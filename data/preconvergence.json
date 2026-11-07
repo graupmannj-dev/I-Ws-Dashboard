@@ -1,0 +1,286 @@
+{
+  "data_start": "2026-10-01",
+  "data_end": "2026-11-04",
+  "model": "Trailing 21-observation median/MAD; min 14 dates; 2.5 robust-sigma attention threshold",
+  "measured_variable": "Iran/Canada English Wikipedia daily pageview ratio, not local population activity",
+  "matched_market": "U.S. ground invasion of Iran before 2027; daily market change, percentage points",
+  "flags": [
+    {
+      "date": "2026-11-03",
+      "area": "Iran (worldwide English Wikipedia audience)",
+      "signal": "Attention ↑ while U.S. ground-invasion forecast did not rise",
+      "classification": "Investigatory discrepancy — not an attack warning",
+      "attention_robust_z": 4.002,
+      "market_change_pp": 0.0,
+      "evidence_date": "2026-11-03",
+      "coverage": "Paired dated observations",
+      "independence": "Two measurement systems; underlying news drivers may be shared",
+      "causal_warning": "Market contract is U.S. ground invasion of Iran before 2027, NOT near-term airstrike probability.",
+      "source_urls": [
+        "https://doc.wikimedia.org/generated-data-platform/aqs/analytics-api/",
+        "https://themorningline.news/odds/will-the-u-s-invade-iran-before-2027"
+      ],
+      "next": "Check same-day news roots, airline suspensions, insurer terms, independent diplomatic action; assess whether attention shift precedes these."
+    }
+  ],
+  "daily_diagnostics": [
+    {
+      "date": "2026-10-01",
+      "ratio": 0.7678228334513095,
+      "robust_z": null,
+      "invasion_market_change_pp": null,
+      "state": "insufficient_history"
+    },
+    {
+      "date": "2026-10-02",
+      "ratio": 0.7633531932685272,
+      "robust_z": null,
+      "invasion_market_change_pp": 0.0,
+      "state": "insufficient_history"
+    },
+    {
+      "date": "2026-10-03",
+      "ratio": 0.7933371625502584,
+      "robust_z": null,
+      "invasion_market_change_pp": 0.0,
+      "state": "insufficient_history"
+    },
+    {
+      "date": "2026-10-04",
+      "ratio": 0.8086348941495464,
+      "robust_z": null,
+      "invasion_market_change_pp": 0.0,
+      "state": "insufficient_history"
+    },
+    {
+      "date": "2026-10-05",
+      "ratio": 0.7475766180358366,
+      "robust_z": null,
+      "invasion_market_change_pp": 0.0,
+      "state": "insufficient_history"
+    },
+    {
+      "date": "2026-10-06",
+      "ratio": 0.6926532522227422,
+      "robust_z": null,
+      "invasion_market_change_pp": -2.0,
+      "state": "insufficient_history"
+    },
+    {
+      "date": "2026-10-07",
+      "ratio": 0.6937789799072643,
+      "robust_z": null,
+      "invasion_market_change_pp": 2.0,
+      "state": "insufficient_history"
+    },
+    {
+      "date": "2026-10-08",
+      "ratio": 0.7039992309171313,
+      "robust_z": null,
+      "invasion_market_change_pp": 0.0,
+      "state": "insufficient_history"
+    },
+    {
+      "date": "2026-10-09",
+      "ratio": 0.737077737077737,
+      "robust_z": null,
+      "invasion_market_change_pp": 0.0,
+      "state": "insufficient_history"
+    },
+    {
+      "date": "2026-10-10",
+      "ratio": 0.7418275131094499,
+      "robust_z": null,
+      "invasion_market_change_pp": 0.0,
+      "state": "insufficient_history"
+    },
+    {
+      "date": "2026-10-11",
+      "ratio": 0.778866035477201,
+      "robust_z": null,
+      "invasion_market_change_pp": 0.0,
+      "state": "insufficient_history"
+    },
+    {
+      "date": "2026-10-12",
+      "ratio": 0.7121974371143807,
+      "robust_z": null,
+      "invasion_market_change_pp": 2.0,
+      "state": "insufficient_history"
+    },
+    {
+      "date": "2026-10-13",
+      "ratio": 0.6670318634164156,
+      "robust_z": null,
+      "invasion_market_change_pp": 0.0,
+      "state": "insufficient_history"
+    },
+    {
+      "date": "2026-10-14",
+      "ratio": 0.6748107693781739,
+      "robust_z": null,
+      "invasion_market_change_pp": -2.0,
+      "state": "insufficient_history"
+    },
+    {
+      "date": "2026-10-15",
+      "ratio": 0.7042824074074074,
+      "robust_z": -0.634,
+      "invasion_market_change_pp": 0.0,
+      "state": "within_baseline"
+    },
+    {
+      "date": "2026-10-16",
+      "ratio": 0.6353555120678408,
+      "robust_z": -2.074,
+      "invasion_market_change_pp": 0.0,
+      "state": "within_baseline"
+    },
+    {
+      "date": "2026-10-17",
+      "ratio": 0.6790533067905331,
+      "robust_z": -0.87,
+      "invasion_market_change_pp": 0.0,
+      "state": "within_baseline"
+    },
+    {
+      "date": "2026-10-18",
+      "ratio": 0.5912949250496659,
+      "robust_z": -2.305,
+      "invasion_market_change_pp": -2.0,
+      "state": "within_baseline"
+    },
+    {
+      "date": "2026-10-19",
+      "ratio": 0.48220322131636506,
+      "robust_z": -4.181,
+      "invasion_market_change_pp": 2.0,
+      "state": "within_baseline"
+    },
+    {
+      "date": "2026-10-20",
+      "ratio": 0.4939102348428773,
+      "robust_z": -3.779,
+      "invasion_market_change_pp": -2.0,
+      "state": "within_baseline"
+    },
+    {
+      "date": "2026-10-21",
+      "ratio": 0.6545774647887324,
+      "robust_z": -0.824,
+      "invasion_market_change_pp": 2.0,
+      "state": "within_baseline"
+    },
+    {
+      "date": "2026-10-22",
+      "ratio": 0.7008286503476522,
+      "robust_z": -0.049,
+      "invasion_market_change_pp": 0.0,
+      "state": "within_baseline"
+    },
+    {
+      "date": "2026-10-23",
+      "ratio": 0.6910167818361304,
+      "robust_z": -0.161,
+      "invasion_market_change_pp": 0.0,
+      "state": "within_baseline"
+    },
+    {
+      "date": "2026-10-24",
+      "ratio": 0.7354824216556217,
+      "robust_z": 0.718,
+      "invasion_market_change_pp": 5.0,
+      "state": "within_baseline"
+    },
+    {
+      "date": "2026-10-25",
+      "ratio": 0.6912021353043836,
+      "robust_z": -0.044,
+      "invasion_market_change_pp": -1.0,
+      "state": "within_baseline"
+    },
+    {
+      "date": "2026-10-26",
+      "ratio": 0.5411888955944478,
+      "robust_z": -3.987,
+      "invasion_market_change_pp": 0.0,
+      "state": "within_baseline"
+    },
+    {
+      "date": "2026-10-27",
+      "ratio": 0.5339709528869997,
+      "robust_z": -4.388,
+      "invasion_market_change_pp": -2.0,
+      "state": "within_baseline"
+    },
+    {
+      "date": "2026-10-28",
+      "ratio": 0.6512650278126683,
+      "robust_z": -0.736,
+      "invasion_market_change_pp": 2.0,
+      "state": "within_baseline"
+    },
+    {
+      "date": "2026-10-29",
+      "ratio": 0.5927663567346242,
+      "robust_z": -1.756,
+      "invasion_market_change_pp": 1.0,
+      "state": "within_baseline"
+    },
+    {
+      "date": "2026-10-30",
+      "ratio": 0.5915456874466268,
+      "robust_z": -1.423,
+      "invasion_market_change_pp": -3.0,
+      "state": "within_baseline"
+    },
+    {
+      "date": "2026-10-31",
+      "ratio": 0.6240983909746625,
+      "robust_z": -0.641,
+      "invasion_market_change_pp": -2.0,
+      "state": "within_baseline"
+    },
+    {
+      "date": "2026-11-01",
+      "ratio": 0.7854024403895667,
+      "robust_z": 1.775,
+      "invasion_market_change_pp": 2.0,
+      "state": "within_baseline"
+    },
+    {
+      "date": "2026-11-02",
+      "ratio": 0.8062811857939536,
+      "robust_z": 2.059,
+      "invasion_market_change_pp": 0.0,
+      "state": "within_baseline"
+    },
+    {
+      "date": "2026-11-03",
+      "ratio": 0.9495317377731529,
+      "robust_z": 4.002,
+      "invasion_market_change_pp": 0.0,
+      "state": "quiet_divergence"
+    },
+    {
+      "date": "2026-11-04",
+      "ratio": 0.880123975204959,
+      "robust_z": 2.461,
+      "invasion_market_change_pp": -2.0,
+      "state": "within_baseline"
+    }
+  ],
+  "coverage": {
+    "dated_rows": 35,
+    "scorable_days": 21,
+    "quiet_divergence_days": 1
+  },
+  "missing_components": [
+    "Daily airline cancellation rate",
+    "Dated war-risk insurance terms",
+    "Daily crowd forecast of equivalent outcome",
+    "Outage time series",
+    "Independent news-root labels"
+  ],
+  "disclaimer": "Retrospective investigatory flags, not out-of-sample warning skill; no calibrated conflict posterior."
+}
