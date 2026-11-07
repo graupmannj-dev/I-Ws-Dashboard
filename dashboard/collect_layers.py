@@ -301,7 +301,13 @@ class Collector:
                 try:
                     imported = notices(self.reviewed, key)
                     with LOCK:
-                        self.payload['layers'][key]['records'].extend(imported)
+                        layer = self.payload['layers'][key]
+                        layer['records'].extend(imported)
+                        if imported:
+                            if layer['status'] == 'unavailable':
+                                layer['status'] = 'partial'
+                            layer['checked_at'] = now()
+                            layer['message'] += f'; {len(imported)} reviewed notices imported'
                 except Exception:
                     with LOCK:
                         self.payload['layers'][key]['message'] += '; reviewed import failed validation'
