@@ -27,12 +27,12 @@ class OperationalPipelineTests(unittest.TestCase):
                          "url": "https://manifold.markets/user/taiwan-blockade"},
                         {"id": "def", "question": "Bad price",
                          "outcomeType": "BINARY", "probability": 2}]
-            return [{"slug": "iran-crisis",
+            return {"events": [{"slug": "iran-crisis",
                      "markets": [{"id": "123", "question": "Will Iran be attacked?",
-                                  "outcomes": '["Yes","No"]', "outcomePrices": '["0.36","0.64"]'}]}]
+                                  "outcomes": '["Yes","No"]', "outcomePrices": '["0.36","0.64"]'}]}]}
         rows, errors, requests = collect_markets(fetch=fake, clock=CLOCK)
         self.assertFalse(errors)
-        self.assertEqual(requests, 8)
+        self.assertEqual(requests, 14)
         self.assertEqual(len(rows), 2)
         self.assertEqual({r["price"] for r in rows}, {0.42, 0.36})
         self.assertTrue(all(r["status"].startswith("candidate") for r in rows))
@@ -47,11 +47,14 @@ class OperationalPipelineTests(unittest.TestCase):
         self.assertTrue(all(r["assessment"].endswith("military_preparation") for r in rows))
 
     def test_commercial_is_media_mention_not_confirmation(self):
-        result = {"articles":[{"url":"https://news.example/a", "title":"Airline flights suspended near Iran", "seendate":"20261107T150000Z"},
-                              {"url":"https://news.example/b", "title":"Ordinary politics"}]}
-        rows, errors, attempts = collect_commercial(fetch=lambda _: result, clock=CLOCK)
+        rss = ET.fromstring("""<rss><channel>
+           <item><title>Airline flights suspended near Iran</title><link>https://news.example/a</link>
+                 <pubDate>Sat, 07 Nov 2026 15:00:00 GMT</pubDate></item>
+           <item><title>Ordinary politics</title><link>https://news.example/b</link></item>
+           </channel></rss>""")
+        rows, errors, attempts = collect_commercial(fetch=lambda _: rss, clock=CLOCK)
         self.assertEqual(len(rows), 1)
-        self.assertEqual(attempts, 3)
+        self.assertEqual(attempts, 2)
         self.assertEqual(rows[0]["assessment"], "media_mention_unverified_not_independent_actor_behavior")
 
     def test_source_failure_does_not_erase_previous_latest(self):
