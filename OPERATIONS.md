@@ -7,7 +7,7 @@ This branch adds a separate, source-audited collection layer to the existing GDE
 | Schedule (UTC) | Function | Writes |
 | --- | --- | --- |
 | 00:17, 06:17, 12:17, 18:17 daily | Public market discovery + US/UK official protective notices | Immutable market/official snapshots, source health, fusion |
-| 07:25 daily | GDELT DOC commercial/evacuation **media mentions** | Media leads + source health + fusion |
+| 07:25 daily | Maritime Executive and Air Cargo News commercial **media mentions** | Media leads + source health + fusion |
 | 11:50 Mondays | Coverage audit (no unsupported false-alarm scores) | Weekly coverage statement + fusion |
 | 14:35 daily (original) | Existing strict GDELT event ingestion + Wikipedia + Pages deployment | Website plus feed status panel |
 
@@ -33,7 +33,7 @@ Collection requires the workflow's scoped \`GITHUB_TOKEN\` to have \`contents: w
 | Polymarket | Public Gamma \`/events\` top-volume sample and individual Yes outcome prices | **Market candidate only** (incomplete sample; volume is not calibrated prediction) |
 | US State | Public travel/security advisory RSS | **Published official protective notice**, often reactive |
 | UK FCDO | Public travel advice Atom feed | **Published official protective notice**, often reactive |
-| GDELT DOC | Public article-list searches on shipping, airspace, evacuation | **Media mention only**, NOT direct verified insurer/airline/vessel behavior |
+| Maritime Executive / Air Cargo News RSS | Public publisher RSS headlines about shipping, air cargo and related disruptions | **Media mention only**, NOT direct verified insurer/airline/vessel behavior |
 | Existing GDELT event archive | Full previous 35-day strict validation | **Provisional global media-coded anomaly** |
 | Existing Wikimedia pageviews | Daily public attention measurements | **Public attention**, NOT local behavior or future conflict |
  
@@ -42,7 +42,8 @@ Documentation:
 - https://institute.polymarket.com/data
 - https://travel.state.gov/_res/rss/TAsTWs.xml
 - https://www.gov.uk/foreign-travel-advice.atom
-- https://blog.gdeltproject.org/gdelt-doc-2-0-api-debuts/
+- https://www.maritime-executive.com/articles.rss
+- https://www.aircargonews.net/feed/
 
 No Good Judgment, licensed Metaculus history, paid insurance terms, granular aviation operations, or actual corporate-action records are included without authorized access. A news headline about a commercial action is NOT treated as independent verification of that action.
 
@@ -67,3 +68,7 @@ This is intentionally conservative. Next development should use licensed airline
 6. Review repository Actions logs and branch storage growth weekly.
 
 The new schedule **will not run until its PR is merged**. Pull-request validation executes only tests and an offline dashboard render, not network source collection. Do not assume it has already run live.
+
+## PR smoke-test findings
+
+The first network probe returned Manifold 7/7, US/UK notices 2/2, but Polymarket's sort query returned HTTP 422 and GDELT DOC 2.0 returned HTTP 429. The adapters were then changed to Polymarket's documented public-search route and to direct maritime/air-cargo publisher RSS. The subsequent smoke test must be checked before merging; a passing unit test alone is insufficient to claim those source endpoints operate from GitHub Actions.
