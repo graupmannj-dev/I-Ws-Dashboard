@@ -70,3 +70,24 @@ jobs:
     steps:
       - id: deployment
         uses: actions/deploy-pages@v4
+
+  operational-smoke:
+    if: github.event_name == 'pull_request'
+    needs: test
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    continue-on-error: true
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Probe public source feeds without writing or publishing
+        shell: bash
+        run: |
+          python ops_pipeline.py --mode markets --state /tmp/aiba-live-probe
+          python ops_pipeline.py --mode official --state /tmp/aiba-live-probe
+          python ops_pipeline.py --mode commercial --state /tmp/aiba-live-probe
+          python scripts/smoke_ops.py /tmp/aiba-live-probe
