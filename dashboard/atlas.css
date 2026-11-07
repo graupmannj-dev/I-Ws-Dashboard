@@ -25,6 +25,11 @@ a{color:#a9d4ff}
 .workspace{display:grid;grid-template-columns:270px minmax(0,1fr) 308px;grid-template-rows:minmax(520px,calc(100vh - 235px)) auto;gap:10px;padding:10px;max-width:2400px;margin:0 auto}
 .sidebar,.watch-panel,.map-area,.timeline{border:1px solid var(--line);border-radius:10px;background:linear-gradient(150deg,#162635,#0e1b2a);min-width:0;overflow:hidden;box-shadow:0 10px 28px #040b1566}
 .sidebar{grid-column:1;grid-row:1;display:flex;flex-direction:column;overflow:auto}
+.workspace.sidebar-collapsed{grid-template-columns:45px minmax(0,1fr) 308px}
+.sidebar.sidebar-minimized{overflow:hidden}
+.sidebar.sidebar-minimized .side-heading{padding:11px 8px;justify-content:center}
+.sidebar.sidebar-minimized .side-heading strong,.sidebar.sidebar-minimized .side-section{display:none}
+.sidebar.sidebar-minimized .icon-button{font-size:20px}
 .side-heading{padding:17px 17px 12px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}
 .side-heading strong{font-size:16px}.icon-button{background:transparent;border:0;color:#a6bacc;font-size:20px}
 .side-section{padding:16px 16px 13px;border-bottom:1px solid #263949}
@@ -115,6 +120,7 @@ a{color:#a9d4ff}
 }
 @media(max-width:1050px){
   .workspace{grid-template-columns:217px minmax(0,1fr);grid-template-rows:minmax(500px,65vh) minmax(180px,32vh) auto}
+  .workspace.sidebar-collapsed{grid-template-columns:45px minmax(0,1fr)}
   .sidebar{grid-column:1;grid-row:1/3}
   .map-area{grid-column:2;grid-row:1}
   .watch-panel{grid-column:2;grid-row:2}
@@ -132,6 +138,8 @@ a{color:#a9d4ff}
   .header-status{display:none}
   .mobile-toggle{display:block;margin-left:auto;color:#e4effa;background:#1b3550;border:1px solid #537b9f;border-radius:6px;padding:6px 9px}
   .workspace{display:flex;flex-direction:column;padding:6px;gap:6px}
+  .workspace.sidebar-collapsed{display:flex}
+  .sidebar.sidebar-minimized{display:none}
   .sidebar{display:none;max-height:65vh;overflow:auto;order:0}
   .sidebar.mobile-open{display:block}
   .map-area{order:1;min-height:490px}
