@@ -107,7 +107,6 @@ jobs:
     needs: test
     runs-on: ubuntu-latest
     timeout-minutes: 15
-    continue-on-error: true
     permissions:
       contents: read
     steps:
@@ -128,9 +127,14 @@ jobs:
           npm install --no-save --no-package-lock playwright
           npx playwright install chromium
       - name: Serve built page and test actual interactions
-        env:
-          AIBA_SCREENSHOT_B64: 'true'
         run: |
           python -m http.server 8765 --bind 127.0.0.1 --directory _site > /tmp/aiba-atlas-server.log 2>&1 &
           sleep 2
           node scripts/test_atlas_browser.js
+      - name: Attach dashboard browser preview
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: atlas-preview
+          path: atlas-preview.jpg
+          if-no-files-found: ignore
