@@ -99,7 +99,7 @@ media reports are not direct observations of commercial decisions. Old data and 
             """</p><p class="sub"><a href="status.json">Source health JSON</a></p></section>
 </main></body></html>""")
     (target / "index.html").write_text(doc, encoding="utf-8")
-    link = '<a href="ops/" style="position:fixed;right:14px;bottom:14px;z-index:10000;background:#22334a;color:#fff;border:1px solid #90acd0;border-radius:9px;padding:10px 14px;font:600 13px system-ui;text-decoration:none;box-shadow:0 3px 15px #0008">Operational feeds ↗</a>'
+    link = '<a href="ops/" style="position:fixed;right:14px;bottom:14px;z-index:10000;background:#22334a;color:#fff;border:1px solid #90acd0;border-radius:9px;padding:10px 14px;font:600 13px system-ui;text-decoration:none;box-shadow:0 3px 15px #0008">Decision briefs ↗</a>'
     for file in ("index.html", "Global_AIBA_5_Watchboard.html", "Global_AIBA_4_Watchboard.html"):
         target_html = site / file
         if target_html.exists():
