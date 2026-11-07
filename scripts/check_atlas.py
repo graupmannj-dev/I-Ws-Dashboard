@@ -27,7 +27,7 @@ for r in atlas["reports"]:
         r["date"] and r["hotspot_id"] and "location" in r["location_precision"].lower()
     )
     assert not r["url"] or r["url"].startswith("https://")
-assert "not official command boundaries" in atlas["geographic_notice"]
+assert "not official aor boundaries" in atlas["geographic_notice"].lower()
 print("Atlas validation passed:",len(atlas["hotspots"]),"theater pins,",
       len(atlas["reports"]),"dated report points,",
       len(geo["features"]),"countries.")
