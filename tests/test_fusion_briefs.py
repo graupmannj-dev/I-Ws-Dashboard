@@ -141,6 +141,29 @@ class FusionBriefTests(unittest.TestCase):
             self.assertEqual(iran["official_change_count"],0)
             self.assertEqual(result["source_health"]["official"]["status"],"stale_or_missing")
 
+    def test_daily_media_source_does_not_repeat_across_six_hour_briefs(self):
+        with tempfile.TemporaryDirectory() as d:
+            root = Path(d)
+            before = {"observed_at":"2026-11-06T15:00:00Z",
+                      "records":[{"source_url":"https://example.org/a",
+                                  "title":"Routine Iran shipping news","published_at":"2026-11-06T12:00:00Z"}]}
+            after = {"observed_at":"2026-11-07T15:00:00Z",
+                     "records":[{"source_url":"https://example.org/a",
+                                 "title":"Routine Iran shipping news","published_at":"2026-11-06T12:00:00Z"},
+                                {"source_url":"https://example.org/b",
+                                 "title":"Iran shipping suspended","published_at":"2026-11-07T14:00:00Z"}]}
+            write_json(root/"history"/"commercial"/"20261106T150000Z.json",before)
+            write_json(root/"history"/"commercial"/"20261107T150000Z.json",after)
+            write_json(root/"latest"/"commercial.json",after)
+            first=build(root,clock=CLOCK,write=False)
+            iran=next(c for c in first["cases"] if c["id"]=="iran_gulf")
+            self.assertEqual(iran["commercial_media_change_count"],1)
+            write_json(root/"latest"/"decision_briefs.json", {
+                "generated_at":"2026-11-07T18:00:00Z"})
+            second=build(root,clock=CLOCK,write=False)
+            iran2=next(c for c in second["cases"] if c["id"]=="iran_gulf")
+            self.assertEqual(iran2["commercial_media_change_count"],0)
+
     def test_watchlist_fails_closed_on_wrong_id_and_preserves_prior(self):
         with tempfile.TemporaryDirectory() as d:
             root=Path(d)
