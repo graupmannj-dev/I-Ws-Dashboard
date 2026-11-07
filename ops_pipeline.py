@@ -111,7 +111,7 @@ def collect_markets(fetch=fetch_json, clock=now_utc):
                     continue
                 price = as_number(item.get("probability"))
                 title = str(item.get("question", ""))[:400]
-                if price is None or not 0 <= price <= 1 or not title:
+                if price is None or not 0 <= price <= 1 or not title or scenario(title) == ["Unassigned / global"]:
                     continue
                 market_id = str(item.get("id", ""))
                 if not market_id:
@@ -284,7 +284,10 @@ def update_fusion(state, clock=now_utc):
     latest = {mode: load_json(Path(state) / "latest" / (mode + ".json"), {}) for mode in ("markets", "official", "commercial")}
     health = {mode: load_json(Path(state) / "health" / (mode + ".json"), {"status": "not_collected"}) for mode in ("markets", "official", "commercial")}
     market_hist = historical_snapshots(state, "markets", 36)
-    current = {r["id"]: r for r in latest["markets"].get("records", [])}
+    market_asof = parse_time(latest["markets"].get("observed_at"))
+    # Failed collection must not replay old changes as new leads.
+    market_current = bool(market_asof and dt.timedelta(0) <= (at - market_asof) <= dt.timedelta(hours=12))
+    current = ({r["id"]: r for r in latest["markets"].get("records", [])} if market_current else {})
     moves = []
     for key, market in current.items():
         now_p = as_number(market.get("price"))
@@ -310,13 +313,17 @@ def update_fusion(state, clock=now_utc):
                           "limitation": "Market question direction may differ from escalation; event definition not cross-validated."})
     # Treat official notices as independently published records, not validation of press headlines.
     fresh_official = []
-    for record in latest["official"].get("records", []):
+    official_asof = parse_time(latest["official"].get("observed_at"))
+    official_current = bool(official_asof and dt.timedelta(0) <= (at - official_asof) <= dt.timedelta(hours=12))
+    for record in (latest["official"].get("records", []) if official_current else []):
         t = parse_time(record.get("published_at"))
         if t and dt.timedelta(0) <= (at - t) <= dt.timedelta(hours=36):
             fresh_official.append(record)
     # Commercial items are media leads and cannot be counted as proof of a commercial decision.
     fresh_commercial = []
-    for record in latest["commercial"].get("records", []):
+    commercial_asof = parse_time(latest["commercial"].get("observed_at"))
+    commercial_current = bool(commercial_asof and dt.timedelta(0) <= (at - commercial_asof) <= dt.timedelta(hours=48))
+    for record in (latest["commercial"].get("records", []) if commercial_current else []):
         t = parse_time(record.get("published_at")) or parse_time(record.get("observed_at"))
         if t and dt.timedelta(0) <= (at - t) <= dt.timedelta(hours=36):
             fresh_commercial.append(record)
