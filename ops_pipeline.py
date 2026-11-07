@@ -126,40 +126,43 @@ def collect_markets(fetch=fetch_json, clock=now_utc):
                              "status": "candidate_market_not_outcome_verified"})
         except (OSError, ValueError, KeyError, TypeError) as exc:
             errors.append({"source": "Manifold:" + term, "error": str(exc)[:240]})
-    # Polymarket's documented Gamma events API: rank by volume and filter titles locally.
-    # The sample is incomplete and should never be treated as a comprehensive market census.
-    url = "https://gamma-api.polymarket.com/events?" + urllib.parse.urlencode(
-        {"active": "true", "closed": "false", "order": "volume_24hr", "ascending": "false", "limit": 200})
-    try:
-        events = fetch(url)
-        if not isinstance(events, list):
-            raise ValueError("Unexpected Polymarket events schema")
-        for event in events:
-            for item in event.get("markets", []):
-                title = str(item.get("question") or event.get("title") or "")[:400]
-                if not title or not any(tag != "Unassigned / global" for tag in scenario(title)):
-                    continue
-                outcomes = json_or_list(item.get("outcomes"))
-                prices = json_or_list(item.get("outcomePrices"))
-                if "Yes" not in outcomes or len(outcomes) != len(prices):
-                    continue
-                price = as_number(prices[outcomes.index("Yes")])
-                if price is None or not 0 <= price <= 1 or item.get("closed"):
-                    continue
-                market_id = str(item.get("id", ""))
-                if not market_id:
-                    continue
-                rows.append({"id": "polymarket:" + market_id, "provider": "Polymarket", "title": title,
-                             "price": round(price, 6), "observed_at": at,
-                             "market_url": "https://polymarket.com/event/" + str(event.get("slug", "")),
-                             "end_at": iso(parse_time(item.get("endDate"))), "liquidity": as_number(item.get("liquidityNum") or item.get("liquidity")),
-                             "volume": as_number(item.get("volumeNum") or item.get("volume")),
-                             "scenario_tags": scenario(title), "source_query": "top_volume_200",
-                             "status": "candidate_market_not_outcome_verified"})
-    except (OSError, ValueError, TypeError, KeyError) as exc:
-        errors.append({"source": "Polymarket:top_volume_200", "error": str(exc)[:240]})
+    # Targeted Gamma search avoids unsupported event sort fields and
+    # still requires exact contract ID and the Yes outcome price.
+    for term in QUERY_TERMS:
+        url = "https://gamma-api.polymarket.com/public-search?" + urllib.parse.urlencode(
+            {"q": term, "limit_per_type": 5, "keep_closed_markets": 0})
+        try:
+            result = fetch(url)
+            if not isinstance(result, dict) or not isinstance(result.get("events"), list):
+                raise ValueError("Unexpected Polymarket search schema")
+            for event in result["events"]:
+                for item in event.get("markets", []):
+                    title = str(item.get("question") or event.get("title") or "")[:400]
+                    if not title or scenario(title) == ["Unassigned / global"]:
+                        continue
+                    outcomes = json_or_list(item.get("outcomes"))
+                    prices = json_or_list(item.get("outcomePrices"))
+                    normalized = [str(x).lower() for x in outcomes]
+                    if "yes" not in normalized or len(outcomes) != len(prices):
+                        continue
+                    price = as_number(prices[normalized.index("yes")])
+                    if price is None or not 0 <= price <= 1 or item.get("closed"):
+                        continue
+                    market_id = str(item.get("id", ""))
+                    if not market_id:
+                        continue
+                    rows.append({"id": "polymarket:" + market_id, "provider": "Polymarket", "title": title,
+                                 "price": round(price, 6), "observed_at": at,
+                                 "market_url": "https://polymarket.com/event/" + str(event.get("slug", "")),
+                                 "end_at": iso(parse_time(item.get("endDate"))),
+                                 "liquidity": as_number(item.get("liquidityNum") or item.get("liquidity")),
+                                 "volume": as_number(item.get("volumeNum") or item.get("volume")),
+                                 "scenario_tags": scenario(title), "source_query": term,
+                                 "status": "candidate_market_not_outcome_verified"})
+        except (OSError, ValueError, TypeError, KeyError) as exc:
+            errors.append({"source": "Polymarket:" + term, "error": str(exc)[:240]})
     dedup = {r["id"]: r for r in rows}
-    return list(dedup.values())[:120], errors, len(QUERY_TERMS) + 1
+    return list(dedup.values())[:120], errors, len(QUERY_TERMS) * 2
 
 def xml_child_text(node, names):
     for name in names:
@@ -208,37 +211,36 @@ def collect_official(fetch=fetch_xml, clock=now_utc):
             errors.append({"source": publisher, "error": str(exc)[:240]})
     return list({r["id"]: r for r in rows}.values()), errors, len(feeds)
 
-def collect_commercial(fetch=fetch_json, clock=now_utc):
-    """GDELT DOC *media coverage leads*. No verified company/insurance decisions."""
+def collect_commercial(fetch=fetch_xml, clock=now_utc):
+    """Maritime and air-cargo trade-press headline leads, not direct activity data."""
     at = iso(clock())
-    queries = [
-        '("shipping" OR "vessel" OR "war risk insurance") (conflict OR attacks OR diverted)',
-        '("airline" OR "airspace" OR "flights") (suspended OR cancelled OR rerouted)',
-        '("evacuation" OR "border crossing") (embassy OR company OR commercial)',
+    feeds = [
+        ("The Maritime Executive", "https://www.maritime-executive.com/articles.rss"),
+        ("Air Cargo News", "https://www.aircargonews.net/feed/"),
     ]
     rows, errors = [], []
-    for query in queries:
-        url = "https://api.gdeltproject.org/api/v2/doc/doc?" + urllib.parse.urlencode(
-            {"query": query, "mode": "artlist", "format": "json", "maxrecords": 40, "timespan": "1d"})
+    for publisher, url in feeds:
         try:
-            response = fetch(url)
-            if not isinstance(response, dict):
-                raise ValueError("Unexpected GDELT DOC response")
-            for item in response.get("articles", []):
-                link = str(item.get("url", ""))
-                if not link.startswith("https://"):
-                    continue
-                title = str(item.get("title", ""))[:400]
-                if not ACTION_WORDS.search(title):
+            root = fetch(url)
+            if not isinstance(root, ET.Element):
+                raise ValueError("Expected RSS XML element")
+            items = root.findall(".//item")
+            if not items:
+                raise ValueError("No RSS items")
+            for item in items[:120]:
+                title = re.sub(r"\s+", " ", html.unescape(xml_child_text(item, ["title"])))[:400]
+                link = xml_child_text(item, ["link"])
+                if not title or not link.startswith("https://") or not ACTION_WORDS.search(title):
                     continue
                 rows.append({"id": digest(link), "title": title, "source_url": link,
-                             "publisher_domain": item.get("domain"), "published_at": iso(parse_time(item.get("seendate"))),
+                             "publisher_domain": publisher,
+                             "published_at": iso(parse_time(xml_child_text(item, ["pubDate"]))),
                              "observed_at": at, "scenario_tags": scenario(title),
-                             "kind": "media_commercial_behavior_lead",
+                             "kind": "trade_press_commercial_behavior_lead",
                              "assessment": "media_mention_unverified_not_independent_actor_behavior"})
-        except (OSError, ValueError, TypeError, KeyError) as exc:
-            errors.append({"source": "GDELT_DOC:" + query[:45], "error": str(exc)[:240]})
-    return list({r["id"]: r for r in rows}.values()), errors, len(queries)
+        except (OSError, ValueError, TypeError, ET.ParseError) as exc:
+            errors.append({"source": publisher, "error": str(exc)[:240]})
+    return list({r["id"]: r for r in rows}.values())[:100], errors, len(feeds)
 
 def load_json(path, default=None):
     try:
