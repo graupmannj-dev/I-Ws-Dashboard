@@ -249,13 +249,32 @@ def build(state, registry=REGISTRY, curated_file=CURATED, clock=now_utc, write=T
     config = json.loads(Path(registry).read_text(encoding="utf-8"))
     original = {x["id"]: x for x in json.loads(Path(curated_file).read_text(encoding="utf-8"))}
     coverage = {mode: recent_snapshot(state, mode, now) for mode in MAX_AGE}
+    prior_brief = load_json(Path(state) / "latest" / "decision_briefs.json", {}) or {}
+    prior_brief_at = parse_time(prior_brief.get("generated_at"))
+    # Independent collector cadences differ. Reusing an unchanged snapshot in a
+    # fresh six-hour build must not repeatedly relabel the same news as new.
+    recently_refreshed = {
+        mode: (prior_brief_at is None or
+               (parse_time(entry["snapshot"].get("observed_at")) is not None and
+                parse_time(entry["snapshot"]["observed_at"]) > prior_brief_at))
+        for mode, entry in coverage.items()
+    }
     moves, market_diag = market_changes(state, coverage["watchlist"], now)
+    if not recently_refreshed["watchlist"]:
+        moves = []
+        market_diag["reason"] = "Watchlist unchanged since preceding decision brief; no duplicate market alert."
     notes = {}
     cases = []
     for case_cfg in config["cases"]:
         key = case_cfg["id"]
         official, official_diag = change_in_notices(state, "official", now, case_cfg, coverage["official"])
         commercial, commercial_diag = change_in_notices(state, "commercial", now, case_cfg, coverage["commercial"])
+        if not recently_refreshed["official"]:
+            official = []
+            official_diag["comparison"] = "Source snapshot unchanged since preceding brief; do not replay alert"
+        if not recently_refreshed["commercial"]:
+            commercial = []
+            commercial_diag["comparison"] = "Source snapshot unchanged since preceding brief; do not replay alert"
         notes[key] = {"official": official_diag, "commercial": commercial_diag}
         cases.append(case_brief(case_cfg, original.get(key, {}), moves, official, commercial, coverage, now))
     ranks = ["Investigate linked changes", "Investigate market repricing", "Verify policy change",
