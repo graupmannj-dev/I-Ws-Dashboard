@@ -23,7 +23,11 @@ def recent_snapshot(state, mode, now):
     health = load_json(Path(state) / "health" / (mode + ".json"), {}) or {}
     stamp = parse_time(snap.get("observed_at"))
     hours = (now - stamp).total_seconds() / 3600 if stamp else None
-    current = hours is not None and 0 <= hours <= MAX_AGE[mode]
+    last_check = parse_time(health.get("checked_at"))
+    # A failed later collection invalidates freshness of previous quotes for new-change alerts.
+    failed_since = bool(health.get("status") == "unavailable" and
+                        (last_check is None or stamp is None or last_check >= stamp))
+    current = hours is not None and 0 <= hours <= MAX_AGE[mode] and not failed_since
     return {"snapshot": snap, "health": health, "available": bool(current),
             "last_asof": iso(stamp), "age_hours": round(hours, 1) if hours is not None else None,
             "status": ("current" if current else "stale_or_missing"),
@@ -175,7 +179,7 @@ def case_brief(case_cfg, curated, market, official, commercial, coverage, now):
                        "and an independent costly action before inferring preparation.")
     elif related_moves:
         priority = "Investigate market repricing"
-        headline = "A scenario-matched contract moved materially before independent confirmation here."
+        headline = "A scenario-matched contract repriced without independent corroboration in these limited feeds."
         implication = ("Check exact contract resolution terms, liquidity and trade drivers. No updated advisory in "
                        "these sources does not establish that public officials or military forces were quiet.")
     elif dated_official:
