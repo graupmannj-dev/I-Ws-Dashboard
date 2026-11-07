@@ -1,0 +1,85 @@
+name: Collect AIBA operational feeds
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "Collection group (all performs every collector and audit)"
+        required: true
+        default: all
+        type: choice
+        options: [all, six_hour, commercial, audit]
+  schedule:
+    - cron: '17 0,6,12,18 * * *'
+    - cron: '25 7 * * *'
+    - cron: '50 11 * * 1'
+permissions:
+  contents: write
+concurrency:
+  group: aiba-operational-snapshots
+  cancel-in-progress: false
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - name: Checkout tested application code
+        uses: actions/checkout@v4
+        with:
+          path: src
+          persist-credentials: false
+      - name: Checkout durable append-only observation branch
+        uses: actions/checkout@v4
+        with:
+          ref: aiba-feed-data
+          path: state
+          fetch-depth: 1
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Choose scheduled collection group
+        shell: bash
+        env:
+          SCHEDULE: ${{ github.event.schedule }}
+          MANUAL_MODE: ${{ github.event.inputs.mode }}
+        run: |
+          case "$SCHEDULE" in
+            '17 0,6,12,18 * * *') mode='six_hour' ;;
+            '25 7 * * *') mode='commercial' ;;
+            '50 11 * * 1') mode='audit' ;;
+            '') mode="$MANUAL_MODE"; if [ -z "$mode" ]; then mode=all; fi ;;
+            *) echo "Unknown cron $SCHEDULE"; exit 2 ;;
+          esac
+          echo "MODE=$mode" >> "$GITHUB_ENV"
+          echo "Selected $mode"
+      - name: Collect timestamped source evidence and recompute provisional fusion
+        shell: bash
+        run: |
+          set -euo pipefail
+          case "$MODE" in
+            six_hour|all)
+              python src/ops_pipeline.py --mode markets --state state/observations
+              python src/ops_pipeline.py --mode official --state state/observations
+              ;;
+          esac
+          case "$MODE" in
+            commercial|all) python src/ops_pipeline.py --mode commercial --state state/observations ;;
+          esac
+          case "$MODE" in
+            audit|all) python src/ops_pipeline.py --mode audit --state state/observations ;;
+          esac
+          python src/ops_pipeline.py --mode fusion --state state/observations
+      - name: Commit immutable observations and visible source health
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd state
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add observations
+          if ! git diff --cached --quiet; then
+            git commit -m "AIBA evidence snapshot: $MODE $GITHUB_RUN_ID [skip ci]"
+            git push origin HEAD:refs/heads/aiba-feed-data
+          else
+            echo "No new observation files"
+          fi
