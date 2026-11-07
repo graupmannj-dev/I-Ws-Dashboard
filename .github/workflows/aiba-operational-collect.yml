@@ -60,6 +60,7 @@ jobs:
             six_hour|all)
               python src/ops_pipeline.py --mode markets --state state/observations
               python src/ops_pipeline.py --mode official --state state/observations
+              python src/watchlist_collector.py --state state/observations
               ;;
           esac
           case "$MODE" in
@@ -69,6 +70,7 @@ jobs:
             audit|all) python src/ops_pipeline.py --mode audit --state state/observations ;;
           esac
           python src/ops_pipeline.py --mode fusion --state state/observations
+          python src/fusion_briefs.py --state state/observations
       - name: Commit immutable observations and visible source health
         shell: bash
         run: |
