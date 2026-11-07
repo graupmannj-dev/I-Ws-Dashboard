@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0c1420">
+  <title>AIBA | Global Early Warning</title>
+  <link rel="stylesheet" href="dashboard/atlas.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="./" aria-label="AIBA home"><span class="brand-mark">◈</span><span>AIBA</span></a>
+    <div class="header-title"><strong>Global Early Warning</strong><span>Global discovery · Source-linked assessments · Operational watch</span></div>
+    <div class="header-status" aria-label="Collection status">
+      <div><small>Watch areas</small><strong id="kpiWatch">—</strong></div>
+      <div><small>New assessed changes</small><strong id="kpiUpdates">—</strong></div>
+      <div><small>Sourced reports</small><strong id="kpiReports">—</strong></div>
+      <div><small>Snapshot</small><strong id="kpiAsOf">—</strong></div>
+    </div>
+    <button id="openControls" class="mobile-toggle" type="button" aria-controls="sidebar" aria-expanded="false">Layers</button>
+  </header>
+
+  <div class="workspace">
+    <aside id="sidebar" class="sidebar" aria-label="Map controls">
+      <div class="side-heading"><strong>Map controls</strong><button id="collapseControls" class="icon-button" aria-label="Collapse controls">«</button></div>
+      <section class="side-section">
+        <h2>Layers</h2>
+        <label class="toggle-row"><input type="checkbox" id="layerHotspots" checked><span>Hotspots</span><i class="legend-swatch red"></i></label>
+        <label class="toggle-row"><input type="checkbox" id="layerReports" checked><span>Reporting points</span><i class="legend-dot"></i></label>
+        <label class="toggle-row"><input type="checkbox" id="layerCommands"><span>Geographic combatant commands <small>(schematic)</small></span><i class="legend-line"></i></label>
+        <label class="toggle-row"><input type="checkbox" id="layerLabels" checked><span>Hotspot labels</span></label>
+        <label class="toggle-row unavailable" title="A direct source of measured shipping tracks is not connected."><input type="checkbox" disabled><span>Shipping / maritime <small>source pending</small></span></label>
+        <label class="toggle-row unavailable" title="A direct source of measured air operations is not connected."><input type="checkbox" disabled><span>Air activity <small>source pending</small></span></label>
+      </section>
+      <section class="side-section">
+        <h2>Severity filter</h2>
+        <div class="filter-buttons" id="severityControls">
+          <button type="button" class="chip active" data-severity="all">All</button>
+          <button type="button" class="chip" data-severity="critical"><i class="dot critical"></i> Critical</button>
+          <button type="button" class="chip" data-severity="active"><i class="dot active"></i> Active</button>
+          <button type="button" class="chip" data-severity="high"><i class="dot high"></i> Escalation</button>
+          <button type="button" class="chip" data-severity="watch"><i class="dot watch"></i> Watch</button>
+        </div>
+        <p class="side-hint">Colors reflect current sourced case state, not a probability of future conflict. No case is automatically assigned Critical.</p>
+      </section>
+      <section class="side-section">
+        <h2>Reporting</h2>
+        <label class="toggle-row"><input type="checkbox" id="changedOnly"><span>Only recently changed hotspots</span></label>
+        <label class="toggle-row"><input type="checkbox" id="autoRotate"><span>Slow globe rotation</span></label>
+        <p class="side-hint" id="dataNotice">Loading source-linked reporting…</p>
+      </section>
+      <section class="side-section">
+        <h2>Views</h2>
+        <button type="button" class="outline-btn" id="resetView">Reset globe position</button>
+        <div class="quick-links"><a href="ops/">Detailed decision briefs</a><a href="classic.html">Classic watchboard</a></div>
+      </section>
+    </aside>
+
+    <main class="map-area">
+      <div class="map-topline">
+        <div class="legend">
+          <span><i class="legend-dot critical"></i> Critical</span>
+          <span><i class="legend-dot active"></i> Active conflict</span>
+          <span><i class="legend-dot high"></i> Escalation</span>
+          <span><i class="legend-dot watch"></i> Watch</span>
+          <span><i class="legend-dot report"></i> Sourced report</span>
+        </div>
+        <div class="view-actions">
+          <button type="button" id="zoomIn" title="Zoom in" aria-label="Zoom in">+</button>
+          <button type="button" id="zoomOut" title="Zoom out" aria-label="Zoom out">−</button>
+          <button type="button" id="northView" title="Reset rotation" aria-label="Reset rotation">◎</button>
+        </div>
+      </div>
+      <div class="globe-wrap" id="globeWrap">
+        <canvas id="globe" role="img" aria-label="Rotatable globe with country outlines, colored watchspots and reporting locations. Use the watchlist for keyboard access."></canvas>
+        <div id="mapTooltip" class="map-tooltip" hidden></div>
+        <div class="map-overlay-note">Drag to rotate · Scroll to zoom · Click a hotspot for the assessment</div>
+        <div class="geographic-note">Theater anchors and GCC reference overlays are approximate. Not incident coordinates or official command boundaries.</div>
+      </div>
+      <div id="selectedDetail" class="selected-detail" aria-live="polite" hidden></div>
+    </main>
+
+    <aside class="watch-panel" aria-label="Watchlist">
+      <div class="watch-heading">
+        <h2>Watchlist <span id="watchCount"></span></h2>
+        <div class="panel-tabs">
+          <button type="button" id="tabAll" class="active">All</button>
+          <button type="button" id="tabNew">Recent changes</button>
+        </div>
+      </div>
+      <div class="watchlist" id="watchlist"><p class="empty">Loading watchspots…</p></div>
+      <div class="watch-footer"><span id="watchFoot">Current case states</span><a href="ops/">Full analysis →</a></div>
+    </aside>
+
+    <section class="timeline" aria-labelledby="timelineTitle">
+      <div class="timeline-head">
+        <h2 id="timelineTitle">Time analysis</h2>
+        <div class="timeline-caption" id="timelineCaption">Loading dated observations…</div>
+      </div>
+      <div class="timeline-main">
+        <div class="window-buttons" id="timeWindows">
+          <button type="button" data-days="1">1d</button>
+          <button type="button" data-days="3">3d</button>
+          <button type="button" data-days="7" class="active">7d</button>
+          <button type="button" data-days="30">30d</button>
+          <button type="button" data-days="all">All</button>
+        </div>
+        <div class="scrubber">
+          <div class="scrub-meta"><span id="timelineStart">—</span><span id="timelineEnd">—</span></div>
+          <div id="eventDensity" class="event-density" aria-hidden="true"></div>
+          <input id="timeCursor" type="range" min="0" max="1" value="1" step="1" aria-label="Selected observation date">
+        </div>
+        <div class="play-controls"><button id="stepBack" type="button" aria-label="Previous day">‹</button><button id="stepForward" type="button" aria-label="Next day">›</button></div>
+      </div>
+      <div class="timeline-foot">
+        <span id="windowLabel">Window —</span>
+        <span>Dated reports only · Current severity is not reconstructed for past dates</span>
+        <span id="visibleCount">—</span>
+      </div>
+    </section>
+  </div>
+  <noscript><p class="noscript">Enable JavaScript to use the interactive globe. The <a href="classic.html">classic watchboard</a> remains available.</p></noscript>
+  <script defer src="dashboard/atlas.js"></script>
+</body>
+</html>

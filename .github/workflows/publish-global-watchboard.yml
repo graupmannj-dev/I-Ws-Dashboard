@@ -29,6 +29,9 @@ jobs:
       - run: python decision_render.py --state /tmp/aiba-missing-feeds --site _site
       - run: python scripts/check_dashboard.py _site/index.html
       - run: node --check /tmp/aiba-dashboard.js
+      - run: python dashboard/build_atlas.py --site _site
+      - run: python scripts/check_atlas.py _site
+      - run: node --check _site/dashboard/atlas.js
   collect:
     needs: test
     if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
@@ -57,6 +60,9 @@ jobs:
       - run: python decision_render.py --state ops-state/observations --site _site
       - run: python scripts/check_dashboard.py _site/index.html
       - run: node --check /tmp/aiba-dashboard.js
+      - run: python dashboard/build_atlas.py --site _site
+      - run: python scripts/check_atlas.py _site
+      - run: node --check _site/dashboard/atlas.js
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site
@@ -95,3 +101,40 @@ jobs:
           python ops_pipeline.py --mode official --state /tmp/aiba-live-probe
           python ops_pipeline.py --mode commercial --state /tmp/aiba-live-probe
           python scripts/smoke_ops.py /tmp/aiba-live-probe
+
+  atlas-browser:
+    if: github.event_name == 'pull_request'
+    needs: test
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install -r requirements.txt
+      - name: Build offline Pages preview
+        run: |
+          python aiba_v5.py --output-dir _site
+          python ops_render.py --state /tmp/aiba-globe-no-ops --site _site
+          python fusion_briefs.py --state /tmp/aiba-globe-no-ops
+          python decision_render.py --state /tmp/aiba-globe-no-ops --site _site
+          python dashboard/build_atlas.py --site _site
+      - name: Install local browser test dependency
+        run: |
+          npm install --no-save --no-package-lock playwright
+          npx playwright install chromium
+      - name: Serve built page and test actual interactions
+        run: |
+          python -m http.server 8765 --bind 127.0.0.1 --directory _site > /tmp/aiba-atlas-server.log 2>&1 &
+          sleep 2
+          node scripts/test_atlas_browser.js
+      - name: Attach dashboard browser preview
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: atlas-preview
+          path: atlas-preview.jpg
+          if-no-files-found: ignore
