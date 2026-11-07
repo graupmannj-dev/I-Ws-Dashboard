@@ -1,0 +1,215 @@
+{
+  "version": 1,
+  "policy": "Only exact-ID records are context; title and outcome must match. No market is a calibrated forecast, and no cross-contract averaging is permitted.",
+  "cases": [
+    {
+      "id": "iran_gulf",
+      "question": "Is a new, major U.S.–Iran military or Hormuz disruption phase developing beyond the existing conflict baseline?",
+      "horizon": "7–30 days",
+      "patterns": [
+        "\\biran\\b",
+        "\\bhormuz\\b",
+        "\\bqeshm\\b",
+        "\\bpersian gulf\\b"
+      ],
+      "next": "Verify a new operational order, sortie/force generation, named insurer or shipper route policy, or sustained Hormuz transit decline against the prior month.",
+      "alternative": "Existing hostilities, sanctions, or recycled media narratives can create activity without a new major offensive."
+    },
+    {
+      "id": "taiwan",
+      "question": "Is the PLA preparing a coercive blockade or attack beyond routine Taiwan Strait operations?",
+      "horizon": "7–90 days",
+      "patterns": [
+        "\\btaiwan\\b",
+        "\\btaipei\\b",
+        "\\bkinmen\\b",
+        "\\bmatsu\\b",
+        "\\btaiwan strait\\b"
+      ],
+      "next": "Seek verified sustained amphibious/logistics preparation, actual restricted waters or commercial route suspension, and independent counterpart preparations beyond exercises.",
+      "alternative": "Exercises, political signaling, and routine high-tempo PLA activity can mimic invasion preparation."
+    },
+    {
+      "id": "russia_nato",
+      "question": "Is there preparation for a new Russia–NATO military confrontation or significantly expanded hybrid action?",
+      "horizon": "7–90 days",
+      "patterns": [
+        "\\bnato\\b",
+        "\\bkaliningrad\\b",
+        "\\bpoland\\b",
+        "\\bbaltic\\b"
+      ],
+      "next": "Check independently confirmed forward logistics/mobilization and protective civilian action linked to NATO territory; separate Ukraine theater combat from an attack on NATO.",
+      "alternative": "Ukraine-related combat, routine exercises or reactive NATO posture changes can look like a new Russia–NATO escalation."
+    },
+    {
+      "id": "korea",
+      "question": "Is a new North–South Korea escalation emerging beyond recurring provocations?",
+      "horizon": "7–90 days",
+      "patterns": [
+        "\\bnorth korea\\b",
+        "\\bsouth korea\\b",
+        "\\bpyongyang\\b",
+        "\\bseoul\\b",
+        "\\bkorean peninsula\\b"
+      ],
+      "next": "Seek verified reserve mobilization, evacuation/airspace restrictions, or sustained unusual multi-domain activity outside normal provocation patterns.",
+      "alternative": "Routine missile tests or diplomatic signaling rarely establish a decision for full-scale war."
+    },
+    {
+      "id": "horn_ethiopia_eritrea",
+      "question": "Are Ethiopia and Eritrea moving toward direct interstate hostilities, distinct from ongoing Tigray fighting?",
+      "horizon": "7–30 days",
+      "patterns": [
+        "\\beritrea\\b",
+        "\\btigray\\b",
+        "\\brama\\b",
+        "\\baden\\b"
+      ],
+      "next": "Independent direct engagement confirmation, sustained paired border formations, or verified border restrictions/evacuations.",
+      "alternative": "Ethiopian–Tigrayan fighting can explain force movements without an Eritrean entry into war."
+    },
+    {
+      "id": "horn_ethiopia_sudan",
+      "question": "Will diplomatic retaliation between Ethiopia and Sudan escalate into direct interstate violence?",
+      "horizon": "7–30 days",
+      "patterns": [
+        "\\bethiopia\\b.{0,80}\\bsudan\\b",
+        "\\bsudan\\b.{0,80}\\bethiopia\\b"
+      ],
+      "next": "Confirm state-attributed cross-border strikes and force concentrations; check diplomatic restrictions and independent freight/airline disruptions.",
+      "alternative": "Consular retaliation and accusations about armed groups need not become interstate war."
+    },
+    {
+      "id": "horn_ethiopia_kenya_moyale",
+      "question": "Is fighting in Ethiopia producing expanding security spillover into Kenya beyond displacement?",
+      "horizon": "7–30 days",
+      "patterns": [
+        "\\bmoyale\\b",
+        "\\bkenya\\b.{0,80}\\bethiopia\\b",
+        "\\bethiopia\\b.{0,80}\\bkenya\\b"
+      ],
+      "next": "Track independently verified cross-border armed incidents, border closure duration, and displacement/cargo flows versus recent baseline.",
+      "alternative": "Humanitarian displacement and border precautions can occur without bilateral hostilities."
+    },
+    {
+      "id": "afpak",
+      "question": "Is Afghanistan–Pakistan fighting expanding beyond its existing cross-border conflict baseline?",
+      "horizon": "7–30 days",
+      "patterns": [
+        "\\bafghanistan\\b.{0,80}\\bpakistan\\b",
+        "\\bpakistan\\b.{0,80}\\bafghanistan\\b",
+        "\\bkhyber\\b.{0,80}\\btaliban\\b"
+      ],
+      "next": "Check multi-sector strike tempo, border closures lasting beyond the latest cycle, evacuations, and exceptional mobilization.",
+      "alternative": "Localized recurrent strikes and counterinsurgency measures may persist without a larger conventional war."
+    },
+    {
+      "id": "drc_rwanda",
+      "question": "Is DRC–Rwanda / Kivu fighting expanding to direct interstate action beyond the existing M23 conflict?",
+      "horizon": "7–90 days",
+      "patterns": [
+        "\\bm23\\b",
+        "\\bkivu\\b",
+        "\\bcongo\\b.{0,80}\\brwanda\\b",
+        "\\brwanda\\b.{0,80}\\bcongo\\b"
+      ],
+      "next": "Confirm new direct-state engagements, cross-border deployments, or verified displacement and border-trade disruption beyond recent rates.",
+      "alternative": "Existing M23 fighting and peace-process volatility can generate repeated alarming headlines without a distinct new escalation."
+    },
+    {
+      "id": "thailand_cambodia",
+      "question": "Is the Thailand–Cambodia ceasefire failing in a way that could restart sustained border fighting?",
+      "horizon": "7–30 days",
+      "patterns": [
+        "\\bthailand\\b.{0,80}\\bcambodia\\b",
+        "\\bcambodia\\b.{0,80}\\bthailand\\b",
+        "\\bthai.cambodian border\\b"
+      ],
+      "next": "Seek verified repeated border engagements, civilian evacuations, border-crossing restrictions, or formal ceasefire suspension.",
+      "alternative": "Localized incidents, accusations, and political rhetoric may be contained by bilateral military channels."
+    }
+  ],
+  "markets": [
+    {
+      "id": "manifold:q2CZUhn500",
+      "case_id": "iran_gulf",
+      "event": "U.S. ground invasion of Iran by end-2026",
+      "effect": "escalation",
+      "expected": "will the us invade iran before the end of 2026",
+      "min_liquidity": 500,
+      "horizon": "2026-12-31",
+      "caveat": "Ground invasion is not a proxy for airstrikes or maritime skirmishes."
+    },
+    {
+      "id": "polymarket:5087226",
+      "case_id": "iran_gulf",
+      "event": "U.S.–Iran Hormuz agreement by November 30",
+      "effect": "deescalation",
+      "expected": "us-iran hormuz agreement by november 30",
+      "min_liquidity": 1000,
+      "horizon": "2026-11-30",
+      "caveat": "Agreement odds measure diplomacy, not the chance of an airstrike."
+    },
+    {
+      "id": "polymarket:5087228",
+      "case_id": "iran_gulf",
+      "event": "U.S.–Iran Hormuz agreement by December 31",
+      "effect": "deescalation",
+      "expected": "us-iran hormuz agreement by december 31",
+      "min_liquidity": 1000,
+      "horizon": "2026-12-31",
+      "caveat": "Longer agreement window; do not compare with November contract as equivalent probabilities."
+    },
+    {
+      "id": "polymarket:2382819",
+      "case_id": "taiwan",
+      "event": "Taiwan blockade during 2026",
+      "effect": "escalation",
+      "expected": "will china blockade taiwan in 2026",
+      "min_liquidity": 1000,
+      "horizon": "2026-12-31",
+      "caveat": "Blockade is not invasion or any military clash."
+    },
+    {
+      "id": "polymarket:677407",
+      "case_id": "taiwan",
+      "event": "China–Taiwan military clash before 2027",
+      "effect": "escalation",
+      "expected": "china x taiwan military clash before 2027",
+      "min_liquidity": 1000,
+      "horizon": "2026-12-31",
+      "caveat": "A clash is not equivalent to invasion."
+    },
+    {
+      "id": "polymarket:1811266",
+      "case_id": "taiwan",
+      "event": "Taiwan invasion by June 30, 2027",
+      "effect": "escalation",
+      "expected": "will china invade taiwan by june 30 2027",
+      "min_liquidity": 1000,
+      "horizon": "2027-06-30",
+      "caveat": "Multi-month event horizon; cannot be equated with 7-day invasion risk."
+    },
+    {
+      "id": "manifold:tNUnHVatJtlGccnOESKc",
+      "case_id": "taiwan",
+      "event": "Outlying Taiwan islands seized by end-2026",
+      "effect": "escalation",
+      "expected": "will china militarily seize any of taiwan",
+      "min_liquidity": 500,
+      "horizon": "2026-12-31",
+      "caveat": "Seizure of outlying islands is distinct from Taiwan main-island invasion."
+    },
+    {
+      "id": "manifold:ACLZU5qCdu",
+      "case_id": "horn_ethiopia_eritrea",
+      "event": "Ethiopia–Eritrea conflict onset by end-2026",
+      "effect": "escalation",
+      "expected": "will armed conflict break out between ethiopia and eritrea",
+      "min_liquidity": 500,
+      "horizon": "2026-12-31",
+      "caveat": "Thin market; original data showed about 100 liquidity units. Treat as uncalibrated and unsuitable for strong warning."
+    }
+  ]
+}
