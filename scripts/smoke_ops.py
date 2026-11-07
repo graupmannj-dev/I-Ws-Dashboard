@@ -7,7 +7,7 @@ import sys
 from pathlib import Path
 
 def check(state):
-    names = ("markets", "official", "commercial")
+    names = ("markets", "watchlist", "official", "commercial")
     report = []
     ok = 0
     for name in names:
@@ -35,8 +35,10 @@ def check(state):
     if summary_path:
         with open(summary_path, "a", encoding="utf-8") as file:
             file.write(summary)
-    # Require at least one working external family to prevent 'all green' on all-failed calls.
-    return 0 if ok else 1
+    # Live smoke requires an exact-ID watchlist quote; other external families
+    # may be intermittent and retain explicit per-provider health statuses.
+    watchlist = next((row for row in report if row[0] == "watchlist"), None)
+    return 0 if ok and watchlist and watchlist[2] > 0 else 1
 
 if __name__ == "__main__":
     sys.exit(check(sys.argv[1]))
