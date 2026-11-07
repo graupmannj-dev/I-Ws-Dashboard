@@ -32,6 +32,7 @@ jobs:
       - run: python dashboard/build_atlas.py --site _site
       - run: python scripts/check_atlas.py _site
       - run: node --check _site/dashboard/atlas.js
+      - run: node --check _site/dashboard/layers.js
   collect:
     needs: test
     if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
@@ -60,9 +61,14 @@ jobs:
       - run: python decision_render.py --state ops-state/observations --site _site
       - run: python scripts/check_dashboard.py _site/index.html
       - run: node --check /tmp/aiba-dashboard.js
+      - name: Collect optional public map overlays
+        run: python dashboard/collect_layers.py --output _site/layers.json
       - run: python dashboard/build_atlas.py --site _site
+        env:
+          AIBA_LAYER_FEED_URL: ${{ vars.AIBA_LAYER_FEED_URL || 'layers.json' }}
       - run: python scripts/check_atlas.py _site
       - run: node --check _site/dashboard/atlas.js
+      - run: node --check _site/dashboard/layers.js
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site
