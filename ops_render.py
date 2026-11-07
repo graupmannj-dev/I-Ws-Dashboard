@@ -70,7 +70,7 @@ def render(state, site, clock=now_utc):
     for item in fusion.get("commercial_media_leads", [])[:30]:
         commercial_rows.append("<li>" + source_link(item.get("source_url"), item.get("title")) +
                                '<span class="sub"> · news mention, not independently verified</span></li>')
-    doc = """<!doctype html><html lang="en"><head><meta charset="utf-8">
+    doc = ("""<!doctype html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1"><title>AIBA Operational Feeds</title>
 <style>
 :root{color-scheme:dark}body{margin:0;background:#0f141e;color:#e6ecf7;font:14px/1.55 system-ui,sans-serif}
@@ -97,7 +97,7 @@ media reports are not direct observations of commercial decisions. Old data and 
 <section><h2>Historical validation</h2><p>""" + esc(audit.get("warning_performance") or
             "Pending: no weekly scored backtest. Current system has no validated event prediction accuracy.") +
             """</p><p class="sub"><a href="status.json">Source health JSON</a></p></section>
-</main></body></html>"""
+</main></body></html>""")
     (target / "index.html").write_text(doc, encoding="utf-8")
     link = '<a href="ops/" style="position:fixed;right:14px;bottom:14px;z-index:10000;background:#22334a;color:#fff;border:1px solid #90acd0;border-radius:9px;padding:10px 14px;font:600 13px system-ui;text-decoration:none;box-shadow:0 3px 15px #0008">Operational feeds ↗</a>'
     for file in ("index.html", "Global_AIBA_5_Watchboard.html", "Global_AIBA_4_Watchboard.html"):
