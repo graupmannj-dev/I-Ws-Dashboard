@@ -24,6 +24,7 @@ jobs:
       - run: python -m pip check
       - run: python -m unittest discover -s tests -v
       - run: python aiba_v5.py --output-dir _site
+      - run: python ops_render.py --state /tmp/aiba-missing-feeds --site _site
       - run: python scripts/check_dashboard.py _site/index.html
       - run: node --check /tmp/aiba-dashboard.js
   collect:
@@ -33,6 +34,11 @@ jobs:
     timeout-minutes: 60
     steps:
       - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          ref: aiba-feed-data
+          path: ops-state
+          persist-credentials: false
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
@@ -45,6 +51,7 @@ jobs:
           restore-keys: gdelt-${{ runner.os }}-
       - name: Collect and require all 35 valid daily archives
         run: python aiba_v5.py --download-days 35 --wiki-days 90 --strict-gdelt --output-dir _site
+      - run: python ops_render.py --state ops-state/observations --site _site
       - run: python scripts/check_dashboard.py _site/index.html
       - run: node --check /tmp/aiba-dashboard.js
       - uses: actions/upload-pages-artifact@v3
