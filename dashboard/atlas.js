@@ -177,7 +177,7 @@ function paintStatic(){
 function pointJitter(id){
   // Screen-only separation at an identical theater anchor; NOT geocoding.
   let h=0;for(let i=0;i<id.length;i++)h=(h*33+id.charCodeAt(i))>>>0;
-  const a=(h%360)*DEG,rad=11+((h>>9)%16);
+  const a=(h%360)*DEG,rad=17+((h>>9)%22);
   return {x:Math.cos(a)*rad,y:Math.sin(a)*rad};
 }
 function dayWindow(){
@@ -211,11 +211,12 @@ function drawFrame(timestamp){
       const p=visible(report.lon,report.lat);
       if(!p)continue;
       const j=pointJitter(report.id),x=p.x+j.x,y=p.y+j.y;
-      c.fillStyle="#aebfce98";c.strokeStyle="#e4f0f7a8";c.lineWidth=.7;
-      c.beginPath();c.arc(x,y,3.2,0,2*Math.PI);c.fill();c.stroke();
-      hits.push({type:"report",x,y,r:6,record:report});
+      c.fillStyle="#bccbd8cf";c.strokeStyle="#eef4fae0";c.lineWidth=.95;
+      c.beginPath();c.arc(x,y,3.9,0,2*Math.PI);c.fill();c.stroke();
+      hits.push({type:"report",x,y,r:7.5,record:report});
     }
   }
+  const occupied=[];
   if($("layerHotspots").checked){
     const hs=selectedHotspots();
     for(const h of hs){
@@ -245,9 +246,23 @@ function drawFrame(timestamp){
         c.textAlign="left";const w=c.measureText(txt).width+12;
         const right=p.x+w+27<d.w;
         const x=right?p.x+17:p.x-w-17;
-        c.fillStyle="#0b1d2bd8";c.strokeStyle="#45647d94";c.lineWidth=.65;
-        c.beginPath();c.roundRect(x,p.y-11,w,20,4);c.fill();c.stroke();
-        c.fillStyle="#e5f0f9";c.fillText(txt,x+6,p.y+3);
+        const offsets=[0,-21,21,-42,42,-63,63];
+        let placement=null;
+        for(const dy of offsets){
+          const y=p.y-11+dy, rect={x,y,w,h:20};
+          const overlap=occupied.some(q=>!(rect.x>q.x+q.w+4||rect.x+rect.w+4<q.x||rect.y>q.y+q.h+4||rect.y+rect.h+4<q.y));
+          if(!overlap&&y>=6&&y+20<=d.h-8){placement=rect;break;}
+        }
+        if(placement){
+          if(Math.abs(placement.y-(p.y-11))>12){
+            c.strokeStyle=col+"ad";c.lineWidth=.75;c.beginPath();c.moveTo(p.x,p.y);
+            c.lineTo(right?placement.x:placement.x+placement.w,placement.y+10);c.stroke();
+          }
+          occupied.push(placement);
+          c.fillStyle="#0b1d2beb";c.strokeStyle="#45647dc0";c.lineWidth=.65;
+          c.beginPath();c.roundRect(placement.x,placement.y,w,20,4);c.fill();c.stroke();
+          c.fillStyle="#e5f0f9";c.fillText(txt,placement.x+6,placement.y+14);
+        }
       }
       c.restore();
       hits.push({type:"hotspot",x:p.x,y:p.y,r:16,record:h});
