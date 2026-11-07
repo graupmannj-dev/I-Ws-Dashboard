@@ -11,6 +11,7 @@ import html
 import json
 from pathlib import Path
 from ops_pipeline import parse_time, load_json, now_utc, iso
+from publication_context import decorate
 
 def e(value):
     return html.escape(str(value if value is not None else ""), quote=True)
@@ -19,6 +20,31 @@ def link(url, title):
     if not isinstance(url, str) or not url.startswith("https://"):
         return e(title)
     return f'<a href="{e(url)}" target="_blank" rel="noopener noreferrer">{e(title)}</a>'
+
+def render_daily_context(case):
+    context = case.get("daily_context", {})
+    if not context:
+        return ""
+    lines = [
+        '<div class="aiba-context"><h4>Daily media/attention context · NOT independent warning confirmation</h4>',
+        '<p>' + e(context.get("interpretation")) + '</p>',
+    ]
+    if context.get("gdelt_anomalies"):
+        lines.append("<ul>")
+        for signal in context["gdelt_anomalies"]:
+            lines.append("<li>" + link(signal.get("source_url"), signal.get("name")) +
+                         " · media-share anomaly " + e(signal.get("event_share_ratio")) +
+                         "×; data through " + e(signal.get("dataset_asof")) + "</li>")
+        lines.append("</ul>")
+    if context.get("wikipedia_flags"):
+        lines.append("<ul>")
+        for signal in context["wikipedia_flags"]:
+            lines.append("<li>" + link(signal.get("source_url"), signal.get("page")) +
+                         " · English Wikipedia attention " + e(signal.get("robust_z")) +
+                         " robust σ on " + e(signal.get("date")) + "</li>")
+        lines.append("</ul>")
+    lines.append('<p class="sub">' + e(context.get("caveat")) + '</p></div>')
+    return "".join(lines)
 
 def render_case(case, first=False):
     priority = case["collection_priority"]
@@ -37,6 +63,7 @@ def render_case(case, first=False):
             f' · Published: {e(timing)}; captured: {e(observation)}</span></li>'
         )
     evidence_html = "<ul>" + "".join(evidence) + "</ul>" if evidence else '<p class="sub">No new dated case-specific change established. Historical signals remain in the original watchboard.</p>'
+    context_html = render_daily_context(case)
     hist_counter = "".join(
         f'<li>{e(x.get("date"))}: {e(x.get("title"))} — {e(x.get("assessment"))}</li>'
         for x in case.get("historical_counter_signals", [])
@@ -54,7 +81,7 @@ def render_case(case, first=False):
         f'<p class="sub"><strong>Background severity:</strong> {e(case["standing_state"])} '
         f'(curated as of {e(case["standing_asof"])}; historical, not automatically reverified). '
         f'Warning horizon: {e(case["warning_horizon"])}</p>'
-        '<h4>New source observations and provenance</h4>' + evidence_html +
+        '<h4>New source observations and provenance</h4>' + evidence_html + context_html +
         ('<h4>Dated historical counter-signals</h4><ul>' + hist_counter + "</ul>" if hist_counter else "") +
         '<p class="sub">' + e(case.get("verification")) + '</p>'
         "</div></details>"
@@ -76,6 +103,7 @@ CSS = """
 #aiba-decision .aiba-stats span{border:1px solid #3e536b;border-radius:8px;padding:6px 8px}
 #aiba-decision h4{font-size:13px;margin:14px 0 6px}
 #aiba-decision li{margin-bottom:8px}
+#aiba-decision .aiba-context{background:#1a2c3c;padding:12px;margin:12px 0;border-radius:8px;border-left:3px solid #89a8c8}
 @media(max-width:550px){#aiba-decision .aiba-case summary{display:block}.aiba-priority{display:inline-block;margin-top:5px}}
 """
 
@@ -94,6 +122,7 @@ def attach(state, site, clock=now_utc):
             "operational_action": "Run the operational collector and check its source-health records; do not infer a quiet environment.",
             "source_health": {}, "limits": ["No synthesis observations were available at publication time."]
         }
+    output = decorate(output, site)
     stamp = parse_time(output.get("generated_at"))
     age = (clock() - stamp).total_seconds() / 3600 if stamp else None
     age_state = ("current" if age is not None and 0 <= age <= 24 else "STALE / timestamp unavailable")
@@ -106,6 +135,11 @@ def attach(state, site, clock=now_utc):
         for k,v in source_status.items()
     )
     cases_html = "".join(render_case(c, i < 2) for i,c in enumerate(cases))
+    daily = output.get("daily_context_status", {})
+    daily_stats = (
+        "<span>GDELT context leads globally: " + e(daily.get("gdelt_candidates_total")) + "</span>" +
+        "<span>Wikimedia attention flags globally: " + e(daily.get("wikipedia_recent_flags_total")) + "</span>"
+    )
     section = (
         '<section id="aiba-decision"><h2>Intelligence synthesis · What changed and why it matters</h2>'
         '<p><strong>' + e(output.get("executive_summary")) + '</strong></p>'
@@ -113,7 +147,7 @@ def attach(state, site, clock=now_utc):
         '<p class="sub">Assessment evidence captured ' + e(output.get("generated_at")) +
         '; freshness: ' + e(age_state) + '. The page itself updates on daily publication, not every source check. '
         'Case priority is a collection task, not a probability or threat level.</p>'
-        '<div class="aiba-stats"><span>' + counts + '</span>' + states + '</div>'
+        '<div class="aiba-stats"><span>' + counts + '</span>' + states + daily_stats + '</div>'
         + cases_html +
         '<p class="sub">Strict safeguard: first snapshots establish baselines; archived advisories are not new events; '
         'markets reflect their exact outcomes; headlines are not independent commercial decisions. '
