@@ -86,7 +86,14 @@ def attach(state, site, clock=now_utc):
         raise FileNotFoundError("Run ops_render.py before decision_render.py")
     output = load_json(Path(state) / "latest" / "decision_briefs.json", None)
     if output is None:
-        raise ValueError("Decision brief missing: run fusion_briefs.py first (no silent placeholder publication)")
+        # The daily Pages build must not fail just because the new independent
+        # six-hour collector has not executed. Label unavailability explicitly.
+        output = {
+            "generated_at": None, "cases": [], "new_change_count": 0,
+            "executive_summary": "Scenario synthesis is unavailable: no verified collection snapshot has been received.",
+            "operational_action": "Run the operational collector and check its source-health records; do not infer a quiet environment.",
+            "source_health": {}, "limits": ["No synthesis observations were available at publication time."]
+        }
     stamp = parse_time(output.get("generated_at"))
     age = (clock() - stamp).total_seconds() / 3600 if stamp else None
     age_state = ("current" if age is not None and 0 <= age <= 24 else "STALE / timestamp unavailable")
