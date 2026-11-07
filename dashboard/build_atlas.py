@@ -9,6 +9,7 @@ from __future__ import annotations
 import argparse
 import datetime as dt
 import json
+import os
 import shutil
 from pathlib import Path
 from collections import defaultdict
@@ -155,6 +156,7 @@ def generate(site, generated=None):
     dates = sorted({r["date"] for r in reports} | {asof})
     payload = {
         "version": 1, "generated_at": now, "asof": asof,
+        "layer_feed": {"url": os.environ.get("AIBA_LAYER_FEED_URL", "layers.json")},
         "title": "AIBA Global Early Warning",
         "hotspots": hotspots, "reports": reports, "report_dates": dates,
         "algorithmic_unlocated_count": len(provisional),
@@ -178,8 +180,14 @@ def generate(site, generated=None):
     (site / "atlas.json").write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
     asset_dir = site / "dashboard"
     asset_dir.mkdir(exist_ok=True)
-    for name in ("atlas.css", "atlas.js", "countries.geojson"):
+    for name in ("atlas.css", "atlas.js", "layers.js", "countries.geojson"):
         shutil.copyfile(WEB / name, asset_dir / name)
+    if not (site / "layers.json").exists():
+        try:
+            from dashboard.collect_layers import empty
+        except ModuleNotFoundError:
+            from collect_layers import empty
+        (site / "layers.json").write_text(json.dumps(empty()), encoding="utf-8")
     # Preserve original fully featured watchboard as a linked legacy view.
     prior = site / "index.html"
     if prior.exists():

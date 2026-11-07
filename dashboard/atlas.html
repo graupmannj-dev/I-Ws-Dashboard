@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
+  <link rel="icon" href="data:,">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#0c1420">
@@ -29,8 +30,9 @@
         <label class="toggle-row"><input type="checkbox" id="layerReports" checked><span>Reporting points</span><i class="legend-dot"></i></label>
         <label class="toggle-row"><input type="checkbox" id="layerCommands"><span>Geographic combatant commands <small>(schematic)</small></span><i class="legend-line"></i></label>
         <label class="toggle-row"><input type="checkbox" id="layerLabels" checked><span>Hotspot labels</span></label>
-        <label class="toggle-row unavailable" title="A direct source of measured shipping tracks is not connected."><input type="checkbox" disabled><span>Shipping / maritime <small>source pending</small></span></label>
-        <label class="toggle-row unavailable" title="A direct source of measured air operations is not connected."><input type="checkbox" disabled><span>Air activity <small>source pending</small></span></label>
+        <div id="measuredLayerControls"></div>
+        <p class="sub">Tracks show observations from the last 10 minutes. These layers show current conditions independently of the report timeline. Trails accumulate while this page is open.</p>
+        <div id="layerStatus" aria-live="polite"></div>
       </section>
       <section class="side-section">
         <h2>Severity filter</h2>
@@ -120,6 +122,7 @@
     </section>
   </div>
   <noscript><p class="noscript">Enable JavaScript to use the interactive globe. The <a href="classic.html">classic watchboard</a> remains available.</p></noscript>
+  <script defer src="dashboard/layers.js"></script>
   <script defer src="dashboard/atlas.js"></script>
 </body>
 </html>

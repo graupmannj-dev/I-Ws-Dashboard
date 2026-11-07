@@ -90,7 +90,7 @@ function frontStroke(ctx,ring){
   }
   ctx.stroke();
 }
-function landGeometry(ctx,feature){
+function landGeometry(ctx,feature,fill=null,stroke=null){
   const geometry=feature.geometry;if(!geometry)return;
   const polygons=geometry.type==="Polygon"?[geometry.coordinates]:
                  geometry.type==="MultiPolygon"?geometry.coordinates:[];
@@ -103,9 +103,9 @@ function landGeometry(ctx,feature){
         ctx.beginPath();
         clipped.forEach((p,i)=>{const q=xy(p);i?ctx.lineTo(q.x,q.y):ctx.moveTo(q.x,q.y);});
         ctx.closePath();
-        ctx.fillStyle="#263b4d";ctx.fill();
+        ctx.fillStyle=fill||window.AtlasLayers.countryFill(feature.properties?.name)||"#263b4d";ctx.fill();
       }
-      ctx.strokeStyle="rgba(225,237,246,.60)";
+      ctx.strokeStyle=stroke||"rgba(225,237,246,.60)";
       ctx.lineWidth=.67;
       frontStroke(ctx,ring);
     }
@@ -206,6 +206,10 @@ function drawFrame(timestamp){
   const d=state.dimensions,c=state.ctx;
   c.clearRect(0,0,d.w,d.h);c.drawImage(state.staticCanvas,0,0,d.w,d.h);
   const hits=[];
+  window.AtlasLayers.draw(c,visible,lineOfGeography,hits,(ctx,feature,fill,stroke)=>{
+    if(feature.geometry.type==="LineString")lineOfGeography(ctx,feature.geometry.coordinates,stroke,2);
+    else landGeometry(ctx,feature,fill,stroke);
+  });
   if($("layerReports").checked){
     for(const report of currentReports()){
       const p=visible(report.lon,report.lat);
@@ -269,7 +273,7 @@ function drawFrame(timestamp){
     }
   }
   // Hit-test hotspots first even if overlapping sourced-report grey dots.
-  state.hitTargets=hits.filter(h=>h.type==="hotspot").concat(hits.filter(h=>h.type==="report"));
+  state.hitTargets=hits.filter(h=>h.type==="hotspot").concat(hits.filter(h=>h.type==="report"),hits.filter(h=>h.type==="layer"));
   state.animationId=requestAnimationFrame(drawFrame);
 }
 function updateDates(){
@@ -312,6 +316,7 @@ function setWindow(w){
   updateTimeline();
 }
 function select(h,type="hotspot"){
+  if(type==="layer"){window.AtlasLayers.show(h,h.layerKey);return;}
   state.selected=h.id;state.selectionType=type;
   if(type==="hotspot"){
     state.lon=h.lon;state.lat=clamp(h.lat*.55,-55,65);state.staticValid=false;
@@ -395,7 +400,7 @@ function attachCanvas(){
       const obj=found.record;
       tip.innerHTML=found.type==="hotspot"
         ?'<b>'+safe(obj.name)+'</b><span>'+safe(obj.state)+' · Approximate theater</span>'
-        :'<b>'+safe(obj.title)+'</b><span>'+safe(obj.date)+' · Theater-associated report</span>';
+        :'<b>'+safe(obj.title)+'</b><span>'+safe(obj.observed_at||obj.date)+' · '+(found.type==="layer"?"Source observation":"Theater-associated report")+'</span>';
     }
   });
   c.addEventListener("pointerup",event=>{
@@ -477,6 +482,7 @@ async function init(){
     ]);
     if(!Array.isArray(data.hotspots)||!Array.isArray(data.reports)||!Array.isArray(geo.features))throw Error("Unexpected feed schema");
     state.atlas=data;state.countries=geo;
+    window.AtlasLayers.init(data.layer_feed,()=>{state.staticValid=false;});
     updateKpis();updateDates();resize();
     if(typeof ResizeObserver==="function"){
       new ResizeObserver(()=>resize()).observe($("globeWrap"));
