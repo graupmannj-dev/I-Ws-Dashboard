@@ -101,3 +101,36 @@ jobs:
           python ops_pipeline.py --mode official --state /tmp/aiba-live-probe
           python ops_pipeline.py --mode commercial --state /tmp/aiba-live-probe
           python scripts/smoke_ops.py /tmp/aiba-live-probe
+
+  atlas-browser:
+    if: github.event_name == 'pull_request'
+    needs: test
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    continue-on-error: true
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install -r requirements.txt
+      - name: Build offline Pages preview
+        run: |
+          python aiba_v5.py --output-dir _site
+          python ops_render.py --state /tmp/aiba-globe-no-ops --site _site
+          python fusion_briefs.py --state /tmp/aiba-globe-no-ops
+          python decision_render.py --state /tmp/aiba-globe-no-ops --site _site
+          python dashboard/build_atlas.py --site _site
+      - name: Install local browser test dependency
+        run: |
+          npm install --no-save --no-package-lock playwright
+          npx playwright install chromium
+      - name: Serve built page and test actual interactions
+        env:
+          AIBA_SCREENSHOT_B64: 'true'
+        run: |
+          python -m http.server 8765 --bind 127.0.0.1 --directory _site > /tmp/aiba-atlas-server.log 2>&1 &
+          sleep 2
+          node scripts/test_atlas_browser.js
