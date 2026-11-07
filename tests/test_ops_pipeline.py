@@ -54,8 +54,8 @@ class OperationalPipelineTests(unittest.TestCase):
            </channel></rss>""")
         rows, errors, attempts = collect_commercial(fetch=lambda _: rss, clock=CLOCK)
         self.assertEqual(len(rows), 1)
-        self.assertEqual(attempts, 2)
-        self.assertEqual(rows[0]["assessment"], "media_mention_unverified_not_independent_actor_behavior")
+        self.assertEqual(attempts, 4)
+        self.assertEqual(rows[0]["assessment"], "syndicated_media_mention_not_independent_actor_behavior")
 
     def test_source_failure_does_not_erase_previous_latest(self):
         with tempfile.TemporaryDirectory() as root:
