@@ -58,12 +58,8 @@ const assert = require("node:assert/strict");
   await page.reload({waitUntil:"networkidle"});
   await page.waitForFunction(()=>document.querySelectorAll(".watch-card").length>0);
   await page.waitForTimeout(350);
-  if(process.env.AIBA_SCREENSHOT_B64==="true"){
-    const shot=await page.screenshot({type:"jpeg",quality:53});
-    console.log("AIBA_SCREENSHOT_START");
-    console.log(shot.toString("base64"));
-    console.log("AIBA_SCREENSHOT_END");
-  }
+  await page.screenshot({path:"atlas-preview.jpg",type:"jpeg",quality:72});
+  console.log("Atlas screenshot saved as atlas-preview.jpg for PR review.");
   assert.equal(errors.length,0,"Console or page errors: "+errors.join(" | "));
   console.log("AIBA browser globe, controls, time filter, mobile controls and sourced watchlist PASS");
   await browser.close();
