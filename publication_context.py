@@ -11,6 +11,28 @@ from pathlib import Path
 from ops_pipeline import load_json
 from fusion_briefs import matches_case, REGISTRY
 
+# Exact actor-pair identity prevents a bilateral crisis being inferred from
+# unrelated conflicts involving just one actor (e.g. Iran–Pakistan ≠ U.S.–Iran).
+GDELT_PAIRS = {
+    "iran_gulf": {frozenset(("IRN", "USA"))},
+    "taiwan": {frozenset(("CHN", "TWN"))},
+    "russia_nato": {frozenset(("RUS", x)) for x in ("POL", "LIT", "LAT", "EST")},
+    "korea": {frozenset(("PRK", "KOR"))},
+    "horn_ethiopia_eritrea": {frozenset(("ETH", "ERI"))},
+    "horn_ethiopia_sudan": {frozenset(("ETH", "SUD"))},
+    "horn_ethiopia_kenya_moyale": {frozenset(("ETH", "KEN"))},
+    "afpak": {frozenset(("AFG", "PAK"))},
+    "drc_rwanda": {frozenset(("DRC", "RWA"))},
+    "thailand_cambodia": {frozenset(("CAM", "THA"))},
+}
+
+def matching_bilateral_id(case_id, gdelt_id):
+    prefix = "gdelt_BILAT_"
+    if not str(gdelt_id).startswith(prefix):
+        return False
+    pair = str(gdelt_id)[len(prefix):].split("_")
+    return len(pair) == 2 and frozenset(pair) in GDELT_PAIRS.get(case_id, set())
+
 PAGES = {
     "iran_gulf": {"Iran"},
     "taiwan": {"Taiwan"},
@@ -37,7 +59,7 @@ def decorate(base, site, registry=REGISTRY):
     for brief in result.get("cases", []):
         case_id = brief["id"]
         config = lookup.get(case_id)
-        matches = [x for x in leads if config and matches_case(config, {"title": x.get("name", "")})]
+        matches = [x for x in leads if matching_bilateral_id(case_id, x.get("id"))]
         flags = [x for x in attention if x.get("name") in PAGES.get(case_id, set())]
         note = ("No case-matched daily GDELT nomination or public-attention flag. "
                 "This is NOT evidence of normal military conditions.")
