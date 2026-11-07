@@ -57,10 +57,12 @@ def render_case(case, first=False):
         extra = ""
         if item.get("change_pp") is not None:
             extra = f" · {e(item['change_pp'])} pp / {e(item.get('window'))}"
+        ceiling = item.get("caveat") or item.get("assessment_ceiling") or ""
         evidence.append(
             "<li>" + link(item.get("source_url"), item.get("title")) +
             f'<span class="sub"> · {e(item.get("source_family"))}{extra}'
-            f' · Published: {e(timing)}; captured: {e(observation)}</span></li>'
+            f' · Published: {e(timing)}; captured: {e(observation)}</span>'
+            f'<div class="sub">{e(ceiling)}</div></li>'
         )
     evidence_html = "<ul>" + "".join(evidence) + "</ul>" if evidence else '<p class="sub">No new dated case-specific change established. Historical signals remain in the original watchboard.</p>'
     context_html = render_daily_context(case)
