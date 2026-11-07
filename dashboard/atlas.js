@@ -426,8 +426,16 @@ function bindControls(){
     $("openControls").setAttribute("aria-expanded",on?"true":"false");
   });
   $("collapseControls").addEventListener("click",()=>{
-    if(window.innerWidth<=690){$("sidebar").classList.remove("mobile-open");$("openControls").setAttribute("aria-expanded","false");}
-    else {$("sidebar").style.display=$("sidebar").style.display==="none"?"flex":"none";}
+    if(window.innerWidth<=690){
+      $("sidebar").classList.remove("mobile-open");
+      $("openControls").setAttribute("aria-expanded","false");
+    }else{
+      const collapsed=$("sidebar").classList.toggle("sidebar-minimized");
+      document.querySelector(".workspace").classList.toggle("sidebar-collapsed",collapsed);
+      $("collapseControls").textContent=collapsed?"»":"«";
+      $("collapseControls").setAttribute("aria-label",collapsed?"Expand controls":"Collapse controls");
+      setTimeout(resize,0);
+    }
   });
 }
 function updateTabs(){
