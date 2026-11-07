@@ -212,32 +212,49 @@ def collect_official(fetch=fetch_xml, clock=now_utc):
     return list({r["id"]: r for r in rows}.values()), errors, len(feeds)
 
 def collect_commercial(fetch=fetch_xml, clock=now_utc):
-    """Maritime and air-cargo trade-press headline leads, not direct activity data."""
+    """Trade-press *media* leads; publisher or aggregator access may be incomplete."""
     at = iso(clock())
+    # Publisher RSS access is variable from hosted runners. Google News RSS is
+    # explicitly marked as syndication, not a second independent news source.
     feeds = [
-        ("The Maritime Executive", "https://www.maritime-executive.com/articles.rss"),
-        ("Air Cargo News", "https://www.aircargonews.net/feed/"),
+        ("The Maritime Executive (direct RSS)", "https://www.maritime-executive.com/articles.rss"),
+        ("Maritime Executive (news syndication)", "https://news.google.com/rss/search?" +
+         urllib.parse.urlencode({"q": "site:maritime-executive.com when:1d", "hl": "en-US", "gl": "US", "ceid": "US:en"})),
+        ("Air Cargo News (news syndication)", "https://news.google.com/rss/search?" +
+         urllib.parse.urlencode({"q": "site:aircargonews.net when:1d", "hl": "en-US", "gl": "US", "ceid": "US:en"})),
+        ("Commercial war-risk reporting (news syndication)", "https://news.google.com/rss/search?" +
+         urllib.parse.urlencode({"q": '"war risk insurance" OR "airline suspends flights" when:1d',
+                                 "hl": "en-US", "gl": "US", "ceid": "US:en"})),
     ]
     rows, errors = [], []
+    atom = "{http://www.w3.org/2005/Atom}"
     for publisher, url in feeds:
         try:
             root = fetch(url)
             if not isinstance(root, ET.Element):
-                raise ValueError("Expected RSS XML element")
-            items = root.findall(".//item")
+                raise ValueError("Expected RSS/Atom XML element")
+            items = root.findall(".//item") or root.findall(".//{*}item") or root.findall(".//" + atom + "entry")
             if not items:
-                raise ValueError("No RSS items")
+                raise ValueError("No RSS/Atom entries")
             for item in items[:120]:
-                title = re.sub(r"\s+", " ", html.unescape(xml_child_text(item, ["title"])))[:400]
-                link = xml_child_text(item, ["link"])
+                is_atom = item.tag.endswith("entry")
+                title = xml_child_text(item, [atom + "title"] if is_atom else ["title", "{*}title"])
+                title = re.sub(r"\s+", " ", html.unescape(title))[:400]
+                if is_atom:
+                    link_item = item.find(atom + "link")
+                    link = link_item.get("href", "") if link_item is not None else ""
+                    date = xml_child_text(item, [atom + "updated", atom + "published"])
+                else:
+                    link = xml_child_text(item, ["link", "{*}link"])
+                    date = xml_child_text(item, ["pubDate", "{*}pubDate"])
                 if not title or not link.startswith("https://") or not ACTION_WORDS.search(title):
                     continue
                 rows.append({"id": digest(link), "title": title, "source_url": link,
                              "publisher_domain": publisher,
-                             "published_at": iso(parse_time(xml_child_text(item, ["pubDate"]))),
+                             "published_at": iso(parse_time(date)),
                              "observed_at": at, "scenario_tags": scenario(title),
                              "kind": "trade_press_commercial_behavior_lead",
-                             "assessment": "media_mention_unverified_not_independent_actor_behavior"})
+                             "assessment": "syndicated_media_mention_not_independent_actor_behavior"})
         except (OSError, ValueError, TypeError, ET.ParseError) as exc:
             errors.append({"source": publisher, "error": str(exc)[:240]})
     return list({r["id"]: r for r in rows}.values())[:100], errors, len(feeds)
