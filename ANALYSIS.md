@@ -66,7 +66,7 @@ of hidden military preparations.
 
 Operational scheduled workflow runs source collection, then \`fusion_briefs.py\`
 and commits source snapshots and decision briefs to \`aiba-feed-data\`.
-The daily Pages build renders the decision briefs above the existing feed reports.
+The daily Pages build decorates each decision brief with the complete 7/28-day GDELT anomaly context and currently available Wikipedia attention flags (different source clocks, non-independent signals), then renders decision briefs above the existing feed reports.
 The public page **does not update every six hours**; it updates at the daily publish.
 Missing briefs show a clearly labeled unavailable state, not a fake "quiet" report.
 
@@ -82,8 +82,7 @@ the new \`watchlist.json\` and \`decision_briefs.json\` in the data branch. Then
   not merely syndicated reports about shipping or insurance.
 - Add source-root event identity, rate/sequence statistics and multi-day change-point
   detection (the current 6/24h thresholds are screening heuristics).
-- Link GDELT nomination data and attention spikes as **non-independent context**
-  with explicit timestamps, without counting them as verified military signals.
+- Daily publication now attaches GDELT bilateral nomination and Wikimedia attention flags as **non-independent context** with dated observations and exact country-pair attribution. These do not raise the new-change count or threat confidence. Upgrade future work to source-event identity and leading/lagging analysis rather than mere topical co-occurrence.
 - Track a pre-specified outcome label, date and event threshold to measure precision,
   recall, false-alert burden and actual lead time through walk-forward tests.
 - Nothing here certifies that market crowds are calibrated or that reviewed dossiers
