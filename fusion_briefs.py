@@ -170,18 +170,32 @@ def case_brief(case_cfg, curated, market, official, commercial, coverage, now):
     related_moves = [m for m in market if m["case_id"] == case_id]
     dated_official = official
     dated_commercial = commercial
+    market_change = ""
+    market_meaning = ""
+    if related_moves:
+        first = related_moves[0]
+        sign = "increased" if first["change_pp"] > 0 else "decreased"
+        market_change = (f"YES price for '{first['event']}' {sign} by "
+                         f"{abs(first['change_pp']):g} percentage points over {first['window']}.")
+        if first["effect"] == "deescalation":
+            market_meaning = ("This contract measures a negotiated or de-escalatory outcome, NOT an attack. "
+                              "A falling YES price may reflect greater doubts about a deal; it does not "
+                              "translate into a measured probability of fighting.")
+        else:
+            market_meaning = ("The contract is about its named military event and expiry date, NOT interchangeable "
+                              "with other conflict scenarios or a 7-day attack probability.")
     # Evidence quality is not predictive skill; new commercial/official records
     # remain source observations, NOT independent costly action.
     if related_moves and dated_official:
         priority = "Investigate linked changes"
-        headline = "A matched contract repriced alongside a newly observed official advisory change."
-        implication = ("Two measurement systems changed, but both may react to the same news. Verify the event dates "
-                       "and an independent costly action before inferring preparation.")
+        headline = market_change + " An official protective-advisory change was also observed."
+        implication = (market_meaning + " Two measurement systems changed, but may react to one news event. "
+                       "Verify dates and an independent cost-bearing action before inferring preparation.")
     elif related_moves:
         priority = "Investigate market repricing"
-        headline = "A scenario-matched contract repriced without independent corroboration in these limited feeds."
-        implication = ("Check exact contract resolution terms, liquidity and trade drivers. No updated advisory in "
-                       "these sources does not establish that public officials or military forces were quiet.")
+        headline = market_change + " No independently corroborating protective action is established in these feeds."
+        implication = (market_meaning + " Check exact resolution terms, liquidity and trade drivers. "
+                       "No updated advisory in these sources is not evidence that governments or forces were quiet.")
     elif dated_official:
         priority = "Verify policy change"
         headline = "An official protective notice changed relative to the preceding collection."
@@ -206,6 +220,7 @@ def case_brief(case_cfg, curated, market, official, commercial, coverage, now):
         [{"source_family": "matched_public_market", "title": m["exact_question"],
           "source_url": m["source_url"], "published_at": None, "observed_at": m["observed_at"],
           "change_pp": m["change_pp"], "window": m["window"],
+          "effect": m["effect"], "market_event": m["event"], "caveat": m["caveat"],
           "assessment_ceiling": m["assessment_ceiling"]} for m in related_moves[:4]]
         + dated_official[:4] + dated_commercial[:4]
     )
