@@ -28,6 +28,28 @@ runs only on `main`; deployment requires successful collection and the approval
 variable. No auto-merge is configured. GitHub Pages environment reviewers and
 branch protection can provide additional account-level controls.
 
+## Optional ADSB.lol regional aircraft overlay
+
+AIBA's persistent `/api/layers` backend now supports the public ADSB.lol
+geographic API through an explicitly enabled, bounded, source-attributed
+adapter. It requires a chosen center and radius (1–250 nautical miles), uses
+at most one query every five minutes, and never writes aircraft positions
+into the public historical Git branch.
+
+The Atlas left toolbar offers military/civilian/unknown affiliation, broad
+airframe type categories (combat-type, transport, tanker, passenger-type,
+cargo-type, scientific and others), and a selectable maximum-marker count.
+Military affiliation requires a database flag; civilian requires positive
+operator metadata; missing evidence stays **Unknown**. These labels are
+provisional airframe/metadata categories, **not flight mission assessments**.
+The layer is off by default and appears only when a live backend is configured.
+
+ADSB.lol data is ODbL 1.0 and production users are asked to contact the
+provider. Review that license and obtain provider approval before publishing
+or scaling automated collection.
+
+See [ADSB_LOL_DEPLOYMENT.md](ADSB_LOL_DEPLOYMENT.md) for Google Cloud settings.
+
 ## Near-current sourced closure maps and optional always-on backend
 
 AIBA Atlas now supports 40× globe zoom and automatic **Focus on sourced area**

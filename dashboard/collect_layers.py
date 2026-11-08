@@ -21,6 +21,11 @@ import xml.etree.ElementTree as ET
 from concurrent.futures import ThreadPoolExecutor
 from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 
+try:
+    from .adsb_lol import collect_region as collect_adsb_lol, SOURCE as ADSB_LOL_SOURCE
+except ImportError:
+    from adsb_lol import collect_region as collect_adsb_lol, SOURCE as ADSB_LOL_SOURCE
+
 KEYS = ('aircraft', 'ships', 'airspace', 'maritime', 'advisories', 'embassies')
 RSS = 'https://travel.state.gov/_res/rss/TAsTWs.xml'
 LOCK = threading.Lock()
@@ -284,8 +289,25 @@ class Collector:
             result = load()
             partial = isinstance(result, dict)
             records = result['records'] if partial else result
-            layer = {'status': 'partial' if partial and result.get('skipped') else 'snapshot', 'records': records, 'checked_at': now(),
-                     'source': source, 'message': f'{len(records)} source records' + (f"; {result['skipped']} unsupported or failed FAA notices omitted; incomplete US coverage" if partial and result.get('skipped') else '')}
+            if not isinstance(records, list) or len(records) > 3000:
+                raise ValueError('Invalid or oversized layer response')
+            skipped = result.get('skipped', 0) if partial else 0
+            if not isinstance(skipped, int) or isinstance(skipped, bool) or skipped < 0:
+                raise ValueError('Invalid source exclusion count')
+            if key in ('aircraft', 'ships'):
+                # No stale historical snapshots accepted as live traffic.
+                if len(records) > 2500:
+                    raise ValueError('Excessive live traffic positions')
+            layer = {'status': 'partial' if skipped else 'snapshot',
+                     'records': records, 'checked_at': now(), 'source': source,
+                     'message': f'{len(records)} supported source records' +
+                                (f'; {skipped} excluded/unsupported upstream records; coverage partial'
+                                 if skipped else '')}
+            if partial and result.get('coverage'):
+                layer['message'] += '; ' + str(result['coverage'])[:100]
+            if key == 'aircraft' and source == ADSB_LOL_SOURCE:
+                layer['attribution'] = 'ADSB.lol contributors · ODbL 1.0'
+                layer['license_url'] = 'https://opendatacommons.org/licenses/odbl/1-0/'
         except Exception as exc:
             # Do not retain previously successful measurements as current.
             layer = {'status': 'unavailable', 'records': [], 'checked_at': now(),
@@ -316,8 +338,17 @@ class Collector:
         self.update('airspace', collect_tfr, TFR)
         self.update('maritime', lambda: maritime(json.loads(request(NIORD))), NIORD)
         self.update('embassies', lambda: embassy_mentions(request(RSS)), RSS)
-        if os.environ.get('OPENSKY_CLIENT_ID') and os.environ.get('OPENSKY_CLIENT_SECRET'):
+        provider = os.environ.get('AIBA_AIRCRAFT_PROVIDER', '').strip().lower()
+        if provider == 'adsb_lol':
+            self.update('aircraft', lambda: collect_adsb_lol(request), ADSB_LOL_SOURCE)
+        elif provider == 'opensky' or (
+            not provider and os.environ.get('OPENSKY_CLIENT_ID')
+            and os.environ.get('OPENSKY_CLIENT_SECRET')
+        ):
             self.update('aircraft', self.opensky, 'https://opensky-network.org/')
+        elif provider and provider not in ('none', 'off'):
+            self.update('aircraft', lambda: (_ for _ in ()).throw(
+                ValueError('Unsupported configured aircraft provider')), 'Aircraft provider configuration')
         if self.reviewed:
             for key in ('maritime', 'embassies'):
                 try:
@@ -395,7 +426,8 @@ def main():
     p.add_argument('--serve', type=Path, help='Serve this built site plus /api/layers on localhost')
     p.add_argument('--port', type=int, default=8765)
     p.add_argument('--bind', default='127.0.0.1')
-    p.add_argument('--interval', type=int, default=120, help='OpenSky refresh seconds; respect account credits')
+    p.add_argument('--interval', type=int, default=300,
+                   help='Configured aircraft/official source refresh seconds; ADSB.lol minimum 300')
     args = p.parse_args()
     collector = Collector(args.reviewed)
     collector.collect()
@@ -406,7 +438,8 @@ def main():
         return
     def refresh():
         while True:
-            time.sleep(max(60, args.interval))
+            time.sleep(max(300 if os.environ.get('AIBA_AIRCRAFT_PROVIDER', '').lower() == 'adsb_lol'
+                               else 60, args.interval))
             collector.collect()
     threading.Thread(target=refresh, daemon=True).start()
     if os.environ.get('AISSTREAM_API_KEY'):
