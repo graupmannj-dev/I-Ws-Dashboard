@@ -52,8 +52,6 @@
         <p class="side-hint" id="dataNotice">Loading source-linked reporting…</p>
         <h3 class="intake-heading">Collection health and source times</h3>
         <div id="collectorHealth" class="intake-status" aria-live="polite">Checking feed snapshots…</div>
-        <h3 class="intake-heading">Unlocated discovery leads</h3>
-        <div id="discoveryLeads" class="intake-discoveries">New geographic leads require reviewed coordinates before map placement.</div>
       </section>
       <section class="side-section">
         <h2>Views</h2>
@@ -72,15 +70,24 @@
           <span><i class="legend-dot report"></i> Sourced report</span>
         </div>
         <div class="view-actions">
+          <button type="button" id="discoveryToggle" class="discovery-toggle" aria-controls="discoveryDrawer" aria-expanded="false" aria-label="Show unlocated discovery leads">Unlocated leads <span id="discoveryCount">0</span> ▾</button>
           <button type="button" id="zoomIn" title="Zoom in" aria-label="Zoom in">+</button>
           <button type="button" id="zoomOut" title="Zoom out" aria-label="Zoom out">−</button>
-          <button type="button" id="northView" title="Reset rotation" aria-label="Reset rotation">◎</button>
+          <button type="button" id="northView" title="Reset rotation and zoom" aria-label="Reset rotation and zoom">◎</button>
+          <output id="zoomLevel" aria-label="Map zoom level">1.0×</output>
         </div>
       </div>
+      <section id="discoveryDrawer" class="discovery-drawer" aria-label="Unlocated discovery leads" hidden>
+        <div class="discovery-drawer-header">
+          <div><strong>Unlocated discovery leads</strong><p>Investigatory observations without verified incident coordinates. Not plotted as invented locations.</p></div>
+          <button type="button" id="discoveryClose" aria-label="Close discovery leads">×</button>
+        </div>
+        <div id="discoveryLeads" class="intake-discoveries" aria-live="polite">Loading provisional leads…</div>
+      </section>
       <div class="globe-wrap" id="globeWrap">
         <canvas id="globe" role="img" aria-label="Rotatable globe with country outlines, colored watchspots and reporting locations. Use the watchlist for keyboard access."></canvas>
         <div id="mapTooltip" class="map-tooltip" hidden></div>
-        <div class="map-overlay-note">Drag to rotate · Scroll to zoom · Click a hotspot for the assessment</div>
+        <div class="map-overlay-note">Drag to rotate · Scroll or double-click to zoom · Select a plotted restriction to inspect the official notice</div>
         <div class="geographic-note">Theater anchors and GCC reference overlays are approximate. Not incident coordinates or official command boundaries.</div>
       </div>
       <div id="selectedDetail" class="selected-detail" aria-live="polite" hidden></div>
@@ -124,12 +131,20 @@
         <div class="scrubber">
           <div class="scrub-meta"><span id="timelineStart">—</span><span id="timelineEnd">—</span></div>
           <div id="eventDensity" class="event-density" aria-hidden="true"></div>
-          <input id="timeCursor" type="range" min="0" max="1" value="1" step="1" aria-label="Selected observation date">
+          <div id="timeRange" class="time-range" role="group" aria-label="Report date window, UTC days">
+            <div class="time-range-track" aria-hidden="true"></div>
+            <div id="timeSelection" class="time-range-selection" role="slider" tabindex="0"
+                 aria-label="Move selected date window" aria-valuemin="0" aria-valuemax="1" aria-valuenow="0"
+                 aria-valuetext="Move selected observation window"></div>
+            <input id="timeStart" class="time-range-handle start" type="range" min="0" max="1" value="0" step="1" aria-label="Start date of reporting window">
+            <input id="timeEnd" class="time-range-handle end" type="range" min="0" max="1" value="1" step="1" aria-label="End date of reporting window">
+          </div>
+          <div class="range-date-labels"><span id="selectedStart">—</span><span id="selectedEnd">—</span></div>
         </div>
         <div class="play-controls"><button id="stepBack" type="button" aria-label="Previous day">‹</button><button id="stepForward" type="button" aria-label="Next day">›</button></div>
       </div>
       <div class="timeline-foot">
-        <span id="windowLabel">Window —</span>
+        <span id="windowLabel">Drag either date handle to resize · drag highlighted bar to move the whole window</span>
         <span>Dated reports only · Current severity is not reconstructed for past dates</span>
         <span id="visibleCount">—</span>
       </div>

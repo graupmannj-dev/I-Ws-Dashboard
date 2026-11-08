@@ -15,6 +15,7 @@ window.AtlasLayers = (() => {
     'eSwatini':'Eswatini', 'Czechia':'Czech Republic', 'Timor-Leste':'Timor-Leste (East Timor)'};
   let payload = {layers:{}}, invalidate = () => {}, endpoint = 'layers.json', failed = false;
   const histories = new Map();
+  const shapeCache = new WeakMap();
   const $ = id => document.getElementById(id);
   const esc = v => String(v ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const validPoint = r => Number.isFinite(r.lon) && Number.isFinite(r.lat) && Math.abs(r.lon)<=180 && Math.abs(r.lat)<=90;
@@ -25,14 +26,65 @@ window.AtlasLayers = (() => {
   }
   function validGeometry(geometry) {
     if(!geometry)return true;
-    if(!['Polygon','MultiPolygon','LineString'].includes(geometry.type))return false;
+    if(!geometry || typeof geometry!=="object" || Array.isArray(geometry))return false;
+    if(geometry.type==="Circle"){
+      return Array.isArray(geometry.center)&&geometry.center.length===2&&
+        validPoint({lon:geometry.center[0],lat:geometry.center[1]})&&
+        Number.isFinite(geometry.radius_km)&&geometry.radius_km>0&&geometry.radius_km<=3500;
+    }
+    if(geometry.type==="BBox"||geometry.type==="Rectangle"){
+      const corners=geometry.coordinates;
+      if(!Array.isArray(corners)||corners.length!==2||
+          !corners.every(x=>Array.isArray(x)&&x.length===2&&validPoint({lon:x[0],lat:x[1]})))return false;
+      const west=corners[0][0],east=corners[1][0],south=corners[0][1],north=corners[1][1];
+      return south<north&&((east>=west?east-west:east+360-west)>0)&&
+        (east>=west?east-west:east+360-west)<=180;
+    }
+    if(!["Polygon","MultiPolygon","LineString"].includes(geometry.type))return false;
     let count=0;
     function walk(points) {
-      if(!Array.isArray(points)||!points.length||++count>100000)return false;
-      if(typeof points[0]==='number')return points.length===2&&validPoint({lon:points[0],lat:points[1]});
+      if(!Array.isArray(points)||!points.length||++count>20000)return false;
+      if(typeof points[0]==="number")
+        return points.length===2&&validPoint({lon:points[0],lat:points[1]});
       return points.every(walk);
     }
     return walk(geometry.coordinates);
+  }
+  function drawableGeometry(source){
+    if(!source || !validGeometry(source))return null;
+    if(!["Circle","BBox","Rectangle"].includes(source.type))return source;
+    const cached=shapeCache.get(source);if(cached)return cached;
+    let ring=[];
+    const rad=Math.PI/180;
+    const normalizeLon=lon=>((lon+180)%360+360)%360-180;
+    if(source.type==="Circle"){
+      // The radius and center must be supplied by the source. Great-circle
+      // sampling renders that exact source-defined area on the 3D globe.
+      const lon=source.center[0]*rad,lat=source.center[1]*rad;
+      const dist=source.radius_km/6371.0088,steps=96;
+      for(let i=0;i<steps;i++){
+        const bearing=2*Math.PI*i/steps;
+        const y=Math.asin(Math.max(-1,Math.min(1,
+          Math.sin(lat)*Math.cos(dist)+Math.cos(lat)*Math.sin(dist)*Math.cos(bearing))));
+        const x=lon+Math.atan2(Math.sin(bearing)*Math.sin(dist)*Math.cos(lat),
+          Math.cos(dist)-Math.sin(lat)*Math.sin(y));
+        ring.push([normalizeLon(x/rad),y/rad]);
+      }
+    }else{
+      const [[west,south],[east,north]]=source.coordinates;
+      const right=east>=west?east:east+360;
+      const step=3;
+      const nLon=Math.max(1,Math.ceil((right-west)/step));
+      const nLat=Math.max(1,Math.ceil((north-south)/step));
+      for(let i=0;i<=nLon;i++)ring.push([normalizeLon(west+(right-west)*i/nLon),south]);
+      for(let i=1;i<=nLat;i++)ring.push([normalizeLon(right),south+(north-south)*i/nLat]);
+      for(let i=1;i<=nLon;i++)ring.push([normalizeLon(right-(right-west)*i/nLon),north]);
+      for(let i=1;i<nLat;i++)ring.push([normalizeLon(west),north-(north-south)*i/nLat]);
+    }
+    if(ring.length>=3)ring.push([...ring[0]]);
+    const converted={type:"Polygon",coordinates:[ring]};
+    shapeCache.set(source,converted);
+    return converted;
   }
   function active(key, row) {
     if(!row || typeof row!=='object' || !validGeometry(row.geometry))return false;
@@ -89,7 +141,10 @@ window.AtlasLayers = (() => {
     for(const [key,[,color]] of Object.entries(definitions)) {
       if(!enabled(key))continue;
       for(const row of records(key)) {
-        if(row.geometry && ['airspace','maritime'].includes(key))geometry(ctx,{geometry:row.geometry},color+'55',color);
+        if(row.geometry && ['airspace','maritime'].includes(key)){
+          const shape=drawableGeometry(row.geometry);
+          if(shape)geometry(ctx,{geometry:shape},color+'3b',color,key,row,hits);
+        }
         const history=histories.get(key+':'+row.id)||[];
         if(history.length>1)line(ctx,history.map(r=>[r.lon,r.lat]),color+'90',1);
         if(!validPoint(row))continue;
@@ -128,12 +183,14 @@ window.AtlasLayers = (() => {
     for(const [key,[title,color]] of Object.entries(definitions)) {
       if(hiddenLayers.has(key))continue;
       const label=document.createElement('label');label.className='toggle-row';
-      label.innerHTML='<input type="checkbox" id="layer-'+key+'"><span>'+title+'</span><i class="legend-swatch" style="background:'+color+'"></i>';
+      label.innerHTML='<input type="checkbox" id="layer-'+key+'"'+
+        (key==='airspace'||key==='maritime'?' checked':'')+
+        '><span>'+title+'</span><i class="legend-swatch" style="background:'+color+'"></i>';
       label.querySelector('input').onchange=()=>{renderStatus();invalidate();};parent.append(label);
     }
     refresh().finally(()=>setTimeout(function poll(){refresh().finally(()=>setTimeout(poll,30000));},30000));
     // Aging applies even while a request is outstanding.
     setInterval(()=>{renderStatus();invalidate();},60000);
   }
-  return {init,draw,countryFill,show};
+  return {init,draw,countryFill,show,validGeometry,drawableGeometry};
 })();

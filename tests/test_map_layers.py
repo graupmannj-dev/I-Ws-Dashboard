@@ -52,6 +52,35 @@ class MapLayersTest(unittest.TestCase):
             with self.assertRaises(ValueError):
                 notices(p, 'maritime')
 
+    def test_reviewed_source_defined_circles_and_boxes(self):
+        base = {'id':'notice-1', 'title':'Official temporary restriction',
+                'source':'Fictional authority (synthetic test)', 'url':'https://example.org/notice',
+                'valid_from':'2026-11-07T10:00:00Z','valid_until':'2026-11-09T12:00:00Z'}
+        area = {**base, 'geometry':{'type':'Circle','center':[52.0,20.0],'radius_km':220}}
+        rectangle = {**base,'id':'notice-2',
+                     'geometry':{'type':'BBox','coordinates':[[177,10],[-178,15]]}}
+        with tempfile.TemporaryDirectory() as tmp:
+            p = Path(tmp)/'areas.json'
+            def valid(rows):
+                p.write_text(json.dumps({'airspace':rows}))
+                return notices(p, 'airspace')
+            self.assertEqual(len(valid([area, rectangle])),2)
+            for bad_radius in [-1, 0, 3501, float('nan'), True]:
+                with self.subTest(radius=bad_radius):
+                    with self.assertRaises(ValueError):
+                        valid([{**area,'geometry':{**area['geometry'],'radius_km':bad_radius}}])
+            for invalid_box in [
+                [[52,22],[50,19]], # reverse latitude
+                [[-175,10],[175,15]], # exceeds 180 degree width
+                [[190,10],[191,12]], # invalid longitude
+            ]:
+                with self.subTest(box=invalid_box):
+                    with self.assertRaises(ValueError):
+                        valid([{**rectangle,'geometry':{'type':'BBox','coordinates':invalid_box}}])
+            with self.assertRaises(ValueError):
+                valid([{**area,'geometry':{'type':'Circle','center':[52,91],
+                                          'radius_km':100}}])
+
     def test_source_failure_clears_old_measurements(self):
         c = Collector()
         c.update('aircraft', lambda:[{'id':'old'}], 'test')

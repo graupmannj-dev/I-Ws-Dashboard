@@ -23,7 +23,8 @@ const state = {
   atlas:null,countries:null,selected:null,selectionType:"hotspot",
   severity:"all",watchTab:"all",windowDays:7,
   friction:null,frictionShowAll:false,frictionRemoteStatus:"static fallback",
-  dates:[],minDay:0,maxDay:0,cursorDay:0,fromDay:0,
+  dates:[],minDay:0,maxDay:0,startDay:0,endDay:0,
+  rangeDrag:null,
   lon:52,lat:20,zoom:1,pins:[],reports:[],hitTargets:[],dimensions:{w:1,h:1,dpr:1,cx:0,cy:0,r:1},
   canvas:null,ctx:null,staticCanvas:null,staticValid:false,drag:null,lastFrame:0,
   animationId:0,showControls:true
@@ -50,6 +51,7 @@ function resize(){
   const canvas=$("globe");canvas.width=Math.round(w*dpr);canvas.height=Math.round(h*dpr);
   state.canvas=canvas;state.ctx=canvas.getContext("2d");state.ctx.setTransform(dpr,0,0,dpr,0,0);
   state.dimensions={w,h,dpr,cx:w/2,cy:h/2+5,r:Math.min(h*.455,w*.455)*state.zoom};
+  $("zoomLevel").textContent=state.zoom.toFixed(1)+"×";
   state.staticCanvas=document.createElement("canvas");
   state.staticCanvas.width=canvas.width;state.staticCanvas.height=canvas.height;
   state.staticValid=false;
@@ -111,6 +113,65 @@ function landGeometry(ctx,feature,fill=null,stroke=null){
       frontStroke(ctx,ring);
     }
   }
+}
+function drawSourceGeometry(ctx,feature,fill,stroke,key,row,hits){
+  // Separate sourced restriction geometry from the standing country layer.
+  // Native GeoJSON polygons, MultiPolygons and open LineStrings are supported;
+  // explicit source radius/bounding boxes are normalized in layers.js.
+  const geometry=feature.geometry;if(!geometry)return;
+  ctx.save();
+  ctx.lineWidth=1.8;ctx.strokeStyle=stroke;ctx.fillStyle=fill;
+  if(geometry.type==="LineString"){
+    lineOfGeography(ctx,geometry.coordinates,stroke,2.2,[5,3]);
+    const points=geometry.coordinates.map(v=>proj(v[0],v[1]));
+    for(let i=1;i<points.length;i++){
+      if(points[i-1].z<0||points[i].z<0)continue;
+      hits.push({type:"region",key,segment:[xy(points[i-1]),xy(points[i])],
+        record:{...row,layerKey:key}});
+    }
+  }else{
+    const polygons=geometry.type==="Polygon"?[geometry.coordinates]:
+                   geometry.type==="MultiPolygon"?geometry.coordinates:[];
+    for(const poly of polygons){
+      if(!Array.isArray(poly)||!poly.length)continue;
+      const clipped=poly.map(ring=>clipRing(ring.map(v=>proj(v[0],v[1]))))
+        .filter(v=>v.length>=3);
+      if(!clipped.length)continue;
+      const projected=clipped.map(ring=>ring.map(xy));
+      ctx.beginPath();
+      for(const ring of projected){
+        ring.forEach((pt,i)=>i?ctx.lineTo(pt.x,pt.y):ctx.moveTo(pt.x,pt.y));
+        ctx.closePath();
+      }
+      ctx.fill("evenodd");
+      ctx.setLineDash([5,3]);ctx.stroke();ctx.setLineDash([]);
+      hits.push({type:"region",key,polygon:projected[0],holes:projected.slice(1),
+        record:{...row,layerKey:key}});
+    }
+  }
+  ctx.restore();
+}
+function inScreenRing(point,ring){
+  if(!ring||ring.length<3)return false;
+  let inside=false;
+  for(let i=0,j=ring.length-1;i<ring.length;j=i++){
+    const a=ring[i],b=ring[j];
+    if(((a.y>point.y)!==(b.y>point.y))&&
+      point.x<(b.x-a.x)*(point.y-a.y)/(b.y-a.y)+a.x)inside=!inside;
+  }
+  return inside;
+}
+function regionHit(item,x,y){
+  if(item.polygon)
+    return inScreenRing({x,y},item.polygon)&&
+      !(item.holes||[]).some(ring=>inScreenRing({x,y},ring));
+  if(item.segment){
+    const [a,b]=item.segment,dx=b.x-a.x,dy=b.y-a.y;
+    const span=dx*dx+dy*dy;
+    const t=span?clamp(((x-a.x)*dx+(y-a.y)*dy)/span,0,1):0;
+    return Math.hypot(a.x+t*dx-x,a.y+t*dy-y)<=7;
+  }
+  return false;
 }
 function lineOfGeography(ctx,points,color,width,dash=[]){
   const ring=points.map(x=>proj(x[0],x[1]));
@@ -182,9 +243,8 @@ function pointJitter(id){
   return {x:Math.cos(a)*rad,y:Math.sin(a)*rad};
 }
 function dayWindow(){
-  const end=state.cursorDay;
-  const start=state.windowDays==="all"?state.minDay:end-Number(state.windowDays)+1;
-  return {start:Math.max(state.minDay,start),end};
+  return {start:clamp(state.startDay,state.minDay,state.maxDay),
+          end:clamp(state.endDay,state.minDay,state.maxDay)};
 }
 function currentReports(){
   const {start,end}=dayWindow();
@@ -207,10 +267,7 @@ function drawFrame(timestamp){
   const d=state.dimensions,c=state.ctx;
   c.clearRect(0,0,d.w,d.h);c.drawImage(state.staticCanvas,0,0,d.w,d.h);
   const hits=[];
-  window.AtlasLayers.draw(c,visible,lineOfGeography,hits,(ctx,feature,fill,stroke)=>{
-    if(feature.geometry.type==="LineString")lineOfGeography(ctx,feature.geometry.coordinates,stroke,2);
-    else landGeometry(ctx,feature,fill,stroke);
-  });
+  window.AtlasLayers.draw(c,visible,lineOfGeography,hits,drawSourceGeometry);
   if($("layerReports").checked){
     for(const report of currentReports()){
       const p=visible(report.lon,report.lat);
@@ -229,7 +286,7 @@ function drawFrame(timestamp){
       const col=colors[h.severity]||colors.watch;
       const sel=state.selected===h.id&&state.selectionType==="hotspot";
       const reportCount=state.atlas.reports.some(r=>r.hotspot_id===h.id&&dayNum(r.date)>=dayWindow().start&&dayNum(r.date)<=dayWindow().end);
-      const historical=state.cursorDay!==state.maxDay;
+      const historical=state.endDay!==state.maxDay;
       const alpha=(historical&&!reportCount)?.55:1;
       c.save();c.globalAlpha=alpha;
       if((h.new_evidence||h.new_analyst_lead)&&!historical&&!window.matchMedia("(prefers-reduced-motion: reduce)").matches){
@@ -274,20 +331,24 @@ function drawFrame(timestamp){
     }
   }
   // Hit-test hotspots first even if overlapping sourced-report grey dots.
-  state.hitTargets=hits.filter(h=>h.type==="hotspot").concat(hits.filter(h=>h.type==="report"),hits.filter(h=>h.type==="layer"));
+  state.hitTargets=hits.filter(h=>h.type==="hotspot").concat(
+    hits.filter(h=>h.type==="report"),hits.filter(h=>h.type==="layer"),
+    hits.filter(h=>h.type==="region"));
   state.animationId=requestAnimationFrame(drawFrame);
 }
 function updateDates(){
-  const nowDay=dayNum(state.atlas.asof);
-  const evidence=state.atlas.reports.map(x=>dayNum(x.date)).filter(x=>x!==null);
-  state.minDay=Math.min(nowDay,...evidence);
-  state.maxDay=nowDay;
-  state.cursorDay=nowDay;
-  const slider=$("timeCursor");
-  slider.min="0";slider.max=String(Math.max(1,nowDay-state.minDay));slider.step="1";
-  slider.value=slider.max;
+  const today=dayNum(state.atlas.asof)??Math.floor(Date.now()/86400000);
+  const evidence=state.atlas.reports.map(x=>dayNum(x.date)).filter(x=>x!==null&&x<=today);
+  state.minDay=Math.min(today,...evidence);
+  state.maxDay=today;
+  state.endDay=today;
+  state.startDay=Math.max(state.minDay,today-6);
+  const maximum=String(Math.max(1,today-state.minDay));
+  for(const id of ["timeStart","timeEnd"]){
+    const slider=$(id);slider.min="0";slider.max=maximum;slider.step="1";
+  }
   const counts={};
-  for(const r of state.atlas.reports){const d=dayNum(r.date);if(d!==null)counts[d]=(counts[d]||0)+1;}
+  for(const r of state.atlas.reports){const d=dayNum(r.date);if(d!==null&&d<=today)counts[d]=(counts[d]||0)+1;}
   const hist=$("eventDensity");hist.replaceChildren();
   const range=Math.max(1,state.maxDay-state.minDay);
   for(const [day,n] of Object.entries(counts)){
@@ -301,20 +362,97 @@ function updateDates(){
   updateTimeline();
 }
 function updateTimeline(){
-  const w=dayWindow();
-  $("timelineCaption").textContent=shortDay(w.start)+" — "+shortDay(w.end)+" (source-date granularity)";
-  $("windowLabel").textContent=state.windowDays==="all"?"Full history through selected day":"Trailing "+state.windowDays+" calendar day(s)";
+  const w=dayWindow(),extent=Math.max(1,state.maxDay-state.minDay);
+  const left=(w.start-state.minDay)/extent*100;
+  const right=(w.end-state.minDay)/extent*100;
+  $("timeStart").value=String(w.start-state.minDay);
+  $("timeEnd").value=String(w.end-state.minDay);
+  const selection=$("timeSelection");
+  selection.style.left=left+"%";
+  selection.style.width=Math.max(0,right-left)+"%";
+  selection.setAttribute("aria-valuemin","0");
+  selection.setAttribute("aria-valuemax",String(state.maxDay-state.minDay-(w.end-w.start)));
+  selection.setAttribute("aria-valuenow",String(w.start-state.minDay));
+  selection.setAttribute("aria-valuetext",shortDay(w.start)+" through "+shortDay(w.end));
+  $("timeStart").setAttribute("aria-valuetext",shortDay(w.start));
+  $("timeEnd").setAttribute("aria-valuetext",shortDay(w.end));
+  $("selectedStart").textContent="From "+shortDay(w.start);
+  $("selectedEnd").textContent="Through "+shortDay(w.end);
+  $("timelineCaption").textContent=shortDay(w.start)+" — "+shortDay(w.end)+" (UTC source dates)";
+  const days=w.end-w.start+1;
+  $("windowLabel").textContent=days+" calendar day"+(days===1?"":"s")+
+    (state.windowDays==="custom"?" · Custom selection":" · "+(state.windowDays==="all"?"Full history":"Preset window"))+
+    " · Drag the blue bar to move it";
   const n=currentReports().length;
   $("visibleCount").textContent=n+" dated reports visible";
-  $("stepBack").disabled=state.cursorDay<=state.minDay;
-  $("stepForward").disabled=state.cursorDay>=state.maxDay;
+  $("stepBack").disabled=w.start<=state.minDay;
+  $("stepForward").disabled=w.end>=state.maxDay;
+  for(const b of document.querySelectorAll("#timeWindows button"))
+    b.classList.toggle("active",b.dataset.days===String(state.windowDays));
   state.staticValid=false;
   updateWatchlist();
 }
 function setWindow(w){
-  state.windowDays=w;
-  for(const b of document.querySelectorAll("#timeWindows button"))b.classList.toggle("active",b.dataset.days===String(w));
+  state.windowDays=String(w);
+  if(w==="all"){
+    state.startDay=state.minDay;
+    state.endDay=state.maxDay;
+  }else{
+    const days=Math.max(1,Math.floor(Number(w)||1));
+    state.startDay=Math.max(state.minDay,state.endDay-days+1);
+  }
   updateTimeline();
+}
+function shiftWindow(days){
+  if(!Number.isFinite(days)||!days)return;
+  const span=state.endDay-state.startDay;
+  const start=clamp(state.startDay+Math.round(days),state.minDay,state.maxDay-span);
+  state.startDay=start;state.endDay=start+span;
+  updateTimeline();
+}
+function bindTimeRange(){
+  $("timeStart").addEventListener("input",e=>{
+    state.startDay=Math.min(state.endDay,state.minDay+Number(e.target.value));
+    state.windowDays="custom";updateTimeline();
+  });
+  $("timeEnd").addEventListener("input",e=>{
+    state.endDay=Math.max(state.startDay,state.minDay+Number(e.target.value));
+    state.windowDays="custom";updateTimeline();
+  });
+  const bar=$("timeSelection");
+  bar.addEventListener("pointerdown",e=>{
+    if(e.button!==0)return;
+    e.preventDefault();
+    state.rangeDrag={x:e.clientX,start:state.startDay,end:state.endDay};
+    bar.setPointerCapture(e.pointerId);
+  });
+  bar.addEventListener("pointermove",e=>{
+    if(!state.rangeDrag)return;
+    const width=$("timeRange").getBoundingClientRect().width;
+    const total=state.maxDay-state.minDay;
+    const delta=Math.round((e.clientX-state.rangeDrag.x)/Math.max(1,width)*total);
+    const span=state.rangeDrag.end-state.rangeDrag.start;
+    state.startDay=clamp(state.rangeDrag.start+delta,state.minDay,state.maxDay-span);
+    state.endDay=state.startDay+span;
+    updateTimeline();
+  });
+  const finish=()=>{state.rangeDrag=null;};
+  bar.addEventListener("pointerup",finish);
+  bar.addEventListener("pointercancel",finish);
+  bar.addEventListener("lostpointercapture",finish);
+  bar.addEventListener("keydown",e=>{
+    let step=0;
+    if(e.key==="ArrowLeft"||e.key==="ArrowDown")step=-1;
+    if(e.key==="ArrowRight"||e.key==="ArrowUp")step=1;
+    if(e.key==="PageDown")step=-7;
+    if(e.key==="PageUp")step=7;
+    if(e.key==="Home")step=state.minDay-state.startDay;
+    if(e.key==="End")step=state.maxDay-state.endDay;
+    if(step){
+      e.preventDefault();
+      shiftWindow(step);
+    }
+  });
 }
 function frictionCase(id){return (state.friction?.cases||[]).find(c=>c.id===id)||null;}
 function frictionIsReview(id){const f=frictionCase(id);return !!f&&["multi_stream_review","source_review","baseline_review"].includes(f.triage);}
@@ -327,7 +465,7 @@ function frictionSources(c){
     ' · captured '+safe(r.first_seen_at||"unknown")+'</span></li>').join("")+'</ul>';
 }
 function select(h,type="hotspot"){
-  if(type==="layer"){window.AtlasLayers.show(h,h.layerKey);return;}
+  if(type==="layer"||type==="region"){window.AtlasLayers.show(h,h.layerKey);return;}
   state.selected=h.id;state.selectionType=type;
   if(type==="hotspot"){
     state.lon=h.lon;state.lat=clamp(h.lat*.55,-55,65);state.staticValid=false;
@@ -460,7 +598,9 @@ function updateWatchlist(){
 function canvasPick(clientX,clientY){
   const rect=state.canvas.getBoundingClientRect(),x=clientX-rect.left,y=clientY-rect.top;
   for(const p of state.hitTargets){
-    if(Math.hypot(p.x-x,p.y-y)<=p.r)return p;
+    if(p.type==="region"){
+      if(regionHit(p,x,y))return p;
+    }else if(Math.hypot(p.x-x,p.y-y)<=p.r)return p;
   }
   return null;
 }
@@ -493,7 +633,8 @@ function attachCanvas(){
       const obj=found.record;
       tip.innerHTML=found.type==="hotspot"
         ?'<b>'+safe(obj.name)+'</b><span>'+safe(obj.state)+' · Approximate theater</span>'
-        :'<b>'+safe(obj.title)+'</b><span>'+safe(obj.observed_at||obj.date)+' · '+(found.type==="layer"?"Source observation":"Theater-associated report")+'</span>';
+        :'<b>'+safe(obj.title)+'</b><span>'+safe(obj.observed_at||obj.date||obj.valid_from||"")+
+          ' · '+(found.type==="region"?"Source-defined restriction area":found.type==="layer"?"Source observation":"Theater-associated report")+'</span>';
     }
   });
   c.addEventListener("pointerup",event=>{
@@ -506,11 +647,38 @@ function attachCanvas(){
   c.addEventListener("pointerleave",()=>{$("mapTooltip").hidden=true;});
   c.addEventListener("wheel",event=>{
     event.preventDefault();
-    state.zoom=clamp(state.zoom*(event.deltaY>0?.93:1.07),.7,1.9);
-    resize();
+    const multiplier=clamp(Math.exp(-event.deltaY*.0015),.82,1.22);
+    changeZoom(multiplier);
   },{passive:false});
+  c.addEventListener("dblclick",event=>{
+    event.preventDefault();
+    changeZoom(1.48);
+  });
+}
+function changeZoom(multiplier){
+  const next=clamp(state.zoom*multiplier,.65,5.5);
+  if(Math.abs(next-state.zoom)<.001)return;
+  state.zoom=next;
+  resize();
+}
+function setDiscoveryDrawer(open){
+  $("discoveryDrawer").hidden=!open;
+  $("discoveryToggle").setAttribute("aria-expanded",String(open));
+  $("discoveryToggle").setAttribute("aria-label",
+    open?"Hide unlocated discovery leads":"Show unlocated discovery leads");
 }
 function bindControls(){
+  $("discoveryToggle").addEventListener("click",()=>{
+    setDiscoveryDrawer($("discoveryDrawer").hidden);
+  });
+  $("discoveryClose").addEventListener("click",()=>{
+    setDiscoveryDrawer(false);$("discoveryToggle").focus();
+  });
+  document.addEventListener("keydown",event=>{
+    if(event.key==="Escape"&&!$("discoveryDrawer").hidden){
+      setDiscoveryDrawer(false);$("discoveryToggle").focus();
+    }
+  });
   $("frictionExpand").addEventListener("click",()=>{
     state.frictionShowAll=!state.frictionShowAll;
     renderFriction();
@@ -528,16 +696,16 @@ function bindControls(){
   });
   for(const b of document.querySelectorAll("#timeWindows [data-days]"))
     b.addEventListener("click",()=>setWindow(b.dataset.days));
-  $("timeCursor").addEventListener("input",event=>{state.cursorDay=state.minDay+Number(event.target.value);updateTimeline();});
-  $("stepBack").addEventListener("click",()=>{state.cursorDay=Math.max(state.minDay,state.cursorDay-1);$("timeCursor").value=state.cursorDay-state.minDay;updateTimeline();});
-  $("stepForward").addEventListener("click",()=>{state.cursorDay=Math.min(state.maxDay,state.cursorDay+1);$("timeCursor").value=state.cursorDay-state.minDay;updateTimeline();});
+  bindTimeRange();
+  $("stepBack").addEventListener("click",()=>shiftWindow(-1));
+  $("stepForward").addEventListener("click",()=>shiftWindow(1));
   $("tabAll").addEventListener("click",()=>{state.watchTab="all";updateTabs();});
   $("tabNew").addEventListener("click",()=>{state.watchTab="new";updateTabs();});
   const reset=()=>{state.lon=52;state.lat=20;state.zoom=1;resize();};
   $("resetView").addEventListener("click",reset);
   $("northView").addEventListener("click",reset);
-  $("zoomIn").addEventListener("click",()=>{state.zoom=clamp(state.zoom*1.15,.7,1.9);resize();});
-  $("zoomOut").addEventListener("click",()=>{state.zoom=clamp(state.zoom/1.15,.7,1.9);resize();});
+  $("zoomIn").addEventListener("click",()=>changeZoom(1.28));
+  $("zoomOut").addEventListener("click",()=>changeZoom(1/1.28));
   $("openControls").addEventListener("click",()=>{
     const on=$("sidebar").classList.toggle("mobile-open");
     $("openControls").setAttribute("aria-expanded",on?"true":"false");
@@ -586,7 +754,8 @@ function renderEvidenceIntake(){
     source_url:x.source_url,kind:"Analyst intake · unreviewed"})),
     ...(a.discovery_leads||[]).map(x=>({title:x.title,summary:x.summary,
     kind:"GDELT · unlocated media-coded lead"}))];
-  discoveries.innerHTML=candidate.length?candidate.slice(0,8).map(x=>
+  $("discoveryCount").textContent=String(candidate.length);
+  discoveries.innerHTML=candidate.length?candidate.slice(0,35).map(x=>
     '<div class="intake-discovery"><strong>'+safe(x.title)+'</strong>'+
     '<span class="sub">'+safe(x.kind)+'</span>'+
     '<span class="sub">'+safe(x.summary)+'</span>'+
