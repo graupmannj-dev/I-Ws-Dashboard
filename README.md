@@ -28,6 +28,22 @@ runs only on `main`; deployment requires successful collection and the approval
 variable. No auto-merge is configured. GitHub Pages environment reviewers and
 branch protection can provide additional account-level controls.
 
+## Near-current sourced closure maps and optional always-on backend
+
+AIBA Atlas now supports 40× globe zoom and automatic **Focus on sourced area**
+for official FAA/Danish airspace and maritime restriction geometry. A separate
+scheduled GitHub workflow publishes bounded source-dated current restriction
+polygons every ~15 minutes, with explicit unavailable/partial source states.
+The Atlas checks the public evidence branch every minute and falls back to
+its dated static snapshot; GitHub cron delivery and raw-file caching remain
+best effort, **not true live streaming**.
+
+A Dockerfile packages the existing optional live AIS/OpenSky API service for
+a separately provisioned always-on host. No external host, API subscriptions
+or streaming credentials are deployed by this repository change.
+
+See [LIVE_MAP_ARCHITECTURE.md](LIVE_MAP_ARCHITECTURE.md) for verification steps.
+
 ## Ephemeral structural friction: new source-separated triage
 
 AIBA includes a **shadow-mode** collector for public NGA navigational-warning

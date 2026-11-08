@@ -13,7 +13,10 @@ window.AtlasLayers = (() => {
     'Central African Rep.':'Central African Republic', 'Dominican Rep.':'Dominican Republic',
     'S. Sudan':'South Sudan', 'Eq. Guinea':'Equatorial Guinea', 'Bosnia and Herz.':'Bosnia and Herzegovina',
     'eSwatini':'Eswatini', 'Czechia':'Czech Republic', 'Timor-Leste':'Timor-Leste (East Timor)'};
-  let payload = {layers:{}}, invalidate = () => {}, endpoint = 'layers.json', failed = false;
+  let payload = {layers:{}}, invalidate = () => {}, focus = () => {}, 
+      endpoint = 'layers.json', liveEndpoint = null, failed = false,
+      fallbackPayload=null, streamPayload=null, lastFallbackFetch=0,
+      sourceStatus="Waiting for restriction observations";
   const histories = new Map();
   const shapeCache = new WeakMap();
   const $ = id => document.getElementById(id);
@@ -113,10 +116,17 @@ window.AtlasLayers = (() => {
       '<p class="sub">'+esc(row.source||'')+' · Source date: '+esc(row.observed_at||row.date||'not supplied')+'</p>'+
       (row.valid_from?'<p>Effective: '+esc(row.valid_from)+' — '+esc(row.valid_until||'Until withdrawn; source rechecked')+'</p>':'')+
       (key==='advisories'?'<p>State Department Level '+esc(row.level)+'. Embassy departure or evacuation status is a separate layer.</p>':'')+
-      (!validPoint(row)&&!row.geometry&&key!=='advisories'?'<p>No precise geometry supplied; listed without an invented map location.</p>':'')+source;
-    panel.querySelector('button').onclick=()=>{panel.hidden=true;};
+      (!validPoint(row)&&!row.geometry&&key!=='advisories'?'<p>No precise geometry supplied; listed without an invented map location.</p>':'')+
+      ((row.geometry&&validGeometry(row.geometry))||validPoint(row)?
+        '<p><button type="button" class="focus-restriction">Focus on sourced area</button></p>':'')+
+      source;
+    panel.querySelector('.detail-close').onclick=()=>{panel.hidden=true;};
+    const locate=panel.querySelector('.focus-restriction');
+    if(locate)locate.onclick=()=>{focus(row);panel.hidden=true;};
   }
   function renderStatus() {
+    const freshness=$('restrictionLiveStatus');
+    if(freshness)freshness.textContent=sourceStatus;
     const container=$('layerStatus');container.replaceChildren();
     for(const [key,[title,color]] of Object.entries(definitions)) {
       if(!enabled(key))continue;
@@ -125,7 +135,9 @@ window.AtlasLayers = (() => {
       const fresh=layer&&recent(layer.checked_at,key==='aircraft'||key==='ships'?600:172800);
       const status=failed?'Feed unavailable':!layer?'Not connected':!fresh&&layer.checked_at?'Stale — measurements hidden':String(layer.status).replaceAll('_',' ');
       const heading=document.createElement('strong');heading.style.color=color;
-      heading.textContent=title+' · '+rows.length+' active';block.append(heading);
+      const shapes=rows.filter(r=>r.geometry&&validGeometry(r.geometry)).length;
+      const pointOnly=rows.filter(r=>!r.geometry&&validPoint(r)).length;
+      heading.textContent=title+' · '+rows.length+' active · '+shapes+' shapes · '+pointOnly+' points';block.append(heading);
       const text=document.createElement('p');text.textContent=status+(layer?.checked_at?' · checked '+new Date(layer.checked_at).toLocaleString():'')+'. '+(layer?.message||'Source not connected');block.append(text);
       if(key==='embassies'){const p=document.createElement('p');p.textContent='Pink countries have departure/operations notices. Automated notices require source review; they do not establish a full evacuation.';block.append(p);}
       if(key==='advisories') {const legend=document.createElement('p');legend.textContent='1 Normal precautions · 2 Increased caution · 3 Reconsider travel · 4 Do not travel. Uncolored = no matched current record.';block.append(legend);}
@@ -160,25 +172,93 @@ window.AtlasLayers = (() => {
       }
     }
   }
-  async function refresh() {
-    try {
-      const response=await fetch(endpoint,{cache:'no-store',signal:AbortSignal.timeout(15000)});
-      if(!response.ok)throw Error('Feed request failed');
-      const next=await response.json();
-      if(next.version!==1 || !next.layers || typeof next.layers!=='object')throw Error('Invalid layer schema');
-      for(const layer of Object.values(next.layers))if(!Array.isArray(layer.records))throw Error('Invalid records');
-      payload=next;failed=false;
-      for(const key of ['aircraft','ships'].filter(key=>enabled(key)))for(const row of records(key)) {
-        const id=key+':'+row.id, history=histories.get(id)||[];
+  function validPayload(next){
+    if(next?.version!==1 || !next.layers || typeof next.layers!=='object')return false;
+    return Object.values(next.layers).every(layer=>layer&&
+      ['snapshot','streaming','partial','unavailable','not_configured'].includes(layer.status)&&
+      Array.isArray(layer.records)&&layer.records.length<=3000);
+  }
+  function asOf(value){
+    const when=Date.parse(value||"");
+    return Number.isFinite(when)?when:null;
+  }
+  function mergeSnapshots(){
+    const stamp=asOf(streamPayload?.generated_at);
+    const liveAge=stamp===null?Infinity:(Date.now()-stamp)/60000;
+    const liveValid=liveAge>=-2&&liveAge<=90;
+    if(!fallbackPayload&&!liveValid){
+      streamPayload=null;
+      payload={layers:{}};failed=true;
+      sourceStatus="No usable restriction feed; both primary and near-live sources unavailable";return;
+    }
+    payload={...fallbackPayload,layers:{...(fallbackPayload?.layers||{})}};
+    if(liveValid){
+      for(const key of ['airspace','maritime']){
+        const newer=streamPayload.layers[key];
+        if(!newer)continue;
+        const old=payload.layers[key];
+        const fresh=asOf(newer.checked_at);
+        if(fresh!==null&&(asOf(old?.checked_at)??-Infinity)<=fresh)
+          payload.layers[key]=newer;
+      }
+      sourceStatus="Periodic GitHub snapshot · sampled "+Math.max(0,Math.round(liveAge))+
+        " min ago (target ~15 min; not continuous)";
+    }else{
+      streamPayload=null;
+      sourceStatus=/(^|\/)api\/layers(?:\?.*)?$/.test(endpoint)
+        ?"Direct API service · data refreshed by its own collectors (verify source timestamps)"
+        :"Static site fallback · near-live restriction snapshot unavailable/stale";
+    }
+    failed=false;
+  }
+  async function fetchSnapshot(url){
+    const opts={cache:'no-store'};
+    if(typeof AbortSignal!=='undefined'&&typeof AbortSignal.timeout==='function')
+      opts.signal=AbortSignal.timeout(15000);
+    const response=await fetch(url,opts);
+    if(!response.ok)throw Error('HTTP '+response.status);
+    return response.json();
+  }
+  async function refresh(){
+    // Pages remains valid even when the public evidence branch is inaccessible.
+    // A restricted live endpoint can replace the static fallback via AIBA_LAYER_FEED_URL.
+    const isStreamEndpoint=/(^|\/)api\/layers(?:\?.*)?$/.test(endpoint);
+    const shouldRefreshFallback=!fallbackPayload || isStreamEndpoint ||
+                                Date.now()-lastFallbackFetch>30*60000;
+    const tasks=[];
+    if(shouldRefreshFallback)tasks.push(fetchSnapshot(endpoint).then(next=>{
+      if(!validPayload(next))throw Error('invalid primary map schema');
+      fallbackPayload=next;lastFallbackFetch=Date.now();
+    }).catch(()=>{if(isStreamEndpoint)fallbackPayload=null;}));
+    if(liveEndpoint&&!isStreamEndpoint)tasks.push(fetchSnapshot(liveEndpoint).then(next=>{
+      if(next.kind!=='aiba_restriction_snapshot'||!validPayload(next) ||
+         typeof next.generated_at!=='string'||
+         !('airspace' in next.layers)||!('maritime' in next.layers))throw Error('invalid public branch snapshot');
+      streamPayload=next;
+    }).catch(()=>{streamPayload=null;}));
+    await Promise.all(tasks);
+    mergeSnapshots();
+    for(const key of ['aircraft','ships'].filter(key=>enabled(key)))
+      for(const row of records(key)){
+        const id=key+':'+row.id,history=histories.get(id)||[];
         if(history.at(-1)?.observed_at!==row.observed_at)history.push(row);
         histories.set(id,history.filter(r=>recent(r.observed_at,600)).slice(-60));
       }
-    } catch(_) {failed=true;}
-    for(const [key,history] of histories)if(!history.some(r=>recent(r.observed_at,600)))histories.delete(key);
+    for(const [key,history] of histories)
+      if(!history.some(r=>recent(r.observed_at,600)))histories.delete(key);
     renderStatus();invalidate();
   }
-  function init(config,onChange) {
-    endpoint=config?.url||'layers.json';invalidate=onChange;
+  function init(config,onChange,onFocus) {
+    endpoint=config?.url||'layers.json';
+    liveEndpoint=config?.live_url||null;
+    invalidate=onChange;
+    focus=typeof onFocus==='function'?onFocus:()=>{};
+    // Public traffic overlays require an explicitly configured real /api/layers
+    // service. They remain opt-in, and never show tracks from stale static Pages.
+    if(/(^|\/)api\/layers(?:\?.*)?$/.test(endpoint)){
+      hiddenLayers.delete('aircraft');
+      hiddenLayers.delete('ships');
+    }
     const parent=$('measuredLayerControls');
     for(const [key,[title,color]] of Object.entries(definitions)) {
       if(hiddenLayers.has(key))continue;
@@ -188,9 +268,9 @@ window.AtlasLayers = (() => {
         '><span>'+title+'</span><i class="legend-swatch" style="background:'+color+'"></i>';
       label.querySelector('input').onchange=()=>{renderStatus();invalidate();};parent.append(label);
     }
-    refresh().finally(()=>setTimeout(function poll(){refresh().finally(()=>setTimeout(poll,30000));},30000));
+    refresh().finally(()=>setTimeout(function poll(){refresh().finally(()=>setTimeout(poll,60000));},60000));
     // Aging applies even while a request is outstanding.
     setInterval(()=>{renderStatus();invalidate();},60000);
   }
-  return {init,draw,countryFill,show,validGeometry,drawableGeometry};
+  return {init,draw,countryFill,show,validGeometry,drawableGeometry,refresh};
 })();

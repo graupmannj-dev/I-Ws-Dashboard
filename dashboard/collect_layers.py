@@ -215,7 +215,7 @@ def collect_tfr():
     return {'records': rows, 'skipped': sum(int(skipped) for _, skipped in results)}
 
 
-NIORD = 'https://niord.dma.dk/rest/public/v1/messages?domain=niord-nw'
+NIORD = 'https://niord.dma.dk/rest/public/v1/messages?domain=niord-nw&domain=niord-fe'
 
 def maritime(payload):
     if not isinstance(payload, list):
@@ -227,7 +227,7 @@ def maritime(payload):
         english = next((d for d in message.get('descs', []) if d.get('lang') == 'en'), {})
         title = english.get('title', '')
         # Include only explicit restriction notices, not every buoy outage.
-        if not re.search(r'\b(closed|prohibited|restricted|exclusion)\b', title, re.I):
+        if not re.search(r'\b(closed|prohibited|restricted|exclusion|firing exercise[s]?|gunnery|live.?fire|military exercise[s]?)\b', title, re.I):
             continue
         for i, part in enumerate(message.get('parts', [])):
             description = next((d for d in part.get('descs', []) if d.get('lang') == 'en'), {})

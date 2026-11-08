@@ -26,6 +26,14 @@ const assert = require("node:assert/strict");
   };
   await page.route('**/aiba-feed-data/observations/latest/friction_briefs.json',
     route=>route.fulfill({json:mockFriction}));
+  // PR tests are hermetic. Simulate an expired live feed before testing current
+  // source snapshots so production endpoints are never needed by Playwright.
+  const staleLive={version:1,kind:"aiba_restriction_snapshot",
+    generated_at:"2000-01-01T00:00:00Z",layers:{
+      airspace:{status:"unavailable",checked_at:"2000-01-01T00:00:00Z",records:[]},
+      maritime:{status:"unavailable",checked_at:"2000-01-01T00:00:00Z",records:[]}}};
+  await page.route('**/aiba-feed-data/observations/latest/live_layers.json',
+    route=>route.fulfill({json:staleLive}));
   page.on("pageerror",err=>errors.push(err.message));
   page.on("console",msg=>{if(msg.type()==="error")errors.push(msg.text());});
   await page.goto("http://127.0.0.1:8765/",{waitUntil:"networkidle",timeout:30000});
@@ -47,7 +55,10 @@ const assert = require("node:assert/strict");
   // Zoom must exceed the former 1.9× limit and reset to the default view.
   for(let i=0;i<6;i++)await page.locator("#zoomIn").click();
   const zoom=parseFloat(await page.locator("#zoomLevel").innerText());
-  assert(zoom>1.9&&zoom<=5.5,"Extended zoom range did not apply");
+  assert(zoom>1.9&&zoom<=40,"Extended zoom range did not apply");
+  for(let i=0;i<8;i++)await page.locator("#zoomIn").click();
+  const deepZoom=parseFloat(await page.locator("#zoomLevel").innerText());
+  assert(deepZoom>5.5&&deepZoom<=40,"Close-range 40× globe zoom did not apply");
   await page.locator("#northView").click();
   assert.match(await page.locator("#zoomLevel").innerText(),/1\.0/);
   await page.locator("#discoveryToggle").click();
@@ -191,6 +202,12 @@ const assert = require("node:assert/strict");
   assert(!statuses.includes('Stale aircraft'));
   assert.match(statuses,/Active closure/);
   assert.match(statuses,/Source-defined circle closure/);
+  await page.getByRole("button",{name:"Source-defined circle closure",exact:true}).click();
+  await page.locator("#selectedDetail .focus-restriction").click();
+  const fitted=parseFloat(await page.locator("#zoomLevel").innerText());
+  assert(fitted>5.5&&fitted<=40,"Focusing an official 250 km radius must zoom to legible area");
+  assert(await page.locator("#selectedDetail").isHidden());
+  await page.locator("#northView").click();
   assert.match(statuses,/Source-defined box closure/);
   assert(!statuses.includes("Invalid geometry"));
   const areaTest=await page.evaluate(()=>{
@@ -219,6 +236,30 @@ const assert = require("node:assert/strict");
   assert.equal(await page.evaluate(()=>window.AtlasLayers.countryFill('Iran')),'#f0657099');
   await page.getByRole('button',{name:'Iran advisory',exact:true}).click();
   assert.match(await page.locator('#selectedDetail').innerText(),/State Department Level 4/);
+  // Simulate a new source-dated snapshot from GitHub between Pages builds.
+  const update={version:1,kind:"aiba_restriction_snapshot",
+    generated_at:new Date().toISOString(),layers:{
+      airspace:{status:"snapshot",checked_at:new Date().toISOString(),
+        message:"Near-current test",records:[{id:"latest",title:"A NEW official sourced boundary",
+          source:"Synthetic test authority",url:"https://example.org/latest",
+          valid_from:past,valid_until:future,
+          geometry:{type:"Circle",center:[52,20],radius_km:110}}]},
+      maritime:{status:"unavailable",checked_at:new Date().toISOString(),
+        message:"Source unavailable; not zero",records:[]}
+    }};
+  await page.route('**/aiba-feed-data/observations/latest/live_layers.json',
+    route=>route.fulfill({json:update}));
+  await page.evaluate(()=>window.AtlasLayers.refresh());
+  const stateText=await page.locator("#layerStatus").innerText();
+  assert.match(stateText,/A NEW official sourced boundary/);
+  assert(!stateText.includes("Source-defined circle closure"),
+    "A newer source snapshot should replace the older static layer");
+  assert.match(await page.locator("#restrictionLiveStatus").innerText(),
+               /Periodic GitHub snapshot/);
+  // Simulate an unresponsive source and ensure the client exposes missingness,
+  // not stale static data rebranded as a live provider.
+  await page.route('**/aiba-feed-data/observations/latest/live_layers.json',
+    route=>route.fulfill({json:staleLive}));
   await page.route('**/layers.json',route=>route.fulfill({status:503,body:'Unavailable'}));
   await page.reload({waitUntil:'networkidle'});
   await page.locator('#layer-airspace').check();
@@ -226,6 +267,6 @@ const assert = require("node:assert/strict");
   // The deliberate network failure is expected; JS runtime errors still fail.
   const unexpected=errors.filter(e=>!e.includes('503'));
   assert.equal(unexpected.length,0,"Console or page errors: "+unexpected.join(" | "));
-  console.log("AIBA browser globe, controls, time filter, mobile controls and sourced watchlist PASS");
+  console.log("AIBA browser deep globe zoom, source-focus, rolling timeline, near-live fallback and official area shapes PASS");
   await browser.close();
 })().catch(e=>{console.error(e);process.exit(1);});
