@@ -351,6 +351,22 @@ def collect(state, clock=utcnow, fetcher=fetch, text_fetcher=None):
     }
     source_rows, health = {}, {}
     for mode in SOURCES:
+        # A demonstrably failing official API should not be hammered on every
+        # half-hour GitHub schedule. Preserve the last *actual check* clock
+        # and record a six-hour retry window, explicitly remaining unavailable.
+        prior = read_json(state / "health" / f"friction_{mode}.json", {}) or {}
+        prior_time = event_time(prior.get("checked_at"))
+        if (mode == "nga" and prior.get("status") == "unavailable" and
+            prior_time is not None and
+            dt.timedelta(0) <= checked - prior_time < dt.timedelta(hours=6)):
+            health[mode] = {
+                **prior, "status": "unavailable", "records": None,
+                "truncated": None, "last_skipped_at": iso(checked),
+                "retry_after": iso(prior_time + dt.timedelta(hours=6)),
+                "caveat": "Source still unavailable; retry cooldown. NOT zero events.",
+            }
+            write_json(state / "health" / f"friction_{mode}.json", health[mode])
+            continue
         try:
             if mode == "amsa":
                 payload = text_fetcher(urls[mode])
