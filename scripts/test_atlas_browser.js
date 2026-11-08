@@ -8,12 +8,36 @@ const assert = require("node:assert/strict");
   const browser=await chromium.launch({headless:true, ...(process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH?{executablePath:process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH}:{})});
   const page=await browser.newPage({viewport:{width:1450,height:900},deviceScaleFactor:1});
   const errors=[];
+  // Block external GitHub raw fetches in deterministic PR browser tests.
+  // The live Atlas polls that public branch; the fixture protects CI from
+  // internet latency and tests that untrusted briefing strings are escaped.
+  const mockFriction={
+    schema_version:1,shadow_mode:true,generated_at:new Date().toISOString(),
+    fresh_snapshot:true,coverage_gaps:["nga"],
+    executive_summary:"Synthetic source observations: review before escalation.",
+    cases:[{id:"taiwan",title:"<img src=x onerror=alert(1)>",
+      triage:"source_review",what_changed:"A test-only source observation changed.",
+      so_what:"This is not a real conflict indicator.",
+      next_signpost:"Seek verified independent confirmation.",
+      alternative:"Normal operations",coverage_gaps:["nga"],
+      source_evidence:[{title:"Synthetic evidence",url:"https://example.org/test",
+        family:"internet_reachability",event_at:"2026-11-08T11:00:00Z",
+        first_seen_at:"2026-11-08T11:15:00Z"}]}]
+  };
+  await page.route('**/aiba-feed-data/observations/latest/friction_briefs.json',
+    route=>route.fulfill({json:mockFriction}));
   page.on("pageerror",err=>errors.push(err.message));
   page.on("console",msg=>{if(msg.type()==="error")errors.push(msg.text());});
   await page.goto("http://127.0.0.1:8765/",{waitUntil:"networkidle",timeout:30000});
   await page.waitForFunction(()=>document.querySelectorAll(".watch-card").length>0,{timeout:15000});
   assert.match(await page.title(),/AIBA/);
   assert.equal(await page.locator(".watch-card").count(),10);
+  await page.waitForFunction(()=>document.querySelector("#frictionSummary").textContent.includes("Synthetic source observations"));
+  assert.match(await page.locator("#frictionTime").innerText(),/Gaps: nga/i);
+  assert.equal(await page.locator("#frictionHighlights img").count(),0,"Untrusted source strings must be escaped");
+  await page.locator("#frictionExpand").click();
+  assert.match(await page.locator("#frictionHighlights").innerText(),/test-only source/i);
+  await page.locator("#frictionExpand").click();
   const pixels=await page.locator("#globe").evaluate(canvas=>{
     const context=canvas.getContext("2d"),w=canvas.width,h=canvas.height;
     const samples=[[w/2,h/2],[w/2+40,h/2],[w/2-60,h/2],[w/2,h/2-45]];
@@ -34,6 +58,12 @@ const assert = require("node:assert/strict");
   await page.locator(".watch-card").first().click();
   await page.locator("#selectedDetail").waitFor({state:"visible"});
   assert.match(await page.locator("#selectedDetail").innerText(),/So what|Next signpost/i);
+  // Confirm the selected theater has a source-linked shadow mode comparison.
+  await page.locator("#selectedDetail .detail-close").click();
+  await page.locator(".watch-card").filter({hasText:"Taiwan"}).click();
+  assert.match(await page.locator("#selectedDetail").innerText(),/Cross-source comparison|Structural friction|What changed/i);
+  assert.equal(await page.locator("#selectedDetail img").count(),0);
+
   await page.locator("#selectedDetail .detail-close").click();
   await page.locator("#collapseControls").click();
   assert(await page.locator("#sidebar").evaluate(node=>node.classList.contains("sidebar-minimized")));
