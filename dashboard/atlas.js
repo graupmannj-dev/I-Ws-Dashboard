@@ -338,6 +338,7 @@ function select(h,type="hotspot"){
     const frictionDetail=f?'<div class="friction-detail"><h4>Cross-source comparison · Shadow mode · '+safe(f.triage.replace(/_/g," "))+'</h4>'+
       '<p><b>What changed:</b> '+safe(f.what_changed)+'</p>'+
       '<p><b>Why it may matter:</b> '+safe(f.so_what)+'</p>'+
+      '<p><b>Compared with conventional indicators:</b> '+safe(f.traditional_contrast||"No cross-check available")+'</p>'+
       '<p><b>Alternative:</b> '+safe(f.alternative)+'</p>'+
       '<p><b>Next observable signpost:</b> '+safe(f.next_signpost)+'</p>'+
       '<p class="sub">Collection gaps: '+safe((f.coverage_gaps||[]).join(", ")||"None declared")+
@@ -394,7 +395,7 @@ function renderFriction(){
     list.innerHTML=shown.map(c=>
       '<div class="friction-highlight"><strong>'+safe(c.title)+'</strong>'+
       '<span class="sub">'+safe(c.what_changed)+'</span>'+
-      '<span class="sub">'+safe(c.so_what)+'</span>'+
+      '<span class="sub">'+safe(c.traditional_contrast||c.so_what)+'</span>'+
       '<span class="sub">Next: '+safe(c.next_signpost)+'</span></div>').join("");
   }
   expand.hidden=!f.cases.length;
