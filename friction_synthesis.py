@@ -168,6 +168,21 @@ def build(state, clock=utcnow, registry=ROOT / "data" / "decision_registry.json"
     snap_time = event_time(current.get("collected_at"))
     current_fresh = bool(snap_time and dt.timedelta(0) <= at - snap_time <= dt.timedelta(hours=3))
     all_records = current.get("records", []) if current_fresh else []
+    ris = read_json(state / "latest" / "ris_sampling.json", {}) or {}
+    ris_ended = event_time(ris.get("ended_at"))
+    ris_age = round((at - ris_ended).total_seconds() / 3600, 2) if ris_ended else None
+    ris_current = (ris_age is not None and 0 <= ris_age <= 3
+                   and ris.get("status") == "collected"
+                   and not ris.get("truncated"))
+    routing_sample = {
+        "status": ("fresh_scoped_sample" if ris_current else
+                   "stale_sample" if ris_ended else "not_configured"),
+        "ended_at": ris.get("ended_at"),
+        "coverage_seconds": ris.get("coverage_seconds"),
+        "scoped_prefixes": (ris.get("prefixes", [])[:8] if ris_current else []),
+        "scope_note": "Optional scoped BGP UPDATE context, not a hijack diagnosis, "
+                      "country attribution or an independent escalation signal.",
+    }
     incoming = unique_recent(history, at)
     recent_by_case = defaultdict(list)
     for row in incoming:
@@ -246,6 +261,7 @@ def build(state, clock=utcnow, registry=ROOT / "data" / "decision_registry.json"
     unlocated = recent_by_case["unlocated"]
     out = {
         "schema_version": 1, "generated_at": iso(at),
+        "routing_sample": routing_sample,
         "fresh_snapshot": current_fresh, "latest_source_snapshot": current.get("collected_at"),
         "shadow_mode": True, "health": health,
         "executive_summary": (
