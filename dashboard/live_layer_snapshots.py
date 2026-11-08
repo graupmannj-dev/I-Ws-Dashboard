@@ -25,6 +25,7 @@ except ImportError:
 SOURCES = ("airspace", "maritime")
 SOURCE_LINKS = {"airspace": TFR, "maritime": NIORD}
 MAX_PER_SOURCE = 1200
+MAX_SOURCE_BYTES = 4_000_000
 MAX_GEOMETRY_POINTS = 15000
 MAX_HISTORY_ITEMS = 1500
 UTC = dt.timezone.utc
@@ -185,6 +186,12 @@ def collect(state, loaders=None, clock=now):
                 raise ValueError("All official rows failed geometry/source validation")
             if len(accepted)>MAX_PER_SOURCE:
                 raise ValueError("Too many normalized notices")
+            # Prevent quarter-hour commits from accumulating huge, duplicated
+            # official polygon payloads in Git history. Do not simplify exact
+            # boundaries or silently truncate a successful source.
+            size=len(json.dumps(accepted,ensure_ascii=False,allow_nan=False).encode("utf-8"))
+            if size>MAX_SOURCE_BYTES:
+                raise ValueError("Official source geometry exceeds bounded Git snapshot size")
             layer_status="partial" if omitted or skipped else "snapshot"
             mapped=sum(bool(r.get("geometry")) or
                        (coord(r.get("lon"),r.get("lat"))) for r in accepted)
