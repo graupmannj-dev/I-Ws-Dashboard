@@ -114,6 +114,65 @@ function landGeometry(ctx,feature,fill=null,stroke=null){
     }
   }
 }
+function drawSourceGeometry(ctx,feature,fill,stroke,key,row,hits){
+  // Separate sourced restriction geometry from the standing country layer.
+  // Native GeoJSON polygons, MultiPolygons and open LineStrings are supported;
+  // explicit source radius/bounding boxes are normalized in layers.js.
+  const geometry=feature.geometry;if(!geometry)return;
+  ctx.save();
+  ctx.lineWidth=1.8;ctx.strokeStyle=stroke;ctx.fillStyle=fill;
+  if(geometry.type==="LineString"){
+    lineOfGeography(ctx,geometry.coordinates,stroke,2.2,[5,3]);
+    const points=geometry.coordinates.map(v=>proj(v[0],v[1]));
+    for(let i=1;i<points.length;i++){
+      if(points[i-1].z<0||points[i].z<0)continue;
+      hits.push({type:"region",key,segment:[xy(points[i-1]),xy(points[i])],
+        record:{...row,layerKey:key}});
+    }
+  }else{
+    const polygons=geometry.type==="Polygon"?[geometry.coordinates]:
+                   geometry.type==="MultiPolygon"?geometry.coordinates:[];
+    for(const poly of polygons){
+      if(!Array.isArray(poly)||!poly.length)continue;
+      const clipped=poly.map(ring=>clipRing(ring.map(v=>proj(v[0],v[1]))))
+        .filter(v=>v.length>=3);
+      if(!clipped.length)continue;
+      const projected=clipped.map(ring=>ring.map(xy));
+      ctx.beginPath();
+      for(const ring of projected){
+        ring.forEach((pt,i)=>i?ctx.lineTo(pt.x,pt.y):ctx.moveTo(pt.x,pt.y));
+        ctx.closePath();
+      }
+      ctx.fill("evenodd");
+      ctx.setLineDash([5,3]);ctx.stroke();ctx.setLineDash([]);
+      hits.push({type:"region",key,polygon:projected[0],holes:projected.slice(1),
+        record:{...row,layerKey:key}});
+    }
+  }
+  ctx.restore();
+}
+function inScreenRing(point,ring){
+  if(!ring||ring.length<3)return false;
+  let inside=false;
+  for(let i=0,j=ring.length-1;i<ring.length;j=i++){
+    const a=ring[i],b=ring[j];
+    if(((a.y>point.y)!==(b.y>point.y))&&
+      point.x<(b.x-a.x)*(point.y-a.y)/(b.y-a.y)+a.x)inside=!inside;
+  }
+  return inside;
+}
+function regionHit(item,x,y){
+  if(item.polygon)
+    return inScreenRing({x,y},item.polygon)&&
+      !(item.holes||[]).some(ring=>inScreenRing({x,y},ring));
+  if(item.segment){
+    const [a,b]=item.segment,dx=b.x-a.x,dy=b.y-a.y;
+    const span=dx*dx+dy*dy;
+    const t=span?clamp(((x-a.x)*dx+(y-a.y)*dy)/span,0,1):0;
+    return Math.hypot(a.x+t*dx-x,a.y+t*dy-y)<=7;
+  }
+  return false;
+}
 function lineOfGeography(ctx,points,color,width,dash=[]){
   const ring=points.map(x=>proj(x[0],x[1]));
   ctx.strokeStyle=color;ctx.lineWidth=width;ctx.setLineDash(dash);
@@ -208,10 +267,7 @@ function drawFrame(timestamp){
   const d=state.dimensions,c=state.ctx;
   c.clearRect(0,0,d.w,d.h);c.drawImage(state.staticCanvas,0,0,d.w,d.h);
   const hits=[];
-  window.AtlasLayers.draw(c,visible,lineOfGeography,hits,(ctx,feature,fill,stroke)=>{
-    if(feature.geometry.type==="LineString")lineOfGeography(ctx,feature.geometry.coordinates,stroke,2);
-    else landGeometry(ctx,feature,fill,stroke);
-  });
+  window.AtlasLayers.draw(c,visible,lineOfGeography,hits,drawSourceGeometry);
   if($("layerReports").checked){
     for(const report of currentReports()){
       const p=visible(report.lon,report.lat);
@@ -275,7 +331,9 @@ function drawFrame(timestamp){
     }
   }
   // Hit-test hotspots first even if overlapping sourced-report grey dots.
-  state.hitTargets=hits.filter(h=>h.type==="hotspot").concat(hits.filter(h=>h.type==="report"),hits.filter(h=>h.type==="layer"));
+  state.hitTargets=hits.filter(h=>h.type==="hotspot").concat(
+    hits.filter(h=>h.type==="report"),hits.filter(h=>h.type==="layer"),
+    hits.filter(h=>h.type==="region"));
   state.animationId=requestAnimationFrame(drawFrame);
 }
 function updateDates(){
@@ -407,7 +465,7 @@ function frictionSources(c){
     ' · captured '+safe(r.first_seen_at||"unknown")+'</span></li>').join("")+'</ul>';
 }
 function select(h,type="hotspot"){
-  if(type==="layer"){window.AtlasLayers.show(h,h.layerKey);return;}
+  if(type==="layer"||type==="region"){window.AtlasLayers.show(h,h.layerKey);return;}
   state.selected=h.id;state.selectionType=type;
   if(type==="hotspot"){
     state.lon=h.lon;state.lat=clamp(h.lat*.55,-55,65);state.staticValid=false;
@@ -540,7 +598,9 @@ function updateWatchlist(){
 function canvasPick(clientX,clientY){
   const rect=state.canvas.getBoundingClientRect(),x=clientX-rect.left,y=clientY-rect.top;
   for(const p of state.hitTargets){
-    if(Math.hypot(p.x-x,p.y-y)<=p.r)return p;
+    if(p.type==="region"){
+      if(regionHit(p,x,y))return p;
+    }else if(Math.hypot(p.x-x,p.y-y)<=p.r)return p;
   }
   return null;
 }
@@ -573,7 +633,8 @@ function attachCanvas(){
       const obj=found.record;
       tip.innerHTML=found.type==="hotspot"
         ?'<b>'+safe(obj.name)+'</b><span>'+safe(obj.state)+' · Approximate theater</span>'
-        :'<b>'+safe(obj.title)+'</b><span>'+safe(obj.observed_at||obj.date)+' · '+(found.type==="layer"?"Source observation":"Theater-associated report")+'</span>';
+        :'<b>'+safe(obj.title)+'</b><span>'+safe(obj.observed_at||obj.date||obj.valid_from||"")+
+          ' · '+(found.type==="region"?"Source-defined restriction area":found.type==="layer"?"Source observation":"Theater-associated report")+'</span>';
     }
   });
   c.addEventListener("pointerup",event=>{
