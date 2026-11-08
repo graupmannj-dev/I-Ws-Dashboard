@@ -618,7 +618,7 @@ function attachCanvas(){
       if(Math.abs(dx)+Math.abs(dy)>4)state.drag.moved=true;
       if(state.drag.moved){
         state.lon=state.drag.lon-dx/Math.max(radius(),1)*80;
-        state.lat=clamp(state.drag.lat+dy/Math.max(radius(),1)*65,-72,72);
+        state.lat=clamp(state.drag.lat+dy/Math.max(radius(),1)*65,-89.5,89.5);
         state.staticValid=false;
       }
       $("mapTooltip").hidden=true;
