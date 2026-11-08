@@ -23,7 +23,8 @@ const state = {
   atlas:null,countries:null,selected:null,selectionType:"hotspot",
   severity:"all",watchTab:"all",windowDays:7,
   friction:null,frictionShowAll:false,frictionRemoteStatus:"static fallback",
-  dates:[],minDay:0,maxDay:0,cursorDay:0,fromDay:0,
+  dates:[],minDay:0,maxDay:0,startDay:0,endDay:0,
+  rangeDrag:null,
   lon:52,lat:20,zoom:1,pins:[],reports:[],hitTargets:[],dimensions:{w:1,h:1,dpr:1,cx:0,cy:0,r:1},
   canvas:null,ctx:null,staticCanvas:null,staticValid:false,drag:null,lastFrame:0,
   animationId:0,showControls:true
@@ -182,9 +183,8 @@ function pointJitter(id){
   return {x:Math.cos(a)*rad,y:Math.sin(a)*rad};
 }
 function dayWindow(){
-  const end=state.cursorDay;
-  const start=state.windowDays==="all"?state.minDay:end-Number(state.windowDays)+1;
-  return {start:Math.max(state.minDay,start),end};
+  return {start:clamp(state.startDay,state.minDay,state.maxDay),
+          end:clamp(state.endDay,state.minDay,state.maxDay)};
 }
 function currentReports(){
   const {start,end}=dayWindow();
@@ -229,7 +229,7 @@ function drawFrame(timestamp){
       const col=colors[h.severity]||colors.watch;
       const sel=state.selected===h.id&&state.selectionType==="hotspot";
       const reportCount=state.atlas.reports.some(r=>r.hotspot_id===h.id&&dayNum(r.date)>=dayWindow().start&&dayNum(r.date)<=dayWindow().end);
-      const historical=state.cursorDay!==state.maxDay;
+      const historical=state.endDay!==state.maxDay;
       const alpha=(historical&&!reportCount)?.55:1;
       c.save();c.globalAlpha=alpha;
       if((h.new_evidence||h.new_analyst_lead)&&!historical&&!window.matchMedia("(prefers-reduced-motion: reduce)").matches){
@@ -278,16 +278,18 @@ function drawFrame(timestamp){
   state.animationId=requestAnimationFrame(drawFrame);
 }
 function updateDates(){
-  const nowDay=dayNum(state.atlas.asof);
-  const evidence=state.atlas.reports.map(x=>dayNum(x.date)).filter(x=>x!==null);
-  state.minDay=Math.min(nowDay,...evidence);
-  state.maxDay=nowDay;
-  state.cursorDay=nowDay;
-  const slider=$("timeCursor");
-  slider.min="0";slider.max=String(Math.max(1,nowDay-state.minDay));slider.step="1";
-  slider.value=slider.max;
+  const today=dayNum(state.atlas.asof)??Math.floor(Date.now()/86400000);
+  const evidence=state.atlas.reports.map(x=>dayNum(x.date)).filter(x=>x!==null&&x<=today);
+  state.minDay=Math.min(today,...evidence);
+  state.maxDay=today;
+  state.endDay=today;
+  state.startDay=Math.max(state.minDay,today-6);
+  const maximum=String(Math.max(1,today-state.minDay));
+  for(const id of ["timeStart","timeEnd"]){
+    const slider=$(id);slider.min="0";slider.max=maximum;slider.step="1";
+  }
   const counts={};
-  for(const r of state.atlas.reports){const d=dayNum(r.date);if(d!==null)counts[d]=(counts[d]||0)+1;}
+  for(const r of state.atlas.reports){const d=dayNum(r.date);if(d!==null&&d<=today)counts[d]=(counts[d]||0)+1;}
   const hist=$("eventDensity");hist.replaceChildren();
   const range=Math.max(1,state.maxDay-state.minDay);
   for(const [day,n] of Object.entries(counts)){
@@ -301,20 +303,97 @@ function updateDates(){
   updateTimeline();
 }
 function updateTimeline(){
-  const w=dayWindow();
-  $("timelineCaption").textContent=shortDay(w.start)+" — "+shortDay(w.end)+" (source-date granularity)";
-  $("windowLabel").textContent=state.windowDays==="all"?"Full history through selected day":"Trailing "+state.windowDays+" calendar day(s)";
+  const w=dayWindow(),extent=Math.max(1,state.maxDay-state.minDay);
+  const left=(w.start-state.minDay)/extent*100;
+  const right=(w.end-state.minDay)/extent*100;
+  $("timeStart").value=String(w.start-state.minDay);
+  $("timeEnd").value=String(w.end-state.minDay);
+  const selection=$("timeSelection");
+  selection.style.left=left+"%";
+  selection.style.width=Math.max(0,right-left)+"%";
+  selection.setAttribute("aria-valuemin","0");
+  selection.setAttribute("aria-valuemax",String(state.maxDay-state.minDay-(w.end-w.start)));
+  selection.setAttribute("aria-valuenow",String(w.start-state.minDay));
+  selection.setAttribute("aria-valuetext",shortDay(w.start)+" through "+shortDay(w.end));
+  $("timeStart").setAttribute("aria-valuetext",shortDay(w.start));
+  $("timeEnd").setAttribute("aria-valuetext",shortDay(w.end));
+  $("selectedStart").textContent="From "+shortDay(w.start);
+  $("selectedEnd").textContent="Through "+shortDay(w.end);
+  $("timelineCaption").textContent=shortDay(w.start)+" — "+shortDay(w.end)+" (UTC source dates)";
+  const days=w.end-w.start+1;
+  $("windowLabel").textContent=days+" calendar day"+(days===1?"":"s")+
+    (state.windowDays==="custom"?" · Custom selection":" · "+(state.windowDays==="all"?"Full history":"Preset window"))+
+    " · Drag the blue bar to move it";
   const n=currentReports().length;
   $("visibleCount").textContent=n+" dated reports visible";
-  $("stepBack").disabled=state.cursorDay<=state.minDay;
-  $("stepForward").disabled=state.cursorDay>=state.maxDay;
+  $("stepBack").disabled=w.start<=state.minDay;
+  $("stepForward").disabled=w.end>=state.maxDay;
+  for(const b of document.querySelectorAll("#timeWindows button"))
+    b.classList.toggle("active",b.dataset.days===String(state.windowDays));
   state.staticValid=false;
   updateWatchlist();
 }
 function setWindow(w){
-  state.windowDays=w;
-  for(const b of document.querySelectorAll("#timeWindows button"))b.classList.toggle("active",b.dataset.days===String(w));
+  state.windowDays=String(w);
+  if(w==="all"){
+    state.startDay=state.minDay;
+    state.endDay=state.maxDay;
+  }else{
+    const days=Math.max(1,Math.floor(Number(w)||1));
+    state.startDay=Math.max(state.minDay,state.endDay-days+1);
+  }
   updateTimeline();
+}
+function shiftWindow(days){
+  if(!Number.isFinite(days)||!days)return;
+  const span=state.endDay-state.startDay;
+  const start=clamp(state.startDay+Math.round(days),state.minDay,state.maxDay-span);
+  state.startDay=start;state.endDay=start+span;
+  updateTimeline();
+}
+function bindTimeRange(){
+  $("timeStart").addEventListener("input",e=>{
+    state.startDay=Math.min(state.endDay,state.minDay+Number(e.target.value));
+    state.windowDays="custom";updateTimeline();
+  });
+  $("timeEnd").addEventListener("input",e=>{
+    state.endDay=Math.max(state.startDay,state.minDay+Number(e.target.value));
+    state.windowDays="custom";updateTimeline();
+  });
+  const bar=$("timeSelection");
+  bar.addEventListener("pointerdown",e=>{
+    if(e.button!==0)return;
+    e.preventDefault();
+    state.rangeDrag={x:e.clientX,start:state.startDay,end:state.endDay};
+    bar.setPointerCapture(e.pointerId);
+  });
+  bar.addEventListener("pointermove",e=>{
+    if(!state.rangeDrag)return;
+    const width=$("timeRange").getBoundingClientRect().width;
+    const total=state.maxDay-state.minDay;
+    const delta=Math.round((e.clientX-state.rangeDrag.x)/Math.max(1,width)*total);
+    const span=state.rangeDrag.end-state.rangeDrag.start;
+    state.startDay=clamp(state.rangeDrag.start+delta,state.minDay,state.maxDay-span);
+    state.endDay=state.startDay+span;
+    updateTimeline();
+  });
+  const finish=()=>{state.rangeDrag=null;};
+  bar.addEventListener("pointerup",finish);
+  bar.addEventListener("pointercancel",finish);
+  bar.addEventListener("lostpointercapture",finish);
+  bar.addEventListener("keydown",e=>{
+    let step=0;
+    if(e.key==="ArrowLeft"||e.key==="ArrowDown")step=-1;
+    if(e.key==="ArrowRight"||e.key==="ArrowUp")step=1;
+    if(e.key==="PageDown")step=-7;
+    if(e.key==="PageUp")step=7;
+    if(e.key==="Home")step=state.minDay-state.startDay;
+    if(e.key==="End")step=state.maxDay-state.endDay;
+    if(step){
+      e.preventDefault();
+      shiftWindow(step);
+    }
+  });
 }
 function frictionCase(id){return (state.friction?.cases||[]).find(c=>c.id===id)||null;}
 function frictionIsReview(id){const f=frictionCase(id);return !!f&&["multi_stream_review","source_review","baseline_review"].includes(f.triage);}
@@ -528,9 +607,9 @@ function bindControls(){
   });
   for(const b of document.querySelectorAll("#timeWindows [data-days]"))
     b.addEventListener("click",()=>setWindow(b.dataset.days));
-  $("timeCursor").addEventListener("input",event=>{state.cursorDay=state.minDay+Number(event.target.value);updateTimeline();});
-  $("stepBack").addEventListener("click",()=>{state.cursorDay=Math.max(state.minDay,state.cursorDay-1);$("timeCursor").value=state.cursorDay-state.minDay;updateTimeline();});
-  $("stepForward").addEventListener("click",()=>{state.cursorDay=Math.min(state.maxDay,state.cursorDay+1);$("timeCursor").value=state.cursorDay-state.minDay;updateTimeline();});
+  bindTimeRange();
+  $("stepBack").addEventListener("click",()=>shiftWindow(-1));
+  $("stepForward").addEventListener("click",()=>shiftWindow(1));
   $("tabAll").addEventListener("click",()=>{state.watchTab="all";updateTabs();});
   $("tabNew").addEventListener("click",()=>{state.watchTab="new";updateTabs();});
   const reset=()=>{state.lon=52;state.lat=20;state.zoom=1;resize();};
