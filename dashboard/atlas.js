@@ -384,10 +384,12 @@ function renderFriction(){
   const fresh=age>=0&&age<=3&&f.fresh_snapshot!==false;
   const gaps=Array.isArray(f.coverage_gaps)?f.coverage_gaps:[];
   summary.textContent=f.executive_summary||"No source-separated synthesis available.";
+  const skill=f.validation?.status||"not_estimable";
   time.textContent=(fresh?"Source briefing: ":"STALE SOURCE BRIEFING: ")+
     (f.generated_at||"unknown UTC time")+
     " · "+state.frictionRemoteStatus+
-    " · "+(gaps.length?"Gaps: "+gaps.join(", "):"Monitored feeds reported");
+    " · "+(gaps.length?"Gaps: "+gaps.join(", "):"Monitored feeds reported")+
+    " · Forecast skill: "+(skill==="not_estimable"?"not estimable":"descriptive labels only");
   const review=f.cases.filter(c=>["multi_stream_review","source_review","baseline_review"].includes(c.triage));
   const shown=state.frictionShowAll?f.cases:review.slice(0,3);
   if(!shown.length){
