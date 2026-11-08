@@ -182,13 +182,15 @@ window.AtlasLayers = (() => {
     return Number.isFinite(when)?when:null;
   }
   function mergeSnapshots(){
-    if(!fallbackPayload&&!streamPayload){
-      payload={layers:{}};failed=true;sourceStatus="No usable restriction feed; check source coverage";return;
-    }
-    payload={...fallbackPayload,layers:{...(fallbackPayload?.layers||{})}};
     const stamp=asOf(streamPayload?.generated_at);
     const liveAge=stamp===null?Infinity:(Date.now()-stamp)/60000;
     const liveValid=liveAge>=-2&&liveAge<=90;
+    if(!fallbackPayload&&!liveValid){
+      streamPayload=null;
+      payload={layers:{}};failed=true;
+      sourceStatus="No usable restriction feed; both primary and near-live sources unavailable";return;
+    }
+    payload={...fallbackPayload,layers:{...(fallbackPayload?.layers||{})}};
     if(liveValid){
       for(const key of ['airspace','maritime']){
         const newer=streamPayload.layers[key];
