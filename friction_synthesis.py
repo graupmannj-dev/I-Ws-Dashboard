@@ -123,6 +123,11 @@ def unique_recent(history, at):
             src = row.get("provider")
             if src not in FAMILIES:
                 continue
+            provider_health = (snap.get("health") or {}).get(src) or {}
+            if provider_health.get("status") not in ("collected", "partial") or provider_health.get("truncated"):
+                # An incomplete page cannot honestly establish a new-event
+                # population or reliable numerator for surge detection.
+                continue
             # The first observation of a source establishes its baseline,
             # regardless of how many apparent events appear on the first pull.
             prior = [v for v in history[:i]
