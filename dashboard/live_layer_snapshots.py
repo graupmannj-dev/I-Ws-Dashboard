@@ -193,16 +193,20 @@ def collect(state, loaders=None, clock=now):
             if size>MAX_SOURCE_BYTES:
                 raise ValueError("Official source geometry exceeds bounded Git snapshot size")
             layer_status="partial" if omitted or skipped else "snapshot"
-            mapped=sum(bool(r.get("geometry")) or
-                       (coord(r.get("lon"),r.get("lat"))) for r in accepted)
+            shapes=sum(bool(r.get("geometry")) for r in accepted)
+            points=sum(not r.get("geometry") and coord(r.get("lon"),r.get("lat"))
+                       for r in accepted)
+            mapped=shapes+points
             layer={"status":layer_status,"records":accepted,"checked_at":current_stamp,
                    "source":SOURCE_LINKS[key], "mapped_records":mapped,
-                   "message":f"{len(accepted)} supported official notices; {mapped} drawable areas/points"+
+                   "shape_records":shapes, "point_records":points,
+                   "message":f"{len(accepted)} supported notices; {shapes} source shapes and {points} points"+
                        (f"; {int(skipped)+omitted} skipped/unsupported notices" if omitted or skipped else "")}
             successes+=1
             health[key]={"status":layer_status,"checked_at":current_stamp,
                          "last_success_at":current_stamp,
                          "record_count":len(accepted),"mapped_records":mapped,
+                         "shape_records":shapes, "point_records":points,
                          "skipped":int(skipped)+omitted}
         except (OSError,ValueError,KeyError,TypeError) as error:
             layer={"status":"unavailable","records":[],"checked_at":current_stamp,
@@ -210,7 +214,8 @@ def collect(state, loaders=None, clock=now):
                    "message":f"Source unavailable or schema incompatible ({type(error).__name__}); not a zero-activity finding"}
             health[key]={"status":"unavailable","checked_at":current_stamp,
                          "last_success_at":prev.get("last_success_at"),
-                         "record_count":None,"mapped_records":None,"skipped":None,
+                         "record_count":None,"mapped_records":None,
+                         "shape_records":None,"point_records":None,"skipped":None,
                          "error_type":type(error).__name__}
         new_layers[key]=layer
         after_records={r["id"]:stable_hash(r) for r in layer["records"]}
