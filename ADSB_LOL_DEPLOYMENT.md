@@ -4,12 +4,12 @@
 
 The optional persistent Google Cloud (or other HTTPS) backend supports
 public ADSB.lol geographic aircraft positions through the existing
-\`dashboard/collect_layers.py --serve\` endpoint. The static GitHub Pages
+`dashboard/collect_layers.py --serve` endpoint. The static GitHub Pages
 site does **not** directly call ADSB.lol or store a global aircraft feed.
 
 - **Current regional positions:** at most one geographic API request per
   configured collection cycle, with a hard minimum of 300 seconds.
-- **No global collection:** public \`/v2/point/{lat}/{lon}/{radius}\` only,
+- **No global collection:** public `/v2/point/{lat}/{lon}/{radius}` only,
   explicitly configured center and radius 1–250 nautical miles.
 - **No guarantee of actual coverage:** volunteer ADS-B/MLAT receivers are
   distributed unevenly; missing aircraft are not evidence of no traffic.
@@ -41,14 +41,14 @@ The backend requires these environment variables:
 
 | Variable | Required | Example | Meaning |
 |---|---|---|---|
-| \`AIBA_AIRCRAFT_PROVIDER\` | Yes | \`adsb_lol\` | Select the ADSB.lol adapter. Unset = no ADSB.lol polling |
-| \`AIBA_ADSB_LAT\` | Yes | \`30.4\` | WGS84 latitude of region center |
-| \`AIBA_ADSB_LON\` | Yes | \`-84.3\` | WGS84 longitude of region center |
-| \`AIBA_ADSB_RADIUS_NM\` | Optional | \`100\` | Radius in nautical miles (1–250), default 100 |
-| \`AIBA_ADSB_USER_AGENT\` | Optional | \`AIBA-Research/1.0 (contact: YOU@EXAMPLE.ORG)\` | Provider identification |
-| \`AIBA_ALLOWED_ORIGIN\` | Yes for public Atlas | \`https://graupmannj-dev.github.io\` | Browser origin allowed to read the HTTPS API |
+| `AIBA_AIRCRAFT_PROVIDER` | Yes | `adsb_lol` | Select the ADSB.lol adapter. Unset = no ADSB.lol polling |
+| `AIBA_ADSB_LAT` | Yes | `30.4` | WGS84 latitude of region center |
+| `AIBA_ADSB_LON` | Yes | `-84.3` | WGS84 longitude of region center |
+| `AIBA_ADSB_RADIUS_NM` | Optional | `100` | Radius in nautical miles (1–250), default 100 |
+| `AIBA_ADSB_USER_AGENT` | Optional | `AIBA-Research/1.0 (contact: YOU@EXAMPLE.ORG)` | Provider identification |
+| `AIBA_ALLOWED_ORIGIN` | Yes for public Atlas | `https://graupmannj-dev.github.io` | Browser origin allowed to read the HTTPS API |
 
-This ADSB.lol region is **independent** of \`AIBA_TRACK_BBOX\` (used by
+This ADSB.lol region is **independent** of `AIBA_TRACK_BBOX` (used by
 OpenSky/AISStream), and the API does not accept an arbitrary global bounding
 box. To cover another region in the future, use a second explicitly
 approved regional collector, not an automatic world sweep.
@@ -58,16 +58,16 @@ approved regional collector, not an automatic world sweep.
 In the cloned AIBA repository on your VM, pull approved merged code and
 build the image:
 
-\`\`\`bash
+```bash
 git pull --ff-only origin main
 sudo docker build -f deploy/live-backend/Dockerfile -t aiba-map-live .
-\`\`\`
+```
 
 After confirming ADSB.lol production usage and ODbL compliance, run one
 narrowly scoped test region (example geographic numbers, not an operational
 watchboard decision):
 
-\`\`\`bash
+```bash
 sudo docker rm -f aiba-map 2>/dev/null || true
 sudo docker run -d \
   --name aiba-map \
@@ -79,21 +79,21 @@ sudo docker run -d \
   -e AIBA_ADSB_RADIUS_NM=100 \
   -e AIBA_ALLOWED_ORIGIN=https://graupmannj-dev.github.io \
   aiba-map-live
-\`\`\`
+```
 
 This sends the source poll from the **VM**, not the user's browser, and
 keeps port 8765 bound to loopback. Verify locally without exposing credentials:
 
-\`\`\`bash
+```bash
 curl -fsS http://127.0.0.1:8765/api/layers \
   | python3 -c 'import json,sys; x=json.load(sys.stdin)["layers"]["aircraft"]; print("status:",x["status"]); print("records:",len(x["records"])); print("attribution:",x.get("attribution")); print("message:",x.get("message"))'
 sudo docker logs --tail 40 aiba-map
-\`\`\`
+```
 
-Expected behavior: \`status\` is \`snapshot\` or \`partial\` when the
-provider returns a valid response; \`unavailable\` on rejection, 429,
+Expected behavior: `status` is `snapshot` or `partial` when the
+provider returns a valid response; `unavailable` on rejection, 429,
 transient network failure, clock mismatch or unsupported schema.
-\`records: 0\` is not proof of no regional flying when coverage is partial.
+`records: 0` is not proof of no regional flying when coverage is partial.
 If ADSB.lol blocks the VM IP/rate, request official provider access rather
 than rotating proxies or evading restrictions.
 
@@ -104,12 +104,12 @@ GitHub Pages, front-end JS, public JSON, or the Dockerfile.
 
 ## 3. Connect the existing Atlas Pages
 
-Once \`https://YOUR_HOST/api/layers\` is publicly accessible via HTTPS:
+Once `https://YOUR_HOST/api/layers` is publicly accessible via HTTPS:
 
 1. Go to GitHub Actions repository variables:
    https://github.com/graupmannj-dev/I-Ws-Dashboard/settings/variables/actions
-2. Set \`AIBA_LAYER_FEED_URL\` to \`https://YOUR_HOST/api/layers\`.
-3. Trigger **Validate and publish AIBA** on \`main\`; verify Pages deploy
+2. Set `AIBA_LAYER_FEED_URL` to `https://YOUR_HOST/api/layers`.
+3. Trigger **Validate and publish AIBA** on `main`; verify Pages deploy
    and JSON publication actually complete.
 4. Open Atlas, select **ADS-B aircraft** in the left Layers panel.
    Only an explicitly configured live /api/layers backend exposes this
@@ -118,13 +118,13 @@ Once \`https://YOUR_HOST/api/layers\` is publicly accessible via HTTPS:
    by default; civilian and unknown are initially unchecked. Select
    affiliation groups and expand the platform-type categories as needed.
    The default cap plots at most 150 markers; users may choose 75/150/300/600.
-6. Inspect \`plotted / matching / valid\` counts and source/clock messages
+6. Inspect `plotted / matching / valid` counts and source/clock messages
    before interpreting a low density of tracks. Only the plotted markers
    are drawn; underlying matching in-memory observations remain filterable.
 
 ## Interpretation: affiliation ≠ mission
 
-Military: only ADSB.lol's documented database flag \`dbFlags & 1\`
+Military: only ADSB.lol's documented database flag `dbFlags & 1`
 provides a provisional military designation. An absent military flag does
 **not** make an aircraft civilian.
 
@@ -146,10 +146,10 @@ intentional outcome, not a software error.
 AIBA excludes missing coordinates, positions older than 120 seconds,
 invalid identifiers, locations outside the selected region and source
 responses over 2,500 aircraft. Freshness uses the provider's own UTC
-clock and \`seen_pos\`. If the provider fails, previously successful
+clock and `seen_pos`. If the provider fails, previously successful
 positions are **removed from current display**, not presented as live.
 
 No raw API positions are inserted into the publicly versioned GitHub
-\`aiba-feed-data\` branch by this integration. Sharing snapshots,
+`aiba-feed-data` branch by this integration. Sharing snapshots,
 retaining tracks or computing an extended database would require its
 own explicit licensing, source capacity, retention and privacy review.
