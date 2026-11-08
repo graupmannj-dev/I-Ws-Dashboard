@@ -219,7 +219,7 @@ window.AtlasLayers = (() => {
   async function refresh(){
     // Pages remains valid even when the public evidence branch is inaccessible.
     // A restricted live endpoint can replace the static fallback via AIBA_LAYER_FEED_URL.
-    const isStreamEndpoint=endpoint.includes('/api/layers');
+    const isStreamEndpoint=/(^|\/)api\/layers(?:\?.*)?$/.test(endpoint);
     const shouldRefreshFallback=!fallbackPayload || isStreamEndpoint ||
                                 Date.now()-lastFallbackFetch>30*60000;
     const tasks=[];
@@ -252,7 +252,7 @@ window.AtlasLayers = (() => {
     focus=typeof onFocus==='function'?onFocus:()=>{};
     // Public traffic overlays require an explicitly configured real /api/layers
     // service. They remain opt-in, and never show tracks from stale static Pages.
-    if(/\/api\/layers(?:\?.*)?$/.test(endpoint)){
+    if(/(^|\/)api\/layers(?:\?.*)?$/.test(endpoint)){
       hiddenLayers.delete('aircraft');
       hiddenLayers.delete('ships');
     }
