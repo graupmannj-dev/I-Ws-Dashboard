@@ -67,7 +67,10 @@ jobs:
             commercial|all) python src/ops_pipeline.py --mode commercial --state state/observations ;;
           esac
           case "$MODE" in
-            audit|all) python src/ops_pipeline.py --mode audit --state state/observations ;;
+            audit|all)
+              python src/ops_pipeline.py --mode audit --state state/observations
+              python src/friction_eval.py --state state/observations --labels src/data/friction_outcomes.json
+              ;;
           esac
           python src/ops_pipeline.py --mode fusion --state state/observations
           python src/fusion_briefs.py --state state/observations
