@@ -16,6 +16,8 @@ def main():
     parser.add_argument("--state", type=Path, required=True)
     parser.add_argument("--input", type=Path, help="Local JSON report path")
     parser.add_argument("--from-env", action="store_true", help="Read AIBA_REPORT_JSON")
+    parser.add_argument("--comment-envelope", action="store_true",
+                        help="Require and remove the AIBA-OSINT-V1 issue-comment prefix")
     args = parser.parse_args()
     if bool(args.input) == bool(args.from_env):
         parser.error("Specify exactly one of --input or --from-env")
@@ -27,6 +29,11 @@ def main():
         content = args.input.read_text(encoding="utf-8")
     if not content or len(content.encode("utf-8")) > MAX_BATCH:
         parser.error("Report missing or exceeds size limit")
+    if args.comment_envelope:
+        envelope = "AIBA-OSINT-V1\n"
+        if not content.startswith(envelope):
+            parser.error("Only a well-formed AIBA-OSINT-V1 report comment is accepted")
+        content = content[len(envelope):].strip()
     batch = json.loads(content)
     file = store_batch(args.state, batch)
     print("Validated OSINT report saved to " + str(file))
