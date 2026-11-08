@@ -242,19 +242,46 @@ def collect(state, clock=utcnow, fetcher=fetch):
                             "error": type(exc).__name__ + ": " + safe_text(str(exc), 120),
                             "caveat": "Upstream unavailable or unsupported; NOT evidence of zero activity."}
         write_json(state / "health" / f"friction_{mode}.json", health[mode])
-    previous = read_json(state / "latest" / "friction.json", {}) or {}
     records = [row for values in source_rows.values() for row in values]
     if source_rows:
-        prior = {r.get("id"): r for r in previous.get("records", []) if isinstance(r, dict)}
+        index_path = state / "index" / "friction_seen.json"
+        index = read_json(index_path, {}) or {}
+        if not isinstance(index, dict):
+            raise ValueError("Invalid previous source identity index")
+        # Keep stable identity for 45 days even when a source temporarily stops
+        # returning an event, so a reappearance does not create a false new hit.
+        kept = {}
+        for key, value in index.items():
+            prior_time = event_time(value.get("last_seen_at")) if isinstance(value, dict) else None
+            if prior_time and checked - dt.timedelta(days=45) <= prior_time <= checked:
+                kept[key] = value
+        index = kept
+        new_records = []
         for row in records:
-            old = prior.get(row["id"])
-            row["first_seen_at"] = old.get("first_seen_at", old.get("collected_at")) if old else iso(checked)
+            old = index.get(row["id"])
+            row["first_seen_at"] = old["first_seen_at"] if old else iso(checked)
+            if old is None:
+                new_records.append(row)
+            index[row["id"]] = {"first_seen_at": row["first_seen_at"],
+                                "last_seen_at": iso(checked), "family": row["family"]}
+        write_json(index_path, index)
+        by_case = {}
+        for row in records:
+            key = row.get("case_id") or "unlocated"
+            member = by_case.setdefault(key, {})
+            member[row["family"]] = member.get(row["family"], 0) + 1
         result = {"schema_version": 1, "collected_at": iso(checked),
-                  "records": records, "health": health,
+                  "records": records, "health": health, "case_counts": by_case,
                   "coverage": "partial" if any(x["status"] != "collected" for x in health.values())
                               else "collected",
                   "note": "Only successful sources appear in records. Missing sources remain unavailable."}
-        write_json(state / "history" / "friction" / (checked.strftime("%Y%m%dT%H%M%SZ") + ".json"), result)
+        # Historical snapshots contain ONLY newly identified event payloads
+        # plus aggregates, not repeated full global API dumps. The full latest
+        # snapshot and identity index support replay, baselines and dedup.
+        historical = {k: v for k, v in result.items() if k != "records"}
+        historical["new_records"] = new_records
+        historical["record_count"] = len(records)
+        write_json(state / "history" / "friction" / (checked.strftime("%Y%m%dT%H%M%SZ") + ".json"), historical)
         write_json(state / "latest" / "friction.json", result)
     else:
         result = {"schema_version": 1, "collected_at": iso(checked),
