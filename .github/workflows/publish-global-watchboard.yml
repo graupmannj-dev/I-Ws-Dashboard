@@ -180,7 +180,7 @@ jobs:
           from pathlib import Path
           root=Path("/tmp/aiba-friction-pr/health")
           lines=["## AIBA friction source probe (NO production ingestion)","","| Feed | Status | Records | Error |","|---|---|---:|---|"]
-          for name in ("ioda","nga"):
+          for name in ("ioda","nga","amsa"):
               health=json.loads((root/f"friction_{name}.json").read_text())
               lines.append(f"| {name} | {health['status']} | {health['records']} | {str(health.get('error') or '')[:100]} |")
           summary="\n".join(lines)+"\n"
