@@ -363,6 +363,72 @@ function select(h,type="hotspot"){
   panel.querySelector(".detail-close").addEventListener("click",()=>{panel.hidden=true;state.selected=null;updateWatchlist();});
   updateWatchlist();
 }
+function validFriction(value){
+  return !!value&&value.schema_version===1&&value.shadow_mode===true&&
+    Array.isArray(value.cases)&&value.cases.length<=100&&
+    value.cases.every(c=>c&&typeof c.id==="string"&&typeof c.triage==="string");
+}
+function renderFriction(){
+  const f=state.friction;
+  const summary=$("frictionSummary"),time=$("frictionTime");
+  const list=$("frictionHighlights"),expand=$("frictionExpand");
+  if(!validFriction(f)){
+    summary.textContent="Structural-friction feeds have not produced a usable briefing.";
+    time.textContent="Collection coverage unavailable, not an all-clear.";
+    list.replaceChildren();expand.hidden=true;return;
+  }
+  const stamp=Date.parse(f.generated_at||"");
+  const age=Number.isFinite(stamp)?(Date.now()-stamp)/3600000:Infinity;
+  const fresh=age>=0&&age<=3&&f.fresh_snapshot!==false;
+  const gaps=Array.isArray(f.coverage_gaps)?f.coverage_gaps:[];
+  summary.textContent=f.executive_summary||"No source-separated synthesis available.";
+  time.textContent=(fresh?"Source briefing: ":"STALE SOURCE BRIEFING: ")+
+    (f.generated_at||"unknown UTC time")+
+    " · "+state.frictionRemoteStatus+
+    " · "+(gaps.length?"Gaps: "+gaps.join(", "):"Monitored feeds reported");
+  const review=f.cases.filter(c=>["multi_stream_review","source_review","baseline_review"].includes(c.triage));
+  const shown=state.frictionShowAll?f.cases:review.slice(0,3);
+  if(!shown.length){
+    list.innerHTML='<div class="friction-highlight"><span class="sub">No new structural-friction lead established. Standing watches continue; check coverage before interpreting silence.</span></div>';
+  }else{
+    list.innerHTML=shown.map(c=>
+      '<div class="friction-highlight"><strong>'+safe(c.title)+'</strong>'+
+      '<span class="sub">'+safe(c.what_changed)+'</span>'+
+      '<span class="sub">'+safe(c.so_what)+'</span>'+
+      '<span class="sub">Next: '+safe(c.next_signpost)+'</span></div>').join("");
+  }
+  expand.hidden=!f.cases.length;
+  expand.textContent=state.frictionShowAll?"Show material changes only":"Show all theater syntheses";
+  expand.setAttribute("aria-expanded",state.frictionShowAll?"true":"false");
+  $("frictionBriefing").classList.toggle("expanded",state.frictionShowAll);
+}
+async function refreshFriction(){
+  const url=state.atlas?.friction_live_url;
+  if(!safeUrl(url))return;
+  try{
+    const opts={cache:"no-store"};
+    if(typeof AbortSignal!=="undefined"&&typeof AbortSignal.timeout==="function")
+      opts.signal=AbortSignal.timeout(12000);
+    const response=await fetch(url,opts);
+    if(!response.ok)throw Error("source status "+response.status);
+    const fresh=await response.json();
+    if(!validFriction(fresh))throw Error("invalid source schema");
+    const before=Date.parse(state.friction?.generated_at||"");
+    const after=Date.parse(fresh.generated_at||"");
+    if(!Number.isFinite(after))throw Error("missing generation timestamp");
+    if(!Number.isFinite(before)||after>=before){
+      state.friction=fresh;
+      state.frictionRemoteStatus="public evidence branch snapshot";
+      renderFriction();updateWatchlist();
+    }else{
+      state.frictionRemoteStatus="site snapshot is newer than public branch";
+      renderFriction();
+    }
+  }catch(error){
+    state.frictionRemoteStatus="static fallback (live source unavailable)";
+    renderFriction();
+  }
+}
 function updateWatchlist(){
   if(!state.atlas)return;
   const list=$("watchlist");list.replaceChildren();
