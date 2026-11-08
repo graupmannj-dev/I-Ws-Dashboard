@@ -95,7 +95,7 @@ class ADSBLolTests(unittest.TestCase):
         self.assertTrue(all(x["license"]=="ODbL-1.0" for x in rows["records"]))
         self.assertNotIn("registration",m)
         self.assertNotIn("ownOp",m)
-        self.assertIn("NOT",m["detail"])
+        self.assertIn("not evidence",m["detail"])
 
     def test_age_distance_and_bad_identity_rejection(self):
         payload=envelope(
