@@ -1,0 +1,57 @@
+name: Collect AIBA near-current map restrictions
+on:
+  workflow_dispatch:
+  # Best-effort cron; GitHub Actions does not guarantee a 15-minute delivery.
+  schedule:
+    - cron: '7,22,37,52 * * * *'
+permissions:
+  contents: write
+concurrency:
+  group: aiba-operational-snapshots
+  cancel-in-progress: false
+jobs:
+  collect-restrictions:
+    runs-on: ubuntu-latest
+    timeout-minutes: 13
+    steps:
+      - name: Checkout validated collector source
+        uses: actions/checkout@v4
+        with:
+          path: src
+          persist-credentials: false
+      - name: Checkout persistent public evidence branch
+        uses: actions/checkout@v4
+        with:
+          ref: aiba-feed-data
+          path: state
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Collect official FAA TFR and Niord maritime warning geometries
+        shell: bash
+        run: |
+          set +e
+          python src/dashboard/live_layer_snapshots.py --state state/observations
+          rc=$?
+          set -e
+          echo "AIBA_LIVE_RC=$rc" >> "$GITHUB_ENV"
+      - name: Persist bounded latest geometries, coverage and change-only history
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd state
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add observations/latest/live_layers.json observations/health/live_layers.json
+          if [ -d observations/history/live_layers ]; then
+            git add observations/history/live_layers
+          fi
+          if ! git diff --cached --quiet; then
+            git commit -m "AIBA near-current official map restrictions $GITHUB_RUN_ID [skip ci]"
+            git push origin HEAD:refs/heads/aiba-feed-data
+          fi
+      - name: Report total source failure after preserving missingness
+        if: env.AIBA_LIVE_RC != '0'
+        run: |
+          echo "::error::Both restriction sources failed. Health persisted; no event absences may be inferred."
+          exit 1
