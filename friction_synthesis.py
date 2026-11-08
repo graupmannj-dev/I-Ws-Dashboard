@@ -18,7 +18,7 @@ from friction_pipeline import event_time, iso, read_json, utcnow, write_json
 ROOT = Path(__file__).resolve().parent
 FAMILIES = {"ioda": "internet_reachability", "nga": "maritime_restriction",
             "amsa": "maritime_restriction"}
-MAX_HISTORY = 350
+MAX_HISTORY = 850  # >14 days of half-hour historical samples plus scheduling jitter
 RECENT_HOURS = 36
 BASELINE_DAYS = 14
 MIN_BASELINE = 8
