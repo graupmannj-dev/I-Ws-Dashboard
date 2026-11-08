@@ -186,21 +186,24 @@ def collect(state, loaders=None, clock=now):
             if len(accepted)>MAX_PER_SOURCE:
                 raise ValueError("Too many normalized notices")
             layer_status="partial" if omitted or skipped else "snapshot"
+            mapped=sum(bool(r.get("geometry")) or
+                       (coord(r.get("lon"),r.get("lat"))) for r in accepted)
             layer={"status":layer_status,"records":accepted,"checked_at":current_stamp,
-                   "source":SOURCE_LINKS[key],
-                   "message":f"{len(accepted)} supported official source notices"+
+                   "source":SOURCE_LINKS[key], "mapped_records":mapped,
+                   "message":f"{len(accepted)} supported official notices; {mapped} drawable areas/points"+
                        (f"; {int(skipped)+omitted} skipped/unsupported notices" if omitted or skipped else "")}
             successes+=1
             health[key]={"status":layer_status,"checked_at":current_stamp,
                          "last_success_at":current_stamp,
-                         "record_count":len(accepted),"skipped":int(skipped)+omitted}
+                         "record_count":len(accepted),"mapped_records":mapped,
+                         "skipped":int(skipped)+omitted}
         except (OSError,ValueError,KeyError,TypeError) as error:
             layer={"status":"unavailable","records":[],"checked_at":current_stamp,
                    "source":SOURCE_LINKS[key],
                    "message":f"Source unavailable or schema incompatible ({type(error).__name__}); not a zero-activity finding"}
             health[key]={"status":"unavailable","checked_at":current_stamp,
                          "last_success_at":prev.get("last_success_at"),
-                         "record_count":None,"skipped":None,
+                         "record_count":None,"mapped_records":None,"skipped":None,
                          "error_type":type(error).__name__}
         new_layers[key]=layer
         after_records={r["id"]:stable_hash(r) for r in layer["records"]}
