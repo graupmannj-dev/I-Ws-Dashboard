@@ -260,5 +260,5 @@ window.AtlasLayers = (() => {
     // Aging applies even while a request is outstanding.
     setInterval(()=>{renderStatus();invalidate();},60000);
   }
-  return {init,draw,countryFill,show,validGeometry,drawableGeometry};
+  return {init,draw,countryFill,show,validGeometry,drawableGeometry,refresh};
 })();
