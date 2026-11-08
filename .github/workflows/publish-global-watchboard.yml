@@ -151,3 +151,44 @@ jobs:
           name: atlas-preview
           path: atlas-preview.jpg
           if-no-files-found: ignore
+
+  friction-live-probe:
+    if: github.event_name == 'pull_request'
+    needs: test
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    # API accessibility is external and not needed for offline correctness.
+    # The live status MUST still be reviewed manually before enabling alerts.
+    continue-on-error: true
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Probe bounded NGA and IODA endpoints without publishing
+        shell: bash
+        run: |
+          set +e
+          python friction_pipeline.py --state /tmp/aiba-friction-pr
+          status=$?
+          set -e
+          python friction_synthesis.py --state /tmp/aiba-friction-pr
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          root=Path("/tmp/aiba-friction-pr/health")
+          lines=["## AIBA friction source probe (NO production ingestion)","","| Feed | Status | Records | Error |","|---|---|---:|---|"]
+          for name in ("ioda","nga"):
+              health=json.loads((root/f"friction_{name}.json").read_text())
+              lines.append(f"| {name} | {health['status']} | {health['records']} | {str(health.get('error') or '')[:100]} |")
+          summary="\n".join(lines)+"\n"
+          print(summary)
+          import os
+          if os.getenv("GITHUB_STEP_SUMMARY"):
+              with open(os.environ["GITHUB_STEP_SUMMARY"],"a") as f: f.write(summary)
+          PY
+          if [ "$status" -ne 0 ]; then
+            echo "::warning::No friction feeds responded with valid usable JSON in PR probe"
+          fi
