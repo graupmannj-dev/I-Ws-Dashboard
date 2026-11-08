@@ -193,7 +193,7 @@ function currentReports(){
 function selectedHotspots(){
   const a=state.atlas?.hotspots||[];
   return a.filter(h=>(state.severity==="all"||h.severity===state.severity)
-                   &&(!$("changedOnly").checked||h.new_evidence||h.new_analyst_lead));
+                   &&(!$("changedOnly").checked||h.new_evidence||h.new_analyst_lead||frictionIsReview(h.id)));
 }
 function drawFrame(timestamp){
   if(!state.canvas||!state.atlas||!state.countries)return;
@@ -317,6 +317,7 @@ function setWindow(w){
   updateTimeline();
 }
 function frictionCase(id){return (state.friction?.cases||[]).find(c=>c.id===id)||null;}
+function frictionIsReview(id){const f=frictionCase(id);return !!f&&["multi_stream_review","source_review","baseline_review"].includes(f.triage);}
 function frictionSources(c){
   const rows=(c?.source_evidence||[]).slice(0,5);
   if(!rows.length)return '<p class="sub">No new source record passed the change-detection gate.</p>';
@@ -433,9 +434,9 @@ async function refreshFriction(){
 function updateWatchlist(){
   if(!state.atlas)return;
   const list=$("watchlist");list.replaceChildren();
-  const hs=selectedHotspots().filter(h=>state.watchTab==="all"||h.new_evidence||h.new_analyst_lead);
+  const hs=selectedHotspots().filter(h=>state.watchTab==="all"||h.new_evidence||h.new_analyst_lead||frictionIsReview(h.id));
   const rank={critical:0,active:1,high:2,watch:3,low:4};
-  hs.sort((a,b)=>Number(b.new_evidence||b.new_analyst_lead)-Number(a.new_evidence||a.new_analyst_lead)||(rank[a.severity]??4)-(rank[b.severity]??4)||a.name.localeCompare(b.name));
+  hs.sort((a,b)=>Number(b.new_evidence||b.new_analyst_lead||frictionIsReview(b.id))-Number(a.new_evidence||a.new_analyst_lead||frictionIsReview(a.id))||(rank[a.severity]??4)-(rank[b.severity]??4)||a.name.localeCompare(b.name));
   $("watchCount").textContent="("+hs.length+")";
   $("watchFoot").textContent=state.atlas.algorithmic_unlocated_count+" GDELT + "+(state.atlas.unlocated_analyst_leads||[]).length+" analyst unlocated leads";
   if(!hs.length){list.innerHTML='<p class="empty">No watch areas match these filters. No Critical classification is inferred automatically.</p>';return;}
@@ -443,7 +444,7 @@ function updateWatchlist(){
     const b=document.createElement("button");b.type="button";
     b.className="watch-card"+(state.selected===h.id&&state.selectionType==="hotspot"?" selected":"");
     const f=frictionCase(h.id);
-    const review=f&&["multi_stream_review","source_review","baseline_review"].includes(f.triage);
+    const review=frictionIsReview(h.id);
     b.innerHTML='<div class="watch-card-head"><strong>'+safe(h.name)+'</strong>'+
       '<span class="severity-tag '+safe(h.severity)+'">'+safe(h.state)+'</span></div>'+
       '<p>'+safe(review?f.what_changed:(h.what_changed||h.description||h.scenario))+'</p>'+
