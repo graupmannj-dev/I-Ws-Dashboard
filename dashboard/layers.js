@@ -135,8 +135,9 @@ window.AtlasLayers = (() => {
       const fresh=layer&&recent(layer.checked_at,key==='aircraft'||key==='ships'?600:172800);
       const status=failed?'Feed unavailable':!layer?'Not connected':!fresh&&layer.checked_at?'Stale — measurements hidden':String(layer.status).replaceAll('_',' ');
       const heading=document.createElement('strong');heading.style.color=color;
-      const mapped=rows.filter(r=>r.geometry&&validGeometry(r.geometry)||validPoint(r)).length;
-      heading.textContent=title+' · '+rows.length+' active · '+mapped+' mapped';block.append(heading);
+      const shapes=rows.filter(r=>r.geometry&&validGeometry(r.geometry)).length;
+      const pointOnly=rows.filter(r=>!r.geometry&&validPoint(r)).length;
+      heading.textContent=title+' · '+rows.length+' active · '+shapes+' shapes · '+pointOnly+' points';block.append(heading);
       const text=document.createElement('p');text.textContent=status+(layer?.checked_at?' · checked '+new Date(layer.checked_at).toLocaleString():'')+'. '+(layer?.message||'Source not connected');block.append(text);
       if(key==='embassies'){const p=document.createElement('p');p.textContent='Pink countries have departure/operations notices. Automated notices require source review; they do not establish a full evacuation.';block.append(p);}
       if(key==='advisories') {const legend=document.createElement('p');legend.textContent='1 Normal precautions · 2 Increased caution · 3 Reconsider travel · 4 Do not travel. Uncolored = no matched current record.';block.append(legend);}
