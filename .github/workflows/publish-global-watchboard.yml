@@ -144,6 +144,7 @@ jobs:
           python -m http.server 8765 --bind 127.0.0.1 --directory _site > /tmp/aiba-atlas-server.log 2>&1 &
           sleep 2
           node scripts/test_atlas_browser.js
+          node scripts/test_aircraft_browser.js
       - name: Attach dashboard browser preview
         if: always()
         uses: actions/upload-artifact@v4
