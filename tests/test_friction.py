@@ -206,6 +206,46 @@ class FrictionSynthesisTests(unittest.TestCase):
             self.assertTrue(briefing["shadow_mode"])
             self.assertTrue((Path(d) / "history" / "friction_triage").exists())
 
+    def test_temporally_distant_source_families_do_not_fake_convergence(self):
+        with tempfile.TemporaryDirectory() as d:
+            def empty(url):
+                return {"type": "outages.events", "error": None, "data": []} if "ioda" in url else {"warnings": []}
+            collect(d, lambda: AT - dt.timedelta(hours=2), empty,
+                    text_fetcher=lambda url: amsa_fixture())
+            older_maritime = nga_fixture(AT - dt.timedelta(hours=26))
+            collect(d, lambda: AT,
+                    lambda url: ioda_fixture(AT) if "ioda" in url else older_maritime,
+                    text_fetcher=lambda url: amsa_fixture())
+            report = build(d, clock=lambda: AT)
+            case = next(x for x in report["cases"] if x["id"] == "iran_gulf")
+            self.assertEqual(set(case["new_families"]),
+                             {"internet_reachability", "maritime_restriction"})
+            self.assertEqual(case["triage"], "source_review")
+            self.assertNotEqual(case["triage"], "multi_stream_review")
+
+    def test_source_page_truncation_disables_novelty_queue(self):
+        with tempfile.TemporaryDirectory() as d:
+            def empty(url):
+                return {"type": "outages.events", "error": None, "data": []} if "ioda" in url else {"warnings": []}
+            collect(d, lambda: AT - dt.timedelta(hours=2), empty,
+                    text_fetcher=lambda url: amsa_fixture())
+            many = []
+            for i in range(100):
+                row = dict(ioda_fixture(AT)["data"][0])
+                row["start"] += i
+                many.append(row)
+            def saturated(url):
+                return {"type": "outages.events", "error": None, "data": many} if "ioda" in url else {"warnings": []}
+            snapshot = collect(d, lambda: AT, saturated,
+                               text_fetcher=lambda url: amsa_fixture())
+            self.assertEqual(snapshot["health"]["ioda"]["status"], "partial")
+            self.assertTrue(snapshot["health"]["ioda"]["truncated"])
+            report = build(d, clock=lambda: AT)
+            iran = next(x for x in report["cases"] if x["id"] == "iran_gulf")
+            self.assertEqual(iran["triage"], "maintain")
+            self.assertEqual(iran["new_sources"], 0)
+            self.assertIn("ioda", iran["coverage_gaps"])
+
     def test_count_baseline_requires_matched_hours_and_span(self):
         with tempfile.TemporaryDirectory() as d:
             history = []
