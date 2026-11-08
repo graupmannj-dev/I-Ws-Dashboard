@@ -11,7 +11,17 @@ import re
 from pathlib import Path
 from urllib.parse import urlsplit
 
-from ops_pipeline import parse_time
+def parse_time(value):
+    if not isinstance(value, str):
+        return None
+    try:
+        d = dt.datetime.fromisoformat(value.replace("Z", "+00:00"))
+        if d.tzinfo is None or d.utcoffset() is None:
+            return None
+        return d.astimezone(dt.timezone.utc)
+    except ValueError:
+        return None
+
 
 SOURCE_MODES = ("official", "commercial")
 SNAPSHOT_LIMIT = 70
