@@ -244,10 +244,11 @@ jobs:
               raise SystemExit("No live source health generated")
           rows=json.loads(health.read_text())
           lines=["## Official near-live restriction probe (PR only)","",
-                 "| Source | Status | Valid notices | Skipped |","|---|---|---:|---:|"]
+                 "| Source | Status | Valid notices | Mapped geometry | Skipped |",
+                 "|---|---|---:|---:|---:|"]
           for key in ("airspace","maritime"):
               r=rows[key]
-              lines.append(f"| {key} | {r['status']} | {r['record_count']} | {r['skipped']} |")
+              lines.append(f"| {key} | {r['status']} | {r['record_count']} | {r.get('mapped_records')} | {r['skipped']} |")
           summary="\n".join(lines)+"\n"
           print(summary)
           if os.getenv("GITHUB_STEP_SUMMARY"):
