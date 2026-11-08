@@ -153,10 +153,16 @@ def load_history(state, clock=None):
             roots[root_key] = key
             output[key] = record
     latest = max((x[1] for x in runs.values()), default=None)
+    if latest is None:
+        health = "not_connected"
+    elif clock - timestamp(latest) > dt.timedelta(hours=48):
+        health = "stale"
+    elif any(v[2] in {"failed", "partial"} for v in runs.values() if v[1] == latest):
+        health = "partial"
+    else:
+        health = "collected"
     return {"records": sorted(output.values(), key=lambda v: (v["first_collected_at"], v["observation_id"])),
-            "status": "not_connected" if not runs else
-                      ("partial" if any(v[2] in {"failed", "partial"} for v in runs.values()
-                       if v[1] == latest) else "collected"),
+            "status": health,
             "run_count": len(runs), "latest_collected_at": latest,
             "distinct_observations": len(output)}
 
@@ -179,6 +185,8 @@ def store_batch(state, batch, clock=None):
     folder.mkdir(parents=True, exist_ok=True)
     path = folder / report_filename(archived)
     content = json.dumps(archived, sort_keys=True, indent=2, ensure_ascii=False) + "\n"
+    if len(content.encode("utf-8")) > MAX_BATCH:
+        raise ValueError("Normalized report exceeds size limit")
     if path.exists() and path.read_text(encoding="utf-8") != content:
         raise ValueError("Conflicting immutable report")
     path.write_text(content, encoding="utf-8")
