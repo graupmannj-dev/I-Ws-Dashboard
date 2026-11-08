@@ -54,6 +54,8 @@ class LiveLayerSnapshotTest(unittest.TestCase):
             self.assertEqual(a["successes"],2)
             self.assertEqual(a["snapshot"]["kind"],"aiba_restriction_snapshot")
             self.assertEqual(a["health"]["airspace"]["record_count"],1)
+            self.assertEqual(a["health"]["airspace"]["mapped_records"],1)
+            self.assertEqual(a["health"]["maritime"]["mapped_records"],1)
             self.assertEqual(len(list((state/"history"/"live_layers").glob("*.json"))),1)
             b=collect(state,loaders,lambda:NOW+dt.timedelta(minutes=15))
             self.assertEqual(b["changes"]["airspace"]["new"],[])
