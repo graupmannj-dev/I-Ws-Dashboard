@@ -138,6 +138,29 @@ class FrictionCollectorTests(unittest.TestCase):
             self.assertEqual(read_json(Path(d) / "latest" / "friction.json")["collected_at"],
                              a["collected_at"], "Last successful observation must not be replaced.")
 
+    def test_nga_failures_backoff_without_spoofed_checks(self):
+        with tempfile.TemporaryDirectory() as d:
+            calls = {"nga": 0}
+            def fetch(url):
+                if "ioda" in url:
+                    return ioda_fixture()
+                calls["nga"] += 1
+                raise TimeoutError("NGA temporary failure")
+            first = collect(d, lambda: AT, fetch,
+                            text_fetcher=lambda url: amsa_fixture())
+            second = collect(d, lambda: AT + dt.timedelta(minutes=30), fetch,
+                             text_fetcher=lambda url: amsa_fixture())
+            self.assertEqual(calls["nga"], 1)
+            self.assertEqual(second["health"]["nga"]["status"], "unavailable")
+            self.assertEqual(second["health"]["nga"]["checked_at"], first["health"]["nga"]["checked_at"])
+            self.assertTrue(second["health"]["nga"]["retry_after"])
+            self.assertIsNone(second["health"]["nga"]["records"])
+            self.assertEqual(second["coverage"], "partial")
+            third = collect(d, lambda: AT + dt.timedelta(hours=6), fetch,
+                            text_fetcher=lambda url: amsa_fixture())
+            self.assertEqual(calls["nga"], 2)
+            self.assertEqual(third["health"]["nga"]["status"], "unavailable")
+
     def test_naive_source_time_is_unknown(self):
         self.assertIsNone(event_time("2026-11-08T11:00:00"))
         self.assertIsNone(event_time(None))
