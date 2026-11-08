@@ -157,6 +157,41 @@ a provider restricts GitHub-hosted runners.
 6. Review branch-history growth, API source terms/quotas, and any repeated
    source failures. A continuously failing NGA endpoint is not "connected."
 
+## Human-labeled outcome audit: no invented predictive skill
+
+The Monday audit also runs the forward-time evaluator in friction_eval.py.
+Its empty default registry, data/friction_outcomes.json, intentionally
+returns **not_estimable**. It is NOT a set of actual observed outcomes.
+
+An independent evaluator may add records with:
+- label_id and existing case_id, outcome event or no_event;
+- window_start, window_end, finalized_at (explicit timezone);
+- event_at for an event (before window_end), or null for a no-event window;
+- an authoritative HTTPS source_url supporting the outcome adjudication.
+
+Use independently and systematically sampled non-event windows rather than
+selecting only periods after AIBA generated an interesting alert. Outcome
+definitions must be written before reviewing model decisions where possible.
+The evaluator only counts case-specific review decisions strictly BEFORE
+the labeled event, within the configured horizon (default 72h). It also
+counts labeled non-event windows that contained review activity. It NEVER
+returns calibrated hit/false-alarm/precision statistics without a population
+frame, and it does not infer predictive skill from retrospective pattern
+matching. It keeps descriptive result records for later scientific audit.
+
+Synthetic labels are used in unit tests only, not in the production registry.
+
+## Optional GitHub-hosted RIPE RIS sampling
+
+A manual GitHub Actions workflow titled "Sample RIPE RIS Live prefixes
+(manual, shadow mode)" is also included. After merge, an authorized operator
+may supply one explicitly justified public globally routable prefix and a
+10–3600-second duration. The action writes a precise coverage-limited sample
+into the evidence branch. The deterministic briefing includes recent scoped
+BGP measurements as **unlocated contextual data**, not as an additional
+independent warning family or cyber attribution. This is an on-demand
+short-duration sample, NOT 24/7 persistent monitoring.
+
 ## Not included yet
 
 Official worldwide NOTAM access may require authorization; existing US FAA
