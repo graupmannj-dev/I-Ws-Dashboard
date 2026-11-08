@@ -29,7 +29,7 @@ def publish(state, site, now=None):
         output = {
             "schema_version": 1, "generated_at": None, "fresh_snapshot": False,
             "shadow_mode": True, "cases": [], "unlocated_leads": [], "health": {},
-            "coverage_gaps": ["ioda", "nga"], "uncalibrated_review_count": 0,
+            "coverage_gaps": ["ioda", "nga", "amsa"], "uncalibrated_review_count": 0,
             "executive_summary": "Structural-friction feeds not yet collected. No assessment is implied.",
         }
     write_json(site / "friction_briefs.json", output)
