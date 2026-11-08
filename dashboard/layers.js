@@ -107,6 +107,51 @@ window.AtlasLayers = (() => {
     const row=records('advisories').find(r=>r.country.toLowerCase()===(aliases[name]||name).toLowerCase());
     return row?advisoryColors[row.level]+'99':null;
   }
+  const aircraftGroups=new Set(['military','civilian','unknown']);
+  const aircraftCategories=new Set(['combat','transport','tanker','surveillance','training',
+    'passenger','cargo','scientific','helicopter','general_aviation','unclassified']);
+  const aircraftColors={military:'#ff9b73',civilian:'#70d9ff',unknown:'#b4bccd'};
+  function isAdsbAircraft(){
+    const layer=payload.layers?.aircraft;
+    return layer?.attribution==='ADSB.lol contributors · ODbL 1.0'||
+           layer?.source==='https://www.adsb.lol/docs/open-data/api';
+  }
+  function aircraftFilterSnapshot(rows){
+    const supported=isAdsbAircraft();
+    const cap=Math.max(25,Math.min(600,Number($('aircraftMarkerCap')?.value)||150));
+    let matched=rows;
+    if(supported){
+      const allowedGroups=new Set([...document.querySelectorAll('[data-aircraft-group]:checked')]
+        .map(x=>x.dataset.aircraftGroup).filter(x=>aircraftGroups.has(x)));
+      const allowedCategories=new Set([...document.querySelectorAll('[data-aircraft-category]:checked')]
+        .map(x=>x.dataset.aircraftCategory));
+      matched=rows.filter(row=>{
+        const group=aircraftGroups.has(row.affiliation)?row.affiliation:'unknown';
+        const category=aircraftCategories.has(row.role_category)?row.role_category:'unclassified';
+        return allowedGroups.has(group)&&allowedCategories.has(group+':'+category);
+      });
+    }
+    // Deterministic order: freshest measured positions first, then transponder
+    // ID. Marker capping does not assert excluded aircraft were absent.
+    const sorted=matched.slice().sort((a,b)=>{
+      const da=Date.parse(a.observed_at)||0,db=Date.parse(b.observed_at)||0;
+      return db-da||String(a.id||'').localeCompare(String(b.id||''));
+    });
+    return {total:rows.length,matching:matched.length,displayed:sorted.slice(0,cap),
+            cap,supported};
+  }
+  function updateAircraftFilterControls(){
+    const panel=$('aircraftFilters');
+    if(!panel)return;
+    panel.hidden=!isAdsbAircraft() || !enabled('aircraft');
+    const count=$('aircraftFilterCount');
+    if(count&&!panel.hidden){
+      const selected=aircraftFilterSnapshot(records('aircraft'));
+      count.textContent=selected.displayed.length+' plotted / '+selected.matching+
+        ' matching / '+selected.total+' valid regional positions'+
+        (selected.matching>selected.cap?' · marker cap in effect':'');
+    }
+  }
   function show(row,key) {
     const panel=$('selectedDetail');panel.hidden=false;
     let source='Source link unavailable';
@@ -114,6 +159,12 @@ window.AtlasLayers = (() => {
     panel.innerHTML='<div class="detail-top"><h3>'+esc(row.title||row.country)+'</h3><button class="detail-close" aria-label="Close detail">×</button></div>'+
       '<p>'+esc(definitions[key][0])+'</p><p>'+esc(row.detail||'')+'</p>'+
       '<p class="sub">'+esc(row.source||'')+' · Source date: '+esc(row.observed_at||row.date||'not supplied')+'</p>'+
+      (key==='aircraft'?
+        '<p><b>Affiliation:</b> '+esc(row.affiliation||'Unknown')+
+        ' · <b>Platform category:</b> '+esc(String(row.role_category||'unclassified').replaceAll('_',' '))+
+        '</p><p class="sub">'+esc(row.classification_basis||'No classification available')+
+        ' · Aircraft type: '+esc(row.aircraft_type||'unspecified')+
+        '. Category describes the airframe, NOT its current mission.</p>':'')+
       (row.valid_from?'<p>Effective: '+esc(row.valid_from)+' — '+esc(row.valid_until||'Until withdrawn; source rechecked')+'</p>':'')+
       (key==='advisories'?'<p>State Department Level '+esc(row.level)+'. Embassy departure or evacuation status is a separate layer.</p>':'')+
       (!validPoint(row)&&!row.geometry&&key!=='advisories'?'<p>No precise geometry supplied; listed without an invented map location.</p>':'')+
@@ -128,31 +179,51 @@ window.AtlasLayers = (() => {
     const freshness=$('restrictionLiveStatus');
     if(freshness)freshness.textContent=sourceStatus;
     const container=$('layerStatus');container.replaceChildren();
+    updateAircraftFilterControls();
     for(const [key,[title,color]] of Object.entries(definitions)) {
       if(!enabled(key))continue;
-      const layer=payload.layers[key], rows=records(key);
+      const layer=payload.layers[key], allRows=records(key);
+      const selection=key==='aircraft'?aircraftFilterSnapshot(allRows):null;
+      const rows=selection?selection.displayed:allRows;
       const block=document.createElement('div');block.className='feed-status';
       const fresh=layer&&recent(layer.checked_at,key==='aircraft'||key==='ships'?600:172800);
       const status=failed?'Feed unavailable':!layer?'Not connected':!fresh&&layer.checked_at?'Stale — measurements hidden':String(layer.status).replaceAll('_',' ');
       const heading=document.createElement('strong');heading.style.color=color;
       const shapes=rows.filter(r=>r.geometry&&validGeometry(r.geometry)).length;
       const pointOnly=rows.filter(r=>!r.geometry&&validPoint(r)).length;
-      heading.textContent=title+' · '+rows.length+' active · '+shapes+' shapes · '+pointOnly+' points';block.append(heading);
+      heading.textContent=key==='aircraft'?
+        title+' · '+rows.length+' plotted / '+selection.matching+' matching / '+selection.total+' valid':
+        title+' · '+rows.length+' active · '+shapes+' shapes · '+pointOnly+' points';
+      block.append(heading);
       const text=document.createElement('p');text.textContent=status+(layer?.checked_at?' · checked '+new Date(layer.checked_at).toLocaleString():'')+'. '+(layer?.message||'Source not connected');block.append(text);
       if(key==='embassies'){const p=document.createElement('p');p.textContent='Pink countries have departure/operations notices. Automated notices require source review; they do not establish a full evacuation.';block.append(p);}
       if(key==='advisories') {const legend=document.createElement('p');legend.textContent='1 Normal precautions · 2 Increased caution · 3 Reconsider travel · 4 Do not travel. Uncolored = no matched current record.';block.append(legend);}
-      for(const row of rows.slice(0,200)) {
+      for(const row of rows.slice(0,key==='aircraft'?12:200)) {
         const button=document.createElement('button');button.type='button';button.className='feed-notice';
         button.textContent=row.title||row.id;button.onclick=()=>show(row,key);block.append(button);
       }
-      if(rows.length>200){const p=document.createElement('p');p.textContent='First 200 listed; all valid records remain on the globe.';block.append(p);}
+      if(rows.length>(key==='aircraft'?12:200)){
+        const p=document.createElement('p');
+        p.textContent=key==='aircraft'?
+          'Showing 12 aircraft in the sidebar. Use affiliation, category and marker cap filters to control the globe.':
+          'First 200 listed; all valid records remain on the globe.';
+        block.append(p);
+      }
+      if(key==='aircraft' && isAdsbAircraft()){
+        const p=document.createElement('p');
+        p.textContent='ADSB.lol contributors · Open Database License 1.0. '+
+          'Military flag and operator metadata are provisional; flight mission is unknown.';
+        block.append(p);
+      }
       container.append(block);
     }
   }
   function draw(ctx, visible, line, hits, geometry) {
     for(const [key,[,color]] of Object.entries(definitions)) {
       if(!enabled(key))continue;
-      for(const row of records(key)) {
+      const input=records(key);
+      const layerRows=key==='aircraft'?aircraftFilterSnapshot(input).displayed:input;
+      for(const row of layerRows) {
         if(row.geometry && ['airspace','maritime'].includes(key)){
           const shape=drawableGeometry(row.geometry);
           if(shape)geometry(ctx,{geometry:shape},color+'3b',color,key,row,hits);
@@ -162,7 +233,9 @@ window.AtlasLayers = (() => {
         if(!validPoint(row))continue;
         const p=visible(row.lon,row.lat);if(!p)continue;
         ctx.save();ctx.translate(p.x,p.y);ctx.rotate((Number.isFinite(row.heading)?row.heading:0)*Math.PI/180);
-        ctx.fillStyle=color;ctx.strokeStyle='#091a28';ctx.lineWidth=1;
+        ctx.fillStyle=key==='aircraft'&&isAdsbAircraft()?
+          (aircraftColors[aircraftGroups.has(row.affiliation)?row.affiliation:'unknown']||color):color;
+        ctx.strokeStyle='#091a28';ctx.lineWidth=1;
         ctx.beginPath();
         if(key==='aircraft'){ctx.moveTo(0,-7);ctx.lineTo(5,5);ctx.lineTo(0,2);ctx.lineTo(-5,5);}
         else if(key==='ships'){ctx.moveTo(0,-6);ctx.lineTo(4,0);ctx.lineTo(4,5);ctx.lineTo(-4,5);ctx.lineTo(-4,0);}
@@ -239,7 +312,8 @@ window.AtlasLayers = (() => {
     await Promise.all(tasks);
     mergeSnapshots();
     for(const key of ['aircraft','ships'].filter(key=>enabled(key)))
-      for(const row of records(key)){
+      for(const row of (key==='aircraft'?
+                        aircraftFilterSnapshot(records(key)).displayed:records(key))){
         const id=key+':'+row.id,history=histories.get(id)||[];
         if(history.at(-1)?.observed_at!==row.observed_at)history.push(row);
         histories.set(id,history.filter(r=>recent(r.observed_at,600)).slice(-60));
@@ -268,9 +342,14 @@ window.AtlasLayers = (() => {
         '><span>'+title+'</span><i class="legend-swatch" style="background:'+color+'"></i>';
       label.querySelector('input').onchange=()=>{renderStatus();invalidate();};parent.append(label);
     }
+    for(const input of document.querySelectorAll(
+      '[data-aircraft-group],[data-aircraft-category],#aircraftMarkerCap')){
+      input.addEventListener('change',()=>{renderStatus();invalidate();});
+    }
     refresh().finally(()=>setTimeout(function poll(){refresh().finally(()=>setTimeout(poll,60000));},60000));
     // Aging applies even while a request is outstanding.
     setInterval(()=>{renderStatus();invalidate();},60000);
   }
-  return {init,draw,countryFill,show,validGeometry,drawableGeometry,refresh};
+  return {init,draw,countryFill,show,validGeometry,drawableGeometry,refresh,
+          aircraftFilterSnapshot};
 })();
