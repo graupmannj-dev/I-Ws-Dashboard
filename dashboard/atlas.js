@@ -192,7 +192,7 @@ function currentReports(){
 function selectedHotspots(){
   const a=state.atlas?.hotspots||[];
   return a.filter(h=>(state.severity==="all"||h.severity===state.severity)
-                   &&(!$("changedOnly").checked||h.new_evidence));
+                   &&(!$("changedOnly").checked||h.new_evidence||h.new_analyst_lead));
 }
 function drawFrame(timestamp){
   if(!state.canvas||!state.atlas||!state.countries)return;
@@ -231,7 +231,7 @@ function drawFrame(timestamp){
       const historical=state.cursorDay!==state.maxDay;
       const alpha=(historical&&!reportCount)?.55:1;
       c.save();c.globalAlpha=alpha;
-      if(h.new_evidence&&!historical&&!window.matchMedia("(prefers-reduced-motion: reduce)").matches){
+      if((h.new_evidence||h.new_analyst_lead)&&!historical&&!window.matchMedia("(prefers-reduced-motion: reduce)").matches){
         for(let i=0;i<2;i++){
           const phase=((timestamp/1800+i*.5)%1);
           c.beginPath();c.arc(p.x,p.y,12+phase*24,0,2*Math.PI);
@@ -330,6 +330,7 @@ function select(h,type="hotspot"){
       '<p class="sub">'+safe(h.area)+' · '+safe(h.coordinate_precision)+'</p>'+
       '<p><b>Scenario:</b> '+safe(h.scenario)+'</p>'+
       (h.what_changed?'<p><b>Observed change:</b> '+safe(h.what_changed)+'</p>':'')+
+      (h.new_analyst_lead?'<p><b>New unreviewed OSINT lead:</b> '+safe(h.new_analyst_lead_summary)+' — requires independent source review; standing severity unchanged.</p>':'')+
       '<p><b>So what:</b> '+safe(h.so_what||h.description)+'</p>'+
       '<p><b>Next signpost:</b> '+safe(h.next)+'</p>'+
       '<p><b>Alternative:</b> '+safe(h.alternative)+'</p>'+
@@ -347,11 +348,11 @@ function select(h,type="hotspot"){
 function updateWatchlist(){
   if(!state.atlas)return;
   const list=$("watchlist");list.replaceChildren();
-  const hs=selectedHotspots().filter(h=>state.watchTab==="all"||h.new_evidence);
+  const hs=selectedHotspots().filter(h=>state.watchTab==="all"||h.new_evidence||h.new_analyst_lead);
   const rank={critical:0,active:1,high:2,watch:3,low:4};
-  hs.sort((a,b)=>Number(b.new_evidence)-Number(a.new_evidence)||(rank[a.severity]??4)-(rank[b.severity]??4)||a.name.localeCompare(b.name));
+  hs.sort((a,b)=>Number(b.new_evidence||b.new_analyst_lead)-Number(a.new_evidence||a.new_analyst_lead)||(rank[a.severity]??4)-(rank[b.severity]??4)||a.name.localeCompare(b.name));
   $("watchCount").textContent="("+hs.length+")";
-  $("watchFoot").textContent=state.atlas.algorithmic_unlocated_count+" unlocated GDELT discovery leads";
+  $("watchFoot").textContent=state.atlas.algorithmic_unlocated_count+" GDELT + "+(state.atlas.unlocated_analyst_leads||[]).length+" analyst unlocated leads";
   if(!hs.length){list.innerHTML='<p class="empty">No watch areas match these filters. No Critical classification is inferred automatically.</p>';return;}
   for(const h of hs){
     const b=document.createElement("button");b.type="button";
@@ -360,7 +361,8 @@ function updateWatchlist(){
       '<span class="severity-tag '+safe(h.severity)+'">'+safe(h.state)+'</span></div>'+
       '<p>'+safe(h.what_changed||h.description||h.scenario)+'</p>'+
       '<small>Curated source date: '+safe(h.baseline_asof||"unknown")+'</small>'+
-      (h.new_evidence?'<div class="card-new">NEW ASSESSED CHANGE</div>':'');
+      (h.new_evidence?'<div class="card-new">NEW CASE-SPECIFIC SOURCE CHANGE</div>':'')+
+      (h.new_analyst_lead?'<div class="card-new">NEW UNREVIEWED OSINT LEAD</div>':'');
     b.addEventListener("click",()=>select(h));list.appendChild(b);
   }
 }
@@ -463,14 +465,48 @@ function updateTabs(){
   $("tabNew").classList.toggle("active",state.watchTab==="new");
   updateWatchlist();
 }
+function renderEvidenceIntake(){
+  const a=state.atlas, status=a.status||{};
+  const feeds=status.operational_feeds||{};
+  const health=$("collectorHealth");
+  const rows=[];
+  for(const key of ["markets","official","commercial"]){
+    const f=feeds[key]||{};
+    const name=key.charAt(0).toUpperCase()+key.slice(1);
+    const freshness=f.freshness||"not available";
+    const checked=f.last_checked||"No successful collection timestamp";
+    rows.push('<div class="intake-feed"><span>'+safe(name)+'</span><strong>'+safe(freshness.replace(/_/g," "))+'</strong></div>'+
+      '<small>Checked: '+safe(checked)+'</small>');
+  }
+  const analyst=status.analyst_intake||{};
+  rows.push('<div class="intake-feed"><span>ChatGPT report intake</span><strong>'+
+    safe((analyst.status||"not_connected").replace(/_/g," "))+'</strong></div>'+
+    '<small>Last handoff: '+safe(analyst.latest_collected_at||"None — scheduled chats do not automatically publish")+
+    '; unique observations: '+safe(analyst.distinct_observations||0)+'</small>');
+  rows.push('<p class="sub">GDELT dataset as of '+safe(a.asof)+
+    '; site generated '+safe(a.generated_at)+'. Collection dates differ from report publication dates.</p>');
+  health.innerHTML=rows.join("");
+  const discoveries=$("discoveryLeads");
+  const candidate=[...(a.unlocated_analyst_leads||[]).map(x=>({title:x.title,summary:x.summary,
+    source_url:x.source_url,kind:"Analyst intake · unreviewed"})),
+    ...(a.discovery_leads||[]).map(x=>({title:x.title,summary:x.summary,
+    kind:"GDELT · unlocated media-coded lead"}))];
+  discoveries.innerHTML=candidate.length?candidate.slice(0,8).map(x=>
+    '<div class="intake-discovery"><strong>'+safe(x.title)+'</strong>'+
+    '<span class="sub">'+safe(x.kind)+'</span>'+
+    '<span class="sub">'+safe(x.summary)+'</span>'+
+    (safeUrl(x.source_url)?'<a href="'+safe(x.source_url)+'" target="_blank" rel="noopener noreferrer">Original source</a>':'<a href="classic.html">Original GDELT context</a>')+
+    '</div>').join(""):'No unlocated leads in this publication.';
+}
 function updateKpis(){
   const a=state.atlas;
   $("kpiWatch").textContent=a.hotspots.length;
-  $("kpiUpdates").textContent=a.hotspots.filter(x=>x.new_evidence).length;
+  $("kpiUpdates").textContent=a.hotspots.filter(x=>x.new_evidence||x.new_analyst_lead).length;
   $("kpiReports").textContent=a.reports.length;
   $("kpiAsOf").textContent=a.asof;
   $("dataNotice").textContent=a.geographic_notice+" "+a.algorithmic_caveat;
-  if(a.algorithmic_unlocated_count) $("dataNotice").textContent+=" ("+a.algorithmic_unlocated_count+" unlocated leads).";
+  if(a.algorithmic_unlocated_count) $("dataNotice").textContent+=" ("+a.algorithmic_unlocated_count+" unlocated GDELT leads).";
+  renderEvidenceIntake();
 }
 async function init(){
   bindControls();
