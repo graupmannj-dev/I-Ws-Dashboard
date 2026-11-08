@@ -16,13 +16,16 @@ AT = dt.datetime(2026, 11, 8, 18, 30, tzinfo=UTC)
 
 
 def ioda_fixture(t=AT, ident="test-event-one"):
-    return {"data": {"events": [{
-        "id": ident,
-        "entity": {"type": "country", "code": "IR"},
+    # Mirrors the live IODA v2 outages.events envelope observed in PR CI.
+    return {"type": "outages.events", "error": None, "data": [{
+        "location": "country/IR",
+        "location_name": "Iran",
+        "datasource": "bgp",
+        "method": "data-driven",
         "start": int((t - dt.timedelta(minutes=45)).timestamp()),
-        "end": None, "datasources": ["bgp", "ping-slash24"],
-        "score": 2000,
-    }], "pagination": {"nextPage": None}}}
+        "status": 0, "duration": 1800, "uncertainty": None,
+        "overlaps_window": False, "score": 2000.0,
+    }], "metadata": {"pagination": {}}}
 
 
 def nga_fixture(t=AT, number="17"):
@@ -48,9 +51,32 @@ class FrictionCollectorTests(unittest.TestCase):
         self.assertFalse(more)
         self.assertEqual(data[0]["case_id"], "iran_gulf")
         self.assertEqual(data[0]["family"], "internet_reachability")
+        self.assertEqual(data[0]["entity_type"], "country")
+        self.assertEqual(data[0]["entity_code"], "IR")
+        self.assertEqual(data[0]["signal_types"], ["bgp"])
+        self.assertEqual(data[0]["detection_method"], "data-driven")
+        self.assertEqual(data[0]["source_score"], 2000.0)
         self.assertIsNone(data[0]["source_published_at"])
         self.assertTrue(data[0]["event_at"].endswith("Z"))
         self.assertIn("not", data[0]["summary"].lower())
+
+    def test_ioda_live_envelope_can_return_genuine_zero_events(self):
+        rows, more = ioda_records({"type": "outages.events", "error": None,
+                                   "data": [], "metadata": {}}, AT)
+        self.assertEqual(rows, [])
+        self.assertFalse(more)
+        with self.assertRaises(ValueError):
+            ioda_records({"type": "outages.events", "error": "Upstream failed",
+                          "data": []}, AT)
+
+    def test_ioda_distinguishes_measurements_but_not_as_separate_source_families(self):
+        example = ioda_fixture()
+        first = dict(example["data"][0])
+        second = {**first, "datasource": "ping-slash24"}
+        rows, _ = ioda_records({**example, "data": [first, second]}, AT)
+        self.assertEqual(len(rows), 2)
+        self.assertNotEqual(rows[0]["id"], rows[1]["id"])
+        self.assertEqual({r["family"] for r in rows}, {"internet_reachability"})
 
     def test_nga_detects_navigation_warning_without_invented_polygon(self):
         records, more = nga_records(nga_fixture(), AT)
