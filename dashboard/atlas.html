@@ -75,6 +75,7 @@
           <button type="button" id="zoomOut" title="Zoom out" aria-label="Zoom out">−</button>
           <button type="button" id="northView" title="Reset rotation and zoom" aria-label="Reset rotation and zoom">◎</button>
           <output id="zoomLevel" aria-label="Map zoom level">1.0×</output>
+          <span id="restrictionLiveStatus" class="restriction-live-status" role="status">Restriction feed pending</span>
         </div>
       </div>
       <section id="discoveryDrawer" class="discovery-drawer" aria-label="Unlocated discovery leads" hidden>
@@ -87,7 +88,7 @@
       <div class="globe-wrap" id="globeWrap">
         <canvas id="globe" role="img" aria-label="Rotatable globe with country outlines, colored watchspots and reporting locations. Use the watchlist for keyboard access."></canvas>
         <div id="mapTooltip" class="map-tooltip" hidden></div>
-        <div class="map-overlay-note">Drag to rotate · Scroll or double-click to zoom · Select a plotted restriction to inspect the official notice</div>
+        <div class="map-overlay-note">Drag to rotate · Scroll to zoom (40× maximum) · Double-click to center · Open a sourced notice and select Focus on sourced area</div>
         <div class="geographic-note">Theater anchors and GCC reference overlays are approximate. Not incident coordinates or official command boundaries.</div>
       </div>
       <div id="selectedDetail" class="selected-detail" aria-live="polite" hidden></div>
