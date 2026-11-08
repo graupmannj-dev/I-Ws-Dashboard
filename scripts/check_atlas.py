@@ -22,11 +22,15 @@ for h in atlas["hotspots"]:
     assert -90 <= h["lat"] <= 90 and -180 <= h["lon"] <= 180
     if h["new_evidence"]:
         assert h["new_evidence_count"]>0 and h["brief_asof"]
+    if h.get("new_analyst_lead"):
+        assert h.get("new_analyst_lead_count", 0)>0 and h.get("new_analyst_lead_summary")
 for r in atlas["reports"]:
     assert r["date"] and r["hotspot_id"] and "geocod" in r["location_precision"].lower() or (
         r["date"] and r["hotspot_id"] and "location" in r["location_precision"].lower()
     )
     assert not r["url"] or r["url"].startswith("https://")
+    if r["id"].startswith("analyst:"):
+        assert r["assessment"] == "OSINT intake; not independently reverified"
 assert "not official aor boundaries" in atlas["geographic_notice"].lower()
 print("Atlas validation passed:",len(atlas["hotspots"]),"theater pins,",
       len(atlas["reports"]),"dated report points,",

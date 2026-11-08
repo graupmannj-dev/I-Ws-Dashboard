@@ -92,6 +92,14 @@ a{color:#a9d4ff}
 .card-new{font-size:10px;color:#ffc4a1;font-weight:700;letter-spacing:.03em}
 .card-new:before{content:"●";color:#ff856b;margin-right:5px}
 .watch-footer{padding:12px;display:flex;justify-content:space-between;gap:8px;font-size:11px;color:#9db2c5;border-top:1px solid var(--line)}
+.intake-heading{font-size:11px;letter-spacing:.025em;color:#b4cede;margin:14px 0 6px}
+.intake-status,.intake-discoveries{font-size:10.5px;color:#a9c0d5;line-height:1.5}
+.intake-feed{display:flex;gap:4px;justify-content:space-between;border-top:1px solid #32475b;padding:5px 0}
+.intake-feed strong{font-weight:650;color:#d1e3f0}
+.intake-status small{font-size:9.5px;color:#93b0c9}
+.intake-discovery{padding:7px 0;border-top:1px solid #32475b}
+.intake-discovery a{color:#bad6f9;text-decoration:underline;text-underline-offset:2px}
+.intake-discovery .sub{display:block;font-size:10px;color:#91a8ba}
 .empty{color:#b3c4d1;text-align:center;padding:30px 14px}
 .timeline{grid-column:1/-1;grid-row:2;background:linear-gradient(120deg,#142536,#0e1c2b);padding:13px 20px 12px}
 .timeline-head{display:flex;align-items:center;justify-content:space-between;gap:20px;margin-bottom:6px}

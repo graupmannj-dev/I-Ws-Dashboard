@@ -14,6 +14,13 @@ import shutil
 from pathlib import Path
 from collections import defaultdict
 
+try:
+    from .analyst_intake import load_history as load_analyst_history
+    from .feed_history import source_reports
+except ImportError:  # Direct CLI invocation: python dashboard/build_atlas.py
+    from analyst_intake import load_history as load_analyst_history
+    from feed_history import source_reports
+
 ROOT = Path(__file__).resolve().parent.parent
 WEB = ROOT / "dashboard"
 
@@ -65,7 +72,7 @@ def read(path, default):
 def sanitize_url(value):
     return value if isinstance(value, str) and value.startswith("https://") else None
 
-def generate(site, generated=None):
+def generate(site, generated=None, state_dir=None):
     site = Path(site)
     current = read(site / "hotspots.json", {})
     records = read(ROOT / "data/verified_hotspots.json", [])
@@ -84,6 +91,38 @@ def generate(site, generated=None):
     except ValueError:
         pass
     render_time = dt.datetime.fromisoformat(now.replace("Z", "+00:00"))
+    if render_time.tzinfo is None:
+        render_time = render_time.replace(tzinfo=dt.timezone.utc)
+    state_dir = Path(state_dir) if state_dir else None
+    analyst = (load_analyst_history(state_dir, clock=render_time) if state_dir else
+               {"records": [], "status": "not_connected", "run_count": 0,
+                "distinct_observations": 0, "latest_collected_at": None})
+    by_case = defaultdict(list)
+    unlocated_analyst = []
+    for item in analyst["records"]:
+        if item["case_id"] in ANCHORS:
+            by_case[item["case_id"]].append(item)
+        else:
+            unlocated_analyst.append({
+                "id": item["observation_id"], "case_id": item["case_id"],
+                "title": item["title"], "summary": item["summary"],
+                "published_at": item["published_at"], "source_url": item["source_url"],
+                "confidence": item["confidence"], "classification": "Unreviewed OSINT lead",
+            })
+    feed_reports, feed_stats = (source_reports(
+        state_dir, read(ROOT / "data/decision_registry.json", {}), render_time)
+        if state_dir else ([], {}))
+
+    def is_recent_lead(item):
+        # A reissued old story does not pulse. Source dates and first intake
+        # clocks are independent, and both must be recent.
+        if not item["published_at"]:
+            return False
+        first_seen = dt.datetime.fromisoformat(item["first_collected_at"])
+        published = dt.date.fromisoformat(item["published_at"])
+        return (dt.timedelta(0) <= render_time - first_seen <= dt.timedelta(hours=36)
+                and dt.timedelta(0) <= render_time.date() - published <= dt.timedelta(days=7))
+
     fresh_brief = bool(brief_time and dt.timedelta(0) <= render_time - brief_time <= dt.timedelta(hours=36))
     hotspots, reports = [], []
     for dossier in records:
@@ -97,6 +136,7 @@ def generate(site, generated=None):
         # Need an actual observed change from the previous collection, not a
         # standing advisory, today's scrape, or a mere Wikipedia view anomaly.
         updated = bool(evidence)
+        fresh_leads = [r for r in by_case[case_id] if is_recent_lead(r)]
         hotspots.append({
             "id": case_id, "name": dossier.get("name"), "area": area,
             "lat": lat, "lon": lon, "coordinate_precision": "Approximate theater anchor; NOT incident coordinates",
@@ -112,6 +152,9 @@ def generate(site, generated=None):
             "alternative": brief.get("alternative_explanation") or dossier.get("alternatives", ""),
             "review_status": brief.get("collection_priority", "Curated snapshot"),
             "new_evidence": updated, "new_evidence_count": len(evidence),
+            "new_analyst_lead": bool(fresh_leads),
+            "new_analyst_lead_count": len(fresh_leads),
+            "new_analyst_lead_summary": fresh_leads[-1]["summary"] if fresh_leads else None,
             "brief_asof": decision.get("generated_at") if brief else None
         })
         for ix, sig in enumerate(dossier.get("signals", [])):
@@ -148,7 +191,33 @@ def generate(site, generated=None):
                 "location_precision": "Theater-associated evidence, not a geocoded incident.",
                 "root": sig.get("root")
             })
-    reports = sorted(reports, key=lambda v: (v["date"],v["id"]))[-MAX_POINTS:]
+    # Append source-dated history without treating ordinary polls as new
+    # case-specific changes or evidence of verified commercial behavior.
+    for item in feed_reports:
+        if item["hotspot_id"] not in ANCHORS:
+            continue
+        lat, lon, _ = ANCHORS[item["hotspot_id"]]
+        reports.append({**item, "lat": lat, "lon": lon})
+    for item in analyst["records"]:
+        if item["case_id"] not in ANCHORS or not item["published_at"]:
+            continue
+        lat, lon, _ = ANCHORS[item["case_id"]]
+        reports.append({
+            "id": "analyst:" + item["observation_id"],
+            "hotspot_id": item["case_id"], "lat": lat, "lon": lon,
+            "date": item["published_at"],
+            "category": "Unreviewed analyst lead: " + item["evidence_class"].replace("_", " "),
+            "title": item["title"], "assessment": "OSINT intake; not independently reverified",
+            "detail": item["summary"], "source": item["publisher"],
+            "url": item["source_url"], "root": item["information_root"],
+            "location_precision": "Theater-associated source; no incident-point geolocation.",
+            "confidence": item["confidence"],
+            "independently_confirmed": item["independently_confirmed"],
+            "collected_at": item["first_collected_at"],
+        })
+    # Stable IDs keep repeat collections from multiplying a report.
+    reports = sorted({r["id"]: r for r in reports}.values(),
+                     key=lambda v: (v["date"], v["id"]))[-MAX_POINTS:]
     # Data source may nominate country-pair anomalies but without location
     # coordinates. They are surfaced as a count, never plotted in fake places.
     provisional = [v for v in current.get("hotspots", [])
@@ -160,6 +229,12 @@ def generate(site, generated=None):
         "title": "AIBA Global Early Warning",
         "hotspots": hotspots, "reports": reports, "report_dates": dates,
         "algorithmic_unlocated_count": len(provisional),
+        "discovery_leads": [{
+            "id": x.get("id"), "title": x.get("name"),
+            "summary": x.get("summary"), "date": safe_date(x.get("asof")),
+            "classification": "Unverified media-coded anomaly",
+        } for x in provisional[:25]],
+        "unlocated_analyst_leads": unlocated_analyst[-25:],
         "algorithmic_caveat": "Media-coded actor-pair anomalies without incident coordinates are not plotted.",
         "collection_summary": current.get("collection_summary", "No GDELT collection status available"),
         "status": {
@@ -167,6 +242,9 @@ def generate(site, generated=None):
             "wikipedia": (collected.get("wikipedia") or {}).get("status"),
             "decision_asof": decision.get("generated_at"),
             "decision_changed_cases": decision.get("new_change_count", 0),
+            "operational_feeds": read(site / "ops" / "status.json", {}).get("sources", {}),
+            "operational_history": feed_stats,
+            "analyst_intake": {key: value for key, value in analyst.items() if key != "records"},
             "curated_source_age": "Original dated dossiers; not reverified by this publication"
         },
         "geographic_notice": ("All colored markers are approximate theater anchors, not GPS incident locations. "
@@ -174,8 +252,9 @@ def generate(site, generated=None):
                               "Combatant-command reference overlays are schematic geographic orientation, NOT official AOR boundaries."),
         "time_notice": ("Timeline filters the publication dates of available source observations. "
                         "Current hotspot severity labels are NOT reconstructed historical states."),
-        "pulses_notice": ("Pulses indicate a new dated case-specific signal in the latest fusion assessment, "
-                          "not proof of critical severity or fresh military escalation.")
+        "pulses_notice": ("Pulses distinguish fresh source-specific fusion evidence and recently ingested "
+                          "unreviewed OSINT leads; neither automatically changes standing severity "
+                          "or establishes independently verified military escalation.")
     }
     (site / "atlas.json").write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
     asset_dir = site / "dashboard"
@@ -198,8 +277,10 @@ def generate(site, generated=None):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--site", type=Path, required=True)
+    parser.add_argument("--state", type=Path,
+                        help="Validated durable observations (aiba-feed-data/observations)")
     args = parser.parse_args()
-    data = generate(args.site)
+    data = generate(args.site, state_dir=args.state)
     print(f"Atlas: {len(data['hotspots'])} watchspots, {len(data['reports'])} dated sourced observations; "
           f"{data['algorithmic_unlocated_count']} unplotted GDELT location-unknown leads.")
 

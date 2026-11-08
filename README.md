@@ -28,6 +28,21 @@ runs only on `main`; deployment requires successful collection and the approval
 variable. No auto-merge is configured. GitHub Pages environment reviewers and
 branch protection can provide additional account-level controls.
 
+## Atlas operational history and analyst handoff
+
+The Atlas now renders source-dated observations from the existing durable
+operational feed branch and displays per-feed health and collection clocks.
+Successful GitHub operational or analyst-intake workflows trigger a new
+strict-GDELT Pages build; a failed collection never produces a success status.
+An unlocated GDELT nomination is a sidebar lead, not a fabricated map point.
+
+The separate ChatGPT scheduled intelligence tasks are **not automatically
+connected to the evidence branch**. A validated OSINT report contract and
+an authenticated GitHub Actions import workflow have been added, but the
+ChatGPT-to-GitHub write/dispatch step still requires connection and approval.
+Until a report is actually received, the Atlas will display the ChatGPT
+intake as **not connected**. See [ANALYST_HANDOFF.md](ANALYST_HANDOFF.md).
+
 ## Run locally
 
 Python 3.11 or 3.12; dependencies are pinned in `requirements.txt`.

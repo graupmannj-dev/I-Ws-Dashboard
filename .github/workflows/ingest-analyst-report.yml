@@ -1,0 +1,50 @@
+name: Ingest AIBA analyst OSINT report
+on:
+  workflow_dispatch:
+    inputs:
+      report_json:
+        description: "Validated OSINT report JSON (public repo; no secrets or sensitive data)"
+        required: true
+        type: string
+permissions:
+  contents: write
+concurrency:
+  group: aiba-operational-snapshots
+  cancel-in-progress: false
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    if: github.ref == 'refs/heads/main'
+    steps:
+      - name: Checkout application validation code
+        uses: actions/checkout@v4
+        with:
+          path: src
+          persist-credentials: false
+      - name: Checkout durable observation branch
+        uses: actions/checkout@v4
+        with:
+          ref: aiba-feed-data
+          path: state
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Validate and stage immutable OSINT report
+        env:
+          AIBA_REPORT_JSON: ${{ inputs.report_json }}
+        run: python src/scripts/import_analyst_report.py --state state/observations --from-env
+      - name: Commit report to evidence branch only
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd state
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add observations/analyst/history
+          if git diff --cached --quiet; then
+            echo "No new report"
+          else
+            git commit -m "AIBA analyst OSINT intake $GITHUB_RUN_ID [skip ci]"
+            git push origin HEAD:refs/heads/aiba-feed-data
+          fi

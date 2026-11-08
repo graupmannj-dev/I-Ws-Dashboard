@@ -58,6 +58,18 @@ No Good Judgment, licensed Metaculus history, paid insurance terms, granular avi
 
 This is intentionally conservative. Next development should use licensed airline/insurance data or verifiable company/agency statements, robust deduplication by common information root, case-specific contract registry, outcome annotation, and true walk-forward calibration before upgrading automated warning statuses.
 
+## Atlas integration added after initial operational phase
+
+The existing evidence-branch collectors remain the source of truth. The Atlas
+now consumes a bounded history of official/commercial source-published records,
+not only the latest decision briefs, and displays collector-specific clocks and
+failures. A completed operational collector run triggers a strict re-publication,
+not an unvalidated direct browser update. A separate authenticated intake
+workflow is provided for source-linked ChatGPT analyst reports, but the
+ChatGPT scheduled automation must still be authorized and configured to write
+to GitHub. Until then, that source is clearly labeled not connected. See
+ANALYST_HANDOFF.md for the schema and the end-to-end acceptance checklist.
+
 ## First deployment procedure
 
 1. Review/merge the PR only after test suite passes.

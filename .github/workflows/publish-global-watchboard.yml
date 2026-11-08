@@ -4,6 +4,10 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+  workflow_run:
+    workflows: ['Collect AIBA operational feeds', 'Ingest AIBA analyst OSINT report']
+    types: [completed]
+    branches: [main]
   schedule:
     - cron: '35 14 * * *'
 permissions:
@@ -35,7 +39,7 @@ jobs:
       - run: node --check _site/dashboard/layers.js
   collect:
     needs: test
-    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request' && (github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success')
     runs-on: ubuntu-latest
     timeout-minutes: 60
     steps:
@@ -63,7 +67,7 @@ jobs:
       - run: node --check /tmp/aiba-dashboard.js
       - name: Collect optional public map overlays
         run: python dashboard/collect_layers.py --output _site/layers.json
-      - run: python dashboard/build_atlas.py --site _site
+      - run: python dashboard/build_atlas.py --site _site --state ops-state/observations
         env:
           AIBA_LAYER_FEED_URL: ${{ vars.AIBA_LAYER_FEED_URL || 'layers.json' }}
       - run: python scripts/check_atlas.py _site

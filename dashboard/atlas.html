@@ -14,7 +14,7 @@
     <div class="header-title"><strong>Global Early Warning</strong><span>Global discovery · Source-linked assessments · Operational watch</span></div>
     <div class="header-status" aria-label="Collection status">
       <div><small>Watch areas</small><strong id="kpiWatch">—</strong></div>
-      <div><small>New assessed changes</small><strong id="kpiUpdates">—</strong></div>
+      <div><small>Recent source changes</small><strong id="kpiUpdates">—</strong></div>
       <div><small>Sourced reports</small><strong id="kpiReports">—</strong></div>
       <div><small>Snapshot</small><strong id="kpiAsOf">—</strong></div>
     </div>
@@ -50,6 +50,10 @@
         <label class="toggle-row"><input type="checkbox" id="changedOnly"><span>Only recently changed hotspots</span></label>
         <label class="toggle-row"><input type="checkbox" id="autoRotate"><span>Slow globe rotation</span></label>
         <p class="side-hint" id="dataNotice">Loading source-linked reporting…</p>
+        <h3 class="intake-heading">Collection health and source times</h3>
+        <div id="collectorHealth" class="intake-status" aria-live="polite">Checking feed snapshots…</div>
+        <h3 class="intake-heading">Unlocated discovery leads</h3>
+        <div id="discoveryLeads" class="intake-discoveries">New geographic leads require reviewed coordinates before map placement.</div>
       </section>
       <section class="side-section">
         <h2>Views</h2>
