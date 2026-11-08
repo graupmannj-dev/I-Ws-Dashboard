@@ -12,6 +12,7 @@ import hashlib
 import json
 import math
 import re
+import ssl
 import urllib.parse
 import urllib.request
 from pathlib import Path
@@ -87,7 +88,14 @@ def fetch(url):
     if not url.startswith("https://"):
         raise ValueError("HTTPS required")
     req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT, "Accept": "application/json"})
-    with urllib.request.urlopen(req, timeout=23) as reply:
+    # IODA currently serves a TLS 1.2-only stack for some clients. Use an
+    # authenticated TLS 1.2 connection for IODA only; do not disable CA
+    # verification, hostname checking, or downgrade other sources.
+    context = None
+    if urllib.parse.urlsplit(url).hostname == "api.ioda.inetintel.cc.gatech.edu":
+        context = ssl.create_default_context()
+        context.maximum_version = ssl.TLSVersion.TLSv1_2
+    with urllib.request.urlopen(req, timeout=23, context=context) as reply:
         data = reply.read(MAX_BYTES + 1)
         if len(data) > MAX_BYTES:
             raise ValueError("Response larger than bounded collector limit")
@@ -172,7 +180,7 @@ def ioda_records(payload, checked, max_records=MAX_RECORDS):
             "root": f"ioda:{identifier}", "review_level": "measurement_context",
             "location_precision": "Country/region/network context, not incident geolocation.",
         })
-    return list({x["id"]: x for x in result}.values()), more or len(entries) > max_records
+    return list({x["id"]: x for x in result}.values()), more or len(entries) >= max_records
 
 
 def nga_records(payload, checked, max_records=MAX_RECORDS):
