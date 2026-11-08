@@ -130,7 +130,10 @@ def unique_recent(history, at):
             if not prior or src is None:
                 continue
             original = event_time(row.get("event_at"))
-            if original and not dt.timedelta(0) <= at - original <= dt.timedelta(days=7):
+            # New-to-collector is not necessarily new-to-world. Without a
+            # source event date, a warning is retained as context only and
+            # cannot qualify for the recent-change queue.
+            if not original or not dt.timedelta(0) <= at - original <= dt.timedelta(days=7):
                 continue
             recent.append(row)
     return recent
@@ -206,23 +209,58 @@ def build(state, clock=utcnow, registry=ROOT / "data" / "decision_registry.json"
             by_root.setdefault(row.get("root") or row["id"], row)
         new = list(by_root.values())[:16]
         distinct = sorted({r["family"] for r in new})
-        overlaps = len(distinct) >= 2
+        # A multi-source *time sequence* needs temporal proximity. Two
+        # unrelated observations on different days are not corroboration.
+        overlaps = any(
+            first.get("family") != second.get("family")
+            and event_time(first.get("event_at")) is not None
+            and event_time(second.get("event_at")) is not None
+            and abs((event_time(first["event_at"]) -
+                     event_time(second["event_at"])).total_seconds()) <= 6 * 3600
+            for i, first in enumerate(new) for second in new[i + 1:]
+        )
         traditional = matched_legacy(state, cid, at)
+        if new and traditional:
+            contrast = ("Traditional case-specific change evidence and nontraditional "
+                        "observations are both present. Investigate shared causes, "
+                        "reporting delays, and whether either actually preceded the other.")
+        elif new:
+            contrast = ("Nontraditional-source change without new corroborating evidence "
+                        "from the latest case-specific traditional brief. This may "
+                        "reflect stale or incomplete conventional coverage, not secrecy.")
+        elif traditional:
+            contrast = ("Traditional-source change without newly detected structural "
+                        "friction in the monitored feeds. Missing sources limit "
+                        "inferences from apparent quiet.")
+        else:
+            contrast = ("No new matched source change across these monitored families; "
+                        "the standing watch and unmeasured activity remain unresolved.")
         baselines = {family: baseline(state, history, cid, family, at)
                      for family in FAMILIES.values()}
         anomalous = [family for family, val in baselines.items()
                      if val["status"] == "unusual_count"]
         gap = [name for name, info in health.items()
                if info["status"] != "fresh" or info["coverage"] == "partial"]
+        counts = {family: sum(r["family"] == family for r in new)
+                  for family in distinct}
+        readable = {
+            "internet_reachability": "public network-reachability detections",
+            "maritime_restriction": "official maritime safety notices",
+        }
+        summary = " and ".join(
+            f"{counts[family]} new {readable.get(family, family)}"
+            for family in distinct)
         if overlaps:
             triage = "multi_stream_review"
-            changed = "Distinct maritime and connectivity source families have newly reported observations."
+            changed = (summary + " within a six-hour source-event window. "
+                       "Joint timing merits review, not an assumption of common intent.")
         elif new:
             triage = "source_review"
-            changed = "New source-specific structural-friction observation warrants contextual review."
+            changed = (summary + ". Source-specific materiality and baseline "
+                       "still require analyst verification.")
         elif anomalous:
             triage = "baseline_review"
-            changed = "Observed source counts differ from the matched-hour historical baseline."
+            changed = "Observed source counts differ from their matched-hour historical baselines."
         else:
             triage = "collection_gap" if len(gap) == len(FAMILIES) else "maintain"
             changed = "No qualifying new structural-friction change established from available observations."
@@ -237,6 +275,7 @@ def build(state, clock=utcnow, registry=ROOT / "data" / "decision_registry.json"
             "standing_state": standing.get("state") or "Standing watch",
             "triage": triage, "what_changed": changed, "so_what": so_what,
             "alternative": alternative, "next_signpost": case_cfg.get("next") or standing.get("next"),
+            "traditional_contrast": contrast,
             "new_sources": len(new), "new_families": distinct, "current_source_records": len(ongoing),
             "source_evidence": [{"id": r["id"], "title": r["title"],
                                  "family": r["family"], "kind": r["kind"],
