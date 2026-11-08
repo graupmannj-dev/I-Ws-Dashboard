@@ -11,7 +11,9 @@ html=(site/"index.html").read_text(encoding="utf-8")
 classic=(site/"classic.html").read_text(encoding="utf-8")
 assert atlas["hotspots"] and atlas["reports"], "Missing source-linked data"
 assert geo["type"]=="FeatureCollection" and len(geo["features"])>=150
-assert "id=\"globe\"" in html and 'id="timeCursor"' in html
+assert "id=\"globe\"" in html and 'id="timeStart"' in html and 'id="timeEnd"' in html
+assert 'id="timeSelection"' in html and 'id="discoveryDrawer"' in html
+assert 'id="discoveryToggle"' in html and 'id="zoomLevel"' in html
 assert 'id="layerCommands"' in html and 'id="severityControls"' in html
 assert 'id="layerReports"' in html
 assert 'id="frictionBriefing"' in html and 'id="frictionSummary"' in html
