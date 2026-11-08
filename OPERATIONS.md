@@ -58,6 +58,19 @@ No Good Judgment, licensed Metaculus history, paid insurance terms, granular avi
 
 This is intentionally conservative. Next development should use licensed airline/insurance data or verifiable company/agency statements, robust deduplication by common information root, case-specific contract registry, outcome annotation, and true walk-forward calibration before upgrading automated warning statuses.
 
+## New structural-friction collection (shadow mode)
+
+The separate Collect AIBA structural friction workflow polls IODA outage
+events and NGA maritime broadcast warnings on a best-effort 30-minute UTC
+schedule, using two source-separated health records. It commits compact event
+deltas and a review-only source-family synthesis to the same evidence branch.
+The Atlas may fetch latest public branch data without triggering a full
+GDELT rebuild each half hour. Source errors are recorded and must not be
+interpreted as no activity. NGA parser compatibility, live feed access and
+IODA event coverage must be proven after merging. Optional scoped RIS Live
+streaming requires a separate persistent runtime and state publisher.
+See FRICTION_ARCHITECTURE.md.
+
 ## Atlas integration added after initial operational phase
 
 The existing evidence-branch collectors remain the source of truth. The Atlas

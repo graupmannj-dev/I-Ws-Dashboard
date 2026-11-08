@@ -33,6 +33,7 @@ jobs:
       - run: python decision_render.py --state /tmp/aiba-missing-feeds --site _site
       - run: python scripts/check_dashboard.py _site/index.html
       - run: node --check /tmp/aiba-dashboard.js
+      - run: python friction_render.py --state /tmp/aiba-missing-feeds --site _site
       - run: python dashboard/build_atlas.py --site _site
       - run: python scripts/check_atlas.py _site
       - run: node --check _site/dashboard/atlas.js
@@ -67,6 +68,7 @@ jobs:
       - run: node --check /tmp/aiba-dashboard.js
       - name: Collect optional public map overlays
         run: python dashboard/collect_layers.py --output _site/layers.json
+      - run: python friction_render.py --state ops-state/observations --site _site
       - run: python dashboard/build_atlas.py --site _site --state ops-state/observations
         env:
           AIBA_LAYER_FEED_URL: ${{ vars.AIBA_LAYER_FEED_URL || 'layers.json' }}
@@ -131,6 +133,7 @@ jobs:
           python ops_render.py --state /tmp/aiba-globe-no-ops --site _site
           python fusion_briefs.py --state /tmp/aiba-globe-no-ops
           python decision_render.py --state /tmp/aiba-globe-no-ops --site _site
+          python friction_render.py --state /tmp/aiba-globe-no-ops --site _site
           python dashboard/build_atlas.py --site _site
       - name: Install local browser test dependency
         run: |
@@ -148,3 +151,67 @@ jobs:
           name: atlas-preview
           path: atlas-preview.jpg
           if-no-files-found: ignore
+
+  friction-live-probe:
+    if: github.event_name == 'pull_request'
+    needs: test
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    # API accessibility is external and not needed for offline correctness.
+    # The live status MUST still be reviewed manually before enabling alerts.
+    continue-on-error: true
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Inspect IODA envelope structure (keys only; no raw event logging)
+        continue-on-error: true
+        run: |
+          python - <<'PY'
+          import datetime as dt
+          from urllib.parse import urlencode
+          from friction_pipeline import IODA, fetch
+          now=int(dt.datetime.now(dt.timezone.utc).timestamp())
+          data=fetch(IODA+"?"+urlencode({
+              "from":now-14400,"until":now,"entityType":"country",
+              "limit":10,"page":0,"extendWindowSeconds":0}))
+          nested=data.get("data") if isinstance(data,dict) else None
+          print("IODA envelope:",{
+              "kind":type(data).__name__,
+              "keys": sorted(data.keys())[:16] if isinstance(data,dict) else [],
+              "type":str(data.get("type"))[:80] if isinstance(data,dict) else "",
+              "error":str(data.get("error"))[:250] if isinstance(data,dict) else "",
+              "data_kind":type(nested).__name__,
+              "data_keys":sorted(nested.keys())[:16] if isinstance(nested,dict) else [],
+              "data_items":len(nested) if isinstance(nested,list) else None,
+              "first_item_keys":sorted(nested[0].keys())[:15] if isinstance(nested,list) and nested and isinstance(nested[0],dict) else [],
+          })
+          PY
+      - name: Probe bounded NGA and IODA endpoints without publishing
+        shell: bash
+        run: |
+          set +e
+          python friction_pipeline.py --state /tmp/aiba-friction-pr
+          status=$?
+          set -e
+          python friction_synthesis.py --state /tmp/aiba-friction-pr
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          root=Path("/tmp/aiba-friction-pr/health")
+          lines=["## AIBA friction source probe (NO production ingestion)","","| Feed | Status | Records | Error |","|---|---|---:|---|"]
+          for name in ("ioda","nga","amsa"):
+              health=json.loads((root/f"friction_{name}.json").read_text())
+              lines.append(f"| {name} | {health['status']} | {health['records']} | {str(health.get('error') or '')[:100]} |")
+          summary="\n".join(lines)+"\n"
+          print(summary)
+          import os
+          if os.getenv("GITHUB_STEP_SUMMARY"):
+              with open(os.environ["GITHUB_STEP_SUMMARY"],"a") as f: f.write(summary)
+          PY
+          if [ "$status" -ne 0 ]; then
+            echo "::warning::No friction feeds responded with valid usable JSON in PR probe"
+          fi

@@ -14,6 +14,11 @@ assert geo["type"]=="FeatureCollection" and len(geo["features"])>=150
 assert "id=\"globe\"" in html and 'id="timeCursor"' in html
 assert 'id="layerCommands"' in html and 'id="severityControls"' in html
 assert 'id="layerReports"' in html
+assert 'id="frictionBriefing"' in html and 'id="frictionSummary"' in html
+assert 'id="frictionExpand"' in html
+assert (site/"friction_briefs.json").exists(), "No durable friction briefing fallback"
+assert "friction_briefs" in atlas and atlas["friction_briefs"].get("shadow_mode", True)
+assert "friction_live_url" in atlas and atlas["friction_live_url"].startswith("https://")
 assert "id=\"payload\"" in classic, "Classic watchboard unexpectedly lost"
 assert (site/"dashboard"/"atlas.js").stat().st_size>10000
 for h in atlas["hotspots"]:

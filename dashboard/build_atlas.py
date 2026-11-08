@@ -79,6 +79,7 @@ def generate(site, generated=None, state_dir=None):
     decision = read(site / "ops" / "decision_briefs.json", {})
     decision_by_id = {item["id"]: item for item in decision.get("cases", [])}
     collected = read(site / "collection_status.json", {})
+    friction = read(site / "friction_briefs.json", {})
     asof = safe_date(current.get("asof")) or (dt.datetime.now(dt.timezone.utc).date().isoformat())
     now = generated or dt.datetime.now(dt.timezone.utc).replace(microsecond=0).isoformat()
     # Only a case with a newly recorded case-specific change, not just a
@@ -228,6 +229,8 @@ def generate(site, generated=None, state_dir=None):
         "layer_feed": {"url": os.environ.get("AIBA_LAYER_FEED_URL", "layers.json")},
         "title": "AIBA Global Early Warning",
         "hotspots": hotspots, "reports": reports, "report_dates": dates,
+        "friction_briefs": friction,
+        "friction_live_url": "https://raw.githubusercontent.com/graupmannj-dev/I-Ws-Dashboard/aiba-feed-data/observations/latest/friction_briefs.json",
         "algorithmic_unlocated_count": len(provisional),
         "discovery_leads": [{
             "id": x.get("id"), "title": x.get("name"),
@@ -245,6 +248,8 @@ def generate(site, generated=None, state_dir=None):
             "operational_feeds": read(site / "ops" / "status.json", {}).get("sources", {}),
             "operational_history": feed_stats,
             "analyst_intake": {key: value for key, value in analyst.items() if key != "records"},
+            "friction_generated_at": friction.get("generated_at"),
+            "friction_shadow_mode": True,
             "curated_source_age": "Original dated dossiers; not reverified by this publication"
         },
         "geographic_notice": ("All colored markers are approximate theater anchors, not GPS incident locations. "

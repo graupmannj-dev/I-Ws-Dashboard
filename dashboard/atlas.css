@@ -74,6 +74,21 @@ a{color:#a9d4ff}
 .selected-detail .detail-close{border:0;background:#28405b;color:white;border-radius:6px;padding:1px 9px;font-size:19px}
 .selected-detail a{font-size:12px}
 .watch-panel{grid-column:3;grid-row:1;display:flex;flex-direction:column;min-height:0}
+.friction-briefing{padding:12px 13px 10px;border-bottom:1px solid var(--line);background:linear-gradient(135deg,#172e41,#102337);overflow:auto;max-height:245px;flex-shrink:0}
+.friction-head{display:flex;align-items:center;flex-wrap:wrap;gap:6px;justify-content:space-between}
+.friction-head strong{font-size:13px;color:#e7f4fe}
+.friction-mode{font-size:9px;letter-spacing:.03em;color:#a6cce2;border:1px solid #486880;padding:1px 5px;border-radius:4px}
+.friction-summary{font-size:11px;line-height:1.47;color:#ccdded;margin:6px 0 4px}
+.friction-time{font-size:9.5px;color:#91adbf;margin:0 0 7px}
+.friction-highlight{padding:7px 0;border-top:1px solid #36506a;font-size:11px;line-height:1.43}
+.friction-highlight strong{display:block;color:#e6effa}
+.friction-highlight .sub{display:block;color:#a6bdd1}
+.friction-highlight a{font-size:10px}
+.friction-expand{margin-top:6px;color:#a4d7ff;background:transparent;border:0;padding:3px 0;text-align:left;font-size:11px}
+.friction-expand:focus-visible{outline:2px solid #70adf9}
+.friction-briefing.expanded{max-height:390px}
+.friction-briefing.expanded~.watchlist{min-height:125px}
+
 .watch-heading{border-bottom:1px solid var(--line);padding:15px 14px 0}
 .watch-heading h2{font-size:16px;margin:0 0 10px}
 #watchCount{color:#9eb4c9;font-weight:400}

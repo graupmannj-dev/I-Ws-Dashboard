@@ -1,0 +1,58 @@
+name: Collect AIBA structural friction (shadow mode)
+on:
+  workflow_dispatch:
+  # GitHub Actions cron is best-effort, not a guaranteed real-time interval.
+  schedule:
+    - cron: '13,43 * * * *'
+permissions:
+  contents: write
+concurrency:
+  group: aiba-operational-snapshots
+  cancel-in-progress: false
+jobs:
+  collect-friction:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout tested source code
+        uses: actions/checkout@v4
+        with:
+          path: src
+          persist-credentials: false
+      - name: Checkout append-only evidence branch
+        uses: actions/checkout@v4
+        with:
+          ref: aiba-feed-data
+          path: state
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Collect official maritime warnings and measured internet outage events
+        shell: bash
+        run: |
+          set -euo pipefail
+          rc=0
+          python src/friction_pipeline.py --state state/observations || rc=$?
+          echo "FRICTION_COLLECT_RC=$rc" >> "$GITHUB_ENV"
+      - name: Build source-separated shadow-mode analysis and audit trace
+        shell: bash
+        run: python src/friction_synthesis.py --state state/observations
+      - name: Persist evidence, source errors, and shadow-mode briefing
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd state
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add observations
+          if ! git diff --cached --quiet; then
+            git commit -m "AIBA friction observations and source health $GITHUB_RUN_ID [skip ci]"
+            git push origin HEAD:refs/heads/aiba-feed-data
+          else
+            echo "No new observations"
+          fi
+      - name: Report total collection failure after persisting missingness
+        if: env.FRICTION_COLLECT_RC != '0'
+        run: |
+          echo "::error::All monitored friction source feeds failed; preserved health state in evidence branch"
+          exit 1

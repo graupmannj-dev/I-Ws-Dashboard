@@ -28,6 +28,25 @@ runs only on `main`; deployment requires successful collection and the approval
 variable. No auto-merge is configured. GitHub Pages environment reviewers and
 branch protection can provide additional account-level controls.
 
+## Ephemeral structural friction: new source-separated triage
+
+AIBA includes a **shadow-mode** collector for public NGA navigational-warning
+notices and Georgia Tech IODA internet outage detections. New source events are
+stored as compact append-only historical deltas; source-specific failures and
+observation clocks are visible rather than quietly labeled normal. A bounded,
+optional RIPE RIS Live sampler is provided for a separately hosted streaming
+service; GitHub Pages is not a persistent WebSocket backend.
+
+The Atlas's **Cross-source I&W** section provides brief theater-specific
+comparison, contradictory hypotheses, and next signposts, with source links
+on selection. It attempts a read-only five-minute refresh from the public
+evidence branch, with the static Pages snapshot retained as a fallback. This
+is **not** a five-minute global collection guarantee, a calibrated warning
+score, or a verified live intelligence product.
+
+See [FRICTION_ARCHITECTURE.md](FRICTION_ARCHITECTURE.md) for operational
+instructions, source limitations and pre-merge acceptance gates.
+
 ## Atlas operational history and analyst handoff
 
 The Atlas now renders source-dated observations from the existing durable

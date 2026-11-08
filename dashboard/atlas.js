@@ -22,6 +22,7 @@ const commandAreas = [
 const state = {
   atlas:null,countries:null,selected:null,selectionType:"hotspot",
   severity:"all",watchTab:"all",windowDays:7,
+  friction:null,frictionShowAll:false,frictionRemoteStatus:"static fallback",
   dates:[],minDay:0,maxDay:0,cursorDay:0,fromDay:0,
   lon:52,lat:20,zoom:1,pins:[],reports:[],hitTargets:[],dimensions:{w:1,h:1,dpr:1,cx:0,cy:0,r:1},
   canvas:null,ctx:null,staticCanvas:null,staticValid:false,drag:null,lastFrame:0,
@@ -315,6 +316,15 @@ function setWindow(w){
   for(const b of document.querySelectorAll("#timeWindows button"))b.classList.toggle("active",b.dataset.days===String(w));
   updateTimeline();
 }
+function frictionCase(id){return (state.friction?.cases||[]).find(c=>c.id===id)||null;}
+function frictionSources(c){
+  const rows=(c?.source_evidence||[]).slice(0,5);
+  if(!rows.length)return '<p class="sub">No new source record passed the change-detection gate.</p>';
+  return '<p><b>Evidence and source clocks:</b></p><ul>'+rows.map(r=>
+    '<li>'+(safeUrl(r.url)?'<a href="'+safe(r.url)+'" target="_blank" rel="noopener noreferrer">'+safe(r.title)+'</a>':safe(r.title))+
+    '<span class="sub"> · '+safe(r.family)+' · original event '+safe(r.event_at||"not dated")+
+    ' · captured '+safe(r.first_seen_at||"unknown")+'</span></li>').join("")+'</ul>';
+}
 function select(h,type="hotspot"){
   if(type==="layer"){window.AtlasLayers.show(h,h.layerKey);return;}
   state.selected=h.id;state.selectionType=type;
@@ -324,6 +334,15 @@ function select(h,type="hotspot"){
   const panel=$("selectedDetail");panel.hidden=false;
   if(type==="hotspot"){
     const link='<a href="ops/">Full source-linked decision brief →</a>';
+    const f=frictionCase(h.id);
+    const frictionDetail=f?'<div class="friction-detail"><h4>Cross-source comparison · Shadow mode · '+safe(f.triage.replace(/_/g," "))+'</h4>'+
+      '<p><b>What changed:</b> '+safe(f.what_changed)+'</p>'+
+      '<p><b>Why it may matter:</b> '+safe(f.so_what)+'</p>'+
+      '<p><b>Compared with conventional indicators:</b> '+safe(f.traditional_contrast||"No cross-check available")+'</p>'+
+      '<p><b>Alternative:</b> '+safe(f.alternative)+'</p>'+
+      '<p><b>Next observable signpost:</b> '+safe(f.next_signpost)+'</p>'+
+      '<p class="sub">Collection gaps: '+safe((f.coverage_gaps||[]).join(", ")||"None declared")+
+      '. Triage does not change standing threat severity.</p>'+frictionSources(f)+'</div>':'';
     panel.innerHTML=
       '<div class="detail-top"><div><h3>'+safe(h.name)+'</h3><span class="severity-tag '+safe(h.severity)+'">'+safe(h.state)+'</span></div>'+
       '<button class="detail-close" aria-label="Close detail" type="button">×</button></div>'+
@@ -334,7 +353,7 @@ function select(h,type="hotspot"){
       '<p><b>So what:</b> '+safe(h.so_what||h.description)+'</p>'+
       '<p><b>Next signpost:</b> '+safe(h.next)+'</p>'+
       '<p><b>Alternative:</b> '+safe(h.alternative)+'</p>'+
-      '<p class="sub">Standing evidence as of '+safe(h.baseline_asof)+'; no automated escalation classification. '+safe(h.review_status)+'</p>'+link;
+      '<p class="sub">Standing evidence as of '+safe(h.baseline_asof)+'; no automated escalation classification. '+safe(h.review_status)+'</p>'+frictionDetail+link;
   }else{
     const source=safeUrl(h.url)?'<a href="'+safe(h.url)+'" target="_blank" rel="noopener noreferrer">Open original source →</a>':'Source link unavailable';
     panel.innerHTML='<div class="detail-top"><h3>'+safe(h.title)+'</h3><button class="detail-close" aria-label="Close detail" type="button">×</button></div>'+
@@ -344,6 +363,72 @@ function select(h,type="hotspot"){
   }
   panel.querySelector(".detail-close").addEventListener("click",()=>{panel.hidden=true;state.selected=null;updateWatchlist();});
   updateWatchlist();
+}
+function validFriction(value){
+  return !!value&&value.schema_version===1&&value.shadow_mode===true&&
+    Array.isArray(value.cases)&&value.cases.length<=100&&
+    value.cases.every(c=>c&&typeof c.id==="string"&&typeof c.triage==="string");
+}
+function renderFriction(){
+  const f=state.friction;
+  const summary=$("frictionSummary"),time=$("frictionTime");
+  const list=$("frictionHighlights"),expand=$("frictionExpand");
+  if(!validFriction(f)){
+    summary.textContent="Structural-friction feeds have not produced a usable briefing.";
+    time.textContent="Collection coverage unavailable, not an all-clear.";
+    list.replaceChildren();expand.hidden=true;return;
+  }
+  const stamp=Date.parse(f.generated_at||"");
+  const age=Number.isFinite(stamp)?(Date.now()-stamp)/3600000:Infinity;
+  const fresh=age>=0&&age<=3&&f.fresh_snapshot!==false;
+  const gaps=Array.isArray(f.coverage_gaps)?f.coverage_gaps:[];
+  summary.textContent=f.executive_summary||"No source-separated synthesis available.";
+  time.textContent=(fresh?"Source briefing: ":"STALE SOURCE BRIEFING: ")+
+    (f.generated_at||"unknown UTC time")+
+    " · "+state.frictionRemoteStatus+
+    " · "+(gaps.length?"Gaps: "+gaps.join(", "):"Monitored feeds reported");
+  const review=f.cases.filter(c=>["multi_stream_review","source_review","baseline_review"].includes(c.triage));
+  const shown=state.frictionShowAll?f.cases:review.slice(0,3);
+  if(!shown.length){
+    list.innerHTML='<div class="friction-highlight"><span class="sub">No new structural-friction lead established. Standing watches continue; check coverage before interpreting silence.</span></div>';
+  }else{
+    list.innerHTML=shown.map(c=>
+      '<div class="friction-highlight"><strong>'+safe(c.title)+'</strong>'+
+      '<span class="sub">'+safe(c.what_changed)+'</span>'+
+      '<span class="sub">'+safe(c.traditional_contrast||c.so_what)+'</span>'+
+      '<span class="sub">Next: '+safe(c.next_signpost)+'</span></div>').join("");
+  }
+  expand.hidden=!f.cases.length;
+  expand.textContent=state.frictionShowAll?"Show material changes only":"Show all theater syntheses";
+  expand.setAttribute("aria-expanded",state.frictionShowAll?"true":"false");
+  $("frictionBriefing").classList.toggle("expanded",state.frictionShowAll);
+}
+async function refreshFriction(){
+  const url=state.atlas?.friction_live_url;
+  if(!safeUrl(url))return;
+  try{
+    const opts={cache:"no-store"};
+    if(typeof AbortSignal!=="undefined"&&typeof AbortSignal.timeout==="function")
+      opts.signal=AbortSignal.timeout(12000);
+    const response=await fetch(url,opts);
+    if(!response.ok)throw Error("source status "+response.status);
+    const fresh=await response.json();
+    if(!validFriction(fresh))throw Error("invalid source schema");
+    const before=Date.parse(state.friction?.generated_at||"");
+    const after=Date.parse(fresh.generated_at||"");
+    if(!Number.isFinite(after))throw Error("missing generation timestamp");
+    if(!Number.isFinite(before)||after>=before){
+      state.friction=fresh;
+      state.frictionRemoteStatus="public evidence branch snapshot";
+      renderFriction();updateWatchlist();
+    }else{
+      state.frictionRemoteStatus="site snapshot is newer than public branch";
+      renderFriction();
+    }
+  }catch(error){
+    state.frictionRemoteStatus="static fallback (live source unavailable)";
+    renderFriction();
+  }
 }
 function updateWatchlist(){
   if(!state.atlas)return;
@@ -357,12 +442,15 @@ function updateWatchlist(){
   for(const h of hs){
     const b=document.createElement("button");b.type="button";
     b.className="watch-card"+(state.selected===h.id&&state.selectionType==="hotspot"?" selected":"");
+    const f=frictionCase(h.id);
+    const review=f&&["multi_stream_review","source_review","baseline_review"].includes(f.triage);
     b.innerHTML='<div class="watch-card-head"><strong>'+safe(h.name)+'</strong>'+
       '<span class="severity-tag '+safe(h.severity)+'">'+safe(h.state)+'</span></div>'+
-      '<p>'+safe(h.what_changed||h.description||h.scenario)+'</p>'+
+      '<p>'+safe(review?f.what_changed:(h.what_changed||h.description||h.scenario))+'</p>'+
       '<small>Curated source date: '+safe(h.baseline_asof||"unknown")+'</small>'+
       (h.new_evidence?'<div class="card-new">NEW CASE-SPECIFIC SOURCE CHANGE</div>':'')+
-      (h.new_analyst_lead?'<div class="card-new">NEW UNREVIEWED OSINT LEAD</div>':'');
+      (h.new_analyst_lead?'<div class="card-new">NEW UNREVIEWED OSINT LEAD</div>':'')+
+      (review?'<small>Cross-source shadow review · '+safe(f.triage.replace(/_/g,' '))+'</small>':'');
     b.addEventListener("click",()=>select(h));list.appendChild(b);
   }
 }
@@ -420,6 +508,10 @@ function attachCanvas(){
   },{passive:false});
 }
 function bindControls(){
+  $("frictionExpand").addEventListener("click",()=>{
+    state.frictionShowAll=!state.frictionShowAll;
+    renderFriction();
+  });
   for(const id of ["layerHotspots","layerReports","layerCommands","layerLabels","changedOnly"]){
     $(id).addEventListener("change",()=>{state.staticValid=false;updateWatchlist();});
   }
@@ -518,6 +610,10 @@ async function init(){
     ]);
     if(!Array.isArray(data.hotspots)||!Array.isArray(data.reports)||!Array.isArray(geo.features))throw Error("Unexpected feed schema");
     state.atlas=data;state.countries=geo;
+    state.friction=validFriction(data.friction_briefs)?data.friction_briefs:null;
+    renderFriction();
+    void refreshFriction();
+    setInterval(refreshFriction,300000);
     window.AtlasLayers.init(data.layer_feed,()=>{state.staticValid=false;});
     updateKpis();updateDates();resize();
     if(typeof ResizeObserver==="function"){
