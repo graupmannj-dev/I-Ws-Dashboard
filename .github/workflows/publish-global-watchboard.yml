@@ -167,6 +167,29 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
+      - name: Inspect IODA envelope structure (keys only; no raw event logging)
+        continue-on-error: true
+        run: |
+          python - <<'PY'
+          import datetime as dt
+          from urllib.parse import urlencode
+          from friction_pipeline import IODA, fetch
+          now=int(dt.datetime.now(dt.timezone.utc).timestamp())
+          data=fetch(IODA+"?"+urlencode({
+              "from":now-14400,"until":now,"entityType":"country",
+              "limit":10,"page":0,"extendWindowSeconds":0}))
+          nested=data.get("data") if isinstance(data,dict) else None
+          print("IODA envelope:",{
+              "kind":type(data).__name__,
+              "keys": sorted(data.keys())[:16] if isinstance(data,dict) else [],
+              "type":str(data.get("type"))[:80] if isinstance(data,dict) else "",
+              "error":str(data.get("error"))[:250] if isinstance(data,dict) else "",
+              "data_kind":type(nested).__name__,
+              "data_keys":sorted(nested.keys())[:16] if isinstance(nested,dict) else [],
+              "data_items":len(nested) if isinstance(nested,list) else None,
+              "first_item_keys":sorted(nested[0].keys())[:15] if isinstance(nested,list) and nested and isinstance(nested[0],dict) else [],
+          })
+          PY
       - name: Probe bounded NGA and IODA endpoints without publishing
         shell: bash
         run: |
