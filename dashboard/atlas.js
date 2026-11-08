@@ -51,6 +51,7 @@ function resize(){
   const canvas=$("globe");canvas.width=Math.round(w*dpr);canvas.height=Math.round(h*dpr);
   state.canvas=canvas;state.ctx=canvas.getContext("2d");state.ctx.setTransform(dpr,0,0,dpr,0,0);
   state.dimensions={w,h,dpr,cx:w/2,cy:h/2+5,r:Math.min(h*.455,w*.455)*state.zoom};
+  $("zoomLevel").textContent=state.zoom.toFixed(1)+"×";
   state.staticCanvas=document.createElement("canvas");
   state.staticCanvas.width=canvas.width;state.staticCanvas.height=canvas.height;
   state.staticValid=false;
@@ -585,11 +586,38 @@ function attachCanvas(){
   c.addEventListener("pointerleave",()=>{$("mapTooltip").hidden=true;});
   c.addEventListener("wheel",event=>{
     event.preventDefault();
-    state.zoom=clamp(state.zoom*(event.deltaY>0?.93:1.07),.7,1.9);
-    resize();
+    const multiplier=clamp(Math.exp(-event.deltaY*.0015),.82,1.22);
+    changeZoom(multiplier);
   },{passive:false});
+  c.addEventListener("dblclick",event=>{
+    event.preventDefault();
+    changeZoom(1.48);
+  });
+}
+function changeZoom(multiplier){
+  const next=clamp(state.zoom*multiplier,.65,5.5);
+  if(Math.abs(next-state.zoom)<.001)return;
+  state.zoom=next;
+  resize();
+}
+function setDiscoveryDrawer(open){
+  $("discoveryDrawer").hidden=!open;
+  $("discoveryToggle").setAttribute("aria-expanded",String(open));
+  $("discoveryToggle").setAttribute("aria-label",
+    open?"Hide unlocated discovery leads":"Show unlocated discovery leads");
 }
 function bindControls(){
+  $("discoveryToggle").addEventListener("click",()=>{
+    setDiscoveryDrawer($("discoveryDrawer").hidden);
+  });
+  $("discoveryClose").addEventListener("click",()=>{
+    setDiscoveryDrawer(false);$("discoveryToggle").focus();
+  });
+  document.addEventListener("keydown",event=>{
+    if(event.key==="Escape"&&!$("discoveryDrawer").hidden){
+      setDiscoveryDrawer(false);$("discoveryToggle").focus();
+    }
+  });
   $("frictionExpand").addEventListener("click",()=>{
     state.frictionShowAll=!state.frictionShowAll;
     renderFriction();
@@ -615,8 +643,8 @@ function bindControls(){
   const reset=()=>{state.lon=52;state.lat=20;state.zoom=1;resize();};
   $("resetView").addEventListener("click",reset);
   $("northView").addEventListener("click",reset);
-  $("zoomIn").addEventListener("click",()=>{state.zoom=clamp(state.zoom*1.15,.7,1.9);resize();});
-  $("zoomOut").addEventListener("click",()=>{state.zoom=clamp(state.zoom/1.15,.7,1.9);resize();});
+  $("zoomIn").addEventListener("click",()=>changeZoom(1.28));
+  $("zoomOut").addEventListener("click",()=>changeZoom(1/1.28));
   $("openControls").addEventListener("click",()=>{
     const on=$("sidebar").classList.toggle("mobile-open");
     $("openControls").setAttribute("aria-expanded",on?"true":"false");
@@ -665,7 +693,8 @@ function renderEvidenceIntake(){
     source_url:x.source_url,kind:"Analyst intake · unreviewed"})),
     ...(a.discovery_leads||[]).map(x=>({title:x.title,summary:x.summary,
     kind:"GDELT · unlocated media-coded lead"}))];
-  discoveries.innerHTML=candidate.length?candidate.slice(0,8).map(x=>
+  $("discoveryCount").textContent=String(candidate.length);
+  discoveries.innerHTML=candidate.length?candidate.slice(0,35).map(x=>
     '<div class="intake-discovery"><strong>'+safe(x.title)+'</strong>'+
     '<span class="sub">'+safe(x.kind)+'</span>'+
     '<span class="sub">'+safe(x.summary)+'</span>'+
