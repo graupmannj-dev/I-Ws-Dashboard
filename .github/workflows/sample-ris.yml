@@ -1,0 +1,81 @@
+name: Sample RIPE RIS Live prefixes (manual, shadow mode)
+on:
+  workflow_dispatch:
+    inputs:
+      prefix:
+        description: "Explicit globally routable monitored prefix (NO default geography)"
+        required: true
+        type: string
+      seconds:
+        description: "Bounded live sample duration, 10–3600 seconds"
+        required: true
+        default: '120'
+        type: string
+permissions:
+  contents: write
+concurrency:
+  group: aiba-operational-snapshots
+  cancel-in-progress: false
+jobs:
+  sample:
+    runs-on: ubuntu-latest
+    timeout-minutes: 70
+    steps:
+      - name: Checkout collection code
+        uses: actions/checkout@v4
+        with:
+          path: src
+          persist-credentials: false
+      - name: Checkout observation data
+        uses: actions/checkout@v4
+        with:
+          ref: aiba-feed-data
+          path: state
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install WebSocket client
+        run: python -m pip install -r src/requirements-friction-live.txt
+      - name: Verify prefix and sample bounds before opening a socket
+        env:
+          PREFIX: ${{ inputs.prefix }}
+          SECONDS: ${{ inputs.seconds }}
+        shell: bash
+        working-directory: src
+        run: |
+          python - <<'PY'
+          import os
+          from ris_stream import allowed_prefixes
+          seconds = int(os.environ["SECONDS"])
+          if not (10 <= seconds <= 3600):
+              raise SystemExit("Duration must be 10–3600 seconds")
+          allowed_prefixes([os.environ["PREFIX"]])
+          PY
+      - name: Observe bounded RIPE RIS Live stream
+        shell: bash
+        env:
+          PREFIX: ${{ inputs.prefix }}
+          SECONDS: ${{ inputs.seconds }}
+        run: |
+          set +e
+          python src/ris_stream.py --prefix "$PREFIX" --duration "$SECONDS" --state state/observations
+          rc=$?
+          set -e
+          echo "RIS_SAMPLE_RC=$rc" >> "$GITHUB_ENV"
+      - name: Commit observation and coverage status
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd state
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add observations/latest/ris_sampling.json observations/history/ris_sampling
+          if ! git diff --cached --quiet; then
+            git commit -m "AIBA scoped RIS sample $GITHUB_RUN_ID [skip ci]"
+            git push origin HEAD:refs/heads/aiba-feed-data
+          fi
+      - name: Report incomplete stream
+        if: env.RIS_SAMPLE_RC != '0'
+        run: |
+          echo "::error::RIS stream incomplete; count only observed coverage windows."
+          exit 1
