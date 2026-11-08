@@ -25,7 +25,7 @@ Source documentation:
 - https://api.ioda.inetintel.cc.gatech.edu/v2/docs
 - https://msi.nga.mil/NavWarnings
 - https://www.postman.com/api-evangelist/national-geospatial-intelligence-agency-nga/documentation/ak1v6h5/maritime-safety-information-rest-api
-- https://ris-live.ripe.net/manual/
+- https://ris-live.ripe.net/manual/\n- https://www.amsa.gov.au/safety-navigation/navigation-systems/maritime-safety-information-database
 
 IODA public responses declare Georgia Tech copyright; do not redistribute
 entire bulk responses or use unlicensed bulk scraping. This collector retains
