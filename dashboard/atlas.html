@@ -31,6 +31,58 @@
         <label class="toggle-row"><input type="checkbox" id="layerCommands"><span>Geographic combatant commands <small>(schematic)</small></span><i class="legend-line"></i></label>
         <label class="toggle-row"><input type="checkbox" id="layerLabels" checked><span>Hotspot labels</span></label>
         <div id="measuredLayerControls"></div>
+        <div id="aircraftFilters" class="aircraft-filters" hidden>
+          <div class="aircraft-filter-head"><strong>Aircraft filters</strong><small>ADS-B aircraft · provisional labels</small></div>
+          <p class="aircraft-filter-note">Choose affiliations and platform categories. A platform type does not establish this flight's mission.</p>
+          <div class="aircraft-group-toggles" role="group" aria-label="Aircraft affiliation filters">
+            <label><input type="checkbox" data-aircraft-group="military" checked> Military</label>
+            <label><input type="checkbox" data-aircraft-group="civilian"> Civilian</label>
+            <label><input type="checkbox" data-aircraft-group="unknown"> Unknown</label>
+          </div>
+          <details class="aircraft-subtypes" open>
+            <summary>Military platform categories</summary>
+            <div class="aircraft-category-grid">
+              <label><input checked type="checkbox" data-aircraft-category="military:combat"> Combat-type</label>
+              <label><input checked type="checkbox" data-aircraft-category="military:transport"> Transport</label>
+              <label><input checked type="checkbox" data-aircraft-category="military:tanker"> Tanker</label>
+              <label><input checked type="checkbox" data-aircraft-category="military:surveillance"> Patrol / ISR</label>
+              <label><input checked type="checkbox" data-aircraft-category="military:training"> Trainer</label>
+              <label><input checked type="checkbox" data-aircraft-category="military:helicopter"> Helicopter</label>
+              <label><input checked type="checkbox" data-aircraft-category="military:unclassified"> Other / unknown</label>
+            </div>
+          </details>
+          <details class="aircraft-subtypes">
+            <summary>Civilian platform categories</summary>
+            <div class="aircraft-category-grid">
+              <label><input checked type="checkbox" data-aircraft-category="civilian:passenger"> Passenger-type</label>
+              <label><input checked type="checkbox" data-aircraft-category="civilian:cargo"> Cargo-type</label>
+              <label><input checked type="checkbox" data-aircraft-category="civilian:scientific"> Scientific / research</label>
+              <label><input checked type="checkbox" data-aircraft-category="civilian:general_aviation"> General aviation</label>
+              <label><input checked type="checkbox" data-aircraft-category="civilian:helicopter"> Helicopter</label>
+              <label><input checked type="checkbox" data-aircraft-category="civilian:unclassified"> Other / unknown</label>
+            </div>
+          </details>
+          <details class="aircraft-subtypes">
+            <summary>Unknown affiliation: airframe types</summary>
+            <div class="aircraft-category-grid">
+              <label><input checked type="checkbox" data-aircraft-category="unknown:passenger"> Passenger-type</label>
+              <label><input checked type="checkbox" data-aircraft-category="unknown:cargo"> Cargo-type</label>
+              <label><input checked type="checkbox" data-aircraft-category="unknown:general_aviation"> General aviation</label>
+              <label><input checked type="checkbox" data-aircraft-category="unknown:helicopter"> Helicopter</label>
+              <label><input checked type="checkbox" data-aircraft-category="unknown:unclassified"> Unclassified</label>
+            </div>
+          </details>
+          <label class="aircraft-density">Maximum aircraft markers
+            <select id="aircraftMarkerCap" aria-label="Maximum plotted aircraft markers">
+              <option value="75">75</option>
+              <option value="150" selected>150</option>
+              <option value="300">300</option>
+              <option value="600">600</option>
+            </select>
+          </label>
+          <p id="aircraftFilterCount" class="aircraft-filter-count" aria-live="polite">Aircraft feed not yet connected.</p>
+          <p class="aircraft-attribution"><a href="https://www.adsb.lol/docs/open-data/api" target="_blank" rel="noopener noreferrer">ADSB.lol contributors</a> · ODbL 1.0. Coverage is regional and incomplete. Database flags and operator descriptions may be wrong or missing.</p>
+        </div>
         <p class="sub">Restriction and advisory layers show current conditions independently of the report timeline.</p>
         <div id="layerStatus" aria-live="polite"></div>
       </section>
