@@ -250,6 +250,12 @@ window.AtlasLayers = (() => {
     liveEndpoint=config?.live_url||null;
     invalidate=onChange;
     focus=typeof onFocus==='function'?onFocus:()=>{};
+    // Public traffic overlays require an explicitly configured real /api/layers
+    // service. They remain opt-in, and never show tracks from stale static Pages.
+    if(/\/api\/layers(?:\?.*)?$/.test(endpoint)){
+      hiddenLayers.delete('aircraft');
+      hiddenLayers.delete('ships');
+    }
     const parent=$('measuredLayerControls');
     for(const [key,[title,color]] of Object.entries(definitions)) {
       if(hiddenLayers.has(key))continue;
