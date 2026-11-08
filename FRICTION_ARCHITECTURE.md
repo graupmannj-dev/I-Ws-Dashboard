@@ -18,7 +18,7 @@ Actions smoke test. No new indicator has been shown to predict conflict.
 | Family | Endpoint | Cadence | What it actually measures |
 | --- | --- | --- | --- |
 | IODA (Georgia Tech) | https://api.ioda.inetintel.cc.gatech.edu/v2/outages/events | GH Actions best-effort every 30 minutes | Country-level outage detections in public internet visibility, including BGP-related signals. Not cyber attribution or BGP hijack confirmation. |
-| NGA Maritime Safety Information | https://msi.nga.mil/api/publications/broadcast-warn?status=active&output=json | GH Actions best-effort every 30 minutes | Official maritime navigation warnings currently reported as active; text may mention military exercises. Not a worldwide, verified blockade database. |
+| NGA Maritime Safety Information | https://msi.nga.mil/api/publications/broadcast-warn?status=active&output=json | GH Actions best-effort every 30 minutes, if reachable | Official maritime navigation warnings currently reported as active; text may mention military exercises. Not a worldwide, verified blockade database. |
 | AMSA NAVAREA X (Australia) | https://www.operations.amsa.gov.au/AMSA.Web.MSIPublication/ | GH Actions best-effort every 30 minutes | Regional officially issued navigational warnings with UTC issue dates; no inferred polygons. Regional, not global coverage. |\n| RIPE RIS Live | https://ris-live.ripe.net/ | Optional standalone, no default network subscription | Bounded public BGP UPDATE aggregates for an **explicit prefix allowlist**. No global firehose, no continuous service deployed. |
 
 Source documentation:
