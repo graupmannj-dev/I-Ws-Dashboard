@@ -50,6 +50,12 @@ Every friction record retains:
   "bilateral military escalation". A text reference is not an incident location.
 - Explicit case linkage gaps and no invented latitude/longitude.
 
+The first GitHub hosted-runner live checks successfully parsed **IODA's typed
+outages.events envelope** and **AMSA NAVAREA X SECURITE messages**; NGA
+returned HTTP 503. The NGA collector preserves an unavailable health status
+and backs off repeated failures for six hours to avoid repeatedly hammering
+a restricted endpoint. A source success is not evidence of predictive value.
+
 The 30-minute collector queries IODA for an overlapping four-hour window,
 retrieves bounded active NGA warnings, and parses official AMSA NAVAREA X
 radio navigational-warning messages. It records per-source health:
