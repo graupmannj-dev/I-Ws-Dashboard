@@ -204,7 +204,9 @@ window.AtlasLayers = (() => {
         " min ago (target ~15 min; not continuous)";
     }else{
       streamPayload=null;
-      sourceStatus="Static site fallback · near-live restriction snapshot unavailable/stale";
+      sourceStatus=/(^|\/)api\/layers(?:\?.*)?$/.test(endpoint)
+        ?"Direct API service · data refreshed by its own collectors (verify source timestamps)"
+        :"Static site fallback · near-live restriction snapshot unavailable/stale";
     }
     failed=false;
   }
