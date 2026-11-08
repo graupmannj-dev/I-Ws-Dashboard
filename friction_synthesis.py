@@ -123,6 +123,11 @@ def unique_recent(history, at):
             src = row.get("provider")
             if src not in FAMILIES:
                 continue
+            provider_health = (snap.get("health") or {}).get(src) or {}
+            if provider_health.get("status") not in ("collected", "partial") or provider_health.get("truncated"):
+                # An incomplete page cannot honestly establish a new-event
+                # population or reliable numerator for surge detection.
+                continue
             # The first observation of a source establishes its baseline,
             # regardless of how many apparent events appear on the first pull.
             prior = [v for v in history[:i]
@@ -166,6 +171,7 @@ def build(state, clock=utcnow, registry=ROOT / "data" / "decision_registry.json"
     config = read_json(registry, {"cases": []})
     curated_cases = {x["id"]: x for x in (read_json(curated, []) or []) if isinstance(x, dict) and "id" in x}
     current = read_json(state / "latest" / "friction.json", {}) or {}
+    validation = read_json(state / "latest" / "friction_validation.json", {}) or {}
     history = historical(state, at)
     health = {mode: source_status(state, mode, at) for mode in FAMILIES}
     snap_time = event_time(current.get("collected_at"))
@@ -301,6 +307,8 @@ def build(state, clock=utcnow, registry=ROOT / "data" / "decision_registry.json"
     out = {
         "schema_version": 1, "generated_at": iso(at),
         "routing_sample": routing_sample,
+        "validation": {"status": validation.get("status", "not_estimable"),
+                       "labeled_windows": validation.get("labels_finalized", 0)},
         "fresh_snapshot": current_fresh, "latest_source_snapshot": current.get("collected_at"),
         "shadow_mode": True, "health": health,
         "executive_summary": (
