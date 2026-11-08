@@ -37,11 +37,11 @@ The optional GitHub PR \`atlas-browser\` job runs headless Chromium to interact 
 
 ## Measured overlays and official notices
 
-The six new switches are independent of the historical reporting timeline:
-ADS-B aircraft, AIS vessels, airspace restrictions, maritime restrictions,
-US travel advisories, and US embassy departure/operations notices. All start off.
-Selecting a layer opens a source-linked notice list; aircraft/vessels also have
-clickable markers and trails accumulated while the page is open. State advisories
+The four visible switches are independent of the historical reporting timeline:
+airspace restrictions, maritime restrictions, US travel advisories, and US embassy
+departure/operations notices. All start off. Selecting a layer opens a source-linked
+notice list. ADS-B aircraft and AIS vessel controls are hidden for now; their feed
+adapters and track rendering code remain available for a future opt-in. State advisories
 shade matched countries by official level (1–4); pink embassy notice shading takes
 precedence when both switches are enabled. Unmatched countries remain uncolored.
 Natural Earth display-name matching has a small alias table; not every advisory

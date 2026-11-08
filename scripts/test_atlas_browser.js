@@ -60,7 +60,7 @@ const assert = require("node:assert/strict");
   await page.waitForTimeout(350);
   await page.screenshot({path:"atlas-preview.jpg",type:"jpeg",quality:72});
   console.log("Atlas screenshot saved as atlas-preview.jpg for PR review.");
-  // Deterministic measured-feed QA: stale data is never rendered as current.
+  // Deterministic feed QA: traffic stays hidden even when the feed contains tracks.
   const now=new Date().toISOString(), future=new Date(Date.now()+3600000).toISOString();
   const past=new Date(Date.now()-3600000).toISOString();
   const fixture={version:1,layers:{
@@ -72,6 +72,7 @@ const assert = require("node:assert/strict");
     advisories:{status:'snapshot',checked_at:now,records:[{id:'a',country:'Iran',level:4,title:'Iran advisory',url:'https://travel.state.gov/',detail:'Example advisory'}]},
     airspace:{status:'partial',checked_at:now,message:'Incomplete US coverage',records:[
       {id:'closed',title:'Active closure',valid_from:past,valid_until:future,geometry:{type:'Polygon',coordinates:[[[50,20],[51,20],[51,21],[50,20]]]}},
+      {id:'unsafe',title:'<img src=x onerror=alert(1)>',valid_from:past,valid_until:future},
       {id:'expired',title:'Expired closure',valid_from:past,valid_until:past},
       {id:'scheduled',title:'Scheduled closure',valid_from:future,valid_until:future}]},
     maritime:{status:'unavailable',checked_at:now,records:[]},
@@ -79,9 +80,11 @@ const assert = require("node:assert/strict");
   }};
   await page.route('**/layers.json',route=>route.fulfill({json:fixture}));
   await page.reload({waitUntil:'networkidle'});
-  for(const key of Object.keys(fixture.layers))await page.locator('#layer-'+key).check();
+  assert.equal(await page.locator('#layer-aircraft, #layer-ships').count(),0);
+  assert.equal(await page.locator('#measuredLayerControls input').count(),4);
+  for(const key of ['advisories','airspace','maritime','embassies'])await page.locator('#layer-'+key).check();
   const statuses=await page.locator('#layerStatus').innerText();
-  assert.match(statuses,/Fresh aircraft/);
+  assert(!statuses.includes('Fresh aircraft')&&!statuses.includes('AIS vessels'));
   assert(!statuses.includes('Stale aircraft'));
   assert.match(statuses,/Active closure/);
   assert(!statuses.includes('Expired closure')&&!statuses.includes('Scheduled closure'));
@@ -94,7 +97,7 @@ const assert = require("node:assert/strict");
   assert.match(await page.locator('#selectedDetail').innerText(),/State Department Level 4/);
   await page.route('**/layers.json',route=>route.fulfill({status:503,body:'Unavailable'}));
   await page.reload({waitUntil:'networkidle'});
-  await page.locator('#layer-aircraft').check();
+  await page.locator('#layer-airspace').check();
   assert.match(await page.locator('#layerStatus').innerText(),/Feed unavailable/);
   // The deliberate network failure is expected; JS runtime errors still fail.
   const unexpected=errors.filter(e=>!e.includes('503'));

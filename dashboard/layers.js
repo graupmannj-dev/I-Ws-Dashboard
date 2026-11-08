@@ -6,6 +6,8 @@ window.AtlasLayers = (() => {
     airspace: ['Airspace restrictions', '#ffab62'], maritime: ['Maritime restrictions', '#db9aff'],
     advisories: ['US travel advisories', '#edc852'], embassies: ['US embassy status', '#ef879b']
   };
+  // Keep traffic adapters available for a future opt-in; omit their UI for now.
+  const hiddenLayers = new Set(['aircraft', 'ships']);
   const advisoryColors = {1:'#57c99b', 2:'#edc852', 3:'#f3a348', 4:'#f06570'};
   const aliases = {'United States of America':'United States', 'Dem. Rep. Congo':'Democratic Republic of the Congo',
     'Central African Rep.':'Central African Republic', 'Dominican Rep.':'Dominican Republic',
@@ -16,7 +18,7 @@ window.AtlasLayers = (() => {
   const $ = id => document.getElementById(id);
   const esc = v => String(v ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const validPoint = r => Number.isFinite(r.lon) && Number.isFinite(r.lat) && Math.abs(r.lon)<=180 && Math.abs(r.lat)<=90;
-  const enabled = key => $('layer-'+key)?.checked;
+  const enabled = key => !hiddenLayers.has(key) && $('layer-'+key)?.checked;
   function recent(stamp, seconds) {
     const age = (Date.now()-Date.parse(stamp))/1000;
     return Number.isFinite(age) && age >= -60 && age <= seconds;
@@ -111,7 +113,7 @@ window.AtlasLayers = (() => {
       if(next.version!==1 || !next.layers || typeof next.layers!=='object')throw Error('Invalid layer schema');
       for(const layer of Object.values(next.layers))if(!Array.isArray(layer.records))throw Error('Invalid records');
       payload=next;failed=false;
-      for(const key of ['aircraft','ships'])for(const row of records(key)) {
+      for(const key of ['aircraft','ships'].filter(key=>enabled(key)))for(const row of records(key)) {
         const id=key+':'+row.id, history=histories.get(id)||[];
         if(history.at(-1)?.observed_at!==row.observed_at)history.push(row);
         histories.set(id,history.filter(r=>recent(r.observed_at,600)).slice(-60));
@@ -124,6 +126,7 @@ window.AtlasLayers = (() => {
     endpoint=config?.url||'layers.json';invalidate=onChange;
     const parent=$('measuredLayerControls');
     for(const [key,[title,color]] of Object.entries(definitions)) {
+      if(hiddenLayers.has(key))continue;
       const label=document.createElement('label');label.className='toggle-row';
       label.innerHTML='<input type="checkbox" id="layer-'+key+'"><span>'+title+'</span><i class="legend-swatch" style="background:'+color+'"></i>';
       label.querySelector('input').onchange=()=>{renderStatus();invalidate();};parent.append(label);
