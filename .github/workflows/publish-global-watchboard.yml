@@ -215,3 +215,44 @@ jobs:
           if [ "$status" -ne 0 ]; then
             echo "::warning::No friction feeds responded with valid usable JSON in PR probe"
           fi
+
+  live-restrictions-probe:
+    if: github.event_name == 'pull_request'
+    needs: test
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    continue-on-error: true
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Check official geometry feed compatibility without production writes
+        shell: bash
+        run: |
+          set +e
+          python dashboard/live_layer_snapshots.py --state /tmp/aiba-live-restrictions-pr
+          rc=$?
+          set -e
+          python - <<'PY'
+          import json,os
+          from pathlib import Path
+          health=Path("/tmp/aiba-live-restrictions-pr/health/live_layers.json")
+          if not health.exists():
+              raise SystemExit("No live source health generated")
+          rows=json.loads(health.read_text())
+          lines=["## Official near-live restriction probe (PR only)","",
+                 "| Source | Status | Valid notices | Skipped |","|---|---|---:|---:|"]
+          for key in ("airspace","maritime"):
+              r=rows[key]
+              lines.append(f"| {key} | {r['status']} | {r['record_count']} | {r['skipped']} |")
+          summary="\n".join(lines)+"\n"
+          print(summary)
+          if os.getenv("GITHUB_STEP_SUMMARY"):
+              with open(os.environ["GITHUB_STEP_SUMMARY"],"a") as f:f.write(summary)
+          PY
+          if [ "$rc" -ne 0 ]; then
+            echo "::warning::Neither official restriction source could be parsed; do not claim near-live coverage."
+          fi
