@@ -652,14 +652,80 @@ function attachCanvas(){
   },{passive:false});
   c.addEventListener("dblclick",event=>{
     event.preventDefault();
-    changeZoom(1.48);
+    // Keep the clicked geographic location in view while zooming.
+    const point=geographicPointAt(event.clientX,event.clientY);
+    if(point)centerOnPosition(point[0],point[1],state.zoom*1.65);
+    else changeZoom(1.65);
   });
 }
+function geographicPointAt(clientX,clientY){
+  const rect=state.canvas.getBoundingClientRect(),d=state.dimensions;
+  const xp=(clientX-rect.left-d.cx)/d.r;
+  const yp=(d.cy-(clientY-rect.top))/d.r;
+  const rho=Math.hypot(xp,yp);
+  if(rho>1)return null;
+  const centerLat=state.lat*DEG;
+  const surface=Math.sqrt(Math.max(0,1-rho*rho));
+  const latitude=Math.asin(clamp(surface*Math.sin(centerLat)+yp*Math.cos(centerLat),-1,1));
+  const longitude=state.lon*DEG+
+    Math.atan2(xp,surface*Math.cos(centerLat)-yp*Math.sin(centerLat));
+  return [longitude/DEG,latitude/DEG];
+}
 function changeZoom(multiplier){
-  const next=clamp(state.zoom*multiplier,.65,5.5);
+  const next=clamp(state.zoom*multiplier,.65,40);
   if(Math.abs(next-state.zoom)<.001)return;
   state.zoom=next;
   resize();
+}
+function centerOnPosition(lon,lat,zoom=null){
+  if(!Number.isFinite(lon)||!Number.isFinite(lat)||
+     Math.abs(lon)>180||Math.abs(lat)>90)return;
+  state.lon=((lon+180)%360+360)%360-180;
+  state.lat=clamp(lat,-89.5,89.5);
+  if(Number.isFinite(zoom))state.zoom=clamp(zoom,.65,40);
+  resize();
+}
+function geographicCenter(points){
+  // Spherical vector mean prevents antimeridian polygons averaging to 0E.
+  let x=0,y=0,z=0;
+  for(const [lon,lat] of points){
+    if(!Number.isFinite(lon)||!Number.isFinite(lat))continue;
+    const lo=lon*DEG,la=lat*DEG;
+    x+=Math.cos(la)*Math.cos(lo);
+    y+=Math.cos(la)*Math.sin(lo);
+    z+=Math.sin(la);
+  }
+  const len=Math.hypot(x,y,z);
+  if(len<1e-6)return points[0]||null;
+  return [Math.atan2(y,x)/DEG,Math.atan2(z,Math.hypot(x,y))/DEG];
+}
+function focusRestriction(row){
+  const source=row?.geometry;
+  const geometry=window.AtlasLayers.drawableGeometry(source);
+  const points=[];
+  function walk(part){
+    if(!Array.isArray(part))return;
+    if(part.length===2&&typeof part[0]==="number"&&typeof part[1]==="number")
+      points.push(part);
+    else for(const child of part)walk(child);
+  }
+  if(geometry)walk(geometry.coordinates);
+  if(!points.length&&Number.isFinite(row.lon)&&Number.isFinite(row.lat))
+    points.push([row.lon,row.lat]);
+  if(!points.length)return;
+  const center=geographicCenter(points);
+  if(!center)return;
+  // Geometric angular extent, not invented positions. Pick a zoom that makes
+  // the actual published outline occupy a legible fraction of the canvas.
+  const lon=center[0]*DEG,lat=center[1]*DEG;
+  let theta=0;
+  for(const [lo,la] of points){
+    const cos=Math.sin(lat)*Math.sin(la*DEG)+
+              Math.cos(lat)*Math.cos(la*DEG)*Math.cos((lo*DEG)-lon);
+    theta=Math.max(theta,Math.acos(clamp(cos,-1,1)));
+  }
+  const desired=clamp(.36/Math.max(.00002,Math.sin(Math.min(theta,Math.PI/2))),1,40);
+  centerOnPosition(center[0],center[1],desired);
 }
 function setDiscoveryDrawer(open){
   $("discoveryDrawer").hidden=!open;
@@ -786,7 +852,7 @@ async function init(){
     renderFriction();
     void refreshFriction();
     setInterval(refreshFriction,300000);
-    window.AtlasLayers.init(data.layer_feed,()=>{state.staticValid=false;});
+    window.AtlasLayers.init(data.layer_feed,()=>{state.staticValid=false;},focusRestriction);
     updateKpis();updateDates();resize();
     if(typeof ResizeObserver==="function"){
       new ResizeObserver(()=>resize()).observe($("globeWrap"));
