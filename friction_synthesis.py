@@ -16,7 +16,8 @@ from pathlib import Path
 from friction_pipeline import event_time, iso, read_json, utcnow, write_json
 
 ROOT = Path(__file__).resolve().parent
-FAMILIES = {"ioda": "internet_reachability", "nga": "maritime_restriction"}
+FAMILIES = {"ioda": "internet_reachability", "nga": "maritime_restriction",
+            "amsa": "maritime_restriction"}
 MAX_HISTORY = 350
 RECENT_HOURS = 36
 BASELINE_DAYS = 14
@@ -72,15 +73,23 @@ def robust_change(current, prior):
 
 
 def baseline(state, history, case, family, at):
-    current_source = next((mode for mode, name in FAMILIES.items() if name == family), None)
+    sources = [mode for mode, name in FAMILIES.items() if name == family]
+    now_health = (history[-1].get("health") or {}) if history else {}
+    active_sources = {mode for mode in sources
+                      if (now_health.get(mode) or {}).get("status") in ("collected", "partial")
+                      and not (now_health.get(mode) or {}).get("truncated")}
+    if not active_sources:
+        return {"status": "insufficient_baseline", "samples": 0,
+                "current": None, "median": None, "robust_z": None}
     pairs = []
     for snap in history[:-1]:
         moment = event_time(snap.get("collected_at"))
-        health = (snap.get("health") or {}).get(current_source, {})
+        old_health = snap.get("health") or {}
+        old_sources = {mode for mode in sources
+                       if (old_health.get(mode) or {}).get("status") in ("collected", "partial")
+                       and not (old_health.get(mode) or {}).get("truncated")}
         if (not moment or not 0 < (at - moment).total_seconds() <= BASELINE_DAYS * 86400
-                or health.get("status") not in ("collected", "partial")):
-            continue
-        if health.get("status") == "partial" and health.get("truncated"):
+                or old_sources != active_sources):
             continue
         val = (snap.get("case_counts") or {}).get(case, {}).get(family, 0)
         if isinstance(val, int) and not isinstance(val, bool):
@@ -111,8 +120,9 @@ def unique_recent(history, at):
             if not isinstance(row, dict) or row.get("id") in seen:
                 continue
             seen.add(row["id"])
-            src = "ioda" if row.get("family") == "internet_reachability" else (
-                "nga" if row.get("family") == "maritime_restriction" else None)
+            src = row.get("provider")
+            if src not in FAMILIES:
+                continue
             # The first observation of a source establishes its baseline,
             # regardless of how many apparent events appear on the first pull.
             prior = [v for v in history[:i]
