@@ -50,8 +50,9 @@ Every friction record retains:
   "bilateral military escalation". A text reference is not an incident location.
 - Explicit case linkage gaps and no invented latitude/longitude.
 
-The 30-minute collector queries IODA for an overlapping four-hour window
-and retrieves bounded active NGA warnings. It records per-source health:
+The 30-minute collector queries IODA for an overlapping four-hour window,
+retrieves bounded active NGA warnings, and parses official AMSA NAVAREA X
+radio navigational-warning messages. It records per-source health:
 collected, partial, or unavailable. A failed query does not overwrite earlier
 successful latest measurements, and zero records are only accepted when the
 response has a recognized empty-list schema.
