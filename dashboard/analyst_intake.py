@@ -170,10 +170,15 @@ def report_filename(batch):
 
 def store_batch(state, batch, clock=None):
     normalized = validate_batch(batch, clock)
+    # Preserve source publication timestamps rather than day-only display dates.
+    # Canonical normalized records are for display; archived inputs remain replayable.
+    archived = {"schema_version": 1, "run_id": normalized["run_id"],
+                "collector": normalized["collector"], "status": normalized["status"],
+                "collected_at": normalized["collected_at"], "observations": batch["observations"]}
     folder = Path(state) / "analyst" / "history"
     folder.mkdir(parents=True, exist_ok=True)
-    path = folder / report_filename(normalized)
-    content = json.dumps(normalized, sort_keys=True, indent=2, ensure_ascii=False) + "\n"
+    path = folder / report_filename(archived)
+    content = json.dumps(archived, sort_keys=True, indent=2, ensure_ascii=False) + "\n"
     if path.exists() and path.read_text(encoding="utf-8") != content:
         raise ValueError("Conflicting immutable report")
     path.write_text(content, encoding="utf-8")
