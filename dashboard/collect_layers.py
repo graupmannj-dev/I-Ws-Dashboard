@@ -78,7 +78,7 @@ def advisories(xml):
     return rows
 
 def notices(path, key):
-    """Reviewed official notices, with optional exact GeoJSON; never infer polygons."""
+    """Reviewed official notices; allow only explicit source geometry, never inferred areas."""
     value = json.loads(Path(path).read_text())
     rows = value.get(key, [])
     if not isinstance(rows, list):
@@ -100,19 +100,41 @@ def notices(path, key):
         if ('lon' in row or 'lat' in row) and not coord(row.get('lon'), row.get('lat')):
             raise ValueError('Invalid notice position')
         geometry = row.get('geometry')
-        if geometry:
-            if geometry.get('type') not in ('Polygon', 'MultiPolygon', 'LineString'):
+        if geometry is not None:
+            if not isinstance(geometry, dict):
+                raise ValueError('Notice geometry must be an object')
+            kind = geometry.get('type')
+            if kind == 'Circle':
+                center, radius = geometry.get('center'), geometry.get('radius_km')
+                if (not isinstance(center, list) or len(center) != 2 or
+                    not coord(*center) or not isinstance(radius, (int, float)) or
+                    isinstance(radius, bool) or not math.isfinite(radius) or
+                    not 0 < radius <= 3500):
+                    raise ValueError('Circle requires an explicit source center and 0-3500 km radius')
+            elif kind in ('BBox', 'Rectangle'):
+                corners = geometry.get('coordinates')
+                if not isinstance(corners, list) or len(corners) != 2 or not all(
+                    isinstance(point, list) and len(point) == 2 and coord(*point)
+                    for point in corners
+                ):
+                    raise ValueError('Coordinate box requires two valid WGS84 corners')
+                (west, south), (east, north) = corners
+                width = east - west if east >= west else east + 360 - west
+                if not south < north or not 0 < width <= 180:
+                    raise ValueError('Invalid latitude range or implausible box width')
+            elif kind in ('Polygon', 'MultiPolygon', 'LineString'):
+                def check(points):
+                    if not isinstance(points, list) or not points:
+                        raise ValueError('Empty geometry')
+                    if isinstance(points[0], (int, float)):
+                        if len(points) != 2 or not coord(*points):
+                            raise ValueError('Invalid coordinates')
+                    else:
+                        for child in points:
+                            check(child)
+                check(geometry.get('coordinates'))
+            else:
                 raise ValueError('Unsupported notice geometry')
-            def check(points):
-                if not isinstance(points, list) or not points:
-                    raise ValueError('Empty geometry')
-                if isinstance(points[0], (int, float)):
-                    if len(points) != 2 or not coord(*points):
-                        raise ValueError('Invalid coordinates')
-                else:
-                    for child in points:
-                        check(child)
-            check(geometry['coordinates'])
     return rows
 
 TFR = 'https://tfr.faa.gov/tfrapi/exportTfrList?format=json'
