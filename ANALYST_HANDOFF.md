@@ -20,6 +20,45 @@ the Atlas says **not connected**, not "operational".
   discoveries. Neither source media anomalies nor new ChatGPT reports can
   automatically change severity or create invented map coordinates.
 
+## ChatGPT automation → authenticated GitHub comment gateway
+
+The external handoff is GitHub Issue #9, not a public API key.
+An authenticated ChatGPT GitHub connector posts a single issue comment
+with the exact AIBA-OSINT-V1 header followed by one JSON batch.
+
+The GitHub Actions workflow only accepts:
+- Issue #9, excluding pull request comments.
+- The repository owner GitHub account ID 320673296.
+- Versioned comments with the required newline and JSON schema.
+- Reports passing strict source/timestamp/size/deduplication validation.
+
+The comment is supplied to the importer as a protected environment value,
+not interpolated into a shell program. Validated observations go to the
+aiba-feed-data branch; a successful intake then triggers the existing
+strict-GDELT publisher. A completed empty batch means the handoff worked
+but no new sourced observation qualified; it is not a zero-risk assessment.
+
+The GitHub connector can demonstrably post as the owner in an interactive
+chat. That DOES NOT establish that scheduled ChatGPT automations have
+access to the connector. Those tasks must be tested separately, with
+explicit permission and honest failure reporting.
+
+Issue comments and the evidence branch are immediately public and persist
+in GitHub history. Submit only unclassified public OSINT with source URLs.
+Never submit private user data, credentials, private work material, or
+classified information. Do not inject synthetic geopolitical claims into
+this production issue. Synthetic data belong in isolated test directories.
+
+End-to-end validation requires all four:
+1. The expected report comment on public Issue #9, author verified.
+2. A successful Ingest AIBA analyst OSINT report Actions job.
+3. A persisted analyst/history observation file (or a duplicate no-op).
+4. A successful Validate and publish AIBA job showing a refreshed
+   atlas.json analyst_intake.latest_collected_at timestamp.
+
+If any link fails, preserve the original ChatGPT analysis and do not claim
+the Atlas was updated.
+
 ## Authenticated import
 
 After merging, use GitHub Actions > Ingest AIBA analyst OSINT report > Run
