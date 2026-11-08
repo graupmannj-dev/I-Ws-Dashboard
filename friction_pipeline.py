@@ -13,6 +13,7 @@ import json
 import math
 import re
 import ssl
+from html.parser import HTMLParser
 import urllib.parse
 import urllib.request
 from pathlib import Path
@@ -20,11 +21,12 @@ from pathlib import Path
 UTC = dt.timezone.utc
 IODA = "https://api.ioda.inetintel.cc.gatech.edu/v2/outages/events"
 NGA = "https://msi.nga.mil/api/publications/broadcast-warn"
+AMSA = "https://www.operations.amsa.gov.au/AMSA.Web.MSIPublication/"
 USER_AGENT = "AIBA-Public-IW-Friction/1.0 (github.com/graupmannj-dev/I-Ws-Dashboard)"
 MAX_BYTES = 3_000_000
 MAX_RECORDS = 250
 MAX_ARCHIVES = 350
-SOURCES = ("ioda", "nga")
+SOURCES = ("ioda", "nga", "amsa")
 CAVEAT = "Source observation only. Does not independently establish military preparations or event attribution."
 
 # Geographic association is explicitly contextual; a national outage cannot
@@ -104,6 +106,89 @@ def fetch(url):
         return json.loads(data)
 
 
+def fetch_text(url):
+    """Limited official HTML, no cookies, scraping login or browser automation."""
+    if not url.startswith("https://"):
+        raise ValueError("HTTPS required")
+    req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT,
+                                               "Accept": "text/html"})
+    with urllib.request.urlopen(req, timeout=23) as reply:
+        raw = reply.read(MAX_BYTES + 1)
+        if len(raw) > MAX_BYTES:
+            raise ValueError("Official warning page exceeds response size limit")
+        return raw.decode("utf-8", errors="replace")
+
+
+class _Text(HTMLParser):
+    def __init__(self):
+        super().__init__(convert_charrefs=True)
+        self.parts = []
+
+    def handle_starttag(self, tag, attrs):
+        if tag in ("p", "pre", "br", "div", "li", "tr"):
+            self.parts.append("\n")
+
+    def handle_data(self, text):
+        self.parts.append(text)
+
+
+def amsa_records(source_html, checked):
+    """AMSA official NAVAREA X broadcast texts, with explicit UTC issuances.
+
+    No inferred warning polygons; disappearance alone is not cancellation.
+    Only textual broadcast messages with an authentic NAVAREA X identifier
+    are accepted. Other Australian coastal warnings remain out of scope.
+    """
+    if not isinstance(source_html, str):
+        raise ValueError("AMSA source must be an HTML document")
+    parser = _Text()
+    parser.feed(source_html[:MAX_BYTES])
+    text = " ".join(parser.parts)
+    chunks = re.findall(r"\bSECURITE\b(.*?)\bNNNN\b", text, flags=re.I | re.S)
+    if not chunks:
+        raise ValueError("AMSA page contains no recognized SECURITE/NNNN warning messages")
+    observations = []
+    for chunk in chunks[:200]:
+        heading = re.search(r"\bNAVAREA\s+X\s+(\d{1,4})/(\d{2})\b", chunk, flags=re.I)
+        if not heading:
+            continue
+        number, year = heading.groups()
+        issued = re.search(r"\b(\d{2})(\d{2})(\d{2})Z\s+([A-Z]{3})\s+(\d{2})\b", chunk, flags=re.I)
+        when = None
+        if issued:
+            day, hour, minute, mon, yr = issued.groups()
+            try:
+                when = dt.datetime.strptime(f"{day} {mon.title()} 20{yr} {hour}:{minute}",
+                                            "%d %b %Y %H:%M").replace(tzinfo=UTC)
+            except ValueError:
+                pass
+        if when and when > checked + dt.timedelta(minutes=5):
+            continue
+        prose = re.sub(r"\s+", " ", chunk).strip()
+        matched = [case for case, terms in MARITIME_CASE_TERMS.items()
+                   if any(re.search(x, prose, re.I) for x in terms)]
+        area = "NAVAREA X"
+        is_summary = "WARNINGS IN FORCE" in prose.upper()
+        observations.append({
+            "id": "amsa:" + fingerprint(year, number),
+            "provider": "amsa", "family": "maritime_restriction",
+            "source": "Australian Maritime Safety Authority (NAVAREA X)",
+            "source_url": AMSA, "case_id": matched[0] if len(matched) == 1 else None,
+            "title": f"NAVAREA X {number}/{year} official warning",
+            "summary": prose[:800], "kind": (
+                "administrative_inforce_summary" if is_summary else
+                "military_hazard_mention" if MILITARY.search(prose) else "navigation_safety_notice"),
+            "event_at": iso(when) if when else None,
+            "source_published_at": iso(when) if when else None,
+            "collected_at": iso(checked), "root": f"amsa:NAVAREA-X:{year}:{number}",
+            "review_level": "official_notice_not_kinetic_confirmation",
+            "location_precision": "NAVAREA X regional warning; no point geolocation inferred.",
+        })
+    if not observations:
+        raise ValueError("AMSA page has no recognized NAVAREA X warning entries")
+    return list({x["id"]: x for x in observations}.values()), len(chunks) > 200
+
+
 def extract_records(payload, names):
     """Reject unknown API responses, rather than call them zero events."""
     if isinstance(payload, list):
@@ -127,7 +212,10 @@ def extract_records(payload, names):
                 for child in ("results", "items", "rows", "data"):
                     if isinstance(val.get(child), list):
                         return val[child], bool(val.get("nextPage") or val.get("hasNextPage"))
-    raise ValueError("Unsupported upstream response shape; never label it an empty result")
+    keys = sorted(str(x) for x in payload.keys())[:10]
+    sub = payload.get("data")
+    inner = sorted(str(x) for x in sub.keys())[:10] if isinstance(sub, dict) else type(sub).__name__
+    raise ValueError(f"Unsupported upstream response shape (keys={keys}, data={inner})")
 
 
 def safe_text(value, limit=350):
@@ -169,7 +257,7 @@ def ioda_records(payload, checked, max_records=MAX_RECORDS):
         link = "https://ioda.inetintel.cc.gatech.edu/"
         result.append({
             "id": "ioda:" + fingerprint(identifier, kind, cc),
-            "family": "internet_reachability", "source": "IODA / Georgia Tech",
+            "provider": "ioda", "family": "internet_reachability", "source": "IODA / Georgia Tech",
             "source_url": link, "entity_type": kind, "entity_code": cc,
             "case_id": case, "title": f"IODA detected connectivity anomaly: {kind} {cc}",
             "summary": ("Internet outage detection candidate; network measurements are not "
@@ -207,7 +295,7 @@ def nga_records(payload, checked, max_records=MAX_RECORDS):
         case = matches[0] if len(matches) == 1 else None
         identifier = (f"{area}:{year}:{number}" if number else fingerprint(area, title, message))
         result.append({
-            "id": "nga:" + fingerprint(identifier), "family": "maritime_restriction",
+            "id": "nga:" + fingerprint(identifier), "provider": "nga", "family": "maritime_restriction",
             "source": "NGA Maritime Safety Information", "source_url": "https://msi.nga.mil/NavWarnings",
             "case_id": case, "title": title, "summary": message[:800],
             "kind": "military_hazard_mention" if MILITARY.search(content) else "navigation_safety_notice",
@@ -219,10 +307,11 @@ def nga_records(payload, checked, max_records=MAX_RECORDS):
     return list({x["id"]: x for x in result}.values()), more or len(entries) > max_records
 
 
-def collect(state, clock=utcnow, fetcher=fetch):
+def collect(state, clock=utcnow, fetcher=fetch, text_fetcher=None):
     """Write health for every query; retain previous successful latest on failures."""
     state = Path(state)
     checked = clock()
+    text_fetcher = text_fetcher or fetch_text
     # A bounded global 4h event window; source historical backfill can overlap
     # prior runs, and stable event IDs remove overlap.
     start = checked - dt.timedelta(hours=4)
@@ -231,13 +320,18 @@ def collect(state, clock=utcnow, fetcher=fetch):
             "from": int(start.timestamp()), "until": int(checked.timestamp()),
             "entityType": "country", "limit": 100, "page": 0, "extendWindowSeconds": 0}),
         "nga": NGA + "?" + urllib.parse.urlencode({"status": "active", "output": "json"}),
+        "amsa": AMSA,
     }
     source_rows, health = {}, {}
     for mode in SOURCES:
         try:
-            payload = fetcher(urls[mode])
-            normalized, truncated = (ioda_records(payload, checked, 100) if mode == "ioda"
-                                     else nga_records(payload, checked, MAX_RECORDS))
+            if mode == "amsa":
+                payload = text_fetcher(urls[mode])
+                normalized, truncated = amsa_records(payload, checked)
+            else:
+                payload = fetcher(urls[mode])
+                normalized, truncated = (ioda_records(payload, checked, 100) if mode == "ioda"
+                                         else nga_records(payload, checked, MAX_RECORDS))
             status = "partial" if truncated else "collected"
             source_rows[mode] = normalized
             health[mode] = {"status": status, "checked_at": iso(checked),
