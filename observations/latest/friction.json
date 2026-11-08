@@ -1,0 +1,175 @@
+{
+  "case_counts": {
+    "unlocated": {
+      "internet_reachability": 3,
+      "maritime_restriction": 3
+    }
+  },
+  "collected_at": "2026-11-08T22:48:57Z",
+  "coverage": "partial",
+  "health": {
+    "amsa": {
+      "caveat": "Source observation only. Does not independently establish military preparations or event attribution.",
+      "checked_at": "2026-11-08T22:48:57Z",
+      "error": null,
+      "records": 3,
+      "source_url": "https://www.operations.amsa.gov.au/AMSA.Web.MSIPublication/",
+      "status": "collected",
+      "truncated": false
+    },
+    "ioda": {
+      "caveat": "Source observation only. Does not independently establish military preparations or event attribution.",
+      "checked_at": "2026-11-08T22:48:57Z",
+      "error": null,
+      "records": 3,
+      "source_url": "https://api.ioda.inetintel.cc.gatech.edu/v2/outages/events?from=1794163737&until=1794178137&entityType=country&limit=100&page=0&extendWindowSeconds=0",
+      "status": "collected",
+      "truncated": false
+    },
+    "nga": {
+      "caveat": "Upstream unavailable or unsupported; NOT evidence of zero activity.",
+      "checked_at": "2026-11-08T22:48:57Z",
+      "error": "HTTPError: HTTP Error 503: Service Unavailable",
+      "records": null,
+      "source_url": "https://msi.nga.mil/api/publications/broadcast-warn?status=active&output=json",
+      "status": "unavailable",
+      "truncated": null
+    }
+  },
+  "note": "Only successful sources appear in records. Missing sources remain unavailable.",
+  "records": [
+    {
+      "case_id": null,
+      "collected_at": "2026-11-08T22:48:57Z",
+      "detection_method": "sarima",
+      "end_at": null,
+      "entity_code": "CN",
+      "entity_type": "country",
+      "event_at": "2026-11-04T20:30:00Z",
+      "family": "internet_reachability",
+      "first_seen_at": "2026-11-08T22:48:57Z",
+      "id": "ioda:4e5f27607dd381558cde06ba",
+      "kind": "outage_event",
+      "location_precision": "Country/region/network context, not incident geolocation.",
+      "provider": "ioda",
+      "review_level": "measurement_context",
+      "root": "ioda:7b5fb0d7cd1ab4dae880cc0a",
+      "signal_types": [
+        "gtr"
+      ],
+      "source": "IODA / Georgia Tech",
+      "source_published_at": null,
+      "source_score": 373955.72256814886,
+      "source_url": "https://ioda.inetintel.cc.gatech.edu/",
+      "summary": "Internet outage detection candidate; network measurements are not evidence of state attribution or an impending cyber offensive.",
+      "title": "IODA detected connectivity anomaly: country CN"
+    },
+    {
+      "case_id": null,
+      "collected_at": "2026-11-08T22:48:57Z",
+      "detection_method": "median",
+      "end_at": null,
+      "entity_code": "GI",
+      "entity_type": "country",
+      "event_at": "2026-11-05T11:25:00Z",
+      "family": "internet_reachability",
+      "first_seen_at": "2026-11-08T22:48:57Z",
+      "id": "ioda:89087ead3b4e93f34ee4c55b",
+      "kind": "outage_event",
+      "location_precision": "Country/region/network context, not incident geolocation.",
+      "provider": "ioda",
+      "review_level": "measurement_context",
+      "root": "ioda:bb1db6122c3245a9f0971667",
+      "signal_types": [
+        "bgp"
+      ],
+      "source": "IODA / Georgia Tech",
+      "source_published_at": null,
+      "source_score": 5904.365781710914,
+      "source_url": "https://ioda.inetintel.cc.gatech.edu/",
+      "summary": "Internet outage detection candidate; network measurements are not evidence of state attribution or an impending cyber offensive.",
+      "title": "IODA detected connectivity anomaly: country GI"
+    },
+    {
+      "case_id": null,
+      "collected_at": "2026-11-08T22:48:57Z",
+      "detection_method": "median",
+      "end_at": null,
+      "entity_code": "VE",
+      "entity_type": "country",
+      "event_at": "2026-11-08T06:10:00Z",
+      "family": "internet_reachability",
+      "first_seen_at": "2026-11-08T22:48:57Z",
+      "id": "ioda:7f676f906192612b28b13d56",
+      "kind": "outage_event",
+      "location_precision": "Country/region/network context, not incident geolocation.",
+      "provider": "ioda",
+      "review_level": "measurement_context",
+      "root": "ioda:bfeb9d9fe9dbba4c2a3f1b02",
+      "signal_types": [
+        "bgp"
+      ],
+      "source": "IODA / Georgia Tech",
+      "source_published_at": null,
+      "source_score": 1002.2515344664779,
+      "source_url": "https://ioda.inetintel.cc.gatech.edu/",
+      "summary": "Internet outage detection candidate; network measurements are not evidence of state attribution or an impending cyber offensive.",
+      "title": "IODA detected connectivity anomaly: country VE"
+    },
+    {
+      "case_id": null,
+      "collected_at": "2026-11-08T22:48:57Z",
+      "event_at": "2026-11-05T00:01:00Z",
+      "family": "maritime_restriction",
+      "first_seen_at": "2026-11-08T22:48:57Z",
+      "id": "amsa:d080e170cf1e310bf23643b7",
+      "kind": "administrative_inforce_summary",
+      "location_precision": "NAVAREA X regional warning; no point geolocation inferred.",
+      "provider": "amsa",
+      "review_level": "official_notice_not_kinetic_confirmation",
+      "root": "amsa:NAVAREA-X:26:117",
+      "source": "Australian Maritime Safety Authority (NAVAREA X)",
+      "source_published_at": "2026-11-05T00:01:00Z",
+      "source_url": "https://www.operations.amsa.gov.au/AMSA.Web.MSIPublication/",
+      "summary": "FM JRCC AUSTRALIA 050001Z NOV 26 NAVAREA X 117/26 1. NAVAREA X WARNINGS IN FORCE AT 050001 UTC NOV 26 117/26 2. AUSCOAST WARNINGS IN FORCE AT 050001 UTC NOV 26 AREA A NIL AREA B 327/26, 342/26 AREA C 231/26 AREA D 231/26, 280/26, 297/26, 317/26, 318/26, 336/26, 349/26 AREA E 350/26, 351/26 AREA F 273/26, 330/26 AREA G 120/26, 267/26, 270/26, 303/26, 340/26, 344/26, 346/26, 347/26, 352/26 AREA H NIL 3. COMPLETE TEXTS OF ALL WARNINGS IN FORCE ARE AVAILABLE FROM WEBSITE WWW.AMSA.GOV.AU. 4. CANCEL THIS MESSAGE 120001 UTC NOV 26",
+      "title": "NAVAREA X 117/26 official warning"
+    },
+    {
+      "case_id": null,
+      "collected_at": "2026-11-08T22:48:57Z",
+      "event_at": "2026-11-06T01:10:00Z",
+      "family": "maritime_restriction",
+      "first_seen_at": "2026-11-08T22:48:57Z",
+      "id": "amsa:bcc9cd973776728e55c4d96d",
+      "kind": "navigation_safety_notice",
+      "location_precision": "NAVAREA X regional warning; no point geolocation inferred.",
+      "provider": "amsa",
+      "review_level": "official_notice_not_kinetic_confirmation",
+      "root": "amsa:NAVAREA-X:26:118",
+      "source": "Australian Maritime Safety Authority (NAVAREA X)",
+      "source_published_at": "2026-11-06T01:10:00Z",
+      "source_url": "https://www.operations.amsa.gov.au/AMSA.Web.MSIPublication/",
+      "summary": "FM JRCC AUSTRALIA 060110Z NOV 26 NAVAREA X 118/26 PORT VILA HARBOUR - STBD DREDGE CHANNEL BUOY MISSING 17-45.199 S 168-18.341 E",
+      "title": "NAVAREA X 118/26 official warning"
+    },
+    {
+      "case_id": null,
+      "collected_at": "2026-11-08T22:48:57Z",
+      "event_at": "2026-11-08T03:30:00Z",
+      "family": "maritime_restriction",
+      "first_seen_at": "2026-11-08T22:48:57Z",
+      "id": "amsa:7f1ff12960e9e8b4c547c51d",
+      "kind": "navigation_safety_notice",
+      "location_precision": "NAVAREA X regional warning; no point geolocation inferred.",
+      "provider": "amsa",
+      "review_level": "official_notice_not_kinetic_confirmation",
+      "root": "amsa:NAVAREA-X:26:121",
+      "source": "Australian Maritime Safety Authority (NAVAREA X)",
+      "source_published_at": "2026-11-08T03:30:00Z",
+      "source_url": "https://www.operations.amsa.gov.au/AMSA.Web.MSIPublication/",
+      "summary": "FM JRCC AUSTRALIA 080330Z NOV 26 NAVAREA X 121/26 AUS 4070 - INDIAN OCEAN SOUTHERN PART 1. SPACE DEBRIS DANGER AREA 80NM EITHER SIDE OF CENTRELINE A. 26-09 S 071-48 E B. 23-53 S 078-28 E C. 21-20 S 085-05 E D. 18-27 S 091-32 E E. 14-55 S 097-56 E 2. HAZARDOUS WINDOW DAILY FROM 13 NOV TO 20 NOV 2026 BETWEEN 2253 UTC AND 0114 UTC",
+      "title": "NAVAREA X 121/26 official warning"
+    }
+  ],
+  "schema_version": 1
+}
