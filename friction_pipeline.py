@@ -195,6 +195,15 @@ def extract_records(payload, names):
         return payload, False
     if not isinstance(payload, dict):
         raise ValueError("Unexpected upstream response")
+    if payload.get("error") not in (None, False, ""):
+        raise ValueError("Provider returned a source error")
+    # IODA v2 responds with a typed envelope whose data is *directly* a
+    # list of detection objects, not a nested {events: [...]} property.
+    if payload.get("type") == "outages.events" and isinstance(payload.get("data"), list):
+        meta = payload.get("metadata") or {}
+        paging = meta.get("pagination") if isinstance(meta, dict) else {}
+        more = bool(paging.get("next") or paging.get("hasNextPage")) if isinstance(paging, dict) else False
+        return payload["data"], more
     containers = [payload]
     if isinstance(payload.get("data"), dict):
         containers.insert(0, payload["data"])
@@ -235,8 +244,15 @@ def ioda_records(payload, checked, max_records=MAX_RECORDS):
         entity = row.get("entity") or {}
         if not isinstance(entity, dict):
             entity = {}
-        kind = str(entity.get("type") or row.get("entityType") or "").lower()
-        cc = str(entity.get("code") or row.get("entityCode") or "").upper()
+        location = row.get("location")
+        if isinstance(location, str) and "/" in location:
+            location_kind, location_code = location.split("/", 1)
+            kind, cc = location_kind.strip().lower(), location_code.strip().upper()
+        else:
+            kind = str(entity.get("type") or row.get("entityType") or "").lower()
+            cc = str(entity.get("code") or row.get("entityCode") or "").upper()
+        if not cc or len(cc) > 32:
+            continue
         if kind not in ("country", "region", "asn", "geoasn"):
             continue
         start = event_time(row.get("start") or row.get("startTime") or row.get("start_time"))
@@ -246,13 +262,20 @@ def ioda_records(payload, checked, max_records=MAX_RECORDS):
             continue
         if start < checked - dt.timedelta(days=7):
             continue
-        signals = row.get("datasources") or row.get("sources") or []
+        signals = row.get("datasources") or row.get("datasource") or row.get("sources") or []
+        if isinstance(signals, str):
+            signals = [signals]
         if isinstance(signals, dict):
             signals = list(signals)
         if not isinstance(signals, list):
             signals = []
         signal_names = [safe_text(v, 40) for v in signals if isinstance(v, str)][:8]
-        identifier = safe_text(row.get("id"), 100) or fingerprint(kind, cc, iso(start), signal_names)
+        method = safe_text(row.get("method"), 60)
+        # One reported IODA source/detection method is one observation.
+        # The same physical outage may produce several IODA observations;
+        # all remain in ONE internet_reachability source family.
+        identifier = safe_text(row.get("id"), 100) or fingerprint(
+            kind, cc, iso(start), sorted(signal_names), method)
         case = COUNTRY_CASES.get(cc) if kind == "country" else None
         link = "https://ioda.inetintel.cc.gatech.edu/"
         result.append({
@@ -265,6 +288,10 @@ def ioda_records(payload, checked, max_records=MAX_RECORDS):
             "kind": "outage_event", "event_at": iso(start),
             "source_published_at": None, "collected_at": iso(checked),
             "end_at": iso(end) if end else None, "signal_types": signal_names,
+            "detection_method": method,
+            "source_score": row.get("score") if isinstance(row.get("score"), (int, float))
+                            and not isinstance(row.get("score"), bool)
+                            and math.isfinite(row.get("score")) else None,
             "root": f"ioda:{identifier}", "review_level": "measurement_context",
             "location_precision": "Country/region/network context, not incident geolocation.",
         })
