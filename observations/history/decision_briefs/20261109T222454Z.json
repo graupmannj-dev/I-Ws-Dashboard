@@ -1,0 +1,407 @@
+{
+  "baseline_comparison": {
+    "afpak": {
+      "commercial": {
+        "baseline": true,
+        "comparison": "Source snapshot unchanged since preceding brief; do not replay alert"
+      },
+      "official": {
+        "baseline": true,
+        "comparison": "prior vs current observations"
+      }
+    },
+    "drc_rwanda": {
+      "commercial": {
+        "baseline": true,
+        "comparison": "Source snapshot unchanged since preceding brief; do not replay alert"
+      },
+      "official": {
+        "baseline": true,
+        "comparison": "prior vs current observations"
+      }
+    },
+    "horn_ethiopia_eritrea": {
+      "commercial": {
+        "baseline": true,
+        "comparison": "Source snapshot unchanged since preceding brief; do not replay alert"
+      },
+      "official": {
+        "baseline": true,
+        "comparison": "prior vs current observations"
+      }
+    },
+    "horn_ethiopia_kenya_moyale": {
+      "commercial": {
+        "baseline": true,
+        "comparison": "Source snapshot unchanged since preceding brief; do not replay alert"
+      },
+      "official": {
+        "baseline": true,
+        "comparison": "prior vs current observations"
+      }
+    },
+    "horn_ethiopia_sudan": {
+      "commercial": {
+        "baseline": true,
+        "comparison": "Source snapshot unchanged since preceding brief; do not replay alert"
+      },
+      "official": {
+        "baseline": true,
+        "comparison": "prior vs current observations"
+      }
+    },
+    "iran_gulf": {
+      "commercial": {
+        "baseline": true,
+        "comparison": "Source snapshot unchanged since preceding brief; do not replay alert"
+      },
+      "official": {
+        "baseline": true,
+        "comparison": "prior vs current observations"
+      }
+    },
+    "korea": {
+      "commercial": {
+        "baseline": true,
+        "comparison": "Source snapshot unchanged since preceding brief; do not replay alert"
+      },
+      "official": {
+        "baseline": true,
+        "comparison": "prior vs current observations"
+      }
+    },
+    "russia_nato": {
+      "commercial": {
+        "baseline": true,
+        "comparison": "Source snapshot unchanged since preceding brief; do not replay alert"
+      },
+      "official": {
+        "baseline": true,
+        "comparison": "prior vs current observations"
+      }
+    },
+    "taiwan": {
+      "commercial": {
+        "baseline": true,
+        "comparison": "Source snapshot unchanged since preceding brief; do not replay alert"
+      },
+      "official": {
+        "baseline": true,
+        "comparison": "prior vs current observations"
+      }
+    },
+    "thailand_cambodia": {
+      "commercial": {
+        "baseline": true,
+        "comparison": "Source snapshot unchanged since preceding brief; do not replay alert"
+      },
+      "official": {
+        "baseline": true,
+        "comparison": "prior vs current observations"
+      }
+    }
+  },
+  "cases": [
+    {
+      "alternative_explanation": "Conflict among Ethiopian federal forces and Tigrayan forces can explain fighting and troop movements without a new Ethiopia–Eritrea war.",
+      "collection_priority": "Verify policy change",
+      "commercial_media_change_count": 0,
+      "historical_counter_signals": [
+        {
+          "assessment": "Counter-signal",
+          "date": "2026-11-05",
+          "title": "Chinese mediation contacts"
+        }
+      ],
+      "id": "horn_ethiopia_eritrea",
+      "market_repricing_count": 0,
+      "official_change_count": 1,
+      "question": "Are Ethiopia and Eritrea moving toward direct interstate hostilities, distinct from ongoing Tigray fighting?",
+      "scope_note": "Case-specific; adjacent conflict reports do not automatically establish direct interstate escalation.",
+      "so_what": "This demonstrates a public advisory change, often reactive. Investigate whether independent actors changed behavior earlier, rather than counting the advisory as attack preparation.",
+      "source_evidence": [
+        {
+          "assessment_ceiling": "Published government notice; not evidence of military preparations",
+          "kind": "first_seen_with_new_publication_timestamp",
+          "observed_at": "2026-11-09T22:24:52Z",
+          "previous_check_at": "2026-11-09T06:36:10Z",
+          "published_at": "2026-11-09T16:20:13Z",
+          "publisher": "UK FCDO",
+          "root": "https www gov uk foreign travel advice eritrea",
+          "source_family": "official_protective",
+          "source_url": "https://www.gov.uk/foreign-travel-advice/eritrea",
+          "title": "Eritrea"
+        }
+      ],
+      "standing_asof": "2026-11-06",
+      "standing_confidence": "Moderate for Tigray fighting; low for direct interstate clashes",
+      "standing_state": "Escalation watch",
+      "title": "Ethiopia–Eritrea / northern Tigray",
+      "verification": "No automated classification as imminent, critical or independently confirmed. Curated dossier is a dated human-supplied baseline, not refreshed by this run.",
+      "warning_horizon": "7–30 days",
+      "what_changed": "An official protective notice changed relative to the preceding collection.",
+      "what_would_change_assessment": "Independent direct engagement confirmation, sustained paired border formations, or verified border restrictions/evacuations."
+    },
+    {
+      "alternative_explanation": "Counterinsurgency-driven cross-border actions that do not develop into sustained conventional interstate war.",
+      "collection_priority": "Maintain watch",
+      "commercial_media_change_count": 0,
+      "historical_counter_signals": [],
+      "id": "afpak",
+      "market_repricing_count": 0,
+      "official_change_count": 0,
+      "question": "Is Afghanistan–Pakistan fighting expanding beyond its existing cross-border conflict baseline?",
+      "scope_note": "Case-specific; adjacent conflict reports do not automatically establish direct interstate escalation.",
+      "so_what": "This is not evidence of reduced threat. Longstanding risk and current-period changes are separate judgments, and these public feeds do not cover military preparations exhaustively.",
+      "source_evidence": [],
+      "standing_asof": "2026-10-29",
+      "standing_confidence": "High for existing combat",
+      "standing_state": "Active conflict",
+      "title": "Afghanistan–Pakistan",
+      "verification": "No automated classification as imminent, critical or independently confirmed. Curated dossier is a dated human-supplied baseline, not refreshed by this run.",
+      "warning_horizon": "7–30 days",
+      "what_changed": "No reproducible new change established by the currently implemented feeds.",
+      "what_would_change_assessment": "Check multi-sector strike tempo, border closures lasting beyond the latest cycle, evacuations, and exceptional mobilization."
+    },
+    {
+      "alternative_explanation": "Continuing proxy conflict and enforcement measures without transition to overt conventional interstate war.",
+      "collection_priority": "Maintain watch",
+      "commercial_media_change_count": 0,
+      "historical_counter_signals": [
+        {
+          "assessment": "Counter-signal",
+          "date": "2026-10-22",
+          "title": "Joint security coordination meeting"
+        }
+      ],
+      "id": "drc_rwanda",
+      "market_repricing_count": 0,
+      "official_change_count": 0,
+      "question": "Is DRC–Rwanda / Kivu fighting expanding to direct interstate action beyond the existing M23 conflict?",
+      "scope_note": "Case-specific; adjacent conflict reports do not automatically establish direct interstate escalation.",
+      "so_what": "This is not evidence of reduced threat. Longstanding risk and current-period changes are separate judgments, and these public feeds do not cover military preparations exhaustively.",
+      "source_evidence": [],
+      "standing_asof": "2026-10-28",
+      "standing_confidence": "High for fighting; lower for new direct interstate attack",
+      "standing_state": "Active conflict",
+      "title": "DR Congo–Rwanda / Kivu",
+      "verification": "No automated classification as imminent, critical or independently confirmed. Curated dossier is a dated human-supplied baseline, not refreshed by this run.",
+      "warning_horizon": "7–90 days",
+      "what_changed": "No reproducible new change established by the currently implemented feeds.",
+      "what_would_change_assessment": "Confirm new direct-state engagements, cross-border deployments, or verified displacement and border-trade disruption beyond recent rates."
+    },
+    {
+      "alternative_explanation": "Population flight may reflect localized intra-Ethiopian fighting and civilian risk avoidance without expansion into an interstate confrontation. Reporting and registrations lag actual movements.",
+      "collection_priority": "Maintain watch",
+      "commercial_media_change_count": 0,
+      "historical_counter_signals": [],
+      "id": "horn_ethiopia_kenya_moyale",
+      "market_repricing_count": 0,
+      "official_change_count": 0,
+      "question": "Is fighting in Ethiopia producing expanding security spillover into Kenya beyond displacement?",
+      "scope_note": "Case-specific; adjacent conflict reports do not automatically establish direct interstate escalation.",
+      "so_what": "This is not evidence of reduced threat. Longstanding risk and current-period changes are separate judgments, and these public feeds do not cover military preparations exhaustively.",
+      "source_evidence": [],
+      "standing_asof": "2026-11-07",
+      "standing_confidence": "High on displacement; limited on armed escalation",
+      "standing_state": "Active displacement / border watch",
+      "title": "Ethiopia–Kenya / Moyale spillover",
+      "verification": "No automated classification as imminent, critical or independently confirmed. Curated dossier is a dated human-supplied baseline, not refreshed by this run.",
+      "warning_horizon": "7–30 days",
+      "what_changed": "No reproducible new change established by the currently implemented feeds.",
+      "what_would_change_assessment": "Track independently verified cross-border armed incidents, border closure duration, and displacement/cargo flows versus recent baseline."
+    },
+    {
+      "alternative_explanation": "Diplomatic retaliation and information campaigns in the context of existing internal conflicts rather than a decision for interstate war.",
+      "collection_priority": "Maintain watch",
+      "commercial_media_change_count": 0,
+      "historical_counter_signals": [],
+      "id": "horn_ethiopia_sudan",
+      "market_repricing_count": 0,
+      "official_change_count": 0,
+      "question": "Will diplomatic retaliation between Ethiopia and Sudan escalate into direct interstate violence?",
+      "scope_note": "Case-specific; adjacent conflict reports do not automatically establish direct interstate escalation.",
+      "so_what": "This is not evidence of reduced threat. Longstanding risk and current-period changes are separate judgments, and these public feeds do not cover military preparations exhaustively.",
+      "source_evidence": [],
+      "standing_asof": "2026-11-04",
+      "standing_confidence": "High for diplomatic action; low for imminent attack",
+      "standing_state": "New tension",
+      "title": "Ethiopia–Sudan",
+      "verification": "No automated classification as imminent, critical or independently confirmed. Curated dossier is a dated human-supplied baseline, not refreshed by this run.",
+      "warning_horizon": "7–30 days",
+      "what_changed": "No reproducible new change established by the currently implemented feeds.",
+      "what_would_change_assessment": "Confirm state-attributed cross-border strikes and force concentrations; check diplomatic restrictions and independent freight/airline disruptions."
+    },
+    {
+      "alternative_explanation": "Testing and political coercion rather than attack execution.",
+      "collection_priority": "Maintain watch",
+      "commercial_media_change_count": 0,
+      "historical_counter_signals": [],
+      "id": "korea",
+      "market_repricing_count": 0,
+      "official_change_count": 0,
+      "question": "Is a new North–South Korea escalation emerging beyond recurring provocations?",
+      "scope_note": "Case-specific; adjacent conflict reports do not automatically establish direct interstate escalation.",
+      "so_what": "This is not evidence of reduced threat. Longstanding risk and current-period changes are separate judgments, and these public feeds do not cover military preparations exhaustively.",
+      "source_evidence": [],
+      "standing_asof": "2026-11-04",
+      "standing_confidence": "Moderate for activity; low for timing",
+      "standing_state": "Activity watch",
+      "title": "Korean Peninsula",
+      "verification": "No automated classification as imminent, critical or independently confirmed. Curated dossier is a dated human-supplied baseline, not refreshed by this run.",
+      "warning_horizon": "7–90 days",
+      "what_changed": "No reproducible new change established by the currently implemented feeds.",
+      "what_would_change_assessment": "Seek verified reserve mobilization, evacuation/airspace restrictions, or sustained unusual multi-domain activity outside normal provocation patterns."
+    },
+    {
+      "alternative_explanation": "Defensive precautions may deter or prevent incidents; suspicious observations can be innocuous.",
+      "collection_priority": "Maintain watch",
+      "commercial_media_change_count": 0,
+      "historical_counter_signals": [
+        {
+          "assessment": "Counter-signal (conventional)",
+          "date": "2026-10-14",
+          "title": "NATO finds no imminent conventional threat"
+        }
+      ],
+      "id": "russia_nato",
+      "market_repricing_count": 0,
+      "official_change_count": 0,
+      "question": "Is there preparation for a new Russia–NATO military confrontation or significantly expanded hybrid action?",
+      "scope_note": "Case-specific; adjacent conflict reports do not automatically establish direct interstate escalation.",
+      "so_what": "This is not evidence of reduced threat. Longstanding risk and current-period changes are separate judgments, and these public feeds do not cover military preparations exhaustively.",
+      "source_evidence": [],
+      "standing_asof": "2026-11-03",
+      "standing_confidence": "Moderate",
+      "standing_state": "Hybrid warning",
+      "title": "Russia–NATO",
+      "verification": "No automated classification as imminent, critical or independently confirmed. Curated dossier is a dated human-supplied baseline, not refreshed by this run.",
+      "warning_horizon": "7–90 days",
+      "what_changed": "No reproducible new change established by the currently implemented feeds.",
+      "what_would_change_assessment": "Check independently confirmed forward logistics/mobilization and protective civilian action linked to NATO territory; separate Ukraine theater combat from an attack on NATO."
+    },
+    {
+      "alternative_explanation": "Persistent coercive activity without a decision to initiate a blockade.",
+      "collection_priority": "Maintain watch",
+      "commercial_media_change_count": 0,
+      "historical_counter_signals": [
+        {
+          "assessment": "Counter-signal",
+          "date": "2026-10-31",
+          "title": "PLA aircraft sorties decrease"
+        }
+      ],
+      "id": "taiwan",
+      "market_repricing_count": 0,
+      "official_change_count": 0,
+      "question": "Is the PLA preparing a coercive blockade or attack beyond routine Taiwan Strait operations?",
+      "scope_note": "Case-specific; adjacent conflict reports do not automatically establish direct interstate escalation.",
+      "so_what": "This is not evidence of reduced threat. Longstanding risk and current-period changes are separate judgments, and these public feeds do not cover military preparations exhaustively.",
+      "source_evidence": [],
+      "standing_asof": "2026-10-31",
+      "standing_confidence": "High for measured activity; low for timing",
+      "standing_state": "Persistent coercion",
+      "title": "Taiwan Strait",
+      "verification": "No automated classification as imminent, critical or independently confirmed. Curated dossier is a dated human-supplied baseline, not refreshed by this run.",
+      "warning_horizon": "7–90 days",
+      "what_changed": "No reproducible new change established by the currently implemented feeds.",
+      "what_would_change_assessment": "Seek verified sustained amphibious/logistics preparation, actual restricted waters or commercial route suspension, and independent counterpart preparations beyond exercises."
+    },
+    {
+      "alternative_explanation": "Domestic political posturing and difficult negotiations inside a still-functioning ceasefire.",
+      "collection_priority": "Maintain watch",
+      "commercial_media_change_count": 0,
+      "historical_counter_signals": [
+        {
+          "assessment": "Counter-signal",
+          "date": "2026-10-28",
+          "title": "Bilateral military implementation talks"
+        }
+      ],
+      "id": "thailand_cambodia",
+      "market_repricing_count": 0,
+      "official_change_count": 0,
+      "question": "Is the Thailand–Cambodia ceasefire failing in a way that could restart sustained border fighting?",
+      "scope_note": "Case-specific; adjacent conflict reports do not automatically establish direct interstate escalation.",
+      "so_what": "This is not evidence of reduced threat. Longstanding risk and current-period changes are separate judgments, and these public feeds do not cover military preparations exhaustively.",
+      "source_evidence": [],
+      "standing_asof": "2026-10-29",
+      "standing_confidence": "High for continuing dispute; low for imminent resumed combat",
+      "standing_state": "Fragile ceasefire",
+      "title": "Thailand–Cambodia",
+      "verification": "No automated classification as imminent, critical or independently confirmed. Curated dossier is a dated human-supplied baseline, not refreshed by this run.",
+      "warning_horizon": "7–30 days",
+      "what_changed": "No reproducible new change established by the currently implemented feeds.",
+      "what_would_change_assessment": "Seek verified repeated border engagements, civilian evacuations, border-crossing restrictions, or formal ceasefire suspension."
+    },
+    {
+      "alternative_explanation": "Deterrent reinforcement or localized strikes may occur without a new theater-wide campaign.",
+      "collection_priority": "Maintain watch",
+      "commercial_media_change_count": 0,
+      "historical_counter_signals": [
+        {
+          "assessment": "Counter-signal",
+          "date": "2026-11-05",
+          "title": "Iranian proposal via Qatar"
+        }
+      ],
+      "id": "iran_gulf",
+      "market_repricing_count": 0,
+      "official_change_count": 0,
+      "question": "Is a new, major U.S.–Iran military or Hormuz disruption phase developing beyond the existing conflict baseline?",
+      "scope_note": "Case-specific; adjacent conflict reports do not automatically establish direct interstate escalation.",
+      "so_what": "This is not evidence of reduced threat. Longstanding risk and current-period changes are separate judgments, and these public feeds do not cover military preparations exhaustively.",
+      "source_evidence": [],
+      "standing_asof": "2026-11-05",
+      "standing_confidence": "High for ongoing conflict; uncertain for new major escalation",
+      "standing_state": "Active conflict",
+      "title": "U.S.–Iran / Hormuz",
+      "verification": "No automated classification as imminent, critical or independently confirmed. Curated dossier is a dated human-supplied baseline, not refreshed by this run.",
+      "warning_horizon": "7–30 days",
+      "what_changed": "No reproducible new change established by the currently implemented feeds.",
+      "what_would_change_assessment": "Verify a new operational order, sortie/force generation, named insurer or shipper route policy, or sustained Hormuz transit decline against the prior month."
+    }
+  ],
+  "executive_summary": "1 of 10 cases have new monitored change leads; none is automatically a verified conflict warning.",
+  "generated_at": "2026-11-09T22:24:54Z",
+  "limits": [
+    "A source-wide 6h scan is not evidence of comprehensive military, shipping, or insurance coverage.",
+    "First successful collection establishes a baseline, not a new warning.",
+    "Published_at null cannot be treated as an event occurring at fetched_at.",
+    "Market YES prices measure their exact questions and horizons; not probabilities of war.",
+    "Government advisories are often reactive and a syndicated media headline is not independent commercial behavior.",
+    "Curated hotspot states are historical context; this layer does not update their verified status or estimate conflict probabilities."
+  ],
+  "market_diagnostics": {
+    "eligible": 7,
+    "reason": "Comparisons need prior same-ID observations 4–10h or 18–36h earlier; insufficient history is not a null signal.",
+    "window_comparisons": 7
+  },
+  "new_change_count": 1,
+  "new_market_moves": 0,
+  "operational_action": "Review changed case evidence and seek independent cost-bearing action.",
+  "source_health": {
+    "commercial": {
+      "age_hours": 4.8,
+      "collection_status": "collected",
+      "last_check": "2026-11-09T17:38:46Z",
+      "latest_observation": "2026-11-09T17:38:46Z",
+      "status": "current"
+    },
+    "official": {
+      "age_hours": 0.0,
+      "collection_status": "collected",
+      "last_check": "2026-11-09T22:24:52Z",
+      "latest_observation": "2026-11-09T22:24:52Z",
+      "status": "current"
+    },
+    "watchlist": {
+      "age_hours": 0.0,
+      "collection_status": "collected",
+      "last_check": "2026-11-09T22:24:53Z",
+      "latest_observation": "2026-11-09T22:24:53Z",
+      "status": "current"
+    }
+  },
+  "version": 1
+}
