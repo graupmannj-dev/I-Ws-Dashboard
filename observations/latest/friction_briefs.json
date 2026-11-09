@@ -417,11 +417,11 @@
   ],
   "executive_summary": "No qualifying novel structural-friction lead in the collected evidence. This is not an all-clear; verify coverage and established watch states.",
   "fresh_snapshot": true,
-  "generated_at": "2026-11-08T22:49:06Z",
+  "generated_at": "2026-11-09T02:36:45Z",
   "health": {
     "amsa": {
       "age_hours": 0.0,
-      "checked_at": "2026-11-08T22:48:57Z",
+      "checked_at": "2026-11-09T02:36:42Z",
       "collector_status": "collected",
       "coverage": "complete",
       "error": null,
@@ -430,15 +430,15 @@
     },
     "ioda": {
       "age_hours": 0.0,
-      "checked_at": "2026-11-08T22:48:57Z",
+      "checked_at": "2026-11-09T02:36:42Z",
       "collector_status": "collected",
       "coverage": "complete",
       "error": null,
-      "observed_records": 3,
+      "observed_records": 4,
       "status": "fresh"
     },
     "nga": {
-      "age_hours": 0.0,
+      "age_hours": 3.8,
       "checked_at": "2026-11-08T22:48:57Z",
       "collector_status": "unavailable",
       "coverage": "unknown",
@@ -447,7 +447,7 @@
       "status": "unavailable"
     }
   },
-  "latest_source_snapshot": "2026-11-08T22:48:57Z",
+  "latest_source_snapshot": "2026-11-09T02:36:42Z",
   "limits": [
     "Data feeds are partial, not a global exhaustive sensor network.",
     "Collection timestamp does not establish source event or publication time.",
@@ -466,7 +466,14 @@
   "schema_version": 1,
   "shadow_mode": true,
   "uncalibrated_review_count": 0,
-  "unlocated_leads": [],
+  "unlocated_leads": [
+    {
+      "event_at": "2026-11-08T20:30:00Z",
+      "family": "internet_reachability",
+      "title": "IODA detected connectivity anomaly: country NF",
+      "url": "https://ioda.inetintel.cc.gatech.edu/"
+    }
+  ],
   "validation": {
     "labeled_windows": 0,
     "status": "not_estimable"
