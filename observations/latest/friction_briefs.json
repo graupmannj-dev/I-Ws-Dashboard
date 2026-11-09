@@ -8,14 +8,14 @@
           "current": null,
           "median": null,
           "robust_z": null,
-          "samples": 0,
+          "samples": 1,
           "status": "insufficient_baseline"
         },
         "maritime_restriction": {
           "current": null,
           "median": null,
           "robust_z": null,
-          "samples": 0,
+          "samples": 1,
           "status": "insufficient_baseline"
         }
       },
@@ -23,24 +23,38 @@
       "coverage_gaps": [
         "nga"
       ],
-      "current_source_records": 0,
+      "current_source_records": 1,
       "id": "afpak",
-      "new_families": [],
-      "new_sources": 0,
+      "new_families": [
+        "internet_reachability"
+      ],
+      "new_sources": 1,
       "next_signpost": "Check multi-sector strike tempo, border closures lasting beyond the latest cycle, evacuations, and exceptional mobilization.",
-      "so_what": "0 current source records provide context; repeated pulls are not new alerts.",
-      "source_evidence": [],
+      "so_what": "1 newly observed unique roots across internet_reachability. Co-occurrence does not establish a common cause or an impending operation.",
+      "source_evidence": [
+        {
+          "assessment": "measurement_context",
+          "event_at": "2026-11-09T19:20:00Z",
+          "family": "internet_reachability",
+          "first_seen_at": "2026-11-09T21:02:22Z",
+          "id": "ioda:b9a9fb6373dbdc1ed2cd0ce3",
+          "kind": "outage_event",
+          "root": "ioda:25eed20411d769eeeb86dec5",
+          "title": "IODA detected connectivity anomaly: country AF",
+          "url": "https://ioda.inetintel.cc.gatech.edu/"
+        }
+      ],
       "standing_state": "Active conflict",
       "title": "Afghanistan–Pakistan",
       "traditional_changes": [],
-      "traditional_contrast": "No new matched source change across these monitored families; the standing watch and unmeasured activity remain unresolved.",
-      "triage": "maintain",
+      "traditional_contrast": "Nontraditional-source change without new corroborating evidence from the latest case-specific traditional brief. This may reflect stale or incomplete conventional coverage, not secrecy.",
+      "triage": "source_review",
       "warnings": [
         "Existing war severity is not evidence of a new phase.",
         "A national network disruption is not evidence of interstate military preparation.",
         "Concurrent restrictions and outages can share a public, routine, or accidental cause."
       ],
-      "what_changed": "No qualifying new structural-friction change established from available observations."
+      "what_changed": "1 new public network-reachability detections. Source-specific materiality and baseline still require analyst verification."
     },
     {
       "alternative": "Existing M23 fighting and peace-process volatility can generate repeated alarming headlines without a distinct new escalation.",
@@ -49,14 +63,14 @@
           "current": null,
           "median": null,
           "robust_z": null,
-          "samples": 0,
+          "samples": 1,
           "status": "insufficient_baseline"
         },
         "maritime_restriction": {
           "current": null,
           "median": null,
           "robust_z": null,
-          "samples": 0,
+          "samples": 1,
           "status": "insufficient_baseline"
         }
       },
@@ -64,24 +78,38 @@
       "coverage_gaps": [
         "nga"
       ],
-      "current_source_records": 0,
+      "current_source_records": 1,
       "id": "drc_rwanda",
-      "new_families": [],
-      "new_sources": 0,
+      "new_families": [
+        "internet_reachability"
+      ],
+      "new_sources": 1,
       "next_signpost": "Confirm new direct-state engagements, cross-border deployments, or verified displacement and border-trade disruption beyond recent rates.",
-      "so_what": "0 current source records provide context; repeated pulls are not new alerts.",
-      "source_evidence": [],
+      "so_what": "1 newly observed unique roots across internet_reachability. Co-occurrence does not establish a common cause or an impending operation.",
+      "source_evidence": [
+        {
+          "assessment": "measurement_context",
+          "event_at": "2026-11-09T19:20:00Z",
+          "family": "internet_reachability",
+          "first_seen_at": "2026-11-09T21:02:22Z",
+          "id": "ioda:ba8099d2da99902b207a2504",
+          "kind": "outage_event",
+          "root": "ioda:9121447f80b43044f5ed86ad",
+          "title": "IODA detected connectivity anomaly: country CD",
+          "url": "https://ioda.inetintel.cc.gatech.edu/"
+        }
+      ],
       "standing_state": "Active conflict",
       "title": "DR Congo–Rwanda / Kivu",
       "traditional_changes": [],
-      "traditional_contrast": "No new matched source change across these monitored families; the standing watch and unmeasured activity remain unresolved.",
-      "triage": "maintain",
+      "traditional_contrast": "Nontraditional-source change without new corroborating evidence from the latest case-specific traditional brief. This may reflect stale or incomplete conventional coverage, not secrecy.",
+      "triage": "source_review",
       "warnings": [
         "Existing war severity is not evidence of a new phase.",
         "A national network disruption is not evidence of interstate military preparation.",
         "Concurrent restrictions and outages can share a public, routine, or accidental cause."
       ],
-      "what_changed": "No qualifying new structural-friction change established from available observations."
+      "what_changed": "1 new public network-reachability detections. Source-specific materiality and baseline still require analyst verification."
     },
     {
       "alternative": "Ethiopian–Tigrayan fighting can explain force movements without an Eritrean entry into war.",
@@ -90,14 +118,14 @@
           "current": null,
           "median": null,
           "robust_z": null,
-          "samples": 0,
+          "samples": 1,
           "status": "insufficient_baseline"
         },
         "maritime_restriction": {
           "current": null,
           "median": null,
           "robust_z": null,
-          "samples": 0,
+          "samples": 1,
           "status": "insufficient_baseline"
         }
       },
@@ -105,24 +133,93 @@
       "coverage_gaps": [
         "nga"
       ],
-      "current_source_records": 0,
+      "current_source_records": 1,
       "id": "horn_ethiopia_eritrea",
-      "new_families": [],
-      "new_sources": 0,
+      "new_families": [
+        "internet_reachability"
+      ],
+      "new_sources": 1,
       "next_signpost": "Independent direct engagement confirmation, sustained paired border formations, or verified border restrictions/evacuations.",
-      "so_what": "0 current source records provide context; repeated pulls are not new alerts.",
-      "source_evidence": [],
+      "so_what": "1 newly observed unique roots across internet_reachability. Co-occurrence does not establish a common cause or an impending operation.",
+      "source_evidence": [
+        {
+          "assessment": "measurement_context",
+          "event_at": "2026-11-09T19:20:00Z",
+          "family": "internet_reachability",
+          "first_seen_at": "2026-11-09T21:02:22Z",
+          "id": "ioda:c2396639b26aad6d38449e31",
+          "kind": "outage_event",
+          "root": "ioda:86456ad4a7ed1276ef6dad69",
+          "title": "IODA detected connectivity anomaly: country ER",
+          "url": "https://ioda.inetintel.cc.gatech.edu/"
+        }
+      ],
       "standing_state": "Escalation watch",
       "title": "Ethiopia–Eritrea / northern Tigray",
       "traditional_changes": [],
-      "traditional_contrast": "No new matched source change across these monitored families; the standing watch and unmeasured activity remain unresolved.",
-      "triage": "maintain",
+      "traditional_contrast": "Nontraditional-source change without new corroborating evidence from the latest case-specific traditional brief. This may reflect stale or incomplete conventional coverage, not secrecy.",
+      "triage": "source_review",
       "warnings": [
         "Existing war severity is not evidence of a new phase.",
         "A national network disruption is not evidence of interstate military preparation.",
         "Concurrent restrictions and outages can share a public, routine, or accidental cause."
       ],
-      "what_changed": "No qualifying new structural-friction change established from available observations."
+      "what_changed": "1 new public network-reachability detections. Source-specific materiality and baseline still require analyst verification."
+    },
+    {
+      "alternative": "Routine missile tests or diplomatic signaling rarely establish a decision for full-scale war.",
+      "anomaly_baselines": {
+        "internet_reachability": {
+          "current": null,
+          "median": null,
+          "robust_z": null,
+          "samples": 1,
+          "status": "insufficient_baseline"
+        },
+        "maritime_restriction": {
+          "current": null,
+          "median": null,
+          "robust_z": null,
+          "samples": 1,
+          "status": "insufficient_baseline"
+        }
+      },
+      "confidence": "Review priority, not confidence in escalation. No source-independence or causal attribution is assumed.",
+      "coverage_gaps": [
+        "nga"
+      ],
+      "current_source_records": 1,
+      "id": "korea",
+      "new_families": [
+        "internet_reachability"
+      ],
+      "new_sources": 1,
+      "next_signpost": "Seek verified reserve mobilization, evacuation/airspace restrictions, or sustained unusual multi-domain activity outside normal provocation patterns.",
+      "so_what": "1 newly observed unique roots across internet_reachability. Co-occurrence does not establish a common cause or an impending operation.",
+      "source_evidence": [
+        {
+          "assessment": "measurement_context",
+          "event_at": "2026-11-09T19:20:00Z",
+          "family": "internet_reachability",
+          "first_seen_at": "2026-11-09T21:02:22Z",
+          "id": "ioda:569400e0466e312c9ea5879e",
+          "kind": "outage_event",
+          "root": "ioda:6b58e41bc9207701f7c9b1ad",
+          "title": "IODA detected connectivity anomaly: country KP",
+          "url": "https://ioda.inetintel.cc.gatech.edu/"
+        }
+      ],
+      "standing_state": "Activity watch",
+      "title": "Korean Peninsula",
+      "traditional_changes": [],
+      "traditional_contrast": "Nontraditional-source change without new corroborating evidence from the latest case-specific traditional brief. This may reflect stale or incomplete conventional coverage, not secrecy.",
+      "triage": "source_review",
+      "warnings": [
+        "Existing war severity is not evidence of a new phase.",
+        "A national network disruption is not evidence of interstate military preparation.",
+        "Concurrent restrictions and outages can share a public, routine, or accidental cause."
+      ],
+      "what_changed": "1 new public network-reachability detections. Source-specific materiality and baseline still require analyst verification."
     },
     {
       "alternative": "Humanitarian displacement and border precautions can occur without bilateral hostilities.",
@@ -131,14 +228,14 @@
           "current": null,
           "median": null,
           "robust_z": null,
-          "samples": 0,
+          "samples": 1,
           "status": "insufficient_baseline"
         },
         "maritime_restriction": {
           "current": null,
           "median": null,
           "robust_z": null,
-          "samples": 0,
+          "samples": 1,
           "status": "insufficient_baseline"
         }
       },
@@ -172,14 +269,14 @@
           "current": null,
           "median": null,
           "robust_z": null,
-          "samples": 0,
+          "samples": 1,
           "status": "insufficient_baseline"
         },
         "maritime_restriction": {
           "current": null,
           "median": null,
           "robust_z": null,
-          "samples": 0,
+          "samples": 1,
           "status": "insufficient_baseline"
         }
       },
@@ -207,61 +304,20 @@
       "what_changed": "No qualifying new structural-friction change established from available observations."
     },
     {
-      "alternative": "Routine missile tests or diplomatic signaling rarely establish a decision for full-scale war.",
-      "anomaly_baselines": {
-        "internet_reachability": {
-          "current": null,
-          "median": null,
-          "robust_z": null,
-          "samples": 0,
-          "status": "insufficient_baseline"
-        },
-        "maritime_restriction": {
-          "current": null,
-          "median": null,
-          "robust_z": null,
-          "samples": 0,
-          "status": "insufficient_baseline"
-        }
-      },
-      "confidence": "Review priority, not confidence in escalation. No source-independence or causal attribution is assumed.",
-      "coverage_gaps": [
-        "nga"
-      ],
-      "current_source_records": 0,
-      "id": "korea",
-      "new_families": [],
-      "new_sources": 0,
-      "next_signpost": "Seek verified reserve mobilization, evacuation/airspace restrictions, or sustained unusual multi-domain activity outside normal provocation patterns.",
-      "so_what": "0 current source records provide context; repeated pulls are not new alerts.",
-      "source_evidence": [],
-      "standing_state": "Activity watch",
-      "title": "Korean Peninsula",
-      "traditional_changes": [],
-      "traditional_contrast": "No new matched source change across these monitored families; the standing watch and unmeasured activity remain unresolved.",
-      "triage": "maintain",
-      "warnings": [
-        "Existing war severity is not evidence of a new phase.",
-        "A national network disruption is not evidence of interstate military preparation.",
-        "Concurrent restrictions and outages can share a public, routine, or accidental cause."
-      ],
-      "what_changed": "No qualifying new structural-friction change established from available observations."
-    },
-    {
       "alternative": "Ukraine-related combat, routine exercises or reactive NATO posture changes can look like a new Russia–NATO escalation.",
       "anomaly_baselines": {
         "internet_reachability": {
           "current": null,
           "median": null,
           "robust_z": null,
-          "samples": 0,
+          "samples": 1,
           "status": "insufficient_baseline"
         },
         "maritime_restriction": {
           "current": null,
           "median": null,
           "robust_z": null,
-          "samples": 0,
+          "samples": 1,
           "status": "insufficient_baseline"
         }
       },
@@ -295,14 +351,14 @@
           "current": null,
           "median": null,
           "robust_z": null,
-          "samples": 0,
+          "samples": 1,
           "status": "insufficient_baseline"
         },
         "maritime_restriction": {
           "current": null,
           "median": null,
           "robust_z": null,
-          "samples": 0,
+          "samples": 1,
           "status": "insufficient_baseline"
         }
       },
@@ -336,14 +392,14 @@
           "current": null,
           "median": null,
           "robust_z": null,
-          "samples": 0,
+          "samples": 1,
           "status": "insufficient_baseline"
         },
         "maritime_restriction": {
           "current": null,
           "median": null,
           "robust_z": null,
-          "samples": 0,
+          "samples": 1,
           "status": "insufficient_baseline"
         }
       },
@@ -377,14 +433,14 @@
           "current": null,
           "median": null,
           "robust_z": null,
-          "samples": 0,
+          "samples": 1,
           "status": "insufficient_baseline"
         },
         "maritime_restriction": {
           "current": null,
           "median": null,
           "robust_z": null,
-          "samples": 0,
+          "samples": 1,
           "status": "insufficient_baseline"
         }
       },
@@ -415,13 +471,13 @@
   "coverage_gaps": [
     "nga"
   ],
-  "executive_summary": "No qualifying novel structural-friction lead in the collected evidence. This is not an all-clear; verify coverage and established watch states.",
+  "executive_summary": "4 theaters have investigatory source anomalies in shadow mode; 65 recent unlocated source leads. No automated change to standing threat categories.",
   "fresh_snapshot": true,
-  "generated_at": "2026-11-09T10:17:47Z",
+  "generated_at": "2026-11-09T21:02:35Z",
   "health": {
     "amsa": {
       "age_hours": 0.0,
-      "checked_at": "2026-11-09T10:17:44Z",
+      "checked_at": "2026-11-09T21:02:22Z",
       "collector_status": "collected",
       "coverage": "complete",
       "error": null,
@@ -430,16 +486,16 @@
     },
     "ioda": {
       "age_hours": 0.0,
-      "checked_at": "2026-11-09T10:17:44Z",
+      "checked_at": "2026-11-09T21:02:22Z",
       "collector_status": "collected",
       "coverage": "complete",
       "error": null,
-      "observed_records": 5,
+      "observed_records": 69,
       "status": "fresh"
     },
     "nga": {
       "age_hours": 0.0,
-      "checked_at": "2026-11-09T10:17:44Z",
+      "checked_at": "2026-11-09T21:02:22Z",
       "collector_status": "unavailable",
       "coverage": "unknown",
       "error": "HTTPError: HTTP Error 503: Service Unavailable",
@@ -447,7 +503,7 @@
       "status": "unavailable"
     }
   },
-  "latest_source_snapshot": "2026-11-09T10:17:44Z",
+  "latest_source_snapshot": "2026-11-09T21:02:22Z",
   "limits": [
     "Data feeds are partial, not a global exhaustive sensor network.",
     "Collection timestamp does not establish source event or publication time.",
@@ -465,7 +521,7 @@
   },
   "schema_version": 1,
   "shadow_mode": true,
-  "uncalibrated_review_count": 0,
+  "uncalibrated_review_count": 4,
   "unlocated_leads": [
     {
       "event_at": "2026-11-08T20:30:00Z",
@@ -477,6 +533,144 @@
       "event_at": "2026-11-09T04:30:00Z",
       "family": "internet_reachability",
       "title": "IODA detected connectivity anomaly: country AX",
+      "url": "https://ioda.inetintel.cc.gatech.edu/"
+    },
+    {
+      "event_at": "2026-11-09T15:00:00Z",
+      "family": "internet_reachability",
+      "title": "IODA detected connectivity anomaly: country NF",
+      "url": "https://ioda.inetintel.cc.gatech.edu/"
+    },
+    {
+      "event_at": "2026-11-09T16:35:00Z",
+      "family": "internet_reachability",
+      "title": "IODA detected connectivity anomaly: country UG",
+      "url": "https://ioda.inetintel.cc.gatech.edu/"
+    },
+    {
+      "event_at": "2026-11-09T17:05:00Z",
+      "family": "internet_reachability",
+      "title": "IODA detected connectivity anomaly: country TK",
+      "url": "https://ioda.inetintel.cc.gatech.edu/"
+    },
+    {
+      "event_at": "2026-11-09T19:20:00Z",
+      "family": "internet_reachability",
+      "title": "IODA detected connectivity anomaly: country SS",
+      "url": "https://ioda.inetintel.cc.gatech.edu/"
+    },
+    {
+      "event_at": "2026-11-09T19:20:00Z",
+      "family": "internet_reachability",
+      "title": "IODA detected connectivity anomaly: country HT",
+      "url": "https://ioda.inetintel.cc.gatech.edu/"
+    },
+    {
+      "event_at": "2026-11-09T19:20:00Z",
+      "family": "internet_reachability",
+      "title": "IODA detected connectivity anomaly: country BN",
+      "url": "https://ioda.inetintel.cc.gatech.edu/"
+    },
+    {
+      "event_at": "2026-11-09T19:20:00Z",
+      "family": "internet_reachability",
+      "title": "IODA detected connectivity anomaly: country CF",
+      "url": "https://ioda.inetintel.cc.gatech.edu/"
+    },
+    {
+      "event_at": "2026-11-09T19:20:00Z",
+      "family": "internet_reachability",
+      "title": "IODA detected connectivity anomaly: country TD",
+      "url": "https://ioda.inetintel.cc.gatech.edu/"
+    },
+    {
+      "event_at": "2026-11-09T19:20:00Z",
+      "family": "internet_reachability",
+      "title": "IODA detected connectivity anomaly: country TJ",
+      "url": "https://ioda.inetintel.cc.gatech.edu/"
+    },
+    {
+      "event_at": "2026-11-09T19:20:00Z",
+      "family": "internet_reachability",
+      "title": "IODA detected connectivity anomaly: country TL",
+      "url": "https://ioda.inetintel.cc.gatech.edu/"
+    },
+    {
+      "event_at": "2026-11-09T19:20:00Z",
+      "family": "internet_reachability",
+      "title": "IODA detected connectivity anomaly: country NE",
+      "url": "https://ioda.inetintel.cc.gatech.edu/"
+    },
+    {
+      "event_at": "2026-11-09T19:20:00Z",
+      "family": "internet_reachability",
+      "title": "IODA detected connectivity anomaly: country BW",
+      "url": "https://ioda.inetintel.cc.gatech.edu/"
+    },
+    {
+      "event_at": "2026-11-09T19:20:00Z",
+      "family": "internet_reachability",
+      "title": "IODA detected connectivity anomaly: country CV",
+      "url": "https://ioda.inetintel.cc.gatech.edu/"
+    },
+    {
+      "event_at": "2026-11-09T19:20:00Z",
+      "family": "internet_reachability",
+      "title": "IODA detected connectivity anomaly: country NR",
+      "url": "https://ioda.inetintel.cc.gatech.edu/"
+    },
+    {
+      "event_at": "2026-11-09T19:20:00Z",
+      "family": "internet_reachability",
+      "title": "IODA detected connectivity anomaly: country PW",
+      "url": "https://ioda.inetintel.cc.gatech.edu/"
+    },
+    {
+      "event_at": "2026-11-09T19:20:00Z",
+      "family": "internet_reachability",
+      "title": "IODA detected connectivity anomaly: country FM",
+      "url": "https://ioda.inetintel.cc.gatech.edu/"
+    },
+    {
+      "event_at": "2026-11-09T19:20:00Z",
+      "family": "internet_reachability",
+      "title": "IODA detected connectivity anomaly: country LC",
+      "url": "https://ioda.inetintel.cc.gatech.edu/"
+    },
+    {
+      "event_at": "2026-11-09T19:20:00Z",
+      "family": "internet_reachability",
+      "title": "IODA detected connectivity anomaly: country GY",
+      "url": "https://ioda.inetintel.cc.gatech.edu/"
+    },
+    {
+      "event_at": "2026-11-09T19:20:00Z",
+      "family": "internet_reachability",
+      "title": "IODA detected connectivity anomaly: country ML",
+      "url": "https://ioda.inetintel.cc.gatech.edu/"
+    },
+    {
+      "event_at": "2026-11-09T19:20:00Z",
+      "family": "internet_reachability",
+      "title": "IODA detected connectivity anomaly: country SZ",
+      "url": "https://ioda.inetintel.cc.gatech.edu/"
+    },
+    {
+      "event_at": "2026-11-09T19:20:00Z",
+      "family": "internet_reachability",
+      "title": "IODA detected connectivity anomaly: country MC",
+      "url": "https://ioda.inetintel.cc.gatech.edu/"
+    },
+    {
+      "event_at": "2026-11-09T19:20:00Z",
+      "family": "internet_reachability",
+      "title": "IODA detected connectivity anomaly: country TO",
+      "url": "https://ioda.inetintel.cc.gatech.edu/"
+    },
+    {
+      "event_at": "2026-11-09T19:20:00Z",
+      "family": "internet_reachability",
+      "title": "IODA detected connectivity anomaly: country SL",
       "url": "https://ioda.inetintel.cc.gatech.edu/"
     }
   ],
