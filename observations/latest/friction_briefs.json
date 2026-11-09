@@ -417,11 +417,11 @@
   ],
   "executive_summary": "No qualifying novel structural-friction lead in the collected evidence. This is not an all-clear; verify coverage and established watch states.",
   "fresh_snapshot": true,
-  "generated_at": "2026-11-09T02:36:45Z",
+  "generated_at": "2026-11-09T10:17:47Z",
   "health": {
     "amsa": {
       "age_hours": 0.0,
-      "checked_at": "2026-11-09T02:36:42Z",
+      "checked_at": "2026-11-09T10:17:44Z",
       "collector_status": "collected",
       "coverage": "complete",
       "error": null,
@@ -430,16 +430,16 @@
     },
     "ioda": {
       "age_hours": 0.0,
-      "checked_at": "2026-11-09T02:36:42Z",
+      "checked_at": "2026-11-09T10:17:44Z",
       "collector_status": "collected",
       "coverage": "complete",
       "error": null,
-      "observed_records": 4,
+      "observed_records": 5,
       "status": "fresh"
     },
     "nga": {
-      "age_hours": 3.8,
-      "checked_at": "2026-11-08T22:48:57Z",
+      "age_hours": 0.0,
+      "checked_at": "2026-11-09T10:17:44Z",
       "collector_status": "unavailable",
       "coverage": "unknown",
       "error": "HTTPError: HTTP Error 503: Service Unavailable",
@@ -447,7 +447,7 @@
       "status": "unavailable"
     }
   },
-  "latest_source_snapshot": "2026-11-09T02:36:42Z",
+  "latest_source_snapshot": "2026-11-09T10:17:44Z",
   "limits": [
     "Data feeds are partial, not a global exhaustive sensor network.",
     "Collection timestamp does not establish source event or publication time.",
@@ -471,6 +471,12 @@
       "event_at": "2026-11-08T20:30:00Z",
       "family": "internet_reachability",
       "title": "IODA detected connectivity anomaly: country NF",
+      "url": "https://ioda.inetintel.cc.gatech.edu/"
+    },
+    {
+      "event_at": "2026-11-09T04:30:00Z",
+      "family": "internet_reachability",
+      "title": "IODA detected connectivity anomaly: country AX",
       "url": "https://ioda.inetintel.cc.gatech.edu/"
     }
   ],
