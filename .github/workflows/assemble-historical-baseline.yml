@@ -1,0 +1,72 @@
+name: Assemble GDELT historical baselines (manual shadow mode)
+on:
+  workflow_dispatch:
+    inputs:
+      start:
+        description: Earliest UTC day required in assembled panel (YYYY-MM-DD)
+        required: true
+        type: string
+      end:
+        description: Last UTC day required in assembled panel (YYYY-MM-DD)
+        required: true
+        type: string
+permissions:
+  contents: read
+  actions: read
+jobs:
+  assemble:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Download bounded historical GDELT artifacts from previous runs
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          mkdir -p historical-artifacts
+          gh run list --repo "$GITHUB_REPOSITORY" --workflow historical-baseline.yml \
+            --limit 100 --json databaseId,conclusion \
+            --jq '.[] | select(.conclusion=="success" or .conclusion=="failure") | .databaseId' > /tmp/gdelt-runs.txt
+          if [ ! -s /tmp/gdelt-runs.txt ]; then
+            echo "No completed historical backfill runs" >&2
+            exit 1
+          fi
+          while read -r run_id; do
+            # A missing artifact differs from a failed authenticated download.
+            # Never hide API, token or network errors with a successful echo.
+            count="$(gh api "repos/$GITHUB_REPOSITORY/actions/runs/$run_id/artifacts?per_page=100" \
+              --jq '[.artifacts[] | select(.name | startswith("gdelt-baseline-")) | select(.expired == false)] | length')"
+            if [ "$count" -eq 0 ]; then
+              echo "::warning::Run $run_id has no retained historical artifact; source coverage is unknown for this run"
+              continue
+            fi
+            mkdir -p "historical-artifacts/$run_id"
+            gh run download "$run_id" --repo "$GITHUB_REPOSITORY" \
+              --pattern 'gdelt-baseline-*' --dir "historical-artifacts/$run_id"
+            if ! find "historical-artifacts/$run_id" -name daily.jsonl -print -quit | grep -q .; then
+              echo "::error::Run $run_id has an artifact but no daily.jsonl; treating as a collection/format failure"
+              exit 1
+            fi
+          done < /tmp/gdelt-runs.txt
+          if ! find historical-artifacts -name daily.jsonl | grep -q .; then
+            echo "No daily.jsonl files were downloaded" >&2
+            exit 1
+          fi
+      - name: Stitch chronology and recompute shadow anomalies
+        run: |
+          python scripts/merge_gdelt_history.py \
+            --inputs historical-artifacts \
+            --start "${{ inputs.start }}" --end "${{ inputs.end }}" \
+            --output historical-merged
+      - name: Store source-profiled merged history and coverage report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: gdelt-merged-shadow-${{ inputs.start }}-${{ inputs.end }}
+          path: historical-merged/
+          if-no-files-found: warn
+          retention-days: 90
