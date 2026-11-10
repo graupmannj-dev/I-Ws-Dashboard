@@ -164,6 +164,21 @@ def propose_episodes(src, start=dt.date(2026, 7, 11), end=RELEASE_END):
         deaths = src["daily_best_deaths"][key]
         names = src["dyad_info"][key]
         last = {"quiet_restart": None, "intensification": None}
+
+        def surge_state(x):
+            # The *first* high-intensity crossing is the label, rather
+            # than every day an existing conflict stays intense.
+            recent_start = x - dt.timedelta(days=6)
+            ref_start, ref_end = x-dt.timedelta(days=34), x-dt.timedelta(days=7)
+            if any_uncertain(src, key, ref_start, x):
+                return None, None, None
+            recent = sum(deaths.get(d, 0) for d in calendar(recent_start, x))
+            before = sum(deaths.get(d, 0) for d in calendar(ref_start, ref_end))
+            qualifies = (before >= ESCALATION_MIN_PRIOR_BEST_DEATHS
+                         and recent >= ESCALATION_MIN_BEST_DEATHS
+                         and recent >= ESCALATION_RATIO*(before/4))
+            return qualifies, recent, before
+
         for t in calendar(start, end):
             if deaths.get(t, 0) == 0:
                 continue
@@ -186,19 +201,18 @@ def propose_episodes(src, start=dt.date(2026, 7, 11), end=RELEASE_END):
                 last["quiet_restart"] = t
                 reason["quiet_restart"] += 1
 
-            recent_start = t-dt.timedelta(days=6)
-            ref_start, ref_end = t-dt.timedelta(days=34), t-dt.timedelta(days=7)
-            if any_uncertain(src, key, ref_start, t):
+            qualifies, recent, before = surge_state(t)
+            preceding_qualifies, _, _ = surge_state(t-dt.timedelta(days=1))
+            if qualifies is None or preceding_qualifies is None:
                 reason["intensification_censored_uncertain_event"] += 1
                 continue
-            recent = sum(deaths.get(d, 0) for d in calendar(recent_start, t))
-            before = sum(deaths.get(d, 0) for d in calendar(ref_start, ref_end))
-            if before < ESCALATION_MIN_PRIOR_BEST_DEATHS:
-                continue
-            if recent < ESCALATION_MIN_BEST_DEATHS or recent < ESCALATION_RATIO*(before/4):
+            if not qualifies or preceding_qualifies:
+                # A day remaining above the threshold is NOT a new
+                # escalation, even if no earlier label was issued.
                 continue
             if last["intensification"] and (t-last["intensification"]).days < COOLDOWN_DAYS:
                 continue
+            recent_start = t-dt.timedelta(days=6)
             episodes.append({
                 "episode_id": f"UCDP-CAND-{UCDP_RELEASE}-{dyad}-{country}-{t}-SURGE",
                 "date": t.isoformat(), "type": "intensification",
