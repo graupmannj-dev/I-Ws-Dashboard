@@ -48,8 +48,12 @@ Two separate **episode candidate** definitions:
    **at least 15 best-estimate fatalities**, the *nonoverlapping*
    **prior 28 days** contain **at least 7**, and recent seven-day deaths
    reach **at least 3×** the 7-day expected count derived from the
-   preceding 28-day reference. A new surge is suppressed for 14 days
-   after a prior candidate surge in the same dyad–country.
+   preceding 28-day reference. **The same threshold must have been
+   below threshold on the preceding UTC day**; a series that was
+   already intense is never automatically relabeled a fresh surge.
+   Any uncertainty in the t or t-1 source windows censors the label.
+   A new surge is suppressed for 14 days after a prior candidate
+   surge in the same dyad–country.
 
 The source starts January 1, so no episodes are eligible before
 **February 5**, after 35 prior days can be observed. Evaluation is
