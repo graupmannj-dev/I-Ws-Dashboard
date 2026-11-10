@@ -1,0 +1,122 @@
+{
+  "case_counts": {
+    "unlocated": {
+      "internet_reachability": 8,
+      "maritime_restriction": 3
+    }
+  },
+  "collected_at": "2026-11-10T18:50:22Z",
+  "coverage": "partial",
+  "health": {
+    "amsa": {
+      "caveat": "Source observation only. Does not independently establish military preparations or event attribution.",
+      "checked_at": "2026-11-10T18:50:22Z",
+      "error": null,
+      "records": 3,
+      "source_url": "https://www.operations.amsa.gov.au/AMSA.Web.MSIPublication/",
+      "status": "collected",
+      "truncated": false
+    },
+    "ioda": {
+      "caveat": "Source observation only. Does not independently establish military preparations or event attribution.",
+      "checked_at": "2026-11-10T18:50:22Z",
+      "error": null,
+      "records": 8,
+      "source_url": "https://api.ioda.inetintel.cc.gatech.edu/v2/outages/events?from=1794322222&until=1794336622&entityType=country&limit=100&page=0&extendWindowSeconds=0",
+      "status": "collected",
+      "truncated": false
+    },
+    "nga": {
+      "caveat": "Upstream unavailable or unsupported; NOT evidence of zero activity.",
+      "checked_at": "2026-11-10T18:50:22Z",
+      "error": "HTTPError: HTTP Error 503: Service Unavailable",
+      "records": null,
+      "source_url": "https://msi.nga.mil/api/publications/broadcast-warn?status=active&output=json",
+      "status": "unavailable",
+      "truncated": null
+    }
+  },
+  "new_records": [
+    {
+      "case_id": null,
+      "collected_at": "2026-11-10T18:50:22Z",
+      "detection_method": "median",
+      "end_at": null,
+      "entity_code": "VE",
+      "entity_type": "country",
+      "event_at": "2026-11-10T13:55:00Z",
+      "family": "internet_reachability",
+      "first_seen_at": "2026-11-10T18:50:22Z",
+      "id": "ioda:f65badb9e2bbc5bccc31dc23",
+      "kind": "outage_event",
+      "location_precision": "Country/region/network context, not incident geolocation.",
+      "provider": "ioda",
+      "review_level": "measurement_context",
+      "root": "ioda:28b5df416bfd2ce8b6fa46c3",
+      "signal_types": [
+        "bgp"
+      ],
+      "source": "IODA / Georgia Tech",
+      "source_published_at": null,
+      "source_score": 4046.3734246108247,
+      "source_url": "https://ioda.inetintel.cc.gatech.edu/",
+      "summary": "Internet outage detection candidate; network measurements are not evidence of state attribution or an impending cyber offensive.",
+      "title": "IODA detected connectivity anomaly: country VE"
+    },
+    {
+      "case_id": null,
+      "collected_at": "2026-11-10T18:50:22Z",
+      "detection_method": "median",
+      "end_at": null,
+      "entity_code": "GP",
+      "entity_type": "country",
+      "event_at": "2026-11-10T15:30:00Z",
+      "family": "internet_reachability",
+      "first_seen_at": "2026-11-10T18:50:22Z",
+      "id": "ioda:237fd455c0ec641ebe39b650",
+      "kind": "outage_event",
+      "location_precision": "Country/region/network context, not incident geolocation.",
+      "provider": "ioda",
+      "review_level": "measurement_context",
+      "root": "ioda:079efa58ece348d9471a7c5a",
+      "signal_types": [
+        "bgp"
+      ],
+      "source": "IODA / Georgia Tech",
+      "source_published_at": null,
+      "source_score": 25.74370709382151,
+      "source_url": "https://ioda.inetintel.cc.gatech.edu/",
+      "summary": "Internet outage detection candidate; network measurements are not evidence of state attribution or an impending cyber offensive.",
+      "title": "IODA detected connectivity anomaly: country GP"
+    },
+    {
+      "case_id": null,
+      "collected_at": "2026-11-10T18:50:22Z",
+      "detection_method": "median",
+      "end_at": null,
+      "entity_code": "MU",
+      "entity_type": "country",
+      "event_at": "2026-11-10T16:10:00Z",
+      "family": "internet_reachability",
+      "first_seen_at": "2026-11-10T18:50:22Z",
+      "id": "ioda:4cb5c494ecacc95da84de670",
+      "kind": "outage_event",
+      "location_precision": "Country/region/network context, not incident geolocation.",
+      "provider": "ioda",
+      "review_level": "measurement_context",
+      "root": "ioda:1dc5b9a48130cbe42f355c60",
+      "signal_types": [
+        "ping-slash24"
+      ],
+      "source": "IODA / Georgia Tech",
+      "source_published_at": null,
+      "source_score": 650.7439310884887,
+      "source_url": "https://ioda.inetintel.cc.gatech.edu/",
+      "summary": "Internet outage detection candidate; network measurements are not evidence of state attribution or an impending cyber offensive.",
+      "title": "IODA detected connectivity anomaly: country MU"
+    }
+  ],
+  "note": "Only successful sources appear in records. Missing sources remain unavailable.",
+  "record_count": 11,
+  "schema_version": 1
+}

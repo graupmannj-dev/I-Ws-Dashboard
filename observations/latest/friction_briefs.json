@@ -536,11 +536,11 @@
   "executive_review_count": 0,
   "executive_summary": "0 early indicators qualify for executive assessment; 4 other investigatory leads remain. No automated change to standing threat categories.",
   "fresh_snapshot": true,
-  "generated_at": "2026-11-10T11:43:11Z",
+  "generated_at": "2026-11-10T18:50:26Z",
   "health": {
     "amsa": {
-      "age_hours": 0.01,
-      "checked_at": "2026-11-10T11:42:47Z",
+      "age_hours": 0.0,
+      "checked_at": "2026-11-10T18:50:22Z",
       "collector_status": "collected",
       "coverage": "complete",
       "error": null,
@@ -548,17 +548,17 @@
       "status": "fresh"
     },
     "ioda": {
-      "age_hours": 0.01,
-      "checked_at": "2026-11-10T11:42:47Z",
+      "age_hours": 0.0,
+      "checked_at": "2026-11-10T18:50:22Z",
       "collector_status": "collected",
       "coverage": "complete",
       "error": null,
-      "observed_records": 7,
+      "observed_records": 8,
       "status": "fresh"
     },
     "nga": {
-      "age_hours": 0.01,
-      "checked_at": "2026-11-10T11:42:47Z",
+      "age_hours": 0.0,
+      "checked_at": "2026-11-10T18:50:22Z",
       "collector_status": "unavailable",
       "coverage": "unknown",
       "error": "HTTPError: HTTP Error 503: Service Unavailable",
@@ -566,7 +566,7 @@
       "status": "unavailable"
     }
   },
-  "latest_source_snapshot": "2026-11-10T11:42:47Z",
+  "latest_source_snapshot": "2026-11-10T18:50:22Z",
   "limits": [
     "Data feeds are partial, not a global exhaustive sensor network.",
     "Collection timestamp does not establish source event or publication time.",
@@ -586,12 +586,6 @@
   "shadow_mode": true,
   "uncalibrated_review_count": 4,
   "unlocated_leads": [
-    {
-      "event_at": "2026-11-08T20:30:00Z",
-      "family": "internet_reachability",
-      "title": "IODA detected connectivity anomaly: country NF",
-      "url": "https://ioda.inetintel.cc.gatech.edu/"
-    },
     {
       "event_at": "2026-11-09T04:30:00Z",
       "family": "internet_reachability",
@@ -734,6 +728,12 @@
       "event_at": "2026-11-09T19:20:00Z",
       "family": "internet_reachability",
       "title": "IODA detected connectivity anomaly: country SL",
+      "url": "https://ioda.inetintel.cc.gatech.edu/"
+    },
+    {
+      "event_at": "2026-11-09T19:20:00Z",
+      "family": "internet_reachability",
+      "title": "IODA detected connectivity anomaly: country CG",
       "url": "https://ioda.inetintel.cc.gatech.edu/"
     }
   ],
