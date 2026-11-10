@@ -414,6 +414,7 @@ def build(state, clock=utcnow, registry=ROOT / "data" / "decision_registry.json"
         # Compact immutable alert-decision trace for future walk-forward audits.
         trace = {"asof": iso(at), "shadow_mode": True,
                  "review_case_ids": [c["id"] for c in review],
+                 "executive_case_ids": [c["id"] for c in executive],
                  "triage": {c["id"]: c["triage"] for c in cases},
                  "sources_available": {k: v["status"] for k, v in health.items()},
                  "outcomes_labeled": False}
