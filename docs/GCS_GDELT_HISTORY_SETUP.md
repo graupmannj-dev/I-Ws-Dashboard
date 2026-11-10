@@ -83,6 +83,11 @@ gcloud iam service-accounts create "$SA_NAME" \
 gcloud storage buckets add-iam-policy-binding "gs://$BUCKET" \
   --member="serviceAccount:$SA_EMAIL" \
   --role="roles/storage.objectUser"
+# Required for the application's explicit check that Object Versioning is on.
+# storage.objectUser alone does not grant storage.buckets.get.
+gcloud storage buckets add-iam-policy-binding "gs://$BUCKET" \
+  --member="serviceAccount:$SA_EMAIL" \
+  --role="roles/storage.bucketViewer"
 
 gcloud iam workload-identity-pools create "$POOL" \
   --project="$PROJECT_ID" --location="global" \
