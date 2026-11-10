@@ -60,8 +60,30 @@ jobs:
           path: cache
           key: gdelt-${{ runner.os }}-${{ github.run_id }}
           restore-keys: gdelt-${{ runner.os }}-
-      - name: Collect and require all 35 valid daily archives
-        run: python aiba_v5.py --download-days 35 --wiki-days 90 --strict-gdelt --output-dir _site
+      - name: Collect with strict GDELT gate; degrade only on missing archives
+        shell: bash
+        run: |
+          set +e
+          python aiba_v5.py --download-days 35 --wiki-days 90 --strict-gdelt --output-dir _site > /tmp/aiba-strict.log 2>&1
+          rc=$?
+          set -e
+          cat /tmp/aiba-strict.log
+          if [ "$rc" -ne 0 ]; then
+            if ! grep -q 'REFUSING TO PUBLISH: require all 7 recent and 28 baseline valid daily archives' /tmp/aiba-strict.log; then
+              echo "::error::Unexpected build failure; do not mask it with a partial publication"
+              exit "$rc"
+            fi
+            echo "::warning::GDELT daily archive window incomplete. Publishing other validated feeds; suppressing GDELT discovery."
+            python aiba_v5.py --wiki-days 90 --allow-partial-gdelt --output-dir _site
+            python - <<'PY'
+          import json
+          from pathlib import Path
+          status=json.loads(Path("_site/collection_status.json").read_text())
+          if status["discovery_status"] != "missing_data":
+              raise SystemExit("Degraded build did not report missing GDELT data")
+          print("Partial publication: GDELT discovery suppressed; other feeds may continue.")
+          PY
+          fi
       - run: python ops_render.py --state ops-state/observations --site _site
       - run: python decision_render.py --state ops-state/observations --site _site
       - run: python scripts/check_dashboard.py _site/index.html
