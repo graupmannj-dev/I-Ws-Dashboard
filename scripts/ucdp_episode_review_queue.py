@@ -67,7 +67,7 @@ def build_queue(episodes, history, xwalk, max_per_episode=5):
               min(dt.date.fromisoformat(e["date"]) for e in valid_episodes)-dt.timedelta(days=HORIZON))
     last=min(last_day,max(dt.date.fromisoformat(e["date"]) for e in valid_episodes)-dt.timedelta(days=1))
     flags=prior_flags(by_day,first,last) if first<=last else {}
-    reviewed=[],Counter()
+    reviewed=[]
     counts=Counter()
     for e in valid_episodes:
         eday=dt.date.fromisoformat(e["date"])
