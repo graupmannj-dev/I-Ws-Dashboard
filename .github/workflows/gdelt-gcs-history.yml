@@ -6,7 +6,7 @@ on:
         description: 'Four-root seed/update, or six-root backfill/update in separate GCS namespace'
         type: choice
         required: true
-        options: [seed, update, six_backfill, six_update]
+        options: [seed, update, six_backfill, six_update, six_sweep]
       through:
         description: 'Update only: last completed UTC day, e.g. 2026-11-09; blank = yesterday'
         type: string
@@ -19,6 +19,11 @@ on:
         description: 'six_backfill only: last YYYY-MM-DD UTC date (max 14 days per run)'
         type: string
         required: false
+      max_batches:
+        description: 'six_sweep only: max 1-8 individually validated 14-day batches (default 8)'
+        type: number
+        required: false
+        default: 8
   schedule:
     - cron: '27 13 * * *'
 permissions:
@@ -52,7 +57,7 @@ jobs:
           fi
   gcs-history:
     needs: preflight
-    if: needs.preflight.outputs.ready == 'true' && (github.event_name == 'schedule' || (inputs.mode != 'six_backfill' && inputs.mode != 'six_update'))
+    if: needs.preflight.outputs.ready == 'true' && (github.event_name == 'schedule' || (inputs.mode != 'six_backfill' && inputs.mode != 'six_update' && inputs.mode != 'six_sweep'))
     runs-on: ubuntu-latest
     timeout-minutes: 45
     permissions:
@@ -142,17 +147,18 @@ jobs:
     needs: [preflight, gcs-history]
     # Keep this job in the SAME workflow file to honor the existing,
     # tightly restricted Google Cloud OIDC workflow_ref condition.
-    if: always() && needs.preflight.outputs.ready == 'true' && ((github.event_name == 'schedule' && needs.gcs-history.result == 'success') || (github.event_name == 'workflow_dispatch' && (inputs.mode == 'six_backfill' || inputs.mode == 'six_update')))
+    if: always() && needs.preflight.outputs.ready == 'true' && ((github.event_name == 'schedule' && needs.gcs-history.result == 'success') || (github.event_name == 'workflow_dispatch' && (inputs.mode == 'six_backfill' || inputs.mode == 'six_update' || inputs.mode == 'six_sweep')))
     runs-on: ubuntu-latest
     timeout-minutes: 65
     permissions:
       contents: read
       id-token: write
     env:
-      RUN_MODE: ${{ github.event_name == 'schedule' && 'update' || (inputs.mode == 'six_backfill' && 'backfill' || 'update') }}
+      RUN_MODE: ${{ github.event_name == 'schedule' && 'update' || (inputs.mode == 'six_backfill' && 'backfill' || (inputs.mode == 'six_sweep' && 'sweep' || 'update')) }}
       FIRST_DAY: ${{ inputs.start }}
       LAST_DAY: ${{ inputs.end }}
       TARGET_DAY: ${{ inputs.through }}
+      MAX_BATCHES: ${{ inputs.max_batches }}
       GCS_BUCKET: ${{ vars.GCS_GDELT_BUCKET }}
     steps:
       - uses: actions/checkout@v4
@@ -182,29 +188,54 @@ jobs:
           elif [ -n "$TARGET_DAY" ]; then
             args+=(--through "$TARGET_DAY")
           fi
-          python scripts/gdelt_six_root_gcs.py "${args[@]}"
+          if [ "$RUN_MODE" = sweep ]; then
+            sweep_args=(--project aiba-514120 --bucket "$GCS_BUCKET"
+                         --output gdelt-sixroot-audit --run-id "$GITHUB_RUN_ID"
+                         --max-batches "$MAX_BATCHES")
+            if [ -n "$TARGET_DAY" ]; then sweep_args+=(--through "$TARGET_DAY"); fi
+            python scripts/gdelt_sixroot_sweep.py "${sweep_args[@]}"
+          else
+            python scripts/gdelt_six_root_gcs.py "${args[@]}"
+          fi
       - name: Record six-root parity and migration health
         if: always()
         run: |
           python - <<'PY'
           import json,os
           from pathlib import Path
-          f=Path('gdelt-sixroot-audit/manifest.json')
-          if not f.exists():
-              print('::warning::Six-root migration failed before an audit receipt could be written')
-          else:
+          f=Path('gdelt-sixroot-audit/sweep_manifest.json')
+          if f.exists():
               m=json.loads(f.read_text())
               lines=[
-                  '## Six-root GDELT shadow profile (13,16,17–20)',
+                  '## GDELT six-root audited bulk reconciliation',
                   f"- Status: **{m['status']}**",
-                  f"- UTC dates created: {len(m['created_days'])}",
-                  f"- Four-root projections checked: {len(m['checked_parity'])}",
-                  f"- Provider failures: {len(m['source_failures'])}",
-                  f"- Backfill dates not yet present: {len(m['missing_sixroot_days'])}",
-                  f"- Missing four-root reference dates: {len(m['missing_v1_dependency'])}",
-                  f"- Eligible lagged shadow comparisons: {len(m['eligible_evaluations'])}",
+                  f"- Bounded 14-day batches attempted: {m['attempted_batches']}",
+                  f"- New days: {m['total_new_days']}",
+                  f"- Full-source dates stored: {m['total_existing_sixroot_in_target']}/{m['total_required_dates']}",
+                  f"- Missing six-root dates: {len(m['remaining_sixroot_dates'])}",
+                  f"- Provider failures: {len(m['provider_failures'])}",
+                  f"- Missing four-root references: {len(m['missing_fourroot_reference_dates'])}",
                   '- Production warnings and publication: UNCHANGED'
               ]
+          else:
+              f=Path('gdelt-sixroot-audit/manifest.json')
+              if not f.exists():
+                  print('::warning::Six-root migration failed before an audit receipt could be written')
+                  lines=[]
+              else:
+                  m=json.loads(f.read_text())
+                  lines=[
+                      '## Six-root GDELT shadow profile (13,16,17–20)',
+                      f"- Status: **{m['status']}**",
+                      f"- UTC dates created: {len(m['created_days'])}",
+                      f"- Four-root projections checked: {len(m['checked_parity'])}",
+                      f"- Provider failures: {len(m['source_failures'])}",
+                      f"- Backfill dates not yet present: {len(m['missing_sixroot_days'])}",
+                      f"- Missing four-root reference dates: {len(m['missing_v1_dependency'])}",
+                      f"- Eligible lagged shadow comparisons: {len(m['eligible_evaluations'])}",
+                      '- Production warnings and publication: UNCHANGED'
+                  ]
+          if lines:
               with open(os.environ['GITHUB_STEP_SUMMARY'],'a') as out:
                   out.write('\n'.join(lines)+'\n')
           PY
