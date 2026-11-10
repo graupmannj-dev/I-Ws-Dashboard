@@ -52,16 +52,29 @@ class EpisodeLabelTests(unittest.TestCase):
         t=dt.date(2026,7,11)
         for d in range(34,6,-1):
             src["daily_best_deaths"][key][t-dt.timedelta(days=d)]=1
-        for d in range(6,-1,-1):
-            src["daily_best_deaths"][key][t-dt.timedelta(days=d)]=4
+        for d in range(6,0,-1):
+            src["daily_best_deaths"][key][t-dt.timedelta(days=d)]=2
+        src["daily_best_deaths"][key][t]=20
         src["daily_event_ids"][key][t]=["U-2"]
         episodes,_=propose_episodes(src,t,t)
         self.assertEqual([e["type"] for e in episodes],["intensification"])
-        self.assertEqual(episodes[0]["best_fatalities_7d"],28)
+        self.assertEqual(episodes[0]["best_fatalities_7d"],32)
         self.assertEqual(episodes[0]["baseline_best_fatalities_28d"],28)
         src["country_uncertain_dates"]["Ukraine"].add(t-dt.timedelta(days=8))
         censored,_=propose_episodes(src,t,t)
         self.assertEqual(censored,[])
+
+    def test_continuing_high_severity_does_not_invent_a_new_escalation(self):
+        src=source_stub()
+        key=("Ukraine","770")
+        t=dt.date(2026,7,11)
+        for d in range(34,6,-1):
+            src["daily_best_deaths"][key][t-dt.timedelta(days=d)]=1
+        for d in range(6,-1,-1):
+            src["daily_best_deaths"][key][t-dt.timedelta(days=d)]=7
+        src["daily_event_ids"][key][t]=["U-3"]
+        episodes,_=propose_episodes(src,t,t)
+        self.assertEqual(episodes,[], "Severity already above threshold on t-1 is not a new crossing")
 
     def test_repeated_escalation_crossings_suppressed_by_cooldown(self):
         src=source_stub()
