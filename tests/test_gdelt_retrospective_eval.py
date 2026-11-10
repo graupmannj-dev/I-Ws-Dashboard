@@ -12,10 +12,10 @@ from scripts.gdelt_retrospective_eval import (
 )
 
 
-FIRST = dt.date(2026, 7, 11)
+FIRST = dt.date(2026, 4, 12)
 
 
-def data_fixture(folder, n=80):
+def data_fixture(folder, n=170):
     out=Path(folder)
     hist=out/"daily.jsonl"
     with hist.open("w") as f:
@@ -25,7 +25,7 @@ def data_fixture(folder, n=80):
             rec={"day":d.strftime("%Y%m%d"),"rows":1200,"selected":1000,
                  "counts":{"BILAT:RUS:UKR": 80, "DOMESTIC:UKR": 20,
                            "DOMESTIC:RUS": 10,"DOMESTIC:AFG":890}}
-            if i==66:
+            if i==135:
                 rec["counts"]["BILAT:RUS:UKR"]=200
                 rec["counts"]["DOMESTIC:AFG"]=770
             f.write(json.dumps(rec)+"\n")
@@ -72,6 +72,14 @@ class RetrospectiveTests(unittest.TestCase):
             self.assertIn("RUS",report["coverage"]["unmatched_country_codes"])
             self.assertFalse(report["approved_for_alert_promotion"])
             self.assertGreater(report["metrics"]["all_country_days"]["shadow_90d"]["country_days"],0)
+
+    def test_full_90_day_calendar_history_is_required(self):
+        with tempfile.TemporaryDirectory() as d:
+            hist,cross,ucdp=data_fixture(d,n=80)
+            rows,report=evaluate(hist,cross,ucdp)
+            self.assertFalse(rows)
+            self.assertEqual(report["status"],"insufficient_labeled_coverage")
+            self.assertGreater(report["coverage"]["excluded"]["missing_full_90_calendar_day_reference"],0)
 
     def test_no_prospective_lookahead_in_seven_28(self):
         with tempfile.TemporaryDirectory() as d:
