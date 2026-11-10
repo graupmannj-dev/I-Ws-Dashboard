@@ -307,8 +307,13 @@ def main():
     args = parser.parse_args()
     if args.project != PROJECT:
         parser.error(f"This rollout is scoped to Google Cloud project {PROJECT}")
+    if not re.fullmatch(r"[a-z0-9][a-z0-9.-]{2,221}", args.bucket) or args.bucket.startswith("gs://"):
+        parser.error("--bucket must be a bucket name without gs://")
     from google.cloud import storage  # Only needed for authenticated runtime, not local tests.
     bucket = storage.Client(project=args.project).bucket(args.bucket)
+    bucket.reload()
+    if not bucket.versioning_enabled:
+        raise SystemExit("Bucket Object Versioning is disabled; refusing to write durable baseline.")
     day = dt.date.fromisoformat(args.through) if args.through else None
     result = execute(bucket, args.mode, args.output, through=day,
                      seed_file=args.seed_file, seed_manifest=args.seed_manifest,
