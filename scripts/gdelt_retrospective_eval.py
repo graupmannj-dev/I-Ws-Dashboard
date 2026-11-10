@@ -39,24 +39,27 @@ def iso_day(value):
     return parse_date(value)
 
 
-def load_history(path):
-    """Accept only the verified four-root v1 file; v2 must be evaluated separately."""
+def load_history(paths):
+    """Stitch separately verified four-root periods; never tolerate conflicting days."""
     by_day = {}
-    source = Path(path).read_bytes()
-    for line_num, line in enumerate(source.splitlines(), 1):
-        if not line.strip():
-            continue
-        try:
-            record = json.loads(line)
-            day = validate_record(record)
-        except (ValueError, json.JSONDecodeError) as exc:
-            raise ValueError(f"Historical row {line_num}: {exc}") from exc
-        if day in by_day:
-            raise ValueError(f"Duplicate historical date {day}")
-        by_day[day] = record
+    digest = hashlib.sha256()
+    for path in paths:
+        source = Path(path).read_bytes()
+        digest.update(Path(path).name.encode()+b"\\0"+hashlib.sha256(source).digest())
+        for line_num, line in enumerate(source.splitlines(), 1):
+            if not line.strip():
+                continue
+            try:
+                record = json.loads(line)
+                day = validate_record(record)
+            except (ValueError, json.JSONDecodeError) as exc:
+                raise ValueError(f"{path}: historical row {line_num}: {exc}") from exc
+            if day in by_day and by_day[day] != record:
+                raise ValueError(f"Conflicting source history on {day}: independent review required")
+            by_day[day] = record
     if not by_day:
         raise ValueError("No valid GDELT aggregate records")
-    return by_day, hashlib.sha256(source).hexdigest()
+    return by_day, digest.hexdigest()
 
 
 def country_crosswalk(path):
@@ -216,7 +219,7 @@ def confusion(rows, prediction_key, subset=None):
 
 
 def evaluate(history, crosswalk, ucdp, start=None, end=None):
-    by_day, gdelt_hash = load_history(history)
+    by_day, gdelt_hash = load_history([history] if isinstance(history, (str, Path)) else history)
     cases = country_crosswalk(crosswalk)
     ledger = load_ucdp(ucdp, set(cases.values()))
     start = max(start or min(by_day), min(by_day)+dt.timedelta(days=34),
@@ -236,6 +239,11 @@ def evaluate(history, crosswalk, ucdp, start=None, end=None):
             continue
         if compare is None or not screen["baseline"]["eligible"]:
             excluded["incomplete_gdelt_lagged_baseline"] += 1
+            continue
+        # A 28–89-day warm-up is NOT a validated 90-day reference.
+        # Without pre-July source history no dates overlap Sep 2026 UCDP.
+        if screen["baseline"]["expected_days"] != 90 or screen["baseline"]["valid_days"] != 90:
+            excluded["missing_full_90_calendar_day_reference"] += 1
             continue
         n90 = exposure({x["case"] for x in screen["established_leads"]+screen["emerging_leads"]})
         n728 = exposure(compare)
@@ -298,7 +306,7 @@ def evaluate(history, crosswalk, ucdp, start=None, end=None):
 
 def main():
     p=argparse.ArgumentParser(description=__doc__)
-    p.add_argument("--history",required=True)
+    p.add_argument("--history",nargs="+",required=True,help="One or more source-compatible four-root daily.jsonl inputs")
     p.add_argument("--ucdp",required=True)
     p.add_argument("--crosswalk",default="data/validation/ucdp_country_crosswalk_pilot.csv")
     p.add_argument("--start")
@@ -317,7 +325,7 @@ def main():
         w.writeheader()
         w.writerows(rows)
     (path/"report.json").write_text(json.dumps(report,indent=2)+"\n",encoding="utf-8")
-    print(json.dumps(report,indent=2))
+    print(json.dumps(report,indent=2))\n    if report["status"] != "exploratory_proxy_only":\n        raise SystemExit("No full-90-day references overlap UCDP covered outcomes; collect pre-July history before claiming metrics")
 
 
 if __name__=="__main__":
