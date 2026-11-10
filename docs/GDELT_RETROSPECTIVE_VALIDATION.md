@@ -5,10 +5,25 @@ not feed the dashboard or promote executive warnings.
 
 ## 1. Precisely what can be tested with current sources
 
-The validated GDELT historical file covers 122 complete days
-**2026-07-11 through 2026-11-09**, but is a *four-root* source profile
+The verified GDELT historical artifact covers 122 complete days
+**2026-07-11 through 2026-11-09**, in a *four-root* source profile
 (17–20). The new six-root historical migration is handled separately
 in PR #23. The two profiles **must not be pooled**.
+
+**Critical calendar constraint:** the first full 90-day reference from
+a July 11 history is not available until **October 9, 2026**. UCDP
+Candidate's September release only permits t+7 forecasting windows
+through **September 23**, so the two periods have **zero overlap**.
+It would be statistically deceptive to call a 28–74-day growing
+warm-up window a 90-day baseline.
+
+The evaluation workflow therefore **reprocesses 90 additional original
+GDELT daily archives for April 12–July 10, 2026** using the same
+four-root parser, validates complete 90/90 source coverage, and
+stitches them to the independently verified July–November file.
+The combined chronology supports **full lagged 90-day** screens
+beginning July 11. A missing April–July source day makes the
+workflow fail closed, not score partial 90-day references.
 
 The first independent coded-outcome source is UCDP **Candidate Events**
 global quarterly **26.01.26.09**, frozen through **September 30, 2026**:
@@ -54,7 +69,8 @@ countries for which the UCDP CSV has **no matching country-name rows**:
 absence might mean a spelling mismatch. It reports those names
 explicitly for analyst review.
 
-For each eligible country-day, the backtest computes and compares:
+For each eligible country-day (starting **July 11**, after 90 complete
+preceding dates), the backtest computes and compares:
 
 - **90-day shadow**: the same four-root lead nominations produced by
   `gdelt_shadow_monitor.analyze_day` with prior 90-calendar-day
@@ -82,7 +98,9 @@ dependent, so unadjusted significance tests are prohibited.
 After merging this evaluation PR, run manually:
 [Evaluate GDELT shadow leads against UCDP Candidate](https://github.com/graupmannj-dev/I-Ws-Dashboard/actions/workflows/gdelt-ucdp-retrospective.yml).
 
-It automatically downloads:
+It automatically downloads or restores from a versioned Actions cache:
+- **90 earlier GDELT daily ZIPs**, April 12–July 10, and requires 90/90
+  valid days; a SHA256 of the stitched historical source is retained.
 - GitHub Actions source artifact
   `gdelt-shadow-baseline-42893068477` from verified run 42893068477,
   containing the complete 122-day four-root history.
@@ -95,6 +113,8 @@ It emits:
 - `validation-shadow/country_day_pilot.csv` for review of every
   source-labelled forecast and its outcome window.
 - `ucdp-candidate-source/source.sha256` to detect later version drift.
+- `historical-prewindow/{daily.jsonl,manifest.json,source.sha256}` for
+  independent review of the extra 90-day original-source collection.
 
 The workflow uses Actions artifacts for a **research pilot only**, not
 a durable versioned store. Original raw UCDP CSV is not republished.
