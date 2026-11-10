@@ -16,7 +16,7 @@ permissions:
 jobs:
   retrospective-pilot:
     runs-on: ubuntu-latest
-    timeout-minutes: 25
+    timeout-minutes: 70
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -40,6 +40,29 @@ jobs:
           assert m['profile']=='GDELT-v1 EventRootCode 17/18/19/20, selected-event denominator'
           print('Source version pinned: verified 122-day GDELT four-root reference.')
           PY
+      - name: Reuse previously validated April–July source ZIP cache
+        uses: actions/cache@v4
+        with:
+          path: .cache/gdelt-validation-prehistory
+          key: gdelt-ucdp-prehistory-20260412-20260710-v1
+      - name: Reconstruct complete 90-day lead-in before July 11
+        shell: bash
+        run: |
+          set -euo pipefail
+          python scripts/historical_gdelt_baseline.py \
+            --start 2026-04-12 --end 2026-07-10 \
+            --cache .cache/gdelt-validation-prehistory \
+            --output historical-prewindow
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          m=json.loads(Path('historical-prewindow/manifest.json').read_text())
+          assert m['start']=='2026-04-12' and m['end']=='2026-07-10'
+          assert m['complete_days']==90 and m['failed_days']==0
+          print('FULL lagged reference available: April 12–July 10 (90 UTC days).')
+          PY
+          sha256sum historical-prewindow/daily.jsonl \
+            > historical-prewindow/source.sha256
       - name: Retrieve pinned-version UCDP Candidate country/event outcome source
         shell: bash
         run: |
@@ -59,7 +82,7 @@ jobs:
           LAST: ${{ inputs.end }}
         run: |
           set -euo pipefail
-          args=(--history original-four-root/daily_aggregates.jsonl
+          args=(--history historical-prewindow/daily.jsonl original-four-root/daily_aggregates.jsonl
                 --ucdp ucdp-candidate-source/GEDEvent_v26_01_26_09.csv
                 --crosswalk data/validation/ucdp_country_crosswalk_pilot.csv
                 --output validation-shadow)
@@ -97,5 +120,8 @@ jobs:
             validation-shadow/
             ucdp-candidate-source/source.sha256
             original-four-root/manifest.json
+            historical-prewindow/manifest.json
+            historical-prewindow/daily.jsonl
+            historical-prewindow/source.sha256
           retention-days: 90
           if-no-files-found: warn
