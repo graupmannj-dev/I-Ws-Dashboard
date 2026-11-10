@@ -253,7 +253,7 @@ function currentReports(){
 function selectedHotspots(){
   const a=state.atlas?.hotspots||[];
   return a.filter(h=>(state.severity==="all"||h.severity===state.severity)
-                   &&(!$("changedOnly").checked||h.new_evidence||h.new_analyst_lead||frictionIsReview(h.id)));
+                   &&(!$("changedOnly").checked||h.new_evidence||frictionIsReview(h.id)));
 }
 function drawFrame(timestamp){
   if(!state.canvas||!state.atlas||!state.countries)return;
@@ -289,7 +289,7 @@ function drawFrame(timestamp){
       const historical=state.endDay!==state.maxDay;
       const alpha=(historical&&!reportCount)?.55:1;
       c.save();c.globalAlpha=alpha;
-      if((h.new_evidence||h.new_analyst_lead)&&!historical&&!window.matchMedia("(prefers-reduced-motion: reduce)").matches){
+      if((h.new_evidence||frictionIsReview(h.id))&&!historical&&!window.matchMedia("(prefers-reduced-motion: reduce)").matches){
         for(let i=0;i<2;i++){
           const phase=((timestamp/1800+i*.5)%1);
           c.beginPath();c.arc(p.x,p.y,12+phase*24,0,2*Math.PI);
@@ -455,7 +455,11 @@ function bindTimeRange(){
   });
 }
 function frictionCase(id){return (state.friction?.cases||[]).find(c=>c.id===id)||null;}
-function frictionIsReview(id){const f=frictionCase(id);return !!f&&["multi_stream_review","source_review","baseline_review"].includes(f.triage);}
+function frictionIsReview(id){
+  const f=frictionCase(id);
+  // A novel source alone is an investigative record, not an executive change.
+  return !!f&&f.executive_eligible===true;
+}
 function frictionSources(c){
   const rows=(c?.source_evidence||[]).slice(0,5);
   if(!rows.length)return '<p class="sub">No new source record passed the change-detection gate.</p>';
@@ -474,14 +478,19 @@ function select(h,type="hotspot"){
   if(type==="hotspot"){
     const link='<a href="ops/">Full source-linked decision brief →</a>';
     const f=frictionCase(h.id);
-    const frictionDetail=f?'<div class="friction-detail"><h4>Cross-source comparison · Shadow mode · '+safe(f.triage.replace(/_/g," "))+'</h4>'+
+    const frictionDetail=f?'<div class="friction-detail"><h4>'+
+      (f.executive_eligible===true?'Early indicator assessment':'Investigatory source context')+
+      ' · Shadow mode</h4>'+
       '<p><b>What changed:</b> '+safe(f.what_changed)+'</p>'+
-      '<p><b>Why it may matter:</b> '+safe(f.so_what)+'</p>'+
-      '<p><b>Compared with conventional indicators:</b> '+safe(f.traditional_contrast||"No cross-check available")+'</p>'+
+      '<p><b>Why this matters:</b> '+safe(f.so_what)+'</p>'+
+      '<p><b>Baseline comparison:</b> '+safe(f.baseline_context||"Not yet characterized")+'</p>'+
+      '<p><b>Materiality basis:</b> '+safe(f.materiality_rationale||"Not assessed")+'</p>'+
+      '<p><b>Evidence against / uncertainties:</b> '+safe(f.counter_evidence||"Not yet assessed")+'</p>'+
+      '<p><b>Conventional comparison:</b> '+safe(f.traditional_contrast||"No current cross-check")+'</p>'+
       '<p><b>Alternative:</b> '+safe(f.alternative)+'</p>'+
       '<p><b>Next observable signpost:</b> '+safe(f.next_signpost)+'</p>'+
       '<p class="sub">Collection gaps: '+safe((f.coverage_gaps||[]).join(", ")||"None declared")+
-      '. Triage does not change standing threat severity.</p>'+frictionSources(f)+'</div>':'';
+      '. No automatic change to standing severity.</p>'+frictionSources(f)+'</div>':'';
     panel.innerHTML=
       '<div class="detail-top"><div><h3>'+safe(h.name)+'</h3><span class="severity-tag '+safe(h.severity)+'">'+safe(h.state)+'</span></div>'+
       '<button class="detail-close" aria-label="Close detail" type="button">×</button></div>'+
@@ -528,16 +537,21 @@ function renderFriction(){
     " · "+state.frictionRemoteStatus+
     " · "+(gaps.length?"Gaps: "+gaps.join(", "):"Monitored feeds reported")+
     " · Forecast skill: "+(skill==="not_estimable"?"not estimable":"descriptive labels only");
-  const review=f.cases.filter(c=>["multi_stream_review","source_review","baseline_review"].includes(c.triage));
+  const review=f.cases.filter(c=>c.executive_eligible===true);
+  const investigatory=f.cases.filter(c=>["multi_stream_review","source_review","baseline_review"].includes(c.triage)&&!c.executive_eligible);
   const shown=state.frictionShowAll?f.cases:review.slice(0,3);
   if(!shown.length){
-    list.innerHTML='<div class="friction-highlight"><span class="sub">No new structural-friction lead established. Standing watches continue; check coverage before interpreting silence.</span></div>';
+    list.innerHTML='<div class="friction-highlight"><span class="sub">No source signal yet clears the executive materiality gate. '+
+      investigatory.length+' investigatory leads retained below; absence of promotion is not an all-clear.</span></div>';
   }else{
     list.innerHTML=shown.map(c=>
       '<div class="friction-highlight"><strong>'+safe(c.title)+'</strong>'+
-      '<span class="sub">'+safe(c.what_changed)+'</span>'+
-      '<span class="sub">'+safe(c.traditional_contrast||c.so_what)+'</span>'+
-      '<span class="sub">Next: '+safe(c.next_signpost)+'</span></div>').join("");
+      '<span class="sub">'+safe(c.executive_eligible?'EARLY INDICATOR · '+(c.publication_basis||"provisional"):'INVESTIGATORY · not promoted')+'</span>'+
+      '<span class="sub"><b>Change:</b> '+safe(c.what_changed)+'</span>'+
+      '<span class="sub"><b>So what:</b> '+safe(c.so_what)+'</span>'+
+      '<span class="sub"><b>Compared to baseline:</b> '+safe(c.baseline_context||"Not characterized")+'</span>'+
+      '<span class="sub"><b>Alternative:</b> '+safe(c.alternative)+'</span>'+
+      '<span class="sub"><b>Next signpost:</b> '+safe(c.next_signpost)+'</span></div>').join("");
   }
   expand.hidden=!f.cases.length;
   expand.textContent=state.frictionShowAll?"Show material changes only":"Show all theater syntheses";
@@ -561,7 +575,7 @@ async function refreshFriction(){
     if(!Number.isFinite(before)||after>=before){
       state.friction=fresh;
       state.frictionRemoteStatus="public evidence branch snapshot";
-      renderFriction();updateWatchlist();
+      renderFriction();updateWatchlist();updateKpis();
     }else{
       state.frictionRemoteStatus="site snapshot is newer than public branch";
       renderFriction();
@@ -574,9 +588,9 @@ async function refreshFriction(){
 function updateWatchlist(){
   if(!state.atlas)return;
   const list=$("watchlist");list.replaceChildren();
-  const hs=selectedHotspots().filter(h=>state.watchTab==="all"||h.new_evidence||h.new_analyst_lead||frictionIsReview(h.id));
+  const hs=selectedHotspots().filter(h=>state.watchTab==="all"||h.new_evidence||frictionIsReview(h.id));
   const rank={critical:0,active:1,high:2,watch:3,low:4};
-  hs.sort((a,b)=>Number(b.new_evidence||b.new_analyst_lead||frictionIsReview(b.id))-Number(a.new_evidence||a.new_analyst_lead||frictionIsReview(a.id))||(rank[a.severity]??4)-(rank[b.severity]??4)||a.name.localeCompare(b.name));
+  hs.sort((a,b)=>Number(b.new_evidence||frictionIsReview(b.id))-Number(a.new_evidence||frictionIsReview(a.id))||(rank[a.severity]??4)-(rank[b.severity]??4)||a.name.localeCompare(b.name));
   $("watchCount").textContent="("+hs.length+")";
   $("watchFoot").textContent=state.atlas.algorithmic_unlocated_count+" GDELT + "+(state.atlas.unlocated_analyst_leads||[]).length+" analyst unlocated leads";
   if(!hs.length){list.innerHTML='<p class="empty">No watch areas match these filters. No Critical classification is inferred automatically.</p>';return;}
@@ -587,11 +601,11 @@ function updateWatchlist(){
     const review=frictionIsReview(h.id);
     b.innerHTML='<div class="watch-card-head"><strong>'+safe(h.name)+'</strong>'+
       '<span class="severity-tag '+safe(h.severity)+'">'+safe(h.state)+'</span></div>'+
-      '<p>'+safe(review?f.what_changed:(h.what_changed||h.description||h.scenario))+'</p>'+
+      '<p>'+safe(review?f.so_what:(h.what_changed||h.description||h.scenario))+'</p>'+
       '<small>Curated source date: '+safe(h.baseline_asof||"unknown")+'</small>'+
       (h.new_evidence?'<div class="card-new">NEW CASE-SPECIFIC SOURCE CHANGE</div>':'')+
-      (h.new_analyst_lead?'<div class="card-new">NEW UNREVIEWED OSINT LEAD</div>':'')+
-      (review?'<small>Cross-source shadow review · '+safe(f.triage.replace(/_/g,' '))+'</small>':'');
+      (h.new_analyst_lead?'<div class="card-new">UNREVIEWED OSINT LEAD · INVESTIGATORY ONLY</div>':'')+
+      (review?'<small>Early indicator · '+safe(f.publication_basis||"provisional")+' · '+safe(f.baseline_context||"baseline unavailable")+'</small>':'');
     b.addEventListener("click",()=>select(h));list.appendChild(b);
   }
 }
@@ -831,7 +845,7 @@ function renderEvidenceIntake(){
 function updateKpis(){
   const a=state.atlas;
   $("kpiWatch").textContent=a.hotspots.length;
-  $("kpiUpdates").textContent=a.hotspots.filter(x=>x.new_evidence||x.new_analyst_lead).length;
+  $("kpiUpdates").textContent=a.hotspots.filter(x=>x.new_evidence||frictionIsReview(x.id)).length;
   $("kpiReports").textContent=a.reports.length;
   $("kpiAsOf").textContent=a.asof;
   $("dataNotice").textContent=a.geographic_notice+" "+a.algorithmic_caveat;
