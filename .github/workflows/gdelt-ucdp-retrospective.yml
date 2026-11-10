@@ -1,0 +1,101 @@
+name: Evaluate GDELT shadow leads against UCDP Candidate (manual)
+on:
+  workflow_dispatch:
+    inputs:
+      start:
+        description: 'Optional first GDELT evaluation UTC day, YYYY-MM-DD'
+        type: string
+        required: false
+      end:
+        description: 'Optional last GDELT evaluation UTC day; UCDP Sep-2026 release is the hard cutoff'
+        type: string
+        required: false
+permissions:
+  contents: read
+  actions: read
+jobs:
+  retrospective-pilot:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Retrieve verified 122-day four-root input (not production six-root)
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          gh run download 42893068477 \
+            --repo "$GITHUB_REPOSITORY" \
+            --name gdelt-shadow-baseline-42893068477 --dir original-four-root
+          test -s original-four-root/daily_aggregates.jsonl
+          test -s original-four-root/manifest.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          m=json.loads(Path('original-four-root/manifest.json').read_text())
+          assert m['total_valid_days']==122 and not m['failed_days']
+          assert m['profile']=='GDELT-v1 EventRootCode 17/18/19/20, selected-event denominator'
+          print('Source version pinned: verified 122-day GDELT four-root reference.')
+          PY
+      - name: Retrieve pinned-version UCDP Candidate country/event outcome source
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p ucdp-candidate-source
+          curl --fail --location --show-error --silent \
+            --retry 3 --retry-delay 3 --max-time 180 \
+            'https://ucdp.uu.se/downloads/candidateged/GEDEvent_v26_01_26_09.csv' \
+            -o ucdp-candidate-source/GEDEvent_v26_01_26_09.csv
+          test -s ucdp-candidate-source/GEDEvent_v26_01_26_09.csv
+          sha256sum ucdp-candidate-source/GEDEvent_v26_01_26_09.csv \
+            > ucdp-candidate-source/source.sha256
+      - name: Reconstruct lead flags as of day t and evaluate only released outcome windows
+        shell: bash
+        env:
+          FIRST: ${{ inputs.start }}
+          LAST: ${{ inputs.end }}
+        run: |
+          set -euo pipefail
+          args=(--history original-four-root/daily_aggregates.jsonl
+                --ucdp ucdp-candidate-source/GEDEvent_v26_01_26_09.csv
+                --crosswalk data/validation/ucdp_country_crosswalk_pilot.csv
+                --output validation-shadow)
+          if [ -n "$FIRST" ]; then args+=(--start "$FIRST"); fi
+          if [ -n "$LAST" ]; then args+=(--end "$LAST"); fi
+          python scripts/gdelt_retrospective_eval.py "${args[@]}"
+          python - <<'PY'
+          import json,os
+          from pathlib import Path
+          r=json.loads(Path('validation-shadow/report.json').read_text())
+          if r['status'] != 'exploratory_proxy_only':
+              raise SystemExit('No outcome-covered country-days; refuse accuracy claims')
+          allr=r['metrics']['all_country_days']
+          s=[
+              '## External-outcome retrospective pilot — NOT a prediction validation',
+              f"- UCDP version: {r['outcome_version']} (available through Sep 30, 2026)",
+              f"- GDELT evaluation: {r['coverage']['start']} to {r['coverage']['end']}",
+              f"- Matched country-days: {allr['shadow_90d']['country_days']}",
+              f"- 90-day shadow screening alerts per 100 country-days: {allr['shadow_90d']['alerts_per_100_country_days']}",
+              f"- Matched-profile simple 7/28 alerts per 100 country-days: {allr['simple_7_28d']['alerts_per_100_country_days']}",
+              f"- Selected countries with no matching UCDP country-name rows: {r['coverage']['unmatched_country_codes']}",
+              '- No metrics for October/November 2026: source outcomes not released.',
+              '- Outcome is future fatal state-based candidate event; NOT interstate escalation or onset.',
+              '- No claim of skill; retrospectively constructed 7-day overlapping outcomes.'
+          ]
+          with open(os.environ['GITHUB_STEP_SUMMARY'],'a') as f:
+              f.write('\n'.join(s)+'\n')
+          PY
+      - name: Retain auditable metrics, country-day classifications and source hashes
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: gdelt-ucdp-candidate-shadow-${{ github.run_id }}
+          path: |
+            validation-shadow/
+            ucdp-candidate-source/source.sha256
+            original-four-root/manifest.json
+          retention-days: 90
+          if-no-files-found: warn
