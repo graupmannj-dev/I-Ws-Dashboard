@@ -1,0 +1,90 @@
+name: GDELT 120-day baseline and forward shadow comparison (manual)
+on:
+  workflow_dispatch:
+    inputs:
+      baseline_run:
+        description: Source historical backfill Actions run ID (120 complete days)
+        required: true
+        default: '42743720673'
+        type: string
+      baseline_artifact:
+        description: Exact historical artifact name
+        required: true
+        default: 'gdelt-baseline-2026-07-11-2026-11-07'
+        type: string
+      through:
+        description: Optional UTC day to fetch forward through (YYYY-MM-DD, 14-day limit)
+        required: false
+        type: string
+permissions:
+  contents: read
+  actions: read
+jobs:
+  shadow:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Retrieve and verify source backfill artifact
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RUN_ID: ${{ inputs.baseline_run }}
+          ARTIFACT_NAME: ${{ inputs.baseline_artifact }}
+        run: |
+          set -euo pipefail
+          if ! [[ "$RUN_ID" =~ ^[0-9]+$ ]]; then
+            echo "::error::Invalid backfill run ID"; exit 1
+          fi
+          gh run download "$RUN_ID" --repo "$GITHUB_REPOSITORY" \
+            --name "$ARTIFACT_NAME" --dir downloaded-backfill
+          test -s downloaded-backfill/manifest.json
+          test -s downloaded-backfill/daily.jsonl
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          manifest=json.loads(Path('downloaded-backfill/manifest.json').read_text())
+          assert manifest['complete_days']==120 and manifest['failed_days']==0, (
+            'Expected verified 120-day complete input; revalidate or choose another artifact')
+          assert manifest['start']=='2026-07-11' and manifest['end']=='2026-11-07', (
+            'This first baseline is fixed to the independently inspected 120-day source profile')
+          print('Historical source manifest verified; GDELT 17-20 root profile.')
+          PY
+      - name: Build source-matched shadow reference and optional incoming comparisons
+        env:
+          THROUGH: ${{ inputs.through }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          args=(--history downloaded-backfill --output gdelt-shadow)
+          if [ -n "$THROUGH" ]; then args+=(--through "$THROUGH"); fi
+          python scripts/gdelt_shadow_monitor.py "${args[@]}"
+          python - <<'PY'
+          import json,os
+          from pathlib import Path
+          m=json.loads(Path('gdelt-shadow/manifest.json').read_text())
+          lines=[
+              '## GDELT 17-20 historical shadow comparison',
+              f"- Source history: {m['historical_start']} to {m['historical_end']}",
+              f"- Latest evaluated date: {m['latest_comparison_date']}",
+              f"- Mode: **{m['mode']}**",
+              f"- New archives: {len(m['freshly_collected_days'])}; missing: {len(m['failed_days'])}",
+              f"- Established-case screening leads: {m['latest_established_leads_total']}",
+              f"- Sparse/new-case screening leads: {m['latest_emerging_leads_total']}",
+              '- No automatic executive promotion or threat probability.'
+          ]
+          if m['failed_days']:
+              lines.append('> WARNING: unavailable daily provider archives were not filled with zero events.')
+          with open(os.environ['GITHUB_STEP_SUMMARY'],'a') as f:
+              f.write('\n'.join(lines)+'\n')
+          PY
+      - name: Retain scored shadow product and updated aggregate chronology
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: gdelt-shadow-baseline-${{ github.run_id }}
+          path: gdelt-shadow/
+          if-no-files-found: warn
+          retention-days: 90
