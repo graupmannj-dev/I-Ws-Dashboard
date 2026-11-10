@@ -1,0 +1,33 @@
+name: Historical GDELT baseline (manual shadow mode)
+on:
+  workflow_dispatch:
+    inputs:
+      start:
+        description: First UTC day (YYYY-MM-DD)
+        required: true
+        type: string
+      end:
+        description: Last UTC day (YYYY-MM-DD; max 120 days per run)
+        required: true
+        type: string
+permissions:
+  contents: read
+jobs:
+  backfill:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Download and compute shadow baseline
+        run: python scripts/historical_gdelt_baseline.py --start "${{ inputs.start }}" --end "${{ inputs.end }}" --output historical-baseline
+      - name: Preserve manifest and output even when incomplete
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: gdelt-baseline-${{ inputs.start }}-${{ inputs.end }}
+          path: historical-baseline/
+          if-no-files-found: warn
+          retention-days: 90
