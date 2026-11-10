@@ -79,7 +79,7 @@ class RetrospectiveTests(unittest.TestCase):
             rows,report=evaluate(hist,cross,ucdp)
             self.assertFalse(rows)
             self.assertEqual(report["status"],"insufficient_labeled_coverage")
-            self.assertGreater(report["coverage"]["excluded"]["missing_full_90_calendar_day_reference"],0)
+            self.assertGreater(report["coverage"]["excluded"]["no_full_90_day_reference_overlap_with_released_outcomes"],0)
 
     def test_no_prospective_lookahead_in_seven_28(self):
         with tempfile.TemporaryDirectory() as d:
