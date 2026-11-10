@@ -109,6 +109,67 @@ def baseline(state, history, case, family, at):
     return robust_change(value, [c for _, c in pairs])
 
 
+
+def executive_materiality(case_id, question, new, overlaps, anomalous, baselines, reviews, at):
+    """Screen significance, not mere novelty, and retain uncorroborated early signals."""
+    comp = []
+    for family, v in baselines.items():
+        if v["status"] == "unusual_count":
+            comp.append(f"{family}: current {v['current']}, 14-day matched-hour median "
+                        f"{v['median']}, {v['samples']} valid samples, screening "
+                        f"threshold {v['threshold']}, robust z {v['robust_z']}.")
+        elif v["status"] == "insufficient_baseline":
+            comp.append(f"{family}: insufficient matched-hour baseline "
+                        f"({v.get('samples', 0)} samples); rarity cannot be quantified.")
+    context = " ".join(comp) or "No statistically characterized source anomaly."
+    for r in reviews:
+        if not isinstance(r, dict) or r.get("status") != "approved" or r.get("case_id") != case_id:
+            continue
+        when = event_time(r.get("reviewed_at"))
+        if not when or not dt.timedelta(0) <= at - when <= dt.timedelta(days=7):
+            continue
+        if not any(e.get("root") == r.get("root") and
+                   e.get("source_url") == r.get("source_url") for e in new):
+            continue
+        fields = ("materiality_basis", "why_it_matters", "baseline_comparison",
+                  "alternative_evidence", "next_signpost")
+        if not all(isinstance(r.get(k), str) and len(r[k].strip()) >= 25 for k in fields):
+            continue
+        return {"executive_eligible": True, "publication_basis": "reviewed_single_root",
+                "baseline_context": r["baseline_comparison"],
+                "so_what": r["why_it_matters"],
+                "materiality_rationale": r["materiality_basis"],
+                "counter_evidence": r["alternative_evidence"],
+                "next_signpost_override": r["next_signpost"]}
+    if anomalous:
+        relevance = ("Abnormal network disruptions may impede local communications "
+                     "and independent reporting; they do not imply state involvement."
+                     if "internet_reachability" in anomalous else
+                     "Above-baseline navigational restrictions may constrain "
+                     "commercial movement or indicate unusual maritime activity, "
+                     "but exercises are a common alternative.")
+        return {"executive_eligible": True, "publication_basis": "matched_hour_anomaly",
+                "baseline_context": context, "so_what": relevance+" Case: "+question,
+                "materiality_rationale": "Observed count exceeds an explicit short-window screening threshold.",
+                "counter_evidence": "Count deviations alone provide no causal attribution.",
+                "next_signpost_override": None}
+    if overlaps:
+        return {"executive_eligible": True, "publication_basis": "dated_multi_family_overlap",
+                "baseline_context": context,
+                "so_what": ("Six-hour overlap of different source families may indicate "
+                            "operational friction; unrelated or shared routine causes "
+                            "remain plausible. Case: "+question),
+                "materiality_rationale": "Distinct source families have source-dated proximity, not proven independent causes.",
+                "counter_evidence": "Exercises, weather, or shared reporting effects remain possible.",
+                "next_signpost_override": None}
+    return {"executive_eligible": False, "publication_basis": "investigatory_only",
+            "baseline_context": context,
+            "so_what": "Novel observation retained; deviation and scenario consequence not yet established.",
+            "materiality_rationale": "Source novelty alone does not warrant executive prominence.",
+            "counter_evidence": "No demonstrated departure, timed overlap, or reviewed exceptional single indicator.",
+            "next_signpost_override": None}
+
+
 def unique_recent(history, at):
     """Only records first observed after an established previous source sample."""
     seen, recent = set(), []
@@ -165,11 +226,16 @@ def matched_legacy(state, case_id, at):
 
 
 def build(state, clock=utcnow, registry=ROOT / "data" / "decision_registry.json",
-          curated=ROOT / "data" / "verified_hotspots.json", write=True):
+          curated=ROOT / "data" / "verified_hotspots.json", write=True,
+          executive_registry=ROOT / "data" / "executive_signal_reviews.json"):
     at = clock()
     state = Path(state)
     config = read_json(registry, {"cases": []})
     curated_cases = {x["id"]: x for x in (read_json(curated, []) or []) if isinstance(x, dict) and "id" in x}
+    reviews_cfg = read_json(executive_registry, {"reviews": []}) or {}
+    reviews = reviews_cfg.get("reviews", []) if isinstance(reviews_cfg, dict) else []
+    if not isinstance(reviews, list):
+        reviews = []
     current = read_json(state / "latest" / "friction.json", {}) or {}
     validation = read_json(state / "latest" / "friction_validation.json", {}) or {}
     history = historical(state, at)
@@ -270,17 +336,22 @@ def build(state, clock=utcnow, registry=ROOT / "data" / "decision_registry.json"
         else:
             triage = "collection_gap" if len(gap) == len(FAMILIES) else "maintain"
             changed = "No qualifying new structural-friction change established from available observations."
-        subject = " and ".join(distinct) if distinct else "current monitored feeds"
-        so_what = (f"{len(new)} newly observed unique roots across {subject}. "
-                   "Co-occurrence does not establish a common cause or an impending operation."
-                   if new else
-                   f"{len(ongoing)} current source records provide context; repeated pulls are not new alerts.")
+        assessment = executive_materiality(
+            cid, case_cfg.get("question") or cid, new, overlaps,
+            anomalous, baselines, reviews, at)
+        so_what = assessment["so_what"]
         alternative = case_cfg.get("alternative") or standing.get("alternatives") or "Routine activity or reporting coverage shift."
         cases.append({
             "id": cid, "title": standing.get("name") or cid,
             "standing_state": standing.get("state") or "Standing watch",
             "triage": triage, "what_changed": changed, "so_what": so_what,
-            "alternative": alternative, "next_signpost": case_cfg.get("next") or standing.get("next"),
+            "executive_eligible": assessment["executive_eligible"],
+            "publication_basis": assessment["publication_basis"],
+            "baseline_context": assessment["baseline_context"],
+            "materiality_rationale": assessment["materiality_rationale"],
+            "counter_evidence": assessment["counter_evidence"],
+            "alternative": alternative,
+            "next_signpost": assessment["next_signpost_override"] or case_cfg.get("next") or standing.get("next"),
             "traditional_contrast": contrast,
             "new_sources": len(new), "new_families": distinct, "current_source_records": len(ongoing),
             "source_evidence": [{"id": r["id"], "title": r["title"],
@@ -303,6 +374,7 @@ def build(state, clock=utcnow, registry=ROOT / "data" / "decision_registry.json"
             "source_review": 2, "collection_gap": 3, "maintain": 4}
     cases.sort(key=lambda x: (rank[x["triage"]], x["title"]))
     review = [c for c in cases if c["triage"] in ("multi_stream_review", "baseline_review", "source_review")]
+    executive = [c for c in review if c["executive_eligible"]]
     unlocated = recent_by_case["unlocated"]
     out = {
         "schema_version": 1, "generated_at": iso(at),
@@ -312,8 +384,8 @@ def build(state, clock=utcnow, registry=ROOT / "data" / "decision_registry.json"
         "fresh_snapshot": current_fresh, "latest_source_snapshot": current.get("collected_at"),
         "shadow_mode": True, "health": health,
         "executive_summary": (
-            f"{len(review)} theaters have investigatory source anomalies in shadow mode; "
-            f"{len(unlocated)} recent unlocated source leads. "
+            f"{len(executive)} early indicators qualify for executive assessment; "
+            f"{len(review)-len(executive)} other investigatory leads remain. "
             "No automated change to standing threat categories."
             if review else
             "No qualifying novel structural-friction lead in the collected evidence. "
@@ -326,6 +398,8 @@ def build(state, clock=utcnow, registry=ROOT / "data" / "decision_registry.json"
                           if h["status"] != "fresh" or h["coverage"] == "partial"],
         "alert_count": 0,  # No automatic threats or notifications from a shadow model.
         "uncalibrated_review_count": len(review),
+        "executive_case_ids": [c["id"] for c in executive],
+        "executive_review_count": len(executive),
         "limits": [
             "Data feeds are partial, not a global exhaustive sensor network.",
             "Collection timestamp does not establish source event or publication time.",
