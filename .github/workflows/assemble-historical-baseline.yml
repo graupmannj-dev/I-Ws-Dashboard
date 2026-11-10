@@ -36,10 +36,21 @@ jobs:
             exit 1
           fi
           while read -r run_id; do
+            # A missing artifact differs from a failed authenticated download.
+            # Never hide API, token or network errors with a successful echo.
+            count="$(gh api "repos/$GITHUB_REPOSITORY/actions/runs/$run_id/artifacts?per_page=100" \
+              --jq '[.artifacts[] | select(.name | startswith("gdelt-baseline-")) | select(.expired == false)] | length')"
+            if [ "$count" -eq 0 ]; then
+              echo "::warning::Run $run_id has no retained historical artifact; source coverage is unknown for this run"
+              continue
+            fi
             mkdir -p "historical-artifacts/$run_id"
             gh run download "$run_id" --repo "$GITHUB_REPOSITORY" \
-              --pattern 'gdelt-baseline-*' --dir "historical-artifacts/$run_id" \
-              || echo "No reusable artifact for run $run_id; coverage manifest will show any missing dates"
+              --pattern 'gdelt-baseline-*' --dir "historical-artifacts/$run_id"
+            if ! find "historical-artifacts/$run_id" -name daily.jsonl -print -quit | grep -q .; then
+              echo "::error::Run $run_id has an artifact but no daily.jsonl; treating as a collection/format failure"
+              exit 1
+            fi
           done < /tmp/gdelt-runs.txt
           if ! find historical-artifacts -name daily.jsonl | grep -q .; then
             echo "No daily.jsonl files were downloaded" >&2
