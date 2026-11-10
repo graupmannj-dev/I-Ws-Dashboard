@@ -37,14 +37,11 @@ jobs:
             --name gdelt-shadow-baseline-42893068477 \
             --dir verified-seed
           python - <<'PY'
-          import json
-          from pathlib import Path
-          early=json.loads(Path('independent-reference/historical-prewindow/manifest.json').read_text())
-          later=json.loads(Path('verified-seed/manifest.json').read_text())
-          assert early['complete_days']==90 and early['failed_days']==0
-          assert early['start']=='2026-04-12' and early['end']=='2026-07-10'
-          assert later['total_valid_days']==122 and later['failed_days']==0
-          assert later['profile']=='GDELT-v1 EventRootCode 17/18/19/20, selected-event denominator'
+          from scripts.validate_ucdp_episode_inputs import check_files
+          check_files(
+              'independent-reference/historical-prewindow/manifest.json',
+              'verified-seed/manifest.json',
+          )
           PY
       - name: Download exactly pinned official September UCDP Candidate dataset
         shell: bash
