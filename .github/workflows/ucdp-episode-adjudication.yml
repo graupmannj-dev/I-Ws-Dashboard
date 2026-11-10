@@ -1,0 +1,115 @@
+name: Build UCDP escalation episode adjudication queue (manual)
+on:
+  workflow_dispatch:
+    inputs:
+      start:
+        description: 'Episode evaluation UTC start YYYY-MM-DD (blank = July 11, 2026)'
+        type: string
+        required: false
+      end:
+        description: 'Episode evaluation UTC end YYYY-MM-DD (hard stop September 30, 2026)'
+        type: string
+        required: false
+permissions:
+  contents: read
+  actions: read
+jobs:
+  label-and-nominate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Fetch verified April–July GDELT prehistory and July–November source archives
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          gh run download 42912512785 \
+            --repo "$GITHUB_REPOSITORY" \
+            --name gdelt-ucdp-candidate-shadow-42912512785 \
+            --dir independent-reference
+          gh run download 42893068477 \
+            --repo "$GITHUB_REPOSITORY" \
+            --name gdelt-shadow-baseline-42893068477 \
+            --dir verified-seed
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          early=json.loads(Path('independent-reference/historical-prewindow/manifest.json').read_text())
+          later=json.loads(Path('verified-seed/manifest.json').read_text())
+          assert early['complete_days']==90 and early['failed_days']==0
+          assert early['start']=='2026-04-12' and early['end']=='2026-07-10'
+          assert later['total_valid_days']==122 and later['failed_days']==0
+          assert later['profile']=='GDELT-v1 EventRootCode 17/18/19/20, selected-event denominator'
+          PY
+      - name: Download exactly pinned official September UCDP Candidate dataset
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p original-ucdp
+          curl --fail --location --show-error --silent --retry 3 \
+            --retry-delay 3 --max-time 180 \
+            'https://ucdp.uu.se/downloads/candidateged/GEDEvent_v26_01_26_09.csv' \
+            -o original-ucdp/GEDEvent_v26_01_26_09.csv
+          python - <<'PY'
+          from pathlib import Path
+          from scripts.ucdp_episode_labels import UCDP_SHA256
+          import hashlib
+          source=Path('original-ucdp/GEDEvent_v26_01_26_09.csv')
+          assert source.stat().st_size > 100000
+          sha=hashlib.sha256(source.read_bytes()).hexdigest()
+          if sha != UCDP_SHA256:
+              raise SystemExit(f'Source changed since last verified UCDP release: {sha}; decline retrospective relabel')
+          print('UCDP frozen release SHA256 matches previously audited source.')
+          Path('original-ucdp/source.sha256').write_text(sha+'\n')
+          PY
+      - name: Build UCDP dyad-country episodes and unreviewed pre-event nominations
+        shell: bash
+        env:
+          FIRST: ${{ inputs.start }}
+          LAST: ${{ inputs.end }}
+        run: |
+          set -euo pipefail
+          args=(--history independent-reference/historical-prewindow/daily.jsonl
+                   verified-seed/daily_aggregates.jsonl
+                --ucdp original-ucdp/GEDEvent_v26_01_26_09.csv
+                --crosswalk data/validation/ucdp_country_crosswalk_pilot.csv
+                --output episode-outcome-audit)
+          if [ -n "$FIRST" ]; then args+=(--start "$FIRST"); fi
+          if [ -n "$LAST" ]; then args+=(--end "$LAST"); fi
+          python scripts/ucdp_episode_review_queue.py "${args[@]}"
+          python - <<'PY'
+          import json,os
+          from pathlib import Path
+          r=json.loads(Path('episode-outcome-audit/summary.json').read_text())
+          assert r['accepted_verified_links']==0
+          assert not r['approved_for_operational_warning']
+          count=r['candidate_episode_count']; queue=r['review_queue_rows']
+          a=[
+             '## UCDP escalation episodes: UNADJUDICATED',
+             f'- Automated UCDP episode candidates: **{count}**',
+             f'- Country-exposure nomination rows awaiting review: **{queue}**',
+             f"- Reviewed actor/dyad links: **{r['accepted_verified_links']}**",
+             '- No operational alert status or production scoring changed',
+             '- No prospective predictive-skill estimate issued',
+             '- All GDELT flags evaluated as-of t strictly predate episode dates'
+          ]
+          with open(os.environ['GITHUB_STEP_SUMMARY'],'a') as f:
+              f.write('\n'.join(a)+'\n')
+          PY
+      - name: Preserve audited episode labels and independent-review queue
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: aiba-ucdp-episode-adjudication-${{ github.run_id }}
+          path: |
+            episode-outcome-audit/
+            original-ucdp/source.sha256
+            verified-seed/manifest.json
+            independent-reference/historical-prewindow/manifest.json
+          retention-days: 90
+          if-no-files-found: warn
