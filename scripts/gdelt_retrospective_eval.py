@@ -330,7 +330,9 @@ def main():
         w.writeheader()
         w.writerows(rows)
     (path/"report.json").write_text(json.dumps(report,indent=2)+"\n",encoding="utf-8")
-    print(json.dumps(report,indent=2))\n    if report["status"] != "exploratory_proxy_only":\n        raise SystemExit("No full-90-day references overlap UCDP covered outcomes; collect pre-July history before claiming metrics")
+    print(json.dumps(report,indent=2))
+    if report["status"] != "exploratory_proxy_only":
+        raise SystemExit("No full-90-day references overlap UCDP covered outcomes; collect pre-July history before claiming metrics")
 
 
 if __name__=="__main__":
