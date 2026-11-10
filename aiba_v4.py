@@ -222,13 +222,17 @@ result+=`<div class="section"><button class="dataexport" id="copy">Copy hotspot 
 el('q').addEventListener('input',renderList);renderEarly();init();
 </script></body></html>'''
 
-def build(out=OUT, asof=None, cache=CACHE, offline=True, baseline_days=28,window_days=7, strict=False, live_attention=None):
+def build(out=OUT, asof=None, cache=CACHE, offline=True, baseline_days=28,window_days=7, strict=False, live_attention=None, suppress_incomplete_discovery=False):
     out.mkdir(parents=True,exist_ok=True)
     asof=asof or dt.date.today()
     seed=json.loads((DATA/'verified_hotspots.json').read_text())
     audit={}
     records,totals,roots,avail,samples=ingest(cache, asof,audit)
     discovery,completeness=analyze(records,totals,roots,avail,samples,asof,baseline_days,window_days)
+    complete = (completeness['recent_days'] == window_days and completeness['baseline_days'] == baseline_days)
+    if suppress_incomplete_discovery and not complete:
+        # Missing source days cannot be interpreted as zero events or normal conditions.
+        discovery = []
     if strict and (completeness['recent_days'] != window_days or completeness['baseline_days'] != baseline_days):
         raise ValueError('REFUSING TO PUBLISH: require all 7 recent and 28 baseline valid daily archives')
     early_path=DATA/'preconvergence.json'
