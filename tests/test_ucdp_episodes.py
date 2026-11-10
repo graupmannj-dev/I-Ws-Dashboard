@@ -119,6 +119,50 @@ class EpisodeLabelTests(unittest.TestCase):
             episodes,_=propose_episodes(src,dt.date(2026,7,11),dt.date(2026,7,11))
             self.assertEqual(episodes,[])
 
+    def test_inconsistent_fatality_bounds_are_quarantined_not_zeroed(self):
+        from scripts.ucdp_episode_labels import produce
+        with tempfile.TemporaryDirectory() as d:
+            p=Path(d)/"ucdp.csv"
+            fields=["id","country","type_of_violence","dyad_new_id",
+                    "dyad_name","conflict_new_id","date_start","date_end",
+                    "date_prec","event_clarity","code_status","best","high"]
+            rows=[
+                ["628267","Ukraine","1","770","Government of Ukraine - Test Group","100",
+                 "2026-07-09","2026-07-09","1","1","Clear","5","2"],
+                ["628268","Ukraine","1","770","Government of Ukraine - Test Group","100",
+                 "2026-07-11","2026-07-11","1","1","Clear","3","3"],
+            ]
+            with p.open("w",newline="") as out:
+                w=csv.writer(out);w.writerow(fields);w.writerows(rows)
+            src=read_candidate_csv(p,require_sha=False)
+            key=("Ukraine","770")
+            self.assertEqual(src["source_counts"]["fatality_bounds_inconsistent_quarantined"],1)
+            self.assertEqual(src["source_counts"]["clear_exact_fatal"],1)
+            self.assertEqual(src["daily_best_deaths"][key][dt.date(2026,7,9)],0)
+            self.assertIn(dt.date(2026,7,9),src["uncertain_dates"][key])
+            self.assertEqual(src["invalid_fatality_bounds"][0]["event_id"],"628267")
+            episodes,_=propose_episodes(src,dt.date(2026,7,11),dt.date(2026,7,11))
+            self.assertEqual(episodes,[], "Uncertain earlier fatalities cannot establish a new quiet-restart")
+            events,manifest=produce(p,Path(d)/"output",require_sha=False)
+            self.assertEqual(events,[])
+            self.assertEqual(manifest["quarantined_fatality_bounds_count"],1)
+            qc=list(csv.DictReader((Path(d)/"output"/"quarantined_fatality_bounds.csv").open()))
+            self.assertEqual(len(qc),1)
+            self.assertEqual(qc[0]["event_id"],"628267")
+
+    def test_conflicting_duplicate_event_id_still_fails_closed(self):
+        with tempfile.TemporaryDirectory() as d:
+            p=Path(d)/"ucdp.csv"
+            fields=["id","country","type_of_violence","dyad_new_id",
+                    "dyad_name","conflict_new_id","date_start","date_end",
+                    "date_prec","event_clarity","code_status","best","high"]
+            row=["1","Ukraine","1","770","Test dyad","100",
+                 "2026-07-09","2026-07-09","1","1","Clear","5","2"]
+            with p.open("w",newline="") as out:
+                w=csv.writer(out);w.writerow(fields);w.writerow(row);w.writerow(row[:-1]+["6"])
+            with self.assertRaisesRegex(ValueError,"Conflicting duplicate"):
+                read_candidate_csv(p,require_sha=False)
+
     def test_nomination_queue_only_pre_event_days_and_no_auto_actor_acceptance(self):
         with tempfile.TemporaryDirectory() as d:
             root=Path(d)
