@@ -222,10 +222,13 @@ def evaluate(history, crosswalk, ucdp, start=None, end=None):
     by_day, gdelt_hash = load_history([history] if isinstance(history, (str, Path)) else history)
     cases = country_crosswalk(crosswalk)
     ledger = load_ucdp(ucdp, set(cases.values()))
-    start = max(start or min(by_day), min(by_day)+dt.timedelta(days=34),
-                OUTCOME_COVERAGE_START)
-    end = min(end or max(by_day), max(by_day), OUTCOME_COVERAGE_END-dt.timedelta(days=HORIZON))
+    first_full_90 = min(by_day) + dt.timedelta(days=90)
+    start = max(start or first_full_90, first_full_90, OUTCOME_COVERAGE_START)
+    end = min(end or max(by_day), max(by_day),
+              OUTCOME_COVERAGE_END-dt.timedelta(days=HORIZON))
     records, excluded = [], Counter()
+    if end < start:
+        excluded["no_full_90_day_reference_overlap_with_released_outcomes"] += 1
     active = {code: name for code, name in cases.items() if ledger["source_rows"][name]>0}
     for code, name in cases.items():
         if code not in active:
@@ -275,7 +278,9 @@ def evaluate(history, crosswalk, ucdp, start=None, end=None):
     }
     coverage = {"start": start.isoformat(), "end": end.isoformat(),
                 "ucdp_release_end": OUTCOME_COVERAGE_END.isoformat(),
-                "horizon_days": HORIZON, "countries_preselected": list(sorted(cases)),
+                "horizon_days": HORIZON,
+                "first_calendar_day_with_full_90_prior_days": first_full_90.isoformat(),
+                "countries_preselected": list(sorted(cases)),
                 "countries_with_recognized_ucdp_rows": list(sorted(active)),
                 "unmatched_country_codes": sorted(set(cases)-set(active)),
                 "excluded": dict(sorted(excluded.items()))}
