@@ -15,6 +15,7 @@ from scripts.gdelt_gcs_history import (
     PREFIX as FOUR_PREFIX, canonical, day_key, source_record
 )
 from scripts.gdelt_six_root_gcs import eligible_dates, execute
+from scripts.gdelt_sixroot_sweep import sweep, MAX_BATCHES
 
 
 DAY = dt.date(2026, 7, 11)
@@ -154,6 +155,47 @@ class ProfileParityTests(unittest.TestCase):
         self.assertIsNone(classify_actors("13","RUS","RUS"))
         self.assertEqual(classify_actors("18","RUS","RUS"),("DOMESTIC",("RUS",)))
         self.assertEqual(classify_actors("13","RUS","UKR"),("BILAT",("RUS","UKR")))
+
+    def test_bulk_sweep_fills_historical_dates_with_per_date_parity(self):
+        bucket=Bucket()
+        dates=[DAY+dt.timedelta(days=i) for i in range(3)]
+        for day in dates:
+            add_v1(bucket,day)
+        with tempfile.TemporaryDirectory() as d:
+            m=sweep(bucket,Path(d)/"sweep",dates[-1],max_batches=2,
+                    run_id="test-sweep",fetcher=lambda day:archive(day))
+            self.assertEqual(m["status"],"complete")
+            self.assertEqual(m["total_existing_sixroot_in_target"],3)
+            self.assertEqual(m["total_new_days"],3)
+            self.assertEqual(m["remaining_sixroot_dates"],[])
+            self.assertEqual(m["batch_reports"][0]["created_days"],
+                             m["batch_reports"][0]["checked_parity"])
+            again=sweep(bucket,Path(d)/"repeat",dates[-1],max_batches=1,
+                        run_id="test-repeat",fetcher=lambda day:(_ for _ in ()).throw(AssertionError("refetch")))
+            self.assertEqual(again["total_new_days"],0)
+            self.assertEqual(again["status"],"complete")
+
+    def test_bulk_sweep_is_partial_when_v1_reference_not_there(self):
+        bucket=Bucket()
+        add_v1(bucket,DAY)
+        target=DAY+dt.timedelta(days=2)
+        with tempfile.TemporaryDirectory() as d:
+            m=sweep(bucket,Path(d),target,max_batches=3,run_id="partial",
+                    fetcher=lambda day:archive(day))
+            self.assertEqual(m["status"],"partial")
+            self.assertEqual(m["total_new_days"],1)
+            self.assertEqual(len(m["remaining_sixroot_dates"]),2)
+            self.assertEqual(len(m["missing_fourroot_reference_dates"]),2)
+            self.assertLessEqual(m["attempted_batches"],3)
+            self.assertTrue((Path(d)/"sweep_manifest.json").exists())
+
+    def test_bulk_sweep_rejects_unbounded_or_future_targets(self):
+        bucket=Bucket()
+        with tempfile.TemporaryDirectory() as d:
+            with self.assertRaisesRegex(ValueError,"1–8"):
+                sweep(bucket,Path(d),DAY,max_batches=MAX_BATCHES+1)
+            with self.assertRaisesRegex(ValueError,"completed UTC"):
+                sweep(bucket,Path(d),dt.datetime.now(dt.timezone.utc).date(),max_batches=1)
 
 
 if __name__=="__main__":
