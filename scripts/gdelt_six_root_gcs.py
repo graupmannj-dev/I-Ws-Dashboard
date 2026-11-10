@@ -127,10 +127,15 @@ def execute(bucket, mode, output, start=None, end=None, through=None, run_id="lo
     # Score only newly added six-root dates with strict lagged history,
     # using a matched six-root denominator; dates without 28 previous
     # complete days are explicitly INELIGIBLE.
-    for day in sorted(created):
-        lookback = [d for d in updated if day - dt.timedelta(days=90) <= d <= day]
-        prior = {d: stored_v2(bucket, updated, d) for d in lookback}
-        scored.append(analyze_day(prior, day, profile=PROFILE))
+    if created:
+        # Read each immutable object at most once per run, avoiding repeated
+        # network fetches when 14 backfill days share the same 90-day history.
+        first_needed = min(created) - dt.timedelta(days=90)
+        last_needed = max(created)
+        needed = [d for d in updated if first_needed <= d <= last_needed]
+        by_day = {d: stored_v2(bucket, updated, d) for d in needed}
+        for day in sorted(created):
+            scored.append(analyze_day(by_day, day, profile=PROFILE))
     with (out / "comparisons.jsonl").open("w", encoding="utf-8") as handle:
         for row in scored:
             handle.write(json.dumps(row, sort_keys=True) + "\n")
