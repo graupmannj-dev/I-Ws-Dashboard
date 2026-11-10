@@ -1,0 +1,131 @@
+name: Persist GDELT historical baseline to GCS (shadow only)
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: 'One-time initial seed, or incremental gap-recovering update'
+        type: choice
+        required: true
+        options: [seed, update]
+      through:
+        description: 'Update only: last completed UTC day, e.g. 2026-11-09; blank = yesterday'
+        type: string
+        required: false
+  schedule:
+    - cron: '27 13 * * *'
+permissions:
+  contents: read
+  actions: read
+concurrency:
+  group: aiba-gdelt-gcs-history
+  cancel-in-progress: false
+jobs:
+  preflight:
+    runs-on: ubuntu-latest
+    outputs:
+      ready: ${{ steps.config.outputs.ready }}
+    steps:
+      - name: Check explicit cloud opt-in configuration
+        id: config
+        env:
+          GCP_WIF_PROVIDER: ${{ vars.GCP_WIF_PROVIDER }}
+          GCP_SERVICE_ACCOUNT: ${{ vars.GCP_SERVICE_ACCOUNT }}
+          GCS_GDELT_BUCKET: ${{ vars.GCS_GDELT_BUCKET }}
+          EVENT_NAME: ${{ github.event_name }}
+        run: |
+          if [ -z "$GCP_WIF_PROVIDER" ] || [ -z "$GCP_SERVICE_ACCOUNT" ] || [ -z "$GCS_GDELT_BUCKET" ]; then
+            echo "ready=false" >> "$GITHUB_OUTPUT"
+            echo "::warning::GCS persistence is not configured: set GCP_WIF_PROVIDER, GCP_SERVICE_ACCOUNT, GCS_GDELT_BUCKET."
+            echo "GCS history collection is DISABLED pending cloud setup." >> "$GITHUB_STEP_SUMMARY"
+            if [ "$EVENT_NAME" = "workflow_dispatch" ]; then exit 1; fi
+          else
+            echo "ready=true" >> "$GITHUB_OUTPUT"
+            echo "Keyless GCS collection configured; project aiba-514120." >> "$GITHUB_STEP_SUMMARY"
+          fi
+  gcs-history:
+    needs: preflight
+    if: needs.preflight.outputs.ready == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    permissions:
+      contents: read
+      actions: read
+      id-token: write
+    env:
+      RUN_MODE: ${{ github.event_name == 'schedule' && 'update' || inputs.mode }}
+      TARGET_DAY: ${{ inputs.through }}
+      GCS_BUCKET: ${{ vars.GCS_GDELT_BUCKET }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install storage client (never a stored service account key)
+        run: python -m pip install 'google-cloud-storage>=2.18,<4'
+      - name: Retrieve inspected 122-day seed artifact (seed mode only)
+        if: env.RUN_MODE == 'seed'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          gh run download 42893068477 \
+            --repo "$GITHUB_REPOSITORY" \
+            --name gdelt-shadow-baseline-42893068477 \
+            --dir verified-seed
+          test -s verified-seed/daily_aggregates.jsonl
+          test -s verified-seed/manifest.json
+      - name: Authenticate through repository-restricted OIDC federation
+        uses: google-github-actions/auth@v3
+        with:
+          project_id: aiba-514120
+          workload_identity_provider: ${{ vars.GCP_WIF_PROVIDER }}
+          service_account: ${{ vars.GCP_SERVICE_ACCOUNT }}
+      - name: Persist / recover source-matched daily GDELT aggregates
+        shell: bash
+        run: |
+          set -euo pipefail
+          args=(--project aiba-514120 --bucket "$GCS_BUCKET"
+            --mode "$RUN_MODE" --output gdelt-gcs-output
+            --run-id "${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}")
+          if [ "$RUN_MODE" = seed ]; then
+            args+=(--seed-file verified-seed/daily_aggregates.jsonl
+              --seed-manifest verified-seed/manifest.json)
+          elif [ -n "$TARGET_DAY" ]; then
+            args+=(--through "$TARGET_DAY")
+          fi
+          python scripts/gdelt_gcs_history.py "${args[@]}"
+      - name: Summarize completeness, source outages and shadow leads
+        if: always()
+        run: |
+          python - <<'PY'
+          import json, os
+          from pathlib import Path
+          path=Path('gdelt-gcs-output/manifest.json')
+          if not path.exists():
+              print('::warning::GCS history failed before producing an audit manifest')
+          else:
+              report=json.loads(path.read_text())
+              rows=[
+                  '## Durable GDELT 17–20 source-profile baseline',
+                  f"- Operation: {report['mode']}",
+                  f"- Source status: **{report['status']}**",
+                  f"- History: {report['first_stored_date']} through {report['latest_stored_date']}",
+                  f"- Newly persisted days: {len(report['created_days'])}",
+                  f"- Provider/validation failures: {len(report['failed_downloads'])}",
+                  f"- Missing calendar days in last 120: {len(report['missing_last_120_days'])}",
+                  f"- Unattempted backlog: {len(report['unattempted_backlog'])}",
+                  f"- Evaluated shadow comparisons: {len(report['evaluated_days'])}",
+                  f"- Established / sparse leads: {report['shadow_established_leads']} / {report['shadow_emerging_leads']}",
+                  '- Publication/operational warning integration: **disabled**'
+              ]
+              with open(os.environ['GITHUB_STEP_SUMMARY'],'a') as f:
+                  f.write('\n'.join(rows)+'\n')
+          PY
+      - name: Preserve runner-side audit and rolling reference
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: gdelt-gcs-audit-${{ github.run_id }}-${{ github.run_attempt }}
+          path: gdelt-gcs-output/
+          retention-days: 30
+          if-no-files-found: warn
