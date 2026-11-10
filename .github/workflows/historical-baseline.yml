@@ -3,11 +3,11 @@ on:
   workflow_dispatch:
     inputs:
       start:
-        description: First UTC day (YYYY-MM-DD)
+        description: First UTC day, e.g. 2026-07-10 (slashes also accepted)
         required: true
         type: string
       end:
-        description: Last UTC day (YYYY-MM-DD; max 120 days per run)
+        description: Last UTC day, e.g. 2026-09-08 (120 days max; inclusive)
         required: true
         type: string
 permissions:
@@ -21,13 +21,32 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+      - name: Validate inclusive dates and normalize artifact names
+        id: dates
+        env:
+          INPUT_START: ${{ inputs.start }}
+          INPUT_END: ${{ inputs.end }}
+        run: |
+          python - <<'PY'
+          import os
+          from scripts.historical_gdelt_baseline import parse_range
+          try:
+              first, last = parse_range(os.environ["INPUT_START"], os.environ["INPUT_END"])
+          except ValueError as exc:
+              print("::error title=Invalid GDELT backfill range::" + str(exc))
+              raise SystemExit(2)
+          with open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as out:
+              out.write(f"start={first.isoformat()}\n")
+              out.write(f"end={last.isoformat()}\n")
+          print(f"Validated inclusive range: {first} through {last} ({(last-first).days+1} days)")
+          PY
       - name: Download and compute shadow baseline
-        run: python scripts/historical_gdelt_baseline.py --start "${{ inputs.start }}" --end "${{ inputs.end }}" --output historical-baseline
+        run: python scripts/historical_gdelt_baseline.py --start "${{ steps.dates.outputs.start }}" --end "${{ steps.dates.outputs.end }}" --output historical-baseline
       - name: Preserve manifest and output even when incomplete
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: gdelt-baseline-${{ inputs.start }}-${{ inputs.end }}
+          name: gdelt-baseline-${{ steps.dates.outputs.start }}-${{ steps.dates.outputs.end }}
           path: historical-baseline/
           if-no-files-found: warn
           retention-days: 90
