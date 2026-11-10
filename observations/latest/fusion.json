@@ -131,7 +131,7 @@
       "title": "Indian Oil to buy tankers as shipping costs soar - Big News Network.com"
     }
   ],
-  "generated_at": "2026-11-09T22:24:54Z",
+  "generated_at": "2026-11-10T07:22:20Z",
   "health": {
     "commercial": {
       "caveat": "Data are source observations or investigatory leads; no likelihood of conflict is inferred.",
@@ -145,17 +145,17 @@
     },
     "markets": {
       "caveat": "Data are source observations or investigatory leads; no likelihood of conflict is inferred.",
-      "checked_at": "2026-11-09T22:24:47Z",
+      "checked_at": "2026-11-10T07:22:14Z",
       "errors": [],
       "mode": "markets",
-      "record_count": 120,
+      "record_count": 116,
       "source_queries_attempted": 14,
       "source_queries_ok": 14,
       "status": "collected"
     },
     "official": {
       "caveat": "Data are source observations or investigatory leads; no likelihood of conflict is inferred.",
-      "checked_at": "2026-11-09T22:24:52Z",
+      "checked_at": "2026-11-10T07:22:18Z",
       "errors": [],
       "mode": "official",
       "record_count": 238,
@@ -164,7 +164,21 @@
       "status": "collected"
     }
   },
-  "market_moves": [],
+  "market_moves": [
+    {
+      "change_24h_approx": 0.145,
+      "classification": "market_repricing_investigation_only",
+      "current_at": "2026-11-10T07:22:14Z",
+      "id": "polymarket:6367369",
+      "limitation": "Market question direction may differ from escalation; event definition not cross-validated.",
+      "previous_at": "2026-11-09T06:36:06Z",
+      "scenario_tags": [
+        "Iran / Gulf"
+      ],
+      "title": "Israel x Iran ceasefire continues through December 15?",
+      "url": "https://polymarket.com/event/israel-x-iran-ceasefire-continues-throughptptpt-20260716224448963"
+    }
+  ],
   "models": [
     "same-contract roughly-24h repricing",
     "dated notice/media comparison"
@@ -174,7 +188,7 @@
       "assessment": "protective_advisory_not_military_preparation",
       "id": "1d0d915268d3e508a768",
       "kind": "official_travel_security_notice",
-      "observed_at": "2026-11-09T22:24:52Z",
+      "observed_at": "2026-11-10T07:22:18Z",
       "published_at": "2026-11-09T16:20:13Z",
       "publisher": "UK FCDO",
       "scenario_tags": [
@@ -187,7 +201,7 @@
       "assessment": "protective_advisory_not_military_preparation",
       "id": "40f7190ca5339e59cb4b",
       "kind": "official_travel_security_notice",
-      "observed_at": "2026-11-09T22:24:52Z",
+      "observed_at": "2026-11-10T07:22:18Z",
       "published_at": "2026-11-09T16:16:31Z",
       "publisher": "UK FCDO",
       "scenario_tags": [
@@ -200,7 +214,7 @@
       "assessment": "protective_advisory_not_military_preparation",
       "id": "e4bee665e7191c31d3a0",
       "kind": "official_travel_security_notice",
-      "observed_at": "2026-11-09T22:24:52Z",
+      "observed_at": "2026-11-10T07:22:18Z",
       "published_at": "2026-11-09T14:38:31Z",
       "publisher": "UK FCDO",
       "scenario_tags": [
@@ -213,7 +227,7 @@
       "assessment": "protective_advisory_not_military_preparation",
       "id": "becdf16f2200ac044e2c",
       "kind": "official_travel_security_notice",
-      "observed_at": "2026-11-09T22:24:52Z",
+      "observed_at": "2026-11-10T07:22:18Z",
       "published_at": "2026-11-09T12:06:58Z",
       "publisher": "UK FCDO",
       "scenario_tags": [
@@ -223,11 +237,33 @@
       "title": "Chile"
     }
   ],
-  "preconvergence_leads": [],
+  "preconvergence_leads": [
+    {
+      "kind": "quiet_discrepancy_candidate",
+      "market": {
+        "change_24h_approx": 0.145,
+        "classification": "market_repricing_investigation_only",
+        "current_at": "2026-11-10T07:22:14Z",
+        "id": "polymarket:6367369",
+        "limitation": "Market question direction may differ from escalation; event definition not cross-validated.",
+        "previous_at": "2026-11-09T06:36:06Z",
+        "scenario_tags": [
+          "Iran / Gulf"
+        ],
+        "title": "Israel x Iran ceasefire continues through December 15?",
+        "url": "https://polymarket.com/event/israel-x-iran-ceasefire-continues-throughptptpt-20260716224448963"
+      },
+      "meaning": "An investigatory lead only: neither a war probability nor proof of advance knowledge.",
+      "related_official_notices": [],
+      "scenario_tags": [
+        "Iran / Gulf"
+      ]
+    }
+  ],
   "source_asof": {
     "commercial": "2026-11-09T17:38:46Z",
-    "markets": "2026-11-09T22:24:47Z",
-    "official": "2026-11-09T22:24:52Z"
+    "markets": "2026-11-10T07:22:14Z",
+    "official": "2026-11-10T07:22:18Z"
   },
   "warnings": [
     "No validated conflict event posterior",
