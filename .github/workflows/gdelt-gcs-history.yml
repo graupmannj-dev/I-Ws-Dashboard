@@ -6,7 +6,7 @@ on:
         description: 'Four-root seed/update, or six-root backfill/update in separate GCS namespace'
         type: choice
         required: true
-        options: [seed, update, six_backfill, six_update, six_sweep]
+        options: [seed, update, six_backfill, six_update, six_sweep, six_prebaseline]
       through:
         description: 'Update only: last completed UTC day, e.g. 2026-11-09; blank = yesterday'
         type: string
@@ -57,7 +57,7 @@ jobs:
           fi
   gcs-history:
     needs: preflight
-    if: needs.preflight.outputs.ready == 'true' && (github.event_name == 'schedule' || (inputs.mode != 'six_backfill' && inputs.mode != 'six_update' && inputs.mode != 'six_sweep'))
+    if: needs.preflight.outputs.ready == 'true' && (github.event_name == 'schedule' || (inputs.mode != 'six_backfill' && inputs.mode != 'six_update' && inputs.mode != 'six_sweep' && inputs.mode != 'six_prebaseline'))
     runs-on: ubuntu-latest
     timeout-minutes: 45
     permissions:
@@ -147,14 +147,15 @@ jobs:
     needs: [preflight, gcs-history]
     # Keep this job in the SAME workflow file to honor the existing,
     # tightly restricted Google Cloud OIDC workflow_ref condition.
-    if: always() && needs.preflight.outputs.ready == 'true' && ((github.event_name == 'schedule' && needs.gcs-history.result == 'success') || (github.event_name == 'workflow_dispatch' && (inputs.mode == 'six_backfill' || inputs.mode == 'six_update' || inputs.mode == 'six_sweep')))
+    if: always() && needs.preflight.outputs.ready == 'true' && ((github.event_name == 'schedule' && needs.gcs-history.result == 'success') || (github.event_name == 'workflow_dispatch' && (inputs.mode == 'six_backfill' || inputs.mode == 'six_update' || inputs.mode == 'six_sweep' || inputs.mode == 'six_prebaseline')))
     runs-on: ubuntu-latest
     timeout-minutes: 65
     permissions:
       contents: read
+      actions: read
       id-token: write
     env:
-      RUN_MODE: ${{ github.event_name == 'schedule' && 'update' || (inputs.mode == 'six_backfill' && 'backfill' || (inputs.mode == 'six_sweep' && 'sweep' || 'update')) }}
+      RUN_MODE: ${{ github.event_name == 'schedule' && 'update' || (inputs.mode == 'six_backfill' && 'backfill' || (inputs.mode == 'six_sweep' && 'sweep' || (inputs.mode == 'six_prebaseline' && 'prebaseline' || 'update'))) }}
       FIRST_DAY: ${{ inputs.start }}
       LAST_DAY: ${{ inputs.end }}
       TARGET_DAY: ${{ inputs.through }}
@@ -166,6 +167,26 @@ jobs:
         with:
           python-version: '3.12'
       - run: python -m pip install 'google-cloud-storage>=2.18,<4'
+      - name: Download and pin original 90-day April–July GDELT evidence
+        if: env.RUN_MODE == 'prebaseline'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          gh run download 42912512785 \
+            --repo "$GITHUB_REPOSITORY" \
+            --name gdelt-ucdp-candidate-shadow-42912512785 \
+            --dir verified-april-reference
+          test -s verified-april-reference/historical-prewindow/daily.jsonl
+          test -s verified-april-reference/historical-prewindow/manifest.json
+          python - <<'PY'
+          from pathlib import Path
+          from scripts.gdelt_sixroot_prehistory import load_reference
+          r,m=load_reference(
+              'verified-april-reference/historical-prewindow/daily.jsonl',
+              'verified-april-reference/historical-prewindow/manifest.json')
+          print(f"Verified 90-day independent four-root reference, SHA256={m['sha256']}")
+          PY
       - name: Authenticate using existing restricted history-workflow OIDC
         uses: google-github-actions/auth@v3
         with:
@@ -194,6 +215,13 @@ jobs:
                          --max-batches "$MAX_BATCHES")
             if [ -n "$TARGET_DAY" ]; then sweep_args+=(--through "$TARGET_DAY"); fi
             python scripts/gdelt_sixroot_sweep.py "${sweep_args[@]}"
+          elif [ "$RUN_MODE" = prebaseline ]; then
+            python scripts/gdelt_sixroot_prehistory.py \
+              --project aiba-514120 --bucket "$GCS_BUCKET" \
+              --reference verified-april-reference/historical-prewindow/daily.jsonl \
+              --reference-manifest verified-april-reference/historical-prewindow/manifest.json \
+              --max-batches "$MAX_BATCHES" \
+              --output gdelt-sixroot-audit --run-id "$GITHUB_RUN_ID"
           else
             python scripts/gdelt_six_root_gcs.py "${args[@]}"
           fi
@@ -203,38 +231,52 @@ jobs:
           python - <<'PY'
           import json,os
           from pathlib import Path
-          f=Path('gdelt-sixroot-audit/sweep_manifest.json')
-          if f.exists():
-              m=json.loads(f.read_text())
+          p=Path('gdelt-sixroot-audit/prehistory_manifest.json')
+          if p.exists():
+              m=json.loads(p.read_text())
               lines=[
-                  '## GDELT six-root audited bulk reconciliation',
+                  '## Source-verified April–July six-root prehistory',
                   f"- Status: **{m['status']}**",
-                  f"- Bounded 14-day batches attempted: {m['attempted_batches']}",
-                  f"- New days: {m['total_new_days']}",
-                  f"- Full-source dates stored: {m['total_existing_sixroot_in_target']}/{m['total_required_dates']}",
-                  f"- Missing six-root dates: {len(m['remaining_sixroot_dates'])}",
+                  f"- Immutable prehistory dates stored: {m['persisted_days']}/{m['expected_days']}",
+                  f"- Missing dates: {len(m['remaining_dates'])}",
                   f"- Provider failures: {len(m['provider_failures'])}",
-                  f"- Missing four-root references: {len(m['missing_fourroot_reference_dates'])}",
-                  '- Production warnings and publication: UNCHANGED'
+                  f"- Parity/source validation failures: {len(m['parity_or_validation_failures'])}",
+                  f"- Independent four-root source SHA256: `{m['verified_fourroot_reference_sha256']}`",
+                  '- No production warning/publication changes'
               ]
           else:
-              f=Path('gdelt-sixroot-audit/manifest.json')
-              if not f.exists():
-                  print('::warning::Six-root migration failed before an audit receipt could be written')
-                  lines=[]
-              else:
+              f=Path('gdelt-sixroot-audit/sweep_manifest.json')
+              if f.exists():
                   m=json.loads(f.read_text())
                   lines=[
-                      '## Six-root GDELT shadow profile (13,16,17–20)',
+                      '## GDELT six-root audited bulk reconciliation',
                       f"- Status: **{m['status']}**",
-                      f"- UTC dates created: {len(m['created_days'])}",
-                      f"- Four-root projections checked: {len(m['checked_parity'])}",
-                      f"- Provider failures: {len(m['source_failures'])}",
-                      f"- Backfill dates not yet present: {len(m['missing_sixroot_days'])}",
-                      f"- Missing four-root reference dates: {len(m['missing_v1_dependency'])}",
-                      f"- Eligible lagged shadow comparisons: {len(m['eligible_evaluations'])}",
+                      f"- Bounded 14-day batches attempted: {m['attempted_batches']}",
+                      f"- New days: {m['total_new_days']}",
+                      f"- Full-source dates stored: {m['total_existing_sixroot_in_target']}/{m['total_required_dates']}",
+                      f"- Missing six-root dates: {len(m['remaining_sixroot_dates'])}",
+                      f"- Provider failures: {len(m['provider_failures'])}",
+                      f"- Missing four-root references: {len(m['missing_fourroot_reference_dates'])}",
                       '- Production warnings and publication: UNCHANGED'
                   ]
+              else:
+                  f=Path('gdelt-sixroot-audit/manifest.json')
+                  if not f.exists():
+                      print('::warning::Six-root migration failed before an audit receipt could be written')
+                      lines=[]
+                  else:
+                      m=json.loads(f.read_text())
+                      lines=[
+                          '## Six-root GDELT shadow profile (13,16,17–20)',
+                          f"- Status: **{m['status']}**",
+                          f"- UTC dates created: {len(m['created_days'])}",
+                          f"- Four-root projections checked: {len(m['checked_parity'])}",
+                          f"- Provider failures: {len(m['source_failures'])}",
+                          f"- Backfill dates not yet present: {len(m['missing_sixroot_days'])}",
+                          f"- Missing four-root reference dates: {len(m['missing_v1_dependency'])}",
+                          f"- Eligible lagged shadow comparisons: {len(m['eligible_evaluations'])}",
+                          '- Production warnings and publication: UNCHANGED'
+                      ]
           if lines:
               with open(os.environ['GITHUB_STEP_SUMMARY'],'a') as out:
                   out.write('\n'.join(lines)+'\n')
