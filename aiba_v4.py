@@ -21,13 +21,14 @@ import sys
 import urllib.request
 import zipfile
 from collections import Counter, defaultdict
+from scripts.gdelt_event_profile import ROOT_LABEL, classify_actors
 
 HERE=pathlib.Path(__file__).resolve().parent
 CACHE=HERE/'cache'
 DATA=HERE/'data'
 OUT=HERE/'output'
 GDELT_ROOT='https://data.gdeltproject.org/events/'
-ROOT_LABEL={'13':'Threaten', '16':'Reduce relations','17':'Coerce','18':'Assault','19':'Fight','20':'Mass violence'}
+# Root scope and actor-case assignment must match the six-root shadow profile.
 # GDELT actor country codes mostly resemble ISO alpha-3 but not guaranteed.
 COUNTRIES={'ETH':'Ethiopia','ERI':'Eritrea','SUD':'Sudan','PAK':'Pakistan','AFG':'Afghanistan','DRC':'DR Congo','RWA':'Rwanda','THA':'Thailand','CAM':'Cambodia','RUS':'Russia','USA':'United States','IRN':'Iran','CHN':'China','TWN':'Taiwan','PRK':'North Korea','KOR':'South Korea','UKR':'Ukraine','ISR':'Israel','IND':'India','VEN':'Venezuela','GUY':'Guyana','MYA':'Myanmar','MLI':'Mali','BFI':'Burkina Faso'}
 
@@ -99,13 +100,8 @@ def ingest(cache_dir=CACHE, asof=None, audit=None):
                 if root == '--': uncoded += 1
                 if root not in ROOT_LABEL: continue
                 total += 1
-                a,b=row[7].strip(),row[17].strip()
-                valid=lambda c:len(c)==3 and c.isalpha()
-                if valid(a) and valid(b) and a!=b:
-                    key=('BILAT',tuple(sorted((a,b))))
-                elif root in ('17','18','19','20') and (valid(a) or valid(b)):
-                    key=('DOMESTIC',(a if valid(a) else b,))
-                else: continue
+                key=classify_actors(root,row[7],row[17])
+                if key is None: continue
                 local[(day,key)] += 1
                 local_roots[key][root] += 1
                 if len(local_samples[key])<8 and row[-1].startswith(('https://','http://')):

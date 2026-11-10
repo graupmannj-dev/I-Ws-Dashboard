@@ -3,12 +3,20 @@ on:
   workflow_dispatch:
     inputs:
       mode:
-        description: 'One-time initial seed, or incremental gap-recovering update'
+        description: 'Four-root seed/update, or six-root backfill/update in separate GCS namespace'
         type: choice
         required: true
-        options: [seed, update]
+        options: [seed, update, six_backfill, six_update]
       through:
         description: 'Update only: last completed UTC day, e.g. 2026-11-09; blank = yesterday'
+        type: string
+        required: false
+      start:
+        description: 'six_backfill only: first YYYY-MM-DD UTC date (max 14 days per run)'
+        type: string
+        required: false
+      end:
+        description: 'six_backfill only: last YYYY-MM-DD UTC date (max 14 days per run)'
         type: string
         required: false
   schedule:
@@ -44,7 +52,7 @@ jobs:
           fi
   gcs-history:
     needs: preflight
-    if: needs.preflight.outputs.ready == 'true'
+    if: needs.preflight.outputs.ready == 'true' && (github.event_name == 'schedule' || (inputs.mode != 'six_backfill' && inputs.mode != 'six_update'))
     runs-on: ubuntu-latest
     timeout-minutes: 45
     permissions:
@@ -129,3 +137,82 @@ jobs:
           path: gdelt-gcs-output/
           retention-days: 30
           if-no-files-found: warn
+
+  six-root-shadow:
+    needs: [preflight, gcs-history]
+    # Keep this job in the SAME workflow file to honor the existing,
+    # tightly restricted Google Cloud OIDC workflow_ref condition.
+    if: always() && needs.preflight.outputs.ready == 'true' && ((github.event_name == 'schedule' && needs.gcs-history.result == 'success') || (github.event_name == 'workflow_dispatch' && (inputs.mode == 'six_backfill' || inputs.mode == 'six_update')))
+    runs-on: ubuntu-latest
+    timeout-minutes: 65
+    permissions:
+      contents: read
+      id-token: write
+    env:
+      RUN_MODE: ${{ github.event_name == 'schedule' && 'update' || (inputs.mode == 'six_backfill' && 'backfill' || 'update') }}
+      FIRST_DAY: ${{ inputs.start }}
+      LAST_DAY: ${{ inputs.end }}
+      TARGET_DAY: ${{ inputs.through }}
+      GCS_BUCKET: ${{ vars.GCS_GDELT_BUCKET }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install 'google-cloud-storage>=2.18,<4'
+      - name: Authenticate using existing restricted history-workflow OIDC
+        uses: google-github-actions/auth@v3
+        with:
+          project_id: aiba-514120
+          workload_identity_provider: ${{ vars.GCP_WIF_PROVIDER }}
+          service_account: ${{ vars.GCP_SERVICE_ACCOUNT }}
+      - name: Migrate GDELT 13/16/17/18/19/20 daily archives in shadow mode
+        shell: bash
+        run: |
+          set -euo pipefail
+          args=(--project aiba-514120 --bucket "$GCS_BUCKET"
+                --mode "$RUN_MODE" --output gdelt-sixroot-audit
+                --run-id "$GITHUB_RUN_ID")
+          if [ "$RUN_MODE" = backfill ]; then
+            if [ -z "$FIRST_DAY" ] || [ -z "$LAST_DAY" ]; then
+              echo "::error::six_backfill requires both start and end (<=14 inclusive UTC days)"
+              exit 2
+            fi
+            args+=(--start "$FIRST_DAY" --end "$LAST_DAY")
+          elif [ -n "$TARGET_DAY" ]; then
+            args+=(--through "$TARGET_DAY")
+          fi
+          python scripts/gdelt_six_root_gcs.py "${args[@]}"
+      - name: Record six-root parity and migration health
+        if: always()
+        run: |
+          python - <<'PY'
+          import json,os
+          from pathlib import Path
+          f=Path('gdelt-sixroot-audit/manifest.json')
+          if not f.exists():
+              print('::warning::Six-root migration failed before an audit receipt could be written')
+          else:
+              m=json.loads(f.read_text())
+              lines=[
+                  '## Six-root GDELT shadow profile (13,16,17–20)',
+                  f"- Status: **{m['status']}**",
+                  f"- UTC dates created: {len(m['created_days'])}",
+                  f"- Four-root projections checked: {len(m['checked_parity'])}",
+                  f"- Provider failures: {len(m['source_failures'])}",
+                  f"- Backfill dates not yet present: {len(m['missing_sixroot_days'])}",
+                  f"- Missing four-root reference dates: {len(m['missing_v1_dependency'])}",
+                  f"- Eligible lagged shadow comparisons: {len(m['eligible_evaluations'])}",
+                  '- Production warnings and publication: UNCHANGED'
+              ]
+              with open(os.environ['GITHUB_STEP_SUMMARY'],'a') as out:
+                  out.write('\n'.join(lines)+'\n')
+          PY
+      - name: Retain six-root source QA and shadow comparisons
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: gdelt-sixroot-audit-${{ github.run_id }}-${{ github.run_attempt }}
+          path: gdelt-sixroot-audit/
+          if-no-files-found: warn
+          retention-days: 90

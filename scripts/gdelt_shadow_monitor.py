@@ -61,15 +61,19 @@ def prior_window(by_day, day):
     }
 
 
-def analyze_day(by_day, date):
-    """Descriptive volume-normalized baseline with sparse-key separate routing."""
+def analyze_day(by_day, date, profile=SOURCE_PROFILE):
+    """Descriptive volume-normalized baseline with sparse-key separate routing.
+
+    Caller MUST ensure every source record shares the declared profile and
+    denominator. Six-root GCS migration independently validates this.
+    """
     current = by_day.get(date)
     if current is None:
         raise ValueError(f"No valid daily aggregate for {date}")
     prior, health = prior_window(by_day, date)
     result = {
         "day": date.isoformat(),
-        "profile": SOURCE_PROFILE,
+        "profile": profile,
         "selected_events": current["selected"],
         "all_events": current["rows"],
         "baseline": health,
