@@ -66,6 +66,54 @@ def build_panel(records, min_history=28):
                            "status":"shadow_only_not_predictive"})
     return output
 
+
+def parse_range(start_text, end_text, max_days=120):
+    """Normalize unambiguous ISO-like dates and enforce a bounded inclusive range.
+
+    GitHub's form may receive YYYY/MM/DD; normalize it before artifact naming.
+    A backfill larger than the cap is refused with balanced chunk suggestions.
+    """
+    import re
+
+    def parse_one(value, label):
+        if not isinstance(value, str) or not re.fullmatch(r"\d{4}[-/]\d{2}[-/]\d{2}", value):
+            raise ValueError(
+                f"{label} must be YYYY-MM-DD (e.g. 2026-07-10); "
+                "YYYY/MM/DD is also accepted."
+            )
+        if value[4] != value[7]:
+            raise ValueError(f"{label} must use matching date separators")
+        try:
+            return dt.date.fromisoformat(value.replace("/", "-"))
+        except ValueError as exc:
+            raise ValueError(f"{label} is not a valid calendar date: {value}") from exc
+
+    first = parse_one(start_text, "Start")
+    last = parse_one(end_text, "End")
+    if last < first:
+        raise ValueError(f"End {last} cannot precede start {first}")
+    if max_days < 1:
+        raise ValueError("max_days must be at least one")
+    days = (last - first).days + 1
+    if days > max_days:
+        chunks = (days + max_days - 1) // max_days
+        per_chunk, extra = divmod(days, chunks)
+        pieces = []
+        day = first
+        for i in range(chunks):
+            size = per_chunk + (1 if i < extra else 0)
+            upper = day + dt.timedelta(days=size - 1)
+            pieces.append(f"{day.isoformat()} through {upper.isoformat()} ({size} days)")
+            day = upper + dt.timedelta(days=1)
+        raise ValueError(
+            f"Requested {days} inclusive days exceeds the {max_days}-day limit. "
+            "Run separate bounded backfills: " + "; ".join(pieces) +
+            ". Then assemble the resulting artifacts using the historical "
+            "assembly workflow."
+        )
+    return first, last
+
+
 def main():
     p=argparse.ArgumentParser()
     p.add_argument("--start",required=True)
@@ -74,9 +122,10 @@ def main():
     p.add_argument("--output",default="historical-baseline")
     p.add_argument("--max-days",type=int,default=120)
     a=p.parse_args()
-    start,end=dt.date.fromisoformat(a.start),dt.date.fromisoformat(a.end)
-    if end<start or (end-start).days+1>a.max_days:
-        p.error("Invalid range or exceeds --max-days; run in bounded chunks")
+    try:
+        start,end=parse_range(a.start,a.end,max_days=a.max_days)
+    except ValueError as exc:
+        p.error(str(exc))
     cache,out=pathlib.Path(a.cache),pathlib.Path(a.output)
     cache.mkdir(parents=True,exist_ok=True);out.mkdir(parents=True,exist_ok=True)
     records=[];failures=[]
@@ -98,7 +147,7 @@ def main():
     panel=build_panel(records)
     with (out/"shadow_replay.jsonl").open("w") as f:
         for r in panel:f.write(json.dumps(r,sort_keys=True)+"\n")
-    manifest={"start":a.start,"end":a.end,"requested_days":(end-start).days+1,
+    manifest={"start":start.isoformat(),"end":end.isoformat(),"requested_days":(end-start).days+1,
               "complete_days":len(records),"failed_days":len(failures),
               "failures":failures,"shadow_rows":len(panel),
               "method":"prior-90-valid-day median/MAD of selected-event shares; no outcome labels",
