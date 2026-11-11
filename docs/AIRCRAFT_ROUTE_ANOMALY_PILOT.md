@@ -182,9 +182,12 @@ investigated as a source-content change, not silently accepted as the same run.
 ## Follow-up PRs
 
 - [Bounded offline cohort archive scanner](AIRCRAFT_COHORT_ARCHIVE_SCAN.md)
-  now measures local split-TAR bytes and extracts preselected source traces
-  for review. Real complete-day resource measurements, valid leg selection,
-  and zero-cost feasibility remain unvalidated.
+  now extracts preselected source traces for review. Its
+  [first full-day production source measurement](AIRCRAFT_ONE_DAY_BENCHMARK.md)
+  verified a complete 3.689 GB TAR stream in 23.2 seconds on a
+  standard GitHub-hosted runner. That run used a synthetic negative-control
+  ICAO. **Real comparative flight-leg coverage and 28-day affordability
+  remain unvalidated**, despite successful one-day source ingestion.
 - Offline historical reference and held-out evaluation now exist as an
   **unvalidated synthetic-tested prototype**; a real preselected cohort with
   independently verified historical coverage remains necessary.
