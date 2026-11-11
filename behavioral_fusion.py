@@ -206,12 +206,16 @@ def build(state,clock=None,write=True,run_id=None):
     if not generated or generated>now+dt.timedelta(minutes=5) or now-generated>dt.timedelta(minutes=20):
         raise ValueError("Behavioral registry latest is not a fresh bounded collection; no stale re-alert")
     recent,history_diag=recently_observed(state,now)
-    single,single_total=review_queue(registry,recent,now)
-    recent_ids={x["id"] for x in registry["records"] if x.get("registry_novelty")=="newly_observed"}
-    groups,total=converge(recent,recent_ids,now)
     if registry.get("first_registry_baseline"):
-        if single_total or total:
-            raise ValueError("Initial behavioral baseline must not generate new leads")
+        # First-pass data are the reference population, even if an
+        # upstream adapter mislabels its initial items as novel.
+        # Never send first-seen backfills as live review leads.
+        single,single_total=[],0
+        groups,total=[],0
+    else:
+        single,single_total=review_queue(registry,recent,now)
+        recent_ids={x["id"] for x in registry["records"] if x.get("registry_novelty")=="newly_observed"}
+        groups,total=converge(recent,recent_ids,now)
     output={
         "schema":SCHEMA,"generated_at":iso(now),
         "registry_asof":registry["generated_at"],
