@@ -203,6 +203,19 @@ class BoundedOfflineArchiveScanTests(unittest.TestCase):
         self.assertEqual(receipt["status"], "unavailable")
         self.assertEqual(receipt["reason"], "Selected TAR member is not a regular file")
 
+    def test_valid_selected_trace_larger_than_one_reader_chunk(self):
+        fixture = trace("abc123")
+        # Valid source JSON below the per-trace 2 MiB limit but over the
+        # 1 MiB bounded reader chunk size: real source files can be this big.
+        fixture["extra"] = "x" * (scan.MAX_READ + 8192)
+        payload = archive([("./traces/ab/trace_full_abc123.json",
+                            json.dumps(fixture).encode(), None)])
+        with tempfile.TemporaryDirectory() as folder:
+            receipt, candidate = self.run_scan(parts(folder, payload))
+        self.assertEqual(receipt["status"], "archive_scanned_review_required")
+        self.assertEqual(receipt["selected_trace_members"], 1)
+        self.assertEqual(candidate["aircraft_traces"][0]["readsb"]["icao"], "abc123")
+
     def test_selected_members_and_expanded_output_are_limited(self):
         bomb = gzip.compress(b"x" * (scan.MAX_SELECTED_JSON + 1))
         payload = archive([("./traces/ab/trace_full_abc123.json.gz", bomb, None)])
