@@ -66,6 +66,7 @@ def read_candidate_csv(path, require_sha=True):
     uncertain = defaultdict(set)
     country_uncertain = defaultdict(set)
     dyad_info, ids, reason = {}, {}, Counter()
+    invalid_fatality_bounds = []
     seen_country_dyads = set()
     for row in reader:
         eid = row["id"].strip()
@@ -93,8 +94,7 @@ def read_candidate_csv(path, require_sha=True):
             continue
         best = _integer(row["best"], "best")
         high = _integer(row["high"], "high")
-        if high < best:
-            raise ValueError(f"High fatalities smaller than best for {eid}")
+        invalid_bounds = high < best
         # A dyad label must be stable within the frozen source release.
         key = (country, dyad)
         if dyad:
@@ -106,7 +106,19 @@ def read_candidate_csv(path, require_sha=True):
         exact = (dyad and row["code_status"].strip().lower() == "clear"
                  and row["date_prec"].strip() == "1"
                  and row["event_clarity"].strip() == "1" and start == end)
-        if not exact or (best == 0 and high > 0):
+        if invalid_bounds or not exact or (best == 0 and high > 0):
+            # Source quality exceptions are NOT repaired, silently
+            # dropped, or treated as evidence of zero fatalities.
+            # Preserve all potentially affected days as uncertain.
+            if invalid_bounds:
+                reason["fatality_bounds_inconsistent_quarantined"] += 1
+                invalid_fatality_bounds.append({
+                    "event_id": eid, "country": country,
+                    "dyad_new_id": dyad or None,
+                    "start": start.isoformat(), "end": end.isoformat(),
+                    "best": best, "high": high,
+                    "reason": "UCDP high below best; excluded from candidate labels",
+                })
             for day in calendar(max(start, RELEASE_START), min(end, RELEASE_END)):
                 if dyad:
                     uncertain[key].add(day)
@@ -131,6 +143,7 @@ def read_candidate_csv(path, require_sha=True):
         "uncertain_dates": uncertain,
         "country_uncertain_dates": country_uncertain,
         "source_counts": dict(reason),
+        "invalid_fatality_bounds": invalid_fatality_bounds,
     }
 
 
@@ -253,6 +266,14 @@ def produce(path, output, start=dt.date(2026,7,11), end=RELEASE_END, require_sha
             "conflict_new_id","country","best_fatalities_on_date",
             "best_fatalities_7d","baseline_best_fatalities_28d",
             "source_event_ids","label_status"]
+    # A separate forensic-quality register makes every excluded
+    # contradictory fatality bound independently inspectable. Include
+    # even records outside the selected episode period for source QA.
+    qc_fields=["event_id","country","dyad_new_id","start","end","best","high","reason"]
+    with (out/"quarantined_fatality_bounds.csv").open("w",newline="",encoding="utf-8") as f:
+        w=csv.DictWriter(f,fieldnames=qc_fields)
+        w.writeheader()
+        w.writerows(src["invalid_fatality_bounds"])
     with (out/"episodes_unadjudicated.csv").open("w",newline="",encoding="utf-8") as f:
         w=csv.DictWriter(f,fieldnames=fields);w.writeheader()
         for event in events:
@@ -263,6 +284,8 @@ def produce(path, output, start=dt.date(2026,7,11), end=RELEASE_END, require_sha
         "ucdp_source_sha256":src["source_sha256"],
         "unique_source_events":src["seen_unique_event_ids"],
         "source_counts":src["source_counts"],
+        "quarantined_fatality_bounds_count":len(src["invalid_fatality_bounds"]),
+        "quarantined_fatality_bounds_artifact":"quarantined_fatality_bounds.csv",
         "coverage":info,
         "episode_count":len(events),
         "approved_episode_count":0,

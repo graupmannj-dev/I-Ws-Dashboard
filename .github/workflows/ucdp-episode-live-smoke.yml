@@ -1,0 +1,100 @@
+name: Verify UCDP episode parser against pinned real source (PR only)
+on:
+  pull_request:
+    paths:
+      - 'scripts/ucdp_episode_labels.py'
+      - 'scripts/ucdp_episode_review_queue.py'
+      - 'tests/test_ucdp_episodes.py'
+      - '.github/workflows/ucdp-episode-live-smoke.yml'
+permissions:
+  contents: read
+  actions: read
+jobs:
+  source-integration:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Retrieve the same independently verified historical GDELT inputs
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          gh run download 42912512785 \
+            --repo "$GITHUB_REPOSITORY" \
+            --name gdelt-ucdp-candidate-shadow-42912512785 \
+            --dir independent-reference
+          gh run download 42893068477 \
+            --repo "$GITHUB_REPOSITORY" \
+            --name gdelt-shadow-baseline-42893068477 \
+            --dir verified-seed
+          python - <<'PY'
+          from scripts.validate_ucdp_episode_inputs import check_files
+          check_files(
+              'independent-reference/historical-prewindow/manifest.json',
+              'verified-seed/manifest.json',
+          )
+          PY
+      - name: Download original official UCDP Candidate September 2026 release
+        shell: bash
+        run: |
+          set -euo pipefail
+          curl --fail --location --silent --show-error --retry 3 \
+            --max-time 180 \
+            'https://ucdp.uu.se/downloads/candidateged/GEDEvent_v26_01_26_09.csv' \
+            -o ucdp-candidate.csv
+          python - <<'PY'
+          import hashlib
+          from pathlib import Path
+          from scripts.ucdp_episode_labels import UCDP_SHA256
+          src=Path('ucdp-candidate.csv')
+          got=hashlib.sha256(src.read_bytes()).hexdigest()
+          if got!=UCDP_SHA256:
+              raise SystemExit(f'Pinned release SHA256 drift: {got}')
+          PY
+      - name: Exercise full episode creation and GDELT review queue with real pinned CSV
+        shell: bash
+        run: |
+          set -euo pipefail
+          python scripts/ucdp_episode_review_queue.py \
+            --history independent-reference/historical-prewindow/daily.jsonl \
+                verified-seed/daily_aggregates.jsonl \
+            --ucdp ucdp-candidate.csv \
+            --crosswalk data/validation/ucdp_country_crosswalk_pilot.csv \
+            --output episode-integration-audit
+          python - <<'PY'
+          import csv,json,os
+          from pathlib import Path
+          root=Path('episode-integration-audit')
+          manifest=json.loads((root/'manifest.json').read_text())
+          summary=json.loads((root/'summary.json').read_text())
+          qc=list(csv.DictReader((root/'quarantined_fatality_bounds.csv').open()))
+          assert manifest['quarantined_fatality_bounds_count']==len(qc)
+          assert manifest['source_counts']['fatality_bounds_inconsistent_quarantined']==len(qc)
+          assert any(r['event_id']=='628267' for r in qc)
+          assert not summary['approved_for_operational_warning']
+          assert summary['accepted_verified_links']==0
+          assert summary['candidate_episode_count']>0
+          lines=[
+              '## Pinned real-source episode smoke',
+              f"- Provisional episodes: {summary['candidate_episode_count']}",
+              f"- Unreviewed nominations: {summary['review_queue_rows']}",
+              f"- Quarantined contradictory UCDP fatality bounds: {len(qc)}",
+              '- Source event 628267 isolated and recorded, not used in labels.',
+              '- Automatic warning promotions: disabled.',
+          ]
+          with open(os.environ['GITHUB_STEP_SUMMARY'],'a') as f:
+              f.write('\n'.join(lines)+'\n')
+          PY
+      - name: Preserve safe source QA receipts, not full original source
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ucdp-real-source-smoke-${{ github.run_id }}
+          path: episode-integration-audit/
+          retention-days: 14
+          if-no-files-found: warn
