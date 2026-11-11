@@ -37,6 +37,9 @@ jobs:
       - name: Build source-separated shadow-mode analysis and audit trace
         shell: bash
         run: python src/friction_synthesis.py --state state/observations
+      - name: Reconcile source-timed global behavioral observations (shadow)
+        shell: bash
+        run: python src/behavioral_registry.py --state state/observations
       - name: Persist evidence, source errors, and shadow-mode briefing
         shell: bash
         run: |
