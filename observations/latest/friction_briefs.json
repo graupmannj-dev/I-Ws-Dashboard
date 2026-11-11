@@ -2,84 +2,24 @@
   "alert_count": 0,
   "cases": [
     {
-      "alternative": "Existing M23 fighting and peace-process volatility can generate repeated alarming headlines without a distinct new escalation.",
-      "anomaly_baselines": {
-        "internet_reachability": {
-          "current": null,
-          "median": null,
-          "robust_z": null,
-          "samples": 1,
-          "status": "insufficient_baseline"
-        },
-        "maritime_restriction": {
-          "current": null,
-          "median": null,
-          "robust_z": null,
-          "samples": 1,
-          "status": "insufficient_baseline"
-        }
-      },
-      "baseline_context": "internet_reachability: insufficient matched-hour baseline (1 samples); rarity cannot be quantified. maritime_restriction: insufficient matched-hour baseline (1 samples); rarity cannot be quantified.",
-      "confidence": "Review priority, not confidence in escalation. No source-independence or causal attribution is assumed.",
-      "counter_evidence": "No demonstrated departure, timed overlap, or reviewed exceptional single indicator.",
-      "coverage_gaps": [
-        "nga"
-      ],
-      "current_source_records": 0,
-      "executive_eligible": false,
-      "id": "drc_rwanda",
-      "materiality_rationale": "Source novelty alone does not warrant executive prominence.",
-      "new_families": [
-        "internet_reachability"
-      ],
-      "new_sources": 1,
-      "next_signpost": "Confirm new direct-state engagements, cross-border deployments, or verified displacement and border-trade disruption beyond recent rates.",
-      "publication_basis": "investigatory_only",
-      "so_what": "Novel observation retained; deviation and scenario consequence not yet established.",
-      "source_evidence": [
-        {
-          "assessment": "measurement_context",
-          "event_at": "2026-11-10T00:30:00Z",
-          "family": "internet_reachability",
-          "first_seen_at": "2026-11-10T03:29:02Z",
-          "id": "ioda:f358c9a1e6a238b56207782e",
-          "kind": "outage_event",
-          "root": "ioda:86f54d0739236e6b1b9c28b6",
-          "title": "IODA detected connectivity anomaly: country CD",
-          "url": "https://ioda.inetintel.cc.gatech.edu/"
-        }
-      ],
-      "standing_state": "Active conflict",
-      "title": "DR Congo–Rwanda / Kivu",
-      "traditional_changes": [],
-      "traditional_contrast": "Nontraditional-source change without new corroborating evidence from the latest case-specific traditional brief. This may reflect stale or incomplete conventional coverage, not secrecy.",
-      "triage": "source_review",
-      "warnings": [
-        "Existing war severity is not evidence of a new phase.",
-        "A national network disruption is not evidence of interstate military preparation.",
-        "Concurrent restrictions and outages can share a public, routine, or accidental cause."
-      ],
-      "what_changed": "1 new public network-reachability detections. Source-specific materiality and baseline still require analyst verification."
-    },
-    {
       "alternative": "Localized recurrent strikes and counterinsurgency measures may persist without a larger conventional war.",
       "anomaly_baselines": {
         "internet_reachability": {
           "current": null,
           "median": null,
           "robust_z": null,
-          "samples": 1,
+          "samples": 4,
           "status": "insufficient_baseline"
         },
         "maritime_restriction": {
           "current": null,
           "median": null,
           "robust_z": null,
-          "samples": 1,
+          "samples": 4,
           "status": "insufficient_baseline"
         }
       },
-      "baseline_context": "internet_reachability: insufficient matched-hour baseline (1 samples); rarity cannot be quantified. maritime_restriction: insufficient matched-hour baseline (1 samples); rarity cannot be quantified.",
+      "baseline_context": "internet_reachability: insufficient matched-hour baseline (4 samples); rarity cannot be quantified. maritime_restriction: insufficient matched-hour baseline (4 samples); rarity cannot be quantified.",
       "confidence": "Review priority, not confidence in escalation. No source-independence or causal attribution is assumed.",
       "counter_evidence": "No demonstrated departure, timed overlap, or reviewed exceptional single indicator.",
       "coverage_gaps": [
@@ -108,24 +48,70 @@
       "what_changed": "No qualifying new structural-friction change established from available observations."
     },
     {
-      "alternative": "Ethiopian–Tigrayan fighting can explain force movements without an Eritrean entry into war.",
+      "alternative": "Existing M23 fighting and peace-process volatility can generate repeated alarming headlines without a distinct new escalation.",
       "anomaly_baselines": {
         "internet_reachability": {
           "current": null,
           "median": null,
           "robust_z": null,
-          "samples": 1,
+          "samples": 4,
           "status": "insufficient_baseline"
         },
         "maritime_restriction": {
           "current": null,
           "median": null,
           "robust_z": null,
-          "samples": 1,
+          "samples": 4,
           "status": "insufficient_baseline"
         }
       },
-      "baseline_context": "internet_reachability: insufficient matched-hour baseline (1 samples); rarity cannot be quantified. maritime_restriction: insufficient matched-hour baseline (1 samples); rarity cannot be quantified.",
+      "baseline_context": "internet_reachability: insufficient matched-hour baseline (4 samples); rarity cannot be quantified. maritime_restriction: insufficient matched-hour baseline (4 samples); rarity cannot be quantified.",
+      "confidence": "Review priority, not confidence in escalation. No source-independence or causal attribution is assumed.",
+      "counter_evidence": "No demonstrated departure, timed overlap, or reviewed exceptional single indicator.",
+      "coverage_gaps": [
+        "nga"
+      ],
+      "current_source_records": 0,
+      "executive_eligible": false,
+      "id": "drc_rwanda",
+      "materiality_rationale": "Source novelty alone does not warrant executive prominence.",
+      "new_families": [],
+      "new_sources": 0,
+      "next_signpost": "Confirm new direct-state engagements, cross-border deployments, or verified displacement and border-trade disruption beyond recent rates.",
+      "publication_basis": "investigatory_only",
+      "so_what": "Novel observation retained; deviation and scenario consequence not yet established.",
+      "source_evidence": [],
+      "standing_state": "Active conflict",
+      "title": "DR Congo–Rwanda / Kivu",
+      "traditional_changes": [],
+      "traditional_contrast": "No new matched source change across these monitored families; the standing watch and unmeasured activity remain unresolved.",
+      "triage": "maintain",
+      "warnings": [
+        "Existing war severity is not evidence of a new phase.",
+        "A national network disruption is not evidence of interstate military preparation.",
+        "Concurrent restrictions and outages can share a public, routine, or accidental cause."
+      ],
+      "what_changed": "No qualifying new structural-friction change established from available observations."
+    },
+    {
+      "alternative": "Ethiopian–Tigrayan fighting can explain force movements without an Eritrean entry into war.",
+      "anomaly_baselines": {
+        "internet_reachability": {
+          "current": null,
+          "median": null,
+          "robust_z": null,
+          "samples": 4,
+          "status": "insufficient_baseline"
+        },
+        "maritime_restriction": {
+          "current": null,
+          "median": null,
+          "robust_z": null,
+          "samples": 4,
+          "status": "insufficient_baseline"
+        }
+      },
+      "baseline_context": "internet_reachability: insufficient matched-hour baseline (4 samples); rarity cannot be quantified. maritime_restriction: insufficient matched-hour baseline (4 samples); rarity cannot be quantified.",
       "confidence": "Review priority, not confidence in escalation. No source-independence or causal attribution is assumed.",
       "counter_evidence": "No demonstrated departure, timed overlap, or reviewed exceptional single indicator.",
       "coverage_gaps": [
@@ -160,18 +146,18 @@
           "current": null,
           "median": null,
           "robust_z": null,
-          "samples": 1,
+          "samples": 4,
           "status": "insufficient_baseline"
         },
         "maritime_restriction": {
           "current": null,
           "median": null,
           "robust_z": null,
-          "samples": 1,
+          "samples": 4,
           "status": "insufficient_baseline"
         }
       },
-      "baseline_context": "internet_reachability: insufficient matched-hour baseline (1 samples); rarity cannot be quantified. maritime_restriction: insufficient matched-hour baseline (1 samples); rarity cannot be quantified.",
+      "baseline_context": "internet_reachability: insufficient matched-hour baseline (4 samples); rarity cannot be quantified. maritime_restriction: insufficient matched-hour baseline (4 samples); rarity cannot be quantified.",
       "confidence": "Review priority, not confidence in escalation. No source-independence or causal attribution is assumed.",
       "counter_evidence": "No demonstrated departure, timed overlap, or reviewed exceptional single indicator.",
       "coverage_gaps": [
@@ -206,18 +192,18 @@
           "current": null,
           "median": null,
           "robust_z": null,
-          "samples": 1,
+          "samples": 4,
           "status": "insufficient_baseline"
         },
         "maritime_restriction": {
           "current": null,
           "median": null,
           "robust_z": null,
-          "samples": 1,
+          "samples": 4,
           "status": "insufficient_baseline"
         }
       },
-      "baseline_context": "internet_reachability: insufficient matched-hour baseline (1 samples); rarity cannot be quantified. maritime_restriction: insufficient matched-hour baseline (1 samples); rarity cannot be quantified.",
+      "baseline_context": "internet_reachability: insufficient matched-hour baseline (4 samples); rarity cannot be quantified. maritime_restriction: insufficient matched-hour baseline (4 samples); rarity cannot be quantified.",
       "confidence": "Review priority, not confidence in escalation. No source-independence or causal attribution is assumed.",
       "counter_evidence": "No demonstrated departure, timed overlap, or reviewed exceptional single indicator.",
       "coverage_gaps": [
@@ -252,18 +238,18 @@
           "current": null,
           "median": null,
           "robust_z": null,
-          "samples": 1,
+          "samples": 4,
           "status": "insufficient_baseline"
         },
         "maritime_restriction": {
           "current": null,
           "median": null,
           "robust_z": null,
-          "samples": 1,
+          "samples": 4,
           "status": "insufficient_baseline"
         }
       },
-      "baseline_context": "internet_reachability: insufficient matched-hour baseline (1 samples); rarity cannot be quantified. maritime_restriction: insufficient matched-hour baseline (1 samples); rarity cannot be quantified.",
+      "baseline_context": "internet_reachability: insufficient matched-hour baseline (4 samples); rarity cannot be quantified. maritime_restriction: insufficient matched-hour baseline (4 samples); rarity cannot be quantified.",
       "confidence": "Review priority, not confidence in escalation. No source-independence or causal attribution is assumed.",
       "counter_evidence": "No demonstrated departure, timed overlap, or reviewed exceptional single indicator.",
       "coverage_gaps": [
@@ -298,18 +284,18 @@
           "current": null,
           "median": null,
           "robust_z": null,
-          "samples": 1,
+          "samples": 4,
           "status": "insufficient_baseline"
         },
         "maritime_restriction": {
           "current": null,
           "median": null,
           "robust_z": null,
-          "samples": 1,
+          "samples": 4,
           "status": "insufficient_baseline"
         }
       },
-      "baseline_context": "internet_reachability: insufficient matched-hour baseline (1 samples); rarity cannot be quantified. maritime_restriction: insufficient matched-hour baseline (1 samples); rarity cannot be quantified.",
+      "baseline_context": "internet_reachability: insufficient matched-hour baseline (4 samples); rarity cannot be quantified. maritime_restriction: insufficient matched-hour baseline (4 samples); rarity cannot be quantified.",
       "confidence": "Review priority, not confidence in escalation. No source-independence or causal attribution is assumed.",
       "counter_evidence": "No demonstrated departure, timed overlap, or reviewed exceptional single indicator.",
       "coverage_gaps": [
@@ -344,18 +330,18 @@
           "current": null,
           "median": null,
           "robust_z": null,
-          "samples": 1,
+          "samples": 4,
           "status": "insufficient_baseline"
         },
         "maritime_restriction": {
           "current": null,
           "median": null,
           "robust_z": null,
-          "samples": 1,
+          "samples": 4,
           "status": "insufficient_baseline"
         }
       },
-      "baseline_context": "internet_reachability: insufficient matched-hour baseline (1 samples); rarity cannot be quantified. maritime_restriction: insufficient matched-hour baseline (1 samples); rarity cannot be quantified.",
+      "baseline_context": "internet_reachability: insufficient matched-hour baseline (4 samples); rarity cannot be quantified. maritime_restriction: insufficient matched-hour baseline (4 samples); rarity cannot be quantified.",
       "confidence": "Review priority, not confidence in escalation. No source-independence or causal attribution is assumed.",
       "counter_evidence": "No demonstrated departure, timed overlap, or reviewed exceptional single indicator.",
       "coverage_gaps": [
@@ -390,18 +376,18 @@
           "current": null,
           "median": null,
           "robust_z": null,
-          "samples": 1,
+          "samples": 4,
           "status": "insufficient_baseline"
         },
         "maritime_restriction": {
           "current": null,
           "median": null,
           "robust_z": null,
-          "samples": 1,
+          "samples": 4,
           "status": "insufficient_baseline"
         }
       },
-      "baseline_context": "internet_reachability: insufficient matched-hour baseline (1 samples); rarity cannot be quantified. maritime_restriction: insufficient matched-hour baseline (1 samples); rarity cannot be quantified.",
+      "baseline_context": "internet_reachability: insufficient matched-hour baseline (4 samples); rarity cannot be quantified. maritime_restriction: insufficient matched-hour baseline (4 samples); rarity cannot be quantified.",
       "confidence": "Review priority, not confidence in escalation. No source-independence or causal attribution is assumed.",
       "counter_evidence": "No demonstrated departure, timed overlap, or reviewed exceptional single indicator.",
       "coverage_gaps": [
@@ -436,18 +422,18 @@
           "current": null,
           "median": null,
           "robust_z": null,
-          "samples": 1,
+          "samples": 4,
           "status": "insufficient_baseline"
         },
         "maritime_restriction": {
           "current": null,
           "median": null,
           "robust_z": null,
-          "samples": 1,
+          "samples": 4,
           "status": "insufficient_baseline"
         }
       },
-      "baseline_context": "internet_reachability: insufficient matched-hour baseline (1 samples); rarity cannot be quantified. maritime_restriction: insufficient matched-hour baseline (1 samples); rarity cannot be quantified.",
+      "baseline_context": "internet_reachability: insufficient matched-hour baseline (4 samples); rarity cannot be quantified. maritime_restriction: insufficient matched-hour baseline (4 samples); rarity cannot be quantified.",
       "confidence": "Review priority, not confidence in escalation. No source-independence or causal attribution is assumed.",
       "counter_evidence": "No demonstrated departure, timed overlap, or reviewed exceptional single indicator.",
       "coverage_gaps": [
@@ -481,13 +467,13 @@
   ],
   "executive_case_ids": [],
   "executive_review_count": 0,
-  "executive_summary": "0 early indicators qualify for executive assessment; 1 other investigatory leads remain. No automated change to standing threat categories.",
+  "executive_summary": "No qualifying novel structural-friction lead in the collected evidence. This is not an all-clear; verify coverage and established watch states.",
   "fresh_snapshot": true,
-  "generated_at": "2026-11-11T14:07:43Z",
+  "generated_at": "2026-11-11T21:20:13Z",
   "health": {
     "amsa": {
-      "age_hours": 0.0,
-      "checked_at": "2026-11-11T14:07:39Z",
+      "age_hours": 0.01,
+      "checked_at": "2026-11-11T21:19:46Z",
       "collector_status": "collected",
       "coverage": "complete",
       "error": null,
@@ -495,25 +481,25 @@
       "status": "fresh"
     },
     "ioda": {
-      "age_hours": 0.0,
-      "checked_at": "2026-11-11T14:07:39Z",
+      "age_hours": 0.01,
+      "checked_at": "2026-11-11T21:19:46Z",
       "collector_status": "collected",
       "coverage": "complete",
       "error": null,
-      "observed_records": 8,
+      "observed_records": 6,
       "status": "fresh"
     },
     "nga": {
-      "age_hours": 0.0,
-      "checked_at": "2026-11-11T14:07:39Z",
+      "age_hours": 0.01,
+      "checked_at": "2026-11-11T21:19:46Z",
       "collector_status": "unavailable",
       "coverage": "unknown",
-      "error": "HTTPError: HTTP Error 503: Service Unavailable",
+      "error": "TimeoutError: The read operation timed out",
       "observed_records": null,
       "status": "unavailable"
     }
   },
-  "latest_source_snapshot": "2026-11-11T14:07:39Z",
+  "latest_source_snapshot": "2026-11-11T21:19:46Z",
   "limits": [
     "Data feeds are partial, not a global exhaustive sensor network.",
     "Collection timestamp does not establish source event or publication time.",
@@ -531,44 +517,8 @@
   },
   "schema_version": 1,
   "shadow_mode": true,
-  "uncalibrated_review_count": 1,
+  "uncalibrated_review_count": 0,
   "unlocated_leads": [
-    {
-      "event_at": "2026-11-09T21:00:00Z",
-      "family": "internet_reachability",
-      "title": "IODA detected connectivity anomaly: country NF",
-      "url": "https://ioda.inetintel.cc.gatech.edu/"
-    },
-    {
-      "event_at": "2026-11-09T21:00:00Z",
-      "family": "internet_reachability",
-      "title": "IODA detected connectivity anomaly: country NA",
-      "url": "https://ioda.inetintel.cc.gatech.edu/"
-    },
-    {
-      "event_at": "2026-11-09T22:05:00Z",
-      "family": "internet_reachability",
-      "title": "IODA detected connectivity anomaly: country NG",
-      "url": "https://ioda.inetintel.cc.gatech.edu/"
-    },
-    {
-      "event_at": "2026-11-09T23:30:00Z",
-      "family": "internet_reachability",
-      "title": "IODA detected connectivity anomaly: country RE",
-      "url": "https://ioda.inetintel.cc.gatech.edu/"
-    },
-    {
-      "event_at": "2026-11-09T23:50:00Z",
-      "family": "internet_reachability",
-      "title": "IODA detected connectivity anomaly: country GU",
-      "url": "https://ioda.inetintel.cc.gatech.edu/"
-    },
-    {
-      "event_at": "2026-11-10T01:10:00Z",
-      "family": "internet_reachability",
-      "title": "IODA detected connectivity anomaly: country GU",
-      "url": "https://ioda.inetintel.cc.gatech.edu/"
-    },
     {
       "event_at": "2026-11-10T03:00:00Z",
       "family": "internet_reachability",
@@ -681,6 +631,30 @@
       "event_at": "2026-11-11T12:40:00Z",
       "family": "internet_reachability",
       "title": "IODA detected connectivity anomaly: country TJ",
+      "url": "https://ioda.inetintel.cc.gatech.edu/"
+    },
+    {
+      "event_at": "2026-11-11T14:00:00Z",
+      "family": "internet_reachability",
+      "title": "IODA detected connectivity anomaly: country FI",
+      "url": "https://ioda.inetintel.cc.gatech.edu/"
+    },
+    {
+      "event_at": "2026-11-11T15:20:00Z",
+      "family": "internet_reachability",
+      "title": "IODA detected connectivity anomaly: country GQ",
+      "url": "https://ioda.inetintel.cc.gatech.edu/"
+    },
+    {
+      "event_at": "2026-11-11T16:50:00Z",
+      "family": "internet_reachability",
+      "title": "IODA detected connectivity anomaly: country VE",
+      "url": "https://ioda.inetintel.cc.gatech.edu/"
+    },
+    {
+      "event_at": "2026-11-11T17:30:00Z",
+      "family": "internet_reachability",
+      "title": "IODA detected connectivity anomaly: country SC",
       "url": "https://ioda.inetintel.cc.gatech.edu/"
     }
   ],
