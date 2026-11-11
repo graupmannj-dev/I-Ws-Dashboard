@@ -3,7 +3,7 @@
   "automated_severity_changes": 0,
   "collection_coverage": {
     "amsa": {
-      "age_hours": 0.0,
+      "age_hours": 0.45,
       "checked_at": "2026-11-11T06:00:26Z",
       "missingness": "provider_bounded_not_exhaustive",
       "mode": "amsa",
@@ -14,7 +14,7 @@
       "truncated_or_partial": false
     },
     "commercial": {
-      "age_hours": 3.21,
+      "age_hours": 3.66,
       "checked_at": "2026-11-11T02:47:58Z",
       "missingness": "provider_bounded_not_exhaustive",
       "mode": "commercial",
@@ -25,7 +25,7 @@
       "truncated_or_partial": false
     },
     "ioda": {
-      "age_hours": 0.0,
+      "age_hours": 0.45,
       "checked_at": "2026-11-11T06:00:26Z",
       "missingness": "provider_bounded_not_exhaustive",
       "mode": "ioda",
@@ -36,7 +36,7 @@
       "truncated_or_partial": false
     },
     "nga": {
-      "age_hours": 0.0,
+      "age_hours": 0.45,
       "checked_at": "2026-11-11T02:48:58Z",
       "missingness": "not_measured_not_zero",
       "mode": "nga",
@@ -47,23 +47,23 @@
       "truncated_or_partial": false
     },
     "official": {
-      "age_hours": 3.21,
-      "checked_at": "2026-11-11T02:47:57Z",
+      "age_hours": 0.0,
+      "checked_at": "2026-11-11T06:27:23Z",
       "missingness": "provider_bounded_not_exhaustive",
       "mode": "official",
       "provider_status": "collected",
-      "snapshot_at": "2026-11-11T02:47:57Z",
+      "snapshot_at": "2026-11-11T06:27:23Z",
       "source_scope": "US State and UK FCDO travel-advice feeds",
       "status": "current",
       "truncated_or_partial": false
     },
     "watchlist": {
-      "age_hours": 3.21,
-      "checked_at": "2026-11-11T02:47:57Z",
+      "age_hours": 0.0,
+      "checked_at": "2026-11-11T06:27:23Z",
       "missingness": "provider_bounded_not_exhaustive",
       "mode": "watchlist",
       "provider_status": "collected",
-      "snapshot_at": "2026-11-11T02:47:57Z",
+      "snapshot_at": "2026-11-11T06:27:23Z",
       "source_scope": "registered, exact-ID forecast contracts only",
       "status": "current",
       "truncated_or_partial": false
@@ -71,11 +71,11 @@
   },
   "forecast_probability": null,
   "gdelt_context": "separate_analytical_stream_not_a_gate_or_confirmation",
-  "generated_at": "2026-11-11T06:00:30Z",
+  "generated_at": "2026-11-11T06:27:26Z",
   "geographic_scope": "source_declared_only",
   "history_diagnostics": {
     "excluded_observations": {},
-    "history_files_examined": 3,
+    "history_files_examined": 4,
     "lookback_hours": 72,
     "recent_unique_records": 3
   },
@@ -86,33 +86,10 @@
     "Unlocated records cannot produce automatic geographic convergence.",
     "Unavailable collection is not evidence of no threatening activity."
   ],
-  "new_single_source_count_total": 1,
-  "new_single_source_leads": [
-    {
-      "evidence_class": "network_measurement",
-      "first_observed_at": "2026-11-11T06:00:26Z",
-      "geography": {
-        "key": "country:NE",
-        "kind": "country_code",
-        "label": "NE",
-        "latitude": null,
-        "longitude": null,
-        "precision": "provider_reported_country",
-        "verified_iso": false
-      },
-      "information_root": "ioda:d55a15583ebb7361d5cf585e",
-      "meaning": "Observation novelty, not evidence of impending violence.",
-      "observation_id": "beh:7780be1f9ad9f50b4aa6734d4c28",
-      "requires_geolocation": false,
-      "source_family": "internet_reachability",
-      "source_published_at": null,
-      "source_url": "https://ioda.inetintel.cc.gatech.edu/",
-      "status": "single_source_unreviewed",
-      "title": "IODA detected connectivity anomaly: country NE"
-    }
-  ],
+  "new_single_source_count_total": 0,
+  "new_single_source_leads": [],
   "prediction_horizon": null,
-  "registry_asof": "2026-11-11T06:00:30Z",
+  "registry_asof": "2026-11-11T06:27:26Z",
   "registry_source_count": 267,
   "review_groups": [],
   "review_groups_count_total": 0,
