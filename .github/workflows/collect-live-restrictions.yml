@@ -35,6 +35,21 @@ jobs:
           rc=$?
           set -e
           echo "AIBA_LIVE_RC=$rc" >> "$GITHUB_ENV"
+      - name: Normalize existing official restrictions into behavioral registry
+        shell: bash
+        run: |
+          set +e
+          python src/behavioral_registry.py --state state/observations &&
+          python src/behavioral_fusion.py --state state/observations &&
+          python src/behavioral_validation.py \
+            --state state/observations \
+            --spec src/data/validation/behavioral_outcome_frame.json
+          rc=$?
+          echo "AIBA_BEHAVIORAL_RC=$rc" >> "$GITHUB_ENV"
+          if [ "$rc" -ne 0 ]; then
+            echo "::warning::Behavioral restriction reconciliation failed; restriction source health will still be persisted."
+          fi
+          exit 0
       - name: Persist bounded latest geometries, coverage and change-only history
         shell: bash
         run: |
@@ -42,14 +57,18 @@ jobs:
           cd state
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add observations/latest/live_layers.json observations/health/live_layers.json
-          if [ -d observations/history/live_layers ]; then
-            git add observations/history/live_layers
-          fi
+          # Preserve source-time registry, fusion and validation receipts
+          # alongside official geometry change history in one evidence commit.
+          git add observations
           if ! git diff --cached --quiet; then
             git commit -m "AIBA near-current official map restrictions $GITHUB_RUN_ID [skip ci]"
             git push origin HEAD:refs/heads/aiba-feed-data
           fi
+      - name: Report behavioral reconciliation failure after persisting raw source health
+        if: env.AIBA_BEHAVIORAL_RC != '0'
+        run: |
+          echo "::error::Behavioral integration failed; original source collection receipt retained in evidence branch."
+          exit 1
       - name: Report total source failure after preserving missingness
         if: env.AIBA_LIVE_RC != '0'
         run: |

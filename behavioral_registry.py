@@ -18,22 +18,27 @@ import re
 from urllib.parse import urlsplit
 
 from ops_pipeline import load_json, parse_time, write_json
+from behavioral_restrictions import SOURCES as RESTRICTION_SOURCES, adapt_layer
 
 UTC = dt.timezone.utc
 SCHEMA = "aiba.behavioral-observations.v1"
-MODES = ("ioda", "nga", "amsa", "official", "commercial", "watchlist")
+MODES = ("ioda", "nga", "amsa", "official", "commercial", "watchlist", "live_airspace", "live_maritime")
 ALLOWED_STATES = {"collected", "partial"}
 FRESH_HOURS = {"ioda": 6, "nga": 6, "amsa": 6,
-               "official": 12, "commercial": 48, "watchlist": 12}
+               "official": 12, "commercial": 48, "watchlist": 12,
+               "live_airspace": 2, "live_maritime": 2}
 FAMILIES = {"ioda": "internet_reachability", "nga": "maritime_restriction",
             "amsa": "maritime_restriction", "official": "protective_notice",
-            "commercial": "commercial_media", "watchlist": "market_expectation"}
+            "commercial": "commercial_media", "watchlist": "market_expectation",
+            "live_airspace": "airspace_restriction", "live_maritime": "maritime_restriction"}
 EVIDENCE = {"ioda": "network_measurement", "nga": "official_notice",
             "amsa": "official_notice", "official": "official_notice",
-            "commercial": "media_mention", "watchlist": "market_quote"}
+            "commercial": "media_mention", "watchlist": "market_quote",
+            "live_airspace": "official_notice", "live_maritime": "official_notice"}
 # No source is yet verified as a military preparations sensor.
 DIRECT_BEHAVIOR = {"ioda": True, "nga": False, "amsa": False,
-                   "official": False, "commercial": False, "watchlist": False}
+                   "official": False, "commercial": False, "watchlist": False,
+                   "live_airspace": False, "live_maritime": False}
 MAX_PER_MODE = 500
 MAX_INDEX = 15000
 MAX_SNAPSHOT = 2500
@@ -64,6 +69,32 @@ def safe_url(value):
 def mode_status(state, mode, now):
     """Source-by-source freshness, including later failures after a stale latest."""
     state=Path(state)
+    if mode in RESTRICTION_SOURCES:
+        source=RESTRICTION_SOURCES[mode][0]
+        snapshot=load_json(state/"latest"/"live_layers.json",{}) or {}
+        layer=snapshot.get("layers",{}).get(source,{})
+        snap_at=when(layer.get("checked_at"))
+        health=(load_json(state/"health"/"live_layers.json",{}) or {}).get(source,{})
+        available=layer.get("status") in ("snapshot","partial")
+        healthy=health.get("status") in ("snapshot","partial")
+        truncated=health.get("status")=="partial" or bool(health.get("skipped"))
+        scope=("FAA temporary flight restrictions: United States only" if mode=="live_airspace"
+               else "Danish Maritime Authority Niord notices: regional Baltic/North Sea")
+        status=("current_partial" if available and healthy and truncated else
+                "current" if available and healthy else "stale_or_unavailable")
+        age=(now-snap_at).total_seconds()/3600 if snap_at else None
+        current=bool(available and healthy and age is not None and 0<=age<=FRESH_HOURS[mode])
+        return {"mode":mode,"status":status if current else "stale_or_unavailable",
+                "provider_status":health.get("status","never_checked"),
+                "checked_at":health.get("checked_at"),
+                "snapshot_at":iso(snap_at) if snap_at else None,
+                "age_hours":round(age,2) if age is not None else None,
+                "truncated_or_partial":truncated,
+                "source_scope":scope,
+                "missingness":"not_measured_not_zero" if not current else
+                    "partial_sampling_not_worldwide_exhaustive" if truncated else
+                    "provider_bounded_not_exhaustive",
+                "_current":current, "_snapshot":snapshot}
     if mode in ("ioda", "nga", "amsa"):
         snapshot=load_json(state/"latest"/"friction.json",{}) or {}
         snap_at=when(snapshot.get("collected_at"))
@@ -141,6 +172,8 @@ def normalize(mode, row, now):
     provider=str(row.get("provider") or mode).strip().lower()
     if mode in ("ioda","nga","amsa") and provider!=mode:
         return None,"friction_provider_mismatch"
+    if mode in RESTRICTION_SOURCES and provider!=RESTRICTION_SOURCES[mode][1]:
+        return None,"restriction_provider_mismatch"
     rid=str(row.get("id") or "").strip()
     url=safe_url(row.get("source_url"))
     if not rid or not url or len(rid)>200:
@@ -153,14 +186,15 @@ def normalize(mode, row, now):
     first_feed=when(row.get("first_seen_at"))
     if any(t and t>collected+dt.timedelta(minutes=5) for t in (published,occurred,first_feed)):
         return None,"source_clock_after_observation"
-    group=location(row,mode)
+    group=row["geography"] if mode in RESTRICTION_SOURCES else location(row,mode)
     family=FAMILIES[mode]
-    root=str(row.get("root") or "").strip() if mode in ("ioda","nga","amsa") else ""
+    root=str(row.get("root") or "").strip() if mode in ("ioda","nga","amsa") or mode in RESTRICTION_SOURCES else ""
     # Do not promote syndication to independently confirmed commercial action.
     if not root:
         root=f"{mode}:{rid}"
     result={
         "id":"beh:"+fingerprint(mode,rid),
+        "collection_mode":mode,
         "raw_source_id":rid,"provider":provider,"source_family":family,
         "evidence_class":EVIDENCE[mode],"direct_observed_behavior":DIRECT_BEHAVIOR[mode],
         "observed_at":iso(collected),"event_at":iso(occurred) if occurred else None,
@@ -171,13 +205,21 @@ def normalize(mode, row, now):
         "source_kind":str(row.get("kind") or row.get("status") or "")[:90],
         "geography":group,
         "case_hint":str(row.get("case_id"))[:90] if row.get("case_id") else None,
-        "claim_level":("measurement_no_attribution" if mode=="ioda" else
+        "claim_level":("official_scheduled_restriction_not_military_preparation"
+                       if mode in RESTRICTION_SOURCES else
+                       "measurement_no_attribution" if mode=="ioda" else
                        "notice_not_verified_preparation" if mode in ("amsa","nga","official") else
                        "news_mention_not_action" if mode=="commercial" else
                        "market_quote_not_war_probability"),
         "actor_identified":False,
         "alert_eligible":False,
     }
+    if mode in RESTRICTION_SOURCES:
+        result["restriction_status"]=row["restriction_time_state"]
+        result["scheduled_valid_from"]=row["scheduled_valid_from"]
+        result["scheduled_valid_until"]=row["scheduled_valid_until"]
+        result["source_updated_at"]=row["source_updated_at"]
+        result["source_version"]=row["source_version"]
     return result,None
 
 
@@ -193,6 +235,10 @@ def create(state, clock=None, write=True, run_id=None):
     old_index=load_json(state/"index"/"behavioral_seen.json",{}) or {}
     if not isinstance(old_index,dict):
         raise ValueError("Behavioral identity index is not a dictionary")
+    source_first=load_json(state/"index"/"behavioral_sources_seen.json",{}) or {}
+    if not isinstance(source_first,dict):
+        raise ValueError("Behavioral per-source first-baseline index corrupted")
+    new_source_first=dict(source_first)
     index={}
     for k,v in old_index.items():
         if not isinstance(v,dict):
@@ -211,10 +257,21 @@ def create(state, clock=None, write=True, run_id=None):
         snap=status["_snapshot"]
         if mode in ("ioda","nga","amsa"):
             raw=[r for r in snap.get("records",[]) if isinstance(r,dict) and r.get("provider")==mode]
+        elif mode in RESTRICTION_SOURCES:
+            raw,source_rejected=adapt_layer(snap,mode)
+            for reason,n in source_rejected.items():
+                rejects[f"{mode}:{reason}"]=rejects.get(f"{mode}:{reason}",0)+n
         else:
             raw=snap.get("records",[])
         if not isinstance(raw,list):
             raise ValueError(f"{mode} source snapshot records are not a list")
+        if mode not in new_source_first:
+            # Adding an already-existing provider must NOT turn all
+            # standing old notices into first-day warning leads.
+            new_source_first[mode]=iso(now)
+            statuses[mode]["first_provider_baseline"]=True
+        else:
+            statuses[mode]["first_provider_baseline"]=False
         if len(raw)>MAX_PER_MODE:
             statuses[mode]["truncated_or_partial"]=True
             statuses[mode]["missingness"]="partial_sampling_not_worldwide_exhaustive"
@@ -247,8 +304,10 @@ def create(state, clock=None, write=True, run_id=None):
         else:
             first=when(item["upstream_first_seen_at"]) or now
             item["first_observed_at"]=iso(first)
-            item["registry_novelty"]="newly_observed" if prior_initialized else "initial_baseline"
-            if prior_initialized:
+            first_provider_baseline=statuses[item["collection_mode"]]["first_provider_baseline"]
+            item["registry_novelty"]=("initial_baseline" if not prior_initialized or first_provider_baseline
+                                       else "newly_observed")
+            if item["registry_novelty"]=="newly_observed":
                 changes.append(item.copy())
         index[item["id"]]={
             "first_observed_at":item["first_observed_at"],
@@ -287,6 +346,7 @@ def create(state, clock=None, write=True, run_id=None):
             raise ValueError("Append-only behavioral run identity collision; no overwrite")
         write_json(history,delta)
         write_json(state/"index"/"behavioral_seen.json",index)
+        write_json(state/"index"/"behavioral_sources_seen.json",new_source_first)
         write_json(state/"latest"/"behavioral_registry.json",result)
     return result
 

@@ -61,7 +61,7 @@ def render(state,site,clock=None):
     warning=("FRESH SOURCE SNAPSHOT (not a current threat assessment)" if current else
              "NO RECENT VALID SOURCE SNAPSHOT — historical context only; do not infer calm")
     health_rows=[]
-    for mode in ("ioda","nga","amsa","official","commercial","watchlist"):
+    for mode in ("ioda","nga","amsa","official","commercial","watchlist","live_airspace","live_maritime"):
         row=health.get(mode) or {}
         health_rows.append(
             "<tr><td>"+esc(mode.upper())+"</td><td>"+

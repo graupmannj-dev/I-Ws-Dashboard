@@ -30,7 +30,7 @@ MAX_SINGLE_LEADS=50
 MAX_REVIEW_GROUPS=25
 # A shared news article or market quote can *contextualize*, but never
 # contribute an independent observed-behavior family to convergence.
-REVIEW_FAMILIES={"internet_reachability","maritime_restriction","protective_notice"}
+REVIEW_FAMILIES={"internet_reachability","maritime_restriction","airspace_restriction","protective_notice"}
 ADDITIONAL_CONTEXT_FAMILIES={"commercial_media","market_expectation"}
 
 
@@ -47,6 +47,12 @@ def candidate_observation(item, now):
         return False,"published_after_first_observed"
     if published and now-published>dt.timedelta(hours=LOOKBACK_HOURS):
         return False,"old_source_publication"
+    updated=when(item.get("source_updated_at"))
+    if updated and (updated>first+dt.timedelta(minutes=5) or
+                    now-updated>dt.timedelta(hours=LOOKBACK_HOURS)):
+        # A first-seen old scheduled restriction is not a new
+        # preparation signal simply because AIBA ingested it today.
+        return False,"old_or_future_source_revision"
     if item.get("alert_eligible") is not False:
         return False,"unexpected_alert_eligibility"
     if item.get("source_family") not in REVIEW_FAMILIES|ADDITIONAL_CONTEXT_FAMILIES:
