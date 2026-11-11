@@ -1,7 +1,7 @@
 # Real-source aircraft trace quality audit: first training day
 
-**Scope:** one reproducible historical training day, fixed hash sample,
-aggregate-only quality output. This is **not** a vetted recurring-route
+**Scope:** completed one reproducible historical training-day hash sample,
+with a retained aggregate-only quality receipt. This is **not** a vetted recurring-route
 cohort, flight-path warning, confirmed receiver coverage, measured
 false-positive rate, or live global aircraft feed.
 
@@ -89,6 +89,46 @@ It will retrieve ~3.40 GB after checking release metadata,
 available disk, source size/hashes and transport bounds.
 Never invoke it on a billable cloud instance without review.
 No scheduled job or automatic daily archives are introduced.
+
+## Measured Nov 7 quality result
+
+[One-off source run 43115969163](https://github.com/graupmannj-dev/I-Ws-Dashboard/actions/runs/43115969163)
+completed successfully on a standard GitHub-hosted runner. The
+[immutable aggregate receipt](evidence/aircraft-real-trace-quality-2026-11-11.json)
+is stored without ICAO identities, callsigns, source positions or
+real track geometry. The temporary PR-triggered one-day source
+job was removed from the feature branch after this result.
+
+| Source / quality measure | Observed |
+| --- | ---: |
+| Production TAR bytes downloaded and hash-verified | 3,404,765,184 |
+| Complete TAR trace members | 68,182 |
+| Predeclared hash-selected, decoded aircraft traces | 55 |
+| Position rows in selected traces | 74,104 |
+| Candidate continuous segments | 1,074 |
+| Segments passing basic geometry checks | 128 (11.9%) |
+| Short/sparse segments | 946 (88.1%) |
+| Stale observations (boundary/exclusion events) | 1,720 |
+| Ground observations (boundary/exclusion events) | 6,572 |
+| New source leg markers during a segment | 38 |
+| Time gaps/nonmonotonic boundaries | 49 |
+| Source scan wall time | 5.9655 s |
+| End-to-end download and scan | 39.851 s |
+| Python peak RSS | 36,040 KiB |
+
+Two published source asset hashes were validated. The source TAR
+stream reached a valid termination marker, and all raw material
+was deleted from the runner after the audit.
+
+The **11.9%** fraction is provisional *segment usability* under
+these particular geometry thresholds, **not** detection recall,
+precision, an aircraft coverage estimate, false alarm rate,
+or evidence of 128 meaningful aviation events. The large number
+of short/sparse fragments makes quality gating essential.
+The selected aircraft were determined **by hash**, not chosen
+after viewing which flew anomalously on November 10.
+No recurring route has yet been established, and no held-out
+anomaly score has been computed.
 
 ## Decision after the one-day audit
 
