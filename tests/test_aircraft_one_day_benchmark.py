@@ -155,6 +155,7 @@ class OneDayBenchmarkTests(unittest.TestCase):
             with patch.object(bench, "fetch_release", return_value="2026-11-11T03:27:13Z"), patch.object(
                 bench, "run_benchmark", return_value={
                     "status": "archive_scanned_review_required",
+                    "full_day_download_executed": True,
                     "raw_source_retained": False, "receiver_coverage_verified": False,
                     "detector_input_ready": False, "downloaded_bytes": 3689415168,
                 }
