@@ -265,6 +265,12 @@ def decode_points(flight):
         return None, "callsign_change", removed
     if len(points) < MIN_POINTS or points[-1][0] - points[0][0] < MIN_DURATION_S:
         return None, "too_few_positions_or_short_leg", removed
+    midnight = dt.datetime.combine(flight["_day"], dt.time.min, tzinfo=dt.timezone.utc).timestamp()
+    if points[0][0] < midnight or points[-1][0] >= midnight + 86400:
+        return None, "timestamps_outside_source_day", removed
+    path_length = sum(haversine(a[1], b[1]) for a, b in zip(points, points[1:]))
+    if path_length < 5:
+        return None, "insufficient_spatial_extent", removed
     return points, None, removed
 
 
