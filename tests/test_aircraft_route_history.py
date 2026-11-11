@@ -204,6 +204,30 @@ class RouteRetrospectiveTests(unittest.TestCase):
         self.assertGreater(center[0][1], 178)
         self.assertLess(center[-1][1], -178)
 
+    def test_misdated_positions_cannot_leak_a_future_day_into_history(self):
+        data = dataset()
+        historical = data["flights"][0]["points"]
+        for pt in historical:
+            pt["t"] += 9 * 86400
+        item = self.single(data)
+        self.assertEqual(item["status"], "insufficient_history")
+        self.assertEqual(item["reference_flights"], 3)
+        # A held-out flight containing out-of-day positions is also not scored.
+        data = dataset(deviation=True)
+        for pt in data["flights"][-1]["points"]:
+            pt["t"] -= 86400
+        item = self.single(data)
+        self.assertEqual(item["status"], "insufficient_coverage")
+        self.assertEqual(item["reason"], "timestamps_outside_source_day")
+
+    def test_stationary_history_is_excluded_not_a_fatal_error(self):
+        data = dataset()
+        for pt in data["flights"][0]["points"]:
+            pt["lon"] = 0.0
+        item = self.single(data)
+        self.assertEqual(item["status"], "insufficient_history")
+        self.assertEqual(item["reference_flights"], 3)
+
     def test_missing_eval_flight_is_not_successful_zero_anomalies(self):
         data = dataset()
         data["flights"].pop()
