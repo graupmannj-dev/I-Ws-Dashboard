@@ -242,7 +242,14 @@ def scan(parts, manifest, date, max_bytes=DEFAULT_SCAN_BYTES,
                 seen.add(identity)
                 if member.size > MAX_SELECTED_JSON:
                     raise ScanError("Selected trace exceeds member limit")
-                raw = reader.exact(member.size)
+                # Selected JSON may be up to 2 MiB while each individual
+                # reader operation is capped at 1 MiB. Read in bounded chunks.
+                remaining, chunks = member.size, []
+                while remaining:
+                    chunk = reader.exact(min(remaining, MAX_READ))
+                    chunks.append(chunk)
+                    remaining -= len(chunk)
+                raw = b"".join(chunks)
                 envelope, decoded_size = read_selected(raw, name, identity)
                 if report["selected_expanded_bytes"] + decoded_size > MAX_SELECTED_TOTAL:
                     raise BudgetStop("selected_output_budget_exhausted")
