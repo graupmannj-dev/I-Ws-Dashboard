@@ -151,10 +151,10 @@ class ProviderBaselineTests(unittest.TestCase):
                 "first_seen_counts_by_mode":{},"new_records":[]}
             write_json(s/"history"/"behavioral_registry"/
                        (future.strftime("%Y%m%dT%H%M%SZ")+".json"),delta)
-            # Future-dated file with future day is excluded by the
-            # calendar index, not silently included as a quiet day.
-            report=build(s,clock=lambda:NOW,write=False)
-            self.assertEqual(report["history_deltas_with_per_provider_counts"],1)
+            # A future-dated source history is not an ordinary missing
+            # day. Fail closed instead of silently ignoring chronology drift.
+            with self.assertRaisesRegex(ValueError,"future provider-history clock"):
+                build(s,clock=lambda:NOW,write=False)
 
 
 if __name__=="__main__":
