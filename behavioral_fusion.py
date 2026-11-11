@@ -30,7 +30,7 @@ MAX_SINGLE_LEADS=50
 MAX_REVIEW_GROUPS=25
 # A shared news article or market quote can *contextualize*, but never
 # contribute an independent observed-behavior family to convergence.
-REVIEW_FAMILIES={"internet_reachability","maritime_restriction","protective_notice"}
+REVIEW_FAMILIES={"internet_reachability","maritime_restriction","airspace_restriction","protective_notice"}
 ADDITIONAL_CONTEXT_FAMILIES={"commercial_media","market_expectation"}
 
 
