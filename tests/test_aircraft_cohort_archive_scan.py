@@ -13,7 +13,7 @@ from scripts import aircraft_cohort_archive_scan as scan
 
 
 DAY = "2026-11-10"
-PREFIX = "v2026.11.10-planes-readsb-prod-0.tar."
+PREFIX = "v2026.11.10-planes-readsb-prod-0.tar"
 
 
 def cohort():
