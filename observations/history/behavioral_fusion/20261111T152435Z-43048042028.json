@@ -1,0 +1,152 @@
+{
+  "approved_warning_count": 0,
+  "automated_severity_changes": 0,
+  "collection_coverage": {
+    "amsa": {
+      "age_hours": 1.28,
+      "checked_at": "2026-11-11T14:07:39Z",
+      "first_provider_baseline": false,
+      "missingness": "provider_bounded_not_exhaustive",
+      "mode": "amsa",
+      "provider_status": "collected",
+      "snapshot_at": "2026-11-11T14:07:39Z",
+      "source_scope": "AMSA NAVAREA X only",
+      "status": "current",
+      "truncated_or_partial": false
+    },
+    "commercial": {
+      "age_hours": 0.0,
+      "checked_at": "2026-11-11T15:24:33Z",
+      "first_provider_baseline": false,
+      "missingness": "provider_bounded_not_exhaustive",
+      "mode": "commercial",
+      "provider_status": "collected",
+      "snapshot_at": "2026-11-11T15:24:33Z",
+      "source_scope": "selected maritime/air-cargo/war-risk press and syndication",
+      "status": "current",
+      "truncated_or_partial": false
+    },
+    "ioda": {
+      "age_hours": 1.28,
+      "checked_at": "2026-11-11T14:07:39Z",
+      "first_provider_baseline": false,
+      "missingness": "provider_bounded_not_exhaustive",
+      "mode": "ioda",
+      "provider_status": "collected",
+      "snapshot_at": "2026-11-11T14:07:39Z",
+      "source_scope": "IODA country events (first 100 of first page, 4-hour query)",
+      "status": "current",
+      "truncated_or_partial": false
+    },
+    "live_airspace": {
+      "age_hours": 1.3,
+      "checked_at": "2026-11-11T14:06:44Z",
+      "first_provider_baseline": false,
+      "missingness": "partial_sampling_not_worldwide_exhaustive",
+      "mode": "live_airspace",
+      "provider_status": "partial",
+      "snapshot_at": "2026-11-11T14:06:44Z",
+      "source_scope": "FAA temporary flight restrictions: United States only",
+      "status": "current_partial",
+      "truncated_or_partial": true
+    },
+    "live_maritime": {
+      "age_hours": 1.3,
+      "checked_at": "2026-11-11T14:06:44Z",
+      "first_provider_baseline": false,
+      "missingness": "partial_sampling_not_worldwide_exhaustive",
+      "mode": "live_maritime",
+      "provider_status": "partial",
+      "snapshot_at": "2026-11-11T14:06:44Z",
+      "source_scope": "Danish Maritime Authority Niord notices: regional Baltic/North Sea",
+      "status": "current_partial",
+      "truncated_or_partial": true
+    },
+    "nga": {
+      "age_hours": 1.28,
+      "checked_at": "2026-11-11T14:07:39Z",
+      "missingness": "not_measured_not_zero",
+      "mode": "nga",
+      "provider_status": "unavailable",
+      "snapshot_at": "2026-11-11T14:07:39Z",
+      "source_scope": "NGA active broadcast warnings; provider availability varies",
+      "status": "stale_or_unavailable",
+      "truncated_or_partial": false
+    },
+    "official": {
+      "age_hours": 8.95,
+      "checked_at": "2026-11-11T06:27:23Z",
+      "first_provider_baseline": false,
+      "missingness": "provider_bounded_not_exhaustive",
+      "mode": "official",
+      "provider_status": "collected",
+      "snapshot_at": "2026-11-11T06:27:23Z",
+      "source_scope": "US State and UK FCDO travel-advice feeds",
+      "status": "current",
+      "truncated_or_partial": false
+    },
+    "watchlist": {
+      "age_hours": 8.95,
+      "checked_at": "2026-11-11T06:27:23Z",
+      "first_provider_baseline": false,
+      "missingness": "provider_bounded_not_exhaustive",
+      "mode": "watchlist",
+      "provider_status": "collected",
+      "snapshot_at": "2026-11-11T06:27:23Z",
+      "source_scope": "registered, exact-ID forecast contracts only",
+      "status": "current",
+      "truncated_or_partial": false
+    }
+  },
+  "forecast_probability": null,
+  "gdelt_context": "separate_analytical_stream_not_a_gate_or_confirmation",
+  "generated_at": "2026-11-11T15:24:35Z",
+  "geographic_scope": "source_declared_only",
+  "history_diagnostics": {
+    "excluded_observations": {
+      "old_source_publication": 1
+    },
+    "history_files_examined": 8,
+    "lookback_hours": 72,
+    "recent_unique_records": 7
+  },
+  "limit_notes": [
+    "No automated threat warning. These are unreviewed investigatory leads.",
+    "Distinct providers and families do not prove causal independence.",
+    "Media syndication, markets and source-only notices are not military preparations.",
+    "Unlocated records cannot produce automatic geographic convergence.",
+    "Unavailable collection is not evidence of no threatening activity."
+  ],
+  "new_single_source_count_total": 1,
+  "new_single_source_leads": [
+    {
+      "evidence_class": "media_mention",
+      "first_observed_at": "2026-11-11T15:24:35Z",
+      "geography": {
+        "key": null,
+        "kind": "unlocated",
+        "label": null,
+        "latitude": null,
+        "longitude": null,
+        "precision": "no_source_verified_geography",
+        "verified_iso": false
+      },
+      "information_root": "commercial:8768ace60d8354fb4f82",
+      "meaning": "Observation novelty, not evidence of impending violence.",
+      "observation_id": "beh:2c93cecbc2ed92bc2973c78a6782",
+      "requires_geolocation": true,
+      "source_family": "commercial_media",
+      "source_published_at": "2026-11-11T03:00:11Z",
+      "source_url": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxQeFk0S0FZWEk2RWVHbkpWZ3lJX2xGYXloc3ZWdGw1dGtVWTc4cjVub3pOczFzUkhtM1FMNmM0Vk1LeUZqTGlCem13eHJmSnIzVmYwTmJobU4tdGdDRnhQUDdLWWk4R0pudU9yanJpVFY1Nm9KVkRhU3NvbTRZRlAzVGxCTEpMNW1YRm91OWpYVUQteVpHN2laMDZJeDd1cU5hUVpnVXJYeGtPX1A5dlVxN05JeEFLS1BueDFhQm9yaEJTMUQxZ0l0SUREeDlhTGhDSVFsN3BWWHB0QmJEaTlqUEJR?oc=5",
+      "status": "single_source_unreviewed",
+      "title": "West Asia crisis drives India’s crude oil shipping costs up nearly fivefold; Strait of Hormuz remains in focus - India Shipping News"
+    }
+  ],
+  "prediction_horizon": null,
+  "registry_asof": "2026-11-11T15:24:35Z",
+  "registry_source_count": 411,
+  "review_groups": [],
+  "review_groups_count_total": 0,
+  "schema": "aiba.behavioral-convergence-shadow.v1",
+  "ucdp_outcomes": "separate_retrospective_validation_not_an_alert_trigger"
+}
