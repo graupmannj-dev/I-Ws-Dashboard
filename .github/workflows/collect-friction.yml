@@ -40,6 +40,9 @@ jobs:
       - name: Reconcile source-timed global behavioral observations (shadow)
         shell: bash
         run: python src/behavioral_registry.py --state state/observations
+      - name: Generate source-separated behavioral convergence review candidates (shadow)
+        shell: bash
+        run: python src/behavioral_fusion.py --state state/observations
       - name: Persist evidence, source errors, and shadow-mode briefing
         shell: bash
         run: |

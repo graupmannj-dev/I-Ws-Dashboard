@@ -75,6 +75,7 @@ jobs:
           python src/ops_pipeline.py --mode fusion --state state/observations
           python src/fusion_briefs.py --state state/observations
           python src/behavioral_registry.py --state state/observations
+          python src/behavioral_fusion.py --state state/observations
       - name: Commit immutable observations and visible source health
         shell: bash
         run: |

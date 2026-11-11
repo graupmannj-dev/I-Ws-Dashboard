@@ -34,6 +34,7 @@ jobs:
       - run: python scripts/check_dashboard.py _site/index.html
       - run: node --check /tmp/aiba-dashboard.js
       - run: python friction_render.py --state /tmp/aiba-missing-feeds --site _site
+      - run: python behavioral_render.py --state /tmp/aiba-missing-feeds --site _site
       - run: python dashboard/build_atlas.py --site _site
       - run: python scripts/check_atlas.py _site
       - run: node --check _site/dashboard/atlas.js
@@ -91,6 +92,7 @@ jobs:
       - name: Collect optional public map overlays
         run: python dashboard/collect_layers.py --output _site/layers.json
       - run: python friction_render.py --state ops-state/observations --site _site
+      - run: python behavioral_render.py --state ops-state/observations --site _site
       - run: python dashboard/build_atlas.py --site _site --state ops-state/observations
         env:
           AIBA_LAYER_FEED_URL: ${{ vars.AIBA_LAYER_FEED_URL || 'layers.json' }}
@@ -156,6 +158,7 @@ jobs:
           python fusion_briefs.py --state /tmp/aiba-globe-no-ops
           python decision_render.py --state /tmp/aiba-globe-no-ops --site _site
           python friction_render.py --state /tmp/aiba-globe-no-ops --site _site
+          python behavioral_render.py --state /tmp/aiba-globe-no-ops --site _site
           python dashboard/build_atlas.py --site _site
       - name: Install local browser test dependency
         run: |
