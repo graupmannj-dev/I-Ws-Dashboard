@@ -1,0 +1,178 @@
+{
+  "approved_warning_count": 0,
+  "automated_severity_changes": 0,
+  "collection_coverage": {
+    "amsa": {
+      "age_hours": 0.07,
+      "checked_at": "2026-11-11T21:19:46Z",
+      "first_provider_baseline": false,
+      "missingness": "provider_bounded_not_exhaustive",
+      "mode": "amsa",
+      "provider_status": "collected",
+      "snapshot_at": "2026-11-11T21:19:46Z",
+      "source_scope": "AMSA NAVAREA X only",
+      "status": "current",
+      "truncated_or_partial": false
+    },
+    "commercial": {
+      "age_hours": 5.99,
+      "checked_at": "2026-11-11T15:24:33Z",
+      "first_provider_baseline": false,
+      "missingness": "provider_bounded_not_exhaustive",
+      "mode": "commercial",
+      "provider_status": "collected",
+      "snapshot_at": "2026-11-11T15:24:33Z",
+      "source_scope": "selected maritime/air-cargo/war-risk press and syndication",
+      "status": "current",
+      "truncated_or_partial": false
+    },
+    "ioda": {
+      "age_hours": 0.07,
+      "checked_at": "2026-11-11T21:19:46Z",
+      "first_provider_baseline": false,
+      "missingness": "provider_bounded_not_exhaustive",
+      "mode": "ioda",
+      "provider_status": "collected",
+      "snapshot_at": "2026-11-11T21:19:46Z",
+      "source_scope": "IODA country events (first 100 of first page, 4-hour query)",
+      "status": "current",
+      "truncated_or_partial": false
+    },
+    "live_airspace": {
+      "age_hours": 0.0,
+      "checked_at": "2026-11-11T21:23:42Z",
+      "first_provider_baseline": false,
+      "missingness": "partial_sampling_not_worldwide_exhaustive",
+      "mode": "live_airspace",
+      "provider_status": "partial",
+      "snapshot_at": "2026-11-11T21:23:42Z",
+      "source_scope": "FAA temporary flight restrictions: United States only",
+      "status": "current_partial",
+      "truncated_or_partial": true
+    },
+    "live_maritime": {
+      "age_hours": 0.0,
+      "checked_at": "2026-11-11T21:23:42Z",
+      "first_provider_baseline": false,
+      "missingness": "partial_sampling_not_worldwide_exhaustive",
+      "mode": "live_maritime",
+      "provider_status": "partial",
+      "snapshot_at": "2026-11-11T21:23:42Z",
+      "source_scope": "Danish Maritime Authority Niord notices: regional Baltic/North Sea",
+      "status": "current_partial",
+      "truncated_or_partial": true
+    },
+    "nga": {
+      "age_hours": 0.07,
+      "checked_at": "2026-11-11T21:19:46Z",
+      "missingness": "not_measured_not_zero",
+      "mode": "nga",
+      "provider_status": "unavailable",
+      "snapshot_at": "2026-11-11T21:19:46Z",
+      "source_scope": "NGA active broadcast warnings; provider availability varies",
+      "status": "stale_or_unavailable",
+      "truncated_or_partial": false
+    },
+    "official": {
+      "age_hours": 1.76,
+      "checked_at": "2026-11-11T19:38:09Z",
+      "first_provider_baseline": false,
+      "missingness": "provider_bounded_not_exhaustive",
+      "mode": "official",
+      "provider_status": "collected",
+      "snapshot_at": "2026-11-11T19:38:09Z",
+      "source_scope": "US State and UK FCDO travel-advice feeds",
+      "status": "current",
+      "truncated_or_partial": false
+    },
+    "watchlist": {
+      "age_hours": 1.76,
+      "checked_at": "2026-11-11T19:38:10Z",
+      "first_provider_baseline": false,
+      "missingness": "provider_bounded_not_exhaustive",
+      "mode": "watchlist",
+      "provider_status": "collected",
+      "snapshot_at": "2026-11-11T19:38:10Z",
+      "source_scope": "registered, exact-ID forecast contracts only",
+      "status": "current",
+      "truncated_or_partial": false
+    }
+  },
+  "forecast_probability": null,
+  "gdelt_context": "separate_analytical_stream_not_a_gate_or_confirmation",
+  "generated_at": "2026-11-11T21:23:46Z",
+  "geographic_scope": "source_declared_only",
+  "history_diagnostics": {
+    "excluded_observations": {
+      "old_source_publication": 1
+    },
+    "history_files_examined": 11,
+    "lookback_hours": 72,
+    "recent_unique_records": 17
+  },
+  "limit_notes": [
+    "No automated threat warning. These are unreviewed investigatory leads.",
+    "Distinct providers and families do not prove causal independence.",
+    "Media syndication, markets and source-only notices are not military preparations.",
+    "Unlocated records cannot produce automatic geographic convergence.",
+    "Unavailable collection is not evidence of no threatening activity."
+  ],
+  "new_single_source_count_total": 2,
+  "new_single_source_leads": [
+    {
+      "evidence_class": "official_notice",
+      "first_observed_at": "2026-11-11T21:23:46Z",
+      "geography": {
+        "geometry_sha256_prefix": "484b523d9efd76fb1d554494",
+        "geometry_type": "MultiPolygon",
+        "key": "source-footprint:484b523d9efd76fb1d554494",
+        "kind": "source_notice_footprint",
+        "label": "Official MultiPolygon notice area",
+        "latitude": null,
+        "longitude": null,
+        "precision": "provider_defined_notice_boundary_not_event_point",
+        "verified_iso": false
+      },
+      "information_root": "faa:6/7139:0:0",
+      "meaning": "Observation novelty, not evidence of impending violence.",
+      "observation_id": "beh:1dc6805f71c8d0110a2e2489a40d",
+      "requires_geolocation": false,
+      "source_family": "airspace_restriction",
+      "source_published_at": null,
+      "source_url": "https://tfr.faa.gov/6_7139.html",
+      "status": "single_source_unreviewed",
+      "title": "FAA TFR 6/7139 · 39 ZJX AIRSPACE BARTOW, FL, Wednesday, November 11, 2026 UTC"
+    },
+    {
+      "evidence_class": "official_notice",
+      "first_observed_at": "2026-11-11T21:23:46Z",
+      "geography": {
+        "geometry_sha256_prefix": "c8bf9513c0a93d84d9e48b6b",
+        "geometry_type": "MultiPolygon",
+        "key": "source-footprint:c8bf9513c0a93d84d9e48b6b",
+        "kind": "source_notice_footprint",
+        "label": "Official MultiPolygon notice area",
+        "latitude": null,
+        "longitude": null,
+        "precision": "provider_defined_notice_boundary_not_event_point",
+        "verified_iso": false
+      },
+      "information_root": "faa:6/7137:0:0",
+      "meaning": "Observation novelty, not evidence of impending violence.",
+      "observation_id": "beh:d6e1750ad0a427562cfa963448b6",
+      "requires_geolocation": false,
+      "source_family": "airspace_restriction",
+      "source_published_at": null,
+      "source_url": "https://tfr.faa.gov/6_7137.html",
+      "status": "single_source_unreviewed",
+      "title": "FAA TFR 6/7137 · 27NM NE NEWCASTLE, WY, Thursday, November 12, 2026 through Friday, November 13, 2026 UTC"
+    }
+  ],
+  "prediction_horizon": null,
+  "registry_asof": "2026-11-11T21:23:46Z",
+  "registry_source_count": 399,
+  "review_groups": [],
+  "review_groups_count_total": 0,
+  "schema": "aiba.behavioral-convergence-shadow.v1",
+  "ucdp_outcomes": "separate_retrospective_validation_not_an_alert_trigger"
+}

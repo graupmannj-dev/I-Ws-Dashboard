@@ -3,7 +3,7 @@
   "automated_severity_changes": 0,
   "collection_coverage": {
     "amsa": {
-      "age_hours": 0.01,
+      "age_hours": 0.07,
       "checked_at": "2026-11-11T21:19:46Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -15,7 +15,7 @@
       "truncated_or_partial": false
     },
     "commercial": {
-      "age_hours": 5.93,
+      "age_hours": 5.99,
       "checked_at": "2026-11-11T15:24:33Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -27,7 +27,7 @@
       "truncated_or_partial": false
     },
     "ioda": {
-      "age_hours": 0.01,
+      "age_hours": 0.07,
       "checked_at": "2026-11-11T21:19:46Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -39,29 +39,31 @@
       "truncated_or_partial": false
     },
     "live_airspace": {
-      "age_hours": 7.23,
-      "checked_at": "2026-11-11T14:06:44Z",
-      "missingness": "not_measured_not_zero",
+      "age_hours": 0.0,
+      "checked_at": "2026-11-11T21:23:42Z",
+      "first_provider_baseline": false,
+      "missingness": "partial_sampling_not_worldwide_exhaustive",
       "mode": "live_airspace",
       "provider_status": "partial",
-      "snapshot_at": "2026-11-11T14:06:44Z",
+      "snapshot_at": "2026-11-11T21:23:42Z",
       "source_scope": "FAA temporary flight restrictions: United States only",
-      "status": "stale_or_unavailable",
+      "status": "current_partial",
       "truncated_or_partial": true
     },
     "live_maritime": {
-      "age_hours": 7.23,
-      "checked_at": "2026-11-11T14:06:44Z",
-      "missingness": "not_measured_not_zero",
+      "age_hours": 0.0,
+      "checked_at": "2026-11-11T21:23:42Z",
+      "first_provider_baseline": false,
+      "missingness": "partial_sampling_not_worldwide_exhaustive",
       "mode": "live_maritime",
       "provider_status": "partial",
-      "snapshot_at": "2026-11-11T14:06:44Z",
+      "snapshot_at": "2026-11-11T21:23:42Z",
       "source_scope": "Danish Maritime Authority Niord notices: regional Baltic/North Sea",
-      "status": "stale_or_unavailable",
+      "status": "current_partial",
       "truncated_or_partial": true
     },
     "nga": {
-      "age_hours": 0.01,
+      "age_hours": 0.07,
       "checked_at": "2026-11-11T21:19:46Z",
       "missingness": "not_measured_not_zero",
       "mode": "nga",
@@ -72,7 +74,7 @@
       "truncated_or_partial": false
     },
     "official": {
-      "age_hours": 1.7,
+      "age_hours": 1.76,
       "checked_at": "2026-11-11T19:38:09Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -84,7 +86,7 @@
       "truncated_or_partial": false
     },
     "watchlist": {
-      "age_hours": 1.7,
+      "age_hours": 1.76,
       "checked_at": "2026-11-11T19:38:10Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -98,15 +100,15 @@
   },
   "forecast_probability": null,
   "gdelt_context": "separate_analytical_stream_not_a_gate_or_confirmation",
-  "generated_at": "2026-11-11T21:20:14Z",
+  "generated_at": "2026-11-11T21:23:46Z",
   "geographic_scope": "source_declared_only",
   "history_diagnostics": {
     "excluded_observations": {
       "old_source_publication": 1
     },
-    "history_files_examined": 10,
+    "history_files_examined": 11,
     "lookback_hours": 72,
-    "recent_unique_records": 15
+    "recent_unique_records": 17
   },
   "limit_notes": [
     "No automated threat warning. These are unreviewed investigatory leads.",
@@ -115,100 +117,60 @@
     "Unlocated records cannot produce automatic geographic convergence.",
     "Unavailable collection is not evidence of no threatening activity."
   ],
-  "new_single_source_count_total": 4,
+  "new_single_source_count_total": 2,
   "new_single_source_leads": [
     {
-      "evidence_class": "network_measurement",
-      "first_observed_at": "2026-11-11T21:19:46Z",
+      "evidence_class": "official_notice",
+      "first_observed_at": "2026-11-11T21:23:46Z",
       "geography": {
-        "key": "country:SC",
-        "kind": "country_code",
-        "label": "SC",
+        "geometry_sha256_prefix": "484b523d9efd76fb1d554494",
+        "geometry_type": "MultiPolygon",
+        "key": "source-footprint:484b523d9efd76fb1d554494",
+        "kind": "source_notice_footprint",
+        "label": "Official MultiPolygon notice area",
         "latitude": null,
         "longitude": null,
-        "precision": "provider_reported_country",
+        "precision": "provider_defined_notice_boundary_not_event_point",
         "verified_iso": false
       },
-      "information_root": "ioda:2e34c7a77e350caef1a7a9b1",
+      "information_root": "faa:6/7139:0:0",
       "meaning": "Observation novelty, not evidence of impending violence.",
-      "observation_id": "beh:2f353e4e5ebe1b72d20e1fb6099c",
+      "observation_id": "beh:1dc6805f71c8d0110a2e2489a40d",
       "requires_geolocation": false,
-      "source_family": "internet_reachability",
+      "source_family": "airspace_restriction",
       "source_published_at": null,
-      "source_url": "https://ioda.inetintel.cc.gatech.edu/",
+      "source_url": "https://tfr.faa.gov/6_7139.html",
       "status": "single_source_unreviewed",
-      "title": "IODA detected connectivity anomaly: country SC"
+      "title": "FAA TFR 6/7139 · 39 ZJX AIRSPACE BARTOW, FL, Wednesday, November 11, 2026 UTC"
     },
     {
-      "evidence_class": "network_measurement",
-      "first_observed_at": "2026-11-11T21:19:46Z",
+      "evidence_class": "official_notice",
+      "first_observed_at": "2026-11-11T21:23:46Z",
       "geography": {
-        "key": "country:VE",
-        "kind": "country_code",
-        "label": "VE",
+        "geometry_sha256_prefix": "c8bf9513c0a93d84d9e48b6b",
+        "geometry_type": "MultiPolygon",
+        "key": "source-footprint:c8bf9513c0a93d84d9e48b6b",
+        "kind": "source_notice_footprint",
+        "label": "Official MultiPolygon notice area",
         "latitude": null,
         "longitude": null,
-        "precision": "provider_reported_country",
+        "precision": "provider_defined_notice_boundary_not_event_point",
         "verified_iso": false
       },
-      "information_root": "ioda:0e2f59fee432b827cd4a233c",
+      "information_root": "faa:6/7137:0:0",
       "meaning": "Observation novelty, not evidence of impending violence.",
-      "observation_id": "beh:8c49d309e4e751d246cb405b4a85",
+      "observation_id": "beh:d6e1750ad0a427562cfa963448b6",
       "requires_geolocation": false,
-      "source_family": "internet_reachability",
+      "source_family": "airspace_restriction",
       "source_published_at": null,
-      "source_url": "https://ioda.inetintel.cc.gatech.edu/",
+      "source_url": "https://tfr.faa.gov/6_7137.html",
       "status": "single_source_unreviewed",
-      "title": "IODA detected connectivity anomaly: country VE"
-    },
-    {
-      "evidence_class": "network_measurement",
-      "first_observed_at": "2026-11-11T21:19:46Z",
-      "geography": {
-        "key": "country:GQ",
-        "kind": "country_code",
-        "label": "GQ",
-        "latitude": null,
-        "longitude": null,
-        "precision": "provider_reported_country",
-        "verified_iso": false
-      },
-      "information_root": "ioda:7a773b11326aff8fc57e730c",
-      "meaning": "Observation novelty, not evidence of impending violence.",
-      "observation_id": "beh:e73e368990047312eb2b14ddaa31",
-      "requires_geolocation": false,
-      "source_family": "internet_reachability",
-      "source_published_at": null,
-      "source_url": "https://ioda.inetintel.cc.gatech.edu/",
-      "status": "single_source_unreviewed",
-      "title": "IODA detected connectivity anomaly: country GQ"
-    },
-    {
-      "evidence_class": "network_measurement",
-      "first_observed_at": "2026-11-11T21:19:46Z",
-      "geography": {
-        "key": "country:FI",
-        "kind": "country_code",
-        "label": "FI",
-        "latitude": null,
-        "longitude": null,
-        "precision": "provider_reported_country",
-        "verified_iso": false
-      },
-      "information_root": "ioda:d4454a85aaf9193abbb3c75b",
-      "meaning": "Observation novelty, not evidence of impending violence.",
-      "observation_id": "beh:ff777bb143bcfa6d51910858034d",
-      "requires_geolocation": false,
-      "source_family": "internet_reachability",
-      "source_published_at": null,
-      "source_url": "https://ioda.inetintel.cc.gatech.edu/",
-      "status": "single_source_unreviewed",
-      "title": "IODA detected connectivity anomaly: country FI"
+      "title": "FAA TFR 6/7137 · 27NM NE NEWCASTLE, WY, Thursday, November 12, 2026 through Friday, November 13, 2026 UTC"
     }
   ],
   "prediction_horizon": null,
-  "registry_asof": "2026-11-11T21:20:14Z",
-  "registry_source_count": 265,
+  "registry_asof": "2026-11-11T21:23:46Z",
+  "registry_source_count": 399,
   "review_groups": [],
   "review_groups_count_total": 0,
   "schema": "aiba.behavioral-convergence-shadow.v1",
