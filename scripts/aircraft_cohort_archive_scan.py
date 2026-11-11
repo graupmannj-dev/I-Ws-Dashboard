@@ -226,6 +226,9 @@ def scan(parts, manifest, date, max_bytes=DEFAULT_SCAN_BYTES,
             if (member.size < 0 or member.name.startswith("/")
                     or ".." in member.name.split("/")):
                 raise ScanError("Unsafe or unsupported TAR member")
+            if member.type in (tarfile.XHDTYPE, tarfile.XGLTYPE,
+                               tarfile.GNUTYPE_LONGNAME, tarfile.GNUTYPE_LONGLINK):
+                raise ScanError("Extended TAR metadata requires explicit parser support")
             name = member.name.removeprefix("./")
             match = TRACE_PATTERN.fullmatch(name)
             if match:
