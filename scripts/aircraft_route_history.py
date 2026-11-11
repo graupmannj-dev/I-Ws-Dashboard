@@ -233,6 +233,7 @@ def decode_points(flight):
     if len(raw) > MAX_POINTS:
         raise InputError("Point count exceeds bound")
     points, removed, callsigns = [], 0, set()
+    landed_after_airborne = False
     for raw_point in raw:
         if not isinstance(raw_point, dict):
             return None, "invalid_position", removed
@@ -247,11 +248,19 @@ def decode_points(flight):
             if not isinstance(label, str):
                 return None, "invalid_callsign", removed
             callsigns.add(label.strip())
-        if flags & 1 or raw_point.get("ground", False):
-            removed += 1
-            continue
+        # A source leg marker is never erased by stale filtering.
         if (flags & 2) and points:
             return None, "multiple_legs", removed
+        if raw_point.get("ground", False):
+            if points:
+                landed_after_airborne = True
+            removed += 1
+            continue
+        if landed_after_airborne:
+            return None, "multiple_legs", removed
+        if flags & 1:
+            removed += 1
+            continue
         if points:
             gap = t - points[-1][0]
             if gap <= 0:
