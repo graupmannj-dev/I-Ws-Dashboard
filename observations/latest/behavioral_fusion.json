@@ -3,7 +3,7 @@
   "automated_severity_changes": 0,
   "collection_coverage": {
     "amsa": {
-      "age_hours": 1.28,
+      "age_hours": 5.51,
       "checked_at": "2026-11-11T14:07:39Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -15,7 +15,7 @@
       "truncated_or_partial": false
     },
     "commercial": {
-      "age_hours": 0.0,
+      "age_hours": 4.23,
       "checked_at": "2026-11-11T15:24:33Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -27,7 +27,7 @@
       "truncated_or_partial": false
     },
     "ioda": {
-      "age_hours": 1.28,
+      "age_hours": 5.51,
       "checked_at": "2026-11-11T14:07:39Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -39,31 +39,29 @@
       "truncated_or_partial": false
     },
     "live_airspace": {
-      "age_hours": 1.3,
+      "age_hours": 5.52,
       "checked_at": "2026-11-11T14:06:44Z",
-      "first_provider_baseline": false,
-      "missingness": "partial_sampling_not_worldwide_exhaustive",
+      "missingness": "not_measured_not_zero",
       "mode": "live_airspace",
       "provider_status": "partial",
       "snapshot_at": "2026-11-11T14:06:44Z",
       "source_scope": "FAA temporary flight restrictions: United States only",
-      "status": "current_partial",
+      "status": "stale_or_unavailable",
       "truncated_or_partial": true
     },
     "live_maritime": {
-      "age_hours": 1.3,
+      "age_hours": 5.52,
       "checked_at": "2026-11-11T14:06:44Z",
-      "first_provider_baseline": false,
-      "missingness": "partial_sampling_not_worldwide_exhaustive",
+      "missingness": "not_measured_not_zero",
       "mode": "live_maritime",
       "provider_status": "partial",
       "snapshot_at": "2026-11-11T14:06:44Z",
       "source_scope": "Danish Maritime Authority Niord notices: regional Baltic/North Sea",
-      "status": "current_partial",
+      "status": "stale_or_unavailable",
       "truncated_or_partial": true
     },
     "nga": {
-      "age_hours": 1.28,
+      "age_hours": 5.51,
       "checked_at": "2026-11-11T14:07:39Z",
       "missingness": "not_measured_not_zero",
       "mode": "nga",
@@ -74,25 +72,25 @@
       "truncated_or_partial": false
     },
     "official": {
-      "age_hours": 8.95,
-      "checked_at": "2026-11-11T06:27:23Z",
+      "age_hours": 0.0,
+      "checked_at": "2026-11-11T19:38:09Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
       "mode": "official",
       "provider_status": "collected",
-      "snapshot_at": "2026-11-11T06:27:23Z",
+      "snapshot_at": "2026-11-11T19:38:09Z",
       "source_scope": "US State and UK FCDO travel-advice feeds",
       "status": "current",
       "truncated_or_partial": false
     },
     "watchlist": {
-      "age_hours": 8.95,
-      "checked_at": "2026-11-11T06:27:23Z",
+      "age_hours": 0.0,
+      "checked_at": "2026-11-11T19:38:10Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
       "mode": "watchlist",
       "provider_status": "collected",
-      "snapshot_at": "2026-11-11T06:27:23Z",
+      "snapshot_at": "2026-11-11T19:38:10Z",
       "source_scope": "registered, exact-ID forecast contracts only",
       "status": "current",
       "truncated_or_partial": false
@@ -100,15 +98,15 @@
   },
   "forecast_probability": null,
   "gdelt_context": "separate_analytical_stream_not_a_gate_or_confirmation",
-  "generated_at": "2026-11-11T15:24:35Z",
+  "generated_at": "2026-11-11T19:38:12Z",
   "geographic_scope": "source_declared_only",
   "history_diagnostics": {
     "excluded_observations": {
       "old_source_publication": 1
     },
-    "history_files_examined": 8,
+    "history_files_examined": 9,
     "lookback_hours": 72,
-    "recent_unique_records": 7
+    "recent_unique_records": 11
   },
   "limit_notes": [
     "No automated threat warning. These are unreviewed investigatory leads.",
@@ -117,11 +115,11 @@
     "Unlocated records cannot produce automatic geographic convergence.",
     "Unavailable collection is not evidence of no threatening activity."
   ],
-  "new_single_source_count_total": 1,
+  "new_single_source_count_total": 4,
   "new_single_source_leads": [
     {
-      "evidence_class": "media_mention",
-      "first_observed_at": "2026-11-11T15:24:35Z",
+      "evidence_class": "official_notice",
+      "first_observed_at": "2026-11-11T19:38:12Z",
       "geography": {
         "key": null,
         "kind": "unlocated",
@@ -131,20 +129,86 @@
         "precision": "no_source_verified_geography",
         "verified_iso": false
       },
-      "information_root": "commercial:8768ace60d8354fb4f82",
+      "information_root": "official:50cc52ee1dcc7d47e4f4",
       "meaning": "Observation novelty, not evidence of impending violence.",
-      "observation_id": "beh:2c93cecbc2ed92bc2973c78a6782",
+      "observation_id": "beh:1b2e206ac68aa7460556679c7d6b",
       "requires_geolocation": true,
-      "source_family": "commercial_media",
-      "source_published_at": "2026-11-11T03:00:11Z",
-      "source_url": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxQeFk0S0FZWEk2RWVHbkpWZ3lJX2xGYXloc3ZWdGw1dGtVWTc4cjVub3pOczFzUkhtM1FMNmM0Vk1LeUZqTGlCem13eHJmSnIzVmYwTmJobU4tdGdDRnhQUDdLWWk4R0pudU9yanJpVFY1Nm9KVkRhU3NvbTRZRlAzVGxCTEpMNW1YRm91OWpYVUQteVpHN2laMDZJeDd1cU5hUVpnVXJYeGtPX1A5dlVxN05JeEFLS1BueDFhQm9yaEJTMUQxZ0l0SUREeDlhTGhDSVFsN3BWWHB0QmJEaTlqUEJR?oc=5",
+      "source_family": "protective_notice",
+      "source_published_at": "2026-11-11T16:50:01Z",
+      "source_url": "https://www.gov.uk/foreign-travel-advice/the-gambia",
       "status": "single_source_unreviewed",
-      "title": "West Asia crisis drives India’s crude oil shipping costs up nearly fivefold; Strait of Hormuz remains in focus - India Shipping News"
+      "title": "The Gambia"
+    },
+    {
+      "evidence_class": "official_notice",
+      "first_observed_at": "2026-11-11T19:38:12Z",
+      "geography": {
+        "key": null,
+        "kind": "unlocated",
+        "label": null,
+        "latitude": null,
+        "longitude": null,
+        "precision": "no_source_verified_geography",
+        "verified_iso": false
+      },
+      "information_root": "official:a28d646a504f3e6e69a1",
+      "meaning": "Observation novelty, not evidence of impending violence.",
+      "observation_id": "beh:34eb2e43bb566cedce02b25eae44",
+      "requires_geolocation": true,
+      "source_family": "protective_notice",
+      "source_published_at": "2026-11-11T16:31:16Z",
+      "source_url": "https://www.gov.uk/foreign-travel-advice/trinidad-and-tobago",
+      "status": "single_source_unreviewed",
+      "title": "Trinidad and Tobago"
+    },
+    {
+      "evidence_class": "official_notice",
+      "first_observed_at": "2026-11-11T19:38:12Z",
+      "geography": {
+        "key": null,
+        "kind": "unlocated",
+        "label": null,
+        "latitude": null,
+        "longitude": null,
+        "precision": "no_source_verified_geography",
+        "verified_iso": false
+      },
+      "information_root": "official:b4d921b71a1e8c3e8983",
+      "meaning": "Observation novelty, not evidence of impending violence.",
+      "observation_id": "beh:ae385785f218faa2fefd51c0e19d",
+      "requires_geolocation": true,
+      "source_family": "protective_notice",
+      "source_published_at": "2026-11-11T15:51:34Z",
+      "source_url": "https://www.gov.uk/foreign-travel-advice/madagascar",
+      "status": "single_source_unreviewed",
+      "title": "Madagascar"
+    },
+    {
+      "evidence_class": "official_notice",
+      "first_observed_at": "2026-11-11T19:38:12Z",
+      "geography": {
+        "key": null,
+        "kind": "unlocated",
+        "label": null,
+        "latitude": null,
+        "longitude": null,
+        "precision": "no_source_verified_geography",
+        "verified_iso": false
+      },
+      "information_root": "official:c195b22882e7e09669ed",
+      "meaning": "Observation novelty, not evidence of impending violence.",
+      "observation_id": "beh:e0217276026928b29ca17d20b272",
+      "requires_geolocation": true,
+      "source_family": "protective_notice",
+      "source_published_at": "2026-11-11T16:56:17Z",
+      "source_url": "https://www.gov.uk/foreign-travel-advice/liberia",
+      "status": "single_source_unreviewed",
+      "title": "Liberia"
     }
   ],
   "prediction_horizon": null,
-  "registry_asof": "2026-11-11T15:24:35Z",
-  "registry_source_count": 411,
+  "registry_asof": "2026-11-11T19:38:12Z",
+  "registry_source_count": 267,
   "review_groups": [],
   "review_groups_count_total": 0,
   "schema": "aiba.behavioral-convergence-shadow.v1",
