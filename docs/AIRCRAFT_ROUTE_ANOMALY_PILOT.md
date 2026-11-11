@@ -1,7 +1,9 @@
 # Daily aircraft route anomaly pilot
 
-Status: **bounded input reader implemented and checked locally; detector not
-implemented or deployed**. No aircraft analysis job is scheduled by this document.
+Status: **bounded input reader checked; offline experimental historical corridor
+comparator implemented separately, not deployed or scheduled**. See
+[the offline retrospective prototype](AIRCRAFT_ROUTE_RETROSPECTIVE.md).
+No aircraft analysis job is scheduled by this document.
 
 ## Intended dashboard behavior
 
@@ -183,9 +185,12 @@ investigated as a source-content change, not silently accepted as the same run.
   recurring-flight cohort. The bounded prefix reader is now implemented;
   cohort selection, full-day resource requirements and zero-cost feasibility
   remain unvalidated.
-- Historical route reference and held-out evaluation, including insufficient
-  history and coverage cases.
+- Offline historical reference and held-out evaluation now exist as an
+  **unvalidated synthetic-tested prototype**; a real preselected cohort with
+  independently verified historical coverage remains necessary.
 - Atlas report rendering, then a reviewed daily workflow once measured costs
   and output retention are acceptable.
 
-The historical detector, map integration and daily schedule remain planned.
+The offline prototype exists; real-source historical calibration, map
+integration and daily scheduling remain planned. The measured archive prefix
+remains unsuitable as a route baseline.
