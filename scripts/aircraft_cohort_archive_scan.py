@@ -18,6 +18,11 @@ import re
 import resource
 import tarfile
 import time
+import sys
+
+# Support both 'python -m scripts.module' and documented direct script invocation.
+if __package__ in (None, ""):
+    sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from scripts import aircraft_archive_probe as probe
 from scripts import aircraft_route_history as route
