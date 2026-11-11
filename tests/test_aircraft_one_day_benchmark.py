@@ -7,6 +7,7 @@ import json
 from pathlib import Path
 import subprocess
 import tempfile
+import sys
 import unittest
 from unittest.mock import patch
 
@@ -42,6 +43,16 @@ def release(p=None):
 class OneDayBenchmarkTests(unittest.TestCase):
     def save_pin(self, path, value=None):
         path.write_text(json.dumps(value or pin()))
+
+    def test_documented_direct_entrypoints_can_show_help(self):
+        for script in (bench.__file__, bench.archive.__file__):
+            with self.subTest(script=script):
+                completed = subprocess.run(
+                    [sys.executable, script, "--help"],
+                    capture_output=True, text=True, timeout=10, check=False
+                )
+                self.assertEqual(completed.returncode, 0, completed.stderr)
+                self.assertIn("--", completed.stdout)
 
     def test_fixed_release_pin_has_expected_size(self):
         with tempfile.TemporaryDirectory() as tmp:
