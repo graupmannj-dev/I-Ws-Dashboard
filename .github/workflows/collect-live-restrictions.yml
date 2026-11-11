@@ -43,7 +43,8 @@ jobs:
           python src/behavioral_fusion.py --state state/observations &&
           python src/behavioral_validation.py \
             --state state/observations \
-            --spec src/data/validation/behavioral_outcome_frame.json
+            --spec src/data/validation/behavioral_outcome_frame.json &&
+          python src/behavioral_baselines.py --state state/observations
           rc=$?
           echo "AIBA_BEHAVIORAL_RC=$rc" >> "$GITHUB_ENV"
           if [ "$rc" -ne 0 ]; then

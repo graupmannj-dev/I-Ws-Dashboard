@@ -5,6 +5,7 @@ on:
       - 'behavioral_registry.py'
       - 'behavioral_fusion.py'
       - 'behavioral_validation.py'
+      - 'behavioral_baselines.py'
       - 'behavioral_render.py'
       - 'tests/test_behavioral_*.py'
       - '.github/workflows/behavioral-real-source-smoke.yml'
@@ -37,6 +38,7 @@ jobs:
           python behavioral_validation.py \
             --state evidence/observations \
             --spec data/validation/behavioral_outcome_frame.json
+          python behavioral_baselines.py --state evidence/observations
           python behavioral_render.py --state evidence/observations --site /tmp/aiba-behavioral-preview
           python - <<'PY'
           import json
@@ -45,6 +47,11 @@ jobs:
           reg=json.loads((p/'behavioral_registry.json').read_text())
           fusion=json.loads((p/'behavioral_fusion.json').read_text())
           evaluation=json.loads((p/'behavioral_validation.json').read_text())
+          baselines=json.loads((p/'behavioral_baselines.json').read_text())
+          assert baselines['schema']=='aiba.behavioral-provider-baseline.v1'
+          assert baselines['alerts_generated']==0
+          assert baselines['anomalies_promoted']==0
+          assert baselines['calibrated_forecast_skill'] is None
           assert reg['schema']=='aiba.behavioral-observations.v1'
           assert fusion['schema']=='aiba.behavioral-convergence-shadow.v1'
           assert evaluation['schema']=='aiba.behavioral-validation-ledger.v1'
@@ -82,5 +89,6 @@ jobs:
             evidence/observations/latest/behavioral_registry.json
             evidence/observations/latest/behavioral_fusion.json
             evidence/observations/latest/behavioral_validation.json
+            evidence/observations/latest/behavioral_baselines.json
           retention-days: 7
           if-no-files-found: warn

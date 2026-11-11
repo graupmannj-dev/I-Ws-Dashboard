@@ -45,7 +45,9 @@ jobs:
         run: python src/behavioral_fusion.py --state state/observations
       - name: Preserve forward-time behavioral evaluation readiness (no automatic negative labels)
         shell: bash
-        run: python src/behavioral_validation.py --state state/observations --spec src/data/validation/behavioral_outcome_frame.json
+        run: |
+          python src/behavioral_validation.py --state state/observations --spec src/data/validation/behavioral_outcome_frame.json
+          python src/behavioral_baselines.py --state state/observations
       - name: Persist evidence, source errors, and shadow-mode briefing
         shell: bash
         run: |
