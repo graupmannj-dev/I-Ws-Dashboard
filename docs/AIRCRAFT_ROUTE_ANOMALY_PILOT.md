@@ -181,10 +181,10 @@ investigated as a source-content change, not silently accepted as the same run.
 
 ## Follow-up PRs
 
-- Measure how much of a full archive must be read to obtain a predefined
-  recurring-flight cohort. The bounded prefix reader is now implemented;
-  cohort selection, full-day resource requirements and zero-cost feasibility
-  remain unvalidated.
+- [Bounded offline cohort archive scanner](AIRCRAFT_COHORT_ARCHIVE_SCAN.md)
+  now measures local split-TAR bytes and extracts preselected source traces
+  for review. Real complete-day resource measurements, valid leg selection,
+  and zero-cost feasibility remain unvalidated.
 - Offline historical reference and held-out evaluation now exist as an
   **unvalidated synthetic-tested prototype**; a real preselected cohort with
   independently verified historical coverage remains necessary.
