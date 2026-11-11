@@ -77,6 +77,7 @@ jobs:
           python src/behavioral_registry.py --state state/observations
           python src/behavioral_fusion.py --state state/observations
           python src/behavioral_validation.py --state state/observations --spec src/data/validation/behavioral_outcome_frame.json
+          python src/behavioral_baselines.py --state state/observations
       - name: Commit immutable observations and visible source health
         shell: bash
         run: |
