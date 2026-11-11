@@ -37,7 +37,9 @@ ACK = "YES_ONE_DAY_3_69_GB"
 
 
 class BenchmarkError(ValueError):
-    pass
+    def __init__(self, reason, partial=None):
+        super().__init__(reason)
+        self.partial = partial or {}
 
 
 def load_pin(path):
@@ -172,28 +174,35 @@ def run_benchmark(pin, source_bytes, cohort, work_dir,
     if free_bytes < source_bytes + BUFFER_BYTES:
         raise BenchmarkError("insufficient_ephemeral_disk_for_complete_archive")
     started = time.monotonic()
+    progress = {"downloaded_bytes": 0, "verified_asset_count": 0, "downloads": [],
+                "full_day_download_attempted": False, "raw_source_retained": False}
     with tempfile.TemporaryDirectory(prefix="aiba-archive-one-day-", dir=work_dir) as temp:
         scratch = Path(temp)
-        downloads, paths = [], []
+        paths = []
         for part in pin["assets"]:
-            path, record = download_one(part, pin, scratch, max_seconds=max_asset_seconds)
-            downloads.append(record)
+            progress["full_day_download_attempted"] = True
+            try:
+                path, record = download_one(part, pin, scratch, max_seconds=max_asset_seconds)
+            except BenchmarkError as exc:
+                raise BenchmarkError(str(exc), progress.copy()) from exc
+            progress["downloads"].append(record)
+            progress["verified_asset_count"] += 1
+            progress["downloaded_bytes"] += record["downloaded_bytes"]
             paths.append(path)
         scan_receipt, _candidate = archive.scan(
             paths, cohort, pin["source_day"], max_bytes=SCAN_LIMIT,
             max_seconds=SCAN_SECONDS
         )
-        # Deliberately discard all selected geometry; never output it as an artifact.
+        progress["scan"] = scan_receipt
+        progress["total_wall_seconds"] = round(time.monotonic() - started, 3)
+        # Discard any private selected trace geometry, even if scan fails.
         if not scan_receipt["archive_complete"]:
-            raise BenchmarkError("full_day_tar_scan_failed_" + scan_receipt.get("reason", "unknown"))
-        return {
-            "status": "archive_scanned_review_required",
-            "downloaded_bytes": sum(r["downloaded_bytes"] for r in downloads),
-            "verified_asset_count": len(downloads), "downloads": downloads,
-            "scan": scan_receipt, "total_wall_seconds": round(time.monotonic() - started, 3),
-            "raw_source_retained": False, "receiver_coverage_verified": False,
-            "detector_input_ready": False,
-        }
+            raise BenchmarkError("full_day_tar_scan_failed_" +
+                                 scan_receipt.get("reason", "unknown"), progress.copy())
+        return {"status": "archive_scanned_review_required",
+                "full_day_download_executed": True,
+                "receiver_coverage_verified": False, "detector_input_ready": False,
+                **progress}
 
 
 def main(argv=None):
@@ -233,14 +242,16 @@ def main(argv=None):
         report["source_metadata_verified"] = True
         report["published_at_utc"] = published_at
         if args.execute:
+            report["full_day_benchmark_requested"] = True
             cohort = routes.read_json(args.cohort)
-            report["full_day_download_executed"] = True
             report.update(run_benchmark(pin, planned_bytes, cohort, args.work_dir))
         else:
             report["status"] = "metadata_verified_not_downloaded"
         result_code = 0
     except (BenchmarkError, routes.InputError, OSError, TypeError, OverflowError) as exc:
         report["status"] = "unavailable"
+        if isinstance(exc, BenchmarkError):
+            report.update(exc.partial)
         report["reason"] = str(exc) if isinstance(exc, (BenchmarkError, routes.InputError)) else "benchmark_input_or_transport_unavailable"
     report["elapsed_process_seconds"] = round(time.monotonic() - started, 3)
     try:
