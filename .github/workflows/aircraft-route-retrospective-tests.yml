@@ -1,0 +1,29 @@
+name: Aircraft route retrospective prototype tests (PR only)
+on:
+  pull_request:
+    paths:
+      - 'scripts/aircraft_route_history.py'
+      - 'scripts/aircraft_archive_probe.py'
+      - 'tests/test_aircraft_route_history.py'
+      - 'tests/test_aircraft_archive_probe.py'
+      - 'docs/AIRCRAFT_ROUTE_RETROSPECTIVE.md'
+      - 'docs/AIRCRAFT_ROUTE_ANOMALY_PILOT.md'
+      - '.github/workflows/aircraft-route-retrospective-tests.yml'
+permissions:
+  contents: read
+jobs:
+  offline-synthetic:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout candidate code without persistent credentials
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Compile and test offline parsers and retrospective comparator
+        run: |
+          python -m compileall -q scripts/aircraft_route_history.py scripts/aircraft_archive_probe.py
+          python -m unittest tests.test_aircraft_route_history tests.test_aircraft_archive_probe -v
