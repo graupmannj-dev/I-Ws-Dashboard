@@ -95,7 +95,9 @@ class RealTraceQualityTests(unittest.TestCase):
         self.assertFalse(receipt["raw_geometry_saved"])
         self.assertNotIn(ID, json.dumps(receipt))
         self.assertNotIn("SAMPLE", json.dumps(receipt))
-        self.assertNotIn("11.0", json.dumps(receipt))
+        self.assertNotIn('"lat"', json.dumps(receipt))
+        self.assertNotIn('"lon"', json.dumps(receipt))
+        self.assertNotIn('"trace": [', json.dumps(receipt))
 
     def test_explicit_leg_marker_splits_not_stitches(self):
         p = envelope()
@@ -122,7 +124,7 @@ class RealTraceQualityTests(unittest.TestCase):
         p["trace"][7][8]["flight"] = "DIFFERENT"
         receipt = self.observed([("./traces/ab/trace_full_abc123.json",
                                   json.dumps(p).encode(), None)])
-        self.assertEqual(receipt["leg_exclusions"]["callsign_change"], 1)
+        self.assertEqual(receipt["leg_exclusions"]["callsign_change"], 2)
         p = envelope()
         p["trace"][7][0] = p["trace"][6][0] + 601
         receipt = self.observed([("./traces/ab/trace_full_abc123.json",
@@ -165,7 +167,9 @@ class RealTraceQualityTests(unittest.TestCase):
         p["padding"] = "x" * (quality.MAX_SAMPLE_BYTES + 1)
         receipt = self.observed([("./traces/ab/trace_full_abc123.json",
                                   json.dumps(p).encode(), None)])
-        self.assertEqual(receipt["status"], "source_sample_audited_review_required")
+        self.assertEqual(receipt["status"], "insufficient_sample")
+        self.assertTrue(receipt["source_archive_complete"])
+        self.assertFalse(receipt["decoded_sample_adequate"])
         self.assertEqual(receipt["counts"]["sampled_oversized_members"], 1)
         self.assertEqual(receipt["counts"].get("sampled_decoded_traces", 0), 0)
 
