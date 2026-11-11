@@ -1,0 +1,30 @@
+{
+  "schema": "aiba.aircraft-archive-input-check.v1",
+  "checked_on": "2026-11-11",
+  "source_date": "2026-11-10",
+  "source_release": "https://github.com/adsblol/globe_history_2026/releases/tag/v2026.11.10-planes-readsb-prod-0",
+  "source_asset": "https://github.com/adsblol/globe_history_2026/releases/download/v2026.11.10-planes-readsb-prod-0/v2026.11.10-planes-readsb-prod-0.tar.aa",
+  "inclusive_byte_range": [0, 262143],
+  "downloaded_bytes": 262144,
+  "prefix_sha256": "564c6bdac043a99574795cbbad84ed230e4916d8f026cf36fb19ebc2ca4ee106",
+  "scope": "Complete JSON members in one bounded archive prefix; archive-order sample, not representative of worldwide coverage. No anomaly scoring performed.",
+  "counts": {
+    "aircraft_files": 11,
+    "position_rows": 8668,
+    "files_with_numeric_base_timestamp": 11,
+    "rows_with_numeric_coordinates": 8668,
+    "source_marked_stale_rows": 148,
+    "source_leg_start_markers": 10,
+    "rows_with_callsign_metadata": 2025,
+    "rows_with_ground_altitude": 1236
+  },
+  "not_validated": [
+    "geographic or receiver coverage",
+    "flight segmentation",
+    "historical route baseline",
+    "anomaly detection accuracy",
+    "full-archive processing resources",
+    "zero-cost hosting"
+  ],
+  "deployment_status": "not_implemented_or_deployed"
+}
