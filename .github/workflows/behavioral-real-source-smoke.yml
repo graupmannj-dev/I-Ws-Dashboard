@@ -53,7 +53,22 @@ jobs:
           assert evaluation['calibrated_precision'] is None
           assert evaluation['false_alarm_rate'] is None
           assert (Path('/tmp/aiba-behavioral-preview')/'behavior'/'index.html').is_file()
-          assert set(reg['source_health'])=={'ioda','nga','amsa','official','commercial','watchlist'}
+          assert set(reg['source_health'])=={'ioda','nga','amsa','official','commercial','watchlist','live_airspace','live_maritime'}
+          # These authority notices were collected by a different,
+          # already-running workflow. Parse its actual cached geometry
+          # regardless of whether the latest snapshot is currently fresh.
+          from behavioral_restrictions import adapt_layer
+          official=json.loads((Path('evidence/observations/latest/live_layers.json')).read_text())
+          for source_mode,layer in (('live_airspace','airspace'),('live_maritime','maritime')):
+              status=official['layers'][layer]['status']
+              if status in ('snapshot','partial'):
+                  normalized,excluded=adapt_layer(official,source_mode)
+                  print(source_mode,'raw=',len(official['layers'][layer]['records']),
+                        'recognized=',len(normalized),'excluded=',excluded)
+                  assert not official['layers'][layer]['records'] or normalized
+                  assert all(v['event_at'] is None and v['source_published_at'] is None
+                             for v in normalized)
+          
           print('Accepted public-source integration schema. Records:',reg['record_count'])
           print('Source status:',{k:v['status'] for k,v in reg['source_health'].items()})
           print('Study readiness:',evaluation['status'])
