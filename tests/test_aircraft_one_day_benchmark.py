@@ -242,8 +242,30 @@ class OneDayBenchmarkTests(unittest.TestCase):
                     {"archive_complete": False, "reason": "missing_second_tar_terminator"}, {}
                 )
             ):
-                with self.assertRaisesRegex(bench.BenchmarkError, "scan_failed"):
+                with self.assertRaisesRegex(bench.BenchmarkError, "scan_failed") as caught:
                     bench.run_benchmark(pin(), 3689415168, {}, folder)
+            self.assertEqual(caught.exception.partial["verified_asset_count"], 2)
+            self.assertEqual(caught.exception.partial["downloaded_bytes"], 3689415168)
+            self.assertEqual(caught.exception.partial["scan"]["reason"],
+                             "missing_second_tar_terminator")
+            self.assertEqual(list(folder.iterdir()), [])
+
+    def test_second_asset_failure_keeps_first_asset_measurement_only(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            folder = Path(tmp)
+            def mock_download(part, pin_data, scratch, **kwargs):
+                if part["name"].endswith(".ab"):
+                    raise bench.BenchmarkError("asset_download_failed_code_22")
+                asset_path = scratch / part["name"]
+                asset_path.write_bytes(b"bounded synthetic")
+                return asset_path, {"asset": part["name"],
+                                    "downloaded_bytes": part["size_bytes"]}
+            with patch.object(bench, "download_one", side_effect=mock_download):
+                with self.assertRaisesRegex(bench.BenchmarkError, "code_22") as caught:
+                    bench.run_benchmark(pin(), 3689415168, {}, folder)
+            self.assertEqual(caught.exception.partial["downloaded_bytes"], 2000000000)
+            self.assertEqual(caught.exception.partial["verified_asset_count"], 1)
+            self.assertTrue(caught.exception.partial["full_day_download_attempted"])
             self.assertEqual(list(folder.iterdir()), [])
 
     def test_failed_preflight_replaces_prior_success(self):
