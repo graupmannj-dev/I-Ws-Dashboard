@@ -194,6 +194,7 @@ def normalize(mode, row, now):
         root=f"{mode}:{rid}"
     result={
         "id":"beh:"+fingerprint(mode,rid),
+        "collection_mode":mode,
         "raw_source_id":rid,"provider":provider,"source_family":family,
         "evidence_class":EVIDENCE[mode],"direct_observed_behavior":DIRECT_BEHAVIOR[mode],
         "observed_at":iso(collected),"event_at":iso(occurred) if occurred else None,
@@ -303,11 +304,7 @@ def create(state, clock=None, write=True, run_id=None):
         else:
             first=when(item["upstream_first_seen_at"]) or now
             item["first_observed_at"]=iso(first)
-            first_provider_baseline=statuses.get(
-                next((mode for mode in MODES if item["source_family"]==FAMILIES[mode]
-                      and mode in new_source_first and mode in statuses
-                      and statuses[mode].get("first_provider_baseline")), ""),{}
-            ).get("first_provider_baseline",False)
+            first_provider_baseline=statuses[item["collection_mode"]]["first_provider_baseline"]
             item["registry_novelty"]=("initial_baseline" if not prior_initialized or first_provider_baseline
                                        else "newly_observed")
             if item["registry_novelty"]=="newly_observed":
@@ -349,6 +346,7 @@ def create(state, clock=None, write=True, run_id=None):
             raise ValueError("Append-only behavioral run identity collision; no overwrite")
         write_json(history,delta)
         write_json(state/"index"/"behavioral_seen.json",index)
+        write_json(state/"index"/"behavioral_sources_seen.json",new_source_first)
         write_json(state/"latest"/"behavioral_registry.json",result)
     return result
 
