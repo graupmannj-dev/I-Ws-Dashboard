@@ -1,0 +1,71 @@
+name: Verify behavioral source registry and fusion against public evidence (PR only)
+on:
+  pull_request:
+    paths:
+      - 'behavioral_registry.py'
+      - 'behavioral_fusion.py'
+      - 'behavioral_validation.py'
+      - 'behavioral_render.py'
+      - 'tests/test_behavioral_*.py'
+      - '.github/workflows/behavioral-real-source-smoke.yml'
+permissions:
+  contents: read
+jobs:
+  live-public-evidence:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - name: Checkout candidate code, no publishing permission
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Read public AIBA source-evidence branch
+        uses: actions/checkout@v4
+        with:
+          ref: aiba-feed-data
+          path: evidence
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Exercise existing source evidence with code from PR
+        shell: bash
+        run: |
+          set -euo pipefail
+          python behavioral_registry.py --state evidence/observations
+          python behavioral_fusion.py --state evidence/observations
+          python behavioral_validation.py \
+            --state evidence/observations \
+            --spec data/validation/behavioral_outcome_frame.json
+          python behavioral_render.py --state evidence/observations --site /tmp/aiba-behavioral-preview
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path('evidence/observations/latest')
+          reg=json.loads((p/'behavioral_registry.json').read_text())
+          fusion=json.loads((p/'behavioral_fusion.json').read_text())
+          evaluation=json.loads((p/'behavioral_validation.json').read_text())
+          assert reg['schema']=='aiba.behavioral-observations.v1'
+          assert fusion['schema']=='aiba.behavioral-convergence-shadow.v1'
+          assert evaluation['schema']=='aiba.behavioral-validation-ledger.v1'
+          assert fusion['approved_warning_count']==0
+          assert fusion['automated_severity_changes']==0
+          assert evaluation['calibrated_precision'] is None
+          assert evaluation['false_alarm_rate'] is None
+          assert (Path('/tmp/aiba-behavioral-preview')/'behavior'/'index.html').is_file()
+          assert set(reg['source_health'])=={'ioda','nga','amsa','official','commercial','watchlist'}
+          print('Accepted public-source integration schema. Records:',reg['record_count'])
+          print('Source status:',{k:v['status'] for k,v in reg['source_health'].items()})
+          print('Study readiness:',evaluation['status'])
+          PY
+      - name: Preserve only normalized, source-linked study QA (not provider raw dumps)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: aiba-behavioral-real-source-smoke-${{ github.run_id }}
+          path: |
+            evidence/observations/latest/behavioral_registry.json
+            evidence/observations/latest/behavioral_fusion.json
+            evidence/observations/latest/behavioral_validation.json
+          retention-days: 7
+          if-no-files-found: warn
