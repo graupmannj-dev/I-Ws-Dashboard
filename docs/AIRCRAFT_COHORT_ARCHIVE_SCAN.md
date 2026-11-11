@@ -94,8 +94,10 @@ links, extracts member paths, or materializes nonselected geometry.
 
 ## Before any daily workflow
 
-1. Measure a representative complete source-day archive (bytes, CPU/RSS,
-   runtime and selected-trace volume) before requesting 28 source days.
+1. **Completed**: [full-day 2026-11-10 source benchmark](AIRCRAFT_ONE_DAY_BENCHMARK.md)
+   verified both archive SHA-256 hashes and scanned 3.689 GB / 75,360
+   trace members in approximately 23.2 seconds. This was a synthetic
+   negative-control selection, **not** a valid route history.
 2. Test whether archive indexing or a cheaper selected-identity source
    exists. A split TAR does not itself permit random individual-aircraft
    retrieval. Do not treat source absence as zero flights.

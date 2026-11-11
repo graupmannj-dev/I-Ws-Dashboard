@@ -1,0 +1,57 @@
+name: One-day ADSB.lol source archive benchmark (manual, no publishing)
+
+on:
+  workflow_dispatch:
+    inputs:
+      run_mode:
+        description: 'Metadata-only by default. Full 3.69 GB requires explicit opt-in.'
+        required: true
+        type: choice
+        options:
+          - METADATA_ONLY
+          - YES_ONE_DAY_3_69_GB
+        default: METADATA_ONLY
+
+permissions:
+  contents: read
+
+jobs:
+  one-day-benchmark:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - name: Checkout without persistent credentials
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Source release metadata preflight or explicitly approved full-day scan
+        shell: bash
+        env:
+          AIBA_RUN_MODE: ${{ inputs.run_mode }}
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/aiba-one-day-report"
+          if [ "$AIBA_RUN_MODE" = 'YES_ONE_DAY_3_69_GB' ]; then
+            python scripts/aircraft_one_day_benchmark.py \
+              --pin data/validation/aircraft_one_day_source_pin.json \
+              --cohort data/validation/aircraft_one_day_benchmark_control.json \
+              --execute --acknowledge YES_ONE_DAY_3_69_GB \
+              --work-dir "$RUNNER_TEMP" \
+              --output "$RUNNER_TEMP/aiba-one-day-report/receipt.json"
+          else
+            python scripts/aircraft_one_day_benchmark.py \
+              --pin data/validation/aircraft_one_day_source_pin.json \
+              --output "$RUNNER_TEMP/aiba-one-day-report/receipt.json"
+          fi
+      - name: Preserve aggregate measurement ONLY (no raw tracks or archive)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: aircraft-one-day-source-benchmark-${{ github.run_id }}
+          path: ${{ runner.temp }}/aiba-one-day-report/receipt.json
+          if-no-files-found: warn
+          retention-days: 7
