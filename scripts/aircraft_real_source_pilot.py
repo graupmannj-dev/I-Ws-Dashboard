@@ -53,7 +53,8 @@ def measure(pin, available_bytes, workdir):
             "total_seconds": round(time.monotonic() - started, 3),
             "raw_archives_deleted": True,
             "status": "quality_audit_review_required"
-                      if result["source_archive_complete"] else "unavailable",
+                      if result["status"] == "source_sample_audited_review_required" else "insufficient_sample_or_source",
+            "source_download_executed": True,
         }
 
 
