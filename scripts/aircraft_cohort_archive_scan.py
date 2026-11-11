@@ -301,9 +301,14 @@ def main(argv=None):
               "archive_complete": False}
     candidate = {"schema": CANDIDATE_SCHEMA, "status": "unavailable",
                  "detector_input_ready": False, "aircraft_traces": []}
+    candidate_path_allowed = False
     try:
         root = Path(__file__).resolve().parents[1]
-        if (args.candidates_output and args.candidates_output.resolve().is_relative_to(root)):
+        candidate_path_allowed = (
+            args.candidates_output is None
+            or not args.candidates_output.resolve().is_relative_to(root)
+        )
+        if not candidate_path_allowed:
             raise ScanError("Raw selected traces must be written outside the Git checkout")
         manifest = route.read_json(args.cohort)
         report, candidate = scan(args.part, manifest, args.date,
@@ -314,7 +319,7 @@ def main(argv=None):
         report["reason"] = str(exc) if isinstance(exc, (ScanError, route.InputError)) else "Local input unavailable"
     try:
         route.write_atomic(args.report, report)
-        if args.candidates_output:
+        if args.candidates_output and candidate_path_allowed:
             route.write_atomic(args.candidates_output, candidate)
     except OSError:
         print("Cannot write local scan receipts")
