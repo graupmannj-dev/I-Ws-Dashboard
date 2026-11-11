@@ -98,7 +98,7 @@ def adapt(mode,row,checked):
         return None,"unparseable_valid_until"
     if start and end and end<=start:
         return None,"reversed_validity"
-    if start and checked>end if end else False:
+    if end and checked >= end:
         # Expired notices may still be present in the upstream list.
         # Preserve them as reference observations, not fresh in-force restrictions.
         state="expired_present_in_source"
