@@ -163,6 +163,14 @@ class RouteRetrospectiveTests(unittest.TestCase):
         self.assertEqual(item["status"], "insufficient_coverage")
         self.assertEqual(item["reason"], "observation_gap")
 
+    def test_ground_interruption_is_not_spliced_into_one_leg(self):
+        data = dataset()
+        data["flights"][-1]["points"][4]["ground"] = True
+        item = self.single(data)
+        self.assertEqual(item["status"], "insufficient_coverage")
+        self.assertEqual(item["reason"], "multiple_legs")
+        self.assertIsNone(item["geometry"])
+
     def test_mixed_historical_routes_cannot_form_misleading_wide_corridor(self):
         data = dataset()
         data["flights"][0]["points"] = flight(DATES[0], "other", deviation=True)["points"]
@@ -190,8 +198,10 @@ class RouteRetrospectiveTests(unittest.TestCase):
         self.assertEqual(item["status"], "insufficient_coverage")
         self.assertEqual(item["reason"], "callsign_change")
         held["readsb"]["trace"][5][8] = {"flight": "TEST1"}
-        held["readsb"]["trace"][5][6] = 3
+        held["readsb"]["trace"][5][6] = 1
         self.assertEqual(self.single(data)["status"], "within_reference")
+        held["readsb"]["trace"][5][6] = 3
+        self.assertEqual(self.single(data)["reason"], "multiple_legs")
 
     def test_antimeridian_corridor_is_short_not_long_way_around(self):
         data = dataset()
