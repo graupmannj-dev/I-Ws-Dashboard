@@ -24,7 +24,10 @@ from ops_pipeline import load_json, write_json
 UTC=dt.timezone.utc
 SCHEMA="aiba.behavioral-convergence-shadow.v1"
 LOOKBACK_HOURS=72
-MAX_HISTORY_FILES=500
+# Existing 15-minute official restriction checks plus 30-minute friction
+# and six-hour operational runs can generate >400 source-ledger deltas
+# in 72h. Leave bounded headroom without silently losing recent evidence.
+MAX_HISTORY_FILES=800
 MAX_RECENT=3000
 MAX_SINGLE_LEADS=50
 MAX_REVIEW_GROUPS=25
