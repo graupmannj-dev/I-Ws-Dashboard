@@ -4,9 +4,12 @@ on:
     paths:
       - 'scripts/aircraft_route_history.py'
       - 'scripts/aircraft_archive_probe.py'
+      - 'scripts/aircraft_cohort_archive_scan.py'
       - 'tests/test_aircraft_route_history.py'
       - 'tests/test_aircraft_archive_probe.py'
+      - 'tests/test_aircraft_cohort_archive_scan.py'
       - 'docs/AIRCRAFT_ROUTE_RETROSPECTIVE.md'
+      - 'docs/AIRCRAFT_COHORT_ARCHIVE_SCAN.md'
       - 'docs/AIRCRAFT_ROUTE_ANOMALY_PILOT.md'
       - '.github/workflows/aircraft-route-retrospective-tests.yml'
 permissions:
@@ -23,7 +26,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - name: Compile and test offline parsers and retrospective comparator
+      - name: Compile and test offline archive scanner and retrospective comparator
         run: |
-          python -m compileall -q scripts/aircraft_route_history.py scripts/aircraft_archive_probe.py
-          python -m unittest tests.test_aircraft_route_history tests.test_aircraft_archive_probe -v
+          python -m compileall -q scripts/aircraft_route_history.py scripts/aircraft_archive_probe.py scripts/aircraft_cohort_archive_scan.py
+          python -m unittest tests.test_aircraft_route_history tests.test_aircraft_archive_probe tests.test_aircraft_cohort_archive_scan -v
