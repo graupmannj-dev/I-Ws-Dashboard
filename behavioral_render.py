@@ -58,6 +58,19 @@ def render(state,site,clock=None):
             "collection_coverage":{},
             "status":"No behavioral fusion source has been collected."}
         groups=[];leads=[];health={}
+    baseline=load_json(state/"latest"/"behavioral_baselines.json",{}) or {}
+    baseline_ok=(baseline.get("schema")=="aiba.behavioral-provider-baseline.v1" and
+                 isinstance(baseline.get("sources"),dict))
+    baseline_rows=[]
+    if baseline_ok:
+        for mode,row in sorted(baseline["sources"].items()):
+            median=row.get("median_daily_source_snapshot_records")
+            baseline_rows.append(
+                "<tr><td>"+esc(mode)+"</td><td>"+
+                esc(row.get("status"))+"</td><td>"+
+                esc(row.get("comparable_provider_snapshot_days"))+"</td><td>"+
+                esc("insufficient history" if median is None else median)+"</td></tr>"
+            )
     warning=("FRESH SOURCE SNAPSHOT (not a current threat assessment)" if current else
              "NO RECENT VALID SOURCE SNAPSHOT — historical context only; do not infer calm")
     health_rows=[]
@@ -131,6 +144,14 @@ Source-relative timestamps are not necessarily event-onset timestamps. Provider 
 <table><thead><tr><th>Provider</th><th>Status</th><th>Source snapshot</th><th>Actual coverage limit</th></tr></thead>
 <tbody>'''+''.join(health_rows)+'''</tbody></table>
 </section>
+<section><h2>Source-specific historical reference (descriptive only)</h2>
+<p>Based on observed provider snapshots, not full-day observation or global incident counts. A newly connected provider needs at least 14 comparable observed days before its median appears. An unavailable or partial source never becomes a zero-activity day.</p>
+<table><thead><tr><th>Source adapter</th><th>Reference status</th><th>Comparable days / 28</th><th>Median visible records</th></tr></thead>
+<tbody>'''+''.join(baseline_rows)+'''</tbody></table>
+<p class="sub">'''+esc("Source-matched baseline last computed: "+str(baseline.get("generated_at") or "not available") if baseline_ok else
+                 "Historical source baselines not yet collected; no normal-activity inference is possible.")+'''</p>
+<p class="sub">These statistics are not indicators of military preparation, conflict probabilities or verified anomaly thresholds.</p>
+</section>
 <section><h2>Method and constraints</h2>
 <p>GDELT remains a parallel contextual media-event stream; UCDP is a retrospective outcome dataset. Neither is required for behavioral source ingestion. A collection-time coincidence is not verified military preparation.</p>
 <p><a href="behavioral_fusion.json">Read source-timed machine-readable audit</a>. The GitHub evidence-branch history records non-events and source health only insofar as they were actually measured; evaluation requires a separately defined risk set and outcome-label review.</p></section>
@@ -139,6 +160,10 @@ Source-relative timestamps are not necessarily event-onset timestamps. Provider 
     target.mkdir(parents=True,exist_ok=True)
     (target/"index.html").write_text(doc,encoding="utf-8")
     write_json(target/"behavioral_fusion.json",payload)
+    write_json(target/"behavioral_baselines.json",baseline if baseline_ok else {
+        "schema":"aiba.behavioral-provider-baseline.v1",
+        "generated_at":None,"sources":{},"status":"no_verified_history",
+        "alerts_generated":0,"calibrated_forecast_skill":None})
     return payload
 
 
