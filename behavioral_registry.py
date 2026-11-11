@@ -317,9 +317,23 @@ def create(state, clock=None, write=True, run_id=None):
     if len(index)>MAX_INDEX:
         raise ValueError("Behavioral index cap exceeded; audit source churn before truncation")
     records=sorted(unique.values(),key=lambda r:(r["source_family"],r["id"]))
+    # These are bounded *provider snapshots*, not global event counts.
+    # Record the denominator per adapter; do not infer a missing source
+    # contributed zero observations.
+    snapshot_counts={}
+    novelty_counts={}
+    for mode in MODES:
+        snapshot_counts[mode]=(
+            sum(r["collection_mode"]==mode for r in records)
+            if statuses[mode]["status"] in ("current","current_partial") else None)
+        novelty_counts[mode]=(
+            sum(r["collection_mode"]==mode for r in changes)
+            if snapshot_counts[mode] is not None else None)
     result={
         "schema":SCHEMA,"generated_at":iso(now),"scope":"worldwide_capable_but_source_bounded",
         "records":records,"source_health":statuses,"invalid_records":rejects,
+        "snapshot_counts_by_mode":snapshot_counts,
+        "first_seen_counts_by_mode":novelty_counts,
         "record_count":len(records),"new_after_baseline_count":len(changes),
         "first_registry_baseline":not prior_initialized,
         "alert_eligible":False,
@@ -339,6 +353,8 @@ def create(state, clock=None, write=True, run_id=None):
             "schema":SCHEMA,"generated_at":iso(now),
             "first_registry_baseline":not prior_initialized,
             "new_records":changes,"source_health":statuses,"invalid_records":rejects,
+            "snapshot_counts_by_mode":snapshot_counts,
+            "first_seen_counts_by_mode":novelty_counts,
             "full_snapshot_count":len(records),
             "operational_alerts_generated":0}
         history=state/"history"/"behavioral_registry"/filename
