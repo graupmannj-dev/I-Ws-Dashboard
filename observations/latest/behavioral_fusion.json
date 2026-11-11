@@ -3,8 +3,9 @@
   "automated_severity_changes": 0,
   "collection_coverage": {
     "amsa": {
-      "age_hours": 0.45,
+      "age_hours": 5.82,
       "checked_at": "2026-11-11T06:00:26Z",
+      "first_provider_baseline": true,
       "missingness": "provider_bounded_not_exhaustive",
       "mode": "amsa",
       "provider_status": "collected",
@@ -14,8 +15,9 @@
       "truncated_or_partial": false
     },
     "commercial": {
-      "age_hours": 3.66,
+      "age_hours": 9.03,
       "checked_at": "2026-11-11T02:47:58Z",
+      "first_provider_baseline": true,
       "missingness": "provider_bounded_not_exhaustive",
       "mode": "commercial",
       "provider_status": "collected",
@@ -25,8 +27,9 @@
       "truncated_or_partial": false
     },
     "ioda": {
-      "age_hours": 0.45,
+      "age_hours": 5.82,
       "checked_at": "2026-11-11T06:00:26Z",
+      "first_provider_baseline": true,
       "missingness": "provider_bounded_not_exhaustive",
       "mode": "ioda",
       "provider_status": "collected",
@@ -35,8 +38,32 @@
       "status": "current",
       "truncated_or_partial": false
     },
+    "live_airspace": {
+      "age_hours": 0.0,
+      "checked_at": "2026-11-11T11:49:51Z",
+      "first_provider_baseline": true,
+      "missingness": "partial_sampling_not_worldwide_exhaustive",
+      "mode": "live_airspace",
+      "provider_status": "partial",
+      "snapshot_at": "2026-11-11T11:49:51Z",
+      "source_scope": "FAA temporary flight restrictions: United States only",
+      "status": "current_partial",
+      "truncated_or_partial": true
+    },
+    "live_maritime": {
+      "age_hours": 0.0,
+      "checked_at": "2026-11-11T11:49:51Z",
+      "first_provider_baseline": true,
+      "missingness": "partial_sampling_not_worldwide_exhaustive",
+      "mode": "live_maritime",
+      "provider_status": "partial",
+      "snapshot_at": "2026-11-11T11:49:51Z",
+      "source_scope": "Danish Maritime Authority Niord notices: regional Baltic/North Sea",
+      "status": "current_partial",
+      "truncated_or_partial": true
+    },
     "nga": {
-      "age_hours": 0.45,
+      "age_hours": 5.82,
       "checked_at": "2026-11-11T02:48:58Z",
       "missingness": "not_measured_not_zero",
       "mode": "nga",
@@ -47,8 +74,9 @@
       "truncated_or_partial": false
     },
     "official": {
-      "age_hours": 0.0,
+      "age_hours": 5.38,
       "checked_at": "2026-11-11T06:27:23Z",
+      "first_provider_baseline": true,
       "missingness": "provider_bounded_not_exhaustive",
       "mode": "official",
       "provider_status": "collected",
@@ -58,8 +86,9 @@
       "truncated_or_partial": false
     },
     "watchlist": {
-      "age_hours": 0.0,
+      "age_hours": 5.38,
       "checked_at": "2026-11-11T06:27:23Z",
+      "first_provider_baseline": true,
       "missingness": "provider_bounded_not_exhaustive",
       "mode": "watchlist",
       "provider_status": "collected",
@@ -71,11 +100,11 @@
   },
   "forecast_probability": null,
   "gdelt_context": "separate_analytical_stream_not_a_gate_or_confirmation",
-  "generated_at": "2026-11-11T06:27:26Z",
+  "generated_at": "2026-11-11T11:49:55Z",
   "geographic_scope": "source_declared_only",
   "history_diagnostics": {
     "excluded_observations": {},
-    "history_files_examined": 4,
+    "history_files_examined": 5,
     "lookback_hours": 72,
     "recent_unique_records": 3
   },
@@ -89,8 +118,8 @@
   "new_single_source_count_total": 0,
   "new_single_source_leads": [],
   "prediction_horizon": null,
-  "registry_asof": "2026-11-11T06:27:26Z",
-  "registry_source_count": 267,
+  "registry_asof": "2026-11-11T11:49:55Z",
+  "registry_source_count": 411,
   "review_groups": [],
   "review_groups_count_total": 0,
   "schema": "aiba.behavioral-convergence-shadow.v1",
