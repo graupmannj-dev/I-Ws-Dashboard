@@ -1,5 +1,11 @@
 # ADSB.lol regional aircraft layer and filters — AIBA Atlas
 
+For the proposed daily historical flight-path comparison, see
+[Aircraft route anomaly pilot](docs/AIRCRAFT_ROUTE_ANOMALY_PILOT.md).
+That pilot is separate from this existing regional live adapter. The VM
+commands below do not implement route baselines, worldwide discovery or
+historical anomaly detection; no VM is needed for the initial local pilot.
+
 ## What is and is not live
 
 The optional persistent Google Cloud (or other HTTPS) backend supports
