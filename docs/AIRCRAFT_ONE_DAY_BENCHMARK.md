@@ -1,9 +1,46 @@
 # One representative complete aircraft archive day — bounded benchmark
 
-**State:** source release metadata verified; **full source not yet
-downloaded or scanned**. This is one manually triggered benchmark,
-not historical cohort validation, an automatic collector, a live
-sensor, a warning, or a dashboard publication.
+**State:** full source downloaded, both asset SHA-256 hashes verified,
+and complete TAR scanned in an **isolated PR-only one-off GitHub Actions
+run** on 2026-11-11. This is a source-resource benchmark, **not**
+historical cohort validation, an automatic collector, a live sensor,
+a warning, or dashboard publication.
+
+## Actual complete-day measurement (2026-11-11)
+
+[GitHub Actions run 43112308272](https://github.com/graupmannj-dev/I-Ws-Dashboard/actions/runs/43112308272)
+succeeded using a standard public-repository Ubuntu runner. A full
+aggregate-only JSON receipt is retained in
+[evidence/aircraft-full-day-source-benchmark-2026-11-11.json](evidence/aircraft-full-day-source-benchmark-2026-11-11.json).
+
+| Observed measurement | Result |
+| --- | ---: |
+| Release asset bytes verified/downloaded | 3,689,415,168 |
+| First asset download | 9.052 seconds |
+| Second asset download | 9.379 seconds |
+| Complete sequential TAR scan | 4.775 seconds |
+| Total download-and-scan wall time | 23.206 seconds |
+| Scanned TAR members | 75,673 |
+| Scanned aircraft trace members | 75,360 |
+| Python process peak RSS | 30,120 KiB |
+| Raw archives/track files retained | **No** |
+
+The two exact source hashes, source metadata and aggregate full-stream
+SHA-256 were recorded. All full-day source geometry was deleted
+automatically from the ephemeral runner. **Zero** selected traces were
+found for the synthetic negative-control ICAO, which is expected to
+provide no meaningful flight-route baseline. The 75,360 trace members
+are archive files, **not** 75,360 distinct flights or proof of global
+surveillance coverage.
+
+The complete-day run demonstrates **bounded ingestion feasibility on
+this runner and source day**, not measured 28-day backfill cost or
+prospective route anomaly quality. The successful download throughput
+must not be assumed for future days.
+
+The one-off experiment was triggered on the test PR and its temporary
+review-event workflow is removed before the PR is offered for merge.
+Only the **separately opt-in manual** benchmark workflow remains.
 
 ## Representative source selection
 
@@ -99,7 +136,9 @@ https://docs.github.com/en/actions/how-tos/write-workflows/choose-where-workflow
 
 ## Acceptance gate to consider a 28-day pilot
 
-A one-day result is acceptable only if:
+The observed complete-day scan passed source hash verification,
+TAR integrity, byte/time/memory constraints and raw-data cleanup.
+**Remaining requirements** before any 28-day pilot:
 
 - The release metadata exactly matches the pinned asset sizes
   and SHA-256 values; downloads re-hash successfully.
