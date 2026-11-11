@@ -1,7 +1,7 @@
 # Daily aircraft route anomaly pilot
 
-Status: **planned; input readability checked locally; detector not implemented
-or deployed**. No aircraft analysis job is scheduled by this document.
+Status: **bounded input reader implemented and checked locally; detector not
+implemented or deployed**. No aircraft analysis job is scheduled by this document.
 
 ## Intended dashboard behavior
 
@@ -113,6 +113,58 @@ are useful inputs; their presence does not validate an anomaly method.
 
 ## Reproduce the bounded input check
 
+The first implementation is `scripts/aircraft_archive_probe.py`. It uses
+Python's standard library and `curl` on Linux (including standard Ubuntu
+GitHub Actions runners). It is a manual input experiment; no workflow or
+dashboard build invokes it.
+
+From the repository root, download a bounded prefix and produce an aggregate
+receipt outside the checkout:
+
+```bash
+python scripts/aircraft_archive_probe.py \
+  --date 2026-11-10 \
+  --output /tmp/aiba-aircraft-probe.json
+```
+
+The default transfer is 256 KiB with a 30-second deadline, up to 25 complete
+aircraft files and 250,000 rows. `--max-bytes` can increase the prefix to at
+most 16 MiB; decoded JSON is limited to 2 MiB per aircraft. This is not a
+whole-day ingest command. Change `--date` only to an available archived day;
+archive publication can lag the observation date. The URL is generated from
+the date and cannot be overridden with an arbitrary host.
+
+For an existing local prefix, add `--archive-prefix /path/to/prefix`. Its source
+date and provenance are caller supplied, not verified by the local file path.
+The same byte and parser limits apply. No archive member is extracted to disk,
+and output contains no aircraft identities, callsigns or track coordinates.
+
+Success returns exit code 0 and `status=input_sample_readable`. A network,
+format, empty/unusable sample or limit failure returns 1 and writes an
+`unavailable` receipt without successful counts, replacing any earlier success
+at that output path. An incomplete last member is expected for a prefix and
+is excluded with an explicit stop reason. Enough valid rows to read a sample
+does not establish accurate flight paths or a usable baseline.
+
+The receipt records a prefix digest, HTTP range metadata for remote reads,
+source-quality counts, elapsed wall time and Linux Python-process CPU/peak RSS.
+The memory/CPU figures exclude the curl child. Input-byte counts exclude HTTP
+headers. Output-file size can be measured separately with `wc -c`; none of
+these small-prefix results estimate the workload of a full day.
+
+A [fresh HTTPS-run receipt](evidence/aircraft-archive-probe-2026-11-11.json)
+reproduced the original digest and 11-file/8,668-row sample. That run transferred
+262,144 payload bytes, took approximately 0.48 seconds of wall time, and
+reported 18,120 KiB Python-process peak RSS. The aggregate receipt occupied
+1,488 bytes. These are measurements from one small sample on one machine,
+not a full-day cost estimate or a claim that worldwide processing is free.
+
+Offline parser, limit, transport-response and failure-receipt tests run with:
+
+```bash
+python -m unittest tests.test_aircraft_archive_probe -v
+```
+
 The receipt points to the source asset, exact inclusive byte range and SHA-256
 of the downloaded prefix. Keep TLS verification and inherited proxy settings.
 For a local recheck, request `Range: bytes=0-262143`, require HTTP 206 and a
@@ -127,11 +179,13 @@ investigated as a source-content change, not silently accepted as the same run.
 
 ## Follow-up PRs
 
-- Bounded archive reader and measured processing experiment, with a
-  reproducible command and meaningful malformed/missing-input tests.
+- Measure how much of a full archive must be read to obtain a predefined
+  recurring-flight cohort. The bounded prefix reader is now implemented;
+  cohort selection, full-day resource requirements and zero-cost feasibility
+  remain unvalidated.
 - Historical route reference and held-out evaluation, including insufficient
   history and coverage cases.
 - Atlas report rendering, then a reviewed daily workflow once measured costs
   and output retention are acceptable.
 
-These are planned deliverables. None is completed by this documentation PR.
+The historical detector, map integration and daily schedule remain planned.
