@@ -71,7 +71,7 @@ def parts(folder, payload, cut=None):
 class BoundedOfflineArchiveScanTests(unittest.TestCase):
     def run_scan(self, paths, limit=None, manifest=None):
         return scan.scan(paths, manifest or cohort(), DAY,
-                         max_bytes=limit or 64 * 1024 * 1024)
+                         max_bytes=limit if limit is not None else 64 * 1024 * 1024)
 
     def test_complete_split_archive_selects_only_predeclared_icao(self):
         payload = archive(entries())
@@ -103,7 +103,7 @@ class BoundedOfflineArchiveScanTests(unittest.TestCase):
             receipt, candidate = self.run_scan(parts(folder, payload, cut=733))
         self.assertEqual(receipt["status"], "archive_scanned_review_required")
         self.assertEqual(candidate["aircraft_traces"][0]["readsb"]["icao"], "abc123")
-        self.assertEqual(candidate["aircraft_traces"][0]["readsb"]["trace"][3][2], .6 + 1e-16 if False else .6000000000000001)
+        self.assertAlmostEqual(candidate["aircraft_traces"][0]["readsb"]["trace"][3][2], .6)
 
     def test_small_budget_explicitly_incomplete_even_after_a_selected_trace(self):
         payload = archive(entries())
@@ -128,7 +128,10 @@ class BoundedOfflineArchiveScanTests(unittest.TestCase):
     def test_missing_tar_terminator_is_not_successful_completion(self):
         payload = archive(entries())
         # complete members but no two-block terminator
-        payload = payload.rstrip(b"\0")
+        # Stop immediately after the final member's padded data, before EOF blocks.
+        member_end = sum(512 + ((len(body) + 511) // 512) * 512
+                         for _, body, _ in entries())
+        payload = payload[:member_end]
         with tempfile.TemporaryDirectory() as folder:
             receipt, candidate = self.run_scan(parts(folder, payload))
         self.assertEqual(receipt["status"], "incomplete_archive")
