@@ -156,6 +156,7 @@ def scan_day(parts, day, *, max_bytes=MAX_SCAN_BYTES, max_seconds=MAX_RUN_S):
     counts, reasons = Counter(), Counter()
     start = time.monotonic()
     status, failure, selected_bytes = "unavailable", None, 0
+    tar_complete = False
     try:
         while True:
             header = reader.read(512)
@@ -172,7 +173,9 @@ def scan_day(parts, day, *, max_bytes=MAX_SCAN_BYTES, max_seconds=MAX_RUN_S):
                         break
                     if any(tail):
                         raise archive.IncompleteScan("nonzero_tail_after_end_marker")
-                status = "source_sample_audited_review_required"
+                tar_complete = True
+                status = ("source_sample_audited_review_required"
+                          if counts["sampled_decoded_traces"] > 0 else "insufficient_sample")
                 break
             counts["tar_members"] += 1
             if counts["tar_members"] > MAX_TAR_MEMBERS:
@@ -232,7 +235,7 @@ def scan_day(parts, day, *, max_bytes=MAX_SCAN_BYTES, max_seconds=MAX_RUN_S):
         status, failure = "unavailable", str(exc) if isinstance(exc, (AuditError, archive.ScanError)) else "unreadable_local_archive"
     finally:
         reader.close()
-    complete = status == "source_sample_audited_review_required"
+    complete = tar_complete
     # Partial readings may be indicative of cost but never yield a success count.
     return {
         "schema": SCHEMA, "status": status, "reason": failure,
@@ -240,9 +243,11 @@ def scan_day(parts, day, *, max_bytes=MAX_SCAN_BYTES, max_seconds=MAX_RUN_S):
         "source_asset": asset, "source_license": "ODbL-1.0",
         "attribution": "ADSB.lol contributors",
         "selection_rule": "sha256_fixed_salt_mod_1024_eq_0",
-        "precommitted_selection": True,
+        "selection_rule_frozen_before_this_scan": True,
+        "historically_prospective_warning": False,
         "selection_target_day_independent": True,
         "sample_fraction_design": "1/1024_of_icao_identities",
+        "decoded_sample_adequate": complete and counts["sampled_decoded_traces"] > 0,
         "source_archive_complete": complete,
         "receiver_coverage_verified": False,
         "route_classification_verified": False,
