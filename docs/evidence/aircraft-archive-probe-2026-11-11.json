@@ -1,0 +1,43 @@
+{
+  "schema": "aiba.aircraft-archive-probe.v1",
+  "status": "input_sample_readable",
+  "generated_at": "2026-11-11T20:18:41.453188+00:00",
+  "source_date": "2026-11-10",
+  "sample_only": true,
+  "coverage": "archive_order_prefix_not_worldwide_monitoring",
+  "anomaly_scoring": "not_implemented",
+  "license": "ODbL-1.0",
+  "attribution": "ADSB.lol contributors",
+  "source_asset": "https://github.com/adsblol/globe_history_2026/releases/download/v2026.11.10-planes-readsb-prod-0/v2026.11.10-planes-readsb-prod-0.tar.aa",
+  "limits": {
+    "prefix_bytes": 262144,
+    "aircraft_files": 25,
+    "json_bytes_per_file": 2097152,
+    "position_rows": 250000,
+    "download_seconds": 30
+  },
+  "transport": {
+    "mode": "https_range",
+    "http_status": 206,
+    "content_range": "bytes 0-262143/2000000000"
+  },
+  "counts": {
+    "aircraft_files": 11,
+    "position_rows": 8668,
+    "valid_position_rows": 8668,
+    "invalid_position_rows": 0,
+    "source_marked_stale_rows": 148,
+    "source_leg_start_markers": 10,
+    "rows_with_callsign_metadata": 2025,
+    "rows_with_ground_altitude": 1236
+  },
+  "stop_reason": "incomplete_member_at_prefix_boundary",
+  "input_bytes": 262144,
+  "prefix_sha256": "564c6bdac043a99574795cbbad84ed230e4916d8f026cf36fb19ebc2ca4ee106",
+  "measurement": {
+    "wall_seconds": 0.478389,
+    "python_cpu_seconds": 0.035503,
+    "python_peak_rss_kib": 18120,
+    "measurement_scope": "Linux Python process; curl child CPU/RSS and network headers excluded"
+  }
+}

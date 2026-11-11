@@ -54,9 +54,9 @@ The proposed next step is a **daily retrospective aircraft-route anomaly
 pilot**: display unusual observed paths alongside historical route corridors,
 rather than plot every aircraft worldwide. Worldwide discovery is the eventual
 goal; the initial processing test uses a small cohort and measures whether
-GitHub-hosted execution can fit a zero-cost budget. Only archive-input
-readability has been checked locally; the detector, baseline, schedule and
-map integration are not implemented or deployed. See
+GitHub-hosted execution can fit a zero-cost budget. A manual bounded archive
+reader and input experiment are implemented and checked locally; the detector,
+baseline, schedule and map integration are not implemented or deployed. See
 [the pilot plan and sample evidence](docs/AIRCRAFT_ROUTE_ANOMALY_PILOT.md).
 
 ## Near-current sourced closure maps and optional always-on backend
