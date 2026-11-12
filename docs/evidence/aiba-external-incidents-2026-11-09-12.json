@@ -1,0 +1,67 @@
+{
+  "schema": "aiba.external-provider-incident-context.v1",
+  "provider": "GitHub",
+  "period": "2026-11-09 through 2026-11-12",
+  "method": "manually transcribed from public Github Status incident notices, not inferred from local collector failures",
+  "incidents": [
+    {
+      "id": "github-2026-11-09-actions-queue",
+      "start": "2026-11-09T09:23:00Z",
+      "end": "2026-11-09T11:40:00Z",
+      "affected": [
+        "Actions",
+        "Webhooks",
+        "Checks API"
+      ],
+      "evidence": "https://www.githubstatus.com/?date=now",
+      "status": "resolved",
+      "causal_claim": "Github reports some Actions did not start when queued events expired; a Kafka broker degradation had begun Nov 7. This is external direct evidence of potential dropped scheduled runs, not confirmed matching individual AIBA run IDs."
+    },
+    {
+      "id": "github-2026-11-10-git-actions",
+      "start": "2026-11-10T16:10:00Z",
+      "end": "2026-11-10T17:55:00Z",
+      "affected": [
+        "Actions",
+        "Git Operations",
+        "Pull Requests"
+      ],
+      "evidence": "https://www.githubstatus.com/history",
+      "status": "resolved",
+      "causal_claim": "Provider confirmed degraded availability of GitHub Actions and related services."
+    },
+    {
+      "id": "github-2026-11-11-actions",
+      "start": "2026-11-11T20:48:00Z",
+      "end": "2026-11-11T21:21:00Z",
+      "affected": [
+        "Actions",
+        "Pages",
+        "Copilot",
+        "Webhooks"
+      ],
+      "evidence": "https://www.githubstatus.com/history",
+      "status": "resolved",
+      "causal_claim": "Provider confirmed Actions backlog and multi-product degradation."
+    },
+    {
+      "id": "github-2026-11-12-webhooks",
+      "start": "2026-11-12T18:43:00Z",
+      "end": "2026-11-12T19:33:00Z",
+      "affected": [
+        "Webhooks"
+      ],
+      "evidence": "https://www.githubstatus.com/?dupe=no",
+      "status": "resolved",
+      "causal_claim": "Provider confirmed Webhooks timeouts; not independently known to affect scheduled AIBA collectors."
+    }
+  ],
+  "alternative_external_incident": {
+    "provider": "Microsoft 365",
+    "date": "2026-11-12",
+    "evidence": "https://www.reuters.com/technology/microsoft-365-outlook-down-thousands-us-users-downdetector-shows-2026-11-12/",
+    "reported_impact": "Microsoft 365 Outlook Teams and downstream connectors; no evidence yet of direct impact on AIBA Github Actions collection."
+  },
+  "interpretation": "External incidents overlap measured historical collection-gap dates. Temporal coincidence does not establish that each missed start was caused by GitHub. The scheduling diagnosis should be reassessed in a healthy postincident period before adopting a paid scheduler.",
+  "all_collector_gaps_are_incident_caused": false
+}
