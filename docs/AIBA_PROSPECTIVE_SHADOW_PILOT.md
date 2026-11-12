@@ -95,6 +95,24 @@ and mutable filesystem do not yet prove issuance time.
 Do not publish actual tipper predictions or provider-specific
 operational details to an open Git repository.
 
+### Manual GitHub Actions readiness check
+
+After PR merge, use **Actions → Manual AIBA prospective shadow source
+readiness → Run workflow**. This workflow:
+
+- checks out both the live source code and existing aiba-feed-data
+  evidence branch read-only;
+- performs exactly the same check as the CLI, including the strict
+  90-minute snapshot age limit;
+- uploads a short aggregate JSON receipt even on failures; and
+- does **not** issue forecasts, freeze a ledger frame, create
+  monitoring risk sets, change source evidence or modify any
+  production hotspot.
+
+A red readiness run due to stale data is meaningful missingness,
+not an absent event or collector "success". This is deliberately
+manual (no new polling job or cloud service).
+
 ## Concrete non-event handling
 
 A freshly frozen frame records e.g.:
@@ -184,7 +202,10 @@ No new recurring job was added.
 
 ## Rollout restrictions
 
-- No new schedule or GitHub workflow run in this PR.
+- No new schedule and no automatic forecasting workflow. The manual
+  read-only GitHub Actions readiness check can be dispatched after
+  this PR is merged; it produces an aggregate receipt and fails red
+  when source snapshots are stale. It does not write any ledger entry.
 - No GCP cost, IAM, secrets or external write integrations.
 - No automatic ledger issuance, forecast generation or warning
   change. Manual prospective judgment remains required.
