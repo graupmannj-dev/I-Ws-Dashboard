@@ -161,7 +161,7 @@ def validate_report(p, recorded):
 def validate_adjudication(p, recorded, issued):
     keys = {"tipper_id", "outcome", "case_id", "reviewer", "source_ref",
             "adjudication_note", "event_time", "actors_match", "action_match",
-            "geography_match", "verified_through", "revision_reason"}
+            "geography_match", "verified_through", "coverage_complete", "revision_reason"}
     if not isinstance(p, dict) or set(p) != keys:
         raise LedgerError("adjudication_fields_mismatch")
     clean_id(p["tipper_id"], "tipper_id")
@@ -186,6 +186,10 @@ def validate_adjudication(p, recorded, issued):
             raise LedgerError("event_not_verified_at_adjudication")
     elif p["event_time"] is not None:
         raise LedgerError("nonmatched_outcome_has_event_time")
+    if type(p["coverage_complete"]) is not bool:
+        raise LedgerError("invalid_outcome_coverage_flag")
+    if p["outcome"] == "no_event" and not p["coverage_complete"]:
+        raise LedgerError("no_event_requires_observed_complete_risk_window")
     if p["outcome"] == "no_event" and verified < iso_time(issued["horizon_end"]):
         raise LedgerError("no_event_requires_complete_forecast_window")
     if p["revision_reason"] is not None:
