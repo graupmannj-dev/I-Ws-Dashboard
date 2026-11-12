@@ -3,6 +3,7 @@ on:
   workflow_dispatch:
 permissions:
   contents: read
+  actions: read
 jobs:
   read-only-shadow-preflight:
     runs-on: ubuntu-latest
@@ -32,11 +33,51 @@ jobs:
             --registry state/observations/latest/behavioral_registry.json \
             --fusion state/observations/latest/behavioral_fusion.json \
             --receipt "$RUNNER_TEMP/aiba-prospective-check/receipt.json"
+      - name: Audit actual collector workflow starts and source health (read only)
+        if: always()
+        env:
+          GH_ACTIONS_AUDIT_TOKEN: ${{ github.token }}
+          RUN_ROOT: ${{ runner.temp }}/aiba-prospective-check
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUN_ROOT"
+          python - <<'PY'
+          import json, os, pathlib, urllib.request
+          root = pathlib.Path(os.environ["RUN_ROOT"])
+          runs = []
+          total = None
+          for page in range(1,5):
+              req = urllib.request.Request(
+                  "https://api.github.com/repos/graupmannj-dev/I-Ws-Dashboard/"
+                  f"actions/runs?per_page=100&page={page}",
+                  headers={"Authorization":"Bearer "+os.environ["GH_ACTIONS_AUDIT_TOKEN"],
+                           "Accept":"application/vnd.github+json",
+                           "X-GitHub-Api-Version":"2022-11-28",
+                           "User-Agent":"AIBA-private-read-only-cadence-diagnostic"})
+              with urllib.request.urlopen(req,timeout=25) as resp:
+                  body=json.load(resp)
+              total=body["total_count"]
+              runs.extend({k:r.get(k) for k in (
+                  "id","name","event","created_at","status","conclusion")}
+                  for r in body.get("workflow_runs",[]))
+              if len(runs)>=total or not body.get("workflow_runs"):
+                  break
+          (root/"runs-metadata.json").write_text(
+              json.dumps({"total_count":total,"workflow_runs":runs}),encoding="utf-8")
+          PY
+          python src/scripts/aiba_collection_cadence_audit.py \
+            --runs "$RUN_ROOT/runs-metadata.json" \
+            --registry state/observations/latest/behavioral_registry.json \
+            --fusion state/observations/latest/behavioral_fusion.json \
+            --output "$RUN_ROOT/cadence-summary.json"
       - name: Preserve aggregate readiness including failures
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: manual-prospective-source-readiness-${{ github.run_id }}
-          path: ${{ runner.temp }}/aiba-prospective-check/receipt.json
+          path: |
+            ${{ runner.temp }}/aiba-prospective-check/receipt.json
+            ${{ runner.temp }}/aiba-prospective-check/cadence-summary.json
           if-no-files-found: warn
           retention-days: 7
