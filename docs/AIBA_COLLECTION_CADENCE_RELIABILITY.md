@@ -109,6 +109,22 @@ The repository can provide a manual read-only GitHub Actions check
 using the same script; no new automatic schedule, external billing
 or production source changes are introduced.
 
+### Manual AIBA readiness action now includes this audit
+
+The pre-existing **Manual AIBA prospective shadow source readiness**
+GitHub workflow now has an additional read-only step that retrieves
+up to four pages of Actions-run metadata using a minimal
+actions: read job token. It writes a separate cadence-summary.json
+alongside the original receipt.json (both aggregate-only), even
+when the original prospective freshness check fails red.
+
+This introduces **no new schedule, external service, polling costs,
+or data-branch writes**. The existing workflow_dispatch
+remains the only trigger for this readiness workflow. A real
+reliability alerting SLA would require a separate independently
+scheduled watchdog; do not represent a manual check as continuous
+monitoring.
+
 ## Recommended repair sequence
 
 1. **Near term:** use existing workflow_dispatch collectors for
