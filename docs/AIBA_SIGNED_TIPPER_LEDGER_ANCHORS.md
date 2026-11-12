@@ -109,6 +109,30 @@ timestamp but have **no prospective evidentiary value for that
 event**. Privacy and classified information restrictions remain
 the operator's responsibility.
 
+## Empirical verification of the signing service (November 12)
+
+A one-time synthetic-only GitHub Actions test confirmed the attestation
+workflow can sign a known fake hash and recover a independently
+cryptographically verifiable Sigstore/Rekor timestamp. The GitHub
+test run was
+https://github.com/graupmannj-dev/I-Ws-Dashboard/actions/runs/43332630210
+and the transparency timestamp was
+**2026-11-12T23:53:50Z**. The attested hash was 64 hexadecimal
+characters all set to F (an unmistakably synthetic subject),
+NOT a genuine AIBA forecast or real private ledger.
+The workflow's ephemeral one-time pull-request trigger was
+removed after the aggregate proof was recorded.
+
+See [permanent verification evidence](evidence/aiba-sigstore-synthetic-witness-2026-11-12.json).
+The manual workflow reuses the same successfully tested
+actions/attest@v4 signing and GH CLI verification pattern
+with narrowly scoped GitHub Actions write permissions. There
+is still **no real-world pre-news tipper** or verified leadtime
+result. A real anchor is only meaningful when a private
+ledger is committed *before* the independently established
+earliest public article and the exact private ledger hash
+is later independently validated.
+
 ## Next gates to real warning skill
 
 - Stabilize source cadence, measure provider-specific gaps,
