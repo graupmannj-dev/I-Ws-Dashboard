@@ -142,7 +142,7 @@ def evaluate(runs, registry, fusion, *, now=None, lookback_hours=LOOKBACK_HOURS)
         raise CadenceError("current_registry_fusion_pair_missing_or_mismatched")
     a,b = instant(registry.get("generated_at"),"registry_asof"),instant(
         fusion.get("generated_at"),"fusion_asof")
-    if not a <= b <= now + dt.timedelta(minutes=5):
+    if not a <= b <= now:
         raise CadenceError("bad_registry_fusion_clock")
     if registry.get("source_health") != fusion.get("collection_coverage"):
         raise CadenceError("source_health_diverged")
@@ -151,10 +151,6 @@ def evaluate(runs, registry, fusion, *, now=None, lookback_hours=LOOKBACK_HOURS)
         raise CadenceError("source_health_unavailable")
     degraded = [name for name, item in health.items() if
                 isinstance(item, dict) and (item.get("status") != "current" or item.get("missingness") != "none")]
-    if len(degraded) != len(health):
-        # A single 'current' provider may still have bounded missingness;
-        # this is not a closed global coverage denominator.
-        pass
     newest_age_min = (now-b).total_seconds()/60
     readiness = "gap_or_stale_source_review_required" if any_gaps or newest_age_min > 90 else "bounded_provisional_source_readiness"
     return {
