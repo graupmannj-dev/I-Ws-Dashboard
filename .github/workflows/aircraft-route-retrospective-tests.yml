@@ -9,6 +9,7 @@ on:
       - 'scripts/aircraft_real_trace_quality.py'
       - 'scripts/aircraft_real_source_pilot.py'
       - 'scripts/aircraft_airway_prefilter.py'
+      - 'scripts/aircraft_postlanding_retention.py'
       - 'tests/test_aircraft_route_history.py'
       - 'tests/test_aircraft_archive_probe.py'
       - 'tests/test_aircraft_cohort_archive_scan.py'
@@ -16,6 +17,7 @@ on:
       - 'tests/test_aircraft_real_trace_quality.py'
       - 'tests/test_aircraft_real_source_pilot.py'
       - 'tests/test_aircraft_airway_prefilter.py'
+      - 'tests/test_aircraft_postlanding_retention.py'
       - 'data/validation/aircraft_one_day_source_pin.json'
       - 'data/validation/aircraft_one_day_benchmark_control.json'
       - 'data/validation/aircraft_sample_day_2026_11_07_pin.json'
@@ -24,6 +26,7 @@ on:
       - 'docs/AIRCRAFT_ONE_DAY_BENCHMARK.md'
       - 'docs/AIRCRAFT_REAL_TRACE_QUALITY.md'
       - 'docs/AIRCRAFT_FAA_NASR_PREFILTER.md'
+      - 'docs/AIRCRAFT_POSTLANDING_RETENTION.md'
       - 'docs/AIBA_TIPPER_EVIDENCE_LOOP.md'
       - '.github/workflows/aircraft-one-day-benchmark.yml'
       - 'docs/AIRCRAFT_ROUTE_ANOMALY_PILOT.md'
@@ -44,5 +47,5 @@ jobs:
           python-version: '3.11'
       - name: Compile and test offline archive scanner and retrospective comparator
         run: |
-          python -m compileall -q scripts/aircraft_route_history.py scripts/aircraft_archive_probe.py scripts/aircraft_cohort_archive_scan.py scripts/aircraft_one_day_benchmark.py scripts/aircraft_real_trace_quality.py scripts/aircraft_real_source_pilot.py scripts/aircraft_airway_prefilter.py
-          python -m unittest tests.test_aircraft_route_history tests.test_aircraft_archive_probe tests.test_aircraft_cohort_archive_scan tests.test_aircraft_one_day_benchmark tests.test_aircraft_real_trace_quality tests.test_aircraft_real_source_pilot tests.test_aircraft_airway_prefilter -v
+          python -m compileall -q scripts/aircraft_route_history.py scripts/aircraft_archive_probe.py scripts/aircraft_cohort_archive_scan.py scripts/aircraft_one_day_benchmark.py scripts/aircraft_real_trace_quality.py scripts/aircraft_real_source_pilot.py scripts/aircraft_airway_prefilter.py scripts/aircraft_postlanding_retention.py
+          python -m unittest tests.test_aircraft_route_history tests.test_aircraft_archive_probe tests.test_aircraft_cohort_archive_scan tests.test_aircraft_one_day_benchmark tests.test_aircraft_real_trace_quality tests.test_aircraft_real_source_pilot tests.test_aircraft_airway_prefilter tests.test_aircraft_postlanding_retention -v
