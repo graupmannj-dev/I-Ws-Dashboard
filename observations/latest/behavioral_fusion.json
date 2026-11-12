@@ -3,19 +3,18 @@
   "automated_severity_changes": 0,
   "collection_coverage": {
     "amsa": {
-      "age_hours": 4.76,
+      "age_hours": 7.76,
       "checked_at": "2026-11-12T02:29:18Z",
-      "first_provider_baseline": false,
-      "missingness": "provider_bounded_not_exhaustive",
+      "missingness": "not_measured_not_zero",
       "mode": "amsa",
       "provider_status": "collected",
       "snapshot_at": "2026-11-12T02:29:18Z",
       "source_scope": "AMSA NAVAREA X only",
-      "status": "current",
+      "status": "stale_or_unavailable",
       "truncated_or_partial": false
     },
     "commercial": {
-      "age_hours": 15.84,
+      "age_hours": 18.84,
       "checked_at": "2026-11-11T15:24:33Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -27,41 +26,42 @@
       "truncated_or_partial": false
     },
     "ioda": {
-      "age_hours": 4.76,
+      "age_hours": 7.76,
       "checked_at": "2026-11-12T02:29:18Z",
-      "first_provider_baseline": false,
-      "missingness": "provider_bounded_not_exhaustive",
+      "missingness": "not_measured_not_zero",
       "mode": "ioda",
       "provider_status": "collected",
       "snapshot_at": "2026-11-12T02:29:18Z",
       "source_scope": "IODA country events (first 100 of first page, 4-hour query)",
-      "status": "current",
+      "status": "stale_or_unavailable",
       "truncated_or_partial": false
     },
     "live_airspace": {
-      "age_hours": 4.75,
-      "checked_at": "2026-11-12T02:29:50Z",
-      "missingness": "not_measured_not_zero",
+      "age_hours": 0.0,
+      "checked_at": "2026-11-12T10:14:42Z",
+      "first_provider_baseline": false,
+      "missingness": "partial_sampling_not_worldwide_exhaustive",
       "mode": "live_airspace",
       "provider_status": "partial",
-      "snapshot_at": "2026-11-12T02:29:50Z",
+      "snapshot_at": "2026-11-12T10:14:42Z",
       "source_scope": "FAA temporary flight restrictions: United States only",
-      "status": "stale_or_unavailable",
+      "status": "current_partial",
       "truncated_or_partial": true
     },
     "live_maritime": {
-      "age_hours": 4.75,
-      "checked_at": "2026-11-12T02:29:50Z",
-      "missingness": "not_measured_not_zero",
+      "age_hours": 0.0,
+      "checked_at": "2026-11-12T10:14:42Z",
+      "first_provider_baseline": false,
+      "missingness": "partial_sampling_not_worldwide_exhaustive",
       "mode": "live_maritime",
       "provider_status": "partial",
-      "snapshot_at": "2026-11-12T02:29:50Z",
+      "snapshot_at": "2026-11-12T10:14:42Z",
       "source_scope": "Danish Maritime Authority Niord notices: regional Baltic/North Sea",
-      "status": "stale_or_unavailable",
+      "status": "current_partial",
       "truncated_or_partial": true
     },
     "nga": {
-      "age_hours": 4.76,
+      "age_hours": 7.76,
       "checked_at": "2026-11-11T21:19:46Z",
       "missingness": "not_measured_not_zero",
       "mode": "nga",
@@ -72,7 +72,7 @@
       "truncated_or_partial": false
     },
     "official": {
-      "age_hours": 0.0,
+      "age_hours": 3.0,
       "checked_at": "2026-11-12T07:14:40Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -84,7 +84,7 @@
       "truncated_or_partial": false
     },
     "watchlist": {
-      "age_hours": 0.0,
+      "age_hours": 3.0,
       "checked_at": "2026-11-12T07:14:40Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -98,13 +98,13 @@
   },
   "forecast_probability": null,
   "gdelt_context": "separate_analytical_stream_not_a_gate_or_confirmation",
-  "generated_at": "2026-11-12T07:14:42Z",
+  "generated_at": "2026-11-12T10:14:46Z",
   "geographic_scope": "source_declared_only",
   "history_diagnostics": {
     "excluded_observations": {
       "old_source_publication": 1
     },
-    "history_files_examined": 14,
+    "history_files_examined": 15,
     "lookback_hours": 72,
     "recent_unique_records": 92
   },
@@ -118,8 +118,8 @@
   "new_single_source_count_total": 0,
   "new_single_source_leads": [],
   "prediction_horizon": null,
-  "registry_asof": "2026-11-12T07:14:41Z",
-  "registry_source_count": 289,
+  "registry_asof": "2026-11-12T10:14:46Z",
+  "registry_source_count": 377,
   "review_groups": [],
   "review_groups_count_total": 0,
   "schema": "aiba.behavioral-convergence-shadow.v1",
