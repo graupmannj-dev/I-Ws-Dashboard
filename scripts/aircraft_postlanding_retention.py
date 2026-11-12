@@ -245,6 +245,11 @@ def main(argv=None):
                         help="Optional PRIVATE .json.gz copy outside the Git checkout")
     parser.add_argument("--interval-seconds", type=int, default=MAX_TIME_GAP_S)
     args = parser.parse_args(argv)
+    # Fail before any write: a user-supplied receipt path may alias the
+    # original input. Even a failure receipt must NEVER replace raw data.
+    if args.input.resolve() == args.receipt.resolve():
+        print("Receipt path aliases original input; refusing to write")
+        return 1
     receipt = {
         "schema": RECEIPT_SCHEMA, "status": "not_eligible",
         "original_data_deleted": False, "source_mutated": False,
@@ -257,6 +262,8 @@ def main(argv=None):
     try:
         checkout = Path(__file__).resolve().parents[1]
         if args.copy is not None:
+            if args.copy.exists() or args.copy.is_symlink():
+                raise RetentionError("private_archive_already_exists_use_unique_path")
             if args.copy.suffixes[-2:] != [".json", ".gz"]:
                 raise RetentionError("private_archive_output_must_end_json_gz")
             if args.copy.resolve().is_relative_to(checkout):
