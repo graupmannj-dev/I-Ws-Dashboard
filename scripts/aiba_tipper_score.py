@@ -26,7 +26,11 @@ def score_entries(entries):
     reports = {}
     outcomes = {}
     revisions = Counter()
+    frames = []
     for event in entries:
+        if event["kind"] == "frame":
+            frames.append(event)
+            continue
         p = event["payload"]
         key = p["tipper_id"]
         if event["kind"] == "issued":
@@ -107,6 +111,8 @@ def score_entries(entries):
         "schema": SCHEMA, "status": "offline_ledger_score_review_required",
         "scored_unit": "issued_tipper_not_unique_geopolitical_event",
         "source_entries": len(entries),
+        "prospective_monitor_frames": len(frames),
+        "monitor_frames_are_not_verified_negative_outcomes": True,
         "counts": dict(counts),
         "duplicate_event_cases_among_hits": len(repeated_case_ids),
         "adjudication_revisions": sum(revisions.values()),
