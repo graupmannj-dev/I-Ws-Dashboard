@@ -196,10 +196,66 @@ def validate_adjudication(p, recorded, issued):
         clean_string(p["revision_reason"], "revision_reason", minimum=20)
 
 
+def validate_monitor_frame(p, recorded, entries):
+    """Bounded, non-exhaustive prospective monitoring window; NOT a warning."""
+    fields = {"frame_id", "window_start", "window_end", "registry_asof",
+              "fusion_asof", "source_sha256", "sensor_coverage",
+              "single_source_review_count", "cross_family_review_count",
+              "collection_scope", "approved_tippers", "source_completeness_verified",
+              "negative_outcome_inferred", "automated_warning_changes"}
+    if not isinstance(p, dict) or set(p) != fields:
+        raise LedgerError("monitor_frame_fields_mismatch")
+    clean_id(p["frame_id"], "frame_id")
+    if any(e["kind"] == "frame" and e["payload"]["frame_id"] == p["frame_id"]
+           for e in entries):
+        raise LedgerError("monitor_frame_id_already_registered")
+    now = iso_time(recorded)
+    start, end = iso_time(p["window_start"]), iso_time(p["window_end"])
+    if not now <= start <= now + dt.timedelta(minutes=5):
+        raise LedgerError("monitor_window_start_must_be_prospective")
+    if not dt.timedelta(hours=1) <= end - start <= dt.timedelta(hours=24):
+        raise LedgerError("monitor_window_duration_invalid")
+    reg, fusion = iso_time(p["registry_asof"]), iso_time(p["fusion_asof"])
+    if not now - dt.timedelta(minutes=90) <= reg <= fusion <= now:
+        raise LedgerError("monitor_sources_stale_future_or_out_of_order")
+    hashes = p["source_sha256"]
+    if (not isinstance(hashes, dict) or set(hashes) != {"registry", "fusion"} or
+            any(not isinstance(x, str) or not re.fullmatch(r"[0-9a-f]{64}", x)
+                for x in hashes.values())):
+        raise LedgerError("monitor_source_hash_invalid")
+    coverage = p["sensor_coverage"]
+    if not isinstance(coverage, list) or not 1 <= len(coverage) <= 30:
+        raise LedgerError("monitor_coverage_missing")
+    seen = set()
+    for provider in coverage:
+        if not isinstance(provider, dict) or set(provider) != {"provider", "status", "missingness", "source_scope"}:
+            raise LedgerError("monitor_provider_schema_invalid")
+        name = clean_string(provider["provider"], "provider", maximum=100)
+        if name in seen:
+            raise LedgerError("duplicate_monitor_provider")
+        seen.add(name)
+        for key in ("status", "missingness", "source_scope"):
+            clean_string(provider[key], key, maximum=350)
+    for field in ("single_source_review_count", "cross_family_review_count"):
+        value = p[field]
+        if type(value) is not int or not 0 <= value <= 100000:
+            raise LedgerError("monitor_count_invalid")
+    if (p["collection_scope"] != "source_observed_nonexhaustive"
+            or type(p["source_completeness_verified"]) is not bool
+            or p["source_completeness_verified"] is not False
+            or type(p["negative_outcome_inferred"]) is not bool
+            or p["negative_outcome_inferred"] is not False
+            or type(p["approved_tippers"]) is not int or p["approved_tippers"] != 0
+            or type(p["automated_warning_changes"]) is not int or p["automated_warning_changes"] != 0):
+        raise LedgerError("monitor_frame_cannot_claim_world_coverage_or_promote_warnings")
+
+
 def validate_new(kind, payload, recorded, entries):
     issued = {e["payload"]["tipper_id"]: e["payload"]
               for e in entries if e["kind"] == "issued"}
-    if kind == "issued":
+    if kind == "frame":
+        validate_monitor_frame(payload, recorded, entries)
+    elif kind == "issued":
         validate_issuance(payload, recorded)
         if payload["tipper_id"] in issued:
             raise LedgerError("tipper_id_already_issued")
@@ -319,7 +375,7 @@ def read_ledger(path):
 
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("command", choices=("issue", "report", "adjudicate", "verify"))
+    parser.add_argument("command", choices=("issue", "report", "adjudicate", "frame", "verify"))
     parser.add_argument("--ledger", required=True, type=Path,
                         help="Private append-only local ledger outside the Git checkout")
     parser.add_argument("--payload", type=Path, help="JSON record for issue/report/adjudicate")
@@ -338,7 +394,7 @@ def main(argv=None):
                 raise LedgerError("payload_missing_or_aliases_ledger")
             payload = load_json_file(args.payload)
             operation = {"issue": "issued", "report": "report",
-                         "adjudicate": "adjudicated"}[args.command]
+                         "adjudicate": "adjudicated", "frame": "frame"}[args.command]
             print(json.dumps(append(args.ledger, operation, payload)))
         return 0
     except (LedgerError, OSError, TypeError, OverflowError, ValueError) as exc:
