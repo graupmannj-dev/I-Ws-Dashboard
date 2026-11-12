@@ -19,7 +19,7 @@ if __package__ in (None, ""):
 from scripts import aiba_tipper_ledger as ledger
 
 SCHEMA = "aiba.prospective-shadow-monitor-preflight.v1"
-REGISTRY_SCHEMA = "aiba.behavioral-source-registry.v1"
+REGISTRY_SCHEMA = "aiba.behavioral-observations.v1"
 FUSION_SCHEMA = "aiba.behavioral-convergence-shadow.v1"
 MAX_SOURCE_BYTES = 4 * 1024 * 1024
 MAX_SOURCES = 30
