@@ -12,13 +12,80 @@ flight paths in this test. The only objects compared here are **geometric
 and short-time diagnostic signatures**. Do not infer precision/recall
 about real threats or real aircraft mission changes from these outputs.
 
+## Observed production-source findings (November 11/12, 2026)
+
+The complete November 10 production TAR was downloaded and verified on a
+standard public GitHub runner. There were two runs; **the first found a
+real defect** in the source PR42 time-anchor selection: the code picked
+the first observation at or after the 600-second interval, which can
+produce a stored gap over 600 seconds when raw ADS-B rows are irregular.
+This invalidated 73 out of 130 otherwise plausible shadow legs.
+The follow-up fix anchors at the last observation BEFORE a crossed
+time deadline and uses additional selected rows to keep every
+stored interval <=600 seconds. A synthetic irregular-interval
+regression test now covers the failure.
+
+The initial run is recorded for audit, not blended with the corrected
+results. Evidence: [Initial run](https://github.com/graupmannj-dev/I-Ws-Dashboard/actions/runs/43139506141);
+[Corrected run](https://github.com/graupmannj-dev/I-Ws-Dashboard/actions/runs/43140037805);
+[permanent comparative aggregate receipt](evidence/aircraft-retention-heldout-2026-11-10.json).
+
+**Corrected-run results:**
+
+| Metric | Observed |
+| --- | ---: |
+| Source archive size; both SHA-256 checks passed | 3,689,415,168 B |
+| Total source trace members | 75,360 |
+| Path-independent sampled traces | 70 |
+| Provisional segments | 1,107 |
+| Too short / sparse / otherwise subthreshold segments | 977 |
+| Uninterrupted segments evaluated for compression | 130 |
+| Original positions in those segments | 54,343 |
+| Thinned positions in those segments | 2,055 (96.22% reduction) |
+| Gzip original geometry-arrays (not source archive) | 752,551 B |
+| Gzip thinned geometry-arrays | 38,297 B (94.91% reduction) |
+| Max verified horizontal reconstruction error | 1.99185 km |
+| Max verified altitude reconstruction error | 499.537 ft |
+| Segment-level full lateral/altitude diagnostic positives | 0 / 1 |
+| Full-positive events absent from reduced version | 0 / 0 |
+| New positives when applying the SAME triplet code to reduced positions | 99 lateral / 60 altitude |
+
+The new triplet positives do **not** indicate 159 physical
+maneuvers. This is an explicit *sampling-cadence mismatch*: with
+different adjacent timestamps, local triplets cover different
+distances and durations. Re-running a high-frequency event
+detector on a sparse geometry archive without adapting its
+sampling logic can generate spurious signatures. The absence
+of any original lateral-positive segment also means this
+sample **cannot estimate real short-turn sensitivity**.
+A separate synthetic test demonstrates that a **1.5 km,
+short-lived lateral excursion can disappear** under the 2 km
+per-point reconstruction allowance, despite satisfying the
+claimed geometry bound.
+
+**Conclusions:** the time-anchor bug is fixed; the implementation
+can reduce the *eligible shadow legs'* geometry arrays by roughly
+95% even relative to gzip-compressed originals. That is **NOT**
+an estimate of savings from the 3.69 GB daily source acquisition,
+or from a real deployed backend. The sampled data are
+historical observations, not independently verified
+completed/landed/normal flights. No actual event-labeled
+production warning detector was run, and none of this supports
+a raw-retention purge. The normal-review gate in PR42 remains
+mandatory, unvalidated and inactive in production.
+
+The one-time GitHub Actions event trigger was removed from
+the PR branch after the corrected empirical run. The complete
+raw source files and ephemeral selected geometry were discarded
+by the isolated runner; only the aggregate receipt is retained.
+
 ## Pre-registered tests and safeguards
 
 The source is the same SHA-256-pinned Nov 10, 2026 ADSB.lol production
 archive previously benchmarked in PR #39. The runner uses one standard
 public-repo GitHub Actions machine, with a fixed 4.0 GB scan cap,
 600-second time cap, selected sample maximum 150 aircraft traces,
-48 MiB expanded source cap, and ~5.7 GB minimum ephemeral storage
+48 MiB expanded source cap, and source-size plus 2 GiB minimum ephemeral storage
 before downloads. Downloading each source part requires SHA-256
 verification and exact publication metadata match.
 
