@@ -1,0 +1,82 @@
+name: ONE-TIME PR47 Sigstore witnessed-time mechanism test
+on:
+  pull_request:
+    types: [ready_for_review]
+permissions:
+  contents: read
+  id-token: write
+  attestations: write
+  artifact-metadata: write
+jobs:
+  experimental-timestamp-witness:
+    if: github.event.pull_request.number == 47 && github.event.pull_request.head.repo.full_name == 'graupmannj-dev/I-Ws-Dashboard'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Prepare unmistakably synthetic anchor — no actual tippers
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/aiba-synthetic-signed-witness"
+          python scripts/aiba_tipper_anchor.py public-anchor \
+            --head-hash ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff \
+            --entry-count 1 \
+            --github-run-id "$GITHUB_RUN_ID" \
+            --source-sha "$GITHUB_SHA" \
+            --output "$RUNNER_TEMP/aiba-synthetic-signed-witness/anchor-subject.json"
+      - name: Obtain GitHub-hosted Sigstore witness for synthetic digest
+        uses: actions/attest@v4
+        with:
+          subject-path: ${{ runner.temp }}/aiba-synthetic-signed-witness/anchor-subject.json
+      - name: Verify cryptographic signer identity and transparency timestamp
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          file="$RUNNER_TEMP/aiba-synthetic-signed-witness/anchor-subject.json"
+          for attempt in 1 2 3; do
+            if gh attestation verify "$file" \
+              --repo graupmannj-dev/I-Ws-Dashboard \
+              --signer-workflow graupmannj-dev/I-Ws-Dashboard/.github/workflows/aiba-one-time-pr47-signed-witness-test.yml \
+              --format json > "$RUNNER_TEMP/aiba-synthetic-signed-witness/verified.json"; then
+              break
+            fi
+            if [ "$attempt" = 3 ]; then echo "No verifiable GitHub Sigstore proof"; exit 1; fi
+            sleep 5
+          done
+          python - <<'PY'
+          import json,os,pathlib
+          p=pathlib.Path(os.environ["RUNNER_TEMP"])/"aiba-synthetic-signed-witness"
+          records=json.loads((p/"verified.json").read_text())
+          if not isinstance(records,list) or not records: raise SystemExit("No verified attestation")
+          witnesses=[t for r in records if isinstance(r,dict)
+                     for t in (r.get("verificationResult",{}) or {}).get("verifiedTimestamps",[])]
+          if not witnesses: raise SystemExit("Missing cryptographically witnessed timestamp")
+          output={
+              "schema":"aiba.synthetic-sigstore-witness-test.v1",
+              "status":"verified_synthetic_mechanism_only",
+              "subject_is_synthetic":True,"ledger_contains_actual_forecast":False,
+              "github_run_id":os.environ["GITHUB_RUN_ID"],
+              "verified_timestamps":witnesses,
+              "signer_workflow_verification_requested":True,
+              "actual_pre_news_skill_verified":False,
+          }
+          (p/"receipt.json").write_text(json.dumps(output,indent=2)+"\n")
+          PY
+      - name: Archive public synthetic witness evidence, not source content
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: one-off-pr47-synthetic-signed-witness-${{ github.run_id }}
+          path: |
+            ${{ runner.temp }}/aiba-synthetic-signed-witness/anchor-subject.json
+            ${{ runner.temp }}/aiba-synthetic-signed-witness/receipt.json
+          if-no-files-found: warn
+          retention-days: 7
