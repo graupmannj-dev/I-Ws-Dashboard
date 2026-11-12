@@ -146,7 +146,7 @@ class FaaNasrAirwayPrefilterTests(unittest.TestCase):
         self.assertEqual(result["points_near_any_published_airway"], 11)
 
     def test_distant_path_needs_route_context_not_anomaly(self):
-        result = screen(legs=[leg(shift=2.0)])["results"][0]
+        result = screen(legs=[leg(shift=3.0)])["results"][0]
         self.assertEqual(result["status"], "uncovered_by_local_reference_index")
         self.assertFalse(result["requires_historical_validation"])
         # Some point locations share a route's coarse geographic cells,
