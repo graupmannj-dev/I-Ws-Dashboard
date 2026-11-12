@@ -63,6 +63,7 @@ def adjudication(tid="watch-001", *, outcome="matched_event",
             "action_match": outcome == "matched_event",
             "geography_match": outcome == "matched_event",
             "verified_through": verified_through,
+            "coverage_complete": outcome == "no_event",
             "revision_reason": revision_reason}
 
 
@@ -142,6 +143,14 @@ class TipperLedgerTests(unittest.TestCase):
         with self.assertRaisesRegex(ledger.LedgerError,"explicit_actor_action_geography"):
             self.add("adjudicated",d,ADJ)
         self.assertEqual(len(ledger.read_ledger(self.path)[0]),1)
+
+    def test_no_event_with_unverified_coverage_cannot_be_negative(self):
+        self.add("issued", issued(), ISSUE)
+        record = adjudication(outcome="no_event")
+        record["coverage_complete"] = False
+        with self.assertRaisesRegex(ledger.LedgerError, "observed_complete_risk_window"):
+            self.add("adjudicated", record, ADJ)
+        self.assertEqual(len(ledger.read_ledger(self.path)[0]), 1)
 
     def test_revisions_append_not_overwrite(self):
         self.add("issued",issued(),ISSUE)
