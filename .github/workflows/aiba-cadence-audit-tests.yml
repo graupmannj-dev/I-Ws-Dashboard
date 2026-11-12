@@ -1,0 +1,25 @@
+name: AIBA collector cadence reliability tests (PR only)
+on:
+  pull_request:
+    paths:
+      - 'scripts/aiba_collection_cadence_audit.py'
+      - 'tests/test_aiba_collection_cadence_audit.py'
+      - 'docs/AIBA_COLLECTION_CADENCE_RELIABILITY.md'
+      - '.github/workflows/aiba-cadence-audit-tests.yml'
+permissions:
+  contents: read
+jobs:
+  offline-source-cadence:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Audit source-clock and missingness contract with synthetic workflow metadata
+        run: |
+          python -m compileall -q scripts/aiba_collection_cadence_audit.py
+          python -m unittest tests.test_aiba_collection_cadence_audit -v
