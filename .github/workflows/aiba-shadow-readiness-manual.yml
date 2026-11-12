@@ -1,0 +1,42 @@
+name: Manual AIBA prospective shadow source readiness
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  read-only-shadow-preflight:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - name: Checkout tested source code
+        uses: actions/checkout@v4
+        with:
+          path: src
+          persist-credentials: false
+      - name: Checkout existing source evidence branch read-only
+        uses: actions/checkout@v4
+        with:
+          ref: aiba-feed-data
+          path: state
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Read and evaluate current source snapshots without issuing warnings
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/aiba-prospective-check"
+          python src/scripts/aiba_prospective_shadow.py \
+            --mode check \
+            --registry state/observations/latest/behavioral_registry.json \
+            --fusion state/observations/latest/behavioral_fusion.json \
+            --receipt "$RUNNER_TEMP/aiba-prospective-check/receipt.json"
+      - name: Preserve aggregate readiness including failures
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: manual-prospective-source-readiness-${{ github.run_id }}
+          path: ${{ runner.temp }}/aiba-prospective-check/receipt.json
+          if-no-files-found: warn
+          retention-days: 7
