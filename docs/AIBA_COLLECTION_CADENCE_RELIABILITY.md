@@ -45,6 +45,39 @@ The previously tested shadow readiness check correctly refused stale
 registry/fusion data stamped 2026-11-12T19:56:26Z. An incomplete workflow
 cadence is a priority engineering blocker for a 24-hour prospective test.
 
+## One-time real-source follow-up audit (UTC Nov 12, 23:42:27)
+
+PR #46 ran the independent source/start audit using a read-only
+GitHub-hosted runner and the actual latest aiba-feed-data branch.
+[Run and aggregate artifact](https://github.com/graupmannj-dev/I-Ws-Dashboard/actions/runs/43331055493);
+[permanent reproducible aggregate record](evidence/aiba-collector-cadence-real-2026-11-12.json).
+
+The bounded API fetch covered at least the last 72 hours, reading
+400 run records. The actual 72-hour observations were:
+
+| Collector | Observed starts | Success conclusions | Start intervals >2× nominal | Max start gap |
+| --- | ---: | ---: | ---: | ---: |
+| Structural friction | 11 | 11 | 10 | 499.85 min |
+| Official air/maritime restrictions | 11 | 11 | 10 | 493.67 min |
+| Mixed-mode operational (optimistic) | 10 | 10 | 0 >720 min | 696.50 min |
+
+At the audit, the most recent behavioral fusion was dated
+2026-11-12T19:56:26Z, **226.02 minutes old**, violating
+the 90-minute shadow freshness gate. Restriction and friction
+start timestamps had not advanced for over 5 hours. All eight
+current provider statuses were bounded, degraded or otherwise
+not verified exhaustive. There were **no verified global
+no-event observations** and no issued prospective warnings.
+
+These figures DO NOT tell us how many individual source
+observations were missed or whether GitHub specifically
+dropped each scheduled trigger. They do show that a claim
+of continuous 15/30-minute collection is unsupported.
+
+The one-time GitHub PR experiment workflow was removed
+after recording the result. Existing collection schedules
+and source branches remain unchanged.
+
 ## Offline audit script
 
 ~~~bash
