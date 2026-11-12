@@ -1,0 +1,84 @@
+name: ONE-TIME PR46 observed GitHub run cadence audit
+on:
+  pull_request:
+    types: [ready_for_review]
+permissions:
+  contents: read
+  actions: read
+jobs:
+  one-off-real-cadence:
+    if: github.event.pull_request.number == 46 && github.event.pull_request.head.repo.full_name == 'graupmannj-dev/I-Ws-Dashboard'
+    runs-on: ubuntu-latest
+    timeout-minutes: 7
+    steps:
+      - name: Checkout candidate source and current observational evidence
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          path: src
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          ref: aiba-feed-data
+          path: state
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Fetch bounded GitHub workflow metadata (READ only)
+        env:
+          GITHUB_ACTIONS_TOKEN: ${{ github.token }}
+          RUN_ROOT: ${{ runner.temp }}/aiba-cadence
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUN_ROOT"
+          python - <<'PY'
+          import json, os, pathlib, urllib.request
+          output = pathlib.Path(os.environ["RUN_ROOT"])/"runs.json"
+          items = []
+          last_total = None
+          for page in range(1, 5):
+              url = ("https://api.github.com/repos/graupmannj-dev/I-Ws-Dashboard/"
+                     f"actions/runs?per_page=100&page={page}")
+              req = urllib.request.Request(url, headers={
+                  "Authorization": "Bearer " + os.environ["GITHUB_ACTIONS_TOKEN"],
+                  "Accept": "application/vnd.github+json",
+                  "X-GitHub-Api-Version": "2022-11-28",
+                  "User-Agent": "AIBA-read-only-cadence-audit"})
+              with urllib.request.urlopen(req, timeout=25) as resp:
+                  result = json.load(resp)
+              last_total = result["total_count"]
+              items.extend({key: x.get(key) for key in (
+                  "id", "name", "event", "created_at", "status", "conclusion")}
+                  for x in result.get("workflow_runs", []))
+              if len(items) >= last_total or not result.get("workflow_runs"):
+                  break
+          output.write_text(json.dumps({"total_count": last_total, "workflow_runs": items}))
+          PY
+      - name: Analyze real start gaps and source freshness, no alerts
+        env:
+          RUN_ROOT: ${{ runner.temp }}/aiba-cadence
+        shell: bash
+        run: |
+          set -euo pipefail
+          python src/scripts/aiba_collection_cadence_audit.py \
+            --runs "$RUN_ROOT/runs.json" \
+            --registry state/observations/latest/behavioral_registry.json \
+            --fusion state/observations/latest/behavioral_fusion.json \
+            --output "$RUN_ROOT/summary.json"
+          python - <<'PY'
+          import json, os, pathlib
+          x=json.loads((pathlib.Path(os.environ["RUN_ROOT"])/"summary.json").read_text())
+          print("CADENCE_STATUS", x["status"])
+          print("FUSION_AGE_MINUTES", x["fusion_age_minutes"])
+          for name, row in x["collector_groups"].items():
+              print("COLLECTOR_GAP", name, row["max_observed_start_gap_minutes"])
+          PY
+      - name: Archive aggregate reliability evidence only
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: one-off-pr46-cadence-reliability-${{ github.run_id }}
+          path: ${{ runner.temp }}/aiba-cadence/summary.json
+          retention-days: 7
+          if-no-files-found: warn
