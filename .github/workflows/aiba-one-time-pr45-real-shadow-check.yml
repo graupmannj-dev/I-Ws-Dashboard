@@ -1,0 +1,47 @@
+name: ONE-TIME PR45 real production-shaped shadow source preflight
+on:
+  pull_request:
+    types: [ready_for_review]
+permissions:
+  contents: read
+jobs:
+  one-time-real-shadow-check:
+    if: github.event.pull_request.number == 45 && github.event.pull_request.head.repo.full_name == 'graupmannj-dev/I-Ws-Dashboard' && github.event.pull_request.base.ref == 'main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - name: Checkout the candidate code without persistent credentials
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          path: src
+      - name: Checkout existing AIBA observation snapshots read-only
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          ref: aiba-feed-data
+          path: state
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Snapshot current real production-form data (NO warnings or writes)
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/aiba-shadow-check"
+          rc=0
+          python src/scripts/aiba_prospective_shadow.py \
+            --registry state/observations/latest/behavioral_registry.json \
+            --fusion state/observations/latest/behavioral_fusion.json \
+            --receipt "$RUNNER_TEMP/aiba-shadow-check/receipt.json" \
+            --mode check || rc=$?
+          echo "CHECK_EXIT=$rc"
+          python -c "import json,os; p=os.path.join(os.environ['RUNNER_TEMP'],'aiba-shadow-check','receipt.json'); a=json.load(open(p)); print('PILOT_STATUS',a['status']); print('ISSUED_WARNING_COUNT',a['issued_warning_count'])"
+      - name: Publish bounded aggregate outcome, no per-aircraft/source geometry
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: one-off-pr45-shadow-source-check-${{ github.run_id }}
+          path: ${{ runner.temp }}/aiba-shadow-check/receipt.json
+          if-no-files-found: warn
+          retention-days: 7
