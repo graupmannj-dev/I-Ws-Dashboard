@@ -125,6 +125,39 @@ The checked source files must still be fresh relative to the
 actual pilot execution clock. The code will correctly reject
 them as stale when they have aged past 90 minutes.
 
+## First real source preflight outcome (November 12, 2026)
+
+The one-off PR45 real-source test read the **actual current
+aiba-feed-data branch** using read-only GitHub Actions checkouts.
+It used no live new collector, no source writes and no automatic
+warning/ledger issuance.
+
+- [Experiment run](https://github.com/graupmannj-dev/I-Ws-Dashboard/actions/runs/43321912652)
+- [Permanent aggregate receipt and source freshness audit](evidence/aiba-shadow-real-preflight-2026-11-12.json)
+- Source branch latest snapshot from 19:56:26 UTC on Nov 12:
+  one new unreviewed source-only lead, zero cross-family nominations,
+  zero approved warnings, unavailable NGA source and partial
+  official air/maritime sampling.
+- **Result:** unavailable / source_snapshot_stale_or_future.
+  On the runner this source material had aged **more than the
+  predeclared 90-minute freshness ceiling**. It was NOT a prospective
+  frame, not a negative event, and not a miss.
+- No frozen warning or future outcome was registered. A previous
+  successful collector run is insufficient evidence of fresh
+  current monitoring if the latest snapshots are stale.
+
+The latest evidence-branch commit at the preflight was
+18fc0f38bfc0956eba0612beb2b458581eb0539c. Multiple
+past scheduled collection jobs succeeded, but their timing was
+irregular: the missing newer snapshot must be investigated
+before relying on 24-hour prospective coverage. Scheduled GitHub
+Actions run time is best-effort and a successful prior job does
+not prove punctual ongoing collection.
+
+The test-only workflow used for this one-off live check
+was removed from this PR after the aggregate receipt was saved.
+No new recurring job was added.
+
 ## Evaluation plan
 
 1. In manual, local shadow mode, capture actual snapshots as
