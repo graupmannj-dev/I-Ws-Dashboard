@@ -216,6 +216,7 @@ class TipperLedgerTests(unittest.TestCase):
     def test_duplicate_case_not_independent_warning_success(self):
         for ident in ("watch-001","watch-002"):
             self.add("issued",issued(ident),ISSUE)
+        for ident in ("watch-001","watch-002"):
             self.add("adjudicated",adjudication(ident),ADJ)
         s=scoring.score_ledger(self.path)
         self.assertEqual(s["counts"]["resolved_matched_in_horizon"],2)
