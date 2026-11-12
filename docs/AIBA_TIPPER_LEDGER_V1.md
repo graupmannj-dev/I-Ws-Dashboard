@@ -19,7 +19,7 @@ truncated chain fails closed. Payloads cannot select the issue timestamp.
 The local ledger is not cryptographically immutable against a privileged
 operator who rewrites and rehashes the entire file, nor is its computer
 clock externally trusted. Any future claim of proven pre-news issuance
-will require an externally timestamped/writ e-once chain-head anchor and
+will require an externally timestamped/write-once chain-head anchor and
 clock-synchronization evidence.
 
 ## Three payload types
@@ -48,10 +48,11 @@ never credits pre-news lead time.
 
 **Adjudicated** includes tipper_id, outcome, case_id, reviewer,
 source_ref, adjudication_note, event_time (matched outcome only),
-actors_match, action_match, geography_match, verified_through and
-revision_reason. matched_event requires explicit actor/action/area
-match. no_event is accepted only if the entire original forecast
-horizon was independently verified. censored/inconclusive/not_applicable
+actors_match, action_match, geography_match, verified_through,
+coverage_complete and revision_reason. matched_event requires explicit actor/action/area
+match. no_event is accepted only if coverage_complete is explicitly true
+and the entire original forecast horizon was independently verified.
+This flag is an analyst assertion, not independently audited source coverage. censored/inconclusive/not_applicable
 cannot count as observed negative outcomes. Later corrections append
 a new adjudication with a nonempty substantive revision reason.
 
