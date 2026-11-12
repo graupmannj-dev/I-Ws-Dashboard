@@ -1,0 +1,26 @@
+name: AIBA tipper ledger offline evidence-contract tests (PR only)
+on:
+  pull_request:
+    paths:
+      - 'scripts/aiba_tipper_ledger.py'
+      - 'scripts/aiba_tipper_score.py'
+      - 'tests/test_aiba_tipper_ledger.py'
+      - 'docs/AIBA_TIPPER_LEDGER_V1.md'
+      - '.github/workflows/aiba-tipper-ledger-tests.yml'
+permissions:
+  contents: read
+jobs:
+  offline-ledger-contract:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Compile and test pure local, synthetic evidence and scoring
+        run: |
+          python -m compileall -q scripts/aiba_tipper_ledger.py scripts/aiba_tipper_score.py
+          python -m unittest tests.test_aiba_tipper_ledger -v
