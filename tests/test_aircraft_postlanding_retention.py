@@ -140,6 +140,18 @@ class PostLandingRetentionTests(unittest.TestCase):
                 with self.assertRaises(mod.RetentionError):
                     mod.compact(d)
 
+    def test_irregular_but_valid_source_intervals_never_overshoot_600s(self):
+        # The prior implementation chose the first row AFTER 600 s,
+        # creating artificial 600–1200 second retained gaps.
+        offsets=[0,320,590,880,1180,1490,1780]
+        points=[(1794312000+offset,38.0,-100+i*0.08,32000.0)
+                for i,offset in enumerate(offsets)]
+        selected, fidelity=mod.select_positions(points)
+        self.assertGreater(len(selected),2)
+        self.assertLessEqual(fidelity["max_retained_gap_seconds"],600)
+        self.assertEqual(selected[0],0)
+        self.assertEqual(selected[-1],len(points)-1)
+
     def test_out_of_range_interval_and_error_bounds_rejected(self):
         p=mod.validate_positions(sample())
         for interval in (0,601,True,30.0):
