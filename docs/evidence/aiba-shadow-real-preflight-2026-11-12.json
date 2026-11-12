@@ -1,0 +1,39 @@
+{
+  "schema": "aiba.prospective-shadow-real-preflight-evidence.v1",
+  "asof_date": "2026-11-12",
+  "test_kind": "one_time_read_only_live_branch_preflight",
+  "actions_run": "https://github.com/graupmannj-dev/I-Ws-Dashboard/actions/runs/43321912652",
+  "artifact_id": 13991755084,
+  "data_branch": "aiba-feed-data",
+  "observed_data_branch_head": "18fc0f38bfc0956eba0612beb2b458581eb0539c",
+  "behavioral_registry_generated_at": "2026-11-12T19:56:26Z",
+  "behavioral_fusion_generated_at": "2026-11-12T19:56:26Z",
+  "fusion_new_unreviewed_single_source_leads": 1,
+  "fusion_unreviewed_cross_family_groups": 0,
+  "fusion_approved_warning_count": 0,
+  "known_data_coverage_gaps": [
+    "nga_unavailable",
+    "airspace_partial_US_only",
+    "maritime_partial_regional"
+  ],
+  "preflight_receipt": {
+    "schema": "aiba.prospective-shadow-monitor-preflight.v1",
+    "status": "unavailable",
+    "reason": "source_snapshot_stale_or_future",
+    "issued_warning_count": 0,
+    "automatic_promotion": false,
+    "no_event_inferred": false,
+    "frozen_issued_tipper": false,
+    "source_completeness_verified": false,
+    "approved_for_global_recall_scoring": false
+  },
+  "operational_interpretation": "Existing behavioral snapshots were >90m old at one-off test; no legitimate prospective monitoring frame or event forecast was issued. GitHub scheduled collector timing may be delayed; do not treat successful earlier workflow runs as fresh monitoring coverage.",
+  "requirements_before_prospective_pilot": [
+    "Observe current matching source registry and fusion snapshots as of actual clock",
+    "Freeze frame locally and independently time-anchor ledger head",
+    "Manually specify actor/action/area/horizon and source-root independence before issuing a forecast",
+    "Verify outcome monitoring scope and first-publication chronology before scoring"
+  ],
+  "automatic_warning_changes": 0,
+  "new_workflows_scheduled": 0
+}
