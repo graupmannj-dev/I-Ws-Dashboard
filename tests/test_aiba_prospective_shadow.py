@@ -220,8 +220,13 @@ class ShadowFrameTests(unittest.TestCase):
             ledger_path=root/"ledger.jsonl"
             rp.write_text(json.dumps(registry()))
             fp.write_text(json.dumps(fusion()))
+            # append's default clock is bound at function definition time;
+            # inject via the append call, not patching its module attribute.
+            true_append = ledger.append
             with patch.object(shadow, "clock_now", return_value=NOW), patch.object(
-                ledger, "utc_now", return_value="2026-11-12T22:00:30Z"
+                ledger, "append", side_effect=lambda path, kind, payload:
+                true_append(path, kind, payload,
+                            clock=lambda: "2026-11-12T22:00:30Z")
             ):
                 result=shadow.run(rp,fp,mode="freeze",ledger_path=ledger_path)
             self.assertEqual(result["status"],"local_unanchored_shadow_frame_appended")
@@ -235,7 +240,7 @@ class ShadowFrameTests(unittest.TestCase):
             with self.assertRaises(shadow.ShadowError):
                 shadow.read_snapshot(path)
             path.write_text('{"schema":"x","schema":"y"}')
-            with self.assertRaises(ledger.LedgerError):
+            with self.assertRaises(shadow.ShadowError):
                 shadow.read_snapshot(path)
 
     def test_cli_failure_receipt_cannot_claim_success_or_overwrite_source(self):
