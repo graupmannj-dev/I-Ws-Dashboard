@@ -78,6 +78,40 @@ The one-time GitHub PR experiment workflow was removed
 after recording the result. Existing collection schedules
 and source branches remain unchanged.
 
+## External provider outages: confounding evidence
+
+GitHub's own incident history confirms real service degradation
+during the Nov 8–12 audit window. A [Nov 9 incident report]
+(https://www.githubstatus.com/?date=now) states that a slowed
+Kafka broker beginning Nov 7 disrupted Actions queues; some
+delayed events **never launched** because Actions drops queued
+events older than 30 minutes. The platform also reported
+Actions degradation on **Nov 10, 16:10–17:55 UTC**, and a
+multi-service Actions backlog on **Nov 11, 20:48–21:21 UTC**.
+GitHub separately reported a Webhooks issue on Nov 12, which
+does not by itself prove scheduled Actions were affected.
+
+Wider Microsoft 365 service disruptions on Nov 12, reported by
+Reuters, are additional background but are **not established as
+causally connected to the AIBA collection failures**. The
+[dated incident context](evidence/aiba-external-incidents-2026-11-09-12.json)
+is explicitly a *potential explanation*, not an attribution of
+individual missing workflow starts.
+
+**Correction to earlier diagnosis:** AIBA's observed coverage is
+insufficiently continuous, but we CANNOT yet conclude that
+GitHub's normal cron scheduler is inherently failing. The
+measurement period is contaminated by confirmed provider
+incidents. Do not increase polling rates, add a paid scheduler,
+or change shared-write concurrency on this evidence alone.
+
+Hold the current schedules fixed, explicitly mark outage-
+associated coverage windows as unknown, and run a fresh,
+prospective **7–14 days of postincident** workflow-start,
+queue-delay, and source-observation monitoring before making
+a platform migration recommendation. An outage ending does
+not retroactively fill the missing observations.
+
 ## Offline audit script
 
 ~~~bash
@@ -137,8 +171,9 @@ monitoring.
    completion, and source availability. Preserve lag/outage
    intervals as unknown for scoring, never fill forward with
    old values or treat old notices as new actions.
-3. **Reliability design:** move the schedule trigger to a dependable
-   orchestrator if measured gaps persist. A small authorized
+3. **Reliability design:** only evaluate moving the trigger to another
+   orchestrator if verified gaps persist during a clean postincident
+   7–14-day observation period. A small authorized
    external cron/GCP scheduler triggering GitHub collection
    workflows could isolate scheduling from extraction, but
    requires explicit review of authentication, IAM, cost,
