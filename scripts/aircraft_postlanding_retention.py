@@ -154,8 +154,21 @@ def select_positions(points, *, interval_s=MAX_TIME_GAP_S,
     # (unlike pure RDP). Preserve both endpoints and additional turning
     # or altitude-transition points via iterative bounded-error splitting.
     anchors = [0]
-    for index in range(1, len(points) - 1):
-        if points[index][0] - points[anchors[-1]][0] >= interval_s:
+    for index in range(1, len(points)):
+        distance_s = points[index][0] - points[anchors[-1]][0]
+        if distance_s > interval_s:
+            # Choose the last point BEFORE crossing the deadline.
+            # Choosing the first point AFTER the deadline caused a
+            # 600–1200s gap on irregular-but-continuous raw ADS-B rows.
+            # Upstream validation must reject any raw gap >interval.
+            preceding = index - 1
+            if preceding <= anchors[-1]:
+                raise RetentionError("source_gap_exceeds_retention_interval")
+            anchors.append(preceding)
+            distance_s = points[index][0] - points[anchors[-1]][0]
+            if distance_s > interval_s:
+                raise RetentionError("source_gap_exceeds_retention_interval")
+        if distance_s == interval_s and anchors[-1] != index:
             anchors.append(index)
     if anchors[-1] != len(points) - 1:
         anchors.append(len(points) - 1)
