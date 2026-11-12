@@ -3,7 +3,7 @@
   "automated_severity_changes": 0,
   "collection_coverage": {
     "amsa": {
-      "age_hours": 1.36,
+      "age_hours": 5.27,
       "checked_at": "2026-11-12T18:34:40Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -15,7 +15,7 @@
       "truncated_or_partial": false
     },
     "commercial": {
-      "age_hours": 3.9,
+      "age_hours": 7.81,
       "checked_at": "2026-11-12T16:02:34Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -27,7 +27,7 @@
       "truncated_or_partial": false
     },
     "ioda": {
-      "age_hours": 1.36,
+      "age_hours": 5.27,
       "checked_at": "2026-11-12T18:34:40Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -39,31 +39,31 @@
       "truncated_or_partial": false
     },
     "live_airspace": {
-      "age_hours": 1.5,
-      "checked_at": "2026-11-12T18:26:22Z",
+      "age_hours": 0.0,
+      "checked_at": "2026-11-12T23:51:05Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
       "mode": "live_airspace",
       "provider_status": "partial",
-      "snapshot_at": "2026-11-12T18:26:22Z",
+      "snapshot_at": "2026-11-12T23:51:05Z",
       "source_scope": "FAA temporary flight restrictions: United States only",
       "status": "current_partial",
       "truncated_or_partial": true
     },
     "live_maritime": {
-      "age_hours": 1.5,
-      "checked_at": "2026-11-12T18:26:22Z",
+      "age_hours": 0.0,
+      "checked_at": "2026-11-12T23:51:05Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
       "mode": "live_maritime",
       "provider_status": "partial",
-      "snapshot_at": "2026-11-12T18:26:22Z",
+      "snapshot_at": "2026-11-12T23:51:05Z",
       "source_scope": "Danish Maritime Authority Niord notices: regional Baltic/North Sea",
       "status": "current_partial",
       "truncated_or_partial": true
     },
     "nga": {
-      "age_hours": 1.36,
+      "age_hours": 5.27,
       "checked_at": "2026-11-12T18:34:40Z",
       "missingness": "not_measured_not_zero",
       "mode": "nga",
@@ -74,7 +74,7 @@
       "truncated_or_partial": false
     },
     "official": {
-      "age_hours": 0.0,
+      "age_hours": 3.91,
       "checked_at": "2026-11-12T19:56:25Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -86,7 +86,7 @@
       "truncated_or_partial": false
     },
     "watchlist": {
-      "age_hours": 0.0,
+      "age_hours": 3.91,
       "checked_at": "2026-11-12T19:56:26Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -100,15 +100,15 @@
   },
   "forecast_probability": null,
   "gdelt_context": "separate_analytical_stream_not_a_gate_or_confirmation",
-  "generated_at": "2026-11-12T19:56:26Z",
+  "generated_at": "2026-11-12T23:51:09Z",
   "geographic_scope": "source_declared_only",
   "history_diagnostics": {
     "excluded_observations": {
       "old_source_publication": 1
     },
-    "history_files_examined": 20,
+    "history_files_examined": 21,
     "lookback_hours": 72,
-    "recent_unique_records": 118
+    "recent_unique_records": 119
   },
   "limit_notes": [
     "No automated threat warning. These are unreviewed investigatory leads.",
@@ -121,29 +121,31 @@
   "new_single_source_leads": [
     {
       "evidence_class": "official_notice",
-      "first_observed_at": "2026-11-12T19:56:26Z",
+      "first_observed_at": "2026-11-12T23:51:09Z",
       "geography": {
-        "key": null,
-        "kind": "unlocated",
-        "label": null,
+        "geometry_sha256_prefix": "348f4fc3a75e5276860e34e9",
+        "geometry_type": "MultiPolygon",
+        "key": "source-footprint:348f4fc3a75e5276860e34e9",
+        "kind": "source_notice_footprint",
+        "label": "Official MultiPolygon notice area",
         "latitude": null,
         "longitude": null,
-        "precision": "no_source_verified_geography",
+        "precision": "provider_defined_notice_boundary_not_event_point",
         "verified_iso": false
       },
-      "information_root": "official:ae720a57bbe6be9d7c05",
+      "information_root": "faa:6/7308:0:0",
       "meaning": "Observation novelty, not evidence of impending violence.",
-      "observation_id": "beh:d2b45d28f70500898fc2eb8bb833",
-      "requires_geolocation": true,
-      "source_family": "protective_notice",
-      "source_published_at": "2026-11-12T16:54:23Z",
-      "source_url": "https://www.gov.uk/foreign-travel-advice/georgia",
+      "observation_id": "beh:653b8a3d4017550e96d22ce9b011",
+      "requires_geolocation": false,
+      "source_family": "airspace_restriction",
+      "source_published_at": null,
+      "source_url": "https://tfr.faa.gov/6_7308.html",
       "status": "single_source_unreviewed",
-      "title": "Georgia"
+      "title": "FAA TFR 6/7308 · GEORGETOWN, CO, Thursday, November 12, 2026 through Friday, November 13, 2026 UTC"
     }
   ],
   "prediction_horizon": null,
-  "registry_asof": "2026-11-12T19:56:26Z",
+  "registry_asof": "2026-11-12T23:51:09Z",
   "registry_source_count": 388,
   "review_groups": [],
   "review_groups_count_total": 0,
