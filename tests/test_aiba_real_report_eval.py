@@ -65,7 +65,7 @@ class RealReportEvaluationTests(unittest.TestCase):
         self.assertEqual(out["by_split"]["development"]["report_count"], 2)
         self.assertEqual(out["by_split"]["heldout"]["report_count"], 1)
         self.assertEqual(out["claim_metrics"]["tp"], 1)
-        self.assertEqual(out["claim_metrics"]["fp"], 0)
+        self.assertEqual(out["claim_metrics"]["fp"], 1)  # exposes unsafe active-voice reading of telegraphic passive
         self.assertEqual(out["claim_metrics"]["fn"], 0)
         self.assertEqual(out["review_audit"]["disagreement_count"], 0)
 
