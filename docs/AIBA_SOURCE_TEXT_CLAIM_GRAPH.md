@@ -11,6 +11,31 @@ This PR supplies a local/offline body-ingestion route and a candidate graph
 for future separately reviewed real-text intake. It is not active on the live
 AIBA collectors.
 
+## Single-command private evaluation workspace
+
+Once permission-approved original source bodies or excerpts are present in
+`private/approved_input.jsonl`, the integrated claim lab can run intake,
+literal claim extraction, report-pair candidate nomination and two independent
+prediction-blind annotation packets in one local command:
+
+```sh
+PYTHONPATH=. python scripts/aiba_claim_lab.py \\
+  --input private/approved_input.jsonl \\
+  --workspace private/claim_lab_run
+```
+
+This creates `reports.jsonl`, `lineage_splits.json`,
+`candidate_claims.json`, `candidate_relationships.json`,
+`reviewer_A.jsonl`, `reviewer_B.jsonl` and `receipt.json`
+in the private workspace. The manifest is reused on subsequent runs so
+the same story lineage cannot switch evaluation partitions. Corpus
+content stays local and the command prints only aggregate counts.
+
+**Important:** The current AIBA live history does not yet supply article
+body text; this command is not deployed or invoked by existing collectors.
+It will not produce actual field-validation metrics without a permitted
+source corpus and independently adjudicated ground truth.
+
 ## 1. Provider-neutral article text intake
 
 `scripts/aiba_source_text_intake.py` requires an operator-controlled JSONL
