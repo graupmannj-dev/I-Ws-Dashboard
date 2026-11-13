@@ -1,0 +1,702 @@
+{
+  "approved_warning_count": 0,
+  "automated_severity_changes": 0,
+  "collection_coverage": {
+    "amsa": {
+      "age_hours": 0.0,
+      "checked_at": "2026-11-13T14:52:55Z",
+      "first_provider_baseline": false,
+      "missingness": "provider_bounded_not_exhaustive",
+      "mode": "amsa",
+      "provider_status": "collected",
+      "snapshot_at": "2026-11-13T14:52:55Z",
+      "source_scope": "AMSA NAVAREA X only",
+      "status": "current",
+      "truncated_or_partial": false
+    },
+    "commercial": {
+      "age_hours": 22.84,
+      "checked_at": "2026-11-12T16:02:34Z",
+      "first_provider_baseline": false,
+      "missingness": "provider_bounded_not_exhaustive",
+      "mode": "commercial",
+      "provider_status": "collected",
+      "snapshot_at": "2026-11-12T16:02:34Z",
+      "source_scope": "selected maritime/air-cargo/war-risk press and syndication",
+      "status": "current",
+      "truncated_or_partial": false
+    },
+    "ioda": {
+      "age_hours": 0.0,
+      "checked_at": "2026-11-13T14:52:55Z",
+      "first_provider_baseline": false,
+      "missingness": "provider_bounded_not_exhaustive",
+      "mode": "ioda",
+      "provider_status": "collected",
+      "snapshot_at": "2026-11-13T14:52:55Z",
+      "source_scope": "IODA country events (first 100 of first page, 4-hour query)",
+      "status": "current",
+      "truncated_or_partial": false
+    },
+    "live_airspace": {
+      "age_hours": 2.42,
+      "checked_at": "2026-11-13T12:28:01Z",
+      "missingness": "not_measured_not_zero",
+      "mode": "live_airspace",
+      "provider_status": "partial",
+      "snapshot_at": "2026-11-13T12:28:01Z",
+      "source_scope": "FAA temporary flight restrictions: United States only",
+      "status": "stale_or_unavailable",
+      "truncated_or_partial": true
+    },
+    "live_maritime": {
+      "age_hours": 2.42,
+      "checked_at": "2026-11-13T12:28:01Z",
+      "missingness": "not_measured_not_zero",
+      "mode": "live_maritime",
+      "provider_status": "partial",
+      "snapshot_at": "2026-11-13T12:28:01Z",
+      "source_scope": "Danish Maritime Authority Niord notices: regional Baltic/North Sea",
+      "status": "stale_or_unavailable",
+      "truncated_or_partial": true
+    },
+    "nga": {
+      "age_hours": 0.0,
+      "checked_at": "2026-11-13T14:52:55Z",
+      "missingness": "not_measured_not_zero",
+      "mode": "nga",
+      "provider_status": "unavailable",
+      "snapshot_at": "2026-11-13T14:52:55Z",
+      "source_scope": "NGA active broadcast warnings; provider availability varies",
+      "status": "stale_or_unavailable",
+      "truncated_or_partial": false
+    },
+    "official": {
+      "age_hours": 8.07,
+      "checked_at": "2026-11-13T06:49:09Z",
+      "first_provider_baseline": false,
+      "missingness": "provider_bounded_not_exhaustive",
+      "mode": "official",
+      "provider_status": "collected",
+      "snapshot_at": "2026-11-13T06:49:09Z",
+      "source_scope": "US State and UK FCDO travel-advice feeds",
+      "status": "current",
+      "truncated_or_partial": false
+    },
+    "watchlist": {
+      "age_hours": 8.07,
+      "checked_at": "2026-11-13T06:49:09Z",
+      "first_provider_baseline": false,
+      "missingness": "provider_bounded_not_exhaustive",
+      "mode": "watchlist",
+      "provider_status": "collected",
+      "snapshot_at": "2026-11-13T06:49:09Z",
+      "source_scope": "registered, exact-ID forecast contracts only",
+      "status": "current",
+      "truncated_or_partial": false
+    }
+  },
+  "discovery_visibility": {
+    "exact_geography_match_required_for_cross_family": true,
+    "latest_initial_baseline": false,
+    "latest_registry_newly_observed_count": 2,
+    "latest_registry_record_count": 270,
+    "latest_unlocated_record_count": 256,
+    "new_or_collocated_not_same_as_verified_threat": true,
+    "new_this_collection_required_for_cross_family_nomination": true,
+    "recent_observations_sampled": 24,
+    "recent_source_families": {
+      "airspace_restriction": 8,
+      "commercial_media": 7,
+      "internet_reachability": 57,
+      "maritime_restriction": 96,
+      "protective_notice": 5
+    },
+    "recent_unique_record_count_72h": 173,
+    "recent_unlocated_count_72h": 90,
+    "schema": "aiba.behavioral-discovery-visibility.v1",
+    "shared_exact_geography_keys_across_behavior_families": 0,
+    "source_coverage_is_globally_complete": false
+  },
+  "forecast_probability": null,
+  "gdelt_context": "separate_analytical_stream_not_a_gate_or_confirmation",
+  "generated_at": "2026-11-13T14:53:04Z",
+  "geographic_scope": "source_declared_only",
+  "history_diagnostics": {
+    "excluded_observations": {
+      "old_source_publication": 1
+    },
+    "history_files_examined": 27,
+    "lookback_hours": 72,
+    "recent_unique_records": 173
+  },
+  "limit_notes": [
+    "No automated threat warning. These are unreviewed investigatory leads.",
+    "Distinct providers and families do not prove causal independence.",
+    "Media syndication, markets and source-only notices are not military preparations.",
+    "Unlocated records cannot produce automatic geographic convergence.",
+    "Unavailable collection is not evidence of no threatening activity."
+  ],
+  "new_single_source_count_total": 2,
+  "new_single_source_leads": [
+    {
+      "evidence_class": "network_measurement",
+      "first_observed_at": "2026-11-13T14:52:55Z",
+      "geography": {
+        "key": "country:XK",
+        "kind": "country_code",
+        "label": "XK",
+        "latitude": null,
+        "longitude": null,
+        "precision": "provider_reported_country",
+        "verified_iso": false
+      },
+      "information_root": "ioda:1d3c018e5e6415a2f04904f6",
+      "meaning": "Observation novelty, not evidence of impending violence.",
+      "observation_id": "beh:b799eeea1c7a5cb76f0b38baff80",
+      "requires_geolocation": false,
+      "source_family": "internet_reachability",
+      "source_published_at": null,
+      "source_url": "https://ioda.inetintel.cc.gatech.edu/",
+      "status": "single_source_unreviewed",
+      "title": "IODA detected connectivity anomaly: country XK"
+    },
+    {
+      "evidence_class": "network_measurement",
+      "first_observed_at": "2026-11-13T14:52:55Z",
+      "geography": {
+        "key": "country:VE",
+        "kind": "country_code",
+        "label": "VE",
+        "latitude": null,
+        "longitude": null,
+        "precision": "provider_reported_country",
+        "verified_iso": false
+      },
+      "information_root": "ioda:3076628dbd01df5502249c94",
+      "meaning": "Observation novelty, not evidence of impending violence.",
+      "observation_id": "beh:ce417417a8ba0d608a7c35d4f5b2",
+      "requires_geolocation": false,
+      "source_family": "internet_reachability",
+      "source_published_at": null,
+      "source_url": "https://ioda.inetintel.cc.gatech.edu/",
+      "status": "single_source_unreviewed",
+      "title": "IODA detected connectivity anomaly: country VE"
+    }
+  ],
+  "prediction_horizon": null,
+  "recent_source_observations": [
+    {
+      "first_observed_at": "2026-11-13T14:52:55Z",
+      "geography": {
+        "key": "country:VE",
+        "kind": "country_code",
+        "label": "VE",
+        "latitude": null,
+        "longitude": null,
+        "precision": "provider_reported_country",
+        "verified_iso": false
+      },
+      "observation_id": "beh:ce417417a8ba0d608a7c35d4f5b2",
+      "provider": "ioda",
+      "requires_geolocation": false,
+      "source_family": "internet_reachability",
+      "source_published_at": null,
+      "source_url": "https://ioda.inetintel.cc.gatech.edu/",
+      "status": "recent_source_observation_unreviewed",
+      "title": "IODA detected connectivity anomaly: country VE"
+    },
+    {
+      "first_observed_at": "2026-11-13T14:52:55Z",
+      "geography": {
+        "key": "country:XK",
+        "kind": "country_code",
+        "label": "XK",
+        "latitude": null,
+        "longitude": null,
+        "precision": "provider_reported_country",
+        "verified_iso": false
+      },
+      "observation_id": "beh:b799eeea1c7a5cb76f0b38baff80",
+      "provider": "ioda",
+      "requires_geolocation": false,
+      "source_family": "internet_reachability",
+      "source_published_at": null,
+      "source_url": "https://ioda.inetintel.cc.gatech.edu/",
+      "status": "recent_source_observation_unreviewed",
+      "title": "IODA detected connectivity anomaly: country XK"
+    },
+    {
+      "first_observed_at": "2026-11-13T06:31:11Z",
+      "geography": {
+        "key": "navarea:X",
+        "kind": "maritime_region",
+        "label": "NAVAREA X",
+        "latitude": null,
+        "longitude": null,
+        "precision": "regional_not_point",
+        "verified_iso": false
+      },
+      "observation_id": "beh:94a5613c42a6b14e3981611fd806",
+      "provider": "amsa",
+      "requires_geolocation": false,
+      "source_family": "maritime_restriction",
+      "source_published_at": "2026-11-13T01:21:00Z",
+      "source_url": "https://www.operations.amsa.gov.au/AMSA.Web.MSIPublication/",
+      "status": "recent_source_observation_unreviewed",
+      "title": "NAVAREA X 124/26 official warning"
+    },
+    {
+      "first_observed_at": "2026-11-13T06:31:11Z",
+      "geography": {
+        "key": "country:NF",
+        "kind": "country_code",
+        "label": "NF",
+        "latitude": null,
+        "longitude": null,
+        "precision": "provider_reported_country",
+        "verified_iso": false
+      },
+      "observation_id": "beh:1aca4f8aad842ef3d7557dce2821",
+      "provider": "ioda",
+      "requires_geolocation": false,
+      "source_family": "internet_reachability",
+      "source_published_at": null,
+      "source_url": "https://ioda.inetintel.cc.gatech.edu/",
+      "status": "recent_source_observation_unreviewed",
+      "title": "IODA detected connectivity anomaly: country NF"
+    },
+    {
+      "first_observed_at": "2026-11-13T04:21:51Z",
+      "geography": {
+        "geometry_sha256_prefix": null,
+        "geometry_type": null,
+        "key": null,
+        "kind": "unlocated",
+        "label": null,
+        "latitude": null,
+        "longitude": null,
+        "precision": "notice_geography_unavailable",
+        "verified_iso": false
+      },
+      "observation_id": "beh:f920309a8066ebf3f517223fc7bc",
+      "provider": "niord",
+      "requires_geolocation": true,
+      "source_family": "maritime_restriction",
+      "source_published_at": null,
+      "source_url": "https://niord.dma.dk/#/message/fd585098-74b9-49ea-a826-82951a0a3ad3",
+      "status": "recent_source_observation_unreviewed",
+      "title": "Denmark. Kattegat. EK R 45 Hevring. Firing exercises. Warning."
+    },
+    {
+      "first_observed_at": "2026-11-13T04:21:51Z",
+      "geography": {
+        "geometry_sha256_prefix": null,
+        "geometry_type": null,
+        "key": null,
+        "kind": "unlocated",
+        "label": null,
+        "latitude": null,
+        "longitude": null,
+        "precision": "notice_geography_unavailable",
+        "verified_iso": false
+      },
+      "observation_id": "beh:edc065bc6f8605311ce614b47c73",
+      "provider": "niord",
+      "requires_geolocation": true,
+      "source_family": "maritime_restriction",
+      "source_published_at": null,
+      "source_url": "https://niord.dma.dk/#/message/81a3ee1e-3be5-4107-ba85-9b4f5eb65d25",
+      "status": "recent_source_observation_unreviewed",
+      "title": "Denmark. Kattegat. EK R 18 Jaegerspris. Firing exercises. Warning."
+    },
+    {
+      "first_observed_at": "2026-11-13T04:21:51Z",
+      "geography": {
+        "geometry_sha256_prefix": "7cd0c92c0114570caed57302",
+        "geometry_type": "Polygon",
+        "key": "source-footprint:7cd0c92c0114570caed57302",
+        "kind": "source_notice_footprint",
+        "label": "Official Polygon notice area",
+        "latitude": null,
+        "longitude": null,
+        "precision": "provider_defined_notice_boundary_not_event_point",
+        "verified_iso": false
+      },
+      "observation_id": "beh:e08afdf1ebeaf38580b9ed358d0a",
+      "provider": "niord",
+      "requires_geolocation": false,
+      "source_family": "maritime_restriction",
+      "source_published_at": null,
+      "source_url": "https://niord.dma.dk/#/message/81a3ee1e-3be5-4107-ba85-9b4f5eb65d25",
+      "status": "recent_source_observation_unreviewed",
+      "title": "Denmark. Kattegat. EK R 18 Jaegerspris. Firing exercises. Warning."
+    },
+    {
+      "first_observed_at": "2026-11-13T04:21:51Z",
+      "geography": {
+        "geometry_sha256_prefix": null,
+        "geometry_type": null,
+        "key": null,
+        "kind": "unlocated",
+        "label": null,
+        "latitude": null,
+        "longitude": null,
+        "precision": "notice_geography_unavailable",
+        "verified_iso": false
+      },
+      "observation_id": "beh:dedb5c7ac53b6b65740b2ba3a60f",
+      "provider": "niord",
+      "requires_geolocation": true,
+      "source_family": "maritime_restriction",
+      "source_published_at": null,
+      "source_url": "https://niord.dma.dk/#/message/fd585098-74b9-49ea-a826-82951a0a3ad3",
+      "status": "recent_source_observation_unreviewed",
+      "title": "Denmark. Kattegat. EK R 45 Hevring. Firing exercises. Warning."
+    },
+    {
+      "first_observed_at": "2026-11-13T04:21:51Z",
+      "geography": {
+        "geometry_sha256_prefix": null,
+        "geometry_type": null,
+        "key": null,
+        "kind": "unlocated",
+        "label": null,
+        "latitude": null,
+        "longitude": null,
+        "precision": "notice_geography_unavailable",
+        "verified_iso": false
+      },
+      "observation_id": "beh:dec67081294c06d86a7c96c2c4ad",
+      "provider": "niord",
+      "requires_geolocation": true,
+      "source_family": "maritime_restriction",
+      "source_published_at": null,
+      "source_url": "https://niord.dma.dk/#/message/81a3ee1e-3be5-4107-ba85-9b4f5eb65d25",
+      "status": "recent_source_observation_unreviewed",
+      "title": "Denmark. Kattegat. EK R 18 Jaegerspris. Firing exercises. Warning."
+    },
+    {
+      "first_observed_at": "2026-11-13T04:21:51Z",
+      "geography": {
+        "geometry_sha256_prefix": null,
+        "geometry_type": null,
+        "key": null,
+        "kind": "unlocated",
+        "label": null,
+        "latitude": null,
+        "longitude": null,
+        "precision": "notice_geography_unavailable",
+        "verified_iso": false
+      },
+      "observation_id": "beh:dc40af2cce839a77c1efa12b3cf0",
+      "provider": "niord",
+      "requires_geolocation": true,
+      "source_family": "maritime_restriction",
+      "source_published_at": null,
+      "source_url": "https://niord.dma.dk/#/message/3b2bd424-b82d-439c-a51b-2919d5f09b15",
+      "status": "recent_source_observation_unreviewed",
+      "title": "Denmark. Skagerrak. EK R 48 Tranum S. Firing exercises. Warning."
+    },
+    {
+      "first_observed_at": "2026-11-13T04:21:51Z",
+      "geography": {
+        "geometry_sha256_prefix": null,
+        "geometry_type": null,
+        "key": null,
+        "kind": "unlocated",
+        "label": null,
+        "latitude": null,
+        "longitude": null,
+        "precision": "notice_geography_unavailable",
+        "verified_iso": false
+      },
+      "observation_id": "beh:d614687307108dd64c32fa1faaff",
+      "provider": "niord",
+      "requires_geolocation": true,
+      "source_family": "maritime_restriction",
+      "source_published_at": null,
+      "source_url": "https://niord.dma.dk/#/message/a44d4d9c-474d-40ff-a585-f4408032c1c2",
+      "status": "recent_source_observation_unreviewed",
+      "title": "Denmark. Kattegat. EK R 12 Gniben. Firing exercises. Warning."
+    },
+    {
+      "first_observed_at": "2026-11-12T23:51:29Z",
+      "geography": {
+        "key": "country:BJ",
+        "kind": "country_code",
+        "label": "BJ",
+        "latitude": null,
+        "longitude": null,
+        "precision": "provider_reported_country",
+        "verified_iso": false
+      },
+      "observation_id": "beh:db571268cdeef458c828c64c1e5b",
+      "provider": "ioda",
+      "requires_geolocation": false,
+      "source_family": "internet_reachability",
+      "source_published_at": null,
+      "source_url": "https://ioda.inetintel.cc.gatech.edu/",
+      "status": "recent_source_observation_unreviewed",
+      "title": "IODA detected connectivity anomaly: country BJ"
+    },
+    {
+      "first_observed_at": "2026-11-12T23:51:29Z",
+      "geography": {
+        "key": "country:CK",
+        "kind": "country_code",
+        "label": "CK",
+        "latitude": null,
+        "longitude": null,
+        "precision": "provider_reported_country",
+        "verified_iso": false
+      },
+      "observation_id": "beh:dafb0c1b43bc1638ff0320764553",
+      "provider": "ioda",
+      "requires_geolocation": false,
+      "source_family": "internet_reachability",
+      "source_published_at": null,
+      "source_url": "https://ioda.inetintel.cc.gatech.edu/",
+      "status": "recent_source_observation_unreviewed",
+      "title": "IODA detected connectivity anomaly: country CK"
+    },
+    {
+      "first_observed_at": "2026-11-12T23:51:29Z",
+      "geography": {
+        "key": "country:VE",
+        "kind": "country_code",
+        "label": "VE",
+        "latitude": null,
+        "longitude": null,
+        "precision": "provider_reported_country",
+        "verified_iso": false
+      },
+      "observation_id": "beh:d3907d005e2866e1651dfb09274d",
+      "provider": "ioda",
+      "requires_geolocation": false,
+      "source_family": "internet_reachability",
+      "source_published_at": null,
+      "source_url": "https://ioda.inetintel.cc.gatech.edu/",
+      "status": "recent_source_observation_unreviewed",
+      "title": "IODA detected connectivity anomaly: country VE"
+    },
+    {
+      "first_observed_at": "2026-11-12T23:51:29Z",
+      "geography": {
+        "key": "country:TR",
+        "kind": "country_code",
+        "label": "TR",
+        "latitude": null,
+        "longitude": null,
+        "precision": "provider_reported_country",
+        "verified_iso": false
+      },
+      "observation_id": "beh:1be45dfea1f3e076d9a4b7eae72e",
+      "provider": "ioda",
+      "requires_geolocation": false,
+      "source_family": "internet_reachability",
+      "source_published_at": null,
+      "source_url": "https://ioda.inetintel.cc.gatech.edu/",
+      "status": "recent_source_observation_unreviewed",
+      "title": "IODA detected connectivity anomaly: country TR"
+    },
+    {
+      "first_observed_at": "2026-11-12T23:51:29Z",
+      "geography": {
+        "key": "country:FI",
+        "kind": "country_code",
+        "label": "FI",
+        "latitude": null,
+        "longitude": null,
+        "precision": "provider_reported_country",
+        "verified_iso": false
+      },
+      "observation_id": "beh:0d1c573c154be53e244bf88a0a9c",
+      "provider": "ioda",
+      "requires_geolocation": false,
+      "source_family": "internet_reachability",
+      "source_published_at": null,
+      "source_url": "https://ioda.inetintel.cc.gatech.edu/",
+      "status": "recent_source_observation_unreviewed",
+      "title": "IODA detected connectivity anomaly: country FI"
+    },
+    {
+      "first_observed_at": "2026-11-12T23:51:09Z",
+      "geography": {
+        "geometry_sha256_prefix": "348f4fc3a75e5276860e34e9",
+        "geometry_type": "MultiPolygon",
+        "key": "source-footprint:348f4fc3a75e5276860e34e9",
+        "kind": "source_notice_footprint",
+        "label": "Official MultiPolygon notice area",
+        "latitude": null,
+        "longitude": null,
+        "precision": "provider_defined_notice_boundary_not_event_point",
+        "verified_iso": false
+      },
+      "observation_id": "beh:653b8a3d4017550e96d22ce9b011",
+      "provider": "faa",
+      "requires_geolocation": false,
+      "source_family": "airspace_restriction",
+      "source_published_at": null,
+      "source_url": "https://tfr.faa.gov/6_7308.html",
+      "status": "recent_source_observation_unreviewed",
+      "title": "FAA TFR 6/7308 · GEORGETOWN, CO, Thursday, November 12, 2026 through Friday, November 13, 2026 UTC"
+    },
+    {
+      "first_observed_at": "2026-11-12T19:56:26Z",
+      "geography": {
+        "key": null,
+        "kind": "unlocated",
+        "label": null,
+        "latitude": null,
+        "longitude": null,
+        "precision": "no_source_verified_geography",
+        "verified_iso": false
+      },
+      "observation_id": "beh:d2b45d28f70500898fc2eb8bb833",
+      "provider": "official",
+      "requires_geolocation": true,
+      "source_family": "protective_notice",
+      "source_published_at": "2026-11-12T16:54:23Z",
+      "source_url": "https://www.gov.uk/foreign-travel-advice/georgia",
+      "status": "recent_source_observation_unreviewed",
+      "title": "Georgia"
+    },
+    {
+      "first_observed_at": "2026-11-12T18:26:27Z",
+      "geography": {
+        "geometry_sha256_prefix": "e1abfdaf8c02b60e406f8474",
+        "geometry_type": "MultiPolygon",
+        "key": "source-footprint:e1abfdaf8c02b60e406f8474",
+        "kind": "source_notice_footprint",
+        "label": "Official MultiPolygon notice area",
+        "latitude": null,
+        "longitude": null,
+        "precision": "provider_defined_notice_boundary_not_event_point",
+        "verified_iso": false
+      },
+      "observation_id": "beh:7d002b2bddc019df266c1d69644a",
+      "provider": "faa",
+      "requires_geolocation": false,
+      "source_family": "airspace_restriction",
+      "source_published_at": null,
+      "source_url": "https://tfr.faa.gov/6_7195.html",
+      "status": "recent_source_observation_unreviewed",
+      "title": "FAA TFR 6/7195 · ARLINGTON, KS, Friday, November 13, 2026 UTC"
+    },
+    {
+      "first_observed_at": "2026-11-12T18:26:27Z",
+      "geography": {
+        "geometry_sha256_prefix": "3abdd7ed4443c62a953a5793",
+        "geometry_type": "MultiPolygon",
+        "key": "source-footprint:3abdd7ed4443c62a953a5793",
+        "kind": "source_notice_footprint",
+        "label": "Official MultiPolygon notice area",
+        "latitude": null,
+        "longitude": null,
+        "precision": "provider_defined_notice_boundary_not_event_point",
+        "verified_iso": false
+      },
+      "observation_id": "beh:65a3a3f81d81052415b5209368ef",
+      "provider": "faa",
+      "requires_geolocation": false,
+      "source_family": "airspace_restriction",
+      "source_published_at": null,
+      "source_url": "https://tfr.faa.gov/6_7206.html",
+      "status": "recent_source_observation_unreviewed",
+      "title": "FAA TFR 6/7206 · 10NM SE BERLIN, NH, Thursday, November 12, 2026 through Sunday, November 15, 2026 UTC"
+    },
+    {
+      "first_observed_at": "2026-11-12T18:26:27Z",
+      "geography": {
+        "geometry_sha256_prefix": "c13a8ba31864fdffa5afb945",
+        "geometry_type": "MultiPolygon",
+        "key": "source-footprint:c13a8ba31864fdffa5afb945",
+        "kind": "source_notice_footprint",
+        "label": "Official MultiPolygon notice area",
+        "latitude": null,
+        "longitude": null,
+        "precision": "provider_defined_notice_boundary_not_event_point",
+        "verified_iso": false
+      },
+      "observation_id": "beh:4dbfe59cb00e848c2ce621c08435",
+      "provider": "faa",
+      "requires_geolocation": false,
+      "source_family": "airspace_restriction",
+      "source_published_at": null,
+      "source_url": "https://tfr.faa.gov/6_7213.html",
+      "status": "recent_source_observation_unreviewed",
+      "title": "FAA TFR 6/7213 · W MARTINSBURG, WV, Thursday, November 12, 2026 UTC"
+    },
+    {
+      "first_observed_at": "2026-11-12T18:26:27Z",
+      "geography": {
+        "geometry_sha256_prefix": "8bd59ac7ff8fc066ac6c225f",
+        "geometry_type": "MultiPolygon",
+        "key": "source-footprint:8bd59ac7ff8fc066ac6c225f",
+        "kind": "source_notice_footprint",
+        "label": "Official MultiPolygon notice area",
+        "latitude": null,
+        "longitude": null,
+        "precision": "provider_defined_notice_boundary_not_event_point",
+        "verified_iso": false
+      },
+      "observation_id": "beh:1a0f44626448332fc791813deb5a",
+      "provider": "faa",
+      "requires_geolocation": false,
+      "source_family": "airspace_restriction",
+      "source_published_at": null,
+      "source_url": "https://tfr.faa.gov/6_7165.html",
+      "status": "recent_source_observation_unreviewed",
+      "title": "FAA TFR 6/7165 · BROWNSVILLE, TX, Thursday, November 19, 2026 through Sunday, November 29, 2026 UTC"
+    },
+    {
+      "first_observed_at": "2026-11-12T18:26:27Z",
+      "geography": {
+        "geometry_sha256_prefix": "e3f2cc6e53ad76cdcbc8c879",
+        "geometry_type": "MultiPolygon",
+        "key": "source-footprint:e3f2cc6e53ad76cdcbc8c879",
+        "kind": "source_notice_footprint",
+        "label": "Official MultiPolygon notice area",
+        "latitude": null,
+        "longitude": null,
+        "precision": "provider_defined_notice_boundary_not_event_point",
+        "verified_iso": false
+      },
+      "observation_id": "beh:15db227e89eb9204219fc496200f",
+      "provider": "faa",
+      "requires_geolocation": false,
+      "source_family": "airspace_restriction",
+      "source_published_at": null,
+      "source_url": "https://tfr.faa.gov/6_7271.html",
+      "status": "recent_source_observation_unreviewed",
+      "title": "FAA TFR 6/7271 · GRANITE CITY, IL, Monday, November 16, 2026 UTC"
+    },
+    {
+      "first_observed_at": "2026-11-12T16:02:36Z",
+      "geography": {
+        "key": null,
+        "kind": "unlocated",
+        "label": null,
+        "latitude": null,
+        "longitude": null,
+        "precision": "no_source_verified_geography",
+        "verified_iso": false
+      },
+      "observation_id": "beh:e341f0391cd745da4446b44c269c",
+      "provider": "commercial",
+      "requires_geolocation": true,
+      "source_family": "commercial_media",
+      "source_published_at": "2026-11-11T18:17:00Z",
+      "source_url": "https://maritime-executive.com/article/greek-maritime-forum-2027-to-put-athens-at-centre-of-global-shipping",
+      "status": "recent_source_observation_unreviewed",
+      "title": "Greek Maritime Forum 2027 to Put Athens at Centre of Global Shipping"
+    }
+  ],
+  "registry_asof": "2026-11-13T14:53:04Z",
+  "registry_source_count": 270,
+  "review_groups": [],
+  "review_groups_count_total": 0,
+  "schema": "aiba.behavioral-convergence-shadow.v1",
+  "ucdp_outcomes": "separate_retrospective_validation_not_an_alert_trigger"
+}
