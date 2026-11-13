@@ -68,6 +68,18 @@ class ReportEventTests(unittest.TestCase):
         self.assertGreater(result["reported_event_site_separation_km"],150)
         self.assertFalse(result["independent_corroboration_established"])
 
+    def test_identical_headline_does_not_hide_conflicting_event_sites(self):
+        a=row("a",TITLE1,provider="press-a",
+              event_site=location(50.45,30.52))
+        b=row("b",TITLE1,provider="press-b",
+              event_site=location(46.48,30.73),offset=12)
+        result=match_pair(a,b)
+        self.assertEqual(result["status"],"related_reporting_unreviewed")
+        self.assertEqual(result["match_basis"],
+                         "strong_content_overlap_but_conflicting_source_declared_event_sites")
+        self.assertTrue(result["reported_event_site_comparison_available"])
+        self.assertGreater(result["reported_event_site_separation_km"],150)
+
     def test_publisher_new_york_coordinates_never_used_for_proximity(self):
         a=row("a",TITLE1,reporting_origin="New York lat 40.7 lon -74",
               event_site=location(50.45,30.52))
