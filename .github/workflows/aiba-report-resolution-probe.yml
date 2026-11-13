@@ -1,0 +1,33 @@
+name: Read-only AIBA report/event resolution source probe (PR only)
+on:
+  pull_request:
+    paths:
+      - 'behavioral_event_resolution.py'
+      - 'behavioral_fusion.py'
+      - 'scripts/aiba_report_resolution_probe.py'
+      - '.github/workflows/aiba-report-resolution-probe.yml'
+permissions:
+  contents: read
+jobs:
+  real-source-resolution-probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 7
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: src
+          persist-credentials: false
+      - uses: actions/checkout@v4
+        with:
+          path: state
+          ref: aiba-feed-data
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Inspect real source history at source-asof time; counts only, no warnings
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd src
+          python scripts/aiba_report_resolution_probe.py --state ../state/observations
