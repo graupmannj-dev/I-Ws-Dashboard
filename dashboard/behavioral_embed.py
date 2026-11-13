@@ -269,10 +269,21 @@ def embed(site):
                 "warning_level_change":False,
                 "source_reports":safe_links,
             })
+        examined=matches.get("records_examined")
+        eligible=matches.get("eligible_event_reporting_records")
+        excluded=matches.get(
+            "routine_notice_market_or_measurement_records_excluded_from_text_event_matching")
+        if (type(examined) is not int or type(eligible) is not int or
+                type(excluded) is not int or examined<0 or eligible<0 or
+                excluded<0 or eligible+excluded!=examined):
+            return empty("invalid_event_report_denominators")
         safe_matches = {
             "schema":matches["schema"],
             "status":"unreviewed_report_relationships_only",
-            "records_examined":matches.get("records_examined"),
+            "records_examined":examined,
+            "eligible_event_reporting_records":eligible,
+            "routine_notice_market_or_measurement_records_excluded_from_text_event_matching":
+                excluded,
             "input_truncated":matches.get("input_truncated") is True,
             "pairwise_comparisons_capped":matches.get("pairwise_comparisons_capped") is True,
             "same_document_group_count_total":matches.get("same_document_group_count_total"),
