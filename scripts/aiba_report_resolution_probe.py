@@ -35,6 +35,7 @@ def probe(state):
         "history_files_examined":history["history_files_examined"],
         "excluded_source_observations":history["excluded_observations"],
         "exact_source_document_groups":result["same_document_group_count_total"],
+        "possible_same_source_story_report_pairs":result["possible_same_source_story_count_total"],
         "possible_same_event_report_pairs":result["possible_same_event_count_total"],
         "related_but_not_same_event_report_pairs":result["related_reporting_count_total"],
         "records_examined":result["records_examined"],
