@@ -1,0 +1,21 @@
+name: AIBA real-report evaluation contract (no source fetch)
+on:
+  pull_request:
+    paths:
+      - 'scripts/aiba_real_report_eval.py'
+      - 'tests/test_aiba_real_report_eval.py'
+      - '.github/workflows/aiba-real-report-eval-contract.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  eval-contract:
+    runs-on: ubuntu-latest
+    timeout-minutes: 7
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Validate synthetic contract tests only
+        run: PYTHONPATH=. python -m unittest tests.test_aiba_real_report_eval
