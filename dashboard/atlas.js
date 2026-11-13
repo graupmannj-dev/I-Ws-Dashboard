@@ -23,7 +23,7 @@ const state = {
   atlas:null,countries:null,selected:null,selectionType:"hotspot",
   severity:"all",watchTab:"all",windowDays:7,
   friction:null,frictionShowAll:false,frictionRemoteStatus:"static fallback",
-  behavior:null,
+  behavior:null,behaviorRemoteStatus:"published site snapshot",
   dates:[],minDay:0,maxDay:0,startDay:0,endDay:0,
   rangeDrag:null,
   lon:52,lat:20,zoom:1,pins:[],reports:[],hitTargets:[],dimensions:{w:1,h:1,dpr:1,cx:0,cy:0,r:1},
@@ -602,6 +602,118 @@ function validBehavior(value){
     value.new_single_source_leads.every(l=>l&&l.status==="single_source_unreviewed")&&
     typeof value.collection_coverage==="object"&&value.collection_coverage!==null;
 }
+function normalizeLiveBehavior(raw){
+  // Existing source-separated fusion output, never an approved warning.
+  if(!raw||raw.schema!=="aiba.behavioral-convergence-shadow.v1"||
+     raw.approved_warning_count!==0||raw.automated_severity_changes!==0||
+     raw.forecast_probability!=null||raw.prediction_horizon!=null||
+     !Array.isArray(raw.review_groups)||raw.review_groups.length>25||
+     !Array.isArray(raw.new_single_source_leads)||raw.new_single_source_leads.length>50||
+     !raw.collection_coverage||typeof raw.collection_coverage!=="object"||
+     Array.isArray(raw.collection_coverage)||Object.keys(raw.collection_coverage).length>30)
+    return null;
+  const at=Date.parse(raw.generated_at||"");
+  const registryAt=Date.parse(raw.registry_asof||"");
+  if(!Number.isFinite(at)||!Number.isFinite(registryAt)||
+      !/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z$/.test(raw.generated_at)||
+      !/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z$/.test(raw.registry_asof)||
+      at>Date.now()+120000||at<registryAt||at-registryAt>900000)return null;
+  const groupTotal=raw.review_groups_count_total;
+  const leadTotal=raw.new_single_source_count_total;
+  if(!Number.isInteger(groupTotal)||groupTotal<raw.review_groups.length||groupTotal>100000||
+     !Number.isInteger(leadTotal)||leadTotal<raw.new_single_source_leads.length||leadTotal>100000)return null;
+  for(const g of raw.review_groups){
+    if(!g||g.status!=="cross_family_cooccurrence_unreviewed"||
+       g.warning_level_change!==false||!Array.isArray(g.distinct_source_families)||
+       g.distinct_source_families.length<2||!Array.isArray(g.source_links)||
+       Date.parse(g.last_observed_at||"")>at)return null;
+  }
+  for(const l of raw.new_single_source_leads){
+    if(!l||l.status!=="single_source_unreviewed"||
+       Date.parse(l.first_observed_at||"")>at)return null;
+  }
+  const limited=v=>typeof v==="string"?v.slice(0,800):"";
+  const geo=v=>({
+    label:limited(v?.label||"Location not verified"),
+    scope_key:limited(v?.key||"")||null,
+    precision:limited(v?.precision||"not_geocoded"),
+    verified_iso:v?.verified_iso===true,
+    // Deliberately omit lat/lon even where another upstream field contains
+    // a centroid. A source-defined region is NOT a verified incident point.
+  });
+  const groups=raw.review_groups.map(g=>({
+    id:limited(g.id),geography:geo(g.geography),status:g.status,
+    warning_level_change:false,assessment:limited(g.assessment),
+    source_family_count:Number(g.source_family_count)||g.distinct_source_families.length,
+    distinct_source_families:g.distinct_source_families.slice(0,12).map(limited),
+    distinct_provider_count:Number(g.distinct_provider_count)||0,
+    source_root_count:Number(g.source_root_count)||0,
+    first_observed_at:limited(g.first_observed_at),
+    last_observed_at:limited(g.last_observed_at),
+    source_links:g.source_links.slice(0,12).map(x=>({
+      url:safeUrl(x?.url),provider:limited(x?.provider),family:limited(x?.family),
+      first_observed_at:limited(x?.first_observed_at),
+      published_at:limited(x?.published_at),
+    })),
+  }));
+  const leads=raw.new_single_source_leads.map(l=>({
+    observation_id:limited(l.observation_id),title:limited(l.title),
+    source_family:limited(l.source_family),source_url:safeUrl(l.source_url),
+    first_observed_at:limited(l.first_observed_at),
+    source_published_at:limited(l.source_published_at),
+    geography:geo(l.geography),
+    requires_geolocation:l.requires_geolocation===true,
+    status:"single_source_unreviewed",
+  }));
+  const health={};
+  for(const [name,row] of Object.entries(raw.collection_coverage)){
+    if(!row||typeof row!=="object"||Array.isArray(row))return null;
+    health[limited(name)]={
+      status:limited(row.status||"unknown"),
+      missingness:limited(row.missingness||"unknown"),
+      source_scope:limited(row.source_scope||"unverified scope"),
+      snapshot_at:limited(row.snapshot_at),
+    };
+  }
+  return {
+    schema:raw.schema,status:"read_only_shadow_evidence",
+    source_generated_at:raw.generated_at,site_snapshot_fresh:false,
+    cross_family_count_total:groupTotal,single_source_count_total:leadTotal,
+    review_groups:groups,new_single_source_leads:leads,
+    collection_coverage:health,
+    provider_baselines:state.behavior?.provider_baselines||{},
+    approved_warning_count:0,automated_severity_changes:0,
+    source_continuity_proven:false,forecast_probability:null,
+    map_coordinates_inferred:false,
+  };
+}
+async function refreshBehavior(){
+  const url=state.atlas?.behavior_live_url;
+  if(!safeUrl(url))return;
+  try{
+    const opts={cache:"no-store"};
+    if(typeof AbortSignal!=="undefined"&&typeof AbortSignal.timeout==="function")
+      opts.signal=AbortSignal.timeout(12000);
+    const response=await fetch(url,opts);
+    if(!response.ok)throw Error("behavioral source response "+response.status);
+    const raw=await response.json(),candidate=normalizeLiveBehavior(raw);
+    if(!validBehavior(candidate))throw Error("invalid behavioral evidence schema");
+    const previous=Date.parse(state.behavior?.source_generated_at||"");
+    const next=Date.parse(candidate.source_generated_at);
+    if(!Number.isFinite(previous)||next>previous){
+      state.behavior=candidate;
+      state.behaviorRemoteStatus="public evidence branch snapshot";
+      updateBehaviorTabCount();
+      if(state.watchTab==="behavior")renderBehaviorList();
+    }else{
+      state.behaviorRemoteStatus="published site snapshot retained";
+      if(state.watchTab==="behavior")renderBehaviorList();
+    }
+  }catch(error){
+    state.behaviorRemoteStatus="source branch refresh unavailable; last published snapshot retained";
+    if(state.watchTab==="behavior")renderBehaviorList();
+  }
+}
 function behaviorAge(){
   const then=Date.parse(state.behavior?.source_generated_at||"");
   return Number.isFinite(then)?(Date.now()-then)/60000:Infinity;
@@ -688,7 +800,7 @@ function renderBehaviorList(){
   introduction.innerHTML='<strong>Behavioral discovery · SHADOW ONLY</strong>'+
     '<span class="behavior-status">'+(recent?"SOURCE SNAPSHOT WITHIN 90 MIN":"STALE OR UNVERIFIED SNAPSHOT")+'</span>'+
     '<p>As of '+safe(b.source_generated_at)+' · '+safe(stamp)+
-    '. Unreviewed source observations, not confirmed preparations or attack forecasts.</p>'+
+    ' · '+safe(state.behaviorRemoteStatus)+'. Unreviewed source observations, not confirmed preparations or attack forecasts.</p>'+
     '<div class="behavior-counts"><span><b>'+safe(b.cross_family_count_total)+'</b> cross-family reviews</span>'+
     '<span><b>'+safe(b.single_source_count_total)+'</b> new source leads</span></div>'+
     (recent?'':'<p class="behavior-caution">Historical context only: source freshness failed the 90-minute pilot gate. No current all-clear may be inferred.</p>');
@@ -1026,6 +1138,8 @@ async function init(){
     state.friction=validFriction(data.friction_briefs)?data.friction_briefs:null;
     state.behavior=validBehavior(data.behavioral_discovery)?data.behavioral_discovery:null;
     updateBehaviorTabCount();
+    void refreshBehavior();
+    setInterval(refreshBehavior,300000);
     renderFriction();
     void refreshFriction();
     setInterval(refreshFriction,300000);
