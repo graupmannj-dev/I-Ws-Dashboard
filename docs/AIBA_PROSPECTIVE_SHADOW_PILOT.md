@@ -57,6 +57,25 @@ Requirements for an eligible source-coverage frame:
   ledger records hashes and aggregate coverage, not aircraft
   locations or individual source observations.
 
+## Capturing immutable source evidence in a private pilot
+
+The production evidence branch stores mutable latest registry and fusion
+snapshots. The local source-coverage frame captures their SHA256s but
+a SHA256 alone does not preserve the actual bytes for later audit.
+The new, opt-in [private capture kit](AIBA_PRIVATE_PILOT_CAPTURE.md)
+performs the same 90-minute as-of-source preflight, archives **the exact
+source bytes** privately with restrictive file permissions, appends the
+24-hour frame to the separate local hash chain, verifies the hashes,
+and returns the chain head/count for the existing manual GitHub
+Sigstore timestamp workflow.
+
+This is not a new collector or a periodic monitoring service.
+The resulting 24-hour horizon is a forward-looking evaluation
+container, **not proof that every source was continuously checked
+during those 24 hours**. Actual specific geopolitical forecasts
+still require an explicit analyst-issued tipper and a fresh
+independent witness of the resulting new chain head.
+
 ## Read-only preparation
 
 Use a current local checkout of the *data branch* (not the

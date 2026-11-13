@@ -1,0 +1,27 @@
+name: AIBA prospective private source capture tests (PR only)
+on:
+  pull_request:
+    paths:
+      - 'scripts/aiba_private_pilot_capture.py'
+      - 'scripts/aiba_private_pilot_reconstruct.py'
+      - 'tests/test_aiba_private_pilot_capture.py'
+      - 'tests/test_aiba_private_pilot_reconstruct.py'
+      - 'docs/AIBA_PRIVATE_PILOT_CAPTURE.md'
+      - '.github/workflows/aiba-private-pilot-capture-tests.yml'
+permissions:
+  contents: read
+jobs:
+  private-pilot-custody-test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Compile and test offline source archiving with synthetic sources only
+        run: |
+          python -m compileall -q scripts/aiba_private_pilot_capture.py scripts/aiba_private_pilot_reconstruct.py
+          python -m unittest tests.test_aiba_private_pilot_capture tests.test_aiba_private_pilot_reconstruct tests.test_aiba_prospective_shadow tests.test_aiba_tipper_anchor -v
