@@ -25,8 +25,13 @@ could incorrectly think the behavioral engine was another website.
   `dashboard/build_atlas.py`. The Atlas builder now embeds a
   *whitelisted bounded summary* of that same source's
   `/behavior/behavioral_fusion.json` into the existing
-  `/atlas.json`. No second backend, polling job, IAM,
-  data collector or external cloud endpoint is needed.
+  `/atlas.json`. The tab also **checks the existing public
+  aiba-feed-data branch every five minutes** for a strictly newer,
+  validated behavioral fusion snapshot and uses the published site
+  copy as fallback. This is browser-side read-only refresh, not a
+  guarantee that providers collect on time. No second backend,
+  scheduling job, IAM, new data collector or billed cloud endpoint
+  is needed.
 - The detailed `/behavior/` page remains available for the
   full source-health table; `/ops/` and `/classic.html` remain
   under the **same website**, linked from Atlas.
@@ -84,11 +89,14 @@ exercise the same canonical site-root build order.
 ## What remains before AIBA is one complete operational workflow
 
 1. The behavioral panel is **integrated visually and structurally**
-   into the existing Atlas, but the static Pages build still
-   refreshes on publication. Browser-refresh and collector cadence
-   are distinct; source times are explicit. A future optional
-   direct fetch from the public evidence branch should compare
-   fresh schema/time/identity and retain the static fallback.
+   into the existing Atlas. Every five minutes the browser attempts
+   a read-only check of the existing public evidence branch for a
+   **newer** behavioral fusion snapshot. It rejects malformed,
+   future-dated, implausibly delayed or promoted warning records
+   and retains the static Pages fallback on failure. Browser
+   polling does not make the underlying collectors punctual:
+   actual provider timestamps and 90-minute staleness warnings
+   remain displayed. The refresh exposes no private ledger data.
 2. The **private** prospective tipper issuance, independent
    hash witness, first-publication adjudication and evaluation
    remain CLI/Actions workflows. Do **not** render private
