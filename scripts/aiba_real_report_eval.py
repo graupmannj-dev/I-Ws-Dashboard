@@ -89,6 +89,17 @@ def validate_reports(rows):
     leaked = sorted(key for key, v in splits.items() if len(v) > 1)
     if leaked:
         raise ValueError("source-story lineage leak across splits: " + ", ".join(leaked[:5]))
+    # A story can be independently rewritten or republished while remaining
+    # the same episode. Explicitly reviewed episode groups must not span
+    # development/heldout. Exact duplicated text is another leakage route.
+    for key in ("evaluation_group_id", "source_text_sha256"):
+        split_map = defaultdict(set)
+        for row in result:
+            val = row.get(key)
+            if val:
+                split_map[val].add(row["split"])
+        if any(len(splits) > 1 for splits in split_map.values()):
+            raise ValueError(f"{key} crosses evaluation split")
     return result
 
 
