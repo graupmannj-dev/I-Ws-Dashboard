@@ -90,6 +90,34 @@ SHA256 and entry count. The receipt explicitly says:
 independent time witness unverified; no issued tipper;
 no confirmed negative event; no predictive skill estimate.
 
+## Read-only evidence reconstruction before outcome review
+
+A successful capture is useful only if another analyst can later
+reconstruct the **exact original evidence** rather than trust
+whatever the evidence branch currently displays.
+
+~~~bash
+python ~/aiba-code/scripts/aiba_private_pilot_reconstruct.py \
+  --private-root ~/.aiba-shadow-private \
+  --frame-id shadow-YYYYMMDDTHHMMSS-<digest>
+~~~
+
+Copy the exact frame ID from the successful capture receipt.
+The read-only reconstruction validates the entire local
+hash-chained ledger, looks up the historical frame entry,
+recomputes BOTH archived source SHA256 digests, verifies the
+owner-only manifest and freeze receipt, and repeats the
+original source-eligibility checks against the **original
+recorded frame time** rather than today's source freshness.
+It works even if subsequent ledgers have additional entries
+(issued tippers or adjudication records).
+
+A successful local reconstruction still reports
+independent_sigstore_witness_verified=false. A hash chain
+and matching source copies do **not** independently prove
+the issuer's clock or news/publication chronology; the
+separate verified witness is required.
+
 ## Independently witness the ledger head
 
 Immediately open the existing GitHub workflow:
