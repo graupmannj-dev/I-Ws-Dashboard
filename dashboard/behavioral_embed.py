@@ -16,6 +16,7 @@ MAX_GROUPS=25
 MAX_LEADS=50
 MAX_PROVIDERS=30
 MAX_SOURCES_PER_GROUP=12
+MAX_RECENT_CONTEXT=24
 
 
 def empty(reason="not_collected"):
@@ -26,6 +27,7 @@ def empty(reason="not_collected"):
         "cross_family_count_total":0,"single_source_count_total":0,
         "review_groups":[],"new_single_source_leads":[],
         "collection_coverage":{},"provider_baselines":{},
+        "discovery_visibility":None,"recent_source_observations":[],
         "approved_warning_count":0,"automated_severity_changes":0,
         "source_continuity_proven":False,
         "forecast_probability":None,
@@ -146,6 +148,56 @@ def embed(site):
             "requires_geolocation":row.get("requires_geolocation") is True,
             "status":"single_source_unreviewed",
         })
+    # Preserve source monitoring evidence separately from candidate alerts.
+    # These optional new fields are absent in historical published snapshots.
+    vis = raw.get("discovery_visibility")
+    contextual = raw.get("recent_source_observations", [])
+    if (vis is not None or "recent_source_observations" in raw):
+        expected = ("latest_registry_record_count",
+                    "latest_registry_newly_observed_count",
+                    "recent_unique_record_count_72h",
+                    "recent_unlocated_count_72h",
+                    "latest_unlocated_record_count",
+                    "shared_exact_geography_keys_across_behavior_families",
+                    "recent_observations_sampled")
+        if (not isinstance(vis, dict) or
+                vis.get("schema") != "aiba.behavioral-discovery-visibility.v1" or
+                not isinstance(contextual, list) or len(contextual) > MAX_RECENT_CONTEXT or
+                any(type(vis.get(key)) is not int or
+                    not 0 <= vis[key] <= 100000 for key in expected) or
+                vis.get("recent_observations_sampled") != len(contextual) or
+                vis.get("source_coverage_is_globally_complete") is not False or
+                vis.get("new_or_collocated_not_same_as_verified_threat") is not True):
+            return empty("invalid_discovery_visibility_diagnostics")
+        safe_vis = {key: vis[key] for key in expected}
+        safe_vis["schema"] = vis["schema"]
+        safe_vis["exact_geography_match_required_for_cross_family"] = (
+            vis.get("exact_geography_match_required_for_cross_family") is True)
+        safe_vis["new_this_collection_required_for_cross_family_nomination"] = (
+            vis.get("new_this_collection_required_for_cross_family_nomination") is True)
+        safe_vis["source_coverage_is_globally_complete"] = False
+        safe_recent = []
+        for item in contextual:
+            if not isinstance(item, dict) or item.get("status") != "recent_source_observation_unreviewed":
+                return empty("unexpected_historical_observation_status")
+            observed = iso(item.get("first_observed_at"))
+            if not observed or observed > stamp:
+                return empty("future_or_invalid_source_observation")
+            safe_recent.append({
+                "observation_id": as_string(item.get("observation_id"), 140),
+                "title": as_string(item.get("title"), 250),
+                "source_family": as_string(item.get("source_family"), 120),
+                "provider": as_string(item.get("provider"), 120),
+                "source_url": https_url(item.get("source_url")),
+                "first_observed_at": observed,
+                "source_published_at": iso(item.get("source_published_at")),
+                "geography": geo_note(item.get("geography")),
+                "requires_geolocation": item.get("requires_geolocation") is True,
+                "status": "recent_source_observation_unreviewed",
+            })
+    else:
+        safe_vis = None
+        safe_recent = []
     safe_health={}
     for name,row in sorted(health.items()):
         if not isinstance(name,str) or not isinstance(row,dict):
@@ -178,6 +230,8 @@ def embed(site):
         "single_source_count_total":total_leads,
         "review_groups":safe_groups,
         "new_single_source_leads":safe_leads,
+        "discovery_visibility":safe_vis,
+        "recent_source_observations":safe_recent,
         "collection_coverage":safe_health,
         "provider_baselines":provider_baselines,
         "approved_warning_count":0,
