@@ -1562,5 +1562,61 @@ async function init(){
     $("timelineCaption").textContent="Timeline unavailable: source data could not be loaded.";
   }
 }
+/* FAA NAS official operational disruption monitor. Do not interpret disruption
+ * or multi-airport impact as evidence of military, cyber or foreign activity.
+ * Never show green/all-clear when the upstream source is missing or stale. */
+async function refreshFaaNas() {
+  const heading=$("faaNasSummary"), line=$("faaNasTime");
+  if(!heading||!line)return;
+  const base="https://raw.githubusercontent.com/graupmannj-dev/I-Ws-Dashboard/aiba-feed-data/observations/";
+  const set=(message,detail)=>{heading.textContent=message;line.textContent=detail;};
+  try {
+    const [sourceResponse,healthResponse]=await Promise.all([
+      fetch(base+"latest/faa_nas.json",{cache:"no-store"}),
+      fetch(base+"health/faa_nas.json",{cache:"no-store"})
+    ]);
+    if(!sourceResponse.ok||!healthResponse.ok)throw Error("sensor not available on public evidence branch");
+    const data=await sourceResponse.json(),health=await healthResponse.json();
+    if(!data||data.schema!=="aiba.faa-nas-systemic-disruption.v1"||
+       !health||health.schema!=="aiba.faa-nas-health.v1"||
+       typeof data.monitored_airport_count!=="number"||
+       typeof data.national_stop_airports!=="number"||
+       !Array.isArray(data.airports)||data.hostile_actor_evidence!==false||
+       data.military_warning_level_change!==false)throw Error("unrecognized sensor payload");
+    const sampleTime=Date.parse(String(data.checked_at||""));
+    const healthTime=Date.parse(String(health.checked_at||""));
+    const age=Date.now()-sampleTime;
+    const recentlyCollected=Number.isFinite(sampleTime)&&age>=-300000&&age<=25*60000;
+    const sourceHealthy=health.status==="collected"&&Number.isFinite(healthTime)&&
+                        (Date.now()-healthTime)<=25*60000;
+    if(!recentlyCollected||!sourceHealthy){
+      set("FAA sensor stale or unavailable; no all-clear inference",
+          "Last valid sample: "+String(data.checked_at||"unknown")+
+          " · last source check: "+String(health.checked_at||"unknown"));
+      return;
+    }
+    let title;
+    if(data.status==="multi_airport_national_stop_language"){
+      title="FAA NAS: NATIONAL STOP language in "+data.national_stop_airports+
+          " monitored airport records — systemic disruption requires review";
+    }else if(data.status==="single_airport_national_stop_language"){
+      title="FAA NAS: national-stop language reported at one monitored airport";
+    }else if(data.status==="multiple_airport_ground_stops"){
+      title="FAA NAS: simultaneous ground-stop records at "+data.active_ground_stop_airports+" monitored airports";
+    }else if(data.status==="no_systemic_disruption_in_monitored_sample"){
+      title="No cross-airport disruption pattern in this FAA sample (not a national all-clear)";
+    }else{
+      throw Error("unknown systemic disruption category");
+    }
+    set(title,"Observed "+String(data.checked_at)+
+        " · "+data.monitored_airport_count+" monitored airports · FAA single-source operational effect, cause unknown");
+  } catch(_err){
+    set("FAA NAS sensor unavailable; no all-clear inference",
+        "Independent source status unavailable — consult the official FAA NAS feed");
+  }
+}
 if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",init);else init();
+if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",refreshFaaNas);
+else refreshFaaNas();
+setInterval(refreshFaaNas,120000);
 })();
