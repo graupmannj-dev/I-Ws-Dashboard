@@ -26,6 +26,10 @@ const assert = require("node:assert/strict");
   };
   await page.route('**/aiba-feed-data/observations/latest/friction_briefs.json',
     route=>route.fulfill({json:mockFriction}));
+  // Behavioral live source can be unavailable; the static Pages source
+  // must remain usable rather than accidentally relying on GitHub uptime.
+  await page.route('**/aiba-feed-data/observations/latest/behavioral_fusion.json',
+    route=>route.fulfill({status:503,body:"test-only offline behavioral feed"}));
   // PR tests are hermetic. Simulate an expired live feed before testing current
   // source snapshots so production endpoints are never needed by Playwright.
   const staleLive={version:1,kind:"aiba_restriction_snapshot",
