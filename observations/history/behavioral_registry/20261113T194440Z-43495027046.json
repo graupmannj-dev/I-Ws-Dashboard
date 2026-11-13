@@ -1,0 +1,124 @@
+{
+  "first_registry_baseline": false,
+  "first_seen_counts_by_mode": {
+    "amsa": 0,
+    "commercial": 0,
+    "ioda": 0,
+    "live_airspace": null,
+    "live_maritime": null,
+    "nga": null,
+    "official": 0,
+    "watchlist": 0
+  },
+  "full_snapshot_count": 269,
+  "generated_at": "2026-11-13T19:44:40Z",
+  "invalid_records": {},
+  "new_records": [],
+  "operational_alerts_generated": 0,
+  "schema": "aiba.behavioral-observations.v1",
+  "snapshot_counts_by_mode": {
+    "amsa": 4,
+    "commercial": 9,
+    "ioda": 10,
+    "live_airspace": null,
+    "live_maritime": null,
+    "nga": null,
+    "official": 238,
+    "watchlist": 8
+  },
+  "source_health": {
+    "amsa": {
+      "age_hours": 4.86,
+      "checked_at": "2026-11-13T14:52:55Z",
+      "first_provider_baseline": false,
+      "missingness": "provider_bounded_not_exhaustive",
+      "mode": "amsa",
+      "provider_status": "collected",
+      "snapshot_at": "2026-11-13T14:52:55Z",
+      "source_scope": "AMSA NAVAREA X only",
+      "status": "current",
+      "truncated_or_partial": false
+    },
+    "commercial": {
+      "age_hours": 4.25,
+      "checked_at": "2026-11-13T15:29:52Z",
+      "first_provider_baseline": false,
+      "missingness": "provider_bounded_not_exhaustive",
+      "mode": "commercial",
+      "provider_status": "collected",
+      "snapshot_at": "2026-11-13T15:29:52Z",
+      "source_scope": "selected maritime/air-cargo/war-risk press and syndication",
+      "status": "current",
+      "truncated_or_partial": false
+    },
+    "ioda": {
+      "age_hours": 4.86,
+      "checked_at": "2026-11-13T14:52:55Z",
+      "first_provider_baseline": false,
+      "missingness": "provider_bounded_not_exhaustive",
+      "mode": "ioda",
+      "provider_status": "collected",
+      "snapshot_at": "2026-11-13T14:52:55Z",
+      "source_scope": "IODA country events (first 100 of first page, 4-hour query)",
+      "status": "current",
+      "truncated_or_partial": false
+    },
+    "live_airspace": {
+      "age_hours": 7.28,
+      "checked_at": "2026-11-13T12:28:01Z",
+      "missingness": "not_measured_not_zero",
+      "mode": "live_airspace",
+      "provider_status": "partial",
+      "snapshot_at": "2026-11-13T12:28:01Z",
+      "source_scope": "FAA temporary flight restrictions: United States only",
+      "status": "stale_or_unavailable",
+      "truncated_or_partial": true
+    },
+    "live_maritime": {
+      "age_hours": 7.28,
+      "checked_at": "2026-11-13T12:28:01Z",
+      "missingness": "not_measured_not_zero",
+      "mode": "live_maritime",
+      "provider_status": "partial",
+      "snapshot_at": "2026-11-13T12:28:01Z",
+      "source_scope": "Danish Maritime Authority Niord notices: regional Baltic/North Sea",
+      "status": "stale_or_unavailable",
+      "truncated_or_partial": true
+    },
+    "nga": {
+      "age_hours": 4.86,
+      "checked_at": "2026-11-13T14:52:55Z",
+      "missingness": "not_measured_not_zero",
+      "mode": "nga",
+      "provider_status": "unavailable",
+      "snapshot_at": "2026-11-13T14:52:55Z",
+      "source_scope": "NGA active broadcast warnings; provider availability varies",
+      "status": "stale_or_unavailable",
+      "truncated_or_partial": false
+    },
+    "official": {
+      "age_hours": 0.0,
+      "checked_at": "2026-11-13T19:44:38Z",
+      "first_provider_baseline": false,
+      "missingness": "provider_bounded_not_exhaustive",
+      "mode": "official",
+      "provider_status": "collected",
+      "snapshot_at": "2026-11-13T19:44:38Z",
+      "source_scope": "US State and UK FCDO travel-advice feeds",
+      "status": "current",
+      "truncated_or_partial": false
+    },
+    "watchlist": {
+      "age_hours": 0.0,
+      "checked_at": "2026-11-13T19:44:38Z",
+      "first_provider_baseline": false,
+      "missingness": "provider_bounded_not_exhaustive",
+      "mode": "watchlist",
+      "provider_status": "collected",
+      "snapshot_at": "2026-11-13T19:44:38Z",
+      "source_scope": "registered, exact-ID forecast contracts only",
+      "status": "current",
+      "truncated_or_partial": false
+    }
+  }
+}

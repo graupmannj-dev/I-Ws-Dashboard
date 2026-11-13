@@ -40,7 +40,7 @@
       "title": "Black Sea war risk insurance premiums surge to 20% of vessel value - Beinsure"
     }
   ],
-  "generated_at": "2026-11-13T15:29:53Z",
+  "generated_at": "2026-11-13T19:44:39Z",
   "health": {
     "commercial": {
       "caveat": "Data are source observations or investigatory leads; no likelihood of conflict is inferred.",
@@ -54,17 +54,17 @@
     },
     "markets": {
       "caveat": "Data are source observations or investigatory leads; no likelihood of conflict is inferred.",
-      "checked_at": "2026-11-13T06:49:06Z",
+      "checked_at": "2026-11-13T19:44:35Z",
       "errors": [],
       "mode": "markets",
-      "record_count": 117,
+      "record_count": 115,
       "source_queries_attempted": 14,
       "source_queries_ok": 14,
       "status": "collected"
     },
     "official": {
       "caveat": "Data are source observations or investigatory leads; no likelihood of conflict is inferred.",
-      "checked_at": "2026-11-13T06:49:09Z",
+      "checked_at": "2026-11-13T19:44:38Z",
       "errors": [],
       "mode": "official",
       "record_count": 238,
@@ -75,17 +75,30 @@
   },
   "market_moves": [
     {
-      "change_24h_approx": -0.155,
+      "change_24h_approx": 0.13,
       "classification": "market_repricing_investigation_only",
-      "current_at": "2026-11-13T06:49:06Z",
-      "id": "polymarket:6831494",
+      "current_at": "2026-11-13T19:44:35Z",
+      "id": "polymarket:6450185",
       "limitation": "Market question direction may differ from escalation; event definition not cross-validated.",
-      "previous_at": "2026-11-12T07:14:35Z",
+      "previous_at": "2026-11-12T19:56:23Z",
       "scenario_tags": [
-        "Iran / Gulf"
+        "DRC / Rwanda"
       ],
-      "title": "US x Iran Effective Ceasefire by November 15?",
-      "url": "https://polymarket.com/event/us-x-iran-effective-ceasefire-begins-by-2-week-pause-20261108"
+      "title": "Will Mali vs. Rwanda end in a draw?",
+      "url": "https://polymarket.com/event/afcq-mal-rwa-2026-11-13"
+    },
+    {
+      "change_24h_approx": 0.16,
+      "classification": "market_repricing_investigation_only",
+      "current_at": "2026-11-13T19:44:35Z",
+      "id": "polymarket:6450186",
+      "limitation": "Market question direction may differ from escalation; event definition not cross-validated.",
+      "previous_at": "2026-11-12T19:56:23Z",
+      "scenario_tags": [
+        "DRC / Rwanda"
+      ],
+      "title": "Will Rwanda win on 2026-11-13?",
+      "url": "https://polymarket.com/event/afcq-mal-rwa-2026-11-13"
     }
   ],
   "models": [
@@ -97,7 +110,7 @@
       "assessment": "protective_advisory_not_military_preparation",
       "id": "ae720a57bbe6be9d7c05",
       "kind": "official_travel_security_notice",
-      "observed_at": "2026-11-13T06:49:09Z",
+      "observed_at": "2026-11-13T19:44:38Z",
       "published_at": "2026-11-12T16:54:23Z",
       "publisher": "UK FCDO",
       "scenario_tags": [
@@ -110,7 +123,7 @@
       "assessment": "protective_advisory_not_military_preparation",
       "id": "b536f3297517a19afa0d",
       "kind": "official_travel_security_notice",
-      "observed_at": "2026-11-13T06:49:09Z",
+      "observed_at": "2026-11-13T19:44:38Z",
       "published_at": "2026-11-12T11:00:21Z",
       "publisher": "UK FCDO",
       "scenario_tags": [
@@ -124,29 +137,50 @@
     {
       "kind": "quiet_discrepancy_candidate",
       "market": {
-        "change_24h_approx": -0.155,
+        "change_24h_approx": 0.13,
         "classification": "market_repricing_investigation_only",
-        "current_at": "2026-11-13T06:49:06Z",
-        "id": "polymarket:6831494",
+        "current_at": "2026-11-13T19:44:35Z",
+        "id": "polymarket:6450185",
         "limitation": "Market question direction may differ from escalation; event definition not cross-validated.",
-        "previous_at": "2026-11-12T07:14:35Z",
+        "previous_at": "2026-11-12T19:56:23Z",
         "scenario_tags": [
-          "Iran / Gulf"
+          "DRC / Rwanda"
         ],
-        "title": "US x Iran Effective Ceasefire by November 15?",
-        "url": "https://polymarket.com/event/us-x-iran-effective-ceasefire-begins-by-2-week-pause-20261108"
+        "title": "Will Mali vs. Rwanda end in a draw?",
+        "url": "https://polymarket.com/event/afcq-mal-rwa-2026-11-13"
       },
       "meaning": "An investigatory lead only: neither a war probability nor proof of advance knowledge.",
       "related_official_notices": [],
       "scenario_tags": [
-        "Iran / Gulf"
+        "DRC / Rwanda"
+      ]
+    },
+    {
+      "kind": "quiet_discrepancy_candidate",
+      "market": {
+        "change_24h_approx": 0.16,
+        "classification": "market_repricing_investigation_only",
+        "current_at": "2026-11-13T19:44:35Z",
+        "id": "polymarket:6450186",
+        "limitation": "Market question direction may differ from escalation; event definition not cross-validated.",
+        "previous_at": "2026-11-12T19:56:23Z",
+        "scenario_tags": [
+          "DRC / Rwanda"
+        ],
+        "title": "Will Rwanda win on 2026-11-13?",
+        "url": "https://polymarket.com/event/afcq-mal-rwa-2026-11-13"
+      },
+      "meaning": "An investigatory lead only: neither a war probability nor proof of advance knowledge.",
+      "related_official_notices": [],
+      "scenario_tags": [
+        "DRC / Rwanda"
       ]
     }
   ],
   "source_asof": {
     "commercial": "2026-11-13T15:29:52Z",
-    "markets": "2026-11-13T06:49:06Z",
-    "official": "2026-11-13T06:49:09Z"
+    "markets": "2026-11-13T19:44:35Z",
+    "official": "2026-11-13T19:44:38Z"
   },
   "warnings": [
     "No validated conflict event posterior",
