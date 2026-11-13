@@ -106,6 +106,37 @@ class ReportEventTests(unittest.TestCase):
         self.assertFalse(result["candidate_groups"][0]["warning_level_change"])
         self.assertEqual(result["automatic_alerts_created"],0)
 
+    def test_routine_advisories_with_shared_generic_text_are_not_events(self):
+        a=row("a","Ukraine Level 3 Reconsider Travel - Exercise Increased Caution",
+              family="protective_notice",provider="us-state")
+        b=row("b","Ukraine Level 3 Reconsider Travel - Exercise Increased Caution",
+              family="protective_notice",provider="uk-foreign-office",offset=10)
+        self.assertIsNone(match_pair(a,b))
+        result=build({"a":a,"b":b})
+        self.assertEqual(result["possible_same_event_count_total"],0)
+        self.assertEqual(result["eligible_event_reporting_records"],0)
+
+    def test_similar_scheduled_exercises_across_distinct_notices_are_not_same_event(self):
+        a=row("a","Denmark Kattegat Hevring firing exercises warning",
+              provider="niord",family="maritime_restriction",
+              url="https://niord.dma.dk/#/message/a1")
+        b=row("b","Denmark Kattegat Hevring firing exercises warning",
+              provider="niord",family="maritime_restriction",
+              url="https://niord.dma.dk/#/message/b2")
+        out=build({"a":a,"b":b})
+        self.assertEqual(out["same_document_group_count_total"],0)
+        self.assertEqual(out["possible_same_event_count_total"],0)
+        self.assertEqual(out["related_reporting_count_total"],0)
+
+    def test_explicit_source_event_report_can_match_across_source_families(self):
+        a=row("a",TITLE1,provider="live-eyewitness",
+              family="protective_notice")
+        a["source_kind"]="eyewitness_event_report"
+        b=row("b",TITLE2,provider="news",family="commercial_media",offset=10)
+        result=match_pair(a,b)
+        self.assertEqual(result["status"],"possible_same_event_unreviewed")
+        self.assertFalse(result["independent_corroboration_established"])
+
     def test_homepage_not_a_document_specific_identity(self):
         x=row("a",TITLE1,url="https://ioda.inetintel.cc.gatech.edu/")
         y=row("b",TITLE2,url="https://ioda.inetintel.cc.gatech.edu/",
