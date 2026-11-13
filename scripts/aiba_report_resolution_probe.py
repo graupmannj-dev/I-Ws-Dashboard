@@ -38,6 +38,9 @@ def probe(state):
         "possible_same_event_report_pairs":result["possible_same_event_count_total"],
         "related_but_not_same_event_report_pairs":result["related_reporting_count_total"],
         "records_examined":result["records_examined"],
+        "eligible_event_reporting_records":result["eligible_event_reporting_records"],
+        "routine_notice_market_or_measurement_records_excluded_from_text_event_matching":
+            result["routine_notice_market_or_measurement_records_excluded_from_text_event_matching"],
         "candidate_groups_displayed":len(result["candidate_groups"]),
         "matching_input_truncated":result["input_truncated"],
         "matching_comparisons_capped":result["pairwise_comparisons_capped"],
