@@ -106,7 +106,7 @@ function mockBehavior(stamp){
     assert.equal(await page.locator("#tabBehavior").getAttribute("aria-pressed"),"true");
     // The tab also fetches newer public evidence-branch source records,
     // but NEVER escalates their status or infers exact incident geometry.
-    const newer=new Date(Date.now()-60000).toISOString();
+    const newer=new Date(Date.now()-60000).toISOString().replace(/\.\d{3}Z$/,"Z");
     const rawLive={...mockBehavior(newer),generated_at:newer,
       registry_asof:newer,review_groups_count_total:1,
       new_single_source_count_total:1,prediction_horizon:null};
