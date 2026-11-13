@@ -1,0 +1,53 @@
+{
+  "schema": "aiba.collection-cadence-measured-evidence.v1",
+  "source_actions_run": "https://github.com/graupmannj-dev/I-Ws-Dashboard/actions/runs/43331055493",
+  "github_artifact_id": 13995660475,
+  "checked_at_utc": "2026-11-12T23:42:27Z",
+  "lookback_hours": 72,
+  "api_history_covers_window": true,
+  "runs_examined": 400,
+  "github_total_runs_at_query": 417,
+  "source_fusion_generated_at_utc": "2026-11-12T19:56:26Z",
+  "source_age_minutes": 226.02,
+  "source_fresh_enough_for_shadow": false,
+  "collectors": {
+    "friction": {
+      "nominal_minutes": 30,
+      "observed_runs": 11,
+      "scheduled_runs": 10,
+      "manual_runs": 1,
+      "successful_runs": 11,
+      "run_gaps_over_60_minutes": 10,
+      "maximum_start_gap_minutes": 499.85,
+      "minutes_since_latest_start": 307.88
+    },
+    "restrictions": {
+      "nominal_minutes": 15,
+      "observed_runs": 11,
+      "scheduled_runs": 10,
+      "manual_runs": 1,
+      "successful_runs": 11,
+      "run_gaps_over_30_minutes": 10,
+      "maximum_start_gap_minutes": 493.67,
+      "minutes_since_latest_start": 316.2
+    },
+    "operational_mixed_modes": {
+      "nominal_core_minutes": 360,
+      "observed_runs": 10,
+      "scheduled_runs": 9,
+      "manual_runs": 1,
+      "successful_runs": 10,
+      "run_gaps_over_720_minutes": 0,
+      "maximum_start_gap_minutes": 696.5,
+      "minutes_since_latest_start": 226.17,
+      "upper_bound_only": true
+    }
+  },
+  "source_status": "gap_or_stale_source_review_required",
+  "provider_health": "8 observed provider statuses; all bounded, partial or unavailable, no global completeness proof",
+  "all_source_continuity_verified": false,
+  "scheduled_event_delivery_verified": false,
+  "issued_tippers": 0,
+  "negative_outcomes_inferred": false,
+  "interpretation": "Gaps between actual GitHub Actions created_at timestamps, not proven missed scheduled events. Successful job conclusions do not prove the collector continuously measured its relevant geography. Core six-hour operational feeds are not isolated by the mixed-mode workflow record."
+}
