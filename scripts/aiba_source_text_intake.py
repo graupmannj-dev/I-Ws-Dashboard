@@ -22,7 +22,7 @@ MAX_BODY = 12000
 MAX_URL = 2000
 REQUIRED = ("id", "source_url", "source_text", "rights_basis",
             "retrieved_at", "story_lineage_id", "source_family")
-ALLOWED_KIND = {"commercial_media", "field_event_report",
+ALLOWED_KIND = {"commercial_media", "official_media", "field_event_report",
                 "primary_event_report", "eyewitness_event_report",
                 "source_event_report"}
 
