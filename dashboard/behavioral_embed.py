@@ -17,6 +17,8 @@ MAX_LEADS=50
 MAX_PROVIDERS=30
 MAX_SOURCES_PER_GROUP=12
 MAX_RECENT_CONTEXT=24
+MAX_EVENT_LINK_GROUPS=20
+MAX_EVENT_SOURCES=8
 
 
 def empty(reason="not_collected"):
@@ -28,6 +30,7 @@ def empty(reason="not_collected"):
         "review_groups":[],"new_single_source_leads":[],
         "collection_coverage":{},"provider_baselines":{},
         "discovery_visibility":None,"recent_source_observations":[],
+        "report_relationships":None,
         "approved_warning_count":0,"automated_severity_changes":0,
         "source_continuity_proven":False,
         "forecast_probability":None,
@@ -198,6 +201,94 @@ def embed(site):
     else:
         safe_vis = None
         safe_recent = []
+    # Event/report relationship matching is a *separate* investigative lane.
+    # Same document = potentially ONE report duplicated across geometries;
+    # substantively similar reporting = possible same/related event, NOT
+    # verified source independence or military intent.
+    matches = raw.get("report_relationships")
+    if matches is not None:
+        statuses = {
+            "shared_source_document_unreviewed",
+            "possible_same_event_unreviewed",
+            "related_reporting_unreviewed",
+        }
+        if (not isinstance(matches,dict) or
+                matches.get("schema")!="aiba.report-event-resolution-shadow.v1" or
+                matches.get("status")!="unreviewed_report_relationships_only" or
+                matches.get("reporting_origins_are_not_event_locations") is not True or
+                matches.get("source_independence_unverified") is not True or
+                matches.get("not_a_preparations_sensor_or_warning") is not True or
+                matches.get("automatic_alerts_created")!=0 or
+                matches.get("automatic_severity_changes")!=0 or
+                matches.get("forecast_probability") is not None or
+                not isinstance(matches.get("candidate_groups"),list) or
+                len(matches["candidate_groups"])>MAX_EVENT_LINK_GROUPS):
+            return empty("invalid_event_resolution_metadata")
+        safe_groups=[]
+        for item in matches["candidate_groups"]:
+            if (not isinstance(item,dict) or item.get("status") not in statuses or
+                    item.get("independent_corroboration_established") is not False or
+                    item.get("warning_level_change") is not False or
+                    item.get("reporting_origin_used_as_event_site") is not False or
+                    not isinstance(item.get("source_reports"),list) or
+                    not 2<=len(item["source_reports"])<=MAX_EVENT_SOURCES):
+                return empty("invalid_event_link_evidence")
+            safe_links=[]
+            for x in item["source_reports"]:
+                if not isinstance(x,dict) or x.get("status")!="unreviewed_source_report":
+                    return empty("invalid_event_source_report")
+                safe_links.append({
+                    "observation_id":as_string(x.get("observation_id"),140),
+                    "title":as_string(x.get("title"),240),
+                    "source_family":as_string(x.get("source_family"),80),
+                    "provider":as_string(x.get("provider"),80),
+                    "source_url":https_url(x.get("source_url")),
+                    "first_observed_at":iso(x.get("first_observed_at")),
+                    "source_published_at":iso(x.get("source_published_at")),
+                    "reporting_origin":as_string(x.get("reporting_origin"),100),
+                    "geography":geo_note(x.get("geography")),
+                    "status":"unreviewed_source_report",
+                })
+            score=item.get("semantic_similarity")
+            km=item.get("reported_event_site_separation_km")
+            if score is not None and (type(score) not in (int,float) or not 0<=score<=1):
+                return empty("invalid_event_semantic_similarity")
+            if km is not None and (type(km) not in (int,float) or not 0<=km<=20020):
+                return empty("invalid_event_site_separation")
+            safe_groups.append({
+                "id":as_string(item.get("id"),100),
+                "status":item["status"],
+                "match_basis":as_string(item.get("match_basis"),180),
+                "semantic_similarity":score,
+                "reported_event_site_separation_km":km,
+                "reported_event_site_comparison_available":item.get(
+                    "reported_event_site_comparison_available") is True,
+                "shared_information_root":item.get("shared_information_root") is True,
+                "independent_corroboration_established":False,
+                "reporting_origin_used_as_event_site":False,
+                "warning_level_change":False,
+                "source_reports":safe_links,
+            })
+        safe_matches = {
+            "schema":matches["schema"],
+            "status":"unreviewed_report_relationships_only",
+            "records_examined":matches.get("records_examined"),
+            "input_truncated":matches.get("input_truncated") is True,
+            "pairwise_comparisons_capped":matches.get("pairwise_comparisons_capped") is True,
+            "same_document_group_count_total":matches.get("same_document_group_count_total"),
+            "possible_same_event_count_total":matches.get("possible_same_event_count_total"),
+            "related_reporting_count_total":matches.get("related_reporting_count_total"),
+            "candidate_groups_truncated":matches.get("candidate_groups_truncated") is True,
+            "reporting_origins_are_not_event_locations":True,
+            "source_independence_unverified":True,
+            "not_a_preparations_sensor_or_warning":True,
+            "automatic_alerts_created":0,
+            "automatic_severity_changes":0,
+            "forecast_probability":None,
+            "candidate_groups":safe_groups,
+        }
+    else:
+        safe_matches=None
     safe_health={}
     for name,row in sorted(health.items()):
         if not isinstance(name,str) or not isinstance(row,dict):
@@ -232,6 +323,7 @@ def embed(site):
         "new_single_source_leads":safe_leads,
         "discovery_visibility":safe_vis,
         "recent_source_observations":safe_recent,
+        "report_relationships":safe_matches,
         "collection_coverage":safe_health,
         "provider_baselines":provider_baselines,
         "approved_warning_count":0,
