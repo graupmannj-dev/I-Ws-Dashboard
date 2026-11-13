@@ -224,6 +224,14 @@ def generate(site, generated=None, state_dir=None):
     except ModuleNotFoundError:
         from behavioral_embed import embed as embedded_behavior
     behavioral = embedded_behavior(site)
+    # Only safe source monitoring context is included publicly. The private
+    # forecast ledger, Sigstore subject records and outcome labels stay off
+    # GitHub Pages until a separately approved audited aggregate pipeline.
+    try:
+        from dashboard.evaluation_readiness import write as write_evaluation
+    except ModuleNotFoundError:
+        from evaluation_readiness import write as write_evaluation
+    evaluation = write_evaluation(site, behavioral, generated_at=now)
     # Stable IDs keep repeat collections from multiplying a report.
     reports = sorted({r["id"]: r for r in reports}.values(),
                      key=lambda v: (v["date"], v["id"]))[-MAX_POINTS:]
@@ -240,6 +248,7 @@ def generate(site, generated=None, state_dir=None):
         "hotspots": hotspots, "reports": reports, "report_dates": dates,
         "friction_briefs": friction,
         "behavioral_discovery": behavioral,
+        "warning_evaluation": evaluation,
         "behavior_live_url": "https://raw.githubusercontent.com/graupmannj-dev/I-Ws-Dashboard/aiba-feed-data/observations/latest/behavioral_fusion.json",
         "friction_live_url": "https://raw.githubusercontent.com/graupmannj-dev/I-Ws-Dashboard/aiba-feed-data/observations/latest/friction_briefs.json",
         "algorithmic_unlocated_count": len(provisional),
