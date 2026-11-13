@@ -70,7 +70,9 @@ PYTHONPATH=. python scripts/aiba_claim_lab.py \
 ```
 
 This prepares original-source candidate clauses, possible report links, and
-two prediction-blind independent annotation packets. No independent
+two prediction-blind independent annotation packets and a separate
+event-pair review pool that includes both candidate matches and
+challenging unlinked comparisons. The pair pool is not a labeled corpus. No independent
 annotator decisions have been created by the software. No claim is verified,
 and no event is automatically merged or used for warning escalation.
 
@@ -86,8 +88,34 @@ The successful run includes a 30-day GitHub artifact named
 3. Under **Artifacts**, download `aiba-govuk-official-source-corpus`.
 4. Unzip it into a private directory on your computer.
 5. Review `RIGHTS_AND_LIMITS.txt` and `acquisition_audit.json`.
-6. Use `reports.jsonl` for original source excerpts and
-   `claim_lab/reviewer_A.jsonl` and `reviewer_B.jsonl` for annotation.
+6. Use `reports.jsonl` for original source excerpts; use
+   `claim_lab/reviewer_A.jsonl` and `reviewer_B.jsonl` for actor/action/object
+   annotations.
+7. For **event identity pair review**, open
+   `claim_lab/aiba_blind_pair_labeler.html` in a local web browser.
+   Reviewer A loads `blind_pair_reviewer_A.jsonl`, reads both articles
+   without looking at model predictions, labels the pair (same event,
+   different event, same story, same document or uncertain) and exports
+   a decisions file. Reviewer B separately uses the B packet and
+   likewise exports decisions. The HTML page performs no API requests
+   or uploads; note that opening the original source link in a new tab
+   navigates to that external publisher.
+8. After both reviewers complete all pairs, run the comparison audit:
+
+```sh
+PYTHONPATH=. python scripts/aiba_pair_label_audit.py \\
+  --reviewer-a private/claim_lab_run/aiba_pair_reviewer_A_decisions.jsonl \\
+  --reviewer-b private/claim_lab_run/aiba_pair_reviewer_B_decisions.jsonl \\
+  --adjudication-template private/claim_lab_run/pair_adjudication_queue.jsonl \\
+  --audit private/claim_lab_run/pair_review_agreement.json
+```
+
+The audit refuses missing decisions or identity mismatches and **never
+auto-generates gold labels**. A reviewer/adjudicator must choose a final
+label with an adjudication ID, after independent coding. When the
+adjudicated file has been completed, use the PR #56 head-to-head
+comparator to evaluate the title baseline against claim-based matching
+on heldout reports. Never present annotator agreement as model accuracy.
 
 GitHub Actions artifacts expire after 30 days; the sources can be reacquired
 from the committed seed manifest. The public repo contains only source
