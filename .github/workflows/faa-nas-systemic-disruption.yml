@@ -1,0 +1,98 @@
+name: AIBA FAA NAS systemic disruption sensor
+on:
+  pull_request:
+    paths:
+      - 'faa_nas_sensor.py'
+      - 'tests/test_faa_nas_sensor.py'
+      - 'dashboard/atlas.html'
+      - 'dashboard/atlas.js'
+      - 'dashboard/atlas.css'
+      - '.github/workflows/faa-nas-systemic-disruption.yml'
+  workflow_dispatch:
+  # GitHub cron is best-effort and can run late; not a guaranteed 10-minute SLA.
+  schedule:
+    - cron: '4,14,24,34,44,54 * * * *'
+permissions:
+  contents: write
+concurrency:
+  group: aiba-operational-snapshots
+  cancel-in-progress: false
+jobs:
+  contract-tests:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Verify systemic stop classification and source-failure behavior
+        run: PYTHONPATH=. python -m unittest tests.test_faa_nas_sensor
+      - name: Check browser script syntax
+        run: node --check dashboard/atlas.js
+  source-compatibility-probe:
+    if: github.event_name == 'pull_request'
+    needs: contract-tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    continue-on-error: true
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Probe FAA NAS official source without publishing
+        shell: bash
+        run: |
+          set -euo pipefail
+          python faa_nas_sensor.py --state /tmp/aiba-nas-pr-probe
+  collect-and-persist:
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: src
+          persist-credentials: false
+      - uses: actions/checkout@v4
+        with:
+          path: state
+          ref: aiba-feed-data
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Capture bounded FAA operational event snapshot
+        shell: bash
+        run: |
+          set +e
+          python src/faa_nas_sensor.py --state state/observations
+          rc=$?
+          set -e
+          echo "AIBA_FAA_NAS_RC=$rc" >> "$GITHUB_ENV"
+      - name: Persist source health and changed systemic event observations
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd state
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add observations/latest/faa_nas.json observations/health/faa_nas.json observations/history/faa_nas/ || true
+          if ! git diff --cached --quiet; then
+            git commit -m "AIBA FAA NAS operations and coverage $GITHUB_RUN_ID [skip ci]"
+            git push origin HEAD:refs/heads/aiba-feed-data
+          fi
+      - name: Report FAA source failure after preserving missingness
+        if: env.AIBA_FAA_NAS_RC != '0'
+        run: |
+          echo "::error::FAA source failed or changed schema. Health retained; no false all-clear."
+          exit 1
