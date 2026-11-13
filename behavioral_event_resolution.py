@@ -199,6 +199,29 @@ def match_pair(a,b):
     # not become evidence of two independent descriptions of an incident.
     same_story=(canonical_story_title(a)==canonical_story_title(b) and
                 len(canonical_story_title(a))>=24)
+    if far_event:
+        # Conflicting, explicitly reported event positions take priority
+        # over identical headlines. They can still be copy/syndication;
+        # they must NOT be silently declared one incident.
+        return {
+            "status":"related_reporting_unreviewed",
+            "match_basis":"strong_content_overlap_but_conflicting_source_declared_event_sites",
+            "semantic_similarity":sub["similarity"],
+            "shared_content_terms":sub["common_terms"],
+            "first_observation_separation_hours":round(delta,2),
+            "reported_event_site_separation_km":round(distance,1),
+            "reported_event_site_comparison_available":True,
+            "reporting_origin_used_as_event_site":False,
+            "shared_information_root":same_origin,
+            "independent_corroboration_established":False,
+            "source_reports":[safe_link(a),safe_link(b)],
+            "review_requirements":[
+                "Resolve conflicting primary-source event locations before any merge",
+                "Check whether duplicate titles hide two distinct events",
+                "Never treat publisher origin as event geography",
+            ],
+            "warning_level_change":False,
+        }
     if same_story:
         kind="possible_same_source_story_unreviewed"
         reason="same_substantive_article_title_different_source_urls"
@@ -224,10 +247,7 @@ def match_pair(a,b):
     far_event=distance is not None and distance>MAX_CONFLICT_EVENT_KM
     # Two independently reported sites far apart cannot be declared one
     # local event, even when publishers choose near-identical headlines.
-    if far_event:
-        kind="related_reporting_unreviewed" if high_similarity else None
-        reason="substantive_overlap_but_distinct_reported_event_sites"
-    elif delta<=MAX_SEMANTIC_HOURS and (high_similarity or (
+    if delta<=MAX_SEMANTIC_HOURS and (high_similarity or (
             close_event and sub["similarity"]>=0.55)):
         kind="possible_same_event_unreviewed"
         reason=("similar_content_and_nearby_reported_event_sites" if close_event else
