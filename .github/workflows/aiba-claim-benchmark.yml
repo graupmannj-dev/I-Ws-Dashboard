@@ -1,0 +1,31 @@
+name: AIBA shadow claim-extraction benchmark
+on:
+  pull_request:
+    paths:
+      - 'behavioral_claim_extraction.py'
+      - 'behavioral_event_resolution.py'
+      - 'scripts/aiba_claim_benchmark.py'
+      - 'tests/fixtures/aiba_claim_benchmark_v1.json'
+      - 'tests/test_aiba_claim_benchmark.py'
+      - '.github/workflows/aiba-claim-benchmark.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  synthetic-claim-benchmark:
+    runs-on: ubuntu-latest
+    timeout-minutes: 7
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Benchmark integrity checks
+        run: PYTHONPATH=. python -m unittest tests.test_aiba_claim_benchmark
+      - name: Synthetic claim and relationship metrics
+        run: PYTHONPATH=. python scripts/aiba_claim_benchmark.py --output /tmp/aiba-claim-benchmark-results.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: aiba-claim-benchmark-synthetic
+          path: /tmp/aiba-claim-benchmark-results.json
+          retention-days: 14

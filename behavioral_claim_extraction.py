@@ -76,7 +76,7 @@ def _site(row):
 
 
 def _phrase(span):
-    return span.strip(" ,;:-\t\r\n")[:160]
+    return span.strip(" ,;:.-!?\t\r\n")[:160]
 
 
 def _extract_sentence(sentence, start):
@@ -97,6 +97,18 @@ def _extract_sentence(sentence, start):
         return None
     m = matches[0]
     left, right = _phrase(s[:m.start()]), _phrase(s[m.end():])
+    # Attribution lead-ins do not identify the actor of the embedded act.
+    if re.search(r"\b(?:said|claimed|reported|announced|warned|stated|according to)\b", left, re.I):
+        return None
+    # Hypothetical or conditional activity is not a past incident.
+    if re.search(r"\b(?:will|would|could|should|might|plans? to|expected to)\b", left, re.I):
+        return None
+    # Passive-voice objects are not actors; parsing these needs a separate rule.
+    if re.search(r"\b(?:was|were|is|are|been|being)$", left, re.I):
+        return None
+    # Modifiers qualify the claim, not the actor.
+    left = re.sub(r"\s+(?:reportedly|allegedly|may have|might have)$", "", left, flags=re.I)
+
     # Conservative actor/object constraints; no pronoun actor hallucination.
     if not left or not right or len(left.split()) > 8 or len(right.split()) > 22:
         return None
