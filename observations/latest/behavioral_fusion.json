@@ -3,7 +3,7 @@
   "automated_severity_changes": 0,
   "collection_coverage": {
     "amsa": {
-      "age_hours": 0.3,
+      "age_hours": 5.95,
       "checked_at": "2026-11-13T06:31:11Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -15,7 +15,7 @@
       "truncated_or_partial": false
     },
     "commercial": {
-      "age_hours": 14.78,
+      "age_hours": 20.43,
       "checked_at": "2026-11-12T16:02:34Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -27,7 +27,7 @@
       "truncated_or_partial": false
     },
     "ioda": {
-      "age_hours": 0.3,
+      "age_hours": 5.95,
       "checked_at": "2026-11-13T06:31:11Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -39,29 +39,31 @@
       "truncated_or_partial": false
     },
     "live_airspace": {
-      "age_hours": 2.46,
-      "checked_at": "2026-11-13T04:21:48Z",
-      "missingness": "not_measured_not_zero",
+      "age_hours": 0.0,
+      "checked_at": "2026-11-13T12:28:01Z",
+      "first_provider_baseline": false,
+      "missingness": "partial_sampling_not_worldwide_exhaustive",
       "mode": "live_airspace",
       "provider_status": "partial",
-      "snapshot_at": "2026-11-13T04:21:48Z",
+      "snapshot_at": "2026-11-13T12:28:01Z",
       "source_scope": "FAA temporary flight restrictions: United States only",
-      "status": "stale_or_unavailable",
+      "status": "current_partial",
       "truncated_or_partial": true
     },
     "live_maritime": {
-      "age_hours": 2.46,
-      "checked_at": "2026-11-13T04:21:48Z",
-      "missingness": "not_measured_not_zero",
+      "age_hours": 0.0,
+      "checked_at": "2026-11-13T12:28:01Z",
+      "first_provider_baseline": false,
+      "missingness": "partial_sampling_not_worldwide_exhaustive",
       "mode": "live_maritime",
       "provider_status": "partial",
-      "snapshot_at": "2026-11-13T04:21:48Z",
+      "snapshot_at": "2026-11-13T12:28:01Z",
       "source_scope": "Danish Maritime Authority Niord notices: regional Baltic/North Sea",
-      "status": "stale_or_unavailable",
+      "status": "current_partial",
       "truncated_or_partial": true
     },
     "nga": {
-      "age_hours": 0.3,
+      "age_hours": 5.95,
       "checked_at": "2026-11-13T06:31:11Z",
       "missingness": "not_measured_not_zero",
       "mode": "nga",
@@ -72,7 +74,7 @@
       "truncated_or_partial": false
     },
     "official": {
-      "age_hours": 0.0,
+      "age_hours": 5.65,
       "checked_at": "2026-11-13T06:49:09Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -84,7 +86,7 @@
       "truncated_or_partial": false
     },
     "watchlist": {
-      "age_hours": 0.0,
+      "age_hours": 5.65,
       "checked_at": "2026-11-13T06:49:09Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -98,13 +100,13 @@
   },
   "forecast_probability": null,
   "gdelt_context": "separate_analytical_stream_not_a_gate_or_confirmation",
-  "generated_at": "2026-11-13T06:49:10Z",
+  "generated_at": "2026-11-13T12:28:06Z",
   "geographic_scope": "source_declared_only",
   "history_diagnostics": {
     "excluded_observations": {
       "old_source_publication": 1
     },
-    "history_files_examined": 25,
+    "history_files_examined": 26,
     "lookback_hours": 72,
     "recent_unique_records": 171
   },
@@ -118,8 +120,8 @@
   "new_single_source_count_total": 0,
   "new_single_source_leads": [],
   "prediction_horizon": null,
-  "registry_asof": "2026-11-13T06:49:10Z",
-  "registry_source_count": 270,
+  "registry_asof": "2026-11-13T12:28:06Z",
+  "registry_source_count": 377,
   "review_groups": [],
   "review_groups_count_total": 0,
   "schema": "aiba.behavioral-convergence-shadow.v1",
