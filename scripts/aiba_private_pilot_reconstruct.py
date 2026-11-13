@@ -51,9 +51,15 @@ def reconstruct(private_root, frame_id):
         raise ReconstructionError("frame_missing_or_duplicate_in_ledger")
     original = matches[0]
     p = original["payload"]
-    folder = root / "frames" / frame_id
-    if folder.is_symlink() or not folder.is_dir() or folder.stat().st_mode & 0o077:
+    archive = root / "frames"
+    folder = archive / frame_id
+    if (archive.is_symlink() or not archive.is_dir() or archive.stat().st_mode & 0o077
+            or folder.is_symlink() or not folder.is_dir() or folder.stat().st_mode & 0o077):
         raise ReconstructionError("private_frame_archive_missing_or_insecure")
+    for name in capture.FILES.values():
+        path = folder / name
+        if path.is_symlink() or not path.is_file() or path.stat().st_mode & 0o077:
+            raise ReconstructionError("private_source_permissions_invalid")
     registry, rh = shadow.read_snapshot(folder / capture.FILES["registry"])
     fusion, fh = shadow.read_snapshot(folder / capture.FILES["fusion"])
     hashes = {"registry": rh, "fusion": fh}
