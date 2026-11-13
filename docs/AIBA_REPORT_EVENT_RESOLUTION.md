@@ -98,6 +98,42 @@ and live branch refresh both project a smaller
 safe subset and reject attempts to claim already
 verified independent corroboration or warning status.
 
+## Actual source-data validation (November 13, 2026)
+
+The read-only PR source probe examined **173 unique normalized
+historical observations** (27 history files) and found:
+
+| Relationship kind | Observed |
+| --- | ---: |
+| Repeated, source-specific primary documents | 9 groups |
+| Possible republication of the same article via another URL | 2 pairs |
+| Possible event identity across separately worded reports | 0 pairs |
+| Related stories about possibly different reported incidents | 0 pairs |
+
+Only **7 of 173** available records were incident-report-like
+commercial reporting; **166 were routine notices, market
+questions or measurement data**, which are not eligible
+for title-only incident matching. The actual current
+registry had 270 records in that run; a source snapshot
+count is not a worldwide case denominator.
+
+The initial permissive prototype produced **608 apparent
+same-event pairs**, overwhelmingly the wrong interpretation
+of routine notices and repeated articles. That was rejected
+before deployment. The final probe correctly reclassified
+syndicated Google News versus direct Maritime Executive
+articles as possible *same stories*, not two independently
+witnessed geopolitical events.
+
+See [dated source-audit receipt](evidence/aiba-report-resolution-real-probe-2026-11-13.json)
+and the read-only
+[GitHub source run](https://github.com/graupmannj-dev/I-Ws-Dashboard/actions/runs/43448755858).
+
+No source in that run supplied enough validated event-site
+metadata to test a real proximity-based incident match.
+A successful synthetic Kyiv/New York test verifies the
+*logic*, not actual detection performance.
+
 ## Follow-on improvements
 
 An academically/operationally serious report resolution
