@@ -49,6 +49,7 @@ function mockBehavior(stamp){
       records_examined:2,eligible_event_reporting_records:2,
       routine_notice_market_or_measurement_records_excluded_from_text_event_matching:0,
       same_document_group_count_total:0,
+      possible_same_source_story_count_total:0,
       possible_same_event_count_total:1,related_reporting_count_total:0,
       candidate_groups_truncated:false,input_truncated:false,
       pairwise_comparisons_capped:false,
