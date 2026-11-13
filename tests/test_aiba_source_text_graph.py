@@ -56,7 +56,7 @@ class SourceTextAndGraphTests(unittest.TestCase):
     def test_graph_nomination_and_geo_separation(self):
         a = doc("a", "Russian missiles struck Kyiv energy station.")
         b = doc("b", "Russian missiles struck Kyiv energy station.")
-        rows, _, _ = ingest([a, b])
+        rows, _, _ = ingest([a, b], {"lineage_splits": {"a": "development", "b": "development"}})
         graph = build(rows)
         self.assertEqual(graph["candidate_count_total"], 1)
         pair = graph["candidates"][0]
