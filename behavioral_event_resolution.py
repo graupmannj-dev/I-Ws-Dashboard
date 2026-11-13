@@ -58,7 +58,7 @@ GENERIC={"russia","ukraine","china","taiwan","israel","iran","united","states",
 # propositions, and source geometry sections. These are NOT accounts of a
 # particular incident. Title similarity among them is not event identity.
 # Such source rows can still be grouped by the exact primary source document.
-REPORTING_FAMILIES={"commercial_media"}
+REPORTING_FAMILIES={"commercial_media", "official_media"}
 REPORTING_SOURCE_KINDS={"field_event_report","primary_event_report",
                         "eyewitness_event_report","source_event_report"}
 
