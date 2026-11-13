@@ -58,7 +58,7 @@ def fetch_assets(asset_ids, api_key):
         if not isinstance(data, dict) or not isinstance(data.get("results"), dict):
             raise ValueError("unexpected provider response shape")
         row = data["results"]
-        if row.get("id") != ident or row.get("type") != "news":
+        if row.get("id") != ident or row.get("type") not in (None, "news"):
             raise ValueError("provider identity or content type mismatch")
         results.append(row)
     return {"results": results}
