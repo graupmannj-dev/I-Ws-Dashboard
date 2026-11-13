@@ -240,6 +240,7 @@ def generate(site, generated=None, state_dir=None):
         "hotspots": hotspots, "reports": reports, "report_dates": dates,
         "friction_briefs": friction,
         "behavioral_discovery": behavioral,
+        "behavior_live_url": "https://raw.githubusercontent.com/graupmannj-dev/I-Ws-Dashboard/aiba-feed-data/observations/latest/behavioral_fusion.json",
         "friction_live_url": "https://raw.githubusercontent.com/graupmannj-dev/I-Ws-Dashboard/aiba-feed-data/observations/latest/friction_briefs.json",
         "algorithmic_unlocated_count": len(provisional),
         "discovery_leads": [{
