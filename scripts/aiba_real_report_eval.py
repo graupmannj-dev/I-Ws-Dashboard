@@ -252,10 +252,35 @@ def score_pairs(reports, pairs):
             "cases": cases}
 
 
-def score(reports, adjudicated, pairs):
+def review_audit(reports, reviewer_a, reviewer_b):
+    """Check both independent review sets and count pre-adjudication disagreements."""
+    for coder, labels in (("A", reviewer_a), ("B", reviewer_b)):
+        validate_labels(reports, labels)
+        if len(labels) != len(reports) or {x["report_id"] for x in labels} != {r["id"] for r in reports}:
+            raise ValueError(f"reviewer {coder} lacks one completed record per report")
+        if any(x.get("annotator_id") != coder for x in labels):
+            raise ValueError(f"reviewer {coder} annotation identity mismatch")
+    a = {x["report_id"]: x for x in reviewer_a}
+    b = {x["report_id"]: x for x in reviewer_b}
+    disagreements = []
+    for rid in sorted(a):
+        aa = sorted([(_key(c), c["evidence_span"]["start"], c["evidence_span"]["end"])
+                     for c in a[rid]["claims"]], key=str)
+        bb = sorted([(_key(c), c["evidence_span"]["start"], c["evidence_span"]["end"])
+                     for c in b[rid]["claims"]], key=str)
+        if aa != bb:
+            disagreements.append(rid)
+    return {"report_count_double_coded": len(reports), "disagreement_count": len(disagreements),
+            "disagreement_report_ids": disagreements}
+
+
+def score(reports, adjudicated, pairs, reviewer_a=None, reviewer_b=None):
     validate_reports(reports)
     validate_labels(reports, adjudicated)
     validate_pairs(reports, pairs)
+    if reviewer_a is None or reviewer_b is None:
+        raise ValueError("two completed independent reviewer sets required")
+    audit = review_audit(reports, reviewer_a, reviewer_b)
     # Prevent accidentally substituting one of the two blinded annotation packets
     # for final labels. Every report must be recorded as adjudicated.
     if any(l.get("annotator_id") != "ADJUDICATED" or not l.get("adjudication_id")
@@ -277,7 +302,7 @@ def score(reports, adjudicated, pairs):
             "operational_validation": False, "report_count": len(reports),
             "claim_metrics": score_claims(reports, adjudicated),
             "pair_metrics": score_pairs(reports, pairs),
-            "by_split": split_results,
+            "by_split": split_results, "review_audit": audit,
             "limitations": [
                 "Precision, recall and false-merge rates require a representative held-out corpus.",
                 "Unreviewed claims and links do not authorize automated military warning decisions.",
@@ -291,6 +316,8 @@ def main():
     p.add_argument("--mode", choices=("prepare", "score"), required=True)
     p.add_argument("--output", required=True, type=Path)
     p.add_argument("--adjudicated", type=Path)
+    p.add_argument("--reviewer-a", type=Path)
+    p.add_argument("--reviewer-b", type=Path)
     p.add_argument("--pairs", type=Path)
     a = p.parse_args()
     reports = validate_reports(read_jsonl(a.reports))
@@ -306,9 +333,10 @@ def main():
                     "independent_reviewer_packets": ["A", "B"],
                     "predictions_excluded": True, "split_leakage_checked": True})
     else:
-        if a.adjudicated is None or a.pairs is None:
-            p.error("--adjudicated and --pairs are required for score")
-        results = score(reports, read_jsonl(a.adjudicated), read_jsonl(a.pairs))
+        if any(x is None for x in (a.adjudicated, a.pairs, a.reviewer_a, a.reviewer_b)):
+            p.error("--adjudicated, --pairs, --reviewer-a, and --reviewer-b are required for score")
+        results = score(reports, read_jsonl(a.adjudicated), read_jsonl(a.pairs),
+                        read_jsonl(a.reviewer_a), read_jsonl(a.reviewer_b))
         write_json(a.output, results)
         print(json.dumps({"report_count": results["report_count"],
                           "claim_metrics": {k: v for k, v in results["claim_metrics"].items() if k != "cases"},
