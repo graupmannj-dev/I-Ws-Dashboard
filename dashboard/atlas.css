@@ -128,6 +128,37 @@ a{color:#a9d4ff}
 .friction-briefing.expanded{max-height:390px}
 .friction-briefing.expanded~.watchlist{min-height:125px}
 
+
+/* Source-separated behavioral discovery is a tab of the SAME Atlas.
+   Never display unverified behavioral signals with hotspot severity colors. */
+.panel-tabs{gap:13px;flex-wrap:wrap}
+.panel-tabs button{font-size:11.5px}
+#behaviorTabCount{font-size:10px;color:#acc4d8;font-weight:450}
+.watchlist.behavior-view{display:block;overscroll-behavior:contain}
+.behavior-panel-body{display:block;min-width:0}
+.behavior-overview{padding:11px 10px 12px;border:1px solid #40637a;background:#14334a;border-radius:8px;margin-bottom:13px}
+.behavior-overview.stale{border-color:#806c4d;background:#322d24}
+.behavior-overview>strong{display:block;font-size:12px;line-height:1.4}
+.behavior-overview p{margin:7px 0 0;font-size:11px;color:#d0deea;line-height:1.55}
+.behavior-overview .behavior-caution{color:#f5d2a4}
+.behavior-counts{display:flex;flex-wrap:wrap;gap:8px;font-size:11px;margin-top:9px}
+.behavior-counts span{padding:4px 7px;background:#0d2538;border:1px solid #35536d;border-radius:5px}
+.behavior-counts b{color:#fff;font-size:13px}
+.behavior-status{display:inline-block;margin-top:5px;color:#b9d9f2;border:1px solid #52708a;font-size:9px;line-height:1.35;padding:2px 5px;border-radius:4px;letter-spacing:.015em}
+.behavior-section-title{font-size:12px;letter-spacing:.02em;margin:13px 0 8px;color:#dceaf6}
+.behavior-card{width:100%;margin-bottom:8px}
+.behavior-card .behavior-status{flex:none;color:#bed9ed}
+.behavior-card small{display:block;margin-top:5px;font-size:10px}
+.behavior-empty{color:#a8c0d4;font-size:11px;line-height:1.55;margin:7px 0 13px}
+.behavior-disclaimer{color:#a8c4d9;font-size:10.5px;line-height:1.55;margin:9px 0 14px}
+.behavior-health{border:1px solid #35526c;background:#13273b;border-radius:8px;padding:9px 10px;margin:12px 0;font-size:11px;color:#cee1f2}
+.behavior-health summary{cursor:pointer;font-weight:650;line-height:1.5}
+.behavior-health p{font-size:10.5px;line-height:1.5;color:#acc6dc}
+.behavior-table-scroll{max-width:100%;overflow:auto}
+.behavior-health table{border-collapse:collapse;min-width:440px}
+.behavior-health th,.behavior-health td{border-bottom:1px solid #35526a;vertical-align:top;padding:6px 7px;text-align:left;font-size:10px}
+.behavior-health th{color:#ddeaf5}
+
 .watch-heading{border-bottom:1px solid var(--line);padding:15px 14px 0}
 .watch-heading h2{font-size:16px;margin:0 0 10px}
 #watchCount{color:#9eb4c9;font-weight:400}

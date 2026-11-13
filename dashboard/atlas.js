@@ -23,6 +23,7 @@ const state = {
   atlas:null,countries:null,selected:null,selectionType:"hotspot",
   severity:"all",watchTab:"all",windowDays:7,
   friction:null,frictionShowAll:false,frictionRemoteStatus:"static fallback",
+  behavior:null,behaviorRemoteStatus:"published site snapshot",
   dates:[],minDay:0,maxDay:0,startDay:0,endDay:0,
   rangeDrag:null,
   lon:52,lat:20,zoom:1,pins:[],reports:[],hitTargets:[],dimensions:{w:1,h:1,dpr:1,cx:0,cy:0,r:1},
@@ -585,9 +586,273 @@ async function refreshFriction(){
     renderFriction();
   }
 }
+/* Unified global behavioral discovery, read-only shadow-mode source evidence.
+ * Never infer an incident point, approved warning, foreign actor or attack date.
+ */
+function validBehavior(value){
+  return !!value&&value.schema==="aiba.behavioral-convergence-shadow.v1"&&
+    value.status==="read_only_shadow_evidence"&&
+    value.approved_warning_count===0&&value.automated_severity_changes===0&&
+    value.forecast_probability==null&&value.source_continuity_proven===false&&
+    value.map_coordinates_inferred===false&&
+    typeof value.source_generated_at==="string"&&
+    Array.isArray(value.review_groups)&&value.review_groups.length<=25&&
+    value.review_groups.every(g=>g&&g.status==="cross_family_cooccurrence_unreviewed"&&g.warning_level_change===false)&&
+    Array.isArray(value.new_single_source_leads)&&value.new_single_source_leads.length<=50&&
+    value.new_single_source_leads.every(l=>l&&l.status==="single_source_unreviewed")&&
+    typeof value.collection_coverage==="object"&&value.collection_coverage!==null;
+}
+function normalizeLiveBehavior(raw){
+  // Existing source-separated fusion output, never an approved warning.
+  if(!raw||raw.schema!=="aiba.behavioral-convergence-shadow.v1"||
+     raw.approved_warning_count!==0||raw.automated_severity_changes!==0||
+     raw.forecast_probability!=null||raw.prediction_horizon!=null||
+     !Array.isArray(raw.review_groups)||raw.review_groups.length>25||
+     !Array.isArray(raw.new_single_source_leads)||raw.new_single_source_leads.length>50||
+     !raw.collection_coverage||typeof raw.collection_coverage!=="object"||
+     Array.isArray(raw.collection_coverage)||Object.keys(raw.collection_coverage).length>30)
+    return null;
+  const at=Date.parse(raw.generated_at||"");
+  const registryAt=Date.parse(raw.registry_asof||"");
+  if(!Number.isFinite(at)||!Number.isFinite(registryAt)||
+      !/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z$/.test(raw.generated_at)||
+      !/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z$/.test(raw.registry_asof)||
+      at>Date.now()+120000||at<registryAt||at-registryAt>900000)return null;
+  const groupTotal=raw.review_groups_count_total;
+  const leadTotal=raw.new_single_source_count_total;
+  if(!Number.isInteger(groupTotal)||groupTotal<raw.review_groups.length||groupTotal>100000||
+     !Number.isInteger(leadTotal)||leadTotal<raw.new_single_source_leads.length||leadTotal>100000)return null;
+  for(const g of raw.review_groups){
+    if(!g||g.status!=="cross_family_cooccurrence_unreviewed"||
+       g.warning_level_change!==false||!Array.isArray(g.distinct_source_families)||
+       g.distinct_source_families.length<2||!Array.isArray(g.source_links)||
+       Date.parse(g.last_observed_at||"")>at)return null;
+  }
+  for(const l of raw.new_single_source_leads){
+    if(!l||l.status!=="single_source_unreviewed"||
+       Date.parse(l.first_observed_at||"")>at)return null;
+  }
+  const limited=v=>typeof v==="string"?v.slice(0,800):"";
+  const geo=v=>({
+    label:limited(v?.label||"Location not verified"),
+    scope_key:limited(v?.key||"")||null,
+    precision:limited(v?.precision||"not_geocoded"),
+    verified_iso:v?.verified_iso===true,
+    // Deliberately omit lat/lon even where another upstream field contains
+    // a centroid. A source-defined region is NOT a verified incident point.
+  });
+  const groups=raw.review_groups.map(g=>({
+    id:limited(g.id),geography:geo(g.geography),status:g.status,
+    warning_level_change:false,assessment:limited(g.assessment),
+    source_family_count:Number(g.source_family_count)||g.distinct_source_families.length,
+    distinct_source_families:g.distinct_source_families.slice(0,12).map(limited),
+    distinct_provider_count:Number(g.distinct_provider_count)||0,
+    source_root_count:Number(g.source_root_count)||0,
+    first_observed_at:limited(g.first_observed_at),
+    last_observed_at:limited(g.last_observed_at),
+    source_links:g.source_links.slice(0,12).map(x=>({
+      url:safeUrl(x?.url),provider:limited(x?.provider),family:limited(x?.family),
+      first_observed_at:limited(x?.first_observed_at),
+      published_at:limited(x?.published_at),
+    })),
+  }));
+  const leads=raw.new_single_source_leads.map(l=>({
+    observation_id:limited(l.observation_id),title:limited(l.title),
+    source_family:limited(l.source_family),source_url:safeUrl(l.source_url),
+    first_observed_at:limited(l.first_observed_at),
+    source_published_at:limited(l.source_published_at),
+    geography:geo(l.geography),
+    requires_geolocation:l.requires_geolocation===true,
+    status:"single_source_unreviewed",
+  }));
+  const health={};
+  for(const [name,row] of Object.entries(raw.collection_coverage)){
+    if(!row||typeof row!=="object"||Array.isArray(row))return null;
+    health[limited(name)]={
+      status:limited(row.status||"unknown"),
+      missingness:limited(row.missingness||"unknown"),
+      source_scope:limited(row.source_scope||"unverified scope"),
+      snapshot_at:limited(row.snapshot_at),
+    };
+  }
+  return {
+    schema:raw.schema,status:"read_only_shadow_evidence",
+    source_generated_at:raw.generated_at,site_snapshot_fresh:false,
+    cross_family_count_total:groupTotal,single_source_count_total:leadTotal,
+    review_groups:groups,new_single_source_leads:leads,
+    collection_coverage:health,
+    provider_baselines:state.behavior?.provider_baselines||{},
+    approved_warning_count:0,automated_severity_changes:0,
+    source_continuity_proven:false,forecast_probability:null,
+    map_coordinates_inferred:false,
+  };
+}
+async function refreshBehavior(){
+  const url=state.atlas?.behavior_live_url;
+  if(!safeUrl(url))return;
+  try{
+    const opts={cache:"no-store"};
+    if(typeof AbortSignal!=="undefined"&&typeof AbortSignal.timeout==="function")
+      opts.signal=AbortSignal.timeout(12000);
+    const response=await fetch(url,opts);
+    if(!response.ok)throw Error("behavioral source response "+response.status);
+    const raw=await response.json(),candidate=normalizeLiveBehavior(raw);
+    if(!validBehavior(candidate))throw Error("invalid behavioral evidence schema");
+    const previous=Date.parse(state.behavior?.source_generated_at||"");
+    const next=Date.parse(candidate.source_generated_at);
+    if(!Number.isFinite(previous)||next>previous){
+      state.behavior=candidate;
+      state.behaviorRemoteStatus="public evidence branch snapshot";
+      updateBehaviorTabCount();
+      if(state.watchTab==="behavior")renderBehaviorList();
+    }else{
+      state.behaviorRemoteStatus="published site snapshot retained";
+      if(state.watchTab==="behavior")renderBehaviorList();
+    }
+  }catch(error){
+    state.behaviorRemoteStatus="source branch refresh unavailable; last published snapshot retained";
+    if(state.watchTab==="behavior")renderBehaviorList();
+  }
+}
+function behaviorAge(){
+  const then=Date.parse(state.behavior?.source_generated_at||"");
+  return Number.isFinite(then)?(Date.now()-then)/60000:Infinity;
+}
+function updateBehaviorTabCount(){
+  const b=state.behavior;
+  const total=b?(b.cross_family_count_total||0)+(b.single_source_count_total||0):0;
+  $("behaviorTabCount").textContent=b?"("+total+")":"";
+}
+function behaviorHealthTable(b){
+  const health=b.collection_coverage||{};
+  const baselines=b.provider_baselines||{};
+  const rows=Object.entries(health).map(([name,info])=>{
+    const base=baselines[name]||{};
+    const degraded=info.status!=="current"||info.missingness!=="none";
+    return '<tr><th scope="row">'+safe(name)+'</th><td>'+safe(info.status||"unknown")+
+      (degraded?' · bounded/unavailable':'')+'</td><td>'+safe(info.source_scope||"not established")+
+      '</td><td>'+safe(base.comparable_days??"—")+
+      ' days; median '+safe(base.median_records??"unavailable")+
+      '</td></tr>';
+  }).join("");
+  return '<details class="behavior-health"><summary>Source coverage and reference baselines ('+
+    Object.keys(health).length+' providers)</summary>'+
+    '<p>Provider completeness is not verified; partial or missing observations are never treated as a zero-event interval.</p>'+
+    '<div class="behavior-table-scroll"><table><thead><tr><th>Feed</th><th>Status</th><th>Scope</th><th>Baseline</th></tr></thead><tbody>'+
+    (rows||'<tr><td colspan="4">No source health available.</td></tr>')+
+    '</tbody></table></div></details>';
+}
+function selectBehavior(row,kind){
+  const panel=$("selectedDetail");panel.hidden=false;
+  const isGroup=kind==="group";
+  const area=row.geography||{};
+  const named=area.label||"Location not independently verified";
+  const age=behaviorAge();
+  const freshness=age>=0&&age<=90?"recent source snapshot":"historical or stale source snapshot";
+  const title=isGroup?("Cross-family review · "+named):(row.title||row.observation_id||"Single-source lead");
+  const links=isGroup?(row.source_links||[]):[{url:row.source_url,provider:row.source_family,
+    first_observed_at:row.first_observed_at,published_at:row.source_published_at}];
+  const details=links.slice(0,12).map(item=>
+    '<li>'+(safeUrl(item.url)?'<a href="'+safe(item.url)+'" target="_blank" rel="noopener noreferrer">'+
+      safe(item.provider||item.family||"Original source")+'</a>':safe(item.provider||"Source unlinked"))+
+    '<span class="sub"> · observed '+safe(item.first_observed_at||"unknown")+
+    ' · published '+safe(item.published_at||"unknown")+'</span></li>').join("");
+  panel.innerHTML='<div class="detail-top"><div><h3>'+safe(title)+'</h3>'+
+    '<span class="behavior-status">UNREVIEWED · '+safe(freshness)+'</span></div>'+
+    '<button class="detail-close" type="button" aria-label="Close behavioral detail">×</button></div>'+
+    '<p><b>Source-defined geography:</b> '+safe(named)+
+    ' · '+safe(area.precision||"not geocoded")+'</p>'+
+    '<p>'+safe(isGroup?row.assessment:
+      "One source observation only. Additional independent evidence is needed before a hypothesis can be issued.")+'</p>'+
+    (isGroup?'<p><b>Evidence families:</b> '+safe((row.distinct_source_families||[]).join(", "))+
+      ' · '+safe(row.source_root_count||"unknown")+' distinct reported source roots (causal independence not verified).</p>':'')+
+    '<p><b>First observed:</b> '+safe(row.first_observed_at||"unknown")+
+    ' · <b>Last observed:</b> '+safe(row.last_observed_at||row.first_observed_at||"unknown")+'</p>'+
+    '<p class="sub">No automatic change to standing severity or warning probability. '+
+    'A provider-declared geographic scope is not a confirmed event position; no map marker inferred.</p>'+
+    '<ul>'+details+'</ul>'+
+    '<a href="behavior/">Detailed behavioral source coverage →</a>';
+  panel.querySelector(".detail-close").addEventListener("click",()=>{panel.hidden=true;state.selected=null;});
+}
+function renderBehaviorList(){
+  const list=$("watchlist");list.classList.add("behavior-view");list.replaceChildren();
+  $("watchPanelTitle").firstChild.textContent="Behavioral signals ";
+  $("frictionBriefing").hidden=true;
+  $("watchDetailLink").href="behavior/";
+  $("watchDetailLink").textContent="Detailed source records →";
+  const b=state.behavior;
+  if(!b){
+    $("watchCount").textContent="(unavailable)";
+    $("watchFoot").textContent="No current source evidence; not an all-clear.";
+    list.innerHTML='<p class="behavior-disclaimer">SHADOW MODE · No automatic warning classifications</p>'+
+      '<p class="behavior-empty">A validated behavioral source snapshot is unavailable. Source collection may be delayed or incomplete; no absence of activity can be inferred.</p>'+
+      '<a href="behavior/">Open original behavioral source table →</a>';
+    return;
+  }
+  const age=behaviorAge(),recent=age>=0&&age<=90;
+  $("watchCount").textContent="("+(b.cross_family_count_total+b.single_source_count_total)+")";
+  $("watchFoot").textContent="Investigatory sources, not issued forecasts.";
+  const frag=document.createElement("div");
+  frag.className="behavior-panel-body";
+  const introduction=document.createElement("div");
+  introduction.className="behavior-overview"+(recent?"":" stale");
+  const stamp=Number.isFinite(age)&&age>=0?Math.round(age)+" minutes old":"clock/source time inconsistent";
+  introduction.innerHTML='<strong>Behavioral discovery · SHADOW ONLY</strong>'+
+    '<span class="behavior-status">'+(recent?"SOURCE SNAPSHOT WITHIN 90 MIN":"STALE OR UNVERIFIED SNAPSHOT")+'</span>'+
+    '<p>As of '+safe(b.source_generated_at)+' · '+safe(stamp)+
+    ' · '+safe(state.behaviorRemoteStatus)+'. Unreviewed source observations, not confirmed preparations or attack forecasts.</p>'+
+    '<div class="behavior-counts"><span><b>'+safe(b.cross_family_count_total)+'</b> cross-family reviews</span>'+
+    '<span><b>'+safe(b.single_source_count_total)+'</b> new source leads</span></div>'+
+    (recent?'':'<p class="behavior-caution">Historical context only: source freshness failed the 90-minute pilot gate. No current all-clear may be inferred.</p>');
+  frag.appendChild(introduction);
+  const groups=b.review_groups;
+  const groupTitle=document.createElement("h3");groupTitle.className="behavior-section-title";groupTitle.textContent="Cross-family observations";frag.appendChild(groupTitle);
+  if(!groups.length){
+    const p=document.createElement("p");p.className="behavior-empty";
+    p.textContent="No newly nominated co-occurrences in this source snapshot. This is not evidence of no threat.";frag.appendChild(p);
+  }
+  for(const row of groups){
+    const button=document.createElement("button");button.type="button";button.className="watch-card behavior-card";
+    const loc=row.geography?.label||"Location not verified";
+    button.innerHTML='<div class="watch-card-head"><strong>'+safe(loc)+'</strong>'+
+      '<span class="behavior-status">REVIEW</span></div>'+
+      '<p>'+safe(row.assessment||"Co-occurring sources; causal independence not established.")+'</p>'+
+      '<small>'+safe((row.distinct_source_families||[]).join(" · "))+'</small>'+
+      '<small>First observed '+safe(row.first_observed_at||"unavailable")+'</small>';
+    button.addEventListener("click",()=>selectBehavior(row,"group"));
+    frag.appendChild(button);
+  }
+  const leadTitle=document.createElement("h3");leadTitle.className="behavior-section-title";leadTitle.textContent="New single-source leads";frag.appendChild(leadTitle);
+  if(!b.new_single_source_leads.length){
+    const p=document.createElement("p");p.className="behavior-empty";
+    p.textContent="No new source-only leads in this snapshot; observation coverage remains bounded.";frag.appendChild(p);
+  }
+  for(const row of b.new_single_source_leads){
+    const button=document.createElement("button");button.type="button";button.className="watch-card behavior-card";
+    button.innerHTML='<div class="watch-card-head"><strong>'+safe(row.title||row.observation_id)+'</strong>'+
+      '<span class="behavior-status">SOURCE</span></div>'+
+      '<p>'+safe(row.source_family||"Unclassified source family")+' · '+
+      safe(row.geography?.label||"Location not verified")+'</p>'+
+      '<small>Observed '+safe(row.first_observed_at||"unknown")+
+      (row.requires_geolocation?' · GEOGRAPHY UNVERIFIED':'')+'</small>';
+    button.addEventListener("click",()=>selectBehavior(row,"lead"));
+    frag.appendChild(button);
+  }
+  const health=document.createElement("div");
+  health.innerHTML=behaviorHealthTable(b);frag.appendChild(health);
+  const note=document.createElement("p");note.className="behavior-disclaimer";
+  note.textContent="No behavioral observations are plotted as event coordinates, promoted to hotspot severity, or scored as validated early warnings.";
+  frag.appendChild(note);
+  list.appendChild(frag);
+}
 function updateWatchlist(){
   if(!state.atlas)return;
-  const list=$("watchlist");list.replaceChildren();
+  if(state.watchTab==="behavior"){renderBehaviorList();return;}
+  const list=$("watchlist");list.classList.remove("behavior-view");list.replaceChildren();
+  $("watchPanelTitle").firstChild.textContent="Watchlist ";
+  $("watchDetailLink").href="ops/";
+  $("watchDetailLink").textContent="Full analysis →";
+  $("frictionBriefing").hidden=false;
   const hs=selectedHotspots().filter(h=>state.watchTab==="all"||h.new_evidence||frictionIsReview(h.id));
   const rank={critical:0,active:1,high:2,watch:3,low:4};
   hs.sort((a,b)=>Number(b.new_evidence||frictionIsReview(b.id))-Number(a.new_evidence||frictionIsReview(a.id))||(rank[a.severity]??4)-(rank[b.severity]??4)||a.name.localeCompare(b.name));
@@ -781,6 +1046,11 @@ function bindControls(){
   $("stepForward").addEventListener("click",()=>shiftWindow(1));
   $("tabAll").addEventListener("click",()=>{state.watchTab="all";updateTabs();});
   $("tabNew").addEventListener("click",()=>{state.watchTab="new";updateTabs();});
+  $("tabBehavior").addEventListener("click",()=>{state.watchTab="behavior";updateTabs();});
+  $("openBehavior").addEventListener("click",()=>{
+    state.watchTab="behavior";updateTabs();
+    if(window.innerWidth<=1050)document.querySelector(".watch-panel").scrollIntoView({block:"nearest",behavior:"smooth"});
+  });
   const reset=()=>{state.lon=52;state.lat=20;state.zoom=1;resize();};
   $("resetView").addEventListener("click",reset);
   $("northView").addEventListener("click",reset);
@@ -804,8 +1074,11 @@ function bindControls(){
   });
 }
 function updateTabs(){
-  $("tabAll").classList.toggle("active",state.watchTab==="all");
-  $("tabNew").classList.toggle("active",state.watchTab==="new");
+  for(const [id,tab] of [["tabAll","all"],["tabNew","new"],["tabBehavior","behavior"]]){
+    const active=state.watchTab===tab;
+    $(id).classList.toggle("active",active);
+    $(id).setAttribute("aria-pressed",String(active));
+  }
   updateWatchlist();
 }
 function renderEvidenceIntake(){
@@ -863,6 +1136,10 @@ async function init(){
     if(!Array.isArray(data.hotspots)||!Array.isArray(data.reports)||!Array.isArray(geo.features))throw Error("Unexpected feed schema");
     state.atlas=data;state.countries=geo;
     state.friction=validFriction(data.friction_briefs)?data.friction_briefs:null;
+    state.behavior=validBehavior(data.behavioral_discovery)?data.behavioral_discovery:null;
+    updateBehaviorTabCount();
+    void refreshBehavior();
+    setInterval(refreshBehavior,300000);
     renderFriction();
     void refreshFriction();
     setInterval(refreshFriction,300000);

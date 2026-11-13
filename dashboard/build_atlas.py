@@ -216,6 +216,14 @@ def generate(site, generated=None, state_dir=None):
             "independently_confirmed": item["independently_confirmed"],
             "collected_at": item["first_collected_at"],
         })
+    # The source-separated behavioral engine already publishes a verified,
+    # capped shadow-feed snapshot under /behavior/. Embed its bounded public
+    # summary in the SAME Atlas without promoting any threat label.
+    try:
+        from dashboard.behavioral_embed import embed as embedded_behavior
+    except ModuleNotFoundError:
+        from behavioral_embed import embed as embedded_behavior
+    behavioral = embedded_behavior(site)
     # Stable IDs keep repeat collections from multiplying a report.
     reports = sorted({r["id"]: r for r in reports}.values(),
                      key=lambda v: (v["date"], v["id"]))[-MAX_POINTS:]
@@ -231,6 +239,8 @@ def generate(site, generated=None, state_dir=None):
         "title": "AIBA Global Early Warning",
         "hotspots": hotspots, "reports": reports, "report_dates": dates,
         "friction_briefs": friction,
+        "behavioral_discovery": behavioral,
+        "behavior_live_url": "https://raw.githubusercontent.com/graupmannj-dev/I-Ws-Dashboard/aiba-feed-data/observations/latest/behavioral_fusion.json",
         "friction_live_url": "https://raw.githubusercontent.com/graupmannj-dev/I-Ws-Dashboard/aiba-feed-data/observations/latest/friction_briefs.json",
         "algorithmic_unlocated_count": len(provisional),
         "discovery_leads": [{

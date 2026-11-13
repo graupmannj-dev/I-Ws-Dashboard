@@ -6,27 +6,40 @@ validated attack-prediction model.
 
 Repository: https://github.com/graupmannj-dev/I-Ws-Dashboard
 
-## Review and deployment
+## One AIBA website, deployment and review
 
-The application is proposed in a pull request. Do not merge or publish until
-approved. The default branch initially contains only a review placeholder.
+**AIBA Atlas entry point:** https://graupmannj-dev.github.io/I-Ws-Dashboard/
 
-After approval:
+The repository's GitHub Pages deployment workflow reported successful
+production deployments on November 12, 2026 (GitHub Actions runs
+43334726137 and 43334717467). The URL above is the configured Pages
+address; application source freshness must still be checked inside
+the interface. A successful site deployment does **not** prove that
+every underlying data feed collected on time.
 
-1. Merge the reviewed PR.
-2. Select **Settings → Pages → Build and deployment → Source → GitHub Actions**.
-   The connected GitHub integration could not change this setting (HTTP 403).
-3. Set repository Actions variable `AIBA_PUBLISH_APPROVED` to `true` only when
-   publication is approved. Leaving it unset prevents all deployments.
-4. Run **Validate and publish AIBA** on `main`. Inspect the tests, collection,
-   and deployment jobs. The workflow runs daily at **14:35 UTC** thereafter.
+The unified Atlas contains **Watchlist**, **Recent changes** and
+**Behavioral signals** in the same interactive globe interface.
+The behavioral discovery engine uses the same source registry and
+fusion pipeline; `/behavior/` remains a detailed source coverage
+view **on this same site**, not a separate service. The site also
+retains `/ops/` decision briefs and `/classic.html` for legacy
+context. See
+[Atlas behavioral integration](docs/AIBA_UNIFIED_ATLAS_BEHAVIORAL.md).
 
-Expected URL after a successful approved deployment:
-https://graupmannj-dev.github.io/I-Ws-Dashboard/ (not yet published).
-PRs run tests and an offline build without deployment permissions. Collection
-runs only on `main`; deployment requires successful collection and the approval
-variable. No auto-merge is configured. GitHub Pages environment reviewers and
-branch protection can provide additional account-level controls.
+**Important separation:** experimental tippers and GitHub/Sigstore
+witnesses are generated from the private hash-chained ledger. They
+are **not automatically published** on the public Atlas and do not
+constitute verified intelligence warnings. The public website
+shows only source-separated investigative observations and
+source-health limitations.
+
+Publication remains approval gated: pull requests run offline
+tests and build previews without a production deploy; deployment
+uses the `Validate and publish AIBA` workflow on `main` and
+requires the repository Actions variable
+`AIBA_PUBLISH_APPROVED=true`. Do not merge or publish new
+features without review. GitHub Pages and Actions schedules remain
+best effort, not an operational monitoring SLA.
 
 ## Optional ADSB.lol regional aircraft overlay
 
