@@ -67,6 +67,8 @@ def to_record(record):
     item["rights_note"] = record["rights_note"].strip()
     item["content_type"] = record["content_type"]
     item["source_kind"] = record.get("source_kind")
+    item["provider"] = str(record.get("provider") or "operator_supplied")[:80]
+    item["source_credit"] = str(record.get("source_credit") or "")[:500] or None
     item["title"] = record.get("title")
     item["source_published_at"] = record.get("source_published_at")
     item["event_at"] = record.get("event_at")
