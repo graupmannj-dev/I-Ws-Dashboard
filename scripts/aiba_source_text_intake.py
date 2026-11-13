@@ -69,6 +69,10 @@ def to_record(record):
     item["source_kind"] = record.get("source_kind")
     item["provider"] = str(record.get("provider") or "operator_supplied")[:80]
     item["source_credit"] = str(record.get("source_credit") or "")[:500] or None
+    item["sampling_stratum"] = record.get("sampling_stratum")
+    item["evaluation_group_id"] = record.get("evaluation_group_id")
+    item["source_document_type"] = record.get("source_document_type")
+    item["content_api_updated_at"] = record.get("content_api_updated_at")
     item["title"] = record.get("title")
     item["source_published_at"] = record.get("source_published_at")
     item["event_at"] = record.get("event_at")
@@ -94,6 +98,10 @@ def ingest(rows, manifest=None):
     if not isinstance(existing, dict):
         raise ValueError("invalid frozen split manifest")
     assigned = dict(existing)
+    group_existing = manifest.get("evaluation_group_splits", {})
+    if not isinstance(group_existing, dict):
+        raise ValueError("invalid frozen evaluation group manifest")
+    group_assigned = dict(group_existing)
     output = []
     seen = set()
     docs = set()
@@ -108,7 +116,17 @@ def ingest(rows, manifest=None):
             raise ValueError("duplicate document: use one row per original report")
         docs.add(doc)
         lineage = item["story_lineage_id"]
-        split = assigned.setdefault(lineage, _split(lineage))
+        group = item.get("evaluation_group_id")
+        if group is not None and (not isinstance(group, str) or len(group) > 150):
+            raise ValueError("invalid evaluation group")
+        if group:
+            split = group_assigned.get(group, assigned.get(lineage, _split(group)))
+            group_assigned[group] = split
+            if lineage in assigned and assigned[lineage] != split:
+                raise ValueError("lineage and episode split conflict")
+            assigned[lineage] = split
+        else:
+            split = assigned.setdefault(lineage, _split(lineage))
         if split not in ("development", "heldout"):
             raise ValueError("invalid preexisting split")
         if r.get("split") and r["split"] != split:
@@ -120,11 +138,16 @@ def ingest(rows, manifest=None):
     for lineage, split in existing.items():
         if assigned[lineage] != split:
             raise ValueError("frozen lineage split modified")
+    for group, split in group_existing.items():
+        if group_assigned[group] != split:
+            raise ValueError("frozen episode split modified")
     receipt = {
         "schema": "aiba.source-text-intake-receipt.v1",
         "source_kind": "operator_supplied_permission_attested_not_independently_verified",
         "record_count": len(output),
         "distinct_lineages": len({r["story_lineage_id"] for r in output}),
+        "distinct_evaluation_groups": len({
+            r["evaluation_group_id"] for r in output if r.get("evaluation_group_id")}),
         "full_bodies": sum(r["content_type"] == "full_body" for r in output),
         "excerpts": sum(r["content_type"] == "source_excerpt" for r in output),
         "development_records": sum(r["split"] == "development" for r in output),
@@ -135,7 +158,8 @@ def ingest(rows, manifest=None):
         "text_copied_to_public_repository": False,
     }
     return output, {"schema": "aiba.lineage-split-manifest.v1",
-                    "lineage_splits": assigned}, receipt
+                    "lineage_splits": assigned,
+                    "evaluation_group_splits": group_assigned}, receipt
 
 
 def main():
