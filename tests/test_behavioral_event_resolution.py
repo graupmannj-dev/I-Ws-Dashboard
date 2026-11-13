@@ -137,6 +137,20 @@ class ReportEventTests(unittest.TestCase):
         self.assertEqual(result["status"],"possible_same_event_unreviewed")
         self.assertFalse(result["independent_corroboration_established"])
 
+    def test_syndicated_google_news_duplicate_not_an_independent_event(self):
+        source="Study: Shipping Can Avoid Endangered-Species Habitat at Minimal Cost"
+        a=row("a",source,provider="commercial",family="commercial_media",
+              url="https://maritime-executive.com/article/ship-habitat-study")
+        b=row("b",source+" - The Maritime Executive",provider="commercial",
+              family="commercial_media",
+              url="https://news.google.com/rss/articles/ABC?oc=5",offset=15)
+        result=match_pair(a,b)
+        self.assertEqual(result["status"],"possible_same_source_story_unreviewed")
+        self.assertFalse(result["independent_corroboration_established"])
+        v=build({"a":a,"b":b})
+        self.assertEqual(v["possible_same_source_story_count_total"],1)
+        self.assertEqual(v["possible_same_event_count_total"],0)
+
     def test_homepage_not_a_document_specific_identity(self):
         x=row("a",TITLE1,url="https://ioda.inetintel.cc.gatech.edu/")
         y=row("b",TITLE2,url="https://ioda.inetintel.cc.gatech.edu/",
