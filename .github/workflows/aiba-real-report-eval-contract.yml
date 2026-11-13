@@ -1,0 +1,42 @@
+name: AIBA real-report evaluation contract (no source fetch)
+on:
+  pull_request:
+    paths:
+      - 'scripts/aiba_real_report_eval.py'
+      - 'tests/test_aiba_real_report_eval.py'
+      - 'scripts/aiba_claim_intake_readiness.py'
+      - 'tests/test_aiba_claim_intake_readiness.py'
+      - '.github/workflows/aiba-real-report-eval-contract.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  eval-contract:
+    runs-on: ubuntu-latest
+    timeout-minutes: 7
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Validate synthetic contract tests only
+        run: PYTHONPATH=. python -m unittest tests.test_aiba_real_report_eval tests.test_aiba_claim_intake_readiness
+
+  real-source-readiness:
+    runs-on: ubuntu-latest
+    timeout-minutes: 7
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: src
+          persist-credentials: false
+      - uses: actions/checkout@v4
+        with:
+          path: state
+          ref: aiba-feed-data
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Audit bounded historical source body availability (counts only)
+        run: cd src && PYTHONPATH=. python scripts/aiba_claim_intake_readiness.py --state ../state/observations
