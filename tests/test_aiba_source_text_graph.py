@@ -3,6 +3,7 @@ import unittest
 
 from scripts.aiba_source_text_intake import ingest
 from scripts.aiba_dvids_asset_adapter import convert
+from scripts.aiba_dvids_fetch import fetch_assets
 from scripts.aiba_extracted_claim_graph import build, evaluate_pair
 from behavioral_claim_extraction import extract_report
 
