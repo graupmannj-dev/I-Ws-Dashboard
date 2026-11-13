@@ -27,6 +27,7 @@ MAX_CONFLICT_EVENT_KM=150
 SCHEMA="aiba.report-event-resolution-shadow.v1"
 STATUS={
     "shared_source_document_unreviewed",
+    "possible_same_source_story_unreviewed",
     "possible_same_event_unreviewed",
     "related_reporting_unreviewed",
 }
@@ -131,6 +132,17 @@ def kilometers(a,b):
     return 12742*math.asin(min(1,math.sqrt(h)))
 
 
+def canonical_story_title(row):
+    """Strip recognizable *publisher byline* suffixes, not event geography."""
+    title=str(row.get("title") or "").strip().lower()
+    if " - " in title:
+        stem,suffix=title.rsplit(" - ",1)
+        if suffix in {"the maritime executive","air cargo news","reuters",
+                      "associated press","ap news","bbc news","beinsure"}:
+            title=stem
+    return re.sub(r"\s+"," ",re.sub(r"[^a-z0-9]+"," ",title)).strip()
+
+
 def shared_subject(a,b):
     ta,tb=tokens(a.get("title")),tokens(b.get("title"))
     common=ta&tb
@@ -183,6 +195,31 @@ def match_pair(a,b):
     same_origin=bool(a.get("information_root") and
                      a.get("information_root")==b.get("information_root"))
     high_similarity=sub["similarity"]>=0.74 and sub["common_count"]>=5
+    # Two different URLs can be the same syndicated article. This should
+    # not become evidence of two independent descriptions of an incident.
+    same_story=(canonical_story_title(a)==canonical_story_title(b) and
+                len(canonical_story_title(a))>=24)
+    if same_story:
+        kind="possible_same_source_story_unreviewed"
+        reason="same_substantive_article_title_different_source_urls"
+        return {
+            "status":kind,"match_basis":reason,
+            "semantic_similarity":sub["similarity"],
+            "shared_content_terms":sub["common_terms"],
+            "first_observation_separation_hours":round(delta,2),
+            "reported_event_site_separation_km":None,
+            "reported_event_site_comparison_available":False,
+            "reporting_origin_used_as_event_site":False,
+            "shared_information_root":same_origin,
+            "independent_corroboration_established":False,
+            "source_reports":[safe_link(a),safe_link(b)],
+            "review_requirements":[
+                "Verify whether both URLs reproduce one original article",
+                "Do not count syndication as two independently observed events",
+                "Resolve the underlying event separately from this story",
+            ],
+            "warning_level_change":False,
+        }
     close_event=distance is not None and distance<=CLOSE_EVENT_KM
     far_event=distance is not None and distance>MAX_CONFLICT_EVENT_KM
     # Two independently reported sites far apart cannot be declared one
@@ -277,6 +314,7 @@ def build(recent, now=None):
         if comparisons_capped:break
     # Important: the list is just a sorted shortlist of suggestions.
     proposals.sort(key=lambda p:(p["status"]!="possible_same_event_unreviewed",
+                                 p["status"]!="possible_same_source_story_unreviewed",
                                  -p["semantic_similarity"],
                                  p["first_observation_separation_hours"],p["id"]))
     documents.sort(key=lambda x:(-x["report_count_total"],x["id"]))
@@ -295,6 +333,8 @@ def build(recent, now=None):
         "pairwise_comparisons_capped":comparisons_capped,
         "same_document_group_count_total":len(documents),
         "cross_document_relation_count_total":len(proposals),
+        "possible_same_source_story_count_total":sum(
+            x["status"]=="possible_same_source_story_unreviewed" for x in proposals),
         "possible_same_event_count_total":sum(
             x["status"]=="possible_same_event_unreviewed" for x in proposals),
         "related_reporting_count_total":sum(
