@@ -1568,6 +1568,7 @@ async function init(){
 async function refreshFaaNas() {
   const heading=$("faaNasSummary"), line=$("faaNasTime");
   if(!heading||!line)return;
+  const set=(message,detail)=>{heading.textContent=message;line.textContent=detail;};
   // Offline browser tests and local previews have no persisted FAA NAS data branch.
   // Do not initiate external fetches or create false error alerts in that mode.
   if(location.hostname==="127.0.0.1"||location.hostname==="localhost"){
@@ -1576,7 +1577,6 @@ async function refreshFaaNas() {
     return;
   }
   const base="https://raw.githubusercontent.com/graupmannj-dev/I-Ws-Dashboard/aiba-feed-data/observations/";
-  const set=(message,detail)=>{heading.textContent=message;line.textContent=detail;};
   try {
     const [sourceResponse,healthResponse]=await Promise.all([
       fetch(base+"latest/faa_nas.json",{cache:"no-store"}),
