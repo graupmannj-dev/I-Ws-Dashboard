@@ -19,6 +19,7 @@ from pathlib import Path
 import re
 
 from behavioral_registry import SCHEMA as REGISTRY_SCHEMA, iso, when
+from behavioral_event_resolution import build as resolve_report_relationships
 from ops_pipeline import load_json, write_json
 
 UTC=dt.timezone.utc
@@ -295,10 +296,15 @@ def build(state,clock=None,write=True,run_id=None):
         groups,total=converge(recent,recent_ids,now)
     visibility, recent_observations = discovery_visibility(
         recent, registry, initial_baseline=bool(registry.get("first_registry_baseline")))
+    # Report relationships are NOT independent-source confirmations and do
+    # not affect the strict behavior-family convergence or warning output.
+    report_relationships = resolve_report_relationships(
+        recent if not registry.get("first_registry_baseline") else {})
     output={
         "schema":SCHEMA,"generated_at":iso(now),
         "discovery_visibility":visibility,
         "recent_source_observations":recent_observations,
+        "report_relationships":report_relationships,
         "registry_asof":registry["generated_at"],
         "registry_source_count":registry.get("record_count"),
         "geographic_scope":"source_declared_only",
