@@ -1,5 +1,6 @@
 """Prospective source evidence custody, replay, privacy and witness-gate tests."""
 import contextlib
+import datetime as dt
 import hashlib
 import io
 import json
@@ -157,10 +158,11 @@ class PrivatePilotCaptureTests(unittest.TestCase):
         self.assertFalse((items[0]/"local-freeze-receipt.json").exists())
 
     def test_cli_stale_feeds_fail_without_forecast_or_claims(self):
-        with contextlib.redirect_stdout(io.StringIO()) as output:
+        with contextlib.redirect_stdout(io.StringIO()) as output, patch.object(
+                capture.shadow, "clock_now", return_value=NOW + dt.timedelta(hours=3)):
             code=capture.main(["--registry",str(self.rpath),"--fusion",str(self.fpath)])
-        # Current runtime is not November 12 22:00Z so fixtures must be
-        # rejected as historical, not silently reissued with old clocks.
+        # Use a deterministic future clock; historical fixtures cannot be
+        # reissued retrospectively as genuinely prospective observations.
         self.assertEqual(code,1)
         result=json.loads(output.getvalue())
         self.assertEqual(result["status"],"unavailable")
