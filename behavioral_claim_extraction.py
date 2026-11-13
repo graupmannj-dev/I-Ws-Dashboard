@@ -143,7 +143,7 @@ def extract_report(row):
             "independent_corroboration_established": False}
     if not rid or not _valid_source(url):
         return {**base, "reason": "missing_source_identity"}
-    if row.get("source_family") != "commercial_media" and row.get("source_kind") not in EVENT_REPORT_KINDS:
+    if row.get("source_family") not in ("commercial_media", "official_media") and row.get("source_kind") not in EVENT_REPORT_KINDS:
         return {**base, "reason": "not_event_reporting"}
     body = row.get("source_text")
     if not isinstance(body, str) or not body.strip():
