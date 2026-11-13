@@ -99,6 +99,7 @@ class SourceTextAndGraphTests(unittest.TestCase):
         rows, rejects = convert([asset], ["news:1234567"], STAMP)
         self.assertEqual(len(rows), 1)
         self.assertEqual(rows[0]["content_type"], "full_body")
+        self.assertEqual(rows[0]["source_family"], "official_media")
         self.assertNotIn("reported_event_location", rows[0])
         self.assertIsNone(rows[0]["reporting_origin"])
         self.assertEqual(rows[0]["source_credit"], None)
