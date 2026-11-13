@@ -261,11 +261,23 @@ def score(reports, adjudicated, pairs):
     if any(l.get("annotator_id") != "ADJUDICATED" or not l.get("adjudication_id")
            for l in adjudicated):
         raise ValueError("adjudicated gold required, not a single coder's judgments")
+    split_results = {}
+    for split in ("development", "heldout"):
+        sample = [r for r in reports if r["split"] == split]
+        selected = {r["id"] for r in sample}
+        split_labels = [r for r in adjudicated if r["report_id"] in selected]
+        split_pairs = [p for p in pairs if p["a"] in selected and p["b"] in selected]
+        split_results[split] = {
+            "report_count": len(sample),
+            "claim_metrics": score_claims(sample, split_labels),
+            "pair_metrics": score_pairs(sample, split_pairs),
+        }
     return {"schema": "aiba.real-report-evaluation-results.v1",
             "kind": "real_report_evaluation_requires_independent_annotations",
             "operational_validation": False, "report_count": len(reports),
             "claim_metrics": score_claims(reports, adjudicated),
             "pair_metrics": score_pairs(reports, pairs),
+            "by_split": split_results,
             "limitations": [
                 "Precision, recall and false-merge rates require a representative held-out corpus.",
                 "Unreviewed claims and links do not authorize automated military warning decisions.",
