@@ -1,0 +1,219 @@
+{
+  "schema": "aiba.claim-extraction-benchmark.synthetic.v1",
+  "dataset_kind": "hand_authored_synthetic_not_real_world",
+  "created_at": "2026-11-13",
+  "guidance": "Expect adversarial cases to reveal current errors; these labels are not blinded independent annotation.",
+  "claim_cases": [
+    {
+      "id": "positive_kyiv",
+      "text": "Russian missiles struck Kyiv energy substation overnight.",
+      "actor": "Russian missiles",
+      "action": "strike",
+      "object": "Kyiv energy substation overnight",
+      "status": "source_asserted_unverified"
+    },
+    {
+      "id": "positive_port",
+      "text": "Coast guard vessels seized suspicious cargo near the port.",
+      "actor": "Coast guard vessels",
+      "action": "seize",
+      "object": "suspicious cargo near the port",
+      "status": "source_asserted_unverified"
+    },
+    {
+      "id": "positive_air",
+      "text": "Ukrainian air defenses intercepted two missiles over Kyiv.",
+      "actor": "Ukrainian air defenses",
+      "action": "intercept",
+      "object": "two missiles over Kyiv",
+      "status": "source_asserted_unverified"
+    },
+    {
+      "id": "positive_close",
+      "text": "Port authorities closed the eastern shipping channel.",
+      "actor": "Port authorities",
+      "action": "close",
+      "object": "the eastern shipping channel",
+      "status": "source_asserted_unverified"
+    },
+    {
+      "id": "positive_detain",
+      "text": "Police detained three suspects near the airport.",
+      "actor": "Police",
+      "action": "detain",
+      "object": "three suspects near the airport",
+      "status": "source_asserted_unverified"
+    },
+    {
+      "id": "hedged_reportedly",
+      "text": "Russian missiles reportedly struck Kyiv energy station.",
+      "actor": "Russian missiles",
+      "action": "strike",
+      "object": "Kyiv energy station",
+      "status": "attributed_or_uncertain"
+    },
+    {
+      "id": "hedged_may",
+      "text": "Russian missiles may have struck Kyiv energy station.",
+      "actor": "Russian missiles",
+      "action": "strike",
+      "object": "Kyiv energy station",
+      "status": "attributed_or_uncertain"
+    },
+    {
+      "id": "negated",
+      "text": "Russian missiles did not strike Kyiv energy station.",
+      "none": true
+    },
+    {
+      "id": "denied",
+      "text": "Officials denied that Russian missiles struck Kyiv energy station.",
+      "none": true
+    },
+    {
+      "id": "quotation",
+      "text": "The post stated \"Russian missiles struck Kyiv energy station.\"",
+      "none": true
+    },
+    {
+      "id": "no_incident",
+      "text": "Shipping insurance premiums rose sharply this quarter.",
+      "none": true
+    },
+    {
+      "id": "status_notice",
+      "text": "The maritime notice describes restricted navigation zones.",
+      "none": true
+    },
+    {
+      "id": "pronoun",
+      "text": "They attacked the facility near the airport.",
+      "none": true
+    },
+    {
+      "id": "two_verbs",
+      "text": "Police detained three suspects and seized a vehicle.",
+      "none": true
+    },
+    {
+      "id": "passive",
+      "text": "The power station was struck by Russian missiles.",
+      "none": true
+    },
+    {
+      "id": "attributed_nested",
+      "text": "Officials said Russian missiles struck Kyiv energy station.",
+      "none": true
+    },
+    {
+      "id": "prediction",
+      "text": "Russian missiles will strike Kyiv energy station tomorrow.",
+      "none": true
+    },
+    {
+      "id": "conditional",
+      "text": "Russian missiles could strike Kyiv energy station soon.",
+      "none": true
+    },
+    {
+      "id": "question",
+      "text": "Did Russian missiles strike Kyiv energy station?",
+      "none": true
+    },
+    {
+      "id": "unrelated_background",
+      "text": "Regional officials met for a planning conference.",
+      "none": true
+    }
+  ],
+  "relationship_cases": [
+    {
+      "id": "same_incident_different_desks",
+      "a": "Russian missiles struck Kyiv energy substation overnight",
+      "b": "Kyiv energy substation struck overnight by Russian missiles",
+      "truth": "same_event",
+      "locationA": null,
+      "locationB": null,
+      "originA": "New York",
+      "originB": "Kyiv"
+    },
+    {
+      "id": "separate_incident_far_site",
+      "a": "Russian missiles struck Kyiv energy substation overnight",
+      "b": "Kyiv energy substation struck overnight by Russian missiles",
+      "truth": "different_event",
+      "locationA": [
+        50.45,
+        30.52
+      ],
+      "locationB": [
+        46.48,
+        30.73
+      ]
+    },
+    {
+      "id": "nearby_unrelated",
+      "a": "Airport baggage conveyor mechanical maintenance",
+      "b": "Civilian hospital oxygen supply delivery delayed",
+      "truth": "different_event",
+      "locationA": [
+        50.45,
+        30.52
+      ],
+      "locationB": [
+        50.46,
+        30.53
+      ]
+    },
+    {
+      "id": "generic_same_topic",
+      "a": "Ukraine war updates",
+      "b": "Ukraine war briefing",
+      "truth": "different_event"
+    },
+    {
+      "id": "same_article_syndicated",
+      "a": "Study Shipping Can Avoid Endangered Species Habitat at Minimal Cost",
+      "b": "Study Shipping Can Avoid Endangered Species Habitat at Minimal Cost",
+      "truth": "same_story",
+      "urlA": "https://original.example.net/articles/123",
+      "urlB": "https://syndicate.example.net/articles/456"
+    },
+    {
+      "id": "event_close_site",
+      "a": "Russian missiles struck Kyiv energy substation overnight",
+      "b": "Kyiv energy substation struck overnight by Russian missiles",
+      "truth": "same_event",
+      "locationA": [
+        50.45,
+        30.52
+      ],
+      "locationB": [
+        50.46,
+        30.56
+      ]
+    },
+    {
+      "id": "nearby_unrelated_actions",
+      "a": "Police detained suspects outside airport security terminal",
+      "b": "Cargo operators closed shipping terminal access road",
+      "truth": "different_event",
+      "locationA": [
+        50.45,
+        30.52
+      ],
+      "locationB": [
+        50.45,
+        30.52
+      ]
+    },
+    {
+      "id": "same_story_one_source_document",
+      "a": "Russian missiles struck Kyiv energy substation overnight",
+      "b": "Russian missiles struck Kyiv energy substation overnight",
+      "truth": "same_document",
+      "urlA": "https://agency.example.net/article/same",
+      "urlB": "https://agency.example.net/article/same"
+    }
+  ]
+}
