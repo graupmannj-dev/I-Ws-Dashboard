@@ -59,7 +59,7 @@ def asset_to_input(obj, approved, retrieved_at):
     return {
         "id": "dvids-" + ident.replace(":", "-"),
         "source_url": url,
-        "source_family": "commercial_media",  # eligible text-report lane, NOT commercial assertion
+        "source_family": "official_media",  # explicit government-origin text, not commercial press
         "source_kind": "source_event_report",
         "provider": "dvids",
         "source_text": description,
