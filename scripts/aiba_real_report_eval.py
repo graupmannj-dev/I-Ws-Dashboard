@@ -76,7 +76,7 @@ def validate_reports(rows):
             r"20\d\d-\d\d-\d\dT\d\d:\d\d:\d\dZ", r["retrieved_at"]
         ):
             raise ValueError(f"{rid}: missing UTC retrieval provenance")
-        if r.get("source_family") != "commercial_media" and r.get("source_kind") not in (
+        if r.get("source_family") not in ("commercial_media", "official_media") and r.get("source_kind") not in (
             "field_event_report", "primary_event_report", "eyewitness_event_report", "source_event_report"
         ):
             raise ValueError(f"{rid}: not event-report eligible")
