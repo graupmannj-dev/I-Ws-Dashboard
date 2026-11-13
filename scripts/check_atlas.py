@@ -21,6 +21,9 @@ assert 'id="frictionExpand"' in html
 assert 'id="tabBehavior"' in html and 'id="openBehavior"' in html
 assert 'id="watchDetailLink"' in html
 assert "behavioral_discovery" in atlas
+assert atlas.get("behavior_live_url", "").startswith(
+    "https://raw.githubusercontent.com/graupmannj-dev/I-Ws-Dashboard/aiba-feed-data/observations/latest/behavioral_fusion.json"
+)
 behavior = atlas["behavioral_discovery"]
 assert behavior["schema"] == "aiba.behavioral-convergence-shadow.v1"
 assert behavior["status"] in ("read_only_shadow_evidence", "unavailable")
