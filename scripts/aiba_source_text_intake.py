@@ -57,7 +57,7 @@ def to_record(record):
         raise ValueError("content_type must identify full_body versus source_excerpt")
     canonical_url(record["source_url"])
     # Refuse article prose which is claimed to be an event site without typed provenance.
-    if "reported_event_location" in record:
+    if record.get("reported_event_location") is not None:
         from behavioral_claim_extraction import _site
         if _site(record) is None:
             raise ValueError("invalid source declared event site")
