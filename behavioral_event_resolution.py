@@ -194,6 +194,8 @@ def match_pair(a,b):
     distance=kilometers(pos1,pos2) if pos1 and pos2 else None
     same_origin=bool(a.get("information_root") and
                      a.get("information_root")==b.get("information_root"))
+    close_event=distance is not None and distance<=CLOSE_EVENT_KM
+    far_event=distance is not None and distance>MAX_CONFLICT_EVENT_KM
     high_similarity=sub["similarity"]>=0.74 and sub["common_count"]>=5
     # Two different URLs can be the same syndicated article. This should
     # not become evidence of two independent descriptions of an incident.
@@ -243,8 +245,6 @@ def match_pair(a,b):
             ],
             "warning_level_change":False,
         }
-    close_event=distance is not None and distance<=CLOSE_EVENT_KM
-    far_event=distance is not None and distance>MAX_CONFLICT_EVENT_KM
     # Two independently reported sites far apart cannot be declared one
     # local event, even when publishers choose near-identical headlines.
     if delta<=MAX_SEMANTIC_HOURS and (high_similarity or (
