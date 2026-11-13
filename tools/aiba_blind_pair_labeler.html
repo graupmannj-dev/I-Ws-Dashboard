@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AIBA Blind Report Pair Labeler — Offline</title>
+<style>
+:root{color-scheme:dark;font-family:system-ui,Arial,sans-serif;background:#101827;color:#edf1f5}
+*{box-sizing:border-box}body{margin:0}header{padding:18px 24px;border-bottom:1px solid #415266;background:#1a2637}
+h1{font-size:20px;margin:0 0 5px}.sub{font-size:13px;color:#a8bacb}
+.toolbar{display:flex;flex-wrap:wrap;gap:10px;padding:14px 24px;align-items:center;border-bottom:1px solid #415266}
+button,input,select,textarea{font:inherit;color:#eef1f4;background:#25354a;border:1px solid #61758d;border-radius:7px;padding:8px}
+button{cursor:pointer}button:hover{background:#35516b}button:disabled{opacity:.35;cursor:default}
+input[type=file]{max-width:330px}main{padding:20px 24px;max-width:1550px;margin:auto}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+article{min-width:0;border:1px solid #4b6078;border-radius:10px;background:#182639;padding:18px}
+h2{font-size:16px;margin:0 0 10px}.source{font-size:12px;color:#b7c6d2;overflow-wrap:anywhere}
+.story{white-space:pre-wrap;line-height:1.6;min-height:220px;max-height:56vh;overflow:auto;margin-top:15px}
+footer{margin-top:20px;border:1px solid #4b6078;border-radius:10px;padding:18px;background:#182639}
+label{display:block;margin-bottom:7px;color:#d3dce6;font-weight:600}
+select,textarea{width:100%}textarea{min-height:90px;resize:vertical}
+.hint{font-size:12px;color:#a8bacb;margin-top:12px}.count{font-weight:700}
+a{color:#aac9f7;overflow-wrap:anywhere}button.primary{background:#5c2f44;border-color:#bc9b5d}
+button.primary:hover{background:#754158}
+@media(max-width:800px){.grid{grid-template-columns:1fr}.story{max-height:35vh}main{padding:12px}}
+</style>
+</head>
+<body>
+<header>
+<h1>AIBA — Blinded event relationship review</h1>
+<div class="sub">Offline tool · no network requests · source statements are not independently verified incidents</div>
+</header>
+<div class="toolbar">
+<label for="sourceFile">Load assigned reviewer packet (.jsonl)</label>
+<input id="sourceFile" type="file" accept=".jsonl,.txt,application/json">
+<button id="previous" disabled>Previous</button>
+<button id="next" disabled>Next</button>
+<strong id="status">No packet loaded</strong>
+<button id="export" class="primary" disabled>Export decisions (.jsonl)</button>
+</div>
+<main>
+<div class="grid">
+<article>
+<h2>Report A</h2>
+<div class="source" id="metadataA"></div>
+<div class="story" id="bodyA"></div>
+</article>
+<article>
+<h2>Report B</h2>
+<div class="source" id="metadataB"></div>
+<div class="story" id="bodyB"></div>
+</article>
+</div>
+<footer>
+<label for="relationship">What relationship do these two reports have?</label>
+<select id="relationship">
+<option value="">Not reviewed</option>
+<option value="same_event">Same underlying real-world event (may be differently described)</option>
+<option value="different_event">Different real-world events / not evidence of same event</option>
+<option value="same_story">Same publication or copied/syndicated source story</option>
+<option value="same_document">Exactly the same original source document</option>
+<option value="uncertain">Insufficient information / cannot determine</option>
+</select>
+<label for="notes" style="margin-top:14px">Evidence and uncertainty notes</label>
+<textarea id="notes" placeholder="Cite text that supports identity or distinguishes incidents, including event time, actors, objects, sites and apparent syndication."></textarea>
+<p class="hint">Do not count publisher city as incident site. Do not treat two articles issued by one government as independent confirmation. If uncertain, select 'Insufficient information.' Work independently: do not consult a second reviewer's labels or the model candidate graph. Export regularly; this page does not save to the cloud.</p>
+</footer>
+</main>
+<script>
+(() => {
+  "use strict";
+  let rows = [], cursor = 0;
+  const byId = id => document.getElementById(id);
+  const status = byId("status"), select = byId("relationship"), notes = byId("notes");
+  const valid = new Set(["same_event","different_event","same_story","same_document","uncertain"]);
+  const sourceFile = byId("sourceFile");
+  function save() {
+    if (!rows.length) return;
+    rows[cursor].label = select.value || null;
+    rows[cursor].reviewer_notes = notes.value.slice(0,3000);
+  }
+  function source(info, suffix) {
+    byId("body"+suffix).textContent = info.source_text || "";
+    const box = byId("metadata"+suffix);
+    box.replaceChildren();
+    const heading = document.createElement("strong");
+    heading.textContent = (info.title || "") + "  ";
+    box.appendChild(heading);
+    const link = document.createElement("a");
+    link.href = info.source_url; link.textContent = info.source_url;
+    link.target = "_blank";link.rel = "noopener noreferrer";
+    box.appendChild(link);
+    const date = document.createElement("div");
+    date.textContent = "Published (not incident time): " + (info.source_published_at || "unknown");
+    box.appendChild(date);
+  }
+  function render() {
+    const ready = rows.length > 0;
+    byId("previous").disabled = !ready || cursor === 0;
+    byId("next").disabled = !ready || cursor === rows.length-1;
+    byId("export").disabled = !ready;
+    if (!ready) return;
+    const r = rows[cursor];
+    source(r.a,"A");source(r.b,"B");
+    select.value = valid.has(r.label) ? r.label : "";
+    notes.value = r.reviewer_notes || "";
+    const completed = rows.filter(x=>valid.has(x.label)).length;
+    status.textContent = "Pair " + (cursor+1) + "/" + rows.length +
+      "  ·  " + completed + " reviewed  ·  reviewer " + r.annotator_id;
+  }
+  byId("previous").onclick = () => { save(); if(cursor>0)cursor--; render(); };
+  byId("next").onclick = () => { save(); if(cursor<rows.length-1)cursor++; render(); };
+  select.onchange = save; notes.oninput = save;
+  sourceFile.onchange = async () => {
+    if (!sourceFile.files.length) return;
+    try {
+      const lines = (await sourceFile.files[0].text()).split(/\r?\n/).filter(x=>x.trim());
+      const parsed = lines.map(x=>JSON.parse(x));
+      if (!parsed.length || parsed.length > 200 || new Set(parsed.map(x=>x.pair_id)).size !== parsed.length ||
+          parsed.some(x=>!x.pair_id || !["A","B"].includes(x.annotator_id) ||
+            !x.a?.source_text || !x.b?.source_text || !x.a?.report_id || !x.b?.report_id) ||
+          new Set(parsed.map(x=>x.annotator_id)).size !== 1) throw Error("Invalid or mixed reviewer packet");
+      rows = parsed.map(x=>({...x,label:valid.has(x.label)?x.label:null,reviewer_notes:x.reviewer_notes||""}));
+      cursor=0;render();
+    } catch(e) {
+      rows=[];status.textContent="Invalid packet: "+e.message;
+      byId("previous").disabled=true;byId("next").disabled=true;byId("export").disabled=true;
+      byId("bodyA").textContent="";byId("bodyB").textContent="";
+    }
+  };
+  byId("export").onclick = () => {
+    save();
+    const reviewer = rows[0].annotator_id;
+    const result = rows.map(r=>({
+      pair_id:r.pair_id, annotator_id:r.annotator_id,
+      a:r.a.report_id,b:r.b.report_id,
+      label:valid.has(r.label)?r.label:null,
+      reviewer_notes:r.reviewer_notes||""
+    }));
+    const blob = new Blob([result.map(x=>JSON.stringify(x)).join("\n")+"\n"],{type:"application/x-ndjson"});
+    const url=URL.createObjectURL(blob);
+    const a=document.createElement("a");
+    a.href=url;a.download="aiba_pair_reviewer_"+reviewer+"_decisions.jsonl";
+    document.body.appendChild(a);a.click();a.remove();
+    setTimeout(()=>URL.revokeObjectURL(url),2500);
+  };
+})();
+</script>
+</body>
+</html>
