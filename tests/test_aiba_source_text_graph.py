@@ -68,7 +68,7 @@ class SourceTextAndGraphTests(unittest.TestCase):
         a_site = {"role": "reported_event_site", "basis": "source_declared", "lat": 50.45, "lon": 30.52}
         b_site = {"role": "reported_event_site", "basis": "source_declared", "lat": 46.48, "lon": 30.73}
         a["reported_event_location"], b["reported_event_location"] = a_site, b_site
-        rows, _, _ = ingest([a, b])
+        rows, _, _ = ingest([a, b], {"lineage_splits": {"a": "development", "b": "development"}})
         self.assertEqual(build(rows)["candidates"][0]["category"],
                          "related_claims_conflicting_event_sites")
 
@@ -77,14 +77,14 @@ class SourceTextAndGraphTests(unittest.TestCase):
         b = doc("b", "Russian missiles struck Kyiv energy station.")
         a["event_at"] = "2026-11-01T12:00:00Z"
         b["event_at"] = "2026-11-12T12:00:00Z"
-        rows, _, _ = ingest([a, b])
+        rows, _, _ = ingest([a, b], {"lineage_splits": {"a": "development", "b": "development"}})
         self.assertEqual(build(rows)["candidates"][0]["category"],
                          "related_claims_conflicting_event_times")
 
     def test_distinct_actions_do_not_match(self):
         a = doc("a", "Russian missiles struck Kyiv energy station.")
         b = doc("b", "Russian missiles intercepted Kyiv energy station.")
-        rows, _, _ = ingest([a, b])
+        rows, _, _ = ingest([a, b], {"lineage_splits": {"a": "development", "b": "development"}})
         self.assertEqual(build(rows)["candidate_count_total"], 0)
 
     def test_dvids_needs_asset_specific_rights_approval(self):
