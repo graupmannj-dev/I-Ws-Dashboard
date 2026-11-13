@@ -43,11 +43,28 @@ NOISE={
     "thursday","friday","saturday","sunday","november","december",
     "january","february","march","april","june","july","august",
     "september","october","year","utc","2026","2025",
+    "level","exercise","exercises","increased","caution","advisory",
+    "advisories","travel","risk","issued","notice","recommended",
+    "restriction","restrictions","scheduled","planned","information",
 }
 # Typical high-frequency generic categories do NOT anchor individual events.
 GENERIC={"russia","ukraine","china","taiwan","israel","iran","united","states",
          "military","government","security","conflict","war","shipping",
          "market","maritime","aircraft","flight","region","border"}
+
+
+# The public registry contains many routine status notices, market
+# propositions, and source geometry sections. These are NOT accounts of a
+# particular incident. Title similarity among them is not event identity.
+# Such source rows can still be grouped by the exact primary source document.
+REPORTING_FAMILIES={"commercial_media"}
+REPORTING_SOURCE_KINDS={"field_event_report","primary_event_report",
+                        "eyewitness_event_report","source_event_report"}
+
+
+def is_event_reporting(row):
+    return (row.get("source_family") in REPORTING_FAMILIES or
+            row.get("source_kind") in REPORTING_SOURCE_KINDS)
 
 
 def tokens(value):
@@ -119,7 +136,7 @@ def shared_subject(a,b):
     common=ta&tb
     if len(common)<3:return None
     distinctive=common-GENERIC
-    if len(distinctive)<2:return None
+    if len(distinctive)<4:return None
     score=len(common)/len(ta|tb) if ta|tb else 0
     return {"similarity":round(score,3),"common_terms":sorted(distinctive)[:6],
             "common_count":len(common)}
@@ -145,6 +162,11 @@ def safe_link(row):
 
 def match_pair(a,b):
     """Return an unreviewed possible same event / related subject, or None."""
+    # Two scheduled restrictions, routine travel advisories, or country
+    # reachability status rows are not two independent news reports of one
+    # incident. Shared-document grouping remains available for these.
+    if not is_event_reporting(a) or not is_event_reporting(b):
+        return None
     doca,docb=report_document(a),report_document(b)
     if doca and doca==docb:
         return None  # clustered by document before pairwise matching
@@ -155,12 +177,12 @@ def match_pair(a,b):
     sub=shared_subject(a,b)
     if not sub:return None
     # Generic text overlap must not manufacture a match.
-    if sub["similarity"]<0.48 or sub["common_count"]<4:return None
+    if sub["similarity"]<0.55 or sub["common_count"]<5:return None
     pos1,pos2=reported_site(a),reported_site(b)
     distance=kilometers(pos1,pos2) if pos1 and pos2 else None
     same_origin=bool(a.get("information_root") and
                      a.get("information_root")==b.get("information_root"))
-    high_similarity=sub["similarity"]>=0.72 and sub["common_count"]>=5
+    high_similarity=sub["similarity"]>=0.74 and sub["common_count"]>=5
     close_event=distance is not None and distance<=CLOSE_EVENT_KM
     far_event=distance is not None and distance>MAX_CONFLICT_EVENT_KM
     # Two independently reported sites far apart cannot be declared one
@@ -213,6 +235,7 @@ def build(recent, now=None):
         d=report_document(row)
         if d:docs[d].append(row)
     documents=[]
+    eligible_report_records=sum(is_event_reporting(r) for r in records)
     for doc,members in sorted(docs.items()):
         if len(members)<2:continue
         members.sort(key=lambda x:(x.get("first_observed_at") or "",x.get("id") or ""),reverse=True)
@@ -264,6 +287,9 @@ def build(recent, now=None):
         "status":"unreviewed_report_relationships_only",
         "records_available":inputs,
         "records_examined":len(records),
+        "eligible_event_reporting_records":eligible_report_records,
+        "routine_notice_market_or_measurement_records_excluded_from_text_event_matching":
+            len(records)-eligible_report_records,
         "input_truncated":truncated,
         "pairwise_comparisons_examined":checked,
         "pairwise_comparisons_capped":comparisons_capped,
