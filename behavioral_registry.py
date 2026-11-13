@@ -19,6 +19,7 @@ from urllib.parse import urlsplit
 
 from ops_pipeline import load_json, parse_time, write_json
 from behavioral_restrictions import SOURCES as RESTRICTION_SOURCES, adapt_layer
+from behavioral_event_resolution import reported_site
 
 UTC = dt.timezone.utc
 SCHEMA = "aiba.behavioral-observations.v1"
@@ -214,6 +215,25 @@ def normalize(mode, row, now):
         "actor_identified":False,
         "alert_eligible":False,
     }
+    # Publisher location and reported event location are completely separate.
+    # Never map a dateline, reporting office, bulletin issuer or physical
+    # notice polygon to the site of a hostile event.
+    if "reporting_origin" in row:
+        origin = row["reporting_origin"]
+        if not isinstance(origin, str) or len(origin)>100:
+            return None,"invalid_reporting_origin"
+        result["reporting_origin"]=origin
+    if "reported_event_location" in row:
+        event_site = reported_site(row)
+        if event_site is None:
+            return None,"unverified_or_invalid_reported_event_site"
+        claim = row["reported_event_location"]
+        result["reported_event_location"]={
+            "role":"reported_event_site",
+            "basis":claim["basis"],
+            "lat":event_site[0],"lon":event_site[1],
+            "location_quality":"source_declared_unreviewed",
+        }
     if mode in RESTRICTION_SOURCES:
         result["restriction_status"]=row["restriction_time_state"]
         result["scheduled_valid_from"]=row["scheduled_valid_from"]
