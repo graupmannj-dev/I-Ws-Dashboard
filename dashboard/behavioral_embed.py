@@ -209,6 +209,7 @@ def embed(site):
     if matches is not None:
         statuses = {
             "shared_source_document_unreviewed",
+            "possible_same_source_story_unreviewed",
             "possible_same_event_unreviewed",
             "related_reporting_unreviewed",
         }
@@ -287,6 +288,7 @@ def embed(site):
             "input_truncated":matches.get("input_truncated") is True,
             "pairwise_comparisons_capped":matches.get("pairwise_comparisons_capped") is True,
             "same_document_group_count_total":matches.get("same_document_group_count_total"),
+            "possible_same_source_story_count_total":matches.get("possible_same_source_story_count_total"),
             "possible_same_event_count_total":matches.get("possible_same_event_count_total"),
             "related_reporting_count_total":matches.get("related_reporting_count_total"),
             "candidate_groups_truncated":matches.get("candidate_groups_truncated") is True,
