@@ -3,7 +3,7 @@
   "automated_severity_changes": 0,
   "collection_coverage": {
     "amsa": {
-      "age_hours": 4.86,
+      "age_hours": 5.11,
       "checked_at": "2026-11-13T14:52:55Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -15,7 +15,7 @@
       "truncated_or_partial": false
     },
     "commercial": {
-      "age_hours": 4.25,
+      "age_hours": 4.5,
       "checked_at": "2026-11-13T15:29:52Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -27,7 +27,7 @@
       "truncated_or_partial": false
     },
     "ioda": {
-      "age_hours": 4.86,
+      "age_hours": 5.11,
       "checked_at": "2026-11-13T14:52:55Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -39,29 +39,31 @@
       "truncated_or_partial": false
     },
     "live_airspace": {
-      "age_hours": 7.28,
-      "checked_at": "2026-11-13T12:28:01Z",
-      "missingness": "not_measured_not_zero",
+      "age_hours": 0.0,
+      "checked_at": "2026-11-13T19:59:30Z",
+      "first_provider_baseline": false,
+      "missingness": "partial_sampling_not_worldwide_exhaustive",
       "mode": "live_airspace",
       "provider_status": "partial",
-      "snapshot_at": "2026-11-13T12:28:01Z",
+      "snapshot_at": "2026-11-13T19:59:30Z",
       "source_scope": "FAA temporary flight restrictions: United States only",
-      "status": "stale_or_unavailable",
+      "status": "current_partial",
       "truncated_or_partial": true
     },
     "live_maritime": {
-      "age_hours": 7.28,
-      "checked_at": "2026-11-13T12:28:01Z",
-      "missingness": "not_measured_not_zero",
+      "age_hours": 0.0,
+      "checked_at": "2026-11-13T19:59:30Z",
+      "first_provider_baseline": false,
+      "missingness": "partial_sampling_not_worldwide_exhaustive",
       "mode": "live_maritime",
       "provider_status": "partial",
-      "snapshot_at": "2026-11-13T12:28:01Z",
+      "snapshot_at": "2026-11-13T19:59:30Z",
       "source_scope": "Danish Maritime Authority Niord notices: regional Baltic/North Sea",
-      "status": "stale_or_unavailable",
+      "status": "current_partial",
       "truncated_or_partial": true
     },
     "nga": {
-      "age_hours": 4.86,
+      "age_hours": 5.11,
       "checked_at": "2026-11-13T14:52:55Z",
       "missingness": "not_measured_not_zero",
       "mode": "nga",
@@ -72,7 +74,7 @@
       "truncated_or_partial": false
     },
     "official": {
-      "age_hours": 0.0,
+      "age_hours": 0.25,
       "checked_at": "2026-11-13T19:44:38Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -84,7 +86,7 @@
       "truncated_or_partial": false
     },
     "watchlist": {
-      "age_hours": 0.0,
+      "age_hours": 0.25,
       "checked_at": "2026-11-13T19:44:38Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -99,36 +101,36 @@
   "discovery_visibility": {
     "exact_geography_match_required_for_cross_family": true,
     "latest_initial_baseline": false,
-    "latest_registry_newly_observed_count": 0,
-    "latest_registry_record_count": 269,
-    "latest_unlocated_record_count": 255,
+    "latest_registry_newly_observed_count": 5,
+    "latest_registry_record_count": 377,
+    "latest_unlocated_record_count": 334,
     "new_or_collocated_not_same_as_verified_threat": true,
     "new_this_collection_required_for_cross_family_nomination": true,
     "recent_observations_sampled": 24,
     "recent_source_families": {
-      "airspace_restriction": 8,
+      "airspace_restriction": 13,
       "commercial_media": 10,
       "internet_reachability": 57,
       "maritime_restriction": 96,
       "protective_notice": 5
     },
-    "recent_unique_record_count_72h": 176,
-    "recent_unlocated_count_72h": 93,
+    "recent_unique_record_count_72h": 181,
+    "recent_unlocated_count_72h": 96,
     "schema": "aiba.behavioral-discovery-visibility.v1",
     "shared_exact_geography_keys_across_behavior_families": 0,
     "source_coverage_is_globally_complete": false
   },
   "forecast_probability": null,
   "gdelt_context": "separate_analytical_stream_not_a_gate_or_confirmation",
-  "generated_at": "2026-11-13T19:44:40Z",
+  "generated_at": "2026-11-13T19:59:34Z",
   "geographic_scope": "source_declared_only",
   "history_diagnostics": {
     "excluded_observations": {
       "old_source_publication": 1
     },
-    "history_files_examined": 29,
+    "history_files_examined": 30,
     "lookback_hours": 72,
-    "recent_unique_records": 176
+    "recent_unique_records": 181
   },
   "limit_notes": [
     "No automated threat warning. These are unreviewed investigatory leads.",
@@ -137,10 +139,241 @@
     "Unlocated records cannot produce automatic geographic convergence.",
     "Unavailable collection is not evidence of no threatening activity."
   ],
-  "new_single_source_count_total": 0,
-  "new_single_source_leads": [],
+  "new_single_source_count_total": 5,
+  "new_single_source_leads": [
+    {
+      "evidence_class": "official_notice",
+      "first_observed_at": "2026-11-13T19:59:34Z",
+      "geography": {
+        "geometry_sha256_prefix": "c13a8ba31864fdffa5afb945",
+        "geometry_type": "MultiPolygon",
+        "key": "source-footprint:c13a8ba31864fdffa5afb945",
+        "kind": "source_notice_footprint",
+        "label": "Official MultiPolygon notice area",
+        "latitude": null,
+        "longitude": null,
+        "precision": "provider_defined_notice_boundary_not_event_point",
+        "verified_iso": false
+      },
+      "information_root": "faa:6/7338:0:0",
+      "meaning": "Observation novelty, not evidence of impending violence.",
+      "observation_id": "beh:1d63464ac7fc27f35778539d03b7",
+      "requires_geolocation": false,
+      "source_family": "airspace_restriction",
+      "source_published_at": null,
+      "source_url": "https://tfr.faa.gov/6_7338.html",
+      "status": "single_source_unreviewed",
+      "title": "FAA TFR 6/7338 · W MARTINSBURG, WV, Friday, November 13, 2026 UTC"
+    },
+    {
+      "evidence_class": "official_notice",
+      "first_observed_at": "2026-11-13T19:59:34Z",
+      "geography": {
+        "geometry_sha256_prefix": "d4b8fd38058de360f6f5cd2b",
+        "geometry_type": "MultiPolygon",
+        "key": "source-footprint:d4b8fd38058de360f6f5cd2b",
+        "kind": "source_notice_footprint",
+        "label": "Official MultiPolygon notice area",
+        "latitude": null,
+        "longitude": null,
+        "precision": "provider_defined_notice_boundary_not_event_point",
+        "verified_iso": false
+      },
+      "information_root": "faa:6/7462:0:0",
+      "meaning": "Observation novelty, not evidence of impending violence.",
+      "observation_id": "beh:6dae79e34c358cf922dfbf1d932b",
+      "requires_geolocation": false,
+      "source_family": "airspace_restriction",
+      "source_published_at": null,
+      "source_url": "https://tfr.faa.gov/6_7462.html",
+      "status": "single_source_unreviewed",
+      "title": "FAA TFR 6/7462 · KEEWATIN, MN, Monday, November 16, 2026 UTC"
+    },
+    {
+      "evidence_class": "official_notice",
+      "first_observed_at": "2026-11-13T19:59:34Z",
+      "geography": {
+        "geometry_sha256_prefix": null,
+        "geometry_type": null,
+        "key": null,
+        "kind": "unlocated",
+        "label": null,
+        "latitude": null,
+        "longitude": null,
+        "precision": "notice_geography_unavailable",
+        "verified_iso": false
+      },
+      "information_root": "faa:6/7420:0:0",
+      "meaning": "Observation novelty, not evidence of impending violence.",
+      "observation_id": "beh:0e2c59ad57e7c755ef7b4ecc5c00",
+      "requires_geolocation": true,
+      "source_family": "airspace_restriction",
+      "source_published_at": null,
+      "source_url": "https://tfr.faa.gov/6_7420.html",
+      "status": "single_source_unreviewed",
+      "title": "FAA TFR 6/7420 · U.S. MEXICO BORDER, AZ, Friday, November 13, 2026 UTC"
+    },
+    {
+      "evidence_class": "official_notice",
+      "first_observed_at": "2026-11-13T19:59:34Z",
+      "geography": {
+        "geometry_sha256_prefix": null,
+        "geometry_type": null,
+        "key": null,
+        "kind": "unlocated",
+        "label": null,
+        "latitude": null,
+        "longitude": null,
+        "precision": "notice_geography_unavailable",
+        "verified_iso": false
+      },
+      "information_root": "faa:6/7422:0:0",
+      "meaning": "Observation novelty, not evidence of impending violence.",
+      "observation_id": "beh:2620d94ed6d902850199bedb3284",
+      "requires_geolocation": true,
+      "source_family": "airspace_restriction",
+      "source_published_at": null,
+      "source_url": "https://tfr.faa.gov/6_7422.html",
+      "status": "single_source_unreviewed",
+      "title": "FAA TFR 6/7422 · U.S. MEXICO BORDER, TX, Friday, November 13, 2026 UTC"
+    },
+    {
+      "evidence_class": "official_notice",
+      "first_observed_at": "2026-11-13T19:59:34Z",
+      "geography": {
+        "geometry_sha256_prefix": null,
+        "geometry_type": null,
+        "key": null,
+        "kind": "unlocated",
+        "label": null,
+        "latitude": null,
+        "longitude": null,
+        "precision": "notice_geography_unavailable",
+        "verified_iso": false
+      },
+      "information_root": "faa:6/7421:0:0",
+      "meaning": "Observation novelty, not evidence of impending violence.",
+      "observation_id": "beh:60e8e7ee8e36abbadbda44c896f7",
+      "requires_geolocation": true,
+      "source_family": "airspace_restriction",
+      "source_published_at": null,
+      "source_url": "https://tfr.faa.gov/6_7421.html",
+      "status": "single_source_unreviewed",
+      "title": "FAA TFR 6/7421 · U.S MEXICO BORDER, TX, Friday, November 13, 2026 UTC"
+    }
+  ],
   "prediction_horizon": null,
   "recent_source_observations": [
+    {
+      "first_observed_at": "2026-11-13T19:59:34Z",
+      "geography": {
+        "geometry_sha256_prefix": "d4b8fd38058de360f6f5cd2b",
+        "geometry_type": "MultiPolygon",
+        "key": "source-footprint:d4b8fd38058de360f6f5cd2b",
+        "kind": "source_notice_footprint",
+        "label": "Official MultiPolygon notice area",
+        "latitude": null,
+        "longitude": null,
+        "precision": "provider_defined_notice_boundary_not_event_point",
+        "verified_iso": false
+      },
+      "observation_id": "beh:6dae79e34c358cf922dfbf1d932b",
+      "provider": "faa",
+      "requires_geolocation": false,
+      "source_family": "airspace_restriction",
+      "source_published_at": null,
+      "source_url": "https://tfr.faa.gov/6_7462.html",
+      "status": "recent_source_observation_unreviewed",
+      "title": "FAA TFR 6/7462 · KEEWATIN, MN, Monday, November 16, 2026 UTC"
+    },
+    {
+      "first_observed_at": "2026-11-13T19:59:34Z",
+      "geography": {
+        "geometry_sha256_prefix": null,
+        "geometry_type": null,
+        "key": null,
+        "kind": "unlocated",
+        "label": null,
+        "latitude": null,
+        "longitude": null,
+        "precision": "notice_geography_unavailable",
+        "verified_iso": false
+      },
+      "observation_id": "beh:60e8e7ee8e36abbadbda44c896f7",
+      "provider": "faa",
+      "requires_geolocation": true,
+      "source_family": "airspace_restriction",
+      "source_published_at": null,
+      "source_url": "https://tfr.faa.gov/6_7421.html",
+      "status": "recent_source_observation_unreviewed",
+      "title": "FAA TFR 6/7421 · U.S MEXICO BORDER, TX, Friday, November 13, 2026 UTC"
+    },
+    {
+      "first_observed_at": "2026-11-13T19:59:34Z",
+      "geography": {
+        "geometry_sha256_prefix": null,
+        "geometry_type": null,
+        "key": null,
+        "kind": "unlocated",
+        "label": null,
+        "latitude": null,
+        "longitude": null,
+        "precision": "notice_geography_unavailable",
+        "verified_iso": false
+      },
+      "observation_id": "beh:2620d94ed6d902850199bedb3284",
+      "provider": "faa",
+      "requires_geolocation": true,
+      "source_family": "airspace_restriction",
+      "source_published_at": null,
+      "source_url": "https://tfr.faa.gov/6_7422.html",
+      "status": "recent_source_observation_unreviewed",
+      "title": "FAA TFR 6/7422 · U.S. MEXICO BORDER, TX, Friday, November 13, 2026 UTC"
+    },
+    {
+      "first_observed_at": "2026-11-13T19:59:34Z",
+      "geography": {
+        "geometry_sha256_prefix": "c13a8ba31864fdffa5afb945",
+        "geometry_type": "MultiPolygon",
+        "key": "source-footprint:c13a8ba31864fdffa5afb945",
+        "kind": "source_notice_footprint",
+        "label": "Official MultiPolygon notice area",
+        "latitude": null,
+        "longitude": null,
+        "precision": "provider_defined_notice_boundary_not_event_point",
+        "verified_iso": false
+      },
+      "observation_id": "beh:1d63464ac7fc27f35778539d03b7",
+      "provider": "faa",
+      "requires_geolocation": false,
+      "source_family": "airspace_restriction",
+      "source_published_at": null,
+      "source_url": "https://tfr.faa.gov/6_7338.html",
+      "status": "recent_source_observation_unreviewed",
+      "title": "FAA TFR 6/7338 · W MARTINSBURG, WV, Friday, November 13, 2026 UTC"
+    },
+    {
+      "first_observed_at": "2026-11-13T19:59:34Z",
+      "geography": {
+        "geometry_sha256_prefix": null,
+        "geometry_type": null,
+        "key": null,
+        "kind": "unlocated",
+        "label": null,
+        "latitude": null,
+        "longitude": null,
+        "precision": "notice_geography_unavailable",
+        "verified_iso": false
+      },
+      "observation_id": "beh:0e2c59ad57e7c755ef7b4ecc5c00",
+      "provider": "faa",
+      "requires_geolocation": true,
+      "source_family": "airspace_restriction",
+      "source_published_at": null,
+      "source_url": "https://tfr.faa.gov/6_7420.html",
+      "status": "recent_source_observation_unreviewed",
+      "title": "FAA TFR 6/7420 · U.S. MEXICO BORDER, AZ, Friday, November 13, 2026 UTC"
+    },
     {
       "first_observed_at": "2026-11-13T15:29:53Z",
       "geography": {
@@ -534,118 +767,10 @@
       "source_url": "https://ioda.inetintel.cc.gatech.edu/",
       "status": "recent_source_observation_unreviewed",
       "title": "IODA detected connectivity anomaly: country FI"
-    },
-    {
-      "first_observed_at": "2026-11-12T23:51:09Z",
-      "geography": {
-        "geometry_sha256_prefix": "348f4fc3a75e5276860e34e9",
-        "geometry_type": "MultiPolygon",
-        "key": "source-footprint:348f4fc3a75e5276860e34e9",
-        "kind": "source_notice_footprint",
-        "label": "Official MultiPolygon notice area",
-        "latitude": null,
-        "longitude": null,
-        "precision": "provider_defined_notice_boundary_not_event_point",
-        "verified_iso": false
-      },
-      "observation_id": "beh:653b8a3d4017550e96d22ce9b011",
-      "provider": "faa",
-      "requires_geolocation": false,
-      "source_family": "airspace_restriction",
-      "source_published_at": null,
-      "source_url": "https://tfr.faa.gov/6_7308.html",
-      "status": "recent_source_observation_unreviewed",
-      "title": "FAA TFR 6/7308 · GEORGETOWN, CO, Thursday, November 12, 2026 through Friday, November 13, 2026 UTC"
-    },
-    {
-      "first_observed_at": "2026-11-12T19:56:26Z",
-      "geography": {
-        "key": null,
-        "kind": "unlocated",
-        "label": null,
-        "latitude": null,
-        "longitude": null,
-        "precision": "no_source_verified_geography",
-        "verified_iso": false
-      },
-      "observation_id": "beh:d2b45d28f70500898fc2eb8bb833",
-      "provider": "official",
-      "requires_geolocation": true,
-      "source_family": "protective_notice",
-      "source_published_at": "2026-11-12T16:54:23Z",
-      "source_url": "https://www.gov.uk/foreign-travel-advice/georgia",
-      "status": "recent_source_observation_unreviewed",
-      "title": "Georgia"
-    },
-    {
-      "first_observed_at": "2026-11-12T18:26:27Z",
-      "geography": {
-        "geometry_sha256_prefix": "e1abfdaf8c02b60e406f8474",
-        "geometry_type": "MultiPolygon",
-        "key": "source-footprint:e1abfdaf8c02b60e406f8474",
-        "kind": "source_notice_footprint",
-        "label": "Official MultiPolygon notice area",
-        "latitude": null,
-        "longitude": null,
-        "precision": "provider_defined_notice_boundary_not_event_point",
-        "verified_iso": false
-      },
-      "observation_id": "beh:7d002b2bddc019df266c1d69644a",
-      "provider": "faa",
-      "requires_geolocation": false,
-      "source_family": "airspace_restriction",
-      "source_published_at": null,
-      "source_url": "https://tfr.faa.gov/6_7195.html",
-      "status": "recent_source_observation_unreviewed",
-      "title": "FAA TFR 6/7195 · ARLINGTON, KS, Friday, November 13, 2026 UTC"
-    },
-    {
-      "first_observed_at": "2026-11-12T18:26:27Z",
-      "geography": {
-        "geometry_sha256_prefix": "3abdd7ed4443c62a953a5793",
-        "geometry_type": "MultiPolygon",
-        "key": "source-footprint:3abdd7ed4443c62a953a5793",
-        "kind": "source_notice_footprint",
-        "label": "Official MultiPolygon notice area",
-        "latitude": null,
-        "longitude": null,
-        "precision": "provider_defined_notice_boundary_not_event_point",
-        "verified_iso": false
-      },
-      "observation_id": "beh:65a3a3f81d81052415b5209368ef",
-      "provider": "faa",
-      "requires_geolocation": false,
-      "source_family": "airspace_restriction",
-      "source_published_at": null,
-      "source_url": "https://tfr.faa.gov/6_7206.html",
-      "status": "recent_source_observation_unreviewed",
-      "title": "FAA TFR 6/7206 · 10NM SE BERLIN, NH, Thursday, November 12, 2026 through Sunday, November 15, 2026 UTC"
-    },
-    {
-      "first_observed_at": "2026-11-12T18:26:27Z",
-      "geography": {
-        "geometry_sha256_prefix": "c13a8ba31864fdffa5afb945",
-        "geometry_type": "MultiPolygon",
-        "key": "source-footprint:c13a8ba31864fdffa5afb945",
-        "kind": "source_notice_footprint",
-        "label": "Official MultiPolygon notice area",
-        "latitude": null,
-        "longitude": null,
-        "precision": "provider_defined_notice_boundary_not_event_point",
-        "verified_iso": false
-      },
-      "observation_id": "beh:4dbfe59cb00e848c2ce621c08435",
-      "provider": "faa",
-      "requires_geolocation": false,
-      "source_family": "airspace_restriction",
-      "source_published_at": null,
-      "source_url": "https://tfr.faa.gov/6_7213.html",
-      "status": "recent_source_observation_unreviewed",
-      "title": "FAA TFR 6/7213 · W MARTINSBURG, WV, Thursday, November 12, 2026 UTC"
     }
   ],
-  "registry_asof": "2026-11-13T19:44:40Z",
-  "registry_source_count": 269,
+  "registry_asof": "2026-11-13T19:59:34Z",
+  "registry_source_count": 377,
   "report_relationships": {
     "automatic_alerts_created": 0,
     "automatic_severity_changes": 0,
@@ -2253,14 +2378,14 @@
     "input_truncated": false,
     "not_a_preparations_sensor_or_warning": true,
     "pairwise_comparisons_capped": false,
-    "pairwise_comparisons_examined": 15400,
+    "pairwise_comparisons_examined": 16290,
     "possible_same_event_count_total": 0,
     "possible_same_source_story_count_total": 3,
-    "records_available": 176,
-    "records_examined": 176,
+    "records_available": 181,
+    "records_examined": 181,
     "related_reporting_count_total": 0,
     "reporting_origins_are_not_event_locations": true,
-    "routine_notice_market_or_measurement_records_excluded_from_text_event_matching": 166,
+    "routine_notice_market_or_measurement_records_excluded_from_text_event_matching": 171,
     "same_document_group_count_total": 9,
     "schema": "aiba.report-event-resolution-shadow.v1",
     "source_independence_unverified": true,
