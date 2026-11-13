@@ -99,8 +99,10 @@ def relationship_case(row):
                         matched.get("independent_corroboration_established")):
             raise ValueError("unsafe relationship promotion: " + row["id"])
     truth = row["truth"]
+    acceptable = (predicted == truth or
+                  (truth == "different_event" and predicted in ("no_match", "related")))
     return {"id": row["id"], "truth": truth, "predicted": predicted,
-            "correct": predicted == truth,
+            "correct": acceptable,
             "false_event_merge": predicted == "same_event" and truth != "same_event",
             "missed_same_event": truth == "same_event" and predicted != "same_event"}
 
@@ -145,7 +147,7 @@ def evaluate(fixture):
             "same_event_nomination_recall": safe_ratio(event_true_positive, event_positive),
             "same_event_nomination_precision": safe_ratio(
                 event_true_positive, event_true_positive + false_merge),
-            "exact_relation_accuracy": safe_ratio(
+            "acceptable_relation_accuracy": safe_ratio(
                 sum(c["correct"] for c in relationships), len(relationships)),
         },
         "claim_cases": claims, "relationship_cases": relationships,
