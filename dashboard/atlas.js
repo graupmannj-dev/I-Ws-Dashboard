@@ -600,6 +600,12 @@ function validReportRelations(value){
     value.not_a_preparations_sensor_or_warning===true&&
     value.automatic_alerts_created===0&&
     value.automatic_severity_changes===0&&value.forecast_probability===null&&
+    Number.isInteger(value.records_examined)&&value.records_examined>=0&&
+    Number.isInteger(value.eligible_event_reporting_records)&&
+    Number.isInteger(value.routine_notice_market_or_measurement_records_excluded_from_text_event_matching)&&
+    value.eligible_event_reporting_records+
+      value.routine_notice_market_or_measurement_records_excluded_from_text_event_matching===
+      value.records_examined&&
     Array.isArray(value.candidate_groups)&&value.candidate_groups.length<=20&&
     value.candidate_groups.every(g=>g&&statuses.includes(g.status)&&
       g.independent_corroboration_established===false&&
@@ -791,9 +797,16 @@ function normalizeLiveBehavior(raw){
       });
     }
     const count=x=>Number.isInteger(x)&&x>=0&&x<=100000?x:null;
+    const examined=count(incoming.records_examined);
+    const eligible=count(incoming.eligible_event_reporting_records);
+    const excluded=count(incoming.routine_notice_market_or_measurement_records_excluded_from_text_event_matching);
+    if(examined===null||eligible===null||excluded===null||eligible+excluded!==examined)
+      return null;
     relationship={
       schema:incoming.schema,status:incoming.status,
-      records_examined:count(incoming.records_examined),
+      records_examined:examined,
+      eligible_event_reporting_records:eligible,
+      routine_notice_market_or_measurement_records_excluded_from_text_event_matching:excluded,
       same_document_group_count_total:count(incoming.same_document_group_count_total),
       possible_same_event_count_total:count(incoming.possible_same_event_count_total),
       related_reporting_count_total:count(incoming.related_reporting_count_total),
@@ -1005,7 +1018,10 @@ function renderBehaviorList(){
     head.textContent="Possible event/report links · NOT corroboration";
     frag.appendChild(head);
     const explain=document.createElement("p");explain.className="behavior-empty";
-    explain.textContent=(relationships.same_document_group_count_total||0)+
+    explain.textContent=relationships.records_examined+" monitored source observations; "+
+      relationships.eligible_event_reporting_records+
+      " eligible for incident-report text matching. "+
+      (relationships.same_document_group_count_total||0)+
       " repeated source-document groups · "+
       (relationships.possible_same_event_count_total||0)+
       " possible same-event pairs · "+
