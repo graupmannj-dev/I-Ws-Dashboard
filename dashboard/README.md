@@ -16,10 +16,17 @@ introduced.
 
 The site builder embeds the bounded summary of the already
 rendered `/behavior/behavioral_fusion.json` into
-`/atlas.json` after `behavioral_render.py`. Source freshness
+`/atlas.json` after `behavioral_render.py`. For faster source
+visibility the browser also checks the existing public
+`aiba-feed-data/observations/latest/behavioral_fusion.json`
+**every five minutes**, accepting only validated newer records
+while retaining the published site copy on error or outage.
+This is read-only polling, not a newly scheduled collector or
+a guarantee of fresh underlying feed data. Source freshness
 is shown relative to the browser clock using a 90-minute pilot
-gate. A successful build does not imply fresh providers, and
-missing observations cannot be recoded as absence of threat.
+gate. A successful build or browser refresh does not imply
+complete provider coverage, and missing observations cannot
+be recoded as absence of threat.
 
 See [unified Atlas integration](../docs/AIBA_UNIFIED_ATLAS_BEHAVIORAL.md).
 
