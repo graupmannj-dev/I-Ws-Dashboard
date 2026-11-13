@@ -1568,6 +1568,13 @@ async function init(){
 async function refreshFaaNas() {
   const heading=$("faaNasSummary"), line=$("faaNasTime");
   if(!heading||!line)return;
+  // Offline browser tests and local previews have no persisted FAA NAS data branch.
+  // Do not initiate external fetches or create false error alerts in that mode.
+  if(location.hostname==="127.0.0.1"||location.hostname==="localhost"){
+    set("FAA NAS source is not connected in this offline preview",
+        "Live source status is available on the published site after the first collector run");
+    return;
+  }
   const base="https://raw.githubusercontent.com/graupmannj-dev/I-Ws-Dashboard/aiba-feed-data/observations/";
   const set=(message,detail)=>{heading.textContent=message;line.textContent=detail;};
   try {
