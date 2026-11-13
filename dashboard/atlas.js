@@ -704,10 +704,10 @@ async function refreshBehavior(){
       state.behavior=candidate;
       state.behaviorRemoteStatus="public evidence branch snapshot";
       updateBehaviorTabCount();
-      if(state.watchTab==="behavior")renderBehaviorList();
+      if(state.watchTab==="behavior"||state.watchTab==="evaluation")updateWatchlist();
     }else{
       state.behaviorRemoteStatus="published site snapshot retained";
-      if(state.watchTab==="behavior")renderBehaviorList();
+      if(state.watchTab==="behavior"||state.watchTab==="evaluation")updateWatchlist();
     }
   }catch(error){
     state.behaviorRemoteStatus="source branch refresh unavailable; last published snapshot retained";
@@ -845,10 +845,110 @@ function renderBehaviorList(){
   frag.appendChild(note);
   list.appendChild(frag);
 }
+/* Public AIBA performance-readiness tab. Private tipper ledgers are NOT
+ * imported by Pages; no 0/0 rate or "all quiet" is ever inferred.
+ */
+function validEvaluation(value){
+  if(!value||value.schema!=="aiba.atlas-public-evaluation-readiness.v1"||
+     value.status!=="prospective_skill_not_established"||
+     value.public_forecast_ledger!=="not_connected"||
+     value.publication_of_private_ledger!==false||
+     value.production_warning_updates!==false||
+     value.forecast_probability!==null||
+     value.claims_of_predictive_skill!==false||
+     !value.observation||!value.verification_gates||!value.metrics)return false;
+  if(Object.values(value.metrics).some(x=>x!==null))return false;
+  if(Object.values(value.verification_gates).some(x=>x!=="not_connected"))return false;
+  return value.observation.worldwide_source_completeness_verified===false&&
+    value.observation.unobserved_intervals_are_negative_events===false;
+}
+function renderEvaluationList(){
+  const list=$("watchlist");list.replaceChildren();
+  list.classList.add("behavior-view","evaluation-view");
+  $("watchPanelTitle").firstChild.textContent="Warning evaluation ";
+  $("watchCount").textContent="";
+  $("frictionBriefing").hidden=true;
+  $("watchDetailLink").href="https://github.com/graupmannj-dev/I-Ws-Dashboard/blob/main/docs/AIBA_PROSPECTIVE_SHADOW_PILOT.md";
+  $("watchDetailLink").textContent="Evaluation protocol →";
+  $("watchFoot").textContent="Read-only public review · no private forecast content.";
+  const e=state.atlas?.warning_evaluation;
+  if(!validEvaluation(e)){
+    list.innerHTML='<p class="evaluation-caution"><b>Evaluation data unavailable.</b> No prospectively verified forecast outcomes can be established. This is not a zero-event result.</p>';
+    return;
+  }
+  const b=validBehavior(state.behavior)?state.behavior:null;
+  const age=b?behaviorAge():Infinity;
+  const current=Number.isFinite(age)&&age>=0&&age<=90;
+  const health=b?.collection_coverage||{};
+  const observed=b?Object.keys(health).length:e.observation.source_adapters_reported;
+  const impaired=b?Object.values(health).filter(r=>
+    !r||r.status!=="current"||r.missingness!=="none").length:
+    e.observation.source_adapters_bounded_or_degraded;
+  const observedAsOf=b?.source_generated_at||e.observation.behavioral_source_asof;
+  const frag=document.createElement("div");frag.className="evaluation-panel-body";
+  const hero=document.createElement("section");hero.className="evaluation-hero";
+  hero.innerHTML='<strong>Prospective I&W evaluation</strong>'+
+    '<span class="evaluation-state">SKILL NOT YET ESTABLISHED</span>'+
+    '<p>The source engine can nominate investigative signals; it has not supplied an independently verified prospective forecast dataset to this public dashboard. Signed mechanism tests are not operational predictions.</p>';
+  frag.appendChild(hero);
+  const title=document.createElement("h3");title.className="behavior-section-title";
+  title.textContent="Current collection readiness";frag.appendChild(title);
+  const ready=document.createElement("section");ready.className="evaluation-readiness";
+  const ageLabel=Number.isFinite(age)&&age>=0?Math.round(age)+" min old":
+    (observedAsOf?"snapshot freshness unverified":"source snapshot unavailable");
+  ready.innerHTML='<div class="evaluation-sensor-status">'+
+    '<strong>'+(current?"Snapshot recent":"Snapshot stale or unavailable")+'</strong>'+
+    '<span>'+safe(observedAsOf||"No observed source time")+'</span></div>'+
+    '<p>Last source timestamp: '+safe(ageLabel)+
+    '. The 90-minute freshness gate checks snapshot age, <b>not source completeness</b>.</p>'+
+    '<p>Source adapters represented: <b>'+safe(observed??"unavailable")+'</b>'+
+    '; bounded or degraded: <b>'+safe(impaired??"unavailable")+'</b>.</p>'+
+    '<p class="evaluation-note">Unobserved time/geography remains UNKNOWN. Collection gaps cannot be scored as quiet periods.</p>';
+  frag.appendChild(ready);
+  const scores=document.createElement("h3");scores.className="behavior-section-title";
+  scores.textContent="Warning performance · not estimable";frag.appendChild(scores);
+  const tiles=document.createElement("div");tiles.className="evaluation-metrics";
+  const items=[
+    ["Verified pre-news lead time","median_verified_prepublication_lead_seconds"],
+    ["False alarms per analyst-day","false_alarms_per_analyst_day"],
+    ["Missed-event recall","recall_against_registered_outcomes"],
+    ["Forecast calibration","brier_calibration_score"],
+  ];
+  for(const [name,key] of items){
+    const tile=document.createElement("div");tile.className="evaluation-metric";
+    // The v1 public contract requires null metrics; a number from an
+    // external or unchecked summary cannot be rendered as validated skill.
+    const value=e.metrics[key];
+    tile.innerHTML='<small>'+safe(name)+'</small><strong>'+
+      (value===null?"—":"Unavailable")+'</strong><span>Not independently verified</span>';
+    tiles.appendChild(tile);
+  }
+  frag.appendChild(tiles);
+  const gate=document.createElement("h3");gate.className="behavior-section-title";
+  gate.textContent="Evidence needed before claiming skill";frag.appendChild(gate);
+  const gates=document.createElement("ol");gates.className="evaluation-gates";
+  for(const text of [
+    "Freeze genuinely prospective source-coverage frames and monitored risk sets.",
+    "Independently timestamp real, analyst-reviewed actor/action/horizon forecasts.",
+    "Establish original public-report chronology, not GDELT ingestion time.",
+    "Adjudicate outcome and non-event windows against independent sources.",
+    "Count misses, exposure time, outages and analyst burden before calculating skill.",
+  ]){
+    const li=document.createElement("li");li.textContent=text;gates.appendChild(li);
+  }
+  frag.appendChild(gates);
+  const link=document.createElement("p");link.className="evaluation-note";
+  link.innerHTML='Private ledger scoring and witness workflows stay off this public site. '+
+    '<a href="https://github.com/graupmannj-dev/I-Ws-Dashboard/actions/workflows/aiba-shadow-readiness-manual.yml" target="_blank" rel="noopener noreferrer">Manual source readiness check</a>'+
+    ' · <a href="https://github.com/graupmannj-dev/I-Ws-Dashboard/blob/main/docs/AIBA_SIGNED_TIPPER_LEDGER_ANCHORS.md" target="_blank" rel="noopener noreferrer">Witness protocol</a>';
+  frag.appendChild(link);
+  list.appendChild(frag);
+}
 function updateWatchlist(){
   if(!state.atlas)return;
   if(state.watchTab==="behavior"){renderBehaviorList();return;}
-  const list=$("watchlist");list.classList.remove("behavior-view");list.replaceChildren();
+  if(state.watchTab==="evaluation"){renderEvaluationList();return;}
+  const list=$("watchlist");list.classList.remove("behavior-view","evaluation-view");list.replaceChildren();
   $("watchPanelTitle").firstChild.textContent="Watchlist ";
   $("watchDetailLink").href="ops/";
   $("watchDetailLink").textContent="Full analysis →";
@@ -1047,6 +1147,11 @@ function bindControls(){
   $("tabAll").addEventListener("click",()=>{state.watchTab="all";updateTabs();});
   $("tabNew").addEventListener("click",()=>{state.watchTab="new";updateTabs();});
   $("tabBehavior").addEventListener("click",()=>{state.watchTab="behavior";updateTabs();});
+  $("tabEvaluation").addEventListener("click",()=>{state.watchTab="evaluation";updateTabs();});
+  $("openEvaluation").addEventListener("click",()=>{
+    state.watchTab="evaluation";updateTabs();
+    if(window.innerWidth<=1050)document.querySelector(".watch-panel").scrollIntoView({block:"nearest",behavior:"smooth"});
+  });
   $("openBehavior").addEventListener("click",()=>{
     state.watchTab="behavior";updateTabs();
     if(window.innerWidth<=1050)document.querySelector(".watch-panel").scrollIntoView({block:"nearest",behavior:"smooth"});
@@ -1074,7 +1179,7 @@ function bindControls(){
   });
 }
 function updateTabs(){
-  for(const [id,tab] of [["tabAll","all"],["tabNew","new"],["tabBehavior","behavior"]]){
+  for(const [id,tab] of [["tabAll","all"],["tabNew","new"],["tabBehavior","behavior"],["tabEvaluation","evaluation"]]){
     const active=state.watchTab===tab;
     $(id).classList.toggle("active",active);
     $(id).setAttribute("aria-pressed",String(active));
