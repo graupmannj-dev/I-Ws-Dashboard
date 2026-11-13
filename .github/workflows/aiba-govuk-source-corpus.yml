@@ -1,0 +1,78 @@
+name: AIBA GOV.UK real-source corpus pilot (read-only)
+on:
+  pull_request:
+    paths:
+      - 'scripts/aiba_govuk_corpus.py'
+      - 'scripts/aiba_source_text_intake.py'
+      - 'scripts/aiba_real_report_eval.py'
+      - 'behavioral_claim_extraction.py'
+      - 'behavioral_event_resolution.py'
+      - 'tests/test_aiba_govuk_corpus.py'
+      - 'data/govuk_source_seed_manifest.json'
+      - '.github/workflows/aiba-govuk-source-corpus.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  local-contract:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Validate source licensing and holdout grouping contract
+        run: PYTHONPATH=. python -m unittest tests.test_aiba_govuk_corpus tests.test_aiba_claim_lab tests.test_aiba_real_report_eval
+  govuk-real-text-pilot:
+    needs: local-contract
+    runs-on: ubuntu-latest
+    timeout-minutes: 14
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Retrieve curated GOV.UK official source paragraphs
+        run: |
+          set -euo pipefail
+          PYTHONPATH=. python scripts/aiba_govuk_corpus.py \
+            --seeds data/govuk_source_seed_manifest.json \
+            --private-workspace /tmp/aiba-govuk-source-eval \
+            --minimum-success 12
+      - name: End-to-end private claim extraction and two blinded review packets
+        run: |
+          set -euo pipefail
+          PYTHONPATH=. python scripts/aiba_claim_lab.py \
+            --input /tmp/aiba-govuk-source-eval/reports.jsonl \
+            --workspace /tmp/aiba-govuk-source-eval/claim_lab
+      - name: License attribution and limitations
+        shell: bash
+        run: |
+          cat > /tmp/aiba-govuk-source-eval/RIGHTS_AND_LIMITS.txt <<'EOF'
+          AIBA GOV.UK real source-text evaluation pilot
+          Source: UK Government, https://www.gov.uk
+          License: Open Government Licence v3.0
+          https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/
+          Text is excerpted from original official narrative paragraphs only,
+          omitting embedded blockquotes, tables, figures and images.
+          Each article's source URL and content hash appear in reports.jsonl.
+          Some material may be excluded from OGL; confirm individual content rights
+          before republication outside permitted evaluation.
+          Seed strata are sampling hints, NOT incident labels or ground truth.
+          A government claim is NOT independent verification of an event.
+          Human ground truth annotations are NOT provided or simulated.
+          Do not treat this corpus as geographically/source representative.
+          This workflow never connects to deployed AIBA alert scoring.
+          EOF
+      - name: Archive OGL source excerpts and private evaluation evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: aiba-govuk-official-source-corpus
+          path: /tmp/aiba-govuk-source-eval/
+          retention-days: 30
+          if-no-files-found: error
