@@ -1,0 +1,26 @@
+{
+  "schema": "aiba.sigstore-synthetic-mechanism-evidence.v1",
+  "source": "GitHub Actions and public Sigstore Rekor transparency log",
+  "test_run": "https://github.com/graupmannj-dev/I-Ws-Dashboard/actions/runs/43332630210",
+  "artifact_id": 13995128605,
+  "test_status": "verified_synthetic_mechanism_only",
+  "subject": "Unmistakably synthetic 64-byte F-hex string (not a true private ledger)",
+  "signed_provenance": {
+    "repository": "graupmannj-dev/I-Ws-Dashboard",
+    "workflow": ".github/workflows/aiba-one-time-pr47-signed-witness-test.yml",
+    "github_run_id": "43332630210",
+    "source_sha": "37cc99f52c77088e92ba961e207a30a89c2fac66"
+  },
+  "verified_sigstore_timestamp": {
+    "type": "Tlog",
+    "uri": "https://rekor.sigstore.dev",
+    "timestamp": "2026-11-12T23:53:50Z"
+  },
+  "verification_command": "gh attestation verify subject.json --repo graupmannj-dev/I-Ws-Dashboard --signer-workflow graupmannj-dev/I-Ws-Dashboard/.github/workflows/aiba-one-time-pr47-signed-witness-test.yml --format json",
+  "real_issue_timestamp_trusted": false,
+  "actual_tippers_issued": 0,
+  "ledger_original_content_uploaded": false,
+  "event_correctness_proven": false,
+  "pre_news_leadtime_proven": false,
+  "next_step": "Operator may use the separately configured manual AIBA ledger-head workflow after merge to witness real private local ledger chain heads; preserve private source and perform independent original-publication and event adjudication."
+}

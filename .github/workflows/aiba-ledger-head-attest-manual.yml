@@ -1,0 +1,97 @@
+name: Manual AIBA signed private-ledger hash witness
+on:
+  workflow_dispatch:
+    inputs:
+      ledger_head_sha256:
+        description: 'SHA-256 chain head from local private AIBA tipper ledger (64 lowercase hex)'
+        type: string
+        required: true
+      entry_count:
+        description: 'Number of entries represented by that exact ledger head'
+        type: string
+        required: true
+permissions:
+  contents: read
+  id-token: write
+  attestations: write
+  artifact-metadata: write
+jobs:
+  attest-private-ledger-hash:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Construct hash-only subject without original warning content
+        env:
+          INPUT_HEAD: ${{ inputs.ledger_head_sha256 }}
+          INPUT_COUNT: ${{ inputs.entry_count }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/aiba-ledger-anchor"
+          python scripts/aiba_tipper_anchor.py public-anchor \
+            --head-hash "$INPUT_HEAD" \
+            --entry-count "$INPUT_COUNT" \
+            --github-run-id "$GITHUB_RUN_ID" \
+            --source-sha "$GITHUB_SHA" \
+            --output "$RUNNER_TEMP/aiba-ledger-anchor/anchor-subject.json"
+      - name: Generate independently witnessed Sigstore attestation
+        uses: actions/attest@v4
+        with:
+          subject-path: ${{ runner.temp }}/aiba-ledger-anchor/anchor-subject.json
+      - name: Cryptographically verify signer identity and witnessed timestamp
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          file="$RUNNER_TEMP/aiba-ledger-anchor/anchor-subject.json"
+          for i in 1 2 3; do
+            if gh attestation verify "$file" \
+              --repo graupmannj-dev/I-Ws-Dashboard \
+              --signer-workflow graupmannj-dev/I-Ws-Dashboard/.github/workflows/aiba-ledger-head-attest-manual.yml \
+              --format json > "$RUNNER_TEMP/aiba-ledger-anchor/verified-attestation.json"; then
+              break
+            fi
+            if [ "$i" = 3 ]; then
+              echo "::error::Signed attestation could not be independently verified"
+              exit 1
+            fi
+            sleep 5
+          done
+          python - <<'PY'
+          import json,os,pathlib
+          folder=pathlib.Path(os.environ["RUNNER_TEMP"])/"aiba-ledger-anchor"
+          proof=json.loads((folder/"verified-attestation.json").read_text())
+          if not isinstance(proof,list) or not proof:
+              raise SystemExit("No attestation proof verified")
+          witnesses=[row["verificationResult"].get("verifiedTimestamps",[])
+                     for row in proof if isinstance(row,dict) and isinstance(row.get("verificationResult"),dict)]
+          if not any(witnesses):
+              raise SystemExit("No witnessed timestamp in cryptographically verified proof")
+          digest=json.loads((folder/"anchor-subject.json").read_text())["ledger_head_sha256"]
+          summary={"schema":"aiba.signed-head-witness-verified.v1",
+                   "status":"sigstore_signature_and_witness_verified",
+                   "ledger_head_sha256":digest,
+                   "gh_run_id":os.environ["GITHUB_RUN_ID"],
+                   "sigstore_witness_present":True,
+                   "private_tip_data_published":False,
+                   "time_is_upper_bound_not_local_issuance_clock":True,
+                   "forecast_was_pre_news_proven":False}
+          (folder/"verification-summary.json").write_text(json.dumps(summary,indent=2)+"\n")
+          PY
+      - name: Retain only public hash subject and verification summary
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: aiba-signed-ledger-head-${{ github.run_id }}
+          path: |
+            ${{ runner.temp }}/aiba-ledger-anchor/anchor-subject.json
+            ${{ runner.temp }}/aiba-ledger-anchor/verification-summary.json
+          retention-days: 30
+          if-no-files-found: warn
