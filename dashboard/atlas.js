@@ -589,6 +589,33 @@ async function refreshFriction(){
 /* Unified global behavioral discovery, read-only shadow-mode source evidence.
  * Never infer an incident point, approved warning, foreign actor or attack date.
  */
+function validReportRelations(value){
+  if(value==null)return true; // Older published source snapshots
+  const statuses=["shared_source_document_unreviewed",
+    "possible_same_source_story_unreviewed",
+    "possible_same_event_unreviewed","related_reporting_unreviewed"];
+  return value.schema==="aiba.report-event-resolution-shadow.v1"&&
+    value.status==="unreviewed_report_relationships_only"&&
+    value.source_independence_unverified===true&&
+    value.reporting_origins_are_not_event_locations===true&&
+    value.not_a_preparations_sensor_or_warning===true&&
+    value.automatic_alerts_created===0&&
+    value.automatic_severity_changes===0&&value.forecast_probability===null&&
+    Number.isInteger(value.records_examined)&&value.records_examined>=0&&
+    Number.isInteger(value.eligible_event_reporting_records)&&
+    Number.isInteger(value.routine_notice_market_or_measurement_records_excluded_from_text_event_matching)&&
+    value.eligible_event_reporting_records+
+      value.routine_notice_market_or_measurement_records_excluded_from_text_event_matching===
+      value.records_examined&&
+    Array.isArray(value.candidate_groups)&&value.candidate_groups.length<=20&&
+    value.candidate_groups.every(g=>g&&statuses.includes(g.status)&&
+      g.independent_corroboration_established===false&&
+      g.warning_level_change===false&&
+      g.reporting_origin_used_as_event_site===false&&
+      Array.isArray(g.source_reports)&&g.source_reports.length>=2&&
+      g.source_reports.length<=8&&g.source_reports.every(x=>
+        x&&x.status==="unreviewed_source_report"));
+}
 function validBehavior(value){
   return !!value&&value.schema==="aiba.behavioral-convergence-shadow.v1"&&
     value.status==="read_only_shadow_evidence"&&
@@ -609,6 +636,7 @@ function validBehavior(value){
       value.recent_source_observations.every(l=>l&&
         l.status==="recent_source_observation_unreviewed"&&
         Number.isFinite(Date.parse(l.first_observed_at)))))&&
+    validReportRelations(value.report_relationships)&&
     typeof value.collection_coverage==="object"&&value.collection_coverage!==null;
 }
 function normalizeLiveBehavior(raw){
@@ -716,6 +744,85 @@ function normalizeLiveBehavior(raw){
     new_this_collection_required_for_cross_family_nomination:true,
     source_coverage_is_globally_complete:false,
   }:null;
+  let relationship=null;
+  const incoming=raw.report_relationships;
+  if(incoming!=null){
+    if(!incoming||incoming.schema!=="aiba.report-event-resolution-shadow.v1"||
+       incoming.status!=="unreviewed_report_relationships_only"||
+       incoming.source_independence_unverified!==true||
+       incoming.reporting_origins_are_not_event_locations!==true||
+       incoming.not_a_preparations_sensor_or_warning!==true||
+       incoming.automatic_alerts_created!==0||
+       incoming.automatic_severity_changes!==0||
+       incoming.forecast_probability!=null||
+       !Array.isArray(incoming.candidate_groups)||incoming.candidate_groups.length>20)return null;
+    const statusSet=["shared_source_document_unreviewed",
+      "possible_same_source_story_unreviewed",
+      "possible_same_event_unreviewed","related_reporting_unreviewed"];
+    const safeCandidates=[];
+    for(const g of incoming.candidate_groups){
+      if(!g||!statusSet.includes(g.status)||
+         g.independent_corroboration_established!==false||
+         g.warning_level_change!==false||
+         g.reporting_origin_used_as_event_site!==false||
+         !Array.isArray(g.source_reports)||g.source_reports.length<2||
+         g.source_reports.length>8)return null;
+      const reports=[];
+      for(const r of g.source_reports){
+        if(!r||r.status!=="unreviewed_source_report"||
+           Date.parse(r.first_observed_at||"")>at ||
+           !Number.isFinite(Date.parse(r.first_observed_at||"")))return null;
+        reports.push({
+          observation_id:limited(r.observation_id),title:limited(r.title),
+          source_family:limited(r.source_family),provider:limited(r.provider),
+          source_url:safeUrl(r.source_url),geography:geo(r.geography),
+          reporting_origin:limited(r.reporting_origin),
+          first_observed_at:limited(r.first_observed_at),
+          source_published_at:limited(r.source_published_at),
+          status:"unreviewed_source_report",
+        });
+      }
+      const distance=g.reported_event_site_separation_km;
+      const sim=g.semantic_similarity;
+      if((distance!=null&&(!Number.isFinite(distance)||distance<0||distance>20020))||
+         (sim!=null&&(!Number.isFinite(sim)||sim<0||sim>1)))return null;
+      safeCandidates.push({
+        id:limited(g.id),status:g.status,match_basis:limited(g.match_basis),
+        semantic_similarity:sim==null?null:sim,
+        reported_event_site_separation_km:distance==null?null:distance,
+        reported_event_site_comparison_available:
+          g.reported_event_site_comparison_available===true,
+        shared_information_root:g.shared_information_root===true,
+        independent_corroboration_established:false,
+        warning_level_change:false,reporting_origin_used_as_event_site:false,
+        source_reports:reports,
+      });
+    }
+    const count=x=>Number.isInteger(x)&&x>=0&&x<=100000?x:null;
+    const examined=count(incoming.records_examined);
+    const eligible=count(incoming.eligible_event_reporting_records);
+    const excluded=count(incoming.routine_notice_market_or_measurement_records_excluded_from_text_event_matching);
+    if(examined===null||eligible===null||excluded===null||eligible+excluded!==examined)
+      return null;
+    relationship={
+      schema:incoming.schema,status:incoming.status,
+      records_examined:examined,
+      eligible_event_reporting_records:eligible,
+      routine_notice_market_or_measurement_records_excluded_from_text_event_matching:excluded,
+      same_document_group_count_total:count(incoming.same_document_group_count_total),
+      possible_same_source_story_count_total:count(incoming.possible_same_source_story_count_total),
+      possible_same_event_count_total:count(incoming.possible_same_event_count_total),
+      related_reporting_count_total:count(incoming.related_reporting_count_total),
+      input_truncated:incoming.input_truncated===true,
+      pairwise_comparisons_capped:incoming.pairwise_comparisons_capped===true,
+      candidate_groups_truncated:incoming.candidate_groups_truncated===true,
+      reporting_origins_are_not_event_locations:true,
+      source_independence_unverified:true,
+      not_a_preparations_sensor_or_warning:true,
+      automatic_alerts_created:0,automatic_severity_changes:0,
+      forecast_probability:null,candidate_groups:safeCandidates,
+    };
+  }
   const health={};
   for(const [name,row] of Object.entries(raw.collection_coverage)){
     if(!row||typeof row!=="object"||Array.isArray(row))return null;
@@ -734,6 +841,7 @@ function normalizeLiveBehavior(raw){
     collection_coverage:health,
     provider_baselines:state.behavior?.provider_baselines||{},
     discovery_visibility:safeVis,recent_source_observations:safeRecent,
+    report_relationships:relationship,
     approved_warning_count:0,automated_severity_changes:0,
     source_continuity_proven:false,forecast_probability:null,
     map_coordinates_inferred:false,
@@ -828,6 +936,38 @@ function selectBehavior(row,kind){
     '<a href="behavior/">Detailed behavioral source coverage →</a>';
   panel.querySelector(".detail-close").addEventListener("click",()=>{panel.hidden=true;state.selected=null;});
 }
+function openReportRelationship(group){
+  const panel=$("selectedDetail");panel.hidden=false;
+  const names={
+    shared_source_document_unreviewed:"One shared source document",
+    possible_same_source_story_unreviewed:"Possibly the same syndicated article",
+    possible_same_event_unreviewed:"Possible reports of the same event",
+    related_reporting_unreviewed:"Related reports — event identity uncertain",
+  };
+  const sourceRows=group.source_reports||[];
+  const articles=sourceRows.map(r=>'<li><strong>'+safe(r.title||"Untitled report")+
+    '</strong> · '+safe(r.provider||"Unknown provider")+
+    (safeUrl(r.source_url)?' · <a target="_blank" rel="noopener noreferrer" href="'+
+      safe(r.source_url)+'">Original source</a>':'')+
+    '<small>Source observed '+safe(r.first_observed_at||"unknown")+
+    ' · publisher origin '+safe(r.reporting_origin||"unrecorded")+
+    ' · source geography '+safe(r.geography?.label||"not verified")+'</small></li>').join("");
+  const loc=group.reported_event_site_comparison_available?
+    ('Source-declared event sites approximately '+safe(group.reported_event_site_separation_km)+
+      ' km apart (not independently located).'):
+    'No two explicitly source-declared event sites were available to measure proximity.';
+  panel.innerHTML='<div class="detail-top"><div><h3>'+
+    safe(names[group.status]||"Unreviewed source relationship")+'</h3>'+
+    '<span class="behavior-status">POSSIBLE · NOT VERIFIED</span></div>'+
+    '<button type="button" class="detail-close" aria-label="Close possible relationship">×</button></div>'+
+    '<p><b>Why surfaced:</b> '+safe(group.match_basis||"Unverified relationship")+'</p>'+
+    '<p>'+loc+'</p><p><b>Publisher location does not identify event location.</b> '+
+    'Shared subjects, overlapping geography or a shared source URL never establish independent corroboration or military intent.</p>'+
+    '<ul>'+articles+'</ul>'+
+    '<p class="sub">Analyst must compare primary sources, actual incident chronology, geographic claims and alternative explanations. '+
+    'Standing watch severity and issued warning counts are unchanged.</p>';
+  panel.querySelector(".detail-close").addEventListener("click",()=>{panel.hidden=true;});
+}
 function renderBehaviorList(){
   const list=$("watchlist");list.classList.add("behavior-view");list.replaceChildren();
   $("watchPanelTitle").firstChild.textContent="Behavioral signals ";
@@ -875,6 +1015,53 @@ function renderBehaviorList(){
       '<p class="behavior-caution">Cross-family nominations require both a matching source geography and a new record in this collection. '+
       'These counts diagnose the gate; they do not certify source independence, benign conditions, or threat preparation.</p>';
     frag.appendChild(funnel);
+  }
+  const relationships=b.report_relationships;
+  if(relationships){
+    const head=document.createElement("h3");head.className="behavior-section-title";
+    head.textContent="Possible event/report links · NOT corroboration";
+    frag.appendChild(head);
+    const explain=document.createElement("p");explain.className="behavior-empty";
+    explain.textContent=relationships.records_examined+" monitored source observations; "+
+      relationships.eligible_event_reporting_records+
+      " eligible for incident-report text matching. "+
+      (relationships.same_document_group_count_total||0)+
+      " repeated source-document groups · "+
+      (relationships.possible_same_source_story_count_total||0)+
+      " possible same-story syndications · "+
+      (relationships.possible_same_event_count_total||0)+
+      " possible same-event pairs · "+
+      (relationships.related_reporting_count_total||0)+
+      " related-reporting pairs. Publisher origin and event site are different fields.";
+    frag.appendChild(explain);
+    if(relationships.input_truncated||relationships.pairwise_comparisons_capped||
+       relationships.candidate_groups_truncated){
+      const caution=document.createElement("p");caution.className="behavior-caution";
+      caution.textContent="Matching is bounded or truncated; this is NOT an exhaustive deduplication.";
+      frag.appendChild(caution);
+    }
+    if(!relationships.candidate_groups.length){
+      const p=document.createElement("p");p.className="behavior-empty";
+      p.textContent="No report relationships cleared the current conservative candidate threshold.";
+      frag.appendChild(p);
+    }
+    for(const g of relationships.candidate_groups){
+      const item=document.createElement("button");item.type="button";
+      item.className="watch-card relationship-card";
+      const label=g.status==="shared_source_document_unreviewed"?
+        "SHARED SOURCE":g.status==="possible_same_source_story_unreviewed"?
+        "POSSIBLE SYNDICATION":g.status==="possible_same_event_unreviewed"?
+        "POSSIBLE SAME EVENT":"RELATED REPORTING";
+      const row=g.source_reports[0];
+      item.innerHTML='<div class="watch-card-head"><strong>'+
+        safe(row?.title||"Unreviewed report relationship")+
+        '</strong><span class="behavior-status">'+safe(label)+'</span></div>'+
+        '<p>'+safe(g.match_basis||"Needs review")+
+        ' · '+safe(g.source_reports.length)+' displayed source records</p>'+
+        '<small>Not evidence of independent confirmation or imminent action</small>';
+      item.addEventListener("click",()=>openReportRelationship(g));
+      frag.appendChild(item);
+    }
   }
   const groups=b.review_groups;
   const groupTitle=document.createElement("h3");groupTitle.className="behavior-section-title";groupTitle.textContent="Cross-family observations";frag.appendChild(groupTitle);

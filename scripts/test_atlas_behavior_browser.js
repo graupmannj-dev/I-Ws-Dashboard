@@ -43,6 +43,49 @@ function mockBehavior(stamp){
       nga:{status:"stale_or_unavailable",missingness:"not_measured_not_zero",
         source_scope:"NGA source not responding",snapshot_at:stamp},
     },
+    report_relationships:{
+      schema:"aiba.report-event-resolution-shadow.v1",
+      status:"unreviewed_report_relationships_only",
+      records_examined:2,eligible_event_reporting_records:2,
+      routine_notice_market_or_measurement_records_excluded_from_text_event_matching:0,
+      same_document_group_count_total:0,
+      possible_same_source_story_count_total:0,
+      possible_same_event_count_total:1,related_reporting_count_total:0,
+      candidate_groups_truncated:false,input_truncated:false,
+      pairwise_comparisons_capped:false,
+      source_independence_unverified:true,
+      reporting_origins_are_not_event_locations:true,
+      not_a_preparations_sensor_or_warning:true,
+      automatic_alerts_created:0,automatic_severity_changes:0,
+      forecast_probability:null,
+      candidate_groups:[{
+        id:"relation:synthetic",status:"possible_same_event_unreviewed",
+        match_basis:"similar_content_and_time_event_site_unverified",
+        semantic_similarity:0.9,
+        reported_event_site_separation_km:null,
+        reported_event_site_comparison_available:false,
+        shared_information_root:false,
+        independent_corroboration_established:false,
+        reporting_origin_used_as_event_site:false,
+        warning_level_change:false,
+        source_reports:[{
+          observation_id:"nyc-report",title:"<img src=x onerror=alert(1)> Russian missiles struck Kyiv substation",
+          source_family:"commercial_media",provider:"New York desk",
+          source_url:"https://example.org/nyc",
+          reporting_origin:"New York",
+          first_observed_at:stamp,source_published_at:stamp,
+          geography:{label:"Not geocoded",key:null},status:"unreviewed_source_report",
+        },{
+          observation_id:"kyiv-report",title:"Kyiv energy substation struck by Russian missiles",
+          source_family:"commercial_media",provider:"Kyiv reporter",
+          source_url:"https://example.org/kyiv",
+          reporting_origin:"Kyiv",
+          first_observed_at:stamp,source_published_at:stamp,
+          geography:{label:"Kyiv source area",key:"country:UA"},
+          status:"unreviewed_source_report",
+        }]
+      }]
+    },
     provider_baselines:{ioda:{status:"insufficient_history",comparable_days:6,median_records:null}}
   };
 }
@@ -111,6 +154,18 @@ function mockBehavior(stamp){
     assert.match(await page.locator("#watchPanelTitle").innerText(),/Behavioral signals/);
     assert.match(await page.locator("#watchlist").innerText(),/SOURCE SNAPSHOT WITHIN 90 MIN/);
     assert.equal(await page.locator("#watchlist .behavior-card").count(),2);
+    assert.equal(await page.locator("#watchlist .relationship-card").count(),1);
+    assert.match(await page.locator("#watchlist").innerText(),/Possible event\/report links/);
+    await page.locator("#watchlist .relationship-card").click();
+    const reportDetail=await page.locator("#selectedDetail").innerText();
+    assert.match(reportDetail,/Possible reports of the same event/);
+    assert.match(reportDetail,/New York/);
+    assert.match(reportDetail,/Kyiv/);
+    assert.match(reportDetail,/Publisher location does not identify event location/);
+    assert.equal(await page.locator("#selectedDetail img").count(),0);
+    assert.equal(await page.locator("#selectedDetail a[href='https://example.org/kyiv']").count(),1);
+    await page.locator("#selectedDetail .detail-close").click();
+
     assert.equal(await page.locator("#watchlist img").count(),0,"XSS input may not render images");
     await page.locator("#watchlist .behavior-card").first().click();
     assert.match(await page.locator("#selectedDetail").innerText(),/not proof of military intent/i);
