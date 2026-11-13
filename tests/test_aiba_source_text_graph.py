@@ -104,6 +104,12 @@ class SourceTextAndGraphTests(unittest.TestCase):
         self.assertEqual(rows[0]["source_credit"], None)
         self.assertFalse(rejects)
 
+    def test_dvids_fetch_refuses_missing_key_before_any_network(self):
+        with self.assertRaisesRegex(ValueError, "DVIDS_API_KEY"):
+            fetch_assets(["news:1234567"], "")
+        with self.assertRaisesRegex(ValueError, "DVIDS_API_KEY"):
+            fetch_assets(["news:1234567"], "key-not-a-real-valid-key!!")
+
     def test_dvids_wrong_url_id_rejected(self):
         asset = {"id": "news:1234567", "type": "news",
                  "url": "https://www.dvidshub.net/news/9876543/dummy-story",
