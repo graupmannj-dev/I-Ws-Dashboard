@@ -18,6 +18,29 @@ manufactures validated warning accuracy.
 
 See [public evaluation readiness contract](../docs/AIBA_ATLAS_PUBLIC_EVALUATION_READINESS.md).
 
+## Source-flow visibility: observed is not warned
+
+The Atlas Behavioral signals tab displays three distinct levels:
+(1) source observations retained from the last 72 hours,
+(2) newly nominated individual leads or exact-geography
+cross-family source co-occurrences, and (3) separately
+reviewed standing-watch changes on Recent changes.
+
+The latest source registry may hold hundreds of ordinary
+observations while newly nominated leads are zero.
+For that reason the behavioral view now shows **source
+inventory counts and bounded recent observation cards**
+even when review nominations are empty. The Recent changes
+view explains when no case-specific developments passed
+review and points to the actual observed evidence.
+
+This does not loosen warning criteria, plot unverified
+incident coordinates, establish independent corroboration,
+or imply favorable geopolitical conditions.
+The source-flow diagnosis and live prospective readiness
+test are documented in
+[trial and data-funnel audit](../docs/AIBA_LIVE_TRIAL_AND_DISCOVERY_FUNNEL.md).
+
 ## One integrated Atlas for behavioral investigation
 
 The same AIBA website has a **Behavioral signals** tab in the
