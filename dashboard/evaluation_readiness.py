@@ -97,7 +97,7 @@ def summary(behavior, *, generated_at=None):
         "publication_of_private_ledger": False,
         "forecast_probability": None,
         "production_warning_updates": False,
-        "claims_of_predicitive_skill": False,
+        "claims_of_predictive_skill": False,
         "interpretation": (
             "The Atlas displays source monitoring context, not validated early-warning performance. "
             "The private ledger and any real signed timestamps are not connected to this public site. "
