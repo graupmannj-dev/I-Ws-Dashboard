@@ -1,0 +1,88 @@
+{
+  "case_counts": {
+    "unlocated": {
+      "internet_reachability": 10,
+      "maritime_restriction": 4
+    }
+  },
+  "collected_at": "2026-11-13T06:31:11Z",
+  "coverage": "partial",
+  "health": {
+    "amsa": {
+      "caveat": "Source observation only. Does not independently establish military preparations or event attribution.",
+      "checked_at": "2026-11-13T06:31:11Z",
+      "error": null,
+      "records": 4,
+      "source_url": "https://www.operations.amsa.gov.au/AMSA.Web.MSIPublication/",
+      "status": "collected",
+      "truncated": false
+    },
+    "ioda": {
+      "caveat": "Source observation only. Does not independently establish military preparations or event attribution.",
+      "checked_at": "2026-11-13T06:31:11Z",
+      "error": null,
+      "records": 10,
+      "source_url": "https://api.ioda.inetintel.cc.gatech.edu/v2/outages/events?from=1794537071&until=1794551471&entityType=country&limit=100&page=0&extendWindowSeconds=0",
+      "status": "collected",
+      "truncated": false
+    },
+    "nga": {
+      "caveat": "Upstream unavailable or unsupported; NOT evidence of zero activity.",
+      "checked_at": "2026-11-13T06:31:11Z",
+      "error": "HTTPError: HTTP Error 503: Service Unavailable",
+      "records": null,
+      "source_url": "https://msi.nga.mil/api/publications/broadcast-warn?status=active&output=json",
+      "status": "unavailable",
+      "truncated": null
+    }
+  },
+  "new_records": [
+    {
+      "case_id": null,
+      "collected_at": "2026-11-13T06:31:11Z",
+      "detection_method": "sarima",
+      "end_at": null,
+      "entity_code": "NF",
+      "entity_type": "country",
+      "event_at": "2026-11-13T00:30:00Z",
+      "family": "internet_reachability",
+      "first_seen_at": "2026-11-13T06:31:11Z",
+      "id": "ioda:363b7a3e9006d88200702a16",
+      "kind": "outage_event",
+      "location_precision": "Country/region/network context, not incident geolocation.",
+      "provider": "ioda",
+      "review_level": "measurement_context",
+      "root": "ioda:fbcf75e8f2f2201f35f85ca5",
+      "signal_types": [
+        "gtr"
+      ],
+      "source": "IODA / Georgia Tech",
+      "source_published_at": null,
+      "source_score": 22778.822736490052,
+      "source_url": "https://ioda.inetintel.cc.gatech.edu/",
+      "summary": "Internet outage detection candidate; network measurements are not evidence of state attribution or an impending cyber offensive.",
+      "title": "IODA detected connectivity anomaly: country NF"
+    },
+    {
+      "case_id": null,
+      "collected_at": "2026-11-13T06:31:11Z",
+      "event_at": "2026-11-13T01:21:00Z",
+      "family": "maritime_restriction",
+      "first_seen_at": "2026-11-13T06:31:11Z",
+      "id": "amsa:676e09663437e331df0eaa88",
+      "kind": "navigation_safety_notice",
+      "location_precision": "NAVAREA X regional warning; no point geolocation inferred.",
+      "provider": "amsa",
+      "review_level": "official_notice_not_kinetic_confirmation",
+      "root": "amsa:NAVAREA-X:26:124",
+      "source": "Australian Maritime Safety Authority (NAVAREA X)",
+      "source_published_at": "2026-11-13T01:21:00Z",
+      "source_url": "https://www.operations.amsa.gov.au/AMSA.Web.MSIPublication/",
+      "summary": "FM JRCC AUSTRALIA 130121Z NOV 26 NAVAREA X 124/26 1. EMAIL SERVICES TO NAVAREA X COORDINATOR AND RESCUE COORDINATION CENTRE AUSTRALIA UNAVAILABLE UNTIL FURTHER NOTICE. 2. CONTACT RESCUE COORDINATION CENTRE AUSTRALIA BY ALTERNATIVE MEANS, USING TELEPHONE +61 2 6230 6811, INMARSAT THROUGH LES BATAM (POR 212, IOR 312), SPECIAL ACCESS CODE (SAC) 39, IRIDIUM SAFETY MESSAGE, HF DSC 005030001.",
+      "title": "NAVAREA X 124/26 official warning"
+    }
+  ],
+  "note": "Only successful sources appear in records. Missing sources remain unavailable.",
+  "record_count": 14,
+  "schema_version": 1
+}
