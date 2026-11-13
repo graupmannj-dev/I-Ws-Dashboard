@@ -33,9 +33,9 @@ def private_jsonl(path, rows):
 
 
 def prepare(input_rows, existing_manifest=None):
-    reports, manifest, intake = ingest(input_rows, existing_manifest)
-    if len(reports) > MAX_REPORTS:
+    if not isinstance(input_rows, list) or len(input_rows) > MAX_REPORTS:
         raise ValueError("one claim-lab batch may contain at most 250 documents")
+    reports, manifest, intake = ingest(input_rows, existing_manifest)
     claims = extract_claims(reports)
     graph = build_graph(reports)
     packets = assignment(reports)
