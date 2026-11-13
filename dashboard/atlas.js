@@ -592,6 +592,7 @@ async function refreshFriction(){
 function validReportRelations(value){
   if(value==null)return true; // Older published source snapshots
   const statuses=["shared_source_document_unreviewed",
+    "possible_same_source_story_unreviewed",
     "possible_same_event_unreviewed","related_reporting_unreviewed"];
   return value.schema==="aiba.report-event-resolution-shadow.v1"&&
     value.status==="unreviewed_report_relationships_only"&&
@@ -756,6 +757,7 @@ function normalizeLiveBehavior(raw){
        incoming.forecast_probability!=null||
        !Array.isArray(incoming.candidate_groups)||incoming.candidate_groups.length>20)return null;
     const statusSet=["shared_source_document_unreviewed",
+      "possible_same_source_story_unreviewed",
       "possible_same_event_unreviewed","related_reporting_unreviewed"];
     const safeCandidates=[];
     for(const g of incoming.candidate_groups){
@@ -808,6 +810,7 @@ function normalizeLiveBehavior(raw){
       eligible_event_reporting_records:eligible,
       routine_notice_market_or_measurement_records_excluded_from_text_event_matching:excluded,
       same_document_group_count_total:count(incoming.same_document_group_count_total),
+      possible_same_source_story_count_total:count(incoming.possible_same_source_story_count_total),
       possible_same_event_count_total:count(incoming.possible_same_event_count_total),
       related_reporting_count_total:count(incoming.related_reporting_count_total),
       input_truncated:incoming.input_truncated===true,
@@ -937,6 +940,7 @@ function openReportRelationship(group){
   const panel=$("selectedDetail");panel.hidden=false;
   const names={
     shared_source_document_unreviewed:"One shared source document",
+    possible_same_source_story_unreviewed:"Possibly the same syndicated article",
     possible_same_event_unreviewed:"Possible reports of the same event",
     related_reporting_unreviewed:"Related reports — event identity uncertain",
   };
@@ -1023,6 +1027,8 @@ function renderBehaviorList(){
       " eligible for incident-report text matching. "+
       (relationships.same_document_group_count_total||0)+
       " repeated source-document groups · "+
+      (relationships.possible_same_source_story_count_total||0)+
+      " possible same-story syndications · "+
       (relationships.possible_same_event_count_total||0)+
       " possible same-event pairs · "+
       (relationships.related_reporting_count_total||0)+
@@ -1043,7 +1049,8 @@ function renderBehaviorList(){
       const item=document.createElement("button");item.type="button";
       item.className="watch-card relationship-card";
       const label=g.status==="shared_source_document_unreviewed"?
-        "SHARED SOURCE":g.status==="possible_same_event_unreviewed"?
+        "SHARED SOURCE":g.status==="possible_same_source_story_unreviewed"?
+        "POSSIBLE SYNDICATION":g.status==="possible_same_event_unreviewed"?
         "POSSIBLE SAME EVENT":"RELATED REPORTING";
       const row=g.source_reports[0];
       item.innerHTML='<div class="watch-card-head"><strong>'+
