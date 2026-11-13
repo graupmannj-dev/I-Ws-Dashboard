@@ -103,6 +103,9 @@ def _extract_sentence(sentence, start):
     # Hypothetical or conditional activity is not a past incident.
     if re.search(r"\b(?:will|would|could|should|might|plans? to|expected to)\b", left, re.I):
         return None
+    # Passive-voice objects are not actors; parsing these needs a separate rule.
+    if re.search(r"\b(?:was|were|is|are|been|being)$", left, re.I):
+        return None
     # Modifiers qualify the claim, not the actor.
     left = re.sub(r"\s+(?:reportedly|allegedly|may have|might have)$", "", left, flags=re.I)
 
