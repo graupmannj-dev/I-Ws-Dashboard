@@ -108,7 +108,8 @@
       <section class="side-section">
         <h2>Views</h2>
         <button type="button" class="outline-btn" id="resetView">Reset globe position</button>
-        <div class="quick-links"><a href="behavior/">Behavioral discovery (shadow)</a><a href="ops/">Detailed decision briefs</a><a href="classic.html">Classic watchboard</a></div>
+        <button type="button" class="outline-btn" id="openBehavior">Explore behavioral signals in Atlas</button>
+        <div class="quick-links"><a href="behavior/">Behavioral source detail</a><a href="ops/">Detailed decision briefs</a><a href="classic.html">Classic watchboard</a></div>
       </section>
     </aside>
 
@@ -146,12 +147,13 @@
       <div id="selectedDetail" class="selected-detail" aria-live="polite" hidden></div>
     </main>
 
-    <aside class="watch-panel" aria-label="Watchlist">
+    <aside class="watch-panel" aria-label="AIBA watchlist and behavioral investigative signals">
       <div class="watch-heading">
-        <h2>Watchlist <span id="watchCount"></span></h2>
-        <div class="panel-tabs">
-          <button type="button" id="tabAll" class="active">All</button>
-          <button type="button" id="tabNew">Recent changes</button>
+        <h2 id="watchPanelTitle">Watchlist <span id="watchCount"></span></h2>
+        <div class="panel-tabs" aria-label="Monitoring views">
+          <button type="button" id="tabAll" class="active" aria-pressed="true">All</button>
+          <button type="button" id="tabNew" aria-pressed="false">Recent changes</button>
+          <button type="button" id="tabBehavior" aria-pressed="false">Behavioral signals <span id="behaviorTabCount"></span></button>
         </div>
       </div>
       <section class="friction-briefing" id="frictionBriefing" aria-label="Cross-source early-warning briefing">
@@ -165,7 +167,7 @@
         <button id="frictionExpand" type="button" class="friction-expand" aria-expanded="false">Show all theater syntheses</button>
       </section>
       <div class="watchlist" id="watchlist"><p class="empty">Loading watchspots…</p></div>
-      <div class="watch-footer"><span id="watchFoot">Current case states</span><a href="ops/">Full analysis →</a></div>
+      <div class="watch-footer"><span id="watchFoot">Current case states</span><a id="watchDetailLink" href="ops/">Full analysis →</a></div>
     </aside>
 
     <section class="timeline" aria-labelledby="timelineTitle">
