@@ -9,6 +9,7 @@ from __future__ import annotations
 
 import argparse
 from collections import Counter
+import datetime as dt
 from itertools import combinations
 import json
 from pathlib import Path
@@ -50,6 +51,16 @@ def claim_pair(a, b):
             "evidence_a": a["evidence_span"], "evidence_b": b["evidence_span"]}
 
 
+def _time(value):
+    if not isinstance(value, str):
+        return None
+    try:
+        t = dt.datetime.fromisoformat(value.replace("Z", "+00:00"))
+    except ValueError:
+        return None
+    return t if t.tzinfo else None
+
+
 def evaluate_pair(a, b, ac, bc):
     if a.get("story_lineage_id") == b.get("story_lineage_id"):
         return {"category": "possible_shared_story_lineage", "reason": "same_source_story_lineage"}
@@ -60,7 +71,12 @@ def evaluate_pair(a, b, ac, bc):
         return None
     pa, pb = reported_site(a), reported_site(b)
     distance = kilometers(pa, pb) if pa and pb else None
-    if distance is not None and distance > 150:
+    ta, tb = _time(a.get("event_at")), _time(b.get("event_at"))
+    declared_time_gap_h = abs((ta - tb).total_seconds()) / 3600 if ta and tb else None
+    if declared_time_gap_h is not None and declared_time_gap_h > 72:
+        cat = "related_claims_conflicting_event_times"
+        reason = "source_declared_event_times_more_than_72h_apart"
+    elif distance is not None and distance > 150:
         cat = "related_claims_conflicting_event_sites"
         reason = "source_declared_sites_more_than_150km_apart"
     else:
@@ -70,6 +86,7 @@ def evaluate_pair(a, b, ac, bc):
     return {
         "category": cat, "reason": reason,
         "event_site_distance_km": round(distance, 1) if distance is not None else None,
+        "source_declared_event_time_gap_h": round(declared_time_gap_h, 1) if declared_time_gap_h is not None else None,
         "event_site_comparison_available": distance is not None,
         "matched_claims": evidence[:5],
     }
