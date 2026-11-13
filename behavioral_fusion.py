@@ -31,6 +31,8 @@ MAX_HISTORY_FILES=800
 MAX_RECENT=3000
 MAX_SINGLE_LEADS=50
 MAX_REVIEW_GROUPS=25
+MAX_RECENT_OBSERVATIONS_DISPLAY=24
+MAX_DISPLAY_PER_FAMILY=8
 # A shared news article or market quote can *contextualize*, but never
 # contribute an independent observed-behavior family to convergence.
 REVIEW_FAMILIES={"internet_reachability","maritime_restriction","airspace_restriction","protective_notice"}
@@ -205,6 +207,72 @@ def converge(recent,new_ids,now):
     return groups[:MAX_REVIEW_GROUPS],len(groups)
 
 
+def discovery_visibility(recent, registry, *, initial_baseline=False):
+    """Explanatory intake funnel, not another warning nomination gate.
+
+    A stable existing source still counts as a monitored observation; the
+    operational alert/corroboration logic remains unchanged.
+    """
+    counts = Counter(row["source_family"] for row in recent.values())
+    by_geo = defaultdict(set)
+    recent_unlocated = 0
+    for row in recent.values():
+        key = (row.get("geography") or {}).get("key")
+        if not key:
+            recent_unlocated += 1
+        elif row["source_family"] in REVIEW_FAMILIES:
+            by_geo[key].add(row["source_family"])
+    intersecting = sum(len(families) >= 2 for families in by_geo.values())
+    latest = registry.get("records") or []
+    # This is a bounded read-only sample of already normalized observations.
+    # Balance families: otherwise one high-volume provider fills the entire
+    # panel while other real sources remain invisible.
+    sorted_rows = sorted(recent.values(),
+                         key=lambda row:(row["first_observed_at"],row["id"]),
+                         reverse=True)
+    used = Counter()
+    sample = []
+    if not initial_baseline:
+        for row in sorted_rows:
+            family = row["source_family"]
+            if used[family] >= MAX_DISPLAY_PER_FAMILY:
+                continue
+            sample.append({
+                "observation_id":row["id"],
+                "source_family":family,
+                "provider":row["provider"],
+                "title":row["title"],
+                "source_url":row.get("source_url"),
+                "first_observed_at":row["first_observed_at"],
+                "source_published_at":row.get("source_published_at"),
+                "geography":row.get("geography"),
+                "requires_geolocation":not bool((row.get("geography") or {}).get("key")),
+                "status":"recent_source_observation_unreviewed",
+            })
+            used[family]+=1
+            if len(sample)>=MAX_RECENT_OBSERVATIONS_DISPLAY:
+                break
+    new_count = sum(row.get("registry_novelty") == "newly_observed"
+                    for row in latest)
+    return {
+        "schema":"aiba.behavioral-discovery-visibility.v1",
+        "latest_registry_record_count":len(latest),
+        "latest_registry_newly_observed_count":new_count,
+        "recent_unique_record_count_72h":len(recent),
+        "recent_unlocated_count_72h":recent_unlocated,
+        "latest_unlocated_record_count":sum(
+            not bool((row.get("geography") or {}).get("key")) for row in latest),
+        "recent_source_families":dict(sorted(counts.items())),
+        "shared_exact_geography_keys_across_behavior_families":intersecting,
+        "exact_geography_match_required_for_cross_family":True,
+        "new_this_collection_required_for_cross_family_nomination":True,
+        "latest_initial_baseline":bool(initial_baseline),
+        "recent_observations_sampled":len(sample),
+        "new_or_collocated_not_same_as_verified_threat":True,
+        "source_coverage_is_globally_complete":False,
+    }, sample
+
+
 def build(state,clock=None,write=True,run_id=None):
     now=(clock or (lambda:dt.datetime.now(UTC)))().astimezone(UTC)
     state=Path(state)
@@ -225,8 +293,12 @@ def build(state,clock=None,write=True,run_id=None):
         single,single_total=review_queue(registry,recent,now)
         recent_ids={x["id"] for x in registry["records"] if x.get("registry_novelty")=="newly_observed"}
         groups,total=converge(recent,recent_ids,now)
+    visibility, recent_observations = discovery_visibility(
+        recent, registry, initial_baseline=bool(registry.get("first_registry_baseline")))
     output={
         "schema":SCHEMA,"generated_at":iso(now),
+        "discovery_visibility":visibility,
+        "recent_source_observations":recent_observations,
         "registry_asof":registry["generated_at"],
         "registry_source_count":registry.get("record_count"),
         "geographic_scope":"source_declared_only",

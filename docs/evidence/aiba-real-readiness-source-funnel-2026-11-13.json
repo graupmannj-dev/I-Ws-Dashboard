@@ -1,0 +1,62 @@
+{
+  "schema": "aiba.prospective-readiness-and-detection-funnel-evidence.v1",
+  "inspected_at": "2026-11-13",
+  "source": "GitHub connected repo live aiba-feed-data branch, and one-time GitHub Actions execution",
+  "branch": "aiba-feed-data",
+  "observed_branch_sha": "be40b603f0a6a80d5bb728b895437e457cdc9875",
+  "source_generated_at": "2026-11-13T12:28:06Z",
+  "real_preflight_run": "https://github.com/graupmannj-dev/I-Ws-Dashboard/actions/runs/43437892581",
+  "preflight_ran_at": "2026-11-13T13:55:19Z",
+  "preflight_status": "preflight_only_not_frozen",
+  "preflight_reason": "none",
+  "actual_private_ledger_frozen": false,
+  "actual_specific_geopolitical_forecast_issued": false,
+  "forecast_independent_timestamp_witnessed": false,
+  "warning_skill_estimated": false,
+  "source_registry": {
+    "normalized_record_count": 377,
+    "source_family_counts": {
+      "airspace_restriction": 19,
+      "commercial_media": 10,
+      "internet_reachability": 10,
+      "maritime_restriction": 92,
+      "market_expectation": 8,
+      "protective_notice": 238
+    },
+    "latest_newly_observed_count": 0,
+    "latest_existing_count": 377,
+    "latest_with_geography_key_count": 42,
+    "latest_without_geography_key_count": 335,
+    "latest_geography_keys_shared_by_two_review_families": 0
+  },
+  "behavioral_fusion": {
+    "recent_unique_source_record_count_72h": 171,
+    "history_files_examined": 26,
+    "excluded_observations_by_reason": {
+      "old_source_publication": 1
+    },
+    "new_single_source_lead_count": 0,
+    "cross_family_review_group_count": 0,
+    "approved_warning_count": 0,
+    "automatic_severity_changes": 0
+  },
+  "curated_recent_developments": {
+    "decision_briefs_generated_at": "2026-11-13T06:49:09Z",
+    "curated_cases": 10,
+    "source_evidence_in_changed_cases": 0,
+    "new_case_specific_change_count": 0,
+    "friction_briefs_generated_at": "2026-11-13T06:31:15Z",
+    "friction_cases": 10,
+    "executive_eligible_friction_review_count": 0
+  },
+  "interpretation": [
+    "Normalized sources and historic observations exist. Empty panels cannot be attributed to total ingestion failure.",
+    "Behavioral lead nomination currently requires a source identity newly observed in the latest registry pass, while the latest 377 records were all existing.",
+    "Exact matching geography keys currently do not cross two source families within the latest registry, and 335 of 377 latest source observations have no usable location key.",
+    "Curated Recent changes is intentionally limited to case-specific new evidence or executive friction review; the last 10 cases had none.",
+    "Existing source IDs with changed content may not be surfaced as new; source-version delta and geographically compatible cross-resolution matching need separate review before new signal promotion.",
+    "No validated false-negative, calm period, pre-news warning, or global coverage completeness is established."
+  ],
+  "recommended_immediate_action": "Publish bounded recent observed-source context and stage-by-stage flow diagnostics without relaxing core threat-warning gates.",
+  "required_private_trial_action": "User-selected durable private root outside public repo, manual fresh freeze and independent signed head witness; no such ledger presently created by this read-only test."
+}

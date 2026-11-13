@@ -62,12 +62,41 @@ function mockBehavior(stamp){
           airspace:{status:"unavailable",checked_at:"2000-01-01T00:00:00Z",records:[]},
           maritime:{status:"unavailable",checked_at:"2000-01-01T00:00:00Z",records:[]}}}}));
     let stamp=new Date(Date.now()-10*60000).toISOString();
+    let fixtureMode="normal";
     await page.route("**/aiba-feed-data/observations/latest/behavioral_fusion.json",
       route=>route.fulfill({status:503,body:"Simulated branch outage"}));
     await page.route("**/atlas.json",async route=>{
       const response=await route.fetch();
       const payload=await response.json();
       payload.behavioral_discovery=mockBehavior(stamp);
+      if(fixtureMode==="funnel"){
+        const b=payload.behavioral_discovery;
+        b.review_groups=[];b.cross_family_count_total=0;
+        b.new_single_source_leads=[];b.single_source_count_total=0;
+        b.discovery_visibility={
+          schema:"aiba.behavioral-discovery-visibility.v1",
+          latest_registry_record_count:377,
+          latest_registry_newly_observed_count:0,
+          recent_unique_record_count_72h:171,
+          recent_unlocated_count_72h:140,
+          latest_unlocated_record_count:335,
+          shared_exact_geography_keys_across_behavior_families:0,
+          recent_observations_sampled:1,
+          exact_geography_match_required_for_cross_family:true,
+          new_this_collection_required_for_cross_family_nomination:true,
+          source_coverage_is_globally_complete:false
+        };
+        b.recent_source_observations=[{
+          observation_id:"realistic-history-record",title:"<img src=x onerror=alert(1)> A historical observation",
+          status:"recent_source_observation_unreviewed",
+          source_family:"maritime_restriction",provider:"amsa",
+          source_url:"https://example.org/notice",
+          first_observed_at:new Date(Date.now()-2*3600000).toISOString(),
+          source_published_at:null,
+          geography:{label:"Region not verified",precision:"source_defined_only"},
+          requires_geolocation:true
+        }];
+      }
       await route.fulfill({response,json:payload});
     });
     await page.goto(HOST,{waitUntil:"networkidle",timeout:30000});
@@ -128,6 +157,24 @@ function mockBehavior(stamp){
     assert.match(await page.locator("#watchlist").innerText(),/STALE OR UNVERIFIED SNAPSHOT/);
     assert.match(await page.locator("#watchlist").innerText(),/Historical context only/i);
     assert.equal(await page.locator("#watchlist .behavior-card").count(),2);
+    // The new public observation-context view must not disappear simply
+    // because the last collection contains zero new-only nominations.
+    fixtureMode="funnel";
+    stamp=new Date(Date.now()-10*60000).toISOString();
+    await page.reload({waitUntil:"networkidle"});
+    await page.locator("#tabBehavior").click();
+    const text=await page.locator("#watchlist").innerText();
+    assert.match(text,/377/);
+    assert.match(text,/171/);
+    assert.match(text,/335|140/);
+    assert.match(text,/Recent source observations/);
+    assert.match(text,/NOT warnings/i);
+    assert.equal(await page.locator("#watchlist .behavior-card").count(),0);
+    assert.equal(await page.locator("#watchlist .behavior-history-card").count(),1);
+    assert.equal(await page.locator("#watchlist img").count(),0,"Source title must not become HTML");
+    await page.locator("#watchlist .behavior-history-card").click();
+    assert.match(await page.locator("#selectedDetail").innerText(),/A historical observation/);
+    await page.locator("#selectedDetail .detail-close").click();
     assert.equal(errors.length,0,"No browser JS exceptions: "+errors.join("; "));
     console.log("Unified Atlas behavioral panel: interactive source, missingness, XSS and stale-data browser checks passed.");
   }finally{
