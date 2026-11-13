@@ -1,5 +1,23 @@
 # AIBA Atlas (public front-end)
 
+## Public warning evaluation inside the Atlas
+
+The Atlas watch panel also includes an **Evaluation** tab showing
+source freshness and declared coverage gaps alongside the evidence
+gates required for a defensible early-warning effectiveness study.
+Lead time, false alarms, recall and calibration remain **not
+estimable** until actual prospectively witnessed forecasts,
+independently verified publication timelines and valid risk-set
+denominators are connected through a reviewed private-to-public
+aggregate pipeline. No private tipper ledger is published.
+
+The build emits public evaluation_summary.json and embeds the
+same bounded status into atlas.json. The existing behavioral
+read-only refresh updates its source readiness view, but never
+manufactures validated warning accuracy.
+
+See [public evaluation readiness contract](../docs/AIBA_ATLAS_PUBLIC_EVALUATION_READINESS.md).
+
 ## One integrated Atlas for behavioral investigation
 
 The same AIBA website has a **Behavioral signals** tab in the

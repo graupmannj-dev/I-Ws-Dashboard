@@ -17,8 +17,11 @@ address; application source freshness must still be checked inside
 the interface. A successful site deployment does **not** prove that
 every underlying data feed collected on time.
 
-The unified Atlas contains **Watchlist**, **Recent changes** and
-**Behavioral signals** in the same interactive globe interface.
+The unified Atlas contains **Watchlist**, **Recent changes**,
+**Behavioral signals**, and a public-only **Evaluation** readiness
+view in the same interactive globe interface. The evaluation tab
+does not publish private tipper records or claim verified warning
+skill; see [the aggregate evaluation contract](docs/AIBA_ATLAS_PUBLIC_EVALUATION_READINESS.md).
 The behavioral discovery engine uses the same source registry and
 fusion pipeline; `/behavior/` remains a detailed source coverage
 view **on this same site**, not a separate service. The site also

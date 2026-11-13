@@ -159,6 +159,35 @@ a{color:#a9d4ff}
 .behavior-health th,.behavior-health td{border-bottom:1px solid #35526a;vertical-align:top;padding:6px 7px;text-align:left;font-size:10px}
 .behavior-health th{color:#ddeaf5}
 
+/* Public-only prospective evaluation: neutral, non-escalatory styling. */
+.panel-tabs{gap:12px;flex-wrap:wrap}
+.panel-tabs button{font-size:11.4px}
+.evaluation-panel-body{min-width:0;font-size:11px;line-height:1.52}
+.evaluation-hero{padding:12px;border:1px solid #537089;border-radius:8px;background:#162d41}
+.evaluation-hero>strong{display:block;font-size:13px;color:#ecf5ff}
+.evaluation-hero p{margin:10px 0 0;color:#bdd3e6}
+.evaluation-state{display:inline-block;font-weight:700;font-size:9px;letter-spacing:.04em;
+  color:#bed2e5;border:1px solid #62788d;border-radius:5px;padding:3px 6px;margin:7px 0 0}
+.evaluation-readiness{border:1px solid #334e63;border-radius:8px;background:#122539;padding:11px;margin:8px 0 15px}
+.evaluation-readiness p{color:#b8cede;margin:9px 0 0}
+.evaluation-readiness b{color:#eaf2f9}
+.evaluation-sensor-status{display:flex;gap:5px;flex-direction:column}
+.evaluation-sensor-status strong{font-size:12px;color:#e6eef7}
+.evaluation-sensor-status span{color:#9eb9d0;font-size:10px;overflow-wrap:anywhere}
+.evaluation-metrics{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin:7px 0 17px}
+.evaluation-metric{background:#142a3b;border:1px solid #33546f;padding:10px 8px;
+  border-radius:8px;min-width:0;display:flex;flex-direction:column;gap:4px}
+.evaluation-metric small{font-size:10px;min-height:29px;color:#bdcedb}
+.evaluation-metric strong{font-size:22px;color:#e6f0fc;line-height:1.2}
+.evaluation-metric span{font-size:9px;color:#9eb6ca}
+.evaluation-gates{font-size:11px;color:#c4d6e5;padding:0 0 0 20px;line-height:1.55}
+.evaluation-gates li{margin-bottom:8px}
+.evaluation-note{font-size:10.5px;color:#b5cbdd;line-height:1.5}
+.evaluation-note a{color:#a7d2fc}
+.evaluation-caution{padding:14px;color:#d9e4ee;font-size:11px;line-height:1.55;
+  border:1px solid #607487;border-radius:8px;background:#203144}
+.evaluation-view .behavior-section-title{margin-top:15px}
+
 .watch-heading{border-bottom:1px solid var(--line);padding:15px 14px 0}
 .watch-heading h2{font-size:16px;margin:0 0 10px}
 #watchCount{color:#9eb4c9;font-weight:400}

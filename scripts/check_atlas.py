@@ -19,7 +19,21 @@ assert 'id="layerReports"' in html
 assert 'id="frictionBriefing"' in html and 'id="frictionSummary"' in html
 assert 'id="frictionExpand"' in html
 assert 'id="tabBehavior"' in html and 'id="openBehavior"' in html
+assert 'id="tabEvaluation"' in html and 'id="openEvaluation"' in html
 assert 'id="watchDetailLink"' in html
+assert "warning_evaluation" in atlas, "No embedded warning review status"
+evaluation=atlas["warning_evaluation"]
+assert evaluation["schema"]=="aiba.atlas-public-evaluation-readiness.v1"
+assert evaluation["status"]=="prospective_skill_not_established"
+assert evaluation["public_forecast_ledger"]=="not_connected"
+assert evaluation["production_warning_updates"] is False
+assert evaluation["publication_of_private_ledger"] is False
+assert evaluation["claims_of_predictive_skill"] is False
+assert all(value is None for value in evaluation["metrics"].values())
+assert all(value=="not_connected" for value in evaluation["verification_gates"].values())
+assert evaluation["observation"]["worldwide_source_completeness_verified"] is False
+assert evaluation["observation"]["unobserved_intervals_are_negative_events"] is False
+assert json.loads((site/"evaluation_summary.json").read_text(encoding="utf-8")) == evaluation
 assert "behavioral_discovery" in atlas
 assert atlas.get("behavior_live_url", "").startswith(
     "https://raw.githubusercontent.com/graupmannj-dev/I-Ws-Dashboard/aiba-feed-data/observations/latest/behavioral_fusion.json"

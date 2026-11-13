@@ -109,6 +109,7 @@
         <h2>Views</h2>
         <button type="button" class="outline-btn" id="resetView">Reset globe position</button>
         <button type="button" class="outline-btn" id="openBehavior">Explore behavioral signals in Atlas</button>
+        <button type="button" class="outline-btn" id="openEvaluation">Warning evaluation &amp; source readiness</button>
         <div class="quick-links"><a href="behavior/">Behavioral source detail</a><a href="ops/">Detailed decision briefs</a><a href="classic.html">Classic watchboard</a></div>
       </section>
     </aside>
@@ -147,13 +148,14 @@
       <div id="selectedDetail" class="selected-detail" aria-live="polite" hidden></div>
     </main>
 
-    <aside class="watch-panel" aria-label="AIBA watchlist and behavioral investigative signals">
+    <aside class="watch-panel" aria-label="AIBA watchlist, behavioral sources and independent warning evaluation">
       <div class="watch-heading">
         <h2 id="watchPanelTitle">Watchlist <span id="watchCount"></span></h2>
         <div class="panel-tabs" aria-label="Monitoring views">
           <button type="button" id="tabAll" class="active" aria-pressed="true">All</button>
           <button type="button" id="tabNew" aria-pressed="false">Recent changes</button>
           <button type="button" id="tabBehavior" aria-pressed="false">Behavioral signals <span id="behaviorTabCount"></span></button>
+          <button type="button" id="tabEvaluation" aria-pressed="false">Evaluation</button>
         </div>
       </div>
       <section class="friction-briefing" id="frictionBriefing" aria-label="Cross-source early-warning briefing">

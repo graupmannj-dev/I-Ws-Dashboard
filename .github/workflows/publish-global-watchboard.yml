@@ -170,6 +170,7 @@ jobs:
           sleep 2
           node scripts/test_atlas_browser.js
           node scripts/test_atlas_behavior_browser.js
+          node scripts/test_atlas_evaluation_browser.js
           node scripts/test_aircraft_browser.js
       - name: Attach dashboard browser preview
         if: always()
