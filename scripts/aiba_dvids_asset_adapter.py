@@ -33,7 +33,7 @@ def asset_to_input(obj, approved, retrieved_at):
     """Requires explicit asset-specific confirmation by an operator."""
     if not isinstance(obj, dict):
         return None, "invalid_asset"
-    if obj.get("type") != "news":
+    if obj.get("type") not in (None, "news"):
         return None, "not_news"
     ident = obj.get("id")
     if not isinstance(ident, str) or not re.fullmatch(r"news:\d+", ident):
