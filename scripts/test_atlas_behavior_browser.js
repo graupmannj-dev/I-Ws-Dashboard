@@ -61,7 +61,9 @@ function mockBehavior(stamp){
         generated_at:"2000-01-01T00:00:00Z",layers:{
           airspace:{status:"unavailable",checked_at:"2000-01-01T00:00:00Z",records:[]},
           maritime:{status:"unavailable",checked_at:"2000-01-01T00:00:00Z",records:[]}}}}));
-    let stamp=new Date().toISOString();
+    let stamp=new Date(Date.now()-10*60000).toISOString();
+    await page.route("**/aiba-feed-data/observations/latest/behavioral_fusion.json",
+      route=>route.fulfill({status:503,body:"Simulated branch outage"}));
     await page.route("**/atlas.json",async route=>{
       const response=await route.fetch();
       const payload=await response.json();
@@ -102,8 +104,24 @@ function mockBehavior(stamp){
     assert.equal(await page.locator("#watchDetailLink").getAttribute("href"),"ops/");
     await page.locator("#openBehavior").click();
     assert.equal(await page.locator("#tabBehavior").getAttribute("aria-pressed"),"true");
+    // The tab also fetches newer public evidence-branch source records,
+    // but NEVER escalates their status or infers exact incident geometry.
+    const newer=new Date(Date.now()-60000).toISOString();
+    const rawLive={...mockBehavior(newer),generated_at:newer,
+      registry_asof:newer,review_groups_count_total:1,
+      new_single_source_count_total:1,prediction_horizon:null};
+    await page.route("**/aiba-feed-data/observations/latest/behavioral_fusion.json",
+      route=>route.fulfill({json:rawLive}));
+    await page.reload({waitUntil:"networkidle"});
+    await page.locator("#tabBehavior").click();
+    await page.waitForFunction(()=>document.querySelector("#watchlist").textContent.includes("public evidence branch snapshot"));
+    assert.match(await page.locator("#watchlist").innerText(),/SOURCE SNAPSHOT WITHIN 90 MIN/);
+    assert.equal(await page.locator("#watchlist .behavior-card").count(),2);
     // A newer Pages publication must NOT make a 4-hour-old behavioral
-    // observation look like a fresh prospective frame.
+    // observation look like a fresh prospective frame. Simulate network
+    // failure to verify the dated static fallback stays clearly stale.
+    await page.route("**/aiba-feed-data/observations/latest/behavioral_fusion.json",
+      route=>route.fulfill({status:503,body:"Simulated second outage"}));
     stamp=new Date(Date.now()-4*3600*1000).toISOString();
     await page.reload({waitUntil:"networkidle"});
     await page.locator("#tabBehavior").click();
