@@ -18,6 +18,18 @@ assert 'id="layerCommands"' in html and 'id="severityControls"' in html
 assert 'id="layerReports"' in html
 assert 'id="frictionBriefing"' in html and 'id="frictionSummary"' in html
 assert 'id="frictionExpand"' in html
+assert 'id="tabBehavior"' in html and 'id="openBehavior"' in html
+assert 'id="watchDetailLink"' in html
+assert "behavioral_discovery" in atlas
+behavior = atlas["behavioral_discovery"]
+assert behavior["schema"] == "aiba.behavioral-convergence-shadow.v1"
+assert behavior["status"] in ("read_only_shadow_evidence", "unavailable")
+assert behavior["approved_warning_count"] == 0
+assert behavior["automated_severity_changes"] == 0
+assert behavior["source_continuity_proven"] is False
+assert behavior["map_coordinates_inferred"] is False
+assert behavior["forecast_probability"] is None
+assert len(behavior["review_groups"]) <= 25 and len(behavior["new_single_source_leads"]) <= 50
 assert (site/"friction_briefs.json").exists(), "No durable friction briefing fallback"
 assert "friction_briefs" in atlas and atlas["friction_briefs"].get("shadow_mode", True)
 assert "friction_live_url" in atlas and atlas["friction_live_url"].startswith("https://")
