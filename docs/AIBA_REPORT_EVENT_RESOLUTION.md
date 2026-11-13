@@ -23,14 +23,18 @@ lane, not a new mechanism for automatic warning escalation.
    (including a unique Niord message fragment). Treat as a
    *source-document grouping*, not two independent sources.
    General landing pages are never considered a document ID.
-2. **Possibly the same event:** two reports have strong
+2. **Possibly the same source story:** near-identical article
+   titles published through different URLs (including search
+   syndication links) may represent **one underlying
+   publication**, not independently witnessed events.
+3. **Possibly the same event:** two reports have strong
    substantive title overlap and compatible chronology.
    When both sources give explicitly identified event-site
    coordinates, source-declared reported event sites within
    75 km can support a *candidate* with substantive overlap,
    never automatically establish identity. A publisher's
    reporting origin is ignored for event-site comparisons.
-3. **Related reporting:** strong thematic/textual similarity
+4. **Related reporting:** strong thematic/textual similarity
    with explicitly incompatible reported event locations
    (more than 150 km apart) or a long observation-time
    separation. These should be **reviewed**, not collapsed
