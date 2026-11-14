@@ -3,7 +3,7 @@
   "automated_severity_changes": 0,
   "collection_coverage": {
     "amsa": {
-      "age_hours": 5.38,
+      "age_hours": 5.42,
       "checked_at": "2026-11-14T08:54:43Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -15,7 +15,7 @@
       "truncated_or_partial": false
     },
     "commercial": {
-      "age_hours": 0.01,
+      "age_hours": 0.04,
       "checked_at": "2026-11-14T14:17:06Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -27,7 +27,7 @@
       "truncated_or_partial": true
     },
     "ioda": {
-      "age_hours": 5.38,
+      "age_hours": 5.42,
       "checked_at": "2026-11-14T08:54:43Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -39,29 +39,31 @@
       "truncated_or_partial": false
     },
     "live_airspace": {
-      "age_hours": 7.03,
-      "checked_at": "2026-11-14T07:15:24Z",
-      "missingness": "not_measured_not_zero",
+      "age_hours": 0.0,
+      "checked_at": "2026-11-14T14:19:33Z",
+      "first_provider_baseline": false,
+      "missingness": "partial_sampling_not_worldwide_exhaustive",
       "mode": "live_airspace",
       "provider_status": "partial",
-      "snapshot_at": "2026-11-14T07:15:24Z",
+      "snapshot_at": "2026-11-14T14:19:33Z",
       "source_scope": "FAA temporary flight restrictions: United States only",
-      "status": "stale_or_unavailable",
+      "status": "current_partial",
       "truncated_or_partial": true
     },
     "live_maritime": {
-      "age_hours": 7.03,
-      "checked_at": "2026-11-14T07:15:24Z",
-      "missingness": "not_measured_not_zero",
+      "age_hours": 0.0,
+      "checked_at": "2026-11-14T14:19:33Z",
+      "first_provider_baseline": false,
+      "missingness": "partial_sampling_not_worldwide_exhaustive",
       "mode": "live_maritime",
       "provider_status": "partial",
-      "snapshot_at": "2026-11-14T07:15:24Z",
+      "snapshot_at": "2026-11-14T14:19:33Z",
       "source_scope": "Danish Maritime Authority Niord notices: regional Baltic/North Sea",
-      "status": "stale_or_unavailable",
+      "status": "current_partial",
       "truncated_or_partial": true
     },
     "nga": {
-      "age_hours": 5.38,
+      "age_hours": 5.42,
       "checked_at": "2026-11-14T08:54:43Z",
       "missingness": "not_measured_not_zero",
       "mode": "nga",
@@ -72,7 +74,7 @@
       "truncated_or_partial": false
     },
     "official": {
-      "age_hours": 7.82,
+      "age_hours": 7.86,
       "checked_at": "2026-11-14T06:28:00Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -84,7 +86,7 @@
       "truncated_or_partial": false
     },
     "watchlist": {
-      "age_hours": 7.82,
+      "age_hours": 7.86,
       "checked_at": "2026-11-14T06:28:01Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -99,20 +101,20 @@
   "discovery_visibility": {
     "exact_geography_match_required_for_cross_family": true,
     "latest_initial_baseline": false,
-    "latest_registry_newly_observed_count": 0,
-    "latest_registry_record_count": 266,
-    "latest_unlocated_record_count": 252,
+    "latest_registry_newly_observed_count": 1,
+    "latest_registry_record_count": 368,
+    "latest_unlocated_record_count": 326,
     "new_or_collocated_not_same_as_verified_threat": true,
     "new_this_collection_required_for_cross_family_nomination": true,
     "recent_observations_sampled": 24,
     "recent_source_families": {
-      "airspace_restriction": 13,
+      "airspace_restriction": 14,
       "commercial_media": 9,
       "internet_reachability": 56,
       "maritime_restriction": 121,
       "protective_notice": 6
     },
-    "recent_unique_record_count_72h": 205,
+    "recent_unique_record_count_72h": 206,
     "recent_unlocated_count_72h": 117,
     "schema": "aiba.behavioral-discovery-visibility.v1",
     "shared_exact_geography_keys_across_behavior_families": 0,
@@ -120,15 +122,15 @@
   },
   "forecast_probability": null,
   "gdelt_context": "separate_analytical_stream_not_a_gate_or_confirmation",
-  "generated_at": "2026-11-14T14:17:26Z",
+  "generated_at": "2026-11-14T14:19:37Z",
   "geographic_scope": "source_declared_only",
   "history_diagnostics": {
     "excluded_observations": {
       "old_source_publication": 2
     },
-    "history_files_examined": 30,
+    "history_files_examined": 31,
     "lookback_hours": 72,
-    "recent_unique_records": 205
+    "recent_unique_records": 206
   },
   "limit_notes": [
     "No automated threat warning. These are unreviewed investigatory leads.",
@@ -137,10 +139,57 @@
     "Unlocated records cannot produce automatic geographic convergence.",
     "Unavailable collection is not evidence of no threatening activity."
   ],
-  "new_single_source_count_total": 0,
-  "new_single_source_leads": [],
+  "new_single_source_count_total": 1,
+  "new_single_source_leads": [
+    {
+      "evidence_class": "official_notice",
+      "first_observed_at": "2026-11-14T14:19:37Z",
+      "geography": {
+        "geometry_sha256_prefix": "c13a8ba31864fdffa5afb945",
+        "geometry_type": "MultiPolygon",
+        "key": "source-footprint:c13a8ba31864fdffa5afb945",
+        "kind": "source_notice_footprint",
+        "label": "Official MultiPolygon notice area",
+        "latitude": null,
+        "longitude": null,
+        "precision": "provider_defined_notice_boundary_not_event_point",
+        "verified_iso": false
+      },
+      "information_root": "faa:6/7546:0:0",
+      "meaning": "Observation novelty, not evidence of impending violence.",
+      "observation_id": "beh:23f1956a542e2154ae056ff473c4",
+      "requires_geolocation": false,
+      "source_family": "airspace_restriction",
+      "source_published_at": null,
+      "source_url": "https://tfr.faa.gov/6_7546.html",
+      "status": "single_source_unreviewed",
+      "title": "FAA TFR 6/7546 · W MARTINSBURG, WV, Saturday, November 14, 2026 through Sunday, November 15, 2026 UTC"
+    }
+  ],
   "prediction_horizon": null,
   "recent_source_observations": [
+    {
+      "first_observed_at": "2026-11-14T14:19:37Z",
+      "geography": {
+        "geometry_sha256_prefix": "c13a8ba31864fdffa5afb945",
+        "geometry_type": "MultiPolygon",
+        "key": "source-footprint:c13a8ba31864fdffa5afb945",
+        "kind": "source_notice_footprint",
+        "label": "Official MultiPolygon notice area",
+        "latitude": null,
+        "longitude": null,
+        "precision": "provider_defined_notice_boundary_not_event_point",
+        "verified_iso": false
+      },
+      "observation_id": "beh:23f1956a542e2154ae056ff473c4",
+      "provider": "faa",
+      "requires_geolocation": false,
+      "source_family": "airspace_restriction",
+      "source_published_at": null,
+      "source_url": "https://tfr.faa.gov/6_7546.html",
+      "status": "recent_source_observation_unreviewed",
+      "title": "FAA TFR 6/7546 · W MARTINSBURG, WV, Saturday, November 14, 2026 through Sunday, November 15, 2026 UTC"
+    },
     {
       "first_observed_at": "2026-11-14T06:28:02Z",
       "geography": {
@@ -626,30 +675,10 @@
       "source_url": "https://ioda.inetintel.cc.gatech.edu/",
       "status": "recent_source_observation_unreviewed",
       "title": "IODA detected connectivity anomaly: country VE"
-    },
-    {
-      "first_observed_at": "2026-11-13T14:52:55Z",
-      "geography": {
-        "key": "country:XK",
-        "kind": "country_code",
-        "label": "XK",
-        "latitude": null,
-        "longitude": null,
-        "precision": "provider_reported_country",
-        "verified_iso": false
-      },
-      "observation_id": "beh:b799eeea1c7a5cb76f0b38baff80",
-      "provider": "ioda",
-      "requires_geolocation": false,
-      "source_family": "internet_reachability",
-      "source_published_at": null,
-      "source_url": "https://ioda.inetintel.cc.gatech.edu/",
-      "status": "recent_source_observation_unreviewed",
-      "title": "IODA detected connectivity anomaly: country XK"
     }
   ],
-  "registry_asof": "2026-11-14T14:17:26Z",
-  "registry_source_count": 266,
+  "registry_asof": "2026-11-14T14:19:37Z",
+  "registry_source_count": 368,
   "report_relationships": {
     "automatic_alerts_created": 0,
     "automatic_severity_changes": 0,
@@ -2411,14 +2440,14 @@
     "input_truncated": false,
     "not_a_preparations_sensor_or_warning": true,
     "pairwise_comparisons_capped": false,
-    "pairwise_comparisons_examined": 20910,
+    "pairwise_comparisons_examined": 21115,
     "possible_same_event_count_total": 0,
     "possible_same_source_story_count_total": 3,
-    "records_available": 205,
-    "records_examined": 205,
+    "records_available": 206,
+    "records_examined": 206,
     "related_reporting_count_total": 0,
     "reporting_origins_are_not_event_locations": true,
-    "routine_notice_market_or_measurement_records_excluded_from_text_event_matching": 196,
+    "routine_notice_market_or_measurement_records_excluded_from_text_event_matching": 197,
     "same_document_group_count_total": 11,
     "schema": "aiba.report-event-resolution-shadow.v1",
     "source_independence_unverified": true,
