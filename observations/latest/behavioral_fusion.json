@@ -3,7 +3,7 @@
   "automated_severity_changes": 0,
   "collection_coverage": {
     "amsa": {
-      "age_hours": 1.8,
+      "age_hours": 2.52,
       "checked_at": "2026-11-14T20:39:36Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -15,7 +15,7 @@
       "truncated_or_partial": false
     },
     "commercial": {
-      "age_hours": 8.17,
+      "age_hours": 8.89,
       "checked_at": "2026-11-14T14:17:06Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -27,7 +27,7 @@
       "truncated_or_partial": true
     },
     "ioda": {
-      "age_hours": 1.8,
+      "age_hours": 2.52,
       "checked_at": "2026-11-14T20:39:36Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -39,29 +39,31 @@
       "truncated_or_partial": false
     },
     "live_airspace": {
-      "age_hours": 3.14,
-      "checked_at": "2026-11-14T19:18:50Z",
-      "missingness": "not_measured_not_zero",
+      "age_hours": 0.0,
+      "checked_at": "2026-11-14T23:10:41Z",
+      "first_provider_baseline": false,
+      "missingness": "partial_sampling_not_worldwide_exhaustive",
       "mode": "live_airspace",
       "provider_status": "partial",
-      "snapshot_at": "2026-11-14T19:18:50Z",
+      "snapshot_at": "2026-11-14T23:10:41Z",
       "source_scope": "FAA temporary flight restrictions: United States only",
-      "status": "stale_or_unavailable",
+      "status": "current_partial",
       "truncated_or_partial": true
     },
     "live_maritime": {
-      "age_hours": 3.14,
-      "checked_at": "2026-11-14T19:18:50Z",
-      "missingness": "not_measured_not_zero",
+      "age_hours": 0.0,
+      "checked_at": "2026-11-14T23:10:41Z",
+      "first_provider_baseline": false,
+      "missingness": "partial_sampling_not_worldwide_exhaustive",
       "mode": "live_maritime",
       "provider_status": "partial",
-      "snapshot_at": "2026-11-14T19:18:50Z",
+      "snapshot_at": "2026-11-14T23:10:41Z",
       "source_scope": "Danish Maritime Authority Niord notices: regional Baltic/North Sea",
-      "status": "stale_or_unavailable",
+      "status": "current_partial",
       "truncated_or_partial": true
     },
     "nga": {
-      "age_hours": 1.8,
+      "age_hours": 2.52,
       "checked_at": "2026-11-14T15:45:09Z",
       "missingness": "not_measured_not_zero",
       "mode": "nga",
@@ -72,7 +74,7 @@
       "truncated_or_partial": false
     },
     "official": {
-      "age_hours": 0.0,
+      "age_hours": 0.72,
       "checked_at": "2026-11-14T22:27:19Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -84,7 +86,7 @@
       "truncated_or_partial": false
     },
     "watchlist": {
-      "age_hours": 0.0,
+      "age_hours": 0.72,
       "checked_at": "2026-11-14T22:27:19Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -100,8 +102,8 @@
     "exact_geography_match_required_for_cross_family": true,
     "latest_initial_baseline": false,
     "latest_registry_newly_observed_count": 0,
-    "latest_registry_record_count": 268,
-    "latest_unlocated_record_count": 252,
+    "latest_registry_record_count": 371,
+    "latest_unlocated_record_count": 326,
     "new_or_collocated_not_same_as_verified_threat": true,
     "new_this_collection_required_for_cross_family_nomination": true,
     "recent_observations_sampled": 24,
@@ -120,13 +122,13 @@
   },
   "forecast_probability": null,
   "gdelt_context": "separate_analytical_stream_not_a_gate_or_confirmation",
-  "generated_at": "2026-11-14T22:27:20Z",
+  "generated_at": "2026-11-14T23:10:45Z",
   "geographic_scope": "source_declared_only",
   "history_diagnostics": {
     "excluded_observations": {
       "old_source_publication": 5
     },
-    "history_files_examined": 32,
+    "history_files_examined": 33,
     "lookback_hours": 72,
     "recent_unique_records": 201
   },
@@ -652,8 +654,8 @@
       "title": "FAA TFR 6/7338 · W MARTINSBURG, WV, Friday, November 13, 2026 UTC"
     }
   ],
-  "registry_asof": "2026-11-14T22:27:20Z",
-  "registry_source_count": 268,
+  "registry_asof": "2026-11-14T23:10:44Z",
+  "registry_source_count": 371,
   "report_relationships": {
     "automatic_alerts_created": 0,
     "automatic_severity_changes": 0,
