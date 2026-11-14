@@ -1,0 +1,157 @@
+{
+  "first_registry_baseline": false,
+  "first_seen_counts_by_mode": {
+    "amsa": 0,
+    "commercial": 0,
+    "ioda": 0,
+    "live_airspace": null,
+    "live_maritime": null,
+    "nga": null,
+    "official": 1,
+    "watchlist": 0
+  },
+  "full_snapshot_count": 270,
+  "generated_at": "2026-11-14T06:28:02Z",
+  "invalid_records": {},
+  "new_records": [
+    {
+      "actor_identified": false,
+      "alert_eligible": false,
+      "case_hint": null,
+      "claim_level": "notice_not_verified_preparation",
+      "collection_mode": "official",
+      "direct_observed_behavior": false,
+      "event_at": null,
+      "evidence_class": "official_notice",
+      "first_observed_at": "2026-11-14T06:28:02Z",
+      "geography": {
+        "key": null,
+        "kind": "unlocated",
+        "label": null,
+        "latitude": null,
+        "longitude": null,
+        "precision": "no_source_verified_geography",
+        "verified_iso": false
+      },
+      "id": "beh:04be9989df58bd63cae25e66934a",
+      "information_root": "official:e43a8b8f13d19952aa69",
+      "observed_at": "2026-11-14T06:28:00Z",
+      "provider": "official",
+      "raw_source_id": "e43a8b8f13d19952aa69",
+      "registry_novelty": "newly_observed",
+      "source_family": "protective_notice",
+      "source_kind": "official_travel_security_notice",
+      "source_published_at": "2026-11-14T02:26:03Z",
+      "source_url": "https://www.gov.uk/foreign-travel-advice/usa",
+      "title": "USA",
+      "upstream_first_seen_at": null
+    }
+  ],
+  "operational_alerts_generated": 0,
+  "schema": "aiba.behavioral-observations.v1",
+  "snapshot_counts_by_mode": {
+    "amsa": 3,
+    "commercial": 9,
+    "ioda": 12,
+    "live_airspace": null,
+    "live_maritime": null,
+    "nga": null,
+    "official": 238,
+    "watchlist": 8
+  },
+  "source_health": {
+    "amsa": {
+      "age_hours": 4.74,
+      "checked_at": "2026-11-14T01:43:25Z",
+      "first_provider_baseline": false,
+      "missingness": "provider_bounded_not_exhaustive",
+      "mode": "amsa",
+      "provider_status": "collected",
+      "snapshot_at": "2026-11-14T01:43:25Z",
+      "source_scope": "AMSA NAVAREA X only",
+      "status": "current",
+      "truncated_or_partial": false
+    },
+    "commercial": {
+      "age_hours": 14.97,
+      "checked_at": "2026-11-13T15:29:52Z",
+      "first_provider_baseline": false,
+      "missingness": "provider_bounded_not_exhaustive",
+      "mode": "commercial",
+      "provider_status": "collected",
+      "snapshot_at": "2026-11-13T15:29:52Z",
+      "source_scope": "selected maritime/air-cargo/war-risk press and syndication",
+      "status": "current",
+      "truncated_or_partial": false
+    },
+    "ioda": {
+      "age_hours": 4.74,
+      "checked_at": "2026-11-14T01:43:25Z",
+      "first_provider_baseline": false,
+      "missingness": "provider_bounded_not_exhaustive",
+      "mode": "ioda",
+      "provider_status": "collected",
+      "snapshot_at": "2026-11-14T01:43:25Z",
+      "source_scope": "IODA country events (first 100 of first page, 4-hour query)",
+      "status": "current",
+      "truncated_or_partial": false
+    },
+    "live_airspace": {
+      "age_hours": 5.62,
+      "checked_at": "2026-11-14T00:51:08Z",
+      "missingness": "not_measured_not_zero",
+      "mode": "live_airspace",
+      "provider_status": "partial",
+      "snapshot_at": "2026-11-14T00:51:08Z",
+      "source_scope": "FAA temporary flight restrictions: United States only",
+      "status": "stale_or_unavailable",
+      "truncated_or_partial": true
+    },
+    "live_maritime": {
+      "age_hours": 5.62,
+      "checked_at": "2026-11-14T00:51:08Z",
+      "missingness": "not_measured_not_zero",
+      "mode": "live_maritime",
+      "provider_status": "partial",
+      "snapshot_at": "2026-11-14T00:51:08Z",
+      "source_scope": "Danish Maritime Authority Niord notices: regional Baltic/North Sea",
+      "status": "stale_or_unavailable",
+      "truncated_or_partial": true
+    },
+    "nga": {
+      "age_hours": 4.74,
+      "checked_at": "2026-11-13T21:24:39Z",
+      "missingness": "not_measured_not_zero",
+      "mode": "nga",
+      "provider_status": "unavailable",
+      "snapshot_at": "2026-11-14T01:43:25Z",
+      "source_scope": "NGA active broadcast warnings; provider availability varies",
+      "status": "stale_or_unavailable",
+      "truncated_or_partial": false
+    },
+    "official": {
+      "age_hours": 0.0,
+      "checked_at": "2026-11-14T06:28:00Z",
+      "first_provider_baseline": false,
+      "missingness": "provider_bounded_not_exhaustive",
+      "mode": "official",
+      "provider_status": "collected",
+      "snapshot_at": "2026-11-14T06:28:00Z",
+      "source_scope": "US State and UK FCDO travel-advice feeds",
+      "status": "current",
+      "truncated_or_partial": false
+    },
+    "watchlist": {
+      "age_hours": 0.0,
+      "checked_at": "2026-11-14T06:28:01Z",
+      "first_provider_baseline": false,
+      "missingness": "provider_bounded_not_exhaustive",
+      "mode": "watchlist",
+      "provider_status": "collected",
+      "snapshot_at": "2026-11-14T06:28:01Z",
+      "source_scope": "registered, exact-ID forecast contracts only",
+      "status": "current",
+      "truncated_or_partial": false
+    }
+  }
+}
