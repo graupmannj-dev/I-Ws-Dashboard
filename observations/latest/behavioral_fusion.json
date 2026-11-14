@@ -3,7 +3,7 @@
   "automated_severity_changes": 0,
   "collection_coverage": {
     "amsa": {
-      "age_hours": 2.35,
+      "age_hours": 3.56,
       "checked_at": "2026-11-14T15:45:09Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -15,7 +15,7 @@
       "truncated_or_partial": false
     },
     "commercial": {
-      "age_hours": 3.82,
+      "age_hours": 5.03,
       "checked_at": "2026-11-14T14:17:06Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -27,7 +27,7 @@
       "truncated_or_partial": true
     },
     "ioda": {
-      "age_hours": 2.35,
+      "age_hours": 3.56,
       "checked_at": "2026-11-14T15:45:09Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -39,29 +39,31 @@
       "truncated_or_partial": false
     },
     "live_airspace": {
-      "age_hours": 3.78,
-      "checked_at": "2026-11-14T14:19:33Z",
-      "missingness": "not_measured_not_zero",
+      "age_hours": 0.0,
+      "checked_at": "2026-11-14T19:18:50Z",
+      "first_provider_baseline": false,
+      "missingness": "partial_sampling_not_worldwide_exhaustive",
       "mode": "live_airspace",
       "provider_status": "partial",
-      "snapshot_at": "2026-11-14T14:19:33Z",
+      "snapshot_at": "2026-11-14T19:18:50Z",
       "source_scope": "FAA temporary flight restrictions: United States only",
-      "status": "stale_or_unavailable",
+      "status": "current_partial",
       "truncated_or_partial": true
     },
     "live_maritime": {
-      "age_hours": 3.78,
-      "checked_at": "2026-11-14T14:19:33Z",
-      "missingness": "not_measured_not_zero",
+      "age_hours": 0.0,
+      "checked_at": "2026-11-14T19:18:50Z",
+      "first_provider_baseline": false,
+      "missingness": "partial_sampling_not_worldwide_exhaustive",
       "mode": "live_maritime",
       "provider_status": "partial",
-      "snapshot_at": "2026-11-14T14:19:33Z",
+      "snapshot_at": "2026-11-14T19:18:50Z",
       "source_scope": "Danish Maritime Authority Niord notices: regional Baltic/North Sea",
-      "status": "stale_or_unavailable",
+      "status": "current_partial",
       "truncated_or_partial": true
     },
     "nga": {
-      "age_hours": 2.35,
+      "age_hours": 3.56,
       "checked_at": "2026-11-14T15:45:09Z",
       "missingness": "not_measured_not_zero",
       "mode": "nga",
@@ -72,7 +74,7 @@
       "truncated_or_partial": false
     },
     "official": {
-      "age_hours": 0.0,
+      "age_hours": 1.21,
       "checked_at": "2026-11-14T18:06:13Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -84,7 +86,7 @@
       "truncated_or_partial": false
     },
     "watchlist": {
-      "age_hours": 0.0,
+      "age_hours": 1.21,
       "checked_at": "2026-11-14T18:06:14Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -99,34 +101,34 @@
   "discovery_visibility": {
     "exact_geography_match_required_for_cross_family": true,
     "latest_initial_baseline": false,
-    "latest_registry_newly_observed_count": 0,
-    "latest_registry_record_count": 271,
-    "latest_unlocated_record_count": 252,
+    "latest_registry_newly_observed_count": 2,
+    "latest_registry_record_count": 374,
+    "latest_unlocated_record_count": 326,
     "new_or_collocated_not_same_as_verified_threat": true,
     "new_this_collection_required_for_cross_family_nomination": true,
     "recent_observations_sampled": 24,
     "recent_source_families": {
-      "airspace_restriction": 14,
-      "commercial_media": 6,
+      "airspace_restriction": 16,
+      "commercial_media": 4,
       "internet_reachability": 61,
       "maritime_restriction": 121,
       "protective_notice": 2
     },
     "recent_unique_record_count_72h": 204,
-    "recent_unlocated_count_72h": 110,
+    "recent_unlocated_count_72h": 108,
     "schema": "aiba.behavioral-discovery-visibility.v1",
     "shared_exact_geography_keys_across_behavior_families": 0,
     "source_coverage_is_globally_complete": false
   },
   "forecast_probability": null,
   "gdelt_context": "separate_analytical_stream_not_a_gate_or_confirmation",
-  "generated_at": "2026-11-14T18:06:16Z",
+  "generated_at": "2026-11-14T19:18:54Z",
   "geographic_scope": "source_declared_only",
   "history_diagnostics": {
     "excluded_observations": {
-      "old_source_publication": 7
+      "old_source_publication": 9
     },
-    "history_files_examined": 32,
+    "history_files_examined": 33,
     "lookback_hours": 72,
     "recent_unique_records": 204
   },
@@ -137,10 +139,103 @@
     "Unlocated records cannot produce automatic geographic convergence.",
     "Unavailable collection is not evidence of no threatening activity."
   ],
-  "new_single_source_count_total": 0,
-  "new_single_source_leads": [],
+  "new_single_source_count_total": 2,
+  "new_single_source_leads": [
+    {
+      "evidence_class": "official_notice",
+      "first_observed_at": "2026-11-14T19:18:53Z",
+      "geography": {
+        "geometry_sha256_prefix": "67092dab6abd4e9717772ce5",
+        "geometry_type": "MultiPolygon",
+        "key": "source-footprint:67092dab6abd4e9717772ce5",
+        "kind": "source_notice_footprint",
+        "label": "Official MultiPolygon notice area",
+        "latitude": null,
+        "longitude": null,
+        "precision": "provider_defined_notice_boundary_not_event_point",
+        "verified_iso": false
+      },
+      "information_root": "faa:6/7567:0:0",
+      "meaning": "Observation novelty, not evidence of impending violence.",
+      "observation_id": "beh:4c4753f76c671ef922272d61c568",
+      "requires_geolocation": false,
+      "source_family": "airspace_restriction",
+      "source_published_at": null,
+      "source_url": "https://tfr.faa.gov/6_7567.html",
+      "status": "single_source_unreviewed",
+      "title": "FAA TFR 6/7567 · 1NM NEW ORLEANS, LA, Saturday, November 14, 2026 through Monday, November 16, 2026 UTC"
+    },
+    {
+      "evidence_class": "official_notice",
+      "first_observed_at": "2026-11-14T19:18:53Z",
+      "geography": {
+        "geometry_sha256_prefix": "348a605668a5ab473ca44a3f",
+        "geometry_type": "MultiPolygon",
+        "key": "source-footprint:348a605668a5ab473ca44a3f",
+        "kind": "source_notice_footprint",
+        "label": "Official MultiPolygon notice area",
+        "latitude": null,
+        "longitude": null,
+        "precision": "provider_defined_notice_boundary_not_event_point",
+        "verified_iso": false
+      },
+      "information_root": "faa:6/7553:0:0",
+      "meaning": "Observation novelty, not evidence of impending violence.",
+      "observation_id": "beh:a2c9c8c0b0db5cc5fad7d70fee4a",
+      "requires_geolocation": false,
+      "source_family": "airspace_restriction",
+      "source_published_at": null,
+      "source_url": "https://tfr.faa.gov/6_7553.html",
+      "status": "single_source_unreviewed",
+      "title": "FAA TFR 6/7553 · KENAI, AK, Saturday, November 14, 2026 through Sunday, November 15, 2026 UTC"
+    }
+  ],
   "prediction_horizon": null,
   "recent_source_observations": [
+    {
+      "first_observed_at": "2026-11-14T19:18:53Z",
+      "geography": {
+        "geometry_sha256_prefix": "348a605668a5ab473ca44a3f",
+        "geometry_type": "MultiPolygon",
+        "key": "source-footprint:348a605668a5ab473ca44a3f",
+        "kind": "source_notice_footprint",
+        "label": "Official MultiPolygon notice area",
+        "latitude": null,
+        "longitude": null,
+        "precision": "provider_defined_notice_boundary_not_event_point",
+        "verified_iso": false
+      },
+      "observation_id": "beh:a2c9c8c0b0db5cc5fad7d70fee4a",
+      "provider": "faa",
+      "requires_geolocation": false,
+      "source_family": "airspace_restriction",
+      "source_published_at": null,
+      "source_url": "https://tfr.faa.gov/6_7553.html",
+      "status": "recent_source_observation_unreviewed",
+      "title": "FAA TFR 6/7553 · KENAI, AK, Saturday, November 14, 2026 through Sunday, November 15, 2026 UTC"
+    },
+    {
+      "first_observed_at": "2026-11-14T19:18:53Z",
+      "geography": {
+        "geometry_sha256_prefix": "67092dab6abd4e9717772ce5",
+        "geometry_type": "MultiPolygon",
+        "key": "source-footprint:67092dab6abd4e9717772ce5",
+        "kind": "source_notice_footprint",
+        "label": "Official MultiPolygon notice area",
+        "latitude": null,
+        "longitude": null,
+        "precision": "provider_defined_notice_boundary_not_event_point",
+        "verified_iso": false
+      },
+      "observation_id": "beh:4c4753f76c671ef922272d61c568",
+      "provider": "faa",
+      "requires_geolocation": false,
+      "source_family": "airspace_restriction",
+      "source_published_at": null,
+      "source_url": "https://tfr.faa.gov/6_7567.html",
+      "status": "recent_source_observation_unreviewed",
+      "title": "FAA TFR 6/7567 · 1NM NEW ORLEANS, LA, Saturday, November 14, 2026 through Monday, November 16, 2026 UTC"
+    },
     {
       "first_observed_at": "2026-11-14T15:45:09Z",
       "geography": {
@@ -606,52 +701,10 @@
       "source_url": "https://tfr.faa.gov/6_7338.html",
       "status": "recent_source_observation_unreviewed",
       "title": "FAA TFR 6/7338 · W MARTINSBURG, WV, Friday, November 13, 2026 UTC"
-    },
-    {
-      "first_observed_at": "2026-11-13T19:59:34Z",
-      "geography": {
-        "geometry_sha256_prefix": null,
-        "geometry_type": null,
-        "key": null,
-        "kind": "unlocated",
-        "label": null,
-        "latitude": null,
-        "longitude": null,
-        "precision": "notice_geography_unavailable",
-        "verified_iso": false
-      },
-      "observation_id": "beh:0e2c59ad57e7c755ef7b4ecc5c00",
-      "provider": "faa",
-      "requires_geolocation": true,
-      "source_family": "airspace_restriction",
-      "source_published_at": null,
-      "source_url": "https://tfr.faa.gov/6_7420.html",
-      "status": "recent_source_observation_unreviewed",
-      "title": "FAA TFR 6/7420 · U.S. MEXICO BORDER, AZ, Friday, November 13, 2026 UTC"
-    },
-    {
-      "first_observed_at": "2026-11-13T15:29:53Z",
-      "geography": {
-        "key": null,
-        "kind": "unlocated",
-        "label": null,
-        "latitude": null,
-        "longitude": null,
-        "precision": "no_source_verified_geography",
-        "verified_iso": false
-      },
-      "observation_id": "beh:fd49609bb2f1865137af043a2c94",
-      "provider": "commercial",
-      "requires_geolocation": true,
-      "source_family": "commercial_media",
-      "source_published_at": "2026-11-13T02:26:00Z",
-      "source_url": "https://maritime-executive.com/article/india-s-shipping-ministry-asks-public-for-help-on-cold-case-fatal-accidents",
-      "status": "recent_source_observation_unreviewed",
-      "title": "India's Shipping Ministry Asks Public for Help on Cold-Case Fatal Accidents"
     }
   ],
-  "registry_asof": "2026-11-14T18:06:16Z",
-  "registry_source_count": 271,
+  "registry_asof": "2026-11-14T19:18:53Z",
+  "registry_source_count": 374,
   "report_relationships": {
     "automatic_alerts_created": 0,
     "automatic_severity_changes": 0,
@@ -2202,74 +2255,6 @@
       },
       {
         "first_observation_separation_hours": 0.0,
-        "id": "relation:6a3120a4fef22c62a756",
-        "independent_corroboration_established": false,
-        "match_basis": "same_substantive_article_title_different_source_urls",
-        "reported_event_site_comparison_available": false,
-        "reported_event_site_separation_km": null,
-        "reporting_origin_used_as_event_site": false,
-        "review_requirements": [
-          "Verify whether both URLs reproduce one original article",
-          "Do not count syndication as two independently observed events",
-          "Resolve the underlying event separately from this story"
-        ],
-        "semantic_similarity": 0.889,
-        "shared_content_terms": [
-          "athens",
-          "centre",
-          "forum",
-          "global",
-          "greek",
-          "put"
-        ],
-        "shared_information_root": false,
-        "source_reports": [
-          {
-            "first_observed_at": "2026-11-12T16:02:36Z",
-            "geography": {
-              "key": null,
-              "kind": "unlocated",
-              "label": null,
-              "latitude": null,
-              "longitude": null,
-              "precision": "no_source_verified_geography",
-              "verified_iso": false
-            },
-            "observation_id": "beh:e341f0391cd745da4446b44c269c",
-            "provider": "commercial",
-            "reporting_origin": null,
-            "source_family": "commercial_media",
-            "source_published_at": "2026-11-11T18:17:00Z",
-            "source_url": "https://maritime-executive.com/article/greek-maritime-forum-2027-to-put-athens-at-centre-of-global-shipping",
-            "status": "unreviewed_source_report",
-            "title": "Greek Maritime Forum 2027 to Put Athens at Centre of Global Shipping"
-          },
-          {
-            "first_observed_at": "2026-11-12T16:02:36Z",
-            "geography": {
-              "key": null,
-              "kind": "unlocated",
-              "label": null,
-              "latitude": null,
-              "longitude": null,
-              "precision": "no_source_verified_geography",
-              "verified_iso": false
-            },
-            "observation_id": "beh:ae7d8407feeda9d3c53e140f9d42",
-            "provider": "commercial",
-            "reporting_origin": null,
-            "source_family": "commercial_media",
-            "source_published_at": "2026-11-11T18:17:00Z",
-            "source_url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNcWMxdjgxSFFDZjFDQ1QtTGh1TDFQZ3RvSzV5eG8yU2MyS25GQl9ILWQ1b0paTmhHTEFqZ3VpdUlNSFYyYndKQVNvcWI0ZXNvZTVEZTBSTnVYNWt1Y0p0bFJROVo3VHdFTWotam5BeTFzVWJEclF6ZkdlRVVweWd0ZS1ZZGF6NGRLdjY3WjVyMlM3RGN6dVB2MUVQWkI3NWVSSU5DWHBTWWkta3pn?oc=5",
-            "status": "unreviewed_source_report",
-            "title": "Greek Maritime Forum 2027 to Put Athens at Centre of Global Shipping - The Maritime Executive"
-          }
-        ],
-        "status": "possible_same_source_story_unreviewed",
-        "warning_level_change": false
-      },
-      {
-        "first_observation_separation_hours": 0.0,
         "id": "relation:89b5966476d5b634b9e1",
         "independent_corroboration_established": false,
         "match_basis": "same_substantive_article_title_different_source_urls",
@@ -2338,8 +2323,8 @@
       }
     ],
     "candidate_groups_truncated": true,
-    "cross_document_relation_count_total": 2,
-    "eligible_event_reporting_records": 6,
+    "cross_document_relation_count_total": 1,
+    "eligible_event_reporting_records": 4,
     "forecast_probability": null,
     "geographic_proximity_only_for_explicit_reported_event_sites": true,
     "input_truncated": false,
@@ -2347,12 +2332,12 @@
     "pairwise_comparisons_capped": false,
     "pairwise_comparisons_examined": 20706,
     "possible_same_event_count_total": 0,
-    "possible_same_source_story_count_total": 2,
+    "possible_same_source_story_count_total": 1,
     "records_available": 204,
     "records_examined": 204,
     "related_reporting_count_total": 0,
     "reporting_origins_are_not_event_locations": true,
-    "routine_notice_market_or_measurement_records_excluded_from_text_event_matching": 198,
+    "routine_notice_market_or_measurement_records_excluded_from_text_event_matching": 200,
     "same_document_group_count_total": 11,
     "schema": "aiba.report-event-resolution-shadow.v1",
     "source_independence_unverified": true,
