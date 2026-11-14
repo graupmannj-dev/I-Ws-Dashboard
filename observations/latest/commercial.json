@@ -1,22 +1,48 @@
 {
   "health": {
     "caveat": "Data are source observations or investigatory leads; no likelihood of conflict is inferred.",
-    "checked_at": "2026-11-13T15:29:52Z",
-    "errors": [],
+    "checked_at": "2026-11-14T14:17:06Z",
+    "errors": [
+      {
+        "error": "HTTP Error 503: Service Unavailable",
+        "source": "Maritime Executive (news syndication)"
+      },
+      {
+        "error": "HTTP Error 503: Service Unavailable",
+        "source": "Air Cargo News (news syndication)"
+      },
+      {
+        "error": "HTTP Error 503: Service Unavailable",
+        "source": "Commercial war-risk reporting (news syndication)"
+      }
+    ],
     "mode": "commercial",
-    "record_count": 9,
+    "record_count": 6,
     "source_queries_attempted": 4,
-    "source_queries_ok": 4,
-    "status": "collected"
+    "source_queries_ok": 1,
+    "status": "partial"
   },
   "mode": "commercial",
-  "observed_at": "2026-11-13T15:29:52Z",
+  "observed_at": "2026-11-14T14:17:06Z",
   "records": [
+    {
+      "assessment": "syndicated_media_mention_not_independent_actor_behavior",
+      "id": "218e29c0eea165484a1d",
+      "kind": "trade_press_commercial_behavior_lead",
+      "observed_at": "2026-11-14T14:17:06Z",
+      "published_at": "2026-11-13T17:18:00Z",
+      "publisher_domain": "The Maritime Executive (direct RSS)",
+      "scenario_tags": [
+        "Unassigned / global"
+      ],
+      "source_url": "https://maritime-executive.com/article/study-shipping-can-avoid-endangered-species-habitat-at-minimal-cost",
+      "title": "Study: Shipping Can Avoid Endangered-Species Habitat at Minimal Cost"
+    },
     {
       "assessment": "syndicated_media_mention_not_independent_actor_behavior",
       "id": "5b0257f0b69d9cc31623",
       "kind": "trade_press_commercial_behavior_lead",
-      "observed_at": "2026-11-13T15:29:52Z",
+      "observed_at": "2026-11-14T14:17:06Z",
       "published_at": "2026-11-13T02:26:00Z",
       "publisher_domain": "The Maritime Executive (direct RSS)",
       "scenario_tags": [
@@ -29,7 +55,7 @@
       "assessment": "syndicated_media_mention_not_independent_actor_behavior",
       "id": "7953d6201c01416443a8",
       "kind": "trade_press_commercial_behavior_lead",
-      "observed_at": "2026-11-13T15:29:52Z",
+      "observed_at": "2026-11-14T14:17:06Z",
       "published_at": "2026-11-11T18:17:00Z",
       "publisher_domain": "The Maritime Executive (direct RSS)",
       "scenario_tags": [
@@ -40,22 +66,9 @@
     },
     {
       "assessment": "syndicated_media_mention_not_independent_actor_behavior",
-      "id": "218e29c0eea165484a1d",
-      "kind": "trade_press_commercial_behavior_lead",
-      "observed_at": "2026-11-13T15:29:52Z",
-      "published_at": "2026-11-11T17:10:00Z",
-      "publisher_domain": "The Maritime Executive (direct RSS)",
-      "scenario_tags": [
-        "Unassigned / global"
-      ],
-      "source_url": "https://maritime-executive.com/article/study-shipping-can-avoid-endangered-species-habitat-at-minimal-cost",
-      "title": "Study: Shipping Can Avoid Endangered-Species Habitat at Minimal Cost"
-    },
-    {
-      "assessment": "syndicated_media_mention_not_independent_actor_behavior",
       "id": "3ad538b788a58df26d9a",
       "kind": "trade_press_commercial_behavior_lead",
-      "observed_at": "2026-11-13T15:29:52Z",
+      "observed_at": "2026-11-14T14:17:06Z",
       "published_at": "2026-11-10T22:54:14Z",
       "publisher_domain": "The Maritime Executive (direct RSS)",
       "scenario_tags": [
@@ -68,7 +81,7 @@
       "assessment": "syndicated_media_mention_not_independent_actor_behavior",
       "id": "215086ca3870475adcf1",
       "kind": "trade_press_commercial_behavior_lead",
-      "observed_at": "2026-11-13T15:29:52Z",
+      "observed_at": "2026-11-14T14:17:06Z",
       "published_at": "2026-11-09T17:16:45Z",
       "publisher_domain": "The Maritime Executive (direct RSS)",
       "scenario_tags": [
@@ -81,7 +94,7 @@
       "assessment": "syndicated_media_mention_not_independent_actor_behavior",
       "id": "3146223acfbc41506a46",
       "kind": "trade_press_commercial_behavior_lead",
-      "observed_at": "2026-11-13T15:29:52Z",
+      "observed_at": "2026-11-14T14:17:06Z",
       "published_at": "2026-11-09T16:47:40Z",
       "publisher_domain": "The Maritime Executive (direct RSS)",
       "scenario_tags": [
@@ -89,46 +102,7 @@
       ],
       "source_url": "https://maritime-executive.com/article/damen-delivers-two-patrol-vessels-1304-electric-to-city-of-amsterdam-2",
       "title": "Damen Delivers Two Patrol Vessels 1304 Electric to City of Amsterdam"
-    },
-    {
-      "assessment": "syndicated_media_mention_not_independent_actor_behavior",
-      "id": "37b41c3f0b00748d8adf",
-      "kind": "trade_press_commercial_behavior_lead",
-      "observed_at": "2026-11-13T15:29:52Z",
-      "published_at": "2026-11-09T03:48:46Z",
-      "publisher_domain": "The Maritime Executive (direct RSS)",
-      "scenario_tags": [
-        "Unassigned / global"
-      ],
-      "source_url": "https://maritime-executive.com/article/evergreen-joins-the-return-to-red-sea-shipping",
-      "title": "Evergreen Joins the Return to Red Sea Shipping"
-    },
-    {
-      "assessment": "syndicated_media_mention_not_independent_actor_behavior",
-      "id": "3b2cf8bd28cf06bc1fce",
-      "kind": "trade_press_commercial_behavior_lead",
-      "observed_at": "2026-11-13T15:29:52Z",
-      "published_at": "2026-11-13T02:26:00Z",
-      "publisher_domain": "Maritime Executive (news syndication)",
-      "scenario_tags": [
-        "Unassigned / global"
-      ],
-      "source_url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQV09TNnZ6VnNfZXhvZGJ4WHBFTWt5VDAtdExUbXFsMm92c0QzOVhsX0xlSkN5aHV4SFNELTg3SWY4b3Jqb1B1Q3p3RHd1bGl1LW9TTUIxUTItRktXSnhhRFJFbEF3OGowYXVTN01QWXZCUDFsNUpqZUY2cERodXdadlVxY3IzQ29xaENxWm1hb3VjeFVFdnEzdnA4LVY5R2lhVDJBNTVhN1ZNUXlqY2oyU0pGV1c?oc=5",
-      "title": "India's Shipping Ministry Asks Public for Help on Cold-Case Fatal Accidents - The Maritime Executive"
-    },
-    {
-      "assessment": "syndicated_media_mention_not_independent_actor_behavior",
-      "id": "d881121e5daa2a299e2d",
-      "kind": "trade_press_commercial_behavior_lead",
-      "observed_at": "2026-11-13T15:29:52Z",
-      "published_at": "2026-11-13T10:29:29Z",
-      "publisher_domain": "Commercial war-risk reporting (news syndication)",
-      "scenario_tags": [
-        "Unassigned / global"
-      ],
-      "source_url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE50ek5DdUJhcVUyNXg5dlZpSHRkYVBERTNxelFrdm1UaVE1ZVNqMDdkRXFOaVFfWGNCM0hobGxvNzQ1emttVGtuM244R0tmbzNHZjUtS3R6M0h2TXNOYnlmSnE5ZzR2dnRCdkFGZXh2OTRwVVIyTDJVeHdB?oc=5",
-      "title": "Black Sea war risk insurance premiums surge to 20% of vessel value - Beinsure"
     }
   ],
-  "status": "collected"
+  "status": "partial"
 }
