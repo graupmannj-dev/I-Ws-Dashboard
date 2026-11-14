@@ -1,0 +1,55 @@
+name: AIBA development-only source action-sentence coverage audit
+on:
+  pull_request:
+    paths:
+      - 'scripts/aiba_action_sentence_retrieval.py'
+      - 'tests/test_aiba_action_sentence_retrieval.py'
+      - '.github/workflows/aiba-action-sentence-coverage.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  contract:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Test literal evidence spans, modality flags and heldout gate
+        run: PYTHONPATH=. python -m unittest tests.test_aiba_action_sentence_retrieval
+  dev-source-probe:
+    needs: contract
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Acquire curated official source text (historical, OGL, no secrets)
+        run: |
+          PYTHONPATH=. python scripts/aiba_govuk_corpus.py \
+            --seeds data/govuk_source_seed_manifest.json \
+            --private-workspace /tmp/aiba-govuk-dev-eval \
+            --minimum-success 12
+      - name: Measure literal source action evidence retrieval on DEVELOPMENT ONLY
+        run: |
+          PYTHONPATH=. python scripts/aiba_action_sentence_retrieval.py \
+            --reports /tmp/aiba-govuk-dev-eval/reports.jsonl \
+            --output /tmp/aiba-govuk-dev-eval/dev_action_sentence_candidates.json
+      - name: Archive provenance and developer-only shadow results
+        uses: actions/upload-artifact@v4
+        with:
+          name: aiba-development-only-action-evidence-candidates
+          path: |
+            /tmp/aiba-govuk-dev-eval/dev_action_sentence_candidates.json
+            /tmp/aiba-govuk-dev-eval/acquisition_audit.json
+            /tmp/aiba-govuk-dev-eval/intake_receipt.json
+          retention-days: 30
+          if-no-files-found: error
