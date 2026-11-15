@@ -1,36 +1,12 @@
 {
   "active_ground_stop_airports": 0,
-  "affected_airport_records": 7,
+  "affected_airport_records": 3,
   "airports": [
     {
-      "airport": "DJT",
+      "airport": "MCO",
       "ground_stop_object_present": false,
       "nas_event_reasons": {
-        "departureDelay": "OTHER:ZJX STOPS"
-      },
-      "national_stop_reason_in_source": false
-    },
-    {
-      "airport": "FMY",
-      "ground_stop_object_present": false,
-      "nas_event_reasons": {
-        "departureDelay": "OTHER:ZJX"
-      },
-      "national_stop_reason_in_source": false
-    },
-    {
-      "airport": "OPF",
-      "ground_stop_object_present": false,
-      "nas_event_reasons": {
-        "departureDelay": "TM INITIATIVES:OTHER:ROCKET LAUNCH"
-      },
-      "national_stop_reason_in_source": false
-    },
-    {
-      "airport": "RSW",
-      "ground_stop_object_present": false,
-      "nas_event_reasons": {
-        "departureDelay": "VOL:ZJX"
+        "departureDelay": "RWY:Disabled Aircraft"
       },
       "national_stop_reason_in_source": false
     },
@@ -43,14 +19,6 @@
       "national_stop_reason_in_source": false
     },
     {
-      "airport": "SUA",
-      "ground_stop_object_present": false,
-      "nas_event_reasons": {
-        "airportClosure": "!MIA 11/160 SUA AD AP CLSD EXC AIRSHOW ACFT 2611151600-2611152230"
-      },
-      "national_stop_reason_in_source": false
-    },
-    {
       "airport": "TEB",
       "ground_stop_object_present": false,
       "nas_event_reasons": {
@@ -59,14 +27,14 @@
       "national_stop_reason_in_source": false
     }
   ],
-  "airports_with_any_delay": 5,
-  "airports_with_any_nas_event": 7,
+  "airports_with_any_delay": 2,
+  "airports_with_any_nas_event": 3,
   "automatic_event_merges": 0,
   "changed_since_prior_observation": false,
-  "checked_at": "2026-11-15T20:01:33Z",
+  "checked_at": "2026-11-15T23:56:36Z",
   "cyberattack_evidence": false,
   "event_occurrence_as_reported_by_FAA_only": true,
-  "event_reason_objects_examined": 7,
+  "event_reason_objects_examined": 3,
   "forecast_probability": null,
   "geographic_scope": "United States",
   "hostile_actor_evidence": false,
@@ -78,11 +46,11 @@
     "The sensor makes no inference of hostile intent or cyberattack."
   ],
   "military_warning_level_change": false,
-  "monitored_airport_count": 12,
+  "monitored_airport_count": 8,
   "multiple_airports_not_independent_attribution": true,
   "national_event_confirmed_by_explicit_ATCSCC_order": false,
   "national_stop_airports": 0,
-  "observed_at": "2026-11-15T20:01:33Z",
+  "observed_at": "2026-11-15T23:56:36Z",
   "provisional_review_required": false,
   "schema": "aiba.faa-nas-systemic-disruption.v1",
   "source_family": "civil_air_traffic_management",
