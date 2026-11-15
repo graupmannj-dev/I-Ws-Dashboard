@@ -3,7 +3,7 @@
   "automated_severity_changes": 0,
   "collection_coverage": {
     "amsa": {
-      "age_hours": 2.58,
+      "age_hours": 4.18,
       "checked_at": "2026-11-15T14:42:29Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -15,7 +15,7 @@
       "truncated_or_partial": false
     },
     "commercial": {
-      "age_hours": 2.44,
+      "age_hours": 4.04,
       "checked_at": "2026-11-15T14:50:40Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -27,7 +27,7 @@
       "truncated_or_partial": true
     },
     "ioda": {
-      "age_hours": 2.58,
+      "age_hours": 4.18,
       "checked_at": "2026-11-15T14:42:29Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -39,7 +39,7 @@
       "truncated_or_partial": false
     },
     "live_airspace": {
-      "age_hours": 0.0,
+      "age_hours": 1.6,
       "checked_at": "2026-11-15T17:17:04Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -51,7 +51,7 @@
       "truncated_or_partial": true
     },
     "live_maritime": {
-      "age_hours": 0.0,
+      "age_hours": 1.6,
       "checked_at": "2026-11-15T17:17:04Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -63,7 +63,7 @@
       "truncated_or_partial": true
     },
     "nga": {
-      "age_hours": 2.58,
+      "age_hours": 4.18,
       "checked_at": "2026-11-15T14:42:29Z",
       "missingness": "not_measured_not_zero",
       "mode": "nga",
@@ -74,25 +74,25 @@
       "truncated_or_partial": false
     },
     "official": {
-      "age_hours": 10.67,
-      "checked_at": "2026-11-15T06:37:11Z",
+      "age_hours": 0.0,
+      "checked_at": "2026-11-15T18:53:08Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
       "mode": "official",
       "provider_status": "collected",
-      "snapshot_at": "2026-11-15T06:37:11Z",
+      "snapshot_at": "2026-11-15T18:53:08Z",
       "source_scope": "US State and UK FCDO travel-advice feeds",
       "status": "current",
       "truncated_or_partial": false
     },
     "watchlist": {
-      "age_hours": 10.67,
-      "checked_at": "2026-11-15T06:37:11Z",
+      "age_hours": 0.0,
+      "checked_at": "2026-11-15T18:53:09Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
       "mode": "watchlist",
       "provider_status": "collected",
-      "snapshot_at": "2026-11-15T06:37:11Z",
+      "snapshot_at": "2026-11-15T18:53:09Z",
       "source_scope": "registered, exact-ID forecast contracts only",
       "status": "current",
       "truncated_or_partial": false
@@ -108,13 +108,13 @@
     "new_this_collection_required_for_cross_family_nomination": true,
     "recent_observations_sampled": 24,
     "recent_source_families": {
-      "airspace_restriction": 14,
+      "airspace_restriction": 9,
       "commercial_media": 4,
-      "internet_reachability": 32,
+      "internet_reachability": 24,
       "maritime_restriction": 84,
       "protective_notice": 1
     },
-    "recent_unique_record_count_72h": 135,
+    "recent_unique_record_count_72h": 122,
     "recent_unlocated_count_72h": 76,
     "schema": "aiba.behavioral-discovery-visibility.v1",
     "shared_exact_geography_keys_across_behavior_families": 0,
@@ -122,15 +122,15 @@
   },
   "forecast_probability": null,
   "gdelt_context": "separate_analytical_stream_not_a_gate_or_confirmation",
-  "generated_at": "2026-11-15T17:17:09Z",
+  "generated_at": "2026-11-15T18:53:09Z",
   "geographic_scope": "source_declared_only",
   "history_diagnostics": {
     "excluded_observations": {
       "old_source_publication": 1
     },
-    "history_files_examined": 35,
+    "history_files_examined": 34,
     "lookback_hours": 72,
-    "recent_unique_records": 135
+    "recent_unique_records": 122
   },
   "limit_notes": [
     "No automated threat warning. These are unreviewed investigatory leads.",
@@ -652,7 +652,7 @@
       "title": "FAA TFR 6/7422 · U.S. MEXICO BORDER, TX, Friday, November 13, 2026 UTC"
     }
   ],
-  "registry_asof": "2026-11-15T17:17:09Z",
+  "registry_asof": "2026-11-15T18:53:09Z",
   "registry_source_count": 366,
   "report_relationships": {
     "automatic_alerts_created": 0,
@@ -1998,14 +1998,14 @@
     "input_truncated": false,
     "not_a_preparations_sensor_or_warning": true,
     "pairwise_comparisons_capped": false,
-    "pairwise_comparisons_examined": 9045,
+    "pairwise_comparisons_examined": 7381,
     "possible_same_event_count_total": 0,
     "possible_same_source_story_count_total": 1,
-    "records_available": 135,
-    "records_examined": 135,
+    "records_available": 122,
+    "records_examined": 122,
     "related_reporting_count_total": 0,
     "reporting_origins_are_not_event_locations": true,
-    "routine_notice_market_or_measurement_records_excluded_from_text_event_matching": 131,
+    "routine_notice_market_or_measurement_records_excluded_from_text_event_matching": 118,
     "same_document_group_count_total": 7,
     "schema": "aiba.report-event-resolution-shadow.v1",
     "source_independence_unverified": true,
