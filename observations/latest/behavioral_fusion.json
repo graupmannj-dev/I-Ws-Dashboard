@@ -3,7 +3,7 @@
   "automated_severity_changes": 0,
   "collection_coverage": {
     "amsa": {
-      "age_hours": 0.0,
+      "age_hours": 1.95,
       "checked_at": "2026-11-15T19:56:58Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -15,7 +15,7 @@
       "truncated_or_partial": false
     },
     "commercial": {
-      "age_hours": 5.11,
+      "age_hours": 7.06,
       "checked_at": "2026-11-15T14:50:40Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -27,7 +27,7 @@
       "truncated_or_partial": true
     },
     "ioda": {
-      "age_hours": 0.0,
+      "age_hours": 1.95,
       "checked_at": "2026-11-15T19:56:58Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -39,29 +39,31 @@
       "truncated_or_partial": false
     },
     "live_airspace": {
-      "age_hours": 2.67,
-      "checked_at": "2026-11-15T17:17:04Z",
-      "missingness": "not_measured_not_zero",
+      "age_hours": 0.0,
+      "checked_at": "2026-11-15T21:54:08Z",
+      "first_provider_baseline": false,
+      "missingness": "partial_sampling_not_worldwide_exhaustive",
       "mode": "live_airspace",
       "provider_status": "partial",
-      "snapshot_at": "2026-11-15T17:17:04Z",
+      "snapshot_at": "2026-11-15T21:54:08Z",
       "source_scope": "FAA temporary flight restrictions: United States only",
-      "status": "stale_or_unavailable",
+      "status": "current_partial",
       "truncated_or_partial": true
     },
     "live_maritime": {
-      "age_hours": 2.67,
-      "checked_at": "2026-11-15T17:17:04Z",
-      "missingness": "not_measured_not_zero",
+      "age_hours": 0.0,
+      "checked_at": "2026-11-15T21:54:08Z",
+      "first_provider_baseline": false,
+      "missingness": "partial_sampling_not_worldwide_exhaustive",
       "mode": "live_maritime",
       "provider_status": "partial",
-      "snapshot_at": "2026-11-15T17:17:04Z",
+      "snapshot_at": "2026-11-15T21:54:08Z",
       "source_scope": "Danish Maritime Authority Niord notices: regional Baltic/North Sea",
-      "status": "stale_or_unavailable",
+      "status": "current_partial",
       "truncated_or_partial": true
     },
     "nga": {
-      "age_hours": 0.0,
+      "age_hours": 1.95,
       "checked_at": "2026-11-15T14:42:29Z",
       "missingness": "not_measured_not_zero",
       "mode": "nga",
@@ -72,7 +74,7 @@
       "truncated_or_partial": false
     },
     "official": {
-      "age_hours": 1.07,
+      "age_hours": 3.02,
       "checked_at": "2026-11-15T18:53:08Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -84,7 +86,7 @@
       "truncated_or_partial": false
     },
     "watchlist": {
-      "age_hours": 1.06,
+      "age_hours": 3.02,
       "checked_at": "2026-11-15T18:53:09Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -99,20 +101,20 @@
   "discovery_visibility": {
     "exact_geography_match_required_for_cross_family": true,
     "latest_initial_baseline": false,
-    "latest_registry_newly_observed_count": 4,
-    "latest_registry_record_count": 266,
-    "latest_unlocated_record_count": 251,
+    "latest_registry_newly_observed_count": 2,
+    "latest_registry_record_count": 368,
+    "latest_unlocated_record_count": 324,
     "new_or_collocated_not_same_as_verified_threat": true,
     "new_this_collection_required_for_cross_family_nomination": true,
     "recent_observations_sampled": 24,
     "recent_source_families": {
-      "airspace_restriction": 9,
+      "airspace_restriction": 11,
       "commercial_media": 4,
       "internet_reachability": 28,
       "maritime_restriction": 84,
       "protective_notice": 1
     },
-    "recent_unique_record_count_72h": 126,
+    "recent_unique_record_count_72h": 128,
     "recent_unlocated_count_72h": 76,
     "schema": "aiba.behavioral-discovery-visibility.v1",
     "shared_exact_geography_keys_across_behavior_families": 0,
@@ -120,13 +122,13 @@
   },
   "forecast_probability": null,
   "gdelt_context": "separate_analytical_stream_not_a_gate_or_confirmation",
-  "generated_at": "2026-11-15T19:57:02Z",
+  "generated_at": "2026-11-15T21:54:13Z",
   "geographic_scope": "source_declared_only",
   "history_diagnostics": {
     "excluded_observations": {},
-    "history_files_examined": 34,
+    "history_files_examined": 35,
     "lookback_hours": 72,
-    "recent_unique_records": 126
+    "recent_unique_records": 128
   },
   "limit_notes": [
     "No automated threat warning. These are unreviewed investigatory leads.",
@@ -135,99 +137,103 @@
     "Unlocated records cannot produce automatic geographic convergence.",
     "Unavailable collection is not evidence of no threatening activity."
   ],
-  "new_single_source_count_total": 4,
+  "new_single_source_count_total": 2,
   "new_single_source_leads": [
     {
-      "evidence_class": "network_measurement",
-      "first_observed_at": "2026-11-15T19:56:58Z",
+      "evidence_class": "official_notice",
+      "first_observed_at": "2026-11-15T21:54:13Z",
       "geography": {
-        "key": "country:HT",
-        "kind": "country_code",
-        "label": "HT",
+        "geometry_sha256_prefix": "f96e97cb8aa6667395cb7ad2",
+        "geometry_type": "MultiPolygon",
+        "key": "source-footprint:f96e97cb8aa6667395cb7ad2",
+        "kind": "source_notice_footprint",
+        "label": "Official MultiPolygon notice area",
         "latitude": null,
         "longitude": null,
-        "precision": "provider_reported_country",
+        "precision": "provider_defined_notice_boundary_not_event_point",
         "verified_iso": false
       },
-      "information_root": "ioda:5094a03f7462ba7d76e25546",
+      "information_root": "faa:6/7602:0:0",
       "meaning": "Observation novelty, not evidence of impending violence.",
-      "observation_id": "beh:3550bf70f21ccb34a9977634d4bc",
+      "observation_id": "beh:4b64d765930d51e6f6f8995f79da",
       "requires_geolocation": false,
-      "source_family": "internet_reachability",
+      "source_family": "airspace_restriction",
       "source_published_at": null,
-      "source_url": "https://ioda.inetintel.cc.gatech.edu/",
+      "source_url": "https://tfr.faa.gov/6_7602.html",
       "status": "single_source_unreviewed",
-      "title": "IODA detected connectivity anomaly: country HT"
+      "title": "FAA TFR 6/7602 · 4NM NW WIGGINS, MS, Sunday, November 15, 2026 through Monday, November 16, 2026 UTC"
     },
     {
-      "evidence_class": "network_measurement",
-      "first_observed_at": "2026-11-15T19:56:58Z",
+      "evidence_class": "official_notice",
+      "first_observed_at": "2026-11-15T21:54:13Z",
       "geography": {
-        "key": "country:GA",
-        "kind": "country_code",
-        "label": "GA",
+        "geometry_sha256_prefix": "90a9c9519251281ad7bbdff0",
+        "geometry_type": "MultiPolygon",
+        "key": "source-footprint:90a9c9519251281ad7bbdff0",
+        "kind": "source_notice_footprint",
+        "label": "Official MultiPolygon notice area",
         "latitude": null,
         "longitude": null,
-        "precision": "provider_reported_country",
+        "precision": "provider_defined_notice_boundary_not_event_point",
         "verified_iso": false
       },
-      "information_root": "ioda:0e30c3fb71a743e2c35a3207",
+      "information_root": "faa:6/7601:0:0",
       "meaning": "Observation novelty, not evidence of impending violence.",
-      "observation_id": "beh:b44cca0c1e4dc9c34f36eba04afc",
+      "observation_id": "beh:6fa96d8e8fb4087177b3e7c8a142",
       "requires_geolocation": false,
-      "source_family": "internet_reachability",
+      "source_family": "airspace_restriction",
       "source_published_at": null,
-      "source_url": "https://ioda.inetintel.cc.gatech.edu/",
+      "source_url": "https://tfr.faa.gov/6_7601.html",
       "status": "single_source_unreviewed",
-      "title": "IODA detected connectivity anomaly: country GA"
-    },
-    {
-      "evidence_class": "network_measurement",
-      "first_observed_at": "2026-11-15T19:56:58Z",
-      "geography": {
-        "key": "country:CF",
-        "kind": "country_code",
-        "label": "CF",
-        "latitude": null,
-        "longitude": null,
-        "precision": "provider_reported_country",
-        "verified_iso": false
-      },
-      "information_root": "ioda:4012cf57e079034f31ebe857",
-      "meaning": "Observation novelty, not evidence of impending violence.",
-      "observation_id": "beh:cb242b6cb5d827aedaee00230f38",
-      "requires_geolocation": false,
-      "source_family": "internet_reachability",
-      "source_published_at": null,
-      "source_url": "https://ioda.inetintel.cc.gatech.edu/",
-      "status": "single_source_unreviewed",
-      "title": "IODA detected connectivity anomaly: country CF"
-    },
-    {
-      "evidence_class": "network_measurement",
-      "first_observed_at": "2026-11-15T19:56:58Z",
-      "geography": {
-        "key": "country:UG",
-        "kind": "country_code",
-        "label": "UG",
-        "latitude": null,
-        "longitude": null,
-        "precision": "provider_reported_country",
-        "verified_iso": false
-      },
-      "information_root": "ioda:0151c0b588fbe4182dc7b07e",
-      "meaning": "Observation novelty, not evidence of impending violence.",
-      "observation_id": "beh:d5ff0e05f2641864665b9bf3befa",
-      "requires_geolocation": false,
-      "source_family": "internet_reachability",
-      "source_published_at": null,
-      "source_url": "https://ioda.inetintel.cc.gatech.edu/",
-      "status": "single_source_unreviewed",
-      "title": "IODA detected connectivity anomaly: country UG"
+      "title": "FAA TFR 6/7601 · 1NM W MCLAIN, MS, Sunday, November 15, 2026 through Monday, November 16, 2026 UTC"
     }
   ],
   "prediction_horizon": null,
   "recent_source_observations": [
+    {
+      "first_observed_at": "2026-11-15T21:54:13Z",
+      "geography": {
+        "geometry_sha256_prefix": "90a9c9519251281ad7bbdff0",
+        "geometry_type": "MultiPolygon",
+        "key": "source-footprint:90a9c9519251281ad7bbdff0",
+        "kind": "source_notice_footprint",
+        "label": "Official MultiPolygon notice area",
+        "latitude": null,
+        "longitude": null,
+        "precision": "provider_defined_notice_boundary_not_event_point",
+        "verified_iso": false
+      },
+      "observation_id": "beh:6fa96d8e8fb4087177b3e7c8a142",
+      "provider": "faa",
+      "requires_geolocation": false,
+      "source_family": "airspace_restriction",
+      "source_published_at": null,
+      "source_url": "https://tfr.faa.gov/6_7601.html",
+      "status": "recent_source_observation_unreviewed",
+      "title": "FAA TFR 6/7601 · 1NM W MCLAIN, MS, Sunday, November 15, 2026 through Monday, November 16, 2026 UTC"
+    },
+    {
+      "first_observed_at": "2026-11-15T21:54:13Z",
+      "geography": {
+        "geometry_sha256_prefix": "f96e97cb8aa6667395cb7ad2",
+        "geometry_type": "MultiPolygon",
+        "key": "source-footprint:f96e97cb8aa6667395cb7ad2",
+        "kind": "source_notice_footprint",
+        "label": "Official MultiPolygon notice area",
+        "latitude": null,
+        "longitude": null,
+        "precision": "provider_defined_notice_boundary_not_event_point",
+        "verified_iso": false
+      },
+      "observation_id": "beh:4b64d765930d51e6f6f8995f79da",
+      "provider": "faa",
+      "requires_geolocation": false,
+      "source_family": "airspace_restriction",
+      "source_published_at": null,
+      "source_url": "https://tfr.faa.gov/6_7602.html",
+      "status": "recent_source_observation_unreviewed",
+      "title": "FAA TFR 6/7602 · 4NM NW WIGGINS, MS, Sunday, November 15, 2026 through Monday, November 16, 2026 UTC"
+    },
     {
       "first_observed_at": "2026-11-15T19:56:58Z",
       "geography": {
@@ -691,54 +697,10 @@
       "source_url": "https://tfr.faa.gov/6_7462.html",
       "status": "recent_source_observation_unreviewed",
       "title": "FAA TFR 6/7462 · KEEWATIN, MN, Monday, November 16, 2026 UTC"
-    },
-    {
-      "first_observed_at": "2026-11-13T19:59:34Z",
-      "geography": {
-        "geometry_sha256_prefix": null,
-        "geometry_type": null,
-        "key": null,
-        "kind": "unlocated",
-        "label": null,
-        "latitude": null,
-        "longitude": null,
-        "precision": "notice_geography_unavailable",
-        "verified_iso": false
-      },
-      "observation_id": "beh:60e8e7ee8e36abbadbda44c896f7",
-      "provider": "faa",
-      "requires_geolocation": true,
-      "source_family": "airspace_restriction",
-      "source_published_at": null,
-      "source_url": "https://tfr.faa.gov/6_7421.html",
-      "status": "recent_source_observation_unreviewed",
-      "title": "FAA TFR 6/7421 · U.S MEXICO BORDER, TX, Friday, November 13, 2026 UTC"
-    },
-    {
-      "first_observed_at": "2026-11-13T19:59:34Z",
-      "geography": {
-        "geometry_sha256_prefix": null,
-        "geometry_type": null,
-        "key": null,
-        "kind": "unlocated",
-        "label": null,
-        "latitude": null,
-        "longitude": null,
-        "precision": "notice_geography_unavailable",
-        "verified_iso": false
-      },
-      "observation_id": "beh:2620d94ed6d902850199bedb3284",
-      "provider": "faa",
-      "requires_geolocation": true,
-      "source_family": "airspace_restriction",
-      "source_published_at": null,
-      "source_url": "https://tfr.faa.gov/6_7422.html",
-      "status": "recent_source_observation_unreviewed",
-      "title": "FAA TFR 6/7422 · U.S. MEXICO BORDER, TX, Friday, November 13, 2026 UTC"
     }
   ],
-  "registry_asof": "2026-11-15T19:57:02Z",
-  "registry_source_count": 266,
+  "registry_asof": "2026-11-15T21:54:13Z",
+  "registry_source_count": 368,
   "report_relationships": {
     "automatic_alerts_created": 0,
     "automatic_severity_changes": 0,
@@ -2083,14 +2045,14 @@
     "input_truncated": false,
     "not_a_preparations_sensor_or_warning": true,
     "pairwise_comparisons_capped": false,
-    "pairwise_comparisons_examined": 7875,
+    "pairwise_comparisons_examined": 8128,
     "possible_same_event_count_total": 0,
     "possible_same_source_story_count_total": 1,
-    "records_available": 126,
-    "records_examined": 126,
+    "records_available": 128,
+    "records_examined": 128,
     "related_reporting_count_total": 0,
     "reporting_origins_are_not_event_locations": true,
-    "routine_notice_market_or_measurement_records_excluded_from_text_event_matching": 122,
+    "routine_notice_market_or_measurement_records_excluded_from_text_event_matching": 124,
     "same_document_group_count_total": 7,
     "schema": "aiba.report-event-resolution-shadow.v1",
     "source_independence_unverified": true,
