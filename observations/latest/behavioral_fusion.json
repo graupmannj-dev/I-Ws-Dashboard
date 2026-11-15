@@ -3,7 +3,7 @@
   "automated_severity_changes": 0,
   "collection_coverage": {
     "amsa": {
-      "age_hours": 0.01,
+      "age_hours": 0.14,
       "checked_at": "2026-11-15T14:42:29Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -15,19 +15,19 @@
       "truncated_or_partial": false
     },
     "commercial": {
-      "age_hours": 24.43,
-      "checked_at": "2026-11-14T14:17:06Z",
+      "age_hours": 0.0,
+      "checked_at": "2026-11-15T14:50:40Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
       "mode": "commercial",
       "provider_status": "partial",
-      "snapshot_at": "2026-11-14T14:17:06Z",
+      "snapshot_at": "2026-11-15T14:50:40Z",
       "source_scope": "selected maritime/air-cargo/war-risk press and syndication",
       "status": "current_partial",
       "truncated_or_partial": true
     },
     "ioda": {
-      "age_hours": 0.01,
+      "age_hours": 0.14,
       "checked_at": "2026-11-15T14:42:29Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -39,7 +39,7 @@
       "truncated_or_partial": false
     },
     "live_airspace": {
-      "age_hours": 4.5,
+      "age_hours": 4.63,
       "checked_at": "2026-11-15T10:12:51Z",
       "missingness": "not_measured_not_zero",
       "mode": "live_airspace",
@@ -50,7 +50,7 @@
       "truncated_or_partial": true
     },
     "live_maritime": {
-      "age_hours": 4.5,
+      "age_hours": 4.63,
       "checked_at": "2026-11-15T10:12:51Z",
       "missingness": "not_measured_not_zero",
       "mode": "live_maritime",
@@ -61,7 +61,7 @@
       "truncated_or_partial": true
     },
     "nga": {
-      "age_hours": 0.01,
+      "age_hours": 0.14,
       "checked_at": "2026-11-15T14:42:29Z",
       "missingness": "not_measured_not_zero",
       "mode": "nga",
@@ -72,7 +72,7 @@
       "truncated_or_partial": false
     },
     "official": {
-      "age_hours": 8.1,
+      "age_hours": 8.23,
       "checked_at": "2026-11-15T06:37:11Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -84,7 +84,7 @@
       "truncated_or_partial": false
     },
     "watchlist": {
-      "age_hours": 8.1,
+      "age_hours": 8.23,
       "checked_at": "2026-11-15T06:37:11Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -99,36 +99,36 @@
   "discovery_visibility": {
     "exact_geography_match_required_for_cross_family": true,
     "latest_initial_baseline": false,
-    "latest_registry_newly_observed_count": 2,
-    "latest_registry_record_count": 266,
-    "latest_unlocated_record_count": 252,
+    "latest_registry_newly_observed_count": 1,
+    "latest_registry_record_count": 265,
+    "latest_unlocated_record_count": 251,
     "new_or_collocated_not_same_as_verified_threat": true,
     "new_this_collection_required_for_cross_family_nomination": true,
     "recent_observations_sampled": 24,
     "recent_source_families": {
       "airspace_restriction": 14,
-      "commercial_media": 3,
+      "commercial_media": 4,
       "internet_reachability": 32,
       "maritime_restriction": 84,
       "protective_notice": 2
     },
-    "recent_unique_record_count_72h": 135,
-    "recent_unlocated_count_72h": 76,
+    "recent_unique_record_count_72h": 136,
+    "recent_unlocated_count_72h": 77,
     "schema": "aiba.behavioral-discovery-visibility.v1",
     "shared_exact_geography_keys_across_behavior_families": 0,
     "source_coverage_is_globally_complete": false
   },
   "forecast_probability": null,
   "gdelt_context": "separate_analytical_stream_not_a_gate_or_confirmation",
-  "generated_at": "2026-11-15T14:42:56Z",
+  "generated_at": "2026-11-15T14:50:42Z",
   "geographic_scope": "source_declared_only",
   "history_diagnostics": {
     "excluded_observations": {
       "old_source_publication": 6
     },
-    "history_files_examined": 34,
+    "history_files_examined": 35,
     "lookback_hours": 72,
-    "recent_unique_records": 135
+    "recent_unique_records": 136
   },
   "limit_notes": [
     "No automated threat warning. These are unreviewed investigatory leads.",
@@ -137,55 +137,53 @@
     "Unlocated records cannot produce automatic geographic convergence.",
     "Unavailable collection is not evidence of no threatening activity."
   ],
-  "new_single_source_count_total": 2,
+  "new_single_source_count_total": 1,
   "new_single_source_leads": [
     {
-      "evidence_class": "network_measurement",
-      "first_observed_at": "2026-11-15T14:42:29Z",
+      "evidence_class": "media_mention",
+      "first_observed_at": "2026-11-15T14:50:41Z",
       "geography": {
-        "key": "country:TD",
-        "kind": "country_code",
-        "label": "TD",
+        "key": null,
+        "kind": "unlocated",
+        "label": null,
         "latitude": null,
         "longitude": null,
-        "precision": "provider_reported_country",
+        "precision": "no_source_verified_geography",
         "verified_iso": false
       },
-      "information_root": "ioda:07af3404c1f8ae420c161300",
+      "information_root": "commercial:0eae51027869d54f891b",
       "meaning": "Observation novelty, not evidence of impending violence.",
-      "observation_id": "beh:741a278fe8b50d6c1a94590467dc",
-      "requires_geolocation": false,
-      "source_family": "internet_reachability",
-      "source_published_at": null,
-      "source_url": "https://ioda.inetintel.cc.gatech.edu/",
+      "observation_id": "beh:7c21d9384ac949ed0951b1c2c2b0",
+      "requires_geolocation": true,
+      "source_family": "commercial_media",
+      "source_published_at": "2026-11-15T09:00:42Z",
+      "source_url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQc1RCLV96U25fZ3dwdlYwTjVESktZeUp5Y0l0RzhSaUxwcFpzLWNZS0M4ZzlTR3lZNXZvaUdVNk1VUkxoZmNqVWR4SjEtalRWWXp3Um51Qnc1a0RlcWw0YmVfQ0pieWxaMzJLblM3NDhFeHpXbkJxMWd1cC1EMEt1SG9mdWNpVDNoYm9oOXktWjliM1JUUmttS2h1cjBncEluMWpCTHo1OHVfWnRGNDcybnREZlR0VWZVWXFHY0FMZw?oc=5",
       "status": "single_source_unreviewed",
-      "title": "IODA detected connectivity anomaly: country TD"
-    },
-    {
-      "evidence_class": "network_measurement",
-      "first_observed_at": "2026-11-15T14:42:29Z",
-      "geography": {
-        "key": "country:JP",
-        "kind": "country_code",
-        "label": "JP",
-        "latitude": null,
-        "longitude": null,
-        "precision": "provider_reported_country",
-        "verified_iso": false
-      },
-      "information_root": "ioda:27a87011caa69aa8f60d2924",
-      "meaning": "Observation novelty, not evidence of impending violence.",
-      "observation_id": "beh:cdb2a82a8c961cc93c5c5248d120",
-      "requires_geolocation": false,
-      "source_family": "internet_reachability",
-      "source_published_at": null,
-      "source_url": "https://ioda.inetintel.cc.gatech.edu/",
-      "status": "single_source_unreviewed",
-      "title": "IODA detected connectivity anomaly: country JP"
+      "title": "Nigeria Loses $4.5bn Yearly to Foreign Shipping Firms, Spends $1.5bn on War-Risk Insurance – Expert - New Telegraph"
     }
   ],
   "prediction_horizon": null,
   "recent_source_observations": [
+    {
+      "first_observed_at": "2026-11-15T14:50:41Z",
+      "geography": {
+        "key": null,
+        "kind": "unlocated",
+        "label": null,
+        "latitude": null,
+        "longitude": null,
+        "precision": "no_source_verified_geography",
+        "verified_iso": false
+      },
+      "observation_id": "beh:7c21d9384ac949ed0951b1c2c2b0",
+      "provider": "commercial",
+      "requires_geolocation": true,
+      "source_family": "commercial_media",
+      "source_published_at": "2026-11-15T09:00:42Z",
+      "source_url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQc1RCLV96U25fZ3dwdlYwTjVESktZeUp5Y0l0RzhSaUxwcFpzLWNZS0M4ZzlTR3lZNXZvaUdVNk1VUkxoZmNqVWR4SjEtalRWWXp3Um51Qnc1a0RlcWw0YmVfQ0pieWxaMzJLblM3NDhFeHpXbkJxMWd1cC1EMEt1SG9mdWNpVDNoYm9oOXktWjliM1JUUmttS2h1cjBncEluMWpCTHo1OHVfWnRGNDcybnREZlR0VWZVWXFHY0FMZw?oc=5",
+      "status": "recent_source_observation_unreviewed",
+      "title": "Nigeria Loses $4.5bn Yearly to Foreign Shipping Firms, Spends $1.5bn on War-Risk Insurance – Expert - New Telegraph"
+    },
     {
       "first_observed_at": "2026-11-15T14:42:29Z",
       "geography": {
@@ -673,32 +671,10 @@
       "source_url": "https://tfr.faa.gov/6_7422.html",
       "status": "recent_source_observation_unreviewed",
       "title": "FAA TFR 6/7422 · U.S. MEXICO BORDER, TX, Friday, November 13, 2026 UTC"
-    },
-    {
-      "first_observed_at": "2026-11-13T19:59:34Z",
-      "geography": {
-        "geometry_sha256_prefix": "c13a8ba31864fdffa5afb945",
-        "geometry_type": "MultiPolygon",
-        "key": "source-footprint:c13a8ba31864fdffa5afb945",
-        "kind": "source_notice_footprint",
-        "label": "Official MultiPolygon notice area",
-        "latitude": null,
-        "longitude": null,
-        "precision": "provider_defined_notice_boundary_not_event_point",
-        "verified_iso": false
-      },
-      "observation_id": "beh:1d63464ac7fc27f35778539d03b7",
-      "provider": "faa",
-      "requires_geolocation": false,
-      "source_family": "airspace_restriction",
-      "source_published_at": null,
-      "source_url": "https://tfr.faa.gov/6_7338.html",
-      "status": "recent_source_observation_unreviewed",
-      "title": "FAA TFR 6/7338 · W MARTINSBURG, WV, Friday, November 13, 2026 UTC"
     }
   ],
-  "registry_asof": "2026-11-15T14:42:56Z",
-  "registry_source_count": 266,
+  "registry_asof": "2026-11-15T14:50:41Z",
+  "registry_source_count": 265,
   "report_relationships": {
     "automatic_alerts_created": 0,
     "automatic_severity_changes": 0,
@@ -2037,17 +2013,17 @@
     ],
     "candidate_groups_truncated": false,
     "cross_document_relation_count_total": 1,
-    "eligible_event_reporting_records": 3,
+    "eligible_event_reporting_records": 4,
     "forecast_probability": null,
     "geographic_proximity_only_for_explicit_reported_event_sites": true,
     "input_truncated": false,
     "not_a_preparations_sensor_or_warning": true,
     "pairwise_comparisons_capped": false,
-    "pairwise_comparisons_examined": 9045,
+    "pairwise_comparisons_examined": 9180,
     "possible_same_event_count_total": 0,
     "possible_same_source_story_count_total": 1,
-    "records_available": 135,
-    "records_examined": 135,
+    "records_available": 136,
+    "records_examined": 136,
     "related_reporting_count_total": 0,
     "reporting_origins_are_not_event_locations": true,
     "routine_notice_market_or_measurement_records_excluded_from_text_event_matching": 132,

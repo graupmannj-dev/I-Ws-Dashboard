@@ -1,28 +1,34 @@
 {
-  "commercial_media_leads": [],
-  "generated_at": "2026-11-15T06:37:13Z",
+  "commercial_media_leads": [
+    {
+      "assessment": "syndicated_media_mention_not_independent_actor_behavior",
+      "id": "0eae51027869d54f891b",
+      "kind": "trade_press_commercial_behavior_lead",
+      "observed_at": "2026-11-15T14:50:40Z",
+      "published_at": "2026-11-15T09:00:42Z",
+      "publisher_domain": "Commercial war-risk reporting (news syndication)",
+      "scenario_tags": [
+        "Unassigned / global"
+      ],
+      "source_url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQc1RCLV96U25fZ3dwdlYwTjVESktZeUp5Y0l0RzhSaUxwcFpzLWNZS0M4ZzlTR3lZNXZvaUdVNk1VUkxoZmNqVWR4SjEtalRWWXp3Um51Qnc1a0RlcWw0YmVfQ0pieWxaMzJLblM3NDhFeHpXbkJxMWd1cC1EMEt1SG9mdWNpVDNoYm9oOXktWjliM1JUUmttS2h1cjBncEluMWpCTHo1OHVfWnRGNDcybnREZlR0VWZVWXFHY0FMZw?oc=5",
+      "title": "Nigeria Loses $4.5bn Yearly to Foreign Shipping Firms, Spends $1.5bn on War-Risk Insurance – Expert - New Telegraph"
+    }
+  ],
+  "generated_at": "2026-11-15T14:50:41Z",
   "health": {
     "commercial": {
       "caveat": "Data are source observations or investigatory leads; no likelihood of conflict is inferred.",
-      "checked_at": "2026-11-14T14:17:06Z",
+      "checked_at": "2026-11-15T14:50:40Z",
       "errors": [
         {
-          "error": "HTTP Error 503: Service Unavailable",
-          "source": "Maritime Executive (news syndication)"
-        },
-        {
-          "error": "HTTP Error 503: Service Unavailable",
+          "error": "No RSS/Atom entries",
           "source": "Air Cargo News (news syndication)"
-        },
-        {
-          "error": "HTTP Error 503: Service Unavailable",
-          "source": "Commercial war-risk reporting (news syndication)"
         }
       ],
       "mode": "commercial",
-      "record_count": 6,
+      "record_count": 5,
       "source_queries_attempted": 4,
-      "source_queries_ok": 1,
+      "source_queries_ok": 3,
       "status": "partial"
     },
     "markets": {
@@ -78,21 +84,7 @@
     "same-contract roughly-24h repricing",
     "dated notice/media comparison"
   ],
-  "new_official_notices": [
-    {
-      "assessment": "protective_advisory_not_military_preparation",
-      "id": "e43a8b8f13d19952aa69",
-      "kind": "official_travel_security_notice",
-      "observed_at": "2026-11-15T06:37:11Z",
-      "published_at": "2026-11-14T02:26:03Z",
-      "publisher": "UK FCDO",
-      "scenario_tags": [
-        "Unassigned / global"
-      ],
-      "source_url": "https://www.gov.uk/foreign-travel-advice/usa",
-      "title": "USA"
-    }
-  ],
+  "new_official_notices": [],
   "preconvergence_leads": [
     {
       "kind": "quiet_discrepancy_candidate",
@@ -138,7 +130,7 @@
     }
   ],
   "source_asof": {
-    "commercial": "2026-11-14T14:17:06Z",
+    "commercial": "2026-11-15T14:50:40Z",
     "markets": "2026-11-15T06:37:05Z",
     "official": "2026-11-15T06:37:11Z"
   },
