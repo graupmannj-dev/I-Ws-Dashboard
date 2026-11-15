@@ -3,18 +3,18 @@
   "affected_airport_records": 2,
   "airports": [
     {
-      "airport": "PNS",
+      "airport": "DAL",
       "ground_stop_object_present": false,
       "nas_event_reasons": {
-        "airportClosure": "!PNS 11/028 PNS AD AP CLSD EXC HEL OPS 2611140600-2611141100"
+        "airportClosure": "!DAL 11/044 DAL AD AP CLSD 2611150229-2611151200"
       },
       "national_stop_reason_in_source": false
     },
     {
-      "airport": "SNA",
+      "airport": "PNS",
       "ground_stop_object_present": false,
       "nas_event_reasons": {
-        "airportClosure": "!SNA 11/021 SNA AD AP CLSD 2611140800-2611141415"
+        "airportClosure": "!PNS 11/029 PNS AD AP CLSD EXC HEL OPS 2611150600-2611151100"
       },
       "national_stop_reason_in_source": false
     }
@@ -23,7 +23,7 @@
   "airports_with_any_nas_event": 2,
   "automatic_event_merges": 0,
   "changed_since_prior_observation": false,
-  "checked_at": "2026-11-14T09:37:13Z",
+  "checked_at": "2026-11-15T07:07:35Z",
   "cyberattack_evidence": false,
   "event_occurrence_as_reported_by_FAA_only": true,
   "event_reason_objects_examined": 2,
@@ -38,11 +38,11 @@
     "The sensor makes no inference of hostile intent or cyberattack."
   ],
   "military_warning_level_change": false,
-  "monitored_airport_count": 7,
+  "monitored_airport_count": 5,
   "multiple_airports_not_independent_attribution": true,
   "national_event_confirmed_by_explicit_ATCSCC_order": false,
   "national_stop_airports": 0,
-  "observed_at": "2026-11-14T09:37:13Z",
+  "observed_at": "2026-11-15T07:07:35Z",
   "provisional_review_required": false,
   "schema": "aiba.faa-nas-systemic-disruption.v1",
   "source_family": "civil_air_traffic_management",
