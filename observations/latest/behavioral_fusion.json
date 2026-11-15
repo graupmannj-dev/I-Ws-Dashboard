@@ -3,7 +3,7 @@
   "automated_severity_changes": 0,
   "collection_coverage": {
     "amsa": {
-      "age_hours": 0.0,
+      "age_hours": 3.08,
       "checked_at": "2026-11-15T07:08:18Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -15,7 +15,7 @@
       "truncated_or_partial": false
     },
     "commercial": {
-      "age_hours": 16.85,
+      "age_hours": 19.93,
       "checked_at": "2026-11-14T14:17:06Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -27,7 +27,7 @@
       "truncated_or_partial": true
     },
     "ioda": {
-      "age_hours": 0.0,
+      "age_hours": 3.08,
       "checked_at": "2026-11-15T07:08:18Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -39,29 +39,31 @@
       "truncated_or_partial": false
     },
     "live_airspace": {
-      "age_hours": 4.29,
-      "checked_at": "2026-11-15T02:50:59Z",
-      "missingness": "not_measured_not_zero",
+      "age_hours": 0.0,
+      "checked_at": "2026-11-15T10:12:51Z",
+      "first_provider_baseline": false,
+      "missingness": "partial_sampling_not_worldwide_exhaustive",
       "mode": "live_airspace",
       "provider_status": "partial",
-      "snapshot_at": "2026-11-15T02:50:59Z",
+      "snapshot_at": "2026-11-15T10:12:51Z",
       "source_scope": "FAA temporary flight restrictions: United States only",
-      "status": "stale_or_unavailable",
+      "status": "current_partial",
       "truncated_or_partial": true
     },
     "live_maritime": {
-      "age_hours": 4.29,
-      "checked_at": "2026-11-15T02:50:59Z",
-      "missingness": "not_measured_not_zero",
+      "age_hours": 0.0,
+      "checked_at": "2026-11-15T10:12:51Z",
+      "first_provider_baseline": false,
+      "missingness": "partial_sampling_not_worldwide_exhaustive",
       "mode": "live_maritime",
       "provider_status": "partial",
-      "snapshot_at": "2026-11-15T02:50:59Z",
+      "snapshot_at": "2026-11-15T10:12:51Z",
       "source_scope": "Danish Maritime Authority Niord notices: regional Baltic/North Sea",
-      "status": "stale_or_unavailable",
+      "status": "current_partial",
       "truncated_or_partial": true
     },
     "nga": {
-      "age_hours": 0.0,
+      "age_hours": 3.08,
       "checked_at": "2026-11-15T07:08:18Z",
       "missingness": "not_measured_not_zero",
       "mode": "nga",
@@ -72,7 +74,7 @@
       "truncated_or_partial": false
     },
     "official": {
-      "age_hours": 0.52,
+      "age_hours": 3.6,
       "checked_at": "2026-11-15T06:37:11Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -84,7 +86,7 @@
       "truncated_or_partial": false
     },
     "watchlist": {
-      "age_hours": 0.52,
+      "age_hours": 3.6,
       "checked_at": "2026-11-15T06:37:11Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -99,9 +101,9 @@
   "discovery_visibility": {
     "exact_geography_match_required_for_cross_family": true,
     "latest_initial_baseline": false,
-    "latest_registry_newly_observed_count": 1,
-    "latest_registry_record_count": 265,
-    "latest_unlocated_record_count": 252,
+    "latest_registry_newly_observed_count": 0,
+    "latest_registry_record_count": 366,
+    "latest_unlocated_record_count": 325,
     "new_or_collocated_not_same_as_verified_threat": true,
     "new_this_collection_required_for_cross_family_nomination": true,
     "recent_observations_sampled": 24,
@@ -120,7 +122,7 @@
   },
   "forecast_probability": null,
   "gdelt_context": "separate_analytical_stream_not_a_gate_or_confirmation",
-  "generated_at": "2026-11-15T07:08:22Z",
+  "generated_at": "2026-11-15T10:12:53Z",
   "geographic_scope": "source_declared_only",
   "history_diagnostics": {
     "excluded_observations": {
@@ -137,31 +139,8 @@
     "Unlocated records cannot produce automatic geographic convergence.",
     "Unavailable collection is not evidence of no threatening activity."
   ],
-  "new_single_source_count_total": 1,
-  "new_single_source_leads": [
-    {
-      "evidence_class": "network_measurement",
-      "first_observed_at": "2026-11-15T07:08:18Z",
-      "geography": {
-        "key": "country:NF",
-        "kind": "country_code",
-        "label": "NF",
-        "latitude": null,
-        "longitude": null,
-        "precision": "provider_reported_country",
-        "verified_iso": false
-      },
-      "information_root": "ioda:445cea0a25cae7024fa081f1",
-      "meaning": "Observation novelty, not evidence of impending violence.",
-      "observation_id": "beh:57a54ce38b3a81e2d228348aa0ca",
-      "requires_geolocation": false,
-      "source_family": "internet_reachability",
-      "source_published_at": null,
-      "source_url": "https://ioda.inetintel.cc.gatech.edu/",
-      "status": "single_source_unreviewed",
-      "title": "IODA detected connectivity anomaly: country NF"
-    }
-  ],
+  "new_single_source_count_total": 0,
+  "new_single_source_leads": [],
   "prediction_horizon": null,
   "recent_source_observations": [
     {
@@ -675,8 +654,8 @@
       "title": "FAA TFR 6/7338 · W MARTINSBURG, WV, Friday, November 13, 2026 UTC"
     }
   ],
-  "registry_asof": "2026-11-15T07:08:22Z",
-  "registry_source_count": 265,
+  "registry_asof": "2026-11-15T10:12:53Z",
+  "registry_source_count": 366,
   "report_relationships": {
     "automatic_alerts_created": 0,
     "automatic_severity_changes": 0,
