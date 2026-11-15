@@ -3,7 +3,7 @@
   "automated_severity_changes": 0,
   "collection_coverage": {
     "amsa": {
-      "age_hours": 0.14,
+      "age_hours": 2.58,
       "checked_at": "2026-11-15T14:42:29Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -15,7 +15,7 @@
       "truncated_or_partial": false
     },
     "commercial": {
-      "age_hours": 0.0,
+      "age_hours": 2.44,
       "checked_at": "2026-11-15T14:50:40Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -27,7 +27,7 @@
       "truncated_or_partial": true
     },
     "ioda": {
-      "age_hours": 0.14,
+      "age_hours": 2.58,
       "checked_at": "2026-11-15T14:42:29Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -39,29 +39,31 @@
       "truncated_or_partial": false
     },
     "live_airspace": {
-      "age_hours": 4.63,
-      "checked_at": "2026-11-15T10:12:51Z",
-      "missingness": "not_measured_not_zero",
+      "age_hours": 0.0,
+      "checked_at": "2026-11-15T17:17:04Z",
+      "first_provider_baseline": false,
+      "missingness": "partial_sampling_not_worldwide_exhaustive",
       "mode": "live_airspace",
       "provider_status": "partial",
-      "snapshot_at": "2026-11-15T10:12:51Z",
+      "snapshot_at": "2026-11-15T17:17:04Z",
       "source_scope": "FAA temporary flight restrictions: United States only",
-      "status": "stale_or_unavailable",
+      "status": "current_partial",
       "truncated_or_partial": true
     },
     "live_maritime": {
-      "age_hours": 4.63,
-      "checked_at": "2026-11-15T10:12:51Z",
-      "missingness": "not_measured_not_zero",
+      "age_hours": 0.0,
+      "checked_at": "2026-11-15T17:17:04Z",
+      "first_provider_baseline": false,
+      "missingness": "partial_sampling_not_worldwide_exhaustive",
       "mode": "live_maritime",
       "provider_status": "partial",
-      "snapshot_at": "2026-11-15T10:12:51Z",
+      "snapshot_at": "2026-11-15T17:17:04Z",
       "source_scope": "Danish Maritime Authority Niord notices: regional Baltic/North Sea",
-      "status": "stale_or_unavailable",
+      "status": "current_partial",
       "truncated_or_partial": true
     },
     "nga": {
-      "age_hours": 0.14,
+      "age_hours": 2.58,
       "checked_at": "2026-11-15T14:42:29Z",
       "missingness": "not_measured_not_zero",
       "mode": "nga",
@@ -72,7 +74,7 @@
       "truncated_or_partial": false
     },
     "official": {
-      "age_hours": 8.23,
+      "age_hours": 10.67,
       "checked_at": "2026-11-15T06:37:11Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -84,7 +86,7 @@
       "truncated_or_partial": false
     },
     "watchlist": {
-      "age_hours": 8.23,
+      "age_hours": 10.67,
       "checked_at": "2026-11-15T06:37:11Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -99,9 +101,9 @@
   "discovery_visibility": {
     "exact_geography_match_required_for_cross_family": true,
     "latest_initial_baseline": false,
-    "latest_registry_newly_observed_count": 1,
-    "latest_registry_record_count": 265,
-    "latest_unlocated_record_count": 251,
+    "latest_registry_newly_observed_count": 0,
+    "latest_registry_record_count": 366,
+    "latest_unlocated_record_count": 324,
     "new_or_collocated_not_same_as_verified_threat": true,
     "new_this_collection_required_for_cross_family_nomination": true,
     "recent_observations_sampled": 24,
@@ -110,25 +112,25 @@
       "commercial_media": 4,
       "internet_reachability": 32,
       "maritime_restriction": 84,
-      "protective_notice": 2
+      "protective_notice": 1
     },
-    "recent_unique_record_count_72h": 136,
-    "recent_unlocated_count_72h": 77,
+    "recent_unique_record_count_72h": 135,
+    "recent_unlocated_count_72h": 76,
     "schema": "aiba.behavioral-discovery-visibility.v1",
     "shared_exact_geography_keys_across_behavior_families": 0,
     "source_coverage_is_globally_complete": false
   },
   "forecast_probability": null,
   "gdelt_context": "separate_analytical_stream_not_a_gate_or_confirmation",
-  "generated_at": "2026-11-15T14:50:42Z",
+  "generated_at": "2026-11-15T17:17:09Z",
   "geographic_scope": "source_declared_only",
   "history_diagnostics": {
     "excluded_observations": {
-      "old_source_publication": 6
+      "old_source_publication": 1
     },
     "history_files_examined": 35,
     "lookback_hours": 72,
-    "recent_unique_records": 136
+    "recent_unique_records": 135
   },
   "limit_notes": [
     "No automated threat warning. These are unreviewed investigatory leads.",
@@ -137,31 +139,8 @@
     "Unlocated records cannot produce automatic geographic convergence.",
     "Unavailable collection is not evidence of no threatening activity."
   ],
-  "new_single_source_count_total": 1,
-  "new_single_source_leads": [
-    {
-      "evidence_class": "media_mention",
-      "first_observed_at": "2026-11-15T14:50:41Z",
-      "geography": {
-        "key": null,
-        "kind": "unlocated",
-        "label": null,
-        "latitude": null,
-        "longitude": null,
-        "precision": "no_source_verified_geography",
-        "verified_iso": false
-      },
-      "information_root": "commercial:0eae51027869d54f891b",
-      "meaning": "Observation novelty, not evidence of impending violence.",
-      "observation_id": "beh:7c21d9384ac949ed0951b1c2c2b0",
-      "requires_geolocation": true,
-      "source_family": "commercial_media",
-      "source_published_at": "2026-11-15T09:00:42Z",
-      "source_url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQc1RCLV96U25fZ3dwdlYwTjVESktZeUp5Y0l0RzhSaUxwcFpzLWNZS0M4ZzlTR3lZNXZvaUdVNk1VUkxoZmNqVWR4SjEtalRWWXp3Um51Qnc1a0RlcWw0YmVfQ0pieWxaMzJLblM3NDhFeHpXbkJxMWd1cC1EMEt1SG9mdWNpVDNoYm9oOXktWjliM1JUUmttS2h1cjBncEluMWpCTHo1OHVfWnRGNDcybnREZlR0VWZVWXFHY0FMZw?oc=5",
-      "status": "single_source_unreviewed",
-      "title": "Nigeria Loses $4.5bn Yearly to Foreign Shipping Firms, Spends $1.5bn on War-Risk Insurance – Expert - New Telegraph"
-    }
-  ],
+  "new_single_source_count_total": 0,
+  "new_single_source_leads": [],
   "prediction_horizon": null,
   "recent_source_observations": [
     {
@@ -673,8 +652,8 @@
       "title": "FAA TFR 6/7422 · U.S. MEXICO BORDER, TX, Friday, November 13, 2026 UTC"
     }
   ],
-  "registry_asof": "2026-11-15T14:50:41Z",
-  "registry_source_count": 265,
+  "registry_asof": "2026-11-15T17:17:09Z",
+  "registry_source_count": 366,
   "report_relationships": {
     "automatic_alerts_created": 0,
     "automatic_severity_changes": 0,
@@ -2019,14 +1998,14 @@
     "input_truncated": false,
     "not_a_preparations_sensor_or_warning": true,
     "pairwise_comparisons_capped": false,
-    "pairwise_comparisons_examined": 9180,
+    "pairwise_comparisons_examined": 9045,
     "possible_same_event_count_total": 0,
     "possible_same_source_story_count_total": 1,
-    "records_available": 136,
-    "records_examined": 136,
+    "records_available": 135,
+    "records_examined": 135,
     "related_reporting_count_total": 0,
     "reporting_origins_are_not_event_locations": true,
-    "routine_notice_market_or_measurement_records_excluded_from_text_event_matching": 132,
+    "routine_notice_market_or_measurement_records_excluded_from_text_event_matching": 131,
     "same_document_group_count_total": 7,
     "schema": "aiba.report-event-resolution-shadow.v1",
     "source_independence_unverified": true,
