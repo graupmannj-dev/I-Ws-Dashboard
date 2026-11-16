@@ -1,15 +1,7 @@
 {
   "active_ground_stop_airports": 0,
-  "affected_airport_records": 3,
+  "affected_airport_records": 1,
   "airports": [
-    {
-      "airport": "MCO",
-      "ground_stop_object_present": false,
-      "nas_event_reasons": {
-        "departureDelay": "RWY:Disabled Aircraft"
-      },
-      "national_stop_reason_in_source": false
-    },
     {
       "airport": "SNA",
       "ground_stop_object_present": false,
@@ -17,24 +9,16 @@
         "airportClosure": "!SNA 11/020 SNA AD AP CLSD DLY 0730-1415 2611150730-2611211415"
       },
       "national_stop_reason_in_source": false
-    },
-    {
-      "airport": "TEB",
-      "ground_stop_object_present": false,
-      "nas_event_reasons": {
-        "departureDelay": "VOL:Volume"
-      },
-      "national_stop_reason_in_source": false
     }
   ],
-  "airports_with_any_delay": 2,
-  "airports_with_any_nas_event": 3,
+  "airports_with_any_delay": 0,
+  "airports_with_any_nas_event": 1,
   "automatic_event_merges": 0,
   "changed_since_prior_observation": false,
-  "checked_at": "2026-11-15T23:56:36Z",
+  "checked_at": "2026-11-16T06:11:42Z",
   "cyberattack_evidence": false,
   "event_occurrence_as_reported_by_FAA_only": true,
-  "event_reason_objects_examined": 3,
+  "event_reason_objects_examined": 1,
   "forecast_probability": null,
   "geographic_scope": "United States",
   "hostile_actor_evidence": false,
@@ -46,11 +30,11 @@
     "The sensor makes no inference of hostile intent or cyberattack."
   ],
   "military_warning_level_change": false,
-  "monitored_airport_count": 8,
+  "monitored_airport_count": 5,
   "multiple_airports_not_independent_attribution": true,
   "national_event_confirmed_by_explicit_ATCSCC_order": false,
   "national_stop_airports": 0,
-  "observed_at": "2026-11-15T23:56:36Z",
+  "observed_at": "2026-11-16T06:11:42Z",
   "provisional_review_required": false,
   "schema": "aiba.faa-nas-systemic-disruption.v1",
   "source_family": "civil_air_traffic_management",
