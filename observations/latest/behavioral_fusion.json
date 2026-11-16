@@ -3,7 +3,7 @@
   "automated_severity_changes": 0,
   "collection_coverage": {
     "amsa": {
-      "age_hours": 3.45,
+      "age_hours": 4.89,
       "checked_at": "2026-11-16T16:22:12Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -15,7 +15,7 @@
       "truncated_or_partial": false
     },
     "commercial": {
-      "age_hours": 2.66,
+      "age_hours": 4.11,
       "checked_at": "2026-11-16T17:09:20Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -27,7 +27,7 @@
       "truncated_or_partial": false
     },
     "ioda": {
-      "age_hours": 3.45,
+      "age_hours": 4.89,
       "checked_at": "2026-11-16T16:22:12Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -39,7 +39,7 @@
       "truncated_or_partial": false
     },
     "live_airspace": {
-      "age_hours": 0.0,
+      "age_hours": 1.45,
       "checked_at": "2026-11-16T19:49:09Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -51,7 +51,7 @@
       "truncated_or_partial": true
     },
     "live_maritime": {
-      "age_hours": 0.0,
+      "age_hours": 1.45,
       "checked_at": "2026-11-16T19:49:09Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -63,7 +63,7 @@
       "truncated_or_partial": true
     },
     "nga": {
-      "age_hours": 3.45,
+      "age_hours": 4.89,
       "checked_at": "2026-11-16T16:22:12Z",
       "missingness": "not_measured_not_zero",
       "mode": "nga",
@@ -74,7 +74,7 @@
       "truncated_or_partial": false
     },
     "official": {
-      "age_hours": 13.26,
+      "age_hours": 14.71,
       "checked_at": "2026-11-16T06:33:30Z",
       "missingness": "not_measured_not_zero",
       "mode": "official",
@@ -85,7 +85,7 @@
       "truncated_or_partial": false
     },
     "watchlist": {
-      "age_hours": 13.26,
+      "age_hours": 14.71,
       "checked_at": "2026-11-16T06:33:31Z",
       "missingness": "not_measured_not_zero",
       "mode": "watchlist",
@@ -99,34 +99,34 @@
   "discovery_visibility": {
     "exact_geography_match_required_for_cross_family": true,
     "latest_initial_baseline": false,
-    "latest_registry_newly_observed_count": 12,
+    "latest_registry_newly_observed_count": 0,
     "latest_registry_record_count": 155,
     "latest_unlocated_record_count": 108,
     "new_or_collocated_not_same_as_verified_threat": true,
     "new_this_collection_required_for_cross_family_nomination": true,
     "recent_observations_sampled": 24,
     "recent_source_families": {
-      "airspace_restriction": 22,
+      "airspace_restriction": 17,
       "commercial_media": 5,
       "internet_reachability": 29,
       "maritime_restriction": 106,
       "protective_notice": 1
     },
-    "recent_unique_record_count_72h": 163,
-    "recent_unlocated_count_72h": 97,
+    "recent_unique_record_count_72h": 158,
+    "recent_unlocated_count_72h": 94,
     "schema": "aiba.behavioral-discovery-visibility.v1",
     "shared_exact_geography_keys_across_behavior_families": 0,
     "source_coverage_is_globally_complete": false
   },
   "forecast_probability": null,
   "gdelt_context": "separate_analytical_stream_not_a_gate_or_confirmation",
-  "generated_at": "2026-11-16T19:49:13Z",
+  "generated_at": "2026-11-16T21:15:52Z",
   "geographic_scope": "source_declared_only",
   "history_diagnostics": {
     "excluded_observations": {},
     "history_files_examined": 34,
     "lookback_hours": 72,
-    "recent_unique_records": 163
+    "recent_unique_records": 158
   },
   "limit_notes": [
     "No automated threat warning. These are unreviewed investigatory leads.",
@@ -135,297 +135,8 @@
     "Unlocated records cannot produce automatic geographic convergence.",
     "Unavailable collection is not evidence of no threatening activity."
   ],
-  "new_single_source_count_total": 12,
-  "new_single_source_leads": [
-    {
-      "evidence_class": "official_notice",
-      "first_observed_at": "2026-11-16T19:49:13Z",
-      "geography": {
-        "geometry_sha256_prefix": "275df77dae3017bc0a062b31",
-        "geometry_type": "MultiPolygon",
-        "key": "source-footprint:275df77dae3017bc0a062b31",
-        "kind": "source_notice_footprint",
-        "label": "Official MultiPolygon notice area",
-        "latitude": null,
-        "longitude": null,
-        "precision": "provider_defined_notice_boundary_not_event_point",
-        "verified_iso": false
-      },
-      "information_root": "faa:6/7687:0:0",
-      "meaning": "Observation novelty, not evidence of impending violence.",
-      "observation_id": "beh:1099d92c9ce4a643e3592dcb68ed",
-      "requires_geolocation": false,
-      "source_family": "airspace_restriction",
-      "source_published_at": null,
-      "source_url": "https://tfr.faa.gov/6_7687.html",
-      "status": "single_source_unreviewed",
-      "title": "FAA TFR 6/7687 · 27 NM NE NEWCASTLE, WY, Monday, November 16, 2026 through Tuesday, November 17, 2026 UTC"
-    },
-    {
-      "evidence_class": "official_notice",
-      "first_observed_at": "2026-11-16T19:49:13Z",
-      "geography": {
-        "geometry_sha256_prefix": "3abdd7ed4443c62a953a5793",
-        "geometry_type": "MultiPolygon",
-        "key": "source-footprint:3abdd7ed4443c62a953a5793",
-        "kind": "source_notice_footprint",
-        "label": "Official MultiPolygon notice area",
-        "latitude": null,
-        "longitude": null,
-        "precision": "provider_defined_notice_boundary_not_event_point",
-        "verified_iso": false
-      },
-      "information_root": "faa:6/7689:0:0",
-      "meaning": "Observation novelty, not evidence of impending violence.",
-      "observation_id": "beh:11ce7218eeb6b89057079d444791",
-      "requires_geolocation": false,
-      "source_family": "airspace_restriction",
-      "source_published_at": null,
-      "source_url": "https://tfr.faa.gov/6_7689.html",
-      "status": "single_source_unreviewed",
-      "title": "FAA TFR 6/7689 · 10NM SE BERLIN, NH, Monday, November 16, 2026 through Wednesday, November 18, 2026 UTC"
-    },
-    {
-      "evidence_class": "official_notice",
-      "first_observed_at": "2026-11-16T19:49:13Z",
-      "geography": {
-        "geometry_sha256_prefix": "3d08d9287e4d4863b27fa964",
-        "geometry_type": "MultiPolygon",
-        "key": "source-footprint:3d08d9287e4d4863b27fa964",
-        "kind": "source_notice_footprint",
-        "label": "Official MultiPolygon notice area",
-        "latitude": null,
-        "longitude": null,
-        "precision": "provider_defined_notice_boundary_not_event_point",
-        "verified_iso": false
-      },
-      "information_root": "faa:6/7769:0:0",
-      "meaning": "Observation novelty, not evidence of impending violence.",
-      "observation_id": "beh:247bd1b9d3b9faf585278a796f32",
-      "requires_geolocation": false,
-      "source_family": "airspace_restriction",
-      "source_published_at": null,
-      "source_url": "https://tfr.faa.gov/6_7769.html",
-      "status": "single_source_unreviewed",
-      "title": "FAA TFR 6/7769 · Chicago, IL, Saturday, November 21, 2026 through Sunday, November 22, 2026 UTC"
-    },
-    {
-      "evidence_class": "official_notice",
-      "first_observed_at": "2026-11-16T19:49:13Z",
-      "geography": {
-        "geometry_sha256_prefix": "60b1319945a857490fbd43e6",
-        "geometry_type": "MultiPolygon",
-        "key": "source-footprint:60b1319945a857490fbd43e6",
-        "kind": "source_notice_footprint",
-        "label": "Official MultiPolygon notice area",
-        "latitude": null,
-        "longitude": null,
-        "precision": "provider_defined_notice_boundary_not_event_point",
-        "verified_iso": false
-      },
-      "information_root": "faa:6/7791:0:0",
-      "meaning": "Observation novelty, not evidence of impending violence.",
-      "observation_id": "beh:2d0c73a02acdb5bb2640b2f16b31",
-      "requires_geolocation": false,
-      "source_family": "airspace_restriction",
-      "source_published_at": null,
-      "source_url": "https://tfr.faa.gov/6_7791.html",
-      "status": "single_source_unreviewed",
-      "title": "FAA TFR 6/7791 · PERRY, FL, Saturday, November 21, 2026 UTC"
-    },
-    {
-      "evidence_class": "official_notice",
-      "first_observed_at": "2026-11-16T19:49:13Z",
-      "geography": {
-        "geometry_sha256_prefix": "f809108e756cbf2e6a7a1047",
-        "geometry_type": "MultiPolygon",
-        "key": "source-footprint:f809108e756cbf2e6a7a1047",
-        "kind": "source_notice_footprint",
-        "label": "Official MultiPolygon notice area",
-        "latitude": null,
-        "longitude": null,
-        "precision": "provider_defined_notice_boundary_not_event_point",
-        "verified_iso": false
-      },
-      "information_root": "faa:6/7659:0:0",
-      "meaning": "Observation novelty, not evidence of impending violence.",
-      "observation_id": "beh:2d2fe07af3b533776cc2706e95cc",
-      "requires_geolocation": false,
-      "source_family": "airspace_restriction",
-      "source_published_at": null,
-      "source_url": "https://tfr.faa.gov/6_7659.html",
-      "status": "single_source_unreviewed",
-      "title": "FAA TFR 6/7659 · Orlando, FL, Saturday, November 21, 2026 through Sunday, November 22, 2026 UTC"
-    },
-    {
-      "evidence_class": "official_notice",
-      "first_observed_at": "2026-11-16T19:49:13Z",
-      "geography": {
-        "geometry_sha256_prefix": "63fac7203bc43c34aa5aec6d",
-        "geometry_type": "MultiPolygon",
-        "key": "source-footprint:63fac7203bc43c34aa5aec6d",
-        "kind": "source_notice_footprint",
-        "label": "Official MultiPolygon notice area",
-        "latitude": null,
-        "longitude": null,
-        "precision": "provider_defined_notice_boundary_not_event_point",
-        "verified_iso": false
-      },
-      "information_root": "faa:6/7767:0:0",
-      "meaning": "Observation novelty, not evidence of impending violence.",
-      "observation_id": "beh:49b29e7af06d0e7148124e201472",
-      "requires_geolocation": false,
-      "source_family": "airspace_restriction",
-      "source_published_at": null,
-      "source_url": "https://tfr.faa.gov/6_7767.html",
-      "status": "single_source_unreviewed",
-      "title": "FAA TFR 6/7767 · Glendale, AZ, Saturday, November 21, 2026 through Sunday, November 22, 2026 UTC"
-    },
-    {
-      "evidence_class": "official_notice",
-      "first_observed_at": "2026-11-16T19:49:13Z",
-      "geography": {
-        "geometry_sha256_prefix": "edd432c26fa726621cfed108",
-        "geometry_type": "MultiPolygon",
-        "key": "source-footprint:edd432c26fa726621cfed108",
-        "kind": "source_notice_footprint",
-        "label": "Official MultiPolygon notice area",
-        "latitude": null,
-        "longitude": null,
-        "precision": "provider_defined_notice_boundary_not_event_point",
-        "verified_iso": false
-      },
-      "information_root": "faa:6/7660:0:0",
-      "meaning": "Observation novelty, not evidence of impending violence.",
-      "observation_id": "beh:7eb3b72423e4be447cf82f00382c",
-      "requires_geolocation": false,
-      "source_family": "airspace_restriction",
-      "source_published_at": null,
-      "source_url": "https://tfr.faa.gov/6_7660.html",
-      "status": "single_source_unreviewed",
-      "title": "FAA TFR 6/7660 · Stamford, CT, Sunday, November 22, 2026 UTC"
-    },
-    {
-      "evidence_class": "official_notice",
-      "first_observed_at": "2026-11-16T19:49:13Z",
-      "geography": {
-        "geometry_sha256_prefix": "e3f2cc6e53ad76cdcbc8c879",
-        "geometry_type": "MultiPolygon",
-        "key": "source-footprint:e3f2cc6e53ad76cdcbc8c879",
-        "kind": "source_notice_footprint",
-        "label": "Official MultiPolygon notice area",
-        "latitude": null,
-        "longitude": null,
-        "precision": "provider_defined_notice_boundary_not_event_point",
-        "verified_iso": false
-      },
-      "information_root": "faa:6/7756:0:0",
-      "meaning": "Observation novelty, not evidence of impending violence.",
-      "observation_id": "beh:aa6779c06be4b78a3f0b6dde5b93",
-      "requires_geolocation": false,
-      "source_family": "airspace_restriction",
-      "source_published_at": null,
-      "source_url": "https://tfr.faa.gov/6_7756.html",
-      "status": "single_source_unreviewed",
-      "title": "FAA TFR 6/7756 · GRANITE CITY, IL, Monday, November 16, 2026 UTC"
-    },
-    {
-      "evidence_class": "official_notice",
-      "first_observed_at": "2026-11-16T19:49:13Z",
-      "geography": {
-        "geometry_sha256_prefix": "085780d21ca737d9ecf43666",
-        "geometry_type": "MultiPolygon",
-        "key": "source-footprint:085780d21ca737d9ecf43666",
-        "kind": "source_notice_footprint",
-        "label": "Official MultiPolygon notice area",
-        "latitude": null,
-        "longitude": null,
-        "precision": "provider_defined_notice_boundary_not_event_point",
-        "verified_iso": false
-      },
-      "information_root": "faa:6/7765:0:0",
-      "meaning": "Observation novelty, not evidence of impending violence.",
-      "observation_id": "beh:ce8b659e1282750806b69f14fd18",
-      "requires_geolocation": false,
-      "source_family": "airspace_restriction",
-      "source_published_at": null,
-      "source_url": "https://tfr.faa.gov/6_7765.html",
-      "status": "single_source_unreviewed",
-      "title": "FAA TFR 6/7765 · Indianapolis, IN, Friday, November 20, 2026 through Saturday, November 21, 2026 UTC"
-    },
-    {
-      "evidence_class": "official_notice",
-      "first_observed_at": "2026-11-16T19:49:13Z",
-      "geography": {
-        "geometry_sha256_prefix": "697008acb24cdffb3d5ccbb3",
-        "geometry_type": "MultiPolygon",
-        "key": "source-footprint:697008acb24cdffb3d5ccbb3",
-        "kind": "source_notice_footprint",
-        "label": "Official MultiPolygon notice area",
-        "latitude": null,
-        "longitude": null,
-        "precision": "provider_defined_notice_boundary_not_event_point",
-        "verified_iso": false
-      },
-      "information_root": "faa:6/7766:0:0",
-      "meaning": "Observation novelty, not evidence of impending violence.",
-      "observation_id": "beh:d77eeb27ee22092babd3833e63f7",
-      "requires_geolocation": false,
-      "source_family": "airspace_restriction",
-      "source_published_at": null,
-      "source_url": "https://tfr.faa.gov/6_7766.html",
-      "status": "single_source_unreviewed",
-      "title": "FAA TFR 6/7766 · Detroit, MI, Friday, November 20, 2026 through Saturday, November 21, 2026 UTC"
-    },
-    {
-      "evidence_class": "official_notice",
-      "first_observed_at": "2026-11-16T19:49:13Z",
-      "geography": {
-        "geometry_sha256_prefix": "dc2f2a866ddd64eb138e91f9",
-        "geometry_type": "MultiPolygon",
-        "key": "source-footprint:dc2f2a866ddd64eb138e91f9",
-        "kind": "source_notice_footprint",
-        "label": "Official MultiPolygon notice area",
-        "latitude": null,
-        "longitude": null,
-        "precision": "provider_defined_notice_boundary_not_event_point",
-        "verified_iso": false
-      },
-      "information_root": "faa:6/7665:0:0",
-      "meaning": "Observation novelty, not evidence of impending violence.",
-      "observation_id": "beh:d8f4308a74319a3a1a3b19948234",
-      "requires_geolocation": false,
-      "source_family": "airspace_restriction",
-      "source_published_at": null,
-      "source_url": "https://tfr.faa.gov/6_7665.html",
-      "status": "single_source_unreviewed",
-      "title": "FAA TFR 6/7665 · Apalachicola, FL, Saturday, November 21, 2026 UTC"
-    },
-    {
-      "evidence_class": "official_notice",
-      "first_observed_at": "2026-11-16T19:49:13Z",
-      "geography": {
-        "geometry_sha256_prefix": "78dd86518dd6e6a90f7824e4",
-        "geometry_type": "MultiPolygon",
-        "key": "source-footprint:78dd86518dd6e6a90f7824e4",
-        "kind": "source_notice_footprint",
-        "label": "Official MultiPolygon notice area",
-        "latitude": null,
-        "longitude": null,
-        "precision": "provider_defined_notice_boundary_not_event_point",
-        "verified_iso": false
-      },
-      "information_root": "faa:6/7761:0:0",
-      "meaning": "Observation novelty, not evidence of impending violence.",
-      "observation_id": "beh:fd0686a062a3cdb255e670239d99",
-      "requires_geolocation": false,
-      "source_family": "airspace_restriction",
-      "source_published_at": null,
-      "source_url": "https://tfr.faa.gov/6_7761.html",
-      "status": "single_source_unreviewed",
-      "title": "FAA TFR 6/7761 · Riverside, CA, Saturday, November 21, 2026 through Sunday, November 22, 2026 UTC"
-    }
-  ],
+  "new_single_source_count_total": 0,
+  "new_single_source_leads": [],
   "prediction_horizon": null,
   "recent_source_observations": [
     {
@@ -941,7 +652,7 @@
       "title": "IODA detected connectivity anomaly: country CM"
     }
   ],
-  "registry_asof": "2026-11-16T19:49:13Z",
+  "registry_asof": "2026-11-16T21:15:52Z",
   "registry_source_count": 155,
   "report_relationships": {
     "automatic_alerts_created": 0,
@@ -2568,14 +2279,14 @@
     "input_truncated": false,
     "not_a_preparations_sensor_or_warning": true,
     "pairwise_comparisons_capped": false,
-    "pairwise_comparisons_examined": 13203,
+    "pairwise_comparisons_examined": 12403,
     "possible_same_event_count_total": 0,
     "possible_same_source_story_count_total": 1,
-    "records_available": 163,
-    "records_examined": 163,
+    "records_available": 158,
+    "records_examined": 158,
     "related_reporting_count_total": 0,
     "reporting_origins_are_not_event_locations": true,
-    "routine_notice_market_or_measurement_records_excluded_from_text_event_matching": 158,
+    "routine_notice_market_or_measurement_records_excluded_from_text_event_matching": 153,
     "same_document_group_count_total": 11,
     "schema": "aiba.report-event-resolution-shadow.v1",
     "source_independence_unverified": true,
