@@ -1,12 +1,12 @@
 {
   "collection_mode": "periodic_github_actions",
-  "generated_at": "2026-11-16T01:56:05Z",
+  "generated_at": "2026-11-16T09:31:10Z",
   "kind": "aiba_restriction_snapshot",
   "layers": {
     "airspace": {
-      "checked_at": "2026-11-16T01:56:05Z",
-      "mapped_records": 8,
-      "message": "11 supported notices; 8 source shapes and 0 points; 38 skipped/unsupported notices",
+      "checked_at": "2026-11-16T09:31:10Z",
+      "mapped_records": 7,
+      "message": "10 supported notices; 7 source shapes and 0 points; 38 skipped/unsupported notices",
       "point_records": 0,
       "records": [
         {
@@ -845,173 +845,6 @@
           "valid_until": "2026-12-04T05:00:00+00:00"
         },
         {
-          "date": "2026-11-09T11:34:31",
-          "detail": "US temporary flight restriction; not worldwide NOTAM coverage. Read the original for altitude, exceptions and full schedule. UAS PUBLIC GATHERING",
-          "geometry": {
-            "coordinates": [
-              [
-                [
-                  [
-                    -81.4025,
-                    28.54724416
-                  ],
-                  [
-                    -81.40085686,
-                    28.54711721
-                  ],
-                  [
-                    -81.39926367,
-                    28.54674024
-                  ],
-                  [
-                    -81.39776882,
-                    28.54612468
-                  ],
-                  [
-                    -81.39641777,
-                    28.54528926
-                  ],
-                  [
-                    -81.39525155,
-                    28.54425936
-                  ],
-                  [
-                    -81.3943056,
-                    28.54306628
-                  ],
-                  [
-                    -81.39360867,
-                    28.54174627
-                  ],
-                  [
-                    -81.39318191,
-                    28.54033945
-                  ],
-                  [
-                    -81.3930383,
-                    28.53888856
-                  ],
-                  [
-                    -81.39318217,
-                    28.53743769
-                  ],
-                  [
-                    -81.39360915,
-                    28.53603093
-                  ],
-                  [
-                    -81.39430625,
-                    28.534711
-                  ],
-                  [
-                    -81.39525228,
-                    28.53351803
-                  ],
-                  [
-                    -81.3964185,
-                    28.53248824
-                  ],
-                  [
-                    -81.39776947,
-                    28.53165292
-                  ],
-                  [
-                    -81.39926415,
-                    28.53103746
-                  ],
-                  [
-                    -81.40085712,
-                    28.53066054
-                  ],
-                  [
-                    -81.4025,
-                    28.53053361
-                  ],
-                  [
-                    -81.40414288,
-                    28.53066054
-                  ],
-                  [
-                    -81.40573585,
-                    28.53103746
-                  ],
-                  [
-                    -81.40723053,
-                    28.53165292
-                  ],
-                  [
-                    -81.4085815,
-                    28.53248824
-                  ],
-                  [
-                    -81.40974772,
-                    28.53351803
-                  ],
-                  [
-                    -81.41069375,
-                    28.534711
-                  ],
-                  [
-                    -81.41139085,
-                    28.53603093
-                  ],
-                  [
-                    -81.41181783,
-                    28.53743769
-                  ],
-                  [
-                    -81.4119617,
-                    28.53888856
-                  ],
-                  [
-                    -81.41181809,
-                    28.54033945
-                  ],
-                  [
-                    -81.41139133,
-                    28.54174627
-                  ],
-                  [
-                    -81.4106944,
-                    28.54306628
-                  ],
-                  [
-                    -81.40974845,
-                    28.54425936
-                  ],
-                  [
-                    -81.40858223,
-                    28.54528926
-                  ],
-                  [
-                    -81.40723118,
-                    28.54612468
-                  ],
-                  [
-                    -81.40573633,
-                    28.54674024
-                  ],
-                  [
-                    -81.40414314,
-                    28.54711721
-                  ],
-                  [
-                    -81.4025,
-                    28.54724416
-                  ]
-                ]
-              ]
-            ],
-            "type": "MultiPolygon"
-          },
-          "id": "6/6537:0:0",
-          "source": "Federal Aviation Administration",
-          "title": "FAA TFR 6/6537 · Orlando, FL, Saturday, November 14, 2026 through Monday, November 16, 2026 UTC",
-          "url": "https://tfr.faa.gov/6_6537.html",
-          "valid_from": "2026-11-14T16:00:00+00:00",
-          "valid_until": "2026-11-16T04:59:00+00:00"
-        },
-        {
           "date": "2026-07-31T22:58:31",
           "detail": "US temporary flight restriction; not worldwide NOTAM coverage. Read the original for altitude, exceptions and full schedule. SECURITY",
           "geometry": {
@@ -1376,15 +1209,15 @@
           "valid_until": "2027-03-31T05:00:00+00:00"
         }
       ],
-      "shape_records": 8,
+      "shape_records": 7,
       "source": "https://tfr.faa.gov/tfrapi/exportTfrList?format=json",
       "status": "partial"
     },
     "maritime": {
-      "checked_at": "2026-11-16T01:56:05Z",
-      "mapped_records": 15,
-      "message": "84 supported notices; 9 source shapes and 6 points; 10 skipped/unsupported notices",
-      "point_records": 6,
+      "checked_at": "2026-11-16T09:31:10Z",
+      "mapped_records": 20,
+      "message": "117 supported notices; 13 source shapes and 7 points; 10 skipped/unsupported notices",
+      "point_records": 7,
       "records": [
         {
           "date": "2026-11-02T09:21:51+00:00",
@@ -1675,6 +1508,19 @@
           "url": "https://niord.dma.dk/#/message/496ca0ce-346d-41f5-a3e1-753f38e9e058",
           "valid_from": "2026-11-02T09:21:50+00:00",
           "valid_until": "2026-11-30T00:00:00+00:00"
+        },
+        {
+          "date": "2026-11-16T07:16:54+00:00",
+          "detail": "The bridge\n\nin pos.\n\n54° 45.5'N - 011° 52.0'E        \n    is closed for passage that requires opening of the bridge. Published navigational restriction; no worldwide sea-lane closure coverage. Open-ended notices are rechecked with the source.",
+          "id": "75ebccfd-c509-4f82-bba1-c4a7fb8f6ac5:0:0:0",
+          "in_force": true,
+          "lat": 54.75872307836312,
+          "lon": 11.865945599576946,
+          "source": "Danish Maritime Authority — regional coverage only",
+          "title": "Denmark. The Waters South of Zealand. Guldborgsund. Bridge closed for passage.",
+          "url": "https://niord.dma.dk/#/message/75ebccfd-c509-4f82-bba1-c4a7fb8f6ac5",
+          "valid_from": "2026-11-16T07:16:54+00:00",
+          "valid_until": null
         },
         {
           "date": "2026-11-14T00:21:51+00:00",
@@ -2033,62 +1879,62 @@
           "valid_until": "2026-11-19T17:00:00+00:00"
         },
         {
-          "date": "2026-11-05T00:21:52+00:00",
-          "detail": "16 November 2026, hours 11:00 - 20:00. 17 November 2026, hours 09:00 - 20:00. 18 November 2026, hours 08:00 - 20:00. 19 November 2026, hours 08:00 - 20:00. 20 November 2026, hours 08:00 - 14:00. Published navigational restriction; no worldwide sea-lane closure coverage. Open-ended notices are rechecked with the source.",
-          "id": "dbccca08-6f7f-4029-b0ea-ed091f571f1b:0:0:0",
+          "date": "2026-11-16T09:21:51+00:00",
+          "detail": "16 November 2026, hours 11:00 - 20:00. 17 November 2026, hours 08:00 - 20:00. 18 November 2026, hours 08:00 - 20:00. 19 November 2026, hours 08:00 - 20:00. 20 November 2026, hours 08:00 - 14:00. Published navigational restriction; no worldwide sea-lane closure coverage. Open-ended notices are rechecked with the source.",
+          "id": "b815767c-8bae-40c4-bd79-36ae1e9006b2:0:0:0",
           "in_force": true,
           "source": "Danish Maritime Authority — regional coverage only",
           "title": "Denmark. Kattegat. EK R 19 MULTEX. Firing exercises. Warning.",
-          "url": "https://niord.dma.dk/#/message/dbccca08-6f7f-4029-b0ea-ed091f571f1b",
+          "url": "https://niord.dma.dk/#/message/b815767c-8bae-40c4-bd79-36ae1e9006b2",
           "valid_from": "2026-11-16T10:00:00+00:00",
           "valid_until": "2026-11-16T19:00:00+00:00"
         },
         {
-          "date": "2026-11-05T00:21:52+00:00",
-          "detail": "16 November 2026, hours 11:00 - 20:00. 17 November 2026, hours 09:00 - 20:00. 18 November 2026, hours 08:00 - 20:00. 19 November 2026, hours 08:00 - 20:00. 20 November 2026, hours 08:00 - 14:00. Published navigational restriction; no worldwide sea-lane closure coverage. Open-ended notices are rechecked with the source.",
-          "id": "dbccca08-6f7f-4029-b0ea-ed091f571f1b:0:1:0",
+          "date": "2026-11-16T09:21:51+00:00",
+          "detail": "16 November 2026, hours 11:00 - 20:00. 17 November 2026, hours 08:00 - 20:00. 18 November 2026, hours 08:00 - 20:00. 19 November 2026, hours 08:00 - 20:00. 20 November 2026, hours 08:00 - 14:00. Published navigational restriction; no worldwide sea-lane closure coverage. Open-ended notices are rechecked with the source.",
+          "id": "b815767c-8bae-40c4-bd79-36ae1e9006b2:0:1:0",
           "in_force": true,
           "source": "Danish Maritime Authority — regional coverage only",
           "title": "Denmark. Kattegat. EK R 19 MULTEX. Firing exercises. Warning.",
-          "url": "https://niord.dma.dk/#/message/dbccca08-6f7f-4029-b0ea-ed091f571f1b",
-          "valid_from": "2026-11-17T08:00:00+00:00",
+          "url": "https://niord.dma.dk/#/message/b815767c-8bae-40c4-bd79-36ae1e9006b2",
+          "valid_from": "2026-11-17T07:00:00+00:00",
           "valid_until": "2026-11-17T19:00:00+00:00"
         },
         {
-          "date": "2026-11-05T00:21:52+00:00",
-          "detail": "16 November 2026, hours 11:00 - 20:00. 17 November 2026, hours 09:00 - 20:00. 18 November 2026, hours 08:00 - 20:00. 19 November 2026, hours 08:00 - 20:00. 20 November 2026, hours 08:00 - 14:00. Published navigational restriction; no worldwide sea-lane closure coverage. Open-ended notices are rechecked with the source.",
-          "id": "dbccca08-6f7f-4029-b0ea-ed091f571f1b:0:2:0",
+          "date": "2026-11-16T09:21:51+00:00",
+          "detail": "16 November 2026, hours 11:00 - 20:00. 17 November 2026, hours 08:00 - 20:00. 18 November 2026, hours 08:00 - 20:00. 19 November 2026, hours 08:00 - 20:00. 20 November 2026, hours 08:00 - 14:00. Published navigational restriction; no worldwide sea-lane closure coverage. Open-ended notices are rechecked with the source.",
+          "id": "b815767c-8bae-40c4-bd79-36ae1e9006b2:0:2:0",
           "in_force": true,
           "source": "Danish Maritime Authority — regional coverage only",
           "title": "Denmark. Kattegat. EK R 19 MULTEX. Firing exercises. Warning.",
-          "url": "https://niord.dma.dk/#/message/dbccca08-6f7f-4029-b0ea-ed091f571f1b",
+          "url": "https://niord.dma.dk/#/message/b815767c-8bae-40c4-bd79-36ae1e9006b2",
           "valid_from": "2026-11-18T07:00:00+00:00",
           "valid_until": "2026-11-18T19:00:00+00:00"
         },
         {
-          "date": "2026-11-05T00:21:52+00:00",
-          "detail": "16 November 2026, hours 11:00 - 20:00. 17 November 2026, hours 09:00 - 20:00. 18 November 2026, hours 08:00 - 20:00. 19 November 2026, hours 08:00 - 20:00. 20 November 2026, hours 08:00 - 14:00. Published navigational restriction; no worldwide sea-lane closure coverage. Open-ended notices are rechecked with the source.",
-          "id": "dbccca08-6f7f-4029-b0ea-ed091f571f1b:0:3:0",
+          "date": "2026-11-16T09:21:51+00:00",
+          "detail": "16 November 2026, hours 11:00 - 20:00. 17 November 2026, hours 08:00 - 20:00. 18 November 2026, hours 08:00 - 20:00. 19 November 2026, hours 08:00 - 20:00. 20 November 2026, hours 08:00 - 14:00. Published navigational restriction; no worldwide sea-lane closure coverage. Open-ended notices are rechecked with the source.",
+          "id": "b815767c-8bae-40c4-bd79-36ae1e9006b2:0:3:0",
           "in_force": true,
           "source": "Danish Maritime Authority — regional coverage only",
           "title": "Denmark. Kattegat. EK R 19 MULTEX. Firing exercises. Warning.",
-          "url": "https://niord.dma.dk/#/message/dbccca08-6f7f-4029-b0ea-ed091f571f1b",
+          "url": "https://niord.dma.dk/#/message/b815767c-8bae-40c4-bd79-36ae1e9006b2",
           "valid_from": "2026-11-19T07:00:00+00:00",
           "valid_until": "2026-11-19T19:00:00+00:00"
         },
         {
-          "date": "2026-11-05T00:21:52+00:00",
-          "detail": "16 November 2026, hours 11:00 - 20:00. 17 November 2026, hours 09:00 - 20:00. 18 November 2026, hours 08:00 - 20:00. 19 November 2026, hours 08:00 - 20:00. 20 November 2026, hours 08:00 - 14:00. Published navigational restriction; no worldwide sea-lane closure coverage. Open-ended notices are rechecked with the source.",
-          "id": "dbccca08-6f7f-4029-b0ea-ed091f571f1b:0:4:0",
+          "date": "2026-11-16T09:21:51+00:00",
+          "detail": "16 November 2026, hours 11:00 - 20:00. 17 November 2026, hours 08:00 - 20:00. 18 November 2026, hours 08:00 - 20:00. 19 November 2026, hours 08:00 - 20:00. 20 November 2026, hours 08:00 - 14:00. Published navigational restriction; no worldwide sea-lane closure coverage. Open-ended notices are rechecked with the source.",
+          "id": "b815767c-8bae-40c4-bd79-36ae1e9006b2:0:4:0",
           "in_force": true,
           "source": "Danish Maritime Authority — regional coverage only",
           "title": "Denmark. Kattegat. EK R 19 MULTEX. Firing exercises. Warning.",
-          "url": "https://niord.dma.dk/#/message/dbccca08-6f7f-4029-b0ea-ed091f571f1b",
+          "url": "https://niord.dma.dk/#/message/b815767c-8bae-40c4-bd79-36ae1e9006b2",
           "valid_from": "2026-11-20T07:00:00+00:00",
           "valid_until": "2026-11-20T13:00:00+00:00"
         },
         {
-          "date": "2026-11-05T00:21:52+00:00",
+          "date": "2026-11-16T09:21:51+00:00",
           "detail": " In connection with firing practices, a temporary danger area is established on the sea off the firing practice area in position: \n \n 56° 00'N - 011° 17'E, Gniben. \n \n  \n Shooting targets at anchor can be present in the area outside the announced shooting hours. The shooting targets are marked with white light showing Mo(R). \n Deployment of fishing equipment wihtin a radius of 0.5nm from the anchored shooting targets, is prohibited.  \n During the announced shooting hours, mariners must observe proper caution and, at all times, follow the instructions regarding passage of and other activites in the shooting area, from the shooting office (GNIBEN Range Control) at Naval Weapons Center.   Published navigational restriction; no worldwide sea-lane closure coverage. Open-ended notices are rechecked with the source.",
           "geometry": {
             "coordinates": [
@@ -2133,49 +1979,60 @@
             ],
             "type": "Polygon"
           },
-          "id": "dbccca08-6f7f-4029-b0ea-ed091f571f1b:1:0:0",
+          "id": "b815767c-8bae-40c4-bd79-36ae1e9006b2:1:0:0",
           "in_force": true,
           "source": "Danish Maritime Authority — regional coverage only",
           "title": "Denmark. Kattegat. EK R 19 MULTEX. Firing exercises. Warning.",
-          "url": "https://niord.dma.dk/#/message/dbccca08-6f7f-4029-b0ea-ed091f571f1b",
-          "valid_from": "2026-11-05T00:21:51+00:00",
+          "url": "https://niord.dma.dk/#/message/b815767c-8bae-40c4-bd79-36ae1e9006b2",
+          "valid_from": "2026-11-16T09:21:50+00:00",
           "valid_until": "2026-11-20T13:00:00+00:00"
         },
         {
-          "date": "2026-11-05T00:21:52+00:00",
+          "date": "2026-11-16T09:21:51+00:00",
           "detail": " Firing practices are announced by displaying the following signals on the signal mast, from one hour before the start of the firing practice and until its end: \n \n \n \n  a)  \n  In daylight a flashing white light is lit (60 flashes per   minute).  \n \n \n  b)  \n  In darkness, a fixed red light is lit on the signal mast.  \n \n \n \n \n 56 °  00,54'N - 011 °  16,76'E, signal mast. \n  Published navigational restriction; no worldwide sea-lane closure coverage. Open-ended notices are rechecked with the source.",
-          "id": "dbccca08-6f7f-4029-b0ea-ed091f571f1b:2:0:0",
+          "id": "b815767c-8bae-40c4-bd79-36ae1e9006b2:2:0:0",
           "in_force": true,
           "source": "Danish Maritime Authority — regional coverage only",
           "title": "Denmark. Kattegat. EK R 19 MULTEX. Firing exercises. Warning.",
-          "url": "https://niord.dma.dk/#/message/dbccca08-6f7f-4029-b0ea-ed091f571f1b",
-          "valid_from": "2026-11-05T00:21:51+00:00",
+          "url": "https://niord.dma.dk/#/message/b815767c-8bae-40c4-bd79-36ae1e9006b2",
+          "valid_from": "2026-11-16T09:21:50+00:00",
           "valid_until": "2026-11-20T13:00:00+00:00"
         },
         {
-          "date": "2026-11-05T00:21:52+00:00",
+          "date": "2026-11-16T09:21:51+00:00",
           "detail": "   Information about firing practises, and information about precautions for mariners regarding passage of and other activities in the shooting area,  can be obtained from Naval Weapons Center, tel. +45 7285 5513/+45 7285 5514 or by VHF radio. Callsign: GNIBEN RANGE CONTROL. Hailing channel 16. Communication channel 6. The radio is operative from 1 hour before start of the firing practice and until its end.  Published navigational restriction; no worldwide sea-lane closure coverage. Open-ended notices are rechecked with the source.",
-          "id": "dbccca08-6f7f-4029-b0ea-ed091f571f1b:3:0:0",
+          "id": "b815767c-8bae-40c4-bd79-36ae1e9006b2:3:0:0",
           "in_force": true,
           "source": "Danish Maritime Authority — regional coverage only",
           "title": "Denmark. Kattegat. EK R 19 MULTEX. Firing exercises. Warning.",
-          "url": "https://niord.dma.dk/#/message/dbccca08-6f7f-4029-b0ea-ed091f571f1b",
-          "valid_from": "2026-11-05T00:21:51+00:00",
+          "url": "https://niord.dma.dk/#/message/b815767c-8bae-40c4-bd79-36ae1e9006b2",
+          "valid_from": "2026-11-16T09:21:50+00:00",
           "valid_until": "2026-11-20T13:00:00+00:00"
         },
         {
-          "date": "2026-11-13T00:21:52+00:00",
-          "detail": "19 November 2026, hours 10:00 - 16:00. Published navigational restriction; no worldwide sea-lane closure coverage. Open-ended notices are rechecked with the source.",
-          "id": "a44d4d9c-474d-40ff-a585-f4408032c1c2:0:0:0",
+          "date": "2026-11-16T09:21:51+00:00",
+          "detail": "19 November 2026, hours 10:00 - 16:00. 24 November 2026, hours 09:00 - 16:00. Published navigational restriction; no worldwide sea-lane closure coverage. Open-ended notices are rechecked with the source.",
+          "id": "66104724-dce4-42b0-94f3-a556e64c68e7:0:0:0",
           "in_force": true,
           "source": "Danish Maritime Authority — regional coverage only",
           "title": "Denmark. Kattegat. EK R 12 Gniben. Firing exercises. Warning.",
-          "url": "https://niord.dma.dk/#/message/a44d4d9c-474d-40ff-a585-f4408032c1c2",
+          "url": "https://niord.dma.dk/#/message/66104724-dce4-42b0-94f3-a556e64c68e7",
           "valid_from": "2026-11-19T09:00:00+00:00",
           "valid_until": "2026-11-19T15:00:00+00:00"
         },
         {
-          "date": "2026-11-13T00:21:52+00:00",
+          "date": "2026-11-16T09:21:51+00:00",
+          "detail": "19 November 2026, hours 10:00 - 16:00. 24 November 2026, hours 09:00 - 16:00. Published navigational restriction; no worldwide sea-lane closure coverage. Open-ended notices are rechecked with the source.",
+          "id": "66104724-dce4-42b0-94f3-a556e64c68e7:0:1:0",
+          "in_force": true,
+          "source": "Danish Maritime Authority — regional coverage only",
+          "title": "Denmark. Kattegat. EK R 12 Gniben. Firing exercises. Warning.",
+          "url": "https://niord.dma.dk/#/message/66104724-dce4-42b0-94f3-a556e64c68e7",
+          "valid_from": "2026-11-24T08:00:00+00:00",
+          "valid_until": "2026-11-24T15:00:00+00:00"
+        },
+        {
+          "date": "2026-11-16T09:21:51+00:00",
           "detail": " In connection with firing practices, a temporary danger area is established on the sea off the firing practice area at position: \n \n 56° 00'N - 011° 17'E, Gniben. \n \n  \n Shooting targets at anchor can be present in the area outside the announced shooting hours. The shooting targets are marked with white light showing Mo(R). \n Deployment of fishing equipment within a radius of 0.5nm from the anchored shooting targets, is prohibited.  \n During the announced shooting hours, mariners must observe proper caution and, at all times, follow the instructions regarding passage of and other activities in the shooting area, from the shooting office (GNIBEN Range Control) at Naval Weapons Center.   Published navigational restriction; no worldwide sea-lane closure coverage. Open-ended notices are rechecked with the source.",
           "geometry": {
             "coordinates": [
@@ -2216,35 +2073,35 @@
             ],
             "type": "Polygon"
           },
-          "id": "a44d4d9c-474d-40ff-a585-f4408032c1c2:1:0:0",
+          "id": "66104724-dce4-42b0-94f3-a556e64c68e7:1:0:0",
           "in_force": true,
           "source": "Danish Maritime Authority — regional coverage only",
           "title": "Denmark. Kattegat. EK R 12 Gniben. Firing exercises. Warning.",
-          "url": "https://niord.dma.dk/#/message/a44d4d9c-474d-40ff-a585-f4408032c1c2",
-          "valid_from": "2026-11-13T00:21:51+00:00",
-          "valid_until": "2026-11-19T15:00:00+00:00"
+          "url": "https://niord.dma.dk/#/message/66104724-dce4-42b0-94f3-a556e64c68e7",
+          "valid_from": "2026-11-16T09:21:50+00:00",
+          "valid_until": "2026-11-24T15:00:00+00:00"
         },
         {
-          "date": "2026-11-13T00:21:52+00:00",
+          "date": "2026-11-16T09:21:51+00:00",
           "detail": " Firing practices are announced by displaying the following signals on the signal mast, from one hour before the start of the firing practice and until its end: \n a) In daylight flashing white light is lit (60 flashes per minute). \n b) In darkness, a fixed red light is lit on the signal mast. \n \n 56° 00,54'N - 011° 16,76'E, signal mast. \n  Published navigational restriction; no worldwide sea-lane closure coverage. Open-ended notices are rechecked with the source.",
-          "id": "a44d4d9c-474d-40ff-a585-f4408032c1c2:2:0:0",
+          "id": "66104724-dce4-42b0-94f3-a556e64c68e7:2:0:0",
           "in_force": true,
           "source": "Danish Maritime Authority — regional coverage only",
           "title": "Denmark. Kattegat. EK R 12 Gniben. Firing exercises. Warning.",
-          "url": "https://niord.dma.dk/#/message/a44d4d9c-474d-40ff-a585-f4408032c1c2",
-          "valid_from": "2026-11-13T00:21:51+00:00",
-          "valid_until": "2026-11-19T15:00:00+00:00"
+          "url": "https://niord.dma.dk/#/message/66104724-dce4-42b0-94f3-a556e64c68e7",
+          "valid_from": "2026-11-16T09:21:50+00:00",
+          "valid_until": "2026-11-24T15:00:00+00:00"
         },
         {
-          "date": "2026-11-13T00:21:52+00:00",
+          "date": "2026-11-16T09:21:51+00:00",
           "detail": " Information about firing practises, and information about precautions for mariners regarding passage of and other activities in the shooting area,  can be obtained from Naval Weapons Center, tel. +45 7285 5513/+45 7285 5514 or by VHF radio. Callsign: GNIBEN RANGE CONTROL. Hailing channel 16. Communication channel 6. The radio is operative from 1 hour before start of the firing practice and until its end. \n     Published navigational restriction; no worldwide sea-lane closure coverage. Open-ended notices are rechecked with the source.",
-          "id": "a44d4d9c-474d-40ff-a585-f4408032c1c2:3:0:0",
+          "id": "66104724-dce4-42b0-94f3-a556e64c68e7:3:0:0",
           "in_force": true,
           "source": "Danish Maritime Authority — regional coverage only",
           "title": "Denmark. Kattegat. EK R 12 Gniben. Firing exercises. Warning.",
-          "url": "https://niord.dma.dk/#/message/a44d4d9c-474d-40ff-a585-f4408032c1c2",
-          "valid_from": "2026-11-13T00:21:51+00:00",
-          "valid_until": "2026-11-19T15:00:00+00:00"
+          "url": "https://niord.dma.dk/#/message/66104724-dce4-42b0-94f3-a556e64c68e7",
+          "valid_from": "2026-11-16T09:21:50+00:00",
+          "valid_until": "2026-11-24T15:00:00+00:00"
         },
         {
           "date": "2026-11-02T16:21:51+00:00",
@@ -2327,6 +2184,85 @@
           "url": "https://niord.dma.dk/#/message/6e8d5201-019b-4f3b-a79c-da40eb776a48",
           "valid_from": "2026-11-02T16:21:50+00:00",
           "valid_until": "2026-11-25T15:00:00+00:00"
+        },
+        {
+          "date": "2026-11-16T09:21:51+00:00",
+          "detail": "24 November 2026, hours 09:00 - 16:00. Published navigational restriction; no worldwide sea-lane closure coverage. Open-ended notices are rechecked with the source.",
+          "id": "076f0fb6-c387-450a-9fdb-5629d7c1087e:0:0:0",
+          "in_force": true,
+          "source": "Danish Maritime Authority — regional coverage only",
+          "title": "Denmark. Kattegat. EK R 20 Yderby. Firing exercises. Warning.",
+          "url": "https://niord.dma.dk/#/message/076f0fb6-c387-450a-9fdb-5629d7c1087e",
+          "valid_from": "2026-11-24T08:00:00+00:00",
+          "valid_until": "2026-11-24T15:00:00+00:00"
+        },
+        {
+          "date": "2026-11-16T09:21:51+00:00",
+          "detail": " In connection with firing practices, a temporary danger area is established on the sea off the firing practice area at position: \n \n 56° 00'N - 011° 17'E, Gniben. \n \n  \n Shooting targets at anchor can be present in the area outside the announced shooting hours. The shooting targets are marked with white light showing Mo(R). \n Deployment of fishing equipment within a radius of 0.5nm from the anchored shooting targets, is prohibited.  \n During the announced shooting hours, mariners must observe proper caution and, at all times, follow the instructions regarding passage of and other activities in the shooting area, from the shooting office (GNIBEN Range Control) at Naval Weapons Center.   Published navigational restriction; no worldwide sea-lane closure coverage. Open-ended notices are rechecked with the source.",
+          "geometry": {
+            "coordinates": [
+              [
+                [
+                  11.306116666666666,
+                  56.0725
+                ],
+                [
+                  11.398883333333334,
+                  55.99166666666667
+                ],
+                [
+                  11.249166666666667,
+                  55.93861666666667
+                ],
+                [
+                  11.168616666666667,
+                  56.02583333333333
+                ],
+                [
+                  11.306116666666666,
+                  56.0725
+                ],
+                [
+                  11.306116666666666,
+                  56.0725
+                ],
+                [
+                  11.306116666666666,
+                  56.0725
+                ]
+              ]
+            ],
+            "type": "Polygon"
+          },
+          "id": "076f0fb6-c387-450a-9fdb-5629d7c1087e:1:0:0",
+          "in_force": true,
+          "source": "Danish Maritime Authority — regional coverage only",
+          "title": "Denmark. Kattegat. EK R 20 Yderby. Firing exercises. Warning.",
+          "url": "https://niord.dma.dk/#/message/076f0fb6-c387-450a-9fdb-5629d7c1087e",
+          "valid_from": "2026-11-16T09:21:50+00:00",
+          "valid_until": "2026-11-24T15:00:00+00:00"
+        },
+        {
+          "date": "2026-11-16T09:21:51+00:00",
+          "detail": " Firing practices are announced by displaying the following signals on the signal mast, from one hour before the start of the firing practice and until its end: \n a)  In daylight flashing white light is lit (60 flashes per minute).  \n b)  In darkness, a fixed red light is lit on the signal mast.  \n \n 56° 00,54'N - 011° 16,76'E, signal mast. \n  Published navigational restriction; no worldwide sea-lane closure coverage. Open-ended notices are rechecked with the source.",
+          "id": "076f0fb6-c387-450a-9fdb-5629d7c1087e:2:0:0",
+          "in_force": true,
+          "source": "Danish Maritime Authority — regional coverage only",
+          "title": "Denmark. Kattegat. EK R 20 Yderby. Firing exercises. Warning.",
+          "url": "https://niord.dma.dk/#/message/076f0fb6-c387-450a-9fdb-5629d7c1087e",
+          "valid_from": "2026-11-16T09:21:50+00:00",
+          "valid_until": "2026-11-24T15:00:00+00:00"
+        },
+        {
+          "date": "2026-11-16T09:21:51+00:00",
+          "detail": " Information about firing practises, and information about precautions for mariners regarding passage of and other activities in the shooting area,  can be obtained from Naval Weapons Center, tel. +45 7285 5513/+45 7285 5514 or by VHF radio. Callsign: GNIBEN RANGE CONTROL. Hailing channel 16. Communication channel 6. The radio is operative from 1 hour before start of the firing practice and until its end. \n     Published navigational restriction; no worldwide sea-lane closure coverage. Open-ended notices are rechecked with the source.",
+          "id": "076f0fb6-c387-450a-9fdb-5629d7c1087e:3:0:0",
+          "in_force": true,
+          "source": "Danish Maritime Authority — regional coverage only",
+          "title": "Denmark. Kattegat. EK R 20 Yderby. Firing exercises. Warning.",
+          "url": "https://niord.dma.dk/#/message/076f0fb6-c387-450a-9fdb-5629d7c1087e",
+          "valid_from": "2026-11-16T09:21:50+00:00",
+          "valid_until": "2026-11-24T15:00:00+00:00"
         },
         {
           "date": "2026-11-16T00:21:50+00:00",
@@ -2522,84 +2458,95 @@
           "valid_until": null
         },
         {
-          "date": "2026-11-14T00:21:52+00:00",
-          "detail": "16 November 2026, hours 10:00 - 22:00. 17 November 2026, hours 10:00 - 22:00. 18 November 2026, hours 08:00 - 23:00. 19 November 2026, hours 09:00 - 15:00. 21 November 2026, hours 08:00 - 22:00. 22 November 2026, hours 08:00 - 16:00. 23 November 2026, hours 11:00 - 17:00. Published navigational restriction; no worldwide sea-lane closure coverage. Open-ended notices are rechecked with the source.",
-          "id": "7bc5a48d-5f50-4fb6-b79c-ce85de2573eb:0:0:0",
+          "date": "2026-11-16T09:21:52+00:00",
+          "detail": "16 November 2026, hours 10:00 - 22:00. 17 November 2026, hours 10:00 - 22:00. 18 November 2026, hours 08:00 - 23:00. 19 November 2026, hours 09:00 - 15:00. 21 November 2026, hours 08:00 - 16:00. 22 November 2026, hours 08:00 - 13:00. 23 November 2026, hours 11:00 - 17:00. 24 November 2026, hours 08:00 - 17:00. Published navigational restriction; no worldwide sea-lane closure coverage. Open-ended notices are rechecked with the source.",
+          "id": "0d46c069-0c0b-4cd6-80cb-4e07aeaab638:0:0:0",
           "in_force": true,
           "source": "Danish Maritime Authority — regional coverage only",
           "title": "Denmark. Skagerrak. EK R 48 Tranum S. Firing exercises. Warning.",
-          "url": "https://niord.dma.dk/#/message/7bc5a48d-5f50-4fb6-b79c-ce85de2573eb",
+          "url": "https://niord.dma.dk/#/message/0d46c069-0c0b-4cd6-80cb-4e07aeaab638",
           "valid_from": "2026-11-16T09:00:00+00:00",
           "valid_until": "2026-11-16T21:00:00+00:00"
         },
         {
-          "date": "2026-11-14T00:21:52+00:00",
-          "detail": "16 November 2026, hours 10:00 - 22:00. 17 November 2026, hours 10:00 - 22:00. 18 November 2026, hours 08:00 - 23:00. 19 November 2026, hours 09:00 - 15:00. 21 November 2026, hours 08:00 - 22:00. 22 November 2026, hours 08:00 - 16:00. 23 November 2026, hours 11:00 - 17:00. Published navigational restriction; no worldwide sea-lane closure coverage. Open-ended notices are rechecked with the source.",
-          "id": "7bc5a48d-5f50-4fb6-b79c-ce85de2573eb:0:1:0",
+          "date": "2026-11-16T09:21:52+00:00",
+          "detail": "16 November 2026, hours 10:00 - 22:00. 17 November 2026, hours 10:00 - 22:00. 18 November 2026, hours 08:00 - 23:00. 19 November 2026, hours 09:00 - 15:00. 21 November 2026, hours 08:00 - 16:00. 22 November 2026, hours 08:00 - 13:00. 23 November 2026, hours 11:00 - 17:00. 24 November 2026, hours 08:00 - 17:00. Published navigational restriction; no worldwide sea-lane closure coverage. Open-ended notices are rechecked with the source.",
+          "id": "0d46c069-0c0b-4cd6-80cb-4e07aeaab638:0:1:0",
           "in_force": true,
           "source": "Danish Maritime Authority — regional coverage only",
           "title": "Denmark. Skagerrak. EK R 48 Tranum S. Firing exercises. Warning.",
-          "url": "https://niord.dma.dk/#/message/7bc5a48d-5f50-4fb6-b79c-ce85de2573eb",
+          "url": "https://niord.dma.dk/#/message/0d46c069-0c0b-4cd6-80cb-4e07aeaab638",
           "valid_from": "2026-11-17T09:00:00+00:00",
           "valid_until": "2026-11-17T21:00:00+00:00"
         },
         {
-          "date": "2026-11-14T00:21:52+00:00",
-          "detail": "16 November 2026, hours 10:00 - 22:00. 17 November 2026, hours 10:00 - 22:00. 18 November 2026, hours 08:00 - 23:00. 19 November 2026, hours 09:00 - 15:00. 21 November 2026, hours 08:00 - 22:00. 22 November 2026, hours 08:00 - 16:00. 23 November 2026, hours 11:00 - 17:00. Published navigational restriction; no worldwide sea-lane closure coverage. Open-ended notices are rechecked with the source.",
-          "id": "7bc5a48d-5f50-4fb6-b79c-ce85de2573eb:0:2:0",
+          "date": "2026-11-16T09:21:52+00:00",
+          "detail": "16 November 2026, hours 10:00 - 22:00. 17 November 2026, hours 10:00 - 22:00. 18 November 2026, hours 08:00 - 23:00. 19 November 2026, hours 09:00 - 15:00. 21 November 2026, hours 08:00 - 16:00. 22 November 2026, hours 08:00 - 13:00. 23 November 2026, hours 11:00 - 17:00. 24 November 2026, hours 08:00 - 17:00. Published navigational restriction; no worldwide sea-lane closure coverage. Open-ended notices are rechecked with the source.",
+          "id": "0d46c069-0c0b-4cd6-80cb-4e07aeaab638:0:2:0",
           "in_force": true,
           "source": "Danish Maritime Authority — regional coverage only",
           "title": "Denmark. Skagerrak. EK R 48 Tranum S. Firing exercises. Warning.",
-          "url": "https://niord.dma.dk/#/message/7bc5a48d-5f50-4fb6-b79c-ce85de2573eb",
+          "url": "https://niord.dma.dk/#/message/0d46c069-0c0b-4cd6-80cb-4e07aeaab638",
           "valid_from": "2026-11-18T07:00:00+00:00",
           "valid_until": "2026-11-18T22:00:00+00:00"
         },
         {
-          "date": "2026-11-14T00:21:52+00:00",
-          "detail": "16 November 2026, hours 10:00 - 22:00. 17 November 2026, hours 10:00 - 22:00. 18 November 2026, hours 08:00 - 23:00. 19 November 2026, hours 09:00 - 15:00. 21 November 2026, hours 08:00 - 22:00. 22 November 2026, hours 08:00 - 16:00. 23 November 2026, hours 11:00 - 17:00. Published navigational restriction; no worldwide sea-lane closure coverage. Open-ended notices are rechecked with the source.",
-          "id": "7bc5a48d-5f50-4fb6-b79c-ce85de2573eb:0:3:0",
+          "date": "2026-11-16T09:21:52+00:00",
+          "detail": "16 November 2026, hours 10:00 - 22:00. 17 November 2026, hours 10:00 - 22:00. 18 November 2026, hours 08:00 - 23:00. 19 November 2026, hours 09:00 - 15:00. 21 November 2026, hours 08:00 - 16:00. 22 November 2026, hours 08:00 - 13:00. 23 November 2026, hours 11:00 - 17:00. 24 November 2026, hours 08:00 - 17:00. Published navigational restriction; no worldwide sea-lane closure coverage. Open-ended notices are rechecked with the source.",
+          "id": "0d46c069-0c0b-4cd6-80cb-4e07aeaab638:0:3:0",
           "in_force": true,
           "source": "Danish Maritime Authority — regional coverage only",
           "title": "Denmark. Skagerrak. EK R 48 Tranum S. Firing exercises. Warning.",
-          "url": "https://niord.dma.dk/#/message/7bc5a48d-5f50-4fb6-b79c-ce85de2573eb",
+          "url": "https://niord.dma.dk/#/message/0d46c069-0c0b-4cd6-80cb-4e07aeaab638",
           "valid_from": "2026-11-19T08:00:00+00:00",
           "valid_until": "2026-11-19T14:00:00+00:00"
         },
         {
-          "date": "2026-11-14T00:21:52+00:00",
-          "detail": "16 November 2026, hours 10:00 - 22:00. 17 November 2026, hours 10:00 - 22:00. 18 November 2026, hours 08:00 - 23:00. 19 November 2026, hours 09:00 - 15:00. 21 November 2026, hours 08:00 - 22:00. 22 November 2026, hours 08:00 - 16:00. 23 November 2026, hours 11:00 - 17:00. Published navigational restriction; no worldwide sea-lane closure coverage. Open-ended notices are rechecked with the source.",
-          "id": "7bc5a48d-5f50-4fb6-b79c-ce85de2573eb:0:4:0",
+          "date": "2026-11-16T09:21:52+00:00",
+          "detail": "16 November 2026, hours 10:00 - 22:00. 17 November 2026, hours 10:00 - 22:00. 18 November 2026, hours 08:00 - 23:00. 19 November 2026, hours 09:00 - 15:00. 21 November 2026, hours 08:00 - 16:00. 22 November 2026, hours 08:00 - 13:00. 23 November 2026, hours 11:00 - 17:00. 24 November 2026, hours 08:00 - 17:00. Published navigational restriction; no worldwide sea-lane closure coverage. Open-ended notices are rechecked with the source.",
+          "id": "0d46c069-0c0b-4cd6-80cb-4e07aeaab638:0:4:0",
           "in_force": true,
           "source": "Danish Maritime Authority — regional coverage only",
           "title": "Denmark. Skagerrak. EK R 48 Tranum S. Firing exercises. Warning.",
-          "url": "https://niord.dma.dk/#/message/7bc5a48d-5f50-4fb6-b79c-ce85de2573eb",
+          "url": "https://niord.dma.dk/#/message/0d46c069-0c0b-4cd6-80cb-4e07aeaab638",
           "valid_from": "2026-11-21T07:00:00+00:00",
-          "valid_until": "2026-11-21T21:00:00+00:00"
+          "valid_until": "2026-11-21T15:00:00+00:00"
         },
         {
-          "date": "2026-11-14T00:21:52+00:00",
-          "detail": "16 November 2026, hours 10:00 - 22:00. 17 November 2026, hours 10:00 - 22:00. 18 November 2026, hours 08:00 - 23:00. 19 November 2026, hours 09:00 - 15:00. 21 November 2026, hours 08:00 - 22:00. 22 November 2026, hours 08:00 - 16:00. 23 November 2026, hours 11:00 - 17:00. Published navigational restriction; no worldwide sea-lane closure coverage. Open-ended notices are rechecked with the source.",
-          "id": "7bc5a48d-5f50-4fb6-b79c-ce85de2573eb:0:5:0",
+          "date": "2026-11-16T09:21:52+00:00",
+          "detail": "16 November 2026, hours 10:00 - 22:00. 17 November 2026, hours 10:00 - 22:00. 18 November 2026, hours 08:00 - 23:00. 19 November 2026, hours 09:00 - 15:00. 21 November 2026, hours 08:00 - 16:00. 22 November 2026, hours 08:00 - 13:00. 23 November 2026, hours 11:00 - 17:00. 24 November 2026, hours 08:00 - 17:00. Published navigational restriction; no worldwide sea-lane closure coverage. Open-ended notices are rechecked with the source.",
+          "id": "0d46c069-0c0b-4cd6-80cb-4e07aeaab638:0:5:0",
           "in_force": true,
           "source": "Danish Maritime Authority — regional coverage only",
           "title": "Denmark. Skagerrak. EK R 48 Tranum S. Firing exercises. Warning.",
-          "url": "https://niord.dma.dk/#/message/7bc5a48d-5f50-4fb6-b79c-ce85de2573eb",
+          "url": "https://niord.dma.dk/#/message/0d46c069-0c0b-4cd6-80cb-4e07aeaab638",
           "valid_from": "2026-11-22T07:00:00+00:00",
-          "valid_until": "2026-11-22T15:00:00+00:00"
+          "valid_until": "2026-11-22T12:00:00+00:00"
         },
         {
-          "date": "2026-11-14T00:21:52+00:00",
-          "detail": "16 November 2026, hours 10:00 - 22:00. 17 November 2026, hours 10:00 - 22:00. 18 November 2026, hours 08:00 - 23:00. 19 November 2026, hours 09:00 - 15:00. 21 November 2026, hours 08:00 - 22:00. 22 November 2026, hours 08:00 - 16:00. 23 November 2026, hours 11:00 - 17:00. Published navigational restriction; no worldwide sea-lane closure coverage. Open-ended notices are rechecked with the source.",
-          "id": "7bc5a48d-5f50-4fb6-b79c-ce85de2573eb:0:6:0",
+          "date": "2026-11-16T09:21:52+00:00",
+          "detail": "16 November 2026, hours 10:00 - 22:00. 17 November 2026, hours 10:00 - 22:00. 18 November 2026, hours 08:00 - 23:00. 19 November 2026, hours 09:00 - 15:00. 21 November 2026, hours 08:00 - 16:00. 22 November 2026, hours 08:00 - 13:00. 23 November 2026, hours 11:00 - 17:00. 24 November 2026, hours 08:00 - 17:00. Published navigational restriction; no worldwide sea-lane closure coverage. Open-ended notices are rechecked with the source.",
+          "id": "0d46c069-0c0b-4cd6-80cb-4e07aeaab638:0:6:0",
           "in_force": true,
           "source": "Danish Maritime Authority — regional coverage only",
           "title": "Denmark. Skagerrak. EK R 48 Tranum S. Firing exercises. Warning.",
-          "url": "https://niord.dma.dk/#/message/7bc5a48d-5f50-4fb6-b79c-ce85de2573eb",
+          "url": "https://niord.dma.dk/#/message/0d46c069-0c0b-4cd6-80cb-4e07aeaab638",
           "valid_from": "2026-11-23T10:00:00+00:00",
           "valid_until": "2026-11-23T16:00:00+00:00"
         },
         {
-          "date": "2026-11-14T00:21:52+00:00",
+          "date": "2026-11-16T09:21:52+00:00",
+          "detail": "16 November 2026, hours 10:00 - 22:00. 17 November 2026, hours 10:00 - 22:00. 18 November 2026, hours 08:00 - 23:00. 19 November 2026, hours 09:00 - 15:00. 21 November 2026, hours 08:00 - 16:00. 22 November 2026, hours 08:00 - 13:00. 23 November 2026, hours 11:00 - 17:00. 24 November 2026, hours 08:00 - 17:00. Published navigational restriction; no worldwide sea-lane closure coverage. Open-ended notices are rechecked with the source.",
+          "id": "0d46c069-0c0b-4cd6-80cb-4e07aeaab638:0:7:0",
+          "in_force": true,
+          "source": "Danish Maritime Authority — regional coverage only",
+          "title": "Denmark. Skagerrak. EK R 48 Tranum S. Firing exercises. Warning.",
+          "url": "https://niord.dma.dk/#/message/0d46c069-0c0b-4cd6-80cb-4e07aeaab638",
+          "valid_from": "2026-11-24T07:00:00+00:00",
+          "valid_until": "2026-11-24T16:00:00+00:00"
+        },
+        {
+          "date": "2026-11-16T09:21:52+00:00",
           "detail": " In connection with firing practices, a temporary prohibited area is established on the sea off the firing practice area at position: \n \n 57° 12'N - 009° 29'E. \n  Published navigational restriction; no worldwide sea-lane closure coverage. Open-ended notices are rechecked with the source.",
           "geometry": {
             "coordinates": [
@@ -2636,49 +2583,444 @@
             ],
             "type": "Polygon"
           },
-          "id": "7bc5a48d-5f50-4fb6-b79c-ce85de2573eb:1:0:0",
+          "id": "0d46c069-0c0b-4cd6-80cb-4e07aeaab638:1:0:0",
           "in_force": true,
           "source": "Danish Maritime Authority — regional coverage only",
           "title": "Denmark. Skagerrak. EK R 48 Tranum S. Firing exercises. Warning.",
-          "url": "https://niord.dma.dk/#/message/7bc5a48d-5f50-4fb6-b79c-ce85de2573eb",
-          "valid_from": "2026-11-14T00:21:51+00:00",
-          "valid_until": "2026-11-23T16:00:00+00:00"
+          "url": "https://niord.dma.dk/#/message/0d46c069-0c0b-4cd6-80cb-4e07aeaab638",
+          "valid_from": "2026-11-16T09:21:50+00:00",
+          "valid_until": "2026-11-24T16:00:00+00:00"
         },
         {
-          "date": "2026-11-14T00:21:52+00:00",
+          "date": "2026-11-16T09:21:52+00:00",
           "detail": " During firing practices, all navigation, anchoring and fishing are prohibited in the area.  Published navigational restriction; no worldwide sea-lane closure coverage. Open-ended notices are rechecked with the source.",
-          "id": "7bc5a48d-5f50-4fb6-b79c-ce85de2573eb:2:0:0",
+          "id": "0d46c069-0c0b-4cd6-80cb-4e07aeaab638:2:0:0",
           "in_force": true,
           "source": "Danish Maritime Authority — regional coverage only",
           "title": "Denmark. Skagerrak. EK R 48 Tranum S. Firing exercises. Warning.",
-          "url": "https://niord.dma.dk/#/message/7bc5a48d-5f50-4fb6-b79c-ce85de2573eb",
-          "valid_from": "2026-11-14T00:21:51+00:00",
-          "valid_until": "2026-11-23T16:00:00+00:00"
+          "url": "https://niord.dma.dk/#/message/0d46c069-0c0b-4cd6-80cb-4e07aeaab638",
+          "valid_from": "2026-11-16T09:21:50+00:00",
+          "valid_until": "2026-11-24T16:00:00+00:00"
         },
         {
-          "date": "2026-11-14T00:21:52+00:00",
+          "date": "2026-11-16T09:21:52+00:00",
           "detail": " Information about firing practices is given by displaying the following signals from one hour before the start of the firing practice and until its end: \n \n \n \n  a)  \n  By daylight, four white, flashing lights (60 flashes per minute) are lit on signal mast 1 and 2.  \n \n \n  b)  \n   In darkness, a light is lit displaying a red and white alternating flash (30 flashes per minute) on signal masts 1 and 2.  \n \n \n \n \n  57° 10,77'N - 009° 26,66'E, signal mast 1 ved Ejstrup Strand.  \n  57° 12,38'N - 009° 30,22'E, signal mast 2 ved Rødhus Strand.  \n  Published navigational restriction; no worldwide sea-lane closure coverage. Open-ended notices are rechecked with the source.",
-          "id": "7bc5a48d-5f50-4fb6-b79c-ce85de2573eb:3:0:0",
+          "id": "0d46c069-0c0b-4cd6-80cb-4e07aeaab638:3:0:0",
           "in_force": true,
           "source": "Danish Maritime Authority — regional coverage only",
           "title": "Denmark. Skagerrak. EK R 48 Tranum S. Firing exercises. Warning.",
-          "url": "https://niord.dma.dk/#/message/7bc5a48d-5f50-4fb6-b79c-ce85de2573eb",
-          "valid_from": "2026-11-14T00:21:51+00:00",
-          "valid_until": "2026-11-23T16:00:00+00:00"
+          "url": "https://niord.dma.dk/#/message/0d46c069-0c0b-4cd6-80cb-4e07aeaab638",
+          "valid_from": "2026-11-16T09:21:50+00:00",
+          "valid_until": "2026-11-24T16:00:00+00:00"
         },
         {
-          "date": "2026-11-14T00:21:52+00:00",
+          "date": "2026-11-16T09:21:52+00:00",
           "detail": " Information about firing practices is available from Tranum Skydeterræn tel. +45 7283 9699 / +45 2542 5815, or over VHF radio. Call name: Tranum. Call channel: 16. Conversation channels: 9, 12 and 13. The radio is open from one hour before the start of the firing practice and until its end. \n For further information see Naviairs webbrief and at https://www.forsvaret.dk/da/oevelsesaktiviteter/ \n   Published navigational restriction; no worldwide sea-lane closure coverage. Open-ended notices are rechecked with the source.",
-          "id": "7bc5a48d-5f50-4fb6-b79c-ce85de2573eb:4:0:0",
+          "id": "0d46c069-0c0b-4cd6-80cb-4e07aeaab638:4:0:0",
           "in_force": true,
           "source": "Danish Maritime Authority — regional coverage only",
           "title": "Denmark. Skagerrak. EK R 48 Tranum S. Firing exercises. Warning.",
-          "url": "https://niord.dma.dk/#/message/7bc5a48d-5f50-4fb6-b79c-ce85de2573eb",
-          "valid_from": "2026-11-14T00:21:51+00:00",
-          "valid_until": "2026-11-23T16:00:00+00:00"
+          "url": "https://niord.dma.dk/#/message/0d46c069-0c0b-4cd6-80cb-4e07aeaab638",
+          "valid_from": "2026-11-16T09:21:50+00:00",
+          "valid_until": "2026-11-24T16:00:00+00:00"
+        },
+        {
+          "date": "2026-11-16T09:21:53+00:00",
+          "detail": "16 November 2026, hours 10:00 - 20:00. 17 November 2026, hours 08:00 - 20:00. 18 November 2026, hours 08:00 - 20:00. 19 November 2026, hours 08:00 - 20:00. 20 November 2026, hours 08:00 - 14:00. 21 November 2026, hours 08:00 - 22:00. 22 November 2026, hours 08:00 - 12:00. Published navigational restriction; no worldwide sea-lane closure coverage. Open-ended notices are rechecked with the source.",
+          "id": "8d5a1de4-9b8e-4c89-bd26-41a2becc8cb3:0:0:0",
+          "in_force": true,
+          "source": "Danish Maritime Authority — regional coverage only",
+          "title": "Denmark. The North Sea. 15 Nymindegab. Firing exercises. Warning.",
+          "url": "https://niord.dma.dk/#/message/8d5a1de4-9b8e-4c89-bd26-41a2becc8cb3",
+          "valid_from": "2026-11-16T09:00:00+00:00",
+          "valid_until": "2026-11-16T19:00:00+00:00"
+        },
+        {
+          "date": "2026-11-16T09:21:53+00:00",
+          "detail": "16 November 2026, hours 10:00 - 20:00. 17 November 2026, hours 08:00 - 20:00. 18 November 2026, hours 08:00 - 20:00. 19 November 2026, hours 08:00 - 20:00. 20 November 2026, hours 08:00 - 14:00. 21 November 2026, hours 08:00 - 22:00. 22 November 2026, hours 08:00 - 12:00. Published navigational restriction; no worldwide sea-lane closure coverage. Open-ended notices are rechecked with the source.",
+          "id": "8d5a1de4-9b8e-4c89-bd26-41a2becc8cb3:0:1:0",
+          "in_force": true,
+          "source": "Danish Maritime Authority — regional coverage only",
+          "title": "Denmark. The North Sea. 15 Nymindegab. Firing exercises. Warning.",
+          "url": "https://niord.dma.dk/#/message/8d5a1de4-9b8e-4c89-bd26-41a2becc8cb3",
+          "valid_from": "2026-11-17T07:00:00+00:00",
+          "valid_until": "2026-11-17T19:00:00+00:00"
+        },
+        {
+          "date": "2026-11-16T09:21:53+00:00",
+          "detail": "16 November 2026, hours 10:00 - 20:00. 17 November 2026, hours 08:00 - 20:00. 18 November 2026, hours 08:00 - 20:00. 19 November 2026, hours 08:00 - 20:00. 20 November 2026, hours 08:00 - 14:00. 21 November 2026, hours 08:00 - 22:00. 22 November 2026, hours 08:00 - 12:00. Published navigational restriction; no worldwide sea-lane closure coverage. Open-ended notices are rechecked with the source.",
+          "id": "8d5a1de4-9b8e-4c89-bd26-41a2becc8cb3:0:2:0",
+          "in_force": true,
+          "source": "Danish Maritime Authority — regional coverage only",
+          "title": "Denmark. The North Sea. 15 Nymindegab. Firing exercises. Warning.",
+          "url": "https://niord.dma.dk/#/message/8d5a1de4-9b8e-4c89-bd26-41a2becc8cb3",
+          "valid_from": "2026-11-18T07:00:00+00:00",
+          "valid_until": "2026-11-18T19:00:00+00:00"
+        },
+        {
+          "date": "2026-11-16T09:21:53+00:00",
+          "detail": "16 November 2026, hours 10:00 - 20:00. 17 November 2026, hours 08:00 - 20:00. 18 November 2026, hours 08:00 - 20:00. 19 November 2026, hours 08:00 - 20:00. 20 November 2026, hours 08:00 - 14:00. 21 November 2026, hours 08:00 - 22:00. 22 November 2026, hours 08:00 - 12:00. Published navigational restriction; no worldwide sea-lane closure coverage. Open-ended notices are rechecked with the source.",
+          "id": "8d5a1de4-9b8e-4c89-bd26-41a2becc8cb3:0:3:0",
+          "in_force": true,
+          "source": "Danish Maritime Authority — regional coverage only",
+          "title": "Denmark. The North Sea. 15 Nymindegab. Firing exercises. Warning.",
+          "url": "https://niord.dma.dk/#/message/8d5a1de4-9b8e-4c89-bd26-41a2becc8cb3",
+          "valid_from": "2026-11-19T07:00:00+00:00",
+          "valid_until": "2026-11-19T19:00:00+00:00"
+        },
+        {
+          "date": "2026-11-16T09:21:53+00:00",
+          "detail": "16 November 2026, hours 10:00 - 20:00. 17 November 2026, hours 08:00 - 20:00. 18 November 2026, hours 08:00 - 20:00. 19 November 2026, hours 08:00 - 20:00. 20 November 2026, hours 08:00 - 14:00. 21 November 2026, hours 08:00 - 22:00. 22 November 2026, hours 08:00 - 12:00. Published navigational restriction; no worldwide sea-lane closure coverage. Open-ended notices are rechecked with the source.",
+          "id": "8d5a1de4-9b8e-4c89-bd26-41a2becc8cb3:0:4:0",
+          "in_force": true,
+          "source": "Danish Maritime Authority — regional coverage only",
+          "title": "Denmark. The North Sea. 15 Nymindegab. Firing exercises. Warning.",
+          "url": "https://niord.dma.dk/#/message/8d5a1de4-9b8e-4c89-bd26-41a2becc8cb3",
+          "valid_from": "2026-11-20T07:00:00+00:00",
+          "valid_until": "2026-11-20T13:00:00+00:00"
+        },
+        {
+          "date": "2026-11-16T09:21:53+00:00",
+          "detail": "16 November 2026, hours 10:00 - 20:00. 17 November 2026, hours 08:00 - 20:00. 18 November 2026, hours 08:00 - 20:00. 19 November 2026, hours 08:00 - 20:00. 20 November 2026, hours 08:00 - 14:00. 21 November 2026, hours 08:00 - 22:00. 22 November 2026, hours 08:00 - 12:00. Published navigational restriction; no worldwide sea-lane closure coverage. Open-ended notices are rechecked with the source.",
+          "id": "8d5a1de4-9b8e-4c89-bd26-41a2becc8cb3:0:5:0",
+          "in_force": true,
+          "source": "Danish Maritime Authority — regional coverage only",
+          "title": "Denmark. The North Sea. 15 Nymindegab. Firing exercises. Warning.",
+          "url": "https://niord.dma.dk/#/message/8d5a1de4-9b8e-4c89-bd26-41a2becc8cb3",
+          "valid_from": "2026-11-21T07:00:00+00:00",
+          "valid_until": "2026-11-21T21:00:00+00:00"
+        },
+        {
+          "date": "2026-11-16T09:21:53+00:00",
+          "detail": "16 November 2026, hours 10:00 - 20:00. 17 November 2026, hours 08:00 - 20:00. 18 November 2026, hours 08:00 - 20:00. 19 November 2026, hours 08:00 - 20:00. 20 November 2026, hours 08:00 - 14:00. 21 November 2026, hours 08:00 - 22:00. 22 November 2026, hours 08:00 - 12:00. Published navigational restriction; no worldwide sea-lane closure coverage. Open-ended notices are rechecked with the source.",
+          "id": "8d5a1de4-9b8e-4c89-bd26-41a2becc8cb3:0:6:0",
+          "in_force": true,
+          "source": "Danish Maritime Authority — regional coverage only",
+          "title": "Denmark. The North Sea. 15 Nymindegab. Firing exercises. Warning.",
+          "url": "https://niord.dma.dk/#/message/8d5a1de4-9b8e-4c89-bd26-41a2becc8cb3",
+          "valid_from": "2026-11-22T07:00:00+00:00",
+          "valid_until": "2026-11-22T11:00:00+00:00"
+        },
+        {
+          "date": "2026-11-16T09:21:53+00:00",
+          "detail": " In connection with firing practices, a temporary prohibited area is established on the sea off the firing practice area at position: \n \n 55° 50'N - 008° 10'E. \n  Published navigational restriction; no worldwide sea-lane closure coverage. Open-ended notices are rechecked with the source.",
+          "geometry": {
+            "coordinates": [
+              [
+                [
+                  8.182916666666667,
+                  55.80279999999999
+                ],
+                [
+                  8.149683333333334,
+                  55.77593333333334
+                ],
+                [
+                  8.070483333333334,
+                  55.81056666666666
+                ],
+                [
+                  8.080383333333334,
+                  55.868533333333346
+                ],
+                [
+                  8.144733333333333,
+                  55.88586666666666
+                ],
+                [
+                  8.165583333333334,
+                  55.86253333333329
+                ],
+                [
+                  8.182916666666667,
+                  55.80279999999999
+                ]
+              ]
+            ],
+            "type": "Polygon"
+          },
+          "id": "8d5a1de4-9b8e-4c89-bd26-41a2becc8cb3:1:0:0",
+          "in_force": true,
+          "source": "Danish Maritime Authority — regional coverage only",
+          "title": "Denmark. The North Sea. 15 Nymindegab. Firing exercises. Warning.",
+          "url": "https://niord.dma.dk/#/message/8d5a1de4-9b8e-4c89-bd26-41a2becc8cb3",
+          "valid_from": "2026-11-16T09:21:50+00:00",
+          "valid_until": "2026-11-22T11:00:00+00:00"
+        },
+        {
+          "date": "2026-11-16T09:21:53+00:00",
+          "detail": " During firing practices, all navigation, anchoring and fishing are prohibited in the area.  Published navigational restriction; no worldwide sea-lane closure coverage. Open-ended notices are rechecked with the source.",
+          "id": "8d5a1de4-9b8e-4c89-bd26-41a2becc8cb3:2:0:0",
+          "in_force": true,
+          "source": "Danish Maritime Authority — regional coverage only",
+          "title": "Denmark. The North Sea. 15 Nymindegab. Firing exercises. Warning.",
+          "url": "https://niord.dma.dk/#/message/8d5a1de4-9b8e-4c89-bd26-41a2becc8cb3",
+          "valid_from": "2026-11-16T09:21:50+00:00",
+          "valid_until": "2026-11-22T11:00:00+00:00"
+        },
+        {
+          "date": "2026-11-16T09:21:53+00:00",
+          "detail": " Information about firing practices is given by displaying the following signals on the signal masts W of Nyminde Strøm from one hour before the start of the firing practice and until its end: \n  \n \n \n \n a) \n \n By daylight, a sphere is hoisted on the northern and southern signal mast. \n On the southern signal mast a white flash is lit (30 flashes per minute). \n \n \n \n b) \n  In darkness a red and white alternating flashing light (30 flashes pr. minute) is lit at the southern signal mast.  \n \n \n \n  \n \n 55 °  50,49'N - 008 °  09,92'E, northern signal mast. \n 55 °  49,46'N - 008 °  10,23'E, southern signal mast. \n  Published navigational restriction; no worldwide sea-lane closure coverage. Open-ended notices are rechecked with the source.",
+          "id": "8d5a1de4-9b8e-4c89-bd26-41a2becc8cb3:3:0:0",
+          "in_force": true,
+          "source": "Danish Maritime Authority — regional coverage only",
+          "title": "Denmark. The North Sea. 15 Nymindegab. Firing exercises. Warning.",
+          "url": "https://niord.dma.dk/#/message/8d5a1de4-9b8e-4c89-bd26-41a2becc8cb3",
+          "valid_from": "2026-11-16T09:21:50+00:00",
+          "valid_until": "2026-11-22T11:00:00+00:00"
+        },
+        {
+          "date": "2026-11-16T09:21:53+00:00",
+          "detail": " Information about firing practices is available in the daily working hours from Firing Safety Element in Camp Oksbøl, tel. +45 7283 9550, from  www.forsvaret.dk/da/oevelsesaktiviteter/reg-syddanmark/nymindegab-ovelsesplads-og-skydebaner/  or over VHF radio. Call name: Nymindegab. Call channel: 16. Conversation channels: 6 and 8. The radio is open from one hour before the start of the firing practice and until its end. During firing practices the head of firing can be contacted on tel. +45 5085 7178.  Published navigational restriction; no worldwide sea-lane closure coverage. Open-ended notices are rechecked with the source.",
+          "id": "8d5a1de4-9b8e-4c89-bd26-41a2becc8cb3:4:0:0",
+          "in_force": true,
+          "source": "Danish Maritime Authority — regional coverage only",
+          "title": "Denmark. The North Sea. 15 Nymindegab. Firing exercises. Warning.",
+          "url": "https://niord.dma.dk/#/message/8d5a1de4-9b8e-4c89-bd26-41a2becc8cb3",
+          "valid_from": "2026-11-16T09:21:50+00:00",
+          "valid_until": "2026-11-22T11:00:00+00:00"
+        },
+        {
+          "date": "2026-11-16T09:21:52+00:00",
+          "detail": "16 November 2026, hours 08:00 - 21:00. 17 November 2026, hours 08:00 - 23:59. 18 November 2026, hours 08:00 - 23:59. 19 November 2026, hours 08:00 - 21:00. 20 November 2026, hours 08:00 - 14:00. Published navigational restriction; no worldwide sea-lane closure coverage. Open-ended notices are rechecked with the source.",
+          "id": "f44d130c-3d02-409c-8023-40cb59dad3fb:0:0:0",
+          "in_force": true,
+          "source": "Danish Maritime Authority — regional coverage only",
+          "title": "Denmark. The North Sea. EK R 33 Vejers. Firing exercises. Warning.",
+          "url": "https://niord.dma.dk/#/message/f44d130c-3d02-409c-8023-40cb59dad3fb",
+          "valid_from": "2026-11-16T07:00:00+00:00",
+          "valid_until": "2026-11-16T20:00:00+00:00"
+        },
+        {
+          "date": "2026-11-16T09:21:52+00:00",
+          "detail": "16 November 2026, hours 08:00 - 21:00. 17 November 2026, hours 08:00 - 23:59. 18 November 2026, hours 08:00 - 23:59. 19 November 2026, hours 08:00 - 21:00. 20 November 2026, hours 08:00 - 14:00. Published navigational restriction; no worldwide sea-lane closure coverage. Open-ended notices are rechecked with the source.",
+          "id": "f44d130c-3d02-409c-8023-40cb59dad3fb:0:1:0",
+          "in_force": true,
+          "source": "Danish Maritime Authority — regional coverage only",
+          "title": "Denmark. The North Sea. EK R 33 Vejers. Firing exercises. Warning.",
+          "url": "https://niord.dma.dk/#/message/f44d130c-3d02-409c-8023-40cb59dad3fb",
+          "valid_from": "2026-11-17T07:00:00+00:00",
+          "valid_until": "2026-11-17T22:59:00+00:00"
+        },
+        {
+          "date": "2026-11-16T09:21:52+00:00",
+          "detail": "16 November 2026, hours 08:00 - 21:00. 17 November 2026, hours 08:00 - 23:59. 18 November 2026, hours 08:00 - 23:59. 19 November 2026, hours 08:00 - 21:00. 20 November 2026, hours 08:00 - 14:00. Published navigational restriction; no worldwide sea-lane closure coverage. Open-ended notices are rechecked with the source.",
+          "id": "f44d130c-3d02-409c-8023-40cb59dad3fb:0:2:0",
+          "in_force": true,
+          "source": "Danish Maritime Authority — regional coverage only",
+          "title": "Denmark. The North Sea. EK R 33 Vejers. Firing exercises. Warning.",
+          "url": "https://niord.dma.dk/#/message/f44d130c-3d02-409c-8023-40cb59dad3fb",
+          "valid_from": "2026-11-18T07:00:00+00:00",
+          "valid_until": "2026-11-18T22:59:00+00:00"
+        },
+        {
+          "date": "2026-11-16T09:21:52+00:00",
+          "detail": "16 November 2026, hours 08:00 - 21:00. 17 November 2026, hours 08:00 - 23:59. 18 November 2026, hours 08:00 - 23:59. 19 November 2026, hours 08:00 - 21:00. 20 November 2026, hours 08:00 - 14:00. Published navigational restriction; no worldwide sea-lane closure coverage. Open-ended notices are rechecked with the source.",
+          "id": "f44d130c-3d02-409c-8023-40cb59dad3fb:0:3:0",
+          "in_force": true,
+          "source": "Danish Maritime Authority — regional coverage only",
+          "title": "Denmark. The North Sea. EK R 33 Vejers. Firing exercises. Warning.",
+          "url": "https://niord.dma.dk/#/message/f44d130c-3d02-409c-8023-40cb59dad3fb",
+          "valid_from": "2026-11-19T07:00:00+00:00",
+          "valid_until": "2026-11-19T20:00:00+00:00"
+        },
+        {
+          "date": "2026-11-16T09:21:52+00:00",
+          "detail": "16 November 2026, hours 08:00 - 21:00. 17 November 2026, hours 08:00 - 23:59. 18 November 2026, hours 08:00 - 23:59. 19 November 2026, hours 08:00 - 21:00. 20 November 2026, hours 08:00 - 14:00. Published navigational restriction; no worldwide sea-lane closure coverage. Open-ended notices are rechecked with the source.",
+          "id": "f44d130c-3d02-409c-8023-40cb59dad3fb:0:4:0",
+          "in_force": true,
+          "source": "Danish Maritime Authority — regional coverage only",
+          "title": "Denmark. The North Sea. EK R 33 Vejers. Firing exercises. Warning.",
+          "url": "https://niord.dma.dk/#/message/f44d130c-3d02-409c-8023-40cb59dad3fb",
+          "valid_from": "2026-11-20T07:00:00+00:00",
+          "valid_until": "2026-11-20T13:00:00+00:00"
+        },
+        {
+          "date": "2026-11-16T09:21:52+00:00",
+          "detail": "    In connection with firing practices, a temporary prohibited area is established on the sea off the firing practice area at position:  \n \n 55° 35'N - 008° 06'E. \n  Published navigational restriction; no worldwide sea-lane closure coverage. Open-ended notices are rechecked with the source.",
+          "geometry": {
+            "coordinates": [
+              [
+                [
+                  8.1,
+                  55.583333333333336
+                ],
+                [
+                  8.10195,
+                  55.561566666666664
+                ],
+                [
+                  7.990283333333333,
+                  55.538333333333334
+                ],
+                [
+                  7.8311166666666665,
+                  55.560833333333335
+                ],
+                [
+                  7.823016666666667,
+                  55.61183333333334
+                ],
+                [
+                  7.908383333333333,
+                  55.72696666666667
+                ],
+                [
+                  8.014366666666668,
+                  55.74463333333333
+                ],
+                [
+                  8.122916666666667,
+                  55.61436666666667
+                ],
+                [
+                  8.1,
+                  55.583333333333336
+                ]
+              ]
+            ],
+            "type": "Polygon"
+          },
+          "id": "f44d130c-3d02-409c-8023-40cb59dad3fb:1:0:0",
+          "in_force": true,
+          "source": "Danish Maritime Authority — regional coverage only",
+          "title": "Denmark. The North Sea. EK R 33 Vejers. Firing exercises. Warning.",
+          "url": "https://niord.dma.dk/#/message/f44d130c-3d02-409c-8023-40cb59dad3fb",
+          "valid_from": "2026-11-16T09:21:50+00:00",
+          "valid_until": "2026-11-20T13:00:00+00:00"
+        },
+        {
+          "date": "2026-11-16T09:21:52+00:00",
+          "detail": " During firing practices, all navigation, anchoring and fishing are prohibited in the part of the area that is within the Danish territorial sea and navigation is dangerous in the entire area.  Published navigational restriction; no worldwide sea-lane closure coverage. Open-ended notices are rechecked with the source.",
+          "id": "f44d130c-3d02-409c-8023-40cb59dad3fb:2:0:0",
+          "in_force": true,
+          "source": "Danish Maritime Authority — regional coverage only",
+          "title": "Denmark. The North Sea. EK R 33 Vejers. Firing exercises. Warning.",
+          "url": "https://niord.dma.dk/#/message/f44d130c-3d02-409c-8023-40cb59dad3fb",
+          "valid_from": "2026-11-16T09:21:50+00:00",
+          "valid_until": "2026-11-20T13:00:00+00:00"
+        },
+        {
+          "date": "2026-11-16T09:21:52+00:00",
+          "detail": " Information about firing practices is given by displaying the following signals on the northern and southern signal mast from one hour before the start of the firing practice and until its end: \n \n \n \n  a)  \n  By daylight, a white, flashing light is lit (60 flashes per minute).  \n \n \n  b)  \n  In darkness, a light displaying a red and white alternating flash is lit (30 flashes per minute).  \n \n \n \n \n 55 °  37,24'N - 008 °  07,04'E, northern signal mast. \n 55 °  33,53'N - 008 °  04,67'E, southern signal mast.  \n  Published navigational restriction; no worldwide sea-lane closure coverage. Open-ended notices are rechecked with the source.",
+          "id": "f44d130c-3d02-409c-8023-40cb59dad3fb:3:0:0",
+          "in_force": true,
+          "source": "Danish Maritime Authority — regional coverage only",
+          "title": "Denmark. The North Sea. EK R 33 Vejers. Firing exercises. Warning.",
+          "url": "https://niord.dma.dk/#/message/f44d130c-3d02-409c-8023-40cb59dad3fb",
+          "valid_from": "2026-11-16T09:21:50+00:00",
+          "valid_until": "2026-11-20T13:00:00+00:00"
+        },
+        {
+          "date": "2026-11-16T09:21:52+00:00",
+          "detail": " The safety distance is given in nautical miles and is taken from the position: \n \n 55 °  35,01'N - 008 °  08,21'E. \n \n Attention is drawn to the fact that the actual safety distance may extend beyond the area shown in the chart.   Announcements about the firing practices of the day concerned and the next day are transmitted daily over Lyngby Radio at 07.05 and at 17.05 hours.  Information about firing practices is also available from Firing Safety Element in Camp Oksbøl, tel. +45 7283 9550, from  www.forsvaret.dk/da/oevelsesaktiviteter/reg-syddanmark/skydninger-i-oksboel , or over VHF radio. Call name: Oksbøl. Call channel: 16. Conversation channels: 6 and 8. The radio is open from one hour before the start of the firing practice and until its end.  Published navigational restriction; no worldwide sea-lane closure coverage. Open-ended notices are rechecked with the source.",
+          "id": "f44d130c-3d02-409c-8023-40cb59dad3fb:4:0:0",
+          "in_force": true,
+          "source": "Danish Maritime Authority — regional coverage only",
+          "title": "Denmark. The North Sea. EK R 33 Vejers. Firing exercises. Warning.",
+          "url": "https://niord.dma.dk/#/message/f44d130c-3d02-409c-8023-40cb59dad3fb",
+          "valid_from": "2026-11-16T09:21:50+00:00",
+          "valid_until": "2026-11-20T13:00:00+00:00"
+        },
+        {
+          "date": "2026-11-16T09:21:52+00:00",
+          "detail": "18 November 2026, hours 09:00 - 15:00. 19 November 2026, hours 09:00 - 15:00. Published navigational restriction; no worldwide sea-lane closure coverage. Open-ended notices are rechecked with the source.",
+          "id": "8e982ea7-247c-4dd6-91e9-05a4458317b1:0:0:0",
+          "in_force": true,
+          "source": "Danish Maritime Authority — regional coverage only",
+          "title": "Denmark. The North Sea. EK R 53 Juvre. Firing exercises. Warning.",
+          "url": "https://niord.dma.dk/#/message/8e982ea7-247c-4dd6-91e9-05a4458317b1",
+          "valid_from": "2026-11-18T08:00:00+00:00",
+          "valid_until": "2026-11-18T14:00:00+00:00"
+        },
+        {
+          "date": "2026-11-16T09:21:52+00:00",
+          "detail": "18 November 2026, hours 09:00 - 15:00. 19 November 2026, hours 09:00 - 15:00. Published navigational restriction; no worldwide sea-lane closure coverage. Open-ended notices are rechecked with the source.",
+          "id": "8e982ea7-247c-4dd6-91e9-05a4458317b1:0:1:0",
+          "in_force": true,
+          "source": "Danish Maritime Authority — regional coverage only",
+          "title": "Denmark. The North Sea. EK R 53 Juvre. Firing exercises. Warning.",
+          "url": "https://niord.dma.dk/#/message/8e982ea7-247c-4dd6-91e9-05a4458317b1",
+          "valid_from": "2026-11-19T08:00:00+00:00",
+          "valid_until": "2026-11-19T14:00:00+00:00"
+        },
+        {
+          "date": "2026-11-16T09:21:52+00:00",
+          "detail": "    In connection with firing practices, a temporary prohibited area is established on the sea off the firing practice area at position:  \n \n 55° 12'N - 008° 31'E. \n  Published navigational restriction; no worldwide sea-lane closure coverage. Open-ended notices are rechecked with the source.",
+          "geometry": {
+            "coordinates": [
+              [
+                [
+                  8.448333333333334,
+                  55.26616666666666
+                ],
+                [
+                  8.665,
+                  55.26616666666666
+                ],
+                [
+                  8.665,
+                  55.1575
+                ],
+                [
+                  8.448333333333334,
+                  55.1575
+                ],
+                [
+                  8.448333333333334,
+                  55.26616666666666
+                ],
+                [
+                  8.448333333333334,
+                  55.26616666666666
+                ]
+              ]
+            ],
+            "type": "Polygon"
+          },
+          "id": "8e982ea7-247c-4dd6-91e9-05a4458317b1:1:0:0",
+          "in_force": true,
+          "source": "Danish Maritime Authority — regional coverage only",
+          "title": "Denmark. The North Sea. EK R 53 Juvre. Firing exercises. Warning.",
+          "url": "https://niord.dma.dk/#/message/8e982ea7-247c-4dd6-91e9-05a4458317b1",
+          "valid_from": "2026-11-16T09:21:50+00:00",
+          "valid_until": "2026-11-19T14:00:00+00:00"
+        },
+        {
+          "date": "2026-11-16T09:21:52+00:00",
+          "detail": " During firing practices, all navigation, anchoring and fishing are prohibited in the area.  Published navigational restriction; no worldwide sea-lane closure coverage. Open-ended notices are rechecked with the source.",
+          "id": "8e982ea7-247c-4dd6-91e9-05a4458317b1:2:0:0",
+          "in_force": true,
+          "source": "Danish Maritime Authority — regional coverage only",
+          "title": "Denmark. The North Sea. EK R 53 Juvre. Firing exercises. Warning.",
+          "url": "https://niord.dma.dk/#/message/8e982ea7-247c-4dd6-91e9-05a4458317b1",
+          "valid_from": "2026-11-16T09:21:50+00:00",
+          "valid_until": "2026-11-19T14:00:00+00:00"
+        },
+        {
+          "date": "2026-11-16T09:21:52+00:00",
+          "detail": " Information about firing practices is given by displaying the following signals on the signal masts at positions 1) - 5) from one hour before the start of the firing practice and until its end: \n  \n \n \n \n  a)  \n \n  By daylight, a sphere is hoisted on each of the signal masts and a white, flashing light is lit (60 flashes per minute)  \n  on the control tower at position 5).  \n \n \n \n  b)  \n  In darkness, a fixed, white light is lit on each of the signal masts.  \n \n \n \n  \n \n \n \n  1)  \n  55° 10,26'N - 008° 30,54'E  \n  signal mast  \n \n \n  2)  \n  55° 10,49'N - 008° 32,29'E  \n  signal mast  \n \n \n  3)  \n  55° 11,00'N - 008° 33,62'E  \n  signal mast  \n \n \n  4)  \n  55° 11,54'N - 008° 33,62'E  \n  signal mast  \n \n \n  5)  \n  55° 11,45'N - 008° 33,58'E  \n control tower \n \n \n  Published navigational restriction; no worldwide sea-lane closure coverage. Open-ended notices are rechecked with the source.",
+          "id": "8e982ea7-247c-4dd6-91e9-05a4458317b1:3:0:0",
+          "in_force": true,
+          "source": "Danish Maritime Authority — regional coverage only",
+          "title": "Denmark. The North Sea. EK R 53 Juvre. Firing exercises. Warning.",
+          "url": "https://niord.dma.dk/#/message/8e982ea7-247c-4dd6-91e9-05a4458317b1",
+          "valid_from": "2026-11-16T09:21:50+00:00",
+          "valid_until": "2026-11-19T14:00:00+00:00"
+        },
+        {
+          "date": "2026-11-16T09:21:52+00:00",
+          "detail": " Information about firing practices is available in the daily working hours from Firing Safety Element in Camp Oksbøl, tel. +45 7283 9550, or over VHF radio. Call name: Fly Rømø. Call channel: 16. Conversation channel: 11. The radio is open from one hour before the start of the firing practice and until its end. \n During firing practices the safety office can be contacted on tel. +45 7375 5219. \n  www.forsvaret.dk/da/oevelsesaktiviteter/reg-syddanmark/romo-skydeomrade/   Published navigational restriction; no worldwide sea-lane closure coverage. Open-ended notices are rechecked with the source.",
+          "id": "8e982ea7-247c-4dd6-91e9-05a4458317b1:4:0:0",
+          "in_force": true,
+          "source": "Danish Maritime Authority — regional coverage only",
+          "title": "Denmark. The North Sea. EK R 53 Juvre. Firing exercises. Warning.",
+          "url": "https://niord.dma.dk/#/message/8e982ea7-247c-4dd6-91e9-05a4458317b1",
+          "valid_from": "2026-11-16T09:21:50+00:00",
+          "valid_until": "2026-11-19T14:00:00+00:00"
         }
       ],
-      "shape_records": 9,
+      "shape_records": 13,
       "source": "https://niord.dma.dk/rest/public/v1/messages?domain=niord-nw&domain=niord-fe",
       "status": "partial"
     }
