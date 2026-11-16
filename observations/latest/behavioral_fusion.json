@@ -3,7 +3,7 @@
   "automated_severity_changes": 0,
   "collection_coverage": {
     "amsa": {
-      "age_hours": 0.0,
+      "age_hours": 0.3,
       "checked_at": "2026-11-16T06:15:49Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -15,7 +15,7 @@
       "truncated_or_partial": false
     },
     "commercial": {
-      "age_hours": 15.42,
+      "age_hours": 15.71,
       "checked_at": "2026-11-15T14:50:40Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -27,7 +27,7 @@
       "truncated_or_partial": true
     },
     "ioda": {
-      "age_hours": 0.0,
+      "age_hours": 0.3,
       "checked_at": "2026-11-16T06:15:49Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -39,7 +39,7 @@
       "truncated_or_partial": false
     },
     "live_airspace": {
-      "age_hours": 4.33,
+      "age_hours": 4.62,
       "checked_at": "2026-11-16T01:56:05Z",
       "missingness": "not_measured_not_zero",
       "mode": "live_airspace",
@@ -50,7 +50,7 @@
       "truncated_or_partial": true
     },
     "live_maritime": {
-      "age_hours": 4.33,
+      "age_hours": 4.62,
       "checked_at": "2026-11-16T01:56:05Z",
       "missingness": "not_measured_not_zero",
       "mode": "live_maritime",
@@ -61,7 +61,7 @@
       "truncated_or_partial": true
     },
     "nga": {
-      "age_hours": 0.0,
+      "age_hours": 0.3,
       "checked_at": "2026-11-16T06:15:49Z",
       "missingness": "not_measured_not_zero",
       "mode": "nga",
@@ -72,25 +72,25 @@
       "truncated_or_partial": false
     },
     "official": {
-      "age_hours": 11.38,
-      "checked_at": "2026-11-15T18:53:08Z",
+      "age_hours": 0.0,
+      "checked_at": "2026-11-16T06:33:30Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
       "mode": "official",
       "provider_status": "collected",
-      "snapshot_at": "2026-11-15T18:53:08Z",
+      "snapshot_at": "2026-11-16T06:33:30Z",
       "source_scope": "US State and UK FCDO travel-advice feeds",
       "status": "current",
       "truncated_or_partial": false
     },
     "watchlist": {
-      "age_hours": 11.38,
-      "checked_at": "2026-11-15T18:53:09Z",
+      "age_hours": 0.0,
+      "checked_at": "2026-11-16T06:33:31Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
       "mode": "watchlist",
       "provider_status": "collected",
-      "snapshot_at": "2026-11-15T18:53:09Z",
+      "snapshot_at": "2026-11-16T06:33:31Z",
       "source_scope": "registered, exact-ID forecast contracts only",
       "status": "current",
       "truncated_or_partial": false
@@ -99,7 +99,7 @@
   "discovery_visibility": {
     "exact_geography_match_required_for_cross_family": true,
     "latest_initial_baseline": false,
-    "latest_registry_newly_observed_count": 4,
+    "latest_registry_newly_observed_count": 0,
     "latest_registry_record_count": 265,
     "latest_unlocated_record_count": 251,
     "new_or_collocated_not_same_as_verified_threat": true,
@@ -108,11 +108,11 @@
     "recent_source_families": {
       "airspace_restriction": 10,
       "commercial_media": 2,
-      "internet_reachability": 29,
+      "internet_reachability": 28,
       "maritime_restriction": 50,
       "protective_notice": 1
     },
-    "recent_unique_record_count_72h": 92,
+    "recent_unique_record_count_72h": 91,
     "recent_unlocated_count_72h": 46,
     "schema": "aiba.behavioral-discovery-visibility.v1",
     "shared_exact_geography_keys_across_behavior_families": 0,
@@ -120,15 +120,15 @@
   },
   "forecast_probability": null,
   "gdelt_context": "separate_analytical_stream_not_a_gate_or_confirmation",
-  "generated_at": "2026-11-16T06:15:53Z",
+  "generated_at": "2026-11-16T06:33:32Z",
   "geographic_scope": "source_declared_only",
   "history_diagnostics": {
     "excluded_observations": {
-      "old_source_publication": 3
+      "old_source_publication": 2
     },
     "history_files_examined": 35,
     "lookback_hours": 72,
-    "recent_unique_records": 92
+    "recent_unique_records": 91
   },
   "limit_notes": [
     "No automated threat warning. These are unreviewed investigatory leads.",
@@ -137,97 +137,8 @@
     "Unlocated records cannot produce automatic geographic convergence.",
     "Unavailable collection is not evidence of no threatening activity."
   ],
-  "new_single_source_count_total": 4,
-  "new_single_source_leads": [
-    {
-      "evidence_class": "network_measurement",
-      "first_observed_at": "2026-11-16T06:15:49Z",
-      "geography": {
-        "key": "country:NF",
-        "kind": "country_code",
-        "label": "NF",
-        "latitude": null,
-        "longitude": null,
-        "precision": "provider_reported_country",
-        "verified_iso": false
-      },
-      "information_root": "ioda:a72f49abe4ebec4893249d6e",
-      "meaning": "Observation novelty, not evidence of impending violence.",
-      "observation_id": "beh:13b8feb429ea5ab7f388593326b3",
-      "requires_geolocation": false,
-      "source_family": "internet_reachability",
-      "source_published_at": null,
-      "source_url": "https://ioda.inetintel.cc.gatech.edu/",
-      "status": "single_source_unreviewed",
-      "title": "IODA detected connectivity anomaly: country NF"
-    },
-    {
-      "evidence_class": "network_measurement",
-      "first_observed_at": "2026-11-16T06:15:49Z",
-      "geography": {
-        "key": "country:CG",
-        "kind": "country_code",
-        "label": "CG",
-        "latitude": null,
-        "longitude": null,
-        "precision": "provider_reported_country",
-        "verified_iso": false
-      },
-      "information_root": "ioda:2e3cf567bbf868ac399d40f2",
-      "meaning": "Observation novelty, not evidence of impending violence.",
-      "observation_id": "beh:1b8449144d9474006f91fb0166cf",
-      "requires_geolocation": false,
-      "source_family": "internet_reachability",
-      "source_published_at": null,
-      "source_url": "https://ioda.inetintel.cc.gatech.edu/",
-      "status": "single_source_unreviewed",
-      "title": "IODA detected connectivity anomaly: country CG"
-    },
-    {
-      "evidence_class": "network_measurement",
-      "first_observed_at": "2026-11-16T06:15:49Z",
-      "geography": {
-        "key": "country:CN",
-        "kind": "country_code",
-        "label": "CN",
-        "latitude": null,
-        "longitude": null,
-        "precision": "provider_reported_country",
-        "verified_iso": false
-      },
-      "information_root": "ioda:3e4fb1d4a835138a22f20402",
-      "meaning": "Observation novelty, not evidence of impending violence.",
-      "observation_id": "beh:e0d9ce7898cd2446848687bd5b5d",
-      "requires_geolocation": false,
-      "source_family": "internet_reachability",
-      "source_published_at": null,
-      "source_url": "https://ioda.inetintel.cc.gatech.edu/",
-      "status": "single_source_unreviewed",
-      "title": "IODA detected connectivity anomaly: country CN"
-    },
-    {
-      "evidence_class": "network_measurement",
-      "first_observed_at": "2026-11-16T06:15:49Z",
-      "geography": {
-        "key": "country:CM",
-        "kind": "country_code",
-        "label": "CM",
-        "latitude": null,
-        "longitude": null,
-        "precision": "provider_reported_country",
-        "verified_iso": false
-      },
-      "information_root": "ioda:ee58e42bbaa385794d00f48b",
-      "meaning": "Observation novelty, not evidence of impending violence.",
-      "observation_id": "beh:fda5539515a14af802262d306f9a",
-      "requires_geolocation": false,
-      "source_family": "internet_reachability",
-      "source_published_at": null,
-      "source_url": "https://ioda.inetintel.cc.gatech.edu/",
-      "status": "single_source_unreviewed",
-      "title": "IODA detected connectivity anomaly: country CM"
-    }
-  ],
+  "new_single_source_count_total": 0,
+  "new_single_source_leads": [],
   "prediction_horizon": null,
   "recent_source_observations": [
     {
@@ -739,7 +650,7 @@
       "title": "FAA TFR 6/7462 · KEEWATIN, MN, Monday, November 16, 2026 UTC"
     }
   ],
-  "registry_asof": "2026-11-16T06:15:53Z",
+  "registry_asof": "2026-11-16T06:33:32Z",
   "registry_source_count": 265,
   "report_relationships": {
     "automatic_alerts_created": 0,
@@ -1526,14 +1437,14 @@
     "input_truncated": false,
     "not_a_preparations_sensor_or_warning": true,
     "pairwise_comparisons_capped": false,
-    "pairwise_comparisons_examined": 4186,
+    "pairwise_comparisons_examined": 4095,
     "possible_same_event_count_total": 0,
     "possible_same_source_story_count_total": 0,
-    "records_available": 92,
-    "records_examined": 92,
+    "records_available": 91,
+    "records_examined": 91,
     "related_reporting_count_total": 0,
     "reporting_origins_are_not_event_locations": true,
-    "routine_notice_market_or_measurement_records_excluded_from_text_event_matching": 90,
+    "routine_notice_market_or_measurement_records_excluded_from_text_event_matching": 89,
     "same_document_group_count_total": 4,
     "schema": "aiba.report-event-resolution-shadow.v1",
     "source_independence_unverified": true,
