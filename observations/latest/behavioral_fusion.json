@@ -3,67 +3,63 @@
   "automated_severity_changes": 0,
   "collection_coverage": {
     "amsa": {
-      "age_hours": 2.81,
+      "age_hours": 8.51,
       "checked_at": "2026-11-17T08:26:59Z",
-      "first_provider_baseline": false,
-      "missingness": "provider_bounded_not_exhaustive",
+      "missingness": "not_measured_not_zero",
       "mode": "amsa",
       "provider_status": "collected",
       "snapshot_at": "2026-11-17T08:26:59Z",
       "source_scope": "AMSA NAVAREA X only",
-      "status": "current",
+      "status": "stale_or_unavailable",
       "truncated_or_partial": false
     },
     "commercial": {
-      "age_hours": 18.1,
-      "checked_at": "2026-11-16T17:09:20Z",
+      "age_hours": 0.0,
+      "checked_at": "2026-11-17T16:57:45Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
       "mode": "commercial",
       "provider_status": "collected",
-      "snapshot_at": "2026-11-16T17:09:20Z",
+      "snapshot_at": "2026-11-17T16:57:45Z",
       "source_scope": "selected maritime/air-cargo/war-risk press and syndication",
       "status": "current",
       "truncated_or_partial": false
     },
     "ioda": {
-      "age_hours": 2.81,
+      "age_hours": 8.51,
       "checked_at": "2026-11-17T08:26:59Z",
-      "first_provider_baseline": false,
-      "missingness": "provider_bounded_not_exhaustive",
+      "missingness": "not_measured_not_zero",
       "mode": "ioda",
       "provider_status": "collected",
       "snapshot_at": "2026-11-17T08:26:59Z",
       "source_scope": "IODA country events (first 100 of first page, 4-hour query)",
-      "status": "current",
+      "status": "stale_or_unavailable",
       "truncated_or_partial": false
     },
     "live_airspace": {
-      "age_hours": 0.0,
+      "age_hours": 5.71,
       "checked_at": "2026-11-17T11:15:25Z",
-      "first_provider_baseline": false,
-      "missingness": "partial_sampling_not_worldwide_exhaustive",
+      "missingness": "not_measured_not_zero",
       "mode": "live_airspace",
       "provider_status": "partial",
       "snapshot_at": "2026-11-17T11:15:25Z",
       "source_scope": "FAA temporary flight restrictions: United States only",
-      "status": "current_partial",
+      "status": "stale_or_unavailable",
       "truncated_or_partial": true
     },
     "live_maritime": {
-      "age_hours": 0.0,
+      "age_hours": 5.71,
       "checked_at": "2026-11-17T11:15:25Z",
-      "first_provider_baseline": false,
-      "missingness": "partial_sampling_not_worldwide_exhaustive",
+      "missingness": "not_measured_not_zero",
       "mode": "live_maritime",
       "provider_status": "partial",
       "snapshot_at": "2026-11-17T11:15:25Z",
       "source_scope": "Danish Maritime Authority Niord notices: regional Baltic/North Sea",
-      "status": "current_partial",
+      "status": "stale_or_unavailable",
       "truncated_or_partial": true
     },
     "nga": {
-      "age_hours": 2.81,
+      "age_hours": 8.51,
       "checked_at": "2026-11-17T08:26:59Z",
       "missingness": "not_measured_not_zero",
       "mode": "nga",
@@ -74,7 +70,7 @@
       "truncated_or_partial": false
     },
     "official": {
-      "age_hours": 3.3,
+      "age_hours": 9.01,
       "checked_at": "2026-11-17T07:57:26Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -86,7 +82,7 @@
       "truncated_or_partial": false
     },
     "watchlist": {
-      "age_hours": 3.3,
+      "age_hours": 9.01,
       "checked_at": "2026-11-17T07:57:26Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -101,33 +97,33 @@
   "discovery_visibility": {
     "exact_geography_match_required_for_cross_family": true,
     "latest_initial_baseline": false,
-    "latest_registry_newly_observed_count": 0,
-    "latest_registry_record_count": 389,
-    "latest_unlocated_record_count": 345,
+    "latest_registry_newly_observed_count": 5,
+    "latest_registry_record_count": 255,
+    "latest_unlocated_record_count": 255,
     "new_or_collocated_not_same_as_verified_threat": true,
     "new_this_collection_required_for_cross_family_nomination": true,
     "recent_observations_sampled": 24,
     "recent_source_families": {
-      "airspace_restriction": 18,
-      "commercial_media": 5,
-      "internet_reachability": 28,
+      "airspace_restriction": 17,
+      "commercial_media": 10,
+      "internet_reachability": 23,
       "maritime_restriction": 166
     },
-    "recent_unique_record_count_72h": 217,
-    "recent_unlocated_count_72h": 144,
+    "recent_unique_record_count_72h": 216,
+    "recent_unlocated_count_72h": 149,
     "schema": "aiba.behavioral-discovery-visibility.v1",
     "shared_exact_geography_keys_across_behavior_families": 0,
     "source_coverage_is_globally_complete": false
   },
   "forecast_probability": null,
   "gdelt_context": "separate_analytical_stream_not_a_gate_or_confirmation",
-  "generated_at": "2026-11-17T11:15:30Z",
+  "generated_at": "2026-11-17T16:57:47Z",
   "geographic_scope": "source_declared_only",
   "history_diagnostics": {
     "excluded_observations": {},
-    "history_files_examined": 34,
+    "history_files_examined": 32,
     "lookback_hours": 72,
-    "recent_unique_records": 217
+    "recent_unique_records": 216
   },
   "limit_notes": [
     "No automated threat warning. These are unreviewed investigatory leads.",
@@ -136,10 +132,221 @@
     "Unlocated records cannot produce automatic geographic convergence.",
     "Unavailable collection is not evidence of no threatening activity."
   ],
-  "new_single_source_count_total": 0,
-  "new_single_source_leads": [],
+  "new_single_source_count_total": 5,
+  "new_single_source_leads": [
+    {
+      "evidence_class": "media_mention",
+      "first_observed_at": "2026-11-17T16:57:47Z",
+      "geography": {
+        "key": null,
+        "kind": "unlocated",
+        "label": null,
+        "latitude": null,
+        "longitude": null,
+        "precision": "no_source_verified_geography",
+        "verified_iso": false
+      },
+      "information_root": "commercial:8f5105cddf69ee5d59da",
+      "meaning": "Observation novelty, not evidence of impending violence.",
+      "observation_id": "beh:2d614b5f462883d545bbf46987d8",
+      "requires_geolocation": true,
+      "source_family": "commercial_media",
+      "source_published_at": "2026-11-17T15:35:57Z",
+      "source_url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQM21XcGVndl9YNlYyOG5rc1ZUdTRQOHpfa1JFcGZrUUFReVc4ak1ZOHNCaENiV0M3NFJNVzFLaEZ0OTFOWnR3ZkNCbWQ2TjV0Unp6S0RmaWdUbV9Ubi1ycWxxUUZpYmlNNkdDaUgxelZ5a3JYRWxDbVhMRUJwUFNySzAyWDgwWjUwQ1BvV2ZfWTNLVnRhVkUzRDQ5Mkl6UGFKLWtxLUVEeWs1dw?oc=5",
+      "status": "single_source_unreviewed",
+      "title": "Teesside International secures China freighter flights - Air Cargo News"
+    },
+    {
+      "evidence_class": "media_mention",
+      "first_observed_at": "2026-11-17T16:57:47Z",
+      "geography": {
+        "key": null,
+        "kind": "unlocated",
+        "label": null,
+        "latitude": null,
+        "longitude": null,
+        "precision": "no_source_verified_geography",
+        "verified_iso": false
+      },
+      "information_root": "commercial:780dd3164bdcfc9e06b0",
+      "meaning": "Observation novelty, not evidence of impending violence.",
+      "observation_id": "beh:4813da6829316321de14148b40d2",
+      "requires_geolocation": true,
+      "source_family": "commercial_media",
+      "source_published_at": "2026-11-17T14:19:22Z",
+      "source_url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOWEY0bXdDa3gtNzA0U1k4RWJYajZZUlRkYzl4SUdmR0Nrb1hfN2FPeDEwajExdjgtN3luWE8wQlJUMEJVVmxuSklOQ19NTlZBVThfdF9XSlJuRkd5YzNrRFd2Y1BtMVIwV05mWXRMS2QyRE1LZXQ1Tlc2SHZybkdINk9wSk9UTkhncXJqejhHMmZfc1ZsT1RKV3dVcHJqenp2WEE?oc=5",
+      "status": "single_source_unreviewed",
+      "title": "Airline suspends all flights after 17 years as it files for insolvency - Swindon Advertiser"
+    },
+    {
+      "evidence_class": "media_mention",
+      "first_observed_at": "2026-11-17T16:57:47Z",
+      "geography": {
+        "key": null,
+        "kind": "unlocated",
+        "label": null,
+        "latitude": null,
+        "longitude": null,
+        "precision": "no_source_verified_geography",
+        "verified_iso": false
+      },
+      "information_root": "commercial:6022ccc471df31a1b586",
+      "meaning": "Observation novelty, not evidence of impending violence.",
+      "observation_id": "beh:7c49ae7580ef3124ecdb5d22cbb9",
+      "requires_geolocation": true,
+      "source_family": "commercial_media",
+      "source_published_at": "2026-11-17T02:21:34Z",
+      "source_url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNR3R1b01IV2h2dDkzekJTRTlQa3lrY1hyVUptWC1kamR4LVJaMEJGcGVmU2VvZ2IzSVNNbnZYdTRBYWotdlN0cW1BaFR4WmhjX1JYT0phSndzMEdRVTNHLVM2RVBPX3VNV2EwMDNaZlIwN1lHdGlJTUI0S3RGLVZidHdRc2R4aEtqQ0o3cGRIZlJLZ2ZiRVl4Wi05RVRHZXJ4N3g0M19uWmY5ZU1SRnc?oc=5",
+      "status": "single_source_unreviewed",
+      "title": "CruisePAL's Successful Implementation Aboard Cordelia Cruises’ Vessel - The Maritime Executive"
+    },
+    {
+      "evidence_class": "media_mention",
+      "first_observed_at": "2026-11-17T16:57:47Z",
+      "geography": {
+        "key": null,
+        "kind": "unlocated",
+        "label": null,
+        "latitude": null,
+        "longitude": null,
+        "precision": "no_source_verified_geography",
+        "verified_iso": false
+      },
+      "information_root": "commercial:456e646e758c7372deed",
+      "meaning": "Observation novelty, not evidence of impending violence.",
+      "observation_id": "beh:98ad5e954d5c94f36a536abb7a58",
+      "requires_geolocation": true,
+      "source_family": "commercial_media",
+      "source_published_at": "2026-11-17T02:21:34Z",
+      "source_url": "https://maritime-executive.com/article/cruisepal-s-successful-implementation-aboard-cordelia-cruises-vessel",
+      "status": "single_source_unreviewed",
+      "title": "CruisePAL's Successful Implementation Aboard Cordelia Cruises’ Vessel"
+    },
+    {
+      "evidence_class": "media_mention",
+      "first_observed_at": "2026-11-17T16:57:47Z",
+      "geography": {
+        "key": null,
+        "kind": "unlocated",
+        "label": null,
+        "latitude": null,
+        "longitude": null,
+        "precision": "no_source_verified_geography",
+        "verified_iso": false
+      },
+      "information_root": "commercial:fd00c33efa0fbdaf0c37",
+      "meaning": "Observation novelty, not evidence of impending violence.",
+      "observation_id": "beh:b835bd33adfad3db09580b53bc8b",
+      "requires_geolocation": true,
+      "source_family": "commercial_media",
+      "source_published_at": "2026-11-16T20:00:00Z",
+      "source_url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOLWdqZ1RnSFFwUjFSUF9XX0FBbjBrRVNjenQzSHdESWV4UEpaRThQb2t6djhwY0lHaXRXWlQwR0piYWhfR0JuSXJuNTY2ZmxFdGZHWkk1S0xkOTh5MzVsTGhFdW1RbHM5SzFZT1hyQ2xpRkJtMWxoaUdqRTZfZHlXZ21xOFY5QkxDbDVHWWVmNnRicEF1?oc=5",
+      "status": "single_source_unreviewed",
+      "title": "War Risk Insurance: Why Airlines Are Paying Far More - The Aviation Hub"
+    }
+  ],
   "prediction_horizon": null,
   "recent_source_observations": [
+    {
+      "first_observed_at": "2026-11-17T16:57:47Z",
+      "geography": {
+        "key": null,
+        "kind": "unlocated",
+        "label": null,
+        "latitude": null,
+        "longitude": null,
+        "precision": "no_source_verified_geography",
+        "verified_iso": false
+      },
+      "observation_id": "beh:b835bd33adfad3db09580b53bc8b",
+      "provider": "commercial",
+      "requires_geolocation": true,
+      "source_family": "commercial_media",
+      "source_published_at": "2026-11-16T20:00:00Z",
+      "source_url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOLWdqZ1RnSFFwUjFSUF9XX0FBbjBrRVNjenQzSHdESWV4UEpaRThQb2t6djhwY0lHaXRXWlQwR0piYWhfR0JuSXJuNTY2ZmxFdGZHWkk1S0xkOTh5MzVsTGhFdW1RbHM5SzFZT1hyQ2xpRkJtMWxoaUdqRTZfZHlXZ21xOFY5QkxDbDVHWWVmNnRicEF1?oc=5",
+      "status": "recent_source_observation_unreviewed",
+      "title": "War Risk Insurance: Why Airlines Are Paying Far More - The Aviation Hub"
+    },
+    {
+      "first_observed_at": "2026-11-17T16:57:47Z",
+      "geography": {
+        "key": null,
+        "kind": "unlocated",
+        "label": null,
+        "latitude": null,
+        "longitude": null,
+        "precision": "no_source_verified_geography",
+        "verified_iso": false
+      },
+      "observation_id": "beh:98ad5e954d5c94f36a536abb7a58",
+      "provider": "commercial",
+      "requires_geolocation": true,
+      "source_family": "commercial_media",
+      "source_published_at": "2026-11-17T02:21:34Z",
+      "source_url": "https://maritime-executive.com/article/cruisepal-s-successful-implementation-aboard-cordelia-cruises-vessel",
+      "status": "recent_source_observation_unreviewed",
+      "title": "CruisePAL's Successful Implementation Aboard Cordelia Cruises’ Vessel"
+    },
+    {
+      "first_observed_at": "2026-11-17T16:57:47Z",
+      "geography": {
+        "key": null,
+        "kind": "unlocated",
+        "label": null,
+        "latitude": null,
+        "longitude": null,
+        "precision": "no_source_verified_geography",
+        "verified_iso": false
+      },
+      "observation_id": "beh:7c49ae7580ef3124ecdb5d22cbb9",
+      "provider": "commercial",
+      "requires_geolocation": true,
+      "source_family": "commercial_media",
+      "source_published_at": "2026-11-17T02:21:34Z",
+      "source_url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNR3R1b01IV2h2dDkzekJTRTlQa3lrY1hyVUptWC1kamR4LVJaMEJGcGVmU2VvZ2IzSVNNbnZYdTRBYWotdlN0cW1BaFR4WmhjX1JYT0phSndzMEdRVTNHLVM2RVBPX3VNV2EwMDNaZlIwN1lHdGlJTUI0S3RGLVZidHdRc2R4aEtqQ0o3cGRIZlJLZ2ZiRVl4Wi05RVRHZXJ4N3g0M19uWmY5ZU1SRnc?oc=5",
+      "status": "recent_source_observation_unreviewed",
+      "title": "CruisePAL's Successful Implementation Aboard Cordelia Cruises’ Vessel - The Maritime Executive"
+    },
+    {
+      "first_observed_at": "2026-11-17T16:57:47Z",
+      "geography": {
+        "key": null,
+        "kind": "unlocated",
+        "label": null,
+        "latitude": null,
+        "longitude": null,
+        "precision": "no_source_verified_geography",
+        "verified_iso": false
+      },
+      "observation_id": "beh:4813da6829316321de14148b40d2",
+      "provider": "commercial",
+      "requires_geolocation": true,
+      "source_family": "commercial_media",
+      "source_published_at": "2026-11-17T14:19:22Z",
+      "source_url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOWEY0bXdDa3gtNzA0U1k4RWJYajZZUlRkYzl4SUdmR0Nrb1hfN2FPeDEwajExdjgtN3luWE8wQlJUMEJVVmxuSklOQ19NTlZBVThfdF9XSlJuRkd5YzNrRFd2Y1BtMVIwV05mWXRMS2QyRE1LZXQ1Tlc2SHZybkdINk9wSk9UTkhncXJqejhHMmZfc1ZsT1RKV3dVcHJqenp2WEE?oc=5",
+      "status": "recent_source_observation_unreviewed",
+      "title": "Airline suspends all flights after 17 years as it files for insolvency - Swindon Advertiser"
+    },
+    {
+      "first_observed_at": "2026-11-17T16:57:47Z",
+      "geography": {
+        "key": null,
+        "kind": "unlocated",
+        "label": null,
+        "latitude": null,
+        "longitude": null,
+        "precision": "no_source_verified_geography",
+        "verified_iso": false
+      },
+      "observation_id": "beh:2d614b5f462883d545bbf46987d8",
+      "provider": "commercial",
+      "requires_geolocation": true,
+      "source_family": "commercial_media",
+      "source_published_at": "2026-11-17T15:35:57Z",
+      "source_url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQM21XcGVndl9YNlYyOG5rc1ZUdTRQOHpfa1JFcGZrUUFReVc4ak1ZOHNCaENiV0M3NFJNVzFLaEZ0OTFOWnR3ZkNCbWQ2TjV0Unp6S0RmaWdUbV9Ubi1ycWxxUUZpYmlNNkdDaUgxelZ5a3JYRWxDbVhMRUJwUFNySzAyWDgwWjUwQ1BvV2ZfWTNLVnRhVkUzRDQ5Mkl6UGFKLWtxLUVEeWs1dw?oc=5",
+      "status": "recent_source_observation_unreviewed",
+      "title": "Teesside International secures China freighter flights - Air Cargo News"
+    },
     {
       "first_observed_at": "2026-11-17T08:26:59Z",
       "geography": {
@@ -549,112 +756,10 @@
       "source_url": "https://tfr.faa.gov/6_7660.html",
       "status": "recent_source_observation_unreviewed",
       "title": "FAA TFR 6/7660 · Stamford, CT, Sunday, November 22, 2026 UTC"
-    },
-    {
-      "first_observed_at": "2026-11-16T19:49:13Z",
-      "geography": {
-        "geometry_sha256_prefix": "63fac7203bc43c34aa5aec6d",
-        "geometry_type": "MultiPolygon",
-        "key": "source-footprint:63fac7203bc43c34aa5aec6d",
-        "kind": "source_notice_footprint",
-        "label": "Official MultiPolygon notice area",
-        "latitude": null,
-        "longitude": null,
-        "precision": "provider_defined_notice_boundary_not_event_point",
-        "verified_iso": false
-      },
-      "observation_id": "beh:49b29e7af06d0e7148124e201472",
-      "provider": "faa",
-      "requires_geolocation": false,
-      "source_family": "airspace_restriction",
-      "source_published_at": null,
-      "source_url": "https://tfr.faa.gov/6_7767.html",
-      "status": "recent_source_observation_unreviewed",
-      "title": "FAA TFR 6/7767 · Glendale, AZ, Saturday, November 21, 2026 through Sunday, November 22, 2026 UTC"
-    },
-    {
-      "first_observed_at": "2026-11-16T17:09:22Z",
-      "geography": {
-        "key": null,
-        "kind": "unlocated",
-        "label": null,
-        "latitude": null,
-        "longitude": null,
-        "precision": "no_source_verified_geography",
-        "verified_iso": false
-      },
-      "observation_id": "beh:f1c9c43dd3104ee070073be69e78",
-      "provider": "commercial",
-      "requires_geolocation": true,
-      "source_family": "commercial_media",
-      "source_published_at": "2026-11-16T03:31:00Z",
-      "source_url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNNmNhWVIzYWtPT0w0ZjdCQkNxaVFXVVBRZ3hXa1Z0YXRTQm13eXBoWkNKWVNWc1BBb1VvLWRjQ09KRmdlT2pTOVhMdkVrZGQ4VG1Jc20xaVRFRUdJcEp2VVA0WXZBZlozQjBOS3VleUpGOElNOGdITUtma1NjSzZGMjFvRWl0bUlhQW13bXdDajFvQ1ljbERfa3MxRnlHVnhnbC1XU21qbUtSRFFkaEFQSnUxaw?oc=5",
-      "status": "recent_source_observation_unreviewed",
-      "title": "Cyprus Shipping Chamber Announces Inaugural “Global Shipping Minds” Summit - The Maritime Executive"
-    },
-    {
-      "first_observed_at": "2026-11-16T17:09:22Z",
-      "geography": {
-        "key": null,
-        "kind": "unlocated",
-        "label": null,
-        "latitude": null,
-        "longitude": null,
-        "precision": "no_source_verified_geography",
-        "verified_iso": false
-      },
-      "observation_id": "beh:cfe2881576ea32df546f38617687",
-      "provider": "commercial",
-      "requires_geolocation": true,
-      "source_family": "commercial_media",
-      "source_published_at": "2026-11-16T12:17:19Z",
-      "source_url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQOWlZV1BMNWhHMExqRU1FbXFRSWtTTzBOSkVtMFVneG4zcU9BRWx2RTUxNG9RM0sxSlRGTjJvMU1xSDFUTVBUaUZ5UFEyd2pvS0hqOTZ0cWZwNDN6MEp0UC1rTWhoc1M4LWtoMjFWbGs5RmZEQUg2SjhzMnkzMGphV2toT0tsRGcta0Q5U3YzVXd2MERzdWpZNzA4SGVkNlpJRlB2SlYwU2dSbWwwOVA5QkFpY0MzbU91TjRTTTgwYUR0VmtqaklTSg?oc=5",
-      "status": "recent_source_observation_unreviewed",
-      "title": "DHL Global Forwarding adds India through new Asia-Europe freighter flight - Air Cargo News"
-    },
-    {
-      "first_observed_at": "2026-11-16T17:09:22Z",
-      "geography": {
-        "key": null,
-        "kind": "unlocated",
-        "label": null,
-        "latitude": null,
-        "longitude": null,
-        "precision": "no_source_verified_geography",
-        "verified_iso": false
-      },
-      "observation_id": "beh:878a637a2d69e68e8688512efe15",
-      "provider": "commercial",
-      "requires_geolocation": true,
-      "source_family": "commercial_media",
-      "source_published_at": "2026-11-16T03:31:00Z",
-      "source_url": "https://maritime-executive.com/article/cyprus-shipping-chamber-announces-inaugural-global-shipping-minds-summit",
-      "status": "recent_source_observation_unreviewed",
-      "title": "Cyprus Shipping Chamber Announces Inaugural “Global Shipping Minds” Summit"
-    },
-    {
-      "first_observed_at": "2026-11-16T17:09:22Z",
-      "geography": {
-        "key": null,
-        "kind": "unlocated",
-        "label": null,
-        "latitude": null,
-        "longitude": null,
-        "precision": "no_source_verified_geography",
-        "verified_iso": false
-      },
-      "observation_id": "beh:50bfa48d0318317ed5f566e75e37",
-      "provider": "commercial",
-      "requires_geolocation": true,
-      "source_family": "commercial_media",
-      "source_published_at": "2026-11-16T09:23:14Z",
-      "source_url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNVGNpZWpnZ1RqaE5LaUpVSVFJV3pVZkFKRVptVG42NmpDNmhmYWs4alBiNmtpaU0tdXVzUlY4VURZRjRuT3h5VlRoLWlUT1YtY3AxZE9PSGZtZEMwRVJISXh4YnNYcFhhRFhlNjR6TElaSlk1bVU5MHJVLTFiNGtnNjFnMzI2ZmEyYzNidTMwTDdvbkpTQllRSw?oc=5",
-      "status": "recent_source_observation_unreviewed",
-      "title": "Airline suspends all flights after 17 years as it files for insolvency - Oxford Mail"
     }
   ],
-  "registry_asof": "2026-11-17T11:15:30Z",
-  "registry_source_count": 389,
+  "registry_asof": "2026-11-17T16:57:47Z",
+  "registry_source_count": 255,
   "report_relationships": {
     "automatic_alerts_created": 0,
     "automatic_severity_changes": 0,
@@ -2270,24 +2375,92 @@
         ],
         "status": "possible_same_source_story_unreviewed",
         "warning_level_change": false
+      },
+      {
+        "first_observation_separation_hours": 0.0,
+        "id": "relation:81c1202cf7b9e6f993ce",
+        "independent_corroboration_established": false,
+        "match_basis": "same_substantive_article_title_different_source_urls",
+        "reported_event_site_comparison_available": false,
+        "reported_event_site_separation_km": null,
+        "reporting_origin_used_as_event_site": false,
+        "review_requirements": [
+          "Verify whether both URLs reproduce one original article",
+          "Do not count syndication as two independently observed events",
+          "Resolve the underlying event separately from this story"
+        ],
+        "semantic_similarity": 0.778,
+        "shared_content_terms": [
+          "aboard",
+          "cordelia",
+          "cruisepal",
+          "cruises",
+          "implementation",
+          "successful"
+        ],
+        "shared_information_root": false,
+        "source_reports": [
+          {
+            "first_observed_at": "2026-11-17T16:57:47Z",
+            "geography": {
+              "key": null,
+              "kind": "unlocated",
+              "label": null,
+              "latitude": null,
+              "longitude": null,
+              "precision": "no_source_verified_geography",
+              "verified_iso": false
+            },
+            "observation_id": "beh:98ad5e954d5c94f36a536abb7a58",
+            "provider": "commercial",
+            "reporting_origin": null,
+            "source_family": "commercial_media",
+            "source_published_at": "2026-11-17T02:21:34Z",
+            "source_url": "https://maritime-executive.com/article/cruisepal-s-successful-implementation-aboard-cordelia-cruises-vessel",
+            "status": "unreviewed_source_report",
+            "title": "CruisePAL's Successful Implementation Aboard Cordelia Cruises’ Vessel"
+          },
+          {
+            "first_observed_at": "2026-11-17T16:57:47Z",
+            "geography": {
+              "key": null,
+              "kind": "unlocated",
+              "label": null,
+              "latitude": null,
+              "longitude": null,
+              "precision": "no_source_verified_geography",
+              "verified_iso": false
+            },
+            "observation_id": "beh:7c49ae7580ef3124ecdb5d22cbb9",
+            "provider": "commercial",
+            "reporting_origin": null,
+            "source_family": "commercial_media",
+            "source_published_at": "2026-11-17T02:21:34Z",
+            "source_url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNR3R1b01IV2h2dDkzekJTRTlQa3lrY1hyVUptWC1kamR4LVJaMEJGcGVmU2VvZ2IzSVNNbnZYdTRBYWotdlN0cW1BaFR4WmhjX1JYT0phSndzMEdRVTNHLVM2RVBPX3VNV2EwMDNaZlIwN1lHdGlJTUI0S3RGLVZidHdRc2R4aEtqQ0o3cGRIZlJLZ2ZiRVl4Wi05RVRHZXJ4N3g0M19uWmY5ZU1SRnc?oc=5",
+            "status": "unreviewed_source_report",
+            "title": "CruisePAL's Successful Implementation Aboard Cordelia Cruises’ Vessel - The Maritime Executive"
+          }
+        ],
+        "status": "possible_same_source_story_unreviewed",
+        "warning_level_change": false
       }
     ],
     "candidate_groups_truncated": true,
-    "cross_document_relation_count_total": 1,
-    "eligible_event_reporting_records": 5,
+    "cross_document_relation_count_total": 2,
+    "eligible_event_reporting_records": 10,
     "forecast_probability": null,
     "geographic_proximity_only_for_explicit_reported_event_sites": true,
     "input_truncated": false,
     "not_a_preparations_sensor_or_warning": true,
     "pairwise_comparisons_capped": false,
-    "pairwise_comparisons_examined": 23436,
+    "pairwise_comparisons_examined": 23220,
     "possible_same_event_count_total": 0,
-    "possible_same_source_story_count_total": 1,
-    "records_available": 217,
-    "records_examined": 217,
+    "possible_same_source_story_count_total": 2,
+    "records_available": 216,
+    "records_examined": 216,
     "related_reporting_count_total": 0,
     "reporting_origins_are_not_event_locations": true,
-    "routine_notice_market_or_measurement_records_excluded_from_text_event_matching": 212,
+    "routine_notice_market_or_measurement_records_excluded_from_text_event_matching": 206,
     "same_document_group_count_total": 18,
     "schema": "aiba.report-event-resolution-shadow.v1",
     "source_independence_unverified": true,
