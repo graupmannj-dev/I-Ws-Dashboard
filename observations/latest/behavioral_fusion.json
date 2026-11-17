@@ -3,7 +3,7 @@
   "automated_severity_changes": 0,
   "collection_coverage": {
     "amsa": {
-      "age_hours": 2.07,
+      "age_hours": 3.1,
       "checked_at": "2026-11-17T17:51:47Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -15,7 +15,7 @@
       "truncated_or_partial": false
     },
     "commercial": {
-      "age_hours": 2.97,
+      "age_hours": 4.0,
       "checked_at": "2026-11-17T16:57:45Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -27,7 +27,7 @@
       "truncated_or_partial": false
     },
     "ioda": {
-      "age_hours": 2.07,
+      "age_hours": 3.1,
       "checked_at": "2026-11-17T17:51:47Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -39,7 +39,7 @@
       "truncated_or_partial": false
     },
     "live_airspace": {
-      "age_hours": 0.0,
+      "age_hours": 1.03,
       "checked_at": "2026-11-17T19:55:46Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -51,7 +51,7 @@
       "truncated_or_partial": true
     },
     "live_maritime": {
-      "age_hours": 0.0,
+      "age_hours": 1.03,
       "checked_at": "2026-11-17T19:55:46Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -63,7 +63,7 @@
       "truncated_or_partial": true
     },
     "nga": {
-      "age_hours": 2.07,
+      "age_hours": 3.1,
       "checked_at": "2026-11-17T17:51:47Z",
       "missingness": "not_measured_not_zero",
       "mode": "nga",
@@ -74,25 +74,25 @@
       "truncated_or_partial": false
     },
     "official": {
-      "age_hours": 11.97,
-      "checked_at": "2026-11-17T07:57:26Z",
+      "age_hours": 0.0,
+      "checked_at": "2026-11-17T20:57:46Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
       "mode": "official",
       "provider_status": "collected",
-      "snapshot_at": "2026-11-17T07:57:26Z",
+      "snapshot_at": "2026-11-17T20:57:46Z",
       "source_scope": "US State and UK FCDO travel-advice feeds",
       "status": "current",
       "truncated_or_partial": false
     },
     "watchlist": {
-      "age_hours": 11.97,
-      "checked_at": "2026-11-17T07:57:26Z",
+      "age_hours": 0.0,
+      "checked_at": "2026-11-17T20:57:47Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
       "mode": "watchlist",
       "provider_status": "collected",
-      "snapshot_at": "2026-11-17T07:57:26Z",
+      "snapshot_at": "2026-11-17T20:57:47Z",
       "source_scope": "registered, exact-ID forecast contracts only",
       "status": "current",
       "truncated_or_partial": false
@@ -101,7 +101,7 @@
   "discovery_visibility": {
     "exact_geography_match_required_for_cross_family": true,
     "latest_initial_baseline": false,
-    "latest_registry_newly_observed_count": 3,
+    "latest_registry_newly_observed_count": 2,
     "latest_registry_record_count": 390,
     "latest_unlocated_record_count": 346,
     "new_or_collocated_not_same_as_verified_threat": true,
@@ -110,24 +110,25 @@
     "recent_source_families": {
       "airspace_restriction": 18,
       "commercial_media": 10,
-      "internet_reachability": 25,
-      "maritime_restriction": 166
+      "internet_reachability": 22,
+      "maritime_restriction": 166,
+      "protective_notice": 2
     },
-    "recent_unique_record_count_72h": 219,
-    "recent_unlocated_count_72h": 149,
+    "recent_unique_record_count_72h": 218,
+    "recent_unlocated_count_72h": 151,
     "schema": "aiba.behavioral-discovery-visibility.v1",
     "shared_exact_geography_keys_across_behavior_families": 0,
     "source_coverage_is_globally_complete": false
   },
   "forecast_probability": null,
   "gdelt_context": "separate_analytical_stream_not_a_gate_or_confirmation",
-  "generated_at": "2026-11-17T19:55:51Z",
+  "generated_at": "2026-11-17T20:57:49Z",
   "geographic_scope": "source_declared_only",
   "history_diagnostics": {
     "excluded_observations": {},
     "history_files_examined": 32,
     "lookback_hours": 72,
-    "recent_unique_records": 219
+    "recent_unique_records": 218
   },
   "limit_notes": [
     "No automated threat warning. These are unreviewed investigatory leads.",
@@ -136,83 +137,95 @@
     "Unlocated records cannot produce automatic geographic convergence.",
     "Unavailable collection is not evidence of no threatening activity."
   ],
-  "new_single_source_count_total": 3,
+  "new_single_source_count_total": 2,
   "new_single_source_leads": [
     {
       "evidence_class": "official_notice",
-      "first_observed_at": "2026-11-17T19:55:51Z",
+      "first_observed_at": "2026-11-17T20:57:49Z",
       "geography": {
-        "geometry_sha256_prefix": "ef10f07f507295d97bd67869",
-        "geometry_type": "MultiPolygon",
-        "key": "source-footprint:ef10f07f507295d97bd67869",
-        "kind": "source_notice_footprint",
-        "label": "Official MultiPolygon notice area",
+        "key": null,
+        "kind": "unlocated",
+        "label": null,
         "latitude": null,
         "longitude": null,
-        "precision": "provider_defined_notice_boundary_not_event_point",
+        "precision": "no_source_verified_geography",
         "verified_iso": false
       },
-      "information_root": "faa:6/8293:0:0",
+      "information_root": "official:c7f67c028876c1c91d76",
       "meaning": "Observation novelty, not evidence of impending violence.",
-      "observation_id": "beh:4138b704514e20990632b955f760",
-      "requires_geolocation": false,
-      "source_family": "airspace_restriction",
-      "source_published_at": null,
-      "source_url": "https://tfr.faa.gov/6_8293.html",
+      "observation_id": "beh:360e70c67e05b6ad649ee41a6638",
+      "requires_geolocation": true,
+      "source_family": "protective_notice",
+      "source_published_at": "2026-11-17T13:27:42Z",
+      "source_url": "https://www.gov.uk/foreign-travel-advice/brazil",
       "status": "single_source_unreviewed",
-      "title": "FAA TFR 6/8293 ·   USA, Thursday, November 19, 2026 UTC"
+      "title": "Brazil"
     },
     {
       "evidence_class": "official_notice",
-      "first_observed_at": "2026-11-17T19:55:51Z",
+      "first_observed_at": "2026-11-17T20:57:49Z",
       "geography": {
-        "geometry_sha256_prefix": "087d39c5fb521ae16e31ece3",
-        "geometry_type": "MultiPolygon",
-        "key": "source-footprint:087d39c5fb521ae16e31ece3",
-        "kind": "source_notice_footprint",
-        "label": "Official MultiPolygon notice area",
+        "key": null,
+        "kind": "unlocated",
+        "label": null,
         "latitude": null,
         "longitude": null,
-        "precision": "provider_defined_notice_boundary_not_event_point",
+        "precision": "no_source_verified_geography",
         "verified_iso": false
       },
-      "information_root": "faa:6/8284:0:0",
+      "information_root": "official:c1d93aead4b496b8cc48",
       "meaning": "Observation novelty, not evidence of impending violence.",
-      "observation_id": "beh:6f3f19c491535c818b034c20ecda",
-      "requires_geolocation": false,
-      "source_family": "airspace_restriction",
-      "source_published_at": null,
-      "source_url": "https://tfr.faa.gov/6_8284.html",
+      "observation_id": "beh:a3cb3ebd7fde5c0727ff8b38df88",
+      "requires_geolocation": true,
+      "source_family": "protective_notice",
+      "source_published_at": "2026-11-17T13:27:15Z",
+      "source_url": "https://www.gov.uk/foreign-travel-advice/finland",
       "status": "single_source_unreviewed",
-      "title": "FAA TFR 6/8284 · 13NM SE CAMP SHELBY, MS, Tuesday, November 17, 2026 through Thursday, November 19, 2026 UTC"
-    },
-    {
-      "evidence_class": "official_notice",
-      "first_observed_at": "2026-11-17T19:55:51Z",
-      "geography": {
-        "geometry_sha256_prefix": "5beb44041059c5fe9a9fbaae",
-        "geometry_type": "MultiPolygon",
-        "key": "source-footprint:5beb44041059c5fe9a9fbaae",
-        "kind": "source_notice_footprint",
-        "label": "Official MultiPolygon notice area",
-        "latitude": null,
-        "longitude": null,
-        "precision": "provider_defined_notice_boundary_not_event_point",
-        "verified_iso": false
-      },
-      "information_root": "faa:6/8290:0:0",
-      "meaning": "Observation novelty, not evidence of impending violence.",
-      "observation_id": "beh:7cca148003655a20d98c2980f1e7",
-      "requires_geolocation": false,
-      "source_family": "airspace_restriction",
-      "source_published_at": null,
-      "source_url": "https://tfr.faa.gov/6_8290.html",
-      "status": "single_source_unreviewed",
-      "title": "FAA TFR 6/8290 · BABBITT, MN, Thursday, November 19, 2026 UTC"
+      "title": "Finland"
     }
   ],
   "prediction_horizon": null,
   "recent_source_observations": [
+    {
+      "first_observed_at": "2026-11-17T20:57:49Z",
+      "geography": {
+        "key": null,
+        "kind": "unlocated",
+        "label": null,
+        "latitude": null,
+        "longitude": null,
+        "precision": "no_source_verified_geography",
+        "verified_iso": false
+      },
+      "observation_id": "beh:a3cb3ebd7fde5c0727ff8b38df88",
+      "provider": "official",
+      "requires_geolocation": true,
+      "source_family": "protective_notice",
+      "source_published_at": "2026-11-17T13:27:15Z",
+      "source_url": "https://www.gov.uk/foreign-travel-advice/finland",
+      "status": "recent_source_observation_unreviewed",
+      "title": "Finland"
+    },
+    {
+      "first_observed_at": "2026-11-17T20:57:49Z",
+      "geography": {
+        "key": null,
+        "kind": "unlocated",
+        "label": null,
+        "latitude": null,
+        "longitude": null,
+        "precision": "no_source_verified_geography",
+        "verified_iso": false
+      },
+      "observation_id": "beh:360e70c67e05b6ad649ee41a6638",
+      "provider": "official",
+      "requires_geolocation": true,
+      "source_family": "protective_notice",
+      "source_published_at": "2026-11-17T13:27:42Z",
+      "source_url": "https://www.gov.uk/foreign-travel-advice/brazil",
+      "status": "recent_source_observation_unreviewed",
+      "title": "Brazil"
+    },
     {
       "first_observed_at": "2026-11-17T19:55:51Z",
       "geography": {
@@ -676,51 +689,9 @@
       "source_url": "https://tfr.faa.gov/6_7890.html",
       "status": "recent_source_observation_unreviewed",
       "title": "FAA TFR 6/7890 · GRANITE CITY, IL, Tuesday, November 17, 2026 through Wednesday, November 18, 2026 UTC"
-    },
-    {
-      "first_observed_at": "2026-11-17T00:28:10Z",
-      "geography": {
-        "key": "country:NG",
-        "kind": "country_code",
-        "label": "NG",
-        "latitude": null,
-        "longitude": null,
-        "precision": "provider_reported_country",
-        "verified_iso": false
-      },
-      "observation_id": "beh:8600b38fc89d3b6ac681dddd1362",
-      "provider": "ioda",
-      "requires_geolocation": false,
-      "source_family": "internet_reachability",
-      "source_published_at": null,
-      "source_url": "https://ioda.inetintel.cc.gatech.edu/",
-      "status": "recent_source_observation_unreviewed",
-      "title": "IODA detected connectivity anomaly: country NG"
-    },
-    {
-      "first_observed_at": "2026-11-16T19:49:13Z",
-      "geography": {
-        "geometry_sha256_prefix": "78dd86518dd6e6a90f7824e4",
-        "geometry_type": "MultiPolygon",
-        "key": "source-footprint:78dd86518dd6e6a90f7824e4",
-        "kind": "source_notice_footprint",
-        "label": "Official MultiPolygon notice area",
-        "latitude": null,
-        "longitude": null,
-        "precision": "provider_defined_notice_boundary_not_event_point",
-        "verified_iso": false
-      },
-      "observation_id": "beh:fd0686a062a3cdb255e670239d99",
-      "provider": "faa",
-      "requires_geolocation": false,
-      "source_family": "airspace_restriction",
-      "source_published_at": null,
-      "source_url": "https://tfr.faa.gov/6_7761.html",
-      "status": "recent_source_observation_unreviewed",
-      "title": "FAA TFR 6/7761 · Riverside, CA, Saturday, November 21, 2026 through Sunday, November 22, 2026 UTC"
     }
   ],
-  "registry_asof": "2026-11-17T19:55:51Z",
+  "registry_asof": "2026-11-17T20:57:49Z",
   "registry_source_count": 390,
   "report_relationships": {
     "automatic_alerts_created": 0,
@@ -2415,14 +2386,14 @@
     "input_truncated": false,
     "not_a_preparations_sensor_or_warning": true,
     "pairwise_comparisons_capped": false,
-    "pairwise_comparisons_examined": 23871,
+    "pairwise_comparisons_examined": 23653,
     "possible_same_event_count_total": 0,
     "possible_same_source_story_count_total": 2,
-    "records_available": 219,
-    "records_examined": 219,
+    "records_available": 218,
+    "records_examined": 218,
     "related_reporting_count_total": 0,
     "reporting_origins_are_not_event_locations": true,
-    "routine_notice_market_or_measurement_records_excluded_from_text_event_matching": 209,
+    "routine_notice_market_or_measurement_records_excluded_from_text_event_matching": 208,
     "same_document_group_count_total": 18,
     "schema": "aiba.report-event-resolution-shadow.v1",
     "source_independence_unverified": true,
