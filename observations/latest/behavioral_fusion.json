@@ -3,7 +3,7 @@
   "automated_severity_changes": 0,
   "collection_coverage": {
     "amsa": {
-      "age_hours": 0.0,
+      "age_hours": 2.81,
       "checked_at": "2026-11-17T08:26:59Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -15,7 +15,7 @@
       "truncated_or_partial": false
     },
     "commercial": {
-      "age_hours": 15.3,
+      "age_hours": 18.1,
       "checked_at": "2026-11-16T17:09:20Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -27,7 +27,7 @@
       "truncated_or_partial": false
     },
     "ioda": {
-      "age_hours": 0.0,
+      "age_hours": 2.81,
       "checked_at": "2026-11-17T08:26:59Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -39,29 +39,31 @@
       "truncated_or_partial": false
     },
     "live_airspace": {
-      "age_hours": 5.79,
-      "checked_at": "2026-11-17T02:39:47Z",
-      "missingness": "not_measured_not_zero",
+      "age_hours": 0.0,
+      "checked_at": "2026-11-17T11:15:25Z",
+      "first_provider_baseline": false,
+      "missingness": "partial_sampling_not_worldwide_exhaustive",
       "mode": "live_airspace",
       "provider_status": "partial",
-      "snapshot_at": "2026-11-17T02:39:47Z",
+      "snapshot_at": "2026-11-17T11:15:25Z",
       "source_scope": "FAA temporary flight restrictions: United States only",
-      "status": "stale_or_unavailable",
+      "status": "current_partial",
       "truncated_or_partial": true
     },
     "live_maritime": {
-      "age_hours": 5.79,
-      "checked_at": "2026-11-17T02:39:47Z",
-      "missingness": "not_measured_not_zero",
+      "age_hours": 0.0,
+      "checked_at": "2026-11-17T11:15:25Z",
+      "first_provider_baseline": false,
+      "missingness": "partial_sampling_not_worldwide_exhaustive",
       "mode": "live_maritime",
       "provider_status": "partial",
-      "snapshot_at": "2026-11-17T02:39:47Z",
+      "snapshot_at": "2026-11-17T11:15:25Z",
       "source_scope": "Danish Maritime Authority Niord notices: regional Baltic/North Sea",
-      "status": "stale_or_unavailable",
+      "status": "current_partial",
       "truncated_or_partial": true
     },
     "nga": {
-      "age_hours": 0.0,
+      "age_hours": 2.81,
       "checked_at": "2026-11-17T08:26:59Z",
       "missingness": "not_measured_not_zero",
       "mode": "nga",
@@ -72,7 +74,7 @@
       "truncated_or_partial": false
     },
     "official": {
-      "age_hours": 0.5,
+      "age_hours": 3.3,
       "checked_at": "2026-11-17T07:57:26Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -84,7 +86,7 @@
       "truncated_or_partial": false
     },
     "watchlist": {
-      "age_hours": 0.5,
+      "age_hours": 3.3,
       "checked_at": "2026-11-17T07:57:26Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -99,9 +101,9 @@
   "discovery_visibility": {
     "exact_geography_match_required_for_cross_family": true,
     "latest_initial_baseline": false,
-    "latest_registry_newly_observed_count": 3,
-    "latest_registry_record_count": 265,
-    "latest_unlocated_record_count": 254,
+    "latest_registry_newly_observed_count": 0,
+    "latest_registry_record_count": 389,
+    "latest_unlocated_record_count": 345,
     "new_or_collocated_not_same_as_verified_threat": true,
     "new_this_collection_required_for_cross_family_nomination": true,
     "recent_observations_sampled": 24,
@@ -119,7 +121,7 @@
   },
   "forecast_probability": null,
   "gdelt_context": "separate_analytical_stream_not_a_gate_or_confirmation",
-  "generated_at": "2026-11-17T08:27:13Z",
+  "generated_at": "2026-11-17T11:15:30Z",
   "geographic_scope": "source_declared_only",
   "history_diagnostics": {
     "excluded_observations": {},
@@ -134,75 +136,8 @@
     "Unlocated records cannot produce automatic geographic convergence.",
     "Unavailable collection is not evidence of no threatening activity."
   ],
-  "new_single_source_count_total": 3,
-  "new_single_source_leads": [
-    {
-      "evidence_class": "network_measurement",
-      "first_observed_at": "2026-11-17T08:26:59Z",
-      "geography": {
-        "key": "country:TL",
-        "kind": "country_code",
-        "label": "TL",
-        "latitude": null,
-        "longitude": null,
-        "precision": "provider_reported_country",
-        "verified_iso": false
-      },
-      "information_root": "ioda:c5c331ac182fe75e5fd671bd",
-      "meaning": "Observation novelty, not evidence of impending violence.",
-      "observation_id": "beh:43d7f978f90bcdc436d0aa681a3a",
-      "requires_geolocation": false,
-      "source_family": "internet_reachability",
-      "source_published_at": null,
-      "source_url": "https://ioda.inetintel.cc.gatech.edu/",
-      "status": "single_source_unreviewed",
-      "title": "IODA detected connectivity anomaly: country TL"
-    },
-    {
-      "evidence_class": "network_measurement",
-      "first_observed_at": "2026-11-17T08:26:59Z",
-      "geography": {
-        "key": "country:NP",
-        "kind": "country_code",
-        "label": "NP",
-        "latitude": null,
-        "longitude": null,
-        "precision": "provider_reported_country",
-        "verified_iso": false
-      },
-      "information_root": "ioda:c03da0497b555b8d755087da",
-      "meaning": "Observation novelty, not evidence of impending violence.",
-      "observation_id": "beh:ae3f9bb2591902f1280eef4284b5",
-      "requires_geolocation": false,
-      "source_family": "internet_reachability",
-      "source_published_at": null,
-      "source_url": "https://ioda.inetintel.cc.gatech.edu/",
-      "status": "single_source_unreviewed",
-      "title": "IODA detected connectivity anomaly: country NP"
-    },
-    {
-      "evidence_class": "network_measurement",
-      "first_observed_at": "2026-11-17T08:26:59Z",
-      "geography": {
-        "key": "country:SA",
-        "kind": "country_code",
-        "label": "SA",
-        "latitude": null,
-        "longitude": null,
-        "precision": "provider_reported_country",
-        "verified_iso": false
-      },
-      "information_root": "ioda:ccb64adc2e8802d33460123d",
-      "meaning": "Observation novelty, not evidence of impending violence.",
-      "observation_id": "beh:f38543184ba1380900e97734cf6f",
-      "requires_geolocation": false,
-      "source_family": "internet_reachability",
-      "source_published_at": null,
-      "source_url": "https://ioda.inetintel.cc.gatech.edu/",
-      "status": "single_source_unreviewed",
-      "title": "IODA detected connectivity anomaly: country SA"
-    }
-  ],
+  "new_single_source_count_total": 0,
+  "new_single_source_leads": [],
   "prediction_horizon": null,
   "recent_source_observations": [
     {
@@ -718,8 +653,8 @@
       "title": "Airline suspends all flights after 17 years as it files for insolvency - Oxford Mail"
     }
   ],
-  "registry_asof": "2026-11-17T08:27:13Z",
-  "registry_source_count": 265,
+  "registry_asof": "2026-11-17T11:15:30Z",
+  "registry_source_count": 389,
   "report_relationships": {
     "automatic_alerts_created": 0,
     "automatic_severity_changes": 0,
