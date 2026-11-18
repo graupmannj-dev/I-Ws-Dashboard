@@ -3,18 +3,19 @@
   "automated_severity_changes": 0,
   "collection_coverage": {
     "amsa": {
-      "age_hours": 8.07,
-      "checked_at": "2026-11-18T08:28:52Z",
-      "missingness": "not_measured_not_zero",
+      "age_hours": 0.0,
+      "checked_at": "2026-11-18T17:30:32Z",
+      "first_provider_baseline": false,
+      "missingness": "provider_bounded_not_exhaustive",
       "mode": "amsa",
       "provider_status": "collected",
-      "snapshot_at": "2026-11-18T08:28:52Z",
+      "snapshot_at": "2026-11-18T17:30:32Z",
       "source_scope": "AMSA NAVAREA X only",
-      "status": "stale_or_unavailable",
+      "status": "current",
       "truncated_or_partial": false
     },
     "commercial": {
-      "age_hours": 0.0,
+      "age_hours": 0.96,
       "checked_at": "2026-11-18T16:33:01Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -26,18 +27,19 @@
       "truncated_or_partial": false
     },
     "ioda": {
-      "age_hours": 8.07,
-      "checked_at": "2026-11-18T08:28:52Z",
-      "missingness": "not_measured_not_zero",
+      "age_hours": 0.0,
+      "checked_at": "2026-11-18T17:30:32Z",
+      "first_provider_baseline": false,
+      "missingness": "provider_bounded_not_exhaustive",
       "mode": "ioda",
       "provider_status": "collected",
-      "snapshot_at": "2026-11-18T08:28:52Z",
+      "snapshot_at": "2026-11-18T17:30:32Z",
       "source_scope": "IODA country events (first 100 of first page, 4-hour query)",
-      "status": "stale_or_unavailable",
+      "status": "current",
       "truncated_or_partial": false
     },
     "live_airspace": {
-      "age_hours": 5.88,
+      "age_hours": 6.85,
       "checked_at": "2026-11-18T10:39:58Z",
       "missingness": "not_measured_not_zero",
       "mode": "live_airspace",
@@ -48,7 +50,7 @@
       "truncated_or_partial": true
     },
     "live_maritime": {
-      "age_hours": 5.88,
+      "age_hours": 6.85,
       "checked_at": "2026-11-18T10:39:58Z",
       "missingness": "not_measured_not_zero",
       "mode": "live_maritime",
@@ -59,18 +61,18 @@
       "truncated_or_partial": true
     },
     "nga": {
-      "age_hours": 8.07,
-      "checked_at": "2026-11-18T08:28:52Z",
+      "age_hours": 0.0,
+      "checked_at": "2026-11-18T17:30:32Z",
       "missingness": "not_measured_not_zero",
       "mode": "nga",
       "provider_status": "unavailable",
-      "snapshot_at": "2026-11-18T08:28:52Z",
+      "snapshot_at": "2026-11-18T17:30:32Z",
       "source_scope": "NGA active broadcast warnings; provider availability varies",
       "status": "stale_or_unavailable",
       "truncated_or_partial": false
     },
     "official": {
-      "age_hours": 9.03,
+      "age_hours": 9.99,
       "checked_at": "2026-11-18T07:31:12Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -82,7 +84,7 @@
       "truncated_or_partial": false
     },
     "watchlist": {
-      "age_hours": 9.03,
+      "age_hours": 9.99,
       "checked_at": "2026-11-18T07:31:12Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -97,8 +99,8 @@
   "discovery_visibility": {
     "exact_geography_match_required_for_cross_family": true,
     "latest_initial_baseline": false,
-    "latest_registry_newly_observed_count": 6,
-    "latest_registry_record_count": 256,
+    "latest_registry_newly_observed_count": 4,
+    "latest_registry_record_count": 265,
     "latest_unlocated_record_count": 256,
     "new_or_collocated_not_same_as_verified_threat": true,
     "new_this_collection_required_for_cross_family_nomination": true,
@@ -106,11 +108,11 @@
     "recent_source_families": {
       "airspace_restriction": 34,
       "commercial_media": 15,
-      "internet_reachability": 90,
+      "internet_reachability": 94,
       "maritime_restriction": 229,
       "protective_notice": 2
     },
-    "recent_unique_record_count_72h": 370,
+    "recent_unique_record_count_72h": 374,
     "recent_unlocated_count_72h": 209,
     "schema": "aiba.behavioral-discovery-visibility.v1",
     "shared_exact_geography_keys_across_behavior_families": 0,
@@ -118,13 +120,13 @@
   },
   "forecast_probability": null,
   "gdelt_context": "separate_analytical_stream_not_a_gate_or_confirmation",
-  "generated_at": "2026-11-18T16:33:02Z",
+  "generated_at": "2026-11-18T17:30:46Z",
   "geographic_scope": "source_declared_only",
   "history_diagnostics": {
     "excluded_observations": {},
     "history_files_examined": 29,
     "lookback_hours": 72,
-    "recent_unique_records": 370
+    "recent_unique_records": 374
   },
   "limit_notes": [
     "No automated threat warning. These are unreviewed investigatory leads.",
@@ -133,143 +135,179 @@
     "Unlocated records cannot produce automatic geographic convergence.",
     "Unavailable collection is not evidence of no threatening activity."
   ],
-  "new_single_source_count_total": 6,
+  "new_single_source_count_total": 4,
   "new_single_source_leads": [
     {
-      "evidence_class": "media_mention",
-      "first_observed_at": "2026-11-18T16:33:02Z",
+      "evidence_class": "network_measurement",
+      "first_observed_at": "2026-11-18T17:30:32Z",
       "geography": {
-        "key": null,
-        "kind": "unlocated",
-        "label": null,
+        "key": "country:FI",
+        "kind": "country_code",
+        "label": "FI",
         "latitude": null,
         "longitude": null,
-        "precision": "no_source_verified_geography",
+        "precision": "provider_reported_country",
         "verified_iso": false
       },
-      "information_root": "commercial:3bf54afbe740a0ec375d",
+      "information_root": "ioda:140ab27382eda10a13297869",
       "meaning": "Observation novelty, not evidence of impending violence.",
-      "observation_id": "beh:3ee07c10167225c7e3171fa76b1e",
-      "requires_geolocation": true,
-      "source_family": "commercial_media",
-      "source_published_at": "2026-11-17T19:42:00Z",
-      "source_url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPVXJnZDBBTllaYWhsbzRMSm1qT1N5UjVWMVptTUh5WWdNeUtzUDFMenItUUt2cHpvYlU3TDZBZGRnZ1JXWm1qbjZoS0hTN3Z5LTZpREMzU0h5NWZ4VDlBcXRuVVhCVWo1aXcxQS1xQkFkZDhPWFVicXc4TW9USEF0UHFVT21UbVhBQW5PejVwQU8?oc=5",
+      "observation_id": "beh:3a02021a95871669ff6a186f427b",
+      "requires_geolocation": false,
+      "source_family": "internet_reachability",
+      "source_published_at": null,
+      "source_url": "https://ioda.inetintel.cc.gatech.edu/",
       "status": "single_source_unreviewed",
-      "title": "Russia Deepens its Attacks on Black Sea Shipping - The Maritime Executive"
+      "title": "IODA detected connectivity anomaly: country FI"
     },
     {
-      "evidence_class": "media_mention",
-      "first_observed_at": "2026-11-18T16:33:02Z",
+      "evidence_class": "network_measurement",
+      "first_observed_at": "2026-11-18T17:30:32Z",
       "geography": {
-        "key": null,
-        "kind": "unlocated",
-        "label": null,
+        "key": "country:NG",
+        "kind": "country_code",
+        "label": "NG",
         "latitude": null,
         "longitude": null,
-        "precision": "no_source_verified_geography",
+        "precision": "provider_reported_country",
         "verified_iso": false
       },
-      "information_root": "commercial:1fe6961ec9f1eaaca5af",
+      "information_root": "ioda:385b7aef6e292cd0fc961f71",
       "meaning": "Observation novelty, not evidence of impending violence.",
-      "observation_id": "beh:70fac6b35bdd87cab21973eadf14",
-      "requires_geolocation": true,
-      "source_family": "commercial_media",
-      "source_published_at": "2026-11-17T19:42:00Z",
-      "source_url": "https://maritime-executive.com/article/russia-deepens-its-attacks-on-black-sea-shipping",
+      "observation_id": "beh:7053f388754d94327be544eaf160",
+      "requires_geolocation": false,
+      "source_family": "internet_reachability",
+      "source_published_at": null,
+      "source_url": "https://ioda.inetintel.cc.gatech.edu/",
       "status": "single_source_unreviewed",
-      "title": "Russia Deepens its Attacks on Black Sea Shipping"
+      "title": "IODA detected connectivity anomaly: country NG"
     },
     {
-      "evidence_class": "media_mention",
-      "first_observed_at": "2026-11-18T16:33:02Z",
+      "evidence_class": "network_measurement",
+      "first_observed_at": "2026-11-18T17:30:32Z",
       "geography": {
-        "key": null,
-        "kind": "unlocated",
-        "label": null,
+        "key": "country:CD",
+        "kind": "country_code",
+        "label": "CD",
         "latitude": null,
         "longitude": null,
-        "precision": "no_source_verified_geography",
+        "precision": "provider_reported_country",
         "verified_iso": false
       },
-      "information_root": "commercial:e05a83a13a517a9bf62a",
+      "information_root": "ioda:f15039ae592c56c72ba6bb05",
       "meaning": "Observation novelty, not evidence of impending violence.",
-      "observation_id": "beh:9732c7fec15a452cd13c8cb11776",
-      "requires_geolocation": true,
-      "source_family": "commercial_media",
-      "source_published_at": "2026-11-17T21:56:00Z",
-      "source_url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQdGx5Z2N5YTN0UDlKcFlOUFNJMkxsQWpOZkNONUt6OWdnU3Bsc3JaX1M4cVpvcVc3c2RTb2pVNmNIV0U1amJzd01qMWdjWmd3NXhYd3Z0U0NHRktiV0pPUEJ3YjhqWVRtWUJoaDE3dnRJNzlnNzFXSnh2VmlOYmhHYUw1em0tVEFVTU5pU29jVXB3QQ?oc=5",
+      "observation_id": "beh:ce4ac01c44bf89ef929ec588f0db",
+      "requires_geolocation": false,
+      "source_family": "internet_reachability",
+      "source_published_at": null,
+      "source_url": "https://ioda.inetintel.cc.gatech.edu/",
       "status": "single_source_unreviewed",
-      "title": "Oil Shipping Soars on Russia's Northern Sea Route - The Maritime Executive"
+      "title": "IODA detected connectivity anomaly: country CD"
     },
     {
-      "evidence_class": "media_mention",
-      "first_observed_at": "2026-11-18T16:33:02Z",
+      "evidence_class": "network_measurement",
+      "first_observed_at": "2026-11-18T17:30:32Z",
       "geography": {
-        "key": null,
-        "kind": "unlocated",
-        "label": null,
+        "key": "country:YT",
+        "kind": "country_code",
+        "label": "YT",
         "latitude": null,
         "longitude": null,
-        "precision": "no_source_verified_geography",
+        "precision": "provider_reported_country",
         "verified_iso": false
       },
-      "information_root": "commercial:635224e3a388d2750897",
+      "information_root": "ioda:f4ec8056fbea2f93e532df79",
       "meaning": "Observation novelty, not evidence of impending violence.",
-      "observation_id": "beh:9ecbd52e2c31bb4cf780491284f3",
-      "requires_geolocation": true,
-      "source_family": "commercial_media",
-      "source_published_at": "2026-11-17T21:56:00Z",
-      "source_url": "https://maritime-executive.com/article/oil-shipping-soars-on-russia-s-northern-sea-route",
+      "observation_id": "beh:e97dbcda59fcefe23e2bfb37ff52",
+      "requires_geolocation": false,
+      "source_family": "internet_reachability",
+      "source_published_at": null,
+      "source_url": "https://ioda.inetintel.cc.gatech.edu/",
       "status": "single_source_unreviewed",
-      "title": "Oil Shipping Soars on Russia's Northern Sea Route"
-    },
-    {
-      "evidence_class": "media_mention",
-      "first_observed_at": "2026-11-18T16:33:02Z",
-      "geography": {
-        "key": null,
-        "kind": "unlocated",
-        "label": null,
-        "latitude": null,
-        "longitude": null,
-        "precision": "no_source_verified_geography",
-        "verified_iso": false
-      },
-      "information_root": "commercial:054876ed726814f9da79",
-      "meaning": "Observation novelty, not evidence of impending violence.",
-      "observation_id": "beh:bcf67e715b5b6503f8dace7135b5",
-      "requires_geolocation": true,
-      "source_family": "commercial_media",
-      "source_published_at": "2026-11-18T10:26:59Z",
-      "source_url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPV0NYSHRpTWEtVWx2ZkVfaTl4WkJxejJJcGowNHhOSmtIZzVzbE4wYkhEeUl6NmR4MERtNWdkaGZmZkRHdDZlckt1cEFrYnhBMTZKbnhtOS1OUUdFNkoxZ0UtYndOQWgzdFpJTVRlclNTR1B1dFpVelZmT0dvRXQwMkEzS3gwSmFVYUNiTUFWUmR5ZjlueFJqSF8tYXl6YndQR0tQNVJEaDRJRGNuTnc?oc=5",
-      "status": "single_source_unreviewed",
-      "title": "United Airlines selects WFS for cargo handling at Madrid - Air Cargo News"
-    },
-    {
-      "evidence_class": "media_mention",
-      "first_observed_at": "2026-11-18T16:33:02Z",
-      "geography": {
-        "key": null,
-        "kind": "unlocated",
-        "label": null,
-        "latitude": null,
-        "longitude": null,
-        "precision": "no_source_verified_geography",
-        "verified_iso": false
-      },
-      "information_root": "commercial:78f094fd38e741d04d5a",
-      "meaning": "Observation novelty, not evidence of impending violence.",
-      "observation_id": "beh:cc74fa3ff5ce1a66ff6e86dec198",
-      "requires_geolocation": true,
-      "source_family": "commercial_media",
-      "source_published_at": "2026-11-18T09:10:22Z",
-      "source_url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQZ1l6X0NwdF9NbTdZcl9BWlFjaHMtaHR1RHZfSUk5cHd5RmIzZWRxNUhiMGRBaW1lakFseENzRjFZTExtcW12WXVoa0pQY2gyYUgyUFpPbGdyaFlCdUctd0FFVFB2OGkxbTFsU3lZOWt6WjdRUWg1X1NKbUhlX0NxQ0ptVEgwdWxjX3ZMRFdDXzREbXhhQTl6c0VTODFjeTJna2lJV2hvZ1F6T2hUcTA1YXlhLXJ2cUpiZEVFeDB3Q05Wek5WR1U5QQ?oc=5",
-      "status": "single_source_unreviewed",
-      "title": "To what extent do mines in the Strait of Hormuz pose a threat to shipping? - TRT World"
+      "title": "IODA detected connectivity anomaly: country YT"
     }
   ],
   "prediction_horizon": null,
   "recent_source_observations": [
+    {
+      "first_observed_at": "2026-11-18T17:30:32Z",
+      "geography": {
+        "key": "country:YT",
+        "kind": "country_code",
+        "label": "YT",
+        "latitude": null,
+        "longitude": null,
+        "precision": "provider_reported_country",
+        "verified_iso": false
+      },
+      "observation_id": "beh:e97dbcda59fcefe23e2bfb37ff52",
+      "provider": "ioda",
+      "requires_geolocation": false,
+      "source_family": "internet_reachability",
+      "source_published_at": null,
+      "source_url": "https://ioda.inetintel.cc.gatech.edu/",
+      "status": "recent_source_observation_unreviewed",
+      "title": "IODA detected connectivity anomaly: country YT"
+    },
+    {
+      "first_observed_at": "2026-11-18T17:30:32Z",
+      "geography": {
+        "key": "country:CD",
+        "kind": "country_code",
+        "label": "CD",
+        "latitude": null,
+        "longitude": null,
+        "precision": "provider_reported_country",
+        "verified_iso": false
+      },
+      "observation_id": "beh:ce4ac01c44bf89ef929ec588f0db",
+      "provider": "ioda",
+      "requires_geolocation": false,
+      "source_family": "internet_reachability",
+      "source_published_at": null,
+      "source_url": "https://ioda.inetintel.cc.gatech.edu/",
+      "status": "recent_source_observation_unreviewed",
+      "title": "IODA detected connectivity anomaly: country CD"
+    },
+    {
+      "first_observed_at": "2026-11-18T17:30:32Z",
+      "geography": {
+        "key": "country:NG",
+        "kind": "country_code",
+        "label": "NG",
+        "latitude": null,
+        "longitude": null,
+        "precision": "provider_reported_country",
+        "verified_iso": false
+      },
+      "observation_id": "beh:7053f388754d94327be544eaf160",
+      "provider": "ioda",
+      "requires_geolocation": false,
+      "source_family": "internet_reachability",
+      "source_published_at": null,
+      "source_url": "https://ioda.inetintel.cc.gatech.edu/",
+      "status": "recent_source_observation_unreviewed",
+      "title": "IODA detected connectivity anomaly: country NG"
+    },
+    {
+      "first_observed_at": "2026-11-18T17:30:32Z",
+      "geography": {
+        "key": "country:FI",
+        "kind": "country_code",
+        "label": "FI",
+        "latitude": null,
+        "longitude": null,
+        "precision": "provider_reported_country",
+        "verified_iso": false
+      },
+      "observation_id": "beh:3a02021a95871669ff6a186f427b",
+      "provider": "ioda",
+      "requires_geolocation": false,
+      "source_family": "internet_reachability",
+      "source_published_at": null,
+      "source_url": "https://ioda.inetintel.cc.gatech.edu/",
+      "status": "recent_source_observation_unreviewed",
+      "title": "IODA detected connectivity anomaly: country FI"
+    },
     {
       "first_observed_at": "2026-11-18T16:33:02Z",
       "geography": {
@@ -469,86 +507,6 @@
       "source_url": "https://ioda.inetintel.cc.gatech.edu/",
       "status": "recent_source_observation_unreviewed",
       "title": "IODA detected connectivity anomaly: country BT"
-    },
-    {
-      "first_observed_at": "2026-11-18T08:28:52Z",
-      "geography": {
-        "key": "country:ST",
-        "kind": "country_code",
-        "label": "ST",
-        "latitude": null,
-        "longitude": null,
-        "precision": "provider_reported_country",
-        "verified_iso": false
-      },
-      "observation_id": "beh:f7cebe150cf799ea88ee4478ab65",
-      "provider": "ioda",
-      "requires_geolocation": false,
-      "source_family": "internet_reachability",
-      "source_published_at": null,
-      "source_url": "https://ioda.inetintel.cc.gatech.edu/",
-      "status": "recent_source_observation_unreviewed",
-      "title": "IODA detected connectivity anomaly: country ST"
-    },
-    {
-      "first_observed_at": "2026-11-18T08:28:52Z",
-      "geography": {
-        "key": "country:FM",
-        "kind": "country_code",
-        "label": "FM",
-        "latitude": null,
-        "longitude": null,
-        "precision": "provider_reported_country",
-        "verified_iso": false
-      },
-      "observation_id": "beh:f26ba523ef5cfcf22ccc3bda0266",
-      "provider": "ioda",
-      "requires_geolocation": false,
-      "source_family": "internet_reachability",
-      "source_published_at": null,
-      "source_url": "https://ioda.inetintel.cc.gatech.edu/",
-      "status": "recent_source_observation_unreviewed",
-      "title": "IODA detected connectivity anomaly: country FM"
-    },
-    {
-      "first_observed_at": "2026-11-18T08:28:52Z",
-      "geography": {
-        "key": "country:GD",
-        "kind": "country_code",
-        "label": "GD",
-        "latitude": null,
-        "longitude": null,
-        "precision": "provider_reported_country",
-        "verified_iso": false
-      },
-      "observation_id": "beh:f1e4c71d4b4cd8b70529a665caf3",
-      "provider": "ioda",
-      "requires_geolocation": false,
-      "source_family": "internet_reachability",
-      "source_published_at": null,
-      "source_url": "https://ioda.inetintel.cc.gatech.edu/",
-      "status": "recent_source_observation_unreviewed",
-      "title": "IODA detected connectivity anomaly: country GD"
-    },
-    {
-      "first_observed_at": "2026-11-18T08:28:52Z",
-      "geography": {
-        "key": "country:SZ",
-        "kind": "country_code",
-        "label": "SZ",
-        "latitude": null,
-        "longitude": null,
-        "precision": "provider_reported_country",
-        "verified_iso": false
-      },
-      "observation_id": "beh:e8951e82070fcaab7efa76fee97f",
-      "provider": "ioda",
-      "requires_geolocation": false,
-      "source_family": "internet_reachability",
-      "source_published_at": null,
-      "source_url": "https://ioda.inetintel.cc.gatech.edu/",
-      "status": "recent_source_observation_unreviewed",
-      "title": "IODA detected connectivity anomaly: country SZ"
     },
     {
       "first_observed_at": "2026-11-18T02:22:17Z",
@@ -771,8 +729,8 @@
       "title": "Denmark. Kattegat. EK R 17 Isefjord. Firing exercises. Warning."
     }
   ],
-  "registry_asof": "2026-11-18T16:33:02Z",
-  "registry_source_count": 256,
+  "registry_asof": "2026-11-18T17:30:46Z",
+  "registry_source_count": 265,
   "report_relationships": {
     "automatic_alerts_created": 0,
     "automatic_severity_changes": 0,
@@ -2599,14 +2557,14 @@
     "input_truncated": false,
     "not_a_preparations_sensor_or_warning": true,
     "pairwise_comparisons_capped": false,
-    "pairwise_comparisons_examined": 68265,
+    "pairwise_comparisons_examined": 69751,
     "possible_same_event_count_total": 0,
     "possible_same_source_story_count_total": 4,
-    "records_available": 370,
-    "records_examined": 370,
+    "records_available": 374,
+    "records_examined": 374,
     "related_reporting_count_total": 0,
     "reporting_origins_are_not_event_locations": true,
-    "routine_notice_market_or_measurement_records_excluded_from_text_event_matching": 355,
+    "routine_notice_market_or_measurement_records_excluded_from_text_event_matching": 359,
     "same_document_group_count_total": 26,
     "schema": "aiba.report-event-resolution-shadow.v1",
     "source_independence_unverified": true,
