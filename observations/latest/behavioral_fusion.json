@@ -3,19 +3,19 @@
   "automated_severity_changes": 0,
   "collection_coverage": {
     "amsa": {
-      "age_hours": 3.1,
-      "checked_at": "2026-11-17T17:51:47Z",
+      "age_hours": 0.0,
+      "checked_at": "2026-11-18T00:55:06Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
       "mode": "amsa",
       "provider_status": "collected",
-      "snapshot_at": "2026-11-17T17:51:47Z",
+      "snapshot_at": "2026-11-18T00:55:06Z",
       "source_scope": "AMSA NAVAREA X only",
       "status": "current",
       "truncated_or_partial": false
     },
     "commercial": {
-      "age_hours": 4.0,
+      "age_hours": 7.96,
       "checked_at": "2026-11-17T16:57:45Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -27,54 +27,52 @@
       "truncated_or_partial": false
     },
     "ioda": {
-      "age_hours": 3.1,
-      "checked_at": "2026-11-17T17:51:47Z",
+      "age_hours": 0.0,
+      "checked_at": "2026-11-18T00:55:06Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
       "mode": "ioda",
       "provider_status": "collected",
-      "snapshot_at": "2026-11-17T17:51:47Z",
+      "snapshot_at": "2026-11-18T00:55:06Z",
       "source_scope": "IODA country events (first 100 of first page, 4-hour query)",
       "status": "current",
       "truncated_or_partial": false
     },
     "live_airspace": {
-      "age_hours": 1.03,
+      "age_hours": 4.99,
       "checked_at": "2026-11-17T19:55:46Z",
-      "first_provider_baseline": false,
-      "missingness": "partial_sampling_not_worldwide_exhaustive",
+      "missingness": "not_measured_not_zero",
       "mode": "live_airspace",
       "provider_status": "partial",
       "snapshot_at": "2026-11-17T19:55:46Z",
       "source_scope": "FAA temporary flight restrictions: United States only",
-      "status": "current_partial",
+      "status": "stale_or_unavailable",
       "truncated_or_partial": true
     },
     "live_maritime": {
-      "age_hours": 1.03,
+      "age_hours": 4.99,
       "checked_at": "2026-11-17T19:55:46Z",
-      "first_provider_baseline": false,
-      "missingness": "partial_sampling_not_worldwide_exhaustive",
+      "missingness": "not_measured_not_zero",
       "mode": "live_maritime",
       "provider_status": "partial",
       "snapshot_at": "2026-11-17T19:55:46Z",
       "source_scope": "Danish Maritime Authority Niord notices: regional Baltic/North Sea",
-      "status": "current_partial",
+      "status": "stale_or_unavailable",
       "truncated_or_partial": true
     },
     "nga": {
-      "age_hours": 3.1,
-      "checked_at": "2026-11-17T17:51:47Z",
+      "age_hours": 0.0,
+      "checked_at": "2026-11-18T00:55:06Z",
       "missingness": "not_measured_not_zero",
       "mode": "nga",
       "provider_status": "unavailable",
-      "snapshot_at": "2026-11-17T17:51:47Z",
+      "snapshot_at": "2026-11-18T00:55:06Z",
       "source_scope": "NGA active broadcast warnings; provider availability varies",
       "status": "stale_or_unavailable",
       "truncated_or_partial": false
     },
     "official": {
-      "age_hours": 0.0,
+      "age_hours": 3.96,
       "checked_at": "2026-11-17T20:57:46Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -86,7 +84,7 @@
       "truncated_or_partial": false
     },
     "watchlist": {
-      "age_hours": 0.0,
+      "age_hours": 3.96,
       "checked_at": "2026-11-17T20:57:47Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -101,34 +99,36 @@
   "discovery_visibility": {
     "exact_geography_match_required_for_cross_family": true,
     "latest_initial_baseline": false,
-    "latest_registry_newly_observed_count": 2,
-    "latest_registry_record_count": 390,
-    "latest_unlocated_record_count": 346,
+    "latest_registry_newly_observed_count": 9,
+    "latest_registry_record_count": 272,
+    "latest_unlocated_record_count": 255,
     "new_or_collocated_not_same_as_verified_threat": true,
     "new_this_collection_required_for_cross_family_nomination": true,
     "recent_observations_sampled": 24,
     "recent_source_families": {
       "airspace_restriction": 18,
       "commercial_media": 10,
-      "internet_reachability": 22,
-      "maritime_restriction": 166,
+      "internet_reachability": 31,
+      "maritime_restriction": 153,
       "protective_notice": 2
     },
-    "recent_unique_record_count_72h": 218,
-    "recent_unlocated_count_72h": 151,
+    "recent_unique_record_count_72h": 214,
+    "recent_unlocated_count_72h": 141,
     "schema": "aiba.behavioral-discovery-visibility.v1",
     "shared_exact_geography_keys_across_behavior_families": 0,
     "source_coverage_is_globally_complete": false
   },
   "forecast_probability": null,
   "gdelt_context": "separate_analytical_stream_not_a_gate_or_confirmation",
-  "generated_at": "2026-11-17T20:57:49Z",
+  "generated_at": "2026-11-18T00:55:10Z",
   "geographic_scope": "source_declared_only",
   "history_diagnostics": {
-    "excluded_observations": {},
-    "history_files_examined": 32,
+    "excluded_observations": {
+      "old_or_future_source_revision": 13
+    },
+    "history_files_examined": 30,
     "lookback_hours": 72,
-    "recent_unique_records": 218
+    "recent_unique_records": 214
   },
   "limit_notes": [
     "No automated threat warning. These are unreviewed investigatory leads.",
@@ -137,55 +137,369 @@
     "Unlocated records cannot produce automatic geographic convergence.",
     "Unavailable collection is not evidence of no threatening activity."
   ],
-  "new_single_source_count_total": 2,
+  "new_single_source_count_total": 9,
   "new_single_source_leads": [
     {
-      "evidence_class": "official_notice",
-      "first_observed_at": "2026-11-17T20:57:49Z",
+      "evidence_class": "network_measurement",
+      "first_observed_at": "2026-11-18T00:55:06Z",
       "geography": {
-        "key": null,
-        "kind": "unlocated",
-        "label": null,
+        "key": "country:TD",
+        "kind": "country_code",
+        "label": "TD",
         "latitude": null,
         "longitude": null,
-        "precision": "no_source_verified_geography",
+        "precision": "provider_reported_country",
         "verified_iso": false
       },
-      "information_root": "official:c7f67c028876c1c91d76",
+      "information_root": "ioda:cb06704a626c99b5045704c2",
       "meaning": "Observation novelty, not evidence of impending violence.",
-      "observation_id": "beh:360e70c67e05b6ad649ee41a6638",
-      "requires_geolocation": true,
-      "source_family": "protective_notice",
-      "source_published_at": "2026-11-17T13:27:42Z",
-      "source_url": "https://www.gov.uk/foreign-travel-advice/brazil",
+      "observation_id": "beh:07f3d29c70b072906e80351e8925",
+      "requires_geolocation": false,
+      "source_family": "internet_reachability",
+      "source_published_at": null,
+      "source_url": "https://ioda.inetintel.cc.gatech.edu/",
       "status": "single_source_unreviewed",
-      "title": "Brazil"
+      "title": "IODA detected connectivity anomaly: country TD"
     },
     {
-      "evidence_class": "official_notice",
-      "first_observed_at": "2026-11-17T20:57:49Z",
+      "evidence_class": "network_measurement",
+      "first_observed_at": "2026-11-18T00:55:06Z",
       "geography": {
-        "key": null,
-        "kind": "unlocated",
-        "label": null,
+        "key": "country:NF",
+        "kind": "country_code",
+        "label": "NF",
         "latitude": null,
         "longitude": null,
-        "precision": "no_source_verified_geography",
+        "precision": "provider_reported_country",
         "verified_iso": false
       },
-      "information_root": "official:c1d93aead4b496b8cc48",
+      "information_root": "ioda:8df6c57c4cbb22355661c6f9",
       "meaning": "Observation novelty, not evidence of impending violence.",
-      "observation_id": "beh:a3cb3ebd7fde5c0727ff8b38df88",
-      "requires_geolocation": true,
-      "source_family": "protective_notice",
-      "source_published_at": "2026-11-17T13:27:15Z",
-      "source_url": "https://www.gov.uk/foreign-travel-advice/finland",
+      "observation_id": "beh:36bb0cf684ea8de4d6c7c6796e68",
+      "requires_geolocation": false,
+      "source_family": "internet_reachability",
+      "source_published_at": null,
+      "source_url": "https://ioda.inetintel.cc.gatech.edu/",
       "status": "single_source_unreviewed",
-      "title": "Finland"
+      "title": "IODA detected connectivity anomaly: country NF"
+    },
+    {
+      "evidence_class": "network_measurement",
+      "first_observed_at": "2026-11-18T00:55:06Z",
+      "geography": {
+        "key": "country:CF",
+        "kind": "country_code",
+        "label": "CF",
+        "latitude": null,
+        "longitude": null,
+        "precision": "provider_reported_country",
+        "verified_iso": false
+      },
+      "information_root": "ioda:4f8ae7058204d3cafdfb8fe5",
+      "meaning": "Observation novelty, not evidence of impending violence.",
+      "observation_id": "beh:43503ed52bf6d813da0f42ac0957",
+      "requires_geolocation": false,
+      "source_family": "internet_reachability",
+      "source_published_at": null,
+      "source_url": "https://ioda.inetintel.cc.gatech.edu/",
+      "status": "single_source_unreviewed",
+      "title": "IODA detected connectivity anomaly: country CF"
+    },
+    {
+      "evidence_class": "network_measurement",
+      "first_observed_at": "2026-11-18T00:55:06Z",
+      "geography": {
+        "key": "country:SH",
+        "kind": "country_code",
+        "label": "SH",
+        "latitude": null,
+        "longitude": null,
+        "precision": "provider_reported_country",
+        "verified_iso": false
+      },
+      "information_root": "ioda:bc6b3cb323055f16fe0193e4",
+      "meaning": "Observation novelty, not evidence of impending violence.",
+      "observation_id": "beh:63171377e88406d6f7f3fc9629d2",
+      "requires_geolocation": false,
+      "source_family": "internet_reachability",
+      "source_published_at": null,
+      "source_url": "https://ioda.inetintel.cc.gatech.edu/",
+      "status": "single_source_unreviewed",
+      "title": "IODA detected connectivity anomaly: country SH"
+    },
+    {
+      "evidence_class": "network_measurement",
+      "first_observed_at": "2026-11-18T00:55:06Z",
+      "geography": {
+        "key": "country:CN",
+        "kind": "country_code",
+        "label": "CN",
+        "latitude": null,
+        "longitude": null,
+        "precision": "provider_reported_country",
+        "verified_iso": false
+      },
+      "information_root": "ioda:42e1926b1677d5dfcc75b81e",
+      "meaning": "Observation novelty, not evidence of impending violence.",
+      "observation_id": "beh:839053a4e0d61d96409c1a2e4b61",
+      "requires_geolocation": false,
+      "source_family": "internet_reachability",
+      "source_published_at": null,
+      "source_url": "https://ioda.inetintel.cc.gatech.edu/",
+      "status": "single_source_unreviewed",
+      "title": "IODA detected connectivity anomaly: country CN"
+    },
+    {
+      "evidence_class": "network_measurement",
+      "first_observed_at": "2026-11-18T00:55:06Z",
+      "geography": {
+        "key": "country:BF",
+        "kind": "country_code",
+        "label": "BF",
+        "latitude": null,
+        "longitude": null,
+        "precision": "provider_reported_country",
+        "verified_iso": false
+      },
+      "information_root": "ioda:6bf08b6ae45e5a34f1e0f8f9",
+      "meaning": "Observation novelty, not evidence of impending violence.",
+      "observation_id": "beh:9c4bfa1d14cd168bf35bda528dc7",
+      "requires_geolocation": false,
+      "source_family": "internet_reachability",
+      "source_published_at": null,
+      "source_url": "https://ioda.inetintel.cc.gatech.edu/",
+      "status": "single_source_unreviewed",
+      "title": "IODA detected connectivity anomaly: country BF"
+    },
+    {
+      "evidence_class": "network_measurement",
+      "first_observed_at": "2026-11-18T00:55:06Z",
+      "geography": {
+        "key": "country:BF",
+        "kind": "country_code",
+        "label": "BF",
+        "latitude": null,
+        "longitude": null,
+        "precision": "provider_reported_country",
+        "verified_iso": false
+      },
+      "information_root": "ioda:bdd8eda3da69a6cf60dea7f4",
+      "meaning": "Observation novelty, not evidence of impending violence.",
+      "observation_id": "beh:b4a5678f2ad1ea5f35c3f8a3bba0",
+      "requires_geolocation": false,
+      "source_family": "internet_reachability",
+      "source_published_at": null,
+      "source_url": "https://ioda.inetintel.cc.gatech.edu/",
+      "status": "single_source_unreviewed",
+      "title": "IODA detected connectivity anomaly: country BF"
+    },
+    {
+      "evidence_class": "network_measurement",
+      "first_observed_at": "2026-11-18T00:55:06Z",
+      "geography": {
+        "key": "country:NG",
+        "kind": "country_code",
+        "label": "NG",
+        "latitude": null,
+        "longitude": null,
+        "precision": "provider_reported_country",
+        "verified_iso": false
+      },
+      "information_root": "ioda:ac5745f85e0bebb8f31a2f2a",
+      "meaning": "Observation novelty, not evidence of impending violence.",
+      "observation_id": "beh:e0c56c875e042d8ba778513707d5",
+      "requires_geolocation": false,
+      "source_family": "internet_reachability",
+      "source_published_at": null,
+      "source_url": "https://ioda.inetintel.cc.gatech.edu/",
+      "status": "single_source_unreviewed",
+      "title": "IODA detected connectivity anomaly: country NG"
+    },
+    {
+      "evidence_class": "network_measurement",
+      "first_observed_at": "2026-11-18T00:55:06Z",
+      "geography": {
+        "key": "country:BJ",
+        "kind": "country_code",
+        "label": "BJ",
+        "latitude": null,
+        "longitude": null,
+        "precision": "provider_reported_country",
+        "verified_iso": false
+      },
+      "information_root": "ioda:d0d17ed5603c83984d2f6bb0",
+      "meaning": "Observation novelty, not evidence of impending violence.",
+      "observation_id": "beh:fb8e033ccc7d8f2c3457870e3138",
+      "requires_geolocation": false,
+      "source_family": "internet_reachability",
+      "source_published_at": null,
+      "source_url": "https://ioda.inetintel.cc.gatech.edu/",
+      "status": "single_source_unreviewed",
+      "title": "IODA detected connectivity anomaly: country BJ"
     }
   ],
   "prediction_horizon": null,
   "recent_source_observations": [
+    {
+      "first_observed_at": "2026-11-18T00:55:06Z",
+      "geography": {
+        "key": "country:BJ",
+        "kind": "country_code",
+        "label": "BJ",
+        "latitude": null,
+        "longitude": null,
+        "precision": "provider_reported_country",
+        "verified_iso": false
+      },
+      "observation_id": "beh:fb8e033ccc7d8f2c3457870e3138",
+      "provider": "ioda",
+      "requires_geolocation": false,
+      "source_family": "internet_reachability",
+      "source_published_at": null,
+      "source_url": "https://ioda.inetintel.cc.gatech.edu/",
+      "status": "recent_source_observation_unreviewed",
+      "title": "IODA detected connectivity anomaly: country BJ"
+    },
+    {
+      "first_observed_at": "2026-11-18T00:55:06Z",
+      "geography": {
+        "key": "country:NG",
+        "kind": "country_code",
+        "label": "NG",
+        "latitude": null,
+        "longitude": null,
+        "precision": "provider_reported_country",
+        "verified_iso": false
+      },
+      "observation_id": "beh:e0c56c875e042d8ba778513707d5",
+      "provider": "ioda",
+      "requires_geolocation": false,
+      "source_family": "internet_reachability",
+      "source_published_at": null,
+      "source_url": "https://ioda.inetintel.cc.gatech.edu/",
+      "status": "recent_source_observation_unreviewed",
+      "title": "IODA detected connectivity anomaly: country NG"
+    },
+    {
+      "first_observed_at": "2026-11-18T00:55:06Z",
+      "geography": {
+        "key": "country:BF",
+        "kind": "country_code",
+        "label": "BF",
+        "latitude": null,
+        "longitude": null,
+        "precision": "provider_reported_country",
+        "verified_iso": false
+      },
+      "observation_id": "beh:b4a5678f2ad1ea5f35c3f8a3bba0",
+      "provider": "ioda",
+      "requires_geolocation": false,
+      "source_family": "internet_reachability",
+      "source_published_at": null,
+      "source_url": "https://ioda.inetintel.cc.gatech.edu/",
+      "status": "recent_source_observation_unreviewed",
+      "title": "IODA detected connectivity anomaly: country BF"
+    },
+    {
+      "first_observed_at": "2026-11-18T00:55:06Z",
+      "geography": {
+        "key": "country:BF",
+        "kind": "country_code",
+        "label": "BF",
+        "latitude": null,
+        "longitude": null,
+        "precision": "provider_reported_country",
+        "verified_iso": false
+      },
+      "observation_id": "beh:9c4bfa1d14cd168bf35bda528dc7",
+      "provider": "ioda",
+      "requires_geolocation": false,
+      "source_family": "internet_reachability",
+      "source_published_at": null,
+      "source_url": "https://ioda.inetintel.cc.gatech.edu/",
+      "status": "recent_source_observation_unreviewed",
+      "title": "IODA detected connectivity anomaly: country BF"
+    },
+    {
+      "first_observed_at": "2026-11-18T00:55:06Z",
+      "geography": {
+        "key": "country:CN",
+        "kind": "country_code",
+        "label": "CN",
+        "latitude": null,
+        "longitude": null,
+        "precision": "provider_reported_country",
+        "verified_iso": false
+      },
+      "observation_id": "beh:839053a4e0d61d96409c1a2e4b61",
+      "provider": "ioda",
+      "requires_geolocation": false,
+      "source_family": "internet_reachability",
+      "source_published_at": null,
+      "source_url": "https://ioda.inetintel.cc.gatech.edu/",
+      "status": "recent_source_observation_unreviewed",
+      "title": "IODA detected connectivity anomaly: country CN"
+    },
+    {
+      "first_observed_at": "2026-11-18T00:55:06Z",
+      "geography": {
+        "key": "country:SH",
+        "kind": "country_code",
+        "label": "SH",
+        "latitude": null,
+        "longitude": null,
+        "precision": "provider_reported_country",
+        "verified_iso": false
+      },
+      "observation_id": "beh:63171377e88406d6f7f3fc9629d2",
+      "provider": "ioda",
+      "requires_geolocation": false,
+      "source_family": "internet_reachability",
+      "source_published_at": null,
+      "source_url": "https://ioda.inetintel.cc.gatech.edu/",
+      "status": "recent_source_observation_unreviewed",
+      "title": "IODA detected connectivity anomaly: country SH"
+    },
+    {
+      "first_observed_at": "2026-11-18T00:55:06Z",
+      "geography": {
+        "key": "country:CF",
+        "kind": "country_code",
+        "label": "CF",
+        "latitude": null,
+        "longitude": null,
+        "precision": "provider_reported_country",
+        "verified_iso": false
+      },
+      "observation_id": "beh:43503ed52bf6d813da0f42ac0957",
+      "provider": "ioda",
+      "requires_geolocation": false,
+      "source_family": "internet_reachability",
+      "source_published_at": null,
+      "source_url": "https://ioda.inetintel.cc.gatech.edu/",
+      "status": "recent_source_observation_unreviewed",
+      "title": "IODA detected connectivity anomaly: country CF"
+    },
+    {
+      "first_observed_at": "2026-11-18T00:55:06Z",
+      "geography": {
+        "key": "country:NF",
+        "kind": "country_code",
+        "label": "NF",
+        "latitude": null,
+        "longitude": null,
+        "precision": "provider_reported_country",
+        "verified_iso": false
+      },
+      "observation_id": "beh:36bb0cf684ea8de4d6c7c6796e68",
+      "provider": "ioda",
+      "requires_geolocation": false,
+      "source_family": "internet_reachability",
+      "source_published_at": null,
+      "source_url": "https://ioda.inetintel.cc.gatech.edu/",
+      "status": "recent_source_observation_unreviewed",
+      "title": "IODA detected connectivity anomaly: country NF"
+    },
     {
       "first_observed_at": "2026-11-17T20:57:49Z",
       "geography": {
@@ -293,46 +607,6 @@
       "title": "FAA TFR 6/8293 ·   USA, Thursday, November 19, 2026 UTC"
     },
     {
-      "first_observed_at": "2026-11-17T17:51:47Z",
-      "geography": {
-        "key": "country:FI",
-        "kind": "country_code",
-        "label": "FI",
-        "latitude": null,
-        "longitude": null,
-        "precision": "provider_reported_country",
-        "verified_iso": false
-      },
-      "observation_id": "beh:efd83a7dc8e84d0afa37c6a9c347",
-      "provider": "ioda",
-      "requires_geolocation": false,
-      "source_family": "internet_reachability",
-      "source_published_at": null,
-      "source_url": "https://ioda.inetintel.cc.gatech.edu/",
-      "status": "recent_source_observation_unreviewed",
-      "title": "IODA detected connectivity anomaly: country FI"
-    },
-    {
-      "first_observed_at": "2026-11-17T17:51:47Z",
-      "geography": {
-        "key": "country:TJ",
-        "kind": "country_code",
-        "label": "TJ",
-        "latitude": null,
-        "longitude": null,
-        "precision": "provider_reported_country",
-        "verified_iso": false
-      },
-      "observation_id": "beh:2760bf1957fbba1d0e58e0858771",
-      "provider": "ioda",
-      "requires_geolocation": false,
-      "source_family": "internet_reachability",
-      "source_published_at": null,
-      "source_url": "https://ioda.inetintel.cc.gatech.edu/",
-      "status": "recent_source_observation_unreviewed",
-      "title": "IODA detected connectivity anomaly: country TJ"
-    },
-    {
       "first_observed_at": "2026-11-17T16:57:47Z",
       "geography": {
         "key": null,
@@ -431,66 +705,6 @@
       "source_url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQM21XcGVndl9YNlYyOG5rc1ZUdTRQOHpfa1JFcGZrUUFReVc4ak1ZOHNCaENiV0M3NFJNVzFLaEZ0OTFOWnR3ZkNCbWQ2TjV0Unp6S0RmaWdUbV9Ubi1ycWxxUUZpYmlNNkdDaUgxelZ5a3JYRWxDbVhMRUJwUFNySzAyWDgwWjUwQ1BvV2ZfWTNLVnRhVkUzRDQ5Mkl6UGFKLWtxLUVEeWs1dw?oc=5",
       "status": "recent_source_observation_unreviewed",
       "title": "Teesside International secures China freighter flights - Air Cargo News"
-    },
-    {
-      "first_observed_at": "2026-11-17T08:26:59Z",
-      "geography": {
-        "key": "country:SA",
-        "kind": "country_code",
-        "label": "SA",
-        "latitude": null,
-        "longitude": null,
-        "precision": "provider_reported_country",
-        "verified_iso": false
-      },
-      "observation_id": "beh:f38543184ba1380900e97734cf6f",
-      "provider": "ioda",
-      "requires_geolocation": false,
-      "source_family": "internet_reachability",
-      "source_published_at": null,
-      "source_url": "https://ioda.inetintel.cc.gatech.edu/",
-      "status": "recent_source_observation_unreviewed",
-      "title": "IODA detected connectivity anomaly: country SA"
-    },
-    {
-      "first_observed_at": "2026-11-17T08:26:59Z",
-      "geography": {
-        "key": "country:NP",
-        "kind": "country_code",
-        "label": "NP",
-        "latitude": null,
-        "longitude": null,
-        "precision": "provider_reported_country",
-        "verified_iso": false
-      },
-      "observation_id": "beh:ae3f9bb2591902f1280eef4284b5",
-      "provider": "ioda",
-      "requires_geolocation": false,
-      "source_family": "internet_reachability",
-      "source_published_at": null,
-      "source_url": "https://ioda.inetintel.cc.gatech.edu/",
-      "status": "recent_source_observation_unreviewed",
-      "title": "IODA detected connectivity anomaly: country NP"
-    },
-    {
-      "first_observed_at": "2026-11-17T08:26:59Z",
-      "geography": {
-        "key": "country:TL",
-        "kind": "country_code",
-        "label": "TL",
-        "latitude": null,
-        "longitude": null,
-        "precision": "provider_reported_country",
-        "verified_iso": false
-      },
-      "observation_id": "beh:43d7f978f90bcdc436d0aa681a3a",
-      "provider": "ioda",
-      "requires_geolocation": false,
-      "source_family": "internet_reachability",
-      "source_published_at": null,
-      "source_url": "https://ioda.inetintel.cc.gatech.edu/",
-      "status": "recent_source_observation_unreviewed",
-      "title": "IODA detected connectivity anomaly: country TL"
     },
     {
       "first_observed_at": "2026-11-17T02:39:51Z",
@@ -623,273 +837,14 @@
       "source_url": "https://niord.dma.dk/#/message/bd3a545a-8bee-49ce-a67b-c9169c54c6c0",
       "status": "recent_source_observation_unreviewed",
       "title": "Denmark. Kattegat. EK R 18 Jaegerspris. Firing exercises. Warning."
-    },
-    {
-      "first_observed_at": "2026-11-17T02:39:51Z",
-      "geography": {
-        "geometry_sha256_prefix": null,
-        "geometry_type": null,
-        "key": null,
-        "kind": "unlocated",
-        "label": null,
-        "latitude": null,
-        "longitude": null,
-        "precision": "notice_geography_unavailable",
-        "verified_iso": false
-      },
-      "observation_id": "beh:ef06cb141fc5c9033707bb9f7433",
-      "provider": "niord",
-      "requires_geolocation": true,
-      "source_family": "maritime_restriction",
-      "source_published_at": null,
-      "source_url": "https://niord.dma.dk/#/message/69efd854-5221-4c33-9355-fb79f6ef0b2a",
-      "status": "recent_source_observation_unreviewed",
-      "title": "Denmark. Kattegat. EK R 45 Hevring. Firing exercises. Warning."
-    },
-    {
-      "first_observed_at": "2026-11-17T02:39:51Z",
-      "geography": {
-        "geometry_sha256_prefix": null,
-        "geometry_type": null,
-        "key": null,
-        "kind": "unlocated",
-        "label": null,
-        "latitude": null,
-        "longitude": null,
-        "precision": "notice_geography_unavailable",
-        "verified_iso": false
-      },
-      "observation_id": "beh:eaf86fa5749ea7420658e4d8e861",
-      "provider": "niord",
-      "requires_geolocation": true,
-      "source_family": "maritime_restriction",
-      "source_published_at": null,
-      "source_url": "https://niord.dma.dk/#/message/3d490dac-280b-4363-8759-a043f37854e8",
-      "status": "recent_source_observation_unreviewed",
-      "title": "Denmark. The North Sea. EK R 33 Vejers. Firing exercises. Warning."
-    },
-    {
-      "first_observed_at": "2026-11-17T02:39:51Z",
-      "geography": {
-        "geometry_sha256_prefix": "e3f2cc6e53ad76cdcbc8c879",
-        "geometry_type": "MultiPolygon",
-        "key": "source-footprint:e3f2cc6e53ad76cdcbc8c879",
-        "kind": "source_notice_footprint",
-        "label": "Official MultiPolygon notice area",
-        "latitude": null,
-        "longitude": null,
-        "precision": "provider_defined_notice_boundary_not_event_point",
-        "verified_iso": false
-      },
-      "observation_id": "beh:b95084b01fe41e60b06e5c80987d",
-      "provider": "faa",
-      "requires_geolocation": false,
-      "source_family": "airspace_restriction",
-      "source_published_at": null,
-      "source_url": "https://tfr.faa.gov/6_7890.html",
-      "status": "recent_source_observation_unreviewed",
-      "title": "FAA TFR 6/7890 · GRANITE CITY, IL, Tuesday, November 17, 2026 through Wednesday, November 18, 2026 UTC"
     }
   ],
-  "registry_asof": "2026-11-17T20:57:49Z",
-  "registry_source_count": 390,
+  "registry_asof": "2026-11-18T00:55:10Z",
+  "registry_source_count": 272,
   "report_relationships": {
     "automatic_alerts_created": 0,
     "automatic_severity_changes": 0,
     "candidate_groups": [
-      {
-        "id": "document:4075cf266f39edb3aa1a",
-        "independent_corroboration_established": false,
-        "match_basis": "same_specific_source_document_not_independent_observations",
-        "report_count_total": 13,
-        "reporting_origin_used_as_event_site": false,
-        "review_requirements": [
-          "Verify document identity and any underlying primary source",
-          "Do not treat geometries/sections of one notice as independent events"
-        ],
-        "shared_information_root": true,
-        "source_reports": [
-          {
-            "first_observed_at": "2026-11-15T02:51:03Z",
-            "geography": {
-              "geometry_sha256_prefix": null,
-              "geometry_type": "Point",
-              "key": "source-notice-point:56.53133:10.40583",
-              "kind": "source_notice_point",
-              "label": "Official notice position",
-              "latitude": 56.531333333333336,
-              "longitude": 10.405833333333334,
-              "precision": "provider_defined_notice_point_not_incident",
-              "verified_iso": false
-            },
-            "observation_id": "beh:feb15b720b75ecbe702caa8fa191",
-            "provider": "niord",
-            "reporting_origin": null,
-            "source_family": "maritime_restriction",
-            "source_published_at": null,
-            "source_url": "https://niord.dma.dk/#/message/532825a7-01a5-4d42-a5db-24bed595e9e8",
-            "status": "unreviewed_source_report",
-            "title": "Denmark. Kattegat. EK R 45 Hevring. Firing exercises. Warning."
-          },
-          {
-            "first_observed_at": "2026-11-15T02:51:03Z",
-            "geography": {
-              "geometry_sha256_prefix": null,
-              "geometry_type": null,
-              "key": null,
-              "kind": "unlocated",
-              "label": null,
-              "latitude": null,
-              "longitude": null,
-              "precision": "notice_geography_unavailable",
-              "verified_iso": false
-            },
-            "observation_id": "beh:f559788e0aae65953f3f7136647d",
-            "provider": "niord",
-            "reporting_origin": null,
-            "source_family": "maritime_restriction",
-            "source_published_at": null,
-            "source_url": "https://niord.dma.dk/#/message/532825a7-01a5-4d42-a5db-24bed595e9e8",
-            "status": "unreviewed_source_report",
-            "title": "Denmark. Kattegat. EK R 45 Hevring. Firing exercises. Warning."
-          },
-          {
-            "first_observed_at": "2026-11-15T02:51:03Z",
-            "geography": {
-              "geometry_sha256_prefix": null,
-              "geometry_type": null,
-              "key": null,
-              "kind": "unlocated",
-              "label": null,
-              "latitude": null,
-              "longitude": null,
-              "precision": "notice_geography_unavailable",
-              "verified_iso": false
-            },
-            "observation_id": "beh:c7b3660058ff110a5e6f0de6721e",
-            "provider": "niord",
-            "reporting_origin": null,
-            "source_family": "maritime_restriction",
-            "source_published_at": null,
-            "source_url": "https://niord.dma.dk/#/message/532825a7-01a5-4d42-a5db-24bed595e9e8",
-            "status": "unreviewed_source_report",
-            "title": "Denmark. Kattegat. EK R 45 Hevring. Firing exercises. Warning."
-          },
-          {
-            "first_observed_at": "2026-11-15T02:51:03Z",
-            "geography": {
-              "geometry_sha256_prefix": null,
-              "geometry_type": null,
-              "key": null,
-              "kind": "unlocated",
-              "label": null,
-              "latitude": null,
-              "longitude": null,
-              "precision": "notice_geography_unavailable",
-              "verified_iso": false
-            },
-            "observation_id": "beh:c725551384c6f91ba837d474e03a",
-            "provider": "niord",
-            "reporting_origin": null,
-            "source_family": "maritime_restriction",
-            "source_published_at": null,
-            "source_url": "https://niord.dma.dk/#/message/532825a7-01a5-4d42-a5db-24bed595e9e8",
-            "status": "unreviewed_source_report",
-            "title": "Denmark. Kattegat. EK R 45 Hevring. Firing exercises. Warning."
-          },
-          {
-            "first_observed_at": "2026-11-15T02:51:03Z",
-            "geography": {
-              "geometry_sha256_prefix": null,
-              "geometry_type": null,
-              "key": null,
-              "kind": "unlocated",
-              "label": null,
-              "latitude": null,
-              "longitude": null,
-              "precision": "notice_geography_unavailable",
-              "verified_iso": false
-            },
-            "observation_id": "beh:b84ff8fe7319548631163dce03fd",
-            "provider": "niord",
-            "reporting_origin": null,
-            "source_family": "maritime_restriction",
-            "source_published_at": null,
-            "source_url": "https://niord.dma.dk/#/message/532825a7-01a5-4d42-a5db-24bed595e9e8",
-            "status": "unreviewed_source_report",
-            "title": "Denmark. Kattegat. EK R 45 Hevring. Firing exercises. Warning."
-          },
-          {
-            "first_observed_at": "2026-11-15T02:51:03Z",
-            "geography": {
-              "geometry_sha256_prefix": null,
-              "geometry_type": null,
-              "key": null,
-              "kind": "unlocated",
-              "label": null,
-              "latitude": null,
-              "longitude": null,
-              "precision": "notice_geography_unavailable",
-              "verified_iso": false
-            },
-            "observation_id": "beh:b6b9ee714199bae5eac293e6eadb",
-            "provider": "niord",
-            "reporting_origin": null,
-            "source_family": "maritime_restriction",
-            "source_published_at": null,
-            "source_url": "https://niord.dma.dk/#/message/532825a7-01a5-4d42-a5db-24bed595e9e8",
-            "status": "unreviewed_source_report",
-            "title": "Denmark. Kattegat. EK R 45 Hevring. Firing exercises. Warning."
-          },
-          {
-            "first_observed_at": "2026-11-15T02:51:03Z",
-            "geography": {
-              "geometry_sha256_prefix": null,
-              "geometry_type": null,
-              "key": null,
-              "kind": "unlocated",
-              "label": null,
-              "latitude": null,
-              "longitude": null,
-              "precision": "notice_geography_unavailable",
-              "verified_iso": false
-            },
-            "observation_id": "beh:b211581ad05dbdc0a03a6089bb26",
-            "provider": "niord",
-            "reporting_origin": null,
-            "source_family": "maritime_restriction",
-            "source_published_at": null,
-            "source_url": "https://niord.dma.dk/#/message/532825a7-01a5-4d42-a5db-24bed595e9e8",
-            "status": "unreviewed_source_report",
-            "title": "Denmark. Kattegat. EK R 45 Hevring. Firing exercises. Warning."
-          },
-          {
-            "first_observed_at": "2026-11-15T02:51:03Z",
-            "geography": {
-              "geometry_sha256_prefix": null,
-              "geometry_type": null,
-              "key": null,
-              "kind": "unlocated",
-              "label": null,
-              "latitude": null,
-              "longitude": null,
-              "precision": "notice_geography_unavailable",
-              "verified_iso": false
-            },
-            "observation_id": "beh:9e611fa63c9a0f3c67abb498da8f",
-            "provider": "niord",
-            "reporting_origin": null,
-            "source_family": "maritime_restriction",
-            "source_published_at": null,
-            "source_url": "https://niord.dma.dk/#/message/532825a7-01a5-4d42-a5db-24bed595e9e8",
-            "status": "unreviewed_source_report",
-            "title": "Denmark. Kattegat. EK R 45 Hevring. Firing exercises. Warning."
-          }
-        ],
-        "source_reports_truncated": true,
-        "status": "shared_source_document_unreviewed",
-        "warning_level_change": false
-      },
       {
         "id": "document:6db46f09baee4665f490",
         "independent_corroboration_established": false,
@@ -2242,6 +2197,199 @@
         "warning_level_change": false
       },
       {
+        "id": "document:4eba60713b635f055895",
+        "independent_corroboration_established": false,
+        "match_basis": "same_specific_source_document_not_independent_observations",
+        "report_count_total": 9,
+        "reporting_origin_used_as_event_site": false,
+        "review_requirements": [
+          "Verify document identity and any underlying primary source",
+          "Do not treat geometries/sections of one notice as independent events"
+        ],
+        "shared_information_root": true,
+        "source_reports": [
+          {
+            "first_observed_at": "2026-11-17T02:39:51Z",
+            "geography": {
+              "geometry_sha256_prefix": null,
+              "geometry_type": null,
+              "key": null,
+              "kind": "unlocated",
+              "label": null,
+              "latitude": null,
+              "longitude": null,
+              "precision": "notice_geography_unavailable",
+              "verified_iso": false
+            },
+            "observation_id": "beh:fd748cb30e0e38496855c3e846b2",
+            "provider": "niord",
+            "reporting_origin": null,
+            "source_family": "maritime_restriction",
+            "source_published_at": null,
+            "source_url": "https://niord.dma.dk/#/message/57e3ae61-a94b-4cc6-8303-615cf880c5bb",
+            "status": "unreviewed_source_report",
+            "title": "Denmark. The Baltic Sea. EK D 396 Hullebaek. Firing exercises. Warning."
+          },
+          {
+            "first_observed_at": "2026-11-17T02:39:51Z",
+            "geography": {
+              "geometry_sha256_prefix": null,
+              "geometry_type": null,
+              "key": null,
+              "kind": "unlocated",
+              "label": null,
+              "latitude": null,
+              "longitude": null,
+              "precision": "notice_geography_unavailable",
+              "verified_iso": false
+            },
+            "observation_id": "beh:f7fcc2fb1e1be4def25e2eccf399",
+            "provider": "niord",
+            "reporting_origin": null,
+            "source_family": "maritime_restriction",
+            "source_published_at": null,
+            "source_url": "https://niord.dma.dk/#/message/57e3ae61-a94b-4cc6-8303-615cf880c5bb",
+            "status": "unreviewed_source_report",
+            "title": "Denmark. The Baltic Sea. EK D 396 Hullebaek. Firing exercises. Warning."
+          },
+          {
+            "first_observed_at": "2026-11-17T02:39:51Z",
+            "geography": {
+              "geometry_sha256_prefix": null,
+              "geometry_type": null,
+              "key": null,
+              "kind": "unlocated",
+              "label": null,
+              "latitude": null,
+              "longitude": null,
+              "precision": "notice_geography_unavailable",
+              "verified_iso": false
+            },
+            "observation_id": "beh:d7ad0b00ab472ede9ae5293496b9",
+            "provider": "niord",
+            "reporting_origin": null,
+            "source_family": "maritime_restriction",
+            "source_published_at": null,
+            "source_url": "https://niord.dma.dk/#/message/57e3ae61-a94b-4cc6-8303-615cf880c5bb",
+            "status": "unreviewed_source_report",
+            "title": "Denmark. The Baltic Sea. EK D 396 Hullebaek. Firing exercises. Warning."
+          },
+          {
+            "first_observed_at": "2026-11-17T02:39:51Z",
+            "geography": {
+              "geometry_sha256_prefix": "227310d08dc51d223524a542",
+              "geometry_type": "Polygon",
+              "key": "source-footprint:227310d08dc51d223524a542",
+              "kind": "source_notice_footprint",
+              "label": "Official Polygon notice area",
+              "latitude": null,
+              "longitude": null,
+              "precision": "provider_defined_notice_boundary_not_event_point",
+              "verified_iso": false
+            },
+            "observation_id": "beh:c7bb0712e42fd9b5a8c6edce27c4",
+            "provider": "niord",
+            "reporting_origin": null,
+            "source_family": "maritime_restriction",
+            "source_published_at": null,
+            "source_url": "https://niord.dma.dk/#/message/57e3ae61-a94b-4cc6-8303-615cf880c5bb",
+            "status": "unreviewed_source_report",
+            "title": "Denmark. The Baltic Sea. EK D 396 Hullebaek. Firing exercises. Warning."
+          },
+          {
+            "first_observed_at": "2026-11-17T02:39:51Z",
+            "geography": {
+              "geometry_sha256_prefix": null,
+              "geometry_type": null,
+              "key": null,
+              "kind": "unlocated",
+              "label": null,
+              "latitude": null,
+              "longitude": null,
+              "precision": "notice_geography_unavailable",
+              "verified_iso": false
+            },
+            "observation_id": "beh:b2f7e3f1ce0cb1bcc295e9e6c501",
+            "provider": "niord",
+            "reporting_origin": null,
+            "source_family": "maritime_restriction",
+            "source_published_at": null,
+            "source_url": "https://niord.dma.dk/#/message/57e3ae61-a94b-4cc6-8303-615cf880c5bb",
+            "status": "unreviewed_source_report",
+            "title": "Denmark. The Baltic Sea. EK D 396 Hullebaek. Firing exercises. Warning."
+          },
+          {
+            "first_observed_at": "2026-11-17T02:39:51Z",
+            "geography": {
+              "geometry_sha256_prefix": null,
+              "geometry_type": null,
+              "key": null,
+              "kind": "unlocated",
+              "label": null,
+              "latitude": null,
+              "longitude": null,
+              "precision": "notice_geography_unavailable",
+              "verified_iso": false
+            },
+            "observation_id": "beh:b1f25f6159a7ad9d67d9cbaefca3",
+            "provider": "niord",
+            "reporting_origin": null,
+            "source_family": "maritime_restriction",
+            "source_published_at": null,
+            "source_url": "https://niord.dma.dk/#/message/57e3ae61-a94b-4cc6-8303-615cf880c5bb",
+            "status": "unreviewed_source_report",
+            "title": "Denmark. The Baltic Sea. EK D 396 Hullebaek. Firing exercises. Warning."
+          },
+          {
+            "first_observed_at": "2026-11-17T02:39:51Z",
+            "geography": {
+              "geometry_sha256_prefix": null,
+              "geometry_type": null,
+              "key": null,
+              "kind": "unlocated",
+              "label": null,
+              "latitude": null,
+              "longitude": null,
+              "precision": "notice_geography_unavailable",
+              "verified_iso": false
+            },
+            "observation_id": "beh:a80cd3875d8bd0f44fcbd4f71db3",
+            "provider": "niord",
+            "reporting_origin": null,
+            "source_family": "maritime_restriction",
+            "source_published_at": null,
+            "source_url": "https://niord.dma.dk/#/message/57e3ae61-a94b-4cc6-8303-615cf880c5bb",
+            "status": "unreviewed_source_report",
+            "title": "Denmark. The Baltic Sea. EK D 396 Hullebaek. Firing exercises. Warning."
+          },
+          {
+            "first_observed_at": "2026-11-17T02:39:51Z",
+            "geography": {
+              "geometry_sha256_prefix": null,
+              "geometry_type": null,
+              "key": null,
+              "kind": "unlocated",
+              "label": null,
+              "latitude": null,
+              "longitude": null,
+              "precision": "notice_geography_unavailable",
+              "verified_iso": false
+            },
+            "observation_id": "beh:995d9415f151d573b11ec2dd3a8c",
+            "provider": "niord",
+            "reporting_origin": null,
+            "source_family": "maritime_restriction",
+            "source_published_at": null,
+            "source_url": "https://niord.dma.dk/#/message/57e3ae61-a94b-4cc6-8303-615cf880c5bb",
+            "status": "unreviewed_source_report",
+            "title": "Denmark. The Baltic Sea. EK D 396 Hullebaek. Firing exercises. Warning."
+          }
+        ],
+        "source_reports_truncated": true,
+        "status": "shared_source_document_unreviewed",
+        "warning_level_change": false
+      },
+      {
         "first_observation_separation_hours": 0.0,
         "id": "relation:53ad2e13d10b9c565343",
         "independent_corroboration_established": false,
@@ -2386,15 +2534,15 @@
     "input_truncated": false,
     "not_a_preparations_sensor_or_warning": true,
     "pairwise_comparisons_capped": false,
-    "pairwise_comparisons_examined": 23653,
+    "pairwise_comparisons_examined": 22791,
     "possible_same_event_count_total": 0,
     "possible_same_source_story_count_total": 2,
-    "records_available": 218,
-    "records_examined": 218,
+    "records_available": 214,
+    "records_examined": 214,
     "related_reporting_count_total": 0,
     "reporting_origins_are_not_event_locations": true,
-    "routine_notice_market_or_measurement_records_excluded_from_text_event_matching": 208,
-    "same_document_group_count_total": 18,
+    "routine_notice_market_or_measurement_records_excluded_from_text_event_matching": 204,
+    "same_document_group_count_total": 17,
     "schema": "aiba.report-event-resolution-shadow.v1",
     "source_independence_unverified": true,
     "status": "unreviewed_report_relationships_only"
