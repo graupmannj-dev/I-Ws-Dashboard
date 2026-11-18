@@ -1,12 +1,28 @@
 {
   "active_ground_stop_airports": 0,
-  "affected_airport_records": 2,
+  "affected_airport_records": 4,
   "airports": [
+    {
+      "airport": "FLL",
+      "ground_stop_object_present": false,
+      "nas_event_reasons": {
+        "departureDelay": "TM Initiatives:MIT:WX"
+      },
+      "national_stop_reason_in_source": false
+    },
     {
       "airport": "MIA",
       "ground_stop_object_present": false,
       "nas_event_reasons": {
         "departureDelay": "TM Initiatives:MIT:WX"
+      },
+      "national_stop_reason_in_source": false
+    },
+    {
+      "airport": "PNS",
+      "ground_stop_object_present": false,
+      "nas_event_reasons": {
+        "airportClosure": "!PNS 11/040 PNS AD AP CLSD EXC HEL OPS 2611180600-2611181100"
       },
       "national_stop_reason_in_source": false
     },
@@ -19,14 +35,14 @@
       "national_stop_reason_in_source": false
     }
   ],
-  "airports_with_any_delay": 1,
-  "airports_with_any_nas_event": 2,
+  "airports_with_any_delay": 2,
+  "airports_with_any_nas_event": 4,
   "automatic_event_merges": 0,
   "changed_since_prior_observation": false,
-  "checked_at": "2026-11-17T23:57:45Z",
+  "checked_at": "2026-11-18T07:12:25Z",
   "cyberattack_evidence": false,
   "event_occurrence_as_reported_by_FAA_only": true,
-  "event_reason_objects_examined": 2,
+  "event_reason_objects_examined": 4,
   "forecast_probability": null,
   "geographic_scope": "United States",
   "hostile_actor_evidence": false,
@@ -38,11 +54,11 @@
     "The sensor makes no inference of hostile intent or cyberattack."
   ],
   "military_warning_level_change": false,
-  "monitored_airport_count": 5,
+  "monitored_airport_count": 7,
   "multiple_airports_not_independent_attribution": true,
   "national_event_confirmed_by_explicit_ATCSCC_order": false,
   "national_stop_airports": 0,
-  "observed_at": "2026-11-17T23:57:45Z",
+  "observed_at": "2026-11-18T07:12:25Z",
   "provisional_review_required": false,
   "schema": "aiba.faa-nas-systemic-disruption.v1",
   "source_family": "civil_air_traffic_management",
