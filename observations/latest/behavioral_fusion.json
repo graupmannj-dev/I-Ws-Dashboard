@@ -3,7 +3,7 @@
   "automated_severity_changes": 0,
   "collection_coverage": {
     "amsa": {
-      "age_hours": 0.0,
+      "age_hours": 2.81,
       "checked_at": "2026-11-19T13:51:00Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -15,19 +15,19 @@
       "truncated_or_partial": false
     },
     "commercial": {
-      "age_hours": 21.3,
-      "checked_at": "2026-11-18T16:33:01Z",
+      "age_hours": 0.0,
+      "checked_at": "2026-11-19T16:39:30Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
       "mode": "commercial",
       "provider_status": "collected",
-      "snapshot_at": "2026-11-18T16:33:01Z",
+      "snapshot_at": "2026-11-19T16:39:30Z",
       "source_scope": "selected maritime/air-cargo/war-risk press and syndication",
       "status": "current",
       "truncated_or_partial": false
     },
     "ioda": {
-      "age_hours": 0.0,
+      "age_hours": 2.81,
       "checked_at": "2026-11-19T13:51:00Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -39,7 +39,7 @@
       "truncated_or_partial": false
     },
     "live_airspace": {
-      "age_hours": 4.94,
+      "age_hours": 7.75,
       "checked_at": "2026-11-19T08:54:43Z",
       "missingness": "not_measured_not_zero",
       "mode": "live_airspace",
@@ -50,7 +50,7 @@
       "truncated_or_partial": true
     },
     "live_maritime": {
-      "age_hours": 4.94,
+      "age_hours": 7.75,
       "checked_at": "2026-11-19T08:54:43Z",
       "missingness": "not_measured_not_zero",
       "mode": "live_maritime",
@@ -61,7 +61,7 @@
       "truncated_or_partial": true
     },
     "nga": {
-      "age_hours": 0.0,
+      "age_hours": 2.81,
       "checked_at": "2026-11-19T13:51:00Z",
       "missingness": "not_measured_not_zero",
       "mode": "nga",
@@ -72,7 +72,7 @@
       "truncated_or_partial": false
     },
     "official": {
-      "age_hours": 6.37,
+      "age_hours": 9.18,
       "checked_at": "2026-11-19T07:28:55Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -84,7 +84,7 @@
       "truncated_or_partial": false
     },
     "watchlist": {
-      "age_hours": 6.37,
+      "age_hours": 9.18,
       "checked_at": "2026-11-19T07:28:55Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -99,28 +99,28 @@
   "discovery_visibility": {
     "exact_geography_match_required_for_cross_family": true,
     "latest_initial_baseline": false,
-    "latest_registry_newly_observed_count": 8,
-    "latest_registry_record_count": 267,
-    "latest_unlocated_record_count": 256,
+    "latest_registry_newly_observed_count": 5,
+    "latest_registry_record_count": 266,
+    "latest_unlocated_record_count": 255,
     "new_or_collocated_not_same_as_verified_threat": true,
     "new_this_collection_required_for_cross_family_nomination": true,
     "recent_observations_sampled": 24,
     "recent_source_families": {
       "airspace_restriction": 52,
-      "commercial_media": 11,
-      "internet_reachability": 163,
+      "commercial_media": 16,
+      "internet_reachability": 160,
       "maritime_restriction": 234,
       "protective_notice": 22
     },
-    "recent_unique_record_count_72h": 482,
-    "recent_unlocated_count_72h": 226,
+    "recent_unique_record_count_72h": 484,
+    "recent_unlocated_count_72h": 231,
     "schema": "aiba.behavioral-discovery-visibility.v1",
     "shared_exact_geography_keys_across_behavior_families": 0,
     "source_coverage_is_globally_complete": false
   },
   "forecast_probability": null,
   "gdelt_context": "separate_analytical_stream_not_a_gate_or_confirmation",
-  "generated_at": "2026-11-19T13:51:04Z",
+  "generated_at": "2026-11-19T16:39:32Z",
   "geographic_scope": "source_declared_only",
   "history_diagnostics": {
     "excluded_observations": {
@@ -128,7 +128,7 @@
     },
     "history_files_examined": 29,
     "lookback_hours": 72,
-    "recent_unique_records": 482
+    "recent_unique_records": 484
   },
   "limit_notes": [
     "No automated threat warning. These are unreviewed investigatory leads.",
@@ -137,187 +137,221 @@
     "Unlocated records cannot produce automatic geographic convergence.",
     "Unavailable collection is not evidence of no threatening activity."
   ],
-  "new_single_source_count_total": 8,
+  "new_single_source_count_total": 5,
   "new_single_source_leads": [
     {
-      "evidence_class": "network_measurement",
-      "first_observed_at": "2026-11-19T13:51:00Z",
+      "evidence_class": "media_mention",
+      "first_observed_at": "2026-11-19T16:39:32Z",
       "geography": {
-        "key": "country:FI",
-        "kind": "country_code",
-        "label": "FI",
+        "key": null,
+        "kind": "unlocated",
+        "label": null,
         "latitude": null,
         "longitude": null,
-        "precision": "provider_reported_country",
+        "precision": "no_source_verified_geography",
         "verified_iso": false
       },
-      "information_root": "ioda:e7bf8c2217fdece4871f048c",
+      "information_root": "commercial:b984c947061a8e1d2114",
       "meaning": "Observation novelty, not evidence of impending violence.",
-      "observation_id": "beh:15abf645a47d5bf16c171bd4e226",
-      "requires_geolocation": false,
-      "source_family": "internet_reachability",
-      "source_published_at": null,
-      "source_url": "https://ioda.inetintel.cc.gatech.edu/",
+      "observation_id": "beh:05fbfd500415e3a984634eb4f523",
+      "requires_geolocation": true,
+      "source_family": "commercial_media",
+      "source_published_at": "2026-11-19T10:06:04Z",
+      "source_url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNQThoVlhrMG5sejktdEhwTUw2T3J6aW5fdVhpSFRlNXFGanpaT2NvcTZKbDNPMlpwcHgwZ0tfQ3FLRlNvV2diWW93amtNSmxIb3JZcEpnakJXTHNVUjB3NkdySDRIUkNmbXl1THY4SGRpVGZPZnIySFR1OWtUWjllMnhUb21VSEFrSmRSYmV2UG1XRlI5czZaanZMNGJCMmxPcjRvX3MyX0d3dGhlWVB2N3dub0Y?oc=5",
       "status": "single_source_unreviewed",
-      "title": "IODA detected connectivity anomaly: country FI"
+      "title": "China Cargo Airlines adds new Stansted-Copenhagen freighter flight - Air Cargo News"
     },
     {
-      "evidence_class": "network_measurement",
-      "first_observed_at": "2026-11-19T13:51:00Z",
+      "evidence_class": "media_mention",
+      "first_observed_at": "2026-11-19T16:39:32Z",
       "geography": {
-        "key": "country:MP",
-        "kind": "country_code",
-        "label": "MP",
+        "key": null,
+        "kind": "unlocated",
+        "label": null,
         "latitude": null,
         "longitude": null,
-        "precision": "provider_reported_country",
+        "precision": "no_source_verified_geography",
         "verified_iso": false
       },
-      "information_root": "ioda:0e047d4017bc80aca667168d",
+      "information_root": "commercial:31727abe976cdb1f55be",
       "meaning": "Observation novelty, not evidence of impending violence.",
-      "observation_id": "beh:268435041a4440c97d9f715ac1be",
-      "requires_geolocation": false,
-      "source_family": "internet_reachability",
-      "source_published_at": null,
-      "source_url": "https://ioda.inetintel.cc.gatech.edu/",
+      "observation_id": "beh:28f3df11a942fc3d1d632d8f8478",
+      "requires_geolocation": true,
+      "source_family": "commercial_media",
+      "source_published_at": "2026-11-19T00:52:14Z",
+      "source_url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPd0NNX0k0cjJUQldxdDBEME9oSjE4Vl9NSEN1MVYydEJFeHB6V1F0STdldHJFSEJCMGUwTnJWNUgwUXliX1NrREdDRkRsTlBjZlJEU29lUGhKUGw0RzVrWUYwVWZjUWNRY2ZHOEo2VDg4ZUlqWllGdG9kNHJaOVZKNjREU09OTkNhOE1Ub1lra0x4a3puWFZiVVliaHFyZGFnT056NWVEa2dsOEE?oc=5",
       "status": "single_source_unreviewed",
-      "title": "IODA detected connectivity anomaly: country MP"
+      "title": "U.S. Naval Blockade Now Covers Vessels That Load Iranian Cargo at Sea - The Maritime Executive"
     },
     {
-      "evidence_class": "network_measurement",
-      "first_observed_at": "2026-11-19T13:51:00Z",
+      "evidence_class": "media_mention",
+      "first_observed_at": "2026-11-19T16:39:32Z",
       "geography": {
-        "key": "country:SY",
-        "kind": "country_code",
-        "label": "SY",
+        "key": null,
+        "kind": "unlocated",
+        "label": null,
         "latitude": null,
         "longitude": null,
-        "precision": "provider_reported_country",
+        "precision": "no_source_verified_geography",
         "verified_iso": false
       },
-      "information_root": "ioda:cc03395f9b02ad541c1f6348",
+      "information_root": "commercial:02a47a79590e309976de",
       "meaning": "Observation novelty, not evidence of impending violence.",
-      "observation_id": "beh:3a8506f22f316edb48a6e1ff966f",
-      "requires_geolocation": false,
-      "source_family": "internet_reachability",
-      "source_published_at": null,
-      "source_url": "https://ioda.inetintel.cc.gatech.edu/",
+      "observation_id": "beh:41a82219a7409aef621f667ddbef",
+      "requires_geolocation": true,
+      "source_family": "commercial_media",
+      "source_published_at": "2026-11-18T21:23:00Z",
+      "source_url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOUmZqWnlfZGNJRWVCdF9xeXA1bGQ5WXZQMVgyTUNKa3pUZ2QyekFNRF9BM2hscDhYbWhnclpjaUp5Z0xzZHdkZ044RWg2MUhqZFctT1F6djRmWUxkdllLZmw0US1qTDBHZ0w5cW1YLUpKbTlCRzBsVldxSWV5YzBoWHdVaVJSMWE3TEtuTjNnODloTUJsemxfdkVMaw?oc=5",
       "status": "single_source_unreviewed",
-      "title": "IODA detected connectivity anomaly: country SY"
+      "title": "Kerch Strait Bridge Strike Cuts Off Sea of Azov Shipping - The Maritime Executive"
     },
     {
-      "evidence_class": "network_measurement",
-      "first_observed_at": "2026-11-19T13:51:00Z",
+      "evidence_class": "media_mention",
+      "first_observed_at": "2026-11-19T16:39:32Z",
       "geography": {
-        "key": "country:MC",
-        "kind": "country_code",
-        "label": "MC",
+        "key": null,
+        "kind": "unlocated",
+        "label": null,
         "latitude": null,
         "longitude": null,
-        "precision": "provider_reported_country",
+        "precision": "no_source_verified_geography",
         "verified_iso": false
       },
-      "information_root": "ioda:0a2ada33243bd5f99ae0e3a1",
+      "information_root": "commercial:ccd8abd4253e268bef8b",
       "meaning": "Observation novelty, not evidence of impending violence.",
-      "observation_id": "beh:3c52f7e2120ab3b1c57510994448",
-      "requires_geolocation": false,
-      "source_family": "internet_reachability",
-      "source_published_at": null,
-      "source_url": "https://ioda.inetintel.cc.gatech.edu/",
+      "observation_id": "beh:9716ba7e3fa10ac3595bdd7ec2c3",
+      "requires_geolocation": true,
+      "source_family": "commercial_media",
+      "source_published_at": "2026-11-19T00:52:14Z",
+      "source_url": "https://maritime-executive.com/article/u-s-naval-blockade-now-covers-vessels-that-load-iranian-cargo-at-sea",
       "status": "single_source_unreviewed",
-      "title": "IODA detected connectivity anomaly: country MC"
+      "title": "U.S. Naval Blockade Now Covers Vessels That Load Iranian Cargo at Sea"
     },
     {
-      "evidence_class": "network_measurement",
-      "first_observed_at": "2026-11-19T13:51:00Z",
+      "evidence_class": "media_mention",
+      "first_observed_at": "2026-11-19T16:39:32Z",
       "geography": {
-        "key": "country:NF",
-        "kind": "country_code",
-        "label": "NF",
+        "key": null,
+        "kind": "unlocated",
+        "label": null,
         "latitude": null,
         "longitude": null,
-        "precision": "provider_reported_country",
+        "precision": "no_source_verified_geography",
         "verified_iso": false
       },
-      "information_root": "ioda:0f6c056ef7b96658609348ba",
+      "information_root": "commercial:2d97818a57d0d1f5bc7b",
       "meaning": "Observation novelty, not evidence of impending violence.",
-      "observation_id": "beh:62dfeefd31a3ce0e54097c5d4ad2",
-      "requires_geolocation": false,
-      "source_family": "internet_reachability",
-      "source_published_at": null,
-      "source_url": "https://ioda.inetintel.cc.gatech.edu/",
+      "observation_id": "beh:cfbc777a995f0a0e842702fb92b9",
+      "requires_geolocation": true,
+      "source_family": "commercial_media",
+      "source_published_at": "2026-11-18T21:23:00Z",
+      "source_url": "https://maritime-executive.com/article/kerch-strait-bridge-strike-cuts-off-sea-of-azov-shipping",
       "status": "single_source_unreviewed",
-      "title": "IODA detected connectivity anomaly: country NF"
-    },
-    {
-      "evidence_class": "network_measurement",
-      "first_observed_at": "2026-11-19T13:51:00Z",
-      "geography": {
-        "key": "country:TM",
-        "kind": "country_code",
-        "label": "TM",
-        "latitude": null,
-        "longitude": null,
-        "precision": "provider_reported_country",
-        "verified_iso": false
-      },
-      "information_root": "ioda:02f05461219eba0cbac33406",
-      "meaning": "Observation novelty, not evidence of impending violence.",
-      "observation_id": "beh:7538adf58f60cfc104a48266d54a",
-      "requires_geolocation": false,
-      "source_family": "internet_reachability",
-      "source_published_at": null,
-      "source_url": "https://ioda.inetintel.cc.gatech.edu/",
-      "status": "single_source_unreviewed",
-      "title": "IODA detected connectivity anomaly: country TM"
-    },
-    {
-      "evidence_class": "network_measurement",
-      "first_observed_at": "2026-11-19T13:51:00Z",
-      "geography": {
-        "key": "country:TD",
-        "kind": "country_code",
-        "label": "TD",
-        "latitude": null,
-        "longitude": null,
-        "precision": "provider_reported_country",
-        "verified_iso": false
-      },
-      "information_root": "ioda:55c29a2d6fa40e3275eabf55",
-      "meaning": "Observation novelty, not evidence of impending violence.",
-      "observation_id": "beh:db4883f1b5d3338a469c9908e6b8",
-      "requires_geolocation": false,
-      "source_family": "internet_reachability",
-      "source_published_at": null,
-      "source_url": "https://ioda.inetintel.cc.gatech.edu/",
-      "status": "single_source_unreviewed",
-      "title": "IODA detected connectivity anomaly: country TD"
-    },
-    {
-      "evidence_class": "network_measurement",
-      "first_observed_at": "2026-11-19T13:51:00Z",
-      "geography": {
-        "key": "country:XK",
-        "kind": "country_code",
-        "label": "XK",
-        "latitude": null,
-        "longitude": null,
-        "precision": "provider_reported_country",
-        "verified_iso": false
-      },
-      "information_root": "ioda:0353570cbf1344500381ee5b",
-      "meaning": "Observation novelty, not evidence of impending violence.",
-      "observation_id": "beh:e32b8390862826929f651c5653d6",
-      "requires_geolocation": false,
-      "source_family": "internet_reachability",
-      "source_published_at": null,
-      "source_url": "https://ioda.inetintel.cc.gatech.edu/",
-      "status": "single_source_unreviewed",
-      "title": "IODA detected connectivity anomaly: country XK"
+      "title": "Kerch Strait Bridge Strike Cuts Off Sea of Azov Shipping"
     }
   ],
   "prediction_horizon": null,
   "recent_source_observations": [
+    {
+      "first_observed_at": "2026-11-19T16:39:32Z",
+      "geography": {
+        "key": null,
+        "kind": "unlocated",
+        "label": null,
+        "latitude": null,
+        "longitude": null,
+        "precision": "no_source_verified_geography",
+        "verified_iso": false
+      },
+      "observation_id": "beh:cfbc777a995f0a0e842702fb92b9",
+      "provider": "commercial",
+      "requires_geolocation": true,
+      "source_family": "commercial_media",
+      "source_published_at": "2026-11-18T21:23:00Z",
+      "source_url": "https://maritime-executive.com/article/kerch-strait-bridge-strike-cuts-off-sea-of-azov-shipping",
+      "status": "recent_source_observation_unreviewed",
+      "title": "Kerch Strait Bridge Strike Cuts Off Sea of Azov Shipping"
+    },
+    {
+      "first_observed_at": "2026-11-19T16:39:32Z",
+      "geography": {
+        "key": null,
+        "kind": "unlocated",
+        "label": null,
+        "latitude": null,
+        "longitude": null,
+        "precision": "no_source_verified_geography",
+        "verified_iso": false
+      },
+      "observation_id": "beh:9716ba7e3fa10ac3595bdd7ec2c3",
+      "provider": "commercial",
+      "requires_geolocation": true,
+      "source_family": "commercial_media",
+      "source_published_at": "2026-11-19T00:52:14Z",
+      "source_url": "https://maritime-executive.com/article/u-s-naval-blockade-now-covers-vessels-that-load-iranian-cargo-at-sea",
+      "status": "recent_source_observation_unreviewed",
+      "title": "U.S. Naval Blockade Now Covers Vessels That Load Iranian Cargo at Sea"
+    },
+    {
+      "first_observed_at": "2026-11-19T16:39:32Z",
+      "geography": {
+        "key": null,
+        "kind": "unlocated",
+        "label": null,
+        "latitude": null,
+        "longitude": null,
+        "precision": "no_source_verified_geography",
+        "verified_iso": false
+      },
+      "observation_id": "beh:41a82219a7409aef621f667ddbef",
+      "provider": "commercial",
+      "requires_geolocation": true,
+      "source_family": "commercial_media",
+      "source_published_at": "2026-11-18T21:23:00Z",
+      "source_url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOUmZqWnlfZGNJRWVCdF9xeXA1bGQ5WXZQMVgyTUNKa3pUZ2QyekFNRF9BM2hscDhYbWhnclpjaUp5Z0xzZHdkZ044RWg2MUhqZFctT1F6djRmWUxkdllLZmw0US1qTDBHZ0w5cW1YLUpKbTlCRzBsVldxSWV5YzBoWHdVaVJSMWE3TEtuTjNnODloTUJsemxfdkVMaw?oc=5",
+      "status": "recent_source_observation_unreviewed",
+      "title": "Kerch Strait Bridge Strike Cuts Off Sea of Azov Shipping - The Maritime Executive"
+    },
+    {
+      "first_observed_at": "2026-11-19T16:39:32Z",
+      "geography": {
+        "key": null,
+        "kind": "unlocated",
+        "label": null,
+        "latitude": null,
+        "longitude": null,
+        "precision": "no_source_verified_geography",
+        "verified_iso": false
+      },
+      "observation_id": "beh:28f3df11a942fc3d1d632d8f8478",
+      "provider": "commercial",
+      "requires_geolocation": true,
+      "source_family": "commercial_media",
+      "source_published_at": "2026-11-19T00:52:14Z",
+      "source_url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPd0NNX0k0cjJUQldxdDBEME9oSjE4Vl9NSEN1MVYydEJFeHB6V1F0STdldHJFSEJCMGUwTnJWNUgwUXliX1NrREdDRkRsTlBjZlJEU29lUGhKUGw0RzVrWUYwVWZjUWNRY2ZHOEo2VDg4ZUlqWllGdG9kNHJaOVZKNjREU09OTkNhOE1Ub1lra0x4a3puWFZiVVliaHFyZGFnT056NWVEa2dsOEE?oc=5",
+      "status": "recent_source_observation_unreviewed",
+      "title": "U.S. Naval Blockade Now Covers Vessels That Load Iranian Cargo at Sea - The Maritime Executive"
+    },
+    {
+      "first_observed_at": "2026-11-19T16:39:32Z",
+      "geography": {
+        "key": null,
+        "kind": "unlocated",
+        "label": null,
+        "latitude": null,
+        "longitude": null,
+        "precision": "no_source_verified_geography",
+        "verified_iso": false
+      },
+      "observation_id": "beh:05fbfd500415e3a984634eb4f523",
+      "provider": "commercial",
+      "requires_geolocation": true,
+      "source_family": "commercial_media",
+      "source_published_at": "2026-11-19T10:06:04Z",
+      "source_url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNQThoVlhrMG5sejktdEhwTUw2T3J6aW5fdVhpSFRlNXFGanpaT2NvcTZKbDNPMlpwcHgwZ0tfQ3FLRlNvV2diWW93amtNSmxIb3JZcEpnakJXTHNVUjB3NkdySDRIUkNmbXl1THY4SGRpVGZPZnIySFR1OWtUWjllMnhUb21VSEFrSmRSYmV2UG1XRlI5czZaanZMNGJCMmxPcjRvX3MyX0d3dGhlWVB2N3dub0Y?oc=5",
+      "status": "recent_source_observation_unreviewed",
+      "title": "China Cargo Airlines adds new Stansted-Copenhagen freighter flight - Air Cargo News"
+    },
     {
       "first_observed_at": "2026-11-19T13:51:00Z",
       "geography": {
@@ -717,120 +751,10 @@
       "source_url": "https://tfr.faa.gov/6_8731.html",
       "status": "recent_source_observation_unreviewed",
       "title": "FAA TFR 6/8731 ·   USA, Sunday, November 22, 2026 UTC"
-    },
-    {
-      "first_observed_at": "2026-11-19T01:17:57Z",
-      "geography": {
-        "geometry_sha256_prefix": "f06c306f80c7a4a78be8c880",
-        "geometry_type": "MultiPolygon",
-        "key": "source-footprint:f06c306f80c7a4a78be8c880",
-        "kind": "source_notice_footprint",
-        "label": "Official MultiPolygon notice area",
-        "latitude": null,
-        "longitude": null,
-        "precision": "provider_defined_notice_boundary_not_event_point",
-        "verified_iso": false
-      },
-      "observation_id": "beh:c9faa90d046388b2b4de0a80b767",
-      "provider": "faa",
-      "requires_geolocation": false,
-      "source_family": "airspace_restriction",
-      "source_published_at": null,
-      "source_url": "https://tfr.faa.gov/6_8702.html",
-      "status": "recent_source_observation_unreviewed",
-      "title": "FAA TFR 6/8702 · 02 ZLC AIRSPACE BOISE, ID, Sunday, November 22, 2026 UTC"
-    },
-    {
-      "first_observed_at": "2026-11-19T01:17:57Z",
-      "geography": {
-        "geometry_sha256_prefix": "f06c306f80c7a4a78be8c880",
-        "geometry_type": "MultiPolygon",
-        "key": "source-footprint:f06c306f80c7a4a78be8c880",
-        "kind": "source_notice_footprint",
-        "label": "Official MultiPolygon notice area",
-        "latitude": null,
-        "longitude": null,
-        "precision": "provider_defined_notice_boundary_not_event_point",
-        "verified_iso": false
-      },
-      "observation_id": "beh:bf0c5e38c532f7a9cc956a0ba705",
-      "provider": "faa",
-      "requires_geolocation": false,
-      "source_family": "airspace_restriction",
-      "source_published_at": null,
-      "source_url": "https://tfr.faa.gov/6_8704.html",
-      "status": "recent_source_observation_unreviewed",
-      "title": "FAA TFR 6/8704 · 04 ZLC AIRSPACE BOISE, ID, Sunday, November 22, 2026 UTC"
-    },
-    {
-      "first_observed_at": "2026-11-19T01:17:57Z",
-      "geography": {
-        "geometry_sha256_prefix": "8506c657af92176146a25f86",
-        "geometry_type": "MultiPolygon",
-        "key": "source-footprint:8506c657af92176146a25f86",
-        "kind": "source_notice_footprint",
-        "label": "Official MultiPolygon notice area",
-        "latitude": null,
-        "longitude": null,
-        "precision": "provider_defined_notice_boundary_not_event_point",
-        "verified_iso": false
-      },
-      "observation_id": "beh:bbd49b2ec837b42b7551149be61f",
-      "provider": "faa",
-      "requires_geolocation": false,
-      "source_family": "airspace_restriction",
-      "source_published_at": null,
-      "source_url": "https://tfr.faa.gov/6_8738.html",
-      "status": "recent_source_observation_unreviewed",
-      "title": "FAA TFR 6/8738 ·   USA, Sunday, November 22, 2026 UTC"
-    },
-    {
-      "first_observed_at": "2026-11-19T01:17:57Z",
-      "geography": {
-        "geometry_sha256_prefix": "76313b91398606b1afe68854",
-        "geometry_type": "MultiPolygon",
-        "key": "source-footprint:76313b91398606b1afe68854",
-        "kind": "source_notice_footprint",
-        "label": "Official MultiPolygon notice area",
-        "latitude": null,
-        "longitude": null,
-        "precision": "provider_defined_notice_boundary_not_event_point",
-        "verified_iso": false
-      },
-      "observation_id": "beh:b9145939407c6482712333a9ff7f",
-      "provider": "faa",
-      "requires_geolocation": false,
-      "source_family": "airspace_restriction",
-      "source_published_at": null,
-      "source_url": "https://tfr.faa.gov/6_8723.html",
-      "status": "recent_source_observation_unreviewed",
-      "title": "FAA TFR 6/8723 ·   USA, Sunday, November 22, 2026 UTC"
-    },
-    {
-      "first_observed_at": "2026-11-19T01:17:57Z",
-      "geography": {
-        "geometry_sha256_prefix": "ef10f07f507295d97bd67869",
-        "geometry_type": "MultiPolygon",
-        "key": "source-footprint:ef10f07f507295d97bd67869",
-        "kind": "source_notice_footprint",
-        "label": "Official MultiPolygon notice area",
-        "latitude": null,
-        "longitude": null,
-        "precision": "provider_defined_notice_boundary_not_event_point",
-        "verified_iso": false
-      },
-      "observation_id": "beh:963889867a60541126f2e0dfa2e3",
-      "provider": "faa",
-      "requires_geolocation": false,
-      "source_family": "airspace_restriction",
-      "source_published_at": null,
-      "source_url": "https://tfr.faa.gov/6_8729.html",
-      "status": "recent_source_observation_unreviewed",
-      "title": "FAA TFR 6/8729 ·   USA, Sunday, November 22, 2026 UTC"
     }
   ],
-  "registry_asof": "2026-11-19T13:51:04Z",
-  "registry_source_count": 267,
+  "registry_asof": "2026-11-19T16:39:32Z",
+  "registry_source_count": 266,
   "report_relationships": {
     "automatic_alerts_created": 0,
     "automatic_severity_changes": 0,
@@ -2381,6 +2305,142 @@
       },
       {
         "first_observation_separation_hours": 0.0,
+        "id": "relation:5e40f5bf21a1642059ed",
+        "independent_corroboration_established": false,
+        "match_basis": "same_substantive_article_title_different_source_urls",
+        "reported_event_site_comparison_available": false,
+        "reported_event_site_separation_km": null,
+        "reporting_origin_used_as_event_site": false,
+        "review_requirements": [
+          "Verify whether both URLs reproduce one original article",
+          "Do not count syndication as two independently observed events",
+          "Resolve the underlying event separately from this story"
+        ],
+        "semantic_similarity": 0.818,
+        "shared_content_terms": [
+          "azov",
+          "bridge",
+          "cuts",
+          "kerch",
+          "off",
+          "sea"
+        ],
+        "shared_information_root": false,
+        "source_reports": [
+          {
+            "first_observed_at": "2026-11-19T16:39:32Z",
+            "geography": {
+              "key": null,
+              "kind": "unlocated",
+              "label": null,
+              "latitude": null,
+              "longitude": null,
+              "precision": "no_source_verified_geography",
+              "verified_iso": false
+            },
+            "observation_id": "beh:cfbc777a995f0a0e842702fb92b9",
+            "provider": "commercial",
+            "reporting_origin": null,
+            "source_family": "commercial_media",
+            "source_published_at": "2026-11-18T21:23:00Z",
+            "source_url": "https://maritime-executive.com/article/kerch-strait-bridge-strike-cuts-off-sea-of-azov-shipping",
+            "status": "unreviewed_source_report",
+            "title": "Kerch Strait Bridge Strike Cuts Off Sea of Azov Shipping"
+          },
+          {
+            "first_observed_at": "2026-11-19T16:39:32Z",
+            "geography": {
+              "key": null,
+              "kind": "unlocated",
+              "label": null,
+              "latitude": null,
+              "longitude": null,
+              "precision": "no_source_verified_geography",
+              "verified_iso": false
+            },
+            "observation_id": "beh:41a82219a7409aef621f667ddbef",
+            "provider": "commercial",
+            "reporting_origin": null,
+            "source_family": "commercial_media",
+            "source_published_at": "2026-11-18T21:23:00Z",
+            "source_url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOUmZqWnlfZGNJRWVCdF9xeXA1bGQ5WXZQMVgyTUNKa3pUZ2QyekFNRF9BM2hscDhYbWhnclpjaUp5Z0xzZHdkZ044RWg2MUhqZFctT1F6djRmWUxkdllLZmw0US1qTDBHZ0w5cW1YLUpKbTlCRzBsVldxSWV5YzBoWHdVaVJSMWE3TEtuTjNnODloTUJsemxfdkVMaw?oc=5",
+            "status": "unreviewed_source_report",
+            "title": "Kerch Strait Bridge Strike Cuts Off Sea of Azov Shipping - The Maritime Executive"
+          }
+        ],
+        "status": "possible_same_source_story_unreviewed",
+        "warning_level_change": false
+      },
+      {
+        "first_observation_separation_hours": 0.0,
+        "id": "relation:180e55bbebb0d8ed998e",
+        "independent_corroboration_established": false,
+        "match_basis": "same_substantive_article_title_different_source_urls",
+        "reported_event_site_comparison_available": false,
+        "reported_event_site_separation_km": null,
+        "reporting_origin_used_as_event_site": false,
+        "review_requirements": [
+          "Verify whether both URLs reproduce one original article",
+          "Do not count syndication as two independently observed events",
+          "Resolve the underlying event separately from this story"
+        ],
+        "semantic_similarity": 0.8,
+        "shared_content_terms": [
+          "blockade",
+          "cargo",
+          "covers",
+          "iranian",
+          "load",
+          "naval"
+        ],
+        "shared_information_root": false,
+        "source_reports": [
+          {
+            "first_observed_at": "2026-11-19T16:39:32Z",
+            "geography": {
+              "key": null,
+              "kind": "unlocated",
+              "label": null,
+              "latitude": null,
+              "longitude": null,
+              "precision": "no_source_verified_geography",
+              "verified_iso": false
+            },
+            "observation_id": "beh:9716ba7e3fa10ac3595bdd7ec2c3",
+            "provider": "commercial",
+            "reporting_origin": null,
+            "source_family": "commercial_media",
+            "source_published_at": "2026-11-19T00:52:14Z",
+            "source_url": "https://maritime-executive.com/article/u-s-naval-blockade-now-covers-vessels-that-load-iranian-cargo-at-sea",
+            "status": "unreviewed_source_report",
+            "title": "U.S. Naval Blockade Now Covers Vessels That Load Iranian Cargo at Sea"
+          },
+          {
+            "first_observed_at": "2026-11-19T16:39:32Z",
+            "geography": {
+              "key": null,
+              "kind": "unlocated",
+              "label": null,
+              "latitude": null,
+              "longitude": null,
+              "precision": "no_source_verified_geography",
+              "verified_iso": false
+            },
+            "observation_id": "beh:28f3df11a942fc3d1d632d8f8478",
+            "provider": "commercial",
+            "reporting_origin": null,
+            "source_family": "commercial_media",
+            "source_published_at": "2026-11-19T00:52:14Z",
+            "source_url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPd0NNX0k0cjJUQldxdDBEME9oSjE4Vl9NSEN1MVYydEJFeHB6V1F0STdldHJFSEJCMGUwTnJWNUgwUXliX1NrREdDRkRsTlBjZlJEU29lUGhKUGw0RzVrWUYwVWZjUWNRY2ZHOEo2VDg4ZUlqWllGdG9kNHJaOVZKNjREU09OTkNhOE1Ub1lra0x4a3puWFZiVVliaHFyZGFnT056NWVEa2dsOEE?oc=5",
+            "status": "unreviewed_source_report",
+            "title": "U.S. Naval Blockade Now Covers Vessels That Load Iranian Cargo at Sea - The Maritime Executive"
+          }
+        ],
+        "status": "possible_same_source_story_unreviewed",
+        "warning_level_change": false
+      },
+      {
+        "first_observation_separation_hours": 0.0,
         "id": "relation:51851487757d565eefda",
         "independent_corroboration_established": false,
         "match_basis": "same_substantive_article_title_different_source_urls",
@@ -2514,8 +2574,8 @@
       }
     ],
     "candidate_groups_truncated": true,
-    "cross_document_relation_count_total": 2,
-    "eligible_event_reporting_records": 11,
+    "cross_document_relation_count_total": 4,
+    "eligible_event_reporting_records": 16,
     "forecast_probability": null,
     "geographic_proximity_only_for_explicit_reported_event_sites": true,
     "input_truncated": false,
@@ -2523,12 +2583,12 @@
     "pairwise_comparisons_capped": true,
     "pairwise_comparisons_examined": 90000,
     "possible_same_event_count_total": 0,
-    "possible_same_source_story_count_total": 2,
-    "records_available": 482,
-    "records_examined": 482,
+    "possible_same_source_story_count_total": 4,
+    "records_available": 484,
+    "records_examined": 484,
     "related_reporting_count_total": 0,
     "reporting_origins_are_not_event_locations": true,
-    "routine_notice_market_or_measurement_records_excluded_from_text_event_matching": 471,
+    "routine_notice_market_or_measurement_records_excluded_from_text_event_matching": 468,
     "same_document_group_count_total": 28,
     "schema": "aiba.report-event-resolution-shadow.v1",
     "source_independence_unverified": true,
