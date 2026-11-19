@@ -3,7 +3,7 @@
   "automated_severity_changes": 0,
   "collection_coverage": {
     "amsa": {
-      "age_hours": 2.99,
+      "age_hours": 4.42,
       "checked_at": "2026-11-19T04:29:20Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -15,7 +15,7 @@
       "truncated_or_partial": false
     },
     "commercial": {
-      "age_hours": 14.93,
+      "age_hours": 16.36,
       "checked_at": "2026-11-18T16:33:01Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -27,7 +27,7 @@
       "truncated_or_partial": false
     },
     "ioda": {
-      "age_hours": 2.99,
+      "age_hours": 4.42,
       "checked_at": "2026-11-19T04:29:20Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -39,29 +39,31 @@
       "truncated_or_partial": false
     },
     "live_airspace": {
-      "age_hours": 6.18,
-      "checked_at": "2026-11-19T01:17:53Z",
-      "missingness": "not_measured_not_zero",
+      "age_hours": 0.0,
+      "checked_at": "2026-11-19T08:54:43Z",
+      "first_provider_baseline": false,
+      "missingness": "partial_sampling_not_worldwide_exhaustive",
       "mode": "live_airspace",
       "provider_status": "partial",
-      "snapshot_at": "2026-11-19T01:17:53Z",
+      "snapshot_at": "2026-11-19T08:54:43Z",
       "source_scope": "FAA temporary flight restrictions: United States only",
-      "status": "stale_or_unavailable",
+      "status": "current_partial",
       "truncated_or_partial": true
     },
     "live_maritime": {
-      "age_hours": 6.18,
-      "checked_at": "2026-11-19T01:17:53Z",
-      "missingness": "not_measured_not_zero",
+      "age_hours": 0.0,
+      "checked_at": "2026-11-19T08:54:43Z",
+      "first_provider_baseline": false,
+      "missingness": "partial_sampling_not_worldwide_exhaustive",
       "mode": "live_maritime",
       "provider_status": "partial",
-      "snapshot_at": "2026-11-19T01:17:53Z",
+      "snapshot_at": "2026-11-19T08:54:43Z",
       "source_scope": "Danish Maritime Authority Niord notices: regional Baltic/North Sea",
-      "status": "stale_or_unavailable",
+      "status": "current_partial",
       "truncated_or_partial": true
     },
     "nga": {
-      "age_hours": 2.99,
+      "age_hours": 4.42,
       "checked_at": "2026-11-18T23:34:05Z",
       "missingness": "not_measured_not_zero",
       "mode": "nga",
@@ -72,7 +74,7 @@
       "truncated_or_partial": false
     },
     "official": {
-      "age_hours": 0.0,
+      "age_hours": 1.43,
       "checked_at": "2026-11-19T07:28:55Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -84,7 +86,7 @@
       "truncated_or_partial": false
     },
     "watchlist": {
-      "age_hours": 0.0,
+      "age_hours": 1.43,
       "checked_at": "2026-11-19T07:28:55Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -100,8 +102,8 @@
     "exact_geography_match_required_for_cross_family": true,
     "latest_initial_baseline": false,
     "latest_registry_newly_observed_count": 0,
-    "latest_registry_record_count": 268,
-    "latest_unlocated_record_count": 256,
+    "latest_registry_record_count": 392,
+    "latest_unlocated_record_count": 328,
     "new_or_collocated_not_same_as_verified_threat": true,
     "new_this_collection_required_for_cross_family_nomination": true,
     "recent_observations_sampled": 24,
@@ -120,14 +122,14 @@
   },
   "forecast_probability": null,
   "gdelt_context": "separate_analytical_stream_not_a_gate_or_confirmation",
-  "generated_at": "2026-11-19T07:28:57Z",
+  "generated_at": "2026-11-19T08:54:47Z",
   "geographic_scope": "source_declared_only",
   "history_diagnostics": {
     "excluded_observations": {
       "old_or_future_source_revision": 1,
       "old_source_publication": 2
     },
-    "history_files_examined": 28,
+    "history_files_examined": 29,
     "lookback_hours": 72,
     "recent_unique_records": 531
   },
@@ -653,8 +655,8 @@
       "title": "IODA detected connectivity anomaly: country SR"
     }
   ],
-  "registry_asof": "2026-11-19T07:28:57Z",
-  "registry_source_count": 268,
+  "registry_asof": "2026-11-19T08:54:46Z",
+  "registry_source_count": 392,
   "report_relationships": {
     "automatic_alerts_created": 0,
     "automatic_severity_changes": 0,
