@@ -1,4 +1,4 @@
-/* Public AIBA source health, no threat classification or all-clear claims. */
+/* Public CAIRN source health, no threat classification or all-clear claims. */
 (() => {
 "use strict";
 const $=id=>document.getElementById(id);
@@ -7,14 +7,43 @@ const NAMES={amsa:"AMSA NAVAREA X",commercial:"Commercial media sampling",
   ioda:"IODA connectivity",live_airspace:"FAA temporary flight restrictions",
   live_maritime:"Danish NIORD maritime notices",nga:"NGA broadcast warnings",
   official:"U.S. / U.K. official advisories",watchlist:"Prediction-market contracts",
-  faa_nas:"FAA NAS airport operations"};
+  faa_nas:"FAA NAS airport operations",
+  gdelt:"GDELT news/event index",wikipedia:"Wikipedia public attention"};
 const FRESH_HOURS={amsa:6,commercial:48,ioda:6,live_airspace:2,live_maritime:2,
-  nga:6,official:12,watchlist:12,faa_nas:25/60};
+  nga:6,official:12,watchlist:12,faa_nas:25/60,gdelt:48,wikipedia:72};
+// A source's ROLE and its HEALTH are separate. News can corroborate a lead,
+// but syndicated reports do not by themselves constitute independent sensors.
+const SOURCE_META={
+  amsa:{role:"Alternative indicator",description:
+    "The Australian Maritime Safety Authority publishes navigational warnings for NAVAREA X. Its notices document navigation hazards or restrictions within a regional coverage area, not globally."},
+  commercial:{role:"Context and corroboration",description:
+    "Samples trade press and syndicated reports about shipping, aviation and commercial risk. Articles provide leads and background, but repeated reporting is not independently observed activity."},
+  ioda:{role:"Alternative indicator",description:
+    "Georgia Tech's IODA system detects unusual internet connectivity changes using network measurements. A connectivity anomaly does not establish its cause, intentional interference or attribution."},
+  live_airspace:{role:"Alternative indicator",description:
+    "FAA Temporary Flight Restrictions describe officially restricted U.S. airspace and affected periods. Restrictions may be routine; the feed is U.S.-only and does not establish preparations or hostile intent."},
+  live_maritime:{role:"Alternative indicator",description:
+    "Danish Maritime Authority NIORD notices describe maritime hazards, exercise areas and navigation restrictions in nearby waters. Different notices may refer to separate exercises and should not be counted as independent corroboration of one event."},
+  nga:{role:"Alternative indicator",description:
+    "U.S. National Geospatial-Intelligence Agency maritime navigational warnings identify hazards and restrictions communicated for safe navigation. Collector availability and geographic coverage may be incomplete."},
+  official:{role:"Context and corroboration",description:
+    "U.S. State Department and U.K. FCDO advisories summarize travel and safety concerns. These official statements offer institutional context but are not direct evidence that a specific operational event occurred."},
+  watchlist:{role:"Alternative indicator",description:
+    "Selected prediction-market contracts provide prices and timelines reflecting participants' expectations about specific outcomes. Prices are neither objective conflict probabilities nor independent evidence that an event occurred."},
+  faa_nas:{role:"Alternative indicator",description:
+    "The FAA National Airspace System feed reports selected U.S. airport operational events such as ground stops and disruption notices. It is a monitored sample, not national completeness or an assessment of cause."},
+  gdelt:{role:"Context and corroboration",description:
+    "GDELT indexes worldwide news coverage, reported events and media attention. CAIRN uses it primarily to establish background and compare developing reporting, not as a direct operational sensor or independently verified event record."},
+  wikipedia:{role:"Alternative attention proxy",description:
+    "Wikipedia activity can reflect changes in public attention to a topic. Attention changes are indirect signals, not evidence that the underlying reported event is true."},
+};
+
 const parseTime=v=>typeof v==="string"&&Number.isFinite(Date.parse(v))?Date.parse(v):null;
 const format=v=>parseTime(v)===null?"Unavailable":new Date(v).toISOString().replace("T"," ").replace(".000Z"," UTC");
 const statusOf=(raw,at)=>{
   const checked=parseTime(raw.checked_at||raw.snapshot_at);
   const age=checked===null?Infinity:(at-checked)/3600000;
+  if(checked===null)return "unknown";
   if(age < -0.1 || age > (FRESH_HOURS[raw.mode]||2))return "stale";
   if(raw.status==="current_partial"||raw.truncated_or_partial||raw.provider_status==="partial")return "partial";
   if(raw.status==="current"||raw.status==="collected")return "good";
@@ -28,7 +57,17 @@ function draw(rows,source){
     const r={...item,mode};
     const code=statusOf(r,now);counts[code]++;
     const tr=document.createElement("tr");
-    const name=document.createElement("td");name.textContent=NAMES[mode]||mode;
+    const meta=SOURCE_META[mode]||{role:"Unclassified source",description:
+      "No verified description for this collector is available."};
+    const name=document.createElement("td");
+    const nameLabel=document.createElement("strong");
+    nameLabel.textContent=NAMES[mode]||mode;
+    const role=document.createElement("span");role.className="source-role";
+    role.textContent=meta.role;
+    const description=document.createElement("span");
+    description.className="source-description";
+    description.textContent=meta.description;
+    name.append(nameLabel,role,description);
     const scope=document.createElement("td");scope.textContent=r.source_scope||"Coverage not characterized";
     const st=document.createElement("td"),pill=document.createElement("span");
     pill.className="source-status-pill "+code;
@@ -39,7 +78,8 @@ function draw(rows,source){
       " · "+(r.missingness||"Coverage not fully characterized");
     st.appendChild(detail);
     const check=document.createElement("td");check.textContent=format(r.checked_at);
-    const sample=document.createElement("td");sample.textContent=format(r.snapshot_at||r.checked_at);
+    // A successful check is not proof that a usable sample was captured.
+    const sample=document.createElement("td");sample.textContent=format(r.snapshot_at);
     tr.append(name,scope,st,check,sample);host.appendChild(tr);
   }
   if(!host.children.length){
@@ -67,10 +107,25 @@ async function refresh(){
   const rows={};let note="published Atlas snapshot";
   try{
     const atlas=await get("atlas.json");
+    if(atlas.status?.gdelt){
+      const gd=atlas.status.gdelt;
+      const checked=typeof gd==="object"?(gd.checked_at||gd.collected_at||gd.fetched_at):null;
+      rows.gdelt={mode:"gdelt",status:typeof gd==="object"?(gd.status||"unknown"):String(gd),
+        provider_status:"historical_media_context",
+        checked_at:checked||null,snapshot_at:checked||null,
+        source_scope:"News/event-index background; not a direct physical sensor",
+        missingness:"Collection timestamps are unknown unless explicitly provided"};
+    }
+    if(atlas.status?.wikipedia){
+      rows.wikipedia={mode:"wikipedia",status:String(atlas.status.wikipedia),
+        provider_status:String(atlas.status.wikipedia),
+        source_scope:"Public attention context; scope and timing vary",
+        missingness:"No source timestamp provided in this summary"};
+    }
     for(const entry of atlas.visibility_funnel?.provider_health||[]){
       if(entry&&typeof entry.name==="string")rows[entry.name]={
         status:entry.status,provider_status:entry.status,checked_at:entry.asof,
-        snapshot_at:entry.asof,source_scope:entry.scope,
+        snapshot_at:entry.snapshot_at||null,source_scope:entry.scope,
         missingness:"Published snapshot; may now be stale"};
     }
   }catch(_){}
@@ -96,6 +151,9 @@ async function refresh(){
         source_scope:"FAA NAS monitored U.S. airport records",missingness:"No current health record"};
     }
   }
+  // Legacy GDELT/Wikipedia build context is represented explicitly, even
+  // when Atlas has no source-verified last collection timestamp.
+  // Do not substitute publication time for a successful source pull.
   // Missing provider rows are coverage gaps, not an absent surveillance need.
   for(const mode of Object.keys(FRESH_HOURS)){
     if(!(mode in rows)){

@@ -362,7 +362,7 @@ def generate(site, generated=None, state_dir=None):
         "version": 1, "generated_at": now, "asof": asof,
         "layer_feed": {"url": os.environ.get("AIBA_LAYER_FEED_URL", "layers.json"),
                        "live_url": "https://raw.githubusercontent.com/graupmannj-dev/I-Ws-Dashboard/aiba-feed-data/observations/latest/live_layers.json"},
-        "title": "AIBA Global Early Warning",
+        "title": "CAIRN — Alternative Indicator Early Warning",
         "hotspots": hotspots, "reports": reports, "report_dates": dates,
         "friction_briefs": friction,
         "behavioral_discovery": behavioral,

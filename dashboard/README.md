@@ -1,4 +1,14 @@
-# AIBA Atlas (public front-end)
+# CAIRN Atlas (public front-end)
+
+**CAIRN = Corroborated Alternative Indicators for Risk Navigation.**
+The public landing page prioritizes alternative-indicator evidence, including
+calibrated anomalies with only one source. Traditional media, GDELT and
+curated watchlists provide context and potential corroboration, not a
+requirement before an observation can be displayed. Existing AIBA schemas
+and application paths remain unchanged for backward compatibility.
+
+See [CAIRN product doctrine](../docs/CAIRN_PRODUCT_DOCTRINE.md).
+
 
 ## Public warning evaluation inside the Atlas
 

@@ -2,7 +2,7 @@
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#0c1420">
-<title>AIBA | Source Collection Health</title>
+<title>CAIRN | Source Collection Health</title>
 <link rel="stylesheet" href="dashboard/atlas.css">
 <style>
 .source-page{max-width:1240px;margin:24px auto;padding:0 22px 55px}
@@ -15,6 +15,8 @@
 .source-table th,.source-table td{padding:12px 13px;border-bottom:1px solid #35485b;text-align:left;vertical-align:top;overflow-wrap:anywhere}
 .source-table th{background:#1a2f43;color:#d4e7f6;font-size:12px}
 .source-table td{font-size:13px}
+.source-role{display:block;color:#92d3e5;font-size:11px;font-weight:650;margin-top:3px}
+.source-description{display:block;color:#d2dfeb;font-size:12px;line-height:1.45;margin-top:7px;max-width:460px}
 .source-table .source-sub{display:block;color:#9fbed3;font-size:11px;margin-top:5px;max-width:370px}
 .source-status-pill{font-size:11px;border:1px solid #8195a7;border-radius:18px;padding:3px 8px;white-space:nowrap;display:inline-block}
 .source-status-pill.good{border-color:#70ae98;color:#9be0c3}
@@ -28,18 +30,18 @@
 </style></head>
 <body>
 <header class="topbar">
-<a class="brand" href="./" aria-label="AIBA home"><span class="brand-mark">◈</span><span>AIBA</span></a>
-<div class="header-title"><strong>Source collection health</strong><span>Last successful pulls · missingness · source scope</span></div>
+<a class="brand" href="./" aria-label="CAIRN home"><span class="brand-mark">◈</span><span>CAIRN</span></a>
+<div class="header-title"><strong>Source collection health</strong><span>Corroborated Alternative Indicators for Risk Navigation</span></div>
 <a class="source-back-link" href="./">Back to globe</a>
 </header>
 <main class="source-page">
 <div class="source-head"><div><h1>Collector status and freshness</h1>
-<p class="lead">Dates below are the source's last recorded collection or observation times, not evidence of an incident. Stale, unavailable, and partially sampled sources do not imply normal conditions.</p></div>
+<p class="lead">CAIRN prioritizes nontraditional operational, commercial and institutional signals. News indexes and conventional reporting primarily provide background and possible corroboration; neither fresh data nor multiple articles establishes a verified event. Collection dates are not event dates, and missing observations do not imply normal conditions.</p></div>
 <button type="button" id="sourceRefresh">Refresh status</button></div>
 <p class="source-asof" id="sourceAsOf" aria-live="polite">Reading published source status…</p>
 <div class="source-summary" id="sourceSummary"></div>
 <div style="overflow:auto"><table class="source-table">
-<thead><tr><th scope="col">Source</th><th scope="col">Coverage</th><th scope="col">Status</th><th scope="col">Last check (UTC)</th><th scope="col">Last sample (UTC)</th></tr></thead>
+<thead><tr><th scope="col">Source and purpose</th><th scope="col">Coverage</th><th scope="col">Status</th><th scope="col">Last check (UTC)</th><th scope="col">Last sample (UTC)</th></tr></thead>
 <tbody id="sourceRows"><tr><td colspan="5">Loading status…</td></tr></tbody>
 </table></div>
 <p class="source-note">A green status only means a recent and successful collection within that collector's freshness window; it does not mean its observations are complete or its region is secure. Provider-level health reflects a bounded slice of each source, not worldwide surveillance. FAA NAS measures selected U.S. airport operational records, not attribution or a national all-clear.</p>

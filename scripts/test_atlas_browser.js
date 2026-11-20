@@ -42,7 +42,7 @@ const assert = require("node:assert/strict");
   page.on("console",msg=>{if(msg.type()==="error")errors.push(msg.text());});
   await page.goto("http://127.0.0.1:8765/",{waitUntil:"networkidle",timeout:30000});
   await page.waitForFunction(()=>document.querySelectorAll(".watch-card").length>0,{timeout:15000});
-  assert.match(await page.title(),/AIBA/);
+  assert.match(await page.title(),/CAIRN/);
   assert.equal(await page.locator(".watch-card").count(),10);
   // The source queue must remain discoverable even with zero accepted reports.
 

@@ -31,7 +31,7 @@ class GlobeBuildTests(unittest.TestCase):
             self.assertTrue(all("not" in r["location_precision"].lower() or "no" in r["location_precision"].lower() for r in result["reports"]))
             self.assertTrue((site/"classic.html").exists())
             self.assertIn("Original source-linked watchboard",(site/"classic.html").read_text())
-            self.assertIn("Global Early Warning",(site/"index.html").read_text())
+            self.assertIn("CAIRN | Alternative Indicator Early Warning",(site/"index.html").read_text())
             self.assertTrue((site/"dashboard"/"countries.geojson").exists())
             self.assertTrue((site/"dashboard"/"atlas.js").exists())
             self.assertEqual(json.loads((site/"atlas.json").read_text())["asof"],"2026-11-06")
