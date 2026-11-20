@@ -127,6 +127,7 @@ def analyze(payload, *, collected_at):
         "status": category,
         "provisional_review_required": category != "no_systemic_disruption_in_monitored_sample",
         "monitored_airport_count": len(examined),
+        "monitored_airport_roster_sha256": hashlib.sha256("|".join(sorted(examined)).encode("ascii")).hexdigest(),
         "airports_with_any_nas_event": len(affected),
         "event_reason_objects_examined": observed_reason_count,
         **feature,
