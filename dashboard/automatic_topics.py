@@ -220,7 +220,12 @@ ACTIVITY_ROLES = {
     "seizure":frozenset(("seizure","captured","capture","occupy","occupation")),
 }
 HYBRID_AUTO_THRESHOLD=0.68
-HYBRID_SUBJECT_THRESHOLD=0.60
+HYBRID_SUBJECT_THRESHOLD=0.55
+TEMPLATE_WORDS=frozenset((
+    "faa tfr temporary restrictions restricted restriction notice source "
+    "advisory bulletin status official airport flight airspace country "
+    "connectivity anomaly detected news report latest update security"
+).split())
 MAX_SEMANTIC_SEEDS=2800
 
 
@@ -246,7 +251,7 @@ def _reasoning(doc,seed,metric):
     # Similarity alone is insufficient where only template boilerplate remains.
     a=set(normalized_terms(doc["title"]))-GENERIC-NOISE
     z=set(normalized_terms(seed["title"]))-GENERIC-NOISE
-    shared=a&z
+    shared=(a&z)-TEMPLATE_WORDS
     legacy,legacy_terms=_similar(doc,seed)
     same_subject=bool(ga and gb and ga.intersection(gb))
     shared_roles=bool(doc_roles and seed_roles and not doc_roles.isdisjoint(seed_roles))
@@ -256,9 +261,16 @@ def _reasoning(doc,seed,metric):
     # This condition can recognize paraphrases when two different phrasings
     # share a reported entity and general activity, but it must not unite
     # all reporting about that country.
+    # Shared non-template subject/entity terms and a compatible activity
+    # allow paraphrased reports across different original publishers. A
+    # standalone country or generic activity word does NOT suffice.
+    role_tokens=set().union(*ACTIVITY_ROLES.values())
+    named_or_subject=shared-role_tokens
     paraphrase_ok=(metric["score"]>=HYBRID_SUBJECT_THRESHOLD
-        and same_subject and shared_roles and len(shared)>=1
-        and (metric["latent_cosine"] or 0)>=0.72)
+        and shared_roles and bool(named_or_subject)
+        and len(shared)>=2
+        and ((metric["latent_cosine"] or 0)>=0.67
+             or metric["tfidf_cosine"]>=0.55))
     if not (legacy_ok or hybrid_ok or paraphrase_ok):
         return None
     if len(shared)<2 and not paraphrase_ok and not legacy_ok:
