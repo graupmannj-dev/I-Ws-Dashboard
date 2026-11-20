@@ -288,7 +288,17 @@ function drawFrame(timestamp){
       const sel=state.selected===h.id&&state.selectionType==="hotspot";
       const reportCount=state.atlas.reports.some(r=>r.hotspot_id===h.id&&dayNum(r.date)>=dayWindow().start&&dayNum(r.date)<=dayWindow().end);
       const historical=state.endDay!==state.maxDay;
-      const alpha=(historical&&!reportCount)?.55:1;
+      // Legacy fixed-theater anchors are background context when the global
+      // evidence-family index is present. They are not the active search space.
+      // Fading is an interface recency cue, NOT a claim that the region is safe.
+      const dynamic=state.atlas?.dynamic_bins;
+      const hasIndex=dynamic?.registry_status==="available" &&
+        Array.isArray(dynamic.families) && dynamic.families.length>0;
+      const recentLinked=hasIndex && dynamic.families.some(x=>
+        x.state!=="quiet" && Array.isArray(x.case_hints) && x.case_hints.includes(h.id));
+      const archivalOpacity=hasIndex && !recentLinked && !h.new_evidence &&
+        !h.new_analyst_lead && !frictionIsReview(h.id) ? .30 : 1;
+      const alpha=((historical&&!reportCount)?.55:1)*archivalOpacity;
       c.save();c.globalAlpha=alpha;
       if((h.new_evidence||frictionIsReview(h.id))&&!historical&&!window.matchMedia("(prefers-reduced-motion: reduce)").matches){
         for(let i=0;i<2;i++){
@@ -1788,6 +1798,7 @@ function updateKpis(){
   $("kpiReports").textContent=a.reports.length;
   $("kpiAsOf").textContent=a.asof;
   $("dataNotice").textContent=a.geographic_notice+" "+a.algorithmic_caveat;
+  if(a.dynamic_bins?.registry_status==="available")$("dataNotice").textContent+=" Standing theater pins are historical context; dimming indicates no recent linked source in current coverage, not confirmed calm."
   if(a.algorithmic_unlocated_count) $("dataNotice").textContent+=" ("+a.algorithmic_unlocated_count+" unlocated GDELT leads).";
   renderEvidenceIntake();
 }
