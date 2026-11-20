@@ -977,10 +977,7 @@ function openReportRelationship(group){
     '<ul>'+articles+'</ul>'+
     '<p class="sub">Analyst must compare primary sources, actual incident chronology, geographic claims and alternative explanations. '+
     'Standing watch severity and issued warning counts are unchanged.</p>';
-  panel.querySelector(".detail-close").addEventListener("click",()=>{
-    if(modal.open)modal.close();else panel.hidden=true;
-  });
-  if(modal.open)renderWorkspaceList();
+  panel.querySelector(".detail-close").addEventListener("click",()=>{panel.hidden=true;});
 }
 function renderBehaviorList(){
   const list=$("watchlist");list.classList.add("behavior-view");list.replaceChildren();
@@ -1396,7 +1393,10 @@ function selectFamily(f){
     item.appendChild(note);
   }
   panel.replaceChildren(item);
-  panel.querySelector(".detail-close").addEventListener("click",()=>{panel.hidden=true;});
+  panel.querySelector(".detail-close").addEventListener("click",()=>{
+    if(modal.open)modal.close();else panel.hidden=true;
+  });
+  if(modal.open)renderWorkspaceList();
 }
 /* Native dialog gives the analyst a usable, keyboard-accessible analysis
  * workspace instead of trapping detailed source reporting in a narrow panel. */
