@@ -1270,6 +1270,96 @@ function familyFacetHtml(data){
       return '<span class="family-facet facet-'+status+'" role="img" tabindex="0" aria-label="'+label+'" title="'+label+'">'+keys[status]+'</span>';
     }).join("")+'</div>';
 }
+function familyEvidenceCountLabel(f){
+  if(f.kind==="analytical_topic_family")
+    return (Number(f.notice_count)||0)+" distinct notices · "+
+      (Number(f.source_record_count)||0)+" source fragments · "+
+      (f.providers?.length||0)+" issuing provider(s)";
+  const roots=Number(f.information_root_count)||1;
+  return roots+" source information root"+(roots===1?"":"s")+" · independent corroboration not established";
+}
+function appendTopicNoticeGroups(f,item){
+  if(f.kind!=="analytical_topic_family"||!Array.isArray(f.notice_groups))return false;
+  const summary=document.createElement("section");
+  summary.className="topic-family-summary";
+  const heading=document.createElement("h4");
+  heading.textContent="Analytical grouping · NOT one verified event";
+  const line=document.createElement("p");
+  line.textContent=familyEvidenceCountLabel(f)+
+    ". Notices may describe different locations, operating dates or exercises. "+
+    "Publisher counts are not independent corroboration.";
+  summary.append(heading,line);
+  item.appendChild(summary);
+  const title=document.createElement("h4");
+  title.textContent="Distinct official notices ("+f.notice_count+")";
+  item.appendChild(title);
+  const list=document.createElement("div");list.className="topic-notice-list";
+  for(const notice of f.notice_groups){
+    const block=document.createElement("details");block.className="topic-notice";
+    const sum=document.createElement("summary");
+    const name=document.createElement("strong");
+    name.textContent=notice.title||"Untitled official notice";
+    const meta=document.createElement("span");meta.className="topic-notice-meta";
+    meta.textContent=(notice.area_label||"Area unknown")+" · "+
+      (notice.source_record_count||0)+" source fragment(s) · "+
+      (notice.validity_windows?.length||0)+" published validity interval(s)";
+    sum.append(name,meta);block.appendChild(sum);
+    const body=document.createElement("div");body.className="topic-notice-body";
+    const origin=document.createElement("a");origin.textContent="Open original source notice";
+    if(safeUrl(notice.source_url)){
+      origin.href=notice.source_url;origin.target="_blank";origin.rel="noopener noreferrer";
+    }
+    body.appendChild(origin);
+    const times=document.createElement("div");times.className="topic-validity-windows";
+    for(const window of notice.validity_windows||[]){
+      const row=document.createElement("p");
+      row.textContent="Published validity: "+(window.from||"start unavailable")+
+        " → "+(window.until||"end unavailable");
+      times.appendChild(row);
+    }
+    if(notice.validity_windows_truncated){
+      const p=document.createElement("p");
+      p.textContent="Additional published validity intervals retained in source archive.";
+      times.appendChild(p);
+    }
+    if(!times.children.length){
+      const p=document.createElement("p");p.textContent="No source-validity interval was provided.";
+      times.appendChild(p);
+    }
+    body.appendChild(times);
+    const sourcesHeading=document.createElement("h5");
+    sourcesHeading.textContent="Individual source records ("+(notice.source_record_count||0)+")";
+    body.appendChild(sourcesHeading);
+    const ul=document.createElement("ul");ul.className="topic-source-fragments";
+    for(const source of notice.records||[]){
+      const li=document.createElement("li");
+      const sid=document.createElement("code");sid.textContent=source.id||"Unknown source ID";
+      const details=document.createElement("span");
+      details.textContent="First captured: "+(source.first_observed_at||"unknown")+
+        " · Publisher: "+(source.provider||"unknown")+
+        " · Source geometry: "+(source.geography_precision||"not supplied");
+      const valid=document.createElement("small");
+      valid.textContent="Valid: "+(source.scheduled_valid_from||"not provided")+
+        " → "+(source.scheduled_valid_until||"not provided");
+      li.append(sid,details,valid);ul.appendChild(li);
+    }
+    body.appendChild(ul);
+    if(notice.records_truncated){
+      const p=document.createElement("p");p.textContent=
+        "This notice has additional source fragments in the durable archive.";
+      body.appendChild(p);
+    }
+    block.appendChild(body);list.appendChild(block);
+  }
+  item.appendChild(list);
+  if(f.notice_groups_truncated||f.sources_truncated){
+    const note=document.createElement("p");
+    note.className="topic-notice-caveat";
+    note.textContent="The public dashboard is bounded; some archived notices or fragments are not in this preview.";
+    item.appendChild(note);
+  }
+  return true;
+}
 function renderFamiliesList(){
   const list=$("watchlist");
   list.classList.add("behavior-view");
@@ -1331,7 +1421,7 @@ function renderFamiliesList(){
       b.innerHTML='<div class="family-card-head"><strong>'+safe(item.title||"Untitled source")+'</strong>'+
        '<span class="family-state">'+safe(item.state||"unreviewed")+'</span></div>'+
        '<div class="family-meta">'+safe((item.source_families||[]).join(" · ")||"unspecified source")+
-       ' · '+n+' distinct source root'+(n===1?"":"s")+'</div>'+
+       ' · '+safe(familyEvidenceCountLabel(item))+'</div>'+
        '<small>First evidence '+safe(item.last_observed_at||"unknown")+
        ' · '+safe(item.geography_label||"No validated event location")+'</small>'+
        '<small>'+safe(item.reason||"Investigatory source only")+'</small>';
@@ -1367,9 +1457,13 @@ function selectFamily(f){
     '<p><b>Historical deviation:</b> '+safe(f.anomaly_metric?.status==="calibrated_metric"?
       "Qualified source measurement (see the signed deviation below).":
       "Not calibrated; collection novelty is not statistical abnormality.")+'</p>'+
-    '<p><b>Corroboration:</b> Unreviewed; information-root count '+safe(f.information_root_count||1)+
-    ', independence not established. <b>Geography:</b> '+safe(f.geography_precision||"unverified")+'</p>';
+    '<p><b>Corroboration:</b> '+safe(f.kind==="analytical_topic_family"?
+       "Shared reporting topic, not a confirmed event. "+familyEvidenceCountLabel(f):
+       "Unreviewed; "+familyEvidenceCountLabel(f))+
+    '. <b>Geography:</b> '+safe(f.geography_precision||"unverified")+'</p>';
   item.insertAdjacentHTML("beforeend",familyGaugeHtml(f.anomaly_metric)+familyFacetHtml(f.evidence_facets));
+  const hasTopicNotices=appendTopicNoticeGroups(f,item);
+  if(!hasTopicNotices){
   const heading=document.createElement("h4");heading.textContent="Underlying source items";item.appendChild(heading);
   const ul=document.createElement("ul");ul.className="family-sources";
   for(const src of (f.sources||[])){
@@ -1391,6 +1485,7 @@ function selectFamily(f){
   if(f.sources_truncated){
     const note=document.createElement("p");note.textContent="Some repeated source fragments omitted from this bounded preview.";
     item.appendChild(note);
+  }
   }
   panel.replaceChildren(item);
   panel.querySelector(".detail-close").addEventListener("click",()=>{
@@ -1424,7 +1519,7 @@ function renderWorkspaceList(){
     entry.type="button";entry.className="family-workspace-row family-"+safe(f.state);
     entry.setAttribute("aria-current",String(state.familyWorkspaceSelected===f.id));
     entry.innerHTML='<strong>'+safe(f.title||"Unnamed source")+'</strong>'+
-      '<small>'+safe(f.state)+" · "+safe((f.source_families||[]).join(", "))+'</small>'+
+      '<small>'+safe(f.state)+" · "+safe(familyEvidenceCountLabel(f))+'</small>'+
       familyGaugeHtml(f.anomaly_metric)+familyFacetHtml(f.evidence_facets);
     entry.addEventListener("click",()=>selectFamily(f));
     target.appendChild(entry);
