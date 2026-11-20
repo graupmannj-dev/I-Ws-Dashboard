@@ -1319,6 +1319,20 @@ function appendTopicNoticeGroups(f,item){
       origin.href=notice.source_url;origin.target="_blank";origin.rel="noopener noreferrer";
     }
     body.appendChild(origin);
+    if(f.automatic_grouping&&notice.grouping_explanation){
+      const match=notice.grouping_explanation;
+      const evidence=document.createElement("p");
+      evidence.className="topic-match-explanation";
+      const score=Number(match.score);
+      const info=match.method==="new_analytical_theme"?"Original theme seed":
+        Number.isFinite(score)?"Text/topic similarity "+score.toFixed(2):"Persisted historical membership";
+      const overlap=Array.isArray(match.shared_subject_terms)?
+        match.shared_subject_terms.join(", "):"not available";
+      evidence.textContent="Automatic assignment: "+info+
+        " · matched terms: "+(overlap||"not published")+
+        " · This score is NOT the likelihood of a common event or independent corroboration.";
+      body.appendChild(evidence);
+    }
     const times=document.createElement("div");times.className="topic-validity-windows";
     for(const window of notice.validity_windows||[]){
       const row=document.createElement("p");
