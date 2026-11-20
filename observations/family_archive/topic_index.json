@@ -331,6 +331,7 @@
     "df2cdbe88c2ea87fb919a8d24bdb": "family:ae045b2e9190775a6f31",
     "df39859f4b37b8310e7cfc683426": "family:4883e56e5b9d4fd00239",
     "e074cd3944ed15338a1d7afe2172": "family:70bc6266ab23e9ae9c53",
+    "e115c49a8cce23292181bac19a68": "family:d320e56b7e553fbe00db",
     "e1b6da8c480eec0a71b468000da8": "family:bcbf039a534acb78c1e9",
     "e20bad9a20fde417c1a5c26fb833": "family:f273da875523112731d5",
     "e23edc44695ddb7d718cfc0b90ee": "family:c9675c6f217ebbb3cff4",
@@ -358,6 +359,7 @@
     "ec76ac6d19248bc3b79614dd6dbc": "family:16768cd11ccd8abf1ec4",
     "ed529639a4a2a8a89b322ea65834": "family:a3622921ac50fbc7de1f",
     "ed9850a88f4da4564e8201c96751": "family:b20c065a7da0b73ad992",
+    "eee1f7d0158c16efe71a4d118d57": "family:d320e56b7e553fbe00db",
     "ef8c83df85b6ed101b555fd00015": "family:3faec87a5d3eb20da5ce",
     "ef9c4ec73647e249abce19911a70": "family:c15c1e5929ecc09435b4",
     "ef9cddba44d26d645ad1b850f934": "family:c733ba40ded9c2fca04b",
@@ -3438,6 +3440,23 @@
       },
       "source": "automatic_similarity_v1"
     },
+    "family:d320e56b7e553fbe00db": {
+      "first_document_at": "2026-11-20T07:49:57+00:00",
+      "matched_document_count": 2,
+      "seed": {
+        "domain": "aviation",
+        "geo": [],
+        "key": "e115c49a8cce23292181bac19a68",
+        "publisher": "faa",
+        "source_family": "airspace_restriction",
+        "terms": {
+          "airspaceanchorage": 1,
+          "zan": 1
+        },
+        "title": "FAA TFR 6/9117 · 17 ZAN AIRSPACEANCHORAGE, AK, Friday, November 20, 2026 UTC"
+      },
+      "source": "automatic_similarity_v1"
+    },
     "family:d42b68793f8e65c9d461": {
       "first_document_at": "2026-11-19T16:39:32+00:00",
       "matched_document_count": 2,
@@ -4187,8 +4206,8 @@
     }
   },
   "input_truncated": false,
-  "new_document_assignments": 391,
+  "new_document_assignments": 2,
   "schema": "aiba.automatic-analytical-topics.v1",
-  "total_document_assignments": 391,
-  "total_stable_topics": 182
+  "total_document_assignments": 393,
+  "total_stable_topics": 183
 }

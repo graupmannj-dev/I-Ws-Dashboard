@@ -1,8 +1,8 @@
 {
   "alerts_promoted": 0,
   "archive_integrity": "all shards retained; public discovery cache is bounded",
-  "automatic_topic_count_total": 182,
-  "automatic_topic_document_count_total": 391,
+  "automatic_topic_count_total": 183,
+  "automatic_topic_document_count_total": 393,
   "automatic_topic_index": {
     "assignments": {
       "00ac8cd09e6f31938e341363e4ed": "family:c733ba40ded9c2fca04b",
@@ -336,6 +336,7 @@
       "df2cdbe88c2ea87fb919a8d24bdb": "family:ae045b2e9190775a6f31",
       "df39859f4b37b8310e7cfc683426": "family:4883e56e5b9d4fd00239",
       "e074cd3944ed15338a1d7afe2172": "family:70bc6266ab23e9ae9c53",
+      "e115c49a8cce23292181bac19a68": "family:d320e56b7e553fbe00db",
       "e1b6da8c480eec0a71b468000da8": "family:bcbf039a534acb78c1e9",
       "e20bad9a20fde417c1a5c26fb833": "family:f273da875523112731d5",
       "e23edc44695ddb7d718cfc0b90ee": "family:c9675c6f217ebbb3cff4",
@@ -363,6 +364,7 @@
       "ec76ac6d19248bc3b79614dd6dbc": "family:16768cd11ccd8abf1ec4",
       "ed529639a4a2a8a89b322ea65834": "family:a3622921ac50fbc7de1f",
       "ed9850a88f4da4564e8201c96751": "family:b20c065a7da0b73ad992",
+      "eee1f7d0158c16efe71a4d118d57": "family:d320e56b7e553fbe00db",
       "ef8c83df85b6ed101b555fd00015": "family:3faec87a5d3eb20da5ce",
       "ef9c4ec73647e249abce19911a70": "family:c15c1e5929ecc09435b4",
       "ef9cddba44d26d645ad1b850f934": "family:c733ba40ded9c2fca04b",
@@ -3443,6 +3445,23 @@
         },
         "source": "automatic_similarity_v1"
       },
+      "family:d320e56b7e553fbe00db": {
+        "first_document_at": "2026-11-20T07:49:57+00:00",
+        "matched_document_count": 2,
+        "seed": {
+          "domain": "aviation",
+          "geo": [],
+          "key": "e115c49a8cce23292181bac19a68",
+          "publisher": "faa",
+          "source_family": "airspace_restriction",
+          "terms": {
+            "airspaceanchorage": 1,
+            "zan": 1
+          },
+          "title": "FAA TFR 6/9117 · 17 ZAN AIRSPACEANCHORAGE, AK, Friday, November 20, 2026 UTC"
+        },
+        "source": "automatic_similarity_v1"
+      },
       "family:d42b68793f8e65c9d461": {
         "first_document_at": "2026-11-19T16:39:32+00:00",
         "matched_document_count": 2,
@@ -4193,17 +4212,92 @@
     },
     "public_index_truncated": false,
     "schema": "aiba.automatic-analytical-topics.v1",
-    "total_document_assignments": 391,
-    "total_stable_topics": 182
+    "total_document_assignments": 393,
+    "total_stable_topics": 183
   },
-  "generated_at": "2026-11-20T07:20:14.341154+00:00",
+  "generated_at": "2026-11-20T10:42:43.302506+00:00",
   "historical_relationship_count": 0,
   "missing_data_is_not_zero": true,
-  "new_records_added": 0,
-  "public_record_count": 1155,
+  "new_records_added": 3,
+  "public_record_count": 1158,
   "public_snapshot_truncated": false,
-  "record_count_total": 1155,
+  "record_count_total": 1158,
   "records": [
+    {
+      "calibrated_metric": null,
+      "case_hint": null,
+      "claim_level": "official_scheduled_restriction_not_military_preparation",
+      "collection_mode": "live_airspace",
+      "direct_measurement": false,
+      "event_at": null,
+      "first_observed_at": "2026-11-20T07:49:57+00:00",
+      "geography_key": "source-footprint:7530101fd3a43ce9ff8a91ef",
+      "geography_label": "Official MultiPolygon notice area",
+      "geography_precision": "provider_defined_notice_boundary_not_event_point",
+      "id": "beh:c68d0a60b9886147f007dfff1f85",
+      "information_root": "faa:6/9117:0:0",
+      "origin": "behavioral_registry",
+      "provider": "faa",
+      "published_at": null,
+      "restriction_status": "scheduled_not_yet_effective",
+      "scheduled_valid_from": "2026-11-20T19:30:00Z",
+      "scheduled_valid_until": "2026-11-20T21:30:00Z",
+      "source_family": "airspace_restriction",
+      "source_kind": "official_restriction_notice",
+      "source_updated_at": null,
+      "source_url": "https://tfr.faa.gov/6_9117.html",
+      "title": "FAA TFR 6/9117 · 17 ZAN AIRSPACEANCHORAGE, AK, Friday, November 20, 2026 UTC"
+    },
+    {
+      "calibrated_metric": null,
+      "case_hint": null,
+      "claim_level": "official_scheduled_restriction_not_military_preparation",
+      "collection_mode": "live_airspace",
+      "direct_measurement": false,
+      "event_at": null,
+      "first_observed_at": "2026-11-20T07:49:57+00:00",
+      "geography_key": "source-footprint:d4132c7121fd813614aac18e",
+      "geography_label": "Official MultiPolygon notice area",
+      "geography_precision": "provider_defined_notice_boundary_not_event_point",
+      "id": "beh:aa23c2a1e8ced3e8fa1216b29710",
+      "information_root": "faa:6/9119:0:0",
+      "origin": "behavioral_registry",
+      "provider": "faa",
+      "published_at": null,
+      "restriction_status": "scheduled_not_yet_effective",
+      "scheduled_valid_from": "2026-11-20T21:00:00Z",
+      "scheduled_valid_until": "2026-11-22T03:00:00Z",
+      "source_family": "airspace_restriction",
+      "source_kind": "official_restriction_notice",
+      "source_updated_at": null,
+      "source_url": "https://tfr.faa.gov/6_9119.html",
+      "title": "FAA TFR 6/9119 · ANCHORAGE, AK, Friday, November 20, 2026 through Sunday, November 22, 2026 UTC"
+    },
+    {
+      "calibrated_metric": null,
+      "case_hint": null,
+      "claim_level": "official_scheduled_restriction_not_military_preparation",
+      "collection_mode": "live_airspace",
+      "direct_measurement": false,
+      "event_at": null,
+      "first_observed_at": "2026-11-20T07:49:57+00:00",
+      "geography_key": "source-footprint:7530101fd3a43ce9ff8a91ef",
+      "geography_label": "Official MultiPolygon notice area",
+      "geography_precision": "provider_defined_notice_boundary_not_event_point",
+      "id": "beh:3e9dbfe1edde1c5a8b04a5f945c1",
+      "information_root": "faa:6/9115:0:0",
+      "origin": "behavioral_registry",
+      "provider": "faa",
+      "published_at": null,
+      "restriction_status": "scheduled_not_yet_effective",
+      "scheduled_valid_from": "2026-11-20T17:00:00Z",
+      "scheduled_valid_until": "2026-11-20T18:00:00Z",
+      "source_family": "airspace_restriction",
+      "source_kind": "official_restriction_notice",
+      "source_updated_at": null,
+      "source_url": "https://tfr.faa.gov/6_9115.html",
+      "title": "FAA TFR 6/9115 · 15 ZAN AIRSPACEANCHORAGE, AK, Friday, November 20, 2026 UTC"
+    },
     {
       "calibrated_metric": null,
       "case_hint": "drc_rwanda",
@@ -32932,11 +33026,11 @@
   "report_relationships": {
     "candidate_groups": []
   },
-  "root_count_total": 1155,
+  "root_count_total": 1158,
   "schema": "aiba.family-archive.v1",
   "source_health": {
     "amsa": {
-      "age_hours": 4.27,
+      "age_hours": 4.76,
       "checked_at": "2026-11-20T03:04:12Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -32948,7 +33042,7 @@
       "truncated_or_partial": false
     },
     "commercial": {
-      "age_hours": 14.68,
+      "age_hours": 15.17,
       "checked_at": "2026-11-19T16:39:30Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -32960,7 +33054,7 @@
       "truncated_or_partial": false
     },
     "ioda": {
-      "age_hours": 4.27,
+      "age_hours": 4.76,
       "checked_at": "2026-11-20T03:04:12Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -32972,29 +33066,31 @@
       "truncated_or_partial": false
     },
     "live_airspace": {
-      "age_hours": 6.62,
-      "checked_at": "2026-11-20T00:42:49Z",
-      "missingness": "not_measured_not_zero",
+      "age_hours": 0.0,
+      "checked_at": "2026-11-20T07:49:53Z",
+      "first_provider_baseline": false,
+      "missingness": "partial_sampling_not_worldwide_exhaustive",
       "mode": "live_airspace",
       "provider_status": "partial",
-      "snapshot_at": "2026-11-20T00:42:49Z",
+      "snapshot_at": "2026-11-20T07:49:53Z",
       "source_scope": "FAA temporary flight restrictions: United States only",
-      "status": "stale_or_unavailable",
+      "status": "current_partial",
       "truncated_or_partial": true
     },
     "live_maritime": {
-      "age_hours": 6.62,
-      "checked_at": "2026-11-20T00:42:49Z",
-      "missingness": "not_measured_not_zero",
+      "age_hours": 0.0,
+      "checked_at": "2026-11-20T07:49:53Z",
+      "first_provider_baseline": false,
+      "missingness": "partial_sampling_not_worldwide_exhaustive",
       "mode": "live_maritime",
       "provider_status": "partial",
-      "snapshot_at": "2026-11-20T00:42:49Z",
+      "snapshot_at": "2026-11-20T07:49:53Z",
       "source_scope": "Danish Maritime Authority Niord notices: regional Baltic/North Sea",
-      "status": "stale_or_unavailable",
+      "status": "current_partial",
       "truncated_or_partial": true
     },
     "nga": {
-      "age_hours": 4.27,
+      "age_hours": 4.76,
       "checked_at": "2026-11-19T22:06:56Z",
       "missingness": "not_measured_not_zero",
       "mode": "nga",
@@ -33005,7 +33101,7 @@
       "truncated_or_partial": false
     },
     "official": {
-      "age_hours": 0.0,
+      "age_hours": 0.5,
       "checked_at": "2026-11-20T07:20:11Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -33017,7 +33113,7 @@
       "truncated_or_partial": false
     },
     "watchlist": {
-      "age_hours": 0.0,
+      "age_hours": 0.5,
       "checked_at": "2026-11-20T07:20:12Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
