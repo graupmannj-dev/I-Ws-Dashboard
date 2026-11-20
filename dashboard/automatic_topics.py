@@ -286,7 +286,7 @@ def _reasoning(doc,seed,metric):
     # context for SVD. Strong role + shared named entity + several mapped
     # substantive terms is therefore an independent high-precision route.
     paraphrase_ok=(
-        shared_roles and len(shared)>=3 and bool(shared_named)
+        shared_roles and len(shared)>=2 and bool(shared_named)
         and (metric["score"]>=0.25 or legacy>=0.35)
     ) or (
         metric["score"]>=HYBRID_SUBJECT_THRESHOLD
