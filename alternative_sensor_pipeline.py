@@ -30,8 +30,8 @@ MODES=("usgs","eonet","nws","usace","coops")
 SCOPE={
     "usgs":"USGS M4.5+ earthquakes worldwide, rolling past day; source thresholds apply",
     "eonet":"NASA EONET open natural event catalog, recent 7 days; limit 110",
-    "nws":"U.S. National Weather Service active marine weather alerts, first 110 returned",
-    "usace":"USACE NTNI notices beginning in the last 14 days, U.S. inland waterways; first 110",
+    "nws":"U.S. National Weather Service active Florida-area weather alerts, first 110 returned",
+    "usace":"USACE NTNI active notices beginning in the last day, U.S. inland waterways; first 110",
     "coops":"NOAA CO-OPS water levels at San Francisco, Key West and Sewells Point; stations only",
 }
 PORT_STATIONS={
@@ -105,9 +105,9 @@ def urls(mode,now):
     if mode=="eonet":
         return ["https://eonet.gsfc.nasa.gov/api/v3/events?status=open&days=7&limit=110"]
     if mode=="nws":
-        return ["https://api.weather.gov/alerts/active?region_type=marine&limit=110"]
+        return ["https://api.weather.gov/alerts/active?area=FL"]
     if mode=="usace":
-        start=(now-dt.timedelta(days=14)).strftime("%d%m%Y")
+        start=(now-dt.timedelta(days=1)).strftime("%d%m%Y")
         return ["https://ndc.ops.usace.army.mil/ords/ntni/json_data/notices_geoJson/"+start]
     if mode=="coops":
         root="https://api.tidesandcurrents.noaa.gov/api/prod/datagetter?"
@@ -133,7 +133,7 @@ def entry(mode,rid,title,url,checked,*,event_at=None,published=None,kind="source
         "observed_at":iso(checked),"event_at":iso(event) if event else None,
         "published_at":iso(pub) if pub else None,
         "first_seen_at":iso(first) if first else None,
-        "claim_level":"nonhostile_environmental_context" if mode in ("usgs","eonet","nws","coops")
+        "claim_level":"environmental_context_not_hostile_attribution" if mode in ("usgs","eonet","nws","coops")
                      else "issued_waterway_notice_not_actual_vessel_disruption",
         "source_scope":source_scope or SCOPE[mode],
     }
