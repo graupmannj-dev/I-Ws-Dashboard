@@ -29,7 +29,7 @@ SCHEMA="cairn.alternative-sensors.v1"
 MAX_BYTES=8_000_000  # bounded for full public RIPE built-in probe cohort
 MAX_RECORDS=110
 USER_AGENT="CAIRN-Public-Alternative-Sensors/1.0 (github.com/graupmannj-dev/I-Ws-Dashboard)"
-MODES=("usgs","eonet","nws","usace","coops","swpc","ripe")
+MODES=("usgs","eonet","nws","usace","coops","swpc","ripe","uk_tenders","wiki_edits")
 SCOPE={
     "usgs":"USGS M4.5+ earthquakes worldwide, rolling past day; source thresholds apply",
     "eonet":"NASA EONET open natural event catalog, recent 7 days; limit 110",
@@ -38,6 +38,8 @@ SCOPE={
     "coops":"NOAA CO-OPS water levels at San Francisco, Key West and Sewells Point; stations only",
     "swpc":"NOAA SWPC issued recent solar/geomagnetic warnings; explanatory context only",
     "ripe":"RIPE Atlas built-in K-root ping #1001, global public-probe aggregate; not country coverage",
+    "uk_tenders":"UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+    "wiki_edits":"Wikipedia main-namespace edit-count sample, en/fr/es, three-hour window capped at 500 per wiki",
 }
 PORT_STATIONS={
     "9414290":"San Francisco, CA",
@@ -49,8 +51,11 @@ HOST_ALLOW={
  "nws":"api.weather.gov","usace":"ndc.ops.usace.army.mil",
  "coops":"api.tidesandcurrents.noaa.gov",
  "swpc":"services.swpc.noaa.gov","ripe":"atlas.ripe.net",
+ "uk_tenders":"www.find-tender.service.gov.uk",
+ "wiki_edits":"en.wikipedia.org",
 }
-MAX_URLS={"usgs":1,"eonet":1,"nws":1,"usace":3,"coops":3,"swpc":1,"ripe":1}
+MAX_URLS={"usgs":1,"eonet":1,"nws":1,"usace":3,"coops":3,"swpc":1,"ripe":1,
+          "uk_tenders":1,"wiki_edits":3}
 MAX_RIPE_PROBES=60000
 
 
@@ -86,7 +91,8 @@ def source_url(url,mode):
                                                   "www.weather.gov",
                                                   "water.noaa.gov",
                                                   "tidesandcurrents.noaa.gov",
-                                                  "www.swpc.noaa.gov"):
+                                                  "www.swpc.noaa.gov",
+                                                  "fr.wikipedia.org","es.wikipedia.org"):
         return None
     if p.username or p.password or len(url)>1500:return None
     return url
@@ -122,6 +128,18 @@ def urls(mode,now):
     if mode=="ripe":
         return ["https://atlas.ripe.net/api/v2/measurements/1001/latest/?"+
                 urllib.parse.urlencode({"versions":1,"lookback_days":1,"public_only":"true"})]
+    if mode=="uk_tenders":
+        return ["https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?"+
+                urllib.parse.urlencode({"limit":100,
+                    "updatedFrom":(now-dt.timedelta(days=2)).date().isoformat()})]
+    if mode=="wiki_edits":
+        root="/w/api.php?"
+        args=urllib.parse.urlencode({
+            "action":"query","list":"recentchanges","rcnamespace":0,
+            "rcprop":"title|timestamp|ids","rclimit":500,
+            "rcstart":iso(now),"rcend":iso(now-dt.timedelta(hours=3)),
+            "format":"json","formatversion":2})
+        return ["https://"+lang+".wikipedia.org"+root+args for lang in ("en","fr","es")]
     if mode=="coops":
         root="https://api.tidesandcurrents.noaa.gov/api/prod/datagetter?"
         return [root+urllib.parse.urlencode({
@@ -400,9 +418,75 @@ def adapt_ripe(data,checked,url):
     return [row] if row else []
 
 
+
+def adapt_uk_tenders(data,checked,url):
+    """Official UK public contracting releases; no private vendor data."""
+    if not isinstance(data,dict) or not isinstance(data.get("releases"),list):
+        raise ValueError("UK tender OCDS release-package schema mismatch")
+    result=[]
+    for rel in data["releases"]:
+        if not isinstance(rel,dict):continue
+        rid=clean(rel.get("id"),125)
+        ocid=clean(rel.get("ocid"),125)
+        tender=rel.get("tender") if isinstance(rel.get("tender"),dict) else {}
+        published=parse_time(rel.get("date"))
+        if not rid or not ocid or not published or published>checked+dt.timedelta(minutes=5):
+            continue
+        title=clean(tender.get("title") or rel.get("tag") or "Public procurement release",180)
+        buyer=rel.get("buyer") if isinstance(rel.get("buyer"),dict) else {}
+        title=(title+" · "+clean(buyer.get("name"),60)).strip(" ·")
+        doc=source_url(url,"uk_tenders")
+        row=entry("uk_tenders",ocid+":"+rid,title,doc,checked,
+            published=iso(published),first_seen=iso(published),
+            kind="public_tender_release_not_evidence_of_urgent_need",
+            source_scope=SCOPE["uk_tenders"])
+        if row:result.append(row)
+    if data["releases"] and not result:
+        raise ValueError("Nonempty UK tender package has no dated identifiable releases")
+    return result
+
+
+def adapt_wiki_edits(data,checked,url):
+    """Bounded *aggregate* public edit activity. Never retain accounts or IPs."""
+    changes=(data.get("query") or {}).get("recentchanges") if isinstance(data,dict) else None
+    if not isinstance(changes,list):
+        raise ValueError("Wikipedia recentchanges schema mismatch")
+    host=urllib.parse.urlsplit(url).hostname
+    if host not in ("en.wikipedia.org","fr.wikipedia.org","es.wikipedia.org"):
+        raise ValueError("Unapproved Wikipedia language host")
+    language=host.split(".")[0]
+    by_title={}
+    latest=None
+    for change in changes:
+        if not isinstance(change,dict) or not isinstance(change.get("title"),str):
+            continue
+        stamp=parse_time(change.get("timestamp"))
+        if not stamp or stamp>checked+dt.timedelta(minutes=5) or checked-stamp>dt.timedelta(hours=4):
+            continue
+        title=clean(change["title"],150)
+        if title:by_title[title]=by_title.get(title,0)+1
+        latest=stamp if not latest or stamp>latest else latest
+    # A valid empty window is NOT an outage; it is also not an all-clear.
+    if not by_title:return []
+    if not latest:raise ValueError("Wikipedia edit records have no valid timestamps")
+    sample=sorted(by_title.items(),key=lambda x:(-x[1],x[0]))[:8]
+    count=sum(by_title.values())
+    doc="https://"+host+"/wiki/Special:RecentChanges"
+    return [entry("wiki_edits",language+":"+checked.strftime("%Y%m%dT%H"),
+        "Wikipedia "+language+" public article-edit activity (sampled)",
+        doc,checked,event_at=iso(latest),published=iso(latest),first_seen=iso(latest),
+        kind="bounded_public_edit_count_not_event_verification",
+        measurement={"name":"sampled_edits_last_three_hours","value":count,"unit":"edits",
+                     "distinct_articles_in_sample":len(by_title),
+                     "most_edited_article_counts":[{"title":t,"count":n} for t,n in sample],
+                     "maximum_returned_edits":500,"sample_cap_reached":len(changes)>=500,
+                     "baseline_status":"not_calibrated"},
+        source_scope=SCOPE["wiki_edits"])]
+
 ADAPTERS={"usgs":adapt_usgs,"eonet":adapt_eonet,"nws":adapt_nws,
           "usace":adapt_usace,"coops":adapt_coops,
-          "swpc":adapt_swpc,"ripe":adapt_ripe}
+          "swpc":adapt_swpc,"ripe":adapt_ripe,
+          "uk_tenders":adapt_uk_tenders,"wiki_edits":adapt_wiki_edits}
 
 
 def collect(state,clock=None,fetcher=json_get,selected=MODES):
@@ -418,7 +502,8 @@ def collect(state,clock=None,fetcher=json_get,selected=MODES):
         # does not block successfully observed stations.
         for url in source_urls[:MAX_URLS[mode]]:
             try:
-                if urllib.parse.urlsplit(url).hostname!=HOST_ALLOW[mode]:
+                if urllib.parse.urlsplit(url).hostname not in ((HOST_ALLOW[mode], "fr.wikipedia.org", "es.wikipedia.org")
+                                                             if mode=="wiki_edits" else (HOST_ALLOW[mode],)):
                     raise ValueError("Unapproved data-host endpoint")
                 parsed=ADAPTERS[mode](fetcher(url),now,url)
                 success.extend(parsed)
@@ -427,7 +512,7 @@ def collect(state,clock=None,fetcher=json_get,selected=MODES):
                 errors.append(clean(type(exc).__name__+": "+str(exc),180))
         # Provider responses are bounded and explicitly marked partial;
         # collection never silently truncates and claims exhaustive coverage.
-        truncated=len(success)>MAX_RECORDS or len(errors)>0 or mode in ("usace","nws","eonet","coops")
+        truncated=len(success)>MAX_RECORDS or len(errors)>0 or mode in ("usace","nws","eonet","coops","uk_tenders","wiki_edits")
         kept=success[:MAX_RECORDS]
         ok=len(errors)<len(source_urls)
         status="partial" if ok and truncated else "collected" if ok else "unavailable"
@@ -445,6 +530,8 @@ def collect(state,clock=None,fetcher=json_get,selected=MODES):
                 "environmental_hazard_reporting" if mode in ("usgs","eonet","nws","swpc")
                 else "official_navigation_notice" if mode=="usace"
                 else "aggregate_public_network_ping" if mode=="ripe"
+                else "official_public_procurement_release" if mode=="uk_tenders"
+                else "public_encyclopedia_edit_aggregate" if mode=="wiki_edits"
                 else "station_physical_measurement"),
             "operational_warning_approved":False,
         }
