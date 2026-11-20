@@ -119,14 +119,16 @@ jobs:
           import json
           from pathlib import Path
           from dashboard.dynamic_bins import build
+          from dashboard.topic_families import topic_key
           path=Path("ops-state/observations/latest/behavioral_registry.json")
           raw=json.loads(path.read_text())
           when=dt.datetime.fromisoformat(raw["generated_at"].replace("Z","+00:00"))
+          # The classifier accepts both "firing exercise" and "firing
+          # exercises" as the same source-declared maritime activity.
+          # Keep the regression's reference set aligned with the actual
+          # source classification, not one literal English inflection.
           observed=[x for x in raw["records"]
-              if x.get("source_family")=="maritime_restriction"
-              and x.get("source_kind")=="official_restriction_notice"
-              and x.get("title","").startswith("Denmark.")
-              and "firing exercises" in x.get("title","").lower()]
+              if topic_key(x)==("Denmark","maritime-firing-exercises")]
           result=build(raw,{"records":[]},now=when+dt.timedelta(minutes=10))
           groups=[f for f in result["families"] if
                   f.get("kind")=="analytical_topic_family" and f.get("country")=="Denmark"]
