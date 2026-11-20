@@ -122,5 +122,50 @@ class FamilyArchiveTests(unittest.TestCase):
             self.assertTrue(result["dynamic_bins"]["families"][0]["sources"][0]["source_url"].startswith("https://"))
 
 
+    def test_related_source_links_persist_after_latest_resolver_disappears(self):
+        with tempfile.TemporaryDirectory() as d:
+            state=Path(d)
+            a=item("beh:a","independent:source-a")
+            b=item("beh:b","independent:source-b")
+            registry(state,[a,b])
+            from ops_pipeline import write_json
+            write_json(state/"latest"/"behavioral_fusion.json",{
+                "report_relationships":{"candidate_groups":[{
+                    "id":"related:synthetic","status":"possible_same_event_unreviewed",
+                    "match_basis":"synthetic explicit possible match",
+                    "source_reports":[{"observation_id":"beh:a"},{"observation_id":"beh:b"}],
+                }]}
+            })
+            initial=update(state,clock=NOW)
+            self.assertEqual(initial["historical_relationship_count"],1)
+            registry(state,[])
+            write_json(state/"latest"/"behavioral_fusion.json",{})
+            later=update(state,clock=NOW+dt.timedelta(days=35))
+            self.assertEqual(later["historical_relationship_count"],1)
+            link=later["report_relationships"]["candidate_groups"][0]
+            self.assertEqual({x["observation_id"] for x in link["source_reports"]},
+                             {"beh:a","beh:b"})
+            self.assertFalse(link["independent_corroboration_established"])
+            site=state/"site";site.mkdir()
+            (site/"index.html").write_text("<p>Test</p>")
+            (site/"hotspots.json").write_text('{"asof":"2026-11-19"}')
+            rendered=generate(site,generated=(NOW+dt.timedelta(days=35)).isoformat(),
+                              state_dir=state)
+            grouped=[x for x in rendered["dynamic_bins"]["families"]
+                     if x["kind"]=="possible_related_reporting"]
+            self.assertEqual(len(grouped),1)
+            self.assertFalse(grouped[0]["source_independence_established"])
+            self.assertFalse(grouped[0]["warning_approved"])
+
+    def test_source_id_cannot_move_between_persistent_root_families(self):
+        with tempfile.TemporaryDirectory() as d:
+            state=Path(d)
+            registry(state,[item("beh:collision","root:a")])
+            update(state,clock=NOW)
+            registry(state,[item("beh:collision","root:b")])
+            with self.assertRaisesRegex(ValueError,"Cross-archive observation identity/root conflict"):
+                update(state,clock=NOW+dt.timedelta(days=61))
+
+
 if __name__=="__main__":
     unittest.main()

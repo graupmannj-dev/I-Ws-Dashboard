@@ -160,6 +160,15 @@ def update(state, clock=None, write=True):
         prefix = shard_file.stem
         if prefix not in shards:
             shards[prefix] = read_strict(shard_file, SCHEMA, None)
+    # The hot 45-day identity index may expire, but an observation ID must
+    # NEVER migrate between long-lived source roots unnoticed.
+    source_owner = {}
+    for shard in shards.values():
+        for key, group in shard["roots"].items():
+            for observation_id, record in group["members"].items():
+                prior = source_owner.setdefault(observation_id, key)
+                if prior != key or record.get("information_root") != group["information_root"]:
+                    raise ValueError("Cross-archive observation identity/root conflict")
     root_count = sum(len(s["roots"]) for s in shards.values())
     rec_count = sum(len(g["members"]) for s in shards.values() for g in s["roots"].values())
     if root_count > MAX_TOTAL_ROOTS or rec_count > MAX_TOTAL_RECORDS:
@@ -190,7 +199,10 @@ def update(state, clock=None, write=True):
         if len(evidence) < 2:
             continue
         old = links.get(ident, {"first_detected_at": now.isoformat(), "source_ids": []})
-        old["source_ids"] = sorted(set(old["source_ids"]) | set(evidence))
+        prior_sources = set(old["source_ids"])
+        old["source_ids"] = sorted(prior_sources | set(evidence))
+        if set(old["source_ids"]) != prior_sources:
+            old["last_new_member_at"] = now.isoformat()
         old["id"] = ident
         old["status"] = link["status"]
         old["match_basis"] = str(link.get("match_basis") or "")[:200]
@@ -199,6 +211,23 @@ def update(state, clock=None, write=True):
         links[ident] = old
     if len(links) > MAX_RELATIONSHIPS:
         raise ValueError("Relationship ledger needs repartitioning; no silent truncation")
+    # Restore the existing discovery builder's source_reports contract from
+    # durable relationship IDs, even when latest resolver output is empty.
+    # Chronology uses first archived evidence clocks, never a repeated scrape.
+    public_links = []
+    for link in sorted(links.values(),
+                       key=lambda x:(x.get("last_new_member_at") or x.get("first_detected_at") or "",
+                                     x.get("id") or ""), reverse=True)[:80]:
+        public_links.append({
+            "id": link["id"], "status": link["status"],
+            "match_basis": link.get("match_basis", ""),
+            "source_reports": [{"observation_id": i} for i in link["source_ids"][:100]],
+            "source_reports_truncated": len(link["source_ids"]) > 100,
+            "independent_corroboration_established": False,
+            "warning_level_change": False,
+            "first_detected_at": link.get("first_detected_at"),
+            "last_new_member_at": link.get("last_new_member_at"),
+        })
     # The cache is for discoverability and may be bounded; the persistent
     # shards and durable relationships remain intact in the evidence branch.
     snapshot = {
@@ -210,9 +239,8 @@ def update(state, clock=None, write=True):
         "records": all_records[:MAX_PUBLIC_RECORDS],
         "source_health": raw_registry.get("source_health", {}),
         "historical_relationship_count": len(links),
-        "report_relationships": {
-            "candidate_groups": list(links.values())[:MAX_RELATIONSHIPS],
-        },
+        "report_relationships": {"candidate_groups": public_links},
+        "relationship_public_truncated": len(links) > len(public_links),
         "alerts_promoted": 0, "new_records_added": new_records,
         "archive_integrity": "all shards retained; public discovery cache is bounded",
         "missing_data_is_not_zero": True,
