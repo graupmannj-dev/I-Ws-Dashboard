@@ -1,14 +1,33 @@
-# AIBA 5.0 — Global Intelligence Early Warning
+# CAIRN — Corroborated Alternative Indicators for Risk Navigation
 
-A global, open-source OSINT dashboard for investigative leads. It is not an
-official intelligence assessment, a calibrated conflict probability, or a
-validated attack-prediction model.
+**CAIRN** is an open-source, alternative-indicator-first strategic warning
+workbench. It collects, synthesizes and analyzes **observable structural friction**
+and unusual operational or institutional behavior, seeking early cues that might
+precede conventional news reporting or established intelligence collection.
+
+Its priorities are **nontraditional observations and calibrated anomalies**:
+maritime/airspace notices, network disruptions, commercial movements, market
+behavior, aviation and infrastructure traces. GDELT, curated news and conventional
+reporting provide background, historical structure and potential corroboration,
+**not** the principal discovery target. Uncorroborated anomalies remain visible,
+clearly marked as such. Topic similarity never certifies one event.
+
+This is not an official intelligence assessment, a calibrated conflict
+probability, or a validated attack-prediction model. CAIRN is designed to
+**complement** established IC/defense intelligence platforms by finding weak
+open-source indicators outside the usual collection spotlight, not to replace
+classified collection or analytic judgments.
+
+The site and project brand are now CAIRN; legacy AIBA repository names,
+GitHub Pages URLs, script names and machine-readable schema identifiers remain
+unchanged for compatibility. See
+[CAIRN product doctrine](docs/CAIRN_PRODUCT_DOCTRINE.md).
 
 Repository: https://github.com/graupmannj-dev/I-Ws-Dashboard
 
-## One AIBA website, deployment and review
+## One CAIRN website, deployment and review
 
-**AIBA Atlas entry point:** https://graupmannj-dev.github.io/I-Ws-Dashboard/
+**CAIRN Atlas entry point:** https://graupmannj-dev.github.io/I-Ws-Dashboard/
 
 The repository's GitHub Pages deployment workflow reported successful
 production deployments on November 12, 2026 (GitHub Actions runs
