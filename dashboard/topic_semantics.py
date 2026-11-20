@@ -15,8 +15,13 @@ import re
 import unicodedata
 import zlib
 
-import numpy as np
-from scipy import sparse
+try:
+    import numpy as np
+    from scipy import sparse
+except ImportError:
+    np=None
+    sparse=None
+
 
 SCHEMA = "aiba.hybrid-local-title-embedding.v1"
 FEATURE_COUNT = 8192
@@ -128,12 +133,36 @@ class LocalTopicEmbeddings:
     def __init__(self,titles):
         if len(titles)>MAX_TITLES:
             raise ValueError("Embedding corpus too large; repartition explicitly")
-        self.matrix=_matrix(titles)
-        self.latent=_latent(self.matrix)
         self.count=len(titles)
+        self.fallback=None
+        self.latent=None
+        if np is None or sparse is None:
+            # Essential operational collectors remain functional even if
+            # package resolution fails. This is a *degraded sparse-only*
+            # mode and is surfaced in the archive's model diagnostics.
+            vectors=[_features(title) for title in titles]
+            df=Counter(k for v in vectors for k in v)
+            idf={k:math.log((len(vectors)+1)/(n+1))+1 for k,n in df.items()}
+            self.fallback=[]
+            for features in vectors:
+                weighted={k:val*idf[k] for k,val in features.items()}
+                norm=math.sqrt(sum(x*x for x in weighted.values())) or 1
+                self.fallback.append({k:v/norm for k,v in weighted.items()})
+            self.matrix=None
+        else:
+            self.matrix=_matrix(titles)
+            self.latent=_latent(self.matrix)
+
+    def _simple_cosine(self,a,b):
+        x=self.fallback[a];y=self.fallback[b]
+        if len(x)>len(y):x,y=y,x
+        return max(0,min(1,sum(v*y.get(k,0) for k,v in x.items())))
 
     def candidates(self,i,seed_count,top=32):
         if not seed_count:return []
+        if self.fallback is not None:
+            scores=[self._simple_cosine(i,j) for j in range(seed_count)]
+            return sorted(range(seed_count),key=lambda j:(-scores[j],j))[:top]
         if self.latent is not None:
             sims=self.latent[:seed_count]@self.latent[i]
         else:
@@ -145,9 +174,13 @@ class LocalTopicEmbeddings:
         return [int(k) for k in sorted(inds,key=lambda k:(-float(sims[k]),int(k)))]
 
     def pair(self,a,b):
-        tfidf=float((self.matrix[a]@self.matrix[b].T).toarray()[0,0])
-        latent=(float(np.dot(self.latent[a],self.latent[b]))
-                if self.latent is not None else None)
+        if self.fallback is not None:
+            tfidf=self._simple_cosine(a,b)
+            latent=None
+        else:
+            tfidf=float((self.matrix[a]@self.matrix[b].T).toarray()[0,0])
+            latent=(float(np.dot(self.latent[a],self.latent[b]))
+                    if self.latent is not None else None)
         tfidf=max(0,min(1,tfidf))
         if latent is not None:
             latent=max(0,min(1,latent))
@@ -156,6 +189,7 @@ class LocalTopicEmbeddings:
             "score":round(float(score),4),
             "tfidf_cosine":round(tfidf,4),
             "latent_cosine":round(latent,4) if latent is not None else None,
-            "embedding_method":SCHEMA,
+            "embedding_method":SCHEMA if self.fallback is None
+                else "aiba.local-sparse-degraded.v1",
             "latent_dimensions":int(self.latent.shape[1]) if self.latent is not None else 0,
         }
