@@ -1793,7 +1793,10 @@ function updateKpis(){
   const a=state.atlas;
   const familyCount=Number(a.dynamic_bins?.emerging_count)||0;
   $("familyTabCount").textContent=familyCount?"("+familyCount+" new)":"";
-    $("kpiWatch").textContent=a.hotspots.length;
+    const hasDynamic=Number(a.dynamic_bins?.candidate_count_total)>0;
+  $("kpiWatch").parentElement.querySelector("small").textContent=
+    hasDynamic?"Evidence families":"Curated theaters";
+  $("kpiWatch").textContent=hasDynamic?a.dynamic_bins.candidate_count_total:a.hotspots.length;
   $("kpiUpdates").textContent=a.hotspots.filter(x=>x.new_evidence||frictionIsReview(x.id)).length;
   $("kpiReports").textContent=a.reports.length;
   $("kpiAsOf").textContent=a.asof;
