@@ -6,7 +6,7 @@ import unittest
 
 from alternative_sensor_pipeline import (
     MODES,SCHEMA,adapt_usgs,adapt_eonet,adapt_nws,adapt_usace,adapt_coops,
-    collect,urls,
+    collect,urls,adapt_uk_tenders,adapt_wiki_edits,
 )
 from behavioral_registry import create,normalize,SCHEMA as REGISTRY_SCHEMA
 from family_archive import update as update_family
@@ -58,6 +58,17 @@ def sample(mode):
         return [{"msm_id":1001,"timestamp":int(NOW.timestamp())-900,
                  "prb_id":i,"from":f"203.0.113.{i}",
                  "avg":5+i/10} for i in range(1,34)]
+    if mode=="uk_tenders":
+        return {"releases":[{"id":"ocds-release-test","ocid":"ocds-uk-test",
+            "date":STAMP,"tag":["tender"],
+            "tender":{"title":"Synthetic public procurement opportunity"},
+            "buyer":{"name":"Public agency"}}]}
+    if mode=="wiki_edits":
+        return {"query":{"recentchanges":[
+            {"title":"Synthetic transport history","timestamp":STAMP,"rcid":1,
+             "user":"PRIVATE_SHOULD_NOT_APPEAR","anon":True},
+            {"title":"Synthetic transport history","timestamp":STAMP,"rcid":2},
+            {"title":"Synthetic weather history","timestamp":STAMP,"rcid":3}]}}
     if mode=="coops":
         return {"metadata":{"id":"9414290","name":"San Francisco"},
           "data":[{"t":"2026-11-20 16:30","v":"0.82","s":"0.02",
@@ -72,6 +83,8 @@ def fake(url):
     if "api.tidesandcurrents.noaa.gov" in url:return sample("coops")
     if "services.swpc.noaa.gov" in url:return sample("swpc")
     if "atlas.ripe.net" in url:return sample("ripe")
+    if "find-tender.service.gov.uk" in url:return sample("uk_tenders")
+    if ".wikipedia.org" in url:return sample("wiki_edits")
     raise ValueError("Unexpected source host")
 
 
@@ -79,14 +92,15 @@ class AlternativeSensorTests(unittest.TestCase):
     def test_all_adapters_stable_identity_and_original_source_context(self):
         for mode,adapter in (("usgs",adapt_usgs),("eonet",adapt_eonet),
                              ("nws",adapt_nws),("usace",adapt_usace),
-                             ("coops",adapt_coops)):
+                             ("coops",adapt_coops),("uk_tenders",adapt_uk_tenders),
+                             ("wiki_edits",adapt_wiki_edits)):
             with self.subTest(mode=mode):
                 row=adapter(sample(mode),NOW,urls(mode,NOW)[0])[0]
                 self.assertTrue(row["source_url"].startswith("https://"))
                 self.assertEqual(row["provider"],mode)
                 self.assertFalse(row.get("warning_approved",False))
                 self.assertTrue(row["id"].startswith(mode+":"))
-                if mode=="usace":
+                if mode in ("usace","uk_tenders"):
                     self.assertIsNotNone(row["published_at"])
                 else:
                     self.assertIsNotNone(row["event_at"])
@@ -158,6 +172,32 @@ class AlternativeSensorTests(unittest.TestCase):
         item,err=normalize("usgs",row,NOW)
         self.assertIsNone(item)
         self.assertEqual(err,"source_clock_after_observation")
+
+    def test_public_wiki_edit_sample_has_no_editor_identifiers(self):
+        rows=adapt_wiki_edits(sample("wiki_edits"),NOW,urls("wiki_edits",NOW)[0])
+        self.assertEqual(len(rows),1)
+        self.assertEqual(rows[0]["source_measurement"]["value"],3)
+        self.assertEqual(rows[0]["source_measurement"]["distinct_articles_in_sample"],2)
+        self.assertNotIn("PRIVATE_SHOULD_NOT_APPEAR",str(rows))
+        self.assertNotIn("user",str(rows).lower())
+
+    def test_uk_tender_requires_timestamps_and_identifiers(self):
+        rows=adapt_uk_tenders(sample("uk_tenders"),NOW,urls("uk_tenders",NOW)[0])
+        self.assertEqual(len(rows),1)
+        self.assertEqual(rows[0]["published_at"],STAMP)
+        self.assertIn("not_fulfillment",rows[0]["claim_level"])
+        with self.assertRaisesRegex(ValueError,"schema"):
+            adapt_uk_tenders({"releases":{}},NOW,urls("uk_tenders",NOW)[0])
+
+    def test_independent_provider_failure_does_not_block_healthy_provider(self):
+        with tempfile.TemporaryDirectory() as d:
+            state=Path(d)
+            result=collect(state,clock=lambda:NOW,selected=("uk_tenders","wiki_edits"),
+                fetcher=lambda url: (_ for _ in ()).throw(TimeoutError("Unavailable"))
+                if "find-tender" in url else fake(url))
+            self.assertEqual(result["uk_tenders"]["status"],"unavailable")
+            self.assertEqual(result["wiki_edits"]["status"],"partial")
+            self.assertEqual(len(load_json(state/"latest"/"wiki_edits.json")["records"]),3)
 
     def test_station_partial_failure_is_not_a_complete_zero(self):
         def partial(url):
