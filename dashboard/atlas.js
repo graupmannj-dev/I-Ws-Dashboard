@@ -1802,6 +1802,7 @@ async function init(){
     setInterval(refreshFriction,300000);
     window.AtlasLayers.init(data.layer_feed,()=>{state.staticValid=false;},focusRestriction);
     updateKpis();updateDates();resize();
+    updateTabs(); // Keep ARIA state synchronized with the evidence-first default.
     if(typeof ResizeObserver==="function"){
       new ResizeObserver(()=>resize()).observe($("globeWrap"));
     }else window.addEventListener("resize",resize);
