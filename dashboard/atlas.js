@@ -1562,6 +1562,15 @@ function openFamilyWorkspace(selected){
 }
 function bindFamilyWorkspace(){
   const dialog=$("familyWorkspace");
+  // A focused search input may consume Escape to clear its value instead of
+  // dismissing the native dialog. Give the modal consistent keyboard behavior.
+  dialog.addEventListener("keydown",event=>{
+    if(event.key==="Escape"&&dialog.open){
+      event.preventDefault();
+      event.stopPropagation();
+      dialog.close();
+    }
+  },true);
   $("familyWorkspaceClose").addEventListener("click",()=>dialog.close());
   dialog.addEventListener("click",event=>{
     if(event.target===dialog)dialog.close();
