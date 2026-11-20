@@ -1227,6 +1227,112 @@ function renderEvaluationList(){
   frag.appendChild(link);
   list.appendChild(frag);
 }
+
+/* Source-grounded families from all normalized collectors. Visible novelty
+ * never implies independent corroboration or a measured z-score. */
+function renderFamiliesList(){
+  const list=$("watchlist");
+  list.classList.add("behavior-view");
+  list.classList.remove("evaluation-view");
+  list.replaceChildren();
+  $("frictionBriefing").hidden=true;
+  $("watchPanelTitle").firstChild.textContent="Evidence families ";
+  $("watchDetailLink").href="behavior/";
+  $("watchDetailLink").textContent="Collector details →";
+  const d=state.atlas?.dynamic_bins;
+  const families=Array.isArray(d?.families)?d.families:[];
+  $("watchCount").textContent="("+families.length+" displayed)";
+  $("watchFoot").textContent="First-seen chronology · global candidate sources, not confirmed incidents.";
+  const caveat=document.createElement("p");
+  caveat.className="behavior-disclaimer";
+  caveat.textContent="DISCOVERY FIRST · One unusual source is reviewable without corroboration. Fresh means newly captured, not statistically abnormal. No family has a validated z-score yet.";
+  list.appendChild(caveat);
+  if(!families.length){
+    const p=document.createElement("p");p.className="behavior-caution";
+    p.textContent=d?.registry_status==="unavailable"
+      ?"Registry not available in this publication. This is missing coverage, not a quiet world."
+      :"No candidate families in this bounded source snapshot.";
+    list.appendChild(p);return;
+  }
+  const controls=document.createElement("div");
+  controls.className="family-controls";
+  const search=document.createElement("input");
+  search.type="search";search.placeholder="Search family, publisher, or source";
+  search.setAttribute("aria-label","Search evidence families");
+  const status=document.createElement("select");
+  status.setAttribute("aria-label","Filter family lifecycle");
+  for(const [value,label] of [["all","Any lifecycle"],["emerging","Emerging"],["monitoring","Monitoring"],["quiet","Quiet / history"]]){
+    const option=document.createElement("option");option.value=value;option.textContent=label;status.appendChild(option);
+  }
+  controls.append(search,status);list.appendChild(controls);
+  const note=document.createElement("p");note.className="behavior-empty";list.appendChild(note);
+  const results=document.createElement("div");results.className="family-results";list.appendChild(results);
+  function display(){
+    const query=search.value.toLowerCase().trim();
+    const rows=families.filter(f=>
+      (status.value==="all"||f.state===status.value)&&
+      (!query||[f.title,...(f.source_families||[]),...(f.providers||[]),
+         ...(f.case_hints||[]),...(f.sources||[]).map(x=>x.title)].join(" ").toLowerCase().includes(query))
+    );
+    note.textContent=rows.length+" candidates · "+d.candidate_count_total+" indexed"+(d.truncated?" · capped publication":"")+
+      " · independent corroboration unverified";
+    results.replaceChildren();
+    for(const item of rows.slice(0,120)){
+      const b=document.createElement("button");b.type="button";
+      b.className="family-card family-"+safe(item.state);
+      const n=Number(item.information_root_count)||1;
+      b.innerHTML='<div class="family-card-head"><strong>'+safe(item.title||"Untitled source")+'</strong>'+
+       '<span class="family-state">'+safe(item.state||"unreviewed")+'</span></div>'+
+       '<div class="family-meta">'+safe((item.source_families||[]).join(" · ")||"unspecified source")+
+       ' · '+n+' distinct source root'+(n===1?"":"s")+'</div>'+
+       '<small>First evidence '+safe(item.last_observed_at||"unknown")+
+       ' · '+safe(item.geography_label||"No validated event location")+'</small>'+
+       '<small>'+safe(item.reason||"Investigatory source only")+'</small>';
+      b.addEventListener("click",()=>selectFamily(item));
+      results.appendChild(b);
+    }
+  }
+  status.addEventListener("change",display);search.addEventListener("input",display);display();
+}
+function selectFamily(f){
+  const panel=$("selectedDetail");
+  panel.hidden=false;
+  const item=document.createElement("div");
+  item.className="family-detail";
+  item.innerHTML='<div class="detail-top"><div><h3>'+safe(f.title||"Investigatory evidence family")+'</h3>'+
+    '<span class="behavior-status">'+safe(f.state||"unreviewed")+' · NOT A VERIFIED EVENT</span></div>'+
+    '<button class="detail-close" type="button" aria-label="Close family detail">×</button></div>'+
+    '<p>'+safe(f.reason||"Source provenance review required.")+'</p>'+
+    '<p><b>First observed:</b> '+safe(f.first_observed_at||"unknown")+
+    ' · <b>Latest new evidence:</b> '+safe(f.last_observed_at||"unknown")+'</p>'+
+    '<p><b>Historical deviation:</b> Not calibrated. A source-count increase is not a statistical baseline score.</p>'+
+    '<p><b>Corroboration:</b> Unreviewed; information-root count '+safe(f.information_root_count||1)+
+    ', independence not established. <b>Geography:</b> '+safe(f.geography_precision||"unverified")+'</p>';
+  const heading=document.createElement("h4");heading.textContent="Underlying source items";item.appendChild(heading);
+  const ul=document.createElement("ul");ul.className="family-sources";
+  for(const src of (f.sources||[])){
+    const li=document.createElement("li");
+    const link=document.createElement("a");
+    link.textContent=src.title||src.source_family||"Original source";
+    if(safeUrl(src.source_url)){
+      link.href=src.source_url;link.target="_blank";link.rel="noopener noreferrer";
+    }else{
+      link.removeAttribute("href");
+    }
+    const meta=document.createElement("small");
+    meta.textContent=[src.provider||"Source unknown",src.source_family||"unknown family",
+      "First captured "+(src.first_observed_at||"unknown"),
+      "Source published "+(src.published_at||"undated")].join(" · ");
+    li.append(link,meta);ul.appendChild(li);
+  }
+  item.appendChild(ul);
+  if(f.sources_truncated){
+    const note=document.createElement("p");note.textContent="Some repeated source fragments omitted from this bounded preview.";
+    item.appendChild(note);
+  }
+  panel.replaceChildren(item);
+  panel.querySelector(".detail-close").addEventListener("click",()=>{panel.hidden=true;});
+}
 /* Public source-review queue: accepted source evidence, not verified incidents.
  * Unassigned reports remain visible without fabricating source geography. */
 function renderQueueList(){
@@ -1362,6 +1468,7 @@ function renderQueueBanner(){
 function updateWatchlist(){
   if(!state.atlas)return;
   renderQueueBanner();
+  if(state.watchTab==="families"){renderFamiliesList();return;}
   if(state.watchTab==="queue"){renderQueueList();return;}
   if(state.watchTab==="pipeline"){renderPipelineList();return;}
   if(state.watchTab==="behavior"){renderBehaviorList();return;}
@@ -1583,6 +1690,7 @@ function bindControls(){
   $("stepForward").addEventListener("click",()=>shiftWindow(1));
   $("tabAll").addEventListener("click",()=>{state.watchTab="all";updateTabs();});
   $("tabNew").addEventListener("click",()=>{state.watchTab="new";updateTabs();});
+  $("tabFamilies").addEventListener("click",()=>{state.watchTab="families";updateTabs();});
   $("tabQueue").addEventListener("click",()=>{state.watchTab="queue";updateTabs();});
   $("tabPipeline").addEventListener("click",()=>{state.watchTab="pipeline";updateTabs();});
   $("openPipeline").addEventListener("click",()=>{state.watchTab="pipeline";updateTabs();});
@@ -1620,7 +1728,7 @@ function bindControls(){
   });
 }
 function updateTabs(){
-  for(const [id,tab] of [["tabAll","all"],["tabNew","new"],["tabQueue","queue"],["tabPipeline","pipeline"],["tabBehavior","behavior"],["tabEvaluation","evaluation"]]){
+  for(const [id,tab] of [["tabFamilies","families"],["tabAll","all"],["tabNew","new"],["tabQueue","queue"],["tabPipeline","pipeline"],["tabBehavior","behavior"],["tabEvaluation","evaluation"]]){
     const active=state.watchTab===tab;
     $(id).classList.toggle("active",active);
     $(id).setAttribute("aria-pressed",String(active));
@@ -1663,7 +1771,9 @@ function renderEvidenceIntake(){
 }
 function updateKpis(){
   const a=state.atlas;
-  $("kpiWatch").textContent=a.hotspots.length;
+  const familyCount=Number(a.dynamic_bins?.emerging_count)||0;
+  $("familyTabCount").textContent=familyCount?"("+familyCount+" new)":"";
+    $("kpiWatch").textContent=a.hotspots.length;
   $("kpiUpdates").textContent=a.hotspots.filter(x=>x.new_evidence||frictionIsReview(x.id)).length;
   $("kpiReports").textContent=a.reports.length;
   $("kpiAsOf").textContent=a.asof;
@@ -1681,6 +1791,7 @@ async function init(){
     ]);
     if(!Array.isArray(data.hotspots)||!Array.isArray(data.reports)||!Array.isArray(geo.features))throw Error("Unexpected feed schema");
     state.atlas=data;state.countries=geo;
+    if(Array.isArray(data.dynamic_bins?.families)&&data.dynamic_bins.families.length){state.watchTab="families";}
     state.friction=validFriction(data.friction_briefs)?data.friction_briefs:null;
     state.behavior=validBehavior(data.behavioral_discovery)?data.behavioral_discovery:null;
     updateBehaviorTabCount();
