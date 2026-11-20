@@ -29,7 +29,7 @@ SCHEMA="cairn.alternative-sensors.v1"
 MAX_BYTES=8_000_000  # bounded for full public RIPE built-in probe cohort
 MAX_RECORDS=110
 USER_AGENT="CAIRN-Public-Alternative-Sensors/1.0 (github.com/graupmannj-dev/I-Ws-Dashboard)"
-MODES=("usgs","eonet","nws","usace","coops","swpc","ripe","uk_tenders","wiki_edits","fema_cbp")
+MODES=("usgs","eonet","nws","usace","coops","swpc","ripe","uk_tenders","wiki_edits","cbp_wait")
 SCOPE={
     "usgs":"USGS M4.5+ earthquakes worldwide, rolling past day; source thresholds apply",
     "eonet":"NASA EONET open natural event catalog, recent 7 days; limit 110",
@@ -40,7 +40,7 @@ SCOPE={
     "ripe":"RIPE Atlas built-in K-root ping #1001, global public-probe aggregate; not country coverage",
     "uk_tenders":"UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
     "wiki_edits":"Wikipedia main-namespace edit-count sample, en/fr/es, three-hour window capped at 500 per wiki",
-    "fema_cbp":"FEMA mirror of CBP southern-border port wait estimates, hourly source refresh; not observed traffic volume",
+    "cbp_wait":"CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
 }
 PORT_STATIONS={
     "9414290":"San Francisco, CA",
@@ -54,10 +54,10 @@ HOST_ALLOW={
  "swpc":"services.swpc.noaa.gov","ripe":"atlas.ripe.net",
  "uk_tenders":"www.find-tender.service.gov.uk",
  "wiki_edits":"en.wikipedia.org",
- "fema_cbp":"gis.fema.gov",
+ "cbp_wait":"bwt.cbp.gov",
 }
 MAX_URLS={"usgs":1,"eonet":1,"nws":1,"usace":3,"coops":3,"swpc":1,"ripe":1,
-          "uk_tenders":1,"wiki_edits":3,"fema_cbp":1}
+          "uk_tenders":1,"wiki_edits":3,"cbp_wait":1}
 MAX_RIPE_PROBES=60000
 
 
@@ -130,13 +130,8 @@ def urls(mode,now):
     if mode=="ripe":
         return ["https://atlas.ripe.net/api/v2/measurements/1001/latest/?"+
                 urllib.parse.urlencode({"versions":1,"lookback_days":1,"public_only":"true"})]
-    if mode=="fema_cbp":
-        base="https://gis.fema.gov/arcgis/rest/services/Partner/BorderPorts_CBP/FeatureServer/0/query?"
-        return [base+urllib.parse.urlencode({
-          "where":"1=1","outFields":"port_number,port_name,crossing_name,border,port_status,"
-                                   "date_,com_stand_delay,com_stand_status,com_stand_open",
-          "returnGeometry":"false","f":"json"
-        })]
+    if mode=="cbp_wait":
+        return ["https://bwt.cbp.gov/api/waittimes"]
     if mode=="uk_tenders":
         return ["https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?"+
                 urllib.parse.urlencode({"limit":100,
@@ -174,7 +169,7 @@ def entry(mode,rid,title,url,checked,*,event_at=None,published=None,kind="source
         "observed_at":iso(checked),"event_at":iso(event) if event else None,
         "published_at":iso(pub) if pub else None,
         "first_seen_at":iso(first) if first else None,
-        "claim_level":"estimated_border_waits_not_vehicle_volume_or_mobilization" if mode=="fema_cbp"
+        "claim_level":"estimated_border_waits_not_vehicle_volume_or_mobilization" if mode=="cbp_wait"
                      else "official_tender_release_not_fulfillment_or_intent" if mode=="uk_tenders"
                      else "public_edit_activity_not_event_confirmation" if mode=="wiki_edits"
                      else "environmental_context_not_hostile_attribution" if mode in ("usgs","eonet","nws","coops","swpc")
@@ -497,51 +492,65 @@ def adapt_wiki_edits(data,checked,url):
         source_scope=SCOPE["wiki_edits"])]
 
 
-def adapt_fema_cbp(data,checked,url):
-    """FEMA public mirror of CBP's southern land-border port estimates.
+def adapt_cbp_wait(data,checked,url):
+    """Primary U.S. CBP port wait feed, public *estimated* commercial delays.
 
-    Delay estimates are not observed truck counts or a military movement
-    measurement. Copy only published port-level statistics; never reconstruct
-    individual trajectories from reports.
+    Port date/time strings are local wall-clock values without a trustworthy
+    per-port UTC offset. Do NOT invent a UTC event time from these fields.
     """
-    if not isinstance(data,dict) or not isinstance(data.get("features"),list):
-        raise ValueError("FEMA/CBP ArcGIS feature response schema mismatch")
-    if data.get("exceededTransferLimit"):
-        raise ValueError("FEMA/CBP result exceeded feature transfer limit")
+    if not isinstance(data,list) or len(data)>MAX_RECORDS:
+        raise ValueError("CBP port-wait list missing or exceeds bound")
     result=[]
-    for feature in data["features"]:
-        if not isinstance(feature,dict):continue
-        a=feature.get("attributes")
-        if not isinstance(a,dict):continue
-        port=clean(a.get("port_number"),60)
-        name=clean(a.get("port_name"),100)
-        crossing=clean(a.get("crossing_name"),100)
-        stamp=parse_time(a.get("date_"))
-        if not port or not name or not stamp or not dt.timedelta(0)<=checked-stamp<=dt.timedelta(hours=12):
+    for port in data:
+        if not isinstance(port,dict):continue
+        ident=clean(port.get("port_number"),50)
+        name=clean(port.get("port_name"),100)
+        crossing=clean(port.get("crossing_name"),100)
+        date_text=clean(port.get("date"),20)
+        local_time=clean(port.get("time"),24)
+        if not ident or not name:
             continue
-        rawdelay=a.get("com_stand_delay")
-        delay=rawdelay if type(rawdelay) is int and 0<=rawdelay<=720 else None
-        status=clean(a.get("port_status"),35)
-        rid=port+":"+stamp.strftime("%Y%m%dT%H%M%SZ")
-        description="FEMA/CBP estimated commercial border wait, "+name
-        if crossing:description+=" / "+crossing
-        row=entry("fema_cbp",rid,description,url,checked,
-                  event_at=iso(stamp),published=iso(stamp),first_seen=iso(stamp),
-                  kind="published_border_port_wait_estimate_not_measured_volume",
-                  geo={"key":"border-port:"+port,"kind":"published_port_of_entry",
-                       "label":name,"precision":"source_port_not_security_incident",
+        try:local_date=dt.datetime.strptime(date_text,"%m/%d/%Y").date()
+        except ValueError:continue
+        # U.S. port-local date may lag UTC by a day, but not multiple days.
+        if not (checked.date()-dt.timedelta(days=1)<=local_date<=
+                checked.date()+dt.timedelta(days=1)):
+            continue
+        if not re.fullmatch(r"\\d{1,2}:\\d{2}:\\d{2}",local_time):
+            continue
+        lanes=port.get("commercial_vehicle_lanes") or {}
+        if not isinstance(lanes,dict):lanes={}
+        standard=lanes.get("standard_lanes") or {}
+        if not isinstance(standard,dict):standard={}
+        raw_delay=clean(standard.get("delay_minutes"),12)
+        delay=int(raw_delay) if raw_delay.isdigit() and int(raw_delay)<=720 else None
+        lanes_open=clean(standard.get("lanes_open"),12)
+        lanes_open=int(lanes_open) if lanes_open.isdigit() and int(lanes_open)<=100 else None
+        status=clean(port.get("port_status"),40)
+        # Original publisher fields remain in local wall time; not asserted as
+        # source-published UTC timestamps.
+        rid=ident+":"+local_date.isoformat()+":"+local_time
+        title="CBP estimated commercial border wait — "+name
+        if crossing:title+=" / "+crossing
+        row=entry("cbp_wait",rid,title,url,checked,
+                  kind="published_commercial_wait_estimate_not_vehicle_volume",
+                  geo={"key":"us-border-port:"+ident,"kind":"source_identified_port",
+                       "label":name,"precision":"published_crossing_not_event_location",
                        "latitude":None,"longitude":None,"verified_iso":False},
-                  measurement={"name":"estimated_commercial_standard_lane_wait",
-                      "unit":"minutes","value":delay,"port_status":status,
-                      "lane_status":clean(a.get("com_stand_status"),45),
-                      "lanes_open":a.get("com_stand_open") if type(a.get("com_stand_open")) is int else None,
-                      "source_declared_border":clean(a.get("border"),55),
+                  measurement={"name":"published_commercial_standard_lane_wait",
+                      "value":delay,"unit":"minutes","lanes_open":lanes_open,
+                      "port_status":status,
+                      "lane_status":clean(standard.get("operational_status"),50),
+                      "reported_local_date":date_text,"reported_local_time":local_time,
+                      "reported_lane_clock":clean(standard.get("update_time"),70),
+                      "source_timezone_resolved":False,
+                      "source_declared_border":clean(port.get("border"),55),
                       "baseline_status":"not_calibrated",
                       "not_a_vehicle_throughput_measurement":True},
-                  source_scope=SCOPE["fema_cbp"])
+                  source_scope=SCOPE["cbp_wait"])
         if row:result.append(row)
     if not result:
-        raise ValueError("FEMA/CBP lacks fresh identifiable port estimates")
+        raise ValueError("CBP returned no identifiable current-date port records")
     return result
 
 
@@ -549,7 +558,7 @@ ADAPTERS={"usgs":adapt_usgs,"eonet":adapt_eonet,"nws":adapt_nws,
           "usace":adapt_usace,"coops":adapt_coops,
           "swpc":adapt_swpc,"ripe":adapt_ripe,
           "uk_tenders":adapt_uk_tenders,"wiki_edits":adapt_wiki_edits,
-          "fema_cbp":adapt_fema_cbp}
+          "cbp_wait":adapt_cbp_wait}
 
 
 def collect(state,clock=None,fetcher=json_get,selected=MODES):
@@ -575,7 +584,7 @@ def collect(state,clock=None,fetcher=json_get,selected=MODES):
                 errors.append(clean(type(exc).__name__+": "+str(exc),180))
         # Provider responses are bounded and explicitly marked partial;
         # collection never silently truncates and claims exhaustive coverage.
-        truncated=len(success)>MAX_RECORDS or len(errors)>0 or mode in ("usace","nws","eonet","coops","uk_tenders","wiki_edits","fema_cbp")
+        truncated=len(success)>MAX_RECORDS or len(errors)>0 or mode in ("usace","nws","eonet","coops","uk_tenders","wiki_edits","cbp_wait")
         kept=success[:MAX_RECORDS]
         ok=len(errors)<len(source_urls)
         status="partial" if ok and truncated else "collected" if ok else "unavailable"
@@ -593,7 +602,7 @@ def collect(state,clock=None,fetcher=json_get,selected=MODES):
                 "environmental_hazard_reporting" if mode in ("usgs","eonet","nws","swpc")
                 else "official_navigation_notice" if mode=="usace"
                 else "aggregate_public_network_ping" if mode=="ripe"
-                else "official_border_wait_estimate" if mode=="fema_cbp"
+                else "official_cbp_border_wait_estimate" if mode=="cbp_wait"
                 else "official_public_procurement_release" if mode=="uk_tenders"
                 else "public_encyclopedia_edit_aggregate" if mode=="wiki_edits"
                 else "station_physical_measurement"),
