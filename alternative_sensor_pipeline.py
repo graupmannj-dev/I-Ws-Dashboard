@@ -328,7 +328,7 @@ def adapt_swpc(data,checked,url):
         if not isinstance(message,str) or not message.strip():continue
         serial=re.search(r"Serial Number:\s*(\d+)",message,re.I)
         serial_id=serial.group(1) if serial else digest(message)
-        rid=f"{product}:{serial_id}:{stamp.strftime('%Y%m%d')}"
+        rid=f"{product}:{serial_id}:{stamp.strftime('%Y%m%dT%H%M%SZ')}"
         headline=next((clean(line,140) for line in message.splitlines()
                        if re.match(r"^(?:ALERT|WARNING|WATCH|CONTINUED ALERT|EXTENDED WARNING):",
                                    line.strip(),re.I)),
