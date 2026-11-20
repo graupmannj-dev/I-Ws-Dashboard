@@ -342,6 +342,18 @@ def generate(site, generated=None, state_dir=None):
         archive.get("root_count_total") if archive_available else None)
     dynamic_families["archive_public_truncated"] = (
         archive.get("public_snapshot_truncated") if archive_available else None)
+    # Hypothesis center: explicit case IDs and reviewer-tagged evidence only.
+    # Historical dossier source items are visible, not reverified as live data.
+    try:
+        from dashboard.hypothesis_evidence import build as build_hypothesis_views
+    except ModuleNotFoundError:
+        from hypothesis_evidence import build as build_hypothesis_views
+    hypothesis_views = build_hypothesis_views(
+        records, dynamic_families, registry.get("source_health", {}),
+        read(ROOT / "data" / "hypothesis_reviews.json", {}),
+        generated_at=now)
+    (site / "hypotheses.json").write_text(
+        json.dumps(hypothesis_views, ensure_ascii=False, indent=2), encoding="utf-8")
     # Only safe source monitoring context is included publicly. The private
     # forecast ledger, Sigstore subject records and outcome labels stay off
     # GitHub Pages until a separately approved audited aggregate pipeline.
@@ -370,6 +382,9 @@ def generate(site, generated=None, state_dir=None):
         "intake_queue_new_count": new_queue_count,
         "visibility_funnel": visibility_funnel,
         "dynamic_bins": dynamic_families,
+        "hypothesis_views": {"url": "hypotheses.html",
+                             "hypothesis_count": hypothesis_views["hypothesis_count"],
+                             "reviewed_hypotheses": hypothesis_views["reviewed_hypotheses"]},
         "warning_evaluation": evaluation,
         "behavior_live_url": "https://raw.githubusercontent.com/graupmannj-dev/I-Ws-Dashboard/aiba-feed-data/observations/latest/behavioral_fusion.json",
         "friction_live_url": "https://raw.githubusercontent.com/graupmannj-dev/I-Ws-Dashboard/aiba-feed-data/observations/latest/friction_briefs.json",
@@ -406,7 +421,8 @@ def generate(site, generated=None, state_dir=None):
     (site / "atlas.json").write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
     asset_dir = site / "dashboard"
     asset_dir.mkdir(exist_ok=True)
-    for name in ("atlas.css", "atlas.js", "layers.js", "countries.geojson"):
+    for name in ("atlas.css", "atlas.js", "layers.js", "countries.geojson",
+                 "hypotheses.css", "hypotheses.js"):
         shutil.copyfile(WEB / name, asset_dir / name)
     if not (site / "layers.json").exists():
         try:
@@ -420,6 +436,7 @@ def generate(site, generated=None, state_dir=None):
         (site / "classic.html").write_bytes(prior.read_bytes())
     shutil.copyfile(WEB / "atlas.html", prior)
     shutil.copyfile(WEB / "sources.html", site / "sources.html")
+    shutil.copyfile(WEB / "hypotheses.html", site / "hypotheses.html")
     shutil.copyfile(WEB / "source_status.js", asset_dir / "source_status.js")
     return payload
 

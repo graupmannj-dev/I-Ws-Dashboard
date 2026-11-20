@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#0c1420">
+  <title>CAIRN | Hypothesis evidence</title>
+  <link rel="stylesheet" href="dashboard/hypotheses.css">
+</head>
+<body>
+<header class="topbar">
+  <a href="./" class="brand">◈ CAIRN</a>
+  <div class="top-title"><strong>Hypothesis-centered evidence</strong><span>Evidence families · source health · competing explanations</span></div>
+  <nav><a href="./">Atlas globe</a><a href="sources.html">Source health</a></nav>
+</header>
+<main class="shell">
+  <div class="hero">
+    <div><p class="eyebrow">INVESTIGATORY WORKSPACE · NOT AN OPERATIONAL WARNING</p>
+      <h1>Competing hypotheses, visible evidence</h1>
+      <p>Every source remains dated and attributable. Evidence direction is assigned only through explicit analyst reviews. A shared topic or source is not automatic corroboration.</p>
+    </div>
+    <div class="summary" id="snapshotStatus" aria-live="polite">Loading hypothesis index…</div>
+  </div>
+  <div class="layout">
+    <aside class="case-list-pane" aria-label="Analytical hypotheses">
+      <div class="case-toolbar">
+        <label for="caseSearch">Find a hypothesis</label>
+        <input id="caseSearch" type="search" placeholder="Region, scenario or source" autocomplete="off">
+        <label for="caseFilter">Evidence balance</label>
+        <select id="caseFilter">
+          <option value="all">All hypotheses</option>
+          <option value="reviewed">With reviewed direction</option>
+          <option value="unassessed">Unassessed</option>
+        </select>
+        <p id="caseCount" class="muted" aria-live="polite">—</p>
+      </div>
+      <div id="caseList" class="case-list"><p class="muted">Reading source cases…</p></div>
+    </aside>
+    <article class="case-detail" id="caseDetail" aria-label="Selected hypothesis" aria-live="polite">
+      Select a hypothesis to examine the original evidence.
+    </article>
+  </div>
+</main>
+<script defer src="dashboard/hypotheses.js"></script>
+</body></html>

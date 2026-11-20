@@ -1,0 +1,141 @@
+/* CAIRN source-honest hypothesis viewer. No implied probability calculation. */
+(() => {
+"use strict";
+const $ = id => document.getElementById(id);
+const escapeHtml = value => String(value ?? "").replace(/[&<>"']/g, c =>
+  ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const safeUrl = value => {
+  try {const u = new URL(value);return u.protocol === "https:" && !u.username && !u.password ? u.href : null;}
+  catch {return null;}
+};
+let rows = [], selected = null;
+const labels = {supports:"Supports hypothesis", contradicts:"Contradicts hypothesis",
+  context:"Context / explanation",not_assessed:"Direction not reviewed"};
+const order = {supports:0,contradicts:1,context:2,not_assessed:3};
+
+function caseLabel(c) {
+  const b=c.balance||{};
+  return b.direction==="not_assessed" ? "No reviewed directional evidence" :
+    b.direction==="leans_support" ? "Review balance: leans supporting" :
+    b.direction==="leans_contradict" ? "Review balance: leans contradicting" :
+    "Review balance: mixed";
+}
+function pill(value,cls) {
+  return '<span class="pill '+escapeHtml(cls||"")+'">'+escapeHtml(value)+'</span>';
+}
+function listCases() {
+  const query=$("caseSearch").value.trim().toLowerCase(),filter=$("caseFilter").value;
+  const shown=rows.filter(c=>(filter==="all" ||
+      (filter==="reviewed"&&c.balance.direction!=="not_assessed") ||
+      (filter==="unassessed"&&c.balance.direction==="not_assessed")) &&
+    (!query||([c.title,c.hypothesis,c.standing_state,...c.families.map(f=>f.title)]
+      .join(" ").toLowerCase().includes(query))));
+  $("caseCount").textContent=shown.length+" of "+rows.length+" hypotheses";
+  const host=$("caseList");host.replaceChildren();
+  for(const c of shown) {
+    const b=document.createElement("button");b.type="button";
+    b.className="case-tile"+(selected===c.id?" active":"");
+    b.setAttribute("aria-pressed",selected===c.id?"true":"false");
+    const header=document.createElement("strong");header.textContent=c.title||c.id;
+    const desc=document.createElement("span");desc.textContent=c.hypothesis||"Hypothesis not specified";
+    const meta=document.createElement("small");
+    meta.textContent=(c.family_count||0)+" evidence families · "+caseLabel(c);
+    b.append(header,desc,meta);b.addEventListener("click",()=>showCase(c.id));
+    host.appendChild(b);
+  }
+  if(!shown.length){const p=document.createElement("p");p.className="muted";p.textContent="No matching hypotheses.";host.appendChild(p);}
+}
+function familyCard(f){
+  const health=f.health||{}, review=f.review||{},sources=Array.isArray(f.sources)?f.sources:[];
+  const direction=f.direction||"not_assessed";
+  const providers=sources.map(s=>s.provider).filter(Boolean);
+  const reasons=review.rationale?'<p class="review-reason"><strong>Reviewer rationale:</strong> '+escapeHtml(review.rationale)+'</p>':
+    '<p class="muted">No directional assessment on file. Source novelty or topic association is not evidence of this hypothesis.</p>';
+  const links=sources.map(s=>{
+    const u=safeUrl(s.source_url);
+    return '<li>'+ (u?'<a href="'+escapeHtml(u)+'" target="_blank" rel="noopener noreferrer">'+
+      escapeHtml(s.title||"Original source")+'</a>':escapeHtml(s.title||"Unlinked source"))+
+      '<span class="source-meta">'+escapeHtml(s.provider||"Unknown publisher")+
+      ' · '+escapeHtml(s.observed_at||"Date not verified")+
+      ' · '+escapeHtml(s.assessment||"No event validation")+'</span></li>';
+  }).join("");
+  return '<details class="evidence-card"><summary><span class="evidence-heading">'+
+    '<strong>'+escapeHtml(f.title||f.evidence_key)+'</strong>'+
+    '<span>'+pill(labels[direction]||"Unassessed","direction "+direction)+
+    pill(health.status||"unknown","health "+(health.status||"unknown"))+'</span>'+
+    '</span><span class="evidence-sub">'+escapeHtml(f.source_mechanism||"Unclassified observation")+
+    ' · '+escapeHtml(providers.filter((x,i,a)=>a.indexOf(x)===i).join(", ")||"Publisher unspecified")+'</span></summary>'+
+    '<div class="evidence-body">'+reasons+
+    '<dl><dt>Source check</dt><dd>'+escapeHtml(health.checked_at||"No live check")+
+    '</dd><dt>Collection scope</dt><dd>'+escapeHtml(health.coverage||"Unknown")+
+    '</dd><dt>Information roots</dt><dd>'+escapeHtml(f.source_root_count ?? "unknown")+
+    ' (independence not assumed)</dd><dt>Links to hypotheses</dt><dd>'+
+    escapeHtml((f.linked_hypotheses||[]).join(", "))+'</dd></dl>'+
+    (review?'<p class="review-meta">Ordinal strength '+escapeHtml(review.strength)+
+      '/3 · dependency group '+escapeHtml(review.dependency_group)+
+      ' · reviewed '+escapeHtml(review.reviewed_at)+'</p>':'')+
+    '<h4>Source records ('+sources.length+')</h4><ul class="source-links">'+links+'</ul></div></details>';
+}
+function showCase(id){
+  selected=id;listCases();const c=rows.find(x=>x.id===id);
+  const host=$("caseDetail");if(!c)return;
+  const balance=c.balance||{},score=balance.signed_ordinal_balance;
+  const assessed=typeof score==="number"&&Number.isFinite(score);
+  const at=assessed ? Math.max(0,Math.min(100,50+score*45)) : 50;
+  const groups={supports:[],contradicts:[],context:[],not_assessed:[]};
+  for(const f of c.families||[]) (groups[f.direction]||groups.not_assessed).push(f);
+  const sections=Object.keys(groups).sort((a,b)=>order[a]-order[b]).filter(k=>groups[k].length)
+    .map(k=>'<section class="evidence-section"><h3>'+escapeHtml(labels[k])+
+      ' <span>'+groups[k].length+'</span></h3>'+
+      groups[k].map(familyCard).join("")+'</section>').join("");
+  host.innerHTML='<p class="eyebrow">SOURCE-DATED HYPOTHESIS · '+escapeHtml(c.dossier_asof||"DATE UNKNOWN")+'</p>'+
+    '<h2>'+escapeHtml(c.title||c.id)+'</h2>'+
+    '<p class="scenario">'+escapeHtml(c.hypothesis||"Hypothesis unspecified")+'</p>'+
+    '<p>'+escapeHtml(c.overview||"No analysis on file")+'</p>'+
+    '<section class="balance"><div class="balance-title"><h3>Direction of reviewed evidence</h3>'+
+      pill(caseLabel(c),assessed?(score>0.2?"supports":score< -0.2?"contradicts":"context"):"not_assessed")+
+      '</div><div class="balance-track" role="img" aria-label="'+
+      escapeHtml(assessed?"Ordinal evidence balance "+score:"Evidence not directionally reviewed")+'">'+
+      '<span class="balance-mid"></span>'+(assessed?'<span class="balance-marker" style="left:'+at+'%"></span>':'')+
+      '</div><div class="balance-axis"><span>Contradicting</span><span>Undetermined</span><span>Supporting</span></div>'+
+      '<p class="muted">'+(assessed?('Reviewed ordinal strengths: '+balance.support_strength+
+        ' supporting / '+balance.contradict_strength+' contradicting. '):'No reviewer-approved signed evidence has been attached. ')+
+        'This is not a probability or automated threat rating.</p>'+
+      (balance.conflicting_dependency_groups_excluded?
+        '<p class="muted">'+balance.conflicting_dependency_groups_excluded+' dependency conflicts excluded pending resolution.</p>':'')+
+    '</section>'+
+    '<div class="panel-grid"><section><h3>Alternative explanatory hypotheses</h3>'+
+      ((c.alternatives||[]).length?
+        '<ol>'+c.alternatives.slice(0,3).map(x=>'<li>'+escapeHtml(x)+'</li>').join("")+'</ol>':
+        '<p class="muted">No sourced alternatives entered; analyst review required.</p>')+
+      '</section><section><h3>Potential discriminating evidence</h3>'+
+        '<p>'+escapeHtml(c.next_discriminators||"No discriminating observations specified.")+'</p></section></div>'+
+    '<div class="evidence-top"><h3>Families of evidence</h3><p>'+
+      escapeHtml(c.family_count)+' linked families · '+escapeHtml(c.reviewed_family_count)+
+      ' with analyst-reviewed roles. Source health is distinct from hypothesis support.</p></div>'+
+      sections+'<footer class="disclaimer">Historical dossiers and unreviewed source-family case hints are not current intelligence assessments. Missing feeds cannot contradict a hypothesis without an explicit expectation and adequate coverage.</footer>';
+  host.scrollTop=0;
+}
+async function start(){
+  try{
+    const res=await fetch("hypotheses.json",{cache:"no-store"});
+    if(!res.ok)throw Error("HTTP "+res.status);
+    const payload=await res.json();
+    if(payload.schema!=="cairn.hypothesis-evidence.v1"||!Array.isArray(payload.hypotheses))
+      throw Error("Unsupported hypothesis index");
+    rows=payload.hypotheses;
+    $("snapshotStatus").textContent=(payload.hypothesis_count||0)+" scenarios · "+
+      (payload.reviewed_hypotheses||0)+" with explicit review · "+
+      (payload.generated_at||"Unknown build time");
+    const initial=new URLSearchParams(window.location.search).get("id");
+    $("caseSearch").addEventListener("input",listCases);
+    $("caseFilter").addEventListener("change",listCases);
+    showCase(rows.some(c=>c.id===initial)?initial:rows[0]?.id);
+  }catch(error){
+    $("snapshotStatus").textContent="Hypothesis index unavailable";
+    $("caseList").textContent="Source-backed hypothesis data could not be loaded: "+error.message;
+    $("caseDetail").textContent="Missing or invalid publication is not an all-clear.";
+  }
+}
+start();
+})();
