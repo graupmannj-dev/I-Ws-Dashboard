@@ -32,6 +32,8 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
+      - name: Install pinned local embedding dependencies
+        run: python -m pip install -r requirements.txt
       - name: Inspect automatic family assignments from real registry without writing
         run: |
           python - <<'PY'
@@ -86,6 +88,8 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
+      - name: Install pinned local embedding dependencies
+        run: python -m pip install -r requirements.txt
       - name: Verify Denmark official topic grouping on real saved notices
         run: |
           python - <<'PY'
@@ -134,6 +138,8 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
+      - name: Install pinned local embedding dependencies
+        run: python -m pip install -r requirements.txt
       - name: Dry-run archive migration on actual public evidence snapshots
         run: |
           python - <<'PY'

@@ -23,6 +23,11 @@ try:
 except ImportError:
     from evidence_facets import facets, qualified_metric
     from topic_families import COUNTRIES, region_from_title
+try:
+    from .topic_semantics import LocalTopicEmbeddings, normalized_terms, SCHEMA as EMBEDDING_SCHEMA
+except ImportError:
+    from topic_semantics import LocalTopicEmbeddings, normalized_terms, SCHEMA as EMBEDDING_SCHEMA
+
 
 SCHEMA = "aiba.automatic-analytical-topics.v1"
 MAX_DOCS_PER_UPDATE = 6000
@@ -62,13 +67,14 @@ ALIASES = {
     "ships":"ship","vessels":"vessel","vessel":"vessel",
     "strikes":"strike","attacks":"attack","attacked":"attack",
     "invasions":"invasion","invading":"invasion","blockades":"blockade",
+    "blocking":"blockade","blocked":"blockade","blocks":"blockade",
     "disruptions":"disruption","outages":"outage","stoppages":"stop",
     "agreements":"agreement","routes":"route",
     "russian":"russia","iranian":"iran","danish":"denmark",
     "chinese":"china","taiwanese":"taiwan",
 }
 DOMAIN_HINTS = {
-    "maritime":frozenset(("ship","vessel","shipping","port","naval","maritime","sea","strait","ferry","tanker","cruise","hormuz")),
+    "maritime":frozenset(("ship","vessel","shipping","port","naval","maritime","sea","strait","ferry","tanker","cruise","hormuz","blockade","interdiction","freight","freighter","freighters","cargo")),
     "aviation":frozenset(("flight","aircraft","airport","airspace","aviation","freighter","tfr","faa")),
     "network":frozenset(("internet","network","connectivity","outage","bgp","dns","routing","cyber")),
 }
@@ -202,6 +208,113 @@ def _similar(doc,seed):
     return (min(1.0,lexical+boost),sorted(meaningful))
 
 
+# Broad functional roles are linguistic safeguards, not a country/event
+# allowlist. Incompatible explicit roles never merge automatically.
+ACTIVITY_ROLES = {
+    "blockade":frozenset(("blockade","interdict","embargo","interdiction")),
+    "kinetic":frozenset(("attack","strike","bomb","explosion","assault","missile")),
+    "agreement":frozenset(("agreement","accord","negotiation","talks","treaty","deal")),
+    "exercise":frozenset(("exercise","training","drill","firing","gunnery")),
+    "outage":frozenset(("outage","blackout","disruption","offline")),
+    "closure":frozenset(("closure","closed","restrict","restriction")),
+    "movement":frozenset(("movement","deployment","diversion","rerouting","shipment")),
+    "seizure":frozenset(("seizure","captured","capture","occupy","occupation")),
+}
+HYBRID_AUTO_THRESHOLD=0.68
+HYBRID_SUBJECT_THRESHOLD=0.55
+TEMPLATE_WORDS=frozenset((
+    "faa tfr temporary restrictions restricted restriction notice source "
+    "advisory bulletin status official airport flight airspace country "
+    "connectivity anomaly detected news report latest update security"
+).split())
+MAX_SEMANTIC_SEEDS=2800
+BROAD_SUBJECT_WORDS=frozenset((
+    "ship shipping cargo freight freighter maritime naval sea ocean vessel port "
+    "traffic airspace aircraft airport flight network internet mobile "
+    "official bulletin warning source operations report halt announced "
+    "temporary state government"
+).split())
+
+
+def _named_subjects(title):
+    # Candidate named subjects only; they are not event/geolocation claims.
+    words=re.findall(r"\b[A-Z][a-z]{3,}\b",title or "")
+    result=set()
+    for word in words:
+        result.update(normalized_terms(word))
+    return result-BROAD_SUBJECT_WORDS-GENERIC-NOISE
+
+
+
+def _roles(title):
+    tokens=set(normalized_terms(title))
+    return frozenset(name for name,items in ACTIVITY_ROLES.items()
+                     if tokens&items)
+
+
+def _reasoning(doc,seed,metric):
+    """Hard gates prevent false thematic joins before any soft similarity."""
+    if doc["domain"]!=seed["domain"]:
+        return None
+    if doc["domain"]=="advisory":
+        return None
+    ga=set(doc["geo"]);gb=set(seed.get("geo") or [])
+    if ga and gb and ga.isdisjoint(gb):
+        return None
+    doc_roles=_roles(doc["title"])
+    seed_roles=_roles(seed["title"])
+    if doc_roles and seed_roles and doc_roles.isdisjoint(seed_roles):
+        return None
+    # Similarity alone is insufficient where only template boilerplate remains.
+    a=set(normalized_terms(doc["title"]))-GENERIC-NOISE
+    z=set(normalized_terms(seed["title"]))-GENERIC-NOISE
+    shared=(a&z)-TEMPLATE_WORDS
+    legacy,legacy_terms=_similar(doc,seed)
+    same_subject=bool(ga and gb and ga.intersection(gb))
+    shared_roles=bool(doc_roles and seed_roles and not doc_roles.isdisjoint(seed_roles))
+    # Existing accepted high-precision lexical matches remain available.
+    legacy_ok=legacy>=MIN_SIMILARITY
+    hybrid_ok=(metric["score"]>=HYBRID_AUTO_THRESHOLD and len(shared)>=2)
+    # This condition can recognize paraphrases when two different phrasings
+    # share a reported entity and general activity, but it must not unite
+    # all reporting about that country.
+    # Shared non-template subject/entity terms and a compatible activity
+    # allow paraphrased reports across different original publishers. A
+    # standalone country or generic activity word does NOT suffice.
+    role_tokens=set().union(*ACTIVITY_ROLES.values())
+    shared_named=_named_subjects(doc["title"])&_named_subjects(seed["title"])
+    # Short articles and market contracts often have too little corpus
+    # context for SVD. Strong role + shared named entity + several mapped
+    # substantive terms is therefore an independent high-precision route.
+    paraphrase_ok=(
+        shared_roles and len(shared)>=2 and bool(shared_named)
+        and (metric["score"]>=0.20 or legacy>=0.30)
+    ) or (
+        metric["score"]>=HYBRID_SUBJECT_THRESHOLD
+        and same_subject and shared_roles and len(shared)>=2
+        and bool((shared-role_tokens)-BROAD_SUBJECT_WORDS)
+        and (metric["latent_cosine"] or 0)>=0.67
+    )
+    if not (legacy_ok or hybrid_ok or paraphrase_ok):
+        return None
+    if len(shared)<2 and not paraphrase_ok and not legacy_ok:
+        return None
+    return {
+        "method":EMBEDDING_SCHEMA if hybrid_ok or paraphrase_ok else "legacy_sparse_v1",
+        "score":round(max(metric["score"],legacy),4),
+        "raw_text_similarity":metric["tfidf_cosine"],
+        "latent_semantic_similarity":metric["latent_cosine"],
+        "shared_subject_terms":sorted(shared)[:12],
+        "shared_named_subjects":sorted(_named_subjects(doc["title"])&_named_subjects(seed["title"]))[:8],
+        "shared_activity_roles":sorted(doc_roles & seed_roles),
+        "subject_geography_compatible":not (ga and gb and ga.isdisjoint(gb)),
+        "same_source_document":False,
+        "same_incident_proven":False,
+        "independent_corroboration_proven":False,
+        "review_status":"unreviewed_automatic_topic_match",
+    }
+
+
 def _seed(doc):
     return {
         "terms":dict(doc["terms"]), "geo":sorted(doc["geo"]),
@@ -224,14 +337,16 @@ def _valid_prior(prior):
 
 
 def assign(rows, prior=None):
-    """Idempotent, append-only topic assignments from bounded source documents.
+    """Autonomously attach source documents to long-lived, unreviewed themes.
 
-    Historic IDs are retained. A new document attaches only if it matches a
-    stable seed by meaningful terms, compatible subject and source domain.
-    Unqualified documents remain searchable as independent source records.
+    Stable existing membership always wins. For *new* documents, hybrid local
+    embeddings broaden candidate retrieval, while explicit source geography,
+    domain, activity-role and boilerplate gates control false joins.
     """
     out=_valid_prior(prior)
-    groups=out["groups"]; assignments=out["assignments"]
+    groups=out["groups"]
+    assignments=out["assignments"]
+    explanations=out.setdefault("assignment_explanations",{})
     docs=documents(rows)
     if len(docs)>MAX_DOCS_PER_UPDATE:
         docs=docs[-MAX_DOCS_PER_UPDATE:]
@@ -240,49 +355,102 @@ def assign(rows, prior=None):
         out["input_truncated"]=False
     inverted=defaultdict(set)
     for gid,g in groups.items():
-        seed=g.get("seed") or {}
-        for t in seed.get("terms",{}):
-            if t not in GENERIC:
-                inverted[t].add(gid)
+        for term in (g.get("seed") or {}).get("terms",{}):
+            if term not in GENERIC:
+                inverted[term].add(gid)
+
+    # Train local latent-semantic vectors once per batch, using persisted topic
+    # seed titles plus fresh source titles. Stable assignments do NOT depend
+    # on subsequent embeddings or models being available.
+    ordered=sorted(groups,key=lambda gid:(
+        groups[gid].get("last_document_at") or groups[gid].get("first_document_at") or "",
+        gid),reverse=True)
+    existing_semantic_seeds=ordered[:MAX_SEMANTIC_SEEDS]
+    seed_positions={gid:i for i,gid in enumerate(existing_semantic_seeds)}
+    titles=[groups[gid]["seed"]["title"] for gid in existing_semantic_seeds]
+    start_docs=len(titles)
+    titles.extend(doc["title"] for doc in docs)
+    model=LocalTopicEmbeddings(titles)
+    out["semantic_seed_index_limited"]=len(groups)>len(existing_semantic_seeds)
+    newly_added=[]
     new_count=0
-    for doc in docs:
-        # Do not create thousands of permanent topic seeds for generic
-        # advisory headlines or too-short boilerplate. They remain individual
-        # source observations in AIBA's main queue, fully discoverable.
-        if doc["domain"]=="advisory" or len(
-                set(doc["terms"])-GENERIC)<MIN_SHARED_TERMS:
-            continue
+
+    for offset,doc in enumerate(docs):
         key=doc["key"]
         if key in assignments:
             if assignments[key] not in groups:
                 raise ValueError("Topic ledger references missing stable group")
             continue
-        match=None
-        if doc["terms"] and doc["domain"]!="advisory":
-            candidate_counts=Counter(gid for t in doc["terms"]
-                                     if t not in GENERIC for gid in inverted[t])
-            shortlisted=[gid for gid,n in candidate_counts.most_common(_MAX_CANDIDATES)
-                         if n>=MIN_SHARED_TERMS]
-            for gid in shortlisted:
-                score,shared=_similar(doc,groups[gid]["seed"])
-                if score<MIN_SIMILARITY:
-                    continue
-                if match is None or (score,gid)>(match[0],match[1]):
-                    match=(score,gid,shared)
-        if match is None:
+        if doc["domain"]=="advisory" or len(set(doc["terms"])-GENERIC)<MIN_SHARED_TERMS:
+            continue
+        position=start_docs+offset
+        # Inverted lookups preserve older archived seeds beyond the bounded
+        # dense index. Top latent nearest-neighbors discover unfamiliar
+        # paraphrases with no requirement for the exact same title.
+        candidate_counts=Counter(gid for term in doc["terms"] if term not in GENERIC
+                                 for gid in inverted[term])
+        candidates=set(gid for gid,n in
+                       candidate_counts.most_common(_MAX_CANDIDATES) if n>=1)
+        for seed_idx in model.candidates(position,len(existing_semantic_seeds),top=36):
+            candidates.add(existing_semantic_seeds[seed_idx])
+        # New groups created earlier this same batch can also receive members.
+        candidates.update(newly_added[-120:])
+        best=None
+        for gid in sorted(candidates):
+            g=groups.get(gid)
+            if not g:
+                continue
+            seed=g["seed"]
+            # Cheap hard gates precede potentially expensive similarities.
+            if doc["domain"]!=seed["domain"]:
+                continue
+            ga=set(doc["geo"]);gb=set(seed.get("geo",[]))
+            if ga and gb and ga.isdisjoint(gb):
+                continue
+            a=_roles(doc["title"]);z=_roles(seed["title"])
+            if a and z and a.isdisjoint(z):
+                continue
+            if gid in seed_positions:
+                metrics=model.pair(position,seed_positions[gid])
+            else:
+                oldscore,_=_similar(doc,seed)
+                metrics={"score":oldscore,"tfidf_cosine":oldscore,
+                         "latent_cosine":None}
+            rationale=_reasoning(doc,seed,metrics)
+            if rationale is None:
+                continue
+            quality=(rationale["score"],gid)
+            if best is None or quality>(best[0],best[1]):
+                best=(quality[0],gid,rationale)
+        if best is None:
             gid="family:"+hashlib.sha256(("auto_topic:v1:"+key).encode()).hexdigest()[:20]
             if gid in groups and groups[gid]["seed"]["key"]!=key:
                 raise ValueError("Topic ID hash collision")
             groups[gid]={
                 "seed":_seed(doc),"first_document_at":doc["first"],
-                "source":"automatic_similarity_v1","matched_document_count":0,
+                "last_document_at":doc["first"],
+                "source":"hybrid_local_topic_embedding_v2",
+                "matched_document_count":0,
             }
-            for t in doc["terms"]:
-                if t not in GENERIC:
-                    inverted[t].add(gid)
+            seed_positions[gid]=position
+            newly_added.append(gid)
+            for term in doc["terms"]:
+                if term not in GENERIC:
+                    inverted[term].add(gid)
+            explanation={
+                "method":"new_analytical_theme","score":None,
+                "shared_subject_terms":[],"shared_activity_roles":[],
+                "same_incident_proven":False,
+                "independent_corroboration_proven":False,
+                "review_status":"unreviewed_automatic_topic_seed",
+            }
         else:
-            gid=match[1]
+            gid=best[1]
+            explanation=best[2]
+            groups[gid]["last_document_at"]=max(
+                groups[gid].get("last_document_at") or doc["first"],doc["first"])
         assignments[key]=gid
+        explanations[key]=explanation
         groups[gid]["matched_document_count"]+=1
         new_count+=1
         if len(assignments)>MAX_STORED_DOCS:
@@ -290,6 +458,7 @@ def assign(rows, prior=None):
     out["new_document_assignments"]=new_count
     out["total_document_assignments"]=len(assignments)
     out["total_stable_topics"]=len(groups)
+    out["automatic_similarity_method"]="hybrid_sparse_char_ngram_lsa_v2"
     return out
 
 
@@ -358,6 +527,11 @@ def build_topics(rows, now, source_health=None, prior=None, exclude_roots=()):
                 "source_record_count":len(fragments),
                 "information_root_count":len({r["information_root"] for r in fragments}),
                 "publisher_names":sorted({r["provider"] for r in fragments if r.get("provider")}),
+                "grouping_explanation":index.get("assignment_explanations",{}).get(
+                    doc["key"],{
+                        "method":"existing_persistent_assignment",
+                        "score":None,"review_status":"not_automatically_adjudicated",
+                    }),
                 "validity_windows":[{"from":a or None,"until":b or None} for a,b in intervals[:30]],
                 "validity_windows_truncated":len(intervals)>30,
                 "records":fragments[:MAX_FRAGMENTS_PER_DOC],
@@ -405,8 +579,9 @@ def build_topics(rows, now, source_health=None, prior=None, exclude_roots=()):
             "sources":raw[:MAX_TOPIC_SOURCES],
             "sources_truncated":len(raw)>MAX_TOPIC_SOURCES,
             "automatic_grouping":{
-                "method":"stable_seed_weighted_lexical_similarity_v1",
-                "threshold":MIN_SIMILARITY,
+                "method":"hybrid_sparse_char_ngram_lsa_v2",
+                "threshold":HYBRID_AUTO_THRESHOLD,
+                "scoring_method":EMBEDDING_SCHEMA,
                 "seed_document":seed["key"],
                 "manual_curation_required":False,
                 "event_identity_assumed":False,
@@ -415,6 +590,6 @@ def build_topics(rows, now, source_health=None, prior=None, exclude_roots=()):
                 "historical_assigned_documents":historic_count,
                 "older_members_not_loaded":historic_count>len(items),
             },
-            "reason":"Automatically grouped source documents sharing distinctive language, compatible reported geography and subject domain. These may be distinct actual events. Topic membership does not establish independent corroboration.",
+            "reason":"Automatic locally embedded source theme with explicit source-domain, activity-role and reported-subject safeguards. Documents can concern different occurrences; clustering neither confirms events nor independent corroboration.",
         })
     return topics,covered,index

@@ -43,6 +43,9 @@ jobs:
       - name: Generate source-separated behavioral convergence review candidates (shadow)
         shell: bash
         run: python src/behavioral_fusion.py --state state/observations
+      - name: Install local semantic math dependencies (sparse fallback if unavailable)
+        continue-on-error: true
+        run: python -m pip install -r src/requirements.txt
       - name: Persist long-lived evidence families and provisional report links
         run: python src/family_archive.py --state state/observations
       - name: Preserve forward-time behavioral evaluation readiness (no automatic negative labels)
