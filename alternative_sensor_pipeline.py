@@ -297,7 +297,13 @@ def usace(data,now,url):
             kind="official_navigation_notice",
             root="usace:original_notice:"+ident,
             source_dependency="usace:original_notice:"+ident))
-    if raw and not rows:raise ValueError("USACE notice identities not recognized; refuse false normal")
+    if raw and not rows:
+        first=raw[0] if isinstance(raw[0],dict) else {}
+        props=first.get("properties") if isinstance(first.get("properties"),dict) else first
+        # Public provider FIELD NAMES only. Never dump response content,
+        # coordinates, or unbounded returned notice descriptions into CI.
+        available=",".join(sorted(str(k) for k in props.keys())[:28])
+        raise ValueError("USACE notice IDs not recognized; keys="+safe_text(available,145))
     return rows,{"total_received":len(raw),
                  "next_page_present":bool(data.get("hasMore") or data.get("next")) if isinstance(data,dict) else False,
                  "envelope":shape}
