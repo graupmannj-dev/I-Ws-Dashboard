@@ -20,26 +20,44 @@ from urllib.parse import urlsplit
 from ops_pipeline import load_json, parse_time, write_json
 from behavioral_restrictions import SOURCES as RESTRICTION_SOURCES, adapt_layer
 from behavioral_event_resolution import reported_site
+from alternative_sensor_pipeline import MODES as ALTERNATIVE_SOURCES, FRESH_HOURS as ALTERNATIVE_FRESH, SOURCE_SCOPE as ALTERNATIVE_SCOPE
 
 UTC = dt.timezone.utc
 SCHEMA = "aiba.behavioral-observations.v1"
-MODES = ("ioda", "nga", "amsa", "official", "commercial", "watchlist", "live_airspace", "live_maritime")
+MODES = ("ioda", "nga", "amsa", "official", "commercial", "watchlist", "live_airspace", "live_maritime") + ALTERNATIVE_SOURCES
 ALLOWED_STATES = {"collected", "partial"}
 FRESH_HOURS = {"ioda": 6, "nga": 6, "amsa": 6,
                "official": 12, "commercial": 48, "watchlist": 12,
-               "live_airspace": 2, "live_maritime": 2}
+               "live_airspace": 2, "live_maritime": 2, **ALTERNATIVE_FRESH}
 FAMILIES = {"ioda": "internet_reachability", "nga": "maritime_restriction",
             "amsa": "maritime_restriction", "official": "protective_notice",
             "commercial": "commercial_media", "watchlist": "market_expectation",
-            "live_airspace": "airspace_restriction", "live_maritime": "maritime_restriction"}
+            "live_airspace": "airspace_restriction", "live_maritime": "maritime_restriction",
+            "usgs_quakes":"environmental_hazard",
+            "nasa_eonet":"environmental_hazard",
+            "noaa_swpc":"environmental_hazard",
+            "nws_alerts":"environmental_hazard",
+            "usace_navigation":"maritime_restriction",
+            "noaa_ports":"port_environment",
+            "ripe_atlas":"internet_reachability"}
 EVIDENCE = {"ioda": "network_measurement", "nga": "official_notice",
             "amsa": "official_notice", "official": "official_notice",
             "commercial": "media_mention", "watchlist": "market_quote",
-            "live_airspace": "official_notice", "live_maritime": "official_notice"}
+            "live_airspace": "official_notice", "live_maritime": "official_notice",
+            "usgs_quakes":"environmental_measurement",
+            "nasa_eonet":"curated_environmental_report",
+            "noaa_swpc":"environmental_alert",
+            "nws_alerts":"environmental_alert",
+            "usace_navigation":"official_navigation_notice",
+            "noaa_ports":"physical_station_measurement",
+            "ripe_atlas":"aggregated_network_measurement"}
 # No source is yet verified as a military preparations sensor.
 DIRECT_BEHAVIOR = {"ioda": True, "nga": False, "amsa": False,
                    "official": False, "commercial": False, "watchlist": False,
-                   "live_airspace": False, "live_maritime": False}
+                   "live_airspace": False, "live_maritime": False,
+                   "usgs_quakes":False,"nasa_eonet":False,
+                   "noaa_swpc":False,"nws_alerts":False,
+                   "usace_navigation":False,"noaa_ports":True,"ripe_atlas":True}
 MAX_PER_MODE = 500
 MAX_INDEX = 15000
 MAX_SNAPSHOT = 2500
@@ -131,7 +149,8 @@ def mode_status(state, mode, now):
                             else "AMSA NAVAREA X only" if mode=="amsa"
                             else "US State and UK FCDO travel-advice feeds" if mode=="official"
                             else "selected maritime/air-cargo/war-risk press and syndication" if mode=="commercial"
-                            else "registered, exact-ID forecast contracts only"),
+                            else "registered, exact-ID forecast contracts only" if mode=="watchlist"
+                            else ALTERNATIVE_SCOPE.get(mode,"Uncharacterized source")) ,
             "missingness":"not_measured_not_zero" if not current else
                           "partial_sampling_not_worldwide_exhaustive" if truncated else
                           "provider_bounded_not_exhaustive",
@@ -162,6 +181,16 @@ def location(row, mode):
             return {"key":f"maritime-area:{region.casefold()}","kind":"maritime_region",
                     "label":region,"precision":"source_text_region_not_point",
                     "verified_iso":False,"latitude":None,"longitude":None}
+    if mode in ALTERNATIVE_SOURCES:
+        group=row.get("geography")
+        if isinstance(group,dict):
+            # Store provider-declared *hazard or monitoring scope*, not a
+            # hostile incident point or a private sensor/device location.
+            return {"key":str(group.get("key"))[:160] if group.get("key") else None,
+                    "kind":str(group.get("kind") or "source_scope")[:70],
+                    "label":str(group.get("label"))[:160] if group.get("label") else None,
+                    "precision":str(group.get("precision") or "not_verified")[:100],
+                    "verified_iso":False,"latitude":None,"longitude":None}
     return {"key":None,"kind":"unlocated","label":None,
             "precision":"no_source_verified_geography",
             "verified_iso":False,"latitude":None,"longitude":None}
@@ -189,7 +218,7 @@ def normalize(mode, row, now):
         return None,"source_clock_after_observation"
     group=row["geography"] if mode in RESTRICTION_SOURCES else location(row,mode)
     family=FAMILIES[mode]
-    root=str(row.get("root") or "").strip() if mode in ("ioda","nga","amsa") or mode in RESTRICTION_SOURCES else ""
+    root=str(row.get("root") or "").strip() if mode in ("ioda","nga","amsa") or mode in RESTRICTION_SOURCES or mode in ALTERNATIVE_SOURCES else ""
     # Do not promote syndication to independently confirmed commercial action.
     if not root:
         root=f"{mode}:{rid}"
@@ -211,6 +240,14 @@ def normalize(mode, row, now):
                        "measurement_no_attribution" if mode=="ioda" else
                        "notice_not_verified_preparation" if mode in ("amsa","nga","official") else
                        "news_mention_not_action" if mode=="commercial" else
+                       "environmental_confounder_not_conflict_evidence"
+                       if mode in ("usgs_quakes","nasa_eonet","noaa_swpc","nws_alerts") else
+                       "official_navigation_notice_not_verified_disruption"
+                       if mode=="usace_navigation" else
+                       "physical_station_weather_not_shipping_activity"
+                       if mode=="noaa_ports" else
+                       "aggregate_network_measurement_no_attribution"
+                       if mode=="ripe_atlas" else
                        "market_quote_not_war_probability"),
         "actor_identified":False,
         "alert_eligible":False,
@@ -234,6 +271,15 @@ def normalize(mode, row, now):
             "lat":event_site[0],"lon":event_site[1],
             "location_quality":"source_declared_unreviewed",
         }
+    if mode in ALTERNATIVE_SOURCES:
+        result["source_role"]=str(row.get("source_role") or "")[:80]
+        result["source_dependency"]=str(row.get("source_dependency") or mode)[:230]
+        metric=row.get("observed_measurement")
+        if isinstance(metric,dict):
+            # A source's raw observation is NOT a standardized anomaly or
+            # reference-ready z-score; retain explicitly as raw data.
+            if metric.get("reference_baseline_ready") is False:
+                result["observed_measurement"]=metric
     if mode in RESTRICTION_SOURCES:
         result["restriction_status"]=row["restriction_time_state"]
         result["scheduled_valid_from"]=row["scheduled_valid_from"]
