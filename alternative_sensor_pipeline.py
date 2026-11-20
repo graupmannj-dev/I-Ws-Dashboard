@@ -140,7 +140,8 @@ def urls(mode,now):
     if mode=="uk_tenders":
         return ["https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?"+
                 urllib.parse.urlencode({"limit":100,
-                    "updatedFrom":(now-dt.timedelta(days=2)).date().isoformat()})]
+                    "updatedFrom":(now-dt.timedelta(days=2)).strftime("%Y-%m-%dT%H:%M:%S"),
+                    "updatedTo":now.strftime("%Y-%m-%dT%H:%M:%S")})]
     if mode=="wiki_edits":
         root="/w/api.php?"
         args=urllib.parse.urlencode({
