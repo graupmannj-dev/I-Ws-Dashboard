@@ -490,6 +490,11 @@ def build_topics(rows, now, source_health=None, prior=None, exclude_roots=()):
                 "source_record_count":len(fragments),
                 "information_root_count":len({r["information_root"] for r in fragments}),
                 "publisher_names":sorted({r["provider"] for r in fragments if r.get("provider")}),
+                "grouping_explanation":index.get("assignment_explanations",{}).get(
+                    doc["key"],{
+                        "method":"existing_persistent_assignment",
+                        "score":None,"review_status":"not_automatically_adjudicated",
+                    }),
                 "validity_windows":[{"from":a or None,"until":b or None} for a,b in intervals[:30]],
                 "validity_windows_truncated":len(intervals)>30,
                 "records":fragments[:MAX_FRAGMENTS_PER_DOC],
@@ -537,8 +542,9 @@ def build_topics(rows, now, source_health=None, prior=None, exclude_roots=()):
             "sources":raw[:MAX_TOPIC_SOURCES],
             "sources_truncated":len(raw)>MAX_TOPIC_SOURCES,
             "automatic_grouping":{
-                "method":"stable_seed_weighted_lexical_similarity_v1",
-                "threshold":MIN_SIMILARITY,
+                "method":"hybrid_sparse_char_ngram_lsa_v2",
+                "threshold":HYBRID_AUTO_THRESHOLD,
+                "scoring_method":EMBEDDING_SCHEMA,
                 "seed_document":seed["key"],
                 "manual_curation_required":False,
                 "event_identity_assumed":False,
@@ -547,6 +553,6 @@ def build_topics(rows, now, source_health=None, prior=None, exclude_roots=()):
                 "historical_assigned_documents":historic_count,
                 "older_members_not_loaded":historic_count>len(items),
             },
-            "reason":"Automatically grouped source documents sharing distinctive language, compatible reported geography and subject domain. These may be distinct actual events. Topic membership does not establish independent corroboration.",
+            "reason":"Automatic locally embedded source theme with explicit source-domain, activity-role and reported-subject safeguards. Documents can concern different occurrences; clustering neither confirms events nor independent corroboration.",
         })
     return topics,covered,index
