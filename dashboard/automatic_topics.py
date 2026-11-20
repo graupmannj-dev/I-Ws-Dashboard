@@ -23,6 +23,11 @@ try:
 except ImportError:
     from evidence_facets import facets, qualified_metric
     from topic_families import COUNTRIES, region_from_title
+try:
+    from .topic_semantics import LocalTopicEmbeddings, normalized_terms, SCHEMA as EMBEDDING_SCHEMA
+except ImportError:
+    from topic_semantics import LocalTopicEmbeddings, normalized_terms, SCHEMA as EMBEDDING_SCHEMA
+
 
 SCHEMA = "aiba.automatic-analytical-topics.v1"
 MAX_DOCS_PER_UPDATE = 6000
@@ -200,6 +205,77 @@ def _similar(doc,seed):
     lexical=2*overlap/den if den else 0
     boost=0.05 if ga and gb and ga.intersection(gb) else 0
     return (min(1.0,lexical+boost),sorted(meaningful))
+
+
+# Broad functional roles are linguistic safeguards, not a country/event
+# allowlist. Incompatible explicit roles never merge automatically.
+ACTIVITY_ROLES = {
+    "blockade":frozenset(("blockade","interdict","embargo","interdiction")),
+    "kinetic":frozenset(("attack","strike","bomb","explosion","assault","missile")),
+    "agreement":frozenset(("agreement","accord","negotiation","talks","treaty","deal")),
+    "exercise":frozenset(("exercise","training","drill","firing","gunnery")),
+    "outage":frozenset(("outage","blackout","disruption","offline")),
+    "closure":frozenset(("closure","closed","restrict","restriction")),
+    "movement":frozenset(("movement","deployment","diversion","rerouting","shipment")),
+    "seizure":frozenset(("seizure","captured","capture","occupy","occupation")),
+}
+HYBRID_AUTO_THRESHOLD=0.68
+HYBRID_SUBJECT_THRESHOLD=0.60
+MAX_SEMANTIC_SEEDS=2800
+
+
+def _roles(title):
+    tokens=set(normalized_terms(title))
+    return frozenset(name for name,items in ACTIVITY_ROLES.items()
+                     if tokens&items)
+
+
+def _reasoning(doc,seed,metric):
+    """Hard gates prevent false thematic joins before any soft similarity."""
+    if doc["domain"]!=seed["domain"]:
+        return None
+    if doc["domain"]=="advisory":
+        return None
+    ga=set(doc["geo"]);gb=set(seed.get("geo") or [])
+    if ga and gb and ga.isdisjoint(gb):
+        return None
+    doc_roles=_roles(doc["title"])
+    seed_roles=_roles(seed["title"])
+    if doc_roles and seed_roles and doc_roles.isdisjoint(seed_roles):
+        return None
+    # Similarity alone is insufficient where only template boilerplate remains.
+    a=set(normalized_terms(doc["title"]))-GENERIC-NOISE
+    z=set(normalized_terms(seed["title"]))-GENERIC-NOISE
+    shared=a&z
+    legacy,legacy_terms=_similar(doc,seed)
+    same_subject=bool(ga and gb and ga.intersection(gb))
+    shared_roles=bool(doc_roles and seed_roles and not doc_roles.isdisjoint(seed_roles))
+    # Existing accepted high-precision lexical matches remain available.
+    legacy_ok=legacy>=MIN_SIMILARITY
+    hybrid_ok=(metric["score"]>=HYBRID_AUTO_THRESHOLD and len(shared)>=2)
+    # This condition can recognize paraphrases when two different phrasings
+    # share a reported entity and general activity, but it must not unite
+    # all reporting about that country.
+    paraphrase_ok=(metric["score"]>=HYBRID_SUBJECT_THRESHOLD
+        and same_subject and shared_roles and len(shared)>=1
+        and (metric["latent_cosine"] or 0)>=0.72)
+    if not (legacy_ok or hybrid_ok or paraphrase_ok):
+        return None
+    if len(shared)<2 and not paraphrase_ok and not legacy_ok:
+        return None
+    return {
+        "method":EMBEDDING_SCHEMA if hybrid_ok or paraphrase_ok else "legacy_sparse_v1",
+        "score":round(max(metric["score"],legacy),4),
+        "raw_text_similarity":metric["tfidf_cosine"],
+        "latent_semantic_similarity":metric["latent_cosine"],
+        "shared_subject_terms":sorted(shared)[:12],
+        "shared_activity_roles":sorted(doc_roles & seed_roles),
+        "subject_geography_compatible":not (ga and gb and ga.isdisjoint(gb)),
+        "same_source_document":False,
+        "same_incident_proven":False,
+        "independent_corroboration_proven":False,
+        "review_status":"unreviewed_automatic_topic_match",
+    }
 
 
 def _seed(doc):
