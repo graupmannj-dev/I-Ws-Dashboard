@@ -1284,6 +1284,16 @@ function familyEvidenceCountLabel(f){
   const roots=Number(f.information_root_count)||1;
   return roots+" source information root"+(roots===1?"":"s")+" · independent corroboration not established";
 }
+function rawSensorMeasurement(source){
+  const m=source?.observed_measurement;
+  if(!m||typeof m!=="object"||m.reference_baseline_ready!==false||
+     typeof m.name!=="string"||!Number.isFinite(m.value))return "";
+  const count=Number.isInteger(m.sampled_probe_count)?
+    " · "+m.sampled_probe_count+" sampled public probes":"";
+  const when=m.observed_time?" · measured "+m.observed_time:"";
+  return m.name+": "+m.value+" "+(m.unit||"unknown units")+
+    count+when+" · RAW observation, NOT baseline-calibrated";
+}
 function appendTopicNoticeGroups(f,item){
   if(f.kind!=="analytical_topic_family"||!Array.isArray(f.notice_groups))return false;
   const summary=document.createElement("section");
@@ -1364,7 +1374,15 @@ function appendTopicNoticeGroups(f,item){
       const valid=document.createElement("small");
       valid.textContent="Valid: "+(source.scheduled_valid_from||"not provided")+
         " → "+(source.scheduled_valid_until||"not provided");
-      li.append(sid,details,valid);ul.appendChild(li);
+      li.append(sid,details,valid);
+      const raw=rawSensorMeasurement(source);
+      if(raw){const measured=document.createElement("small");measured.textContent=raw;li.appendChild(measured);}
+      if(source.source_dependency){
+        const dep=document.createElement("small");
+        dep.textContent="Upstream observation identity: "+source.source_dependency+
+          " · Count shared upstream data only once";li.appendChild(dep);
+      }
+      ul.appendChild(li);
     }
     body.appendChild(ul);
     if(notice.records_truncated){
@@ -1503,7 +1521,15 @@ function selectFamily(f){
     meta.textContent=[src.provider||"Source unknown",src.source_family||"unknown family",
       "First captured "+(src.first_observed_at||"unknown"),
       "Source published "+(src.published_at||"undated")].join(" · ");
-    li.append(link,meta);ul.appendChild(li);
+    li.append(link,meta);
+    const raw=rawSensorMeasurement(src);
+    if(raw){const measured=document.createElement("small");measured.textContent=raw;li.appendChild(measured);}
+    if(src.source_dependency){
+      const dep=document.createElement("small");
+      dep.textContent="Upstream identity: "+src.source_dependency+
+        " · not independently verified";li.appendChild(dep);
+    }
+    ul.appendChild(li);
   }
   item.appendChild(ul);
   if(f.sources_truncated){
