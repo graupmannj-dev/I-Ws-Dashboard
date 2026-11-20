@@ -52,7 +52,7 @@ def fixtures():
     }
 
 
-def fetcher(url,failed=()):
+def fetcher(failed=()):
     def get(query):
         if any(f in query for f in failed):
             raise OSError("Simulated source outage")
