@@ -20,6 +20,7 @@ def populate(state, now=NOW, affected=10, status="multi_airport_ground_stops"):
         "checked_at":now.isoformat().replace("+00:00","Z"),
         "monitored_airport_count":16,"airports_with_any_nas_event":affected,
         "state_fingerprint":"synthetic-pattern",
+        "monitored_airport_roster_sha256":"a"*64,
         "status":status,"source_scope":"FAA sampled airports",
     })
     write_json(state/"health"/"faa_nas.json",{
@@ -36,6 +37,7 @@ def dayfile(state, day, n, hour=20, minute=10):
         "samples":[{
             "checked_at":at.isoformat(),"value":n,"source_count":16,
             "state_fingerprint":"synthetic-historic",
+            "roster_sha256":"a"*64,
             "source_scope":"FAA sampled airports","status":"no_systemic_disruption_in_monitored_sample",
             "source_url":SOURCE_URL,"source_schema":SOURCE_SCHEMA,
         }],
@@ -85,6 +87,20 @@ class FaaNasCalibrationTests(unittest.TestCase):
             z=build(s,clock=NOW)
             self.assertIsNone(z["z_score"])
             self.assertIsNone(z["candidate_source"]["calibrated_metric"])
+
+    def test_changed_airport_cohort_even_same_count_is_incomparable(self):
+        with tempfile.TemporaryDirectory() as d:
+            s=Path(d);populate(s)
+            for i in range(1,18):
+                dayfile(s,NOW.date()-dt.timedelta(days=i),3)
+                path=s/"calibration"/"faa_nas"/(
+                    (NOW.date()-dt.timedelta(days=i)).isoformat()+".json")
+                body=json.loads(path.read_text())
+                body["samples"][0]["roster_sha256"]="b"*64
+                write_json(path,body)
+            out=build(s,clock=NOW)
+            self.assertEqual(out["baseline_days"],0)
+            self.assertIsNone(out["z_score"])
 
     def test_successful_normal_baseline_not_a_new_family(self):
         with tempfile.TemporaryDirectory() as d:
