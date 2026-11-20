@@ -1,0 +1,121 @@
+{
+  "roots": {
+    "461e55e694f3772072f38ad01843f3fa1ee4a7b1bc94b27470290b7d5b15b4b5": {
+      "information_root": "ioda:e23958e0aacf4131c07ae535",
+      "members": {
+        "beh:4e5d2675213e170185d6821f7f1c": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "measurement_no_attribution",
+          "collection_mode": "ioda",
+          "direct_measurement": true,
+          "event_at": "2026-11-11T21:00:00Z",
+          "first_observed_at": "2026-11-12T02:29:18+00:00",
+          "geography_key": "country:TG",
+          "geography_label": "TG",
+          "geography_precision": "provider_reported_country",
+          "id": "beh:4e5d2675213e170185d6821f7f1c",
+          "information_root": "ioda:e23958e0aacf4131c07ae535",
+          "origin": "behavioral_registry",
+          "provider": "ioda",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_family": "internet_reachability",
+          "source_kind": "outage_event",
+          "source_updated_at": null,
+          "source_url": "https://ioda.inetintel.cc.gatech.edu/",
+          "title": "IODA detected connectivity anomaly: country TG"
+        }
+      }
+    },
+    "46352024f460de7b7f71880a9f252e5e6eb55b07d81e9152dbabd529235445a0": {
+      "information_root": "niord:bd3a545a-8bee-49ce-a67b-c9169c54c6c0:1:0:0",
+      "members": {
+        "beh:7092d3bfde6f2fac2cddfc9aa64c": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "official_scheduled_restriction_not_military_preparation",
+          "collection_mode": "live_maritime",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-17T02:39:51+00:00",
+          "geography_key": "source-footprint:7cd0c92c0114570caed57302",
+          "geography_label": "Official Polygon notice area",
+          "geography_precision": "provider_defined_notice_boundary_not_event_point",
+          "id": "beh:7092d3bfde6f2fac2cddfc9aa64c",
+          "information_root": "niord:bd3a545a-8bee-49ce-a67b-c9169c54c6c0:1:0:0",
+          "origin": "behavioral_registry",
+          "provider": "niord",
+          "published_at": null,
+          "restriction_status": "within_published_validity_window_not_verified_active",
+          "scheduled_valid_from": "2026-11-17T00:21:50Z",
+          "scheduled_valid_until": "2026-11-23T16:00:00Z",
+          "source_family": "maritime_restriction",
+          "source_kind": "official_restriction_notice",
+          "source_updated_at": "2026-11-17T00:21:52Z",
+          "source_url": "https://niord.dma.dk/#/message/bd3a545a-8bee-49ce-a67b-c9169c54c6c0",
+          "title": "Denmark. Kattegat. EK R 18 Jaegerspris. Firing exercises. Warning."
+        }
+      }
+    },
+    "466973795c209d0158dd77027f6c2ee87760576c05740fc07d904692bef9a22e": {
+      "information_root": "ioda:fbcf75e8f2f2201f35f85ca5",
+      "members": {
+        "beh:1aca4f8aad842ef3d7557dce2821": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "measurement_no_attribution",
+          "collection_mode": "ioda",
+          "direct_measurement": true,
+          "event_at": "2026-11-13T00:30:00Z",
+          "first_observed_at": "2026-11-13T06:31:11+00:00",
+          "geography_key": "country:NF",
+          "geography_label": "NF",
+          "geography_precision": "provider_reported_country",
+          "id": "beh:1aca4f8aad842ef3d7557dce2821",
+          "information_root": "ioda:fbcf75e8f2f2201f35f85ca5",
+          "origin": "behavioral_registry",
+          "provider": "ioda",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_family": "internet_reachability",
+          "source_kind": "outage_event",
+          "source_updated_at": null,
+          "source_url": "https://ioda.inetintel.cc.gatech.edu/",
+          "title": "IODA detected connectivity anomaly: country NF"
+        }
+      }
+    },
+    "46a40dbbedd3aec97ad4b96c8d8d734edb859c1dc72760e84fdfa98ba3b69836": {
+      "information_root": "faa-national-ground-stop-2026-11-13-2054Z",
+      "members": {
+        "analyst:faa-national-ground-stop-20261113T2054Z": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "unreviewed_source_submission",
+          "collection_mode": "analyst",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-13T23:22:30+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "case_hint_not_source_geolocation",
+          "id": "analyst:faa-national-ground-stop-20261113T2054Z",
+          "information_root": "faa-national-ground-stop-2026-11-13-2054Z",
+          "origin": "analyst_intake",
+          "provider": "Reuters",
+          "published_at": "2026-11-13",
+          "source_family": "media_mention",
+          "source_kind": "unreviewed_analyst_report",
+          "source_url": "https://www.reuters.com/world/us/faa-issues-national-ground-stop-due-extraordinary-circumstance-reasons-safety-2026-11-13/",
+          "title": "FAA nationwide departure ground stop following air traffic control communications failure"
+        }
+      }
+    }
+  },
+  "schema": "aiba.family-archive.v1"
+}

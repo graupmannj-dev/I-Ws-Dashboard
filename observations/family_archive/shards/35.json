@@ -1,0 +1,121 @@
+{
+  "roots": {
+    "350f863c95455a0209eb802c4a36b06486edc1204478192c2ef739971b1388d7": {
+      "information_root": "niord:02f3c722-952b-445c-8ba9-38509d54b5b2:0:3:0",
+      "members": {
+        "beh:4762d6d7caf2fe68eb5cdbdc1c58": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "official_scheduled_restriction_not_military_preparation",
+          "collection_mode": "live_maritime",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-12T02:29:55+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "notice_geography_unavailable",
+          "id": "beh:4762d6d7caf2fe68eb5cdbdc1c58",
+          "information_root": "niord:02f3c722-952b-445c-8ba9-38509d54b5b2:0:3:0",
+          "origin": "behavioral_registry",
+          "provider": "niord",
+          "published_at": null,
+          "restriction_status": "scheduled_not_yet_effective",
+          "scheduled_valid_from": "2026-11-17T08:00:00Z",
+          "scheduled_valid_until": "2026-11-17T17:00:00Z",
+          "source_family": "maritime_restriction",
+          "source_kind": "official_restriction_notice",
+          "source_updated_at": "2026-11-12T00:21:51Z",
+          "source_url": "https://niord.dma.dk/#/message/02f3c722-952b-445c-8ba9-38509d54b5b2",
+          "title": "Denmark. Kattegat. EK R 18 Jaegerspris. Firing exercises. Warning."
+        }
+      }
+    },
+    "351aee91789e2a98835c30e4fb32230413aee7c34c93c64aa3b3e5d5548f4b2b": {
+      "information_root": "reuters-didamar-three-sources-20261111",
+      "members": {
+        "analyst:reuters-20261111-didamar-navigation-target-confirmation": {
+          "calibrated_metric": null,
+          "case_hint": "iran_gulf",
+          "claim_level": "unreviewed_source_submission",
+          "collection_mode": "analyst",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-11T23:14:15.219000+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "case_hint_not_source_geolocation",
+          "id": "analyst:reuters-20261111-didamar-navigation-target-confirmation",
+          "information_root": "reuters-didamar-three-sources-20261111",
+          "origin": "analyst_intake",
+          "provider": "Reuters",
+          "published_at": "2026-11-11",
+          "source_family": "media_mention",
+          "source_kind": "unreviewed_analyst_report",
+          "source_url": "https://www.reuters.com/world/middle-east/iran-attacks-shipping-navigation-systems-omans-didamar-island-sources-say-2026-11-11/",
+          "title": "Reuters sources corroborate reported Iranian strike on navigation infrastructure at Oman's Didamar island"
+        }
+      }
+    },
+    "351f51f65ed7b1356e9d6a8547c94db5cca37408c7c370a89e385a6b2a977e74": {
+      "information_root": "ioda:1bb60e0d49c736dce9d539e3",
+      "members": {
+        "beh:f87fce1c0dddde97e2d99d78d96b": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "measurement_no_attribution",
+          "collection_mode": "ioda",
+          "direct_measurement": true,
+          "event_at": "2026-11-18T04:00:00Z",
+          "first_observed_at": "2026-11-18T08:28:52+00:00",
+          "geography_key": "country:BT",
+          "geography_label": "BT",
+          "geography_precision": "provider_reported_country",
+          "id": "beh:f87fce1c0dddde97e2d99d78d96b",
+          "information_root": "ioda:1bb60e0d49c736dce9d539e3",
+          "origin": "behavioral_registry",
+          "provider": "ioda",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_family": "internet_reachability",
+          "source_kind": "outage_event",
+          "source_updated_at": null,
+          "source_url": "https://ioda.inetintel.cc.gatech.edu/",
+          "title": "IODA detected connectivity anomaly: country BT"
+        }
+      }
+    },
+    "3543db1d66b6e905a6ceea75fa24739764c5aa62b315002692b2b20f61f9830e": {
+      "information_root": "ioda:18f1a5e81fbe7a73812a78f7",
+      "members": {
+        "beh:a86958c588fa4a38ea39ef95be47": {
+          "calibrated_metric": null,
+          "case_hint": "horn_ethiopia_eritrea",
+          "claim_level": "measurement_no_attribution",
+          "collection_mode": "ioda",
+          "direct_measurement": true,
+          "event_at": "2026-11-18T04:00:00Z",
+          "first_observed_at": "2026-11-18T08:28:52+00:00",
+          "geography_key": "country:ER",
+          "geography_label": "ER",
+          "geography_precision": "provider_reported_country",
+          "id": "beh:a86958c588fa4a38ea39ef95be47",
+          "information_root": "ioda:18f1a5e81fbe7a73812a78f7",
+          "origin": "behavioral_registry",
+          "provider": "ioda",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_family": "internet_reachability",
+          "source_kind": "outage_event",
+          "source_updated_at": null,
+          "source_url": "https://ioda.inetintel.cc.gatech.edu/",
+          "title": "IODA detected connectivity anomaly: country ER"
+        }
+      }
+    }
+  },
+  "schema": "aiba.family-archive.v1"
+}

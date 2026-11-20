@@ -1,0 +1,125 @@
+{
+  "roots": {
+    "5425dde0b814ee99cf60afd34fbe2baeacbe999e768763303cc24ba7f664dcd8": {
+      "information_root": "faa:6/7421:0:0",
+      "members": {
+        "beh:60e8e7ee8e36abbadbda44c896f7": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "official_scheduled_restriction_not_military_preparation",
+          "collection_mode": "live_airspace",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-13T19:59:34+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "notice_geography_unavailable",
+          "id": "beh:60e8e7ee8e36abbadbda44c896f7",
+          "information_root": "faa:6/7421:0:0",
+          "origin": "behavioral_registry",
+          "provider": "faa",
+          "published_at": null,
+          "restriction_status": "within_published_validity_window_not_verified_active",
+          "scheduled_valid_from": "2026-11-13T14:40:55Z",
+          "scheduled_valid_until": "2026-11-13T23:59:00Z",
+          "source_family": "airspace_restriction",
+          "source_kind": "official_restriction_notice",
+          "source_updated_at": null,
+          "source_url": "https://tfr.faa.gov/6_7421.html",
+          "title": "FAA TFR 6/7421 · U.S MEXICO BORDER, TX, Friday, November 13, 2026 UTC"
+        }
+      }
+    },
+    "547678a049910967637c2d2182d9e76e8b4a0d55956687dc3559add8d7c79b63": {
+      "information_root": "niord:69efd854-5221-4c33-9355-fb79f6ef0b2a:0:1:0",
+      "members": {
+        "beh:ef06cb141fc5c9033707bb9f7433": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "official_scheduled_restriction_not_military_preparation",
+          "collection_mode": "live_maritime",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-17T02:39:51+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "notice_geography_unavailable",
+          "id": "beh:ef06cb141fc5c9033707bb9f7433",
+          "information_root": "niord:69efd854-5221-4c33-9355-fb79f6ef0b2a:0:1:0",
+          "origin": "behavioral_registry",
+          "provider": "niord",
+          "published_at": null,
+          "restriction_status": "scheduled_not_yet_effective",
+          "scheduled_valid_from": "2026-11-18T07:00:00Z",
+          "scheduled_valid_until": "2026-11-18T18:00:00Z",
+          "source_family": "maritime_restriction",
+          "source_kind": "official_restriction_notice",
+          "source_updated_at": "2026-11-17T00:21:53Z",
+          "source_url": "https://niord.dma.dk/#/message/69efd854-5221-4c33-9355-fb79f6ef0b2a",
+          "title": "Denmark. Kattegat. EK R 45 Hevring. Firing exercises. Warning."
+        }
+      }
+    },
+    "548ef8da3942e9daa780df9fc21fd346cf35ae6fad92cf387dc908d1f501e0a0": {
+      "information_root": "ioda:d81abe599761fea1841ce584",
+      "members": {
+        "beh:919274ea87b4f4e17571c195b7a8": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "measurement_no_attribution",
+          "collection_mode": "ioda",
+          "direct_measurement": true,
+          "event_at": "2026-11-18T22:00:00Z",
+          "first_observed_at": "2026-11-18T23:34:05+00:00",
+          "geography_key": "country:CV",
+          "geography_label": "CV",
+          "geography_precision": "provider_reported_country",
+          "id": "beh:919274ea87b4f4e17571c195b7a8",
+          "information_root": "ioda:d81abe599761fea1841ce584",
+          "origin": "behavioral_registry",
+          "provider": "ioda",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_family": "internet_reachability",
+          "source_kind": "outage_event",
+          "source_updated_at": null,
+          "source_url": "https://ioda.inetintel.cc.gatech.edu/",
+          "title": "IODA detected connectivity anomaly: country CV"
+        }
+      }
+    },
+    "54c9f7621001335f18db569133c204dcf4182d0565b05fc28c611966b856a8ea": {
+      "information_root": "official:0ea913dd03655a4341f5",
+      "members": {
+        "beh:41ecd9ec387fd2cff47f92d72bec": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "notice_not_verified_preparation",
+          "collection_mode": "official",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-11T02:48:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:41ecd9ec387fd2cff47f92d72bec",
+          "information_root": "official:0ea913dd03655a4341f5",
+          "origin": "behavioral_registry",
+          "provider": "official",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_family": "protective_notice",
+          "source_kind": "official_travel_security_notice",
+          "source_updated_at": null,
+          "source_url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.khm.html",
+          "title": "Cambodia - Level 2: Exercise Increased Caution"
+        }
+      }
+    }
+  },
+  "schema": "aiba.family-archive.v1"
+}

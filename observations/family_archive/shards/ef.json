@@ -1,0 +1,95 @@
+{
+  "roots": {
+    "ef296b3a52388187d3dab3733876349623652d20884f2d2e16e66ce0aa4791d2": {
+      "information_root": "ioda:941b0c6df3fec99db179b240",
+      "members": {
+        "beh:4ade69bc4701968feb9c46d16f85": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "measurement_no_attribution",
+          "collection_mode": "",
+          "direct_measurement": true,
+          "event_at": "2026-11-10T21:00:00Z",
+          "first_observed_at": "2026-11-11T02:48:58+00:00",
+          "geography_key": "country:CV",
+          "geography_label": "CV",
+          "geography_precision": "provider_reported_country",
+          "id": "beh:4ade69bc4701968feb9c46d16f85",
+          "information_root": "ioda:941b0c6df3fec99db179b240",
+          "origin": "behavioral_registry",
+          "provider": "ioda",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_family": "internet_reachability",
+          "source_kind": "outage_event",
+          "source_updated_at": null,
+          "source_url": "https://ioda.inetintel.cc.gatech.edu/",
+          "title": "IODA detected connectivity anomaly: country CV"
+        }
+      }
+    },
+    "ef9450c61f46e83b087bd930e9ad0664fc6bca396edcd68334606b2a23034efb": {
+      "information_root": "faa:6/7766:0:0",
+      "members": {
+        "beh:d77eeb27ee22092babd3833e63f7": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "official_scheduled_restriction_not_military_preparation",
+          "collection_mode": "live_airspace",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-16T19:49:13+00:00",
+          "geography_key": "source-footprint:697008acb24cdffb3d5ccbb3",
+          "geography_label": "Official MultiPolygon notice area",
+          "geography_precision": "provider_defined_notice_boundary_not_event_point",
+          "id": "beh:d77eeb27ee22092babd3833e63f7",
+          "information_root": "faa:6/7766:0:0",
+          "origin": "behavioral_registry",
+          "provider": "faa",
+          "published_at": null,
+          "restriction_status": "scheduled_not_yet_effective",
+          "scheduled_valid_from": "2026-11-20T19:00:00Z",
+          "scheduled_valid_until": "2026-11-21T03:00:00Z",
+          "source_family": "airspace_restriction",
+          "source_kind": "official_restriction_notice",
+          "source_updated_at": null,
+          "source_url": "https://tfr.faa.gov/6_7766.html",
+          "title": "FAA TFR 6/7766 · Detroit, MI, Friday, November 20, 2026 through Saturday, November 21, 2026 UTC"
+        }
+      }
+    },
+    "efede518169cb1acd4c138a0cfa56f3cba9e22fef2a67b60f3fb8e2ca0b2644c": {
+      "information_root": "niord:8e982ea7-247c-4dd6-91e9-05a4458317b1:0:0:0",
+      "members": {
+        "beh:aee9b0728840cd23f0c3e87db729": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "official_scheduled_restriction_not_military_preparation",
+          "collection_mode": "live_maritime",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-16T09:31:14+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "notice_geography_unavailable",
+          "id": "beh:aee9b0728840cd23f0c3e87db729",
+          "information_root": "niord:8e982ea7-247c-4dd6-91e9-05a4458317b1:0:0:0",
+          "origin": "behavioral_registry",
+          "provider": "niord",
+          "published_at": null,
+          "restriction_status": "scheduled_not_yet_effective",
+          "scheduled_valid_from": "2026-11-18T08:00:00Z",
+          "scheduled_valid_until": "2026-11-18T14:00:00Z",
+          "source_family": "maritime_restriction",
+          "source_kind": "official_restriction_notice",
+          "source_updated_at": "2026-11-16T09:21:52Z",
+          "source_url": "https://niord.dma.dk/#/message/8e982ea7-247c-4dd6-91e9-05a4458317b1",
+          "title": "Denmark. The North Sea. EK R 53 Juvre. Firing exercises. Warning."
+        }
+      }
+    }
+  },
+  "schema": "aiba.family-archive.v1"
+}

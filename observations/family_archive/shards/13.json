@@ -1,0 +1,95 @@
+{
+  "roots": {
+    "13092e27b4387aef4fa33df23a72fa52d68db10d91c2563a3f7f42c83baf87cc": {
+      "information_root": "official:23723f8bdcb705d46c91",
+      "members": {
+        "beh:d8787ea55ac795e88cd132cf32d1": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "notice_not_verified_preparation",
+          "collection_mode": "official",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-11T02:48:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:d8787ea55ac795e88cd132cf32d1",
+          "information_root": "official:23723f8bdcb705d46c91",
+          "origin": "behavioral_registry",
+          "provider": "official",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_family": "protective_notice",
+          "source_kind": "official_travel_security_notice",
+          "source_updated_at": null,
+          "source_url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.est.html",
+          "title": "Estonia - Level 1: Exercise Normal Precautions"
+        }
+      }
+    },
+    "130f14d74365f64e2a28818a43bc7384d03b5e643a9af06704496d23f6824d36": {
+      "information_root": "ioda:02f05461219eba0cbac33406",
+      "members": {
+        "beh:7538adf58f60cfc104a48266d54a": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "measurement_no_attribution",
+          "collection_mode": "ioda",
+          "direct_measurement": true,
+          "event_at": "2026-11-19T11:25:00Z",
+          "first_observed_at": "2026-11-19T13:51:00+00:00",
+          "geography_key": "country:TM",
+          "geography_label": "TM",
+          "geography_precision": "provider_reported_country",
+          "id": "beh:7538adf58f60cfc104a48266d54a",
+          "information_root": "ioda:02f05461219eba0cbac33406",
+          "origin": "behavioral_registry",
+          "provider": "ioda",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_family": "internet_reachability",
+          "source_kind": "outage_event",
+          "source_updated_at": null,
+          "source_url": "https://ioda.inetintel.cc.gatech.edu/",
+          "title": "IODA detected connectivity anomaly: country TM"
+        }
+      }
+    },
+    "137eeca7bba244cbfa0334f5977ddd898ceae5ef6a38bcbd37edf2e5e8745a6f": {
+      "information_root": "ioda:1472fb1c63524c4af78278a2",
+      "members": {
+        "beh:a96f52afb8acc74f5a1029d9dcc1": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "measurement_no_attribution",
+          "collection_mode": "ioda",
+          "direct_measurement": true,
+          "event_at": "2026-11-14T10:45:00Z",
+          "first_observed_at": "2026-11-14T15:45:09+00:00",
+          "geography_key": "country:BT",
+          "geography_label": "BT",
+          "geography_precision": "provider_reported_country",
+          "id": "beh:a96f52afb8acc74f5a1029d9dcc1",
+          "information_root": "ioda:1472fb1c63524c4af78278a2",
+          "origin": "behavioral_registry",
+          "provider": "ioda",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_family": "internet_reachability",
+          "source_kind": "outage_event",
+          "source_updated_at": null,
+          "source_url": "https://ioda.inetintel.cc.gatech.edu/",
+          "title": "IODA detected connectivity anomaly: country BT"
+        }
+      }
+    }
+  },
+  "schema": "aiba.family-archive.v1"
+}

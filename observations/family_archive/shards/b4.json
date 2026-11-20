@@ -1,0 +1,65 @@
+{
+  "roots": {
+    "b44d335b37331ce00b4ada1ce7a8c39ea65d46ec804f178fcfb77f7bc76606d3": {
+      "information_root": "ioda:400517e3c6b8b206e4e8651c",
+      "members": {
+        "beh:62d419bcf686db2182b885de0e6f": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "measurement_no_attribution",
+          "collection_mode": "ioda",
+          "direct_measurement": true,
+          "event_at": "2026-11-12T04:00:00Z",
+          "first_observed_at": "2026-11-12T10:14:58+00:00",
+          "geography_key": "country:VU",
+          "geography_label": "VU",
+          "geography_precision": "provider_reported_country",
+          "id": "beh:62d419bcf686db2182b885de0e6f",
+          "information_root": "ioda:400517e3c6b8b206e4e8651c",
+          "origin": "behavioral_registry",
+          "provider": "ioda",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_family": "internet_reachability",
+          "source_kind": "outage_event",
+          "source_updated_at": null,
+          "source_url": "https://ioda.inetintel.cc.gatech.edu/",
+          "title": "IODA detected connectivity anomaly: country VU"
+        }
+      }
+    },
+    "b4edcb90d222f306c315244b59c37fdc57ade0c5bcb1b0bbf5123a6322eb2b99": {
+      "information_root": "niord:100277fa-16b5-41b8-a7c5-4c1db67accba:0:0:0",
+      "members": {
+        "beh:d3a7ae89396fb450bc53b88e68d4": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "official_scheduled_restriction_not_military_preparation",
+          "collection_mode": "live_maritime",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-20T00:42:57+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "notice_geography_unavailable",
+          "id": "beh:d3a7ae89396fb450bc53b88e68d4",
+          "information_root": "niord:100277fa-16b5-41b8-a7c5-4c1db67accba:0:0:0",
+          "origin": "behavioral_registry",
+          "provider": "niord",
+          "published_at": null,
+          "restriction_status": "scheduled_not_yet_effective",
+          "scheduled_valid_from": "2026-11-20T07:00:00Z",
+          "scheduled_valid_until": "2026-11-20T13:00:00Z",
+          "source_family": "maritime_restriction",
+          "source_kind": "official_restriction_notice",
+          "source_updated_at": "2026-11-20T00:21:53Z",
+          "source_url": "https://niord.dma.dk/#/message/100277fa-16b5-41b8-a7c5-4c1db67accba",
+          "title": "Denmark. Kattegat. EK R 19 MULTEX. Firing exercises. Warning."
+        }
+      }
+    }
+  },
+  "schema": "aiba.family-archive.v1"
+}

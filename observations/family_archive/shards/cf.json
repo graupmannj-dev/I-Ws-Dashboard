@@ -1,0 +1,91 @@
+{
+  "roots": {
+    "cf07045d4600435bc9c176ccd87849bac44ad65da09a87b7de97574695df286b": {
+      "information_root": "faa:6/8377:0:0",
+      "members": {
+        "beh:961a5f9759bc68baa9f11c55c3e7": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "official_scheduled_restriction_not_military_preparation",
+          "collection_mode": "live_airspace",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-18T02:22:17+00:00",
+          "geography_key": "source-footprint:ef10f07f507295d97bd67869",
+          "geography_label": "Official MultiPolygon notice area",
+          "geography_precision": "provider_defined_notice_boundary_not_event_point",
+          "id": "beh:961a5f9759bc68baa9f11c55c3e7",
+          "information_root": "faa:6/8377:0:0",
+          "origin": "behavioral_registry",
+          "provider": "faa",
+          "published_at": null,
+          "restriction_status": "scheduled_not_yet_effective",
+          "scheduled_valid_from": "2026-11-20T22:15:00Z",
+          "scheduled_valid_until": "2026-11-20T22:35:00Z",
+          "source_family": "airspace_restriction",
+          "source_kind": "official_restriction_notice",
+          "source_updated_at": null,
+          "source_url": "https://tfr.faa.gov/6_8377.html",
+          "title": "FAA TFR 6/8377 ·   USA, Friday, November 20, 2026 UTC"
+        }
+      }
+    },
+    "cf2b4737eaf18aee6ce2ebc9de8467f893fe1d3134ad79f8202ec5315e77ba0b": {
+      "information_root": "kurdistan-electricity-ministry-khor-mor-20261108",
+      "members": {
+        "analyst:khor-mor-drone-production-halt-20261108": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "unreviewed_source_submission",
+          "collection_mode": "analyst",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-08T23:20:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "case_hint_not_source_geolocation",
+          "id": "analyst:khor-mor-drone-production-halt-20261108",
+          "information_root": "kurdistan-electricity-ministry-khor-mor-20261108",
+          "origin": "analyst_intake",
+          "provider": "Reuters",
+          "published_at": "2026-11-08",
+          "source_family": "media_mention",
+          "source_kind": "unreviewed_analyst_report",
+          "source_url": "https://www.reuters.com/business/energy/production-suspended-iraqs-khor-mor-gas-field-after-drone-attack-sources-say-2026-11-08/",
+          "title": "Khor Mor gas production halted after drone strike; regional power generation disrupted"
+        }
+      }
+    },
+    "cfe901d7656ac1e21af36947c187f86e058571efb4ad7fb25dd569cd5bfa7575": {
+      "information_root": "niord:3b2bd424-b82d-439c-a51b-2919d5f09b15:0:1:0",
+      "members": {
+        "beh:6bc4354919b820a19b1aaffd53a6": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "official_scheduled_restriction_not_military_preparation",
+          "collection_mode": "live_maritime",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-13T04:21:51+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "notice_geography_unavailable",
+          "id": "beh:6bc4354919b820a19b1aaffd53a6",
+          "information_root": "niord:3b2bd424-b82d-439c-a51b-2919d5f09b15:0:1:0",
+          "origin": "behavioral_registry",
+          "provider": "niord",
+          "published_at": null,
+          "restriction_status": "scheduled_not_yet_effective",
+          "scheduled_valid_from": "2026-11-16T09:00:00Z",
+          "scheduled_valid_until": "2026-11-16T21:00:00Z",
+          "source_family": "maritime_restriction",
+          "source_kind": "official_restriction_notice",
+          "source_updated_at": "2026-11-13T00:21:52Z",
+          "source_url": "https://niord.dma.dk/#/message/3b2bd424-b82d-439c-a51b-2919d5f09b15",
+          "title": "Denmark. Skagerrak. EK R 48 Tranum S. Firing exercises. Warning."
+        }
+      }
+    }
+  },
+  "schema": "aiba.family-archive.v1"
+}

@@ -1,0 +1,95 @@
+{
+  "roots": {
+    "279faf91eee9124d46d2eb480e9f65f39052bda4c7785e53aa04daae71abdf65": {
+      "information_root": "niord:b815767c-8bae-40c4-bd79-36ae1e9006b2:1:0:0",
+      "members": {
+        "beh:0af06f4bfb44f6c863adb41180a2": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "official_scheduled_restriction_not_military_preparation",
+          "collection_mode": "live_maritime",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-16T09:31:14+00:00",
+          "geography_key": "source-footprint:45e4c7bf505a7c2bb5928f3f",
+          "geography_label": "Official Polygon notice area",
+          "geography_precision": "provider_defined_notice_boundary_not_event_point",
+          "id": "beh:0af06f4bfb44f6c863adb41180a2",
+          "information_root": "niord:b815767c-8bae-40c4-bd79-36ae1e9006b2:1:0:0",
+          "origin": "behavioral_registry",
+          "provider": "niord",
+          "published_at": null,
+          "restriction_status": "within_published_validity_window_not_verified_active",
+          "scheduled_valid_from": "2026-11-16T09:21:50Z",
+          "scheduled_valid_until": "2026-11-20T13:00:00Z",
+          "source_family": "maritime_restriction",
+          "source_kind": "official_restriction_notice",
+          "source_updated_at": "2026-11-16T09:21:51Z",
+          "source_url": "https://niord.dma.dk/#/message/b815767c-8bae-40c4-bd79-36ae1e9006b2",
+          "title": "Denmark. Kattegat. EK R 19 MULTEX. Firing exercises. Warning."
+        }
+      }
+    },
+    "27de5703f958d8b74c50b0470b182c584bc98f331129e72e2b9685cb7934b2f4": {
+      "information_root": "ioda:0e30c3fb71a743e2c35a3207",
+      "members": {
+        "beh:b44cca0c1e4dc9c34f36eba04afc": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "measurement_no_attribution",
+          "collection_mode": "ioda",
+          "direct_measurement": true,
+          "event_at": "2026-11-15T15:00:00Z",
+          "first_observed_at": "2026-11-15T19:56:58+00:00",
+          "geography_key": "country:GA",
+          "geography_label": "GA",
+          "geography_precision": "provider_reported_country",
+          "id": "beh:b44cca0c1e4dc9c34f36eba04afc",
+          "information_root": "ioda:0e30c3fb71a743e2c35a3207",
+          "origin": "behavioral_registry",
+          "provider": "ioda",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_family": "internet_reachability",
+          "source_kind": "outage_event",
+          "source_updated_at": null,
+          "source_url": "https://ioda.inetintel.cc.gatech.edu/",
+          "title": "IODA detected connectivity anomaly: country GA"
+        }
+      }
+    },
+    "27fdf54e4f4ff15aabf06017cd1bc65d255a2be81ddaf5628e1d82fbd0904005": {
+      "information_root": "ioda:6c17ce5b2d5e1c4b34817a3e",
+      "members": {
+        "beh:904fab0a9886d8e71feaec48b208": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "measurement_no_attribution",
+          "collection_mode": "ioda",
+          "direct_measurement": true,
+          "event_at": "2026-11-18T22:00:00Z",
+          "first_observed_at": "2026-11-18T23:34:05+00:00",
+          "geography_key": "country:BT",
+          "geography_label": "BT",
+          "geography_precision": "provider_reported_country",
+          "id": "beh:904fab0a9886d8e71feaec48b208",
+          "information_root": "ioda:6c17ce5b2d5e1c4b34817a3e",
+          "origin": "behavioral_registry",
+          "provider": "ioda",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_family": "internet_reachability",
+          "source_kind": "outage_event",
+          "source_updated_at": null,
+          "source_url": "https://ioda.inetintel.cc.gatech.edu/",
+          "title": "IODA detected connectivity anomaly: country BT"
+        }
+      }
+    }
+  },
+  "schema": "aiba.family-archive.v1"
+}

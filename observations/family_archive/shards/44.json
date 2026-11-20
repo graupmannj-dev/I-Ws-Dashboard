@@ -1,0 +1,125 @@
+{
+  "roots": {
+    "4441959146f1c92d0841176f7fb647a48a708d1b43f587c72b9d5ab3ba6c9ac6": {
+      "information_root": "faa:6/8352:0:0",
+      "members": {
+        "beh:1754968dcb1cb1ed205b14002c69": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "official_scheduled_restriction_not_military_preparation",
+          "collection_mode": "live_airspace",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-18T02:22:17+00:00",
+          "geography_key": "source-footprint:76313b91398606b1afe68854",
+          "geography_label": "Official MultiPolygon notice area",
+          "geography_precision": "provider_defined_notice_boundary_not_event_point",
+          "id": "beh:1754968dcb1cb1ed205b14002c69",
+          "information_root": "faa:6/8352:0:0",
+          "origin": "behavioral_registry",
+          "provider": "faa",
+          "published_at": null,
+          "restriction_status": "scheduled_not_yet_effective",
+          "scheduled_valid_from": "2026-11-19T06:40:00Z",
+          "scheduled_valid_until": "2026-11-19T07:00:00Z",
+          "source_family": "airspace_restriction",
+          "source_kind": "official_restriction_notice",
+          "source_updated_at": null,
+          "source_url": "https://tfr.faa.gov/6_8352.html",
+          "title": "FAA TFR 6/8352 ·   USA, Thursday, November 19, 2026 UTC"
+        }
+      }
+    },
+    "4485f43703aa7504c971b451177e9a46198b2620f5a529a6cdf3bdc00059086a": {
+      "information_root": "ioda:86791ee5376572987fe36593",
+      "members": {
+        "beh:dafb0c1b43bc1638ff0320764553": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "measurement_no_attribution",
+          "collection_mode": "ioda",
+          "direct_measurement": true,
+          "event_at": "2026-11-12T22:30:00Z",
+          "first_observed_at": "2026-11-12T23:51:29+00:00",
+          "geography_key": "country:CK",
+          "geography_label": "CK",
+          "geography_precision": "provider_reported_country",
+          "id": "beh:dafb0c1b43bc1638ff0320764553",
+          "information_root": "ioda:86791ee5376572987fe36593",
+          "origin": "behavioral_registry",
+          "provider": "ioda",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_family": "internet_reachability",
+          "source_kind": "outage_event",
+          "source_updated_at": null,
+          "source_url": "https://ioda.inetintel.cc.gatech.edu/",
+          "title": "IODA detected connectivity anomaly: country CK"
+        }
+      }
+    },
+    "44b78feed19706a59d3c626d3ef135a93b69da6d6f5d0dc768b688809a83b542": {
+      "information_root": "niord:c2bbab7f-c4f0-476e-9ee8-78f8102eec37:0:7:0",
+      "members": {
+        "beh:d7e6b061efb568d4dfd5becc48db": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "official_scheduled_restriction_not_military_preparation",
+          "collection_mode": "live_maritime",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-18T02:22:17+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "notice_geography_unavailable",
+          "id": "beh:d7e6b061efb568d4dfd5becc48db",
+          "information_root": "niord:c2bbab7f-c4f0-476e-9ee8-78f8102eec37:0:7:0",
+          "origin": "behavioral_registry",
+          "provider": "niord",
+          "published_at": null,
+          "restriction_status": "scheduled_not_yet_effective",
+          "scheduled_valid_from": "2026-11-26T23:00:00Z",
+          "scheduled_valid_until": "2026-11-27T17:00:00Z",
+          "source_family": "maritime_restriction",
+          "source_kind": "official_restriction_notice",
+          "source_updated_at": "2026-11-18T00:21:51Z",
+          "source_url": "https://niord.dma.dk/#/message/c2bbab7f-c4f0-476e-9ee8-78f8102eec37",
+          "title": "Denmark. The Baltic Sea. EK D 395 Raghammer. Firing exercises. Warning."
+        }
+      }
+    },
+    "44f1386fc4882400bd6bd08c0532010cb805f37c30b48f277a836e42248d4775": {
+      "information_root": "ioda:151ecc440ba77e1ccbf6e223",
+      "members": {
+        "beh:0c2f287ebe0f3effdf7ba7a6fde8": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "measurement_no_attribution",
+          "collection_mode": "ioda",
+          "direct_measurement": true,
+          "event_at": "2026-11-18T22:00:00Z",
+          "first_observed_at": "2026-11-18T23:34:05+00:00",
+          "geography_key": "country:LA",
+          "geography_label": "LA",
+          "geography_precision": "provider_reported_country",
+          "id": "beh:0c2f287ebe0f3effdf7ba7a6fde8",
+          "information_root": "ioda:151ecc440ba77e1ccbf6e223",
+          "origin": "behavioral_registry",
+          "provider": "ioda",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_family": "internet_reachability",
+          "source_kind": "outage_event",
+          "source_updated_at": null,
+          "source_url": "https://ioda.inetintel.cc.gatech.edu/",
+          "title": "IODA detected connectivity anomaly: country LA"
+        }
+      }
+    }
+  },
+  "schema": "aiba.family-archive.v1"
+}

@@ -1,0 +1,95 @@
+{
+  "roots": {
+    "bb38a27976f87ff17144c37569e160d63c32cb24750238122fb05b380b911ba2": {
+      "information_root": "niord:85b4e019-da5a-432d-b68f-b70721b9f8bb:1:0:0",
+      "members": {
+        "beh:aa982d58d3ea348a1327702d4ba2": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "official_scheduled_restriction_not_military_preparation",
+          "collection_mode": "live_maritime",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-20T00:42:57+00:00",
+          "geography_key": "source-footprint:bbff1dde07b72e3217a462f8",
+          "geography_label": "Official Polygon notice area",
+          "geography_precision": "provider_defined_notice_boundary_not_event_point",
+          "id": "beh:aa982d58d3ea348a1327702d4ba2",
+          "information_root": "niord:85b4e019-da5a-432d-b68f-b70721b9f8bb:1:0:0",
+          "origin": "behavioral_registry",
+          "provider": "niord",
+          "published_at": null,
+          "restriction_status": "within_published_validity_window_not_verified_active",
+          "scheduled_valid_from": "2026-11-20T00:21:51Z",
+          "scheduled_valid_until": "2026-11-22T11:00:00Z",
+          "source_family": "maritime_restriction",
+          "source_kind": "official_restriction_notice",
+          "source_updated_at": "2026-11-20T00:21:55Z",
+          "source_url": "https://niord.dma.dk/#/message/85b4e019-da5a-432d-b68f-b70721b9f8bb",
+          "title": "Denmark. The North Sea. 15 Nymindegab. Firing exercises. Warning."
+        }
+      }
+    },
+    "bb8babd4fa75e3348d92aee8f0afb53bcbe84738ebac5073535feef6a234806d": {
+      "information_root": "niord:11b6b645-a1c8-429d-86f2-a1727651d571:0:2:0",
+      "members": {
+        "beh:b9008bc7355424593884da758a4d": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "official_scheduled_restriction_not_military_preparation",
+          "collection_mode": "live_maritime",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-18T02:22:17+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "notice_geography_unavailable",
+          "id": "beh:b9008bc7355424593884da758a4d",
+          "information_root": "niord:11b6b645-a1c8-429d-86f2-a1727651d571:0:2:0",
+          "origin": "behavioral_registry",
+          "provider": "niord",
+          "published_at": null,
+          "restriction_status": "scheduled_not_yet_effective",
+          "scheduled_valid_from": "2026-11-20T07:00:00Z",
+          "scheduled_valid_until": "2026-11-20T13:00:00Z",
+          "source_family": "maritime_restriction",
+          "source_kind": "official_restriction_notice",
+          "source_updated_at": "2026-11-18T00:21:54Z",
+          "source_url": "https://niord.dma.dk/#/message/11b6b645-a1c8-429d-86f2-a1727651d571",
+          "title": "Denmark. The North Sea. 15 Nymindegab. Firing exercises. Warning."
+        }
+      }
+    },
+    "bbe76979528ff79bcccb56715bdfddf66ff5cf122ad0f3a283ccba4d96092e38": {
+      "information_root": "ioda:b9829df1a989f50904d94198",
+      "members": {
+        "beh:a53e244e6a2d9946241fa6a47fbd": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "measurement_no_attribution",
+          "collection_mode": "ioda",
+          "direct_measurement": true,
+          "event_at": "2026-11-18T22:00:00Z",
+          "first_observed_at": "2026-11-18T23:34:05+00:00",
+          "geography_key": "country:SZ",
+          "geography_label": "SZ",
+          "geography_precision": "provider_reported_country",
+          "id": "beh:a53e244e6a2d9946241fa6a47fbd",
+          "information_root": "ioda:b9829df1a989f50904d94198",
+          "origin": "behavioral_registry",
+          "provider": "ioda",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_family": "internet_reachability",
+          "source_kind": "outage_event",
+          "source_updated_at": null,
+          "source_url": "https://ioda.inetintel.cc.gatech.edu/",
+          "title": "IODA detected connectivity anomaly: country SZ"
+        }
+      }
+    }
+  },
+  "schema": "aiba.family-archive.v1"
+}

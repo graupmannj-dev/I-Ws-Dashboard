@@ -1,0 +1,125 @@
+{
+  "roots": {
+    "c611c435024c1cd5c25ee18840c214691c04748d4966a9892aa215ed78b8ce2b": {
+      "information_root": "ioda:bccc5b114e3828ffef5796ca",
+      "members": {
+        "beh:44fa75b1143743cb674891351b0f": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "measurement_no_attribution",
+          "collection_mode": "ioda",
+          "direct_measurement": true,
+          "event_at": "2026-11-18T04:00:00Z",
+          "first_observed_at": "2026-11-18T08:28:52+00:00",
+          "geography_key": "country:BW",
+          "geography_label": "BW",
+          "geography_precision": "provider_reported_country",
+          "id": "beh:44fa75b1143743cb674891351b0f",
+          "information_root": "ioda:bccc5b114e3828ffef5796ca",
+          "origin": "behavioral_registry",
+          "provider": "ioda",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_family": "internet_reachability",
+          "source_kind": "outage_event",
+          "source_updated_at": null,
+          "source_url": "https://ioda.inetintel.cc.gatech.edu/",
+          "title": "IODA detected connectivity anomaly: country BW"
+        }
+      }
+    },
+    "c65af768b0b447039ffa8998b3679c1e86d0574ca0f6ee5a1847bf306f36a2ca": {
+      "information_root": "niord:c2bbab7f-c4f0-476e-9ee8-78f8102eec37:0:1:0",
+      "members": {
+        "beh:0119ad5beabc520bb190f58c6ed6": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "official_scheduled_restriction_not_military_preparation",
+          "collection_mode": "live_maritime",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-18T02:22:17+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "notice_geography_unavailable",
+          "id": "beh:0119ad5beabc520bb190f58c6ed6",
+          "information_root": "niord:c2bbab7f-c4f0-476e-9ee8-78f8102eec37:0:1:0",
+          "origin": "behavioral_registry",
+          "provider": "niord",
+          "published_at": null,
+          "restriction_status": "scheduled_not_yet_effective",
+          "scheduled_valid_from": "2026-11-19T06:00:00Z",
+          "scheduled_valid_until": "2026-11-19T17:00:00Z",
+          "source_family": "maritime_restriction",
+          "source_kind": "official_restriction_notice",
+          "source_updated_at": "2026-11-18T00:21:51Z",
+          "source_url": "https://niord.dma.dk/#/message/c2bbab7f-c4f0-476e-9ee8-78f8102eec37",
+          "title": "Denmark. The Baltic Sea. EK D 395 Raghammer. Firing exercises. Warning."
+        }
+      }
+    },
+    "c65c054869a9514a98d0cd1f69b4bdac94aeddc4ac238118bbc6d082caa90253": {
+      "information_root": "ioda:a569364625724d2016119b43",
+      "members": {
+        "beh:61e159c6ae964ddc8bf361cbc012": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "measurement_no_attribution",
+          "collection_mode": "ioda",
+          "direct_measurement": true,
+          "event_at": "2026-11-12T17:00:00Z",
+          "first_observed_at": "2026-11-12T18:34:40+00:00",
+          "geography_key": "country:NG",
+          "geography_label": "NG",
+          "geography_precision": "provider_reported_country",
+          "id": "beh:61e159c6ae964ddc8bf361cbc012",
+          "information_root": "ioda:a569364625724d2016119b43",
+          "origin": "behavioral_registry",
+          "provider": "ioda",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_family": "internet_reachability",
+          "source_kind": "outage_event",
+          "source_updated_at": null,
+          "source_url": "https://ioda.inetintel.cc.gatech.edu/",
+          "title": "IODA detected connectivity anomaly: country NG"
+        }
+      }
+    },
+    "c6c19740464ba3518e3f6794c5641d4deeb8d1a70dd97e651144f640759a893d": {
+      "information_root": "official:c195b22882e7e09669ed",
+      "members": {
+        "beh:e0217276026928b29ca17d20b272": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "notice_not_verified_preparation",
+          "collection_mode": "official",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-11T19:38:12+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:e0217276026928b29ca17d20b272",
+          "information_root": "official:c195b22882e7e09669ed",
+          "origin": "behavioral_registry",
+          "provider": "official",
+          "published_at": "2026-11-11T16:56:17Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_family": "protective_notice",
+          "source_kind": "official_travel_security_notice",
+          "source_updated_at": null,
+          "source_url": "https://www.gov.uk/foreign-travel-advice/liberia",
+          "title": "Liberia"
+        }
+      }
+    }
+  },
+  "schema": "aiba.family-archive.v1"
+}

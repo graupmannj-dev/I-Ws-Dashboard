@@ -1,0 +1,95 @@
+{
+  "roots": {
+    "587575253620678497174ad5c1ab30b7f21a523709a32a659e451d465a842c22": {
+      "information_root": "official:aaf0b613c65facd65262",
+      "members": {
+        "beh:0b083b1d68779983669734200a92": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "notice_not_verified_preparation",
+          "collection_mode": "official",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-11T02:48:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:0b083b1d68779983669734200a92",
+          "information_root": "official:aaf0b613c65facd65262",
+          "origin": "behavioral_registry",
+          "provider": "official",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_family": "protective_notice",
+          "source_kind": "official_travel_security_notice",
+          "source_updated_at": null,
+          "source_url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.blr.html",
+          "title": "Belarus - Level 4: Do Not Travel"
+        }
+      }
+    },
+    "58996905498abf7a3e3c09e79ad95c3c61180f97fb8bd500cfeb99785516caa6": {
+      "information_root": "niord:9e345aa9-0c3b-40a4-b93d-0509beaf3267:0:1:0",
+      "members": {
+        "beh:4e179db174c24eba1ad56e63fe9d": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "official_scheduled_restriction_not_military_preparation",
+          "collection_mode": "live_maritime",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-18T02:22:17+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "notice_geography_unavailable",
+          "id": "beh:4e179db174c24eba1ad56e63fe9d",
+          "information_root": "niord:9e345aa9-0c3b-40a4-b93d-0509beaf3267:0:1:0",
+          "origin": "behavioral_registry",
+          "provider": "niord",
+          "published_at": null,
+          "restriction_status": "scheduled_not_yet_effective",
+          "scheduled_valid_from": "2026-11-19T06:00:00Z",
+          "scheduled_valid_until": "2026-11-19T17:00:00Z",
+          "source_family": "maritime_restriction",
+          "source_kind": "official_restriction_notice",
+          "source_updated_at": "2026-11-18T00:21:51Z",
+          "source_url": "https://niord.dma.dk/#/message/9e345aa9-0c3b-40a4-b93d-0509beaf3267",
+          "title": "Denmark. The Baltic Sea. EK D 396 Hullebaek. Firing exercises. Warning."
+        }
+      }
+    },
+    "58b98d5f37f7e41edd925e3cf2011c206dc0de02f81bfc0e07c61addf38707c9": {
+      "information_root": "ioda:987d3f27bcd1747df2a1bf42",
+      "members": {
+        "beh:1e611b198581b00163849530537d": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "measurement_no_attribution",
+          "collection_mode": "ioda",
+          "direct_measurement": true,
+          "event_at": "2026-11-11T09:05:00Z",
+          "first_observed_at": "2026-11-11T14:07:39+00:00",
+          "geography_key": "country:XK",
+          "geography_label": "XK",
+          "geography_precision": "provider_reported_country",
+          "id": "beh:1e611b198581b00163849530537d",
+          "information_root": "ioda:987d3f27bcd1747df2a1bf42",
+          "origin": "behavioral_registry",
+          "provider": "ioda",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_family": "internet_reachability",
+          "source_kind": "outage_event",
+          "source_updated_at": null,
+          "source_url": "https://ioda.inetintel.cc.gatech.edu/",
+          "title": "IODA detected connectivity anomaly: country XK"
+        }
+      }
+    }
+  },
+  "schema": "aiba.family-archive.v1"
+}

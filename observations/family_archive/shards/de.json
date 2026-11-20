@@ -1,0 +1,95 @@
+{
+  "roots": {
+    "de3b39213073621dfe2ab6e60343321e7c3d52bea46929a7fc091671439a711d": {
+      "information_root": "niord:0d46c069-0c0b-4cd6-80cb-4e07aeaab638:3:0:0",
+      "members": {
+        "beh:12135b53ea3c924a7c90fb0d9fc5": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "official_scheduled_restriction_not_military_preparation",
+          "collection_mode": "live_maritime",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-16T09:31:14+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "notice_geography_unavailable",
+          "id": "beh:12135b53ea3c924a7c90fb0d9fc5",
+          "information_root": "niord:0d46c069-0c0b-4cd6-80cb-4e07aeaab638:3:0:0",
+          "origin": "behavioral_registry",
+          "provider": "niord",
+          "published_at": null,
+          "restriction_status": "within_published_validity_window_not_verified_active",
+          "scheduled_valid_from": "2026-11-16T09:21:50Z",
+          "scheduled_valid_until": "2026-11-24T16:00:00Z",
+          "source_family": "maritime_restriction",
+          "source_kind": "official_restriction_notice",
+          "source_updated_at": "2026-11-16T09:21:52Z",
+          "source_url": "https://niord.dma.dk/#/message/0d46c069-0c0b-4cd6-80cb-4e07aeaab638",
+          "title": "Denmark. Skagerrak. EK R 48 Tranum S. Firing exercises. Warning."
+        }
+      }
+    },
+    "de5ef9a89cc96df317e7f3e09e159d60968395f78a83ef52f8b38dd26b939622": {
+      "information_root": "ioda:3e4fb1d4a835138a22f20402",
+      "members": {
+        "beh:e0d9ce7898cd2446848687bd5b5d": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "measurement_no_attribution",
+          "collection_mode": "ioda",
+          "direct_measurement": true,
+          "event_at": "2026-11-15T21:30:00Z",
+          "first_observed_at": "2026-11-16T06:15:49+00:00",
+          "geography_key": "country:CN",
+          "geography_label": "CN",
+          "geography_precision": "provider_reported_country",
+          "id": "beh:e0d9ce7898cd2446848687bd5b5d",
+          "information_root": "ioda:3e4fb1d4a835138a22f20402",
+          "origin": "behavioral_registry",
+          "provider": "ioda",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_family": "internet_reachability",
+          "source_kind": "outage_event",
+          "source_updated_at": null,
+          "source_url": "https://ioda.inetintel.cc.gatech.edu/",
+          "title": "IODA detected connectivity anomaly: country CN"
+        }
+      }
+    },
+    "dedb2f41f3e42907d229fd92630a26ff41d0b8e3036186e17397b2bed77f8a61": {
+      "information_root": "official:d92ecd889ea0b7b7f554",
+      "members": {
+        "beh:1a801c271ded56f526e9b7dde6eb": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "notice_not_verified_preparation",
+          "collection_mode": "official",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-18T20:34:35+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:1a801c271ded56f526e9b7dde6eb",
+          "information_root": "official:d92ecd889ea0b7b7f554",
+          "origin": "behavioral_registry",
+          "provider": "official",
+          "published_at": "2026-11-18T11:13:15Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_family": "protective_notice",
+          "source_kind": "official_travel_security_notice",
+          "source_updated_at": null,
+          "source_url": "https://www.gov.uk/foreign-travel-advice/venezuela",
+          "title": "Venezuela"
+        }
+      }
+    }
+  },
+  "schema": "aiba.family-archive.v1"
+}

@@ -1,0 +1,185 @@
+{
+  "roots": {
+    "2c1c558dbd79aaabb683de25137a30723d3c6d4d1f550c4d65e29bb07d808d46": {
+      "information_root": "faa:6/8350:0:0",
+      "members": {
+        "beh:55b06667c420dc1471950427dc95": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "official_scheduled_restriction_not_military_preparation",
+          "collection_mode": "live_airspace",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-18T02:22:17+00:00",
+          "geography_key": "source-footprint:76313b91398606b1afe68854",
+          "geography_label": "Official MultiPolygon notice area",
+          "geography_precision": "provider_defined_notice_boundary_not_event_point",
+          "id": "beh:55b06667c420dc1471950427dc95",
+          "information_root": "faa:6/8350:0:0",
+          "origin": "behavioral_registry",
+          "provider": "faa",
+          "published_at": null,
+          "restriction_status": "scheduled_not_yet_effective",
+          "scheduled_valid_from": "2026-11-20T22:10:00Z",
+          "scheduled_valid_until": "2026-11-20T22:30:00Z",
+          "source_family": "airspace_restriction",
+          "source_kind": "official_restriction_notice",
+          "source_updated_at": null,
+          "source_url": "https://tfr.faa.gov/6_8350.html",
+          "title": "FAA TFR 6/8350 ·   USA, Friday, November 20, 2026 UTC"
+        }
+      }
+    },
+    "2c3b083d56efd0b6874712a2b66ef968bf64afafc63e1a9c4f11da2bb03244c9": {
+      "information_root": "ioda:07af3404c1f8ae420c161300",
+      "members": {
+        "beh:741a278fe8b50d6c1a94590467dc": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "measurement_no_attribution",
+          "collection_mode": "ioda",
+          "direct_measurement": true,
+          "event_at": "2026-11-15T11:25:00Z",
+          "first_observed_at": "2026-11-15T14:42:29+00:00",
+          "geography_key": "country:TD",
+          "geography_label": "TD",
+          "geography_precision": "provider_reported_country",
+          "id": "beh:741a278fe8b50d6c1a94590467dc",
+          "information_root": "ioda:07af3404c1f8ae420c161300",
+          "origin": "behavioral_registry",
+          "provider": "ioda",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_family": "internet_reachability",
+          "source_kind": "outage_event",
+          "source_updated_at": null,
+          "source_url": "https://ioda.inetintel.cc.gatech.edu/",
+          "title": "IODA detected connectivity anomaly: country TD"
+        }
+      }
+    },
+    "2c93a7db7bc78ccdcb1db01aace29f060aee36dd59bd69d417ffc30d8c62575b": {
+      "information_root": "niord:d05a4852-a07f-46c4-a142-280af74b01f5:0:5:0",
+      "members": {
+        "beh:365c7b0b18740819ad1726f990a4": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "official_scheduled_restriction_not_military_preparation",
+          "collection_mode": "live_maritime",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-16T01:56:09+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "notice_geography_unavailable",
+          "id": "beh:365c7b0b18740819ad1726f990a4",
+          "information_root": "niord:d05a4852-a07f-46c4-a142-280af74b01f5:0:5:0",
+          "origin": "behavioral_registry",
+          "provider": "niord",
+          "published_at": null,
+          "restriction_status": "scheduled_not_yet_effective",
+          "scheduled_valid_from": "2026-11-22T07:00:00Z",
+          "scheduled_valid_until": "2026-11-22T14:00:00Z",
+          "source_family": "maritime_restriction",
+          "source_kind": "official_restriction_notice",
+          "source_updated_at": "2026-11-16T00:21:50Z",
+          "source_url": "https://niord.dma.dk/#/message/d05a4852-a07f-46c4-a142-280af74b01f5",
+          "title": "Denmark. Kattegat. EK R 45 Hevring. Firing exercises. Warning."
+        }
+      }
+    },
+    "2ca41d01be9881904d647b525a5470473c1efd9f26df1725a071951dd71c5e85": {
+      "information_root": "faa:6/7420:0:0",
+      "members": {
+        "beh:0e2c59ad57e7c755ef7b4ecc5c00": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "official_scheduled_restriction_not_military_preparation",
+          "collection_mode": "live_airspace",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-13T19:59:34+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "notice_geography_unavailable",
+          "id": "beh:0e2c59ad57e7c755ef7b4ecc5c00",
+          "information_root": "faa:6/7420:0:0",
+          "origin": "behavioral_registry",
+          "provider": "faa",
+          "published_at": null,
+          "restriction_status": "within_published_validity_window_not_verified_active",
+          "scheduled_valid_from": "2026-11-13T14:40:18Z",
+          "scheduled_valid_until": "2026-11-13T23:59:00Z",
+          "source_family": "airspace_restriction",
+          "source_kind": "official_restriction_notice",
+          "source_updated_at": null,
+          "source_url": "https://tfr.faa.gov/6_7420.html",
+          "title": "FAA TFR 6/7420 · U.S. MEXICO BORDER, AZ, Friday, November 13, 2026 UTC"
+        }
+      }
+    },
+    "2cb64415c3130495b35653f13dbdb9f3ba180161130a001f4cfc1f4469e0a5ff": {
+      "information_root": "niord:1863129d-c7bf-4cf8-9778-0416c0b5b3b3:0:0:0",
+      "members": {
+        "beh:7c512a0c938af0c19fa324c3aed4": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "official_scheduled_restriction_not_military_preparation",
+          "collection_mode": "live_maritime",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-18T02:22:17+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "notice_geography_unavailable",
+          "id": "beh:7c512a0c938af0c19fa324c3aed4",
+          "information_root": "niord:1863129d-c7bf-4cf8-9778-0416c0b5b3b3:0:0:0",
+          "origin": "behavioral_registry",
+          "provider": "niord",
+          "published_at": null,
+          "restriction_status": "scheduled_not_yet_effective",
+          "scheduled_valid_from": "2026-11-18T07:00:00Z",
+          "scheduled_valid_until": "2026-11-18T22:59:00Z",
+          "source_family": "maritime_restriction",
+          "source_kind": "official_restriction_notice",
+          "source_updated_at": "2026-11-18T00:21:54Z",
+          "source_url": "https://niord.dma.dk/#/message/1863129d-c7bf-4cf8-9778-0416c0b5b3b3",
+          "title": "Denmark. The North Sea. EK R 33 Vejers. Firing exercises. Warning."
+        }
+      }
+    },
+    "2cc293e543bc4b63cf61e413bf0aafd87dadd4152fdcd8b5da0e6c426268c06e": {
+      "information_root": "niord:0d46c069-0c0b-4cd6-80cb-4e07aeaab638:0:3:0",
+      "members": {
+        "beh:4f94785e970c37becc98e3ef032d": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "official_scheduled_restriction_not_military_preparation",
+          "collection_mode": "live_maritime",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-16T09:31:14+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "notice_geography_unavailable",
+          "id": "beh:4f94785e970c37becc98e3ef032d",
+          "information_root": "niord:0d46c069-0c0b-4cd6-80cb-4e07aeaab638:0:3:0",
+          "origin": "behavioral_registry",
+          "provider": "niord",
+          "published_at": null,
+          "restriction_status": "scheduled_not_yet_effective",
+          "scheduled_valid_from": "2026-11-19T08:00:00Z",
+          "scheduled_valid_until": "2026-11-19T14:00:00Z",
+          "source_family": "maritime_restriction",
+          "source_kind": "official_restriction_notice",
+          "source_updated_at": "2026-11-16T09:21:52Z",
+          "source_url": "https://niord.dma.dk/#/message/0d46c069-0c0b-4cd6-80cb-4e07aeaab638",
+          "title": "Denmark. Skagerrak. EK R 48 Tranum S. Firing exercises. Warning."
+        }
+      }
+    }
+  },
+  "schema": "aiba.family-archive.v1"
+}

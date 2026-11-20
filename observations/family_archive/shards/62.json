@@ -1,0 +1,65 @@
+{
+  "roots": {
+    "62845f4db60aabf25d7f4f097dc68505996f235447c17916b8f79bf38b74ac1c": {
+      "information_root": "ioda:a39871be00975941c2a14541",
+      "members": {
+        "beh:d5b15694f5f58faf1f09c061c21b": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "measurement_no_attribution",
+          "collection_mode": "ioda",
+          "direct_measurement": true,
+          "event_at": "2026-11-18T22:00:00Z",
+          "first_observed_at": "2026-11-18T23:34:05+00:00",
+          "geography_key": "country:SL",
+          "geography_label": "SL",
+          "geography_precision": "provider_reported_country",
+          "id": "beh:d5b15694f5f58faf1f09c061c21b",
+          "information_root": "ioda:a39871be00975941c2a14541",
+          "origin": "behavioral_registry",
+          "provider": "ioda",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_family": "internet_reachability",
+          "source_kind": "outage_event",
+          "source_updated_at": null,
+          "source_url": "https://ioda.inetintel.cc.gatech.edu/",
+          "title": "IODA detected connectivity anomaly: country SL"
+        }
+      }
+    },
+    "62ea7047a8acb98177f08ee3d7d699f1f011ef17e28f2364009ca8796235417b": {
+      "information_root": "official:22f0cc07e1e0457d0bc5",
+      "members": {
+        "beh:8f9214ac0f47af7533e6e7f0fc76": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "notice_not_verified_preparation",
+          "collection_mode": "official",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-11T02:48:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:8f9214ac0f47af7533e6e7f0fc76",
+          "information_root": "official:22f0cc07e1e0457d0bc5",
+          "origin": "behavioral_registry",
+          "provider": "official",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_family": "protective_notice",
+          "source_kind": "official_travel_security_notice",
+          "source_updated_at": null,
+          "source_url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.tto.html",
+          "title": "Trinidad and Tobago - Level 3: Reconsider Travel"
+        }
+      }
+    }
+  },
+  "schema": "aiba.family-archive.v1"
+}

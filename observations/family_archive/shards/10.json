@@ -1,0 +1,65 @@
+{
+  "roots": {
+    "103e3711783831f8550b277324dcd037269579ebb9cfbbdfd13101c3fa916240": {
+      "information_root": "ioda:ccf41211c872280008e40e72",
+      "members": {
+        "beh:482787bc6b68d5e50e48b00249ea": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "measurement_no_attribution",
+          "collection_mode": "ioda",
+          "direct_measurement": true,
+          "event_at": "2026-11-18T22:00:00Z",
+          "first_observed_at": "2026-11-18T23:34:05+00:00",
+          "geography_key": "country:MC",
+          "geography_label": "MC",
+          "geography_precision": "provider_reported_country",
+          "id": "beh:482787bc6b68d5e50e48b00249ea",
+          "information_root": "ioda:ccf41211c872280008e40e72",
+          "origin": "behavioral_registry",
+          "provider": "ioda",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_family": "internet_reachability",
+          "source_kind": "outage_event",
+          "source_updated_at": null,
+          "source_url": "https://ioda.inetintel.cc.gatech.edu/",
+          "title": "IODA detected connectivity anomaly: country MC"
+        }
+      }
+    },
+    "10c725afc9ee5f63e424a62cfdab26d9b61275cd63fe93e2a0a930fb2037daed": {
+      "information_root": "niord:532825a7-01a5-4d42-a5db-24bed595e9e8:0:5:0",
+      "members": {
+        "beh:b6b9ee714199bae5eac293e6eadb": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "official_scheduled_restriction_not_military_preparation",
+          "collection_mode": "live_maritime",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-15T02:51:03+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "notice_geography_unavailable",
+          "id": "beh:b6b9ee714199bae5eac293e6eadb",
+          "information_root": "niord:532825a7-01a5-4d42-a5db-24bed595e9e8:0:5:0",
+          "origin": "behavioral_registry",
+          "provider": "niord",
+          "published_at": null,
+          "restriction_status": "scheduled_not_yet_effective",
+          "scheduled_valid_from": "2026-11-21T07:00:00Z",
+          "scheduled_valid_until": "2026-11-21T17:00:00Z",
+          "source_family": "maritime_restriction",
+          "source_kind": "official_restriction_notice",
+          "source_updated_at": "2026-11-15T00:21:51Z",
+          "source_url": "https://niord.dma.dk/#/message/532825a7-01a5-4d42-a5db-24bed595e9e8",
+          "title": "Denmark. Kattegat. EK R 45 Hevring. Firing exercises. Warning."
+        }
+      }
+    }
+  },
+  "schema": "aiba.family-archive.v1"
+}

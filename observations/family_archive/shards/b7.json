@@ -1,0 +1,95 @@
+{
+  "roots": {
+    "b744de5ae93d63ae12373be13dbb4f38b870a1a7440a9219a0a434442eeb4dc9": {
+      "information_root": "faa:6/8654:0:0",
+      "members": {
+        "beh:c6f280c28e5569e57c67270aeae5": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "official_scheduled_restriction_not_military_preparation",
+          "collection_mode": "live_airspace",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-18T19:09:25+00:00",
+          "geography_key": "source-footprint:ef10f07f507295d97bd67869",
+          "geography_label": "Official MultiPolygon notice area",
+          "geography_precision": "provider_defined_notice_boundary_not_event_point",
+          "id": "beh:c6f280c28e5569e57c67270aeae5",
+          "information_root": "faa:6/8654:0:0",
+          "origin": "behavioral_registry",
+          "provider": "faa",
+          "published_at": null,
+          "restriction_status": "scheduled_not_yet_effective",
+          "scheduled_valid_from": "2026-11-21T21:55:00Z",
+          "scheduled_valid_until": "2026-11-21T22:15:00Z",
+          "source_family": "airspace_restriction",
+          "source_kind": "official_restriction_notice",
+          "source_updated_at": null,
+          "source_url": "https://tfr.faa.gov/6_8654.html",
+          "title": "FAA TFR 6/8654 ·   USA, Saturday, November 21, 2026 UTC"
+        }
+      }
+    },
+    "b74703486b0e838447feaaa32628ccaf0dda57e0b3cf0866d0156e0fed6053a9": {
+      "information_root": "niord:a4425666-f4fc-489b-8dcd-a4585efb516b:0:5:0",
+      "members": {
+        "beh:ab46b3545b871f4f210da9844f6e": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "official_scheduled_restriction_not_military_preparation",
+          "collection_mode": "live_maritime",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-12T02:29:55+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "notice_geography_unavailable",
+          "id": "beh:ab46b3545b871f4f210da9844f6e",
+          "information_root": "niord:a4425666-f4fc-489b-8dcd-a4585efb516b:0:5:0",
+          "origin": "behavioral_registry",
+          "provider": "niord",
+          "published_at": null,
+          "restriction_status": "scheduled_not_yet_effective",
+          "scheduled_valid_from": "2026-11-18T07:00:00Z",
+          "scheduled_valid_until": "2026-11-18T18:00:00Z",
+          "source_family": "maritime_restriction",
+          "source_kind": "official_restriction_notice",
+          "source_updated_at": "2026-11-12T00:21:51Z",
+          "source_url": "https://niord.dma.dk/#/message/a4425666-f4fc-489b-8dcd-a4585efb516b",
+          "title": "Denmark. Kattegat. EK R 45 Hevring. Firing exercises. Warning."
+        }
+      }
+    },
+    "b7f2ed9ab8505515f5b23cb872c33665fc6fac2e39c9e85b5f5069ba1f5c4bba": {
+      "information_root": "official:2b624af64ec0e68d2aff",
+      "members": {
+        "beh:98c54eade53a78ddbdd06c4d3736": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "notice_not_verified_preparation",
+          "collection_mode": "official",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-11T02:48:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:98c54eade53a78ddbdd06c4d3736",
+          "information_root": "official:2b624af64ec0e68d2aff",
+          "origin": "behavioral_registry",
+          "provider": "official",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_family": "protective_notice",
+          "source_kind": "official_travel_security_notice",
+          "source_updated_at": null,
+          "source_url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.cuw.html",
+          "title": "Curaçao - Level 1: Exercise Normal Precautions"
+        }
+      }
+    }
+  },
+  "schema": "aiba.family-archive.v1"
+}

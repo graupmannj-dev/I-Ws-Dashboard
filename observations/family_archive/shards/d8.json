@@ -1,0 +1,65 @@
+{
+  "roots": {
+    "d807ffb79ff7e8c2445f5ec63f11a5e0badf121c383f6f2854d0d6dc165ae822": {
+      "information_root": "ioda:9061a0f04c6601b455f7b389",
+      "members": {
+        "beh:3db5b491b55f5139dc91d79848ca": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "measurement_no_attribution",
+          "collection_mode": "ioda",
+          "direct_measurement": true,
+          "event_at": "2026-11-18T04:00:00Z",
+          "first_observed_at": "2026-11-18T08:28:52+00:00",
+          "geography_key": "country:PG",
+          "geography_label": "PG",
+          "geography_precision": "provider_reported_country",
+          "id": "beh:3db5b491b55f5139dc91d79848ca",
+          "information_root": "ioda:9061a0f04c6601b455f7b389",
+          "origin": "behavioral_registry",
+          "provider": "ioda",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_family": "internet_reachability",
+          "source_kind": "outage_event",
+          "source_updated_at": null,
+          "source_url": "https://ioda.inetintel.cc.gatech.edu/",
+          "title": "IODA detected connectivity anomaly: country PG"
+        }
+      }
+    },
+    "d8dd70494c95887ca1fe3394e00d924fcabaa230188b4a1e777a355b1613ac96": {
+      "information_root": "commercial:456e646e758c7372deed",
+      "members": {
+        "beh:98ad5e954d5c94f36a536abb7a58": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "news_mention_not_action",
+          "collection_mode": "commercial",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-17T16:57:47+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:98ad5e954d5c94f36a536abb7a58",
+          "information_root": "commercial:456e646e758c7372deed",
+          "origin": "behavioral_registry",
+          "provider": "commercial",
+          "published_at": "2026-11-17T02:21:34Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_family": "commercial_media",
+          "source_kind": "trade_press_commercial_behavior_lead",
+          "source_updated_at": null,
+          "source_url": "https://maritime-executive.com/article/cruisepal-s-successful-implementation-aboard-cordelia-cruises-vessel",
+          "title": "CruisePAL's Successful Implementation Aboard Cordelia Cruises’ Vessel"
+        }
+      }
+    }
+  },
+  "schema": "aiba.family-archive.v1"
+}

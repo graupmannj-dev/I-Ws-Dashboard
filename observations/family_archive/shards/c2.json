@@ -1,0 +1,95 @@
+{
+  "roots": {
+    "c22a111e920f74db3317d344fe74978163ecf5bbd3bb86b20f645ddbfbb907e5": {
+      "information_root": "official:8c11bfdcf775e8b3bc6b",
+      "members": {
+        "beh:b354be9d9cb8d2a1a8fb79abd1bd": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "notice_not_verified_preparation",
+          "collection_mode": "official",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-11T02:48:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:b354be9d9cb8d2a1a8fb79abd1bd",
+          "information_root": "official:8c11bfdcf775e8b3bc6b",
+          "origin": "behavioral_registry",
+          "provider": "official",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_family": "protective_notice",
+          "source_kind": "official_travel_security_notice",
+          "source_updated_at": null,
+          "source_url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.chn.html",
+          "title": "China - Level 2: Exercise Increased Caution"
+        }
+      }
+    },
+    "c28a65723b3e759a0209f7b8824c89717d2d3a22051a1a02e96c2ad276ada862": {
+      "information_root": "ioda:affd1dec0e34d51561681b36",
+      "members": {
+        "beh:5b6d719f200680bd8293ac79c9d6": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "measurement_no_attribution",
+          "collection_mode": "ioda",
+          "direct_measurement": true,
+          "event_at": "2026-11-18T22:00:00Z",
+          "first_observed_at": "2026-11-18T23:34:05+00:00",
+          "geography_key": "country:FM",
+          "geography_label": "FM",
+          "geography_precision": "provider_reported_country",
+          "id": "beh:5b6d719f200680bd8293ac79c9d6",
+          "information_root": "ioda:affd1dec0e34d51561681b36",
+          "origin": "behavioral_registry",
+          "provider": "ioda",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_family": "internet_reachability",
+          "source_kind": "outage_event",
+          "source_updated_at": null,
+          "source_url": "https://ioda.inetintel.cc.gatech.edu/",
+          "title": "IODA detected connectivity anomaly: country FM"
+        }
+      }
+    },
+    "c2f406130e51e80a980e37a85190ae0e08a1c037a468a772e0a92f3d0bd82701": {
+      "information_root": "ioda:ccb64adc2e8802d33460123d",
+      "members": {
+        "beh:f38543184ba1380900e97734cf6f": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "measurement_no_attribution",
+          "collection_mode": "ioda",
+          "direct_measurement": true,
+          "event_at": "2026-11-17T07:25:00Z",
+          "first_observed_at": "2026-11-17T08:26:59+00:00",
+          "geography_key": "country:SA",
+          "geography_label": "SA",
+          "geography_precision": "provider_reported_country",
+          "id": "beh:f38543184ba1380900e97734cf6f",
+          "information_root": "ioda:ccb64adc2e8802d33460123d",
+          "origin": "behavioral_registry",
+          "provider": "ioda",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_family": "internet_reachability",
+          "source_kind": "outage_event",
+          "source_updated_at": null,
+          "source_url": "https://ioda.inetintel.cc.gatech.edu/",
+          "title": "IODA detected connectivity anomaly: country SA"
+        }
+      }
+    }
+  },
+  "schema": "aiba.family-archive.v1"
+}

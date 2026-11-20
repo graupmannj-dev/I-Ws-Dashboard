@@ -1,0 +1,95 @@
+{
+  "roots": {
+    "742cba15fd67b1c3d306ab22a7390c1464815dda5d0d92b1671af0f6c6bdc462": {
+      "information_root": "ioda:d06240ed8adea179bd925da4",
+      "members": {
+        "beh:5f8356984401a179f803517f5dda": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "measurement_no_attribution",
+          "collection_mode": "ioda",
+          "direct_measurement": true,
+          "event_at": "2026-11-18T04:00:00Z",
+          "first_observed_at": "2026-11-18T08:28:52+00:00",
+          "geography_key": "country:VA",
+          "geography_label": "VA",
+          "geography_precision": "provider_reported_country",
+          "id": "beh:5f8356984401a179f803517f5dda",
+          "information_root": "ioda:d06240ed8adea179bd925da4",
+          "origin": "behavioral_registry",
+          "provider": "ioda",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_family": "internet_reachability",
+          "source_kind": "outage_event",
+          "source_updated_at": null,
+          "source_url": "https://ioda.inetintel.cc.gatech.edu/",
+          "title": "IODA detected connectivity anomaly: country VA"
+        }
+      }
+    },
+    "74e1ca01162f11837bca320b2258647bc7d4d0609c6a72a923c7b089172ec809": {
+      "information_root": "niord:83d1a83a-764d-444f-b079-4d31ef8835c0:3:0:0",
+      "members": {
+        "beh:7ca0b7871f26416c6b7410cbec1f": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "official_scheduled_restriction_not_military_preparation",
+          "collection_mode": "live_maritime",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-19T01:17:57+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "notice_geography_unavailable",
+          "id": "beh:7ca0b7871f26416c6b7410cbec1f",
+          "information_root": "niord:83d1a83a-764d-444f-b079-4d31ef8835c0:3:0:0",
+          "origin": "behavioral_registry",
+          "provider": "niord",
+          "published_at": null,
+          "restriction_status": "within_published_validity_window_not_verified_active",
+          "scheduled_valid_from": "2026-11-19T00:21:51Z",
+          "scheduled_valid_until": "2026-11-23T16:00:00Z",
+          "source_family": "maritime_restriction",
+          "source_kind": "official_restriction_notice",
+          "source_updated_at": "2026-11-19T00:21:53Z",
+          "source_url": "https://niord.dma.dk/#/message/83d1a83a-764d-444f-b079-4d31ef8835c0",
+          "title": "Denmark. Kattegat. EK R 18 Jaegerspris. Firing exercises. Warning."
+        }
+      }
+    },
+    "74ef97fb8b35d988ab2ec2e4ea2358512337559e7f78d4b988e26b080a246dbb": {
+      "information_root": "niord:eff10748-1ca2-458c-b65b-24378a47074d:2:0:0",
+      "members": {
+        "beh:a5be494de8a608695c4e5e458fa7": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "official_scheduled_restriction_not_military_preparation",
+          "collection_mode": "live_maritime",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-19T01:17:57+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "notice_geography_unavailable",
+          "id": "beh:a5be494de8a608695c4e5e458fa7",
+          "information_root": "niord:eff10748-1ca2-458c-b65b-24378a47074d:2:0:0",
+          "origin": "behavioral_registry",
+          "provider": "niord",
+          "published_at": null,
+          "restriction_status": "within_published_validity_window_not_verified_active",
+          "scheduled_valid_from": "2026-11-19T00:21:51Z",
+          "scheduled_valid_until": "2026-11-19T14:00:00Z",
+          "source_family": "maritime_restriction",
+          "source_kind": "official_restriction_notice",
+          "source_updated_at": "2026-11-19T00:21:56Z",
+          "source_url": "https://niord.dma.dk/#/message/eff10748-1ca2-458c-b65b-24378a47074d",
+          "title": "Denmark. The North Sea. EK R 53 Juvre. Firing exercises. Warning."
+        }
+      }
+    }
+  },
+  "schema": "aiba.family-archive.v1"
+}

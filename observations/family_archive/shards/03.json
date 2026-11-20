@@ -1,0 +1,275 @@
+{
+  "roots": {
+    "0314a2c6fa30f38df56878b7f304d27471caff0a4bf29babf685eb991ba95391": {
+      "information_root": "ioda:cc0032ef49d5d25f9e003069",
+      "members": {
+        "beh:8bba74056c08a1d75ee47aa467a1": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "measurement_no_attribution",
+          "collection_mode": "ioda",
+          "direct_measurement": true,
+          "event_at": "2026-11-18T04:00:00Z",
+          "first_observed_at": "2026-11-18T08:28:52+00:00",
+          "geography_key": "country:BJ",
+          "geography_label": "BJ",
+          "geography_precision": "provider_reported_country",
+          "id": "beh:8bba74056c08a1d75ee47aa467a1",
+          "information_root": "ioda:cc0032ef49d5d25f9e003069",
+          "origin": "behavioral_registry",
+          "provider": "ioda",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_family": "internet_reachability",
+          "source_kind": "outage_event",
+          "source_updated_at": null,
+          "source_url": "https://ioda.inetintel.cc.gatech.edu/",
+          "title": "IODA detected connectivity anomaly: country BJ"
+        }
+      }
+    },
+    "0315bf0b3f78306168aa130248c04459de0e4268f2445b8c5ac2cecafe27aebf": {
+      "information_root": "official:92bbc56f6dec45ae2760",
+      "members": {
+        "beh:9b0191755791397c8943157b4e82": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "notice_not_verified_preparation",
+          "collection_mode": "official",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-11T02:48:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:9b0191755791397c8943157b4e82",
+          "information_root": "official:92bbc56f6dec45ae2760",
+          "origin": "behavioral_registry",
+          "provider": "official",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_family": "protective_notice",
+          "source_kind": "official_travel_security_notice",
+          "source_updated_at": null,
+          "source_url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.aia.html",
+          "title": "Anguilla - Level 1: Exercise Normal Precautions"
+        }
+      }
+    },
+    "032fc3a4d7b5e0dbf12054fccfa7b450479cd793cd35b2e81ff0b6e33614e1af": {
+      "information_root": "niord:81a3ee1e-3be5-4107-ba85-9b4f5eb65d25:0:3:0",
+      "members": {
+        "beh:9e99356f707e631edad693f3ab89": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "official_scheduled_restriction_not_military_preparation",
+          "collection_mode": "live_maritime",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-13T04:21:51+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "notice_geography_unavailable",
+          "id": "beh:9e99356f707e631edad693f3ab89",
+          "information_root": "niord:81a3ee1e-3be5-4107-ba85-9b4f5eb65d25:0:3:0",
+          "origin": "behavioral_registry",
+          "provider": "niord",
+          "published_at": null,
+          "restriction_status": "scheduled_not_yet_effective",
+          "scheduled_valid_from": "2026-11-18T08:00:00Z",
+          "scheduled_valid_until": "2026-11-18T20:00:00Z",
+          "source_family": "maritime_restriction",
+          "source_kind": "official_restriction_notice",
+          "source_updated_at": "2026-11-13T00:21:51Z",
+          "source_url": "https://niord.dma.dk/#/message/81a3ee1e-3be5-4107-ba85-9b4f5eb65d25",
+          "title": "Denmark. Kattegat. EK R 18 Jaegerspris. Firing exercises. Warning."
+        }
+      }
+    },
+    "0348a8376b68dd57f821052cf01c0e954208d076a5b4050f5d3659a38f3ce302": {
+      "information_root": "faa:6/8735:0:0",
+      "members": {
+        "beh:5da0cc6076a5499f9d36d9effba2": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "official_scheduled_restriction_not_military_preparation",
+          "collection_mode": "live_airspace",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-19T01:17:57+00:00",
+          "geography_key": "source-footprint:76313b91398606b1afe68854",
+          "geography_label": "Official MultiPolygon notice area",
+          "geography_precision": "provider_defined_notice_boundary_not_event_point",
+          "id": "beh:5da0cc6076a5499f9d36d9effba2",
+          "information_root": "faa:6/8735:0:0",
+          "origin": "behavioral_registry",
+          "provider": "faa",
+          "published_at": null,
+          "restriction_status": "scheduled_not_yet_effective",
+          "scheduled_valid_from": "2026-11-22T05:50:00Z",
+          "scheduled_valid_until": "2026-11-22T07:50:00Z",
+          "source_family": "airspace_restriction",
+          "source_kind": "official_restriction_notice",
+          "source_updated_at": null,
+          "source_url": "https://tfr.faa.gov/6_8735.html",
+          "title": "FAA TFR 6/8735 ·   USA, Sunday, November 22, 2026 UTC"
+        }
+      }
+    },
+    "034ea0e4448e85f00c6f12da6fb6bd3b2017f86de0abbc24a60ff4254a6598e0": {
+      "information_root": "official:81c26489647acfe8f3c6",
+      "members": {
+        "beh:d0a59e8aa35151a299bf3fb3fcb6": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "notice_not_verified_preparation",
+          "collection_mode": "official",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-11T02:48:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:d0a59e8aa35151a299bf3fb3fcb6",
+          "information_root": "official:81c26489647acfe8f3c6",
+          "origin": "behavioral_registry",
+          "provider": "official",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_family": "protective_notice",
+          "source_kind": "official_travel_security_notice",
+          "source_updated_at": null,
+          "source_url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.fji.html",
+          "title": "Fiji - Level 1: Exercise Normal Precautions"
+        }
+      }
+    },
+    "035b4251bfa07d4d529c70a347cefeddc46ab2d9a79ebdee4e39279b49fdc508": {
+      "information_root": "faa:6/7602:0:0",
+      "members": {
+        "beh:4b64d765930d51e6f6f8995f79da": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "official_scheduled_restriction_not_military_preparation",
+          "collection_mode": "live_airspace",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-15T21:54:13+00:00",
+          "geography_key": "source-footprint:f96e97cb8aa6667395cb7ad2",
+          "geography_label": "Official MultiPolygon notice area",
+          "geography_precision": "provider_defined_notice_boundary_not_event_point",
+          "id": "beh:4b64d765930d51e6f6f8995f79da",
+          "information_root": "faa:6/7602:0:0",
+          "origin": "behavioral_registry",
+          "provider": "faa",
+          "published_at": null,
+          "restriction_status": "within_published_validity_window_not_verified_active",
+          "scheduled_valid_from": "2026-11-15T18:16:00Z",
+          "scheduled_valid_until": "2026-11-16T02:00:00Z",
+          "source_family": "airspace_restriction",
+          "source_kind": "official_restriction_notice",
+          "source_updated_at": null,
+          "source_url": "https://tfr.faa.gov/6_7602.html",
+          "title": "FAA TFR 6/7602 · 4NM NW WIGGINS, MS, Sunday, November 15, 2026 through Monday, November 16, 2026 UTC"
+        }
+      }
+    },
+    "0365c707a7c4ea6ffdfa541aae2741af00f0f4ec8bd955ebf0df66798f6544a9": {
+      "information_root": "ioda:0a2ada33243bd5f99ae0e3a1",
+      "members": {
+        "beh:3c52f7e2120ab3b1c57510994448": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "measurement_no_attribution",
+          "collection_mode": "ioda",
+          "direct_measurement": true,
+          "event_at": "2026-11-19T07:30:00Z",
+          "first_observed_at": "2026-11-19T13:51:00+00:00",
+          "geography_key": "country:MC",
+          "geography_label": "MC",
+          "geography_precision": "provider_reported_country",
+          "id": "beh:3c52f7e2120ab3b1c57510994448",
+          "information_root": "ioda:0a2ada33243bd5f99ae0e3a1",
+          "origin": "behavioral_registry",
+          "provider": "ioda",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_family": "internet_reachability",
+          "source_kind": "outage_event",
+          "source_updated_at": null,
+          "source_url": "https://ioda.inetintel.cc.gatech.edu/",
+          "title": "IODA detected connectivity anomaly: country MC"
+        }
+      }
+    },
+    "039741484cb02787e5bc77ec12f22ed6984edf08de5a287e2b6e3b10a7a0ff58": {
+      "information_root": "niord:06000b7f-8f63-4ff2-8bd7-12f026492678:0:2:0",
+      "members": {
+        "beh:4d8c5dfb03a758b7802c90f0395e": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "official_scheduled_restriction_not_military_preparation",
+          "collection_mode": "live_maritime",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-18T02:22:17+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "notice_geography_unavailable",
+          "id": "beh:4d8c5dfb03a758b7802c90f0395e",
+          "information_root": "niord:06000b7f-8f63-4ff2-8bd7-12f026492678:0:2:0",
+          "origin": "behavioral_registry",
+          "provider": "niord",
+          "published_at": null,
+          "restriction_status": "scheduled_not_yet_effective",
+          "scheduled_valid_from": "2026-11-20T07:00:00Z",
+          "scheduled_valid_until": "2026-11-20T13:00:00Z",
+          "source_family": "maritime_restriction",
+          "source_kind": "official_restriction_notice",
+          "source_updated_at": "2026-11-18T00:21:52Z",
+          "source_url": "https://niord.dma.dk/#/message/06000b7f-8f63-4ff2-8bd7-12f026492678",
+          "title": "Denmark. Kattegat. EK R 19 MULTEX. Firing exercises. Warning."
+        }
+      }
+    },
+    "0398e969bbf82e704fe62fd4b3394de0ac9b8999aab3376ddb8964ff96680ad5": {
+      "information_root": "official:f6b10d11809c91c4b05d",
+      "members": {
+        "beh:1e17754e8c844a3c37c16b73c48d": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "notice_not_verified_preparation",
+          "collection_mode": "official",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-11T02:48:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:1e17754e8c844a3c37c16b73c48d",
+          "information_root": "official:f6b10d11809c91c4b05d",
+          "origin": "behavioral_registry",
+          "provider": "official",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_family": "protective_notice",
+          "source_kind": "official_travel_security_notice",
+          "source_updated_at": null,
+          "source_url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.ben.html",
+          "title": "Benin - Level 2: Exercise Increased Caution"
+        }
+      }
+    }
+  },
+  "schema": "aiba.family-archive.v1"
+}

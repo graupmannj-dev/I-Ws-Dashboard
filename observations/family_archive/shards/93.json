@@ -1,0 +1,65 @@
+{
+  "roots": {
+    "93a51ca4bd570c87d150489e4ca8649dda12c731f23973098deca5d48dc6f40a": {
+      "information_root": "faa:6/8290:0:0",
+      "members": {
+        "beh:7cca148003655a20d98c2980f1e7": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "official_scheduled_restriction_not_military_preparation",
+          "collection_mode": "live_airspace",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-17T19:55:51+00:00",
+          "geography_key": "source-footprint:5beb44041059c5fe9a9fbaae",
+          "geography_label": "Official MultiPolygon notice area",
+          "geography_precision": "provider_defined_notice_boundary_not_event_point",
+          "id": "beh:7cca148003655a20d98c2980f1e7",
+          "information_root": "faa:6/8290:0:0",
+          "origin": "behavioral_registry",
+          "provider": "faa",
+          "published_at": null,
+          "restriction_status": "scheduled_not_yet_effective",
+          "scheduled_valid_from": "2026-11-19T15:00:00Z",
+          "scheduled_valid_until": "2026-11-19T18:00:00Z",
+          "source_family": "airspace_restriction",
+          "source_kind": "official_restriction_notice",
+          "source_updated_at": null,
+          "source_url": "https://tfr.faa.gov/6_8290.html",
+          "title": "FAA TFR 6/8290 · BABBITT, MN, Thursday, November 19, 2026 UTC"
+        }
+      }
+    },
+    "93cc5348ff3d40e31caa93296b36b8bb678c6c7997343a4bf9db8ba8ce464f5f": {
+      "information_root": "official:6d60cabc9e441fe8969d",
+      "members": {
+        "beh:f448f679f6be4482c0fb0128895e": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "notice_not_verified_preparation",
+          "collection_mode": "official",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-11T02:48:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:f448f679f6be4482c0fb0128895e",
+          "information_root": "official:6d60cabc9e441fe8969d",
+          "origin": "behavioral_registry",
+          "provider": "official",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_family": "protective_notice",
+          "source_kind": "official_travel_security_notice",
+          "source_updated_at": null,
+          "source_url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.gbr.html",
+          "title": "United Kingdom - Level 2: Exercise Increased Caution"
+        }
+      }
+    }
+  },
+  "schema": "aiba.family-archive.v1"
+}

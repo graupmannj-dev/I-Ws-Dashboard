@@ -1,0 +1,121 @@
+{
+  "roots": {
+    "8c117cf10fd92bc28a1318b99518d3572b8849a44b764c478287af2dad37372b": {
+      "information_root": "ioda:d2053abc14ba6a72f0734d60",
+      "members": {
+        "beh:87882b35172abb0f557c461384db": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "measurement_no_attribution",
+          "collection_mode": "ioda",
+          "direct_measurement": true,
+          "event_at": "2026-11-18T22:00:00Z",
+          "first_observed_at": "2026-11-18T23:34:05+00:00",
+          "geography_key": "country:AG",
+          "geography_label": "AG",
+          "geography_precision": "provider_reported_country",
+          "id": "beh:87882b35172abb0f557c461384db",
+          "information_root": "ioda:d2053abc14ba6a72f0734d60",
+          "origin": "behavioral_registry",
+          "provider": "ioda",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_family": "internet_reachability",
+          "source_kind": "outage_event",
+          "source_updated_at": null,
+          "source_url": "https://ioda.inetintel.cc.gatech.edu/",
+          "title": "IODA detected connectivity anomaly: country AG"
+        }
+      }
+    },
+    "8c298fbe527b807be9248f04a1df1383ea7dd5f152b4adae3467c877bb94f00b": {
+      "information_root": "ioda:cae6b54b93c693767386ccb9",
+      "members": {
+        "beh:95eec33d6f5072d2addedcdc25fb": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "measurement_no_attribution",
+          "collection_mode": "ioda",
+          "direct_measurement": true,
+          "event_at": "2026-11-11T20:30:00Z",
+          "first_observed_at": "2026-11-12T02:29:18+00:00",
+          "geography_key": "country:MH",
+          "geography_label": "MH",
+          "geography_precision": "provider_reported_country",
+          "id": "beh:95eec33d6f5072d2addedcdc25fb",
+          "information_root": "ioda:cae6b54b93c693767386ccb9",
+          "origin": "behavioral_registry",
+          "provider": "ioda",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_family": "internet_reachability",
+          "source_kind": "outage_event",
+          "source_updated_at": null,
+          "source_url": "https://ioda.inetintel.cc.gatech.edu/",
+          "title": "IODA detected connectivity anomaly: country MH"
+        }
+      }
+    },
+    "8c43a25bd395e862aea24ac99d9d818e8d6cff13be5635e845c0e6604acd7bf2": {
+      "information_root": "iran-irgc-bahrain-radar-claim-20261113",
+      "members": {
+        "analyst:reuters-20261113-iran-guards-bahrain-radar-claim": {
+          "calibrated_metric": null,
+          "case_hint": "iran_gulf",
+          "claim_level": "unreviewed_source_submission",
+          "collection_mode": "analyst",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-13T04:41:46+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "case_hint_not_source_geolocation",
+          "id": "analyst:reuters-20261113-iran-guards-bahrain-radar-claim",
+          "information_root": "iran-irgc-bahrain-radar-claim-20261113",
+          "origin": "analyst_intake",
+          "provider": "Reuters",
+          "published_at": "2026-11-13",
+          "source_family": "media_mention",
+          "source_kind": "unreviewed_analyst_report",
+          "source_url": "https://www.reuters.com/world/middle-east/irans-guards-say-they-targeted-us-early-warning-radar-bahrain-2026-11-13/",
+          "title": "IRGC claims strike against US early-warning radar in Bahrain"
+        }
+      }
+    },
+    "8ce4858d3520873969616e5603b00ad36bdd3020c9fe39c22a21001565c21a25": {
+      "information_root": "official:20efe2af8b98e32a93c7",
+      "members": {
+        "beh:bb2878b58543ca9d7b0afe0ca5b3": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "notice_not_verified_preparation",
+          "collection_mode": "official",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-11T02:48:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:bb2878b58543ca9d7b0afe0ca5b3",
+          "information_root": "official:20efe2af8b98e32a93c7",
+          "origin": "behavioral_registry",
+          "provider": "official",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_family": "protective_notice",
+          "source_kind": "official_travel_security_notice",
+          "source_updated_at": null,
+          "source_url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.lca.html",
+          "title": "Saint Lucia - Level 2: Exercise Increased Caution"
+        }
+      }
+    }
+  },
+  "schema": "aiba.family-archive.v1"
+}

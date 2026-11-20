@@ -1,0 +1,125 @@
+{
+  "roots": {
+    "9c0a23d5abc3bfc33f5352104f4041be6ca6492ac56634c6d1f8d48be8b94eae": {
+      "information_root": "faa:6/8704:0:0",
+      "members": {
+        "beh:bf0c5e38c532f7a9cc956a0ba705": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "official_scheduled_restriction_not_military_preparation",
+          "collection_mode": "live_airspace",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-19T01:17:57+00:00",
+          "geography_key": "source-footprint:f06c306f80c7a4a78be8c880",
+          "geography_label": "Official MultiPolygon notice area",
+          "geography_precision": "provider_defined_notice_boundary_not_event_point",
+          "id": "beh:bf0c5e38c532f7a9cc956a0ba705",
+          "information_root": "faa:6/8704:0:0",
+          "origin": "behavioral_registry",
+          "provider": "faa",
+          "published_at": null,
+          "restriction_status": "scheduled_not_yet_effective",
+          "scheduled_valid_from": "2026-11-22T17:00:00Z",
+          "scheduled_valid_until": "2026-11-22T23:59:00Z",
+          "source_family": "airspace_restriction",
+          "source_kind": "official_restriction_notice",
+          "source_updated_at": null,
+          "source_url": "https://tfr.faa.gov/6_8704.html",
+          "title": "FAA TFR 6/8704 · 04 ZLC AIRSPACE BOISE, ID, Sunday, November 22, 2026 UTC"
+        }
+      }
+    },
+    "9c6897567e6eb8e69844d27006af815e7f6e1fd749502d442633da03271adfa0": {
+      "information_root": "ioda:447d83c7937a609aff647023",
+      "members": {
+        "beh:4d4ea99e1e3056cb46711614c2f5": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "measurement_no_attribution",
+          "collection_mode": "ioda",
+          "direct_measurement": true,
+          "event_at": "2026-11-19T00:00:00Z",
+          "first_observed_at": "2026-11-19T04:29:20+00:00",
+          "geography_key": "country:NI",
+          "geography_label": "NI",
+          "geography_precision": "provider_reported_country",
+          "id": "beh:4d4ea99e1e3056cb46711614c2f5",
+          "information_root": "ioda:447d83c7937a609aff647023",
+          "origin": "behavioral_registry",
+          "provider": "ioda",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_family": "internet_reachability",
+          "source_kind": "outage_event",
+          "source_updated_at": null,
+          "source_url": "https://ioda.inetintel.cc.gatech.edu/",
+          "title": "IODA detected connectivity anomaly: country NI"
+        }
+      }
+    },
+    "9c791e61851fe317da6d92ef7968023e9687c4703d7cac807344ad2112a4a741": {
+      "information_root": "commercial:fd00c33efa0fbdaf0c37",
+      "members": {
+        "beh:b835bd33adfad3db09580b53bc8b": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "news_mention_not_action",
+          "collection_mode": "commercial",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-17T16:57:47+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:b835bd33adfad3db09580b53bc8b",
+          "information_root": "commercial:fd00c33efa0fbdaf0c37",
+          "origin": "behavioral_registry",
+          "provider": "commercial",
+          "published_at": "2026-11-16T20:00:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_family": "commercial_media",
+          "source_kind": "trade_press_commercial_behavior_lead",
+          "source_updated_at": null,
+          "source_url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOLWdqZ1RnSFFwUjFSUF9XX0FBbjBrRVNjenQzSHdESWV4UEpaRThQb2t6djhwY0lHaXRXWlQwR0piYWhfR0JuSXJuNTY2ZmxFdGZHWkk1S0xkOTh5MzVsTGhFdW1RbHM5SzFZT1hyQ2xpRkJtMWxoaUdqRTZfZHlXZ21xOFY5QkxDbDVHWWVmNnRicEF1?oc=5",
+          "title": "War Risk Insurance: Why Airlines Are Paying Far More - The Aviation Hub"
+        }
+      }
+    },
+    "9ccb769855cb2eb3d29e6ff55413e3e4b5cd992f9741e5d7cc142da3ea624ba3": {
+      "information_root": "niord:11b6b645-a1c8-429d-86f2-a1727651d571:0:1:0",
+      "members": {
+        "beh:a107668d0b81f9a2a73f76febf30": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "official_scheduled_restriction_not_military_preparation",
+          "collection_mode": "live_maritime",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-18T02:22:17+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "notice_geography_unavailable",
+          "id": "beh:a107668d0b81f9a2a73f76febf30",
+          "information_root": "niord:11b6b645-a1c8-429d-86f2-a1727651d571:0:1:0",
+          "origin": "behavioral_registry",
+          "provider": "niord",
+          "published_at": null,
+          "restriction_status": "scheduled_not_yet_effective",
+          "scheduled_valid_from": "2026-11-19T07:00:00Z",
+          "scheduled_valid_until": "2026-11-19T19:00:00Z",
+          "source_family": "maritime_restriction",
+          "source_kind": "official_restriction_notice",
+          "source_updated_at": "2026-11-18T00:21:54Z",
+          "source_url": "https://niord.dma.dk/#/message/11b6b645-a1c8-429d-86f2-a1727651d571",
+          "title": "Denmark. The North Sea. 15 Nymindegab. Firing exercises. Warning."
+        }
+      }
+    }
+  },
+  "schema": "aiba.family-archive.v1"
+}

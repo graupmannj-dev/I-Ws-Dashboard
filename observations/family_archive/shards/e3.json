@@ -1,0 +1,95 @@
+{
+  "roots": {
+    "e332b260fc8493e35b093d551265c7582d7fd24e6e4f86d48faa1e43440b9870": {
+      "information_root": "faa:6/7462:0:0",
+      "members": {
+        "beh:6dae79e34c358cf922dfbf1d932b": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "official_scheduled_restriction_not_military_preparation",
+          "collection_mode": "live_airspace",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-13T19:59:34+00:00",
+          "geography_key": "source-footprint:d4b8fd38058de360f6f5cd2b",
+          "geography_label": "Official MultiPolygon notice area",
+          "geography_precision": "provider_defined_notice_boundary_not_event_point",
+          "id": "beh:6dae79e34c358cf922dfbf1d932b",
+          "information_root": "faa:6/7462:0:0",
+          "origin": "behavioral_registry",
+          "provider": "faa",
+          "published_at": null,
+          "restriction_status": "scheduled_not_yet_effective",
+          "scheduled_valid_from": "2026-11-16T17:30:00Z",
+          "scheduled_valid_until": "2026-11-16T19:30:00Z",
+          "source_family": "airspace_restriction",
+          "source_kind": "official_restriction_notice",
+          "source_updated_at": null,
+          "source_url": "https://tfr.faa.gov/6_7462.html",
+          "title": "FAA TFR 6/7462 · KEEWATIN, MN, Monday, November 16, 2026 UTC"
+        }
+      }
+    },
+    "e399144747d866bbfd367c0e157072ca25c73db172f2d14d6c1ed19826f49356": {
+      "information_root": "niord:83d1a83a-764d-444f-b079-4d31ef8835c0:0:4:0",
+      "members": {
+        "beh:ffe5e7a0b360f8d758bd725b9b6a": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "official_scheduled_restriction_not_military_preparation",
+          "collection_mode": "live_maritime",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-19T01:17:57+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "notice_geography_unavailable",
+          "id": "beh:ffe5e7a0b360f8d758bd725b9b6a",
+          "information_root": "niord:83d1a83a-764d-444f-b079-4d31ef8835c0:0:4:0",
+          "origin": "behavioral_registry",
+          "provider": "niord",
+          "published_at": null,
+          "restriction_status": "scheduled_not_yet_effective",
+          "scheduled_valid_from": "2026-11-23T08:00:00Z",
+          "scheduled_valid_until": "2026-11-23T16:00:00Z",
+          "source_family": "maritime_restriction",
+          "source_kind": "official_restriction_notice",
+          "source_updated_at": "2026-11-19T00:21:53Z",
+          "source_url": "https://niord.dma.dk/#/message/83d1a83a-764d-444f-b079-4d31ef8835c0",
+          "title": "Denmark. Kattegat. EK R 18 Jaegerspris. Firing exercises. Warning."
+        }
+      }
+    },
+    "e3c792257599d9a61dcddcbe59b1bb2122d45bf07c6c6e7e907b98e9540adcbf": {
+      "information_root": "ioda:ab9e3348f0a0360a8d0525e9",
+      "members": {
+        "beh:2024f151b06b8bc243c343b2ed97": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "measurement_no_attribution",
+          "collection_mode": "ioda",
+          "direct_measurement": true,
+          "event_at": "2026-11-18T22:00:00Z",
+          "first_observed_at": "2026-11-18T23:34:05+00:00",
+          "geography_key": "country:PW",
+          "geography_label": "PW",
+          "geography_precision": "provider_reported_country",
+          "id": "beh:2024f151b06b8bc243c343b2ed97",
+          "information_root": "ioda:ab9e3348f0a0360a8d0525e9",
+          "origin": "behavioral_registry",
+          "provider": "ioda",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_family": "internet_reachability",
+          "source_kind": "outage_event",
+          "source_updated_at": null,
+          "source_url": "https://ioda.inetintel.cc.gatech.edu/",
+          "title": "IODA detected connectivity anomaly: country PW"
+        }
+      }
+    }
+  },
+  "schema": "aiba.family-archive.v1"
+}

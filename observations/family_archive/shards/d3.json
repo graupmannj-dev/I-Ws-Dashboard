@@ -1,0 +1,65 @@
+{
+  "roots": {
+    "d31c8853dd47c8430f72876a4870f7fafdd53beb8f7e278f0b1820f8b5fc5b50": {
+      "information_root": "ioda:75329cbe50c861cdd32becd0",
+      "members": {
+        "beh:205a010e11858543365dbd9b57c4": {
+          "calibrated_metric": null,
+          "case_hint": "korea",
+          "claim_level": "measurement_no_attribution",
+          "collection_mode": "ioda",
+          "direct_measurement": true,
+          "event_at": "2026-11-18T22:00:00Z",
+          "first_observed_at": "2026-11-18T23:34:05+00:00",
+          "geography_key": "country:KP",
+          "geography_label": "KP",
+          "geography_precision": "provider_reported_country",
+          "id": "beh:205a010e11858543365dbd9b57c4",
+          "information_root": "ioda:75329cbe50c861cdd32becd0",
+          "origin": "behavioral_registry",
+          "provider": "ioda",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_family": "internet_reachability",
+          "source_kind": "outage_event",
+          "source_updated_at": null,
+          "source_url": "https://ioda.inetintel.cc.gatech.edu/",
+          "title": "IODA detected connectivity anomaly: country KP"
+        }
+      }
+    },
+    "d3b8bd828d185470c80678829b565a19f3b1253e3aa8ea404d8dce7fec7b8487": {
+      "information_root": "niord:a86c476c-375d-469b-be2a-05497e11975a:2:0:0",
+      "members": {
+        "beh:1d213d76727fe113b5af0785dcb7": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "official_scheduled_restriction_not_military_preparation",
+          "collection_mode": "live_maritime",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-19T01:17:57+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "notice_geography_unavailable",
+          "id": "beh:1d213d76727fe113b5af0785dcb7",
+          "information_root": "niord:a86c476c-375d-469b-be2a-05497e11975a:2:0:0",
+          "origin": "behavioral_registry",
+          "provider": "niord",
+          "published_at": null,
+          "restriction_status": "within_published_validity_window_not_verified_active",
+          "scheduled_valid_from": "2026-11-19T00:21:51Z",
+          "scheduled_valid_until": "2026-11-22T11:00:00Z",
+          "source_family": "maritime_restriction",
+          "source_kind": "official_restriction_notice",
+          "source_updated_at": "2026-11-19T00:21:56Z",
+          "source_url": "https://niord.dma.dk/#/message/a86c476c-375d-469b-be2a-05497e11975a",
+          "title": "Denmark. The North Sea. 15 Nymindegab. Firing exercises. Warning."
+        }
+      }
+    }
+  },
+  "schema": "aiba.family-archive.v1"
+}

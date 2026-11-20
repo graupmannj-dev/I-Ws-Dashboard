@@ -1,0 +1,125 @@
+{
+  "roots": {
+    "2902d038c6b1d03ad176ed5f9d9ee3816bbf25311d697244c911ed2404c80289": {
+      "information_root": "ioda:451c8c4ee64f054f5919bafe",
+      "members": {
+        "beh:0328743b89a4eb2ef3c2e601e0a4": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "measurement_no_attribution",
+          "collection_mode": "ioda",
+          "direct_measurement": true,
+          "event_at": "2026-11-18T04:00:00Z",
+          "first_observed_at": "2026-11-18T08:28:52+00:00",
+          "geography_key": "country:CV",
+          "geography_label": "CV",
+          "geography_precision": "provider_reported_country",
+          "id": "beh:0328743b89a4eb2ef3c2e601e0a4",
+          "information_root": "ioda:451c8c4ee64f054f5919bafe",
+          "origin": "behavioral_registry",
+          "provider": "ioda",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_family": "internet_reachability",
+          "source_kind": "outage_event",
+          "source_updated_at": null,
+          "source_url": "https://ioda.inetintel.cc.gatech.edu/",
+          "title": "IODA detected connectivity anomaly: country CV"
+        }
+      }
+    },
+    "293099310d661449cb52e60d8c800c587c5aeb0bf8cfdb9cb07eda94b922d37d": {
+      "information_root": "ioda:a360eb89a61bc9a64ef3aaec",
+      "members": {
+        "beh:3913006ef7dab79e940c42331bc9": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "measurement_no_attribution",
+          "collection_mode": "ioda",
+          "direct_measurement": true,
+          "event_at": "2026-11-18T22:00:00Z",
+          "first_observed_at": "2026-11-18T23:34:05+00:00",
+          "geography_key": "country:NE",
+          "geography_label": "NE",
+          "geography_precision": "provider_reported_country",
+          "id": "beh:3913006ef7dab79e940c42331bc9",
+          "information_root": "ioda:a360eb89a61bc9a64ef3aaec",
+          "origin": "behavioral_registry",
+          "provider": "ioda",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_family": "internet_reachability",
+          "source_kind": "outage_event",
+          "source_updated_at": null,
+          "source_url": "https://ioda.inetintel.cc.gatech.edu/",
+          "title": "IODA detected connectivity anomaly: country NE"
+        }
+      }
+    },
+    "29752d97e902f6f6374f1dbd8eef4752371667b32df2f95f1b493174cecc443e": {
+      "information_root": "official:711f8f988e0cbf4858e3",
+      "members": {
+        "beh:273395c0637fda8c380fd1c6fdd0": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "notice_not_verified_preparation",
+          "collection_mode": "official",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-11T02:48:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:273395c0637fda8c380fd1c6fdd0",
+          "information_root": "official:711f8f988e0cbf4858e3",
+          "origin": "behavioral_registry",
+          "provider": "official",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_family": "protective_notice",
+          "source_kind": "official_travel_security_notice",
+          "source_updated_at": null,
+          "source_url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.alb.html",
+          "title": "Albania - Level 2: Exercise Increased Caution"
+        }
+      }
+    },
+    "29c1342755455800fd819100638689bb03959127e38805e066a5a03cac6113f4": {
+      "information_root": "niord:3b2bd424-b82d-439c-a51b-2919d5f09b15:0:7:0",
+      "members": {
+        "beh:9e478e9087f649a55c4f2253e2f8": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "official_scheduled_restriction_not_military_preparation",
+          "collection_mode": "live_maritime",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-13T04:21:51+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "notice_geography_unavailable",
+          "id": "beh:9e478e9087f649a55c4f2253e2f8",
+          "information_root": "niord:3b2bd424-b82d-439c-a51b-2919d5f09b15:0:7:0",
+          "origin": "behavioral_registry",
+          "provider": "niord",
+          "published_at": null,
+          "restriction_status": "scheduled_not_yet_effective",
+          "scheduled_valid_from": "2026-11-23T10:00:00Z",
+          "scheduled_valid_until": "2026-11-23T16:00:00Z",
+          "source_family": "maritime_restriction",
+          "source_kind": "official_restriction_notice",
+          "source_updated_at": "2026-11-13T00:21:52Z",
+          "source_url": "https://niord.dma.dk/#/message/3b2bd424-b82d-439c-a51b-2919d5f09b15",
+          "title": "Denmark. Skagerrak. EK R 48 Tranum S. Firing exercises. Warning."
+        }
+      }
+    }
+  },
+  "schema": "aiba.family-archive.v1"
+}
