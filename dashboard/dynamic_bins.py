@@ -12,6 +12,11 @@ from collections import defaultdict
 import datetime as dt
 import hashlib
 from urllib.parse import urlsplit
+try:
+    from .evidence_facets import facets, qualified_metric
+except ImportError:
+    from evidence_facets import facets, qualified_metric
+
 
 UTC = dt.timezone.utc
 SCHEMA = "aiba.dynamic-evidence-bins.v1"
@@ -83,6 +88,9 @@ def normalize_registry(registry):
             "provider": clean(record.get("provider"), 100),
             "source_family": clean(record.get("source_family"), 120),
             "source_kind": clean(record.get("source_kind"), 120),
+            "collection_mode": clean(record.get("collection_mode"), 80),
+            "calibrated_metric": record.get("calibrated_metric") if
+                isinstance(record.get("calibrated_metric"), dict) else None,
             "origin": "behavioral_registry",
             "geography_label": clean(geo.get("label"), 160) or None,
             "geography_key": clean(geo.get("key"), 160) or None,
@@ -120,6 +128,8 @@ def normalize_analyst(analyst):
             "provider": clean(record.get("publisher"), 100) or "Analyst intake",
             "source_family": clean(record.get("evidence_class"), 120) or "analyst_report",
             "source_kind": "unreviewed_analyst_report",
+            "collection_mode": "analyst",
+            "calibrated_metric": None,
             "origin": "analyst_intake",
             "geography_label": None,
             "geography_key": None,
@@ -153,6 +163,7 @@ def build(registry, analyst, relationships=None, now=None):
         raise ValueError("Generation clock requires UTC offset")
     now = now.astimezone(UTC)
     source_rows, status = normalize_registry(registry)
+    source_health = registry.get("source_health", {}) if isinstance(registry, dict) else {}
     source_rows += normalize_analyst(analyst)
     roots = defaultdict(dict)
     by_observation = {}
@@ -195,7 +206,8 @@ def build(registry, analyst, relationships=None, now=None):
             "source_independence_established": False,
             "event_occurrence_verified": False,
             "warning_approved": False,
-            "anomaly_metric": {"status": "not_calibrated", "z_score": None},
+            "anomaly_metric": qualified_metric(members),
+            "evidence_facets": facets(members, source_health),
             "corroboration": {"status": "unreviewed", "independent_roots": 1},
             "sources": members[:MAX_SOURCES],
             "sources_truncated": len(members) > MAX_SOURCES,
@@ -240,14 +252,23 @@ def build(registry, analyst, relationships=None, now=None):
             "source_independence_established": False,
             "event_occurrence_verified": False,
             "warning_approved": False,
-            "anomaly_metric": {"status": "not_calibrated", "z_score": None},
+            "anomaly_metric": qualified_metric(members),
+            "evidence_facets": facets(members, source_health),
             "corroboration": {"status": "possible_related_reporting", "independent_roots": None},
             "sources": rows[:MAX_SOURCES],
             "sources_truncated": len(rows) > MAX_SOURCES,
             "reason": clean(candidate.get("match_basis"), 220) or "Candidate report association requiring analyst review.",
         })
     ordering = {"emerging": 0, "monitoring": 1, "quiet": 2}
-    families.sort(key=lambda f: (ordering[f["state"]], -when(f["last_observed_at"]).timestamp(), f["id"]))
+    # A validated extreme excursion outranks ordinary newness even if only
+    # one source root exists. Corroboration never suppresses that candidate.
+    def rank(f):
+        metric = f["anomaly_metric"]
+        z = metric.get("z_score") if metric.get("status") == "calibrated_metric" else None
+        extreme = z is not None and abs(z) >= 2
+        return (0 if extreme else 1, -abs(z) if extreme else 0,
+                ordering[f["state"]], -when(f["last_observed_at"]).timestamp(), f["id"])
+    families.sort(key=rank)
     return {
         "schema": SCHEMA,
         "status": "source_observations_not_verified_events",
@@ -261,6 +282,7 @@ def build(registry, analyst, relationships=None, now=None):
         "quiet_count": sum(f["state"] == "quiet" for f in families),
         "unverified_map_points_count": 0,
         "automatic_warning_count": 0,
-        "default_order": "recent_first_per_lifecycle_no_unvalidated_anomaly_scores",
+        "default_order": "qualified_abs_z_ge_2_first_then_novelty",
+        "anomaly_independence_rule": "calibrated_excursion_visible_without_corroboration",
         "families": families[:MAX_OUTPUT],
     }
