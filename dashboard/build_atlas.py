@@ -216,6 +216,42 @@ def generate(site, generated=None, state_dir=None):
             "independently_confirmed": item["independently_confirmed"],
             "collected_at": item["first_collected_at"],
         })
+    # A separate source-review queue makes accepted evidence discoverable
+    # regardless of whether its case is one of the standing map anchors.
+    # This is neither a verified event list nor an executive-warning feed.
+    queue = []
+    for row in analyst["records"]:
+        first = dt.datetime.fromisoformat(row["first_collected_at"].replace("Z", "+00:00"))
+        pub = safe_date(row.get("published_at"))
+        recent = (dt.timedelta(0) <= render_time - first <= dt.timedelta(hours=36)
+                  and pub is not None
+                  and dt.timedelta(0) <= render_time.date() - dt.date.fromisoformat(pub) <= dt.timedelta(days=7))
+        queue.append({
+            "id": "analyst:" + row["observation_id"], "title": row["title"],
+            "summary": row["summary"], "source_url": sanitize_url(row["source_url"]),
+            "publisher": row["publisher"], "source_family": row["evidence_class"],
+            "case_id": row["case_id"] if row["case_id"] in ANCHORS else None,
+            "case_association": "standing_case" if row["case_id"] in ANCHORS else "unassigned",
+            "original_case_hint": row["case_id"],
+            "published_at": pub, "first_observed_at": row["first_collected_at"],
+            "information_root": row["information_root"], "recent_new": recent,
+            "classification": "unreviewed_source_report", "reviewed_warning": False,
+        })
+    # The operational source chronology is included for search/review, but
+    # repeated snapshots are not counted as fresh claims.
+    for row in feed_reports:
+        queue.append({
+            "id": row["id"], "title": row["title"], "summary": row["detail"],
+            "source_url": sanitize_url(row["url"]), "publisher": row["source"],
+            "source_family": row["category"], "case_id": row["hotspot_id"],
+            "case_association": "standing_case", "original_case_hint": row["hotspot_id"],
+            "published_at": row["date"], "first_observed_at": None,
+            "information_root": row["root"], "recent_new": False,
+            "classification": "unreviewed_source_report", "reviewed_warning": False,
+        })
+    queue.sort(key=lambda x: (x["first_observed_at"] or x["published_at"] or "", x["id"]), reverse=True)
+    queue = queue[:200]
+    new_queue_count = sum(x["recent_new"] for x in queue)
     # The source-separated behavioral engine already publishes a verified,
     # capped shadow-feed snapshot under /behavior/. Embed its bounded public
     # summary in the SAME Atlas without promoting any threat label.
@@ -248,6 +284,8 @@ def generate(site, generated=None, state_dir=None):
         "hotspots": hotspots, "reports": reports, "report_dates": dates,
         "friction_briefs": friction,
         "behavioral_discovery": behavioral,
+        "intake_queue": queue,
+        "intake_queue_new_count": new_queue_count,
         "warning_evaluation": evaluation,
         "behavior_live_url": "https://raw.githubusercontent.com/graupmannj-dev/I-Ws-Dashboard/aiba-feed-data/observations/latest/behavioral_fusion.json",
         "friction_live_url": "https://raw.githubusercontent.com/graupmannj-dev/I-Ws-Dashboard/aiba-feed-data/observations/latest/friction_briefs.json",
