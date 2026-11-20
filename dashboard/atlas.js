@@ -1272,7 +1272,13 @@ function familyFacetHtml(data){
 }
 function familyEvidenceCountLabel(f){
   if(f.kind==="analytical_topic_family")
-    return (Number(f.notice_count)||0)+" distinct notices · "+
+    return (Number(f.notice_count)||0)+
+      (f.activity==="automatically_discovered_shared_subject"?
+        " distinct source documents":
+        " distinct notices")+
+      (f.automatic_grouping?.older_members_not_loaded?
+        " visible of "+f.automatic_grouping.historical_assigned_documents+" assigned historically":"")+
+      " · "+
       (Number(f.source_record_count)||0)+" source fragments · "+
       (f.providers?.length||0)+" issuing provider(s)";
   const roots=Number(f.information_root_count)||1;
@@ -1286,26 +1292,29 @@ function appendTopicNoticeGroups(f,item){
   heading.textContent="Analytical grouping · NOT one verified event";
   const line=document.createElement("p");
   line.textContent=familyEvidenceCountLabel(f)+
-    ". Notices may describe different locations, operating dates or exercises. "+
-    "Publisher counts are not independent corroboration.";
+    ". Grouped documents may cover different actual events, places, or dates. "+
+    "Publisher counts are not established independent corroboration.";
   summary.append(heading,line);
   item.appendChild(summary);
   const title=document.createElement("h4");
-  title.textContent="Distinct official notices ("+f.notice_count+")";
+  title.textContent=(f.activity==="automatically_discovered_shared_subject"?
+    "Similar source documents (":"Distinct official notices (")+f.notice_count+")";
   item.appendChild(title);
   const list=document.createElement("div");list.className="topic-notice-list";
   for(const notice of f.notice_groups){
     const block=document.createElement("details");block.className="topic-notice";
     const sum=document.createElement("summary");
     const name=document.createElement("strong");
-    name.textContent=notice.title||"Untitled official notice";
+    name.textContent=notice.title||"Untitled source document";
     const meta=document.createElement("span");meta.className="topic-notice-meta";
     meta.textContent=(notice.area_label||"Area unknown")+" · "+
       (notice.source_record_count||0)+" source fragment(s) · "+
       (notice.validity_windows?.length||0)+" published validity interval(s)";
     sum.append(name,meta);block.appendChild(sum);
     const body=document.createElement("div");body.className="topic-notice-body";
-    const origin=document.createElement("a");origin.textContent="Open original source notice";
+    const origin=document.createElement("a");
+    origin.textContent=f.activity==="automatically_discovered_shared_subject"?
+      "Open original source document":"Open original source notice";
     if(safeUrl(notice.source_url)){
       origin.href=notice.source_url;origin.target="_blank";origin.rel="noopener noreferrer";
     }
@@ -1328,7 +1337,7 @@ function appendTopicNoticeGroups(f,item){
     }
     body.appendChild(times);
     const sourcesHeading=document.createElement("h5");
-    sourcesHeading.textContent="Individual source records ("+(notice.source_record_count||0)+")";
+    sourcesHeading.textContent="Original source fragments ("+(notice.source_record_count||0)+")";
     body.appendChild(sourcesHeading);
     const ul=document.createElement("ul");ul.className="topic-source-fragments";
     for(const source of notice.records||[]){

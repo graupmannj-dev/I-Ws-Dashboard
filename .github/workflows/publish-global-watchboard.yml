@@ -16,6 +16,60 @@ concurrency:
   group: aiba-${{ github.ref }}
   cancel-in-progress: false
 jobs:
+  automatic-topics-real-input:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          ref: aiba-feed-data
+          path: ops-state
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Inspect automatic family assignments from real registry without writing
+        run: |
+          python - <<'PY'
+          import datetime as dt
+          import json
+          from pathlib import Path
+          from dashboard.dynamic_bins import build
+          from dashboard.automatic_topics import assign, documents
+          reg=json.loads(Path('ops-state/observations/latest/behavioral_registry.json').read_text())
+          now=dt.datetime.fromisoformat(reg['generated_at'].replace('Z','+00:00'))
+          result=build(reg,{'records':[]},now=now+dt.timedelta(minutes=10))
+          auto=[x for x in result['families'] if x['kind']=='analytical_topic_family'
+               and x.get('activity')=='automatically_discovered_shared_subject']
+          print('Automatic topical families found:',len(auto))
+          for family in auto[:30]:
+              print(family['title'][:100], 'docs:',family['notice_count'],
+                    'sources:',family['source_record_count'],
+                    'providers:',family['providers'])
+              assert family['notice_count']>=2
+              assert family['warning_approved'] is False
+              assert family['source_independence_established'] is False
+              assert family['map_eligible'] is False
+              assert family['anomaly_metric'].get('status') in ('not_calibrated','calibrated_metric')
+              assert all(n['source_url'].startswith('https://') for n in family['notice_groups'])
+          # Repeated template-only travel and FAA feeds must not become
+          # independent, unverified bulk topics.
+          assert not any(f['source_families']==['protective_notice'] for f in auto)
+          # Repeat notices at one documented airspace subject (e.g., Boise)
+          # CAN be an analytical topic. Blanket source-wide clustering cannot.
+          total_airspace=sum(x.get('source_family')=='airspace_restriction'
+                             for x in reg['records'])
+          for f in auto:
+              if f['source_families']==['airspace_restriction']:
+                  assert f['source_record_count'] < max(5,int(total_airspace*0.65)), (
+                      'Source template appears to have swallowed a majority of FAA records',
+                      f['title'], f['source_record_count'], total_airspace)
+          print('Original source documents:',len(documents(reg['records'])))
+          PY
   analytical-topic-real-input:
     if: github.event_name == 'pull_request'
     runs-on: ubuntu-latest
@@ -247,6 +301,7 @@ jobs:
           node scripts/test_atlas_browser.js
           node scripts/test_dynamic_bins_browser.js
           node scripts/test_topic_families_browser.js
+          node scripts/test_automatic_topics_browser.js
           node scripts/test_atlas_behavior_browser.js
           node scripts/test_atlas_evaluation_browser.js
           node scripts/test_aircraft_browser.js
