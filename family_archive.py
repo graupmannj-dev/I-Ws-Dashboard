@@ -198,6 +198,13 @@ def update(state, clock=None, write=True):
         "schema": TOPIC_SCHEMA,
         "groups": {g: topic_index["groups"][g] for g in public_group_ids},
         "assignments": public_assignments,
+        "assignment_explanations":{
+            k:topic_index.get("assignment_explanations",{}).get(k)
+            for k in public_assignments if k in
+            topic_index.get("assignment_explanations",{})
+        },
+        "automatic_similarity_method":topic_index.get(
+            "automatic_similarity_method","legacy_sparse_v1"),
         "total_document_assignments": topic_index["total_document_assignments"],
         "total_stable_topics": topic_index["total_stable_topics"],
         "public_index_truncated": len(public_assignments) <
