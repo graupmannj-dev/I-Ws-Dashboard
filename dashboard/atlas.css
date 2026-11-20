@@ -321,3 +321,16 @@ a{color:#a9d4ff}
 .feed-status p {color:#aab9cb;line-height:1.5}
 .feed-notice {display:block;width:100%;text-align:left;background:#142a3b;color:#e5f0f9;border:1px solid #45647d;border-radius:4px;padding:7px;margin:4px 0;cursor:pointer}
 #layerStatus {max-height:320px;overflow:auto}
+
+/* Analyst review lane remains visually distinct from approved assessments. */
+.queue-banner{margin:10px 12px;padding:11px 13px;border:1px solid #a1783c;border-radius:10px;background:#29251f;color:#f4dfb1}
+.queue-banner p{font-size:12px;margin:4px 0 9px;color:#cfb98f}
+.queue-banner button{cursor:pointer;border:1px solid #aa8b60;border-radius:6px;background:#3d3327;color:#f3e9da;padding:7px 10px}
+.queue-toolbar{display:flex;gap:6px;padding:10px 0;flex-wrap:wrap}
+.queue-toolbar input,.queue-toolbar select{background:#152335;border:1px solid #476078;color:#e4ebf4;border-radius:6px;padding:8px;min-width:100px;max-width:100%;flex:1}
+.queue-results{display:flex;flex-direction:column;gap:7px}
+.queue-card{text-align:left;background:#162434;color:#e7edf5;border:1px solid #394f67;border-radius:9px;padding:10px;cursor:pointer;width:100%}
+.queue-card:hover,.queue-card:focus-visible{border-color:#a5c2df;outline-offset:2px}
+.queue-card small{display:block;color:#b5c3d3;margin-top:4px;line-height:1.4}
+.queue-row-head{display:flex;align-items:flex-start;justify-content:space-between;gap:8px}
+.queue-row-head strong{font-size:13px;line-height:1.4}

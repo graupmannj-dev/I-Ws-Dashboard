@@ -14,7 +14,7 @@
     <div class="header-title"><strong>Global Early Warning</strong><span>Global discovery · Source-linked assessments · Operational watch</span></div>
     <div class="header-status" aria-label="Collection status">
       <div><small>Watch areas</small><strong id="kpiWatch">—</strong></div>
-      <div><small>Recent source changes</small><strong id="kpiUpdates">—</strong></div>
+      <div><small>Reviewed changes</small><strong id="kpiUpdates">—</strong></div>
       <div><small>Sourced reports</small><strong id="kpiReports">—</strong></div>
       <div><small>Snapshot</small><strong id="kpiAsOf">—</strong></div>
     </div>
@@ -154,10 +154,12 @@
         <div class="panel-tabs" aria-label="Monitoring views">
           <button type="button" id="tabAll" class="active" aria-pressed="true">All</button>
           <button type="button" id="tabNew" aria-pressed="false">Recent changes</button>
+          <button type="button" id="tabQueue" aria-pressed="false">Source queue <span id="queueTabCount"></span></button>
           <button type="button" id="tabBehavior" aria-pressed="false">Behavioral signals <span id="behaviorTabCount"></span></button>
           <button type="button" id="tabEvaluation" aria-pressed="false">Evaluation</button>
         </div>
       </div>
+      <div id="queueBanner" class="queue-banner" hidden><strong id="queueBannerCount">0 source reports awaiting review</strong><p>New unreviewed evidence has reached Atlas. This is not a confirmed warning or severity change.</p><button id="openQueue" type="button">Inspect source queue</button></div>
       <section class="friction-briefing" id="faaNasPanel" aria-label="FAA U.S. aviation system operational status">
         <div class="friction-head"><strong>U.S. aviation operations</strong><span class="friction-mode">FAA NAS · DISRUPTION, NOT ATTRIBUTION</span></div>
         <p class="friction-summary" id="faaNasSummary" aria-live="polite">Awaiting first FAA NAS sample</p>

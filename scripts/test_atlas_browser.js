@@ -44,6 +44,13 @@ const assert = require("node:assert/strict");
   await page.waitForFunction(()=>document.querySelectorAll(".watch-card").length>0,{timeout:15000});
   assert.match(await page.title(),/AIBA/);
   assert.equal(await page.locator(".watch-card").count(),10);
+  // The source queue must remain discoverable even with zero accepted reports.
+  await page.locator("#tabQueue").click();
+  assert.match(await page.locator("#watchlist").innerText(),/UNREVIEWED SOURCE EVIDENCE/);
+  assert.equal(await page.locator('input[aria-label="Search source queue"]').count(),1);
+  await page.locator("#tabAll").click();
+  assert.equal(await page.locator(".watch-card").count(),10);
+
   await page.waitForFunction(()=>document.querySelector("#frictionSummary").textContent.includes("Synthetic source observations"));
   assert.match(await page.locator("#frictionTime").innerText(),/Gaps: nga/i);
   assert.equal(await page.locator("#frictionHighlights img").count(),0,"Untrusted source strings must be escaped");
