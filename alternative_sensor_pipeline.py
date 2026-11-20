@@ -375,7 +375,7 @@ def adapt_ripe(data,checked,url):
         if type(avg) in (int,float) and math.isfinite(avg) and 0<=avg<100000:
             good.append(float(avg))
     if valid<20 or len(good)<10:
-        raise ValueError("RIPE sample lacks sufficient timestamped public probes")
+        raise ValueError("RIPE insufficient recent public-probe observations for aggregate")
     value=round(median(good),3)
     # Hourly aggregate is an observation of a potentially CHANGING probe
     # cohort, not a matched-cohort deviation. Never publish an implied z-score.
