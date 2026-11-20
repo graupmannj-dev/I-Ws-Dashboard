@@ -473,3 +473,22 @@ a{color:#a9d4ff}
 .topic-notice-caveat{color:#f2c980;font-size:12px;margin:15px 0}
 .family-workspace-row .topic-marker{font-size:10px;color:#9dd5f5;text-transform:uppercase;letter-spacing:.07em}
 @media(max-width:760px){.topic-notice summary{padding:10px}.topic-notice-body{padding:11px}.topic-notice-meta{padding-left:10px}}
+\n
+/* High-density right rail: leave vertical space for evidence review. */
+.watch-heading{padding:8px 10px 0}
+.watch-heading h2{font-size:13px;margin:0 0 4px;line-height:1.2}
+.watch-panel .panel-tabs{flex-wrap:nowrap;white-space:nowrap;overflow-x:auto;overflow-y:hidden;gap:12px;scrollbar-width:thin;scrollbar-color:#66859e transparent}
+.watch-panel .panel-tabs button{flex:0 0 auto;padding:5px 1px 7px;font-size:11px}
+.watch-panel .watchlist{min-height:215px;overflow:auto;flex:1 1 0;overscroll-behavior:contain}
+.watch-panel .friction-briefing{max-height:94px;flex-shrink:0;padding:7px 10px 5px;overflow:hidden}
+.watch-panel .friction-briefing.expanded{max-height:150px;overflow-y:auto}
+.watch-panel .friction-head strong{font-size:11px}
+.watch-panel .friction-mode{font-size:8px}
+.watch-panel .friction-summary{font-size:10px;line-height:1.3;margin:3px 0 1px;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden}
+.watch-panel .friction-time{font-size:9px;margin:0 0 3px}
+.watch-panel .friction-highlights{display:none}
+.watch-panel .friction-briefing.expanded .friction-highlights{display:block}
+.watch-panel .friction-expand{font-size:10px;padding:1px 0;margin-top:1px}
+.source-health-link,.source-back-link{white-space:nowrap;color:#b6dfff;border:1px solid #4d6d86;border-radius:7px;padding:7px 10px;font-size:11px;text-decoration:none}
+.source-health-link:hover,.source-health-link:focus-visible,.source-back-link:hover{border-color:#b6dfff;background:#1b384e}
+@media(max-width:1080px){.source-health-link{font-size:10px;padding:6px}}
