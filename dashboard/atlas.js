@@ -1288,10 +1288,70 @@ function selectQueueRecord(r){
     ' · <b>Publisher:</b> '+safe(r.publisher||"unknown")+'</p>'+
     '<p><b>Published (UTC day):</b> '+safe(r.published_at||"unavailable")+
     ' · <b>First captured:</b> '+safe(r.first_observed_at||"not retained")+'</p>'+
+    '<p><b>Visibility gates:</b> '+safe((r.visibility_reasons||[]).join(", ").replace(/_/g," "))+
+    ' · <b>Shown in:</b> '+safe((r.display_targets||[]).join(", ").replace(/_/g," "))+"</p>"+
     '<p><b>Source family:</b> '+safe(r.source_family||"unknown")+
     ' · <b>Information root:</b> '+safe(r.information_root||"unavailable")+'</p>'+
     '<p>Source geography, actor intent and independent corroboration are not established by this queue. '+source+'</p>';
   panel.querySelector(".detail-close").addEventListener("click",()=>{panel.hidden=true;state.selected=null;});
+}
+function renderPipelineList(){
+  const list=$("watchlist");list.classList.add("behavior-view");list.classList.remove("evaluation-view");list.replaceChildren();
+  $("frictionBriefing").hidden=true;
+  $("watchPanelTitle").firstChild.textContent="Evidence visibility audit ";
+  $("watchCount").textContent="";
+  $("watchFoot").textContent="Collection success does not establish global coverage or warning accuracy.";
+  $("watchDetailLink").href="behavior/";$("watchDetailLink").textContent="Source coverage details →";
+  const f=state.atlas?.visibility_funnel;
+  if(!f||f.schema!=="aiba.atlas-visibility-funnel.v1"){
+    const e=document.createElement("p");e.className="behavior-caution";
+    e.textContent="No validated visibility audit in this published build. Missing is not zero.";
+    list.appendChild(e);return;
+  }
+  const note=document.createElement("p");note.className="behavior-disclaimer";
+  note.textContent="COUNTS DESCRIBE DIFFERENT FUNNELS · No counts are verified threats or independent events.";
+  list.appendChild(note);
+  const metrics=[
+    ["Accepted analyst reports",f.analyst_intake_accepted],
+    ["New reports to review",f.new_source_reports_for_review],
+    ["Queue entries without standing case association",f.source_queue_unassigned],
+    ["Queue entries without publication day",f.source_queue_undated],
+    ["Queue entries with dated theater-map context",f.source_queue_map_context],
+    ["Dated map reporting points (all inputs)",f.dated_map_reports_total],
+    ["Reviewed standing-case changes",f.reviewed_case_changes],
+    ["Distinct behavioral observations over 72h",f.behavioral_recent_72h],
+    ["Behavioral observations lacking comparable geography",f.behavioral_missing_geo_72h],
+    ["Shared exact geographic overlap keys",f.behavioral_exact_geo_overlaps],
+  ];
+  const box=document.createElement("div");box.className="pipeline-metrics";
+  for(const [label,value] of metrics){
+    const row=document.createElement("div");row.className="pipeline-metric";
+    row.innerHTML="<span>"+safe(label)+"</span><strong>"+safe(value===null||value===undefined?"Not measured":value)+"</strong>";
+    box.appendChild(row);
+  }
+  list.appendChild(box);
+  const p=document.createElement("p");p.className="behavior-caution";
+  p.textContent="The "+f.source_queue_displayed+" displayed queue entries are capped from "+
+    f.source_queue_total_before_cap+" total. Intake source, dated timeline and reviewed assessment have different eligibility rules. Source monitoring gaps cannot be interpreted as no events.";
+  list.appendChild(p);
+  const guide=document.createElement("div");guide.className="pipeline-guide";
+  guide.innerHTML='<h3>Where reporting can stop</h3>'+
+    '<p><b>Intake:</b> source supplied and validated? Duplicates collapse to their original information root.</p>'+
+    '<p><b>Time:</b> is an actual source-publication day known? Undated reports remain searchable but are not placed on a dated timeline.</p>'+
+    '<p><b>Geography:</b> does source evidence support case association or location? Unassigned reports remain in the queue rather than at an invented map coordinate.</p>'+
+    '<p><b>Assessment:</b> is there an analyst-reviewed material change? An unreviewed lead never becomes a Critical designation simply through collection.</p>';
+  list.appendChild(guide);
+  const head=document.createElement("h3");head.className="behavior-section-title";head.textContent="Collector coverage and freshness";list.appendChild(head);
+  const cover=document.createElement("div");cover.className="pipeline-coverage";
+  const providers=Array.isArray(f.provider_health)?f.provider_health:[];
+  if(!providers.length)cover.textContent="No source family health details in this snapshot.";
+  for(const row of providers){
+    const item=document.createElement("div");item.className="pipeline-feed";
+    item.innerHTML='<strong>'+safe(row.name||"unknown")+'</strong><span>'+safe(row.status||"unverified")+'</span>'+
+      '<small>'+safe(row.scope||"Coverage unavailable")+'</small><small>Sample '+safe(row.asof||"not measured")+'</small>';
+    cover.appendChild(item);
+  }
+  list.appendChild(cover);
 }
 function renderQueueBanner(){
   const count=Number(state.atlas?.intake_queue_new_count)||0;
@@ -1303,6 +1363,7 @@ function updateWatchlist(){
   if(!state.atlas)return;
   renderQueueBanner();
   if(state.watchTab==="queue"){renderQueueList();return;}
+  if(state.watchTab==="pipeline"){renderPipelineList();return;}
   if(state.watchTab==="behavior"){renderBehaviorList();return;}
   if(state.watchTab==="evaluation"){renderEvaluationList();return;}
   const list=$("watchlist");list.classList.remove("behavior-view","evaluation-view");list.replaceChildren();
@@ -1523,6 +1584,8 @@ function bindControls(){
   $("tabAll").addEventListener("click",()=>{state.watchTab="all";updateTabs();});
   $("tabNew").addEventListener("click",()=>{state.watchTab="new";updateTabs();});
   $("tabQueue").addEventListener("click",()=>{state.watchTab="queue";updateTabs();});
+  $("tabPipeline").addEventListener("click",()=>{state.watchTab="pipeline";updateTabs();});
+  $("openPipeline").addEventListener("click",()=>{state.watchTab="pipeline";updateTabs();});
   $("openQueue").addEventListener("click",()=>{state.watchTab="queue";updateTabs();});
   $("tabBehavior").addEventListener("click",()=>{state.watchTab="behavior";updateTabs();});
   $("tabEvaluation").addEventListener("click",()=>{state.watchTab="evaluation";updateTabs();});
@@ -1557,7 +1620,7 @@ function bindControls(){
   });
 }
 function updateTabs(){
-  for(const [id,tab] of [["tabAll","all"],["tabNew","new"],["tabQueue","queue"],["tabBehavior","behavior"],["tabEvaluation","evaluation"]]){
+  for(const [id,tab] of [["tabAll","all"],["tabNew","new"],["tabQueue","queue"],["tabPipeline","pipeline"],["tabBehavior","behavior"],["tabEvaluation","evaluation"]]){
     const active=state.watchTab===tab;
     $(id).classList.toggle("active",active);
     $(id).setAttribute("aria-pressed",String(active));
