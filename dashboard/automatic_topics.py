@@ -325,8 +325,11 @@ def build_topics(rows, now, source_health=None, prior=None, exclude_roots=()):
     for gid,items in by_gid.items():
         # Only expose a shared theme with >=2 source documents. Isolated
         # observations remain visible in the ordinary evidence queue.
-        if len(items)<2:
+        historic_count=index["groups"][gid]["matched_document_count"]
+        if len(items)<2 and historic_count<2:
             continue
+        # A long-lived topic stays visible when the bounded public snapshot
+        # contains one recent member but older documents are archived.
         seed=index["groups"][gid]["seed"]
         raw=[r for doc in items for r in doc["rows"]]
         newest=max(_date(r["first_observed_at"]) for r in raw)
@@ -409,7 +412,8 @@ def build_topics(rows, now, source_health=None, prior=None, exclude_roots=()):
                 "event_identity_assumed":False,
                 "membership_review_status":"unreviewed_automatic_theme",
                 "public_documents_displayed":len(items),
-                "historical_assigned_documents":index["groups"][gid]["matched_document_count"],
+                "historical_assigned_documents":historic_count,
+                "older_members_not_loaded":historic_count>len(items),
             },
             "reason":"Automatically grouped source documents sharing distinctive language, compatible reported geography and subject domain. These may be distinct actual events. Topic membership does not establish independent corroboration.",
         })
