@@ -285,12 +285,13 @@ def usace(data,now,url):
         waterway=next((prop[k] for k in ("waterway","WATERWAY","waterway_name",
                 "WATERWAY_NAME","river","RIVER") if isinstance(prop.get(k),str)),None)
         rows.append(rec("usace_navigation",
-            "usace:"+hashlib.sha256((ident+"|"+url).encode()).hexdigest()[:24],
+            "usace:"+hashlib.sha256(ident.encode()).hexdigest()[:24],
             "USACE waterway · "+safe_text(title,160),url,now,
             geo=geography("usace-waterway:"+safe_text(waterway,80).casefold() if waterway else None,
                safe_text(waterway,80) or None,"official_notice_scope",
                "navigation_notice_area_not_verified_disruption"),
             kind="official_navigation_notice",
+            root="usace:original_notice:"+ident,
             source_dependency="usace:original_notice:"+ident))
     if raw and not rows:raise ValueError("USACE notice identities not recognized; refuse false normal")
     return rows,{"total_received":len(raw),
