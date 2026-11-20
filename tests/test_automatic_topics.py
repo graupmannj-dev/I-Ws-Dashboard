@@ -112,6 +112,20 @@ class AutoTopicsTests(unittest.TestCase):
         self.assertEqual(assign([newer],latest)["new_document_assignments"],0)
         self.assertEqual(latest["groups"][gid]["matched_document_count"],2)
 
+    def test_single_visible_document_retains_long_lived_archived_theme(self):
+        old=record("old","Iran Hormuz shipping agreement under review",
+                   family="market_expectation",stamp="2026-11-19T18:00:00Z")
+        second=record("second","Iran Hormuz shipping agreement expected soon",
+                      family="market_expectation",stamp="2027-03-19T18:00:00Z")
+        index=assign([old,second])
+        now=dt.datetime(2027,3,19,20,tzinfo=dt.timezone.utc)
+        topics,folded,new_index=build_topics([second],now,prior=index)
+        self.assertEqual(len(topics),1)
+        self.assertEqual(topics[0]["notice_count"],1)
+        self.assertEqual(topics[0]["automatic_grouping"]["historical_assigned_documents"],2)
+        self.assertTrue(topics[0]["automatic_grouping"]["older_members_not_loaded"])
+        self.assertFalse(topics[0]["warning_approved"])
+
     def test_one_official_notice_split_into_polygons_not_multiple_documents(self):
         roots=[record("n"+str(i),
                       "Norway. North Sea. Naval firing exercises. Official notice.",
