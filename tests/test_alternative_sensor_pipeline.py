@@ -6,7 +6,7 @@ import unittest
 
 from alternative_sensor_pipeline import (
     MODES,SCHEMA,adapt_usgs,adapt_eonet,adapt_nws,adapt_usace,adapt_coops,
-    collect,urls,adapt_uk_tenders,adapt_wiki_edits,
+    collect,urls,adapt_uk_tenders,adapt_wiki_edits,adapt_fema_cbp,
 )
 from behavioral_registry import create,normalize,SCHEMA as REGISTRY_SCHEMA
 from family_archive import update as update_family
@@ -58,6 +58,11 @@ def sample(mode):
         return [{"msm_id":1001,"timestamp":int(NOW.timestamp())-900,
                  "prb_id":i,"from":f"203.0.113.{i}",
                  "avg":5+i/10} for i in range(1,34)]
+    if mode=="fema_cbp":
+        return {"features":[{"attributes":{"port_number":"3004","port_name":"Synthetic test crossing",
+                 "crossing_name":"Border Bridge","date_":int(NOW.timestamp()*1000)-900000,
+                 "port_status":"Open","com_stand_delay":22,"com_stand_status":"Open",
+                 "com_stand_open":2,"border":"Mexican Border"}}]}
     if mode=="uk_tenders":
         return {"releases":[{"id":"ocds-release-test","ocid":"ocds-uk-test",
             "date":STAMP,"tag":["tender"],
@@ -84,6 +89,7 @@ def fake(url):
     if "services.swpc.noaa.gov" in url:return sample("swpc")
     if "atlas.ripe.net" in url:return sample("ripe")
     if "find-tender.service.gov.uk" in url:return sample("uk_tenders")
+    if "gis.fema.gov" in url:return sample("fema_cbp")
     if ".wikipedia.org" in url:return sample("wiki_edits")
     raise ValueError("Unexpected source host")
 
@@ -93,7 +99,7 @@ class AlternativeSensorTests(unittest.TestCase):
         for mode,adapter in (("usgs",adapt_usgs),("eonet",adapt_eonet),
                              ("nws",adapt_nws),("usace",adapt_usace),
                              ("coops",adapt_coops),("uk_tenders",adapt_uk_tenders),
-                             ("wiki_edits",adapt_wiki_edits)):
+                             ("wiki_edits",adapt_wiki_edits),("fema_cbp",adapt_fema_cbp)):
             with self.subTest(mode=mode):
                 row=adapter(sample(mode),NOW,urls(mode,NOW)[0])[0]
                 self.assertTrue(row["source_url"].startswith("https://"))
@@ -172,6 +178,18 @@ class AlternativeSensorTests(unittest.TestCase):
         item,err=normalize("usgs",row,NOW)
         self.assertIsNone(item)
         self.assertEqual(err,"source_clock_after_observation")
+
+    def test_fema_cbp_delay_not_interpreted_as_vehicle_volume(self):
+        row=adapt_fema_cbp(sample("fema_cbp"),NOW,urls("fema_cbp",NOW)[0])[0]
+        self.assertEqual(row["source_measurement"]["value"],22)
+        self.assertTrue(row["source_measurement"]["not_a_vehicle_throughput_measurement"])
+        self.assertEqual(row["geography"]["key"],"border-port:3004")
+        self.assertIsNone(row["geography"]["latitude"])
+        self.assertFalse(row.get("warning_approved",False))
+        data=sample("fema_cbp")
+        data["features"][0]["attributes"]["date_"]=int((NOW-dt.timedelta(days=3)).timestamp()*1000)
+        with self.assertRaisesRegex(ValueError,"fresh identifiable"):
+            adapt_fema_cbp(data,NOW,urls("fema_cbp",NOW)[0])
 
     def test_public_wiki_edit_sample_has_no_editor_identifiers(self):
         rows=adapt_wiki_edits(sample("wiki_edits"),NOW,urls("wiki_edits",NOW)[0])
