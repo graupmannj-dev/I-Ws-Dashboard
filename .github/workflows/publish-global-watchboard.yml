@@ -5,7 +5,7 @@ on:
     branches: [main]
   workflow_dispatch:
   workflow_run:
-    workflows: ['Collect AIBA operational feeds', 'Ingest AIBA analyst OSINT report']
+    workflows: ['Collect AIBA operational feeds', 'Ingest AIBA analyst OSINT report', 'Collect CAIRN public alternative sensors']
     types: [completed]
     branches: [main]
   schedule:
