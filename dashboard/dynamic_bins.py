@@ -77,6 +77,14 @@ def normalize_registry(registry):
         if not stamp or not root or not ident:
             continue
         geo = record.get("geography") if isinstance(record.get("geography"), dict) else {}
+        # Archive files contain validated normalized rows rather than the
+        # original raw registry object. Preserve original source geography.
+        if record.get("origin") == "behavioral_registry":
+            geo = {
+                "label": record.get("geography_label"),
+                "key": record.get("geography_key"),
+                "precision": record.get("geography_precision"),
+            }
         result.append({
             "id": ident,
             "information_root": root,

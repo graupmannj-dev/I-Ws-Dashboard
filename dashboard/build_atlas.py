@@ -318,8 +318,29 @@ def generate(site, generated=None, state_dir=None):
     except ModuleNotFoundError:
         from dynamic_bins import build as build_dynamic_bins
     registry = read(state_dir / "latest" / "behavioral_registry.json", {}) if state_dir else {}
+    archive = read(state_dir / "latest" / "family_archive.json", {}) if state_dir else {}
+    archive_available = (archive.get("schema") == "aiba.family-archive.v1"
+                         and isinstance(archive.get("records"), list))
+    # Archive records are persistent across source outages / 45-day index
+    # expiry; source health still comes from the current registry snapshot.
+    if archive_available:
+        durable_registry = {
+            "schema": "aiba.behavioral-observations.v1",
+            "records": archive["records"],
+            "source_health": registry.get("source_health", {}),
+        }
+        families_links = archive.get("report_relationships")
+    else:
+        durable_registry = registry
+        families_links = behavioral.get("report_relationships")
     dynamic_families = build_dynamic_bins(
-        registry, analyst, behavioral.get("report_relationships"), now=render_time)
+        durable_registry, analyst, families_links, now=render_time)
+    dynamic_families["archive_status"] = ("durable_bounded_public_index"
+        if archive_available else "not_yet_collected")
+    dynamic_families["archive_root_count_total"] = (
+        archive.get("root_count_total") if archive_available else None)
+    dynamic_families["archive_public_truncated"] = (
+        archive.get("public_snapshot_truncated") if archive_available else None)
     # Only safe source monitoring context is included publicly. The private
     # forecast ledger, Sigstore subject records and outcome labels stay off
     # GitHub Pages until a separately approved audited aggregate pipeline.

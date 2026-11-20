@@ -76,6 +76,7 @@ jobs:
           python src/fusion_briefs.py --state state/observations
           python src/behavioral_registry.py --state state/observations
           python src/behavioral_fusion.py --state state/observations
+          python src/family_archive.py --state state/observations
           python src/behavioral_validation.py --state state/observations --spec src/data/validation/behavioral_outcome_frame.json
           python src/behavioral_baselines.py --state state/observations
       - name: Commit immutable observations and visible source health
