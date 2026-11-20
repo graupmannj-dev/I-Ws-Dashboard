@@ -40,6 +40,7 @@ ALIAS = {
     "ships":"ship","vessels":"ship","vessel":"ship","freighters":"ship",
     "freighter":"ship","tankers":"tanker",
     "blockading":"blockade","blockaded":"blockade","blockades":"blockade",
+    "blocking":"blockade","blocked":"blockade","blocks":"blockade",
     "interdiction":"blockade","interdict":"blockade","intercepting":"blockade",
     "embargo":"blockade","embargoes":"blockade",
     "attacks":"attack","strikes":"attack","struck":"attack","hit":"attack",
