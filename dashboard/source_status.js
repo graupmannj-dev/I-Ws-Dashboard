@@ -78,7 +78,8 @@ function draw(rows,source){
       " · "+(r.missingness||"Coverage not fully characterized");
     st.appendChild(detail);
     const check=document.createElement("td");check.textContent=format(r.checked_at);
-    const sample=document.createElement("td");sample.textContent=format(r.snapshot_at||r.checked_at);
+    // A successful check is not proof that a usable sample was captured.
+    const sample=document.createElement("td");sample.textContent=format(r.snapshot_at);
     tr.append(name,scope,st,check,sample);host.appendChild(tr);
   }
   if(!host.children.length){
@@ -124,7 +125,7 @@ async function refresh(){
     for(const entry of atlas.visibility_funnel?.provider_health||[]){
       if(entry&&typeof entry.name==="string")rows[entry.name]={
         status:entry.status,provider_status:entry.status,checked_at:entry.asof,
-        snapshot_at:entry.asof,source_scope:entry.scope,
+        snapshot_at:entry.snapshot_at||null,source_scope:entry.scope,
         missingness:"Published snapshot; may now be stale"};
     }
   }catch(_){}
