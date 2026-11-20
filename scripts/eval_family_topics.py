@@ -128,7 +128,6 @@ def run(path=DEFAULT):
     rows=source_rows(fixture["documents"],
                      fixture["snapshot"]["observed_at"])
     docs=documents(rows)
-    key_by_id={r["id"].removeprefix("heldout:"):doc["key"] for r,doc in zip(rows,docs)}
     # The documents() sort is source-key order, NOT necessarily input order.
     key_by_id={}
     for doc in docs:
