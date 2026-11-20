@@ -237,7 +237,7 @@ BROAD_SUBJECT_WORDS=frozenset((
 
 def _named_subjects(title):
     # Candidate named subjects only; they are not event/geolocation claims.
-    words=re.findall(r"\\b[A-Z][a-z]{3,}\\b",title or "")
+    words=re.findall(r"\b[A-Z][a-z]{3,}\b",title or "")
     result=set()
     for word in words:
         result.update(normalized_terms(word))
