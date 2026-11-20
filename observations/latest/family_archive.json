@@ -1,8 +1,8 @@
 {
   "alerts_promoted": 0,
   "archive_integrity": "all shards retained; public discovery cache is bounded",
-  "automatic_topic_count_total": 183,
-  "automatic_topic_document_count_total": 393,
+  "automatic_topic_count_total": 184,
+  "automatic_topic_document_count_total": 395,
   "automatic_topic_index": {
     "assignments": {
       "00ac8cd09e6f31938e341363e4ed": "family:c733ba40ded9c2fca04b",
@@ -130,6 +130,7 @@
       "5a21d92b52304cc4d62b033c0efc": "family:874570591a80a7892e8b",
       "5bf2b4a845ec18f08f689216655f": "family:917788988e5edc628657",
       "5bf35eb77ba488912e897cb0c7cd": "family:0fda8b379f23ffd48335",
+      "5ca2ffd76daee9b72104e041657d": "family:9099e6ce463a997195ad",
       "5db702d433b74b807148db2d4190": "family:1afe2b6a34a597a6fdba",
       "5e854fe2c92c9e96b75a6f839f36": "family:3faec87a5d3eb20da5ce",
       "5fed1e313181d7a4a4a9ade1e0e6": "family:16768cd11ccd8abf1ec4",
@@ -140,6 +141,7 @@
       "6410f275ebe9a5e33fe6e3872eb7": "family:376c27dd72f8168e36a2",
       "6488674d589e332aa456a75b6a78": "family:b9437fdfaec5016c8b93",
       "64e0fab8d74310119903e723d333": "family:5d40cb8bab0fb3c58d51",
+      "64fdcd706153eca7ff33ad0089bf": "family:12ac7173b9295723ae32",
       "650530f8a56adaca0fa73b819925": "family:2fb1b1d00012931f4c74",
       "65556de27c6319a52ca2fc406341": "family:9713cb39e6debc594663",
       "65bf223cdb03859c65fe1be527a8": "family:110a46841aa352688519",
@@ -652,7 +654,7 @@
       },
       "family:12ac7173b9295723ae32": {
         "first_document_at": "2026-11-11T06:00:26+00:00",
-        "matched_document_count": 5,
+        "matched_document_count": 6,
         "seed": {
           "domain": "network",
           "geo": [
@@ -2430,6 +2432,31 @@
             "zealand": 1
           },
           "title": "Denmark. The Waters South of Zealand. Guldborgsund. Bridge closed for passage."
+        },
+        "source": "automatic_similarity_v1"
+      },
+      "family:9099e6ce463a997195ad": {
+        "first_document_at": "2026-11-20T11:04:09+00:00",
+        "matched_document_count": 1,
+        "seed": {
+          "domain": "generic",
+          "geo": [],
+          "key": "5ca2ffd76daee9b72104e041657d",
+          "publisher": "Reuters",
+          "source_family": "media_mention",
+          "terms": {
+            "deploy": 1,
+            "forces": 1,
+            "government": 1,
+            "held": 1,
+            "hezbollah": 1,
+            "inside": 1,
+            "iraqi": 1,
+            "jurf": 1,
+            "kataib": 1,
+            "sakhar": 1
+          },
+          "title": "Iraqi government forces deploy inside Kataib Hezbollah-held Jurf al-Sakhar"
         },
         "source": "automatic_similarity_v1"
       },
@@ -4212,17 +4239,63 @@
     },
     "public_index_truncated": false,
     "schema": "aiba.automatic-analytical-topics.v1",
-    "total_document_assignments": 393,
-    "total_stable_topics": 183
+    "total_document_assignments": 395,
+    "total_stable_topics": 184
   },
-  "generated_at": "2026-11-20T10:42:43.302506+00:00",
+  "generated_at": "2026-11-20T11:25:58.618446+00:00",
   "historical_relationship_count": 0,
   "missing_data_is_not_zero": true,
-  "new_records_added": 3,
-  "public_record_count": 1158,
+  "new_records_added": 2,
+  "public_record_count": 1160,
   "public_snapshot_truncated": false,
-  "record_count_total": 1158,
+  "record_count_total": 1160,
   "records": [
+    {
+      "calibrated_metric": null,
+      "case_hint": null,
+      "claim_level": "measurement_no_attribution",
+      "collection_mode": "ioda",
+      "direct_measurement": true,
+      "event_at": "2026-11-20T09:20:00Z",
+      "first_observed_at": "2026-11-20T11:25:53+00:00",
+      "geography_key": "country:NE",
+      "geography_label": "NE",
+      "geography_precision": "provider_reported_country",
+      "id": "beh:6965450e02c6e048d1889ec46206",
+      "information_root": "ioda:f440b6d911cc40f7cc48169e",
+      "origin": "behavioral_registry",
+      "provider": "ioda",
+      "published_at": null,
+      "restriction_status": "",
+      "scheduled_valid_from": null,
+      "scheduled_valid_until": null,
+      "source_family": "internet_reachability",
+      "source_kind": "outage_event",
+      "source_updated_at": null,
+      "source_url": "https://ioda.inetintel.cc.gatech.edu/",
+      "title": "IODA detected connectivity anomaly: country NE"
+    },
+    {
+      "calibrated_metric": null,
+      "case_hint": null,
+      "claim_level": "unreviewed_source_submission",
+      "collection_mode": "analyst",
+      "direct_measurement": false,
+      "event_at": null,
+      "first_observed_at": "2026-11-20T11:04:09+00:00",
+      "geography_key": null,
+      "geography_label": null,
+      "geography_precision": "case_hint_not_source_geolocation",
+      "id": "analyst:reuters-20261120-iraq-jurf-alsakhar-deployment",
+      "information_root": "reuters-20261120-iraqi-security-deployment-jurf-alsakhar",
+      "origin": "analyst_intake",
+      "provider": "Reuters",
+      "published_at": "2026-11-20",
+      "source_family": "media_mention",
+      "source_kind": "unreviewed_analyst_report",
+      "source_url": "https://www.reuters.com/world/middle-east/iraqi-security-forces-deploy-iran-backed-militia-stronghold-security-officials-2026-11-20/",
+      "title": "Iraqi government forces deploy inside Kataib Hezbollah-held Jurf al-Sakhar"
+    },
     {
       "calibrated_metric": null,
       "case_hint": null,
@@ -33026,23 +33099,23 @@
   "report_relationships": {
     "candidate_groups": []
   },
-  "root_count_total": 1158,
+  "root_count_total": 1160,
   "schema": "aiba.family-archive.v1",
   "source_health": {
     "amsa": {
-      "age_hours": 4.76,
-      "checked_at": "2026-11-20T03:04:12Z",
+      "age_hours": 0.0,
+      "checked_at": "2026-11-20T11:25:53Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
       "mode": "amsa",
       "provider_status": "collected",
-      "snapshot_at": "2026-11-20T03:04:12Z",
+      "snapshot_at": "2026-11-20T11:25:53Z",
       "source_scope": "AMSA NAVAREA X only",
       "status": "current",
       "truncated_or_partial": false
     },
     "commercial": {
-      "age_hours": 15.17,
+      "age_hours": 18.77,
       "checked_at": "2026-11-19T16:39:30Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -33054,54 +33127,52 @@
       "truncated_or_partial": false
     },
     "ioda": {
-      "age_hours": 4.76,
-      "checked_at": "2026-11-20T03:04:12Z",
+      "age_hours": 0.0,
+      "checked_at": "2026-11-20T11:25:53Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
       "mode": "ioda",
       "provider_status": "collected",
-      "snapshot_at": "2026-11-20T03:04:12Z",
+      "snapshot_at": "2026-11-20T11:25:53Z",
       "source_scope": "IODA country events (first 100 of first page, 4-hour query)",
       "status": "current",
       "truncated_or_partial": false
     },
     "live_airspace": {
-      "age_hours": 0.0,
+      "age_hours": 3.6,
       "checked_at": "2026-11-20T07:49:53Z",
-      "first_provider_baseline": false,
-      "missingness": "partial_sampling_not_worldwide_exhaustive",
+      "missingness": "not_measured_not_zero",
       "mode": "live_airspace",
       "provider_status": "partial",
       "snapshot_at": "2026-11-20T07:49:53Z",
       "source_scope": "FAA temporary flight restrictions: United States only",
-      "status": "current_partial",
+      "status": "stale_or_unavailable",
       "truncated_or_partial": true
     },
     "live_maritime": {
-      "age_hours": 0.0,
+      "age_hours": 3.6,
       "checked_at": "2026-11-20T07:49:53Z",
-      "first_provider_baseline": false,
-      "missingness": "partial_sampling_not_worldwide_exhaustive",
+      "missingness": "not_measured_not_zero",
       "mode": "live_maritime",
       "provider_status": "partial",
       "snapshot_at": "2026-11-20T07:49:53Z",
       "source_scope": "Danish Maritime Authority Niord notices: regional Baltic/North Sea",
-      "status": "current_partial",
+      "status": "stale_or_unavailable",
       "truncated_or_partial": true
     },
     "nga": {
-      "age_hours": 4.76,
-      "checked_at": "2026-11-19T22:06:56Z",
+      "age_hours": 0.0,
+      "checked_at": "2026-11-20T11:25:53Z",
       "missingness": "not_measured_not_zero",
       "mode": "nga",
       "provider_status": "unavailable",
-      "snapshot_at": "2026-11-20T03:04:12Z",
+      "snapshot_at": "2026-11-20T11:25:53Z",
       "source_scope": "NGA active broadcast warnings; provider availability varies",
       "status": "stale_or_unavailable",
       "truncated_or_partial": false
     },
     "official": {
-      "age_hours": 0.5,
+      "age_hours": 4.1,
       "checked_at": "2026-11-20T07:20:11Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -33113,7 +33184,7 @@
       "truncated_or_partial": false
     },
     "watchlist": {
-      "age_hours": 0.5,
+      "age_hours": 4.1,
       "checked_at": "2026-11-20T07:20:12Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
