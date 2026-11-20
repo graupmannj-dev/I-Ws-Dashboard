@@ -17,8 +17,12 @@ import hashlib
 import math
 import re
 
-from .evidence_facets import facets, qualified_metric
-from .topic_families import COUNTRIES
+try:
+    from .evidence_facets import facets, qualified_metric
+    from .topic_families import COUNTRIES, region_from_title
+except ImportError:
+    from evidence_facets import facets, qualified_metric
+    from topic_families import COUNTRIES, region_from_title
 
 SCHEMA = "aiba.automatic-analytical-topics.v1"
 MAX_DOCS_PER_UPDATE = 6000
@@ -308,7 +312,7 @@ def _title(seed,docs):
 def build_topics(rows, now, source_health=None, prior=None, exclude_roots=()):
     """Build display families from persisted or inferred document assignments."""
     index=assign(rows,prior)
-    from .topic_families import region_from_title
+    # region_from_title imported above for both module and script execution.
     skip=set(exclude_roots)
     docs=documents([row for row in rows if row.get("information_root") not in skip])
     by_gid=defaultdict(list)
