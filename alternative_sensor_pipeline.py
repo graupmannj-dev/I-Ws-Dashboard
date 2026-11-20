@@ -164,7 +164,9 @@ def entry(mode,rid,title,url,checked,*,event_at=None,published=None,kind="source
         "observed_at":iso(checked),"event_at":iso(event) if event else None,
         "published_at":iso(pub) if pub else None,
         "first_seen_at":iso(first) if first else None,
-        "claim_level":"environmental_context_not_hostile_attribution" if mode in ("usgs","eonet","nws","coops","swpc")
+        "claim_level":"official_tender_release_not_fulfillment_or_intent" if mode=="uk_tenders"
+                     else "public_edit_activity_not_event_confirmation" if mode=="wiki_edits"
+                     else "environmental_context_not_hostile_attribution" if mode in ("usgs","eonet","nws","coops","swpc")
                      else "aggregated_network_measurement_no_attribution" if mode=="ripe"
                      else "issued_waterway_notice_not_actual_vessel_disruption",
         "source_scope":source_scope or SCOPE[mode],
