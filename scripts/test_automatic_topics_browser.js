@@ -13,6 +13,13 @@ const assert=require("node:assert/strict");
         source_url:"https://example.org/article/"+n,
         source_record_count:1,information_root_count:1,
         publisher_names:n===0?["Source A"]:["Source B"],
+        grouping_explanation:n===0?{
+          method:"new_analytical_theme",score:null,shared_subject_terms:[],
+        }:{
+          method:"aiba.hybrid-local-title-embedding.v1",score:0.87,
+          shared_subject_terms:["iran","hormuz","agreement"],
+          same_incident_proven:false,independent_corroboration_proven:false,
+        },
         validity_windows:[],records:[{
           id:"beh:auto-"+n,first_observed_at:"2026-11-19T19:00:00Z",
           source_url:"https://example.org/article/"+n,provider:n===0?"Source A":"Source B",
@@ -58,6 +65,10 @@ const assert=require("node:assert/strict");
     assert.equal(await page.locator(".topic-notice").count(),2);
     await page.locator(".topic-notice").first().locator("summary").click();
     assert.equal(await page.locator(".topic-notice").first().locator("a").count(),1);
+    assert.match(await page.locator(".topic-notice").first().locator(".topic-match-explanation").innerText(),/Original theme seed/);
+    await page.locator(".topic-notice").nth(1).locator("summary").click();
+    assert.match(await page.locator(".topic-notice").nth(1).locator(".topic-match-explanation").innerText(),/similarity 0.87/i);
+    assert.match(await page.locator(".topic-notice").nth(1).locator(".topic-match-explanation").innerText(),/NOT the likelihood of a common event/);
     assert.match(await page.locator(".topic-family-summary").innerText(),
       /not established independent corroboration/i);
     assert.equal(await page.locator(".family-detail .family-gauge-marker").count(),0);
