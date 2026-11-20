@@ -44,8 +44,8 @@ NOISE = frozenset((
     " us usa u s america american united states north south east west"
     " level caution exercise increased precautions reconsider travel not do"
     " airport airports tfr faa nasa norad ioda detected country data"
-    " naval? "
-).replace("naval? ","").split())
+    " synthetic fixture test example source sample document led"
+).split())
 GENERIC = frozenset((
     "security military forces operations activity incident event events "
     "restricted restriction area areas maritime shipping ship vessel vessels "
