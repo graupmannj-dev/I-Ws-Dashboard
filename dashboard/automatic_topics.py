@@ -300,14 +300,16 @@ def _valid_prior(prior):
 
 
 def assign(rows, prior=None):
-    """Idempotent, append-only topic assignments from bounded source documents.
+    """Autonomously attach source documents to long-lived, unreviewed themes.
 
-    Historic IDs are retained. A new document attaches only if it matches a
-    stable seed by meaningful terms, compatible subject and source domain.
-    Unqualified documents remain searchable as independent source records.
+    Stable existing membership always wins. For *new* documents, hybrid local
+    embeddings broaden candidate retrieval, while explicit source geography,
+    domain, activity-role and boilerplate gates control false joins.
     """
     out=_valid_prior(prior)
-    groups=out["groups"]; assignments=out["assignments"]
+    groups=out["groups"]
+    assignments=out["assignments"]
+    explanations=out.setdefault("assignment_explanations",{})
     docs=documents(rows)
     if len(docs)>MAX_DOCS_PER_UPDATE:
         docs=docs[-MAX_DOCS_PER_UPDATE:]
@@ -316,49 +318,102 @@ def assign(rows, prior=None):
         out["input_truncated"]=False
     inverted=defaultdict(set)
     for gid,g in groups.items():
-        seed=g.get("seed") or {}
-        for t in seed.get("terms",{}):
-            if t not in GENERIC:
-                inverted[t].add(gid)
+        for term in (g.get("seed") or {}).get("terms",{}):
+            if term not in GENERIC:
+                inverted[term].add(gid)
+
+    # Train local latent-semantic vectors once per batch, using persisted topic
+    # seed titles plus fresh source titles. Stable assignments do NOT depend
+    # on subsequent embeddings or models being available.
+    ordered=sorted(groups,key=lambda gid:(
+        groups[gid].get("last_document_at") or groups[gid].get("first_document_at") or "",
+        gid),reverse=True)
+    existing_semantic_seeds=ordered[:MAX_SEMANTIC_SEEDS]
+    seed_positions={gid:i for i,gid in enumerate(existing_semantic_seeds)}
+    titles=[groups[gid]["seed"]["title"] for gid in existing_semantic_seeds]
+    start_docs=len(titles)
+    titles.extend(doc["title"] for doc in docs)
+    model=LocalTopicEmbeddings(titles)
+    out["semantic_seed_index_limited"]=len(groups)>len(existing_semantic_seeds)
+    newly_added=[]
     new_count=0
-    for doc in docs:
-        # Do not create thousands of permanent topic seeds for generic
-        # advisory headlines or too-short boilerplate. They remain individual
-        # source observations in AIBA's main queue, fully discoverable.
-        if doc["domain"]=="advisory" or len(
-                set(doc["terms"])-GENERIC)<MIN_SHARED_TERMS:
-            continue
+
+    for offset,doc in enumerate(docs):
         key=doc["key"]
         if key in assignments:
             if assignments[key] not in groups:
                 raise ValueError("Topic ledger references missing stable group")
             continue
-        match=None
-        if doc["terms"] and doc["domain"]!="advisory":
-            candidate_counts=Counter(gid for t in doc["terms"]
-                                     if t not in GENERIC for gid in inverted[t])
-            shortlisted=[gid for gid,n in candidate_counts.most_common(_MAX_CANDIDATES)
-                         if n>=MIN_SHARED_TERMS]
-            for gid in shortlisted:
-                score,shared=_similar(doc,groups[gid]["seed"])
-                if score<MIN_SIMILARITY:
-                    continue
-                if match is None or (score,gid)>(match[0],match[1]):
-                    match=(score,gid,shared)
-        if match is None:
+        if doc["domain"]=="advisory" or len(set(doc["terms"])-GENERIC)<MIN_SHARED_TERMS:
+            continue
+        position=start_docs+offset
+        # Inverted lookups preserve older archived seeds beyond the bounded
+        # dense index. Top latent nearest-neighbors discover unfamiliar
+        # paraphrases with no requirement for the exact same title.
+        candidate_counts=Counter(gid for term in doc["terms"] if term not in GENERIC
+                                 for gid in inverted[term])
+        candidates=set(gid for gid,n in
+                       candidate_counts.most_common(_MAX_CANDIDATES) if n>=1)
+        for seed_idx in model.candidates(position,len(existing_semantic_seeds),top=36):
+            candidates.add(existing_semantic_seeds[seed_idx])
+        # New groups created earlier this same batch can also receive members.
+        candidates.update(newly_added[-120:])
+        best=None
+        for gid in sorted(candidates):
+            g=groups.get(gid)
+            if not g:
+                continue
+            seed=g["seed"]
+            # Cheap hard gates precede potentially expensive similarities.
+            if doc["domain"]!=seed["domain"]:
+                continue
+            ga=set(doc["geo"]);gb=set(seed.get("geo",[]))
+            if ga and gb and ga.isdisjoint(gb):
+                continue
+            a=_roles(doc["title"]);z=_roles(seed["title"])
+            if a and z and a.isdisjoint(z):
+                continue
+            if gid in seed_positions:
+                metrics=model.pair(position,seed_positions[gid])
+            else:
+                oldscore,_=_similar(doc,seed)
+                metrics={"score":oldscore,"tfidf_cosine":oldscore,
+                         "latent_cosine":None}
+            rationale=_reasoning(doc,seed,metrics)
+            if rationale is None:
+                continue
+            quality=(rationale["score"],gid)
+            if best is None or quality>(best[0],best[1]):
+                best=(quality[0],gid,rationale)
+        if best is None:
             gid="family:"+hashlib.sha256(("auto_topic:v1:"+key).encode()).hexdigest()[:20]
             if gid in groups and groups[gid]["seed"]["key"]!=key:
                 raise ValueError("Topic ID hash collision")
             groups[gid]={
                 "seed":_seed(doc),"first_document_at":doc["first"],
-                "source":"automatic_similarity_v1","matched_document_count":0,
+                "last_document_at":doc["first"],
+                "source":"hybrid_local_topic_embedding_v2",
+                "matched_document_count":0,
             }
-            for t in doc["terms"]:
-                if t not in GENERIC:
-                    inverted[t].add(gid)
+            seed_positions[gid]=position
+            newly_added.append(gid)
+            for term in doc["terms"]:
+                if term not in GENERIC:
+                    inverted[term].add(gid)
+            explanation={
+                "method":"new_analytical_theme","score":None,
+                "shared_subject_terms":[],"shared_activity_roles":[],
+                "same_incident_proven":False,
+                "independent_corroboration_proven":False,
+                "review_status":"unreviewed_automatic_topic_seed",
+            }
         else:
-            gid=match[1]
+            gid=best[1]
+            explanation=best[2]
+            groups[gid]["last_document_at"]=max(
+                groups[gid].get("last_document_at") or doc["first"],doc["first"])
         assignments[key]=gid
+        explanations[key]=explanation
         groups[gid]["matched_document_count"]+=1
         new_count+=1
         if len(assignments)>MAX_STORED_DOCS:
@@ -366,6 +421,7 @@ def assign(rows, prior=None):
     out["new_document_assignments"]=new_count
     out["total_document_assignments"]=len(assignments)
     out["total_stable_topics"]=len(groups)
+    out["automatic_similarity_method"]="hybrid_sparse_char_ngram_lsa_v2"
     return out
 
 
