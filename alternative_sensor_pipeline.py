@@ -516,7 +516,7 @@ def adapt_cbp_wait(data,checked,url):
         if not (checked.date()-dt.timedelta(days=1)<=local_date<=
                 checked.date()+dt.timedelta(days=1)):
             continue
-        if not re.fullmatch(r"\\d{1,2}:\\d{2}:\\d{2}",local_time):
+        if not re.fullmatch(r"\d{1,2}:\d{2}:\d{2}",local_time):
             continue
         lanes=port.get("commercial_vehicle_lanes") or {}
         if not isinstance(lanes,dict):lanes={}
