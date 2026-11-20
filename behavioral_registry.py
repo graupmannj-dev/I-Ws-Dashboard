@@ -24,13 +24,14 @@ from behavioral_event_resolution import reported_site
 UTC = dt.timezone.utc
 SCHEMA = "aiba.behavioral-observations.v1"
 MODES = ("ioda", "nga", "amsa", "official", "commercial", "watchlist", "live_airspace", "live_maritime",
-         "usgs", "eonet", "nws", "usace", "coops", "swpc", "ripe")
+         "usgs", "eonet", "nws", "usace", "coops", "swpc", "ripe",
+         "uk_tenders", "wiki_edits")
 ALLOWED_STATES = {"collected", "partial"}
 FRESH_HOURS = {"ioda": 6, "nga": 6, "amsa": 6,
                "official": 12, "commercial": 48, "watchlist": 12,
                "live_airspace": 2, "live_maritime": 2,
                "usgs": 8, "eonet": 8, "nws": 8, "usace": 12, "coops": 8,
-               "swpc": 8, "ripe": 8}
+               "swpc": 8, "ripe": 8, "uk_tenders": 8, "wiki_edits": 8}
 FAMILIES = {"ioda": "internet_reachability", "nga": "maritime_restriction",
             "amsa": "maritime_restriction", "official": "protective_notice",
             "commercial": "commercial_media", "watchlist": "market_expectation",
@@ -38,7 +39,8 @@ FAMILIES = {"ioda": "internet_reachability", "nga": "maritime_restriction",
             "usgs": "environmental_context", "eonet": "environmental_context",
             "nws": "environmental_context", "usace": "waterway_restriction",
             "coops": "port_conditions", "swpc":"environmental_context",
-            "ripe":"internet_reachability"}
+            "ripe":"internet_reachability", "uk_tenders":"public_procurement",
+            "wiki_edits":"public_attention"}
 EVIDENCE = {"ioda": "network_measurement", "nga": "official_notice",
             "amsa": "official_notice", "official": "official_notice",
             "commercial": "media_mention", "watchlist": "market_quote",
@@ -46,14 +48,16 @@ EVIDENCE = {"ioda": "network_measurement", "nga": "official_notice",
             "usgs": "measured_natural_event", "eonet": "hazard_catalog",
             "nws": "official_weather_alert", "usace": "official_navigation_notice",
             "coops": "station_measurement", "swpc":"issued_space_weather_alert",
-            "ripe":"aggregated_public_network_measurement"}
+            "ripe":"aggregated_public_network_measurement",
+            "uk_tenders":"official_public_tender_release",
+            "wiki_edits":"public_edit_activity_aggregate"}
 # No source is yet verified as a military preparations sensor.
 DIRECT_BEHAVIOR = {"ioda": True, "nga": False, "amsa": False,
                    "official": False, "commercial": False, "watchlist": False,
                    "live_airspace": False, "live_maritime": False,
                    "usgs": True, "eonet": False, "nws": False,
                    "usace": False, "coops": True,
-                   "swpc": False, "ripe": True}
+                   "swpc": False, "ripe": True, "uk_tenders": False, "wiki_edits": False}
 MAX_PER_MODE = 500
 MAX_INDEX = 15000
 MAX_SNAPSHOT = 2500
@@ -150,6 +154,8 @@ def mode_status(state, mode, now):
                             else "NWS marine weather alerts (bounded United States sample)" if mode=="nws"
                             else "USACE inland navigation notices beginning in last 14 days" if mode=="usace"
                             else "NOAA CO-OPS three monitored U.S. station levels" if mode=="coops"
+                            else "UK Find a Tender official two-day bounded release sample" if mode=="uk_tenders"
+                            else "Wikipedia en/fr/es recent main-namespace edit sample" if mode=="wiki_edits"
                             else "registered, exact-ID forecast contracts only"),
             "missingness":"not_measured_not_zero" if not current else
                           "partial_sampling_not_worldwide_exhaustive" if truncated else
@@ -206,7 +212,7 @@ def normalize(mode, row, now):
     first_feed=when(row.get("first_seen_at"))
     if any(t and t>collected+dt.timedelta(minutes=5) for t in (published,occurred,first_feed)):
         return None,"source_clock_after_observation"
-    group=(row.get("geography") if mode in ("usgs","eonet","nws","usace","coops","swpc","ripe") else
+    group=(row.get("geography") if mode in ("usgs","eonet","nws","usace","coops","swpc","ripe","uk_tenders","wiki_edits") else
            row["geography"] if mode in RESTRICTION_SOURCES else location(row,mode))
     if not isinstance(group,dict):
         group=location(row,mode)
