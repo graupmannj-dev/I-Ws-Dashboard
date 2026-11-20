@@ -27,6 +27,12 @@ const assert = require("node:assert/strict");
             map_eligible:false,source_independence_established:false,
             warning_approved:false,
             anomaly_metric:{status:"not_calibrated",z_score:null},
+            evidence_facets:{profile:"aviation",values:[
+              {key:"source_notice",label:"Official airspace notice",status:"supported",reason:"One provider notice"},
+              {key:"telemetry",label:"Aircraft telemetry",status:"not_measured",reason:"Coverage unavailable"},
+              {key:"commercial",label:"Commercial reporting",status:"partial",reason:"Unreviewed source mention"},
+              {key:"contradiction",label:"Conflicting evidence",status:"contradicted",reason:"Synthetic conflict fixture"},
+            ]},
             reason:"Synthetic single source; no verified event.",
             sources:[{id:"fixture-one",title:"Synthetic FAA notice",provider:"Fixture",
               source_family:"airspace_restriction",
@@ -40,7 +46,9 @@ const assert = require("node:assert/strict");
             source_families:["maritime_restriction"],providers:["Test"],
             case_hints:[],geography_label:null,geography_precision:"not_geocoded",
             map_eligible:false,source_independence_established:false,warning_approved:false,
-            anomaly_metric:{status:"not_calibrated",z_score:null},
+            anomaly_metric:{status:"calibrated_metric",z_score:-3.2,
+              metric:"Synthetic counted events",unit:"events",observed:5},
+            evidence_facets:{profile:"maritime",values:[]},
             reason:"Synthetic history only.",sources:[],
           },
         ]
@@ -54,12 +62,24 @@ const assert = require("node:assert/strict");
     assert.equal(await page.locator(".family-quiet").count(),1);
     assert.equal(await page.locator(".family-emerging").count(),1);
     assert.equal(await page.locator(".family-card img").count(),0,"Titles must be escaped, never executed");
+    assert.equal(await page.locator(".family-emerging .family-gauge-marker").count(),0,
+      "Uncalibrated data must not show a deviation arrow");
+    assert.equal(await page.locator(".family-quiet .family-gauge-marker").count(),1);
+    assert.equal(await page.locator(".family-emerging .facet-supported").count(),1);
+    assert.equal(await page.locator(".family-emerging .facet-partial").count(),1);
+    assert.equal(await page.locator(".family-emerging .facet-contradicted").count(),1);
+    assert.equal(await page.locator(".family-emerging .facet-not_measured").count(),1);
+    assert.match(await page.locator(".family-quiet .family-gauge").getAttribute("aria-label"),/-3.2.*σ/i);
+
     await page.locator('input[aria-label="Search evidence families"]').fill("maritime");
     assert.equal(await page.locator(".family-card").count(),1);
     await page.locator('input[aria-label="Search evidence families"]').fill("");
     await page.locator(".family-emerging").click();
     assert.equal(await page.locator(".family-detail").count(),1);
     assert.match(await page.locator(".family-detail").innerText(),/Not calibrated/i);
+    assert.equal(await page.locator(".family-detail .family-gauge-marker").count(),0);
+    assert.match(await page.locator(".family-detail .family-facets").getAttribute("aria-label"),/Evidence facets/i);
+
     assert.match(await page.locator(".family-detail").innerText(),/Unreviewed/i);
     assert.equal(await page.locator('.family-detail a[href="https://example.org/source"]').count(),1);
     assert.equal(await page.locator(".family-detail img").count(),0);
