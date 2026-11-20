@@ -134,6 +134,16 @@ class AnalystIntakeTests(unittest.TestCase):
             self.assertEqual(current["algorithmic_unlocated_count"], 1)
             self.assertTrue((site / "atlas.json").exists())
             self.assertIn("Unreviewed analyst lead", json.dumps(current))
+            self.assertEqual(len([r for r in current["intake_queue"]
+                                  if r["id"].startswith("analyst:")]), 2)
+            self.assertEqual(current["intake_queue_new_count"], 2)
+            orphan=next(x for x in current["intake_queue"] if x["id"]=="analyst:test-global-002")
+            self.assertEqual(orphan["case_association"], "unassigned")
+            self.assertIsNone(orphan["case_id"])
+            self.assertFalse(orphan["reviewed_warning"])
+            self.assertTrue(orphan["source_url"].startswith("https://"))
+            self.assertEqual(current["intake_queue"][0]["classification"], "unreviewed_source_report")
+
             late = generate(site, generated="2026-11-11T18:00:00+00:00",
                             state_dir=state)
             self.assertFalse(next(x for x in late["hotspots"] if x["id"] == "taiwan")["new_analyst_lead"])
