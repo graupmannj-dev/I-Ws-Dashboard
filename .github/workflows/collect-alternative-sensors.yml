@@ -1,0 +1,75 @@
+name: Collect CAIRN public alternative sensors
+on:
+  workflow_dispatch:
+  # GitHub scheduled jobs are best effort, not fixed real-time collection.
+  schedule:
+    - cron: '29 * * * *'
+permissions:
+  contents: write
+concurrency:
+  group: aiba-operational-snapshots
+  cancel-in-progress: false
+jobs:
+  public-sensors:
+    runs-on: ubuntu-latest
+    timeout-minutes: 22
+    steps:
+      - name: Checkout CAIRN collector code
+        uses: actions/checkout@v4
+        with:
+          path: src
+          persist-credentials: false
+      - name: Checkout durable, public observation branch
+        uses: actions/checkout@v4
+        with:
+          ref: aiba-feed-data
+          path: state
+          fetch-depth: 1
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Collect public feeds with per-provider failure isolation
+        shell: bash
+        run: |
+          set +e
+          python src/alternative_sensor_pipeline.py --state state/observations
+          echo "CAIRN_PUBLIC_SENSORS_RC=$?" >> "$GITHUB_ENV"
+          exit 0
+      - name: Reconcile source-provenanced alternative and environmental context
+        shell: bash
+        run: |
+          set +e
+          python src/behavioral_registry.py --state state/observations &&
+          python src/behavioral_fusion.py --state state/observations
+          echo "CAIRN_NORMALIZE_RC=$?" >> "$GITHUB_ENV"
+          exit 0
+      - name: Enable numerical topic grouping dependencies (sparse fallback)
+        continue-on-error: true
+        run: python -m pip install -r src/requirements.txt
+      - name: Persist topics and independent original source records
+        if: env.CAIRN_NORMALIZE_RC == '0'
+        shell: bash
+        run: |
+          set +e
+          python src/family_archive.py --state state/observations
+          echo "CAIRN_ARCHIVE_RC=$?" >> "$GITHUB_ENV"
+          exit 0
+      - name: Commit observations AND source health even if a provider failed
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd state
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add observations
+          if ! git diff --cached --quiet; then
+            git commit -m "CAIRN public alternative sensor observations and health $GITHUB_RUN_ID [skip ci]"
+            git push origin HEAD:refs/heads/aiba-feed-data
+          else
+            echo "No new observations or health changes"
+          fi
+      - name: Surface total failure, normalization error, or missing archive
+        if: env.CAIRN_PUBLIC_SENSORS_RC != '0' || env.CAIRN_NORMALIZE_RC != '0' || env.CAIRN_ARCHIVE_RC == '1'
+        run: |
+          echo "::error::Public sensor coverage or archive incomplete; inspect source health on evidence branch"
+          exit 1
