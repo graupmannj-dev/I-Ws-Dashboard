@@ -13,11 +13,12 @@ const NAMES={amsa:"AMSA NAVAREA X",commercial:"Commercial media sampling",
   nws:"NOAA/NWS marine weather alerts",usace:"USACE navigation notices",
   coops:"NOAA CO-OPS monitored port stations",
   swpc:"NOAA space-weather alerts",ripe:"RIPE Atlas public network aggregate",
-  uk_tenders:"UK Find a Tender releases",wiki_edits:"Wikipedia public edits"};
+  uk_tenders:"UK Find a Tender releases",wiki_edits:"Wikipedia public edits",
+  fema_cbp:"FEMA/CBP land-border wait estimates"};
 const FRESH_HOURS={amsa:6,commercial:48,ioda:6,live_airspace:2,live_maritime:2,
   nga:6,official:12,watchlist:12,faa_nas:25/60,gdelt:48,wikipedia:72,
   usgs:8,eonet:8,nws:8,usace:12,coops:8,swpc:8,ripe:8,
-  uk_tenders:8,wiki_edits:8};
+  uk_tenders:8,wiki_edits:8,fema_cbp:8};
 // A source's ROLE and its HEALTH are separate. News can corroborate a lead,
 // but syndicated reports do not by themselves constitute independent sensors.
 const SOURCE_META={
@@ -57,6 +58,8 @@ const SOURCE_META={
     "UK Find a Tender publishes official OCDS public contract releases. This bounded update sample is not all UK purchasing, a measurement of urgency, or proof that goods or services were delivered."},
   wiki_edits:{role:"Public attention/context",description:
     "Wikipedia public mainspace edits are aggregated in bounded three-hour samples from three language editions. No editor identities are recorded; edits alone do not establish an underlying event."},
+  fema_cbp:{role:"Transportation friction proxy",description:
+    "FEMA mirrors CBP published southern-border commercial-lane wait estimates and crossing status. Wait times depend on inspection practices and staffing; they do not measure truck traffic volume, military movements or border-wide throughput."},
   gdelt:{role:"Context and corroboration",description:
     "GDELT indexes worldwide news coverage, reported events and media attention. CAIRN uses it primarily to establish background and compare developing reporting, not as a direct operational sensor or independently verified event record."},
   wikipedia:{role:"Alternative attention proxy",description:
