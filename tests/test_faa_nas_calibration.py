@@ -7,6 +7,7 @@ import unittest
 
 from faa_nas_calibration import build, DAY_SCHEMA, SCHEMA, SOURCE_URL, SOURCE_SCHEMA, HEALTH_SCHEMA
 from family_archive import update
+from dashboard.build_atlas import generate
 from ops_pipeline import write_json
 
 UTC=dt.timezone.utc
@@ -124,6 +125,16 @@ class FaaNasCalibrationTests(unittest.TestCase):
             self.assertEqual(record["calibrated_metric"]["source_id"],record["id"])
             self.assertFalse(record["direct_measurement"])
             self.assertEqual(result["alerts_promoted"],0)
+            site=s/"site";site.mkdir()
+            (site/"index.html").write_text("<p>Synthetic</p>")
+            (site/"hotspots.json").write_text('{"asof":"2026-11-19"}')
+            published=generate(site,generated=NOW.isoformat(),state_dir=s)
+            family=next(x for x in published["dynamic_bins"]["families"]
+                        if x["source_families"]==["aviation_operations"])
+            self.assertGreater(family["anomaly_metric"]["z_score"],5)
+            self.assertFalse(family["source_independence_established"])
+            self.assertFalse(family["warning_approved"])
+            self.assertEqual(family["evidence_facets"]["profile"],"aviation")
 
 
 if __name__=="__main__":
