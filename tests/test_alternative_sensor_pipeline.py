@@ -77,7 +77,10 @@ class AlternativeSensorTests(unittest.TestCase):
                 self.assertEqual(row["provider"],mode)
                 self.assertFalse(row.get("warning_approved",False))
                 self.assertTrue(row["id"].startswith(mode+":"))
-                self.assertIsNotNone(row["event_at"])
+                if mode=="usace":
+                    self.assertIsNotNone(row["published_at"])
+                else:
+                    self.assertIsNotNone(row["event_at"])
                 self.assertEqual(row["observed_at"],"2026-11-20T17:00:00Z")
                 self.assertNotIn("calibrated_metric",row)
                 self.assertIn("not_",row["claim_level"])
