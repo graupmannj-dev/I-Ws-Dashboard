@@ -44,13 +44,12 @@ def sample(mode):
             },"geometry":None,
         }]}
     if mode=="usace":
-        return {"type":"FeatureCollection","features":[{
-            "type":"Feature","properties":{
-                "notice_id":"123ABC","title":"River lock navigation closure",
-                "issue_date":STAMP,
-                "url":"https://ndc.ops.usace.army.mil/ords/ntni/json_data/notices_geoJson/20112026",
-            },
-        }]}
+        return {"items":[{
+            "controlnumber":205788,"noticeno":"205788",
+            "issuedate":STAMP,"begindate":STAMP,
+            "waterways":"POOL_05A_UPPER_MISSISSIPPI",
+            "noticelink":"https://ndc.ops.usace.army.mil/ords/ntni/print_nav_notice?in_nav_notice_number=205788",
+        }],"hasMore":False,"count":1}
     if mode=="coops":
         return {"metadata":{"id":"9414290","name":"San Francisco"},
           "data":[{"t":"2026-11-20 16:30","v":"0.82","s":"0.02",
@@ -116,6 +115,7 @@ class AlternativeSensorTests(unittest.TestCase):
             got=collect(state,clock=lambda:NOW,fetcher=fake)
             self.assertEqual(set(got),set(MODES))
             self.assertEqual(got["coops"]["source_queries_attempted"],3)
+            self.assertEqual(got["usace"]["source_queries_attempted"],3)
             self.assertEqual(got["coops"]["status"],"partial")
             reg=create(state,clock=lambda:NOW,run_id="integration",write=True)
             self.assertEqual(reg["schema"],REGISTRY_SCHEMA)
