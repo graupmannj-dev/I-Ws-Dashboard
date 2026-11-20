@@ -79,6 +79,11 @@ jobs:
           rc=$?
           set -e
           echo "AIBA_FAA_NAS_RC=$rc" >> "$GITHUB_ENV"
+      - name: Record comparable FAA NAS numeric samples and durable candidate evidence
+        if: env.AIBA_FAA_NAS_RC == '0'
+        run: |
+          python src/faa_nas_calibration.py --state state/observations
+          python src/family_archive.py --state state/observations
       - name: Persist source health and changed systemic event observations
         shell: bash
         run: |
@@ -86,7 +91,7 @@ jobs:
           cd state
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add observations/latest/faa_nas.json observations/health/faa_nas.json observations/history/faa_nas/ || true
+          git add observations
           if ! git diff --cached --quiet; then
             git commit -m "AIBA FAA NAS operations and coverage $GITHUB_RUN_ID [skip ci]"
             git push origin HEAD:refs/heads/aiba-feed-data
