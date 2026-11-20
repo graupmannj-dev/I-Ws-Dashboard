@@ -25,6 +25,7 @@ class FaaNasSystemicWatchTests(unittest.TestCase):
     def test_national_stop_reason_from_two_airports_without_claim_of_attack(self):
         out=analyze(sample("OTHER: NATIONAL STOP"),collected_at=NOW)
         self.assertEqual(out["schema"],SCHEMA)
+        self.assertRegex(out["monitored_airport_roster_sha256"],r"^[0-9a-f]{64}$")
         self.assertEqual(out["status"],"multi_airport_national_stop_language")
         self.assertEqual(out["national_stop_airports"],2)
         self.assertTrue(out["provisional_review_required"])
