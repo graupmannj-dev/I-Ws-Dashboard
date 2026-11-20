@@ -221,7 +221,8 @@ def update(state, clock=None, write=True):
         public_links.append({
             "id": link["id"], "status": link["status"],
             "match_basis": link.get("match_basis", ""),
-            "source_reports": [{"observation_id": i} for i in link["source_ids"]],
+            "source_reports": [{"observation_id": i} for i in link["source_ids"][:100]],
+            "source_reports_truncated": len(link["source_ids"]) > 100,
             "independent_corroboration_established": False,
             "warning_level_change": False,
             "first_detected_at": link.get("first_detected_at"),
