@@ -14,6 +14,7 @@ import datetime as dt
 import hashlib
 import json
 import math
+import re
 import statistics
 from pathlib import Path
 
@@ -62,6 +63,9 @@ def sample(source, health, now):
     seen = source.get("monitored_airport_count")
     if type(count) is not int or type(seen) is not int or not 0 <= count <= seen <= 450:
         raise ValueError("FAA event count outside the source envelope")
+    roster = source.get("monitored_airport_roster_sha256")
+    if not isinstance(roster, str) or not re.fullmatch(r"[0-9a-f]{64}", roster):
+        raise ValueError("FAA airport roster missing or source contract changed")
     fingerprint = source.get("state_fingerprint")
     if not isinstance(fingerprint, str) or not fingerprint or len(fingerprint) > 200:
         raise ValueError("Missing source-state identity")
@@ -69,6 +73,7 @@ def sample(source, health, now):
         "checked_at": checked.isoformat(),
         "value": count, "source_count": seen,
         "state_fingerprint": fingerprint,
+        "roster_sha256": roster,
         "source_scope": source.get("source_scope") or "FAA NAS sampled airport-status records",
         "status": source.get("status"),
         "source_url": SOURCE_URL,
@@ -80,7 +85,7 @@ def clock_distance_minutes(a, b):
     return abs((a.hour*60 + a.minute) - (b.hour*60 + b.minute))
 
 
-def prior_samples(state, current):
+def prior_samples(state, current, current_source_count, current_roster):
     matches=[]
     day0=current.date()
     for number in range(1,WINDOW_DAYS+1):
@@ -98,6 +103,11 @@ def prior_samples(state, current):
                 raise ValueError("Invalid prior FAA source sample")
             if row.get("source_schema") != SOURCE_SCHEMA or row.get("source_url") != SOURCE_URL:
                 raise ValueError("Source collection contract changed")
+            # Even identical airport counts can represent a different
+            # airport cohort. Only the identical roster is comparable.
+            if (row.get("source_count") != current_source_count or
+                    row.get("roster_sha256") != current_roster):
+                continue
             if clock_distance_minutes(t,current) <= MAX_CLOCK_OFFSET_MINUTES:
                 checked.append((clock_distance_minutes(t,current),t,row))
         if checked:
@@ -126,7 +136,7 @@ def build(state, *, clock=None, write=True):
     if len(existing)>MAX_PER_DAY:
         raise ValueError("FAA sampling capacity reached; do not drop measurements")
     today["samples"]=[existing[x] for x in sorted(existing)]
-    prior=prior_samples(state,checked)
+    prior=prior_samples(state,checked,row["source_count"],row["roster_sha256"])
     values=[x["value"] for x in prior]
     enough=len(values)>=MIN_DAYS
     variance=statistics.stdev(values) if enough else None
@@ -151,7 +161,7 @@ def build(state, *, clock=None, write=True):
         "baseline_ready":bool(calibrated),
         "coverage_current":True,
         "z_score":z,
-        "comparison_method":"one successful same-clock-time sample per observed prior UTC day",
+        "comparison_method":"one successful same-clock-time AND identical airport-roster sample per prior UTC day",
         "scope_note":"FAA sampled airport-event records; not all airports, flight volume, or hostile cause.",
     })
     unusual=(z is not None and abs(z)>=2)
