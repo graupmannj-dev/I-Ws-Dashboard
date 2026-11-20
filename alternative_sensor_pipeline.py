@@ -50,7 +50,7 @@ USGS="https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_week.geojson
 EONET="https://eonet.gsfc.nasa.gov/api/v3/events?"+urlencode(
     {"status":"all","days":7,"limit":100})
 SWPC="https://services.swpc.noaa.gov/products/alerts.json"
-NWS="https://api.weather.gov/alerts/active?"+urlencode({"limit":100})
+NWS="https://api.weather.gov/alerts/active"
 USACE_ROOT="https://ndc.ops.usace.army.mil/ords/ntni/json_data/notices_geoJson"
 RIPE="https://atlas.ripe.net/api/v2/measurements/1001/latest/?"+urlencode(
     {"versions":1,"lookback_days":1,"public_only":"true"})
@@ -61,7 +61,7 @@ PORT_STATIONS={
 CAPS={"usgs_quakes":120,"nasa_eonet":100,"noaa_swpc":55,"nws_alerts":100,
       "usace_navigation":160,"noaa_ports":len(PORT_STATIONS),"ripe_atlas":1}
 MAX_BYTES=8_000_000
-MAX_RIPE_PROBES=6500
+MAX_RIPE_PROBES=60000  # full bounded public built-in sample; never silently cut at row 6500
 
 
 def utcnow():
@@ -263,12 +263,16 @@ def nws(data,now):
 def usace(data,now,url):
     # The official endpoint is nominally GeoJSON. Oracle ORDS deployments
     # sometimes wrap features as items; refuse any other undocumented shape.
-    if not isinstance(data,dict):
-        raise ValueError("USACE response is not a JSON object")
-    if data.get("type")=="FeatureCollection":
+    if isinstance(data,list):
+        # The live NTNI service can publish a direct JSON array.
+        raw=data
+        shape="array"
+    elif isinstance(data,dict) and data.get("type")=="FeatureCollection":
         raw=require_list(data,"features")
-    elif isinstance(data.get("items"),list):
+        shape="geojson"
+    elif isinstance(data,dict) and isinstance(data.get("items"),list):
         raw=data["items"]
+        shape="ords_items"
     else:raise ValueError("USACE changed response schema")
     rows=[]
     for feature in raw:
@@ -295,7 +299,8 @@ def usace(data,now,url):
             source_dependency="usace:original_notice:"+ident))
     if raw and not rows:raise ValueError("USACE notice identities not recognized; refuse false normal")
     return rows,{"total_received":len(raw),
-                 "next_page_present":bool(data.get("hasMore") or data.get("next"))}
+                 "next_page_present":bool(data.get("hasMore") or data.get("next")) if isinstance(data,dict) else False,
+                 "envelope":shape}
 
 
 def port_url(station):
