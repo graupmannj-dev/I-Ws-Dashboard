@@ -118,7 +118,7 @@ def qualified_metric(rows):
             continue
         if m.get("baseline_ready") is not True or m.get("coverage_current") is not True:
             continue
-        if m.get("metric_family") != row.get("source_family"):
+        if m.get("source_id") != row.get("id") or m.get("metric_family") != row.get("source_family"):
             continue
         if not all(isinstance(m.get(k),str) and 0<len(m[k])<=120
                    for k in ("metric","unit","observed_window","reference_window","source_id")):
