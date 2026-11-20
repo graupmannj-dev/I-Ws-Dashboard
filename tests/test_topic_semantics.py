@@ -4,7 +4,7 @@ import time
 import unittest
 
 from dashboard.topic_semantics import LocalTopicEmbeddings, SCHEMA
-from dashboard.automatic_topics import assign, documents, _subject_geo, _roles, _seed, _reasoning, _similar
+from dashboard.automatic_topics import assign, documents, _subject_geo, _roles, _domain
 
 T0="2026-11-20T12:00:00Z"
 
@@ -28,16 +28,6 @@ def together(a,b):
     if len(docs)!=2:
         raise AssertionError("Pair fixture must contain distinct documents")
     x,y=(result["assignments"].get(d["key"]) for d in docs)
-    if x!=y:
-        model=LocalTopicEmbeddings([d["title"] for d in docs])
-        m=model.pair(0,1)
-        print("DEBUG_UNMATCHED",repr(docs[0]["title"]),repr(docs[1]["title"]),
-              "domains",[d["domain"] for d in docs],
-              "roles",[_roles(d["title"]) for d in docs],
-              "geo",[d["geo"] for d in docs],
-              "metric",m,
-              "lexical",_similar(docs[1],_seed(docs[0])),
-              "rationale",_reasoning(docs[1],_seed(docs[0]),m),flush=True)
     return x is not None and x==y,result
 
 
@@ -109,6 +99,15 @@ class HybridSemanticsTests(unittest.TestCase):
         self.assertEqual(second["assignments"][documents([b])[0]["key"]],gid)
         self.assertEqual(second["groups"][gid]["first_document_at"],T0)
         self.assertEqual(assign([b],second)["new_document_assignments"],0)
+
+    def test_blockade_and_freighter_phrasings_share_domain(self):
+        a=row("domain-a","Iranian cargo ships under naval blockade")
+        b=row("domain-b","Maritime blockade blocks Iranian freighters")
+        docs=documents([a,b])
+        self.assertEqual(docs[0]["domain"],"maritime")
+        self.assertEqual(docs[1]["domain"],"maritime")
+        joined,_=together(a,b)
+        self.assertTrue(joined)
 
     def test_repeated_official_source_fragments_one_document(self):
         a=row("frag1","Denmark firing exercise Kattegat",family="maritime_restriction",
