@@ -250,8 +250,24 @@ def generate(site, generated=None, state_dir=None):
             "classification": "unreviewed_source_report", "reviewed_warning": False,
         })
     queue.sort(key=lambda x: (x["first_observed_at"] or x["published_at"] or "", x["id"]), reverse=True)
+    queue_total = len(queue)
     queue = queue[:200]
     new_queue_count = sum(x["recent_new"] for x in queue)
+    for item in queue:
+        reasons = ["not_an_analyst_reviewed_warning"]
+        if item["case_association"] != "standing_case":
+            reasons.append("no_source_verified_map_association")
+        if not item["published_at"]:
+            reasons.append("missing_source_publication_date")
+        if not item["first_observed_at"]:
+            reasons.append("first_collection_time_not_in_chronology")
+        if not item["recent_new"]:
+            reasons.append("not_recent_new_report")
+        item["display_targets"] = ["source_queue"]
+        if item["case_association"] == "standing_case" and item["published_at"]:
+            item["display_targets"].append("dated_map_context")
+        item["visibility_reasons"] = reasons
+
     # The source-separated behavioral engine already publishes a verified,
     # capped shadow-feed snapshot under /behavior/. Embed its bounded public
     # summary in the SAME Atlas without promoting any threat label.
@@ -260,6 +276,40 @@ def generate(site, generated=None, state_dir=None):
     except ModuleNotFoundError:
         from behavioral_embed import embed as embedded_behavior
     behavioral = embedded_behavior(site)
+    # Make the complete publication funnel auditable without treating accepted
+    # source mentions, map points, or source counts as confirmed events.
+    visibility = behavioral.get("discovery_visibility") or {}
+    providers = behavioral.get("collection_coverage") or {}
+    visibility_funnel = {
+        "schema": "aiba.atlas-visibility-funnel.v1",
+        "generated_at": now,
+        "source_queue_total_before_cap": queue_total,
+        "source_queue_displayed": len(queue),
+        "source_queue_truncated": queue_total > len(queue),
+        "analyst_intake_accepted": analyst["distinct_observations"],
+        "analyst_intake_health": analyst["status"],
+        "new_source_reports_for_review": new_queue_count,
+        "source_queue_unassigned": sum(x["case_association"] != "standing_case" for x in queue),
+        "source_queue_undated": sum(not x["published_at"] for x in queue),
+        "source_queue_map_context": sum("dated_map_context" in x["display_targets"] for x in queue),
+        "dated_map_reports_total": len(reports),
+        "curated_standing_cases": len(hotspots),
+        "reviewed_case_changes": sum(bool(x["new_evidence"]) for x in hotspots),
+        "behavioral_recent_72h": visibility.get("recent_unique_record_count_72h"),
+        "behavioral_missing_geo_72h": visibility.get("recent_unlocated_count_72h"),
+        "behavioral_exact_geo_overlaps": visibility.get("shared_exact_geography_keys_across_behavior_families"),
+        "behavioral_new_leads": behavioral.get("single_source_count_total"),
+        "behavioral_cross_family_leads": behavioral.get("cross_family_count_total"),
+        "provider_health": [
+            {"name": name, "status": record.get("status", "unknown"),
+             "scope": record.get("source_scope", "coverage not established"),
+             "asof": record.get("snapshot_at")}
+            for name, record in sorted(providers.items()) if isinstance(record, dict)
+        ],
+        "explanation": "Each counter represents a different processing population. The map is a subset of source-linked geographic context, not all accepted OSINT and not an event truth set.",
+        "reviewed_warning_from_source_queue": False,
+    }
+
     # Only safe source monitoring context is included publicly. The private
     # forecast ledger, Sigstore subject records and outcome labels stay off
     # GitHub Pages until a separately approved audited aggregate pipeline.
@@ -286,6 +336,7 @@ def generate(site, generated=None, state_dir=None):
         "behavioral_discovery": behavioral,
         "intake_queue": queue,
         "intake_queue_new_count": new_queue_count,
+        "visibility_funnel": visibility_funnel,
         "warning_evaluation": evaluation,
         "behavior_live_url": "https://raw.githubusercontent.com/graupmannj-dev/I-Ws-Dashboard/aiba-feed-data/observations/latest/behavioral_fusion.json",
         "friction_live_url": "https://raw.githubusercontent.com/graupmannj-dev/I-Ws-Dashboard/aiba-feed-data/observations/latest/friction_briefs.json",
