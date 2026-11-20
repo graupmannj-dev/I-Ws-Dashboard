@@ -1227,8 +1227,82 @@ function renderEvaluationList(){
   frag.appendChild(link);
   list.appendChild(frag);
 }
+/* Public source-review queue: accepted source evidence, not verified incidents.
+ * Unassigned reports remain visible without fabricating source geography. */
+function renderQueueList(){
+  const list=$("watchlist");list.classList.add("behavior-view");list.classList.remove("evaluation-view");list.replaceChildren();
+  $("frictionBriefing").hidden=true;
+  $("watchPanelTitle").firstChild.textContent="Source review queue ";
+  $("watchDetailLink").href="behavior/";
+  $("watchDetailLink").textContent="Other behavioral evidence →";
+  const rows=Array.isArray(state.atlas?.intake_queue)?state.atlas.intake_queue:[];
+  $("watchCount").textContent="("+rows.length+" displayed)";
+  $("watchFoot").textContent="Accepted public reports · case hints and source claims unverified.";
+  const note=document.createElement("p");
+  note.className="behavior-disclaimer";
+  note.textContent="UNREVIEWED SOURCE EVIDENCE · A new report is not a new event or a verified warning.";
+  list.appendChild(note);
+  const filters=document.createElement("div");filters.className="queue-toolbar";
+  const search=document.createElement("input");
+  search.type="search";search.placeholder="Find source, event, or case";search.setAttribute("aria-label","Search source queue");
+  const scope=document.createElement("select");
+  scope.setAttribute("aria-label","Filter case association");
+  for(const [value,name] of [["all","All reports"],["new","New to review"],["unassigned","Unassigned"],["assigned","Known theaters"]]){
+    const option=document.createElement("option");option.value=value;option.textContent=name;scope.appendChild(option);
+  }
+  filters.append(search,scope);list.appendChild(filters);
+  const counter=document.createElement("p");counter.className="behavior-empty";list.appendChild(counter);
+  const results=document.createElement("div");results.className="queue-results";list.appendChild(results);
+  function render(){
+    const q=search.value.trim().toLowerCase();
+    const filtered=rows.filter(r=>{
+      if(scope.value==="new"&&!r.recent_new)return false;
+      if(scope.value==="unassigned"&&r.case_association!=="unassigned")return false;
+      if(scope.value==="assigned"&&r.case_association!=="standing_case")return false;
+      if(q&&!([r.title,r.publisher,r.summary,r.case_id,r.original_case_hint,r.source_family].join(" ").toLowerCase().includes(q)))return false;
+      return true;
+    });
+    counter.textContent=filtered.length+" of "+rows.length+" source records · day-only publication stamps are not event-onset times.";
+    results.replaceChildren();
+    if(!filtered.length){const p=document.createElement("p");p.className="behavior-empty";p.textContent="No reports match this view; this does not imply no activity.";results.appendChild(p);}
+    for(const row of filtered.slice(0,120)){
+      const b=document.createElement("button");b.type="button";b.className="queue-card";
+      b.innerHTML='<span class="queue-row-head"><strong>'+safe(row.title||"Untitled report")+'</strong>'+
+        '<span class="behavior-status">'+(row.recent_new?"NEW TO REVIEW":"ARCHIVED")+'</span></span>'+
+        '<small>'+safe(row.publisher||"Source unknown")+' · '+safe(row.source_family||"source")+'</small>'+
+        '<small>'+safe(row.case_association==="standing_case"?(row.case_id||"Associated theater"):"UNASSIGNED / LOCATION NOT VERIFIED")+
+        ' · First captured '+safe(row.first_observed_at||"not retained")+'</small>';
+      b.addEventListener("click",()=>selectQueueRecord(row));results.appendChild(b);
+    }
+  }
+  search.addEventListener("input",render);scope.addEventListener("change",render);render();
+}
+function selectQueueRecord(r){
+  const panel=$("selectedDetail");panel.hidden=false;
+  const source=safeUrl(r.source_url)?'<a target="_blank" rel="noopener noreferrer" href="'+safe(r.source_url)+'">Open original source</a>':"Original source unavailable";
+  panel.innerHTML='<div class="detail-top"><div><h3>'+safe(r.title||"Source observation")+'</h3>'+
+    '<span class="behavior-status">UNREVIEWED · NOT A WARNING</span></div>'+
+    '<button class="detail-close" type="button" aria-label="Close source detail">×</button></div>'+
+    '<p>'+safe(r.summary||"No abstract supplied")+'</p>'+
+    '<p><b>Case association:</b> '+safe(r.case_association==="standing_case"?r.case_id:"Not assigned to standing theater")+
+    ' · <b>Publisher:</b> '+safe(r.publisher||"unknown")+'</p>'+
+    '<p><b>Published (UTC day):</b> '+safe(r.published_at||"unavailable")+
+    ' · <b>First captured:</b> '+safe(r.first_observed_at||"not retained")+'</p>'+
+    '<p><b>Source family:</b> '+safe(r.source_family||"unknown")+
+    ' · <b>Information root:</b> '+safe(r.information_root||"unavailable")+'</p>'+
+    '<p>Source geography, actor intent and independent corroboration are not established by this queue. '+source+'</p>';
+  panel.querySelector(".detail-close").addEventListener("click",()=>{panel.hidden=true;state.selected=null;});
+}
+function renderQueueBanner(){
+  const count=Number(state.atlas?.intake_queue_new_count)||0;
+  const banner=$("queueBanner");banner.hidden=!(count>0&&(state.watchTab==="all"||state.watchTab==="new"));
+  $("queueBannerCount").textContent=count+" new source report"+(count===1?"":"s")+" to review";
+  $("queueTabCount").textContent=count>0?"("+count+" new)":"";
+}
 function updateWatchlist(){
   if(!state.atlas)return;
+  renderQueueBanner();
+  if(state.watchTab==="queue"){renderQueueList();return;}
   if(state.watchTab==="behavior"){renderBehaviorList();return;}
   if(state.watchTab==="evaluation"){renderEvaluationList();return;}
   const list=$("watchlist");list.classList.remove("behavior-view","evaluation-view");list.replaceChildren();
@@ -1448,6 +1522,8 @@ function bindControls(){
   $("stepForward").addEventListener("click",()=>shiftWindow(1));
   $("tabAll").addEventListener("click",()=>{state.watchTab="all";updateTabs();});
   $("tabNew").addEventListener("click",()=>{state.watchTab="new";updateTabs();});
+  $("tabQueue").addEventListener("click",()=>{state.watchTab="queue";updateTabs();});
+  $("openQueue").addEventListener("click",()=>{state.watchTab="queue";updateTabs();});
   $("tabBehavior").addEventListener("click",()=>{state.watchTab="behavior";updateTabs();});
   $("tabEvaluation").addEventListener("click",()=>{state.watchTab="evaluation";updateTabs();});
   $("openEvaluation").addEventListener("click",()=>{
@@ -1481,7 +1557,7 @@ function bindControls(){
   });
 }
 function updateTabs(){
-  for(const [id,tab] of [["tabAll","all"],["tabNew","new"],["tabBehavior","behavior"],["tabEvaluation","evaluation"]]){
+  for(const [id,tab] of [["tabAll","all"],["tabNew","new"],["tabQueue","queue"],["tabBehavior","behavior"],["tabEvaluation","evaluation"]]){
     const active=state.watchTab===tab;
     $(id).classList.toggle("active",active);
     $(id).setAttribute("aria-pressed",String(active));
