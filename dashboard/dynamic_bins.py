@@ -20,6 +20,10 @@ try:
     from .topic_families import build_topics
 except ImportError:
     from topic_families import build_topics
+try:
+    from .automatic_topics import build_topics as build_automatic_topics
+except ImportError:
+    from automatic_topics import build_topics as build_automatic_topics
 
 
 UTC = dt.timezone.utc
@@ -192,7 +196,14 @@ def build(registry, analyst, relationships=None, now=None):
     # Analyst-facing analytical themes sit ABOVE independent notices/root IDs.
     # All individual source items survive inside notice_groups and the durable
     # archive. Grouping does not imply a shared occurrence or corroboration.
-    topics, grouped_roots = build_topics(list(by_observation.values()), now, source_health)
+    source_records = list(by_observation.values())
+    fixed_topics, legacy_roots = build_topics(source_records, now, source_health)
+    automatic, auto_roots, topic_index = build_automatic_topics(
+        source_records, now, source_health,
+        prior=registry.get("automatic_topic_index") if isinstance(registry, dict) else None,
+        exclude_roots=legacy_roots)
+    topics = fixed_topics + automatic
+    grouped_roots = legacy_roots | auto_roots
     families = list(topics)
     for root, member_map in roots.items():
         if root in grouped_roots:
@@ -301,6 +312,9 @@ def build(registry, analyst, relationships=None, now=None):
         "generated_at": now.isoformat(),
         "registry_status": status,
         "analytical_topic_family_count": len(topics),
+        "automatic_topic_family_count": len(automatic),
+        "automatic_topic_document_assignments": topic_index.get("total_document_assignments"),
+        "automatic_topic_method": "stable_seed_weighted_lexical_similarity_v1",
         "source_root_candidates_folded_count": len(grouped_roots),
         "candidate_count_total": len(families),
         "candidate_count_displayed": min(len(families), MAX_OUTPUT),
