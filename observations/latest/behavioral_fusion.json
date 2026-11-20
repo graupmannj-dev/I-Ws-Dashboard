@@ -3,7 +3,7 @@
   "automated_severity_changes": 0,
   "collection_coverage": {
     "amsa": {
-      "age_hours": 4.27,
+      "age_hours": 4.76,
       "checked_at": "2026-11-20T03:04:12Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -15,7 +15,7 @@
       "truncated_or_partial": false
     },
     "commercial": {
-      "age_hours": 14.68,
+      "age_hours": 15.17,
       "checked_at": "2026-11-19T16:39:30Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -27,7 +27,7 @@
       "truncated_or_partial": false
     },
     "ioda": {
-      "age_hours": 4.27,
+      "age_hours": 4.76,
       "checked_at": "2026-11-20T03:04:12Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -39,29 +39,31 @@
       "truncated_or_partial": false
     },
     "live_airspace": {
-      "age_hours": 6.62,
-      "checked_at": "2026-11-20T00:42:49Z",
-      "missingness": "not_measured_not_zero",
+      "age_hours": 0.0,
+      "checked_at": "2026-11-20T07:49:53Z",
+      "first_provider_baseline": false,
+      "missingness": "partial_sampling_not_worldwide_exhaustive",
       "mode": "live_airspace",
       "provider_status": "partial",
-      "snapshot_at": "2026-11-20T00:42:49Z",
+      "snapshot_at": "2026-11-20T07:49:53Z",
       "source_scope": "FAA temporary flight restrictions: United States only",
-      "status": "stale_or_unavailable",
+      "status": "current_partial",
       "truncated_or_partial": true
     },
     "live_maritime": {
-      "age_hours": 6.62,
-      "checked_at": "2026-11-20T00:42:49Z",
-      "missingness": "not_measured_not_zero",
+      "age_hours": 0.0,
+      "checked_at": "2026-11-20T07:49:53Z",
+      "first_provider_baseline": false,
+      "missingness": "partial_sampling_not_worldwide_exhaustive",
       "mode": "live_maritime",
       "provider_status": "partial",
-      "snapshot_at": "2026-11-20T00:42:49Z",
+      "snapshot_at": "2026-11-20T07:49:53Z",
       "source_scope": "Danish Maritime Authority Niord notices: regional Baltic/North Sea",
-      "status": "stale_or_unavailable",
+      "status": "current_partial",
       "truncated_or_partial": true
     },
     "nga": {
-      "age_hours": 4.27,
+      "age_hours": 4.76,
       "checked_at": "2026-11-19T22:06:56Z",
       "missingness": "not_measured_not_zero",
       "mode": "nga",
@@ -72,7 +74,7 @@
       "truncated_or_partial": false
     },
     "official": {
-      "age_hours": 0.0,
+      "age_hours": 0.5,
       "checked_at": "2026-11-20T07:20:11Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -84,7 +86,7 @@
       "truncated_or_partial": false
     },
     "watchlist": {
-      "age_hours": 0.0,
+      "age_hours": 0.5,
       "checked_at": "2026-11-20T07:20:12Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -99,20 +101,20 @@
   "discovery_visibility": {
     "exact_geography_match_required_for_cross_family": true,
     "latest_initial_baseline": false,
-    "latest_registry_newly_observed_count": 0,
-    "latest_registry_record_count": 266,
-    "latest_unlocated_record_count": 255,
+    "latest_registry_newly_observed_count": 3,
+    "latest_registry_record_count": 374,
+    "latest_unlocated_record_count": 310,
     "new_or_collocated_not_same_as_verified_threat": true,
     "new_this_collection_required_for_cross_family_nomination": true,
     "recent_observations_sampled": 24,
     "recent_source_families": {
-      "airspace_restriction": 42,
+      "airspace_restriction": 45,
       "commercial_media": 13,
       "internet_reachability": 166,
       "maritime_restriction": 207,
       "protective_notice": 22
     },
-    "recent_unique_record_count_72h": 450,
+    "recent_unique_record_count_72h": 453,
     "recent_unlocated_count_72h": 201,
     "schema": "aiba.behavioral-discovery-visibility.v1",
     "shared_exact_geography_keys_across_behavior_families": 0,
@@ -120,15 +122,15 @@
   },
   "forecast_probability": null,
   "gdelt_context": "separate_analytical_stream_not_a_gate_or_confirmation",
-  "generated_at": "2026-11-20T07:20:14Z",
+  "generated_at": "2026-11-20T07:49:57Z",
   "geographic_scope": "source_declared_only",
   "history_diagnostics": {
     "excluded_observations": {
       "old_source_publication": 3
     },
-    "history_files_examined": 29,
+    "history_files_examined": 30,
     "lookback_hours": 72,
-    "recent_unique_records": 450
+    "recent_unique_records": 453
   },
   "limit_notes": [
     "No automated threat warning. These are unreviewed investigatory leads.",
@@ -137,10 +139,149 @@
     "Unlocated records cannot produce automatic geographic convergence.",
     "Unavailable collection is not evidence of no threatening activity."
   ],
-  "new_single_source_count_total": 0,
-  "new_single_source_leads": [],
+  "new_single_source_count_total": 3,
+  "new_single_source_leads": [
+    {
+      "evidence_class": "official_notice",
+      "first_observed_at": "2026-11-20T07:49:57Z",
+      "geography": {
+        "geometry_sha256_prefix": "7530101fd3a43ce9ff8a91ef",
+        "geometry_type": "MultiPolygon",
+        "key": "source-footprint:7530101fd3a43ce9ff8a91ef",
+        "kind": "source_notice_footprint",
+        "label": "Official MultiPolygon notice area",
+        "latitude": null,
+        "longitude": null,
+        "precision": "provider_defined_notice_boundary_not_event_point",
+        "verified_iso": false
+      },
+      "information_root": "faa:6/9115:0:0",
+      "meaning": "Observation novelty, not evidence of impending violence.",
+      "observation_id": "beh:3e9dbfe1edde1c5a8b04a5f945c1",
+      "requires_geolocation": false,
+      "source_family": "airspace_restriction",
+      "source_published_at": null,
+      "source_url": "https://tfr.faa.gov/6_9115.html",
+      "status": "single_source_unreviewed",
+      "title": "FAA TFR 6/9115 · 15 ZAN AIRSPACEANCHORAGE, AK, Friday, November 20, 2026 UTC"
+    },
+    {
+      "evidence_class": "official_notice",
+      "first_observed_at": "2026-11-20T07:49:57Z",
+      "geography": {
+        "geometry_sha256_prefix": "d4132c7121fd813614aac18e",
+        "geometry_type": "MultiPolygon",
+        "key": "source-footprint:d4132c7121fd813614aac18e",
+        "kind": "source_notice_footprint",
+        "label": "Official MultiPolygon notice area",
+        "latitude": null,
+        "longitude": null,
+        "precision": "provider_defined_notice_boundary_not_event_point",
+        "verified_iso": false
+      },
+      "information_root": "faa:6/9119:0:0",
+      "meaning": "Observation novelty, not evidence of impending violence.",
+      "observation_id": "beh:aa23c2a1e8ced3e8fa1216b29710",
+      "requires_geolocation": false,
+      "source_family": "airspace_restriction",
+      "source_published_at": null,
+      "source_url": "https://tfr.faa.gov/6_9119.html",
+      "status": "single_source_unreviewed",
+      "title": "FAA TFR 6/9119 · ANCHORAGE, AK, Friday, November 20, 2026 through Sunday, November 22, 2026 UTC"
+    },
+    {
+      "evidence_class": "official_notice",
+      "first_observed_at": "2026-11-20T07:49:57Z",
+      "geography": {
+        "geometry_sha256_prefix": "7530101fd3a43ce9ff8a91ef",
+        "geometry_type": "MultiPolygon",
+        "key": "source-footprint:7530101fd3a43ce9ff8a91ef",
+        "kind": "source_notice_footprint",
+        "label": "Official MultiPolygon notice area",
+        "latitude": null,
+        "longitude": null,
+        "precision": "provider_defined_notice_boundary_not_event_point",
+        "verified_iso": false
+      },
+      "information_root": "faa:6/9117:0:0",
+      "meaning": "Observation novelty, not evidence of impending violence.",
+      "observation_id": "beh:c68d0a60b9886147f007dfff1f85",
+      "requires_geolocation": false,
+      "source_family": "airspace_restriction",
+      "source_published_at": null,
+      "source_url": "https://tfr.faa.gov/6_9117.html",
+      "status": "single_source_unreviewed",
+      "title": "FAA TFR 6/9117 · 17 ZAN AIRSPACEANCHORAGE, AK, Friday, November 20, 2026 UTC"
+    }
+  ],
   "prediction_horizon": null,
   "recent_source_observations": [
+    {
+      "first_observed_at": "2026-11-20T07:49:57Z",
+      "geography": {
+        "geometry_sha256_prefix": "7530101fd3a43ce9ff8a91ef",
+        "geometry_type": "MultiPolygon",
+        "key": "source-footprint:7530101fd3a43ce9ff8a91ef",
+        "kind": "source_notice_footprint",
+        "label": "Official MultiPolygon notice area",
+        "latitude": null,
+        "longitude": null,
+        "precision": "provider_defined_notice_boundary_not_event_point",
+        "verified_iso": false
+      },
+      "observation_id": "beh:c68d0a60b9886147f007dfff1f85",
+      "provider": "faa",
+      "requires_geolocation": false,
+      "source_family": "airspace_restriction",
+      "source_published_at": null,
+      "source_url": "https://tfr.faa.gov/6_9117.html",
+      "status": "recent_source_observation_unreviewed",
+      "title": "FAA TFR 6/9117 · 17 ZAN AIRSPACEANCHORAGE, AK, Friday, November 20, 2026 UTC"
+    },
+    {
+      "first_observed_at": "2026-11-20T07:49:57Z",
+      "geography": {
+        "geometry_sha256_prefix": "d4132c7121fd813614aac18e",
+        "geometry_type": "MultiPolygon",
+        "key": "source-footprint:d4132c7121fd813614aac18e",
+        "kind": "source_notice_footprint",
+        "label": "Official MultiPolygon notice area",
+        "latitude": null,
+        "longitude": null,
+        "precision": "provider_defined_notice_boundary_not_event_point",
+        "verified_iso": false
+      },
+      "observation_id": "beh:aa23c2a1e8ced3e8fa1216b29710",
+      "provider": "faa",
+      "requires_geolocation": false,
+      "source_family": "airspace_restriction",
+      "source_published_at": null,
+      "source_url": "https://tfr.faa.gov/6_9119.html",
+      "status": "recent_source_observation_unreviewed",
+      "title": "FAA TFR 6/9119 · ANCHORAGE, AK, Friday, November 20, 2026 through Sunday, November 22, 2026 UTC"
+    },
+    {
+      "first_observed_at": "2026-11-20T07:49:57Z",
+      "geography": {
+        "geometry_sha256_prefix": "7530101fd3a43ce9ff8a91ef",
+        "geometry_type": "MultiPolygon",
+        "key": "source-footprint:7530101fd3a43ce9ff8a91ef",
+        "kind": "source_notice_footprint",
+        "label": "Official MultiPolygon notice area",
+        "latitude": null,
+        "longitude": null,
+        "precision": "provider_defined_notice_boundary_not_event_point",
+        "verified_iso": false
+      },
+      "observation_id": "beh:3e9dbfe1edde1c5a8b04a5f945c1",
+      "provider": "faa",
+      "requires_geolocation": false,
+      "source_family": "airspace_restriction",
+      "source_published_at": null,
+      "source_url": "https://tfr.faa.gov/6_9115.html",
+      "status": "recent_source_observation_unreviewed",
+      "title": "FAA TFR 6/9115 · 15 ZAN AIRSPACEANCHORAGE, AK, Friday, November 20, 2026 UTC"
+    },
     {
       "first_observed_at": "2026-11-20T03:04:12Z",
       "geography": {
@@ -582,70 +723,10 @@
       "source_url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOUmZqWnlfZGNJRWVCdF9xeXA1bGQ5WXZQMVgyTUNKa3pUZ2QyekFNRF9BM2hscDhYbWhnclpjaUp5Z0xzZHdkZ044RWg2MUhqZFctT1F6djRmWUxkdllLZmw0US1qTDBHZ0w5cW1YLUpKbTlCRzBsVldxSWV5YzBoWHdVaVJSMWE3TEtuTjNnODloTUJsemxfdkVMaw?oc=5",
       "status": "recent_source_observation_unreviewed",
       "title": "Kerch Strait Bridge Strike Cuts Off Sea of Azov Shipping - The Maritime Executive"
-    },
-    {
-      "first_observed_at": "2026-11-19T16:39:32Z",
-      "geography": {
-        "key": null,
-        "kind": "unlocated",
-        "label": null,
-        "latitude": null,
-        "longitude": null,
-        "precision": "no_source_verified_geography",
-        "verified_iso": false
-      },
-      "observation_id": "beh:28f3df11a942fc3d1d632d8f8478",
-      "provider": "commercial",
-      "requires_geolocation": true,
-      "source_family": "commercial_media",
-      "source_published_at": "2026-11-19T00:52:14Z",
-      "source_url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPd0NNX0k0cjJUQldxdDBEME9oSjE4Vl9NSEN1MVYydEJFeHB6V1F0STdldHJFSEJCMGUwTnJWNUgwUXliX1NrREdDRkRsTlBjZlJEU29lUGhKUGw0RzVrWUYwVWZjUWNRY2ZHOEo2VDg4ZUlqWllGdG9kNHJaOVZKNjREU09OTkNhOE1Ub1lra0x4a3puWFZiVVliaHFyZGFnT056NWVEa2dsOEE?oc=5",
-      "status": "recent_source_observation_unreviewed",
-      "title": "U.S. Naval Blockade Now Covers Vessels That Load Iranian Cargo at Sea - The Maritime Executive"
-    },
-    {
-      "first_observed_at": "2026-11-19T16:39:32Z",
-      "geography": {
-        "key": null,
-        "kind": "unlocated",
-        "label": null,
-        "latitude": null,
-        "longitude": null,
-        "precision": "no_source_verified_geography",
-        "verified_iso": false
-      },
-      "observation_id": "beh:05fbfd500415e3a984634eb4f523",
-      "provider": "commercial",
-      "requires_geolocation": true,
-      "source_family": "commercial_media",
-      "source_published_at": "2026-11-19T10:06:04Z",
-      "source_url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNQThoVlhrMG5sejktdEhwTUw2T3J6aW5fdVhpSFRlNXFGanpaT2NvcTZKbDNPMlpwcHgwZ0tfQ3FLRlNvV2diWW93amtNSmxIb3JZcEpnakJXTHNVUjB3NkdySDRIUkNmbXl1THY4SGRpVGZPZnIySFR1OWtUWjllMnhUb21VSEFrSmRSYmV2UG1XRlI5czZaanZMNGJCMmxPcjRvX3MyX0d3dGhlWVB2N3dub0Y?oc=5",
-      "status": "recent_source_observation_unreviewed",
-      "title": "China Cargo Airlines adds new Stansted-Copenhagen freighter flight - Air Cargo News"
-    },
-    {
-      "first_observed_at": "2026-11-19T13:51:00Z",
-      "geography": {
-        "key": "country:XK",
-        "kind": "country_code",
-        "label": "XK",
-        "latitude": null,
-        "longitude": null,
-        "precision": "provider_reported_country",
-        "verified_iso": false
-      },
-      "observation_id": "beh:e32b8390862826929f651c5653d6",
-      "provider": "ioda",
-      "requires_geolocation": false,
-      "source_family": "internet_reachability",
-      "source_published_at": null,
-      "source_url": "https://ioda.inetintel.cc.gatech.edu/",
-      "status": "recent_source_observation_unreviewed",
-      "title": "IODA detected connectivity anomaly: country XK"
     }
   ],
-  "registry_asof": "2026-11-20T07:20:13Z",
-  "registry_source_count": 266,
+  "registry_asof": "2026-11-20T07:49:57Z",
+  "registry_source_count": 374,
   "report_relationships": {
     "automatic_alerts_created": 0,
     "automatic_severity_changes": 0,
@@ -2475,11 +2556,11 @@
     "pairwise_comparisons_examined": 90000,
     "possible_same_event_count_total": 0,
     "possible_same_source_story_count_total": 4,
-    "records_available": 450,
-    "records_examined": 450,
+    "records_available": 453,
+    "records_examined": 453,
     "related_reporting_count_total": 0,
     "reporting_origins_are_not_event_locations": true,
-    "routine_notice_market_or_measurement_records_excluded_from_text_event_matching": 437,
+    "routine_notice_market_or_measurement_records_excluded_from_text_event_matching": 440,
     "same_document_group_count_total": 28,
     "schema": "aiba.report-event-resolution-shadow.v1",
     "source_independence_unverified": true,
