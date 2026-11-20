@@ -1,0 +1,78 @@
+name: Collect CAIRN public alternative sensors
+on:
+  workflow_dispatch:
+  schedule:
+    # Best effort at a bounded cadence. API latency and scheduling are not guaranteed.
+    - cron: '19 */3 * * *'
+permissions:
+  contents: write
+concurrency:
+  group: cairn-public-sensors
+  cancel-in-progress: false
+jobs:
+  public-sensors:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout tested collector source
+        uses: actions/checkout@v4
+        with:
+          path: src
+          persist-credentials: false
+      - name: Checkout persistent evidence branch
+        uses: actions/checkout@v4
+        with:
+          ref: aiba-feed-data
+          path: state
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Query five independent public providers and write separate health receipts
+        shell: bash
+        run: |
+          set -euo pipefail
+          python src/alternative_sensor_pipeline.py --state state/observations
+      - name: Normalize into CAIRN evidence without promoting hazards to warnings
+        shell: bash
+        run: |
+          set +e
+          python src/behavioral_registry.py --state state/observations &&
+          python src/behavioral_fusion.py --state state/observations
+          rc=$?
+          echo "CAIRN_REGISTRY_RC=$rc" >> "$GITHUB_ENV"
+          if [ "$rc" -ne 0 ]; then
+            echo "::warning::Registry integration failed; provider receipts will still be published."
+          fi
+          exit 0
+      - name: Install local semantic dependencies (bounded fallback on failure)
+        continue-on-error: true
+        run: python -m pip install -r src/requirements.txt
+      - name: Append durable evidence family archive where normalization succeeded
+        if: env.CAIRN_REGISTRY_RC == '0'
+        shell: bash
+        run: |
+          set +e
+          python src/family_archive.py --state state/observations
+          rc=$?
+          echo "CAIRN_ARCHIVE_RC=$rc" >> "$GITHUB_ENV"
+          if [ "$rc" -ne 0 ]; then
+            echo "::warning::Source receipts persist; durable family update failed."
+          fi
+          exit 0
+      - name: Commit per-provider health, latest source records and evidence archive
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd state
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add observations
+          if ! git diff --cached --quiet; then
+            git commit -m "CAIRN public alternative sensor observations $GITHUB_RUN_ID [skip ci]"
+            git push origin HEAD:refs/heads/aiba-feed-data
+          fi
+      - name: Surface a failed normalization after preserving raw source health
+        if: env.CAIRN_REGISTRY_RC != '0' || env.CAIRN_ARCHIVE_RC == '1'
+        run: |
+          echo "::error::CAIRN evidence normalization/archive failed; provider receipts retained."
+          exit 1
