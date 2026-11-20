@@ -419,6 +419,8 @@ def generate(site, generated=None, state_dir=None):
     if prior.exists():
         (site / "classic.html").write_bytes(prior.read_bytes())
     shutil.copyfile(WEB / "atlas.html", prior)
+    shutil.copyfile(WEB / "sources.html", site / "sources.html")
+    shutil.copyfile(WEB / "source_status.js", asset_dir / "source_status.js")
     return payload
 
 def main():

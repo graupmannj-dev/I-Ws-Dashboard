@@ -2140,7 +2140,5 @@ async function refreshFaaNas() {
   }
 }
 if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",init);else init();
-if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",refreshFaaNas);
-else refreshFaaNas();
-setInterval(refreshFaaNas,120000);
+// FAA health is accessible through sources.html; no additional source poll here.
 })();
