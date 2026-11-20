@@ -4960,14 +4960,42 @@
     "total_document_assignments": 420,
     "total_stable_topics": 194
   },
-  "generated_at": "2026-11-20T19:14:59.773349+00:00",
+  "generated_at": "2026-11-20T20:24:40.651505+00:00",
   "historical_relationship_count": 0,
   "missing_data_is_not_zero": true,
-  "new_records_added": 2,
-  "public_record_count": 1267,
+  "new_records_added": 1,
+  "public_record_count": 1268,
   "public_snapshot_truncated": false,
-  "record_count_total": 1267,
+  "record_count_total": 1268,
   "records": [
+    {
+      "calibrated_metric": null,
+      "case_hint": null,
+      "claim_level": "notice_not_verified_preparation",
+      "collection_mode": "official",
+      "direct_measurement": false,
+      "event_at": null,
+      "first_observed_at": "2026-11-20T20:24:39+00:00",
+      "geography_key": null,
+      "geography_label": null,
+      "geography_precision": "no_source_verified_geography",
+      "id": "beh:79990be94cb69e96fffc1b1a43fc",
+      "information_root": "official:9db6fff90fe8f15501c1",
+      "origin": "behavioral_registry",
+      "provider": "official",
+      "published_at": "2026-11-20T13:14:04Z",
+      "restriction_status": "",
+      "scheduled_valid_from": null,
+      "scheduled_valid_until": null,
+      "source_dependency_class": null,
+      "source_family": "protective_notice",
+      "source_kind": "official_travel_security_notice",
+      "source_measurement": null,
+      "source_scope": null,
+      "source_updated_at": null,
+      "source_url": "https://www.gov.uk/foreign-travel-advice/ecuador",
+      "title": "Ecuador"
+    },
     {
       "calibrated_metric": null,
       "case_hint": null,
@@ -36484,11 +36512,11 @@
   "report_relationships": {
     "candidate_groups": []
   },
-  "root_count_total": 1267,
+  "root_count_total": 1268,
   "schema": "aiba.family-archive.v1",
   "source_health": {
     "amsa": {
-      "age_hours": 0.0,
+      "age_hours": 1.16,
       "checked_at": "2026-11-20T19:14:46Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -36500,7 +36528,7 @@
       "truncated_or_partial": false
     },
     "commercial": {
-      "age_hours": 3.01,
+      "age_hours": 4.17,
       "checked_at": "2026-11-20T16:14:21Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -36511,8 +36539,30 @@
       "status": "current",
       "truncated_or_partial": false
     },
+    "coops": {
+      "age_hours": null,
+      "checked_at": null,
+      "missingness": "not_measured_not_zero",
+      "mode": "coops",
+      "provider_status": "never_checked",
+      "snapshot_at": null,
+      "source_scope": "NOAA CO-OPS three monitored U.S. station levels",
+      "status": "stale_or_unavailable",
+      "truncated_or_partial": false
+    },
+    "eonet": {
+      "age_hours": null,
+      "checked_at": null,
+      "missingness": "not_measured_not_zero",
+      "mode": "eonet",
+      "provider_status": "never_checked",
+      "snapshot_at": null,
+      "source_scope": "NASA EONET open events, seven-day bounded global sample",
+      "status": "stale_or_unavailable",
+      "truncated_or_partial": false
+    },
     "ioda": {
-      "age_hours": 0.0,
+      "age_hours": 1.16,
       "checked_at": "2026-11-20T19:14:46Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -36524,7 +36574,7 @@
       "truncated_or_partial": false
     },
     "live_airspace": {
-      "age_hours": 2.77,
+      "age_hours": 3.93,
       "checked_at": "2026-11-20T16:28:39Z",
       "missingness": "not_measured_not_zero",
       "mode": "live_airspace",
@@ -36535,7 +36585,7 @@
       "truncated_or_partial": true
     },
     "live_maritime": {
-      "age_hours": 2.77,
+      "age_hours": 3.93,
       "checked_at": "2026-11-20T16:28:39Z",
       "missingness": "not_measured_not_zero",
       "mode": "live_maritime",
@@ -36546,7 +36596,7 @@
       "truncated_or_partial": true
     },
     "nga": {
-      "age_hours": 0.0,
+      "age_hours": 1.16,
       "checked_at": "2026-11-20T19:14:46Z",
       "missingness": "not_measured_not_zero",
       "mode": "nga",
@@ -36556,26 +36606,81 @@
       "status": "stale_or_unavailable",
       "truncated_or_partial": false
     },
+    "nws": {
+      "age_hours": null,
+      "checked_at": null,
+      "missingness": "not_measured_not_zero",
+      "mode": "nws",
+      "provider_status": "never_checked",
+      "snapshot_at": null,
+      "source_scope": "NWS marine weather alerts (bounded United States sample)",
+      "status": "stale_or_unavailable",
+      "truncated_or_partial": false
+    },
     "official": {
-      "age_hours": 11.91,
-      "checked_at": "2026-11-20T07:20:11Z",
+      "age_hours": 0.0,
+      "checked_at": "2026-11-20T20:24:37Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
       "mode": "official",
       "provider_status": "collected",
-      "snapshot_at": "2026-11-20T07:20:11Z",
+      "snapshot_at": "2026-11-20T20:24:37Z",
       "source_scope": "US State and UK FCDO travel-advice feeds",
       "status": "current",
       "truncated_or_partial": false
     },
+    "ripe": {
+      "age_hours": null,
+      "checked_at": null,
+      "missingness": "not_measured_not_zero",
+      "mode": "ripe",
+      "provider_status": "never_checked",
+      "snapshot_at": null,
+      "source_scope": "registered, exact-ID forecast contracts only",
+      "status": "stale_or_unavailable",
+      "truncated_or_partial": false
+    },
+    "swpc": {
+      "age_hours": null,
+      "checked_at": null,
+      "missingness": "not_measured_not_zero",
+      "mode": "swpc",
+      "provider_status": "never_checked",
+      "snapshot_at": null,
+      "source_scope": "registered, exact-ID forecast contracts only",
+      "status": "stale_or_unavailable",
+      "truncated_or_partial": false
+    },
+    "usace": {
+      "age_hours": null,
+      "checked_at": null,
+      "missingness": "not_measured_not_zero",
+      "mode": "usace",
+      "provider_status": "never_checked",
+      "snapshot_at": null,
+      "source_scope": "USACE inland navigation notices beginning in last 14 days",
+      "status": "stale_or_unavailable",
+      "truncated_or_partial": false
+    },
+    "usgs": {
+      "age_hours": null,
+      "checked_at": null,
+      "missingness": "not_measured_not_zero",
+      "mode": "usgs",
+      "provider_status": "never_checked",
+      "snapshot_at": null,
+      "source_scope": "USGS M4.5+ earthquake feed (one-day global sample)",
+      "status": "stale_or_unavailable",
+      "truncated_or_partial": false
+    },
     "watchlist": {
-      "age_hours": 11.91,
-      "checked_at": "2026-11-20T07:20:12Z",
+      "age_hours": 0.0,
+      "checked_at": "2026-11-20T20:24:37Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
       "mode": "watchlist",
       "provider_status": "collected",
-      "snapshot_at": "2026-11-20T07:20:12Z",
+      "snapshot_at": "2026-11-20T20:24:37Z",
       "source_scope": "registered, exact-ID forecast contracts only",
       "status": "current",
       "truncated_or_partial": false

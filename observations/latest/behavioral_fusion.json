@@ -3,7 +3,7 @@
   "automated_severity_changes": 0,
   "collection_coverage": {
     "amsa": {
-      "age_hours": 0.0,
+      "age_hours": 1.16,
       "checked_at": "2026-11-20T19:14:46Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -15,7 +15,7 @@
       "truncated_or_partial": false
     },
     "commercial": {
-      "age_hours": 3.01,
+      "age_hours": 4.17,
       "checked_at": "2026-11-20T16:14:21Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -26,8 +26,30 @@
       "status": "current",
       "truncated_or_partial": false
     },
+    "coops": {
+      "age_hours": null,
+      "checked_at": null,
+      "missingness": "not_measured_not_zero",
+      "mode": "coops",
+      "provider_status": "never_checked",
+      "snapshot_at": null,
+      "source_scope": "NOAA CO-OPS three monitored U.S. station levels",
+      "status": "stale_or_unavailable",
+      "truncated_or_partial": false
+    },
+    "eonet": {
+      "age_hours": null,
+      "checked_at": null,
+      "missingness": "not_measured_not_zero",
+      "mode": "eonet",
+      "provider_status": "never_checked",
+      "snapshot_at": null,
+      "source_scope": "NASA EONET open events, seven-day bounded global sample",
+      "status": "stale_or_unavailable",
+      "truncated_or_partial": false
+    },
     "ioda": {
-      "age_hours": 0.0,
+      "age_hours": 1.16,
       "checked_at": "2026-11-20T19:14:46Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -39,7 +61,7 @@
       "truncated_or_partial": false
     },
     "live_airspace": {
-      "age_hours": 2.77,
+      "age_hours": 3.93,
       "checked_at": "2026-11-20T16:28:39Z",
       "missingness": "not_measured_not_zero",
       "mode": "live_airspace",
@@ -50,7 +72,7 @@
       "truncated_or_partial": true
     },
     "live_maritime": {
-      "age_hours": 2.77,
+      "age_hours": 3.93,
       "checked_at": "2026-11-20T16:28:39Z",
       "missingness": "not_measured_not_zero",
       "mode": "live_maritime",
@@ -61,7 +83,7 @@
       "truncated_or_partial": true
     },
     "nga": {
-      "age_hours": 0.0,
+      "age_hours": 1.16,
       "checked_at": "2026-11-20T19:14:46Z",
       "missingness": "not_measured_not_zero",
       "mode": "nga",
@@ -71,26 +93,81 @@
       "status": "stale_or_unavailable",
       "truncated_or_partial": false
     },
+    "nws": {
+      "age_hours": null,
+      "checked_at": null,
+      "missingness": "not_measured_not_zero",
+      "mode": "nws",
+      "provider_status": "never_checked",
+      "snapshot_at": null,
+      "source_scope": "NWS marine weather alerts (bounded United States sample)",
+      "status": "stale_or_unavailable",
+      "truncated_or_partial": false
+    },
     "official": {
-      "age_hours": 11.91,
-      "checked_at": "2026-11-20T07:20:11Z",
+      "age_hours": 0.0,
+      "checked_at": "2026-11-20T20:24:37Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
       "mode": "official",
       "provider_status": "collected",
-      "snapshot_at": "2026-11-20T07:20:11Z",
+      "snapshot_at": "2026-11-20T20:24:37Z",
       "source_scope": "US State and UK FCDO travel-advice feeds",
       "status": "current",
       "truncated_or_partial": false
     },
+    "ripe": {
+      "age_hours": null,
+      "checked_at": null,
+      "missingness": "not_measured_not_zero",
+      "mode": "ripe",
+      "provider_status": "never_checked",
+      "snapshot_at": null,
+      "source_scope": "registered, exact-ID forecast contracts only",
+      "status": "stale_or_unavailable",
+      "truncated_or_partial": false
+    },
+    "swpc": {
+      "age_hours": null,
+      "checked_at": null,
+      "missingness": "not_measured_not_zero",
+      "mode": "swpc",
+      "provider_status": "never_checked",
+      "snapshot_at": null,
+      "source_scope": "registered, exact-ID forecast contracts only",
+      "status": "stale_or_unavailable",
+      "truncated_or_partial": false
+    },
+    "usace": {
+      "age_hours": null,
+      "checked_at": null,
+      "missingness": "not_measured_not_zero",
+      "mode": "usace",
+      "provider_status": "never_checked",
+      "snapshot_at": null,
+      "source_scope": "USACE inland navigation notices beginning in last 14 days",
+      "status": "stale_or_unavailable",
+      "truncated_or_partial": false
+    },
+    "usgs": {
+      "age_hours": null,
+      "checked_at": null,
+      "missingness": "not_measured_not_zero",
+      "mode": "usgs",
+      "provider_status": "never_checked",
+      "snapshot_at": null,
+      "source_scope": "USGS M4.5+ earthquake feed (one-day global sample)",
+      "status": "stale_or_unavailable",
+      "truncated_or_partial": false
+    },
     "watchlist": {
-      "age_hours": 11.91,
-      "checked_at": "2026-11-20T07:20:12Z",
+      "age_hours": 0.0,
+      "checked_at": "2026-11-20T20:24:37Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
       "mode": "watchlist",
       "provider_status": "collected",
-      "snapshot_at": "2026-11-20T07:20:12Z",
+      "snapshot_at": "2026-11-20T20:24:37Z",
       "source_scope": "registered, exact-ID forecast contracts only",
       "status": "current",
       "truncated_or_partial": false
@@ -99,36 +176,36 @@
   "discovery_visibility": {
     "exact_geography_match_required_for_cross_family": true,
     "latest_initial_baseline": false,
-    "latest_registry_newly_observed_count": 2,
+    "latest_registry_newly_observed_count": 1,
     "latest_registry_record_count": 270,
     "latest_unlocated_record_count": 263,
     "new_or_collocated_not_same_as_verified_threat": true,
     "new_this_collection_required_for_cross_family_nomination": true,
     "recent_observations_sampled": 24,
     "recent_source_families": {
-      "airspace_restriction": 45,
-      "commercial_media": 21,
+      "airspace_restriction": 42,
+      "commercial_media": 19,
       "internet_reachability": 164,
       "maritime_restriction": 300,
-      "protective_notice": 20
+      "protective_notice": 21
     },
-    "recent_unique_record_count_72h": 550,
-    "recent_unlocated_count_72h": 285,
+    "recent_unique_record_count_72h": 546,
+    "recent_unlocated_count_72h": 284,
     "schema": "aiba.behavioral-discovery-visibility.v1",
     "shared_exact_geography_keys_across_behavior_families": 0,
     "source_coverage_is_globally_complete": false
   },
   "forecast_probability": null,
   "gdelt_context": "separate_analytical_stream_not_a_gate_or_confirmation",
-  "generated_at": "2026-11-20T19:14:51Z",
+  "generated_at": "2026-11-20T20:24:39Z",
   "geographic_scope": "source_declared_only",
   "history_diagnostics": {
     "excluded_observations": {
-      "old_source_publication": 2
+      "old_source_publication": 4
     },
     "history_files_examined": 29,
     "lookback_hours": 72,
-    "recent_unique_records": 550
+    "recent_unique_records": 546
   },
   "limit_notes": [
     "No automated threat warning. These are unreviewed investigatory leads.",
@@ -137,55 +214,53 @@
     "Unlocated records cannot produce automatic geographic convergence.",
     "Unavailable collection is not evidence of no threatening activity."
   ],
-  "new_single_source_count_total": 2,
+  "new_single_source_count_total": 1,
   "new_single_source_leads": [
     {
-      "evidence_class": "network_measurement",
-      "first_observed_at": "2026-11-20T19:14:46Z",
+      "evidence_class": "official_notice",
+      "first_observed_at": "2026-11-20T20:24:39Z",
       "geography": {
-        "key": "country:UY",
-        "kind": "country_code",
-        "label": "UY",
+        "key": null,
+        "kind": "unlocated",
+        "label": null,
         "latitude": null,
         "longitude": null,
-        "precision": "provider_reported_country",
+        "precision": "no_source_verified_geography",
         "verified_iso": false
       },
-      "information_root": "ioda:6e5dbb89a9e80ea345b130c7",
+      "information_root": "official:9db6fff90fe8f15501c1",
       "meaning": "Observation novelty, not evidence of impending violence.",
-      "observation_id": "beh:956a249fcf3fd34226d407373572",
-      "requires_geolocation": false,
-      "source_family": "internet_reachability",
-      "source_published_at": null,
-      "source_url": "https://ioda.inetintel.cc.gatech.edu/",
+      "observation_id": "beh:79990be94cb69e96fffc1b1a43fc",
+      "requires_geolocation": true,
+      "source_family": "protective_notice",
+      "source_published_at": "2026-11-20T13:14:04Z",
+      "source_url": "https://www.gov.uk/foreign-travel-advice/ecuador",
       "status": "single_source_unreviewed",
-      "title": "IODA detected connectivity anomaly: country UY"
-    },
-    {
-      "evidence_class": "network_measurement",
-      "first_observed_at": "2026-11-20T19:14:46Z",
-      "geography": {
-        "key": "country:NG",
-        "kind": "country_code",
-        "label": "NG",
-        "latitude": null,
-        "longitude": null,
-        "precision": "provider_reported_country",
-        "verified_iso": false
-      },
-      "information_root": "ioda:39fc31234453cf4963a669d7",
-      "meaning": "Observation novelty, not evidence of impending violence.",
-      "observation_id": "beh:ee362da4c0d79149898b8a56837b",
-      "requires_geolocation": false,
-      "source_family": "internet_reachability",
-      "source_published_at": null,
-      "source_url": "https://ioda.inetintel.cc.gatech.edu/",
-      "status": "single_source_unreviewed",
-      "title": "IODA detected connectivity anomaly: country NG"
+      "title": "Ecuador"
     }
   ],
   "prediction_horizon": null,
   "recent_source_observations": [
+    {
+      "first_observed_at": "2026-11-20T20:24:39Z",
+      "geography": {
+        "key": null,
+        "kind": "unlocated",
+        "label": null,
+        "latitude": null,
+        "longitude": null,
+        "precision": "no_source_verified_geography",
+        "verified_iso": false
+      },
+      "observation_id": "beh:79990be94cb69e96fffc1b1a43fc",
+      "provider": "official",
+      "requires_geolocation": true,
+      "source_family": "protective_notice",
+      "source_published_at": "2026-11-20T13:14:04Z",
+      "source_url": "https://www.gov.uk/foreign-travel-advice/ecuador",
+      "status": "recent_source_observation_unreviewed",
+      "title": "Ecuador"
+    },
     {
       "first_observed_at": "2026-11-20T19:14:46Z",
       "geography": {
@@ -667,29 +742,9 @@
       "source_url": "https://ioda.inetintel.cc.gatech.edu/",
       "status": "recent_source_observation_unreviewed",
       "title": "IODA detected connectivity anomaly: country CD"
-    },
-    {
-      "first_observed_at": "2026-11-20T03:04:12Z",
-      "geography": {
-        "key": "country:NG",
-        "kind": "country_code",
-        "label": "NG",
-        "latitude": null,
-        "longitude": null,
-        "precision": "provider_reported_country",
-        "verified_iso": false
-      },
-      "observation_id": "beh:63320b3ce8a09f2b5effab37b72c",
-      "provider": "ioda",
-      "requires_geolocation": false,
-      "source_family": "internet_reachability",
-      "source_published_at": null,
-      "source_url": "https://ioda.inetintel.cc.gatech.edu/",
-      "status": "recent_source_observation_unreviewed",
-      "title": "IODA detected connectivity anomaly: country NG"
     }
   ],
-  "registry_asof": "2026-11-20T19:14:51Z",
+  "registry_asof": "2026-11-20T20:24:39Z",
   "registry_source_count": 270,
   "report_relationships": {
     "automatic_alerts_created": 0,
@@ -2514,7 +2569,7 @@
     ],
     "candidate_groups_truncated": true,
     "cross_document_relation_count_total": 4,
-    "eligible_event_reporting_records": 21,
+    "eligible_event_reporting_records": 19,
     "forecast_probability": null,
     "geographic_proximity_only_for_explicit_reported_event_sites": true,
     "input_truncated": false,
@@ -2523,11 +2578,11 @@
     "pairwise_comparisons_examined": 90000,
     "possible_same_event_count_total": 0,
     "possible_same_source_story_count_total": 4,
-    "records_available": 550,
-    "records_examined": 550,
+    "records_available": 546,
+    "records_examined": 546,
     "related_reporting_count_total": 0,
     "reporting_origins_are_not_event_locations": true,
-    "routine_notice_market_or_measurement_records_excluded_from_text_event_matching": 529,
+    "routine_notice_market_or_measurement_records_excluded_from_text_event_matching": 527,
     "same_document_group_count_total": 38,
     "schema": "aiba.report-event-resolution-shadow.v1",
     "source_independence_unverified": true,
