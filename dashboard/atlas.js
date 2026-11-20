@@ -1,4 +1,4 @@
-/* AIBA Atlas / zero external runtime dependencies.
+/* CAIRN Atlas / zero external runtime dependencies.
  * Sourced chronology, schematic geography, no invented "Critical" judgments.
  */
 (() => {
@@ -1375,20 +1375,20 @@ function renderFamiliesList(){
   list.classList.remove("evaluation-view");
   list.replaceChildren();
   $("frictionBriefing").hidden=true;
-  $("watchPanelTitle").firstChild.textContent="Evidence families ";
+  $("watchPanelTitle").firstChild.textContent="Alternative indicators ";
   $("watchDetailLink").href="behavior/";
   $("watchDetailLink").textContent="Collector details →";
   const d=state.atlas?.dynamic_bins;
-  const families=Array.isArray(d?.families)?d.families:[];
+  const families=workspaceFamilies();
   $("watchCount").textContent="("+families.length+" displayed)";
-  $("watchFoot").textContent="First-seen chronology · global candidate sources, not confirmed incidents.";
+  $("watchFoot").textContent="Alternative indicators first · conventional reporting retained for context · no event confirmation.";
   const caveat=document.createElement("p");
   caveat.className="behavior-disclaimer";
-  caveat.textContent="DISCOVERY FIRST · Calibrated extreme measurements are prioritized even with one source. Fresh alone is not proof of statistical abnormality. Green means that facet was observed—not that an event is confirmed.";
+  caveat.textContent="ALTERNATIVE INDICATORS FIRST · Calibrated anomalies remain visible even with one source. Media, GDELT and conventional reports provide background and possible corroboration; repeated headlines are not independent confirmation.";
   list.appendChild(caveat);
   const expand=document.createElement("button");
   expand.type="button";expand.className="family-workspace-launch";
-  expand.textContent="↗ Expand evidence family workspace";
+  expand.textContent="↗ Open full indicator family analysis";
   expand.setAttribute("aria-haspopup","dialog");
   expand.addEventListener("click",()=>openFamilyWorkspace());
   list.appendChild(expand);
@@ -1429,7 +1429,8 @@ function renderFamiliesList(){
       const n=Number(item.information_root_count)||1;
       b.innerHTML='<div class="family-card-head"><strong>'+safe(item.title||"Untitled source")+'</strong>'+
        '<span class="family-state">'+safe(item.state||"unreviewed")+'</span></div>'+
-       '<div class="family-meta">'+safe((item.source_families||[]).join(" · ")||"unspecified source")+
+       '<div class="family-meta"><strong>'+safe(familyEvidenceRole(item))+'</strong> · '+
+       safe((item.source_families||[]).join(" · ")||"unspecified source")+
        ' · '+safe(familyEvidenceCountLabel(item))+'</div>'+
        '<small>First evidence '+safe(item.last_observed_at||"unknown")+
        ' · '+safe(item.geography_label||"No validated event location")+'</small>'+
@@ -1504,9 +1505,43 @@ function selectFamily(f){
 }
 /* Native dialog gives the analyst a usable, keyboard-accessible analysis
  * workspace instead of trapping detailed source reporting in a narrow panel. */
+// CAIRN's evidence priority is source ROLE, not the number of repeated stories.
+// Statistical extremes retain priority even when they have one source. Context
+// is kept visible rather than discarded or implicitly counted as confirmation.
+const ALTERNATIVE_FAMILIES=new Set([
+  "maritime_restriction","airspace_restriction","internet_reachability",
+  "aviation_operations","market_expectation",
+]);
+function familyEvidenceRole(f){
+  const kinds=f.source_families||[];
+  return kinds.some(k=>ALTERNATIVE_FAMILIES.has(k))?
+    "Alternative-source evidence":
+    kinds.some(k=>k==="commercial_media"||k==="protective_notice")?
+      "Reporting and institutional context":"Source role not classified";
+}
+function familyPriority(f){
+  const m=f.anomaly_metric||{};
+  if(m.status==="calibrated_metric"&&Number.isFinite(m.z_score)&&Math.abs(m.z_score)>=2){
+    return 0; // Calibrated anomaly rises even with one observed source.
+  }
+  if(familyEvidenceRole(f)==="Alternative-source evidence")return 1;
+  return 2;
+}
+function orderedIndicatorFamilies(rows){
+  return rows.map((f,i)=>({f,i})).sort((a,b)=>{
+    const rank=familyPriority(a.f)-familyPriority(b.f);
+    if(rank)return rank;
+    const aExtreme=a.f.anomaly_metric?.status==="calibrated_metric"?
+      Math.abs(a.f.anomaly_metric.z_score||0):0;
+    const bExtreme=b.f.anomaly_metric?.status==="calibrated_metric"?
+      Math.abs(b.f.anomaly_metric.z_score||0):0;
+    if(familyPriority(a.f)===0&&aExtreme!==bExtreme)return bExtreme-aExtreme;
+    return a.i-b.i; // Preserve backend chronology inside each class.
+  }).map(x=>x.f);
+}
 function workspaceFamilies(){
-  return Array.isArray(state.atlas?.dynamic_bins?.families)?
-    state.atlas.dynamic_bins.families:[];
+  return orderedIndicatorFamilies(Array.isArray(state.atlas?.dynamic_bins?.families)?
+    state.atlas.dynamic_bins.families:[]);
 }
 function renderWorkspaceList(){
   const rows=workspaceFamilies();
