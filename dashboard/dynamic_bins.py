@@ -16,12 +16,16 @@ try:
     from .evidence_facets import facets, qualified_metric
 except ImportError:
     from evidence_facets import facets, qualified_metric
+try:
+    from .topic_families import build_topics
+except ImportError:
+    from topic_families import build_topics
 
 
 UTC = dt.timezone.utc
 SCHEMA = "aiba.dynamic-evidence-bins.v1"
 REGISTRY_SCHEMA = "aiba.behavioral-observations.v1"
-MAX_RECORDS = 2500
+MAX_RECORDS = 5000  # Durable archive public cache cap; no hidden row dropping.
 MAX_ANALYST = 500
 MAX_OUTPUT = 800
 MAX_SOURCES = 12
@@ -89,7 +93,11 @@ def normalize_registry(registry):
             "id": ident,
             "information_root": root,
             "first_observed_at": stamp.isoformat(),
-            "published_at": record.get("source_published_at"),
+            "published_at": record.get("source_published_at") or record.get("published_at"),
+            "source_updated_at": record.get("source_updated_at"),
+            "scheduled_valid_from": record.get("scheduled_valid_from"),
+            "scheduled_valid_until": record.get("scheduled_valid_until"),
+            "restriction_status": clean(record.get("restriction_status"), 120),
             "event_at": record.get("event_at"),
             "source_url": safe_url(record["source_url"]),
             "title": clean(record.get("title"), 270),
@@ -181,8 +189,14 @@ def build(registry, analyst, relationships=None, now=None):
             continue
         by_observation[row["id"]] = row
         roots[row["information_root"]][row["id"]] = row
-    families = []
+    # Analyst-facing analytical themes sit ABOVE independent notices/root IDs.
+    # All individual source items survive inside notice_groups and the durable
+    # archive. Grouping does not imply a shared occurrence or corroboration.
+    topics, grouped_roots = build_topics(list(by_observation.values()), now, source_health)
+    families = list(topics)
     for root, member_map in roots.items():
+        if root in grouped_roots:
+            continue
         members = sorted(member_map.values(), key=lambda v: (v["first_observed_at"], v["id"]), reverse=True)
         if not members:
             continue
@@ -274,14 +288,20 @@ def build(registry, analyst, relationships=None, now=None):
         metric = f["anomaly_metric"]
         z = metric.get("z_score") if metric.get("status") == "calibrated_metric" else None
         extreme = z is not None and abs(z) >= 2
+        # When equally active, show an explanatory analytical family ahead
+        # of its underlying independent notice fragments.
+        is_topic = f["kind"] == "analytical_topic_family"
         return (0 if extreme else 1, -abs(z) if extreme else 0,
-                ordering[f["state"]], -when(f["last_observed_at"]).timestamp(), f["id"])
+                ordering[f["state"]], 0 if is_topic else 1,
+                -when(f["last_observed_at"]).timestamp(), f["id"])
     families.sort(key=rank)
     return {
         "schema": SCHEMA,
         "status": "source_observations_not_verified_events",
         "generated_at": now.isoformat(),
         "registry_status": status,
+        "analytical_topic_family_count": len(topics),
+        "source_root_candidates_folded_count": len(grouped_roots),
         "candidate_count_total": len(families),
         "candidate_count_displayed": min(len(families), MAX_OUTPUT),
         "truncated": len(families) > MAX_OUTPUT,
