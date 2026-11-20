@@ -79,7 +79,7 @@ def normalize_registry(registry):
         geo = record.get("geography") if isinstance(record.get("geography"), dict) else {}
         # Archive files contain validated normalized rows rather than the
         # original raw registry object. Preserve original source geography.
-        if record.get("origin") == "behavioral_registry":
+        if record.get("origin") in ("behavioral_registry", "faa_nas_calibration"):
             geo = {
                 "label": record.get("geography_label"),
                 "key": record.get("geography_key"),

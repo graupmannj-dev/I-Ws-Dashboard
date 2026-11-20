@@ -104,6 +104,20 @@ def update(state, clock=None, write=True):
     from dashboard.analyst_intake import load_history
     analyst = load_history(state, clock=now)
     normal.extend(normalize_analyst(analyst))
+    # FAA NAS samples are operational source measurements, not restrictions.
+    # A qualifying excursion (or a non-routine FAA operational pattern)
+    # contributes its OWN single-source family, never inferred onto a TFR.
+    faa = load_json(state / "latest" / "faa_nas_calibration.json", {}) or {}
+    if faa.get("schema") == "aiba.faa-nas-calibration.v1":
+        candidate = faa.get("candidate_source")
+        if candidate is not None:
+            if (not isinstance(candidate, dict) or
+                    not isinstance(candidate.get("id"), str) or
+                    not isinstance(candidate.get("information_root"), str) or
+                    not isinstance(candidate.get("source_url"), str) or
+                    not candidate["source_url"].startswith("https://")):
+                raise ValueError("FAA candidate source integrity failed")
+            normal.append(candidate)
     shards = {}
     new_records = 0
     for item in normal:
@@ -126,6 +140,13 @@ def update(state, clock=None, write=True):
         if old:
             if old["information_root"] != item["information_root"]:
                 raise ValueError("Source ID changed information root")
+            # An existing observation may receive a validated matched-clock
+            # baseline later. This is *evidence enrichment*, not newness.
+            before = old.get("calibrated_metric")
+            after = item.get("calibrated_metric")
+            if (not before and isinstance(after, dict)
+                    and after.get("baseline_ready") is True):
+                old["calibrated_metric"] = after
             # Earliest original collection and publication metadata persist.
             # Re-polling an old notice is NOT a newly observed event.
             continue

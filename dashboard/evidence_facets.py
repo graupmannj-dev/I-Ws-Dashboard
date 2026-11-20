@@ -45,7 +45,7 @@ FACET_PROFILES = {
 
 def profile(rows):
     families={row.get("source_family") for row in rows}
-    if "airspace_restriction" in families:
+    if "airspace_restriction" in families or "aviation_operations" in families:
         return "aviation"
     if "maritime_restriction" in families:
         return "maritime"
@@ -58,6 +58,8 @@ def facet_type(row):
     fam=row.get("source_family")
     if fam in {"airspace_restriction","maritime_restriction","protective_notice"}:
         return "source_notice"
+    if fam == "aviation_operations":
+        return "traffic_effect"
     if fam == "internet_reachability":
         return "telemetry"
     if fam == "commercial_media":
