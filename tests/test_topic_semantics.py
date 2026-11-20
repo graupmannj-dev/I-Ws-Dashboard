@@ -4,7 +4,7 @@ import time
 import unittest
 
 from dashboard.topic_semantics import LocalTopicEmbeddings, SCHEMA
-from dashboard.automatic_topics import assign, documents, _subject_geo, _roles
+from dashboard.automatic_topics import assign, documents, _subject_geo, _roles, _seed, _reasoning, _similar
 
 T0="2026-11-20T12:00:00Z"
 
@@ -28,6 +28,16 @@ def together(a,b):
     if len(docs)!=2:
         raise AssertionError("Pair fixture must contain distinct documents")
     x,y=(result["assignments"].get(d["key"]) for d in docs)
+    if x!=y:
+        model=LocalTopicEmbeddings([d["title"] for d in docs])
+        m=model.pair(0,1)
+        print("DEBUG_UNMATCHED",repr(docs[0]["title"]),repr(docs[1]["title"]),
+              "domains",[d["domain"] for d in docs],
+              "roles",[_roles(d["title"]) for d in docs],
+              "geo",[d["geo"] for d in docs],
+              "metric",m,
+              "lexical",_similar(docs[1],_seed(docs[0])),
+              "rationale",_reasoning(docs[1],_seed(docs[0]),m),flush=True)
     return x is not None and x==y,result
 
 
