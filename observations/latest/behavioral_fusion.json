@@ -3,7 +3,7 @@
   "automated_severity_changes": 0,
   "collection_coverage": {
     "amsa": {
-      "age_hours": 0.0,
+      "age_hours": 4.81,
       "checked_at": "2026-11-20T11:25:53Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -15,19 +15,19 @@
       "truncated_or_partial": false
     },
     "commercial": {
-      "age_hours": 18.77,
-      "checked_at": "2026-11-19T16:39:30Z",
+      "age_hours": 0.0,
+      "checked_at": "2026-11-20T16:14:21Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
       "mode": "commercial",
       "provider_status": "collected",
-      "snapshot_at": "2026-11-19T16:39:30Z",
+      "snapshot_at": "2026-11-20T16:14:21Z",
       "source_scope": "selected maritime/air-cargo/war-risk press and syndication",
       "status": "current",
       "truncated_or_partial": false
     },
     "ioda": {
-      "age_hours": 0.0,
+      "age_hours": 4.81,
       "checked_at": "2026-11-20T11:25:53Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -39,7 +39,7 @@
       "truncated_or_partial": false
     },
     "live_airspace": {
-      "age_hours": 3.6,
+      "age_hours": 8.41,
       "checked_at": "2026-11-20T07:49:53Z",
       "missingness": "not_measured_not_zero",
       "mode": "live_airspace",
@@ -50,7 +50,7 @@
       "truncated_or_partial": true
     },
     "live_maritime": {
-      "age_hours": 3.6,
+      "age_hours": 8.41,
       "checked_at": "2026-11-20T07:49:53Z",
       "missingness": "not_measured_not_zero",
       "mode": "live_maritime",
@@ -61,7 +61,7 @@
       "truncated_or_partial": true
     },
     "nga": {
-      "age_hours": 0.0,
+      "age_hours": 4.81,
       "checked_at": "2026-11-20T11:25:53Z",
       "missingness": "not_measured_not_zero",
       "mode": "nga",
@@ -72,7 +72,7 @@
       "truncated_or_partial": false
     },
     "official": {
-      "age_hours": 4.1,
+      "age_hours": 8.9,
       "checked_at": "2026-11-20T07:20:11Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -84,7 +84,7 @@
       "truncated_or_partial": false
     },
     "watchlist": {
-      "age_hours": 4.1,
+      "age_hours": 8.9,
       "checked_at": "2026-11-20T07:20:12Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -99,36 +99,36 @@
   "discovery_visibility": {
     "exact_geography_match_required_for_cross_family": true,
     "latest_initial_baseline": false,
-    "latest_registry_newly_observed_count": 1,
-    "latest_registry_record_count": 262,
-    "latest_unlocated_record_count": 255,
+    "latest_registry_newly_observed_count": 10,
+    "latest_registry_record_count": 270,
+    "latest_unlocated_record_count": 263,
     "new_or_collocated_not_same_as_verified_threat": true,
     "new_this_collection_required_for_cross_family_nomination": true,
     "recent_observations_sampled": 24,
     "recent_source_families": {
       "airspace_restriction": 45,
-      "commercial_media": 13,
+      "commercial_media": 21,
       "internet_reachability": 164,
       "maritime_restriction": 207,
-      "protective_notice": 22
+      "protective_notice": 20
     },
-    "recent_unique_record_count_72h": 451,
-    "recent_unlocated_count_72h": 201,
+    "recent_unique_record_count_72h": 457,
+    "recent_unlocated_count_72h": 207,
     "schema": "aiba.behavioral-discovery-visibility.v1",
     "shared_exact_geography_keys_across_behavior_families": 0,
     "source_coverage_is_globally_complete": false
   },
   "forecast_probability": null,
   "gdelt_context": "separate_analytical_stream_not_a_gate_or_confirmation",
-  "generated_at": "2026-11-20T11:25:58Z",
+  "generated_at": "2026-11-20T16:14:22Z",
   "geographic_scope": "source_declared_only",
   "history_diagnostics": {
     "excluded_observations": {
-      "old_source_publication": 3
+      "old_source_publication": 7
     },
-    "history_files_examined": 28,
+    "history_files_examined": 29,
     "lookback_hours": 72,
-    "recent_unique_records": 451
+    "recent_unique_records": 457
   },
   "limit_notes": [
     "No automated threat warning. These are unreviewed investigatory leads.",
@@ -137,33 +137,391 @@
     "Unlocated records cannot produce automatic geographic convergence.",
     "Unavailable collection is not evidence of no threatening activity."
   ],
-  "new_single_source_count_total": 1,
+  "new_single_source_count_total": 10,
   "new_single_source_leads": [
     {
-      "evidence_class": "network_measurement",
-      "first_observed_at": "2026-11-20T11:25:53Z",
+      "evidence_class": "media_mention",
+      "first_observed_at": "2026-11-20T16:14:22Z",
       "geography": {
-        "key": "country:NE",
-        "kind": "country_code",
-        "label": "NE",
+        "key": null,
+        "kind": "unlocated",
+        "label": null,
         "latitude": null,
         "longitude": null,
-        "precision": "provider_reported_country",
+        "precision": "no_source_verified_geography",
         "verified_iso": false
       },
-      "information_root": "ioda:f440b6d911cc40f7cc48169e",
+      "information_root": "commercial:e96b2174aa2358070793",
       "meaning": "Observation novelty, not evidence of impending violence.",
-      "observation_id": "beh:6965450e02c6e048d1889ec46206",
-      "requires_geolocation": false,
-      "source_family": "internet_reachability",
-      "source_published_at": null,
-      "source_url": "https://ioda.inetintel.cc.gatech.edu/",
+      "observation_id": "beh:0e37df5c9b1afd541f219d7d80ce",
+      "requires_geolocation": true,
+      "source_family": "commercial_media",
+      "source_published_at": "2026-11-20T06:00:58Z",
+      "source_url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE9IX1FaT19RSTU0SGNaYVhuSm91T3RreUU3eU9XOVhZVUxZbS1yVXlYcEZyWmpnVjFEbmxSai1oa0c1RFFaeDRwRm9NVzNFYUVzVDdXOVJ6Z056TFY0VnBoRnZIZFlmckxMMUxF?oc=5",
       "status": "single_source_unreviewed",
-      "title": "IODA detected connectivity anomaly: country NE"
+      "title": "Rethinking marine war risk insurance - Splash247"
+    },
+    {
+      "evidence_class": "media_mention",
+      "first_observed_at": "2026-11-20T16:14:22Z",
+      "geography": {
+        "key": null,
+        "kind": "unlocated",
+        "label": null,
+        "latitude": null,
+        "longitude": null,
+        "precision": "no_source_verified_geography",
+        "verified_iso": false
+      },
+      "information_root": "commercial:5b06ea49cd017a0e8b58",
+      "meaning": "Observation novelty, not evidence of impending violence.",
+      "observation_id": "beh:13406933e19b3ae446e3ad5d7c18",
+      "requires_geolocation": true,
+      "source_family": "commercial_media",
+      "source_published_at": "2026-11-19T18:54:00Z",
+      "source_url": "https://maritime-executive.com/article/europe-launches-prototype-vessel-for-protecting-undersea-cables",
+      "status": "single_source_unreviewed",
+      "title": "Europe Launches Prototype Vessel for Protecting Undersea Cables"
+    },
+    {
+      "evidence_class": "media_mention",
+      "first_observed_at": "2026-11-20T16:14:22Z",
+      "geography": {
+        "key": null,
+        "kind": "unlocated",
+        "label": null,
+        "latitude": null,
+        "longitude": null,
+        "precision": "no_source_verified_geography",
+        "verified_iso": false
+      },
+      "information_root": "commercial:49885c9ca47db061a5d5",
+      "meaning": "Observation novelty, not evidence of impending violence.",
+      "observation_id": "beh:2fb52f7953457442fec41708a7e7",
+      "requires_geolocation": true,
+      "source_family": "commercial_media",
+      "source_published_at": "2026-11-20T03:38:51Z",
+      "source_url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNaFkyMFlqalM5VmJ0UEo4VFZJVndMSUFMWnVYaVh0dHFGWTRaZU5mMGUxZmNBRjJwaV9VTTNGN01WQmZZMHJjZmlfR0F3UzNZY25QSHhqTWxYb3RzMUo5S2FpaFlheFNPMFZZdUlfemtndXY1bTJMM3Zmdlc3MlFFaVpZS2Mzc21xY1dDdGF1Y2JhcTJLd0doem11UHZaa3hJdkpZZzZfVTVpQzlkVV9ranlR?oc=5",
+      "status": "single_source_unreviewed",
+      "title": "Ecuadorian Fishermen Sue U.S. Government Over Drone Strike on Their Vessel - The Maritime Executive"
+    },
+    {
+      "evidence_class": "media_mention",
+      "first_observed_at": "2026-11-20T16:14:22Z",
+      "geography": {
+        "key": null,
+        "kind": "unlocated",
+        "label": null,
+        "latitude": null,
+        "longitude": null,
+        "precision": "no_source_verified_geography",
+        "verified_iso": false
+      },
+      "information_root": "commercial:587b4e1cbb9495515fb2",
+      "meaning": "Observation novelty, not evidence of impending violence.",
+      "observation_id": "beh:393e89b76318aacc1f1592b6e7b9",
+      "requires_geolocation": true,
+      "source_family": "commercial_media",
+      "source_published_at": "2026-11-20T13:56:35Z",
+      "source_url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNcUJTLW9rR0JtajNOQ2hiZ2JGT21LSlo5a2VwSTFkYWhVbl9UWnFRaUJEMWFzc2VhRE9CTURRWVRjM3ZRME9nT0YwNTZLbHpJaXNhVGdjdWc1T1AycXhBNjc0ekh2WGZ3cWRNYnJYS0RQc1dyYmo2VFVaLVRGay10ZXAtNUs4MjZV?oc=5",
+      "status": "single_source_unreviewed",
+      "title": "Koretsky proposes that Germany join the launch of a war risk insurance fund - Mezha.net"
+    },
+    {
+      "evidence_class": "media_mention",
+      "first_observed_at": "2026-11-20T16:14:22Z",
+      "geography": {
+        "key": null,
+        "kind": "unlocated",
+        "label": null,
+        "latitude": null,
+        "longitude": null,
+        "precision": "no_source_verified_geography",
+        "verified_iso": false
+      },
+      "information_root": "commercial:db6f730fe3e9b3505942",
+      "meaning": "Observation novelty, not evidence of impending violence.",
+      "observation_id": "beh:4b2a80415b41ee2cf79314b8ce90",
+      "requires_geolocation": true,
+      "source_family": "commercial_media",
+      "source_published_at": "2026-11-19T18:54:00Z",
+      "source_url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOclJ3em9ZSzJXczhrQ09jbE9hVE51SThkRVFjTGNjbTdNOW1XSXd5Qkg5UDlLYTBORWZFWXZXX1IzcllLOHpERHRveTUxNXBrMXUxeDk5QldVZV96NTllQ243MWxST3pyYzNvTkVvemxpSjdOVGowLWg3UWVJN3UzVDlkQUtxRE5hdkVtelROTlVDbkZsNGc3S0RDQzNLNW1lbHhheA?oc=5",
+      "status": "single_source_unreviewed",
+      "title": "Europe Launches Prototype Vessel for Protecting Undersea Cables - The Maritime Executive"
+    },
+    {
+      "evidence_class": "media_mention",
+      "first_observed_at": "2026-11-20T16:14:22Z",
+      "geography": {
+        "key": null,
+        "kind": "unlocated",
+        "label": null,
+        "latitude": null,
+        "longitude": null,
+        "precision": "no_source_verified_geography",
+        "verified_iso": false
+      },
+      "information_root": "commercial:3f096a01b95fcb8bed95",
+      "meaning": "Observation novelty, not evidence of impending violence.",
+      "observation_id": "beh:7188983f4b1b8036b4129bff0a66",
+      "requires_geolocation": true,
+      "source_family": "commercial_media",
+      "source_published_at": "2026-11-20T14:40:34Z",
+      "source_url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPVV81MEl0bnJhRzgxNWtSTTRzVG5UaHRxRm9JdXhHQklSODM0cUJpWXhiSDdNWWU0X251cElhMDRubE1jVmhOUFplSDN0cTFQMkxjSDFBM0xRRXRxc3hPZ19JVFFqUDM3T0pwLVp6MENId0VweEF2QW5uYTY3OXRBWTJKSl9CSXBBX2VxM1VkTWhpTnBUVTFVekowRUktSGxNNGd4REhRNkV5cmlIa0RNVQ?oc=5",
+      "status": "single_source_unreviewed",
+      "title": "Ukraine has called on Germany to support the launch of the War Risk Insurance Fund - UA.NEWS"
+    },
+    {
+      "evidence_class": "media_mention",
+      "first_observed_at": "2026-11-20T16:14:22Z",
+      "geography": {
+        "key": null,
+        "kind": "unlocated",
+        "label": null,
+        "latitude": null,
+        "longitude": null,
+        "precision": "no_source_verified_geography",
+        "verified_iso": false
+      },
+      "information_root": "commercial:bb6fb47715c834c1849f",
+      "meaning": "Observation novelty, not evidence of impending violence.",
+      "observation_id": "beh:92b5eba9b7e42195703646936fdc",
+      "requires_geolocation": true,
+      "source_family": "commercial_media",
+      "source_published_at": "2026-11-20T13:41:00Z",
+      "source_url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNZlNuTHpvRXZFZ3FYV3dCcUNfVExCX1Nzcmx6SHNNZ1A0RTJRSGsxVGFpcUtPYzhUYWU1cHlDUkxVMDcyVFZQS0FnaXdYaUJTV2RLTXAzRmhid0tnbVpmTXlHS083UFQtZjRSY0VnSGdoVFJwbVhsSFF4b1djbnRiSy1JZURKYmRBZGFaejFnYmlTTy1rYTgyYnduWGUzUzZYTDNnVmlmUG1EWUtYcVBEWUdCcGJXRnQweGZXTHZNVi1fcHZ4UnRmZtIBzgFBVV95cUxOODg0RklfblQwR0E1YVNsUDk1RmlPMGMyOElJcGgyNUJUSkEzeFpzODBhbm02aHVVRE9HLVN1aDkzSVZuV0Vpb0JvNnJ1RGdHQ3RpQmFnM2hjYlpRaEJUN291N0plWU9mcDEwNFNGQ0szMWRBQWdIMTA4Zk1CdXNMelloZXZKdFZPX0dOMUpCQ0VibzU5MWNSemlCZ0hUT1YzMXRfS2xSdVdBSE1xb3E2Z0NEczdUY2ZxY19GM3I5RzlyZjJTMndQUzBOY2lpdw?oc=5",
+      "status": "single_source_unreviewed",
+      "title": "Ukraine plans to launch EUR 3B war risk insurance fund in January – Koretskyi - Ukrinform"
+    },
+    {
+      "evidence_class": "media_mention",
+      "first_observed_at": "2026-11-20T16:14:22Z",
+      "geography": {
+        "key": null,
+        "kind": "unlocated",
+        "label": null,
+        "latitude": null,
+        "longitude": null,
+        "precision": "no_source_verified_geography",
+        "verified_iso": false
+      },
+      "information_root": "commercial:ea21518fc3f9cc6b0248",
+      "meaning": "Observation novelty, not evidence of impending violence.",
+      "observation_id": "beh:cdb6de793cec697febe3f66d2801",
+      "requires_geolocation": true,
+      "source_family": "commercial_media",
+      "source_published_at": "2026-11-19T19:02:56Z",
+      "source_url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE1FSkV1c05uVjlKcGRDQWU5cHJKQjBxaTQyQk1saFFwNUlubVhJT3JmSnZ3emJLZ0xYeXRXa1dsZEFxWC0zbGdQSGlkcGxuN0tNX0RMY1lXRWk2eWl5ZnBaVTJBV3Y5WW93enRRZGg2OERDQ0h5SVZFQlJxN2xpRkk?oc=5",
+      "status": "single_source_unreviewed",
+      "title": "US commercial P&C insurance premiums decline 1.3% in Q3 2026 - Beinsure"
+    },
+    {
+      "evidence_class": "media_mention",
+      "first_observed_at": "2026-11-20T16:14:22Z",
+      "geography": {
+        "key": null,
+        "kind": "unlocated",
+        "label": null,
+        "latitude": null,
+        "longitude": null,
+        "precision": "no_source_verified_geography",
+        "verified_iso": false
+      },
+      "information_root": "commercial:c4a28d652cc0365d2053",
+      "meaning": "Observation novelty, not evidence of impending violence.",
+      "observation_id": "beh:ef93d732354755ba1569132961cb",
+      "requires_geolocation": true,
+      "source_family": "commercial_media",
+      "source_published_at": "2026-11-20T06:55:00Z",
+      "source_url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNYjFmVlE3ZnhKbUJ6OFl3aXVpcEVFTWxSNkVCT2xKNjZJVk1sUjFCUWlrYmc4cnFNLWs5VVFBbDdvYWZOS0owdERGckgzclZyZU50SExGM1hwQ2JWc2xhZUg0X0dPTFFMUG1vYmdQRGxXa2t3U1VJMVdyQ0djUFNMWXV3WHlFYWdwMDdfeldnT3FZQ2Y3NS1la0h2bEY?oc=5",
+      "status": "single_source_unreviewed",
+      "title": "US Maritime Memo Warned Iran Blockade Drives Up Gulf Insurance - https://streamlinefeed.co.ke/"
+    },
+    {
+      "evidence_class": "media_mention",
+      "first_observed_at": "2026-11-20T16:14:22Z",
+      "geography": {
+        "key": null,
+        "kind": "unlocated",
+        "label": null,
+        "latitude": null,
+        "longitude": null,
+        "precision": "no_source_verified_geography",
+        "verified_iso": false
+      },
+      "information_root": "commercial:130ec0a4b7ee0564f946",
+      "meaning": "Observation novelty, not evidence of impending violence.",
+      "observation_id": "beh:f8c03869560a7f144760e59f9bc1",
+      "requires_geolocation": true,
+      "source_family": "commercial_media",
+      "source_published_at": "2026-11-20T03:38:51Z",
+      "source_url": "https://maritime-executive.com/article/ecuadorian-fishermen-sue-u-s-government-over-drone-strike-on-their-vessel",
+      "status": "single_source_unreviewed",
+      "title": "Ecuadorian Fishermen Sue U.S. Government Over Drone Strike on Their Vessel"
     }
   ],
   "prediction_horizon": null,
   "recent_source_observations": [
+    {
+      "first_observed_at": "2026-11-20T16:14:22Z",
+      "geography": {
+        "key": null,
+        "kind": "unlocated",
+        "label": null,
+        "latitude": null,
+        "longitude": null,
+        "precision": "no_source_verified_geography",
+        "verified_iso": false
+      },
+      "observation_id": "beh:f8c03869560a7f144760e59f9bc1",
+      "provider": "commercial",
+      "requires_geolocation": true,
+      "source_family": "commercial_media",
+      "source_published_at": "2026-11-20T03:38:51Z",
+      "source_url": "https://maritime-executive.com/article/ecuadorian-fishermen-sue-u-s-government-over-drone-strike-on-their-vessel",
+      "status": "recent_source_observation_unreviewed",
+      "title": "Ecuadorian Fishermen Sue U.S. Government Over Drone Strike on Their Vessel"
+    },
+    {
+      "first_observed_at": "2026-11-20T16:14:22Z",
+      "geography": {
+        "key": null,
+        "kind": "unlocated",
+        "label": null,
+        "latitude": null,
+        "longitude": null,
+        "precision": "no_source_verified_geography",
+        "verified_iso": false
+      },
+      "observation_id": "beh:ef93d732354755ba1569132961cb",
+      "provider": "commercial",
+      "requires_geolocation": true,
+      "source_family": "commercial_media",
+      "source_published_at": "2026-11-20T06:55:00Z",
+      "source_url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNYjFmVlE3ZnhKbUJ6OFl3aXVpcEVFTWxSNkVCT2xKNjZJVk1sUjFCUWlrYmc4cnFNLWs5VVFBbDdvYWZOS0owdERGckgzclZyZU50SExGM1hwQ2JWc2xhZUg0X0dPTFFMUG1vYmdQRGxXa2t3U1VJMVdyQ0djUFNMWXV3WHlFYWdwMDdfeldnT3FZQ2Y3NS1la0h2bEY?oc=5",
+      "status": "recent_source_observation_unreviewed",
+      "title": "US Maritime Memo Warned Iran Blockade Drives Up Gulf Insurance - https://streamlinefeed.co.ke/"
+    },
+    {
+      "first_observed_at": "2026-11-20T16:14:22Z",
+      "geography": {
+        "key": null,
+        "kind": "unlocated",
+        "label": null,
+        "latitude": null,
+        "longitude": null,
+        "precision": "no_source_verified_geography",
+        "verified_iso": false
+      },
+      "observation_id": "beh:cdb6de793cec697febe3f66d2801",
+      "provider": "commercial",
+      "requires_geolocation": true,
+      "source_family": "commercial_media",
+      "source_published_at": "2026-11-19T19:02:56Z",
+      "source_url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE1FSkV1c05uVjlKcGRDQWU5cHJKQjBxaTQyQk1saFFwNUlubVhJT3JmSnZ3emJLZ0xYeXRXa1dsZEFxWC0zbGdQSGlkcGxuN0tNX0RMY1lXRWk2eWl5ZnBaVTJBV3Y5WW93enRRZGg2OERDQ0h5SVZFQlJxN2xpRkk?oc=5",
+      "status": "recent_source_observation_unreviewed",
+      "title": "US commercial P&C insurance premiums decline 1.3% in Q3 2026 - Beinsure"
+    },
+    {
+      "first_observed_at": "2026-11-20T16:14:22Z",
+      "geography": {
+        "key": null,
+        "kind": "unlocated",
+        "label": null,
+        "latitude": null,
+        "longitude": null,
+        "precision": "no_source_verified_geography",
+        "verified_iso": false
+      },
+      "observation_id": "beh:92b5eba9b7e42195703646936fdc",
+      "provider": "commercial",
+      "requires_geolocation": true,
+      "source_family": "commercial_media",
+      "source_published_at": "2026-11-20T13:41:00Z",
+      "source_url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNZlNuTHpvRXZFZ3FYV3dCcUNfVExCX1Nzcmx6SHNNZ1A0RTJRSGsxVGFpcUtPYzhUYWU1cHlDUkxVMDcyVFZQS0FnaXdYaUJTV2RLTXAzRmhid0tnbVpmTXlHS083UFQtZjRSY0VnSGdoVFJwbVhsSFF4b1djbnRiSy1JZURKYmRBZGFaejFnYmlTTy1rYTgyYnduWGUzUzZYTDNnVmlmUG1EWUtYcVBEWUdCcGJXRnQweGZXTHZNVi1fcHZ4UnRmZtIBzgFBVV95cUxOODg0RklfblQwR0E1YVNsUDk1RmlPMGMyOElJcGgyNUJUSkEzeFpzODBhbm02aHVVRE9HLVN1aDkzSVZuV0Vpb0JvNnJ1RGdHQ3RpQmFnM2hjYlpRaEJUN291N0plWU9mcDEwNFNGQ0szMWRBQWdIMTA4Zk1CdXNMelloZXZKdFZPX0dOMUpCQ0VibzU5MWNSemlCZ0hUT1YzMXRfS2xSdVdBSE1xb3E2Z0NEczdUY2ZxY19GM3I5RzlyZjJTMndQUzBOY2lpdw?oc=5",
+      "status": "recent_source_observation_unreviewed",
+      "title": "Ukraine plans to launch EUR 3B war risk insurance fund in January – Koretskyi - Ukrinform"
+    },
+    {
+      "first_observed_at": "2026-11-20T16:14:22Z",
+      "geography": {
+        "key": null,
+        "kind": "unlocated",
+        "label": null,
+        "latitude": null,
+        "longitude": null,
+        "precision": "no_source_verified_geography",
+        "verified_iso": false
+      },
+      "observation_id": "beh:7188983f4b1b8036b4129bff0a66",
+      "provider": "commercial",
+      "requires_geolocation": true,
+      "source_family": "commercial_media",
+      "source_published_at": "2026-11-20T14:40:34Z",
+      "source_url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPVV81MEl0bnJhRzgxNWtSTTRzVG5UaHRxRm9JdXhHQklSODM0cUJpWXhiSDdNWWU0X251cElhMDRubE1jVmhOUFplSDN0cTFQMkxjSDFBM0xRRXRxc3hPZ19JVFFqUDM3T0pwLVp6MENId0VweEF2QW5uYTY3OXRBWTJKSl9CSXBBX2VxM1VkTWhpTnBUVTFVekowRUktSGxNNGd4REhRNkV5cmlIa0RNVQ?oc=5",
+      "status": "recent_source_observation_unreviewed",
+      "title": "Ukraine has called on Germany to support the launch of the War Risk Insurance Fund - UA.NEWS"
+    },
+    {
+      "first_observed_at": "2026-11-20T16:14:22Z",
+      "geography": {
+        "key": null,
+        "kind": "unlocated",
+        "label": null,
+        "latitude": null,
+        "longitude": null,
+        "precision": "no_source_verified_geography",
+        "verified_iso": false
+      },
+      "observation_id": "beh:4b2a80415b41ee2cf79314b8ce90",
+      "provider": "commercial",
+      "requires_geolocation": true,
+      "source_family": "commercial_media",
+      "source_published_at": "2026-11-19T18:54:00Z",
+      "source_url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOclJ3em9ZSzJXczhrQ09jbE9hVE51SThkRVFjTGNjbTdNOW1XSXd5Qkg5UDlLYTBORWZFWXZXX1IzcllLOHpERHRveTUxNXBrMXUxeDk5QldVZV96NTllQ243MWxST3pyYzNvTkVvemxpSjdOVGowLWg3UWVJN3UzVDlkQUtxRE5hdkVtelROTlVDbkZsNGc3S0RDQzNLNW1lbHhheA?oc=5",
+      "status": "recent_source_observation_unreviewed",
+      "title": "Europe Launches Prototype Vessel for Protecting Undersea Cables - The Maritime Executive"
+    },
+    {
+      "first_observed_at": "2026-11-20T16:14:22Z",
+      "geography": {
+        "key": null,
+        "kind": "unlocated",
+        "label": null,
+        "latitude": null,
+        "longitude": null,
+        "precision": "no_source_verified_geography",
+        "verified_iso": false
+      },
+      "observation_id": "beh:393e89b76318aacc1f1592b6e7b9",
+      "provider": "commercial",
+      "requires_geolocation": true,
+      "source_family": "commercial_media",
+      "source_published_at": "2026-11-20T13:56:35Z",
+      "source_url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNcUJTLW9rR0JtajNOQ2hiZ2JGT21LSlo5a2VwSTFkYWhVbl9UWnFRaUJEMWFzc2VhRE9CTURRWVRjM3ZRME9nT0YwNTZLbHpJaXNhVGdjdWc1T1AycXhBNjc0ekh2WGZ3cWRNYnJYS0RQc1dyYmo2VFVaLVRGay10ZXAtNUs4MjZV?oc=5",
+      "status": "recent_source_observation_unreviewed",
+      "title": "Koretsky proposes that Germany join the launch of a war risk insurance fund - Mezha.net"
+    },
+    {
+      "first_observed_at": "2026-11-20T16:14:22Z",
+      "geography": {
+        "key": null,
+        "kind": "unlocated",
+        "label": null,
+        "latitude": null,
+        "longitude": null,
+        "precision": "no_source_verified_geography",
+        "verified_iso": false
+      },
+      "observation_id": "beh:2fb52f7953457442fec41708a7e7",
+      "provider": "commercial",
+      "requires_geolocation": true,
+      "source_family": "commercial_media",
+      "source_published_at": "2026-11-20T03:38:51Z",
+      "source_url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNaFkyMFlqalM5VmJ0UEo4VFZJVndMSUFMWnVYaVh0dHFGWTRaZU5mMGUxZmNBRjJwaV9VTTNGN01WQmZZMHJjZmlfR0F3UzNZY25QSHhqTWxYb3RzMUo5S2FpaFlheFNPMFZZdUlfemtndXY1bTJMM3Zmdlc3MlFFaVpZS2Mzc21xY1dDdGF1Y2JhcTJLd0doem11UHZaa3hJdkpZZzZfVTVpQzlkVV9ranlR?oc=5",
+      "status": "recent_source_observation_unreviewed",
+      "title": "Ecuadorian Fishermen Sue U.S. Government Over Drone Strike on Their Vessel - The Maritime Executive"
+    },
     {
       "first_observed_at": "2026-11-20T11:25:53Z",
       "geography": {
@@ -505,176 +863,10 @@
       "source_url": "https://niord.dma.dk/#/message/3071c75f-f558-410e-8d1b-380cfe1eb877",
       "status": "recent_source_observation_unreviewed",
       "title": "Denmark. The North Sea. EK R 33 Vejers. Firing exercises. Warning."
-    },
-    {
-      "first_observed_at": "2026-11-20T00:42:57Z",
-      "geography": {
-        "geometry_sha256_prefix": "67092dab6abd4e9717772ce5",
-        "geometry_type": "MultiPolygon",
-        "key": "source-footprint:67092dab6abd4e9717772ce5",
-        "kind": "source_notice_footprint",
-        "label": "Official MultiPolygon notice area",
-        "latitude": null,
-        "longitude": null,
-        "precision": "provider_defined_notice_boundary_not_event_point",
-        "verified_iso": false
-      },
-      "observation_id": "beh:9d33c6539312e25e09c1dfd22380",
-      "provider": "faa",
-      "requires_geolocation": false,
-      "source_family": "airspace_restriction",
-      "source_published_at": null,
-      "source_url": "https://tfr.faa.gov/6_9071.html",
-      "status": "recent_source_observation_unreviewed",
-      "title": "FAA TFR 6/9071 · NEW ORLEANS, LA, Thursday, November 19, 2026 through Saturday, November 28, 2026 UTC"
-    },
-    {
-      "first_observed_at": "2026-11-19T22:06:56Z",
-      "geography": {
-        "key": "country:VI",
-        "kind": "country_code",
-        "label": "VI",
-        "latitude": null,
-        "longitude": null,
-        "precision": "provider_reported_country",
-        "verified_iso": false
-      },
-      "observation_id": "beh:f471fe9b3fff90aa9011763ce8f6",
-      "provider": "ioda",
-      "requires_geolocation": false,
-      "source_family": "internet_reachability",
-      "source_published_at": null,
-      "source_url": "https://ioda.inetintel.cc.gatech.edu/",
-      "status": "recent_source_observation_unreviewed",
-      "title": "IODA detected connectivity anomaly: country VI"
-    },
-    {
-      "first_observed_at": "2026-11-19T22:06:56Z",
-      "geography": {
-        "key": "country:BF",
-        "kind": "country_code",
-        "label": "BF",
-        "latitude": null,
-        "longitude": null,
-        "precision": "provider_reported_country",
-        "verified_iso": false
-      },
-      "observation_id": "beh:720b76632b9601b8d46e092158ea",
-      "provider": "ioda",
-      "requires_geolocation": false,
-      "source_family": "internet_reachability",
-      "source_published_at": null,
-      "source_url": "https://ioda.inetintel.cc.gatech.edu/",
-      "status": "recent_source_observation_unreviewed",
-      "title": "IODA detected connectivity anomaly: country BF"
-    },
-    {
-      "first_observed_at": "2026-11-19T22:06:56Z",
-      "geography": {
-        "key": "country:VI",
-        "kind": "country_code",
-        "label": "VI",
-        "latitude": null,
-        "longitude": null,
-        "precision": "provider_reported_country",
-        "verified_iso": false
-      },
-      "observation_id": "beh:4e5f1f126cbec27cd619ad0c8807",
-      "provider": "ioda",
-      "requires_geolocation": false,
-      "source_family": "internet_reachability",
-      "source_published_at": null,
-      "source_url": "https://ioda.inetintel.cc.gatech.edu/",
-      "status": "recent_source_observation_unreviewed",
-      "title": "IODA detected connectivity anomaly: country VI"
-    },
-    {
-      "first_observed_at": "2026-11-19T18:12:17Z",
-      "geography": {
-        "geometry_sha256_prefix": "7fcd974d03720c8983d7b723",
-        "geometry_type": "MultiPolygon",
-        "key": "source-footprint:7fcd974d03720c8983d7b723",
-        "kind": "source_notice_footprint",
-        "label": "Official MultiPolygon notice area",
-        "latitude": null,
-        "longitude": null,
-        "precision": "provider_defined_notice_boundary_not_event_point",
-        "verified_iso": false
-      },
-      "observation_id": "beh:b2a4e50ed5c93010995fb88d46c8",
-      "provider": "faa",
-      "requires_geolocation": false,
-      "source_family": "airspace_restriction",
-      "source_published_at": null,
-      "source_url": "https://tfr.faa.gov/6_8989.html",
-      "status": "recent_source_observation_unreviewed",
-      "title": "FAA TFR 6/8989 · Houston, TX, Thursday, November 26, 2026 UTC"
-    },
-    {
-      "first_observed_at": "2026-11-19T18:12:17Z",
-      "geography": {
-        "geometry_sha256_prefix": "9645252e7802acd884cd269e",
-        "geometry_type": "MultiPolygon",
-        "key": "source-footprint:9645252e7802acd884cd269e",
-        "kind": "source_notice_footprint",
-        "label": "Official MultiPolygon notice area",
-        "latitude": null,
-        "longitude": null,
-        "precision": "provider_defined_notice_boundary_not_event_point",
-        "verified_iso": false
-      },
-      "observation_id": "beh:970b892f77c0a36027ab57f519fa",
-      "provider": "faa",
-      "requires_geolocation": false,
-      "source_family": "airspace_restriction",
-      "source_published_at": null,
-      "source_url": "https://tfr.faa.gov/6_8986.html",
-      "status": "recent_source_observation_unreviewed",
-      "title": "FAA TFR 6/8986 · Detroit, MI, Thursday, November 26, 2026 UTC"
-    },
-    {
-      "first_observed_at": "2026-11-19T16:39:32Z",
-      "geography": {
-        "key": null,
-        "kind": "unlocated",
-        "label": null,
-        "latitude": null,
-        "longitude": null,
-        "precision": "no_source_verified_geography",
-        "verified_iso": false
-      },
-      "observation_id": "beh:cfbc777a995f0a0e842702fb92b9",
-      "provider": "commercial",
-      "requires_geolocation": true,
-      "source_family": "commercial_media",
-      "source_published_at": "2026-11-18T21:23:00Z",
-      "source_url": "https://maritime-executive.com/article/kerch-strait-bridge-strike-cuts-off-sea-of-azov-shipping",
-      "status": "recent_source_observation_unreviewed",
-      "title": "Kerch Strait Bridge Strike Cuts Off Sea of Azov Shipping"
-    },
-    {
-      "first_observed_at": "2026-11-19T16:39:32Z",
-      "geography": {
-        "key": null,
-        "kind": "unlocated",
-        "label": null,
-        "latitude": null,
-        "longitude": null,
-        "precision": "no_source_verified_geography",
-        "verified_iso": false
-      },
-      "observation_id": "beh:9716ba7e3fa10ac3595bdd7ec2c3",
-      "provider": "commercial",
-      "requires_geolocation": true,
-      "source_family": "commercial_media",
-      "source_published_at": "2026-11-19T00:52:14Z",
-      "source_url": "https://maritime-executive.com/article/u-s-naval-blockade-now-covers-vessels-that-load-iranian-cargo-at-sea",
-      "status": "recent_source_observation_unreviewed",
-      "title": "U.S. Naval Blockade Now Covers Vessels That Load Iranian Cargo at Sea"
     }
   ],
-  "registry_asof": "2026-11-20T11:25:57Z",
-  "registry_source_count": 262,
+  "registry_asof": "2026-11-20T16:14:22Z",
+  "registry_source_count": 270,
   "report_relationships": {
     "automatic_alerts_created": 0,
     "automatic_severity_changes": 0,
@@ -2361,6 +2553,74 @@
       },
       {
         "first_observation_separation_hours": 0.0,
+        "id": "relation:4252384306ebb725193d",
+        "independent_corroboration_established": false,
+        "match_basis": "same_substantive_article_title_different_source_urls",
+        "reported_event_site_comparison_available": false,
+        "reported_event_site_separation_km": null,
+        "reporting_origin_used_as_event_site": false,
+        "review_requirements": [
+          "Verify whether both URLs reproduce one original article",
+          "Do not count syndication as two independently observed events",
+          "Resolve the underlying event separately from this story"
+        ],
+        "semantic_similarity": 0.8,
+        "shared_content_terms": [
+          "drone",
+          "ecuadorian",
+          "fishermen",
+          "strike",
+          "sue",
+          "their"
+        ],
+        "shared_information_root": false,
+        "source_reports": [
+          {
+            "first_observed_at": "2026-11-20T16:14:22Z",
+            "geography": {
+              "key": null,
+              "kind": "unlocated",
+              "label": null,
+              "latitude": null,
+              "longitude": null,
+              "precision": "no_source_verified_geography",
+              "verified_iso": false
+            },
+            "observation_id": "beh:f8c03869560a7f144760e59f9bc1",
+            "provider": "commercial",
+            "reporting_origin": null,
+            "source_family": "commercial_media",
+            "source_published_at": "2026-11-20T03:38:51Z",
+            "source_url": "https://maritime-executive.com/article/ecuadorian-fishermen-sue-u-s-government-over-drone-strike-on-their-vessel",
+            "status": "unreviewed_source_report",
+            "title": "Ecuadorian Fishermen Sue U.S. Government Over Drone Strike on Their Vessel"
+          },
+          {
+            "first_observed_at": "2026-11-20T16:14:22Z",
+            "geography": {
+              "key": null,
+              "kind": "unlocated",
+              "label": null,
+              "latitude": null,
+              "longitude": null,
+              "precision": "no_source_verified_geography",
+              "verified_iso": false
+            },
+            "observation_id": "beh:2fb52f7953457442fec41708a7e7",
+            "provider": "commercial",
+            "reporting_origin": null,
+            "source_family": "commercial_media",
+            "source_published_at": "2026-11-20T03:38:51Z",
+            "source_url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNaFkyMFlqalM5VmJ0UEo4VFZJVndMSUFMWnVYaVh0dHFGWTRaZU5mMGUxZmNBRjJwaV9VTTNGN01WQmZZMHJjZmlfR0F3UzNZY25QSHhqTWxYb3RzMUo5S2FpaFlheFNPMFZZdUlfemtndXY1bTJMM3Zmdlc3MlFFaVpZS2Mzc21xY1dDdGF1Y2JhcTJLd0doem11UHZaa3hJdkpZZzZfVTVpQzlkVV9ranlR?oc=5",
+            "status": "unreviewed_source_report",
+            "title": "Ecuadorian Fishermen Sue U.S. Government Over Drone Strike on Their Vessel - The Maritime Executive"
+          }
+        ],
+        "status": "possible_same_source_story_unreviewed",
+        "warning_level_change": false
+      },
+      {
+        "first_observation_separation_hours": 0.0,
         "id": "relation:51851487757d565eefda",
         "independent_corroboration_established": false,
         "match_basis": "same_substantive_article_title_different_source_urls",
@@ -2421,6 +2681,74 @@
             "source_url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQdGx5Z2N5YTN0UDlKcFlOUFNJMkxsQWpOZkNONUt6OWdnU3Bsc3JaX1M4cVpvcVc3c2RTb2pVNmNIV0U1amJzd01qMWdjWmd3NXhYd3Z0U0NHRktiV0pPUEJ3YjhqWVRtWUJoaDE3dnRJNzlnNzFXSnh2VmlOYmhHYUw1em0tVEFVTU5pU29jVXB3QQ?oc=5",
             "status": "unreviewed_source_report",
             "title": "Oil Shipping Soars on Russia's Northern Sea Route - The Maritime Executive"
+          }
+        ],
+        "status": "possible_same_source_story_unreviewed",
+        "warning_level_change": false
+      },
+      {
+        "first_observation_separation_hours": 0.0,
+        "id": "relation:b0ce2926e6d88fa024d7",
+        "independent_corroboration_established": false,
+        "match_basis": "same_substantive_article_title_different_source_urls",
+        "reported_event_site_comparison_available": false,
+        "reported_event_site_separation_km": null,
+        "reporting_origin_used_as_event_site": false,
+        "review_requirements": [
+          "Verify whether both URLs reproduce one original article",
+          "Do not count syndication as two independently observed events",
+          "Resolve the underlying event separately from this story"
+        ],
+        "semantic_similarity": 0.778,
+        "shared_content_terms": [
+          "cables",
+          "europe",
+          "launches",
+          "protecting",
+          "prototype",
+          "undersea"
+        ],
+        "shared_information_root": false,
+        "source_reports": [
+          {
+            "first_observed_at": "2026-11-20T16:14:22Z",
+            "geography": {
+              "key": null,
+              "kind": "unlocated",
+              "label": null,
+              "latitude": null,
+              "longitude": null,
+              "precision": "no_source_verified_geography",
+              "verified_iso": false
+            },
+            "observation_id": "beh:4b2a80415b41ee2cf79314b8ce90",
+            "provider": "commercial",
+            "reporting_origin": null,
+            "source_family": "commercial_media",
+            "source_published_at": "2026-11-19T18:54:00Z",
+            "source_url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOclJ3em9ZSzJXczhrQ09jbE9hVE51SThkRVFjTGNjbTdNOW1XSXd5Qkg5UDlLYTBORWZFWXZXX1IzcllLOHpERHRveTUxNXBrMXUxeDk5QldVZV96NTllQ243MWxST3pyYzNvTkVvemxpSjdOVGowLWg3UWVJN3UzVDlkQUtxRE5hdkVtelROTlVDbkZsNGc3S0RDQzNLNW1lbHhheA?oc=5",
+            "status": "unreviewed_source_report",
+            "title": "Europe Launches Prototype Vessel for Protecting Undersea Cables - The Maritime Executive"
+          },
+          {
+            "first_observed_at": "2026-11-20T16:14:22Z",
+            "geography": {
+              "key": null,
+              "kind": "unlocated",
+              "label": null,
+              "latitude": null,
+              "longitude": null,
+              "precision": "no_source_verified_geography",
+              "verified_iso": false
+            },
+            "observation_id": "beh:13406933e19b3ae446e3ad5d7c18",
+            "provider": "commercial",
+            "reporting_origin": null,
+            "source_family": "commercial_media",
+            "source_published_at": "2026-11-19T18:54:00Z",
+            "source_url": "https://maritime-executive.com/article/europe-launches-prototype-vessel-for-protecting-undersea-cables",
+            "status": "unreviewed_source_report",
+            "title": "Europe Launches Prototype Vessel for Protecting Undersea Cables"
           }
         ],
         "status": "possible_same_source_story_unreviewed",
@@ -2494,8 +2822,8 @@
       }
     ],
     "candidate_groups_truncated": true,
-    "cross_document_relation_count_total": 4,
-    "eligible_event_reporting_records": 13,
+    "cross_document_relation_count_total": 6,
+    "eligible_event_reporting_records": 21,
     "forecast_probability": null,
     "geographic_proximity_only_for_explicit_reported_event_sites": true,
     "input_truncated": false,
@@ -2503,12 +2831,12 @@
     "pairwise_comparisons_capped": true,
     "pairwise_comparisons_examined": 90000,
     "possible_same_event_count_total": 0,
-    "possible_same_source_story_count_total": 4,
-    "records_available": 451,
-    "records_examined": 451,
+    "possible_same_source_story_count_total": 6,
+    "records_available": 457,
+    "records_examined": 457,
     "related_reporting_count_total": 0,
     "reporting_origins_are_not_event_locations": true,
-    "routine_notice_market_or_measurement_records_excluded_from_text_event_matching": 438,
+    "routine_notice_market_or_measurement_records_excluded_from_text_event_matching": 436,
     "same_document_group_count_total": 28,
     "schema": "aiba.report-event-resolution-shadow.v1",
     "source_independence_unverified": true,
