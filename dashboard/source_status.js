@@ -7,7 +7,8 @@ const NAMES={amsa:"AMSA NAVAREA X",commercial:"Commercial media sampling",
   ioda:"IODA connectivity",live_airspace:"FAA temporary flight restrictions",
   live_maritime:"Danish NIORD maritime notices",nga:"NGA broadcast warnings",
   official:"U.S. / U.K. official advisories",watchlist:"Prediction-market contracts",
-  faa_nas:"FAA NAS airport operations"};
+  faa_nas:"FAA NAS airport operations",
+  gdelt:"GDELT news/event index",wikipedia:"Wikipedia public attention"};
 const FRESH_HOURS={amsa:6,commercial:48,ioda:6,live_airspace:2,live_maritime:2,
   nga:6,official:12,watchlist:12,faa_nas:25/60,gdelt:48,wikipedia:72};
 // A source's ROLE and its HEALTH are separate. News can corroborate a lead,
