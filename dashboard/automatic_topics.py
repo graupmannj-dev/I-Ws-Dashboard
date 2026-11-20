@@ -86,6 +86,9 @@ SOURCE_DOMAINS = {
     "protective_notice":"advisory",
     "market_expectation":"generic",
     "commercial_media":"generic",
+    "environmental_context":"environmental_context",
+    "waterway_restriction":"maritime",
+    "port_conditions":"physical_station",
 }
 UTC=dt.timezone.utc
 
@@ -147,7 +150,9 @@ def _domain(row):
 def _doc_key(row):
     # One official message can yield several shapes and validity fragments.
     # A generic API URL (IODA) must NOT merge unrelated country observations.
-    if row.get("source_family") in ("internet_reachability","aviation_operations"):
+    if row.get("source_family") in ("internet_reachability","aviation_operations",
+                                    "environmental_context","port_conditions",
+                                    "waterway_restriction"):
         key=row["information_root"]
     else:
         key=row.get("source_url") or row["information_root"]
@@ -187,7 +192,7 @@ def _similar(doc,seed):
     if doc["domain"]!=seed["domain"]:
         return (0.0, [])
     # Do not use advisory boilerplate to create topic-wide false positives.
-    if doc["domain"]=="advisory":
+    if doc["domain"] in ("advisory","environmental_context","physical_station"):
         return (0.0,[])
     a=doc["terms"]
     b=Counter(seed["terms"])
@@ -256,7 +261,7 @@ def _reasoning(doc,seed,metric):
     """Hard gates prevent false thematic joins before any soft similarity."""
     if doc["domain"]!=seed["domain"]:
         return None
-    if doc["domain"]=="advisory":
+    if doc["domain"] in ("advisory","environmental_context","physical_station"):
         return None
     ga=set(doc["geo"]);gb=set(seed.get("geo") or [])
     if ga and gb and ga.isdisjoint(gb):
@@ -381,7 +386,7 @@ def assign(rows, prior=None):
             if assignments[key] not in groups:
                 raise ValueError("Topic ledger references missing stable group")
             continue
-        if doc["domain"]=="advisory" or len(set(doc["terms"])-GENERIC)<MIN_SHARED_TERMS:
+        if doc["domain"] in ("advisory","environmental_context","physical_station") or len(set(doc["terms"])-GENERIC)<MIN_SHARED_TERMS:
             continue
         position=start_docs+offset
         # Inverted lookups preserve older archived seeds beyond the bounded
