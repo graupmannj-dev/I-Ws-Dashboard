@@ -1524,10 +1524,12 @@ function selectFamily(f){
 // is kept visible rather than discarded or implicitly counted as confirmation.
 const ALTERNATIVE_FAMILIES=new Set([
   "maritime_restriction","airspace_restriction","internet_reachability",
-  "aviation_operations","market_expectation",
+  "aviation_operations","market_expectation","waterway_restriction","port_conditions",
 ]);
 function familyEvidenceRole(f){
   const kinds=f.source_families||[];
+  if(kinds.length&&kinds.every(k=>k==="environmental_context"))
+    return "Environmental context / competing explanation";
   return kinds.some(k=>ALTERNATIVE_FAMILIES.has(k))?
     "Alternative-source evidence":
     kinds.some(k=>k==="commercial_media"||k==="protective_notice")?
