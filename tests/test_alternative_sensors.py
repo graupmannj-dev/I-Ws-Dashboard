@@ -10,6 +10,7 @@ from alternative_sensor_pipeline import (
     MODES,collect,parse_time,usgs,eonet,swpc,nws,usace,noaa_station,ripe
 )
 from behavioral_registry import create
+from behavioral_baselines import build as build_baselines
 from dashboard.dynamic_bins import build as build_families
 
 NOW=dt.datetime(2026,11,20,19,0,tzinfo=dt.timezone.utc)
@@ -34,7 +35,8 @@ def fixtures():
         "swpc":[{"product_id":"K05A","issue_datetime":"2026-11-20 18:30:00.000",
                  "message":"Space Weather Message Code: ALTK05\\nSerial Number: 11\\nALERT: Geomagnetic K-index of 5"}],
         "nws":{"type":"FeatureCollection","features":[{
-            "properties":{"id":"https://api.weather.gov/alerts/test-2026-11",
+            "id":"https://api.weather.gov/alerts/test-2026-11",
+            "properties":{"id":"urn:oid:fake:2026-11","@id":"https://api.weather.gov/alerts/test-2026-11",
                           "event":"High Wind Warning","areaDesc":"Test County",
                           "sent":Z},
             "geometry":None
@@ -160,6 +162,27 @@ class AlternativeSensorPipelineTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             nws({"features":[]},NOW)
         self.assertEqual(parse_time("2026-11-20 18:30").utcoffset(),dt.timedelta(0))
+
+    def test_preinstallation_snapshots_are_unknown_not_zero(self):
+        with tempfile.TemporaryDirectory() as p:
+            state=Path(p)
+            collect(state,clock=lambda:NOW,fetcher=fetcher())
+            create(state,clock=lambda:NOW,run_id="legacy")
+            prior=next((state/"history"/"behavioral_registry").glob("*.json"))
+            historical=json.loads(prior.read_text())
+            for key in ("source_health","snapshot_counts_by_mode",
+                        "first_seen_counts_by_mode"):
+                historical[key]={k:v for k,v in historical[key].items()
+                                 if k not in MODES}
+            prior.write_text(json.dumps(historical))
+            later=NOW+dt.timedelta(hours=1)
+            # Rebuild the registry against stale copies: source absence is not
+            # zero historical observation or a fake full reference cohort.
+            create(state,clock=lambda:later,run_id="later")
+            result=build_baselines(state,clock=lambda:later,write=False)
+            self.assertEqual(result["sources"]["usgs_quakes"]["status"],
+                             "insufficient_comparable_source_days")
+            self.assertLessEqual(result["sources"]["usgs_quakes"]["comparable_provider_snapshot_days"],1)
 
     def test_notice_identity_persists_across_days(self):
         f=fixtures()["usace"]
