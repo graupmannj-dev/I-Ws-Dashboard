@@ -78,15 +78,31 @@ def update(state, clock=None, write=True):
     raw_registry = load_json(state / "latest" / "behavioral_registry.json", {}) or {}
     if raw_registry.get("schema") != REGISTRY_SCHEMA:
         raise ValueError("Latest behavioral registry unavailable; no family archive update")
-    rows = list(raw_registry.get("records", []))
-    if not manifest["bootstrapped"]:
-        rows.extend(rows_from_history(state))
-    # Analyst intake already validates source URLs, time bounds, and immutable roots.
-    from dashboard.analyst_intake import load_history
-    analyst = load_history(state, clock=now)
-    normal, availability = normalize_registry({"schema": REGISTRY_SCHEMA, "records": rows})
+    # Normalize bounded history deltas independently. The union may be much
+    # larger than a single current provider snapshot.
+    normal, availability = normalize_registry(raw_registry)
     if availability != "available":
         raise ValueError("Archive source envelope invalid or oversized")
+    if not manifest["bootstrapped"]:
+        batch = []
+        for row in rows_from_history(state):
+            batch.append(row)
+            if len(batch) == 2000:
+                parsed, status = normalize_registry({
+                    "schema": REGISTRY_SCHEMA, "records": batch})
+                if status != "available":
+                    raise ValueError("Invalid historic source delta")
+                normal.extend(parsed)
+                batch.clear()
+        if batch:
+            parsed, status = normalize_registry({
+                "schema": REGISTRY_SCHEMA, "records": batch})
+            if status != "available":
+                raise ValueError("Invalid historic source delta")
+            normal.extend(parsed)
+    # Analyst intake already validates source URLs, time bounds, and roots.
+    from dashboard.analyst_intake import load_history
+    analyst = load_history(state, clock=now)
     normal.extend(normalize_analyst(analyst))
     shards = {}
     new_records = 0
