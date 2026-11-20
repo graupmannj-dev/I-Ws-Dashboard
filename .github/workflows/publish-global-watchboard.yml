@@ -59,7 +59,15 @@ jobs:
           # Repeated template-only travel and FAA feeds must not become
           # independent, unverified bulk topics.
           assert not any(f['source_families']==['protective_notice'] for f in auto)
-          assert not any(f['source_families']==['airspace_restriction'] for f in auto)
+          # Repeat notices at one documented airspace subject (e.g., Boise)
+          # CAN be an analytical topic. Blanket source-wide clustering cannot.
+          total_airspace=sum(x.get('source_family')=='airspace_restriction'
+                             for x in reg['records'])
+          for f in auto:
+              if f['source_families']==['airspace_restriction']:
+                  assert f['source_record_count'] < max(5,int(total_airspace*0.65)), (
+                      'Source template appears to have swallowed a majority of FAA records',
+                      f['title'], f['source_record_count'], total_airspace)
           print('Original source documents:',len(documents(reg['records'])))
           PY
   analytical-topic-real-input:
