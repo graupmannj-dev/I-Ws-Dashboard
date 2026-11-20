@@ -386,3 +386,67 @@ a{color:#a9d4ff}
 .family-detail .family-gauge{margin:14px 0}
 .family-detail .family-facets{margin-bottom:14px}
 .family-more{cursor:pointer;padding:9px 12px;background:#1d344a;color:#d1e7f7;border-radius:8px;border:1px solid #5b7f9f}
+
+/* Evidence families: dedicated desktop-scale analyst analysis surface. */
+.family-workspace-launch{display:block;width:100%;margin:6px 0 13px;border:1px solid #6b94b2;border-radius:8px;background:#223d57;color:#e5f3ff;padding:11px;cursor:pointer;font-weight:650;text-align:center}
+.family-workspace-launch:hover,.family-workspace-launch:focus-visible{border-color:#b4d9f2;background:#2b516f;outline-offset:3px}
+.family-workspace[open]{box-sizing:border-box;display:flex;flex-direction:column;position:fixed;inset:0;
+  width:min(1440px,96vw);max-width:none;height:min(93vh,1050px);max-height:none;margin:auto;
+  padding:0;background:#101b29;color:#e7eef8;border:1px solid #526b83;border-radius:15px;
+  box-shadow:0 26px 100px rgba(0,0,0,.72);overflow:hidden;color-scheme:dark}
+.family-workspace::backdrop{background:rgba(3,9,18,.82);backdrop-filter:blur(4px)}
+.family-workspace-header{display:flex;align-items:start;justify-content:space-between;gap:20px;padding:22px 26px 14px;border-bottom:1px solid #36516b;background:#162538}
+.family-workspace-header h2{font-size:25px;line-height:1.2;margin:4px 0 8px}
+.family-workspace-header p{max-width:940px;color:#c0cee0;margin:0;font-size:13px;line-height:1.45}
+.family-workspace-header .workspace-eyebrow{font-size:10px;letter-spacing:.13em;color:#83c6e6;font-weight:700}
+.family-workspace-close{background:#294158;color:#e8f2ff;border:1px solid #7894ad;border-radius:8px;padding:10px 14px;cursor:pointer;white-space:nowrap;font-weight:650}
+.family-workspace-close:focus-visible{outline:2px solid #e6f4ff;outline-offset:3px}
+.family-workspace-toolbar{display:grid;grid-template-columns:minmax(240px,1fr) minmax(145px,180px) minmax(180px,220px);
+  gap:11px 15px;align-items:end;padding:13px 25px 10px;background:#122033;border-bottom:1px solid #33475d}
+.family-workspace-toolbar label{display:flex;flex-direction:column;gap:5px;font-size:11px;font-weight:600;color:#b4cbe1;min-width:0}
+.family-workspace-toolbar input,.family-workspace-toolbar select{box-sizing:border-box;background:#091625;color:#e6f0fa;border:1px solid #55718b;border-radius:7px;padding:10px;max-width:100%;min-width:0;font-size:13px}
+.family-workspace-toolbar input:focus-visible,.family-workspace-toolbar select:focus-visible{outline:2px solid #9ed7fc}
+.family-workspace-toolbar p{grid-column:1/-1;font-size:11px;color:#b8c9db;margin:0}
+.family-workspace-columns{display:grid;grid-template-columns:minmax(310px,.43fr) minmax(0,1fr);min-height:0;flex:1;overflow:hidden}
+.family-workspace-list-pane{overflow-y:auto;border-right:1px solid #3b5368;background:#102034;scrollbar-color:#516b83 transparent}
+.family-workspace-list{display:grid;align-content:start;gap:7px;padding:14px}
+.family-workspace-row{display:block;cursor:pointer;text-align:left;background:#1c3046;color:#e9f0f9;border:1px solid #425e77;border-left-width:4px;border-radius:9px;padding:12px 14px}
+.family-workspace-row:hover,.family-workspace-row:focus-visible{border-color:#a5cfec;outline-offset:1px}
+.family-workspace-row[aria-current="true"]{background:#294660;border-color:#aed7f2;box-shadow:inset 0 0 0 1px #628daf}
+.family-workspace-row>strong{display:block;font-size:13px;line-height:1.4;overflow-wrap:anywhere}
+.family-workspace-row>small{display:block;font-size:11px;color:#afc5d8;margin-top:4px}
+.family-workspace-row.family-quiet{opacity:.66}
+.family-workspace-row.family-quiet[aria-current="true"],.family-workspace-row.family-quiet:hover{opacity:1}
+.family-workspace-row .family-gauge-head{display:block}
+.family-workspace-row .family-gauge-head strong{display:block;margin-top:4px}
+.family-workspace-detail{box-sizing:border-box;min-width:0;overflow-y:auto;padding:25px 32px 38px;background:#142233;scrollbar-color:#526a82 transparent}
+.family-workspace-detail .family-detail>p{font-size:14px;line-height:1.6;color:#c7d6e5}
+.family-workspace-detail .family-detail h3{font-size:23px;line-height:1.3;max-width:850px;overflow-wrap:anywhere}
+.family-workspace-detail .family-detail h4{font-size:16px;margin-top:22px;margin-bottom:9px}
+.family-workspace-detail .family-gauge{margin:22px 0;padding:18px 15px;border:1px solid #405974;border-radius:10px;background:#1c3145}
+.family-workspace-detail .family-gauge-head{font-size:13px}
+.family-workspace-detail .family-gauge-head strong{font-size:13px}
+.family-workspace-detail .family-gauge-track{height:17px;margin:18px 8px 8px}
+.family-workspace-detail .family-gauge-zero{height:23px}
+.family-workspace-detail .family-gauge-axis{font-size:12px}
+.family-workspace-detail .family-facet{height:34px;width:34px;font-size:18px}
+.family-workspace-detail .family-sources{list-style:none;padding:0}
+.family-workspace-detail .family-sources li{border:1px solid #38516a;border-radius:8px;padding:12px 14px;margin:8px 0;background:#1a2c41}
+.family-workspace-detail .family-sources li a{font-size:14px;line-height:1.45;overflow-wrap:anywhere}
+.family-workspace-detail .family-sources li small{margin-top:6px;font-size:12px;line-height:1.5}
+.family-workspace-detail .detail-close{display:none}
+.family-workspace-footer{background:#112033;border-top:1px solid #36516b;color:#9eafc1;padding:9px 24px;font-size:11px}
+@media(max-width:760px){
+  .family-workspace[open]{width:100vw;height:100dvh;max-height:none;border-radius:0}
+  .family-workspace-header{padding:13px 15px;gap:10px}
+  .family-workspace-header h2{font-size:18px}
+  .family-workspace-header p{font-size:11px}
+  .family-workspace-close{padding:9px;font-size:12px}
+  .family-workspace-toolbar{grid-template-columns:1fr 1fr;padding:9px 12px}
+  .family-workspace-toolbar label:first-child{grid-column:1/-1}
+  .family-workspace-columns{grid-template-columns:minmax(0,1fr);grid-template-rows:minmax(105px,28vh) minmax(0,1fr)}
+  .family-workspace-list-pane{border-right:0;border-bottom:1px solid #42536b}
+  .family-workspace-list{padding:9px;grid-template-columns:repeat(auto-fit,minmax(210px,1fr))}
+  .family-workspace-detail{padding:15px}
+  .family-workspace-footer{padding:6px 12px;font-size:10px}
+}

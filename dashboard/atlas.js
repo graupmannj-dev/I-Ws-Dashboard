@@ -28,7 +28,8 @@ const state = {
   rangeDrag:null,
   lon:52,lat:20,zoom:1,pins:[],reports:[],hitTargets:[],dimensions:{w:1,h:1,dpr:1,cx:0,cy:0,r:1},
   canvas:null,ctx:null,staticCanvas:null,staticValid:false,drag:null,lastFrame:0,
-  animationId:0,showControls:true
+  animationId:0,showControls:true,
+  familyWorkspaceSelected:null,familyWorkspaceOpener:null,familyWorkspaceLimit:100
 };
 function safe(value){return String(value??"").replace(/[&<>"']/g,s=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[s]));}
 function safeUrl(value){return typeof value==="string"&&/^https:\/\//.test(value)?value:null;}
@@ -1286,6 +1287,12 @@ function renderFamiliesList(){
   caveat.className="behavior-disclaimer";
   caveat.textContent="DISCOVERY FIRST · Calibrated extreme measurements are prioritized even with one source. Fresh alone is not proof of statistical abnormality. Green means that facet was observed—not that an event is confirmed.";
   list.appendChild(caveat);
+  const expand=document.createElement("button");
+  expand.type="button";expand.className="family-workspace-launch";
+  expand.textContent="↗ Expand evidence family workspace";
+  expand.setAttribute("aria-haspopup","dialog");
+  expand.addEventListener("click",()=>openFamilyWorkspace());
+  list.appendChild(expand);
   if(!families.length){
     const p=document.createElement("p");p.className="behavior-caution";
     p.textContent=d?.registry_status==="unavailable"
@@ -1329,7 +1336,7 @@ function renderFamiliesList(){
        ' · '+safe(item.geography_label||"No validated event location")+'</small>'+
        '<small>'+safe(item.reason||"Investigatory source only")+'</small>';
       b.insertAdjacentHTML("beforeend",familyGaugeHtml(item.anomaly_metric)+familyFacetHtml(item.evidence_facets));
-      b.addEventListener("click",()=>selectFamily(item));
+      b.addEventListener("click",()=>openFamilyWorkspace(item));
       results.appendChild(b);
     }
     if(rows.length>visibleLimit){
@@ -1345,7 +1352,9 @@ function renderFamiliesList(){
   display();
 }
 function selectFamily(f){
-  const panel=$("selectedDetail");
+  const modal=$("familyWorkspace");
+  const panel=modal.open?$("familyWorkspaceDetail"):$("selectedDetail");
+  if(modal.open) state.familyWorkspaceSelected=f.id;
   panel.hidden=false;
   const item=document.createElement("div");
   item.className="family-detail";
@@ -1355,7 +1364,9 @@ function selectFamily(f){
     '<p>'+safe(f.reason||"Source provenance review required.")+'</p>'+
     '<p><b>First observed:</b> '+safe(f.first_observed_at||"unknown")+
     ' · <b>Latest new evidence:</b> '+safe(f.last_observed_at||"unknown")+'</p>'+
-    '<p><b>Historical deviation:</b> Not calibrated. A source-count increase is not a statistical baseline score.</p>'+
+    '<p><b>Historical deviation:</b> '+safe(f.anomaly_metric?.status==="calibrated_metric"?
+      "Qualified source measurement (see the signed deviation below).":
+      "Not calibrated; collection novelty is not statistical abnormality.")+'</p>'+
     '<p><b>Corroboration:</b> Unreviewed; information-root count '+safe(f.information_root_count||1)+
     ', independence not established. <b>Geography:</b> '+safe(f.geography_precision||"unverified")+'</p>';
   item.insertAdjacentHTML("beforeend",familyGaugeHtml(f.anomaly_metric)+familyFacetHtml(f.evidence_facets));
@@ -1382,7 +1393,93 @@ function selectFamily(f){
     item.appendChild(note);
   }
   panel.replaceChildren(item);
-  panel.querySelector(".detail-close").addEventListener("click",()=>{panel.hidden=true;});
+  panel.querySelector(".detail-close").addEventListener("click",()=>{
+    if(modal.open)modal.close();else panel.hidden=true;
+  });
+  if(modal.open)renderWorkspaceList();
+}
+/* Native dialog gives the analyst a usable, keyboard-accessible analysis
+ * workspace instead of trapping detailed source reporting in a narrow panel. */
+function workspaceFamilies(){
+  return Array.isArray(state.atlas?.dynamic_bins?.families)?
+    state.atlas.dynamic_bins.families:[];
+}
+function renderWorkspaceList(){
+  const rows=workspaceFamilies();
+  const input=$("familyWorkspaceSearch"),status=$("familyWorkspaceState"),
+        source=$("familyWorkspaceSource"),target=$("familyWorkspaceList");
+  const query=input.value.toLowerCase().trim();
+  const filtered=rows.filter(f=>
+    (status.value==="all"||f.state===status.value)&&
+    (source.value==="all"||(f.source_families||[]).includes(source.value))&&
+    (!query||[f.title,...(f.source_families||[]),...(f.providers||[]),
+      ...(f.case_hints||[]),...(f.sources||[]).map(x=>x.title)].join(" ").toLowerCase().includes(query)));
+  $("familyWorkspaceCount").textContent=filtered.length+" visible of "+rows.length+
+    " candidate families"+(state.atlas?.dynamic_bins?.truncated?" · published result cap reached":"")+
+    " · anomaly and corroboration are separate";
+  target.replaceChildren();
+  const limit=state.familyWorkspaceLimit||100;
+  for(const f of filtered.slice(0,limit)){
+    const entry=document.createElement("button");
+    entry.type="button";entry.className="family-workspace-row family-"+safe(f.state);
+    entry.setAttribute("aria-current",String(state.familyWorkspaceSelected===f.id));
+    entry.innerHTML='<strong>'+safe(f.title||"Unnamed source")+'</strong>'+
+      '<small>'+safe(f.state)+" · "+safe((f.source_families||[]).join(", "))+'</small>'+
+      familyGaugeHtml(f.anomaly_metric)+familyFacetHtml(f.evidence_facets);
+    entry.addEventListener("click",()=>selectFamily(f));
+    target.appendChild(entry);
+  }
+  if(filtered.length>limit){
+    const more=document.createElement("button");more.type="button";
+    more.className="family-more";more.textContent="Load next "+Math.min(100,filtered.length-limit)+" families";
+    more.addEventListener("click",()=>{state.familyWorkspaceLimit+=100;renderWorkspaceList();});
+    target.appendChild(more);
+  }
+  if(filtered.length===0){
+    const message=document.createElement("p");message.className="behavior-caution";
+    message.textContent="No matching families in this published snapshot; source coverage may be incomplete.";
+    target.appendChild(message);
+  }
+}
+function openFamilyWorkspace(selected){
+  const dialog=$("familyWorkspace");
+  const rows=workspaceFamilies();
+  if(!dialog.open){
+    state.familyWorkspaceOpener=document.activeElement;
+    state.familyWorkspaceLimit=100;
+    const source=$("familyWorkspaceSource");
+    source.replaceChildren();
+    const all=document.createElement("option");all.value="all";all.textContent="All sources";source.appendChild(all);
+    const classes=[...new Set(rows.flatMap(f=>f.source_families||[]))].sort();
+    for(const c of classes){
+      const option=document.createElement("option");option.value=c;option.textContent=c.replace(/_/g," ");
+      source.appendChild(option);
+    }
+    dialog.showModal();
+  }
+  const current=selected||rows.find(f=>f.id===state.familyWorkspaceSelected)||rows[0];
+  if(current)selectFamily(current);
+  else {
+    state.familyWorkspaceSelected=null;
+    $("familyWorkspaceDetail").textContent="No evidence families in the current published snapshot.";
+    renderWorkspaceList();
+  }
+}
+function bindFamilyWorkspace(){
+  const dialog=$("familyWorkspace");
+  $("familyWorkspaceClose").addEventListener("click",()=>dialog.close());
+  dialog.addEventListener("click",event=>{
+    if(event.target===dialog)dialog.close();
+  });
+  dialog.addEventListener("close",()=>{
+    const opener=state.familyWorkspaceOpener;
+    if(opener?.isConnected&&typeof opener.focus==="function")opener.focus();
+  });
+  for(const id of ["familyWorkspaceSearch","familyWorkspaceState","familyWorkspaceSource"]){
+    $(id).addEventListener(id==="familyWorkspaceSearch"?"input":"change",()=>{
+      state.familyWorkspaceLimit=100;renderWorkspaceList();
+    });
+  }
 }
 /* Public source-review queue: accepted source evidence, not verified incidents.
  * Unassigned reports remain visible without fabricating source geography. */
@@ -1838,6 +1935,7 @@ function updateKpis(){
 }
 async function init(){
   bindControls();
+  bindFamilyWorkspace();
   attachCanvas();
   try{
     const [data,geo]=await Promise.all([
