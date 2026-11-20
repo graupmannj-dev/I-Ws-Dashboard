@@ -15,6 +15,8 @@ statistical abnormality are separate axes.
   count of airport records displaying a NAS event, and source-scope definition.
 - For a current sample, compare one successfully observed same-UTC-clock-time
   sample from each of the preceding 28 calendar days (±45 minutes).
+- Require an exact match of the sampled airport-ID set, validated by its
+  SHA-256 roster digest; equal sample sizes alone are not comparable.
 - Require >=14 actual reference days, nonzero sample SD, valid source schema,
   current matching health, and matching authoritative source endpoint.
 - Never convert a failed or omitted sample into zero. A baseline absence
