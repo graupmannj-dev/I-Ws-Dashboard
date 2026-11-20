@@ -367,3 +367,22 @@ a{color:#a9d4ff}
 .family-sources li{padding:7px 0;overflow-wrap:anywhere}
 .family-sources small{display:block;color:#b7c2d1;font-size:11px}
 .family-sources a{color:#aed2f8}
+
+/* The magnitude gauge and source-facet marks are separate evidence axes. */
+.family-gauge{margin-top:9px;padding-top:7px;border-top:1px solid rgba(160,178,193,.22)}
+.family-gauge-head{display:flex;justify-content:space-between;gap:8px;align-items:baseline;font-size:10px;color:#b8c9d9}
+.family-gauge-head strong{font-size:10px;text-align:right;font-weight:500;color:#e0e8f0}
+.family-gauge-track{height:11px;border-radius:7px;margin:12px 4px 5px;position:relative;background:linear-gradient(90deg,#33465b 0%,#536578 50%,#33465b 100%);outline:1px solid #607387}
+.family-gauge-zero{position:absolute;left:50%;height:17px;top:-3px;width:1px;background:#dbe6ed;opacity:.85}
+.family-gauge-marker{position:absolute;top:-10px;transform:translateX(-50%);width:0;height:0;border-left:6px solid transparent;border-right:6px solid transparent;border-top:9px solid #f1c46a;filter:drop-shadow(0 0 3px #1a2230)}
+.family-gauge-axis{display:flex;justify-content:space-between;color:#aabacf;font-size:10px;margin:0 3px}
+.family-facets{display:flex;gap:5px;flex-wrap:wrap;margin-top:8px;align-items:center}
+.family-facet{height:23px;width:23px;border:1px solid transparent;border-radius:6px;display:inline-flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;cursor:help}
+.facet-supported{background:#184538;border-color:#46a47f;color:#9fe1c1}
+.facet-partial{background:#4b3e23;border-color:#b79756;color:#f1d590}
+.facet-not_measured,.facet-not_observed{background:#263240;border-color:#576779;color:#bac5d4}
+.facet-contradicted{background:#502b34;border-color:#d17e8d;color:#ffb4bf}
+.family-facet:focus-visible{outline:2px solid #effaff;outline-offset:2px}
+.family-detail .family-gauge{margin:14px 0}
+.family-detail .family-facets{margin-bottom:14px}
+.family-more{cursor:pointer;padding:9px 12px;background:#1d344a;color:#d1e7f7;border-radius:8px;border:1px solid #5b7f9f}

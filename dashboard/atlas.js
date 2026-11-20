@@ -1240,6 +1240,35 @@ function renderEvaluationList(){
 
 /* Source-grounded families from all normalized collectors. Visible novelty
  * never implies independent corroboration or a measured z-score. */
+/* Two deliberately independent dimensions: calibrated magnitude and
+ * source-facet evidence. Missing calibration is not zero deviation. */
+function familyGaugeHtml(metric){
+  const m=metric&&typeof metric==="object"?metric:{};
+  const z=Number(m.z_score);
+  const calibrated=m.status==="calibrated_metric"&&m.z_score!==null&&m.z_score!==undefined&&Number.isFinite(z);
+  const score=calibrated?Math.round(z*100)/100:null;
+  const pos=calibrated?Math.max(0,Math.min(100,50+10*z)):null;
+  const label=calibrated?
+    safe(m.metric||"Named source metric")+" · "+score+"σ ("+safe(m.observed)+" "+safe(m.unit||"")+")":
+    "Not calibrated · No comparable numeric baseline";
+  return '<div class="family-gauge" role="img" aria-label="'+safe("Deviation from baseline: "+label)+'">'+
+    '<div class="family-gauge-head"><span>Deviation from baseline</span><strong>'+label+'</strong></div>'+
+    '<div class="family-gauge-track"><span class="family-gauge-zero"></span>'+
+    (calibrated?'<span class="family-gauge-marker" style="left:'+pos+'%"></span>':'')+'</div>'+
+    '<div class="family-gauge-axis"><span>−5σ</span><span>0</span><span>+5σ</span></div></div>';
+}
+function familyFacetHtml(data){
+  const vals=Array.isArray(data?.values)?data.values:[];
+  const keys={supported:"✓",partial:"~",not_measured:"?",not_observed:"○",contradicted:"!"};
+  const allowed=new Set(Object.keys(keys));
+  return '<div class="family-facets" role="group" aria-label="Evidence facets, not event verification">'+
+    vals.map(v=>{
+      const status=allowed.has(v.status)?v.status:"not_measured";
+      const label=safe((v.label||v.key||"source")+" — "+status.replace(/_/g," ")+
+        ". "+(v.reason||"Review source coverage."));
+      return '<span class="family-facet facet-'+status+'" role="img" tabindex="0" aria-label="'+label+'" title="'+label+'">'+keys[status]+'</span>';
+    }).join("")+'</div>';
+}
 function renderFamiliesList(){
   const list=$("watchlist");
   list.classList.add("behavior-view");
@@ -1255,7 +1284,7 @@ function renderFamiliesList(){
   $("watchFoot").textContent="First-seen chronology · global candidate sources, not confirmed incidents.";
   const caveat=document.createElement("p");
   caveat.className="behavior-disclaimer";
-  caveat.textContent="DISCOVERY FIRST · One unusual source is reviewable without corroboration. Fresh means newly captured, not statistically abnormal. No family has a validated z-score yet.";
+  caveat.textContent="DISCOVERY FIRST · Calibrated extreme measurements are prioritized even with one source. Fresh alone is not proof of statistical abnormality. Green means that facet was observed—not that an event is confirmed.";
   list.appendChild(caveat);
   if(!families.length){
     const p=document.createElement("p");p.className="behavior-caution";
@@ -1299,6 +1328,7 @@ function renderFamiliesList(){
        '<small>First evidence '+safe(item.last_observed_at||"unknown")+
        ' · '+safe(item.geography_label||"No validated event location")+'</small>'+
        '<small>'+safe(item.reason||"Investigatory source only")+'</small>';
+      b.insertAdjacentHTML("beforeend",familyGaugeHtml(item.anomaly_metric)+familyFacetHtml(item.evidence_facets));
       b.addEventListener("click",()=>selectFamily(item));
       results.appendChild(b);
     }
@@ -1328,6 +1358,7 @@ function selectFamily(f){
     '<p><b>Historical deviation:</b> Not calibrated. A source-count increase is not a statistical baseline score.</p>'+
     '<p><b>Corroboration:</b> Unreviewed; information-root count '+safe(f.information_root_count||1)+
     ', independence not established. <b>Geography:</b> '+safe(f.geography_precision||"unverified")+'</p>';
+  item.insertAdjacentHTML("beforeend",familyGaugeHtml(f.anomaly_metric)+familyFacetHtml(f.evidence_facets));
   const heading=document.createElement("h4");heading.textContent="Underlying source items";item.appendChild(heading);
   const ul=document.createElement("ul");ul.className="family-sources";
   for(const src of (f.sources||[])){
