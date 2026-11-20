@@ -96,6 +96,14 @@ async function refresh(){
         source_scope:"FAA NAS monitored U.S. airport records",missingness:"No current health record"};
     }
   }
+  // Missing provider rows are coverage gaps, not an absent surveillance need.
+  for(const mode of Object.keys(FRESH_HOURS)){
+    if(!(mode in rows)){
+      rows[mode]={mode,status:"unavailable",provider_status:"never_checked_or_missing",
+        source_scope:"No validated source scope in this snapshot",
+        missingness:"not_measured_not_zero"};
+    }
+  }
   draw(rows,note);
   $("sourceRefresh").disabled=false;
 }
