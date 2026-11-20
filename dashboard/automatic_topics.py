@@ -106,7 +106,7 @@ def _subject_geo(row):
     # Some source adapters expose the target country only in the title.
     # A source-declared "country FI" code is subject context, never an event
     # geolocation. Different country targets must not be clustered together.
-    code=re.search(r"\\bcountry\\s+([A-Za-z]{2})\\b",title,re.I)
+    code=re.search(r"\bcountry\s+([A-Za-z]{2})\b",title,re.I)
     if code:
         return frozenset(("iso:"+code.group(1).upper(),))
     countries={c.casefold() for c in COUNTRY_RE.findall(title)}
@@ -242,6 +242,12 @@ def assign(rows, prior=None):
                 inverted[t].add(gid)
     new_count=0
     for doc in docs:
+        # Do not create thousands of permanent topic seeds for generic
+        # advisory headlines or too-short boilerplate. They remain individual
+        # source observations in AIBA's main queue, fully discoverable.
+        if doc["domain"]=="advisory" or len(
+                set(doc["terms"])-GENERIC)<MIN_SHARED_TERMS:
+            continue
         key=doc["key"]
         if key in assignments:
             if assignments[key] not in groups:
@@ -288,7 +294,9 @@ def _title(seed,docs):
     if len(docs)>1:
         for doc in docs:
             counts.update(set(doc["terms"])-GENERIC)
-    shared=[t for t,n in counts.most_common() if n>=2]
+    seed_order={t:i for i,t in enumerate(_raw_tokens(seed.get("title","")))}
+    shared=sorted((t for t,n in counts.items() if n>=2),
+                  key=lambda t:(-counts[t],seed_order.get(t,999),t))
     if len(shared)<2:
         shared=[t for t in seed.get("terms",{}) if t not in GENERIC]
     area=sorted(seed.get("geo",[]))
