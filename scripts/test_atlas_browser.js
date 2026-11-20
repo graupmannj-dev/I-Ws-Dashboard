@@ -45,6 +45,11 @@ const assert = require("node:assert/strict");
   assert.match(await page.title(),/AIBA/);
   assert.equal(await page.locator(".watch-card").count(),10);
   // The source queue must remain discoverable even with zero accepted reports.
+
+  await page.locator("#tabPipeline").click();
+  assert.match(await page.locator("#watchlist").innerText(),/Evidence visibility audit|COUNTS DESCRIBE DIFFERENT FUNNELS/);
+  assert.match(await page.locator("#watchlist").innerText(),/No counts are verified threats/i);
+  await page.locator("#tabAll").click();
   await page.locator("#tabQueue").click();
   assert.match(await page.locator("#watchlist").innerText(),/UNREVIEWED SOURCE EVIDENCE/);
   assert.equal(await page.locator('input[aria-label="Search source queue"]').count(),1);
