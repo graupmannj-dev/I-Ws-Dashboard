@@ -31,7 +31,7 @@ SCOPE={
     "usgs":"USGS M4.5+ earthquakes worldwide, rolling past day; source thresholds apply",
     "eonet":"NASA EONET open natural event catalog, recent 7 days; limit 110",
     "nws":"U.S. National Weather Service active Florida-area weather alerts, first 110 returned",
-    "usace":"USACE NTNI active notices beginning in the last day, U.S. inland waterways; first 110",
+    "usace":"USACE NTNI active notices for sampled districts MVP/MVS/SWG; up to 110 total",
     "coops":"NOAA CO-OPS water levels at San Francisco, Key West and Sewells Point; stations only",
 }
 PORT_STATIONS={
@@ -44,7 +44,7 @@ HOST_ALLOW={
  "nws":"api.weather.gov","usace":"ndc.ops.usace.army.mil",
  "coops":"api.tidesandcurrents.noaa.gov",
 }
-MAX_URLS={"usgs":1,"eonet":1,"nws":1,"usace":1,"coops":3}
+MAX_URLS={"usgs":1,"eonet":1,"nws":1,"usace":3,"coops":3}
 
 
 def iso(t):
@@ -107,8 +107,8 @@ def urls(mode,now):
     if mode=="nws":
         return ["https://api.weather.gov/alerts/active?area=FL"]
     if mode=="usace":
-        start=(now-dt.timedelta(days=1)).strftime("%d%m%Y")
-        return ["https://ndc.ops.usace.army.mil/ords/ntni/json_data/notices_geoJson/"+start]
+        root="https://ndc.ops.usace.army.mil/ords/ntni/json_data/notices_by_district/"
+        return [root+x for x in ("MVP","MVS","SWG")]
     if mode=="coops":
         root="https://api.tidesandcurrents.noaa.gov/api/prod/datagetter?"
         return [root+urllib.parse.urlencode({
@@ -238,14 +238,19 @@ def adapt_usace(data,checked,url):
         if not isinstance(p,dict):continue
         # USACE provider field naming may differ between district feeds;
         # refuse a notice without a distinct declared ID.
-        rid=next((str(p[k]) for k in ("notice_id","noticeId","NOTICE_ID","ntni_id","id","ID")
+        rid=next((str(p[k]) for k in ("controlnumber","notice_id","noticeId","NOTICE_ID","ntni_id","id","ID")
                   if p.get(k)),None)
         if not rid:continue
         title=next((p[k] for k in ("title","TITLE","subject","SUBJECT","notice_title")
                     if p.get(k)),None)
+        if not title and p.get("waterways"):
+            title=("NTNI notice "+clean(p.get("noticeno") or rid,60)+
+                   " · "+clean(p["waterways"],145))
         if not title:continue
-        link=source_url(p.get("url") or p.get("link") or p.get("document_url"),"usace") or url
-        at=next((p[k] for k in ("issued_at","issue_date","issueDate","publish_date","start_date")
+        link=source_url(p.get("noticelink") or p.get("url") or p.get("link")
+                        or p.get("document_url"),"usace") or url
+        at=next((p[k] for k in ("issuedate","issued_at","issue_date","issueDate",
+                                 "publish_date","start_date")
                  if p.get(k)),None)
         record=entry("usace",rid,title,link,checked,
                      published=at,first_seen=at,
