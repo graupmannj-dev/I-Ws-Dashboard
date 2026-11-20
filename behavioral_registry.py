@@ -268,7 +268,7 @@ def normalize(mode, row, now):
             "lat":event_site[0],"lon":event_site[1],
             "location_quality":"source_declared_unreviewed",
         }
-    if mode in ("usgs","eonet","nws","usace","coops","swpc","ripe","uk_tenders","wiki_edits"):
+    if mode in ("usgs","eonet","nws","usace","coops","swpc","ripe","uk_tenders","wiki_edits","fema_cbp"):
         # Metadata is source-declared: no synthetic anomaly score or
         # independent corroboration is inferred from natural hazards.
         result["source_scope"]=str(row.get("source_scope") or "")[:220]
