@@ -12,10 +12,12 @@ const NAMES={amsa:"AMSA NAVAREA X",commercial:"Commercial media sampling",
   usgs:"USGS earthquake measurements",eonet:"NASA EONET natural events",
   nws:"NOAA/NWS marine weather alerts",usace:"USACE navigation notices",
   coops:"NOAA CO-OPS monitored port stations",
-  swpc:"NOAA space-weather alerts",ripe:"RIPE Atlas public network aggregate"};
+  swpc:"NOAA space-weather alerts",ripe:"RIPE Atlas public network aggregate",
+  uk_tenders:"UK Find a Tender releases",wiki_edits:"Wikipedia public edits"};
 const FRESH_HOURS={amsa:6,commercial:48,ioda:6,live_airspace:2,live_maritime:2,
   nga:6,official:12,watchlist:12,faa_nas:25/60,gdelt:48,wikipedia:72,
-  usgs:8,eonet:8,nws:8,usace:12,coops:8,swpc:8,ripe:8};
+  usgs:8,eonet:8,nws:8,usace:12,coops:8,swpc:8,ripe:8,
+  uk_tenders:8,wiki_edits:8};
 // A source's ROLE and its HEALTH are separate. News can corroborate a lead,
 // but syndicated reports do not by themselves constitute independent sensors.
 const SOURCE_META={
@@ -51,6 +53,10 @@ const SOURCE_META={
     "NOAA SWPC issues solar and geomagnetic warnings that can provide benign context for communications or navigation anomalies. These bulletins are not direct evidence of hostile preparations."},
   ripe:{role:"Public network measurement",description:
     "RIPE Atlas publishes public ping results to a global reference target; CAIRN keeps only aggregate latency and the public sampled-probe denominator. This is not country-level connectivity coverage or an attributable outage."},
+  uk_tenders:{role:"Institutional procurement proxy",description:
+    "UK Find a Tender publishes official OCDS public contract releases. This bounded update sample is not all UK purchasing, a measurement of urgency, or proof that goods or services were delivered."},
+  wiki_edits:{role:"Public attention/context",description:
+    "Wikipedia public mainspace edits are aggregated in bounded three-hour samples from three language editions. No editor identities are recorded; edits alone do not establish an underlying event."},
   gdelt:{role:"Context and corroboration",description:
     "GDELT indexes worldwide news coverage, reported events and media attention. CAIRN uses it primarily to establish background and compare developing reporting, not as a direct operational sensor or independently verified event record."},
   wikipedia:{role:"Alternative attention proxy",description:
