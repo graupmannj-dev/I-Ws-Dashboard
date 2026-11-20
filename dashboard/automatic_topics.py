@@ -227,6 +227,22 @@ TEMPLATE_WORDS=frozenset((
     "connectivity anomaly detected news report latest update security"
 ).split())
 MAX_SEMANTIC_SEEDS=2800
+BROAD_SUBJECT_WORDS=frozenset((
+    "ship shipping cargo freight freighter maritime naval sea ocean vessel port "
+    "traffic airspace aircraft airport flight network internet mobile "
+    "official bulletin warning source operations report halt announced "
+    "temporary state government"
+).split())
+
+
+def _named_subjects(title):
+    # Candidate named subjects only; they are not event/geolocation claims.
+    words=re.findall(r"\\b[A-Z][a-z]{3,}\\b",title or "")
+    result=set()
+    for word in words:
+        result.update(normalized_terms(word))
+    return result-BROAD_SUBJECT_WORDS-GENERIC-NOISE
+
 
 
 def _roles(title):
@@ -265,12 +281,19 @@ def _reasoning(doc,seed,metric):
     # allow paraphrased reports across different original publishers. A
     # standalone country or generic activity word does NOT suffice.
     role_tokens=set().union(*ACTIVITY_ROLES.values())
-    named_or_subject=shared-role_tokens
-    paraphrase_ok=(metric["score"]>=HYBRID_SUBJECT_THRESHOLD
-        and shared_roles and bool(named_or_subject)
-        and len(shared)>=2
-        and ((metric["latent_cosine"] or 0)>=0.67
-             or metric["tfidf_cosine"]>=0.55))
+    shared_named=_named_subjects(doc["title"])&_named_subjects(seed["title"])
+    # Short articles and market contracts often have too little corpus
+    # context for SVD. Strong role + shared named entity + several mapped
+    # substantive terms is therefore an independent high-precision route.
+    paraphrase_ok=(
+        shared_roles and len(shared)>=3 and bool(shared_named)
+        and (metric["score"]>=0.25 or legacy>=0.35)
+    ) or (
+        metric["score"]>=HYBRID_SUBJECT_THRESHOLD
+        and same_subject and shared_roles and len(shared)>=2
+        and bool((shared-role_tokens)-BROAD_SUBJECT_WORDS)
+        and (metric["latent_cosine"] or 0)>=0.67
+    )
     if not (legacy_ok or hybrid_ok or paraphrase_ok):
         return None
     if len(shared)<2 and not paraphrase_ok and not legacy_ok:
@@ -281,6 +304,7 @@ def _reasoning(doc,seed,metric):
         "raw_text_similarity":metric["tfidf_cosine"],
         "latent_semantic_similarity":metric["latent_cosine"],
         "shared_subject_terms":sorted(shared)[:12],
+        "shared_named_subjects":sorted(_named_subjects(doc["title"])&_named_subjects(seed["title"]))[:8],
         "shared_activity_roles":sorted(doc_roles & seed_roles),
         "subject_geography_compatible":not (ga and gb and ga.isdisjoint(gb)),
         "same_source_document":False,
