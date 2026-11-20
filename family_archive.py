@@ -177,6 +177,33 @@ def update(state, clock=None, write=True):
                    for shard in shards.values() for group in shard["roots"].values()
                    for row in group["members"].values()]
     all_records.sort(key=lambda v: (v["first_observed_at"], v["id"]), reverse=True)
+    # Automatically identify recurring analytical subjects on source
+    # DOCUMENT identities. This ledger survives the hot index and creates
+    # stable topical IDs when new official notices and articles arrive.
+    from dashboard.automatic_topics import (
+        SCHEMA as TOPIC_SCHEMA, MAX_DOCS_PER_UPDATE, assign as assign_topics,
+        documents as topic_documents,
+    )
+    topic_path = base / "topic_index.json"
+    previous_topic_index = read_strict(
+        topic_path, TOPIC_SCHEMA,
+        {"schema": TOPIC_SCHEMA, "groups": {}, "assignments": {}})
+    topic_index = assign_topics(all_records[:MAX_DOCS_PER_UPDATE], previous_topic_index)
+    published_records = all_records[:MAX_PUBLIC_RECORDS]
+    published_doc_ids = {d["key"] for d in topic_documents(published_records)}
+    public_assignments = {
+        k:v for k,v in topic_index["assignments"].items() if k in published_doc_ids}
+    public_group_ids = set(public_assignments.values())
+    public_topic_index = {
+        "schema": TOPIC_SCHEMA,
+        "groups": {g: topic_index["groups"][g] for g in public_group_ids},
+        "assignments": public_assignments,
+        "total_document_assignments": topic_index["total_document_assignments"],
+        "total_stable_topics": topic_index["total_stable_topics"],
+        "public_index_truncated": len(public_assignments) <
+            topic_index["total_document_assignments"],
+    }
+
 
     # Accumulate report relationships as historical candidate links, but do
     # not claim the reports are independent or resolve to one actual event.
@@ -236,7 +263,10 @@ def update(state, clock=None, write=True):
         "record_count_total": rec_count, "root_count_total": root_count,
         "public_record_count": min(len(all_records), MAX_PUBLIC_RECORDS),
         "public_snapshot_truncated": len(all_records) > MAX_PUBLIC_RECORDS,
-        "records": all_records[:MAX_PUBLIC_RECORDS],
+        "records": published_records,
+        "automatic_topic_index": public_topic_index,
+        "automatic_topic_count_total": topic_index["total_stable_topics"],
+        "automatic_topic_document_count_total": topic_index["total_document_assignments"],
         "source_health": raw_registry.get("source_health", {}),
         "historical_relationship_count": len(links),
         "report_relationships": {"candidate_groups": public_links},
@@ -255,6 +285,10 @@ def update(state, clock=None, write=True):
                 write_json(path, shard)
         if read_strict(relations_path, SCHEMA, {"schema": SCHEMA, "links": {}}) != relationships:
             write_json(relations_path, relationships)
+        # Stable seed/document assignments are append-only. Routine re-polls
+        # do not reassign old documents, preserving analyst history.
+        if previous_topic_index != topic_index:
+            write_json(topic_path, topic_index)
         write_json(manifest_path, {
             "schema": SCHEMA, "bootstrapped": True, "generated_at": now.isoformat(),
             "root_count": root_count, "record_count": rec_count,
