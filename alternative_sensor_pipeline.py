@@ -243,8 +243,12 @@ def nws(data,now):
     for feature in raw:
         prop=feature.get("properties") if isinstance(feature,dict) else None
         if not isinstance(prop,dict):continue
-        ident=prop.get("id")
-        if not isinstance(ident,str) or not ident.startswith("https://api.weather.gov/"):
+        # NWS GeoJSON: properties.id is commonly an urn:oid; the
+        # dereferenceable HTTPS resource lives at feature.id or @id.
+        ident=next((v for v in (feature.get("id"),prop.get("@id"),prop.get("id"))
+                    if isinstance(v,str) and v.startswith("https://api.weather.gov/")),
+                   None)
+        if not ident:
             continue
         sent=source_time(prop.get("sent"),now)
         if not sent:continue
@@ -257,6 +261,8 @@ def nws(data,now):
                 "weather_alert_area_not_independent_event_location"),
             kind="weather_warning_or_watch_not_observed_hazard",
             source_dependency=f"nws:source_alert:{ident}"))
+    if raw and not rows:
+        raise ValueError("NWS produced active features but no source identities or timestamps")
     return rows,{"total_received":len(raw),"next_page_present":bool(data.get("pagination",{}).get("next")) if isinstance(data.get("pagination"),dict) else False}
 
 
