@@ -5,7 +5,7 @@ on:
     branches: [main]
   workflow_dispatch:
   workflow_run:
-    workflows: ['Collect AIBA operational feeds', 'Ingest AIBA analyst OSINT report']
+    workflows: ['Collect AIBA operational feeds', 'Ingest AIBA analyst OSINT report', 'Collect CAIRN public alternative sensors']
     types: [completed]
     branches: [main]
   schedule:
@@ -16,6 +16,40 @@ concurrency:
   group: aiba-${{ github.ref }}
   cancel-in-progress: false
 jobs:
+  cairn-public-sensor-probe:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Inspect bounded first-party public source envelopes without publishing
+        run: |
+          python alternative_sensor_pipeline.py --state /tmp/cairn-public-sensor-probe
+      - name: Assert provider-level health receipts and no invented all-clear
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          from alternative_sensor_pipeline import MODES,SCHEMA
+          path=Path("/tmp/cairn-public-sensor-probe/health")
+          for name in MODES:
+              d=json.loads((path/(name+".json")).read_text())
+              assert d["schema"]==SCHEMA
+              assert d["status"] in ("collected","partial","unavailable")
+              assert d["operational_warning_approved"] is False
+              assert d["source_queries_attempted"]>=1
+              if d["status"]=="unavailable":
+                  assert d["records"] is None
+                  assert d["missingness"]=="not_measured_not_zero"
+              print(name, d["status"], "valid records:",
+                    d["records"],"queries:",
+                    d["source_queries_ok"],"/",d["source_queries_attempted"])
+          PY
   topic-quality-audit:
     if: github.event_name == 'pull_request'
     runs-on: ubuntu-latest

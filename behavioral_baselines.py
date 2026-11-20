@@ -65,6 +65,12 @@ def one_mode(mode,snapshots,now):
     for at,d in snapshots:
         h=d["source_health"].get(mode)
         if not isinstance(h,dict):
+            # Historical registry snapshots predate some optional source
+            # adapters. Absence *before onboarding* is unknown coverage,
+            # never a measured zero or reason to invalidate all prior history.
+            if (mode not in d["snapshot_counts_by_mode"] and
+                    mode not in d["first_seen_counts_by_mode"]):
+                continue
             raise ValueError(f"Missing source-health entry for {mode}")
         checked=when(h.get("checked_at"))
         if checked and checked>at+dt.timedelta(minutes=5):

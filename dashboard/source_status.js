@@ -8,9 +8,13 @@ const NAMES={amsa:"AMSA NAVAREA X",commercial:"Commercial media sampling",
   live_maritime:"Danish NIORD maritime notices",nga:"NGA broadcast warnings",
   official:"U.S. / U.K. official advisories",watchlist:"Prediction-market contracts",
   faa_nas:"FAA NAS airport operations",
-  gdelt:"GDELT news/event index",wikipedia:"Wikipedia public attention"};
+  gdelt:"GDELT news/event index",wikipedia:"Wikipedia public attention",
+  usgs:"USGS earthquake measurements",eonet:"NASA EONET natural events",
+  nws:"NOAA/NWS marine weather alerts",usace:"USACE navigation notices",
+  coops:"NOAA CO-OPS monitored port stations"};
 const FRESH_HOURS={amsa:6,commercial:48,ioda:6,live_airspace:2,live_maritime:2,
-  nga:6,official:12,watchlist:12,faa_nas:25/60,gdelt:48,wikipedia:72};
+  nga:6,official:12,watchlist:12,faa_nas:25/60,gdelt:48,wikipedia:72,
+  usgs:8,eonet:8,nws:8,usace:12,coops:8};
 // A source's ROLE and its HEALTH are separate. News can corroborate a lead,
 // but syndicated reports do not by themselves constitute independent sensors.
 const SOURCE_META={
@@ -32,6 +36,16 @@ const SOURCE_META={
     "Selected prediction-market contracts provide prices and timelines reflecting participants' expectations about specific outcomes. Prices are neither objective conflict probabilities nor independent evidence that an event occurred."},
   faa_nas:{role:"Alternative indicator",description:
     "The FAA National Airspace System feed reports selected U.S. airport operational events such as ground stops and disruption notices. It is a monitored sample, not national completeness or an assessment of cause."},
+  usgs:{role:"Environmental context / independent physical mechanism",description:
+    "The US Geological Survey provides timestamped worldwide earthquake measurements from a magnitude-filtered past-day feed. Seismic activity can explain infrastructure disturbances but does not establish any hostile action."},
+  eonet:{role:"Environmental context / competing explanation",description:
+    "NASA EONET catalogs natural events and supporting imagery links. This seven-day bounded feed is incomplete and does not establish a military cause."},
+  nws:{role:"Environmental context / competing explanation",description:
+    "National Weather Service marine alerts describe active U.S. weather hazards that may explain restrictions, outages or maritime diversion. This bounded marine subset is not worldwide weather monitoring."},
+  usace:{role:"Alternative indicator — official navigation restrictions",description:
+    "U.S. Army Corps of Engineers navigation notices describe restrictions affecting inland waterways and locks. A notice is not evidence that actual vessel throughput changed."},
+  coops:{role:"Alternative indicator — selected physical port telemetry",description:
+    "NOAA CO-OPS supplies observed water levels for three selected U.S. stations. Readings have no anomaly classification until comparable station-specific baselines exist."},
   gdelt:{role:"Context and corroboration",description:
     "GDELT indexes worldwide news coverage, reported events and media attention. CAIRN uses it primarily to establish background and compare developing reporting, not as a direct operational sensor or independently verified event record."},
   wikipedia:{role:"Alternative attention proxy",description:

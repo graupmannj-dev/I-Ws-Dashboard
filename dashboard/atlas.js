@@ -1503,7 +1503,22 @@ function selectFamily(f){
     meta.textContent=[src.provider||"Source unknown",src.source_family||"unknown family",
       "First captured "+(src.first_observed_at||"unknown"),
       "Source published "+(src.published_at||"undated")].join(" · ");
-    li.append(link,meta);ul.appendChild(li);
+    li.append(link,meta);
+    const raw=src.source_measurement;
+    if(raw && typeof raw==="object" && Number.isFinite(Number(raw.value))){
+      const measure=document.createElement("small");
+      measure.textContent="Observed "+(raw.name||"physical reading")+": "+
+        Number(raw.value)+" "+(raw.unit||"source units")+
+        " · Not calibrated against a comparable source baseline";
+      li.appendChild(measure);
+    }
+    if(src.source_dependency_class){
+      const dependent=document.createElement("small");
+      dependent.textContent="Measurement mechanism: "+src.source_dependency_class+
+        " · Source family does not establish independent event corroboration";
+      li.appendChild(dependent);
+    }
+    ul.appendChild(li);
   }
   item.appendChild(ul);
   if(f.sources_truncated){
@@ -1524,10 +1539,12 @@ function selectFamily(f){
 // is kept visible rather than discarded or implicitly counted as confirmation.
 const ALTERNATIVE_FAMILIES=new Set([
   "maritime_restriction","airspace_restriction","internet_reachability",
-  "aviation_operations","market_expectation",
+  "aviation_operations","market_expectation","waterway_restriction","port_conditions",
 ]);
 function familyEvidenceRole(f){
   const kinds=f.source_families||[];
+  if(kinds.length&&kinds.every(k=>k==="environmental_context"))
+    return "Environmental context / competing explanation";
   return kinds.some(k=>ALTERNATIVE_FAMILIES.has(k))?
     "Alternative-source evidence":
     kinds.some(k=>k==="commercial_media"||k==="protective_notice")?

@@ -33,6 +33,29 @@ def daily(state,day,mode="live_airspace",count=10,new=0,
 
 
 class ProviderBaselineTests(unittest.TestCase):
+    def test_pre_onboarding_historical_snapshots_are_unknown_not_corrupt(self):
+        with tempfile.TemporaryDirectory() as d:
+            state=Path(d)
+            # An old registry file predates the optional environmental sensor
+            # modes: preserve the older observations without manufacturing zero.
+            old_modes=[m for m in MODES if m not in
+                       ("usgs","eonet","nws","usace","coops")]
+            yesterday=NOW-dt.timedelta(days=1)
+            old={
+                "schema":REGISTRY_SCHEMA,"generated_at":iso(yesterday),
+                "source_health":{m:{"checked_at":None,
+                  "status":"stale_or_unavailable"} for m in old_modes},
+                "snapshot_counts_by_mode":{m:None for m in old_modes},
+                "first_seen_counts_by_mode":{m:None for m in old_modes},
+                "new_records":[],
+            }
+            path=state/"history"/"behavioral_registry"/"old-adapter.json"
+            write_json(path,old)
+            out=build(state,clock=lambda:NOW,write=False)
+            self.assertEqual(out["sources"]["usgs"]["comparable_provider_snapshot_days"],0)
+            self.assertIsNone(out["sources"]["usgs"]["median_daily_source_snapshot_records"])
+            self.assertEqual(out["anomalies_promoted"],0)
+
     def test_no_history_yields_unknown_not_zero(self):
         with tempfile.TemporaryDirectory() as d:
             s=Path(d)

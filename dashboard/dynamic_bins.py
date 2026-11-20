@@ -111,6 +111,10 @@ def normalize_registry(registry):
             "collection_mode": clean(record.get("collection_mode"), 80),
             "calibrated_metric": record.get("calibrated_metric") if
                 isinstance(record.get("calibrated_metric"), dict) else None,
+            "source_measurement": record.get("source_measurement") if
+                isinstance(record.get("source_measurement"), dict) else None,
+            "source_dependency_class":clean(record.get("source_dependency_class"),100) or None,
+            "source_scope":clean(record.get("source_scope"),220) or None,
             "origin": "behavioral_registry",
             "geography_label": clean(geo.get("label"), 160) or None,
             "geography_key": clean(geo.get("key"), 160) or None,

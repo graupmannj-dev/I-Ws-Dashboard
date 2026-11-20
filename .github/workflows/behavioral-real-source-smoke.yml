@@ -60,7 +60,15 @@ jobs:
           assert evaluation['calibrated_precision'] is None
           assert evaluation['false_alarm_rate'] is None
           assert (Path('/tmp/aiba-behavioral-preview')/'behavior'/'index.html').is_file()
-          assert set(reg['source_health'])=={'ioda','nga','amsa','official','commercial','watchlist','live_airspace','live_maritime'}
+          from behavioral_registry import MODES
+          assert set(reg['source_health'])==set(MODES)
+          # These source modes are intentionally not present in the
+          # historical evidence branch before first scheduled collection.
+          # Their absence must remain explicit missingness, not a zero count.
+          for name in ('usgs','eonet','nws','usace','coops'):
+              if not (Path('evidence/observations/latest')/(name+'.json')).is_file():
+                  assert reg['source_health'][name]['status']=='stale_or_unavailable'
+                  assert reg['source_health'][name]['missingness']=='not_measured_not_zero'
           # These authority notices were collected by a different,
           # already-running workflow. Parse its actual cached geometry
           # regardless of whether the latest snapshot is currently fresh.
