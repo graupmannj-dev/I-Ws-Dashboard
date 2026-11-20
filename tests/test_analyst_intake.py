@@ -143,6 +143,17 @@ class AnalystIntakeTests(unittest.TestCase):
             self.assertFalse(orphan["reviewed_warning"])
             self.assertTrue(orphan["source_url"].startswith("https://"))
             self.assertEqual(current["intake_queue"][0]["classification"], "unreviewed_source_report")
+            diag=current["visibility_funnel"]
+            self.assertEqual(diag["analyst_intake_accepted"], 2)
+            self.assertEqual(diag["new_source_reports_for_review"], 2)
+            self.assertEqual(diag["source_queue_unassigned"], 1)
+            self.assertEqual(diag["reviewed_case_changes"], 0)
+            self.assertFalse(diag["reviewed_warning_from_source_queue"])
+            self.assertIn("no_source_verified_map_association", orphan["visibility_reasons"])
+            self.assertEqual(orphan["display_targets"], ["source_queue"])
+            self.assertIn("dated_map_context", next(x for x in current["intake_queue"]
+                if x["id"]=="analyst:test-taiwan-001")["display_targets"])
+
 
             late = generate(site, generated="2026-11-11T18:00:00+00:00",
                             state_dir=state)
