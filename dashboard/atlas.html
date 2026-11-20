@@ -218,6 +218,42 @@
       </div>
     </section>
   </div>
+  <dialog id="familyWorkspace" class="family-workspace" aria-labelledby="familyWorkspaceTitle" aria-describedby="familyWorkspaceCaveat">
+    <div class="family-workspace-header">
+      <div>
+        <p class="workspace-eyebrow">AIBA · SOURCE-GROUNDED ANALYST REVIEW</p>
+        <h2 id="familyWorkspaceTitle">Evidence family workspace</h2>
+        <p id="familyWorkspaceCaveat">Unusual observations can be shown without corroboration. Statistical abnormality, evidence support, and threat attribution are separate judgments.</p>
+      </div>
+      <button type="button" id="familyWorkspaceClose" class="family-workspace-close" aria-label="Close evidence family workspace">✕ Close</button>
+    </div>
+    <div class="family-workspace-toolbar">
+      <label>Find a family
+        <input id="familyWorkspaceSearch" type="search" placeholder="Topic, source, publisher, or case" autocomplete="off">
+      </label>
+      <label>Activity
+        <select id="familyWorkspaceState">
+          <option value="all">All activity states</option>
+          <option value="emerging">Emerging</option>
+          <option value="monitoring">Monitoring</option>
+          <option value="quiet">Quiet / historical</option>
+        </select>
+      </label>
+      <label>Source class
+        <select id="familyWorkspaceSource"><option value="all">All sources</option></select>
+      </label>
+      <p id="familyWorkspaceCount" aria-live="polite">Loading candidate families…</p>
+    </div>
+    <div class="family-workspace-columns">
+      <section class="family-workspace-list-pane" aria-label="Searchable evidence family candidates">
+        <div id="familyWorkspaceList" class="family-workspace-list"></div>
+      </section>
+      <article id="familyWorkspaceDetail" class="family-workspace-detail" aria-label="Selected family analysis" aria-live="polite">
+        Select a family to inspect its measurements and underlying sources.
+      </article>
+    </div>
+    <footer class="family-workspace-footer">Evidence may be uncorroborated or unlocated. Missing collector coverage is not a normal measurement. Original links and first-capture dates remain visible.</footer>
+  </dialog>
   <noscript><p class="noscript">Enable JavaScript to use the interactive globe. The <a href="classic.html">classic watchboard</a> remains available.</p></noscript>
   <script defer src="dashboard/layers.js"></script>
   <script defer src="dashboard/atlas.js"></script>
