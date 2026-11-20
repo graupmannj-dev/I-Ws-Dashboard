@@ -1274,7 +1274,11 @@ function familyEvidenceCountLabel(f){
   if(f.kind==="analytical_topic_family")
     return (Number(f.notice_count)||0)+
       (f.activity==="automatically_discovered_shared_subject"?
-        " distinct source documents · ":" distinct notices · ")+
+        " distinct source documents":
+        " distinct notices")+
+      (f.automatic_grouping?.older_members_not_loaded?
+        " visible of "+f.automatic_grouping.historical_assigned_documents+" assigned historically":"")+
+      " · "+
       (Number(f.source_record_count)||0)+" source fragments · "+
       (f.providers?.length||0)+" issuing provider(s)";
   const roots=Number(f.information_root_count)||1;
