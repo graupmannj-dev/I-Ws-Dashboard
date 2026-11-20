@@ -3,7 +3,7 @@
   "automated_severity_changes": 0,
   "collection_coverage": {
     "amsa": {
-      "age_hours": 1.16,
+      "age_hours": 3.55,
       "checked_at": "2026-11-20T19:14:46Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -14,8 +14,19 @@
       "status": "current",
       "truncated_or_partial": false
     },
+    "cbp_wait": {
+      "age_hours": null,
+      "checked_at": null,
+      "missingness": "not_measured_not_zero",
+      "mode": "cbp_wait",
+      "provider_status": "never_checked",
+      "snapshot_at": null,
+      "source_scope": "CBP public northern/southern border commercial waits (port-local clocks; not volume)",
+      "status": "stale_or_unavailable",
+      "truncated_or_partial": false
+    },
     "commercial": {
-      "age_hours": 4.17,
+      "age_hours": 6.55,
       "checked_at": "2026-11-20T16:14:21Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -49,7 +60,7 @@
       "truncated_or_partial": false
     },
     "ioda": {
-      "age_hours": 1.16,
+      "age_hours": 3.55,
       "checked_at": "2026-11-20T19:14:46Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -61,29 +72,31 @@
       "truncated_or_partial": false
     },
     "live_airspace": {
-      "age_hours": 3.93,
-      "checked_at": "2026-11-20T16:28:39Z",
-      "missingness": "not_measured_not_zero",
+      "age_hours": 0.0,
+      "checked_at": "2026-11-20T22:47:32Z",
+      "first_provider_baseline": false,
+      "missingness": "partial_sampling_not_worldwide_exhaustive",
       "mode": "live_airspace",
       "provider_status": "partial",
-      "snapshot_at": "2026-11-20T16:28:39Z",
+      "snapshot_at": "2026-11-20T22:47:32Z",
       "source_scope": "FAA temporary flight restrictions: United States only",
-      "status": "stale_or_unavailable",
+      "status": "current_partial",
       "truncated_or_partial": true
     },
     "live_maritime": {
-      "age_hours": 3.93,
-      "checked_at": "2026-11-20T16:28:39Z",
-      "missingness": "not_measured_not_zero",
+      "age_hours": 0.0,
+      "checked_at": "2026-11-20T22:47:32Z",
+      "first_provider_baseline": false,
+      "missingness": "partial_sampling_not_worldwide_exhaustive",
       "mode": "live_maritime",
       "provider_status": "partial",
-      "snapshot_at": "2026-11-20T16:28:39Z",
+      "snapshot_at": "2026-11-20T22:47:32Z",
       "source_scope": "Danish Maritime Authority Niord notices: regional Baltic/North Sea",
-      "status": "stale_or_unavailable",
+      "status": "current_partial",
       "truncated_or_partial": true
     },
     "nga": {
-      "age_hours": 1.16,
+      "age_hours": 3.55,
       "checked_at": "2026-11-20T19:14:46Z",
       "missingness": "not_measured_not_zero",
       "mode": "nga",
@@ -105,7 +118,7 @@
       "truncated_or_partial": false
     },
     "official": {
-      "age_hours": 0.0,
+      "age_hours": 2.38,
       "checked_at": "2026-11-20T20:24:37Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -138,6 +151,17 @@
       "status": "stale_or_unavailable",
       "truncated_or_partial": false
     },
+    "uk_tenders": {
+      "age_hours": null,
+      "checked_at": null,
+      "missingness": "not_measured_not_zero",
+      "mode": "uk_tenders",
+      "provider_status": "never_checked",
+      "snapshot_at": null,
+      "source_scope": "UK Find a Tender official two-day bounded release sample",
+      "status": "stale_or_unavailable",
+      "truncated_or_partial": false
+    },
     "usace": {
       "age_hours": null,
       "checked_at": null,
@@ -161,7 +185,7 @@
       "truncated_or_partial": false
     },
     "watchlist": {
-      "age_hours": 0.0,
+      "age_hours": 2.38,
       "checked_at": "2026-11-20T20:24:37Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -171,33 +195,44 @@
       "source_scope": "registered, exact-ID forecast contracts only",
       "status": "current",
       "truncated_or_partial": false
+    },
+    "wiki_edits": {
+      "age_hours": null,
+      "checked_at": null,
+      "missingness": "not_measured_not_zero",
+      "mode": "wiki_edits",
+      "provider_status": "never_checked",
+      "snapshot_at": null,
+      "source_scope": "Wikipedia en/fr/es recent main-namespace edit sample",
+      "status": "stale_or_unavailable",
+      "truncated_or_partial": false
     }
   },
   "discovery_visibility": {
     "exact_geography_match_required_for_cross_family": true,
     "latest_initial_baseline": false,
     "latest_registry_newly_observed_count": 1,
-    "latest_registry_record_count": 270,
-    "latest_unlocated_record_count": 263,
+    "latest_registry_record_count": 396,
+    "latest_unlocated_record_count": 347,
     "new_or_collocated_not_same_as_verified_threat": true,
     "new_this_collection_required_for_cross_family_nomination": true,
     "recent_observations_sampled": 24,
     "recent_source_families": {
-      "airspace_restriction": 42,
-      "commercial_media": 19,
+      "airspace_restriction": 43,
+      "commercial_media": 17,
       "internet_reachability": 164,
       "maritime_restriction": 300,
       "protective_notice": 21
     },
-    "recent_unique_record_count_72h": 546,
-    "recent_unlocated_count_72h": 284,
+    "recent_unique_record_count_72h": 545,
+    "recent_unlocated_count_72h": 282,
     "schema": "aiba.behavioral-discovery-visibility.v1",
     "shared_exact_geography_keys_across_behavior_families": 0,
     "source_coverage_is_globally_complete": false
   },
   "forecast_probability": null,
   "gdelt_context": "separate_analytical_stream_not_a_gate_or_confirmation",
-  "generated_at": "2026-11-20T20:24:39Z",
+  "generated_at": "2026-11-20T22:47:36Z",
   "geographic_scope": "source_declared_only",
   "history_diagnostics": {
     "excluded_observations": {
@@ -205,7 +240,7 @@
     },
     "history_files_examined": 29,
     "lookback_hours": 72,
-    "recent_unique_records": 546
+    "recent_unique_records": 545
   },
   "limit_notes": [
     "No automated threat warning. These are unreviewed investigatory leads.",
@@ -218,29 +253,53 @@
   "new_single_source_leads": [
     {
       "evidence_class": "official_notice",
-      "first_observed_at": "2026-11-20T20:24:39Z",
+      "first_observed_at": "2026-11-20T22:47:36Z",
       "geography": {
-        "key": null,
-        "kind": "unlocated",
-        "label": null,
+        "geometry_sha256_prefix": "61d8f869fbb228b54c763082",
+        "geometry_type": "MultiPolygon",
+        "key": "source-footprint:61d8f869fbb228b54c763082",
+        "kind": "source_notice_footprint",
+        "label": "Official MultiPolygon notice area",
         "latitude": null,
         "longitude": null,
-        "precision": "no_source_verified_geography",
+        "precision": "provider_defined_notice_boundary_not_event_point",
         "verified_iso": false
       },
-      "information_root": "official:9db6fff90fe8f15501c1",
+      "information_root": "faa:6/9186:0:0",
       "meaning": "Observation novelty, not evidence of impending violence.",
-      "observation_id": "beh:79990be94cb69e96fffc1b1a43fc",
-      "requires_geolocation": true,
-      "source_family": "protective_notice",
-      "source_published_at": "2026-11-20T13:14:04Z",
-      "source_url": "https://www.gov.uk/foreign-travel-advice/ecuador",
+      "observation_id": "beh:03ac8322be6536422b42446d9c9f",
+      "requires_geolocation": false,
+      "source_family": "airspace_restriction",
+      "source_published_at": null,
+      "source_url": "https://tfr.faa.gov/6_9186.html",
       "status": "single_source_unreviewed",
-      "title": "Ecuador"
+      "title": "FAA TFR 6/9186 · MIDDLETOWN, IA, Monday, November 23, 2026 through Wednesday, November 25, 2026 UTC"
     }
   ],
   "prediction_horizon": null,
   "recent_source_observations": [
+    {
+      "first_observed_at": "2026-11-20T22:47:36Z",
+      "geography": {
+        "geometry_sha256_prefix": "61d8f869fbb228b54c763082",
+        "geometry_type": "MultiPolygon",
+        "key": "source-footprint:61d8f869fbb228b54c763082",
+        "kind": "source_notice_footprint",
+        "label": "Official MultiPolygon notice area",
+        "latitude": null,
+        "longitude": null,
+        "precision": "provider_defined_notice_boundary_not_event_point",
+        "verified_iso": false
+      },
+      "observation_id": "beh:03ac8322be6536422b42446d9c9f",
+      "provider": "faa",
+      "requires_geolocation": false,
+      "source_family": "airspace_restriction",
+      "source_published_at": null,
+      "source_url": "https://tfr.faa.gov/6_9186.html",
+      "status": "recent_source_observation_unreviewed",
+      "title": "FAA TFR 6/9186 · MIDDLETOWN, IA, Monday, November 23, 2026 through Wednesday, November 25, 2026 UTC"
+    },
     {
       "first_observed_at": "2026-11-20T20:24:39Z",
       "geography": {
@@ -722,30 +781,10 @@
       "source_url": "https://tfr.faa.gov/6_9115.html",
       "status": "recent_source_observation_unreviewed",
       "title": "FAA TFR 6/9115 · 15 ZAN AIRSPACEANCHORAGE, AK, Friday, November 20, 2026 UTC"
-    },
-    {
-      "first_observed_at": "2026-11-20T03:04:12Z",
-      "geography": {
-        "key": "country:CD",
-        "kind": "country_code",
-        "label": "CD",
-        "latitude": null,
-        "longitude": null,
-        "precision": "provider_reported_country",
-        "verified_iso": false
-      },
-      "observation_id": "beh:d15767ad017a55cac5f5835b9446",
-      "provider": "ioda",
-      "requires_geolocation": false,
-      "source_family": "internet_reachability",
-      "source_published_at": null,
-      "source_url": "https://ioda.inetintel.cc.gatech.edu/",
-      "status": "recent_source_observation_unreviewed",
-      "title": "IODA detected connectivity anomaly: country CD"
     }
   ],
-  "registry_asof": "2026-11-20T20:24:39Z",
-  "registry_source_count": 270,
+  "registry_asof": "2026-11-20T22:47:36Z",
+  "registry_source_count": 396,
   "report_relationships": {
     "automatic_alerts_created": 0,
     "automatic_severity_changes": 0,
@@ -2569,7 +2608,7 @@
     ],
     "candidate_groups_truncated": true,
     "cross_document_relation_count_total": 4,
-    "eligible_event_reporting_records": 19,
+    "eligible_event_reporting_records": 17,
     "forecast_probability": null,
     "geographic_proximity_only_for_explicit_reported_event_sites": true,
     "input_truncated": false,
@@ -2578,11 +2617,11 @@
     "pairwise_comparisons_examined": 90000,
     "possible_same_event_count_total": 0,
     "possible_same_source_story_count_total": 4,
-    "records_available": 546,
-    "records_examined": 546,
+    "records_available": 545,
+    "records_examined": 545,
     "related_reporting_count_total": 0,
     "reporting_origins_are_not_event_locations": true,
-    "routine_notice_market_or_measurement_records_excluded_from_text_event_matching": 527,
+    "routine_notice_market_or_measurement_records_excluded_from_text_event_matching": 528,
     "same_document_group_count_total": 38,
     "schema": "aiba.report-event-resolution-shadow.v1",
     "source_independence_unverified": true,
