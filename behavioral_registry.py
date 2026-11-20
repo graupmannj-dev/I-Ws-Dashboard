@@ -23,23 +23,33 @@ from behavioral_event_resolution import reported_site
 
 UTC = dt.timezone.utc
 SCHEMA = "aiba.behavioral-observations.v1"
-MODES = ("ioda", "nga", "amsa", "official", "commercial", "watchlist", "live_airspace", "live_maritime")
+MODES = ("ioda", "nga", "amsa", "official", "commercial", "watchlist", "live_airspace", "live_maritime",
+         "usgs", "eonet", "nws", "usace", "coops")
 ALLOWED_STATES = {"collected", "partial"}
 FRESH_HOURS = {"ioda": 6, "nga": 6, "amsa": 6,
                "official": 12, "commercial": 48, "watchlist": 12,
-               "live_airspace": 2, "live_maritime": 2}
+               "live_airspace": 2, "live_maritime": 2,
+               "usgs": 8, "eonet": 8, "nws": 8, "usace": 12, "coops": 8}
 FAMILIES = {"ioda": "internet_reachability", "nga": "maritime_restriction",
             "amsa": "maritime_restriction", "official": "protective_notice",
             "commercial": "commercial_media", "watchlist": "market_expectation",
-            "live_airspace": "airspace_restriction", "live_maritime": "maritime_restriction"}
+            "live_airspace": "airspace_restriction", "live_maritime": "maritime_restriction",
+            "usgs": "environmental_context", "eonet": "environmental_context",
+            "nws": "environmental_context", "usace": "waterway_restriction",
+            "coops": "port_conditions"}
 EVIDENCE = {"ioda": "network_measurement", "nga": "official_notice",
             "amsa": "official_notice", "official": "official_notice",
             "commercial": "media_mention", "watchlist": "market_quote",
-            "live_airspace": "official_notice", "live_maritime": "official_notice"}
+            "live_airspace": "official_notice", "live_maritime": "official_notice",
+            "usgs": "measured_natural_event", "eonet": "hazard_catalog",
+            "nws": "official_weather_alert", "usace": "official_navigation_notice",
+            "coops": "station_measurement"}
 # No source is yet verified as a military preparations sensor.
 DIRECT_BEHAVIOR = {"ioda": True, "nga": False, "amsa": False,
                    "official": False, "commercial": False, "watchlist": False,
-                   "live_airspace": False, "live_maritime": False}
+                   "live_airspace": False, "live_maritime": False,
+                   "usgs": True, "eonet": False, "nws": False,
+                   "usace": False, "coops": True}
 MAX_PER_MODE = 500
 MAX_INDEX = 15000
 MAX_SNAPSHOT = 2500
@@ -131,6 +141,11 @@ def mode_status(state, mode, now):
                             else "AMSA NAVAREA X only" if mode=="amsa"
                             else "US State and UK FCDO travel-advice feeds" if mode=="official"
                             else "selected maritime/air-cargo/war-risk press and syndication" if mode=="commercial"
+                            else "USGS M4.5+ earthquake feed (one-day global sample)" if mode=="usgs"
+                            else "NASA EONET open events, seven-day bounded global sample" if mode=="eonet"
+                            else "NWS marine weather alerts (bounded United States sample)" if mode=="nws"
+                            else "USACE inland navigation notices beginning in last 14 days" if mode=="usace"
+                            else "NOAA CO-OPS three monitored U.S. station levels" if mode=="coops"
                             else "registered, exact-ID forecast contracts only"),
             "missingness":"not_measured_not_zero" if not current else
                           "partial_sampling_not_worldwide_exhaustive" if truncated else
@@ -187,9 +202,12 @@ def normalize(mode, row, now):
     first_feed=when(row.get("first_seen_at"))
     if any(t and t>collected+dt.timedelta(minutes=5) for t in (published,occurred,first_feed)):
         return None,"source_clock_after_observation"
-    group=row["geography"] if mode in RESTRICTION_SOURCES else location(row,mode)
+    group=(row.get("geography") if mode in ("usgs","eonet","nws","usace","coops") else
+           row["geography"] if mode in RESTRICTION_SOURCES else location(row,mode))
+    if not isinstance(group,dict):
+        group=location(row,mode)
     family=FAMILIES[mode]
-    root=str(row.get("root") or "").strip() if mode in ("ioda","nga","amsa") or mode in RESTRICTION_SOURCES else ""
+    root=str(row.get("root") or "").strip() if mode in ("ioda","nga","amsa","usgs","eonet","nws","usace","coops") or mode in RESTRICTION_SOURCES else ""
     # Do not promote syndication to independently confirmed commercial action.
     if not root:
         root=f"{mode}:{rid}"
@@ -211,7 +229,9 @@ def normalize(mode, row, now):
                        "measurement_no_attribution" if mode=="ioda" else
                        "notice_not_verified_preparation" if mode in ("amsa","nga","official") else
                        "news_mention_not_action" if mode=="commercial" else
-                       "market_quote_not_war_probability"),
+                       "market_quote_not_war_probability" if mode=="watchlist" else
+                       "issued_waterway_notice_not_verified_disruption" if mode=="usace" else
+                       "environmental_context_not_threat_attribution"),
         "actor_identified":False,
         "alert_eligible":False,
     }
@@ -234,6 +254,16 @@ def normalize(mode, row, now):
             "lat":event_site[0],"lon":event_site[1],
             "location_quality":"source_declared_unreviewed",
         }
+    if mode in ("usgs","eonet","nws","usace","coops"):
+        # Metadata is source-declared: no synthetic anomaly score or
+        # independent corroboration is inferred from natural hazards.
+        result["source_scope"]=str(row.get("source_scope") or "")[:220]
+        result["source_measurement"]=row.get("source_measurement")
+        result["source_dependency_class"]=(
+            "environmental_hazard_reporting" if mode in ("usgs","eonet","nws")
+            else "official_navigation_notice" if mode=="usace"
+            else "station_physical_measurement")
+        result["warning_approved"]=False
     if mode in RESTRICTION_SOURCES:
         result["restriction_status"]=row["restriction_time_state"]
         result["scheduled_valid_from"]=row["scheduled_valid_from"]
