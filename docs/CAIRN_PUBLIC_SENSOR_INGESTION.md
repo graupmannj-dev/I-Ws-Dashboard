@@ -16,12 +16,13 @@ only validated successful reads update `latest/<provider>.json`.
   open status, last seven days and 110-item cap. Each event retains
   its original ID and last dated geometry. Latest imagery/provider events
   may be delayed, and location is a hazard record, not an intelligence pin.
-- **NWS** (official U.S. marine weather alerts): [active weather API](https://www.weather.gov/documentation/services-web-api),
+- **NWS** (official Florida-area weather alerts): [active weather API](https://www.weather.gov/documentation/services-web-api),
   area=FL, capped at 110. Source messages are geographic weather
   context; a marine weather alert is not another direct vessel-flow reading.
-- **USACE NTNI** (U.S. inland waterway official notices): [active notices
-  GeoJSON endpoint](https://ndc.ops.usace.army.mil/ords/ntni/json_data/notices_geoJson),
-  with official `DDMMYYYY` start-date path. Validated notice IDs are
+- **USACE NTNI** (U.S. inland waterway official notices): [active district
+  JSON endpoint](https://ndc.ops.usace.army.mil/ords/ntni/json_data/notices_by_district/MVP),
+  sampling three districts (MVP, MVS, SWG). Source fields include `controlnumber`,
+  `noticeno`, `issuedate`, `waterways` and `noticelink`. Validated notice IDs are
   retained as distinct source roots; optional geometry is NOT interpreted as
   an incident location. The upstream schema and availability are independently
   checked; if this service times out or fields cannot be mapped, CAIRN shows
