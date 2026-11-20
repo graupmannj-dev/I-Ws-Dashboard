@@ -328,6 +328,7 @@ def generate(site, generated=None, state_dir=None):
             "schema": "aiba.behavioral-observations.v1",
             "records": archive["records"],
             "source_health": registry.get("source_health", {}),
+            "automatic_topic_index": archive.get("automatic_topic_index"),
         }
         families_links = archive.get("report_relationships")
     else:
