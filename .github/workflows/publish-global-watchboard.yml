@@ -16,6 +16,54 @@ concurrency:
   group: aiba-${{ github.ref }}
   cancel-in-progress: false
 jobs:
+  analytical-topic-real-input:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          ref: aiba-feed-data
+          path: ops-state
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Verify Denmark official topic grouping on real saved notices
+        run: |
+          python - <<'PY'
+          import datetime as dt
+          import json
+          from pathlib import Path
+          from dashboard.dynamic_bins import build
+          path=Path("ops-state/observations/latest/behavioral_registry.json")
+          raw=json.loads(path.read_text())
+          when=dt.datetime.fromisoformat(raw["generated_at"].replace("Z","+00:00"))
+          observed=[x for x in raw["records"]
+              if x.get("source_family")=="maritime_restriction"
+              and x.get("source_kind")=="official_restriction_notice"
+              and x.get("title","").startswith("Denmark.")
+              and "firing exercises" in x.get("title","").lower()]
+          result=build(raw,{"records":[]},now=when+dt.timedelta(minutes=10))
+          groups=[f for f in result["families"] if
+                  f.get("kind")=="analytical_topic_family" and f.get("country")=="Denmark"]
+          if len(observed)>=2:
+              assert len(groups)==1, (len(observed), len(groups))
+              f=groups[0]
+              assert f["notice_count"]==len({x["source_url"] for x in observed})
+              assert f["source_record_count"]==len(observed)
+              assert sum(n["source_record_count"] for n in f["notice_groups"])==len(observed)
+              assert f["source_independence_established"] is False
+              assert f["warning_approved"] is False
+              assert f["anomaly_metric"]["z_score"] is None
+              print("Live registry: grouped",len(observed),"fragments into",
+                    f["notice_count"],"distinct notices in one Denmark analyst family")
+          else:
+              print("No eligible current Denmark notices; synthetic tests remain required.")
+          PY
   family-archive-real-input:
     if: github.event_name == 'pull_request'
     runs-on: ubuntu-latest
@@ -198,6 +246,7 @@ jobs:
           sleep 2
           node scripts/test_atlas_browser.js
           node scripts/test_dynamic_bins_browser.js
+          node scripts/test_topic_families_browser.js
           node scripts/test_atlas_behavior_browser.js
           node scripts/test_atlas_evaluation_browser.js
           node scripts/test_aircraft_browser.js
