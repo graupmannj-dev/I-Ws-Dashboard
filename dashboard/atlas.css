@@ -450,3 +450,26 @@ a{color:#a9d4ff}
   .family-workspace-detail{padding:15px}
   .family-workspace-footer{padding:6px 12px;font-size:10px}
 }
+
+/* Source-typed analytical topics: distinct notices remain independently readable. */
+.topic-family-summary{background:#18324b;border:1px solid #6480a0;border-left:4px solid #86c6e4;border-radius:10px;padding:14px 17px;margin:16px 0}
+.topic-family-summary h4{margin:0 0 7px;font-size:15px}
+.topic-family-summary p{line-height:1.55;font-size:13px;margin:0;color:#d4e1ef}
+.topic-notice-list{display:flex;flex-direction:column;gap:10px}
+.topic-notice{background:#192d40;border:1px solid #4c647c;border-radius:9px;overflow:hidden}
+.topic-notice summary{display:grid;gap:5px;padding:14px 16px;cursor:pointer;list-style-position:inside;line-height:1.5}
+.topic-notice summary:hover,.topic-notice summary:focus-visible{background:#243e58;outline-offset:-3px}
+.topic-notice summary strong{font-size:14px;color:#e9f3ff;overflow-wrap:anywhere}
+.topic-notice-meta{font-size:12px;color:#adcbdf;padding-left:18px}
+.topic-notice-body{padding:12px 19px 18px;border-top:1px solid #47627c;background:#15283a}
+.topic-notice-body>a{display:inline-block;margin-bottom:8px;color:#9dd8ff;font-size:13px}
+.topic-notice-body h5{font-size:13px;margin:12px 0 7px}
+.topic-validity-windows{border-left:2px solid #7b9cb9;margin:6px 0 14px;padding:4px 11px}
+.topic-validity-windows p{margin:4px 0;font-size:12px;color:#ccdae8;line-height:1.5}
+.topic-source-fragments{list-style:none;display:grid;gap:7px;padding:0;margin:0}
+.topic-source-fragments li{display:grid;grid-template-columns:1fr;gap:4px;padding:10px;border:1px solid #344d65;border-radius:6px;background:#1b324a}
+.topic-source-fragments code{font-size:11px;color:#b7e5ff;overflow-wrap:anywhere}
+.topic-source-fragments span,.topic-source-fragments small{font-size:11px;color:#c1d3e2;line-height:1.4;overflow-wrap:anywhere}
+.topic-notice-caveat{color:#f2c980;font-size:12px;margin:15px 0}
+.family-workspace-row .topic-marker{font-size:10px;color:#9dd5f5;text-transform:uppercase;letter-spacing:.07em}
+@media(max-width:760px){.topic-notice summary{padding:10px}.topic-notice-body{padding:11px}.topic-notice-meta{padding-left:10px}}
