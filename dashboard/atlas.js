@@ -1267,6 +1267,7 @@ function renderFamiliesList(){
   controls.append(search,status);list.appendChild(controls);
   const note=document.createElement("p");note.className="behavior-empty";list.appendChild(note);
   const results=document.createElement("div");results.className="family-results";list.appendChild(results);
+  let visibleLimit=80;
   function display(){
     const query=search.value.toLowerCase().trim();
     const rows=families.filter(f=>
@@ -1277,7 +1278,7 @@ function renderFamiliesList(){
     note.textContent=rows.length+" candidates · "+d.candidate_count_total+" indexed"+(d.truncated?" · capped publication":"")+
       " · independent corroboration unverified";
     results.replaceChildren();
-    for(const item of rows.slice(0,120)){
+    for(const item of rows.slice(0,visibleLimit)){
       const b=document.createElement("button");b.type="button";
       b.className="family-card family-"+safe(item.state);
       const n=Number(item.information_root_count)||1;
@@ -1291,8 +1292,17 @@ function renderFamiliesList(){
       b.addEventListener("click",()=>selectFamily(item));
       results.appendChild(b);
     }
+    if(rows.length>visibleLimit){
+      const more=document.createElement("button");more.type="button";
+      more.className="family-more";
+      more.textContent="Show next "+Math.min(80,rows.length-visibleLimit)+" families";
+      more.addEventListener("click",()=>{visibleLimit+=80;display();});
+      results.appendChild(more);
+    }
   }
-  status.addEventListener("change",display);search.addEventListener("input",display);display();
+  status.addEventListener("change",()=>{visibleLimit=80;display();});
+  search.addEventListener("input",()=>{visibleLimit=80;display();});
+  display();
 }
 function selectFamily(f){
   const panel=$("selectedDetail");
