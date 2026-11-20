@@ -16,6 +16,36 @@ concurrency:
   group: aiba-${{ github.ref }}
   cancel-in-progress: false
 jobs:
+  public-sensors-live-probe:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    continue-on-error: true
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Audit bounded public sensor API response and source health
+        shell: bash
+        run: |
+          set +e
+          python alternative_sensor_pipeline.py --state /tmp/cairn-public-probe
+          rc=$?
+          echo "Collector exit: $rc"
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          for path in sorted(Path("/tmp/cairn-public-probe/health").glob("*.json")):
+              h=json.loads(path.read_text())
+              print(path.name, "status:",h["status"],
+                    "ok:",h["source_queries_ok"],"attempted:",h["source_queries_attempted"],
+                    "count:",h["records"],"bounded:",h["truncated"],
+                    "errors:",h.get("errors",[])[:2])
+          PY
+          exit "$rc"
   topic-quality-audit:
     if: github.event_name == 'pull_request'
     runs-on: ubuntu-latest
