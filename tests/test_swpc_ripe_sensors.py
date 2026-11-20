@@ -37,7 +37,7 @@ class SwpcRipeTests(unittest.TestCase):
         rows=adapt_swpc(swpc_payload(),NOW,url)
         self.assertEqual(len(rows),1)
         row=rows[0]
-        self.assertIn("ALTK05:11:20261120",row["id"])
+        self.assertIn("ALTK05:11:20261120T183000Z",row["id"])
         self.assertEqual(row["event_at"],"2026-11-20T18:30:00Z")
         self.assertEqual(row["published_at"],"2026-11-20T18:30:00Z")
         self.assertEqual(row["claim_level"],"environmental_context_not_hostile_attribution")
