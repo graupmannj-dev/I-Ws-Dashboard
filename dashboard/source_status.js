@@ -8,9 +8,15 @@ const NAMES={amsa:"AMSA NAVAREA X",commercial:"Commercial media sampling",
   live_maritime:"Danish NIORD maritime notices",nga:"NGA broadcast warnings",
   official:"U.S. / U.K. official advisories",watchlist:"Prediction-market contracts",
   faa_nas:"FAA NAS airport operations",
-  gdelt:"GDELT news/event index",wikipedia:"Wikipedia public attention"};
+  gdelt:"GDELT news/event index",wikipedia:"Wikipedia public attention",
+  usgs_quakes:"USGS earthquakes",nasa_eonet:"NASA EONET natural hazards",
+  noaa_swpc:"NOAA space-weather alerts",nws_alerts:"NWS weather advisories",
+  usace_navigation:"USACE river/navigation notices",
+  noaa_ports:"NOAA observed port winds",ripe_atlas:"RIPE Atlas network measurements"};
 const FRESH_HOURS={amsa:6,commercial:48,ioda:6,live_airspace:2,live_maritime:2,
-  nga:6,official:12,watchlist:12,faa_nas:25/60,gdelt:48,wikipedia:72};
+  nga:6,official:12,watchlist:12,faa_nas:25/60,gdelt:48,wikipedia:72,
+  usgs_quakes:6,nasa_eonet:6,noaa_swpc:8,nws_alerts:6,
+  usace_navigation:8,noaa_ports:3,ripe_atlas:8};
 // A source's ROLE and its HEALTH are separate. News can corroborate a lead,
 // but syndicated reports do not by themselves constitute independent sensors.
 const SOURCE_META={
@@ -36,6 +42,20 @@ const SOURCE_META={
     "GDELT indexes worldwide news coverage, reported events and media attention. CAIRN uses it primarily to establish background and compare developing reporting, not as a direct operational sensor or independently verified event record."},
   wikipedia:{role:"Alternative attention proxy",description:
     "Wikipedia activity can reflect changes in public attention to a topic. Attention changes are indirect signals, not evidence that the underlying reported event is true."},
+  usgs_quakes:{role:"Environmental explanation",description:
+    "USGS instruments detect and publish earthquake events. These provide independent physical explanations for sudden transport, power and network interruptions, not evidence of hostile preparations."},
+  nasa_eonet:{role:"Environmental explanation",description:
+    "NASA EONET aggregates curated public reports of wildfires, severe storms and other natural events. Its upstream agency observations can overlap USGS or weather feeds and must not be counted as independent confirmation."},
+  noaa_swpc:{role:"Environmental explanation",description:
+    "NOAA's Space Weather Prediction Center issues geomagnetic and solar alerts that can explain radio, navigation and infrastructure disruptions. These bulletins are a possible benign cause, not a conflict indicator."},
+  nws_alerts:{role:"Environmental explanation",description:
+    "National Weather Service active watches and warnings describe hazardous weather in the United States. They are forecast/issued notices rather than direct measurements of the disruption they might help explain."},
+  usace_navigation:{role:"Alternative indicator",description:
+    "U.S. Army Corps of Engineers navigation notices describe waterway and lock restrictions with effective periods and affected areas. They are official constraints, not observed vessel flows or independent evidence of one operational event."},
+  noaa_ports:{role:"Physical sensor / explanatory context",description:
+    "NOAA CO-OPS publishes observed wind conditions at a bounded selection of United States port stations. Changes can explain maritime restrictions but do not measure shipping traffic; each station needs its own history."},
+  ripe_atlas:{role:"Network physical measurement",description:
+    "RIPE Atlas public probes measure internet response times to a reference DNS server. CAIRN stores only an aggregate with sampled-probe denominators; the global sample cannot be attributed to a country or an incident."},
 };
 
 const parseTime=v=>typeof v==="string"&&Number.isFinite(Date.parse(v))?Date.parse(v):null;
