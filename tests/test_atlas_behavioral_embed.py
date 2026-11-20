@@ -178,7 +178,7 @@ class BehavioralEmbedTests(unittest.TestCase):
         self.assertEqual(out["behavioral_discovery"]["single_source_count_total"],1)
         self.assertIn('id="tabBehavior"',html)
         self.assertIn('id="openBehavior"',html)
-        self.assertIn("Behavioral signals",html)
+        self.assertIn("Source signals",html)
         self.assertTrue(out["behavioral_discovery"]["map_coordinates_inferred"] is False)
 
 
