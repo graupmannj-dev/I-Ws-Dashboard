@@ -16,6 +16,34 @@ concurrency:
   group: aiba-${{ github.ref }}
   cancel-in-progress: false
 jobs:
+  family-archive-real-input:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          ref: aiba-feed-data
+          path: ops-state
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Dry-run archive migration on actual public evidence snapshots
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          from family_archive import update
+          snapshot=update(Path("ops-state/observations"),write=False)
+          assert snapshot["alerts_promoted"] == 0
+          assert snapshot["root_count_total"] >= 0
+          print({k:snapshot[k] for k in
+              ("root_count_total","record_count_total","new_records_added",
+               "historical_relationship_count","public_snapshot_truncated")})
+          PY
   test:
     runs-on: ubuntu-latest
     steps:
