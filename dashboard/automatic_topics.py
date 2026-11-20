@@ -74,7 +74,7 @@ ALIASES = {
     "chinese":"china","taiwanese":"taiwan",
 }
 DOMAIN_HINTS = {
-    "maritime":frozenset(("ship","vessel","shipping","port","naval","maritime","sea","strait","ferry","tanker","cruise","hormuz")),
+    "maritime":frozenset(("ship","vessel","shipping","port","naval","maritime","sea","strait","ferry","tanker","cruise","hormuz","blockade","interdiction","freight","freighter","freighters","cargo")),
     "aviation":frozenset(("flight","aircraft","airport","airspace","aviation","freighter","tfr","faa")),
     "network":frozenset(("internet","network","connectivity","outage","bgp","dns","routing","cyber")),
 }
