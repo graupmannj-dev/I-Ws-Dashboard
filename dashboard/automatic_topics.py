@@ -67,6 +67,7 @@ ALIASES = {
     "ships":"ship","vessels":"vessel","vessel":"vessel",
     "strikes":"strike","attacks":"attack","attacked":"attack",
     "invasions":"invasion","invading":"invasion","blockades":"blockade",
+    "blocking":"blockade","blocked":"blockade","blocks":"blockade",
     "disruptions":"disruption","outages":"outage","stoppages":"stop",
     "agreements":"agreement","routes":"route",
     "russian":"russia","iranian":"iran","danish":"denmark",
@@ -287,7 +288,7 @@ def _reasoning(doc,seed,metric):
     # substantive terms is therefore an independent high-precision route.
     paraphrase_ok=(
         shared_roles and len(shared)>=2 and bool(shared_named)
-        and (metric["score"]>=0.25 or legacy>=0.35)
+        and (metric["score"]>=0.20 or legacy>=0.30)
     ) or (
         metric["score"]>=HYBRID_SUBJECT_THRESHOLD
         and same_subject and shared_roles and len(shared)>=2
