@@ -147,7 +147,7 @@ def _domain(row):
 def _doc_key(row):
     # One official message can yield several shapes and validity fragments.
     # A generic API URL (IODA) must NOT merge unrelated country observations.
-    if (row.get("source_family") in ("internet_reachability","aviation_operations","port_environment")
+    if (row.get("source_family") in ("internet_reachability","aviation_operations","port_environment","environmental_hazard")
             or row.get("source_kind")=="official_navigation_notice"):
 
         key=row["information_root"]
