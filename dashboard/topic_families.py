@@ -23,7 +23,7 @@ except ImportError:
 # An explicit positive allowlist prevents a headline's first clause (a port,
 # region, publisher or phenomenon) being silently treated as a country.
 # Extend via source-adapter evidence and tests, not free-form text similarity.
-COUNTRIES = frozenset((
+COUNTRIES = frozenset(name.replace("_", " ") for name in (
     "Denmark Norway Sweden Finland Iceland Germany Poland Netherlands Belgium "
     "France Spain Portugal Italy Greece Turkey Ukraine Russia Belarus Estonia "
     "Latvia Lithuania Romania Bulgaria Croatia Albania Montenegro Slovenia "
@@ -35,21 +35,7 @@ COUNTRIES = frozenset((
     "Mozambique Angola Namibia Nigeria Ghana Senegal South_Africa "
     "Saudi_Arabia United_Arab_Emirates Iran Iraq Israel Jordan Oman Qatar "
     "Bahrain Kuwait Yemen South_Korea North_Korea United_States United_Kingdom"
-).replace("_", " ").split("|")) if False else frozenset(
-    name.replace("_", " ") for name in (
-        "Denmark Norway Sweden Finland Iceland Germany Poland Netherlands Belgium "
-        "France Spain Portugal Italy Greece Turkey Ukraine Russia Belarus Estonia "
-        "Latvia Lithuania Romania Bulgaria Croatia Albania Montenegro Slovenia "
-        "Slovakia Hungary Serbia Ireland Austria Switzerland Cyprus Malta "
-        "Japan China Taiwan Philippines Indonesia Malaysia Singapore Thailand "
-        "Vietnam India Pakistan Bangladesh Sri_Lanka Myanmar Cambodia "
-        "Australia New_Zealand Canada Mexico Brazil Argentina Chile Peru "
-        "Colombia Venezuela Morocco Algeria Tunisia Egypt Libya Kenya Tanzania "
-        "Mozambique Angola Namibia Nigeria Ghana Senegal South_Africa "
-        "Saudi_Arabia United_Arab_Emirates Iran Iraq Israel Jordan Oman Qatar "
-        "Bahrain Kuwait Yemen South_Korea North_Korea United_States United_Kingdom"
-    ).split()
-)
+).split())
 TITLE_COUNTRY = re.compile(r"^([A-Z][A-Za-z]+(?: [A-Z][A-Za-z]+){0,3})\.\s")
 FIRING = re.compile(r"\b(?:firing exercises?|gunnery practice|live[- ]fire exercises?|weapons? firing exercises?)\b", re.I)
 
