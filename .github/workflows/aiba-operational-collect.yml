@@ -52,6 +52,9 @@ jobs:
           esac
           echo "MODE=$mode" >> "$GITHUB_ENV"
           echo "Selected $mode"
+      - name: Install local semantic math dependencies (sparse fallback if unavailable)
+        continue-on-error: true
+        run: python -m pip install -r src/requirements.txt
       - name: Collect timestamped source evidence and recompute provisional fusion
         shell: bash
         run: |
