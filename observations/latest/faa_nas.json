@@ -1,12 +1,36 @@
 {
   "active_ground_stop_airports": 0,
-  "affected_airport_records": 2,
+  "affected_airport_records": 6,
   "airports": [
     {
-      "airport": "PNS",
+      "airport": "DAL",
       "ground_stop_object_present": false,
       "nas_event_reasons": {
-        "airportClosure": "!PNS 11/050 PNS AD AP CLSD EXC HEL OPS 2611200600-2611201100"
+        "departureDelay": "VOL:Multi-taxi"
+      },
+      "national_stop_reason_in_source": false
+    },
+    {
+      "airport": "MCO",
+      "ground_stop_object_present": false,
+      "nas_event_reasons": {
+        "departureDelay": "TM Initiatives:MIT:WX"
+      },
+      "national_stop_reason_in_source": false
+    },
+    {
+      "airport": "RSW",
+      "ground_stop_object_present": false,
+      "nas_event_reasons": {
+        "departureDelay": "VOL:Volume"
+      },
+      "national_stop_reason_in_source": false
+    },
+    {
+      "airport": "SFO",
+      "ground_stop_object_present": false,
+      "nas_event_reasons": {
+        "departureDelay": "RWY:Rwy Change - Operational Necessity"
       },
       "national_stop_reason_in_source": false
     },
@@ -17,16 +41,24 @@
         "airportClosure": "!SNA 11/020 SNA AD AP CLSD DLY 0730-1415 2611150730-2611211415"
       },
       "national_stop_reason_in_source": false
+    },
+    {
+      "airport": "TPA",
+      "ground_stop_object_present": false,
+      "nas_event_reasons": {
+        "departureDelay": "WX:Thunderstorms"
+      },
+      "national_stop_reason_in_source": false
     }
   ],
-  "airports_with_any_delay": 0,
-  "airports_with_any_nas_event": 2,
+  "airports_with_any_delay": 5,
+  "airports_with_any_nas_event": 6,
   "automatic_event_merges": 0,
   "changed_since_prior_observation": false,
-  "checked_at": "2026-11-20T10:42:43Z",
+  "checked_at": "2026-11-20T18:52:11Z",
   "cyberattack_evidence": false,
   "event_occurrence_as_reported_by_FAA_only": true,
-  "event_reason_objects_examined": 2,
+  "event_reason_objects_examined": 6,
   "forecast_probability": null,
   "geographic_scope": "United States",
   "hostile_actor_evidence": false,
@@ -38,12 +70,12 @@
     "The sensor makes no inference of hostile intent or cyberattack."
   ],
   "military_warning_level_change": false,
-  "monitored_airport_count": 6,
-  "monitored_airport_roster_sha256": "4f314af1742f4e67da0c2123ae77392c9b23ac6baeba3ab8f8ee8a1bed009c63",
+  "monitored_airport_count": 10,
+  "monitored_airport_roster_sha256": "197faeeb06e3568975516ef02f7b2048947526ba0997ae80ebfd4784d8ca6b99",
   "multiple_airports_not_independent_attribution": true,
   "national_event_confirmed_by_explicit_ATCSCC_order": false,
   "national_stop_airports": 0,
-  "observed_at": "2026-11-20T10:42:43Z",
+  "observed_at": "2026-11-20T18:52:11Z",
   "provisional_review_required": false,
   "schema": "aiba.faa-nas-systemic-disruption.v1",
   "source_family": "civil_air_traffic_management",
