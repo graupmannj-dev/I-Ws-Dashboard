@@ -103,6 +103,12 @@ def _subject_geo(row):
         if re.fullmatch("[A-Z]{2}",code):
             return frozenset(("iso:"+code,))
     title=row.get("title") or ""
+    # Some source adapters expose the target country only in the title.
+    # A source-declared "country FI" code is subject context, never an event
+    # geolocation. Different country targets must not be clustered together.
+    code=re.search(r"\\bcountry\\s+([A-Za-z]{2})\\b",title,re.I)
+    if code:
+        return frozenset(("iso:"+code.group(1).upper(),))
     countries={c.casefold() for c in COUNTRY_RE.findall(title)}
     if re.search(r"\b(?:U\.S\.|USA|United States)\b",title,re.I):
         countries.add("united states")
