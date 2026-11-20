@@ -13,7 +13,7 @@
     <a class="brand" href="./" aria-label="AIBA home"><span class="brand-mark">◈</span><span>AIBA</span></a>
     <div class="header-title"><strong>Global Early Warning</strong><span>Global discovery · Source-linked assessments · Operational watch</span></div>
     <div class="header-status" aria-label="Collection status">
-      <div><small>Watch areas</small><strong id="kpiWatch">—</strong></div>
+      <div><small>Curated theaters</small><strong id="kpiWatch">—</strong></div>
       <div><small>Reviewed changes</small><strong id="kpiUpdates">—</strong></div>
       <div><small>Sourced reports</small><strong id="kpiReports">—</strong></div>
       <div><small>Snapshot</small><strong id="kpiAsOf">—</strong></div>
@@ -26,7 +26,7 @@
       <div class="side-heading"><strong>Map controls</strong><button id="collapseControls" class="icon-button" aria-label="Collapse controls">«</button></div>
       <section class="side-section">
         <h2>Layers</h2>
-        <label class="toggle-row"><input type="checkbox" id="layerHotspots" checked><span>Hotspots</span><i class="legend-swatch red"></i></label>
+        <label class="toggle-row"><input type="checkbox" id="layerHotspots" checked><span>Curated theaters (context)</span><i class="legend-swatch red"></i></label>
         <label class="toggle-row"><input type="checkbox" id="layerReports" checked><span>Reporting points</span><i class="legend-dot"></i></label>
         <label class="toggle-row"><input type="checkbox" id="layerCommands"><span>Geographic combatant commands <small>(schematic)</small></span><i class="legend-line"></i></label>
         <label class="toggle-row"><input type="checkbox" id="layerLabels" checked><span>Hotspot labels</span></label>
@@ -153,6 +153,7 @@
       <div class="watch-heading">
         <h2 id="watchPanelTitle">Watchlist <span id="watchCount"></span></h2>
         <div class="panel-tabs" aria-label="Monitoring views">
+          <button type="button" id="tabFamilies" aria-pressed="false">Evidence families <span id="familyTabCount"></span></button>
           <button type="button" id="tabAll" class="active" aria-pressed="true">All</button>
           <button type="button" id="tabNew" aria-pressed="false">Recent changes</button>
           <button type="button" id="tabQueue" aria-pressed="false">Source queue <span id="queueTabCount"></span></button>

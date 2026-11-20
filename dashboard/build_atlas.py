@@ -310,6 +310,16 @@ def generate(site, generated=None, state_dir=None):
         "reviewed_warning_from_source_queue": False,
     }
 
+    # Dynamic candidate families are investigative source records. Unlike
+    # the ten legacy curated theaters, they include worldwide and unlocated
+    # sources from the source-separated behavioral registry.
+    try:
+        from dashboard.dynamic_bins import build as build_dynamic_bins
+    except ModuleNotFoundError:
+        from dynamic_bins import build as build_dynamic_bins
+    registry = read(state_dir / "latest" / "behavioral_registry.json", {}) if state_dir else {}
+    dynamic_families = build_dynamic_bins(
+        registry, analyst, behavioral.get("report_relationships"), now=render_time)
     # Only safe source monitoring context is included publicly. The private
     # forecast ledger, Sigstore subject records and outcome labels stay off
     # GitHub Pages until a separately approved audited aggregate pipeline.
@@ -337,6 +347,7 @@ def generate(site, generated=None, state_dir=None):
         "intake_queue": queue,
         "intake_queue_new_count": new_queue_count,
         "visibility_funnel": visibility_funnel,
+        "dynamic_bins": dynamic_families,
         "warning_evaluation": evaluation,
         "behavior_live_url": "https://raw.githubusercontent.com/graupmannj-dev/I-Ws-Dashboard/aiba-feed-data/observations/latest/behavioral_fusion.json",
         "friction_live_url": "https://raw.githubusercontent.com/graupmannj-dev/I-Ws-Dashboard/aiba-feed-data/observations/latest/friction_briefs.json",
