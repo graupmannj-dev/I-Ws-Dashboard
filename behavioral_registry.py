@@ -24,32 +24,36 @@ from behavioral_event_resolution import reported_site
 UTC = dt.timezone.utc
 SCHEMA = "aiba.behavioral-observations.v1"
 MODES = ("ioda", "nga", "amsa", "official", "commercial", "watchlist", "live_airspace", "live_maritime",
-         "usgs", "eonet", "nws", "usace", "coops")
+         "usgs", "eonet", "nws", "usace", "coops", "swpc", "ripe")
 ALLOWED_STATES = {"collected", "partial"}
 FRESH_HOURS = {"ioda": 6, "nga": 6, "amsa": 6,
                "official": 12, "commercial": 48, "watchlist": 12,
                "live_airspace": 2, "live_maritime": 2,
-               "usgs": 8, "eonet": 8, "nws": 8, "usace": 12, "coops": 8}
+               "usgs": 8, "eonet": 8, "nws": 8, "usace": 12, "coops": 8,
+               "swpc": 8, "ripe": 8}
 FAMILIES = {"ioda": "internet_reachability", "nga": "maritime_restriction",
             "amsa": "maritime_restriction", "official": "protective_notice",
             "commercial": "commercial_media", "watchlist": "market_expectation",
             "live_airspace": "airspace_restriction", "live_maritime": "maritime_restriction",
             "usgs": "environmental_context", "eonet": "environmental_context",
             "nws": "environmental_context", "usace": "waterway_restriction",
-            "coops": "port_conditions"}
+            "coops": "port_conditions", "swpc":"environmental_context",
+            "ripe":"internet_reachability"}
 EVIDENCE = {"ioda": "network_measurement", "nga": "official_notice",
             "amsa": "official_notice", "official": "official_notice",
             "commercial": "media_mention", "watchlist": "market_quote",
             "live_airspace": "official_notice", "live_maritime": "official_notice",
             "usgs": "measured_natural_event", "eonet": "hazard_catalog",
             "nws": "official_weather_alert", "usace": "official_navigation_notice",
-            "coops": "station_measurement"}
+            "coops": "station_measurement", "swpc":"issued_space_weather_alert",
+            "ripe":"aggregated_public_network_measurement"}
 # No source is yet verified as a military preparations sensor.
 DIRECT_BEHAVIOR = {"ioda": True, "nga": False, "amsa": False,
                    "official": False, "commercial": False, "watchlist": False,
                    "live_airspace": False, "live_maritime": False,
                    "usgs": True, "eonet": False, "nws": False,
-                   "usace": False, "coops": True}
+                   "usace": False, "coops": True,
+                   "swpc": False, "ripe": True}
 MAX_PER_MODE = 500
 MAX_INDEX = 15000
 MAX_SNAPSHOT = 2500
@@ -202,12 +206,12 @@ def normalize(mode, row, now):
     first_feed=when(row.get("first_seen_at"))
     if any(t and t>collected+dt.timedelta(minutes=5) for t in (published,occurred,first_feed)):
         return None,"source_clock_after_observation"
-    group=(row.get("geography") if mode in ("usgs","eonet","nws","usace","coops") else
+    group=(row.get("geography") if mode in ("usgs","eonet","nws","usace","coops","swpc","ripe") else
            row["geography"] if mode in RESTRICTION_SOURCES else location(row,mode))
     if not isinstance(group,dict):
         group=location(row,mode)
     family=FAMILIES[mode]
-    root=str(row.get("root") or "").strip() if mode in ("ioda","nga","amsa","usgs","eonet","nws","usace","coops") or mode in RESTRICTION_SOURCES else ""
+    root=str(row.get("root") or "").strip() if mode in ("ioda","nga","amsa","usgs","eonet","nws","usace","coops","swpc","ripe") or mode in RESTRICTION_SOURCES else ""
     # Do not promote syndication to independently confirmed commercial action.
     if not root:
         root=f"{mode}:{rid}"
@@ -231,6 +235,7 @@ def normalize(mode, row, now):
                        "news_mention_not_action" if mode=="commercial" else
                        "market_quote_not_war_probability" if mode=="watchlist" else
                        "issued_waterway_notice_not_verified_disruption" if mode=="usace" else
+                       "aggregate_ping_no_country_or_threat_attribution" if mode=="ripe" else
                        "environmental_context_not_threat_attribution"),
         "actor_identified":False,
         "alert_eligible":False,
@@ -254,14 +259,15 @@ def normalize(mode, row, now):
             "lat":event_site[0],"lon":event_site[1],
             "location_quality":"source_declared_unreviewed",
         }
-    if mode in ("usgs","eonet","nws","usace","coops"):
+    if mode in ("usgs","eonet","nws","usace","coops","swpc","ripe"):
         # Metadata is source-declared: no synthetic anomaly score or
         # independent corroboration is inferred from natural hazards.
         result["source_scope"]=str(row.get("source_scope") or "")[:220]
         result["source_measurement"]=row.get("source_measurement")
         result["source_dependency_class"]=(
-            "environmental_hazard_reporting" if mode in ("usgs","eonet","nws")
+            "environmental_hazard_reporting" if mode in ("usgs","eonet","nws","swpc")
             else "official_navigation_notice" if mode=="usace"
+            else "network_aggregate_monitoring" if mode=="ripe"
             else "station_physical_measurement")
         result["warning_approved"]=False
     if mode in RESTRICTION_SOURCES:

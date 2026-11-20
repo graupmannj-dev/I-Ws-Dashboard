@@ -50,6 +50,14 @@ def sample(mode):
             "waterways":"POOL_05A_UPPER_MISSISSIPPI",
             "noticelink":"https://ndc.ops.usace.army.mil/ords/ntni/print_nav_notice?in_nav_notice_number=205788",
         }],"hasMore":False,"count":1}
+    if mode=="swpc":
+        return [{"product_id":"ALTK05",
+                 "issue_datetime":"2026-11-20 16:30:00.000",
+                 "message":"Serial Number: 23\\nALERT: Geomagnetic K-index of 5"}]
+    if mode=="ripe":
+        return [{"msm_id":1001,"timestamp":int(NOW.timestamp())-900,
+                 "prb_id":i,"from":f"203.0.113.{i}",
+                 "avg":5+i/10} for i in range(1,34)]
     if mode=="coops":
         return {"metadata":{"id":"9414290","name":"San Francisco"},
           "data":[{"t":"2026-11-20 16:30","v":"0.82","s":"0.02",
@@ -62,6 +70,8 @@ def fake(url):
     if "api.weather.gov" in url:return sample("nws")
     if "ndc.ops.usace.army.mil" in url:return sample("usace")
     if "api.tidesandcurrents.noaa.gov" in url:return sample("coops")
+    if "services.swpc.noaa.gov" in url:return sample("swpc")
+    if "atlas.ripe.net" in url:return sample("ripe")
     raise ValueError("Unexpected source host")
 
 
@@ -128,7 +138,7 @@ class AlternativeSensorTests(unittest.TestCase):
                 self.assertTrue(row["source_url"].startswith("https://"))
             for mode in MODES:
                 self.assertEqual(reg["source_health"][mode]["status"],
-                    "current" if mode=="usgs" else "current_partial")
+                    "current" if mode in ("usgs","swpc","ripe") else "current_partial")
                 self.assertTrue(reg["source_health"][mode]["first_provider_baseline"])
             families=update_family(state,clock=NOW,write=False)
             self.assertTrue(families["record_count_total"]>=5)

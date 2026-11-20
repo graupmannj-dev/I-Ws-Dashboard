@@ -15,6 +15,9 @@ import argparse
 import datetime as dt
 import hashlib
 import json
+import math
+import re
+from statistics import median
 from pathlib import Path
 import urllib.parse
 import urllib.request
@@ -23,16 +26,18 @@ from ops_pipeline import load_json, write_json
 
 UTC=dt.timezone.utc
 SCHEMA="cairn.alternative-sensors.v1"
-MAX_BYTES=5_000_000
+MAX_BYTES=8_000_000  # bounded for full public RIPE built-in probe cohort
 MAX_RECORDS=110
 USER_AGENT="CAIRN-Public-Alternative-Sensors/1.0 (github.com/graupmannj-dev/I-Ws-Dashboard)"
-MODES=("usgs","eonet","nws","usace","coops")
+MODES=("usgs","eonet","nws","usace","coops","swpc","ripe")
 SCOPE={
     "usgs":"USGS M4.5+ earthquakes worldwide, rolling past day; source thresholds apply",
     "eonet":"NASA EONET open natural event catalog, recent 7 days; limit 110",
     "nws":"U.S. National Weather Service active Florida-area weather alerts, first 110 returned",
     "usace":"USACE NTNI active notices for sampled districts MVP/MVS/SWG; up to 110 total",
     "coops":"NOAA CO-OPS water levels at San Francisco, Key West and Sewells Point; stations only",
+    "swpc":"NOAA SWPC issued recent solar/geomagnetic warnings; explanatory context only",
+    "ripe":"RIPE Atlas built-in K-root ping #1001, global public-probe aggregate; not country coverage",
 }
 PORT_STATIONS={
     "9414290":"San Francisco, CA",
@@ -43,8 +48,10 @@ HOST_ALLOW={
  "usgs":"earthquake.usgs.gov","eonet":"eonet.gsfc.nasa.gov",
  "nws":"api.weather.gov","usace":"ndc.ops.usace.army.mil",
  "coops":"api.tidesandcurrents.noaa.gov",
+ "swpc":"services.swpc.noaa.gov","ripe":"atlas.ripe.net",
 }
-MAX_URLS={"usgs":1,"eonet":1,"nws":1,"usace":3,"coops":3}
+MAX_URLS={"usgs":1,"eonet":1,"nws":1,"usace":3,"coops":3,"swpc":1,"ripe":1}
+MAX_RIPE_PROBES=60000
 
 
 def iso(t):
@@ -78,7 +85,8 @@ def source_url(url,mode):
                                                   "eonet.gsfc.nasa.gov",
                                                   "www.weather.gov",
                                                   "water.noaa.gov",
-                                                  "tidesandcurrents.noaa.gov"):
+                                                  "tidesandcurrents.noaa.gov",
+                                                  "www.swpc.noaa.gov"):
         return None
     if p.username or p.password or len(url)>1500:return None
     return url
@@ -109,6 +117,11 @@ def urls(mode,now):
     if mode=="usace":
         root="https://ndc.ops.usace.army.mil/ords/ntni/json_data/notices_by_district/"
         return [root+x for x in ("MVP","MVS","SWG")]
+    if mode=="swpc":
+        return ["https://services.swpc.noaa.gov/products/alerts.json"]
+    if mode=="ripe":
+        return ["https://atlas.ripe.net/api/v2/measurements/1001/latest/?"+
+                urllib.parse.urlencode({"versions":1,"lookback_days":1,"public_only":"true"})]
     if mode=="coops":
         root="https://api.tidesandcurrents.noaa.gov/api/prod/datagetter?"
         return [root+urllib.parse.urlencode({
@@ -133,7 +146,8 @@ def entry(mode,rid,title,url,checked,*,event_at=None,published=None,kind="source
         "observed_at":iso(checked),"event_at":iso(event) if event else None,
         "published_at":iso(pub) if pub else None,
         "first_seen_at":iso(first) if first else None,
-        "claim_level":"environmental_context_not_hostile_attribution" if mode in ("usgs","eonet","nws","coops")
+        "claim_level":"environmental_context_not_hostile_attribution" if mode in ("usgs","eonet","nws","coops","swpc")
+                     else "aggregated_network_measurement_no_attribution" if mode=="ripe"
                      else "issued_waterway_notice_not_actual_vessel_disruption",
         "source_scope":source_scope or SCOPE[mode],
     }
@@ -295,8 +309,100 @@ def adapt_coops(data,checked,url):
     return [obs] if obs else []
 
 
+def adapt_swpc(data,checked,url):
+    """Public SWPC bulletins. Naive provider issue_datetime is UTC by contract."""
+    if not isinstance(data,list):
+        raise ValueError("SWPC alerts expected JSON list")
+    result=[]
+    for item in data:
+        if not isinstance(item,dict):continue
+        product=clean(item.get("product_id"),40)
+        issued=item.get("issue_datetime")
+        if not isinstance(issued,str) or not product:continue
+        # Only SWPC's documented UTC-without-offset field receives UTC.
+        stamp=parse_time(issued) if issued.endswith(("Z","+00:00")) else (
+            parse_time(issued.replace(" ","T")+"+00:00"))
+        if not stamp or not dt.timedelta(0)<=checked-stamp<=dt.timedelta(hours=96):
+            continue
+        message=item.get("message")
+        if not isinstance(message,str) or not message.strip():continue
+        serial=re.search(r"Serial Number:\s*(\d+)",message,re.I)
+        serial_id=serial.group(1) if serial else digest(message)
+        rid=f"{product}:{serial_id}:{stamp.strftime('%Y%m%dT%H%M%SZ')}"
+        headline=next((clean(line,140) for line in message.splitlines()
+                       if re.match(r"^(?:ALERT|WARNING|WATCH|CONTINUED ALERT|EXTENDED WARNING):",
+                                   line.strip(),re.I)),
+                      f"SWPC space weather bulletin {product}")
+        row=entry("swpc",rid,headline,
+                  "https://www.swpc.noaa.gov/products/alerts-watches-and-warnings",
+                  checked,event_at=iso(stamp),published=iso(stamp),
+                  first_seen=iso(stamp),kind="issued_space_weather_bulletin",
+                  source_scope=SCOPE["swpc"])
+        if row:result.append(row)
+    if data and not result and any(isinstance(x,dict) and
+                                   x.get("issue_datetime") for x in data):
+        # An older feed with no recent notices is valid empty, not false zero
+        # measured space-weather activity.
+        return []
+    return result
+
+
+def adapt_ripe(data,checked,url):
+    """One explicitly named public measurement; publish aggregate only."""
+    if isinstance(data,list):
+        samples=data
+    elif isinstance(data,dict) and isinstance(data.get("results"),list):
+        samples=data["results"]
+    elif isinstance(data,dict):
+        samples=[]
+        for value in data.values():
+            if isinstance(value,list):samples.extend(value)
+            elif isinstance(value,dict):samples.append(value)
+    else:
+        raise ValueError("RIPE latest envelope not recognized")
+    if len(samples)>MAX_RIPE_PROBES:
+        raise ValueError("RIPE probe cohort exceeds fixed upper limit; do not cut silently")
+    valid=0
+    good=[]
+    for row in samples:
+        if not isinstance(row,dict) or row.get("msm_id") not in (1001,"1001",None):
+            continue
+        stamp=parse_time(row.get("timestamp"))
+        if not stamp or not dt.timedelta(0)<=checked-stamp<=dt.timedelta(hours=24):
+            continue
+        valid+=1
+        avg=row.get("avg")
+        if type(avg) in (int,float) and math.isfinite(avg) and 0<=avg<100000:
+            good.append(float(avg))
+    if valid<20 or len(good)<10:
+        raise ValueError("RIPE insufficient recent public-probe observations for aggregate")
+    value=round(median(good),3)
+    # Hourly aggregate is an observation of a potentially CHANGING probe
+    # cohort, not a matched-cohort deviation. Never publish an implied z-score.
+    doc="https://atlas.ripe.net/measurements/1001/"
+    at=checked.replace(minute=0,second=0,microsecond=0)
+    row=entry("ripe",f"measurement:1001:{at.strftime('%Y%m%dT%H')}",
+              f"RIPE Atlas K-root public probe aggregate ({len(good)} usable measurements)",
+              doc,checked,kind="aggregate_public_network_ping",
+              measurement={
+                "name":"sample_median_ping_rtt","value":value,"unit":"ms",
+                "measurement_id":1001,"sampled_probe_count":valid,
+                "valid_rtt_count":len(good),"failed_or_invalid_rtt_count":valid-len(good),
+                "baseline_status":"not_calibrated",
+                "cohort_comparable_to_prior_snapshots":False,
+                "individual_probe_records_published":False,
+              },
+              geo={"key":"ripe-msm:1001","kind":"global_public_probe_cohort",
+                   "label":"K-root public ping aggregate",
+                   "precision":"not_country_or_incident_location",
+                   "latitude":None,"longitude":None,"verified_iso":False},
+              source_scope=SCOPE["ripe"])
+    return [row] if row else []
+
+
 ADAPTERS={"usgs":adapt_usgs,"eonet":adapt_eonet,"nws":adapt_nws,
-          "usace":adapt_usace,"coops":adapt_coops}
+          "usace":adapt_usace,"coops":adapt_coops,
+          "swpc":adapt_swpc,"ripe":adapt_ripe}
 
 
 def collect(state,clock=None,fetcher=json_get,selected=MODES):
@@ -336,8 +442,9 @@ def collect(state,clock=None,fetcher=json_get,selected=MODES):
             "missingness":"provider_bounded_partial" if ok and truncated else
                 "provider_bounded_not_exhaustive" if ok else "not_measured_not_zero",
             "source_dependency_class":(
-                "environmental_hazard_reporting" if mode in ("usgs","eonet","nws")
+                "environmental_hazard_reporting" if mode in ("usgs","eonet","nws","swpc")
                 else "official_navigation_notice" if mode=="usace"
+                else "aggregate_public_network_ping" if mode=="ripe"
                 else "station_physical_measurement"),
             "operational_warning_approved":False,
         }

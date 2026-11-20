@@ -16,6 +16,32 @@ concurrency:
   group: aiba-${{ github.ref }}
   cancel-in-progress: false
 jobs:
+  swpc-ripe-public-live-probe:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    continue-on-error: true
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Read-only NOAA SWPC / RIPE public aggregate probe
+        run: |
+          python alternative_sensor_pipeline.py --state /tmp/cairn-swpc-ripe --sources swpc,ripe
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          for mode in ('swpc','ripe'):
+              file=Path('/tmp/cairn-swpc-ripe/health')/(mode+'.json')
+              state=json.loads(file.read_text())
+              print(mode, 'health:', state['status'],
+                    'records:',state['records'],
+                    'queried:',state['source_queries_ok'],'/',state['source_queries_attempted'],
+                    'errors:',state.get('source_errors',[])[:2])
+          PY
   cairn-public-sensor-probe:
     if: github.event_name == 'pull_request'
     runs-on: ubuntu-latest
