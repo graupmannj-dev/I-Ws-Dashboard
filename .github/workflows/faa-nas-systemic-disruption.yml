@@ -79,6 +79,9 @@ jobs:
           rc=$?
           set -e
           echo "AIBA_FAA_NAS_RC=$rc" >> "$GITHUB_ENV"
+      - name: Install local semantic math dependencies (sparse fallback if unavailable)
+        continue-on-error: true
+        run: python -m pip install -r src/requirements.txt
       - name: Record comparable FAA NAS numeric samples and durable candidate evidence
         if: env.AIBA_FAA_NAS_RC == '0'
         run: |
