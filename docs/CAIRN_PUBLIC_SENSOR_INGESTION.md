@@ -17,7 +17,7 @@ only validated successful reads update `latest/<provider>.json`.
   its original ID and last dated geometry. Latest imagery/provider events
   may be delayed, and location is a hazard record, not an intelligence pin.
 - **NWS** (official U.S. marine weather alerts): [active weather API](https://www.weather.gov/documentation/services-web-api),
-  region_type=marine, capped at 110. Source messages are geographic weather
+  area=FL, capped at 110. Source messages are geographic weather
   context; a marine weather alert is not another direct vessel-flow reading.
 - **USACE NTNI** (U.S. inland waterway official notices): [active notices
   GeoJSON endpoint](https://ndc.ops.usace.army.mil/ords/ntni/json_data/notices_geoJson),
