@@ -111,6 +111,10 @@ class AlternativeSensorTests(unittest.TestCase):
                 self.assertTrue(row["id"].startswith(mode+":"))
                 if mode in ("usace","uk_tenders"):
                     self.assertIsNotNone(row["published_at"])
+                elif mode=="cbp_wait":
+                    # CBP supplies port-local wall clocks; no invented UTC event time.
+                    self.assertIsNone(row["event_at"])
+                    self.assertFalse(row["source_measurement"]["source_timezone_resolved"])
                 else:
                     self.assertIsNotNone(row["event_at"])
                 self.assertEqual(row["observed_at"],"2026-11-20T17:00:00Z")
