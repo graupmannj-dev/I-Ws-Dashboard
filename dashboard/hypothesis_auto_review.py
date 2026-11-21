@@ -129,31 +129,41 @@ def screen(dossiers, registry, archive=None, *, at=None, lookback_hours=LOOKBACK
     valid_archive = (isinstance(archive, dict) and archive.get("schema") == ARCHIVE_SCHEMA
                      and isinstance(archive.get("records"), list))
     records = (archive["records"] if valid_archive else registry.get("records", [])) if valid_registry else []
+    snapshot_time = _parse_time(registry.get("generated_at")) if valid_registry else None
+    current_snapshot = bool(snapshot_time and dt.timedelta(0) <= now - snapshot_time
+                            <= dt.timedelta(hours=lookback_hours))
+    status = ("screened" if valid_registry and current_snapshot else
+              "source_snapshot_stale" if valid_registry else "source_snapshot_unavailable")
     health = registry.get("source_health", {}) if valid_registry else {}
     if not isinstance(health, dict):
         health = {}
     all_cases = {d.get("id"): d for d in dossiers if isinstance(d, dict) and isinstance(d.get("id"), str)}
-    cases = {cid: {"status": "screened" if valid_registry else "source_snapshot_unavailable",
-                   "screened_at": stamp if valid_registry else None,
+    cases = {cid: {"status": status,
+                   "screened_at": stamp if status == "screened" else None,
                    "new_matching_records": 0, "possible_support": 0,
                    "possible_counter": 0, "context": 0, "requires_interpretation": 0,
                    "unavailable_source_matches": 0, "candidates": []}
              for cid in all_cases}
     seen = {cid: set() for cid in all_cases}
-    recent = 0
-    limited = len(records) > MAX_RECORDS
-    for row in records[:MAX_RECORDS]:
-        if not isinstance(row, dict):
-            continue
-        first = _parse_time(row.get("first_observed_at"))
-        if first is None or first > now or now - first > dt.timedelta(hours=lookback_hours):
-            continue
-        if row.get("registry_novelty") == "initial_provider_baseline":
-            continue
-        url = _safe_url(row.get("source_url"))
-        if not url:
-            continue
-        recent += 1
+    recent_rows = []
+    if status == "screened":
+        for row in records:
+            if not isinstance(row, dict):
+                continue
+            first = _parse_time(row.get("first_observed_at"))
+            if (first is None or first > now or
+                    now - first > dt.timedelta(hours=lookback_hours) or
+                    row.get("registry_novelty") == "initial_provider_baseline"):
+                continue
+            url = _safe_url(row.get("source_url"))
+            if url:
+                recent_rows.append((first, row, url))
+    # A durable archive may be ordered oldest-first. Cap *after* selecting
+    # new records, newest first; otherwise recent evidence can be starved.
+    recent_rows.sort(key=lambda item: item[0], reverse=True)
+    limited = len(recent_rows) > MAX_RECORDS
+    recent = len(recent_rows)
+    for first, row, url in recent_rows[:MAX_RECORDS]:
         for cid, result in cases.items():
             basis = _match_case(cid, row)
             if not basis:
@@ -189,8 +199,8 @@ def screen(dossiers, registry, archive=None, *, at=None, lookback_hours=LOOKBACK
         result["candidates_truncated"] = len(result["candidates"]) > MAX_MATCHES_PER_CASE
         result["candidates"] = result["candidates"][:MAX_MATCHES_PER_CASE]
     return {
-        "schema": SCHEMA, "status": "screened" if valid_registry else "source_snapshot_unavailable",
-        "screened_at": stamp if valid_registry else None,
+        "schema": SCHEMA, "status": status,
+        "screened_at": stamp if status == "screened" else None,
         "source_snapshot_at": registry.get("generated_at") if valid_registry else None,
         "window_hours": lookback_hours, "new_source_records_in_window": recent,
         "durable_archive_used": valid_archive, "source_records_truncated": limited,
