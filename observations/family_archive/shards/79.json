@@ -86,6 +86,45 @@
         }
       }
     },
+    "791c5d68eda37e73e98d82387d8f71ff16928baaf399acf52c940cdc7728f017": {
+      "information_root": "inmet_br:inmet_br:29015e3d40e5dc1e7d6bd82e9682",
+      "members": {
+        "beh:955bbd0cfc38450393afcf79c123": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "inmet_br",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-15T09:26:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:955bbd0cfc38450393afcf79c123",
+          "information_root": "inmet_br:inmet_br:29015e3d40e5dc1e7d6bd82e9682",
+          "origin": "behavioral_registry",
+          "provider": "inmet_br",
+          "published_at": "2026-11-15T09:26:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Brazil INMET",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Brazil INMET official severe-weather RSS notices; provider-listed bounded sample",
+          "source_updated_at": null,
+          "source_url": "https://apiprevmet3.inmet.gov.br/avisos/rss/56413",
+          "title": "Aviso de Chuvas Intensas. Severidade Grau: Perigo Potencial"
+        }
+      }
+    },
     "79637169fa2e481e84e78928f598d0ea923c03c1b5b3a3ce0f7b53da96709898": {
       "information_root": "official:5c839047f78770f38774",
       "members": {
@@ -173,6 +212,85 @@
           "source_updated_at": "2026-11-19T00:21:56Z",
           "source_url": "https://niord.dma.dk/#/message/a86c476c-375d-469b-be2a-05497e11975a",
           "title": "Denmark. The North Sea. 15 Nymindegab. Firing exercises. Warning."
+        }
+      }
+    },
+    "79c3b0796cce457bb9da79b12079e14e6f7628d6552a27920502a956f9d19948": {
+      "information_root": "sg_mpa:sg_mpa:2026-02:tug",
+      "members": {
+        "beh:a4a4413c64e1b838d0e2cc52fe1e": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "monthly_maritime_throughput_not_current_disruption",
+          "collection_mode": "sg_mpa",
+          "direct_measurement": true,
+          "event_at": null,
+          "first_observed_at": "2026-11-21T02:31:05+00:00",
+          "geography_key": "country:SG",
+          "geography_label": "Singapore",
+          "geography_precision": "national_port_scope_not_incident",
+          "id": "beh:a4a4413c64e1b838d0e2cc52fe1e",
+          "information_root": "sg_mpa:sg_mpa:2026-02:tug",
+          "origin": "behavioral_registry",
+          "provider": "sg_mpa",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_monthly_port_throughput_historical",
+          "source_family": "port_throughput",
+          "source_kind": "official_monthly_port_arrival_count_historical",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "denominator": "vessels_greater_than_75_gross_tons",
+            "most_recent_month_provisional": false,
+            "name": "monthly_vessel_arrivals_over_75_gt",
+            "not_live_tracking": true,
+            "period": "2026-02",
+            "period_months_lag": 9,
+            "reporting_cadence": "monthly",
+            "source_dataset": "d_8f264219109e61fffa87ac64dd5a9a65",
+            "unit": "vessels",
+            "value": 819,
+            "vessel_type": "Tug"
+          },
+          "source_scope": "Maritime & Port Authority of Singapore monthly arrivals >75 GT by vessel type; selected latest months, publication lag, Singapore-only, not live AIS",
+          "source_updated_at": null,
+          "source_url": "https://data.gov.sg/datasets/d_8f264219109e61fffa87ac64dd5a9a65/view",
+          "title": "Singapore MPA 2026-02 Tug vessel arrivals (>75 GT)"
+        }
+      }
+    },
+    "79cf1eba64897de081d068c403d80d178d423e9d542a7c5eeb845cad767aee1e": {
+      "information_root": "eonet:EONET_26572",
+      "members": {
+        "beh:3b5331e435c9f2cc208bd6d61c52": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "eonet",
+          "direct_measurement": false,
+          "event_at": "2026-11-18T08:47:00Z",
+          "first_observed_at": "2026-11-18T08:47:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:3b5331e435c9f2cc208bd6d61c52",
+          "information_root": "eonet:EONET_26572",
+          "origin": "behavioral_registry",
+          "provider": "eonet",
+          "published_at": "2026-11-18T08:47:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "cataloged_natural_hazard_context",
+          "source_measurement": null,
+          "source_scope": "NASA EONET open catalog, category Wildfires",
+          "source_updated_at": null,
+          "source_url": "https://eonet.gsfc.nasa.gov/api/v3/events/EONET_26572",
+          "title": "Prescribed Fire rx-Lapham Good Oak 2026, Waukesha, Wisconsin"
         }
       }
     }

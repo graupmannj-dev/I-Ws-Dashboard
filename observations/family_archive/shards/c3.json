@@ -1,5 +1,77 @@
 {
   "roots": {
+    "c31da3aed6e02650d613a57a161aa0697c27740ac2effd692e97de6b718d29db": {
+      "information_root": "swpc:EF3A:3778:20261117T084814Z",
+      "members": {
+        "beh:f37b4bb7449e237c1e42583963f3": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "swpc",
+          "direct_measurement": false,
+          "event_at": "2026-11-17T08:48:14Z",
+          "first_observed_at": "2026-11-17T08:48:14+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:f37b4bb7449e237c1e42583963f3",
+          "information_root": "swpc:EF3A:3778:20261117T084814Z",
+          "origin": "behavioral_registry",
+          "provider": "swpc",
+          "published_at": "2026-11-17T08:48:14Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "issued_space_weather_bulletin",
+          "source_measurement": null,
+          "source_scope": "NOAA SWPC issued recent solar/geomagnetic warnings; explanatory context only",
+          "source_updated_at": null,
+          "source_url": "https://www.swpc.noaa.gov/products/alerts-watches-and-warnings",
+          "title": "CONTINUED ALERT: Electron 2MeV Integral Flux exceeded 1,000pfu"
+        }
+      }
+    },
+    "c32a1ffcd1014f2df2dcf5796611b49a080148d5ae815087dce2eb2bb35a0f09": {
+      "information_root": "bmkg_nowcast:bmkg_nowcast:8e1f6fc5780ab02f0461f0b466c7",
+      "members": {
+        "beh:47f2a9b2075c921ed0f1c3c09284": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "bmkg_nowcast",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-21T00:42:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:47f2a9b2075c921ed0f1c3c09284",
+          "information_root": "bmkg_nowcast:bmkg_nowcast:8e1f6fc5780ab02f0461f0b466c7",
+          "origin": "behavioral_registry",
+          "provider": "bmkg_nowcast",
+          "published_at": "2026-11-21T00:42:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Indonesia BMKG",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Indonesia BMKG active provincial nowcast RSS, source-reported only; not global",
+          "source_updated_at": null,
+          "source_url": "https://www.bmkg.go.id/alerts/nowcast/en/CAH20261121001_alert.xml",
+          "title": "Thunderstorm This Morning in Aceh"
+        }
+      }
+    },
     "c33bb2ba01d2224efafece88d43508d02a2f6cca8b886fe0bc8cf2b02e4fceb2": {
       "information_root": "niord:81a3ee1e-3be5-4107-ba85-9b4f5eb65d25:3:0:0",
       "members": {
@@ -87,6 +159,53 @@
           "source_updated_at": "2026-11-20T13:21:54Z",
           "source_url": "https://niord.dma.dk/#/message/8f200052-ced8-4c3a-9793-9fda2144fcf6",
           "title": "Denmark. Kattegat. EK R 20 Yderby. Firing exercises. Warning."
+        }
+      }
+    },
+    "c39db81ce2b38696645a2551e8766faf17347d1dfb2c72406cb1e6ac6d102453": {
+      "information_root": "cbp_wait:cbp_wait:230103:2026-11-20:20:23:04",
+      "members": {
+        "beh:be8d7236a6ed240ce05d7537f5ef": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-21T02:31:05+00:00",
+          "geography_key": "us-border-port:230103",
+          "geography_label": "Gateway",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:be8d7236a6ed240ce05d7537f5ef",
+          "information_root": "cbp_wait:cbp_wait:230103:2026-11-20:20:23:04",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Update Pending",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/20/2026",
+            "reported_local_time": "20:23:04",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Gateway"
         }
       }
     },

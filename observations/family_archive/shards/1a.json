@@ -63,6 +63,99 @@
         }
       }
     },
+    "1a748015f438951c2b820e9a86a1a36feea572dfa4de0661aca469f34301046b": {
+      "information_root": "cbp_wait:cbp_wait:300403:2026-11-20:18:23:03",
+      "members": {
+        "beh:69a4836f0645411bd4b96197176a": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-21T02:31:05+00:00",
+          "geography_key": "us-border-port:300403",
+          "geography_label": "Blaine",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:69a4836f0645411bd4b96197176a",
+          "information_root": "cbp_wait:cbp_wait:300403:2026-11-20:18:23:03",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Update Pending",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/20/2026",
+            "reported_local_time": "18:23:03",
+            "source_declared_border": "Canadian Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Blaine / Point Roberts"
+        }
+      }
+    },
+    "1a8c6c551a41ada6a22c652721f8107f8927e260073bb1d85012f27cb0333a50": {
+      "information_root": "sg_mpa:sg_mpa:2026-05:passenger",
+      "members": {
+        "beh:d8bbff5644f3163f0d2743eef924": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "monthly_maritime_throughput_not_current_disruption",
+          "collection_mode": "sg_mpa",
+          "direct_measurement": true,
+          "event_at": null,
+          "first_observed_at": "2026-11-21T02:31:05+00:00",
+          "geography_key": "country:SG",
+          "geography_label": "Singapore",
+          "geography_precision": "national_port_scope_not_incident",
+          "id": "beh:d8bbff5644f3163f0d2743eef924",
+          "information_root": "sg_mpa:sg_mpa:2026-05:passenger",
+          "origin": "behavioral_registry",
+          "provider": "sg_mpa",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_monthly_port_throughput_historical",
+          "source_family": "port_throughput",
+          "source_kind": "official_monthly_port_arrival_count_historical",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "denominator": "vessels_greater_than_75_gross_tons",
+            "most_recent_month_provisional": false,
+            "name": "monthly_vessel_arrivals_over_75_gt",
+            "not_live_tracking": true,
+            "period": "2026-05",
+            "period_months_lag": 6,
+            "reporting_cadence": "monthly",
+            "source_dataset": "d_8f264219109e61fffa87ac64dd5a9a65",
+            "unit": "vessels",
+            "value": 3217,
+            "vessel_type": "Passenger"
+          },
+          "source_scope": "Maritime & Port Authority of Singapore monthly arrivals >75 GT by vessel type; selected latest months, publication lag, Singapore-only, not live AIS",
+          "source_updated_at": null,
+          "source_url": "https://data.gov.sg/datasets/d_8f264219109e61fffa87ac64dd5a9a65/view",
+          "title": "Singapore MPA 2026-05 Passenger vessel arrivals (>75 GT)"
+        }
+      }
+    },
     "1aa5620aa45df360368a47626980b166c42638b1d8a5e9a55a56657ef2388fc0": {
       "information_root": "official:268ba7084f5ec2cf4e77",
       "members": {
@@ -93,6 +186,85 @@
         }
       }
     },
+    "1aaafef235a03934b115a6bdf2d0127e0c30005b72d8c47f45a16161afe3e82e": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-06e899:110306-2026",
+      "members": {
+        "beh:86657dd4e8209521fd66caa12761": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-20T16:00:15+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:86657dd4e8209521fd66caa12761",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-06e899:110306-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-20T16:00:15Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-19T02%3A27%3A41&updatedTo=2026-11-21T02%3A27%3A41",
+          "title": "OPA/T865 Gibraltar - Kings Lines Strategic Fuel Hub - EPC. · Oil and Pipelines Agency"
+        }
+      }
+    },
+    "1ab87861e7474638bf7c2db301ba3c0cf69f43c4f8515ca727fdb3e663aa4009": {
+      "information_root": "sg_mpa:sg_mpa:2026-04:tug",
+      "members": {
+        "beh:a86224e436af605c466ca53af592": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "monthly_maritime_throughput_not_current_disruption",
+          "collection_mode": "sg_mpa",
+          "direct_measurement": true,
+          "event_at": null,
+          "first_observed_at": "2026-11-21T02:31:05+00:00",
+          "geography_key": "country:SG",
+          "geography_label": "Singapore",
+          "geography_precision": "national_port_scope_not_incident",
+          "id": "beh:a86224e436af605c466ca53af592",
+          "information_root": "sg_mpa:sg_mpa:2026-04:tug",
+          "origin": "behavioral_registry",
+          "provider": "sg_mpa",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_monthly_port_throughput_historical",
+          "source_family": "port_throughput",
+          "source_kind": "official_monthly_port_arrival_count_historical",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "denominator": "vessels_greater_than_75_gross_tons",
+            "most_recent_month_provisional": false,
+            "name": "monthly_vessel_arrivals_over_75_gt",
+            "not_live_tracking": true,
+            "period": "2026-04",
+            "period_months_lag": 7,
+            "reporting_cadence": "monthly",
+            "source_dataset": "d_8f264219109e61fffa87ac64dd5a9a65",
+            "unit": "vessels",
+            "value": 917,
+            "vessel_type": "Tug"
+          },
+          "source_scope": "Maritime & Port Authority of Singapore monthly arrivals >75 GT by vessel type; selected latest months, publication lag, Singapore-only, not live AIS",
+          "source_updated_at": null,
+          "source_url": "https://data.gov.sg/datasets/d_8f264219109e61fffa87ac64dd5a9a65/view",
+          "title": "Singapore MPA 2026-04 Tug vessel arrivals (>75 GT)"
+        }
+      }
+    },
     "1ac29d4a415eb09537f12e8e2dbac4a2eba051354c9023c1b66c48bbeacf8685": {
       "information_root": "faa:6/7791:0:0",
       "members": {
@@ -120,6 +292,52 @@
           "source_updated_at": null,
           "source_url": "https://tfr.faa.gov/6_7791.html",
           "title": "FAA TFR 6/7791 · PERRY, FL, Saturday, November 21, 2026 UTC"
+        }
+      }
+    },
+    "1ad229e4cc63ff3c5397854ac48a0d9f30a8db46c757d51cd0f7e1c25cd7abe9": {
+      "information_root": "sg_mpa:sg_mpa:2026-05:miscellaneous",
+      "members": {
+        "beh:3b1a77d9dd8c5680f661fccb7dc0": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "monthly_maritime_throughput_not_current_disruption",
+          "collection_mode": "sg_mpa",
+          "direct_measurement": true,
+          "event_at": null,
+          "first_observed_at": "2026-11-21T02:31:05+00:00",
+          "geography_key": "country:SG",
+          "geography_label": "Singapore",
+          "geography_precision": "national_port_scope_not_incident",
+          "id": "beh:3b1a77d9dd8c5680f661fccb7dc0",
+          "information_root": "sg_mpa:sg_mpa:2026-05:miscellaneous",
+          "origin": "behavioral_registry",
+          "provider": "sg_mpa",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_monthly_port_throughput_historical",
+          "source_family": "port_throughput",
+          "source_kind": "official_monthly_port_arrival_count_historical",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "denominator": "vessels_greater_than_75_gross_tons",
+            "most_recent_month_provisional": false,
+            "name": "monthly_vessel_arrivals_over_75_gt",
+            "not_live_tracking": true,
+            "period": "2026-05",
+            "period_months_lag": 6,
+            "reporting_cadence": "monthly",
+            "source_dataset": "d_8f264219109e61fffa87ac64dd5a9a65",
+            "unit": "vessels",
+            "value": 883,
+            "vessel_type": "Miscellaneous"
+          },
+          "source_scope": "Maritime & Port Authority of Singapore monthly arrivals >75 GT by vessel type; selected latest months, publication lag, Singapore-only, not live AIS",
+          "source_updated_at": null,
+          "source_url": "https://data.gov.sg/datasets/d_8f264219109e61fffa87ac64dd5a9a65/view",
+          "title": "Singapore MPA 2026-05 Miscellaneous vessel arrivals (>75 GT)"
         }
       }
     },

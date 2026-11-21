@@ -1,5 +1,97 @@
 {
   "roots": {
+    "9e0959ba7701aecc4e5b5efb7fa21a6271b16d61abdefee53ac6d2d23bc2b541": {
+      "information_root": "sg_mpa:sg_mpa:2026-01:passenger",
+      "members": {
+        "beh:4f95636d6eab9c1fa221c03efae3": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "monthly_maritime_throughput_not_current_disruption",
+          "collection_mode": "sg_mpa",
+          "direct_measurement": true,
+          "event_at": null,
+          "first_observed_at": "2026-11-21T02:31:05+00:00",
+          "geography_key": "country:SG",
+          "geography_label": "Singapore",
+          "geography_precision": "national_port_scope_not_incident",
+          "id": "beh:4f95636d6eab9c1fa221c03efae3",
+          "information_root": "sg_mpa:sg_mpa:2026-01:passenger",
+          "origin": "behavioral_registry",
+          "provider": "sg_mpa",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_monthly_port_throughput_historical",
+          "source_family": "port_throughput",
+          "source_kind": "official_monthly_port_arrival_count_historical",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "denominator": "vessels_greater_than_75_gross_tons",
+            "most_recent_month_provisional": false,
+            "name": "monthly_vessel_arrivals_over_75_gt",
+            "not_live_tracking": true,
+            "period": "2026-01",
+            "period_months_lag": 10,
+            "reporting_cadence": "monthly",
+            "source_dataset": "d_8f264219109e61fffa87ac64dd5a9a65",
+            "unit": "vessels",
+            "value": 3500,
+            "vessel_type": "Passenger"
+          },
+          "source_scope": "Maritime & Port Authority of Singapore monthly arrivals >75 GT by vessel type; selected latest months, publication lag, Singapore-only, not live AIS",
+          "source_updated_at": null,
+          "source_url": "https://data.gov.sg/datasets/d_8f264219109e61fffa87ac64dd5a9a65/view",
+          "title": "Singapore MPA 2026-01 Passenger vessel arrivals (>75 GT)"
+        }
+      }
+    },
+    "9e2467c9c42eab966c0f4daf36afa7e8cee943e9c03f5621d374765e57706e34": {
+      "information_root": "sg_mpa:sg_mpa:2026-04:passenger",
+      "members": {
+        "beh:ace4661d89e1310d13a7455df8be": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "monthly_maritime_throughput_not_current_disruption",
+          "collection_mode": "sg_mpa",
+          "direct_measurement": true,
+          "event_at": null,
+          "first_observed_at": "2026-11-21T02:31:05+00:00",
+          "geography_key": "country:SG",
+          "geography_label": "Singapore",
+          "geography_precision": "national_port_scope_not_incident",
+          "id": "beh:ace4661d89e1310d13a7455df8be",
+          "information_root": "sg_mpa:sg_mpa:2026-04:passenger",
+          "origin": "behavioral_registry",
+          "provider": "sg_mpa",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_monthly_port_throughput_historical",
+          "source_family": "port_throughput",
+          "source_kind": "official_monthly_port_arrival_count_historical",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "denominator": "vessels_greater_than_75_gross_tons",
+            "most_recent_month_provisional": false,
+            "name": "monthly_vessel_arrivals_over_75_gt",
+            "not_live_tracking": true,
+            "period": "2026-04",
+            "period_months_lag": 7,
+            "reporting_cadence": "monthly",
+            "source_dataset": "d_8f264219109e61fffa87ac64dd5a9a65",
+            "unit": "vessels",
+            "value": 2954,
+            "vessel_type": "Passenger"
+          },
+          "source_scope": "Maritime & Port Authority of Singapore monthly arrivals >75 GT by vessel type; selected latest months, publication lag, Singapore-only, not live AIS",
+          "source_updated_at": null,
+          "source_url": "https://data.gov.sg/datasets/d_8f264219109e61fffa87ac64dd5a9a65/view",
+          "title": "Singapore MPA 2026-04 Passenger vessel arrivals (>75 GT)"
+        }
+      }
+    },
     "9e6f5f86911fd60e44abbc2aabf42771b381ef525a620ab4f6f13e7f40c08e79": {
       "information_root": "niord:0dd97987-d92b-4b12-b6f2-524532503f33:0:6:0",
       "members": {
@@ -30,6 +122,52 @@
         }
       }
     },
+    "9e8d1d1e4f08281dc299a0291add530a7be66bda8ecc1eac6f395e0ff3fa34d4": {
+      "information_root": "sg_mpa:sg_mpa:2026-10:barges",
+      "members": {
+        "beh:4209a923342b0b6ce29f7586ce5e": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "monthly_maritime_throughput_not_current_disruption",
+          "collection_mode": "sg_mpa",
+          "direct_measurement": true,
+          "event_at": null,
+          "first_observed_at": "2026-11-21T02:31:05+00:00",
+          "geography_key": "country:SG",
+          "geography_label": "Singapore",
+          "geography_precision": "national_port_scope_not_incident",
+          "id": "beh:4209a923342b0b6ce29f7586ce5e",
+          "information_root": "sg_mpa:sg_mpa:2026-10:barges",
+          "origin": "behavioral_registry",
+          "provider": "sg_mpa",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_monthly_port_throughput_historical",
+          "source_family": "port_throughput",
+          "source_kind": "official_monthly_port_arrival_count_historical",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "denominator": "vessels_greater_than_75_gross_tons",
+            "most_recent_month_provisional": true,
+            "name": "monthly_vessel_arrivals_over_75_gt",
+            "not_live_tracking": true,
+            "period": "2026-10",
+            "period_months_lag": 1,
+            "reporting_cadence": "monthly",
+            "source_dataset": "d_8f264219109e61fffa87ac64dd5a9a65",
+            "unit": "vessels",
+            "value": 960,
+            "vessel_type": "Barges"
+          },
+          "source_scope": "Maritime & Port Authority of Singapore monthly arrivals >75 GT by vessel type; selected latest months, publication lag, Singapore-only, not live AIS",
+          "source_updated_at": null,
+          "source_url": "https://data.gov.sg/datasets/d_8f264219109e61fffa87ac64dd5a9a65/view",
+          "title": "Singapore MPA 2026-10 Barges vessel arrivals (>75 GT)"
+        }
+      }
+    },
     "9e8fee95c50e1c48456a40f2380665408f2ea1d3ab91a18ce86d508883855e70": {
       "information_root": "niord:d8f7a59c-bda3-4691-aa45-338949965a54:0:3:0",
       "members": {
@@ -57,6 +195,39 @@
           "source_updated_at": "2026-11-20T13:21:55Z",
           "source_url": "https://niord.dma.dk/#/message/d8f7a59c-bda3-4691-aa45-338949965a54",
           "title": "Denmark. The North Sea. EK R 33 Vejers. Firing exercises. Warning."
+        }
+      }
+    },
+    "9e954b3bbe431395f00e709442ab4f5204789bfb84fde62dba0bdb618ddcbec5": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-065411:110366-2026",
+      "members": {
+        "beh:641d7cbfa84dbefb88cea69fa372": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-20T18:42:16+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:641d7cbfa84dbefb88cea69fa372",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-065411:110366-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-20T18:42:16Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-19T02%3A27%3A41&updatedTo=2026-11-21T02%3A27%3A41",
+          "title": "FCDO Accra British High Commission Offices Redevelopment, Ghana · Foreign, Commonwealth and Development Office"
         }
       }
     },

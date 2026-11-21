@@ -210,6 +210,83 @@
         }
       }
     },
+    "c1c1aef293757cfcb6057409a89b656dff3399157491cd55fd92bed930394b37": {
+      "information_root": "inmet_br:inmet_br:03de4ba0f3e121185aa16159e651",
+      "members": {
+        "beh:ac128ed23083064daaf336514755": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "inmet_br",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-19T16:42:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:ac128ed23083064daaf336514755",
+          "information_root": "inmet_br:inmet_br:03de4ba0f3e121185aa16159e651",
+          "origin": "behavioral_registry",
+          "provider": "inmet_br",
+          "published_at": "2026-11-19T16:42:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Brazil INMET",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Brazil INMET official severe-weather RSS notices; provider-listed bounded sample",
+          "source_updated_at": null,
+          "source_url": "https://apiprevmet3.inmet.gov.br/avisos/rss/56468",
+          "title": "Aviso de Tempestade. Severidade Grau: Perigo Potencial"
+        }
+      }
+    },
+    "c1d843a706472a97bf99c29fa381e82acbdd519b3152e58526459dc1e88f4803": {
+      "information_root": "usgs:us6000uc8d",
+      "members": {
+        "beh:5fbdafca173cc551671c1a6c41df": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "usgs",
+          "direct_measurement": true,
+          "event_at": "2026-11-20T10:16:14Z",
+          "first_observed_at": "2026-11-20T10:16:14+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "source_supplied_point_only",
+          "id": "beh:5fbdafca173cc551671c1a6c41df",
+          "information_root": "usgs:us6000uc8d",
+          "origin": "behavioral_registry",
+          "provider": "usgs",
+          "published_at": "2026-11-20T11:58:03Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "measured_earthquake_context",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "name": "earthquake_magnitude",
+            "unit": "reported_magnitude",
+            "value": 4.6
+          },
+          "source_scope": "USGS M4.5+ earthquakes worldwide, rolling past day; source thresholds apply",
+          "source_updated_at": null,
+          "source_url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000uc8d",
+          "title": "M 4.6 - 40 km SSE of Koróni, Greece"
+        }
+      }
+    },
     "c1e7c87d589f368c3491aa594ed69db0e99f2d1a1106bbe78793ee0ad3e24e6d": {
       "information_root": "official:b373747272f72e6c7085",
       "members": {
@@ -267,6 +344,39 @@
           "source_updated_at": "2026-11-12T00:21:51Z",
           "source_url": "https://niord.dma.dk/#/message/02f3c722-952b-445c-8ba9-38509d54b5b2",
           "title": "Denmark. Kattegat. EK R 18 Jaegerspris. Firing exercises. Warning."
+        }
+      }
+    },
+    "c1fb050d282815dc16f24eee0759ede269369560e2ea615c5a5014de2dd078e0": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c0c5:110334-2026",
+      "members": {
+        "beh:f0320b5dbe445bf4ffe38e0a2c9e": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-20T16:36:53+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:f0320b5dbe445bf4ffe38e0a2c9e",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c0c5:110334-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-20T16:36:53Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-19T02%3A27%3A41&updatedTo=2026-11-21T02%3A27%3A41",
+          "title": "MRF Hot Cells Engineering and Maintenance Framework · UK Atomic Energy Authority"
         }
       }
     }

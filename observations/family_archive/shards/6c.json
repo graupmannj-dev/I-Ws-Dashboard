@@ -120,6 +120,39 @@
         }
       }
     },
+    "6c74099e6393918d948aa2379388b322dbf2eea6d46a283c266b850e01fa141a": {
+      "information_root": "nws:d9fed250ff7c9fe55ba33a1b",
+      "members": {
+        "beh:dfc9ebc8b03202113add634bdd43": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "nws",
+          "direct_measurement": false,
+          "event_at": "2026-11-20T19:46:00Z",
+          "first_observed_at": "2026-11-20T19:46:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:dfc9ebc8b03202113add634bdd43",
+          "information_root": "nws:d9fed250ff7c9fe55ba33a1b",
+          "origin": "behavioral_registry",
+          "provider": "nws",
+          "published_at": "2026-11-20T19:46:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "official_weather_alert_context",
+          "source_measurement": null,
+          "source_scope": "Active NWS marine alerts; severity Moderate",
+          "source_updated_at": null,
+          "source_url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.2f505c1cf3f6a7257ff3d33d93b4726094fe7420.001.1",
+          "title": "Rip Current Statement - Mobile Coastal; Baldwin Coastal; Escambia Coastal; Santa Rosa Coastal; Okaloosa Coastal"
+        }
+      }
+    },
     "6c97719cf44ca6bb9528b40794f8667c2cb42ba3c019eba8fb5bb4181a98b73c": {
       "information_root": "official:0210bf468d3db05e7f52",
       "members": {
@@ -147,6 +180,91 @@
           "source_updated_at": null,
           "source_url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.lby.html",
           "title": "Libya - Level 4: Do Not Travel"
+        }
+      }
+    },
+    "6cae9fc2750a64eed779f71e09c6a3441811b0b5763912d70070735aa74d0019": {
+      "information_root": "cbp_wait:cbp_wait:360401:2026-11-20:20:23:03",
+      "members": {
+        "beh:fd01025e7fa8eed877d24f622700": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-21T02:31:05+00:00",
+          "geography_key": "us-border-port:360401",
+          "geography_label": "International Falls",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:fd01025e7fa8eed877d24f622700",
+          "information_root": "cbp_wait:cbp_wait:360401:2026-11-20:20:23:03",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "no delay",
+            "lanes_open": 1,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "At 10:00 pm CST",
+            "reported_local_date": "11/20/2026",
+            "reported_local_time": "20:23:03",
+            "source_declared_border": "Canadian Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 0
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — International Falls"
+        }
+      }
+    },
+    "6cc4ec9b76927bf9987ff0b413761de3cd8370b6d07caf2d2c76c3e996db9eaa": {
+      "information_root": "usgs:us6000ucd6",
+      "members": {
+        "beh:b45feb94a86b4d8ce902d7301407": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "usgs",
+          "direct_measurement": true,
+          "event_at": "2026-11-20T17:53:15Z",
+          "first_observed_at": "2026-11-20T17:53:15+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "source_supplied_point_only",
+          "id": "beh:b45feb94a86b4d8ce902d7301407",
+          "information_root": "usgs:us6000ucd6",
+          "origin": "behavioral_registry",
+          "provider": "usgs",
+          "published_at": "2026-11-20T18:11:13Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "measured_earthquake_context",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "name": "earthquake_magnitude",
+            "unit": "reported_magnitude",
+            "value": 5.1
+          },
+          "source_scope": "USGS M4.5+ earthquakes worldwide, rolling past day; source thresholds apply",
+          "source_updated_at": null,
+          "source_url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000ucd6",
+          "title": "M 5.1 - 32 km NE of Port-Olry, Vanuatu"
         }
       }
     }

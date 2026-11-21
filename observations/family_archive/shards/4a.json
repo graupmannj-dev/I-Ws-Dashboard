@@ -30,6 +30,39 @@
         }
       }
     },
+    "4a5dff82cc832c1e6c0a00e6a2e0b8f9ac8363cc709583d6d90699c28b10018c": {
+      "information_root": "swpc:K04W:5454:20261118T055607Z",
+      "members": {
+        "beh:bb988ec210555a7737ac023a6300": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "swpc",
+          "direct_measurement": false,
+          "event_at": "2026-11-18T05:56:07Z",
+          "first_observed_at": "2026-11-18T05:56:07+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:bb988ec210555a7737ac023a6300",
+          "information_root": "swpc:K04W:5454:20261118T055607Z",
+          "origin": "behavioral_registry",
+          "provider": "swpc",
+          "published_at": "2026-11-18T05:56:07Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "issued_space_weather_bulletin",
+          "source_measurement": null,
+          "source_scope": "NOAA SWPC issued recent solar/geomagnetic warnings; explanatory context only",
+          "source_updated_at": null,
+          "source_url": "https://www.swpc.noaa.gov/products/alerts-watches-and-warnings",
+          "title": "WARNING: Geomagnetic K-index of 4 expected"
+        }
+      }
+    },
     "4a5f17de7f352c2adb86f419c0c831af46eec3e0e58637316132382c5e0cbbce": {
       "information_root": "official:ce872b71e83449467e43",
       "members": {
@@ -87,6 +120,52 @@
           "source_updated_at": "2026-11-13T00:21:52Z",
           "source_url": "https://niord.dma.dk/#/message/fd585098-74b9-49ea-a826-82951a0a3ad3",
           "title": "Denmark. Kattegat. EK R 45 Hevring. Firing exercises. Warning."
+        }
+      }
+    },
+    "4a76dcfd55252733a288ad6528badbce5fe5fe09892656470486665141d85ea2": {
+      "information_root": "sg_mpa:sg_mpa:2026-10:freighter",
+      "members": {
+        "beh:4647eb37e54fd940de991f98bddf": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "monthly_maritime_throughput_not_current_disruption",
+          "collection_mode": "sg_mpa",
+          "direct_measurement": true,
+          "event_at": null,
+          "first_observed_at": "2026-11-21T02:31:05+00:00",
+          "geography_key": "country:SG",
+          "geography_label": "Singapore",
+          "geography_precision": "national_port_scope_not_incident",
+          "id": "beh:4647eb37e54fd940de991f98bddf",
+          "information_root": "sg_mpa:sg_mpa:2026-10:freighter",
+          "origin": "behavioral_registry",
+          "provider": "sg_mpa",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_monthly_port_throughput_historical",
+          "source_family": "port_throughput",
+          "source_kind": "official_monthly_port_arrival_count_historical",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "denominator": "vessels_greater_than_75_gross_tons",
+            "most_recent_month_provisional": true,
+            "name": "monthly_vessel_arrivals_over_75_gt",
+            "not_live_tracking": true,
+            "period": "2026-10",
+            "period_months_lag": 1,
+            "reporting_cadence": "monthly",
+            "source_dataset": "d_8f264219109e61fffa87ac64dd5a9a65",
+            "unit": "vessels",
+            "value": 531,
+            "vessel_type": "Freighter"
+          },
+          "source_scope": "Maritime & Port Authority of Singapore monthly arrivals >75 GT by vessel type; selected latest months, publication lag, Singapore-only, not live AIS",
+          "source_updated_at": null,
+          "source_url": "https://data.gov.sg/datasets/d_8f264219109e61fffa87ac64dd5a9a65/view",
+          "title": "Singapore MPA 2026-10 Freighter vessel arrivals (>75 GT)"
         }
       }
     },

@@ -1,5 +1,45 @@
 {
   "roots": {
+    "c208a542383ac8e229b2a5deef1f6b8eac757c6665d0f95c8f1660651f2aa239": {
+      "information_root": "bmkg_quake:bmkg_quake:328decfd7056a90a877decca6af0",
+      "members": {
+        "beh:3c2c95d7c3508f73ec62e33420ae": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "bmkg_quake",
+          "direct_measurement": true,
+          "event_at": "2026-11-15T15:41:15Z",
+          "first_observed_at": "2026-11-21T02:31:05+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "source_supplied_earthquake_epicenter",
+          "id": "beh:3c2c95d7c3508f73ec62e33420ae",
+          "information_root": "bmkg_quake:bmkg_quake:328decfd7056a90a877decca6af0",
+          "origin": "behavioral_registry",
+          "provider": "bmkg_quake",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_seismic_reporting_may_represent_same_usgs_event",
+          "source_family": "environmental_context",
+          "source_kind": "national_seismic_measurement_context",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "depth_km": 465.0,
+            "name": "earthquake_magnitude",
+            "possible_same_physical_event_as_usgs": true,
+            "unit": "source_reported_magnitude",
+            "value": 5.4
+          },
+          "source_scope": "Indonesia BMKG 15 latest magnitude-5+ earthquakes; not global; same physical events may appear in USGS",
+          "source_updated_at": null,
+          "source_url": "https://data.bmkg.go.id/DataMKG/TEWS/gempaterkini.json",
+          "title": "BMKG earthquake M5.4 · 127 km BaratLaut GORONTALOUTARA-GORONTALO"
+        }
+      }
+    },
     "c22a111e920f74db3317d344fe74978163ecf5bbd3bb86b20f645ddbfbb907e5": {
       "information_root": "official:8c11bfdcf775e8b3bc6b",
       "members": {

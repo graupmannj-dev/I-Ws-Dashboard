@@ -30,6 +30,52 @@
         }
       }
     },
+    "e6408156d5f4ee8376b06d887eb9a89fdef63cb5f1a28d839ebeb115993b581b": {
+      "information_root": "sg_mpa:sg_mpa:2026-02:tanker",
+      "members": {
+        "beh:64bae03bc6459aa1bfbee7882c47": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "monthly_maritime_throughput_not_current_disruption",
+          "collection_mode": "sg_mpa",
+          "direct_measurement": true,
+          "event_at": null,
+          "first_observed_at": "2026-11-21T02:31:05+00:00",
+          "geography_key": "country:SG",
+          "geography_label": "Singapore",
+          "geography_precision": "national_port_scope_not_incident",
+          "id": "beh:64bae03bc6459aa1bfbee7882c47",
+          "information_root": "sg_mpa:sg_mpa:2026-02:tanker",
+          "origin": "behavioral_registry",
+          "provider": "sg_mpa",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_monthly_port_throughput_historical",
+          "source_family": "port_throughput",
+          "source_kind": "official_monthly_port_arrival_count_historical",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "denominator": "vessels_greater_than_75_gross_tons",
+            "most_recent_month_provisional": false,
+            "name": "monthly_vessel_arrivals_over_75_gt",
+            "not_live_tracking": true,
+            "period": "2026-02",
+            "period_months_lag": 9,
+            "reporting_cadence": "monthly",
+            "source_dataset": "d_8f264219109e61fffa87ac64dd5a9a65",
+            "unit": "vessels",
+            "value": 2084,
+            "vessel_type": "Tanker"
+          },
+          "source_scope": "Maritime & Port Authority of Singapore monthly arrivals >75 GT by vessel type; selected latest months, publication lag, Singapore-only, not live AIS",
+          "source_updated_at": null,
+          "source_url": "https://data.gov.sg/datasets/d_8f264219109e61fffa87ac64dd5a9a65/view",
+          "title": "Singapore MPA 2026-02 Tanker vessel arrivals (>75 GT)"
+        }
+      }
+    },
     "e642dfcfaaac71144226b0452a2dd6b16dd7db110050ee6d1d8da7100f7267a4": {
       "information_root": "niord:57e3ae61-a94b-4cc6-8303-615cf880c5bb:0:1:0",
       "members": {
@@ -60,6 +106,118 @@
         }
       }
     },
+    "e64934597336b206f0573049eff8bb38c553ae628801de60d7e1563a9a841516": {
+      "information_root": "sg_mpa:sg_mpa:2026-04:miscellaneous",
+      "members": {
+        "beh:83fb883b4cdcd7ffd293dcf001ad": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "monthly_maritime_throughput_not_current_disruption",
+          "collection_mode": "sg_mpa",
+          "direct_measurement": true,
+          "event_at": null,
+          "first_observed_at": "2026-11-21T02:31:05+00:00",
+          "geography_key": "country:SG",
+          "geography_label": "Singapore",
+          "geography_precision": "national_port_scope_not_incident",
+          "id": "beh:83fb883b4cdcd7ffd293dcf001ad",
+          "information_root": "sg_mpa:sg_mpa:2026-04:miscellaneous",
+          "origin": "behavioral_registry",
+          "provider": "sg_mpa",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_monthly_port_throughput_historical",
+          "source_family": "port_throughput",
+          "source_kind": "official_monthly_port_arrival_count_historical",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "denominator": "vessels_greater_than_75_gross_tons",
+            "most_recent_month_provisional": false,
+            "name": "monthly_vessel_arrivals_over_75_gt",
+            "not_live_tracking": true,
+            "period": "2026-04",
+            "period_months_lag": 7,
+            "reporting_cadence": "monthly",
+            "source_dataset": "d_8f264219109e61fffa87ac64dd5a9a65",
+            "unit": "vessels",
+            "value": 703,
+            "vessel_type": "Miscellaneous"
+          },
+          "source_scope": "Maritime & Port Authority of Singapore monthly arrivals >75 GT by vessel type; selected latest months, publication lag, Singapore-only, not live AIS",
+          "source_updated_at": null,
+          "source_url": "https://data.gov.sg/datasets/d_8f264219109e61fffa87ac64dd5a9a65/view",
+          "title": "Singapore MPA 2026-04 Miscellaneous vessel arrivals (>75 GT)"
+        }
+      }
+    },
+    "e65d21b99b23cb7591dd2d2287aa8df6209db60050773b841ed652653c57675f": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07911f:110285-2026",
+      "members": {
+        "beh:5ae4ab2add42b77e5c965d3ff253": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-20T15:45:24+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:5ae4ab2add42b77e5c965d3ff253",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07911f:110285-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-20T15:45:24Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-19T02%3A27%3A41&updatedTo=2026-11-21T02%3A27%3A41",
+          "title": "Purchase of Gamma Camera · Royal Surrey County Hospital NHS Foundation Trust"
+        }
+      }
+    },
+    "e6a87fb0257ca85b4727105daeb9624e902a6d4378655c979a754a75a50fd386": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c0b0:110294-2026",
+      "members": {
+        "beh:675ad142deba24ebad5892adccf6": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-20T15:52:38+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:675ad142deba24ebad5892adccf6",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c0b0:110294-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-20T15:52:38Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-19T02%3A27%3A41&updatedTo=2026-11-21T02%3A27%3A41",
+          "title": "26214 - Children's SW Managed Service · DMBC"
+        }
+      }
+    },
     "e6b552bbb93b10e969d6b9852fcba01d3954607fbd00c923f441c34c41f81684": {
       "information_root": "niord:06000b7f-8f63-4ff2-8bd7-12f026492678:1:0:0",
       "members": {
@@ -87,6 +245,92 @@
           "source_updated_at": "2026-11-18T00:21:52Z",
           "source_url": "https://niord.dma.dk/#/message/06000b7f-8f63-4ff2-8bd7-12f026492678",
           "title": "Denmark. Kattegat. EK R 19 MULTEX. Firing exercises. Warning."
+        }
+      }
+    },
+    "e6d0069b7ed0e37329db5adf2197fcdc7928579f3b9af9d7b319f23389f38bcd": {
+      "information_root": "cbp_wait:cbp_wait:070801:2026-11-20:21:23:03",
+      "members": {
+        "beh:61e7b0de4ce5d016542cef407915": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-21T02:31:05+00:00",
+          "geography_key": "us-border-port:070801",
+          "geography_label": "Alexandria Bay",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:61e7b0de4ce5d016542cef407915",
+          "information_root": "cbp_wait:cbp_wait:070801:2026-11-20:21:23:03",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "delay",
+            "lanes_open": 1,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "At 6:00 am EST",
+            "reported_local_date": "11/20/2026",
+            "reported_local_time": "21:23:03",
+            "source_declared_border": "Canadian Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 10
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Alexandria Bay / Thousand Islands Bridge"
+        }
+      }
+    },
+    "e6d625cf5b74b94a3c5425a24618ef326fb0f4f2ac084e196c5a3473e9f497a7": {
+      "information_root": "inmet_br:inmet_br:7f2f0e7e3fa811f878f41cd62cbd",
+      "members": {
+        "beh:411d91b29ef37a4909c2b90fe8f6": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "inmet_br",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-16T09:00:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:411d91b29ef37a4909c2b90fe8f6",
+          "information_root": "inmet_br:inmet_br:7f2f0e7e3fa811f878f41cd62cbd",
+          "origin": "behavioral_registry",
+          "provider": "inmet_br",
+          "published_at": "2026-11-16T09:00:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Brazil INMET",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Brazil INMET official severe-weather RSS notices; provider-listed bounded sample",
+          "source_updated_at": null,
+          "source_url": "https://apiprevmet3.inmet.gov.br/avisos/rss/56424",
+          "title": "Aviso de Ventos Costeiros. Severidade Grau: Perigo Potencial"
         }
       }
     },

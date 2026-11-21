@@ -60,6 +60,81 @@
         }
       }
     },
+    "043c8c2d242ce30c99fe317c56030789e8f7204f1175eee0f5125875e035a8b9": {
+      "information_root": "wiki_edits:wiki_edits:ar:20261121T02",
+      "members": {
+        "beh:777af150b65827f0446c61890a9d": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "wiki_edits",
+          "direct_measurement": false,
+          "event_at": "2026-11-21T02:27:39Z",
+          "first_observed_at": "2026-11-21T02:27:39+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:777af150b65827f0446c61890a9d",
+          "information_root": "wiki_edits:wiki_edits:ar:20261121T02",
+          "origin": "behavioral_registry",
+          "provider": "wiki_edits",
+          "published_at": "2026-11-21T02:27:39Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "public_encyclopedia_edit_aggregate",
+          "source_family": "public_attention",
+          "source_kind": "bounded_public_edit_count_not_event_verification",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "distinct_articles_in_sample": 332,
+            "maximum_returned_edits": 500,
+            "most_edited_article_counts": [
+              {
+                "count": 12,
+                "title": "أنتي بافليتش"
+              },
+              {
+                "count": 9,
+                "title": "أنثروبويد (فلم)"
+              },
+              {
+                "count": 6,
+                "title": "أنتيغوا وباربودا"
+              },
+              {
+                "count": 6,
+                "title": "أنتيوخ ديمتريفتش كانتمير"
+              },
+              {
+                "count": 5,
+                "title": "أنتونيو نوتشيرينو"
+              },
+              {
+                "count": 5,
+                "title": "أنتي إرتسيج"
+              },
+              {
+                "count": 5,
+                "title": "أنتي بوليتش"
+              },
+              {
+                "count": 5,
+                "title": "أنتي ميشا"
+              }
+            ],
+            "name": "sampled_edits_last_three_hours",
+            "sample_cap_reached": true,
+            "unit": "edits",
+            "value": 500
+          },
+          "source_scope": "Wikipedia main-namespace edit-count sample, 14 global language editions, three-hour window capped at 500 per wiki; not geographic location",
+          "source_updated_at": null,
+          "source_url": "https://ar.wikipedia.org/wiki/Special:RecentChanges",
+          "title": "Wikipedia ar public article-edit activity (sampled)"
+        }
+      }
+    },
     "046e4e61934859b147376b1124cbefcad5de8a496dda83509059d5d008a3daea": {
       "information_root": "ioda:95654076edf5357d979e833b",
       "members": {
@@ -147,6 +222,52 @@
           "source_updated_at": "2026-11-12T00:21:51Z",
           "source_url": "https://niord.dma.dk/#/message/02f3c722-952b-445c-8ba9-38509d54b5b2",
           "title": "Denmark. Kattegat. EK R 18 Jaegerspris. Firing exercises. Warning."
+        }
+      }
+    },
+    "04919af5adf859de60ae1a124e6c411c39131a205880113ca0911747b5eccde3": {
+      "information_root": "sg_mpa:sg_mpa:2026-09:freighter",
+      "members": {
+        "beh:37f8ed18cf0d2a8d251e4daa125d": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "monthly_maritime_throughput_not_current_disruption",
+          "collection_mode": "sg_mpa",
+          "direct_measurement": true,
+          "event_at": null,
+          "first_observed_at": "2026-11-21T02:31:05+00:00",
+          "geography_key": "country:SG",
+          "geography_label": "Singapore",
+          "geography_precision": "national_port_scope_not_incident",
+          "id": "beh:37f8ed18cf0d2a8d251e4daa125d",
+          "information_root": "sg_mpa:sg_mpa:2026-09:freighter",
+          "origin": "behavioral_registry",
+          "provider": "sg_mpa",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_monthly_port_throughput_historical",
+          "source_family": "port_throughput",
+          "source_kind": "official_monthly_port_arrival_count_historical",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "denominator": "vessels_greater_than_75_gross_tons",
+            "most_recent_month_provisional": false,
+            "name": "monthly_vessel_arrivals_over_75_gt",
+            "not_live_tracking": true,
+            "period": "2026-09",
+            "period_months_lag": 2,
+            "reporting_cadence": "monthly",
+            "source_dataset": "d_8f264219109e61fffa87ac64dd5a9a65",
+            "unit": "vessels",
+            "value": 510,
+            "vessel_type": "Freighter"
+          },
+          "source_scope": "Maritime & Port Authority of Singapore monthly arrivals >75 GT by vessel type; selected latest months, publication lag, Singapore-only, not live AIS",
+          "source_updated_at": null,
+          "source_url": "https://data.gov.sg/datasets/d_8f264219109e61fffa87ac64dd5a9a65/view",
+          "title": "Singapore MPA 2026-09 Freighter vessel arrivals (>75 GT)"
         }
       }
     },

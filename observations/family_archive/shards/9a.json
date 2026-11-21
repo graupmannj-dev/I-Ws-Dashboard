@@ -60,6 +60,39 @@
         }
       }
     },
+    "9a2373c0f937ec29092fdad4448de224ff349f40277092368a0eca4713756259": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c0c3:110328-2026",
+      "members": {
+        "beh:4b5aa2c1f0088c38854650e45777": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-20T16:32:34+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:4b5aa2c1f0088c38854650e45777",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c0c3:110328-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-20T16:32:34Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-19T02%3A27%3A41&updatedTo=2026-11-21T02%3A27%3A41",
+          "title": "Executive Recruitment · Foreign, Commonwealth and Development Office"
+        }
+      }
+    },
     "9a694028b0c371085f204797443c5bcfad1738888e039cb50084efdc037c511f": {
       "information_root": "niord:69057d00-f2a2-402c-8b88-b8fb3a34b088:1:0:1",
       "members": {
@@ -177,6 +210,53 @@
           "source_updated_at": null,
           "source_url": "https://www.gov.uk/foreign-travel-advice/georgia",
           "title": "Georgia"
+        }
+      }
+    },
+    "9ac9df1598b62506ccd65093638f53f9b1c0ac730b5ee4fe3931820d49068d09": {
+      "information_root": "ons_br:ons_br:N:20261120T030000Z",
+      "members": {
+        "beh:dba5e34ec1b7681f3bd5325a9c7e": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "verified_grid_load_not_outage_or_intent",
+          "collection_mode": "ons_br",
+          "direct_measurement": true,
+          "event_at": "2026-11-20T03:00:00Z",
+          "first_observed_at": "2026-11-21T02:31:05+00:00",
+          "geography_key": "br-ons-loadarea:N",
+          "geography_label": "North",
+          "geography_precision": "regional_grid_not_incident_site",
+          "id": "beh:dba5e34ec1b7681f3bd5325a9c7e",
+          "information_root": "ons_br:ons_br:N:20261120T030000Z",
+          "origin": "behavioral_registry",
+          "provider": "ons_br",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "verified_national_grid_load_measurement",
+          "source_family": "grid_load",
+          "source_kind": "verified_regional_electricity_load_context_not_outage",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "collected_history_day": "2026-11-19",
+            "historical_verified_not_live": true,
+            "load_area_code": "N",
+            "load_area_name": "North",
+            "name": "verified_half_hour_global_load",
+            "not_outage_or_attribution": true,
+            "sample_interval_minutes": 30,
+            "sampled_rows": 48,
+            "source_field": "val_cargaglobal",
+            "source_utc_field": "din_referenciautc",
+            "unit": "MWmed",
+            "value": 10300.871
+          },
+          "source_scope": "Brazilian national system operator ONS verified half-hour load, four macroregions, previous two-day sample; no local facilities/outage attribution",
+          "source_updated_at": null,
+          "source_url": "https://dados.ons.org.br/dataset/carga-energia-verificada",
+          "title": "Brazil ONS North verified half-hourly system load"
         }
       }
     }

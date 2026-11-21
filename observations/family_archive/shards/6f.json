@@ -90,6 +90,120 @@
         }
       }
     },
+    "6f7d220c315d9777b9f509b078815de4b3c32979716702de92ce2e219f7bff23": {
+      "information_root": "wiki_edits:wiki_edits:hi:20261121T02",
+      "members": {
+        "beh:17c863f8944611621ad513a8a330": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "wiki_edits",
+          "direct_measurement": false,
+          "event_at": "2026-11-21T02:26:37Z",
+          "first_observed_at": "2026-11-21T02:26:37+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:17c863f8944611621ad513a8a330",
+          "information_root": "wiki_edits:wiki_edits:hi:20261121T02",
+          "origin": "behavioral_registry",
+          "provider": "wiki_edits",
+          "published_at": "2026-11-21T02:26:37Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "public_encyclopedia_edit_aggregate",
+          "source_family": "public_attention",
+          "source_kind": "bounded_public_edit_count_not_event_verification",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "distinct_articles_in_sample": 21,
+            "maximum_returned_edits": 500,
+            "most_edited_article_counts": [
+              {
+                "count": 1,
+                "title": "देबिना बनर्जी"
+              },
+              {
+                "count": 1,
+                "title": "प्राची बंसल"
+              },
+              {
+                "count": 1,
+                "title": "राष्ट्रीय राजमार्ग 03 (नेपाल)"
+              },
+              {
+                "count": 1,
+                "title": "राष्ट्रीय राजमार्ग 04 (नेपाल)"
+              },
+              {
+                "count": 1,
+                "title": "राष्ट्रीय राजमार्ग 06 (नेपाल)"
+              },
+              {
+                "count": 1,
+                "title": "राष्ट्रीय राजमार्ग 07 (नेपाल)"
+              },
+              {
+                "count": 1,
+                "title": "रास्कल्स"
+              },
+              {
+                "count": 1,
+                "title": "रियाद"
+              }
+            ],
+            "name": "sampled_edits_last_three_hours",
+            "sample_cap_reached": false,
+            "unit": "edits",
+            "value": 21
+          },
+          "source_scope": "Wikipedia main-namespace edit-count sample, 14 global language editions, three-hour window capped at 500 per wiki; not geographic location",
+          "source_updated_at": null,
+          "source_url": "https://hi.wikipedia.org/wiki/Special:RecentChanges",
+          "title": "Wikipedia hi public article-edit activity (sampled)"
+        }
+      }
+    },
+    "6f88c2f2561a6b6ed34471ccd1e2ae59c2b05dd4c43738edbfc743119351c701": {
+      "information_root": "bmkg_nowcast:bmkg_nowcast:796226d7f15276319a735863ead1",
+      "members": {
+        "beh:aaaed0005ce7edfe2b65c428e9cf": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "bmkg_nowcast",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-21T01:42:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:aaaed0005ce7edfe2b65c428e9cf",
+          "information_root": "bmkg_nowcast:bmkg_nowcast:796226d7f15276319a735863ead1",
+          "origin": "behavioral_registry",
+          "provider": "bmkg_nowcast",
+          "published_at": "2026-11-21T01:42:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Indonesia BMKG",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Indonesia BMKG active provincial nowcast RSS, source-reported only; not global",
+          "source_updated_at": null,
+          "source_url": "https://www.bmkg.go.id/alerts/nowcast/en/CSG20261121001_alert.xml",
+          "title": "Thunderstorm This Morning in Sulawesi Tengah"
+        }
+      }
+    },
     "6fe8d8b29b0c6ef728708707b9ce3025f7913f9a86c6d36c075fdc920111a49d": {
       "information_root": "niord:7e1e4c1f-369b-4077-ac94-713da08c9b82:0:0:0",
       "members": {
@@ -117,6 +231,39 @@
           "source_updated_at": "2026-11-19T00:21:54Z",
           "source_url": "https://niord.dma.dk/#/message/7e1e4c1f-369b-4077-ac94-713da08c9b82",
           "title": "Denmark. Kattegat. EK R 45 Hevring. Firing exercises. Warning."
+        }
+      }
+    },
+    "6fea704ef59da6dce969396f82e34caab0d376e30098add75fdca4c776fdf0d3": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c0ce:110349-2026",
+      "members": {
+        "beh:edd415888099d38dbec634f7c68b": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-20T17:18:56+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:edd415888099d38dbec634f7c68b",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c0ce:110349-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-20T17:18:56Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-19T02%3A27%3A41&updatedTo=2026-11-21T02%3A27%3A41",
+          "title": "DfI Rivers Directorate T-1163 Inspection and Maintenance of Underground Infrastructure Framework · DfI Transport and Road Asset Management (TRAM)"
         }
       }
     }

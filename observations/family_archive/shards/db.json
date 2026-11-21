@@ -1,5 +1,52 @@
 {
   "roots": {
+    "db0235303d026a4716b3ad8fd024608752d75c13611f0eee06d7bda73ebb0828": {
+      "information_root": "cbp_wait:cbp_wait:240301:2026-11-20:20:23:04",
+      "members": {
+        "beh:49ad1ae67baa2e0c3ea50b918e2b": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-21T02:31:05+00:00",
+          "geography_key": "us-border-port:240301",
+          "geography_label": "Presidio",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:49ad1ae67baa2e0c3ea50b918e2b",
+          "information_root": "cbp_wait:cbp_wait:240301:2026-11-20:20:23:04",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Lanes Closed",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/20/2026",
+            "reported_local_time": "20:23:04",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Presidio / PRESIDIO PORT OF ENTRY"
+        }
+      }
+    },
     "db1bb9f3a6adb8ab69e7be69ab78b3dc794355eb5b9ec266ca4899c80fc84c04": {
       "information_root": "niord:f9142f62-1f2e-4853-8861-b2920f02f72f:0:4:0",
       "members": {
@@ -177,6 +224,52 @@
           "source_updated_at": "2026-11-20T13:21:52Z",
           "source_url": "https://niord.dma.dk/#/message/0194a017-5b08-4618-930b-47af7c769ae3",
           "title": "Denmark. Kattegat. EK R 18 Jaegerspris. Firing exercises. Warning."
+        }
+      }
+    },
+    "dbbcf3a75cbb0360e83a26405334ee510ca0053589cab189dfffec4b942bbfd8": {
+      "information_root": "sg_mpa:sg_mpa:2026-07:tug",
+      "members": {
+        "beh:c55c66c138080d8003a67913e6ca": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "monthly_maritime_throughput_not_current_disruption",
+          "collection_mode": "sg_mpa",
+          "direct_measurement": true,
+          "event_at": null,
+          "first_observed_at": "2026-11-21T02:31:05+00:00",
+          "geography_key": "country:SG",
+          "geography_label": "Singapore",
+          "geography_precision": "national_port_scope_not_incident",
+          "id": "beh:c55c66c138080d8003a67913e6ca",
+          "information_root": "sg_mpa:sg_mpa:2026-07:tug",
+          "origin": "behavioral_registry",
+          "provider": "sg_mpa",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_monthly_port_throughput_historical",
+          "source_family": "port_throughput",
+          "source_kind": "official_monthly_port_arrival_count_historical",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "denominator": "vessels_greater_than_75_gross_tons",
+            "most_recent_month_provisional": false,
+            "name": "monthly_vessel_arrivals_over_75_gt",
+            "not_live_tracking": true,
+            "period": "2026-07",
+            "period_months_lag": 4,
+            "reporting_cadence": "monthly",
+            "source_dataset": "d_8f264219109e61fffa87ac64dd5a9a65",
+            "unit": "vessels",
+            "value": 946,
+            "vessel_type": "Tug"
+          },
+          "source_scope": "Maritime & Port Authority of Singapore monthly arrivals >75 GT by vessel type; selected latest months, publication lag, Singapore-only, not live AIS",
+          "source_updated_at": null,
+          "source_url": "https://data.gov.sg/datasets/d_8f264219109e61fffa87ac64dd5a9a65/view",
+          "title": "Singapore MPA 2026-07 Tug vessel arrivals (>75 GT)"
         }
       }
     },

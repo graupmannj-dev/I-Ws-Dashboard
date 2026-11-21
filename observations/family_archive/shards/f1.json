@@ -60,6 +60,44 @@
         }
       }
     },
+    "f15efb1e923b7909a1c7ab083e2adfe5a90445874453d5f4c702caf1611f80ea": {
+      "information_root": "usgs:us6000uc8g",
+      "members": {
+        "beh:379eca9a00ee1b93be93de56413c": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "usgs",
+          "direct_measurement": true,
+          "event_at": "2026-11-20T10:30:01Z",
+          "first_observed_at": "2026-11-20T10:30:01+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "source_supplied_point_only",
+          "id": "beh:379eca9a00ee1b93be93de56413c",
+          "information_root": "usgs:us6000uc8g",
+          "origin": "behavioral_registry",
+          "provider": "usgs",
+          "published_at": "2026-11-20T10:47:31Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "measured_earthquake_context",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "name": "earthquake_magnitude",
+            "unit": "reported_magnitude",
+            "value": 5
+          },
+          "source_scope": "USGS M4.5+ earthquakes worldwide, rolling past day; source thresholds apply",
+          "source_updated_at": null,
+          "source_url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000uc8g",
+          "title": "M 5.0 - southeast of the Loyalty Islands"
+        }
+      }
+    },
     "f1b506d6fdfb7ad1b932bdf8fd4136ea3a421e7baf37e9d1faa39e4c401d0c2e": {
       "information_root": "faa:6/8635:0:0",
       "members": {
@@ -90,6 +128,52 @@
         }
       }
     },
+    "f1cf4243148eee983988e77302056bb95bffd27eec0cfe3f12d1ec0523229ad1": {
+      "information_root": "sg_mpa:sg_mpa:2026-04:tanker",
+      "members": {
+        "beh:92b9dcf13e0c486ed0ea20146586": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "monthly_maritime_throughput_not_current_disruption",
+          "collection_mode": "sg_mpa",
+          "direct_measurement": true,
+          "event_at": null,
+          "first_observed_at": "2026-11-21T02:31:05+00:00",
+          "geography_key": "country:SG",
+          "geography_label": "Singapore",
+          "geography_precision": "national_port_scope_not_incident",
+          "id": "beh:92b9dcf13e0c486ed0ea20146586",
+          "information_root": "sg_mpa:sg_mpa:2026-04:tanker",
+          "origin": "behavioral_registry",
+          "provider": "sg_mpa",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_monthly_port_throughput_historical",
+          "source_family": "port_throughput",
+          "source_kind": "official_monthly_port_arrival_count_historical",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "denominator": "vessels_greater_than_75_gross_tons",
+            "most_recent_month_provisional": false,
+            "name": "monthly_vessel_arrivals_over_75_gt",
+            "not_live_tracking": true,
+            "period": "2026-04",
+            "period_months_lag": 7,
+            "reporting_cadence": "monthly",
+            "source_dataset": "d_8f264219109e61fffa87ac64dd5a9a65",
+            "unit": "vessels",
+            "value": 2085,
+            "vessel_type": "Tanker"
+          },
+          "source_scope": "Maritime & Port Authority of Singapore monthly arrivals >75 GT by vessel type; selected latest months, publication lag, Singapore-only, not live AIS",
+          "source_updated_at": null,
+          "source_url": "https://data.gov.sg/datasets/d_8f264219109e61fffa87ac64dd5a9a65/view",
+          "title": "Singapore MPA 2026-04 Tanker vessel arrivals (>75 GT)"
+        }
+      }
+    },
     "f1ece97e23132eabb297ce4e7eef5c3721357d553194b575bf765fa4ab8321c7": {
       "information_root": "niord:b815767c-8bae-40c4-bd79-36ae1e9006b2:0:1:0",
       "members": {
@@ -117,6 +201,39 @@
           "source_updated_at": "2026-11-16T09:21:51Z",
           "source_url": "https://niord.dma.dk/#/message/b815767c-8bae-40c4-bd79-36ae1e9006b2",
           "title": "Denmark. Kattegat. EK R 19 MULTEX. Firing exercises. Warning."
+        }
+      }
+    },
+    "f1eda437368514f4487b054a5e2c0d0d1bdec006d3a81f732135037811f8486c": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-06d59d:110284-2026",
+      "members": {
+        "beh:31953ad8a4aef0b2853ed72fc228": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-20T15:44:53+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:31953ad8a4aef0b2853ed72fc228",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-06d59d:110284-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-20T15:44:53Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-19T02%3A27%3A41&updatedTo=2026-11-21T02%3A27%3A41",
+          "title": "Development Partner for the Blackpool Central Housing Regeneration Area Scheme · Blackpool Borough Council"
         }
       }
     },

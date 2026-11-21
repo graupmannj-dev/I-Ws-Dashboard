@@ -1,5 +1,38 @@
 {
   "roots": {
+    "e8132c3f7d6947de08b6a6cac03fcb5a51b33330115d0b8672071029b1e5a8a1": {
+      "information_root": "usace:214031",
+      "members": {
+        "beh:63f222b2174c166c5a93548125ec": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "issued_waterway_notice_not_verified_disruption",
+          "collection_mode": "usace",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-05-27T14:08:06+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:63f222b2174c166c5a93548125ec",
+          "information_root": "usace:214031",
+          "origin": "behavioral_registry",
+          "provider": "usace",
+          "published_at": "2026-05-27T14:08:06Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_navigation_notice",
+          "source_family": "waterway_restriction",
+          "source_kind": "official_waterway_navigation_notice",
+          "source_measurement": null,
+          "source_scope": "USACE NTNI active notices for sampled districts MVP/MVS/SWG; up to 110 total",
+          "source_updated_at": null,
+          "source_url": "https://ndc.ops.usace.army.mil/ords/ntni/print_nav_notice?in_nav_notice_number=214031&in_title_formatting=UB",
+          "title": "NTNI notice 214031 · POOL_05A_UPPER_MISSISSIPPI"
+        }
+      }
+    },
     "e8226565d90f83c890580fb1bbc56857ca8c4879a6f51ae4ec371adbfabc0668": {
       "information_root": "niord:5d72ff05-f299-4513-bfbd-2c2d38001fd1:2:0:0",
       "members": {
@@ -117,6 +150,52 @@
           "source_updated_at": null,
           "source_url": "https://www.gov.uk/foreign-travel-advice/brazil",
           "title": "Brazil"
+        }
+      }
+    },
+    "e850c1df42883835ef15f4271bf77c3d1222db6c8a008a13ea407240b4c8c0e3": {
+      "information_root": "sg_mpa:sg_mpa:2026-03:freighter",
+      "members": {
+        "beh:07f8deff311caab57d0789ef6a7b": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "monthly_maritime_throughput_not_current_disruption",
+          "collection_mode": "sg_mpa",
+          "direct_measurement": true,
+          "event_at": null,
+          "first_observed_at": "2026-11-21T02:31:05+00:00",
+          "geography_key": "country:SG",
+          "geography_label": "Singapore",
+          "geography_precision": "national_port_scope_not_incident",
+          "id": "beh:07f8deff311caab57d0789ef6a7b",
+          "information_root": "sg_mpa:sg_mpa:2026-03:freighter",
+          "origin": "behavioral_registry",
+          "provider": "sg_mpa",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_monthly_port_throughput_historical",
+          "source_family": "port_throughput",
+          "source_kind": "official_monthly_port_arrival_count_historical",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "denominator": "vessels_greater_than_75_gross_tons",
+            "most_recent_month_provisional": false,
+            "name": "monthly_vessel_arrivals_over_75_gt",
+            "not_live_tracking": true,
+            "period": "2026-03",
+            "period_months_lag": 8,
+            "reporting_cadence": "monthly",
+            "source_dataset": "d_8f264219109e61fffa87ac64dd5a9a65",
+            "unit": "vessels",
+            "value": 466,
+            "vessel_type": "Freighter"
+          },
+          "source_scope": "Maritime & Port Authority of Singapore monthly arrivals >75 GT by vessel type; selected latest months, publication lag, Singapore-only, not live AIS",
+          "source_updated_at": null,
+          "source_url": "https://data.gov.sg/datasets/d_8f264219109e61fffa87ac64dd5a9a65/view",
+          "title": "Singapore MPA 2026-03 Freighter vessel arrivals (>75 GT)"
         }
       }
     },

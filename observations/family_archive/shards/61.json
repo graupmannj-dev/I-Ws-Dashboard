@@ -60,6 +60,52 @@
         }
       }
     },
+    "612b3e92d138e3ac1b45db3e1831c57dbcd4e0836d6616e3e8f02b65ce184733": {
+      "information_root": "sg_mpa:sg_mpa:2026-07:tanker",
+      "members": {
+        "beh:05374c474b900606430d96828990": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "monthly_maritime_throughput_not_current_disruption",
+          "collection_mode": "sg_mpa",
+          "direct_measurement": true,
+          "event_at": null,
+          "first_observed_at": "2026-11-21T02:31:05+00:00",
+          "geography_key": "country:SG",
+          "geography_label": "Singapore",
+          "geography_precision": "national_port_scope_not_incident",
+          "id": "beh:05374c474b900606430d96828990",
+          "information_root": "sg_mpa:sg_mpa:2026-07:tanker",
+          "origin": "behavioral_registry",
+          "provider": "sg_mpa",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_monthly_port_throughput_historical",
+          "source_family": "port_throughput",
+          "source_kind": "official_monthly_port_arrival_count_historical",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "denominator": "vessels_greater_than_75_gross_tons",
+            "most_recent_month_provisional": false,
+            "name": "monthly_vessel_arrivals_over_75_gt",
+            "not_live_tracking": true,
+            "period": "2026-07",
+            "period_months_lag": 4,
+            "reporting_cadence": "monthly",
+            "source_dataset": "d_8f264219109e61fffa87ac64dd5a9a65",
+            "unit": "vessels",
+            "value": 2267,
+            "vessel_type": "Tanker"
+          },
+          "source_scope": "Maritime & Port Authority of Singapore monthly arrivals >75 GT by vessel type; selected latest months, publication lag, Singapore-only, not live AIS",
+          "source_updated_at": null,
+          "source_url": "https://data.gov.sg/datasets/d_8f264219109e61fffa87ac64dd5a9a65/view",
+          "title": "Singapore MPA 2026-07 Tanker vessel arrivals (>75 GT)"
+        }
+      }
+    },
     "61e056da652662485d828ea768cc4b3657924ea1ffdd15429b647d26c042347e": {
       "information_root": "official:bf919e440b7007d3094f",
       "members": {

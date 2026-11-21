@@ -30,6 +30,53 @@
         }
       }
     },
+    "d80895db6bc20b9e9a73944aa7a4da6a0b33059c0cad2b1c4847ec2ae37e091d": {
+      "information_root": "cbp_wait:cbp_wait:020901:2026-11-20:21:23:03",
+      "members": {
+        "beh:84e6da3a490e8a9a6fbb22f05bb1": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-21T02:31:05+00:00",
+          "geography_key": "us-border-port:020901",
+          "geography_label": "Derby Line",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:84e6da3a490e8a9a6fbb22f05bb1",
+          "information_root": "cbp_wait:cbp_wait:020901:2026-11-20:21:23:03",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "no delay",
+            "lanes_open": 1,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "At 8:00 pm EST",
+            "reported_local_date": "11/20/2026",
+            "reported_local_time": "21:23:03",
+            "source_declared_border": "Canadian Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 5
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Derby Line / Derby Line I-91"
+        }
+      }
+    },
     "d82b57795f2a6352d5a636cd29c896bf836b667fbf8784ebac7c8492cb1dbe57": {
       "information_root": "niord:551517f5-e6d2-45bb-a747-02fe68d49778:3:0:0",
       "members": {
@@ -57,6 +104,45 @@
           "source_updated_at": "2026-11-20T13:21:52Z",
           "source_url": "https://niord.dma.dk/#/message/551517f5-e6d2-45bb-a747-02fe68d49778",
           "title": "Denmark. The Baltic Sea. EK D 395 Raghammer. Firing exercises. Warning."
+        }
+      }
+    },
+    "d8320fb0bb3e059819e5065329095779d9cf69f5ff904c8bdc2b49b28efd521a": {
+      "information_root": "inmet_br:inmet_br:0d3c3b6c8de063e6711dd79c3c10",
+      "members": {
+        "beh:b937bde4698d771bb18acd4431e7": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "inmet_br",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-20T09:10:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:b937bde4698d771bb18acd4431e7",
+          "information_root": "inmet_br:inmet_br:0d3c3b6c8de063e6711dd79c3c10",
+          "origin": "behavioral_registry",
+          "provider": "inmet_br",
+          "published_at": "2026-11-20T09:10:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Brazil INMET",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Brazil INMET official severe-weather RSS notices; provider-listed bounded sample",
+          "source_updated_at": null,
+          "source_url": "https://apiprevmet3.inmet.gov.br/avisos/rss/56464",
+          "title": "Aviso de Tempestade. Severidade Grau: Perigo"
         }
       }
     },

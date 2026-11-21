@@ -1,5 +1,52 @@
 {
   "roots": {
+    "f80b082b1937533ec7606b9b8c95a5431b230968887faffd1c2baea8a98285a5": {
+      "information_root": "cbp_wait:cbp_wait:260201:2026-11-20:19:23:04",
+      "members": {
+        "beh:7b09c08d286fcfd8d09bc1a88c8e": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-21T02:31:05+00:00",
+          "geography_key": "us-border-port:260201",
+          "geography_label": "Lukeville",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:7b09c08d286fcfd8d09bc1a88c8e",
+          "information_root": "cbp_wait:cbp_wait:260201:2026-11-20:19:23:04",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Lanes Closed",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/20/2026",
+            "reported_local_time": "19:23:04",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Lukeville"
+        }
+      }
+    },
     "f814954458633f5df757eb76fc47f5f11e61de4ac621dd2c70669c2a694c58d8": {
       "information_root": "faa:6/7271:0:0",
       "members": {
@@ -90,6 +137,39 @@
         }
       }
     },
+    "f876bf0d93f71d53b87fdf443b4b5ad604d23c2f51f1b0b98063ed2589b802af": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-0509db:110359-2026",
+      "members": {
+        "beh:3bb7c9c1cd408d377ffcb94ccbf7": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-20T17:53:50+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:3bb7c9c1cd408d377ffcb94ccbf7",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-0509db:110359-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-20T17:53:50Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-19T02%3A27%3A41&updatedTo=2026-11-21T02%3A27%3A41",
+          "title": "Reactive, Void Property and Roofing Repairs · London and Quadrant Housing Trust"
+        }
+      }
+    },
     "f8833c9bf0744da380055183c7ed1c8e1dfb32d92ca7bde10d7096da5ea9c44c": {
       "information_root": "niord:66104724-dce4-42b0-94f3-a556e64c68e7:0:0:0",
       "members": {
@@ -147,6 +227,39 @@
           "source_updated_at": null,
           "source_url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.mys.html",
           "title": "Malaysia - Level 1: Exercise Normal Precautions"
+        }
+      }
+    },
+    "f8bb2409f193590bba094f0c060d207862c23e16113ef12ab130cad696d60921": {
+      "information_root": "nws:b57a779c585cb939aef0bf7b",
+      "members": {
+        "beh:fd073d53ed9af0e53715a3de5168": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "nws",
+          "direct_measurement": false,
+          "event_at": "2026-11-21T02:09:00Z",
+          "first_observed_at": "2026-11-21T02:09:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:fd073d53ed9af0e53715a3de5168",
+          "information_root": "nws:b57a779c585cb939aef0bf7b",
+          "origin": "behavioral_registry",
+          "provider": "nws",
+          "published_at": "2026-11-21T02:09:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "official_weather_alert_context",
+          "source_measurement": null,
+          "source_scope": "Active NWS marine alerts; severity Minor",
+          "source_updated_at": null,
+          "source_url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.ba5b30cdd7725be89290d579d232926c079ae1c6.001.1",
+          "title": "Coastal Flood Statement - Monroe Upper Keys; Monroe Middle Keys"
         }
       }
     },

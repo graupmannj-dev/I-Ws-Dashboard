@@ -60,6 +60,52 @@
         }
       }
     },
+    "2e3769a4706d9dc5b667564ecf60cd5e991b4394a119d6d6c9c12c475f9ed70f": {
+      "information_root": "sg_mpa:sg_mpa:2026-03:passenger",
+      "members": {
+        "beh:3b6435d9b550774ce8a30d2a6081": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "monthly_maritime_throughput_not_current_disruption",
+          "collection_mode": "sg_mpa",
+          "direct_measurement": true,
+          "event_at": null,
+          "first_observed_at": "2026-11-21T02:31:05+00:00",
+          "geography_key": "country:SG",
+          "geography_label": "Singapore",
+          "geography_precision": "national_port_scope_not_incident",
+          "id": "beh:3b6435d9b550774ce8a30d2a6081",
+          "information_root": "sg_mpa:sg_mpa:2026-03:passenger",
+          "origin": "behavioral_registry",
+          "provider": "sg_mpa",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_monthly_port_throughput_historical",
+          "source_family": "port_throughput",
+          "source_kind": "official_monthly_port_arrival_count_historical",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "denominator": "vessels_greater_than_75_gross_tons",
+            "most_recent_month_provisional": false,
+            "name": "monthly_vessel_arrivals_over_75_gt",
+            "not_live_tracking": true,
+            "period": "2026-03",
+            "period_months_lag": 8,
+            "reporting_cadence": "monthly",
+            "source_dataset": "d_8f264219109e61fffa87ac64dd5a9a65",
+            "unit": "vessels",
+            "value": 3413,
+            "vessel_type": "Passenger"
+          },
+          "source_scope": "Maritime & Port Authority of Singapore monthly arrivals >75 GT by vessel type; selected latest months, publication lag, Singapore-only, not live AIS",
+          "source_updated_at": null,
+          "source_url": "https://data.gov.sg/datasets/d_8f264219109e61fffa87ac64dd5a9a65/view",
+          "title": "Singapore MPA 2026-03 Passenger vessel arrivals (>75 GT)"
+        }
+      }
+    },
     "2e4d92a21efec58b29abe4eeae5ef364be001a152676ba0a94c368b15c009793": {
       "information_root": "niord:853b0835-0a77-4c76-9f7e-01090edb2e75:2:0:0",
       "members": {
@@ -236,6 +282,39 @@
         }
       }
     },
+    "2ebd2bfe513330aa4da5922d0d11f8205118a1f15e3e249f555869da7c4f532f": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-06a565:110365-2026",
+      "members": {
+        "beh:d9491aac320673e766fd44a7b287": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-20T18:24:57+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:d9491aac320673e766fd44a7b287",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-06a565:110365-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-20T18:24:57Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-19T02%3A27%3A41&updatedTo=2026-11-21T02%3A27%3A41",
+          "title": "Care Home Brokerage Services · The Dudley Group NHS Foundation Trust"
+        }
+      }
+    },
     "2ec5d993c84f30f34715e57499641031e37a371b1715778bcbc8eb65be199d37": {
       "information_root": "official:fa06071a79388d1ddc68",
       "members": {
@@ -293,6 +372,39 @@
           "source_updated_at": "2026-11-14T00:21:51Z",
           "source_url": "https://niord.dma.dk/#/message/1a3dd20d-b0dd-4957-8447-a652063698ec",
           "title": "Denmark. Kattegat. EK R 18 Jaegerspris. Firing exercises. Warning."
+        }
+      }
+    },
+    "2ef740fb4ad4e25cd65ec02d58494adacc6864bccd604513f9f9846fd231e87e": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c0d8:110373-2026",
+      "members": {
+        "beh:08c0d7b6a63cee69d96417960239": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-20T23:50:14+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:08c0d7b6a63cee69d96417960239",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c0d8:110373-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-20T23:50:14Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-19T02%3A27%3A41&updatedTo=2026-11-21T02%3A27%3A41",
+          "title": "PROVISION OF SERVICES TO ACCEPT, PROCESS AND MARKET MIXED AND SOURCE SEPARATED WASTE FOR RECYCLING · arc21"
         }
       }
     }

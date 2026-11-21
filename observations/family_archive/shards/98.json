@@ -30,6 +30,44 @@
         }
       }
     },
+    "9845ba0de4e24533c77f04188ea9c1720a489b27475c26b6a9a5991e71984583": {
+      "information_root": "usgs:us6000ucf0",
+      "members": {
+        "beh:1acf1d299ecf6705b56fae03f66b": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "usgs",
+          "direct_measurement": true,
+          "event_at": "2026-11-20T22:34:39Z",
+          "first_observed_at": "2026-11-20T22:34:39+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "source_supplied_point_only",
+          "id": "beh:1acf1d299ecf6705b56fae03f66b",
+          "information_root": "usgs:us6000ucf0",
+          "origin": "behavioral_registry",
+          "provider": "usgs",
+          "published_at": "2026-11-20T22:58:24Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "measured_earthquake_context",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "name": "earthquake_magnitude",
+            "unit": "reported_magnitude",
+            "value": 4.9
+          },
+          "source_scope": "USGS M4.5+ earthquakes worldwide, rolling past day; source thresholds apply",
+          "source_updated_at": null,
+          "source_url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000ucf0",
+          "title": "M 4.9 - 113 km ESE of Pangai, Tonga"
+        }
+      }
+    },
     "984dd4bea785e56793b2e9fd4c53623582eef8590bc389ed96bd9d9a87a17e98": {
       "information_root": "niord:81a3ee1e-3be5-4107-ba85-9b4f5eb65d25:0:5:0",
       "members": {
@@ -120,6 +158,46 @@
         }
       }
     },
+    "987df0f01cc05a389ac0457a76c11d479cf4655135401b12ce71edfe7e883c12": {
+      "information_root": "bmkg_quake:bmkg_quake:3681b232b5d92eefebaa69f69aaf",
+      "members": {
+        "beh:0050bb1a0a7bacaac0b4fae10f2c": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "bmkg_quake",
+          "direct_measurement": true,
+          "event_at": "2026-10-29T20:32:13Z",
+          "first_observed_at": "2026-11-21T02:31:05+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "source_supplied_earthquake_epicenter",
+          "id": "beh:0050bb1a0a7bacaac0b4fae10f2c",
+          "information_root": "bmkg_quake:bmkg_quake:3681b232b5d92eefebaa69f69aaf",
+          "origin": "behavioral_registry",
+          "provider": "bmkg_quake",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_seismic_reporting_may_represent_same_usgs_event",
+          "source_family": "environmental_context",
+          "source_kind": "national_seismic_measurement_context",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "depth_km": 10.0,
+            "name": "earthquake_magnitude",
+            "possible_same_physical_event_as_usgs": true,
+            "unit": "source_reported_magnitude",
+            "value": 5.3
+          },
+          "source_scope": "Indonesia BMKG 15 latest magnitude-5+ earthquakes; not global; same physical events may appear in USGS",
+          "source_updated_at": null,
+          "source_url": "https://data.bmkg.go.id/DataMKG/TEWS/gempaterkini.json",
+          "title": "BMKG earthquake M5.3 · 139 km BaratLaut TUAL-MALUKU"
+        }
+      }
+    },
     "98c699023fc4b8b6822c05e12f5d90673a786084aeab73e0fd6ebfa56f2189d8": {
       "information_root": "niord:8d5a1de4-9b8e-4c89-bd26-41a2becc8cb3:4:0:0",
       "members": {
@@ -147,6 +225,46 @@
           "source_updated_at": "2026-11-16T09:21:53Z",
           "source_url": "https://niord.dma.dk/#/message/8d5a1de4-9b8e-4c89-bd26-41a2becc8cb3",
           "title": "Denmark. The North Sea. 15 Nymindegab. Firing exercises. Warning."
+        }
+      }
+    },
+    "98fcffbb3fb95305616bf731b4624413bdf12025558a8ddcd1031a98003af39a": {
+      "information_root": "coops:8724580:20261121T0218Z",
+      "members": {
+        "beh:2e8a49b96c505d018584142c9b25": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "coops",
+          "direct_measurement": true,
+          "event_at": "2026-11-21T02:18:00Z",
+          "first_observed_at": "2026-11-21T02:18:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:2e8a49b96c505d018584142c9b25",
+          "information_root": "coops:8724580:20261121T0218Z",
+          "origin": "behavioral_registry",
+          "provider": "coops",
+          "published_at": "2026-11-21T02:18:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "station_physical_measurement",
+          "source_family": "port_conditions",
+          "source_kind": "selected_port_water_level_measurement",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "metric_comparable_only_same_station_datum_and_sample_window": true,
+            "name": "observed_water_level",
+            "station": "8724580",
+            "unit": "meters_MLLW",
+            "value": 0.575
+          },
+          "source_scope": "NOAA CO-OPS water levels at San Francisco, Key West and Sewells Point; stations only",
+          "source_updated_at": null,
+          "source_url": "https://tidesandcurrents.noaa.gov/waterlevels.html?id=8724580",
+          "title": "Key West, FL observed water level (no anomaly classification)"
         }
       }
     }

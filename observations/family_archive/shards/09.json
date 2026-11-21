@@ -1,5 +1,117 @@
 {
   "roots": {
+    "09170d677ec1a2be2053deaffb312c2cf2d7e012562e650945602dac18b6fe57": {
+      "information_root": "sg_mpa:sg_mpa:2026-10:container",
+      "members": {
+        "beh:81ba9b82d50939fe16f913717d92": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "monthly_maritime_throughput_not_current_disruption",
+          "collection_mode": "sg_mpa",
+          "direct_measurement": true,
+          "event_at": null,
+          "first_observed_at": "2026-11-21T02:31:05+00:00",
+          "geography_key": "country:SG",
+          "geography_label": "Singapore",
+          "geography_precision": "national_port_scope_not_incident",
+          "id": "beh:81ba9b82d50939fe16f913717d92",
+          "information_root": "sg_mpa:sg_mpa:2026-10:container",
+          "origin": "behavioral_registry",
+          "provider": "sg_mpa",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_monthly_port_throughput_historical",
+          "source_family": "port_throughput",
+          "source_kind": "official_monthly_port_arrival_count_historical",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "denominator": "vessels_greater_than_75_gross_tons",
+            "most_recent_month_provisional": true,
+            "name": "monthly_vessel_arrivals_over_75_gt",
+            "not_live_tracking": true,
+            "period": "2026-10",
+            "period_months_lag": 1,
+            "reporting_cadence": "monthly",
+            "source_dataset": "d_8f264219109e61fffa87ac64dd5a9a65",
+            "unit": "vessels",
+            "value": 1304,
+            "vessel_type": "Container"
+          },
+          "source_scope": "Maritime & Port Authority of Singapore monthly arrivals >75 GT by vessel type; selected latest months, publication lag, Singapore-only, not live AIS",
+          "source_updated_at": null,
+          "source_url": "https://data.gov.sg/datasets/d_8f264219109e61fffa87ac64dd5a9a65/view",
+          "title": "Singapore MPA 2026-10 Container vessel arrivals (>75 GT)"
+        }
+      }
+    },
+    "09341487a06ba61ac27c92197754243c2ccade2f18dab9afbf0722b076901e98": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07b5b6:110298-2026",
+      "members": {
+        "beh:4b5de477b162351d163f32119087": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-20T15:54:15+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:4b5de477b162351d163f32119087",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07b5b6:110298-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-20T15:54:15Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-19T02%3A27%3A41&updatedTo=2026-11-21T02%3A27%3A41",
+          "title": "Tonbridge & Malling Borough Council Angel Centre Demolition Supplier Engagement · Tonbridge and Malling Borough Council"
+        }
+      }
+    },
+    "0976e8488239b20979c37aa7c423ad17d3fac42417d8140ce862238f2d8dfab2": {
+      "information_root": "nws:77f822124c20e916a124a45e",
+      "members": {
+        "beh:01187ef16bc9c1d9983a17248ad2": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "nws",
+          "direct_measurement": false,
+          "event_at": "2026-11-20T17:37:00Z",
+          "first_observed_at": "2026-11-20T17:37:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:01187ef16bc9c1d9983a17248ad2",
+          "information_root": "nws:77f822124c20e916a124a45e",
+          "origin": "behavioral_registry",
+          "provider": "nws",
+          "published_at": "2026-11-20T17:37:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "official_weather_alert_context",
+          "source_measurement": null,
+          "source_scope": "Active NWS marine alerts; severity Moderate",
+          "source_updated_at": null,
+          "source_url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.56c3d9cd681b61ce5e4fcac2a6acfb56593cabbe.005.3",
+          "title": "Rip Current Statement - Coastal Nassau; Coastal Duval; Northeast Coastal St. Johns; Southeast Coastal St. Johns"
+        }
+      }
+    },
     "0984f2bcba723bec769a68e98152365d710d91e94d794a8b2643726faa78d6f1": {
       "information_root": "niord:6e18df13-fea0-44d4-b816-64d8a5d3edbb:2:0:0",
       "members": {

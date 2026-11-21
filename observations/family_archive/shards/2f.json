@@ -60,6 +60,45 @@
         }
       }
     },
+    "2f27f97157f5f8e2bcdaa7f0a9ae6ac382d06d373e52ab712a370ad8e8bf908b": {
+      "information_root": "bmkg_nowcast:bmkg_nowcast:b10e55ca02f5fa8ce7f1796c2ad4",
+      "members": {
+        "beh:2899d1df0782ca7a672c679459c8": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "bmkg_nowcast",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-21T02:10:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:2899d1df0782ca7a672c679459c8",
+          "information_root": "bmkg_nowcast:bmkg_nowcast:b10e55ca02f5fa8ce7f1796c2ad4",
+          "origin": "behavioral_registry",
+          "provider": "bmkg_nowcast",
+          "published_at": "2026-11-21T02:10:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Indonesia BMKG",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Indonesia BMKG active provincial nowcast RSS, source-reported only; not global",
+          "source_updated_at": null,
+          "source_url": "https://www.bmkg.go.id/alerts/nowcast/en/CKR20261121002_alert.xml",
+          "title": "Thunderstorm This Morning in Kep. Riau"
+        }
+      }
+    },
     "2f338a412c242e50a8e9f3c6773a737893656c681f2ca11aff539c24162e3749": {
       "information_root": "ioda:0e2f59fee432b827cd4a233c",
       "members": {
@@ -90,6 +129,52 @@
         }
       }
     },
+    "2f47b857895b07db2c8eccba1402712f90543b54eaded30735c60955ec284a51": {
+      "information_root": "sg_mpa:sg_mpa:2026-04:barges",
+      "members": {
+        "beh:f3470803876f1cbad236546936ca": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "monthly_maritime_throughput_not_current_disruption",
+          "collection_mode": "sg_mpa",
+          "direct_measurement": true,
+          "event_at": null,
+          "first_observed_at": "2026-11-21T02:31:05+00:00",
+          "geography_key": "country:SG",
+          "geography_label": "Singapore",
+          "geography_precision": "national_port_scope_not_incident",
+          "id": "beh:f3470803876f1cbad236546936ca",
+          "information_root": "sg_mpa:sg_mpa:2026-04:barges",
+          "origin": "behavioral_registry",
+          "provider": "sg_mpa",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_monthly_port_throughput_historical",
+          "source_family": "port_throughput",
+          "source_kind": "official_monthly_port_arrival_count_historical",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "denominator": "vessels_greater_than_75_gross_tons",
+            "most_recent_month_provisional": false,
+            "name": "monthly_vessel_arrivals_over_75_gt",
+            "not_live_tracking": true,
+            "period": "2026-04",
+            "period_months_lag": 7,
+            "reporting_cadence": "monthly",
+            "source_dataset": "d_8f264219109e61fffa87ac64dd5a9a65",
+            "unit": "vessels",
+            "value": 864,
+            "vessel_type": "Barges"
+          },
+          "source_scope": "Maritime & Port Authority of Singapore monthly arrivals >75 GT by vessel type; selected latest months, publication lag, Singapore-only, not live AIS",
+          "source_updated_at": null,
+          "source_url": "https://data.gov.sg/datasets/d_8f264219109e61fffa87ac64dd5a9a65/view",
+          "title": "Singapore MPA 2026-04 Barges vessel arrivals (>75 GT)"
+        }
+      }
+    },
     "2f56e60422e20d1ff40907f104211431e0dc60b6989aa30f52024bd0e51e14fe": {
       "information_root": "niord:f1598c0a-45e0-4231-a9ef-2830214be50b:0:3:0",
       "members": {
@@ -117,6 +202,52 @@
           "source_updated_at": "2026-11-20T13:21:53Z",
           "source_url": "https://niord.dma.dk/#/message/f1598c0a-45e0-4231-a9ef-2830214be50b",
           "title": "Denmark. Kattegat. EK R 19 MULTEX. Firing exercises. Warning."
+        }
+      }
+    },
+    "2f6e005b8b70b1d4850b906caefc89bda80a279b447d09a0c6daa937aa3ddb07": {
+      "information_root": "sg_mpa:sg_mpa:2026-09:tanker",
+      "members": {
+        "beh:cf21c3c50be02ed657cab1ebee2a": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "monthly_maritime_throughput_not_current_disruption",
+          "collection_mode": "sg_mpa",
+          "direct_measurement": true,
+          "event_at": null,
+          "first_observed_at": "2026-11-21T02:31:05+00:00",
+          "geography_key": "country:SG",
+          "geography_label": "Singapore",
+          "geography_precision": "national_port_scope_not_incident",
+          "id": "beh:cf21c3c50be02ed657cab1ebee2a",
+          "information_root": "sg_mpa:sg_mpa:2026-09:tanker",
+          "origin": "behavioral_registry",
+          "provider": "sg_mpa",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_monthly_port_throughput_historical",
+          "source_family": "port_throughput",
+          "source_kind": "official_monthly_port_arrival_count_historical",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "denominator": "vessels_greater_than_75_gross_tons",
+            "most_recent_month_provisional": false,
+            "name": "monthly_vessel_arrivals_over_75_gt",
+            "not_live_tracking": true,
+            "period": "2026-09",
+            "period_months_lag": 2,
+            "reporting_cadence": "monthly",
+            "source_dataset": "d_8f264219109e61fffa87ac64dd5a9a65",
+            "unit": "vessels",
+            "value": 2150,
+            "vessel_type": "Tanker"
+          },
+          "source_scope": "Maritime & Port Authority of Singapore monthly arrivals >75 GT by vessel type; selected latest months, publication lag, Singapore-only, not live AIS",
+          "source_updated_at": null,
+          "source_url": "https://data.gov.sg/datasets/d_8f264219109e61fffa87ac64dd5a9a65/view",
+          "title": "Singapore MPA 2026-09 Tanker vessel arrivals (>75 GT)"
         }
       }
     },

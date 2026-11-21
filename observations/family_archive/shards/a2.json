@@ -1,5 +1,38 @@
 {
   "roots": {
+    "a20e946f2baaa9107b9b7d381657c6d5fd245a538126f7887ad87dacfadb4062": {
+      "information_root": "nws:a146295b0bd055ca1918affb",
+      "members": {
+        "beh:2810d320c930747d5076acdc67c2": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "nws",
+          "direct_measurement": false,
+          "event_at": "2026-11-20T16:36:00Z",
+          "first_observed_at": "2026-11-20T16:36:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:2810d320c930747d5076acdc67c2",
+          "information_root": "nws:a146295b0bd055ca1918affb",
+          "origin": "behavioral_registry",
+          "provider": "nws",
+          "published_at": "2026-11-20T16:36:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "official_weather_alert_context",
+          "source_measurement": null,
+          "source_scope": "Active NWS marine alerts; severity Moderate",
+          "source_updated_at": null,
+          "source_url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.ac30a082ebb552555119f32ba3ffddda634e7665.001.1",
+          "title": "Wind Advisory - Coastal Nassau; Coastal Camden"
+        }
+      }
+    },
     "a23063f5fb96d99a9cb10a0ea42b4c126fbf9922d9e4584631960df5c160ae16": {
       "information_root": "niord:a4425666-f4fc-489b-8dcd-a4585efb516b:0:4:0",
       "members": {
@@ -117,6 +150,52 @@
           "source_updated_at": null,
           "source_url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.nic.html",
           "title": "Nicaragua - Level 3: Reconsider Travel"
+        }
+      }
+    },
+    "a27d4313d518fbb4c951e88496912b77a21e46f25af89bc8dcc3bb91d09006bf": {
+      "information_root": "sg_mpa:sg_mpa:2026-01:miscellaneous",
+      "members": {
+        "beh:4222135481164852bbfc6bee4041": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "monthly_maritime_throughput_not_current_disruption",
+          "collection_mode": "sg_mpa",
+          "direct_measurement": true,
+          "event_at": null,
+          "first_observed_at": "2026-11-21T02:31:05+00:00",
+          "geography_key": "country:SG",
+          "geography_label": "Singapore",
+          "geography_precision": "national_port_scope_not_incident",
+          "id": "beh:4222135481164852bbfc6bee4041",
+          "information_root": "sg_mpa:sg_mpa:2026-01:miscellaneous",
+          "origin": "behavioral_registry",
+          "provider": "sg_mpa",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_monthly_port_throughput_historical",
+          "source_family": "port_throughput",
+          "source_kind": "official_monthly_port_arrival_count_historical",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "denominator": "vessels_greater_than_75_gross_tons",
+            "most_recent_month_provisional": false,
+            "name": "monthly_vessel_arrivals_over_75_gt",
+            "not_live_tracking": true,
+            "period": "2026-01",
+            "period_months_lag": 10,
+            "reporting_cadence": "monthly",
+            "source_dataset": "d_8f264219109e61fffa87ac64dd5a9a65",
+            "unit": "vessels",
+            "value": 913,
+            "vessel_type": "Miscellaneous"
+          },
+          "source_scope": "Maritime & Port Authority of Singapore monthly arrivals >75 GT by vessel type; selected latest months, publication lag, Singapore-only, not live AIS",
+          "source_updated_at": null,
+          "source_url": "https://data.gov.sg/datasets/d_8f264219109e61fffa87ac64dd5a9a65/view",
+          "title": "Singapore MPA 2026-01 Miscellaneous vessel arrivals (>75 GT)"
         }
       }
     }

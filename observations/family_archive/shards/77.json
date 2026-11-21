@@ -1,5 +1,38 @@
 {
   "roots": {
+    "77484ba3bf9e31cef368c6de0a2ebdcb31df10a4729f4bdfac48324ac6fa45ff": {
+      "information_root": "usace:214812",
+      "members": {
+        "beh:07b9e91e0f65c04e205abb47fa9b": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "issued_waterway_notice_not_verified_disruption",
+          "collection_mode": "usace",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-07-31T17:22:40+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:07b9e91e0f65c04e205abb47fa9b",
+          "information_root": "usace:214812",
+          "origin": "behavioral_registry",
+          "provider": "usace",
+          "published_at": "2026-07-31T17:22:40Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_navigation_notice",
+          "source_family": "waterway_restriction",
+          "source_kind": "official_waterway_navigation_notice",
+          "source_measurement": null,
+          "source_scope": "USACE NTNI active notices for sampled districts MVP/MVS/SWG; up to 110 total",
+          "source_updated_at": null,
+          "source_url": "https://ndc.ops.usace.army.mil/ords/ntni/print_nav_notice?in_nav_notice_number=214812&in_title_formatting=UB",
+          "title": "NTNI notice 214810-1 · POOL_03_UPPER_MISSISSIPPI, POOL_02_UPPER_MISSISSIPPI"
+        }
+      }
+    },
     "7754cf990371104774867985f6590fe1ecb5b3a6f5a343a873b9dc58b8efa884": {
       "information_root": "ioda:d0d17ed5603c83984d2f6bb0",
       "members": {
@@ -27,6 +60,53 @@
           "source_updated_at": null,
           "source_url": "https://ioda.inetintel.cc.gatech.edu/",
           "title": "IODA detected connectivity anomaly: country BJ"
+        }
+      }
+    },
+    "777815a76a57e5619914f30de96676df196d217c97c23f613ab7cd314eff4f14": {
+      "information_root": "cbp_wait:cbp_wait:340101:2026-11-20:20:23:04",
+      "members": {
+        "beh:cb275141edaf91ab5c091592ca9b": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-21T02:31:05+00:00",
+          "geography_key": "us-border-port:340101",
+          "geography_label": "Pembina",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:cb275141edaf91ab5c091592ca9b",
+          "information_root": "cbp_wait:cbp_wait:340101:2026-11-20:20:23:04",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "no delay",
+            "lanes_open": 1,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "At 7:00 pm CST",
+            "reported_local_date": "11/20/2026",
+            "reported_local_time": "20:23:04",
+            "source_declared_border": "Canadian Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 4
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Pembina"
         }
       }
     },

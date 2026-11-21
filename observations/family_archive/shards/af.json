@@ -29,6 +29,91 @@
           "title": "FAA TFR 6/7769 · Chicago, IL, Saturday, November 21, 2026 through Sunday, November 22, 2026 UTC"
         }
       }
+    },
+    "aff0d651786da7ed11e5fe1d05548c6b749b1c19a451aae37a5cd4f7dd5be84b": {
+      "information_root": "inmet_br:inmet_br:71b7979c8a263a2d00ce69064bf9",
+      "members": {
+        "beh:2a8c63a2d0944ee7889a3fb97262": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "inmet_br",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-15T00:00:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:2a8c63a2d0944ee7889a3fb97262",
+          "information_root": "inmet_br:inmet_br:71b7979c8a263a2d00ce69064bf9",
+          "origin": "behavioral_registry",
+          "provider": "inmet_br",
+          "published_at": "2026-11-15T00:00:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Brazil INMET",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Brazil INMET official severe-weather RSS notices; provider-listed bounded sample",
+          "source_updated_at": null,
+          "source_url": "https://apiprevmet3.inmet.gov.br/avisos/rss/56414",
+          "title": "Aviso de Chuvas Intensas. Severidade Grau: Perigo Potencial"
+        }
+      }
+    },
+    "aff51b27c8faa9aed5f335f03572db4352654a9c8c9e8a5d3f32022734210c9c": {
+      "information_root": "sg_mpa:sg_mpa:2026-08:passenger",
+      "members": {
+        "beh:a073e93573bfe5d87ca7570e9369": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "monthly_maritime_throughput_not_current_disruption",
+          "collection_mode": "sg_mpa",
+          "direct_measurement": true,
+          "event_at": null,
+          "first_observed_at": "2026-11-21T02:31:05+00:00",
+          "geography_key": "country:SG",
+          "geography_label": "Singapore",
+          "geography_precision": "national_port_scope_not_incident",
+          "id": "beh:a073e93573bfe5d87ca7570e9369",
+          "information_root": "sg_mpa:sg_mpa:2026-08:passenger",
+          "origin": "behavioral_registry",
+          "provider": "sg_mpa",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_monthly_port_throughput_historical",
+          "source_family": "port_throughput",
+          "source_kind": "official_monthly_port_arrival_count_historical",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "denominator": "vessels_greater_than_75_gross_tons",
+            "most_recent_month_provisional": false,
+            "name": "monthly_vessel_arrivals_over_75_gt",
+            "not_live_tracking": true,
+            "period": "2026-08",
+            "period_months_lag": 3,
+            "reporting_cadence": "monthly",
+            "source_dataset": "d_8f264219109e61fffa87ac64dd5a9a65",
+            "unit": "vessels",
+            "value": 3235,
+            "vessel_type": "Passenger"
+          },
+          "source_scope": "Maritime & Port Authority of Singapore monthly arrivals >75 GT by vessel type; selected latest months, publication lag, Singapore-only, not live AIS",
+          "source_updated_at": null,
+          "source_url": "https://data.gov.sg/datasets/d_8f264219109e61fffa87ac64dd5a9a65/view",
+          "title": "Singapore MPA 2026-08 Passenger vessel arrivals (>75 GT)"
+        }
+      }
     }
   },
   "schema": "aiba.family-archive.v1"

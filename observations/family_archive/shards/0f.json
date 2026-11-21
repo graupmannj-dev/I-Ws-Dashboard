@@ -146,6 +146,52 @@
         }
       }
     },
+    "0f5c4d20f282a433a2a848dbfd4d86dac553e6c7b457dacf51d57fbdfb9de647": {
+      "information_root": "ris_bgp:ris_bgp:AS7552:20261120T23",
+      "members": {
+        "beh:be2dd93a3ce0ea9051cb2059034e": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "public_routing_updates_not_country_outage",
+          "collection_mode": "ris_bgp",
+          "direct_measurement": true,
+          "event_at": null,
+          "first_observed_at": "2026-11-21T02:31:05+00:00",
+          "geography_key": "asn:7552",
+          "geography_label": "AS7552",
+          "geography_precision": "routing_target_not_country_incident",
+          "id": "beh:be2dd93a3ce0ea9051cb2059034e",
+          "information_root": "ris_bgp:ris_bgp:AS7552:20261120T23",
+          "origin": "behavioral_registry",
+          "provider": "ris_bgp",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "routing_collector_sampled_asn_updates",
+          "source_family": "internet_routing",
+          "source_kind": "sampled_asn_bgp_route_updates_not_network_outage",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "collector_peers_are_not_geo_deduplicated": true,
+            "country_impact_not_established": true,
+            "name": "sampled_6h_bgp_announcements",
+            "registered_network_country_hint": "VN",
+            "returned_sampling_buckets": 6,
+            "source_window_end": "2026-11-20T23:00:00Z",
+            "target_asn": "AS7552",
+            "unit": "announcements",
+            "value": 1287101,
+            "window_hours_requested": 6,
+            "withdrawals_unavailable_for_asn": true
+          },
+          "source_scope": "RIPE RIS public route-announcement update samples on six non-Western operated networks; ASNs not country-wide outage detection",
+          "source_updated_at": null,
+          "source_url": "https://stat.ripe.net/data/bgp-update-activity/data.json?resource=AS7552&num_hours=6&max_samples=24&hide_empty_samples=false",
+          "title": "RIPE RIS sampled BGP announcements: AS7552"
+        }
+      }
+    },
     "0f612cfdab5854469212b56d3cf466fde12440fcdd2326bfacde736acdcea4f4": {
       "information_root": "official:2856183a7ba37d16ade2",
       "members": {
@@ -263,6 +309,45 @@
           "source_updated_at": "2026-11-17T00:21:52Z",
           "source_url": "https://niord.dma.dk/#/message/bd3a545a-8bee-49ce-a67b-c9169c54c6c0",
           "title": "Denmark. Kattegat. EK R 18 Jaegerspris. Firing exercises. Warning."
+        }
+      }
+    },
+    "0fd717adce48c2bc48f9bb90e94d0e89fd1bc3d09df84242414fe2882ed95b3e": {
+      "information_root": "bmkg_nowcast:bmkg_nowcast:ea8654826130b853b6c032adef1d",
+      "members": {
+        "beh:16fafef9952d9a92d3b275f7c752": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "bmkg_nowcast",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-20T23:45:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:16fafef9952d9a92d3b275f7c752",
+          "information_root": "bmkg_nowcast:bmkg_nowcast:ea8654826130b853b6c032adef1d",
+          "origin": "behavioral_registry",
+          "provider": "bmkg_nowcast",
+          "published_at": "2026-11-20T23:45:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Indonesia BMKG",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Indonesia BMKG active provincial nowcast RSS, source-reported only; not global",
+          "source_updated_at": null,
+          "source_url": "https://www.bmkg.go.id/alerts/nowcast/en/CMU20261121001_alert.xml",
+          "title": "Thunderstorm This Morning in Maluku Utara"
         }
       }
     }

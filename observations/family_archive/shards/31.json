@@ -1,5 +1,38 @@
 {
   "roots": {
+    "3113b25f44b55556ec1f21f827c7cd7f7917a843e8d96c1df36faa7c64ca3ad2": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-078416:110293-2026",
+      "members": {
+        "beh:5c33bc7a7cdec9e7ee359051d697": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-20T15:50:47+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:5c33bc7a7cdec9e7ee359051d697",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-078416:110293-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-20T15:50:47Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-19T02%3A27%3A41&updatedTo=2026-11-21T02%3A27%3A41",
+          "title": "Electrical Services · UK Research & Innovation (UKRI)"
+        }
+      }
+    },
     "316dda1e0cce3dd9a3ed6c1388c21440e656629f17b25a90a1a24643a1cf7db6": {
       "information_root": "ioda:1a06b1704d60dbfb27449800",
       "members": {
@@ -30,6 +63,39 @@
         }
       }
     },
+    "3181021390b8df1917951681ad97d6946bad1e6086032806c565849632e5bc00": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c0c9:110340-2026",
+      "members": {
+        "beh:ab57b8cf0fe1802170350171f4b4": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-20T16:52:01+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:ab57b8cf0fe1802170350171f4b4",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c0c9:110340-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-20T16:52:01Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-19T02%3A27%3A41&updatedTo=2026-11-21T02%3A27%3A41",
+          "title": "DfI Rivers Directorate T-1163 Inspection and Maintenance of Underground Infrastructure Framework · DfI Transport and Road Asset Management (TRAM)"
+        }
+      }
+    },
     "31b9b3f152a047c4ee3a1c15f4d294988c07ba52752a2ef190d6e934da7d6cb8": {
       "information_root": "official:54a01aef5ed1cfdff703",
       "members": {
@@ -57,6 +123,98 @@
           "source_updated_at": null,
           "source_url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.hnd.html",
           "title": "Honduras - Level 3: Reconsider Travel"
+        }
+      }
+    },
+    "31d64e400ebc5ec1b83a8b201a5b88bc29fcf4fda966c565649dc49c5b5a4211": {
+      "information_root": "sg_mpa:sg_mpa:2026-05:barges",
+      "members": {
+        "beh:ad9e1c903f2c431a1e94f3fffc65": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "monthly_maritime_throughput_not_current_disruption",
+          "collection_mode": "sg_mpa",
+          "direct_measurement": true,
+          "event_at": null,
+          "first_observed_at": "2026-11-21T02:31:05+00:00",
+          "geography_key": "country:SG",
+          "geography_label": "Singapore",
+          "geography_precision": "national_port_scope_not_incident",
+          "id": "beh:ad9e1c903f2c431a1e94f3fffc65",
+          "information_root": "sg_mpa:sg_mpa:2026-05:barges",
+          "origin": "behavioral_registry",
+          "provider": "sg_mpa",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_monthly_port_throughput_historical",
+          "source_family": "port_throughput",
+          "source_kind": "official_monthly_port_arrival_count_historical",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "denominator": "vessels_greater_than_75_gross_tons",
+            "most_recent_month_provisional": false,
+            "name": "monthly_vessel_arrivals_over_75_gt",
+            "not_live_tracking": true,
+            "period": "2026-05",
+            "period_months_lag": 6,
+            "reporting_cadence": "monthly",
+            "source_dataset": "d_8f264219109e61fffa87ac64dd5a9a65",
+            "unit": "vessels",
+            "value": 867,
+            "vessel_type": "Barges"
+          },
+          "source_scope": "Maritime & Port Authority of Singapore monthly arrivals >75 GT by vessel type; selected latest months, publication lag, Singapore-only, not live AIS",
+          "source_updated_at": null,
+          "source_url": "https://data.gov.sg/datasets/d_8f264219109e61fffa87ac64dd5a9a65/view",
+          "title": "Singapore MPA 2026-05 Barges vessel arrivals (>75 GT)"
+        }
+      }
+    },
+    "31e48cfc073e54cf10816acd4071cad5f23d2cd6b806cc83928c99da0e8e6ab9": {
+      "information_root": "sg_mpa:sg_mpa:2026-08:bulk-carrier",
+      "members": {
+        "beh:f45bbb6c030df64e932d5a120a78": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "monthly_maritime_throughput_not_current_disruption",
+          "collection_mode": "sg_mpa",
+          "direct_measurement": true,
+          "event_at": null,
+          "first_observed_at": "2026-11-21T02:31:05+00:00",
+          "geography_key": "country:SG",
+          "geography_label": "Singapore",
+          "geography_precision": "national_port_scope_not_incident",
+          "id": "beh:f45bbb6c030df64e932d5a120a78",
+          "information_root": "sg_mpa:sg_mpa:2026-08:bulk-carrier",
+          "origin": "behavioral_registry",
+          "provider": "sg_mpa",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_monthly_port_throughput_historical",
+          "source_family": "port_throughput",
+          "source_kind": "official_monthly_port_arrival_count_historical",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "denominator": "vessels_greater_than_75_gross_tons",
+            "most_recent_month_provisional": false,
+            "name": "monthly_vessel_arrivals_over_75_gt",
+            "not_live_tracking": true,
+            "period": "2026-08",
+            "period_months_lag": 3,
+            "reporting_cadence": "monthly",
+            "source_dataset": "d_8f264219109e61fffa87ac64dd5a9a65",
+            "unit": "vessels",
+            "value": 1640,
+            "vessel_type": "Bulk Carrier"
+          },
+          "source_scope": "Maritime & Port Authority of Singapore monthly arrivals >75 GT by vessel type; selected latest months, publication lag, Singapore-only, not live AIS",
+          "source_updated_at": null,
+          "source_url": "https://data.gov.sg/datasets/d_8f264219109e61fffa87ac64dd5a9a65/view",
+          "title": "Singapore MPA 2026-08 Bulk Carrier vessel arrivals (>75 GT)"
         }
       }
     },

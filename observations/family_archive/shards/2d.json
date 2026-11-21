@@ -120,6 +120,52 @@
         }
       }
     },
+    "2d8e8410cd1e462ffee7e5f8c4ce4e4dac8cf2ceae6b956844195f67a3c62d48": {
+      "information_root": "sg_mpa:sg_mpa:2026-08:tanker",
+      "members": {
+        "beh:21719fd90712572810e2875e27e1": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "monthly_maritime_throughput_not_current_disruption",
+          "collection_mode": "sg_mpa",
+          "direct_measurement": true,
+          "event_at": null,
+          "first_observed_at": "2026-11-21T02:31:05+00:00",
+          "geography_key": "country:SG",
+          "geography_label": "Singapore",
+          "geography_precision": "national_port_scope_not_incident",
+          "id": "beh:21719fd90712572810e2875e27e1",
+          "information_root": "sg_mpa:sg_mpa:2026-08:tanker",
+          "origin": "behavioral_registry",
+          "provider": "sg_mpa",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_monthly_port_throughput_historical",
+          "source_family": "port_throughput",
+          "source_kind": "official_monthly_port_arrival_count_historical",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "denominator": "vessels_greater_than_75_gross_tons",
+            "most_recent_month_provisional": false,
+            "name": "monthly_vessel_arrivals_over_75_gt",
+            "not_live_tracking": true,
+            "period": "2026-08",
+            "period_months_lag": 3,
+            "reporting_cadence": "monthly",
+            "source_dataset": "d_8f264219109e61fffa87ac64dd5a9a65",
+            "unit": "vessels",
+            "value": 2203,
+            "vessel_type": "Tanker"
+          },
+          "source_scope": "Maritime & Port Authority of Singapore monthly arrivals >75 GT by vessel type; selected latest months, publication lag, Singapore-only, not live AIS",
+          "source_updated_at": null,
+          "source_url": "https://data.gov.sg/datasets/d_8f264219109e61fffa87ac64dd5a9a65/view",
+          "title": "Singapore MPA 2026-08 Tanker vessel arrivals (>75 GT)"
+        }
+      }
+    },
     "2d953b3feb61f417c66cd103eb9117fec108bb822877020b7f822e52b597d3bf": {
       "information_root": "ioda:c500a4abba63ee84a95cc68e",
       "members": {
@@ -207,6 +253,78 @@
           "source_updated_at": "2026-11-20T00:21:52Z",
           "source_url": "https://niord.dma.dk/#/message/07ae7b1a-b975-48ee-bfd8-822c3fcfa940",
           "title": "Denmark. The Baltic Sea. EK D 395 Raghammer. Firing exercises. Warning."
+        }
+      }
+    },
+    "2dc4434144759aea894296f9bac88ccb759349bdf22955aa219709d11e48bf4c": {
+      "information_root": "usace:215538",
+      "members": {
+        "beh:53d7ca63c8ca969e13440617e968": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "issued_waterway_notice_not_verified_disruption",
+          "collection_mode": "usace",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-04T16:41:14+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:53d7ca63c8ca969e13440617e968",
+          "information_root": "usace:215538",
+          "origin": "behavioral_registry",
+          "provider": "usace",
+          "published_at": "2026-11-04T16:41:14Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_navigation_notice",
+          "source_family": "waterway_restriction",
+          "source_kind": "official_waterway_navigation_notice",
+          "source_measurement": null,
+          "source_scope": "USACE NTNI active notices for sampled districts MVP/MVS/SWG; up to 110 total",
+          "source_updated_at": null,
+          "source_url": "https://ndc.ops.usace.army.mil/ords/ntni/print_nav_notice?in_nav_notice_number=215538&in_title_formatting=UB",
+          "title": "NTNI notice 215065-2 · IVORY_LANDING_UPPER_MISSISSIPPI"
+        }
+      }
+    },
+    "2dd38ac4722dea010fe1223a0969d1ec5626dd192744748cab3c328959a54706": {
+      "information_root": "bmkg_nowcast:bmkg_nowcast:b968be313c142dd12d72b7b55a7e",
+      "members": {
+        "beh:4bc05d436b20116aea61568febbb": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "bmkg_nowcast",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-21T01:30:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:4bc05d436b20116aea61568febbb",
+          "information_root": "bmkg_nowcast:bmkg_nowcast:b968be313c142dd12d72b7b55a7e",
+          "origin": "behavioral_registry",
+          "provider": "bmkg_nowcast",
+          "published_at": "2026-11-21T01:30:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Indonesia BMKG",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Indonesia BMKG active provincial nowcast RSS, source-reported only; not global",
+          "source_updated_at": null,
+          "source_url": "https://www.bmkg.go.id/alerts/nowcast/en/CJK20261121001_alert.xml",
+          "title": "Thunderstorm This Morning in Jakarta"
         }
       }
     }

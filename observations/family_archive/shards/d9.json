@@ -30,6 +30,92 @@
         }
       }
     },
+    "d927821f1b8872752de77ab2328a36072d4f15f4892cf6b6d5c50641f4c0199b": {
+      "information_root": "cbp_wait:cbp_wait:240801:2026-11-20:19:23:04",
+      "members": {
+        "beh:0f88b858adf715a6896f221791bc": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-21T02:31:05+00:00",
+          "geography_key": "us-border-port:240801",
+          "geography_label": "Santa Teresa",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:0f88b858adf715a6896f221791bc",
+          "information_root": "cbp_wait:cbp_wait:240801:2026-11-20:19:23:04",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "delay",
+            "lanes_open": 1,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "At 7:00 pm MST",
+            "reported_local_date": "11/20/2026",
+            "reported_local_time": "19:23:04",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 25
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Santa Teresa / Santa Teresa Port of Entry"
+        }
+      }
+    },
+    "d96be68cf61ecefd15ac6ccba791b8da82556cd49c3e7202c50842903b5bf99d": {
+      "information_root": "inmet_br:inmet_br:52e54eee7cdf7e64c4d9ae02d19d",
+      "members": {
+        "beh:99cd47d67e69379e8403b66a2841": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "inmet_br",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-20T09:16:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:99cd47d67e69379e8403b66a2841",
+          "information_root": "inmet_br:inmet_br:52e54eee7cdf7e64c4d9ae02d19d",
+          "origin": "behavioral_registry",
+          "provider": "inmet_br",
+          "published_at": "2026-11-20T09:16:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Brazil INMET",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Brazil INMET official severe-weather RSS notices; provider-listed bounded sample",
+          "source_updated_at": null,
+          "source_url": "https://apiprevmet3.inmet.gov.br/avisos/rss/56457",
+          "title": "Aviso de Tempestade. Severidade Grau: Perigo"
+        }
+      }
+    },
     "d98fd1218def6665c3e83d8bc220df454195e31ffc540f585d9b564d4c62708b": {
       "information_root": "niord:5d72ff05-f299-4513-bfbd-2c2d38001fd1:0:0:0",
       "members": {
@@ -57,6 +143,77 @@
           "source_updated_at": "2026-11-17T00:21:53Z",
           "source_url": "https://niord.dma.dk/#/message/5d72ff05-f299-4513-bfbd-2c2d38001fd1",
           "title": "Denmark. Skagerrak. EK R 48 Tranum S. Firing exercises. Warning."
+        }
+      }
+    },
+    "d9976bcae4824dae27238073a64777117a8e13e8ba1fe1a8ff6faa03fe02e505": {
+      "information_root": "usace:213232",
+      "members": {
+        "beh:9a18c4f1f25046528ef5545ef335": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "issued_waterway_notice_not_verified_disruption",
+          "collection_mode": "usace",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-03-04T06:00:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:9a18c4f1f25046528ef5545ef335",
+          "information_root": "usace:213232",
+          "origin": "behavioral_registry",
+          "provider": "usace",
+          "published_at": "2026-03-04T06:00:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_navigation_notice",
+          "source_family": "waterway_restriction",
+          "source_kind": "official_waterway_navigation_notice",
+          "source_measurement": null,
+          "source_scope": "USACE NTNI active notices for sampled districts MVP/MVS/SWG; up to 110 total",
+          "source_updated_at": null,
+          "source_url": "https://ndc.ops.usace.army.mil/ords/ntni/print_nav_notice?in_nav_notice_number=213232&in_title_formatting=UB",
+          "title": "NTNI notice 213230-1 · POOL_24_UPPER_MISSISSIPPI, POOL_25_UPPER_MISSISSIPPI"
+        }
+      }
+    },
+    "d9bc9f7ecccdf65d407cc9a7f2e3cccd6600d64cf411ee8c891ae07baa9d040f": {
+      "information_root": "usgs:us6000ucg8",
+      "members": {
+        "beh:46a847bedb4ccfdbfbce67b9f684": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "usgs",
+          "direct_measurement": true,
+          "event_at": "2026-11-21T01:24:09Z",
+          "first_observed_at": "2026-11-21T01:24:09+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "source_supplied_point_only",
+          "id": "beh:46a847bedb4ccfdbfbce67b9f684",
+          "information_root": "usgs:us6000ucg8",
+          "origin": "behavioral_registry",
+          "provider": "usgs",
+          "published_at": "2026-11-21T01:34:16Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "measured_earthquake_context",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "name": "earthquake_magnitude",
+            "unit": "reported_magnitude",
+            "value": 4.7
+          },
+          "source_scope": "USGS M4.5+ earthquakes worldwide, rolling past day; source thresholds apply",
+          "source_updated_at": null,
+          "source_url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000ucg8",
+          "title": "M 4.7 - 38 km NE of Calama, Chile"
         }
       }
     },

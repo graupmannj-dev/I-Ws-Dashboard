@@ -120,6 +120,53 @@
         }
       }
     },
+    "b6727c8f08ca3a851fe2191d805490d2bcbd7f4b60bbe09cd577c71aebffb286": {
+      "information_root": "cbp_wait:cbp_wait:250409:2026-11-20:18:23:04",
+      "members": {
+        "beh:41cb62db9008c2df345a07249fce": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-21T02:31:05+00:00",
+          "geography_key": "us-border-port:250409",
+          "geography_label": "San Ysidro",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:41cb62db9008c2df345a07249fce",
+          "information_root": "cbp_wait:cbp_wait:250409:2026-11-20:18:23:04",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "N/A",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/20/2026",
+            "reported_local_time": "18:23:04",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — San Ysidro / Cross Border Express"
+        }
+      }
+    },
     "b681d4766387e81983334e5c5a505913348966d5e152363494542b68c89729bb": {
       "information_root": "official:36b22b71ec8fe83d9436",
       "members": {
@@ -147,6 +194,93 @@
           "source_updated_at": null,
           "source_url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.and.html",
           "title": "Andorra - Level 1: Exercise Normal Precautions"
+        }
+      }
+    },
+    "b6ddc9fdf3db4493f642a2463e579271d99c92fc7a47992926a60d48c9a2d1b2": {
+      "information_root": "bmkg_quake:bmkg_quake:2d5de237b2a4e44b1dc04302c1f4",
+      "members": {
+        "beh:7b413bb4d93c0efe7c840d49a76f": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "bmkg_quake",
+          "direct_measurement": true,
+          "event_at": "2026-10-29T03:26:49Z",
+          "first_observed_at": "2026-11-21T02:31:05+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "source_supplied_earthquake_epicenter",
+          "id": "beh:7b413bb4d93c0efe7c840d49a76f",
+          "information_root": "bmkg_quake:bmkg_quake:2d5de237b2a4e44b1dc04302c1f4",
+          "origin": "behavioral_registry",
+          "provider": "bmkg_quake",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_seismic_reporting_may_represent_same_usgs_event",
+          "source_family": "environmental_context",
+          "source_kind": "national_seismic_measurement_context",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "depth_km": 120.0,
+            "name": "earthquake_magnitude",
+            "possible_same_physical_event_as_usgs": true,
+            "unit": "source_reported_magnitude",
+            "value": 6.0
+          },
+          "source_scope": "Indonesia BMKG 15 latest magnitude-5+ earthquakes; not global; same physical events may appear in USGS",
+          "source_updated_at": null,
+          "source_url": "https://data.bmkg.go.id/DataMKG/TEWS/gempaterkini.json",
+          "title": "BMKG earthquake M6.0 · 153 km Tenggara OKSIBIL-PAPUAPGNGN"
+        }
+      }
+    },
+    "b6e66866ccfce2ef587ecd3680460fbc93214eec14f8cc84139c1012e5550ff3": {
+      "information_root": "cbp_wait:cbp_wait:010601:2026-11-20:21:23:03",
+      "members": {
+        "beh:425594687705c2e91d1becf4fa2b": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-21T02:31:05+00:00",
+          "geography_key": "us-border-port:010601",
+          "geography_label": "Houlton",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:425594687705c2e91d1becf4fa2b",
+          "information_root": "cbp_wait:cbp_wait:010601:2026-11-20:21:23:03",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "no delay",
+            "lanes_open": 1,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "At 7:00 pm EST",
+            "reported_local_date": "11/20/2026",
+            "reported_local_time": "21:23:03",
+            "source_declared_border": "Canadian Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 0
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Houlton"
         }
       }
     },

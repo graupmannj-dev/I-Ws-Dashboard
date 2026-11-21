@@ -1,5 +1,38 @@
 {
   "roots": {
+    "ba7918247b9566ff9b30ada1129b4dfc9d7ea42eb2a8f6906778854c1bb9df00": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-069a5f:110335-2026",
+      "members": {
+        "beh:3e972c4a3e9cbdf9bbefeea1826d": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-20T16:38:13+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:3e972c4a3e9cbdf9bbefeea1826d",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-069a5f:110335-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-20T16:38:13Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-19T02%3A27%3A41&updatedTo=2026-11-21T02%3A27%3A41",
+          "title": "Lower Thames Crossing (LTC) - Technical Services · National Highways Limited"
+        }
+      }
+    },
     "ba82955419bcd43f0170593d1152f4a4266618cb17bb48b6064460266a46d650": {
       "information_root": "saudi-energy-ministry-east-west-pipeline-20261109",
       "members": {
@@ -56,6 +89,53 @@
         }
       }
     },
+    "bad04c24d543b0deb6fd5f9db70cf10450d8ad27b4de6fbc6202f556358ba5b3": {
+      "information_root": "cbp_wait:cbp_wait:250301:2026-11-20:18:23:04",
+      "members": {
+        "beh:a1578d457976bb4e968b669113df": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-21T02:31:05+00:00",
+          "geography_key": "us-border-port:250301",
+          "geography_label": "Calexico",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:a1578d457976bb4e968b669113df",
+          "information_root": "cbp_wait:cbp_wait:250301:2026-11-20:18:23:04",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "delay",
+            "lanes_open": 2,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "At 6:00 pm PST",
+            "reported_local_date": "11/20/2026",
+            "reported_local_time": "18:23:04",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 150
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Calexico / East"
+        }
+      }
+    },
     "bad1cdd93639ba4f800e436a0d11e1f46a6e305f04dcef9d8e8763ea337a435b": {
       "information_root": "commercial:7953d6201c01416443a8",
       "members": {
@@ -83,6 +163,39 @@
           "source_updated_at": null,
           "source_url": "https://maritime-executive.com/article/greek-maritime-forum-2027-to-put-athens-at-centre-of-global-shipping",
           "title": "Greek Maritime Forum 2027 to Put Athens at Centre of Global Shipping"
+        }
+      }
+    },
+    "bad2c4008e52df059684382188f32a41a85aa659d0c5dba5a405392f27ce55ee": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c0bd:110318-2026",
+      "members": {
+        "beh:bf7daa78308563163a5b8650046a": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-20T16:19:01+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:bf7daa78308563163a5b8650046a",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c0bd:110318-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-20T16:19:01Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-19T02%3A27%3A41&updatedTo=2026-11-21T02%3A27%3A41",
+          "title": "Fisher and Paykel Parter Plus Offer · Guy's and St Thomas' NHS Foundation Trust"
         }
       }
     },

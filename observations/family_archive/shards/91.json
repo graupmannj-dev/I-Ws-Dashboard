@@ -1,5 +1,45 @@
 {
   "roots": {
+    "91702518af274401b5d163e61992e630bbe39d6845c30c0ba84de0f5de84207a": {
+      "information_root": "bmkg_quake:bmkg_quake:b37c14bb18044cfcaa0045358dcf",
+      "members": {
+        "beh:c9561e27655fbfa414f341dee5dd": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "bmkg_quake",
+          "direct_measurement": true,
+          "event_at": "2026-11-18T04:41:32Z",
+          "first_observed_at": "2026-11-21T02:31:05+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "source_supplied_earthquake_epicenter",
+          "id": "beh:c9561e27655fbfa414f341dee5dd",
+          "information_root": "bmkg_quake:bmkg_quake:b37c14bb18044cfcaa0045358dcf",
+          "origin": "behavioral_registry",
+          "provider": "bmkg_quake",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_seismic_reporting_may_represent_same_usgs_event",
+          "source_family": "environmental_context",
+          "source_kind": "national_seismic_measurement_context",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "depth_km": 10.0,
+            "name": "earthquake_magnitude",
+            "possible_same_physical_event_as_usgs": true,
+            "unit": "source_reported_magnitude",
+            "value": 5.8
+          },
+          "source_scope": "Indonesia BMKG 15 latest magnitude-5+ earthquakes; not global; same physical events may appear in USGS",
+          "source_updated_at": null,
+          "source_url": "https://data.bmkg.go.id/DataMKG/TEWS/gempaterkini.json",
+          "title": "BMKG earthquake M5.8 · 49 km TimurLaut RUTENG-MANGGARAI-NTT"
+        }
+      }
+    },
     "917fcbb2c9cf0cbad1b28dacf22d62faa35a4fe4d378bb904b30b855a82f6745": {
       "information_root": "niord:f50f5f45-141b-4e6d-b05f-c91b00e96ce2:3:0:0",
       "members": {
@@ -27,6 +67,45 @@
           "source_updated_at": "2026-11-18T00:21:53Z",
           "source_url": "https://niord.dma.dk/#/message/f50f5f45-141b-4e6d-b05f-c91b00e96ce2",
           "title": "Denmark. Skagerrak. EK R 48 Tranum S. Firing exercises. Warning."
+        }
+      }
+    },
+    "91c0969fdb8635f503604cb0b2a14a65f7bb62d227588d78afed7989370d7021": {
+      "information_root": "inmet_br:inmet_br:bcbcf84c5e9e397c8dfd0c2c67d2",
+      "members": {
+        "beh:69710884f50944180797528d05c3": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "inmet_br",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-18T00:00:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:69710884f50944180797528d05c3",
+          "information_root": "inmet_br:inmet_br:bcbcf84c5e9e397c8dfd0c2c67d2",
+          "origin": "behavioral_registry",
+          "provider": "inmet_br",
+          "published_at": "2026-11-18T00:00:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Brazil INMET",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Brazil INMET official severe-weather RSS notices; provider-listed bounded sample",
+          "source_updated_at": null,
+          "source_url": "https://apiprevmet3.inmet.gov.br/avisos/rss/56439",
+          "title": "Aviso de Tempestade. Severidade Grau: Perigo Potencial"
         }
       }
     },

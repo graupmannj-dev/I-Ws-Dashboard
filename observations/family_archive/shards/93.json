@@ -1,5 +1,38 @@
 {
   "roots": {
+    "934cab034fe9ff965c2fc1089ab0e7f2b4702260a5d2afb1f9017ce272367dae": {
+      "information_root": "swpc:K05W:2276:20261119T010025Z",
+      "members": {
+        "beh:14876726d5759602032879fc048d": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "swpc",
+          "direct_measurement": false,
+          "event_at": "2026-11-19T01:00:25Z",
+          "first_observed_at": "2026-11-19T01:00:25+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:14876726d5759602032879fc048d",
+          "information_root": "swpc:K05W:2276:20261119T010025Z",
+          "origin": "behavioral_registry",
+          "provider": "swpc",
+          "published_at": "2026-11-19T01:00:25Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "issued_space_weather_bulletin",
+          "source_measurement": null,
+          "source_scope": "NOAA SWPC issued recent solar/geomagnetic warnings; explanatory context only",
+          "source_updated_at": null,
+          "source_url": "https://www.swpc.noaa.gov/products/alerts-watches-and-warnings",
+          "title": "WARNING: Geomagnetic K-index of 5 expected"
+        }
+      }
+    },
     "93a51ca4bd570c87d150489e4ca8649dda12c731f23973098deca5d48dc6f40a": {
       "information_root": "faa:6/8290:0:0",
       "members": {
@@ -57,6 +90,39 @@
           "source_updated_at": null,
           "source_url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.gbr.html",
           "title": "United Kingdom - Level 2: Exercise Increased Caution"
+        }
+      }
+    },
+    "93d139f621c5e77011d156ccdc4caee9ad4d1d93251607b24e74f7099904a917": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c0b4:110305-2026",
+      "members": {
+        "beh:82aac9ac38d97afef8766f17c0a2": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-20T15:59:53+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:82aac9ac38d97afef8766f17c0a2",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c0b4:110305-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-20T15:59:53Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-19T02%3A27%3A41&updatedTo=2026-11-21T02%3A27%3A41",
+          "title": "Property Guardian Service · Clarion Housing Group"
         }
       }
     }

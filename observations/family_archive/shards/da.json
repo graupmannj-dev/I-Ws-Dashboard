@@ -60,6 +60,45 @@
         }
       }
     },
+    "da319a0b67f4f9ca591f9db458bdb75960815be98656ff2d6b53bd986c6ac46e": {
+      "information_root": "inmet_br:inmet_br:30073ff72d6e9b79f46a70bd633a",
+      "members": {
+        "beh:0d732b02d2aa7ff9ac522151b803": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "inmet_br",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-19T00:00:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:0d732b02d2aa7ff9ac522151b803",
+          "information_root": "inmet_br:inmet_br:30073ff72d6e9b79f46a70bd633a",
+          "origin": "behavioral_registry",
+          "provider": "inmet_br",
+          "published_at": "2026-11-19T00:00:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Brazil INMET",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Brazil INMET official severe-weather RSS notices; provider-listed bounded sample",
+          "source_updated_at": null,
+          "source_url": "https://apiprevmet3.inmet.gov.br/avisos/rss/56450",
+          "title": "Aviso de Tempestade. Severidade Grau: Perigo Potencial"
+        }
+      }
+    },
     "da5a2aef17952c4431c0665e24d51afd9933f182b0039a20826236b5a0628f3c": {
       "information_root": "official:75e2a3fe0fa02ba97a5b",
       "members": {
@@ -87,6 +126,72 @@
           "source_updated_at": null,
           "source_url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.nor.html",
           "title": "Norway - Level 1: Exercise Normal Precautions"
+        }
+      }
+    },
+    "da9352f84a10b80000463d971b0ea84cf91bd4c18e6bb9325b6448deb075cb62": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c0aa:110282-2026",
+      "members": {
+        "beh:c53466d320c89e0643579808004b": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-20T15:42:21+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:c53466d320c89e0643579808004b",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c0aa:110282-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-20T15:42:21Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-19T02%3A27%3A41&updatedTo=2026-11-21T02%3A27%3A41",
+          "title": "KMCHNA-020 - Fire Safety Remedial Works to Low Rise Buildings · The Council of the Borough of Kirklees"
+        }
+      }
+    },
+    "dab6142dd9086ec399e1b271c0b6c9eddfe4ebda51c4473207739ce561b27a39": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c0bb:110316-2026",
+      "members": {
+        "beh:6b86ca9f311ddf436141e8acd557": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-20T16:18:10+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:6b86ca9f311ddf436141e8acd557",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c0bb:110316-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-20T16:18:10Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-19T02%3A27%3A41&updatedTo=2026-11-21T02%3A27%3A41",
+          "title": "2627-0366 Time and Attendance System · London Borough of Islington"
         }
       }
     }

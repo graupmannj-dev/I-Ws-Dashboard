@@ -90,6 +90,114 @@
         }
       }
     },
+    "cd6f1ddb33a045f5e896d482e0e54152d30986a889eece00c5eee44b053f502b": {
+      "information_root": "wiki_edits:wiki_edits:id:20261121T02",
+      "members": {
+        "beh:5fbeb9ad1efce95f45ac4b9df108": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "wiki_edits",
+          "direct_measurement": false,
+          "event_at": "2026-11-21T02:27:17Z",
+          "first_observed_at": "2026-11-21T02:27:17+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:5fbeb9ad1efce95f45ac4b9df108",
+          "information_root": "wiki_edits:wiki_edits:id:20261121T02",
+          "origin": "behavioral_registry",
+          "provider": "wiki_edits",
+          "published_at": "2026-11-21T02:27:17Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "public_encyclopedia_edit_aggregate",
+          "source_family": "public_attention",
+          "source_kind": "bounded_public_edit_count_not_event_verification",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "distinct_articles_in_sample": 122,
+            "maximum_returned_edits": 500,
+            "most_edited_article_counts": [
+              {
+                "count": 13,
+                "title": "Rahmat Hidayat"
+              },
+              {
+                "count": 8,
+                "title": "Fitria Sukaesih"
+              },
+              {
+                "count": 8,
+                "title": "John Kenedy Azis"
+              },
+              {
+                "count": 6,
+                "title": "Ahlul Badrito Resha"
+              },
+              {
+                "count": 5,
+                "title": "Sohni Mahiwal"
+              },
+              {
+                "count": 5,
+                "title": "Tarian tradisional Sindh"
+              },
+              {
+                "count": 4,
+                "title": "Beiratia"
+              },
+              {
+                "count": 4,
+                "title": "Eko Hadi Santoso"
+              }
+            ],
+            "name": "sampled_edits_last_three_hours",
+            "sample_cap_reached": false,
+            "unit": "edits",
+            "value": 216
+          },
+          "source_scope": "Wikipedia main-namespace edit-count sample, 14 global language editions, three-hour window capped at 500 per wiki; not geographic location",
+          "source_updated_at": null,
+          "source_url": "https://id.wikipedia.org/wiki/Special:RecentChanges",
+          "title": "Wikipedia id public article-edit activity (sampled)"
+        }
+      }
+    },
+    "cd73a38b145d202f819e4af2c4ec0e76d0ef0ab4e413a922620d78d57725db0f": {
+      "information_root": "usace:215603",
+      "members": {
+        "beh:47a0e8925e2691c5993a190ede25": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "issued_waterway_notice_not_verified_disruption",
+          "collection_mode": "usace",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-12T06:00:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:47a0e8925e2691c5993a190ede25",
+          "information_root": "usace:215603",
+          "origin": "behavioral_registry",
+          "provider": "usace",
+          "published_at": "2026-11-12T06:00:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_navigation_notice",
+          "source_family": "waterway_restriction",
+          "source_kind": "official_waterway_navigation_notice",
+          "source_measurement": null,
+          "source_scope": "USACE NTNI active notices for sampled districts MVP/MVS/SWG; up to 110 total",
+          "source_updated_at": null,
+          "source_url": "https://ndc.ops.usace.army.mil/ords/ntni/print_nav_notice?in_nav_notice_number=215603&in_title_formatting=UB",
+          "title": "NTNI notice 215603 · POOL_24_UPPER_MISSISSIPPI"
+        }
+      }
+    },
     "cdb421ea0c57a79aba9f46e90be1c09a6f9f6fc95108268f82956a1a1ce6ec72": {
       "information_root": "niord:07ae7b1a-b975-48ee-bfd8-822c3fcfa940:1:0:0",
       "members": {
@@ -147,6 +255,91 @@
           "source_updated_at": null,
           "source_url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.dnk.html",
           "title": "Denmark - Level 2: Exercise Increased Caution"
+        }
+      }
+    },
+    "cdf428c0d4ffa7a6d8cc7278a51dbe1d1586d2f8beeb6b99552839cbc2a94c72": {
+      "information_root": "bmkg_nowcast:bmkg_nowcast:955e74c432e048d4f02bb46656ba",
+      "members": {
+        "beh:c0e37f2430657fe4968c248cad46": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "bmkg_nowcast",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-21T01:00:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:c0e37f2430657fe4968c248cad46",
+          "information_root": "bmkg_nowcast:bmkg_nowcast:955e74c432e048d4f02bb46656ba",
+          "origin": "behavioral_registry",
+          "provider": "bmkg_nowcast",
+          "published_at": "2026-11-21T01:00:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Indonesia BMKG",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Indonesia BMKG active provincial nowcast RSS, source-reported only; not global",
+          "source_updated_at": null,
+          "source_url": "https://www.bmkg.go.id/alerts/nowcast/en/CSU20261121001_alert.xml",
+          "title": "Thunderstorm This Morning in Sumatera Utara"
+        }
+      }
+    },
+    "cdf8df7021e5ab8b037b5ce31d0474b4f793dde6572da7e3912320f9a7e47b7b": {
+      "information_root": "sg_mpa:sg_mpa:2026-02:passenger",
+      "members": {
+        "beh:c54f24e6c01a338d60ec07d1b6e8": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "monthly_maritime_throughput_not_current_disruption",
+          "collection_mode": "sg_mpa",
+          "direct_measurement": true,
+          "event_at": null,
+          "first_observed_at": "2026-11-21T02:31:05+00:00",
+          "geography_key": "country:SG",
+          "geography_label": "Singapore",
+          "geography_precision": "national_port_scope_not_incident",
+          "id": "beh:c54f24e6c01a338d60ec07d1b6e8",
+          "information_root": "sg_mpa:sg_mpa:2026-02:passenger",
+          "origin": "behavioral_registry",
+          "provider": "sg_mpa",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_monthly_port_throughput_historical",
+          "source_family": "port_throughput",
+          "source_kind": "official_monthly_port_arrival_count_historical",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "denominator": "vessels_greater_than_75_gross_tons",
+            "most_recent_month_provisional": false,
+            "name": "monthly_vessel_arrivals_over_75_gt",
+            "not_live_tracking": true,
+            "period": "2026-02",
+            "period_months_lag": 9,
+            "reporting_cadence": "monthly",
+            "source_dataset": "d_8f264219109e61fffa87ac64dd5a9a65",
+            "unit": "vessels",
+            "value": 3238,
+            "vessel_type": "Passenger"
+          },
+          "source_scope": "Maritime & Port Authority of Singapore monthly arrivals >75 GT by vessel type; selected latest months, publication lag, Singapore-only, not live AIS",
+          "source_updated_at": null,
+          "source_url": "https://data.gov.sg/datasets/d_8f264219109e61fffa87ac64dd5a9a65/view",
+          "title": "Singapore MPA 2026-02 Passenger vessel arrivals (>75 GT)"
         }
       }
     }

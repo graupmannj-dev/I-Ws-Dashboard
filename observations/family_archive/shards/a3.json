@@ -1,5 +1,71 @@
 {
   "roots": {
+    "a31e7d9e574360af69e0d27af1982af11f1ee98f35ad56ffcecbe6d240c0af96": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c0a7:110279-2026",
+      "members": {
+        "beh:02999a261049dbc5bcff9730a283": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-20T15:39:54+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:02999a261049dbc5bcff9730a283",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c0a7:110279-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-20T15:39:54Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-19T02%3A27%3A41&updatedTo=2026-11-21T02%3A27%3A41",
+          "title": "UK2 Materiel Distribution Land (MDL) Programme Market Interest Day · Defence Equipment and Support"
+        }
+      }
+    },
+    "a39cc25971c9c014bc71d6a8372b6faca344c5695df543bee0cf94fc41f19aea": {
+      "information_root": "eonet:EONET_26573",
+      "members": {
+        "beh:6f6fde3e8e6e9fc9183d827d86f2": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "eonet",
+          "direct_measurement": false,
+          "event_at": "2026-11-16T11:32:00Z",
+          "first_observed_at": "2026-11-16T11:32:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:6f6fde3e8e6e9fc9183d827d86f2",
+          "information_root": "eonet:EONET_26573",
+          "origin": "behavioral_registry",
+          "provider": "eonet",
+          "published_at": "2026-11-16T11:32:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "cataloged_natural_hazard_context",
+          "source_measurement": null,
+          "source_scope": "NASA EONET open catalog, category Wildfires",
+          "source_updated_at": null,
+          "source_url": "https://eonet.gsfc.nasa.gov/api/v3/events/EONET_26573",
+          "title": "Prescribed Fire STEELY MILL RX, El Dorado, California"
+        }
+      }
+    },
     "a3f0943b66b4af84c35e6020d222cea7e0819224e80d13faa5d65e34f058f475": {
       "information_root": "official:0898287445f930a680f1",
       "members": {
@@ -57,6 +123,45 @@
           "source_updated_at": "2026-11-20T00:21:54Z",
           "source_url": "https://niord.dma.dk/#/message/30e0503c-a18c-4a20-bb33-158697450fa7",
           "title": "Denmark. Kattegat. EK R 45 Hevring. Firing exercises. Warning."
+        }
+      }
+    },
+    "a3f705c84d6be32542a0418554b25679b8c2a09e3c37cd0d56b8af3411bfb1f0": {
+      "information_root": "inmet_br:inmet_br:a6c18e999dd5fed6e01b838d7e1c",
+      "members": {
+        "beh:c68bf0b7b5e595d1ef28f192f330": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "inmet_br",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-17T00:00:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:c68bf0b7b5e595d1ef28f192f330",
+          "information_root": "inmet_br:inmet_br:a6c18e999dd5fed6e01b838d7e1c",
+          "origin": "behavioral_registry",
+          "provider": "inmet_br",
+          "published_at": "2026-11-17T00:00:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Brazil INMET",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Brazil INMET official severe-weather RSS notices; provider-listed bounded sample",
+          "source_updated_at": null,
+          "source_url": "https://apiprevmet3.inmet.gov.br/avisos/rss/56436",
+          "title": "Aviso de Tempestade. Severidade Grau: Perigo Potencial"
         }
       }
     }

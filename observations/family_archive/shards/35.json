@@ -116,6 +116,53 @@
         }
       }
     },
+    "353f24e30974befe75cf2cce7ae53799a39e14be514fc083973dde52787b16a4": {
+      "information_root": "cbp_wait:cbp_wait:071201:2026-11-20:21:23:03",
+      "members": {
+        "beh:97b5269eeb5e7fd9c5bdc45c4c9a": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-21T02:31:05+00:00",
+          "geography_key": "us-border-port:071201",
+          "geography_label": "Champlain",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:97b5269eeb5e7fd9c5bdc45c4c9a",
+          "information_root": "cbp_wait:cbp_wait:071201:2026-11-20:21:23:03",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "no delay",
+            "lanes_open": 1,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "At 10:00 pm EST",
+            "reported_local_date": "11/20/2026",
+            "reported_local_time": "21:23:03",
+            "source_declared_border": "Canadian Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 0
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Champlain"
+        }
+      }
+    },
     "3543db1d66b6e905a6ceea75fa24739764c5aa62b315002692b2b20f61f9830e": {
       "information_root": "ioda:18f1a5e81fbe7a73812a78f7",
       "members": {
@@ -143,6 +190,151 @@
           "source_updated_at": null,
           "source_url": "https://ioda.inetintel.cc.gatech.edu/",
           "title": "IODA detected connectivity anomaly: country ER"
+        }
+      }
+    },
+    "354d669817b3f7964d59f88910ba4cc1c633ca94d3e73ffb40f86382acadae88": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07b3f0:110276-2026",
+      "members": {
+        "beh:2bbaff8977cf37ffbd4f148674b1": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-20T15:38:01+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:2bbaff8977cf37ffbd4f148674b1",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07b3f0:110276-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-20T15:38:01Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-19T02%3A27%3A41&updatedTo=2026-11-21T02%3A27%3A41",
+          "title": "UKRI-4453 Lot 4_02 R131 Enabling and Infrastructure · UK Research & Innovation (UKRI)"
+        }
+      }
+    },
+    "35a72741eebafa920323916662b71c455a5b590f535e1d4474e2b344daa96902": {
+      "information_root": "swpc:K04W:5457:20261119T011816Z",
+      "members": {
+        "beh:074efadd8eefc43ae7529a1978da": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "swpc",
+          "direct_measurement": false,
+          "event_at": "2026-11-19T01:18:16Z",
+          "first_observed_at": "2026-11-19T01:18:16+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:074efadd8eefc43ae7529a1978da",
+          "information_root": "swpc:K04W:5457:20261119T011816Z",
+          "origin": "behavioral_registry",
+          "provider": "swpc",
+          "published_at": "2026-11-19T01:18:16Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "issued_space_weather_bulletin",
+          "source_measurement": null,
+          "source_scope": "NOAA SWPC issued recent solar/geomagnetic warnings; explanatory context only",
+          "source_updated_at": null,
+          "source_url": "https://www.swpc.noaa.gov/products/alerts-watches-and-warnings",
+          "title": "EXTENDED WARNING: Geomagnetic K-index of 4 expected"
+        }
+      }
+    },
+    "35ccbedf180a92cbc493488d004cced0d19fd1976eae22ea96823aa661ed8448": {
+      "information_root": "sg_mpa:sg_mpa:2026-09:tug",
+      "members": {
+        "beh:b1e379ac0a35e334c2ee7dfb75db": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "monthly_maritime_throughput_not_current_disruption",
+          "collection_mode": "sg_mpa",
+          "direct_measurement": true,
+          "event_at": null,
+          "first_observed_at": "2026-11-21T02:31:05+00:00",
+          "geography_key": "country:SG",
+          "geography_label": "Singapore",
+          "geography_precision": "national_port_scope_not_incident",
+          "id": "beh:b1e379ac0a35e334c2ee7dfb75db",
+          "information_root": "sg_mpa:sg_mpa:2026-09:tug",
+          "origin": "behavioral_registry",
+          "provider": "sg_mpa",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_monthly_port_throughput_historical",
+          "source_family": "port_throughput",
+          "source_kind": "official_monthly_port_arrival_count_historical",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "denominator": "vessels_greater_than_75_gross_tons",
+            "most_recent_month_provisional": false,
+            "name": "monthly_vessel_arrivals_over_75_gt",
+            "not_live_tracking": true,
+            "period": "2026-09",
+            "period_months_lag": 2,
+            "reporting_cadence": "monthly",
+            "source_dataset": "d_8f264219109e61fffa87ac64dd5a9a65",
+            "unit": "vessels",
+            "value": 1008,
+            "vessel_type": "Tug"
+          },
+          "source_scope": "Maritime & Port Authority of Singapore monthly arrivals >75 GT by vessel type; selected latest months, publication lag, Singapore-only, not live AIS",
+          "source_updated_at": null,
+          "source_url": "https://data.gov.sg/datasets/d_8f264219109e61fffa87ac64dd5a9a65/view",
+          "title": "Singapore MPA 2026-09 Tug vessel arrivals (>75 GT)"
+        }
+      }
+    },
+    "35e799e65e5a2966f8369993f90c53a14f1b8e3462624382375978e105393034": {
+      "information_root": "nws:6149387c1b0b8d17c8668177",
+      "members": {
+        "beh:115ffa0af86b5f57878da1a3fefd": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "nws",
+          "direct_measurement": false,
+          "event_at": "2026-11-20T17:37:00Z",
+          "first_observed_at": "2026-11-20T17:37:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:115ffa0af86b5f57878da1a3fefd",
+          "information_root": "nws:6149387c1b0b8d17c8668177",
+          "origin": "behavioral_registry",
+          "provider": "nws",
+          "published_at": "2026-11-20T17:37:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "official_weather_alert_context",
+          "source_measurement": null,
+          "source_scope": "Active NWS marine alerts; severity Minor",
+          "source_updated_at": null,
+          "source_url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.56c3d9cd681b61ce5e4fcac2a6acfb56593cabbe.004.1",
+          "title": "Coastal Flood Advisory - Eastern Clay; South Central Duval; Western St. Johns"
         }
       }
     }

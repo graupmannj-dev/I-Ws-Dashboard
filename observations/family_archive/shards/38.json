@@ -120,6 +120,86 @@
         }
       }
     },
+    "3888d92f99a6d0ccf1c1d99f12f2c98e7df325414878700c8ad56904ef611362": {
+      "information_root": "usace:215666",
+      "members": {
+        "beh:20ded09206c915914978798c60d7": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "issued_waterway_notice_not_verified_disruption",
+          "collection_mode": "usace",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-19T17:11:21+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:20ded09206c915914978798c60d7",
+          "information_root": "usace:215666",
+          "origin": "behavioral_registry",
+          "provider": "usace",
+          "published_at": "2026-11-19T17:11:21Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_navigation_notice",
+          "source_family": "waterway_restriction",
+          "source_kind": "official_waterway_navigation_notice",
+          "source_measurement": null,
+          "source_scope": "USACE NTNI active notices for sampled districts MVP/MVS/SWG; up to 110 total",
+          "source_updated_at": null,
+          "source_url": "https://ndc.ops.usace.army.mil/ords/ntni/print_nav_notice?in_nav_notice_number=215666&in_title_formatting=UB",
+          "title": "NTNI notice 214905-3 · GULF INTRACOASTAL WATERWAY, GULF INTRACOASTAL WATERWAY - WEST LOCK SOUTH RIVERSIDE SECTOR GATE"
+        }
+      }
+    },
+    "38a21b11e53cb137946712ed244b4e97868cff18c11769d8a80563308fe82cc6": {
+      "information_root": "ons_br:ons_br:SECO:20261120T030000Z",
+      "members": {
+        "beh:f214c4b75c57e4d20376dbeba217": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "verified_grid_load_not_outage_or_intent",
+          "collection_mode": "ons_br",
+          "direct_measurement": true,
+          "event_at": "2026-11-20T03:00:00Z",
+          "first_observed_at": "2026-11-21T02:31:05+00:00",
+          "geography_key": "br-ons-loadarea:SECO",
+          "geography_label": "Southeast/Central West",
+          "geography_precision": "regional_grid_not_incident_site",
+          "id": "beh:f214c4b75c57e4d20376dbeba217",
+          "information_root": "ons_br:ons_br:SECO:20261120T030000Z",
+          "origin": "behavioral_registry",
+          "provider": "ons_br",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "verified_national_grid_load_measurement",
+          "source_family": "grid_load",
+          "source_kind": "verified_regional_electricity_load_context_not_outage",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "collected_history_day": "2026-11-19",
+            "historical_verified_not_live": true,
+            "load_area_code": "SECO",
+            "load_area_name": "Southeast/Central West",
+            "name": "verified_half_hour_global_load",
+            "not_outage_or_attribution": true,
+            "sample_interval_minutes": 30,
+            "sampled_rows": 48,
+            "source_field": "val_cargaglobal",
+            "source_utc_field": "din_referenciautc",
+            "unit": "MWmed",
+            "value": 51187.72
+          },
+          "source_scope": "Brazilian national system operator ONS verified half-hour load, four macroregions, previous two-day sample; no local facilities/outage attribution",
+          "source_updated_at": null,
+          "source_url": "https://dados.ons.org.br/dataset/carga-energia-verificada",
+          "title": "Brazil ONS Southeast/Central West verified half-hourly system load"
+        }
+      }
+    },
     "38c24b2ffec5b7c5a96ab03d4d3b90479192d8aa11a9e0d5b6b2290eeabde647": {
       "information_root": "niord:d6579d57-9e90-4738-82a3-05d694d83563:0:0:0",
       "members": {

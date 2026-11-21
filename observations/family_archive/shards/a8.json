@@ -1,5 +1,38 @@
 {
   "roots": {
+    "a8019ebfbc921ae7a571f1c47746704c1f6208547d0f526b633ec8ee394921ac": {
+      "information_root": "eonet:EONET_26568",
+      "members": {
+        "beh:2a11c98bfd920d75977b6adf6a4f": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "eonet",
+          "direct_measurement": false,
+          "event_at": "2026-11-18T14:11:00Z",
+          "first_observed_at": "2026-11-18T14:11:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:2a11c98bfd920d75977b6adf6a4f",
+          "information_root": "eonet:EONET_26568",
+          "origin": "behavioral_registry",
+          "provider": "eonet",
+          "published_at": "2026-11-18T14:11:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "cataloged_natural_hazard_context",
+          "source_measurement": null,
+          "source_scope": "NASA EONET open catalog, category Wildfires",
+          "source_updated_at": null,
+          "source_url": "https://eonet.gsfc.nasa.gov/api/v3/events/EONET_26568",
+          "title": "Wildfire Greene - Caney Creek Lane, Greene, Tennessee"
+        }
+      }
+    },
     "a809e3d9561f12c215321751d95b221deffc668ffff78fa3dfd04af15740ee75": {
       "information_root": "niord:bbdcd7f3-3353-4f9d-939d-cf5b7d0dba74:0:2:0",
       "members": {
@@ -30,6 +63,53 @@
         }
       }
     },
+    "a850153975127472b96ba1be5b44935baeb35627f541e22f0a6e9c3e20596277": {
+      "information_root": "cbp_wait:cbp_wait:230401:2026-11-20:20:23:04",
+      "members": {
+        "beh:6c480a607c721a8abbd8afce4374": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-21T02:31:05+00:00",
+          "geography_key": "us-border-port:230401",
+          "geography_label": "Laredo",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:6c480a607c721a8abbd8afce4374",
+          "information_root": "cbp_wait:cbp_wait:230401:2026-11-20:20:23:04",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "N/A",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/20/2026",
+            "reported_local_time": "20:23:04",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Laredo / Bridge I"
+        }
+      }
+    },
     "a8648e7e2c562509bd9b856702f853f6cb0a666ed1cd6fe151a31cfb72a30905": {
       "information_root": "niord:75ebccfd-c509-4f82-bba1-c4a7fb8f6ac5:0:0:0",
       "members": {
@@ -57,6 +137,45 @@
           "source_updated_at": "2026-11-16T07:16:54Z",
           "source_url": "https://niord.dma.dk/#/message/75ebccfd-c509-4f82-bba1-c4a7fb8f6ac5",
           "title": "Denmark. The Waters South of Zealand. Guldborgsund. Bridge closed for passage."
+        }
+      }
+    },
+    "a8686c935e4a0d9adfbd8bd673e08acb6d47ad37e78f4500ce17b53e37933c94": {
+      "information_root": "inmet_br:inmet_br:7153f4da1f36f77c57de903e96a1",
+      "members": {
+        "beh:a6b4206896c0512e4436cdce5267": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "inmet_br",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-17T00:00:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:a6b4206896c0512e4436cdce5267",
+          "information_root": "inmet_br:inmet_br:7153f4da1f36f77c57de903e96a1",
+          "origin": "behavioral_registry",
+          "provider": "inmet_br",
+          "published_at": "2026-11-17T00:00:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Brazil INMET",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Brazil INMET official severe-weather RSS notices; provider-listed bounded sample",
+          "source_updated_at": null,
+          "source_url": "https://apiprevmet3.inmet.gov.br/avisos/rss/56430",
+          "title": "Aviso de Tempestade. Severidade Grau: Perigo"
         }
       }
     },

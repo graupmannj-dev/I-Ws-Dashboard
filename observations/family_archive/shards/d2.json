@@ -30,6 +30,100 @@
         }
       }
     },
+    "d224169507f9ef3165a6f1f844c66880d1fb72fc7bad8fa35037617d665cc896": {
+      "information_root": "cbp_wait:cbp_wait:380001:2026-11-20:21:23:03",
+      "members": {
+        "beh:fee1ff3bf0ccf70a41f7c2c6e94c": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-21T02:31:05+00:00",
+          "geography_key": "us-border-port:380001",
+          "geography_label": "Detroit",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:fee1ff3bf0ccf70a41f7c2c6e94c",
+          "information_root": "cbp_wait:cbp_wait:380001:2026-11-20:21:23:03",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "no delay",
+            "lanes_open": 4,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "At 9:00 pm EST",
+            "reported_local_date": "11/20/2026",
+            "reported_local_time": "21:23:03",
+            "source_declared_border": "Canadian Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 0
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Detroit / Ambassador Bridge"
+        }
+      }
+    },
+    "d23dac808912b0fa801836c733e33dc1a9ec7541c0a4048b399b0475d0256508": {
+      "information_root": "cbp_wait:cbp_wait:250609:2026-11-20:18:23:04",
+      "members": {
+        "beh:65547e88c27f311a1db9045909c6": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-21T02:31:05+00:00",
+          "geography_key": "us-border-port:250609",
+          "geography_label": "Otay Mesa",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:65547e88c27f311a1db9045909c6",
+          "information_root": "cbp_wait:cbp_wait:250609:2026-11-20:18:23:04",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Update Pending",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/20/2026",
+            "reported_local_time": "18:23:04",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Otay Mesa"
+        }
+      }
+    },
     "d24da222e75836f2e3f90d832735272329db9b880349947fdad52197591e2960": {
       "information_root": "niord:bbdcd7f3-3353-4f9d-939d-cf5b7d0dba74:0:0:0",
       "members": {
@@ -177,6 +271,52 @@
           "source_updated_at": null,
           "source_url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.abw.html",
           "title": "Aruba - Level 1: Exercise Normal Precautions"
+        }
+      }
+    },
+    "d2c5c09a25ef28e64f954530cab501bde93714f173d27e2c5b0c579f815fee69": {
+      "information_root": "sg_mpa:sg_mpa:2026-06:tug",
+      "members": {
+        "beh:c0280307d81fe86dbb311a9be898": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "monthly_maritime_throughput_not_current_disruption",
+          "collection_mode": "sg_mpa",
+          "direct_measurement": true,
+          "event_at": null,
+          "first_observed_at": "2026-11-21T02:31:05+00:00",
+          "geography_key": "country:SG",
+          "geography_label": "Singapore",
+          "geography_precision": "national_port_scope_not_incident",
+          "id": "beh:c0280307d81fe86dbb311a9be898",
+          "information_root": "sg_mpa:sg_mpa:2026-06:tug",
+          "origin": "behavioral_registry",
+          "provider": "sg_mpa",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_monthly_port_throughput_historical",
+          "source_family": "port_throughput",
+          "source_kind": "official_monthly_port_arrival_count_historical",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "denominator": "vessels_greater_than_75_gross_tons",
+            "most_recent_month_provisional": false,
+            "name": "monthly_vessel_arrivals_over_75_gt",
+            "not_live_tracking": true,
+            "period": "2026-06",
+            "period_months_lag": 5,
+            "reporting_cadence": "monthly",
+            "source_dataset": "d_8f264219109e61fffa87ac64dd5a9a65",
+            "unit": "vessels",
+            "value": 898,
+            "vessel_type": "Tug"
+          },
+          "source_scope": "Maritime & Port Authority of Singapore monthly arrivals >75 GT by vessel type; selected latest months, publication lag, Singapore-only, not live AIS",
+          "source_updated_at": null,
+          "source_url": "https://data.gov.sg/datasets/d_8f264219109e61fffa87ac64dd5a9a65/view",
+          "title": "Singapore MPA 2026-06 Tug vessel arrivals (>75 GT)"
         }
       }
     }

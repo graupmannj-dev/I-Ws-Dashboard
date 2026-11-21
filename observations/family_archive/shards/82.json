@@ -60,6 +60,53 @@
         }
       }
     },
+    "821d8f8516b7a12e3a77c0ea4db4a0f9dd464e953e20e886a3cb93f7c2b4ce84": {
+      "information_root": "ons_br:ons_br:S:20261120T030000Z",
+      "members": {
+        "beh:3c6fc330989025048bd5c6041d34": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "verified_grid_load_not_outage_or_intent",
+          "collection_mode": "ons_br",
+          "direct_measurement": true,
+          "event_at": "2026-11-20T03:00:00Z",
+          "first_observed_at": "2026-11-21T02:31:05+00:00",
+          "geography_key": "br-ons-loadarea:S",
+          "geography_label": "South",
+          "geography_precision": "regional_grid_not_incident_site",
+          "id": "beh:3c6fc330989025048bd5c6041d34",
+          "information_root": "ons_br:ons_br:S:20261120T030000Z",
+          "origin": "behavioral_registry",
+          "provider": "ons_br",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "verified_national_grid_load_measurement",
+          "source_family": "grid_load",
+          "source_kind": "verified_regional_electricity_load_context_not_outage",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "collected_history_day": "2026-11-19",
+            "historical_verified_not_live": true,
+            "load_area_code": "S",
+            "load_area_name": "South",
+            "name": "verified_half_hour_global_load",
+            "not_outage_or_attribution": true,
+            "sample_interval_minutes": 30,
+            "sampled_rows": 48,
+            "source_field": "val_cargaglobal",
+            "source_utc_field": "din_referenciautc",
+            "unit": "MWmed",
+            "value": 16160.217
+          },
+          "source_scope": "Brazilian national system operator ONS verified half-hour load, four macroregions, previous two-day sample; no local facilities/outage attribution",
+          "source_updated_at": null,
+          "source_url": "https://dados.ons.org.br/dataset/carga-energia-verificada",
+          "title": "Brazil ONS South verified half-hourly system load"
+        }
+      }
+    },
     "8233ac3569d18cc8151dfe687adbb95bce463376729bd399658db0f798bfb140": {
       "information_root": "official:9ec579e94a8fa9735e3f",
       "members": {
@@ -177,6 +224,53 @@
           "source_updated_at": null,
           "source_url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.btn.html",
           "title": "Bhutan - Level 1: Exercise Normal Precautions"
+        }
+      }
+    },
+    "82d3f54c5c9223a16f4255f62d94513cb9c7be9cfb48ad90c34adac82ff971d3": {
+      "information_root": "cbp_wait:cbp_wait:240203:2026-11-20:19:23:04",
+      "members": {
+        "beh:86dc9bead9a9ac9f9c86cbbdbada": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-21T02:31:05+00:00",
+          "geography_key": "us-border-port:240203",
+          "geography_label": "El Paso",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:86dc9bead9a9ac9f9c86cbbdbada",
+          "information_root": "cbp_wait:cbp_wait:240203:2026-11-20:19:23:04",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "delay",
+            "lanes_open": 4,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "At 7:00 pm MST",
+            "reported_local_date": "11/20/2026",
+            "reported_local_time": "19:23:04",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 45
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — El Paso / Ysleta"
         }
       }
     },

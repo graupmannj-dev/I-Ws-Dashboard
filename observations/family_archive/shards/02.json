@@ -30,6 +30,46 @@
         }
       }
     },
+    "0244c6e9a23a17024cd00eac5498af2dbef09750fce7a67af21ca6ce82c54567": {
+      "information_root": "bmkg_quake:bmkg_quake:910d6358779f0ca9776257709494",
+      "members": {
+        "beh:2e0e3da45c484366199a918d8d9c": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "bmkg_quake",
+          "direct_measurement": true,
+          "event_at": "2026-11-15T20:51:57Z",
+          "first_observed_at": "2026-11-21T02:31:05+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "source_supplied_earthquake_epicenter",
+          "id": "beh:2e0e3da45c484366199a918d8d9c",
+          "information_root": "bmkg_quake:bmkg_quake:910d6358779f0ca9776257709494",
+          "origin": "behavioral_registry",
+          "provider": "bmkg_quake",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_seismic_reporting_may_represent_same_usgs_event",
+          "source_family": "environmental_context",
+          "source_kind": "national_seismic_measurement_context",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "depth_km": 323.0,
+            "name": "earthquake_magnitude",
+            "possible_same_physical_event_as_usgs": true,
+            "unit": "source_reported_magnitude",
+            "value": 5.4
+          },
+          "source_scope": "Indonesia BMKG 15 latest magnitude-5+ earthquakes; not global; same physical events may appear in USGS",
+          "source_updated_at": null,
+          "source_url": "https://data.bmkg.go.id/DataMKG/TEWS/gempaterkini.json",
+          "title": "BMKG earthquake M5.4 · 265 km Tenggara BURUSELATAN-MALUKU"
+        }
+      }
+    },
     "02df517b0f3eeefb3c18bf9789d26c2e3db07093c1a78b454f93ecdb576654ed": {
       "information_root": "official:64a9d961c7511e9c7a50",
       "members": {
@@ -57,6 +97,78 @@
           "source_updated_at": null,
           "source_url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.ita.html",
           "title": "Italy - Level 2: Exercise Increased Caution"
+        }
+      }
+    },
+    "02f76e46d6cbe8003a43778cc18571ce02afc9573d744b801876374ee9a1445f": {
+      "information_root": "usace:12461",
+      "members": {
+        "beh:5a1c3c838c36af95438be9bd4bc1": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "issued_waterway_notice_not_verified_disruption",
+          "collection_mode": "usace",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2020-09-03T00:00:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:5a1c3c838c36af95438be9bd4bc1",
+          "information_root": "usace:12461",
+          "origin": "behavioral_registry",
+          "provider": "usace",
+          "published_at": "2020-09-03T00:00:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_navigation_notice",
+          "source_family": "waterway_restriction",
+          "source_kind": "official_waterway_navigation_notice",
+          "source_measurement": null,
+          "source_scope": "USACE NTNI active notices for sampled districts MVP/MVS/SWG; up to 110 total",
+          "source_updated_at": null,
+          "source_url": "https://ndc.ops.usace.army.mil/ords/ntni/print_nav_notice?in_nav_notice_number=12461&in_title_formatting=UB",
+          "title": "NTNI notice 12461 · UPPER MISSISSIPPI"
+        }
+      }
+    },
+    "02fa39e15dd272d0cdb2c40edcf6d8d9f1f3d481b9d9902fbf0c77c2c05b207c": {
+      "information_root": "inmet_br:inmet_br:970ee73382b01a1997c016c17f65",
+      "members": {
+        "beh:1847b97eeb155c00ed13dbf36740": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "inmet_br",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-17T09:00:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:1847b97eeb155c00ed13dbf36740",
+          "information_root": "inmet_br:inmet_br:970ee73382b01a1997c016c17f65",
+          "origin": "behavioral_registry",
+          "provider": "inmet_br",
+          "published_at": "2026-11-17T09:00:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Brazil INMET",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Brazil INMET official severe-weather RSS notices; provider-listed bounded sample",
+          "source_updated_at": null,
+          "source_url": "https://apiprevmet3.inmet.gov.br/avisos/rss/56434",
+          "title": "Aviso de Tempestade. Severidade Grau: Perigo Potencial"
         }
       }
     }

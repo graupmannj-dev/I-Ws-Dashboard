@@ -60,6 +60,52 @@
         }
       }
     },
+    "54740807f2b7e5e74e9fbdf1e439dfc999a7d41f6d2761d46cb3616cd09af9f8": {
+      "information_root": "sg_mpa:sg_mpa:2026-03:miscellaneous",
+      "members": {
+        "beh:ae9dfd8697a7af09dd46bc49b641": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "monthly_maritime_throughput_not_current_disruption",
+          "collection_mode": "sg_mpa",
+          "direct_measurement": true,
+          "event_at": null,
+          "first_observed_at": "2026-11-21T02:31:05+00:00",
+          "geography_key": "country:SG",
+          "geography_label": "Singapore",
+          "geography_precision": "national_port_scope_not_incident",
+          "id": "beh:ae9dfd8697a7af09dd46bc49b641",
+          "information_root": "sg_mpa:sg_mpa:2026-03:miscellaneous",
+          "origin": "behavioral_registry",
+          "provider": "sg_mpa",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_monthly_port_throughput_historical",
+          "source_family": "port_throughput",
+          "source_kind": "official_monthly_port_arrival_count_historical",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "denominator": "vessels_greater_than_75_gross_tons",
+            "most_recent_month_provisional": false,
+            "name": "monthly_vessel_arrivals_over_75_gt",
+            "not_live_tracking": true,
+            "period": "2026-03",
+            "period_months_lag": 8,
+            "reporting_cadence": "monthly",
+            "source_dataset": "d_8f264219109e61fffa87ac64dd5a9a65",
+            "unit": "vessels",
+            "value": 730,
+            "vessel_type": "Miscellaneous"
+          },
+          "source_scope": "Maritime & Port Authority of Singapore monthly arrivals >75 GT by vessel type; selected latest months, publication lag, Singapore-only, not live AIS",
+          "source_updated_at": null,
+          "source_url": "https://data.gov.sg/datasets/d_8f264219109e61fffa87ac64dd5a9a65/view",
+          "title": "Singapore MPA 2026-03 Miscellaneous vessel arrivals (>75 GT)"
+        }
+      }
+    },
     "547678a049910967637c2d2182d9e76e8b4a0d55956687dc3559add8d7c79b63": {
       "information_root": "niord:69efd854-5221-4c33-9355-fb79f6ef0b2a:0:1:0",
       "members": {
@@ -117,6 +163,127 @@
           "source_updated_at": null,
           "source_url": "https://ioda.inetintel.cc.gatech.edu/",
           "title": "IODA detected connectivity anomaly: country CV"
+        }
+      }
+    },
+    "54b8c91d9a3cbfb548e2a7a6090680e78620c0bb9a84e6f565a42e9fc00723e6": {
+      "information_root": "sg_mpa:sg_mpa:2026-03:tug",
+      "members": {
+        "beh:4fb201a8eb8200ef12766037b803": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "monthly_maritime_throughput_not_current_disruption",
+          "collection_mode": "sg_mpa",
+          "direct_measurement": true,
+          "event_at": null,
+          "first_observed_at": "2026-11-21T02:31:05+00:00",
+          "geography_key": "country:SG",
+          "geography_label": "Singapore",
+          "geography_precision": "national_port_scope_not_incident",
+          "id": "beh:4fb201a8eb8200ef12766037b803",
+          "information_root": "sg_mpa:sg_mpa:2026-03:tug",
+          "origin": "behavioral_registry",
+          "provider": "sg_mpa",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_monthly_port_throughput_historical",
+          "source_family": "port_throughput",
+          "source_kind": "official_monthly_port_arrival_count_historical",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "denominator": "vessels_greater_than_75_gross_tons",
+            "most_recent_month_provisional": false,
+            "name": "monthly_vessel_arrivals_over_75_gt",
+            "not_live_tracking": true,
+            "period": "2026-03",
+            "period_months_lag": 8,
+            "reporting_cadence": "monthly",
+            "source_dataset": "d_8f264219109e61fffa87ac64dd5a9a65",
+            "unit": "vessels",
+            "value": 945,
+            "vessel_type": "Tug"
+          },
+          "source_scope": "Maritime & Port Authority of Singapore monthly arrivals >75 GT by vessel type; selected latest months, publication lag, Singapore-only, not live AIS",
+          "source_updated_at": null,
+          "source_url": "https://data.gov.sg/datasets/d_8f264219109e61fffa87ac64dd5a9a65/view",
+          "title": "Singapore MPA 2026-03 Tug vessel arrivals (>75 GT)"
+        }
+      }
+    },
+    "54c4642c07b5c0da22c62f44489bd62ab207cd3c222986deef44507290a43675": {
+      "information_root": "wiki_edits:wiki_edits:zh:20261121T02",
+      "members": {
+        "beh:6799dd5d5a191398f808e8ad9dbc": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "wiki_edits",
+          "direct_measurement": false,
+          "event_at": "2026-11-21T02:27:33Z",
+          "first_observed_at": "2026-11-21T02:27:33+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:6799dd5d5a191398f808e8ad9dbc",
+          "information_root": "wiki_edits:wiki_edits:zh:20261121T02",
+          "origin": "behavioral_registry",
+          "provider": "wiki_edits",
+          "published_at": "2026-11-21T02:27:33Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "public_encyclopedia_edit_aggregate",
+          "source_family": "public_attention",
+          "source_kind": "bounded_public_edit_count_not_event_verification",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "distinct_articles_in_sample": 413,
+            "maximum_returned_edits": 500,
+            "most_edited_article_counts": [
+              {
+                "count": 7,
+                "title": "莲花桥 (北京)"
+              },
+              {
+                "count": 6,
+                "title": "2026年至2027年拜仁慕尼黑赛季"
+              },
+              {
+                "count": 5,
+                "title": "C19H29N5O2"
+              },
+              {
+                "count": 4,
+                "title": "三鶯線"
+              },
+              {
+                "count": 4,
+                "title": "洋流 (政治)"
+              },
+              {
+                "count": 4,
+                "title": "魏建彦"
+              },
+              {
+                "count": 4,
+                "title": "黎曼猜想"
+              },
+              {
+                "count": 3,
+                "title": "2026—2027年澳洲地區熱帶氣旋季"
+              }
+            ],
+            "name": "sampled_edits_last_three_hours",
+            "sample_cap_reached": true,
+            "unit": "edits",
+            "value": 500
+          },
+          "source_scope": "Wikipedia main-namespace edit-count sample, 14 global language editions, three-hour window capped at 500 per wiki; not geographic location",
+          "source_updated_at": null,
+          "source_url": "https://zh.wikipedia.org/wiki/Special:RecentChanges",
+          "title": "Wikipedia zh public article-edit activity (sampled)"
         }
       }
     },

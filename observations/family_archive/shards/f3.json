@@ -1,5 +1,76 @@
 {
   "roots": {
+    "f32844942e89e57907e278cb4cc6335de9e4567c2a3e037e522498295e2ff046": {
+      "information_root": "usace:205788",
+      "members": {
+        "beh:91dc022c99549c5a9fe034ac8f8b": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "issued_waterway_notice_not_verified_disruption",
+          "collection_mode": "usace",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2024-01-19T15:42:48+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:91dc022c99549c5a9fe034ac8f8b",
+          "information_root": "usace:205788",
+          "origin": "behavioral_registry",
+          "provider": "usace",
+          "published_at": "2024-01-19T15:42:48Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_navigation_notice",
+          "source_family": "waterway_restriction",
+          "source_kind": "official_waterway_navigation_notice",
+          "source_measurement": null,
+          "source_scope": "USACE NTNI active notices for sampled districts MVP/MVS/SWG; up to 110 total",
+          "source_updated_at": null,
+          "source_url": "https://ndc.ops.usace.army.mil/ords/ntni/print_nav_notice?in_nav_notice_number=205788&in_title_formatting=UB",
+          "title": "NTNI notice 205788 · POOL_05A_UPPER_MISSISSIPPI"
+        }
+      }
+    },
+    "f32ce67d3f9fb957269fe1d8c5e36e8b87cbcbae25deca1be5581096466ad162": {
+      "information_root": "usgs:nc75468702",
+      "members": {
+        "beh:9a29ec2ce5975eedc066269809de": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "usgs",
+          "direct_measurement": true,
+          "event_at": "2026-11-20T06:49:16Z",
+          "first_observed_at": "2026-11-20T06:49:16+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "source_supplied_point_only",
+          "id": "beh:9a29ec2ce5975eedc066269809de",
+          "information_root": "usgs:nc75468702",
+          "origin": "behavioral_registry",
+          "provider": "usgs",
+          "published_at": "2026-11-21T02:24:39Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "measured_earthquake_context",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "name": "earthquake_magnitude",
+            "unit": "reported_magnitude",
+            "value": 4.98
+          },
+          "source_scope": "USGS M4.5+ earthquakes worldwide, rolling past day; source thresholds apply",
+          "source_updated_at": null,
+          "source_url": "https://earthquake.usgs.gov/earthquakes/eventpage/nc75468702",
+          "title": "M 5.0 - 10 km NW of Pinnacles, CA"
+        }
+      }
+    },
     "f34d3e40cd53ad3ad7f3ed4dece85efdfbb8bfe059c38d54fbe011d01f237925": {
       "information_root": "official:d3136986d03a3e1d2d25",
       "members": {
@@ -177,6 +248,52 @@
           "source_updated_at": "2026-11-17T00:21:54Z",
           "source_url": "https://niord.dma.dk/#/message/3d490dac-280b-4363-8759-a043f37854e8",
           "title": "Denmark. The North Sea. EK R 33 Vejers. Firing exercises. Warning."
+        }
+      }
+    },
+    "f3e01f03b376f3bc8167d30d92bd7135c66032c0d6e30a642deacfdb61795ac8": {
+      "information_root": "sg_mpa:sg_mpa:2026-06:container",
+      "members": {
+        "beh:17091251de5b03f6cb0dc124a3ed": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "monthly_maritime_throughput_not_current_disruption",
+          "collection_mode": "sg_mpa",
+          "direct_measurement": true,
+          "event_at": null,
+          "first_observed_at": "2026-11-21T02:31:05+00:00",
+          "geography_key": "country:SG",
+          "geography_label": "Singapore",
+          "geography_precision": "national_port_scope_not_incident",
+          "id": "beh:17091251de5b03f6cb0dc124a3ed",
+          "information_root": "sg_mpa:sg_mpa:2026-06:container",
+          "origin": "behavioral_registry",
+          "provider": "sg_mpa",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_monthly_port_throughput_historical",
+          "source_family": "port_throughput",
+          "source_kind": "official_monthly_port_arrival_count_historical",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "denominator": "vessels_greater_than_75_gross_tons",
+            "most_recent_month_provisional": false,
+            "name": "monthly_vessel_arrivals_over_75_gt",
+            "not_live_tracking": true,
+            "period": "2026-06",
+            "period_months_lag": 5,
+            "reporting_cadence": "monthly",
+            "source_dataset": "d_8f264219109e61fffa87ac64dd5a9a65",
+            "unit": "vessels",
+            "value": 1319,
+            "vessel_type": "Container"
+          },
+          "source_scope": "Maritime & Port Authority of Singapore monthly arrivals >75 GT by vessel type; selected latest months, publication lag, Singapore-only, not live AIS",
+          "source_updated_at": null,
+          "source_url": "https://data.gov.sg/datasets/d_8f264219109e61fffa87ac64dd5a9a65/view",
+          "title": "Singapore MPA 2026-06 Container vessel arrivals (>75 GT)"
         }
       }
     },

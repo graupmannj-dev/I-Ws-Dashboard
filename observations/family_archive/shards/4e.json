@@ -120,6 +120,39 @@
         }
       }
     },
+    "4e9ec15ab294299a358df57e8895851efb1070ab49aad2f16eb1e604c490e334": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-05f3ef:110287-2026",
+      "members": {
+        "beh:ad4e4644a3a093ccfe5efeb207ce": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-20T15:46:01+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:ad4e4644a3a093ccfe5efeb207ce",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-05f3ef:110287-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-20T15:46:01Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-19T02%3A27%3A41&updatedTo=2026-11-21T02%3A27%3A41",
+          "title": "Places for People ERP System · PLACES FOR PEOPLE GROUP LIMITED"
+        }
+      }
+    },
     "4eb929c5ddc8e581e539f8ca4a4b37a90210742c7e3f70c64b5aae958dac4ac4": {
       "information_root": "niord:7bc5a48d-5f50-4fb6-b79c-ce85de2573eb:3:0:0",
       "members": {
@@ -147,6 +180,52 @@
           "source_updated_at": "2026-11-14T00:21:52Z",
           "source_url": "https://niord.dma.dk/#/message/7bc5a48d-5f50-4fb6-b79c-ce85de2573eb",
           "title": "Denmark. Skagerrak. EK R 48 Tranum S. Firing exercises. Warning."
+        }
+      }
+    },
+    "4ed08df446b8cd9014906c1cce81c024e3bf0192c0978d0cdf8476610124ab0c": {
+      "information_root": "sg_mpa:sg_mpa:2026-06:barges",
+      "members": {
+        "beh:cca4cd334c416c88655aa7285e4a": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "monthly_maritime_throughput_not_current_disruption",
+          "collection_mode": "sg_mpa",
+          "direct_measurement": true,
+          "event_at": null,
+          "first_observed_at": "2026-11-21T02:31:05+00:00",
+          "geography_key": "country:SG",
+          "geography_label": "Singapore",
+          "geography_precision": "national_port_scope_not_incident",
+          "id": "beh:cca4cd334c416c88655aa7285e4a",
+          "information_root": "sg_mpa:sg_mpa:2026-06:barges",
+          "origin": "behavioral_registry",
+          "provider": "sg_mpa",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_monthly_port_throughput_historical",
+          "source_family": "port_throughput",
+          "source_kind": "official_monthly_port_arrival_count_historical",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "denominator": "vessels_greater_than_75_gross_tons",
+            "most_recent_month_provisional": false,
+            "name": "monthly_vessel_arrivals_over_75_gt",
+            "not_live_tracking": true,
+            "period": "2026-06",
+            "period_months_lag": 5,
+            "reporting_cadence": "monthly",
+            "source_dataset": "d_8f264219109e61fffa87ac64dd5a9a65",
+            "unit": "vessels",
+            "value": 844,
+            "vessel_type": "Barges"
+          },
+          "source_scope": "Maritime & Port Authority of Singapore monthly arrivals >75 GT by vessel type; selected latest months, publication lag, Singapore-only, not live AIS",
+          "source_updated_at": null,
+          "source_url": "https://data.gov.sg/datasets/d_8f264219109e61fffa87ac64dd5a9a65/view",
+          "title": "Singapore MPA 2026-06 Barges vessel arrivals (>75 GT)"
         }
       }
     }

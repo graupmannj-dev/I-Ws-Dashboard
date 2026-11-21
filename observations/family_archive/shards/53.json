@@ -60,6 +60,39 @@
         }
       }
     },
+    "53bf1be579f09e62ad1e644b3da3591ce76148fe4073f0b0c8b01b435acd86d1": {
+      "information_root": "nws:4e3f6921986e6f72e9efb3f9",
+      "members": {
+        "beh:907af64caab46ed02ae8f5249246": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "nws",
+          "direct_measurement": false,
+          "event_at": "2026-11-21T02:03:00Z",
+          "first_observed_at": "2026-11-21T02:03:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:907af64caab46ed02ae8f5249246",
+          "information_root": "nws:4e3f6921986e6f72e9efb3f9",
+          "origin": "behavioral_registry",
+          "provider": "nws",
+          "published_at": "2026-11-21T02:03:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "official_weather_alert_context",
+          "source_measurement": null,
+          "source_scope": "Active NWS marine alerts; severity Severe",
+          "source_updated_at": null,
+          "source_url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.76f161601995ce5eb496bc1690dc8a95b16d3ed8.001.1",
+          "title": "Flood Warning - Seminole, FL"
+        }
+      }
+    },
     "53c62cc71b153bbcd0d9f5f96ce58d9a23a594e2e6c936ee7a9ad3657daeaf80": {
       "information_root": "official:41a412b66271d95315e1",
       "members": {
@@ -147,6 +180,52 @@
           "source_updated_at": null,
           "source_url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQZ1l6X0NwdF9NbTdZcl9BWlFjaHMtaHR1RHZfSUk5cHd5RmIzZWRxNUhiMGRBaW1lakFseENzRjFZTExtcW12WXVoa0pQY2gyYUgyUFpPbGdyaFlCdUctd0FFVFB2OGkxbTFsU3lZOWt6WjdRUWg1X1NKbUhlX0NxQ0ptVEgwdWxjX3ZMRFdDXzREbXhhQTl6c0VTODFjeTJna2lJV2hvZ1F6T2hUcTA1YXlhLXJ2cUpiZEVFeDB3Q05Wek5WR1U5QQ?oc=5",
           "title": "To what extent do mines in the Strait of Hormuz pose a threat to shipping? - TRT World"
+        }
+      }
+    },
+    "53f5a69c609715ac45eaac4966eed82a2731fe54da0009c914f3ddbf8933b0a5": {
+      "information_root": "sg_mpa:sg_mpa:2026-08:tug",
+      "members": {
+        "beh:3a28d761995672adce09924e0b6a": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "monthly_maritime_throughput_not_current_disruption",
+          "collection_mode": "sg_mpa",
+          "direct_measurement": true,
+          "event_at": null,
+          "first_observed_at": "2026-11-21T02:31:05+00:00",
+          "geography_key": "country:SG",
+          "geography_label": "Singapore",
+          "geography_precision": "national_port_scope_not_incident",
+          "id": "beh:3a28d761995672adce09924e0b6a",
+          "information_root": "sg_mpa:sg_mpa:2026-08:tug",
+          "origin": "behavioral_registry",
+          "provider": "sg_mpa",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_monthly_port_throughput_historical",
+          "source_family": "port_throughput",
+          "source_kind": "official_monthly_port_arrival_count_historical",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "denominator": "vessels_greater_than_75_gross_tons",
+            "most_recent_month_provisional": false,
+            "name": "monthly_vessel_arrivals_over_75_gt",
+            "not_live_tracking": true,
+            "period": "2026-08",
+            "period_months_lag": 3,
+            "reporting_cadence": "monthly",
+            "source_dataset": "d_8f264219109e61fffa87ac64dd5a9a65",
+            "unit": "vessels",
+            "value": 971,
+            "vessel_type": "Tug"
+          },
+          "source_scope": "Maritime & Port Authority of Singapore monthly arrivals >75 GT by vessel type; selected latest months, publication lag, Singapore-only, not live AIS",
+          "source_updated_at": null,
+          "source_url": "https://data.gov.sg/datasets/d_8f264219109e61fffa87ac64dd5a9a65/view",
+          "title": "Singapore MPA 2026-08 Tug vessel arrivals (>75 GT)"
         }
       }
     }

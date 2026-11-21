@@ -1,5 +1,52 @@
 {
   "roots": {
+    "a50d865c63a1c290e89c5eb907e1080e8a8a085d7ee1b370e2a54d2984f919fd": {
+      "information_root": "cbp_wait:cbp_wait:250302:2026-11-20:18:23:04",
+      "members": {
+        "beh:5b8e379770d8f93310573e0a9cc9": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-21T02:31:05+00:00",
+          "geography_key": "us-border-port:250302",
+          "geography_label": "Calexico",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:5b8e379770d8f93310573e0a9cc9",
+          "information_root": "cbp_wait:cbp_wait:250302:2026-11-20:18:23:04",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "N/A",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/20/2026",
+            "reported_local_time": "18:23:04",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Calexico / West"
+        }
+      }
+    },
     "a51f3837b0dd5f5a5fad6ce5afef83d595a16bffd0a2d5b17ca95b3b3d195a57": {
       "information_root": "faa:6/7338:0:0",
       "members": {
@@ -27,6 +74,46 @@
           "source_updated_at": null,
           "source_url": "https://tfr.faa.gov/6_7338.html",
           "title": "FAA TFR 6/7338 · W MARTINSBURG, WV, Friday, November 13, 2026 UTC"
+        }
+      }
+    },
+    "a52ce0806ccaeb94d57cc95fe58ed5a5b6e3c963b6dd22523cb9281c6844a57c": {
+      "information_root": "coops:8638610:20261121T0218Z",
+      "members": {
+        "beh:90c546083368e46fdd543bc079d9": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "coops",
+          "direct_measurement": true,
+          "event_at": "2026-11-21T02:18:00Z",
+          "first_observed_at": "2026-11-21T02:18:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:90c546083368e46fdd543bc079d9",
+          "information_root": "coops:8638610:20261121T0218Z",
+          "origin": "behavioral_registry",
+          "provider": "coops",
+          "published_at": "2026-11-21T02:18:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "station_physical_measurement",
+          "source_family": "port_conditions",
+          "source_kind": "selected_port_water_level_measurement",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "metric_comparable_only_same_station_datum_and_sample_window": true,
+            "name": "observed_water_level",
+            "station": "8638610",
+            "unit": "meters_MLLW",
+            "value": 0.345
+          },
+          "source_scope": "NOAA CO-OPS water levels at San Francisco, Key West and Sewells Point; stations only",
+          "source_updated_at": null,
+          "source_url": "https://tidesandcurrents.noaa.gov/waterlevels.html?id=8638610",
+          "title": "Sewells Point, VA observed water level (no anomaly classification)"
         }
       }
     },
@@ -117,6 +204,45 @@
           "source_updated_at": "2026-11-16T09:21:52Z",
           "source_url": "https://niord.dma.dk/#/message/0d46c069-0c0b-4cd6-80cb-4e07aeaab638",
           "title": "Denmark. Skagerrak. EK R 48 Tranum S. Firing exercises. Warning."
+        }
+      }
+    },
+    "a593246f18bf8cca313a5d2c18291369d587c75ffed49fc8e1be554b1193cdaa": {
+      "information_root": "bmkg_nowcast:bmkg_nowcast:03a8ae273e89956f548a45468dce",
+      "members": {
+        "beh:3cb11ff11506e33462557cafb533": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "bmkg_nowcast",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-21T01:50:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:3cb11ff11506e33462557cafb533",
+          "information_root": "bmkg_nowcast:bmkg_nowcast:03a8ae273e89956f548a45468dce",
+          "origin": "behavioral_registry",
+          "provider": "bmkg_nowcast",
+          "published_at": "2026-11-21T01:50:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Indonesia BMKG",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Indonesia BMKG active provincial nowcast RSS, source-reported only; not global",
+          "source_updated_at": null,
+          "source_url": "https://www.bmkg.go.id/alerts/nowcast/en/CJB20261121001_alert.xml",
+          "title": "Thunderstorm This Morning in Jawa Barat"
         }
       }
     },

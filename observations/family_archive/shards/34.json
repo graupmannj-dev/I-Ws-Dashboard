@@ -1,5 +1,38 @@
 {
   "roots": {
+    "340abf4eb3f7d6c94c30fb23d4e7955e14f47fe511f4d78a24e8514f449560e0": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-06e9dd:110357-2026",
+      "members": {
+        "beh:0e079f8c14d6f29e1d70be7a46ef": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-20T17:42:34+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:0e079f8c14d6f29e1d70be7a46ef",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-06e9dd:110357-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-20T17:42:34Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-19T02%3A27%3A41&updatedTo=2026-11-21T02%3A27%3A41",
+          "title": "Marine Consultancy · ASSOCIATED BRITISH PORTS"
+        }
+      }
+    },
     "3414b4ed5e47ef1b23a74bb6d7119ea1d2531e8473aa981bc886c0bfdfcd9a77": {
       "information_root": "niord:532825a7-01a5-4d42-a5db-24bed595e9e8:0:6:0",
       "members": {
@@ -87,6 +120,39 @@
           "source_updated_at": "2026-11-19T00:21:52Z",
           "source_url": "https://niord.dma.dk/#/message/64267632-ab29-4c8e-8fd2-6b1f42ee4abd",
           "title": "Denmark. The Baltic Sea. EK D 396 Hullebaek. Firing exercises. Warning."
+        }
+      }
+    },
+    "346ef588fff8f654326e78d4e24393c19c4d3b57bf7c7d58ef7e384a03f233d7": {
+      "information_root": "nws:1fe8fc884a1140458b8e873e",
+      "members": {
+        "beh:9bb1d829aad5e9e1caecd248bd44": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "nws",
+          "direct_measurement": false,
+          "event_at": "2026-11-20T17:37:00Z",
+          "first_observed_at": "2026-11-20T17:37:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:9bb1d829aad5e9e1caecd248bd44",
+          "information_root": "nws:1fe8fc884a1140458b8e873e",
+          "origin": "behavioral_registry",
+          "provider": "nws",
+          "published_at": "2026-11-20T17:37:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "official_weather_alert_context",
+          "source_measurement": null,
+          "source_scope": "Active NWS marine alerts; severity Minor",
+          "source_updated_at": null,
+          "source_url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.56c3d9cd681b61ce5e4fcac2a6acfb56593cabbe.001.4",
+          "title": "High Surf Advisory - Coastal Flagler"
         }
       }
     },

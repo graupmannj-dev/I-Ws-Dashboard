@@ -86,6 +86,171 @@
         }
       }
     },
+    "1d930c96779a9b2b5c32b722b0641b025eccec4d1dbb8725db16ef51911bf70d": {
+      "information_root": "nws:35f2d715c3bc0ace4b95f675",
+      "members": {
+        "beh:a284c76d6c3983e33d4edc333b97": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "nws",
+          "direct_measurement": false,
+          "event_at": "2026-11-21T01:48:00Z",
+          "first_observed_at": "2026-11-21T01:48:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:a284c76d6c3983e33d4edc333b97",
+          "information_root": "nws:35f2d715c3bc0ace4b95f675",
+          "origin": "behavioral_registry",
+          "provider": "nws",
+          "published_at": "2026-11-21T01:48:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "official_weather_alert_context",
+          "source_measurement": null,
+          "source_scope": "Active NWS marine alerts; severity Minor",
+          "source_updated_at": null,
+          "source_url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.9291cdc11946c4b789113be460b2db6cd698a019.001.1",
+          "title": "Flood Advisory - Gilchrist, FL"
+        }
+      }
+    },
+    "1dab5af6dba7b05f0251c7299b75c768cd45ef08827e28da0a114bf568635877": {
+      "information_root": "inmet_br:inmet_br:6d115bf1f2f46ad1b097f8f867ed",
+      "members": {
+        "beh:09ab9374098ddac76450d14a7008": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "inmet_br",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-20T09:35:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:09ab9374098ddac76450d14a7008",
+          "information_root": "inmet_br:inmet_br:6d115bf1f2f46ad1b097f8f867ed",
+          "origin": "behavioral_registry",
+          "provider": "inmet_br",
+          "published_at": "2026-11-20T09:35:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Brazil INMET",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Brazil INMET official severe-weather RSS notices; provider-listed bounded sample",
+          "source_updated_at": null,
+          "source_url": "https://apiprevmet3.inmet.gov.br/avisos/rss/56470",
+          "title": "Aviso de Tempestade. Severidade Grau: Perigo"
+        }
+      }
+    },
+    "1dc654fe9b7fdd4ea1c239302ce943e688a95ca8d94388824feb265110f4b753": {
+      "information_root": "sg_mpa:sg_mpa:2026-08:miscellaneous",
+      "members": {
+        "beh:47383a18a2325959e6e7e3587cc5": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "monthly_maritime_throughput_not_current_disruption",
+          "collection_mode": "sg_mpa",
+          "direct_measurement": true,
+          "event_at": null,
+          "first_observed_at": "2026-11-21T02:31:05+00:00",
+          "geography_key": "country:SG",
+          "geography_label": "Singapore",
+          "geography_precision": "national_port_scope_not_incident",
+          "id": "beh:47383a18a2325959e6e7e3587cc5",
+          "information_root": "sg_mpa:sg_mpa:2026-08:miscellaneous",
+          "origin": "behavioral_registry",
+          "provider": "sg_mpa",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_monthly_port_throughput_historical",
+          "source_family": "port_throughput",
+          "source_kind": "official_monthly_port_arrival_count_historical",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "denominator": "vessels_greater_than_75_gross_tons",
+            "most_recent_month_provisional": false,
+            "name": "monthly_vessel_arrivals_over_75_gt",
+            "not_live_tracking": true,
+            "period": "2026-08",
+            "period_months_lag": 3,
+            "reporting_cadence": "monthly",
+            "source_dataset": "d_8f264219109e61fffa87ac64dd5a9a65",
+            "unit": "vessels",
+            "value": 920,
+            "vessel_type": "Miscellaneous"
+          },
+          "source_scope": "Maritime & Port Authority of Singapore monthly arrivals >75 GT by vessel type; selected latest months, publication lag, Singapore-only, not live AIS",
+          "source_updated_at": null,
+          "source_url": "https://data.gov.sg/datasets/d_8f264219109e61fffa87ac64dd5a9a65/view",
+          "title": "Singapore MPA 2026-08 Miscellaneous vessel arrivals (>75 GT)"
+        }
+      }
+    },
+    "1dd85115245d05c3ff3727d39ec2b6cdf5a6ea92d3ac8e210762820ea4637dd0": {
+      "information_root": "cbp_wait:cbp_wait:240221:2026-11-20:19:23:04",
+      "members": {
+        "beh:4ffa50bac052a816a3247913e9bd": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-21T02:31:05+00:00",
+          "geography_key": "us-border-port:240221",
+          "geography_label": "El Paso",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:4ffa50bac052a816a3247913e9bd",
+          "information_root": "cbp_wait:cbp_wait:240221:2026-11-20:19:23:04",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Update Pending",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/20/2026",
+            "reported_local_time": "19:23:04",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — El Paso"
+        }
+      }
+    },
     "1de4814dcc2fd9844f3c3765cfb84d61f5fcb198f37f5730362a85238ac53948": {
       "information_root": "niord:d8f7a59c-bda3-4691-aa45-338949965a54:1:0:0",
       "members": {
@@ -113,6 +278,45 @@
           "source_updated_at": "2026-11-20T13:21:55Z",
           "source_url": "https://niord.dma.dk/#/message/d8f7a59c-bda3-4691-aa45-338949965a54",
           "title": "Denmark. The North Sea. EK R 33 Vejers. Firing exercises. Warning."
+        }
+      }
+    },
+    "1de87ba863e8a2b57598b0d6a9de5af13fea8d8929c8ddc476057ebb0cf81bf0": {
+      "information_root": "bmkg_nowcast:bmkg_nowcast:37707bff4a204ea1c17154b6503d",
+      "members": {
+        "beh:d1f4e46738e8d6996f5c6627ee56": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "bmkg_nowcast",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-21T01:50:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:d1f4e46738e8d6996f5c6627ee56",
+          "information_root": "bmkg_nowcast:bmkg_nowcast:37707bff4a204ea1c17154b6503d",
+          "origin": "behavioral_registry",
+          "provider": "bmkg_nowcast",
+          "published_at": "2026-11-21T01:50:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Indonesia BMKG",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Indonesia BMKG active provincial nowcast RSS, source-reported only; not global",
+          "source_updated_at": null,
+          "source_url": "https://www.bmkg.go.id/alerts/nowcast/en/CML20261121002_alert.xml",
+          "title": "Thunderstorm This Afternoon in Maluku"
         }
       }
     },

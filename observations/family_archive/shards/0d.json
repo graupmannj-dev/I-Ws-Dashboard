@@ -1,5 +1,45 @@
 {
   "roots": {
+    "0d127192366a9ee8572debb43fea65f3e6a4b371b1924c574707556a2532e5bb": {
+      "information_root": "bmkg_quake:bmkg_quake:595504f7c3dba9896afb744fa565",
+      "members": {
+        "beh:753c700789476e86ab74c09a187d": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "bmkg_quake",
+          "direct_measurement": true,
+          "event_at": "2026-11-09T09:48:29Z",
+          "first_observed_at": "2026-11-21T02:31:05+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "source_supplied_earthquake_epicenter",
+          "id": "beh:753c700789476e86ab74c09a187d",
+          "information_root": "bmkg_quake:bmkg_quake:595504f7c3dba9896afb744fa565",
+          "origin": "behavioral_registry",
+          "provider": "bmkg_quake",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_seismic_reporting_may_represent_same_usgs_event",
+          "source_family": "environmental_context",
+          "source_kind": "national_seismic_measurement_context",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "depth_km": 10.0,
+            "name": "earthquake_magnitude",
+            "possible_same_physical_event_as_usgs": true,
+            "unit": "source_reported_magnitude",
+            "value": 5.5
+          },
+          "source_scope": "Indonesia BMKG 15 latest magnitude-5+ earthquakes; not global; same physical events may appear in USGS",
+          "source_updated_at": null,
+          "source_url": "https://data.bmkg.go.id/DataMKG/TEWS/gempaterkini.json",
+          "title": "BMKG earthquake M5.5 · 20 km BaratLaut SERAMBAGIANTIMUR-MALUKU"
+        }
+      }
+    },
     "0d2a4241e80c534a6ed264d479e213e1a8c133d3f26f789531962d001c45c2d6": {
       "information_root": "reuters-2026-11-18-ethiopia-eritrea-border-buildup",
       "members": {

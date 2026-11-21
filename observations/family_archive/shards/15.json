@@ -60,6 +60,53 @@
         }
       }
     },
+    "155351986c0875f14a0dd600921cb7f8e04df32a29013ea8f23c932859d37b64": {
+      "information_root": "cbp_wait:cbp_wait:300901:2026-11-20:18:23:04",
+      "members": {
+        "beh:c7a6a08f49b5174a77bf5f695468": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-21T02:31:05+00:00",
+          "geography_key": "us-border-port:300901",
+          "geography_label": "Sumas",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:c7a6a08f49b5174a77bf5f695468",
+          "information_root": "cbp_wait:cbp_wait:300901:2026-11-20:18:23:04",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "delay",
+            "lanes_open": 1,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "At 9:00 am PST",
+            "reported_local_date": "11/20/2026",
+            "reported_local_time": "18:23:04",
+            "source_declared_border": "Canadian Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 15
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Sumas"
+        }
+      }
+    },
     "155bc0311dac9eef86ae6c21930de12922f5f72c84ea68217012f4eb02300c24": {
       "information_root": "niord:a4425666-f4fc-489b-8dcd-a4585efb516b:0:2:0",
       "members": {
@@ -87,6 +134,39 @@
           "source_updated_at": "2026-11-12T00:21:51Z",
           "source_url": "https://niord.dma.dk/#/message/a4425666-f4fc-489b-8dcd-a4585efb516b",
           "title": "Denmark. Kattegat. EK R 45 Hevring. Firing exercises. Warning."
+        }
+      }
+    },
+    "155f6e0ad826314964f60ab7614a2a03d4efd67ef651039bca6912e126174ee6": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-068a61:110296-2026",
+      "members": {
+        "beh:dadf77f86e3177449f7e1615cd03": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-20T15:53:44+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:dadf77f86e3177449f7e1615cd03",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-068a61:110296-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-20T15:53:44Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-19T02%3A27%3A41&updatedTo=2026-11-21T02%3A27%3A41",
+          "title": "Construction Framework Contract 2027 · Warwickshire County Council"
         }
       }
     },

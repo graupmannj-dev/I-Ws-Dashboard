@@ -30,6 +30,53 @@
         }
       }
     },
+    "fc081f562e52da1cf2ff8d9d833fa26be669127bfe00241130487a337b84b5fd": {
+      "information_root": "cbp_wait:cbp_wait:021201:2026-11-20:21:23:03",
+      "members": {
+        "beh:ad23bdd6c3bbd7aea58d33b36371": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-21T02:31:05+00:00",
+          "geography_key": "us-border-port:021201",
+          "geography_label": "Highgate Springs",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:ad23bdd6c3bbd7aea58d33b36371",
+          "information_root": "cbp_wait:cbp_wait:021201:2026-11-20:21:23:03",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "no delay",
+            "lanes_open": 1,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "At 9:00 pm EST",
+            "reported_local_date": "11/20/2026",
+            "reported_local_time": "21:23:03",
+            "source_declared_border": "Canadian Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 0
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Highgate Springs"
+        }
+      }
+    },
     "fc486158385998151acd614ef954217ed3a3018998882333cee0a4138dbf5b11": {
       "information_root": "niord:fbcc5283-72c1-46cf-847c-5c2eface7b46:0:0:0",
       "members": {
@@ -57,6 +104,92 @@
           "source_updated_at": "2026-11-17T00:21:52Z",
           "source_url": "https://niord.dma.dk/#/message/fbcc5283-72c1-46cf-847c-5c2eface7b46",
           "title": "Denmark. Kattegat. EK R 17 Isefjord. Firing exercises. Warning."
+        }
+      }
+    },
+    "fc60c10d49c23a6d1011ca0f98c769273f58c5e77f58874de7171330838ec219": {
+      "information_root": "inmet_br:inmet_br:9081588bd7a799ed8b0be28e9345",
+      "members": {
+        "beh:b35d16f25d9dbbc7144b84d56c10": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "inmet_br",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-18T00:00:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:b35d16f25d9dbbc7144b84d56c10",
+          "information_root": "inmet_br:inmet_br:9081588bd7a799ed8b0be28e9345",
+          "origin": "behavioral_registry",
+          "provider": "inmet_br",
+          "published_at": "2026-11-18T00:00:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Brazil INMET",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Brazil INMET official severe-weather RSS notices; provider-listed bounded sample",
+          "source_updated_at": null,
+          "source_url": "https://apiprevmet3.inmet.gov.br/avisos/rss/56445",
+          "title": "Aviso de Tempestade. Severidade Grau: Perigo Potencial"
+        }
+      }
+    },
+    "fc841ddfe15151f806de1084e16132c065096e8b6e060c2e653ad1681ec50d85": {
+      "information_root": "cbp_wait:cbp_wait:230902:2026-11-20:20:23:04",
+      "members": {
+        "beh:fd7dc9a1d5da7b0348e3d87ab67f": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-21T02:31:05+00:00",
+          "geography_key": "us-border-port:230902",
+          "geography_label": "Progreso",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:fd7dc9a1d5da7b0348e3d87ab67f",
+          "information_root": "cbp_wait:cbp_wait:230902:2026-11-20:20:23:04",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "N/A",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/20/2026",
+            "reported_local_time": "20:23:04",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Progreso / Donna International Bridge"
         }
       }
     },

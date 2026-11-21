@@ -30,6 +30,52 @@
         }
       }
     },
+    "964708cd2ad6c474e2fab7ae1f260427cb87f883a341ba0c4408d08a9677b7f5": {
+      "information_root": "sg_mpa:sg_mpa:2026-07:freighter",
+      "members": {
+        "beh:a8e087d48bd3a0cfca2b9620c79f": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "monthly_maritime_throughput_not_current_disruption",
+          "collection_mode": "sg_mpa",
+          "direct_measurement": true,
+          "event_at": null,
+          "first_observed_at": "2026-11-21T02:31:05+00:00",
+          "geography_key": "country:SG",
+          "geography_label": "Singapore",
+          "geography_precision": "national_port_scope_not_incident",
+          "id": "beh:a8e087d48bd3a0cfca2b9620c79f",
+          "information_root": "sg_mpa:sg_mpa:2026-07:freighter",
+          "origin": "behavioral_registry",
+          "provider": "sg_mpa",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_monthly_port_throughput_historical",
+          "source_family": "port_throughput",
+          "source_kind": "official_monthly_port_arrival_count_historical",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "denominator": "vessels_greater_than_75_gross_tons",
+            "most_recent_month_provisional": false,
+            "name": "monthly_vessel_arrivals_over_75_gt",
+            "not_live_tracking": true,
+            "period": "2026-07",
+            "period_months_lag": 4,
+            "reporting_cadence": "monthly",
+            "source_dataset": "d_8f264219109e61fffa87ac64dd5a9a65",
+            "unit": "vessels",
+            "value": 494,
+            "vessel_type": "Freighter"
+          },
+          "source_scope": "Maritime & Port Authority of Singapore monthly arrivals >75 GT by vessel type; selected latest months, publication lag, Singapore-only, not live AIS",
+          "source_updated_at": null,
+          "source_url": "https://data.gov.sg/datasets/d_8f264219109e61fffa87ac64dd5a9a65/view",
+          "title": "Singapore MPA 2026-07 Freighter vessel arrivals (>75 GT)"
+        }
+      }
+    },
     "964d2b9ee9505d90aacea8195cbfab645e3f769d6b2ca1af502be878c3d8c565": {
       "information_root": "niord:551517f5-e6d2-45bb-a747-02fe68d49778:4:0:0",
       "members": {
@@ -90,6 +136,52 @@
         }
       }
     },
+    "966ab41c3edb7949b8565b677e177a1df392ec5886b08ccff7c0efac67fea57a": {
+      "information_root": "sg_mpa:sg_mpa:2026-01:bulk-carrier",
+      "members": {
+        "beh:dfdce9df781a301ed7ae1e5177fb": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "monthly_maritime_throughput_not_current_disruption",
+          "collection_mode": "sg_mpa",
+          "direct_measurement": true,
+          "event_at": null,
+          "first_observed_at": "2026-11-21T02:31:05+00:00",
+          "geography_key": "country:SG",
+          "geography_label": "Singapore",
+          "geography_precision": "national_port_scope_not_incident",
+          "id": "beh:dfdce9df781a301ed7ae1e5177fb",
+          "information_root": "sg_mpa:sg_mpa:2026-01:bulk-carrier",
+          "origin": "behavioral_registry",
+          "provider": "sg_mpa",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_monthly_port_throughput_historical",
+          "source_family": "port_throughput",
+          "source_kind": "official_monthly_port_arrival_count_historical",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "denominator": "vessels_greater_than_75_gross_tons",
+            "most_recent_month_provisional": false,
+            "name": "monthly_vessel_arrivals_over_75_gt",
+            "not_live_tracking": true,
+            "period": "2026-01",
+            "period_months_lag": 10,
+            "reporting_cadence": "monthly",
+            "source_dataset": "d_8f264219109e61fffa87ac64dd5a9a65",
+            "unit": "vessels",
+            "value": 1695,
+            "vessel_type": "Bulk Carrier"
+          },
+          "source_scope": "Maritime & Port Authority of Singapore monthly arrivals >75 GT by vessel type; selected latest months, publication lag, Singapore-only, not live AIS",
+          "source_updated_at": null,
+          "source_url": "https://data.gov.sg/datasets/d_8f264219109e61fffa87ac64dd5a9a65/view",
+          "title": "Singapore MPA 2026-01 Bulk Carrier vessel arrivals (>75 GT)"
+        }
+      }
+    },
     "968545d7dc598e13709f0a6b67375a65c2f3bfbfb90eaad441be6b66d8cccb05": {
       "information_root": "niord:69efd854-5221-4c33-9355-fb79f6ef0b2a:3:0:0",
       "members": {
@@ -117,6 +209,78 @@
           "source_updated_at": "2026-11-17T00:21:53Z",
           "source_url": "https://niord.dma.dk/#/message/69efd854-5221-4c33-9355-fb79f6ef0b2a",
           "title": "Denmark. Kattegat. EK R 45 Hevring. Firing exercises. Warning."
+        }
+      }
+    },
+    "96b48ee930c16033332f69a59398c135021cc9142e65f9c3bd51fe7de9866f87": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07842f:110289-2026",
+      "members": {
+        "beh:0c2833947260ba00302ece3e9e12": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-20T15:46:10+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:0c2833947260ba00302ece3e9e12",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07842f:110289-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-20T15:46:10Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-19T02%3A27%3A41&updatedTo=2026-11-21T02%3A27%3A41",
+          "title": "The Provision of Vehicle Maintenance and Repair Services"
+        }
+      }
+    },
+    "96de94bd22a8ff8750871876238d8dbf91d16b1e126e65a7de3de4bb55d2870f": {
+      "information_root": "inmet_br:inmet_br:6319108d157600d1c6eb9f64cde4",
+      "members": {
+        "beh:d4abed3f354e25fab7fab930ce56": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "inmet_br",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-18T17:19:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:d4abed3f354e25fab7fab930ce56",
+          "information_root": "inmet_br:inmet_br:6319108d157600d1c6eb9f64cde4",
+          "origin": "behavioral_registry",
+          "provider": "inmet_br",
+          "published_at": "2026-11-18T17:19:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Brazil INMET",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Brazil INMET official severe-weather RSS notices; provider-listed bounded sample",
+          "source_updated_at": null,
+          "source_url": "https://apiprevmet3.inmet.gov.br/avisos/rss/56449",
+          "title": "Aviso de Tempestade. Severidade Grau: Perigo"
         }
       }
     }

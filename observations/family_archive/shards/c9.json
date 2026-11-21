@@ -1,5 +1,49 @@
 {
   "roots": {
+    "c920fa00b519a53f2321bf15b7852ece1012a9b19d3db9df3a1fbd4ed7eb1a05": {
+      "information_root": "ripe:measurement:1001:20261121T02",
+      "members": {
+        "beh:ffbfca9cad54a0ee462a04d5547d": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "aggregate_ping_no_country_or_threat_attribution",
+          "collection_mode": "ripe",
+          "direct_measurement": true,
+          "event_at": null,
+          "first_observed_at": "2026-11-21T02:31:05+00:00",
+          "geography_key": "ripe-msm:1001",
+          "geography_label": "K-root public ping aggregate",
+          "geography_precision": "not_country_or_incident_location",
+          "id": "beh:ffbfca9cad54a0ee462a04d5547d",
+          "information_root": "ripe:measurement:1001:20261121T02",
+          "origin": "behavioral_registry",
+          "provider": "ripe",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "network_aggregate_monitoring",
+          "source_family": "internet_reachability",
+          "source_kind": "aggregate_public_network_ping",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "cohort_comparable_to_prior_snapshots": false,
+            "failed_or_invalid_rtt_count": 382,
+            "individual_probe_records_published": false,
+            "measurement_id": 1001,
+            "name": "sample_median_ping_rtt",
+            "sampled_probe_count": 13447,
+            "unit": "ms",
+            "valid_rtt_count": 13065,
+            "value": 19.034
+          },
+          "source_scope": "RIPE Atlas built-in K-root ping #1001, global public-probe aggregate; not country coverage",
+          "source_updated_at": null,
+          "source_url": "https://atlas.ripe.net/measurements/1001/",
+          "title": "RIPE Atlas K-root public probe aggregate (13065 usable measurements)"
+        }
+      }
+    },
     "c938eb59ff6df47acbaa25612e0a8d6949612850c2af5921a6a2820ba65d84db": {
       "information_root": "faa:6/8729:0:0",
       "members": {
@@ -60,6 +104,81 @@
         }
       }
     },
+    "c9669874cec85e05d9960d325548dc737939f886b303fa82670e7fefb52c6805": {
+      "information_root": "wiki_edits:wiki_edits:fa:20261121T02",
+      "members": {
+        "beh:4d52bde2d97968cb54663a551c71": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "wiki_edits",
+          "direct_measurement": false,
+          "event_at": "2026-11-21T02:27:33Z",
+          "first_observed_at": "2026-11-21T02:27:33+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:4d52bde2d97968cb54663a551c71",
+          "information_root": "wiki_edits:wiki_edits:fa:20261121T02",
+          "origin": "behavioral_registry",
+          "provider": "wiki_edits",
+          "published_at": "2026-11-21T02:27:33Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "public_encyclopedia_edit_aggregate",
+          "source_family": "public_attention",
+          "source_kind": "bounded_public_edit_count_not_event_verification",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "distinct_articles_in_sample": 165,
+            "maximum_returned_edits": 500,
+            "most_edited_article_counts": [
+              {
+                "count": 23,
+                "title": "پاک ته-سونگ"
+              },
+              {
+                "count": 14,
+                "title": "عروسک تکم"
+              },
+              {
+                "count": 7,
+                "title": "المپیک زمستانی ۱۹۸۰"
+              },
+              {
+                "count": 5,
+                "title": "فهرست‌های حاکمان مصر"
+              },
+              {
+                "count": 5,
+                "title": "نقد اسلام"
+              },
+              {
+                "count": 5,
+                "title": "کره شمالی و سلاح‌های کشتار جمعی"
+              },
+              {
+                "count": 3,
+                "title": "استان خوزستان"
+              },
+              {
+                "count": 3,
+                "title": "امین ماسوری"
+              }
+            ],
+            "name": "sampled_edits_last_three_hours",
+            "sample_cap_reached": false,
+            "unit": "edits",
+            "value": 233
+          },
+          "source_scope": "Wikipedia main-namespace edit-count sample, 14 global language editions, three-hour window capped at 500 per wiki; not geographic location",
+          "source_updated_at": null,
+          "source_url": "https://fa.wikipedia.org/wiki/Special:RecentChanges",
+          "title": "Wikipedia fa public article-edit activity (sampled)"
+        }
+      }
+    },
     "c9764c222b630aa33962491b22742821072425ee30a8ab6958511cd59e3c8b51": {
       "information_root": "faa:6/8675:0:0",
       "members": {
@@ -87,6 +206,53 @@
           "source_updated_at": null,
           "source_url": "https://tfr.faa.gov/6_8675.html",
           "title": "FAA TFR 6/8675 ·   USA, Saturday, November 21, 2026 UTC"
+        }
+      }
+    },
+    "c9a600e2e46be3932f6d5bfd372c899c7651fc675d8a5b126ab1777f8646ac26": {
+      "information_root": "cbp_wait:cbp_wait:230502:2026-11-20:20:23:04",
+      "members": {
+        "beh:7cb95d5e4c4fb3efd605b8d2978a": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-21T02:31:05+00:00",
+          "geography_key": "us-border-port:230502",
+          "geography_label": "Hidalgo/Pharr",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:7cb95d5e4c4fb3efd605b8d2978a",
+          "information_root": "cbp_wait:cbp_wait:230502:2026-11-20:20:23:04",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "delay",
+            "lanes_open": 5,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "At 7:00 pm CST",
+            "reported_local_date": "11/20/2026",
+            "reported_local_time": "20:23:04",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 40
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Hidalgo/Pharr / Pharr"
         }
       }
     },

@@ -1,5 +1,45 @@
 {
   "roots": {
+    "df26a66384a4903ed2bcb57b166c765e7fb74422558353d026cf0a8f845ccf05": {
+      "information_root": "bmkg_quake:bmkg_quake:407cfd596a947dd750e24425a74e",
+      "members": {
+        "beh:e8e6e3bec4c36e98df5f11547250": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "bmkg_quake",
+          "direct_measurement": true,
+          "event_at": "2026-11-10T01:53:28Z",
+          "first_observed_at": "2026-11-21T02:31:05+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "source_supplied_earthquake_epicenter",
+          "id": "beh:e8e6e3bec4c36e98df5f11547250",
+          "information_root": "bmkg_quake:bmkg_quake:407cfd596a947dd750e24425a74e",
+          "origin": "behavioral_registry",
+          "provider": "bmkg_quake",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_seismic_reporting_may_represent_same_usgs_event",
+          "source_family": "environmental_context",
+          "source_kind": "national_seismic_measurement_context",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "depth_km": 84.0,
+            "name": "earthquake_magnitude",
+            "possible_same_physical_event_as_usgs": true,
+            "unit": "source_reported_magnitude",
+            "value": 5.4
+          },
+          "source_scope": "Indonesia BMKG 15 latest magnitude-5+ earthquakes; not global; same physical events may appear in USGS",
+          "source_updated_at": null,
+          "source_url": "https://data.bmkg.go.id/DataMKG/TEWS/gempaterkini.json",
+          "title": "BMKG earthquake M5.4 · 90 km BaratDaya TANIMBAR"
+        }
+      }
+    },
     "df503527d9762203b1403998a5693dd21c52a227fd4f916cc42443c9faf33813": {
       "information_root": "niord:f48832c8-64ae-4e88-a799-3eedb2703fec:3:0:0",
       "members": {
@@ -27,6 +67,53 @@
           "source_updated_at": "2026-11-18T00:21:52Z",
           "source_url": "https://niord.dma.dk/#/message/f48832c8-64ae-4e88-a799-3eedb2703fec",
           "title": "Denmark. Kattegat. EK R 17 Isefjord. Firing exercises. Warning."
+        }
+      }
+    },
+    "df8e9a48288413e91b792cffbef2925cd6d557fb8cc4b4bd209deaf8847adedb": {
+      "information_root": "cbp_wait:cbp_wait:250401:2026-11-20:18:23:04",
+      "members": {
+        "beh:07f3582cf57df79b85a3279d46bd": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-21T02:31:05+00:00",
+          "geography_key": "us-border-port:250401",
+          "geography_label": "San Ysidro",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:07f3582cf57df79b85a3279d46bd",
+          "information_root": "cbp_wait:cbp_wait:250401:2026-11-20:18:23:04",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "N/A",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/20/2026",
+            "reported_local_time": "18:23:04",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — San Ysidro"
         }
       }
     },

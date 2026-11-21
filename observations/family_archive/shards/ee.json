@@ -60,6 +60,39 @@
         }
       }
     },
+    "ee6aeeb7229c51b1494343c0dc8c3c380587e6ffc001202b57b1a22c5795c854": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c0d4:110364-2026",
+      "members": {
+        "beh:4f3df9292c2362a99cb46075f72a": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-20T18:24:31+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:4f3df9292c2362a99cb46075f72a",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c0d4:110364-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-20T18:24:31Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-19T02%3A27%3A41&updatedTo=2026-11-21T02%3A27%3A41",
+          "title": "Air Source Heat Pump Maintenance Contract for RSH Hospital · NHS Property Services Limited"
+        }
+      }
+    },
     "ee7ad19adbfa631aeafac5cf37853f35d96575b782beef96817108126310558f": {
       "information_root": "official:1c112b9958ebadf3466d",
       "members": {
@@ -87,6 +120,44 @@
           "source_updated_at": null,
           "source_url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.fin.html",
           "title": "Finland - Level 1: Exercise Normal Precautions"
+        }
+      }
+    },
+    "ee971440b200dc47003d0997ed1867eda675cf95a1ddd543de949c5b33b28323": {
+      "information_root": "usgs:us6000uc6c",
+      "members": {
+        "beh:37936ecb238537c92990283c7161": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "usgs",
+          "direct_measurement": true,
+          "event_at": "2026-11-20T05:17:45Z",
+          "first_observed_at": "2026-11-20T05:17:45+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "source_supplied_point_only",
+          "id": "beh:37936ecb238537c92990283c7161",
+          "information_root": "usgs:us6000uc6c",
+          "origin": "behavioral_registry",
+          "provider": "usgs",
+          "published_at": "2026-11-20T06:27:34Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "measured_earthquake_context",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "name": "earthquake_magnitude",
+            "unit": "reported_magnitude",
+            "value": 4.9
+          },
+          "source_scope": "USGS M4.5+ earthquakes worldwide, rolling past day; source thresholds apply",
+          "source_updated_at": null,
+          "source_url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000uc6c",
+          "title": "M 4.9 - 54 km W of Madang, Papua New Guinea"
         }
       }
     },

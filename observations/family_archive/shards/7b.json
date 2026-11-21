@@ -1,5 +1,44 @@
 {
   "roots": {
+    "7b182b91b1153544c1c769b9a28487190d398f845b15bc9ece9baea48df730d0": {
+      "information_root": "inmet_br:inmet_br:fee1b04a228fcdd3e6eb99c0449d",
+      "members": {
+        "beh:9586ef673336a46f81dab876b8f2": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "inmet_br",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-18T00:00:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:9586ef673336a46f81dab876b8f2",
+          "information_root": "inmet_br:inmet_br:fee1b04a228fcdd3e6eb99c0449d",
+          "origin": "behavioral_registry",
+          "provider": "inmet_br",
+          "published_at": "2026-11-18T00:00:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Brazil INMET",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Brazil INMET official severe-weather RSS notices; provider-listed bounded sample",
+          "source_updated_at": null,
+          "source_url": "https://apiprevmet3.inmet.gov.br/avisos/rss/56432",
+          "title": "Aviso de Tempestade. Severidade Grau: Perigo"
+        }
+      }
+    },
     "7b24456ddaa15afba1e27575a51eafce9d6c29069eea7816bfe7c28cfa055fd2": {
       "information_root": "estonia-government-threod-sabotage-response-20261115",
       "members": {
@@ -143,6 +182,81 @@
           "source_updated_at": null,
           "source_url": "https://ioda.inetintel.cc.gatech.edu/",
           "title": "IODA detected connectivity anomaly: country CD"
+        }
+      }
+    },
+    "7b52c0596cbc7632aa94bf1c5db0d38d3a358c0bcf154dc98df2c2d3c5d29421": {
+      "information_root": "wiki_edits:wiki_edits:fr:20261121T02",
+      "members": {
+        "beh:fab9b83a320bf0ba955e068d8344": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "wiki_edits",
+          "direct_measurement": false,
+          "event_at": "2026-11-21T02:27:41Z",
+          "first_observed_at": "2026-11-21T02:27:41+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:fab9b83a320bf0ba955e068d8344",
+          "information_root": "wiki_edits:wiki_edits:fr:20261121T02",
+          "origin": "behavioral_registry",
+          "provider": "wiki_edits",
+          "published_at": "2026-11-21T02:27:41Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "public_encyclopedia_edit_aggregate",
+          "source_family": "public_attention",
+          "source_kind": "bounded_public_edit_count_not_event_verification",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "distinct_articles_in_sample": 464,
+            "maximum_returned_edits": 500,
+            "most_edited_article_counts": [
+              {
+                "count": 4,
+                "title": "Diplôme national de licence"
+              },
+              {
+                "count": 4,
+                "title": "Henri Bassis"
+              },
+              {
+                "count": 4,
+                "title": "Oxycodone"
+              },
+              {
+                "count": 4,
+                "title": "Parc national Jasper"
+              },
+              {
+                "count": 3,
+                "title": "Institut Pasteur de Dakar"
+              },
+              {
+                "count": 3,
+                "title": "Remodelage de la chromatine"
+              },
+              {
+                "count": 3,
+                "title": "Régiment des fusiliers-grenadiers de la Garde impériale"
+              },
+              {
+                "count": 2,
+                "title": "Arnaud de Salette"
+              }
+            ],
+            "name": "sampled_edits_last_three_hours",
+            "sample_cap_reached": true,
+            "unit": "edits",
+            "value": 500
+          },
+          "source_scope": "Wikipedia main-namespace edit-count sample, 14 global language editions, three-hour window capped at 500 per wiki; not geographic location",
+          "source_updated_at": null,
+          "source_url": "https://fr.wikipedia.org/wiki/Special:RecentChanges",
+          "title": "Wikipedia fr public article-edit activity (sampled)"
         }
       }
     },

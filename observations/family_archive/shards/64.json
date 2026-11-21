@@ -30,6 +30,154 @@
         }
       }
     },
+    "641606f16abf3b41de5d743db28bbbabd67623f9c80ac725bd8634c86edd82f4": {
+      "information_root": "bmkg_quake:bmkg_quake:b12f57a93e1c4d4e6dda7dceb988",
+      "members": {
+        "beh:874c7b2904e3fa03cf6820a6f44c": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "bmkg_quake",
+          "direct_measurement": true,
+          "event_at": "2026-11-20T13:09:01Z",
+          "first_observed_at": "2026-11-21T02:31:05+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "source_supplied_earthquake_epicenter",
+          "id": "beh:874c7b2904e3fa03cf6820a6f44c",
+          "information_root": "bmkg_quake:bmkg_quake:b12f57a93e1c4d4e6dda7dceb988",
+          "origin": "behavioral_registry",
+          "provider": "bmkg_quake",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_seismic_reporting_may_represent_same_usgs_event",
+          "source_family": "environmental_context",
+          "source_kind": "national_seismic_measurement_context",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "depth_km": 10.0,
+            "name": "earthquake_magnitude",
+            "possible_same_physical_event_as_usgs": true,
+            "unit": "source_reported_magnitude",
+            "value": 5.2
+          },
+          "source_scope": "Indonesia BMKG 15 latest magnitude-5+ earthquakes; not global; same physical events may appear in USGS",
+          "source_updated_at": null,
+          "source_url": "https://data.bmkg.go.id/DataMKG/TEWS/gempaterkini.json",
+          "title": "BMKG earthquake M5.2 · 199 km BaratLaut TAHUNA-KEP.SANGIHE-SULUT"
+        }
+      }
+    },
+    "641837547ecbf2ee99a56581642533dd07fe2ff565d080583fb25076f74d7ec6": {
+      "information_root": "wiki_edits:wiki_edits:tr:20261121T02",
+      "members": {
+        "beh:19ce6b7a49002eb4d7a3e41e89e5": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "wiki_edits",
+          "direct_measurement": false,
+          "event_at": "2026-11-21T02:27:22Z",
+          "first_observed_at": "2026-11-21T02:27:22+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:19ce6b7a49002eb4d7a3e41e89e5",
+          "information_root": "wiki_edits:wiki_edits:tr:20261121T02",
+          "origin": "behavioral_registry",
+          "provider": "wiki_edits",
+          "published_at": "2026-11-21T02:27:22Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "public_encyclopedia_edit_aggregate",
+          "source_family": "public_attention",
+          "source_kind": "bounded_public_edit_count_not_event_verification",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "distinct_articles_in_sample": 485,
+            "maximum_returned_edits": 500,
+            "most_edited_article_counts": [
+              {
+                "count": 7,
+                "title": "Karbon tetraklorür"
+              },
+              {
+                "count": 3,
+                "title": "Alayurt, Zile"
+              },
+              {
+                "count": 3,
+                "title": "Mırnohrad"
+              },
+              {
+                "count": 2,
+                "title": "Gustave Geley"
+              },
+              {
+                "count": 2,
+                "title": "Güçlükonak Katliamı"
+              },
+              {
+                "count": 2,
+                "title": "Lucasfilm"
+              },
+              {
+                "count": 2,
+                "title": "Malta millî futbol takımı"
+              },
+              {
+                "count": 2,
+                "title": "Watts ailesi cinayetleri"
+              }
+            ],
+            "name": "sampled_edits_last_three_hours",
+            "sample_cap_reached": true,
+            "unit": "edits",
+            "value": 500
+          },
+          "source_scope": "Wikipedia main-namespace edit-count sample, 14 global language editions, three-hour window capped at 500 per wiki; not geographic location",
+          "source_updated_at": null,
+          "source_url": "https://tr.wikipedia.org/wiki/Special:RecentChanges",
+          "title": "Wikipedia tr public article-edit activity (sampled)"
+        }
+      }
+    },
+    "643aead70b7dbcc13f1756c152e48ba64858c26e3c613e9bda207b862d596290": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07bf01:110360-2026",
+      "members": {
+        "beh:99ba7f91e0cff3a732fcde2ee8bd": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-20T17:55:10+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:99ba7f91e0cff3a732fcde2ee8bd",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07bf01:110360-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-20T17:55:10Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-19T02%3A27%3A41&updatedTo=2026-11-21T02%3A27%3A41",
+          "title": "Provision of Local Area Network (LAN), Wide Area Network (WAN), Wi-Fi and associated managed network services to support LNER's operational and corporate technology infrastructure. · LONDON NORTH EASTERN RAILWAY LIMITED"
+        }
+      }
+    },
     "64975b2ab3ecf589c98c287f5c4949ba751755dc2167951783ec3f4c8863aa8a": {
       "information_root": "niord:0dd97987-d92b-4b12-b6f2-524532503f33:2:0:0",
       "members": {

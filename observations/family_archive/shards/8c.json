@@ -86,6 +86,119 @@
         }
       }
     },
+    "8c637be274f72f1a813bf73c1b4c33cbc37acbf48389ddae2867caa389e18f16": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c0af:110292-2026",
+      "members": {
+        "beh:19757b3741b182f7df25fc8d26e4": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-20T15:48:49+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:19757b3741b182f7df25fc8d26e4",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c0af:110292-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-20T15:48:49Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-19T02%3A27%3A41&updatedTo=2026-11-21T02%3A27%3A41",
+          "title": "Provision of Footwear · Police and Crime Commissioner for South Wales"
+        }
+      }
+    },
+    "8c89c39b61714a7f6909a1e051bf698bf9a11b3310ce4d7d929355fdf024fbe6": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c0ca:110341-2026",
+      "members": {
+        "beh:804074b50b34c13743edcbd0ced6": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-20T17:00:36+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:804074b50b34c13743edcbd0ced6",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c0ca:110341-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-20T17:00:36Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-19T02%3A27%3A41&updatedTo=2026-11-21T02%3A27%3A41",
+          "title": "Traffic Signals Maintenance and Equipment · Swindon Borough Council"
+        }
+      }
+    },
+    "8c98e3ec5e456c1411b50a41e69642fcd39b9a944a3dd1a4d6a9e891da79e8c4": {
+      "information_root": "cbp_wait:cbp_wait:240401:2026-11-20:19:23:04",
+      "members": {
+        "beh:749be1207bad58e38db958df73dd": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-21T02:31:05+00:00",
+          "geography_key": "us-border-port:240401",
+          "geography_label": "Marcelino Serna",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:749be1207bad58e38db958df73dd",
+          "information_root": "cbp_wait:cbp_wait:240401:2026-11-20:19:23:04",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Lanes Closed",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/20/2026",
+            "reported_local_time": "19:23:04",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Marcelino Serna / Tornillo"
+        }
+      }
+    },
     "8ce4858d3520873969616e5603b00ad36bdd3020c9fe39c22a21001565c21a25": {
       "information_root": "official:20efe2af8b98e32a93c7",
       "members": {
@@ -113,6 +226,39 @@
           "source_updated_at": null,
           "source_url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.lca.html",
           "title": "Saint Lucia - Level 2: Exercise Increased Caution"
+        }
+      }
+    },
+    "8cf9a0945b779f53878d07eb270e4cb9d12b18a051644a92efebce705a1cb101": {
+      "information_root": "nws:4b6735d281e0e5a40d998079",
+      "members": {
+        "beh:21598263fdcfc870a87f99dc5bcc": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "nws",
+          "direct_measurement": false,
+          "event_at": "2026-11-21T02:15:00Z",
+          "first_observed_at": "2026-11-21T02:15:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:21598263fdcfc870a87f99dc5bcc",
+          "information_root": "nws:4b6735d281e0e5a40d998079",
+          "origin": "behavioral_registry",
+          "provider": "nws",
+          "published_at": "2026-11-21T02:15:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "official_weather_alert_context",
+          "source_measurement": null,
+          "source_scope": "Active NWS marine alerts; severity Severe",
+          "source_updated_at": null,
+          "source_url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.576df9e68ff4bc6fc4da4ff7a154fdac490627f5.001.1",
+          "title": "Flood Warning - Lake, FL; Volusia, FL"
         }
       }
     }

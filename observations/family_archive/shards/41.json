@@ -1,5 +1,44 @@
 {
   "roots": {
+    "416903a62d0643b36bb6bfedb3f6d91d6e57fcb1e8128e1dc8f74ed10ec6efd0": {
+      "information_root": "inmet_br:inmet_br:47cd36f8484b27d482ee4a5cbe4d",
+      "members": {
+        "beh:f2a852518953d80b588a1d81de51": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "inmet_br",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-16T00:00:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:f2a852518953d80b588a1d81de51",
+          "information_root": "inmet_br:inmet_br:47cd36f8484b27d482ee4a5cbe4d",
+          "origin": "behavioral_registry",
+          "provider": "inmet_br",
+          "published_at": "2026-11-16T00:00:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Brazil INMET",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Brazil INMET official severe-weather RSS notices; provider-listed bounded sample",
+          "source_updated_at": null,
+          "source_url": "https://apiprevmet3.inmet.gov.br/avisos/rss/56417",
+          "title": "Aviso de Tempestade. Severidade Grau: Perigo Potencial"
+        }
+      }
+    },
     "41869066307ad0d0741778d6fba06e5735a37f5d4fb8bd7083cec4d5bcd116bd": {
       "information_root": "ioda:cb06704a626c99b5045704c2",
       "members": {
@@ -27,6 +66,46 @@
           "source_updated_at": null,
           "source_url": "https://ioda.inetintel.cc.gatech.edu/",
           "title": "IODA detected connectivity anomaly: country TD"
+        }
+      }
+    },
+    "41895fa4c9b1699b9423494c309d168a5d21877b0ac774e67e94c87d22829865": {
+      "information_root": "bmkg_quake:bmkg_quake:1bd191ad4fdaed4f0897b2515509",
+      "members": {
+        "beh:ce5e093b16113d266de73e9ca362": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "bmkg_quake",
+          "direct_measurement": true,
+          "event_at": "2026-11-10T08:34:04Z",
+          "first_observed_at": "2026-11-21T02:31:05+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "source_supplied_earthquake_epicenter",
+          "id": "beh:ce5e093b16113d266de73e9ca362",
+          "information_root": "bmkg_quake:bmkg_quake:1bd191ad4fdaed4f0897b2515509",
+          "origin": "behavioral_registry",
+          "provider": "bmkg_quake",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_seismic_reporting_may_represent_same_usgs_event",
+          "source_family": "environmental_context",
+          "source_kind": "national_seismic_measurement_context",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "depth_km": 10.0,
+            "name": "earthquake_magnitude",
+            "possible_same_physical_event_as_usgs": true,
+            "unit": "source_reported_magnitude",
+            "value": 5.3
+          },
+          "source_scope": "Indonesia BMKG 15 latest magnitude-5+ earthquakes; not global; same physical events may appear in USGS",
+          "source_updated_at": null,
+          "source_url": "https://data.bmkg.go.id/DataMKG/TEWS/gempaterkini.json",
+          "title": "BMKG earthquake M5.3 · 69 km BaratLaut KEBARMANOKWARI-PAPUABRT"
         }
       }
     },
@@ -117,6 +196,45 @@
           "source_updated_at": null,
           "source_url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.hti.html",
           "title": "Haiti - Level 4: Do Not Travel"
+        }
+      }
+    },
+    "41c7a51b08036cad69d24a035aa4cd1ad5d7a21e184618fef5d67dfa7a238b0a": {
+      "information_root": "inmet_br:inmet_br:4a6f0071a406549ce973359c0b72",
+      "members": {
+        "beh:c2c97d8a8350ab5fe7e2d3fa7201": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "inmet_br",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-18T00:00:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:c2c97d8a8350ab5fe7e2d3fa7201",
+          "information_root": "inmet_br:inmet_br:4a6f0071a406549ce973359c0b72",
+          "origin": "behavioral_registry",
+          "provider": "inmet_br",
+          "published_at": "2026-11-18T00:00:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Brazil INMET",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Brazil INMET official severe-weather RSS notices; provider-listed bounded sample",
+          "source_updated_at": null,
+          "source_url": "https://apiprevmet3.inmet.gov.br/avisos/rss/56444",
+          "title": "Aviso de Tempestade. Severidade Grau: Perigo"
         }
       }
     },

@@ -90,6 +90,45 @@
         }
       }
     },
+    "242fdf3c3534041dd64aff1f0b9cdecf270b8ce5c0aaaa4f721e34ac9c1a4eb9": {
+      "information_root": "bmkg_nowcast:bmkg_nowcast:e9c0d17f29ac51c92ef65032d301",
+      "members": {
+        "beh:8d0a7c7c3aab18f7de569dd71020": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "bmkg_nowcast",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-21T01:20:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:8d0a7c7c3aab18f7de569dd71020",
+          "information_root": "bmkg_nowcast:bmkg_nowcast:e9c0d17f29ac51c92ef65032d301",
+          "origin": "behavioral_registry",
+          "provider": "bmkg_nowcast",
+          "published_at": "2026-11-21T01:20:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Indonesia BMKG",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Indonesia BMKG active provincial nowcast RSS, source-reported only; not global",
+          "source_updated_at": null,
+          "source_url": "https://www.bmkg.go.id/alerts/nowcast/en/CKR20261121001_alert.xml",
+          "title": "Thunderstorm This Morning in Kep. Riau"
+        }
+      }
+    },
     "245b284425c293ab4fc5dab26ae99f8a58d8d7e39429310c955a7cfa60940e3a": {
       "information_root": "niord:d05a4852-a07f-46c4-a142-280af74b01f5:1:0:0",
       "members": {
@@ -120,6 +159,39 @@
         }
       }
     },
+    "2477ff2a7bac93a22a6e6727dad3be2169553486f4f2251e91956a9a3cdc32e2": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c0c7:110338-2026",
+      "members": {
+        "beh:aa07f3a7271434513f700feeb665": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-20T16:50:45+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:aa07f3a7271434513f700feeb665",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c0c7:110338-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-20T16:50:45Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-19T02%3A27%3A41&updatedTo=2026-11-21T02%3A27%3A41",
+          "title": "DfI Rivers Directorate T-1163 Inspection and Maintenance of Underground Infrastructure Framework · DfI Transport and Road Asset Management (TRAM)"
+        }
+      }
+    },
     "24a902f4cae63f6a6a892ae39ee3adf13492e0de210cb102f97fc498bdd19242": {
       "information_root": "niord:9e345aa9-0c3b-40a4-b93d-0509beaf3267:1:0:0",
       "members": {
@@ -147,6 +219,46 @@
           "source_updated_at": "2026-11-18T00:21:51Z",
           "source_url": "https://niord.dma.dk/#/message/9e345aa9-0c3b-40a4-b93d-0509beaf3267",
           "title": "Denmark. The Baltic Sea. EK D 396 Hullebaek. Firing exercises. Warning."
+        }
+      }
+    },
+    "24b592df95e0b81a96380ba3c134e895add7e23ec2d4c6dca08b24e5ce17aa8a": {
+      "information_root": "bmkg_quake:bmkg_quake:07a68b648b57fb508280f0a7a166",
+      "members": {
+        "beh:070185e0f215717632ef9d5f000d": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "bmkg_quake",
+          "direct_measurement": true,
+          "event_at": "2026-11-10T15:51:37Z",
+          "first_observed_at": "2026-11-21T02:31:05+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "source_supplied_earthquake_epicenter",
+          "id": "beh:070185e0f215717632ef9d5f000d",
+          "information_root": "bmkg_quake:bmkg_quake:07a68b648b57fb508280f0a7a166",
+          "origin": "behavioral_registry",
+          "provider": "bmkg_quake",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_seismic_reporting_may_represent_same_usgs_event",
+          "source_family": "environmental_context",
+          "source_kind": "national_seismic_measurement_context",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "depth_km": 10.0,
+            "name": "earthquake_magnitude",
+            "possible_same_physical_event_as_usgs": true,
+            "unit": "source_reported_magnitude",
+            "value": 5.1
+          },
+          "source_scope": "Indonesia BMKG 15 latest magnitude-5+ earthquakes; not global; same physical events may appear in USGS",
+          "source_updated_at": null,
+          "source_url": "https://data.bmkg.go.id/DataMKG/TEWS/gempaterkini.json",
+          "title": "BMKG earthquake M5.1 · 116 km TimurLaut HALMAHERASELATAN-MALUT"
         }
       }
     },

@@ -1,5 +1,90 @@
 {
   "roots": {
+    "2566177213a2ca28c1a5fd60a48e1233755141053db0e1d010dca4d88a80d92f": {
+      "information_root": "usgs:us6000uc96",
+      "members": {
+        "beh:6c4da3d41a805f3ded0432bb7c55": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "usgs",
+          "direct_measurement": true,
+          "event_at": "2026-11-20T13:09:04Z",
+          "first_observed_at": "2026-11-20T13:09:04+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "source_supplied_point_only",
+          "id": "beh:6c4da3d41a805f3ded0432bb7c55",
+          "information_root": "usgs:us6000uc96",
+          "origin": "behavioral_registry",
+          "provider": "usgs",
+          "published_at": "2026-11-21T02:00:55Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "measured_earthquake_context",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "name": "earthquake_magnitude",
+            "unit": "reported_magnitude",
+            "value": 5.1
+          },
+          "source_scope": "USGS M4.5+ earthquakes worldwide, rolling past day; source thresholds apply",
+          "source_updated_at": null,
+          "source_url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000uc96",
+          "title": "M 5.1 - 15 km SSW of Balangonan, Philippines"
+        }
+      }
+    },
+    "25819b65970c9007c23f63faee7497b583cf756183502360699467a46c47f978": {
+      "information_root": "cbp_wait:cbp_wait:231002:2026-11-20:20:23:04",
+      "members": {
+        "beh:b062e49dae041aadb8192ba4c081": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-21T02:31:05+00:00",
+          "geography_key": "us-border-port:231002",
+          "geography_label": "ROMA TEXAS",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:b062e49dae041aadb8192ba4c081",
+          "information_root": "cbp_wait:cbp_wait:231002:2026-11-20:20:23:04",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Update Pending",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/20/2026",
+            "reported_local_time": "20:23:04",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — ROMA TEXAS / ROMA TEXAS"
+        }
+      }
+    },
     "25cd09e5e14c106992ac2595308bd5d10e87f03ea6ba284922018eb21a1cc7fa": {
       "information_root": "niord:7e1e4c1f-369b-4077-ac94-713da08c9b82:3:0:1",
       "members": {

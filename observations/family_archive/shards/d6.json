@@ -56,6 +56,39 @@
         }
       }
     },
+    "d62736a8a891d46c8667bb88125b8fb628cba5a9d96ea6770f1fd92dacdde6db": {
+      "information_root": "usace:214950",
+      "members": {
+        "beh:0d9519517ea4738cc848338c7823": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "issued_waterway_notice_not_verified_disruption",
+          "collection_mode": "usace",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-08-26T14:27:10+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:0d9519517ea4738cc848338c7823",
+          "information_root": "usace:214950",
+          "origin": "behavioral_registry",
+          "provider": "usace",
+          "published_at": "2026-08-26T14:27:10Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_navigation_notice",
+          "source_family": "waterway_restriction",
+          "source_kind": "official_waterway_navigation_notice",
+          "source_measurement": null,
+          "source_scope": "USACE NTNI active notices for sampled districts MVP/MVS/SWG; up to 110 total",
+          "source_updated_at": null,
+          "source_url": "https://ndc.ops.usace.army.mil/ords/ntni/print_nav_notice?in_nav_notice_number=214950&in_title_formatting=UB",
+          "title": "NTNI notice 212800-7 · GULF INTRACOASTAL WATERWAY -MBRAZOS RIVER FLOOD GATES - EAST AND WEST GATES"
+        }
+      }
+    },
     "d62ef54d1cfdfddcee9a8d26828e57c42491204a6d09f64520045e8f2efd89b8": {
       "information_root": "niord:853b0835-0a77-4c76-9f7e-01090edb2e75:0:4:0",
       "members": {
@@ -86,6 +119,44 @@
         }
       }
     },
+    "d66eed94f449d4d0d67a9e85dfbacb5206229aacc8b9e92cb9468db9fbb81040": {
+      "information_root": "usgs:us6000uc82",
+      "members": {
+        "beh:ae9c757acc2c72330e39dea26789": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "usgs",
+          "direct_measurement": true,
+          "event_at": "2026-11-20T08:44:11Z",
+          "first_observed_at": "2026-11-20T08:44:11+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "source_supplied_point_only",
+          "id": "beh:ae9c757acc2c72330e39dea26789",
+          "information_root": "usgs:us6000uc82",
+          "origin": "behavioral_registry",
+          "provider": "usgs",
+          "published_at": "2026-11-20T10:51:39Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "measured_earthquake_context",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "name": "earthquake_magnitude",
+            "unit": "reported_magnitude",
+            "value": 5.4
+          },
+          "source_scope": "USGS M4.5+ earthquakes worldwide, rolling past day; source thresholds apply",
+          "source_updated_at": null,
+          "source_url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000uc82",
+          "title": "M 5.4 - Carlsberg Ridge"
+        }
+      }
+    },
     "d6801ffcaa70f07628f84d6e97a78213c45e1b257b4fa7f470a9cc5aa43f5a1c": {
       "information_root": "ioda:3076628dbd01df5502249c94",
       "members": {
@@ -113,6 +184,52 @@
           "source_updated_at": null,
           "source_url": "https://ioda.inetintel.cc.gatech.edu/",
           "title": "IODA detected connectivity anomaly: country VE"
+        }
+      }
+    },
+    "d6906786c1029f9dfa0da94d3fc2255c8e9695dd41fecb4663c3126bbc59d492": {
+      "information_root": "sg_mpa:sg_mpa:2026-04:container",
+      "members": {
+        "beh:925df8c6da7907a551b59335ec51": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "monthly_maritime_throughput_not_current_disruption",
+          "collection_mode": "sg_mpa",
+          "direct_measurement": true,
+          "event_at": null,
+          "first_observed_at": "2026-11-21T02:31:05+00:00",
+          "geography_key": "country:SG",
+          "geography_label": "Singapore",
+          "geography_precision": "national_port_scope_not_incident",
+          "id": "beh:925df8c6da7907a551b59335ec51",
+          "information_root": "sg_mpa:sg_mpa:2026-04:container",
+          "origin": "behavioral_registry",
+          "provider": "sg_mpa",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_monthly_port_throughput_historical",
+          "source_family": "port_throughput",
+          "source_kind": "official_monthly_port_arrival_count_historical",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "denominator": "vessels_greater_than_75_gross_tons",
+            "most_recent_month_provisional": false,
+            "name": "monthly_vessel_arrivals_over_75_gt",
+            "not_live_tracking": true,
+            "period": "2026-04",
+            "period_months_lag": 7,
+            "reporting_cadence": "monthly",
+            "source_dataset": "d_8f264219109e61fffa87ac64dd5a9a65",
+            "unit": "vessels",
+            "value": 1343,
+            "vessel_type": "Container"
+          },
+          "source_scope": "Maritime & Port Authority of Singapore monthly arrivals >75 GT by vessel type; selected latest months, publication lag, Singapore-only, not live AIS",
+          "source_updated_at": null,
+          "source_url": "https://data.gov.sg/datasets/d_8f264219109e61fffa87ac64dd5a9a65/view",
+          "title": "Singapore MPA 2026-04 Container vessel arrivals (>75 GT)"
         }
       }
     },

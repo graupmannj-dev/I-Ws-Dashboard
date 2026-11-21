@@ -1,5 +1,38 @@
 {
   "roots": {
+    "7d887f4fb3071c4a1fcd7f116ca0a1b9c7f7c210cbd3d4caf2b43def0445c1a9": {
+      "information_root": "eonet:EONET_26494",
+      "members": {
+        "beh:656ecb68ad84b4f56dde05f38bdf": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "eonet",
+          "direct_measurement": false,
+          "event_at": "2026-11-19T18:00:00Z",
+          "first_observed_at": "2026-11-19T18:00:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:656ecb68ad84b4f56dde05f38bdf",
+          "information_root": "eonet:EONET_26494",
+          "origin": "behavioral_registry",
+          "provider": "eonet",
+          "published_at": "2026-11-19T18:00:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "cataloged_natural_hazard_context",
+          "source_measurement": null,
+          "source_scope": "NASA EONET open catalog, category Severe Storms",
+          "source_updated_at": null,
+          "source_url": "https://eonet.gsfc.nasa.gov/api/v3/events/EONET_26494",
+          "title": "Tropical Cyclone Akvan"
+        }
+      }
+    },
     "7da3167692d0e4292cecd213f6610142f040780cc8f2e4e0bc34e0a988d4cffa": {
       "information_root": "niord:fbcc5283-72c1-46cf-847c-5c2eface7b46:2:0:0",
       "members": {
@@ -57,6 +90,39 @@
           "source_updated_at": null,
           "source_url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.deu.html",
           "title": "Germany - Level 2: Exercise Increased Caution"
+        }
+      }
+    },
+    "7dfda963eb46f155fb31d6a628a14daae70fcb60d0fa79112d511fc77f0c9f6c": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07bee0:110297-2026",
+      "members": {
+        "beh:9566b8df37ede068709bcbf14703": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-20T15:53:52+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:9566b8df37ede068709bcbf14703",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07bee0:110297-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-20T15:53:52Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-19T02%3A27%3A41&updatedTo=2026-11-21T02%3A27%3A41",
+          "title": "Contract for HVO Fuel Provision · Staffordshire County Council"
         }
       }
     }

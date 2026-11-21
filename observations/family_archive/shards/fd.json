@@ -60,6 +60,83 @@
         }
       }
     },
+    "fd6e3cdfc7457b2c926a031720416aab2478490244618f0c2f52c0295da167d6": {
+      "information_root": "usgs:us6000uc8k",
+      "members": {
+        "beh:bd6a1ec95d47603b9446e712599a": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "usgs",
+          "direct_measurement": true,
+          "event_at": "2026-11-20T10:48:44Z",
+          "first_observed_at": "2026-11-20T10:48:44+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "source_supplied_point_only",
+          "id": "beh:bd6a1ec95d47603b9446e712599a",
+          "information_root": "usgs:us6000uc8k",
+          "origin": "behavioral_registry",
+          "provider": "usgs",
+          "published_at": "2026-11-20T11:16:24Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "measured_earthquake_context",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "name": "earthquake_magnitude",
+            "unit": "reported_magnitude",
+            "value": 4.7
+          },
+          "source_scope": "USGS M4.5+ earthquakes worldwide, rolling past day; source thresholds apply",
+          "source_updated_at": null,
+          "source_url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000uc8k",
+          "title": "M 4.7 - southeast of the Loyalty Islands"
+        }
+      }
+    },
+    "fdc6300bac7ad7f64d804f0cfcc5e0a4dac69b7defac59e5d59566c057bd9ea1": {
+      "information_root": "inmet_br:inmet_br:cac863a1770b5805cbe18d704b10",
+      "members": {
+        "beh:c540ec53c41b1183076e19b397ea": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "inmet_br",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-20T00:00:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:c540ec53c41b1183076e19b397ea",
+          "information_root": "inmet_br:inmet_br:cac863a1770b5805cbe18d704b10",
+          "origin": "behavioral_registry",
+          "provider": "inmet_br",
+          "published_at": "2026-11-20T00:00:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Brazil INMET",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Brazil INMET official severe-weather RSS notices; provider-listed bounded sample",
+          "source_updated_at": null,
+          "source_url": "https://apiprevmet3.inmet.gov.br/avisos/rss/56454",
+          "title": "Aviso de Tempestade. Severidade Grau: Perigo Potencial"
+        }
+      }
+    },
     "fdcfa020bdefa114c6d7cc51fc9e7d575bb2a09b1826a3ea07238037b2d4eb7d": {
       "information_root": "niord:bd3a545a-8bee-49ce-a67b-c9169c54c6c0:4:0:0",
       "members": {

@@ -1,5 +1,38 @@
 {
   "roots": {
+    "6809ebab6f01bb10fa22188b9c0e2d6282a0bb03ed9cf8334536fb8c7ea9f496": {
+      "information_root": "usace:214847",
+      "members": {
+        "beh:3d211cf614e33c4e5e83317c4862": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "issued_waterway_notice_not_verified_disruption",
+          "collection_mode": "usace",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-08-06T15:47:12+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:3d211cf614e33c4e5e83317c4862",
+          "information_root": "usace:214847",
+          "origin": "behavioral_registry",
+          "provider": "usace",
+          "published_at": "2026-08-06T15:47:12Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_navigation_notice",
+          "source_family": "waterway_restriction",
+          "source_kind": "official_waterway_navigation_notice",
+          "source_measurement": null,
+          "source_scope": "USACE NTNI active notices for sampled districts MVP/MVS/SWG; up to 110 total",
+          "source_updated_at": null,
+          "source_url": "https://ndc.ops.usace.army.mil/ords/ntni/print_nav_notice?in_nav_notice_number=214847&in_title_formatting=UB",
+          "title": "NTNI notice 214811-1 · POOL_05_UPPER_MISSISSIPPI, POOL_06_UPPER_MISSISSIPPI"
+        }
+      }
+    },
     "682a267ce530c52f913751b63ec592c94feb2e68ec5397c5eecbf78bc5627b86": {
       "information_root": "niord:7e1e4c1f-369b-4077-ac94-713da08c9b82:4:0:0",
       "members": {
@@ -30,6 +63,39 @@
         }
       }
     },
+    "682bc4a5a04e60695d3e4d9e6a1198bf50c7138c866e9be5275dfe90ab4bad80": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07bc0b:110319-2026",
+      "members": {
+        "beh:1dd815c2a00d3e38644c73b71c7c": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-20T16:19:31+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:1dd815c2a00d3e38644c73b71c7c",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07bc0b:110319-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-20T16:19:31Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-19T02%3A27%3A41&updatedTo=2026-11-21T02%3A27%3A41",
+          "title": "Supply and Distribution of Two and Four Wheeled Domestic Recycling Bins · The Council of the Borough of Kirklees"
+        }
+      }
+    },
     "68604a2b52b1657c19176cd954475e3ca0256e3d27e9737d7a8f2a1cd9c714ed": {
       "information_root": "faa:6/7687:0:0",
       "members": {
@@ -57,6 +123,39 @@
           "source_updated_at": null,
           "source_url": "https://tfr.faa.gov/6_7687.html",
           "title": "FAA TFR 6/7687 · 27 NM NE NEWCASTLE, WY, Monday, November 16, 2026 through Tuesday, November 17, 2026 UTC"
+        }
+      }
+    },
+    "687c457804bcd79b013b1ce82af900196259d49ca403a44c7e988d92d1aefd0a": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c0b6:110309-2026",
+      "members": {
+        "beh:d9defd89f959b97a95444c1ad008": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-20T16:03:47+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:d9defd89f959b97a95444c1ad008",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c0b6:110309-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-20T16:03:47Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-19T02%3A27%3A41&updatedTo=2026-11-21T02%3A27%3A41",
+          "title": "Boiler Servicing Contract Schools & Public Buildings 2025-2026 · Rochdale Borough Council"
         }
       }
     },

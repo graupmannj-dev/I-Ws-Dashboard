@@ -1,5 +1,51 @@
 {
   "roots": {
+    "6d2829204b825b727978e9bdf6683a8f56dfd9662a7b3f44c37ca331458c9782": {
+      "information_root": "sg_mpa:sg_mpa:2026-10:miscellaneous",
+      "members": {
+        "beh:6f9640cf9f1df5b5958b2e848fee": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "monthly_maritime_throughput_not_current_disruption",
+          "collection_mode": "sg_mpa",
+          "direct_measurement": true,
+          "event_at": null,
+          "first_observed_at": "2026-11-21T02:31:05+00:00",
+          "geography_key": "country:SG",
+          "geography_label": "Singapore",
+          "geography_precision": "national_port_scope_not_incident",
+          "id": "beh:6f9640cf9f1df5b5958b2e848fee",
+          "information_root": "sg_mpa:sg_mpa:2026-10:miscellaneous",
+          "origin": "behavioral_registry",
+          "provider": "sg_mpa",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_monthly_port_throughput_historical",
+          "source_family": "port_throughput",
+          "source_kind": "official_monthly_port_arrival_count_historical",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "denominator": "vessels_greater_than_75_gross_tons",
+            "most_recent_month_provisional": true,
+            "name": "monthly_vessel_arrivals_over_75_gt",
+            "not_live_tracking": true,
+            "period": "2026-10",
+            "period_months_lag": 1,
+            "reporting_cadence": "monthly",
+            "source_dataset": "d_8f264219109e61fffa87ac64dd5a9a65",
+            "unit": "vessels",
+            "value": 1053,
+            "vessel_type": "Miscellaneous"
+          },
+          "source_scope": "Maritime & Port Authority of Singapore monthly arrivals >75 GT by vessel type; selected latest months, publication lag, Singapore-only, not live AIS",
+          "source_updated_at": null,
+          "source_url": "https://data.gov.sg/datasets/d_8f264219109e61fffa87ac64dd5a9a65/view",
+          "title": "Singapore MPA 2026-10 Miscellaneous vessel arrivals (>75 GT)"
+        }
+      }
+    },
     "6d46437e08bf7f295f7725dc2c1bb5bb4ab9306f8ee4f7f5a6aa79015a328df6": {
       "information_root": "ioda:82bb11cb4933c862716e8b78",
       "members": {
@@ -57,6 +103,53 @@
           "source_updated_at": "2026-11-18T00:21:52Z",
           "source_url": "https://niord.dma.dk/#/message/f9142f62-1f2e-4853-8861-b2920f02f72f",
           "title": "Denmark. Kattegat. EK R 18 Jaegerspris. Firing exercises. Warning."
+        }
+      }
+    },
+    "6d60ebe9dce98993e0f9188566b8831c526af47e40683373c707473b0e70c34d": {
+      "information_root": "cbp_wait:cbp_wait:021101:2026-11-20:21:23:04",
+      "members": {
+        "beh:06e31bb3db8ea37db3458e4fe54d": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-21T02:31:05+00:00",
+          "geography_key": "us-border-port:021101",
+          "geography_label": "Norton",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:06e31bb3db8ea37db3458e4fe54d",
+          "information_root": "cbp_wait:cbp_wait:021101:2026-11-20:21:23:04",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "no delay",
+            "lanes_open": 1,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "At 8:00 am EST",
+            "reported_local_date": "11/20/2026",
+            "reported_local_time": "21:23:04",
+            "source_declared_border": "Canadian Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 0
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Norton"
         }
       }
     },

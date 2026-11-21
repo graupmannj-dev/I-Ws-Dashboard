@@ -1,5 +1,77 @@
 {
   "roots": {
+    "ae5eb9eb15cc40e3407478ac498f2df690263ac5b4f006b8d6d9bf068d62bcd3": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c0d1:110353-2026",
+      "members": {
+        "beh:908a6a51740ece8e3fc99c515e05": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-20T17:25:01+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:908a6a51740ece8e3fc99c515e05",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c0d1:110353-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-20T17:25:01Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-19T02%3A27%3A41&updatedTo=2026-11-21T02%3A27%3A41",
+          "title": "Northamptonshire GP Out of Hours Service · NHS NORTHAMPTONSHIRE INTEGRATED CARE BOARD"
+        }
+      }
+    },
+    "ae66955199419c7b603fc40243d1bc2b41e1138ef0d3601026722fc07bfcf156": {
+      "information_root": "inmet_br:inmet_br:d25d36c5ce2217833ebed0509c80",
+      "members": {
+        "beh:d9504f212d37589c2fe7e2b9eca4": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "inmet_br",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-17T12:00:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:d9504f212d37589c2fe7e2b9eca4",
+          "information_root": "inmet_br:inmet_br:d25d36c5ce2217833ebed0509c80",
+          "origin": "behavioral_registry",
+          "provider": "inmet_br",
+          "published_at": "2026-11-17T12:00:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Brazil INMET",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Brazil INMET official severe-weather RSS notices; provider-listed bounded sample",
+          "source_updated_at": null,
+          "source_url": "https://apiprevmet3.inmet.gov.br/avisos/rss/56437",
+          "title": "Aviso de Tempestade. Severidade Grau: Perigo Potencial"
+        }
+      }
+    },
     "ae930687d5203694d04274ab5ca22245c7f8b9841732ef1f895b336d50776f32": {
       "information_root": "niord:1ef21c8b-efbc-4641-b906-2fa81c3ff90f:1:0:0",
       "members": {

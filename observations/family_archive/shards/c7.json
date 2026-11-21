@@ -1,5 +1,38 @@
 {
   "roots": {
+    "c7142ee1bded6b7032538960b2bbd51fecb742efa2e923fce5fea4a7ba80e3b5": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-0795a0:110332-2026",
+      "members": {
+        "beh:a1b8a0631eebe3713c7e9f529992": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-20T16:35:01+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:a1b8a0631eebe3713c7e9f529992",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-0795a0:110332-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-20T16:35:01Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-19T02%3A27%3A41&updatedTo=2026-11-21T02%3A27%3A41",
+          "title": "V00426 Maintenance of BMS and Immediate Repairs to Chiller Plant · NHS Golden Jubilee"
+        }
+      }
+    },
     "c72090a8de753ae77bddff8446e3651a9f156ce1a228e5c6a2c44155c6b3398e": {
       "information_root": "niord:d05a4852-a07f-46c4-a142-280af74b01f5:0:3:0",
       "members": {
@@ -87,6 +120,53 @@
           "source_updated_at": "2026-11-16T09:21:53Z",
           "source_url": "https://niord.dma.dk/#/message/8d5a1de4-9b8e-4c89-bd26-41a2becc8cb3",
           "title": "Denmark. The North Sea. 15 Nymindegab. Firing exercises. Warning."
+        }
+      }
+    },
+    "c7a4a740714a2c48e6de6cdfb5f5e51b817a00baa8001c9a7cb5e0131aaccef3": {
+      "information_root": "cbp_wait:cbp_wait:260403:2026-11-20:19:23:04",
+      "members": {
+        "beh:8343f59280edec437b6756b3269f": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-21T02:31:05+00:00",
+          "geography_key": "us-border-port:260403",
+          "geography_label": "Nogales",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:8343f59280edec437b6756b3269f",
+          "information_root": "cbp_wait:cbp_wait:260403:2026-11-20:19:23:04",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "N/A",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Closed",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/20/2026",
+            "reported_local_time": "19:23:04",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Nogales / Morley Gate"
         }
       }
     },

@@ -1,5 +1,38 @@
 {
   "roots": {
+    "5e2470181c209cf6c9d712f9b16dabc9a7075f84141040fa0d08b469988b4ec6": {
+      "information_root": "nws:a7ff73be1ea838d6c927e23f",
+      "members": {
+        "beh:38f434ac97c11979fb1be5980f11": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "nws",
+          "direct_measurement": false,
+          "event_at": "2026-11-20T23:43:00Z",
+          "first_observed_at": "2026-11-20T23:43:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:38f434ac97c11979fb1be5980f11",
+          "information_root": "nws:a7ff73be1ea838d6c927e23f",
+          "origin": "behavioral_registry",
+          "provider": "nws",
+          "published_at": "2026-11-20T23:43:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "official_weather_alert_context",
+          "source_measurement": null,
+          "source_scope": "Active NWS marine alerts; severity Moderate",
+          "source_updated_at": null,
+          "source_url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.e3237ee78a86f8502e9a0191fb182e13a662512b.002.1",
+          "title": "Rip Current Statement - Coastal Palm Beach County"
+        }
+      }
+    },
     "5e393f3f50136d60ba940844727c6bc8a7d2d1c7321f3929730de6713a5edb57": {
       "information_root": "niord:83d1a83a-764d-444f-b079-4d31ef8835c0:4:0:0",
       "members": {
@@ -60,6 +93,91 @@
         }
       }
     },
+    "5e5fcf32e7e74ef2458aa283a019738b400ca019e7bc34832d9980571ad4444a": {
+      "information_root": "inmet_br:inmet_br:8097c303116c0e826a2be7522088",
+      "members": {
+        "beh:f490992620ce339141e6fa359842": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "inmet_br",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-14T18:00:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:f490992620ce339141e6fa359842",
+          "information_root": "inmet_br:inmet_br:8097c303116c0e826a2be7522088",
+          "origin": "behavioral_registry",
+          "provider": "inmet_br",
+          "published_at": "2026-11-14T18:00:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Brazil INMET",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Brazil INMET official severe-weather RSS notices; provider-listed bounded sample",
+          "source_updated_at": null,
+          "source_url": "https://apiprevmet3.inmet.gov.br/avisos/rss/56416",
+          "title": "Aviso de Chuvas Intensas. Severidade Grau: Perigo Potencial"
+        }
+      }
+    },
+    "5e784d57be0db3e98568450fd6bf7e743cf834afd4e46bc9a7f21ac300f313b2": {
+      "information_root": "sg_mpa:sg_mpa:2026-09:bulk-carrier",
+      "members": {
+        "beh:229cf2717f34c92f397eaa989aef": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "monthly_maritime_throughput_not_current_disruption",
+          "collection_mode": "sg_mpa",
+          "direct_measurement": true,
+          "event_at": null,
+          "first_observed_at": "2026-11-21T02:31:05+00:00",
+          "geography_key": "country:SG",
+          "geography_label": "Singapore",
+          "geography_precision": "national_port_scope_not_incident",
+          "id": "beh:229cf2717f34c92f397eaa989aef",
+          "information_root": "sg_mpa:sg_mpa:2026-09:bulk-carrier",
+          "origin": "behavioral_registry",
+          "provider": "sg_mpa",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_monthly_port_throughput_historical",
+          "source_family": "port_throughput",
+          "source_kind": "official_monthly_port_arrival_count_historical",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "denominator": "vessels_greater_than_75_gross_tons",
+            "most_recent_month_provisional": false,
+            "name": "monthly_vessel_arrivals_over_75_gt",
+            "not_live_tracking": true,
+            "period": "2026-09",
+            "period_months_lag": 2,
+            "reporting_cadence": "monthly",
+            "source_dataset": "d_8f264219109e61fffa87ac64dd5a9a65",
+            "unit": "vessels",
+            "value": 1652,
+            "vessel_type": "Bulk Carrier"
+          },
+          "source_scope": "Maritime & Port Authority of Singapore monthly arrivals >75 GT by vessel type; selected latest months, publication lag, Singapore-only, not live AIS",
+          "source_updated_at": null,
+          "source_url": "https://data.gov.sg/datasets/d_8f264219109e61fffa87ac64dd5a9a65/view",
+          "title": "Singapore MPA 2026-09 Bulk Carrier vessel arrivals (>75 GT)"
+        }
+      }
+    },
     "5e800d4af7ce67aa4786185b65205b964948083aad9d051872a8252dfff7cd20": {
       "information_root": "ioda:6b8313db92d500d7b208b501",
       "members": {
@@ -90,6 +208,53 @@
           "source_updated_at": null,
           "source_url": "https://ioda.inetintel.cc.gatech.edu/",
           "title": "IODA detected connectivity anomaly: country ML"
+        }
+      }
+    },
+    "5e8bdce46237e6b682b72c08ec7b6e0401b33ce89dddb59e60c0ff25a291a63c": {
+      "information_root": "cbp_wait:cbp_wait:090104:2026-11-20:21:23:03",
+      "members": {
+        "beh:c3dd2ed364481096c66e387d07c8": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-21T02:31:05+00:00",
+          "geography_key": "us-border-port:090104",
+          "geography_label": "Buffalo/Niagara Falls",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:c3dd2ed364481096c66e387d07c8",
+          "information_root": "cbp_wait:cbp_wait:090104:2026-11-20:21:23:03",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "no delay",
+            "lanes_open": 2,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "At 9:17 pm EST",
+            "reported_local_date": "11/20/2026",
+            "reported_local_time": "21:23:03",
+            "source_declared_border": "Canadian Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 0
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Buffalo/Niagara Falls / Lewiston Bridge"
         }
       }
     },

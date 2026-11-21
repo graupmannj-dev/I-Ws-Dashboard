@@ -146,6 +146,174 @@
         }
       }
     },
+    "0a7bf4754fbf52788ee3eedd2d7747fb23dbd56d2dd8681dce6466cec07ec50f": {
+      "information_root": "cbp_wait:cbp_wait:090101:2026-11-20:21:23:03",
+      "members": {
+        "beh:94f8f092013889109720c6956004": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-21T02:31:05+00:00",
+          "geography_key": "us-border-port:090101",
+          "geography_label": "Buffalo/Niagara Falls",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:94f8f092013889109720c6956004",
+          "information_root": "cbp_wait:cbp_wait:090101:2026-11-20:21:23:03",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "no delay",
+            "lanes_open": 4,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "At 9:17 pm EST",
+            "reported_local_date": "11/20/2026",
+            "reported_local_time": "21:23:03",
+            "source_declared_border": "Canadian Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 6
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Buffalo/Niagara Falls / Peace Bridge"
+        }
+      }
+    },
+    "0a808caad502342e2cf98d1ff343407f4f8f35d143c80ffadb53c1e2de816dc9": {
+      "information_root": "sg_mpa:sg_mpa:2026-10:bulk-carrier",
+      "members": {
+        "beh:c16d4ba43b2dd9f2e2c5e546103e": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "monthly_maritime_throughput_not_current_disruption",
+          "collection_mode": "sg_mpa",
+          "direct_measurement": true,
+          "event_at": null,
+          "first_observed_at": "2026-11-21T02:31:05+00:00",
+          "geography_key": "country:SG",
+          "geography_label": "Singapore",
+          "geography_precision": "national_port_scope_not_incident",
+          "id": "beh:c16d4ba43b2dd9f2e2c5e546103e",
+          "information_root": "sg_mpa:sg_mpa:2026-10:bulk-carrier",
+          "origin": "behavioral_registry",
+          "provider": "sg_mpa",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_monthly_port_throughput_historical",
+          "source_family": "port_throughput",
+          "source_kind": "official_monthly_port_arrival_count_historical",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "denominator": "vessels_greater_than_75_gross_tons",
+            "most_recent_month_provisional": true,
+            "name": "monthly_vessel_arrivals_over_75_gt",
+            "not_live_tracking": true,
+            "period": "2026-10",
+            "period_months_lag": 1,
+            "reporting_cadence": "monthly",
+            "source_dataset": "d_8f264219109e61fffa87ac64dd5a9a65",
+            "unit": "vessels",
+            "value": 1797,
+            "vessel_type": "Bulk Carrier"
+          },
+          "source_scope": "Maritime & Port Authority of Singapore monthly arrivals >75 GT by vessel type; selected latest months, publication lag, Singapore-only, not live AIS",
+          "source_updated_at": null,
+          "source_url": "https://data.gov.sg/datasets/d_8f264219109e61fffa87ac64dd5a9a65/view",
+          "title": "Singapore MPA 2026-10 Bulk Carrier vessel arrivals (>75 GT)"
+        }
+      }
+    },
+    "0a88d8b3bf672f0ce410a69f6bd157342ec1a7677ee6f5767de30b06e7d78e50": {
+      "information_root": "wiki_edits:wiki_edits:en:20261121T02",
+      "members": {
+        "beh:911595d4a38d109ee73b1110a7c7": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "wiki_edits",
+          "direct_measurement": false,
+          "event_at": "2026-11-21T02:27:40Z",
+          "first_observed_at": "2026-11-21T02:27:40+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:911595d4a38d109ee73b1110a7c7",
+          "information_root": "wiki_edits:wiki_edits:en:20261121T02",
+          "origin": "behavioral_registry",
+          "provider": "wiki_edits",
+          "published_at": "2026-11-21T02:27:40Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "public_encyclopedia_edit_aggregate",
+          "source_family": "public_attention",
+          "source_kind": "bounded_public_edit_count_not_event_verification",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "distinct_articles_in_sample": 402,
+            "maximum_returned_edits": 500,
+            "most_edited_article_counts": [
+              {
+                "count": 20,
+                "title": "Ryoff Karma"
+              },
+              {
+                "count": 4,
+                "title": "2026 Ladakh Autonomous Hill Development Council, Kargil election"
+              },
+              {
+                "count": 4,
+                "title": "2026–27 Australian region cyclone season"
+              },
+              {
+                "count": 4,
+                "title": "Culture of Guyana"
+              },
+              {
+                "count": 4,
+                "title": "Geese discography"
+              },
+              {
+                "count": 4,
+                "title": "History of Lyon"
+              },
+              {
+                "count": 4,
+                "title": "Lester Moré"
+              },
+              {
+                "count": 4,
+                "title": "List of members of the National Assembly (South Korea), 2024–2028"
+              }
+            ],
+            "name": "sampled_edits_last_three_hours",
+            "sample_cap_reached": true,
+            "unit": "edits",
+            "value": 500
+          },
+          "source_scope": "Wikipedia main-namespace edit-count sample, 14 global language editions, three-hour window capped at 500 per wiki; not geographic location",
+          "source_updated_at": null,
+          "source_url": "https://en.wikipedia.org/wiki/Special:RecentChanges",
+          "title": "Wikipedia en public article-edit activity (sampled)"
+        }
+      }
+    },
     "0ab937936e4f735ab05a9555d5765df76a200ff52cbe0739c7f850ac39ba7a17": {
       "information_root": "ioda:2e34c7a77e350caef1a7a9b1",
       "members": {

@@ -1,5 +1,38 @@
 {
   "roots": {
+    "d3090ec38b2ed4a778fb3d53405738445c7931be86e5fcbd91bc000d5f622838": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-05813b:110351-2026",
+      "members": {
+        "beh:01276f0e2fdd2738029544665531": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-20T17:22:26+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:01276f0e2fdd2738029544665531",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-05813b:110351-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-20T17:22:26Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-19T02%3A27%3A41&updatedTo=2026-11-21T02%3A27%3A41",
+          "title": "Project TELUM - Provision of aerobatic capable, light powered training aircraft, Qualified Flying Instructors, and associated support services to enable ground and flying training · Ministry of Defence"
+        }
+      }
+    },
     "d31c8853dd47c8430f72876a4870f7fafdd53beb8f7e278f0b1820f8b5fc5b50": {
       "information_root": "ioda:75329cbe50c861cdd32becd0",
       "members": {
@@ -27,6 +60,45 @@
           "source_updated_at": null,
           "source_url": "https://ioda.inetintel.cc.gatech.edu/",
           "title": "IODA detected connectivity anomaly: country KP"
+        }
+      }
+    },
+    "d3b1329a2315c20d4d446b2c0e74b28b41b221df34bcdf2d8ea4fbb4956dd443": {
+      "information_root": "inmet_br:inmet_br:0e6a645c83b8c26f92fb8b838567",
+      "members": {
+        "beh:00ad1aabbdfcdd290e3304270d2f": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "inmet_br",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-16T12:00:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:00ad1aabbdfcdd290e3304270d2f",
+          "information_root": "inmet_br:inmet_br:0e6a645c83b8c26f92fb8b838567",
+          "origin": "behavioral_registry",
+          "provider": "inmet_br",
+          "published_at": "2026-11-16T12:00:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Brazil INMET",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Brazil INMET official severe-weather RSS notices; provider-listed bounded sample",
+          "source_updated_at": null,
+          "source_url": "https://apiprevmet3.inmet.gov.br/avisos/rss/56435",
+          "title": "Aviso de Vendaval. Severidade Grau: Perigo Potencial"
         }
       }
     },

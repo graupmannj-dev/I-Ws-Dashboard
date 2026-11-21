@@ -30,6 +30,53 @@
         }
       }
     },
+    "6e40cbb7bc59d79cb859bc95e6caa329adedac2b798cbce411205346f3605701": {
+      "information_root": "cbp_wait:cbp_wait:380002:2026-11-20:21:23:03",
+      "members": {
+        "beh:d06d561db21ba690e328c6fd4fdf": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-21T02:31:05+00:00",
+          "geography_key": "us-border-port:380002",
+          "geography_label": "Detroit",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:d06d561db21ba690e328c6fd4fdf",
+          "information_root": "cbp_wait:cbp_wait:380002:2026-11-20:21:23:03",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Lanes Closed",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/20/2026",
+            "reported_local_time": "21:23:03",
+            "source_declared_border": "Canadian Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Detroit / Windsor Tunnel"
+        }
+      }
+    },
     "6e99a4e2b0d7c2a7c58b92a0114a99464ec99ddc7521a1e36bca2edff7506662": {
       "information_root": "ioda:238c6d4aa513a64e3f0f29e3",
       "members": {
@@ -57,6 +104,128 @@
           "source_updated_at": null,
           "source_url": "https://ioda.inetintel.cc.gatech.edu/",
           "title": "IODA detected connectivity anomaly: country GF"
+        }
+      }
+    },
+    "6ea5cf83401dbb3226f811b756a02f2f8077565cd03d25ae2d964240dbdc3d97": {
+      "information_root": "cbp_wait:cbp_wait:240215:2026-11-20:19:23:04",
+      "members": {
+        "beh:1de82d46ee9c09db021d467ab104": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-21T02:31:05+00:00",
+          "geography_key": "us-border-port:240215",
+          "geography_label": "BOTA CARGO FACILITY",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:1de82d46ee9c09db021d467ab104",
+          "information_root": "cbp_wait:cbp_wait:240215:2026-11-20:19:23:04",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Update Pending",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Closed",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/20/2026",
+            "reported_local_time": "19:23:04",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — BOTA CARGO FACILITY / BRIDGE OF AMERICAS CARGO FACILITY"
+        }
+      }
+    },
+    "6ecceeb7f854ded67e6026b2059b9894594abef2d37703e424a6f0f4b4885033": {
+      "information_root": "wiki_edits:wiki_edits:ko:20261121T02",
+      "members": {
+        "beh:69c05916a7412931c0a9ccbf5ff6": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "wiki_edits",
+          "direct_measurement": false,
+          "event_at": "2026-11-21T02:27:21Z",
+          "first_observed_at": "2026-11-21T02:27:21+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:69c05916a7412931c0a9ccbf5ff6",
+          "information_root": "wiki_edits:wiki_edits:ko:20261121T02",
+          "origin": "behavioral_registry",
+          "provider": "wiki_edits",
+          "published_at": "2026-11-21T02:27:21Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "public_encyclopedia_edit_aggregate",
+          "source_family": "public_attention",
+          "source_kind": "bounded_public_edit_count_not_event_verification",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "distinct_articles_in_sample": 404,
+            "maximum_returned_edits": 500,
+            "most_edited_article_counts": [
+              {
+                "count": 13,
+                "title": "전도연의 수상 및 후보 목록"
+              },
+              {
+                "count": 8,
+                "title": "집으로 가는 길 (2013년 영화)"
+              },
+              {
+                "count": 6,
+                "title": "경기상업고등학교"
+              },
+              {
+                "count": 5,
+                "title": "나인 투 식스 (드라마)"
+              },
+              {
+                "count": 5,
+                "title": "분데스리가 2026-27 경기 일정"
+              },
+              {
+                "count": 5,
+                "title": "월드 프리미어 (말)"
+              },
+              {
+                "count": 4,
+                "title": "성동고등학교"
+              },
+              {
+                "count": 4,
+                "title": "성동글로벌경영고등학교"
+              }
+            ],
+            "name": "sampled_edits_last_three_hours",
+            "sample_cap_reached": true,
+            "unit": "edits",
+            "value": 500
+          },
+          "source_scope": "Wikipedia main-namespace edit-count sample, 14 global language editions, three-hour window capped at 500 per wiki; not geographic location",
+          "source_updated_at": null,
+          "source_url": "https://ko.wikipedia.org/wiki/Special:RecentChanges",
+          "title": "Wikipedia ko public article-edit activity (sampled)"
         }
       }
     },

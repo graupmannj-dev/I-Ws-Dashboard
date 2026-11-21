@@ -1,5 +1,51 @@
 {
   "roots": {
+    "b73a796afb65685b4ebac43fc9a1297a8387b676ba4be06b71791259c011eecb": {
+      "information_root": "sg_mpa:sg_mpa:2026-02:container",
+      "members": {
+        "beh:972cd1dcce60a192e57cd79cc474": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "monthly_maritime_throughput_not_current_disruption",
+          "collection_mode": "sg_mpa",
+          "direct_measurement": true,
+          "event_at": null,
+          "first_observed_at": "2026-11-21T02:31:05+00:00",
+          "geography_key": "country:SG",
+          "geography_label": "Singapore",
+          "geography_precision": "national_port_scope_not_incident",
+          "id": "beh:972cd1dcce60a192e57cd79cc474",
+          "information_root": "sg_mpa:sg_mpa:2026-02:container",
+          "origin": "behavioral_registry",
+          "provider": "sg_mpa",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_monthly_port_throughput_historical",
+          "source_family": "port_throughput",
+          "source_kind": "official_monthly_port_arrival_count_historical",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "denominator": "vessels_greater_than_75_gross_tons",
+            "most_recent_month_provisional": false,
+            "name": "monthly_vessel_arrivals_over_75_gt",
+            "not_live_tracking": true,
+            "period": "2026-02",
+            "period_months_lag": 9,
+            "reporting_cadence": "monthly",
+            "source_dataset": "d_8f264219109e61fffa87ac64dd5a9a65",
+            "unit": "vessels",
+            "value": 1242,
+            "vessel_type": "Container"
+          },
+          "source_scope": "Maritime & Port Authority of Singapore monthly arrivals >75 GT by vessel type; selected latest months, publication lag, Singapore-only, not live AIS",
+          "source_updated_at": null,
+          "source_url": "https://data.gov.sg/datasets/d_8f264219109e61fffa87ac64dd5a9a65/view",
+          "title": "Singapore MPA 2026-02 Container vessel arrivals (>75 GT)"
+        }
+      }
+    },
     "b744de5ae93d63ae12373be13dbb4f38b870a1a7440a9219a0a434442eeb4dc9": {
       "information_root": "faa:6/8654:0:0",
       "members": {
@@ -60,6 +106,39 @@
         }
       }
     },
+    "b78239d203eb961f9ba311456aa2c9d098df395c43457820d41d782310c80161": {
+      "information_root": "eonet:EONET_26463",
+      "members": {
+        "beh:31acf6da8ddc324cc7175df603aa": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "eonet",
+          "direct_measurement": false,
+          "event_at": "2026-11-20T18:00:00Z",
+          "first_observed_at": "2026-11-20T18:00:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:31acf6da8ddc324cc7175df603aa",
+          "information_root": "eonet:EONET_26463",
+          "origin": "behavioral_registry",
+          "provider": "eonet",
+          "published_at": "2026-11-20T18:00:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "cataloged_natural_hazard_context",
+          "source_measurement": null,
+          "source_scope": "NASA EONET open catalog, category Severe Storms",
+          "source_updated_at": null,
+          "source_url": "https://eonet.gsfc.nasa.gov/api/v3/events/EONET_26463",
+          "title": "Tropical Cyclone Xavier"
+        }
+      }
+    },
     "b7dd3dbac8584043fd0a4aa5bdf93c33e738bca1983e361822ffd771208a4d2e": {
       "information_root": "niord:0194a017-5b08-4618-930b-47af7c769ae3:3:0:0",
       "members": {
@@ -87,6 +166,81 @@
           "source_updated_at": "2026-11-20T13:21:52Z",
           "source_url": "https://niord.dma.dk/#/message/0194a017-5b08-4618-930b-47af7c769ae3",
           "title": "Denmark. Kattegat. EK R 18 Jaegerspris. Firing exercises. Warning."
+        }
+      }
+    },
+    "b7dec7b0a2d32cd4ba124d6344c054c6dda2e14939413c95976126fd615a25ae": {
+      "information_root": "wiki_edits:wiki_edits:es:20261121T02",
+      "members": {
+        "beh:8577d4989678fe6c9398eabe7a2f": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "wiki_edits",
+          "direct_measurement": false,
+          "event_at": "2026-11-21T02:27:40Z",
+          "first_observed_at": "2026-11-21T02:27:40+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:8577d4989678fe6c9398eabe7a2f",
+          "information_root": "wiki_edits:wiki_edits:es:20261121T02",
+          "origin": "behavioral_registry",
+          "provider": "wiki_edits",
+          "published_at": "2026-11-21T02:27:40Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "public_encyclopedia_edit_aggregate",
+          "source_family": "public_attention",
+          "source_kind": "bounded_public_edit_count_not_event_verification",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "distinct_articles_in_sample": 410,
+            "maximum_returned_edits": 500,
+            "most_edited_article_counts": [
+              {
+                "count": 8,
+                "title": "Liga Femenina FPF 2026"
+              },
+              {
+                "count": 6,
+                "title": "Erythroxylum kochummenii"
+              },
+              {
+                "count": 6,
+                "title": "Mr. Bean"
+              },
+              {
+                "count": 5,
+                "title": "Flyover (Apple Maps)"
+              },
+              {
+                "count": 5,
+                "title": "Regionalliga 2026-27"
+              },
+              {
+                "count": 4,
+                "title": "Nacional Ricardo Lyon"
+              },
+              {
+                "count": 4,
+                "title": "Pueblo muong"
+              },
+              {
+                "count": 4,
+                "title": "Tú Y Yo (Canción)"
+              }
+            ],
+            "name": "sampled_edits_last_three_hours",
+            "sample_cap_reached": true,
+            "unit": "edits",
+            "value": 500
+          },
+          "source_scope": "Wikipedia main-namespace edit-count sample, 14 global language editions, three-hour window capped at 500 per wiki; not geographic location",
+          "source_updated_at": null,
+          "source_url": "https://es.wikipedia.org/wiki/Special:RecentChanges",
+          "title": "Wikipedia es public article-edit activity (sampled)"
         }
       }
     },

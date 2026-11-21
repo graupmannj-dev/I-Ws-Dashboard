@@ -1,5 +1,71 @@
 {
   "roots": {
+    "f90e71f41f3053776b305975dd3d0f9879c45aac09ee4435478a1200dc0ac1f4": {
+      "information_root": "swpc:K05A:2063:20261119T010854Z",
+      "members": {
+        "beh:cdcea1eaa5f349859345b5c11cbd": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "swpc",
+          "direct_measurement": false,
+          "event_at": "2026-11-19T01:08:54Z",
+          "first_observed_at": "2026-11-19T01:08:54+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:cdcea1eaa5f349859345b5c11cbd",
+          "information_root": "swpc:K05A:2063:20261119T010854Z",
+          "origin": "behavioral_registry",
+          "provider": "swpc",
+          "published_at": "2026-11-19T01:08:54Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "issued_space_weather_bulletin",
+          "source_measurement": null,
+          "source_scope": "NOAA SWPC issued recent solar/geomagnetic warnings; explanatory context only",
+          "source_updated_at": null,
+          "source_url": "https://www.swpc.noaa.gov/products/alerts-watches-and-warnings",
+          "title": "ALERT: Geomagnetic K-index of 5"
+        }
+      }
+    },
+    "f91f5d60f604a054c0874863b89ddc0addd801167b8d496e99720bc90806b7bd": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-0795a0:110333-2026",
+      "members": {
+        "beh:c3669c6d870905f620009740d382": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-20T16:36:16+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:c3669c6d870905f620009740d382",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-0795a0:110333-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-20T16:36:16Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-19T02%3A27%3A41&updatedTo=2026-11-21T02%3A27%3A41",
+          "title": "V00426 Maintenance of BMS and Immediate Repairs to Chiller Plant · NHS Golden Jubilee"
+        }
+      }
+    },
     "f93859f31cab35448fc2e512787d17dc991c9d151d77da09579e004c5923a6f1": {
       "information_root": "niord:a4425666-f4fc-489b-8dcd-a4585efb516b:0:6:0",
       "members": {
@@ -87,6 +153,119 @@
           "source_updated_at": "2026-11-12T00:21:52Z",
           "source_url": "https://niord.dma.dk/#/message/1331ad04-38eb-4c80-b13d-c78c221c5c69",
           "title": "Denmark. Skagerrak. EK R 48 Tranum S. Firing exercises. Warning."
+        }
+      }
+    },
+    "f9a561d0ab1199b7e40a868acae343743d17c1403af9babefbd3cb7f77754e6f": {
+      "information_root": "usace:214032",
+      "members": {
+        "beh:b6cc852c6bbed08596fd4327ab1b": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "issued_waterway_notice_not_verified_disruption",
+          "collection_mode": "usace",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-05-27T14:05:53+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:b6cc852c6bbed08596fd4327ab1b",
+          "information_root": "usace:214032",
+          "origin": "behavioral_registry",
+          "provider": "usace",
+          "published_at": "2026-05-27T14:05:53Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_navigation_notice",
+          "source_family": "waterway_restriction",
+          "source_kind": "official_waterway_navigation_notice",
+          "source_measurement": null,
+          "source_scope": "USACE NTNI active notices for sampled districts MVP/MVS/SWG; up to 110 total",
+          "source_updated_at": null,
+          "source_url": "https://ndc.ops.usace.army.mil/ords/ntni/print_nav_notice?in_nav_notice_number=214032&in_title_formatting=UB",
+          "title": "NTNI notice 214032 · POOL_03_UPPER_MISSISSIPPI"
+        }
+      }
+    },
+    "f9ba28c5cefdee11e9de9d8311e6f36b49e608e5377e13ceab93710fe9da641a": {
+      "information_root": "cbp_wait:cbp_wait:535502:2026-11-20:20:23:04",
+      "members": {
+        "beh:135d8637afbd5aaaa72d723995d1": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-21T02:31:05+00:00",
+          "geography_key": "us-border-port:535502",
+          "geography_label": "Brownsville",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:135d8637afbd5aaaa72d723995d1",
+          "information_root": "cbp_wait:cbp_wait:535502:2026-11-20:20:23:04",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "delay",
+            "lanes_open": 1,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "At 8:00 pm CST",
+            "reported_local_date": "11/20/2026",
+            "reported_local_time": "20:23:04",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 15
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Brownsville / Veterans International"
+        }
+      }
+    },
+    "f9d46cc188aee7b81fbfe07e74a30b34e72a4b0ef6595fdc336daca2a36d226f": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-06bb54:110315-2026",
+      "members": {
+        "beh:6debc928ba06898f635fefa059d1": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-20T16:14:34+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:6debc928ba06898f635fefa059d1",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-06bb54:110315-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-20T16:14:34Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-19T02%3A27%3A41&updatedTo=2026-11-21T02%3A27%3A41",
+          "title": "Carbine Magnifier · Civil Nuclear Police Authority (CNPA) / Civil Nuclear Consta"
         }
       }
     }

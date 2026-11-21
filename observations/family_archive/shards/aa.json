@@ -60,6 +60,44 @@
         }
       }
     },
+    "aa714e67e05ea7419a35788d6078d9d855f75e714ee686a3234268135ab89e7f": {
+      "information_root": "usgs:us6000ucfm",
+      "members": {
+        "beh:5811b81eb173aa1ac26b98a50af8": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "usgs",
+          "direct_measurement": true,
+          "event_at": "2026-11-21T00:09:19Z",
+          "first_observed_at": "2026-11-21T00:09:19+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "source_supplied_point_only",
+          "id": "beh:5811b81eb173aa1ac26b98a50af8",
+          "information_root": "usgs:us6000ucfm",
+          "origin": "behavioral_registry",
+          "provider": "usgs",
+          "published_at": "2026-11-21T02:26:27Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "measured_earthquake_context",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "name": "earthquake_magnitude",
+            "unit": "reported_magnitude",
+            "value": 6.7
+          },
+          "source_scope": "USGS M4.5+ earthquakes worldwide, rolling past day; source thresholds apply",
+          "source_updated_at": null,
+          "source_url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000ucfm",
+          "title": "M 6.7 - 9 km NE of Carhuamayo, Peru"
+        }
+      }
+    },
     "aa87cec24c6e355b164ca881a8dc5e241c68b5f086b26996db3c4ab965d76706": {
       "information_root": "faa:6/8989:0:0",
       "members": {
@@ -117,6 +155,39 @@
           "source_updated_at": "2026-11-16T09:21:52Z",
           "source_url": "https://niord.dma.dk/#/message/0d46c069-0c0b-4cd6-80cb-4e07aeaab638",
           "title": "Denmark. Skagerrak. EK R 48 Tranum S. Firing exercises. Warning."
+        }
+      }
+    },
+    "aafc1d09b8cb39c6ba0e109f1937a786a7a905b08867195c53dd959da134d027": {
+      "information_root": "nws:1a22a2538a48247cdd39afd5",
+      "members": {
+        "beh:3875222e824cedb869dc3665e70e": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "nws",
+          "direct_measurement": false,
+          "event_at": "2026-11-21T01:48:00Z",
+          "first_observed_at": "2026-11-21T01:48:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:3875222e824cedb869dc3665e70e",
+          "information_root": "nws:1a22a2538a48247cdd39afd5",
+          "origin": "behavioral_registry",
+          "provider": "nws",
+          "published_at": "2026-11-21T01:48:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "official_weather_alert_context",
+          "source_measurement": null,
+          "source_scope": "Active NWS marine alerts; severity Severe",
+          "source_updated_at": null,
+          "source_url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.2c5ecb8336c60b4a35d6f2398eabe3c059199f10.001.1",
+          "title": "Flood Warning - Lake, FL; Volusia, FL"
         }
       }
     }

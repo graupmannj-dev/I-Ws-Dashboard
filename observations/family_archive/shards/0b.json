@@ -1,5 +1,38 @@
 {
   "roots": {
+    "0b09b6c78cdb45fd55a4e0e5e0d178ccfbbec43ff59ef5965ba8fc8c98e3f0b8": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c0b3:110303-2026",
+      "members": {
+        "beh:f8b804e4d7c78cb561650dca6e10": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-20T15:59:25+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:f8b804e4d7c78cb561650dca6e10",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c0b3:110303-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-20T15:59:25Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-19T02%3A27%3A41&updatedTo=2026-11-21T02%3A27%3A41",
+          "title": "Laundry Services · The Police and Crime Commissioner for Derbyshire"
+        }
+      }
+    },
     "0b324ff3cd47f424588781c555bff9b2cdf017f3615bf3a00cdc77105afba25f": {
       "information_root": "official:f51332b0fbb2c93355c0",
       "members": {
@@ -57,6 +90,39 @@
           "source_updated_at": null,
           "source_url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.wsm.html",
           "title": "Samoa - Level 1: Exercise Normal Precautions"
+        }
+      }
+    },
+    "0bf91b25e83d1e7c459d0f55d8f5a6f68fac79e1767e87604484234c8360284c": {
+      "information_root": "nws:ad8f95a47bfc5eb1abd7f7a4",
+      "members": {
+        "beh:41c9a53b37dabcbd83ab8f487314": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "nws",
+          "direct_measurement": false,
+          "event_at": "2026-11-20T17:37:00Z",
+          "first_observed_at": "2026-11-20T17:37:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:41c9a53b37dabcbd83ab8f487314",
+          "information_root": "nws:ad8f95a47bfc5eb1abd7f7a4",
+          "origin": "behavioral_registry",
+          "provider": "nws",
+          "published_at": "2026-11-20T17:37:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "official_weather_alert_context",
+          "source_measurement": null,
+          "source_scope": "Active NWS marine alerts; severity Severe",
+          "source_updated_at": null,
+          "source_url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.56c3d9cd681b61ce5e4fcac2a6acfb56593cabbe.001.3",
+          "title": "Coastal Flood Warning - Coastal Flagler"
         }
       }
     }

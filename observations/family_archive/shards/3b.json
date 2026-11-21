@@ -30,6 +30,91 @@
         }
       }
     },
+    "3b2d2193d28d083e60b7f73f845b3ef7661bc787d1d0d310bb11c481be556081": {
+      "information_root": "inmet_br:inmet_br:229f7f475762ba299abf7235d654",
+      "members": {
+        "beh:daca6cf96f5a489ccbd5ffe137fa": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "inmet_br",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-19T08:50:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:daca6cf96f5a489ccbd5ffe137fa",
+          "information_root": "inmet_br:inmet_br:229f7f475762ba299abf7235d654",
+          "origin": "behavioral_registry",
+          "provider": "inmet_br",
+          "published_at": "2026-11-19T08:50:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Brazil INMET",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Brazil INMET official severe-weather RSS notices; provider-listed bounded sample",
+          "source_updated_at": null,
+          "source_url": "https://apiprevmet3.inmet.gov.br/avisos/rss/56452",
+          "title": "Aviso de Tempestade. Severidade Grau: Perigo"
+        }
+      }
+    },
+    "3b30933cf857ecfcc6cf7f706af1a5e0c7c889e4c5db3bd1e8a80b366a988e64": {
+      "information_root": "ris_bgp:ris_bgp:AS5713:20261120T23",
+      "members": {
+        "beh:dffa37f68fd2d9c6a333af4b506f": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "public_routing_updates_not_country_outage",
+          "collection_mode": "ris_bgp",
+          "direct_measurement": true,
+          "event_at": null,
+          "first_observed_at": "2026-11-21T02:31:05+00:00",
+          "geography_key": "asn:5713",
+          "geography_label": "AS5713",
+          "geography_precision": "routing_target_not_country_incident",
+          "id": "beh:dffa37f68fd2d9c6a333af4b506f",
+          "information_root": "ris_bgp:ris_bgp:AS5713:20261120T23",
+          "origin": "behavioral_registry",
+          "provider": "ris_bgp",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "routing_collector_sampled_asn_updates",
+          "source_family": "internet_routing",
+          "source_kind": "sampled_asn_bgp_route_updates_not_network_outage",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "collector_peers_are_not_geo_deduplicated": true,
+            "country_impact_not_established": true,
+            "name": "sampled_6h_bgp_announcements",
+            "registered_network_country_hint": "ZA",
+            "returned_sampling_buckets": 6,
+            "source_window_end": "2026-11-20T23:00:00Z",
+            "target_asn": "AS5713",
+            "unit": "announcements",
+            "value": 6551,
+            "window_hours_requested": 6,
+            "withdrawals_unavailable_for_asn": true
+          },
+          "source_scope": "RIPE RIS public route-announcement update samples on six non-Western operated networks; ASNs not country-wide outage detection",
+          "source_updated_at": null,
+          "source_url": "https://stat.ripe.net/data/bgp-update-activity/data.json?resource=AS5713&num_hours=6&max_samples=24&hide_empty_samples=false",
+          "title": "RIPE RIS sampled BGP announcements: AS5713"
+        }
+      }
+    },
     "3b4d7f7460073e3e9818fff88956b79c60636d6ee36b4af51d5e842e58fa0c0d": {
       "information_root": "commercial:780dd3164bdcfc9e06b0",
       "members": {
@@ -57,6 +142,52 @@
           "source_updated_at": null,
           "source_url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOWEY0bXdDa3gtNzA0U1k4RWJYajZZUlRkYzl4SUdmR0Nrb1hfN2FPeDEwajExdjgtN3luWE8wQlJUMEJVVmxuSklOQ19NTlZBVThfdF9XSlJuRkd5YzNrRFd2Y1BtMVIwV05mWXRMS2QyRE1LZXQ1Tlc2SHZybkdINk9wSk9UTkhncXJqejhHMmZfc1ZsT1RKV3dVcHJqenp2WEE?oc=5",
           "title": "Airline suspends all flights after 17 years as it files for insolvency - Swindon Advertiser"
+        }
+      }
+    },
+    "3b8e55aa9abb5a4aeb1f798675fa6236bbae5cf83b5fc18e6d07ab97f150d4dc": {
+      "information_root": "sg_mpa:sg_mpa:2026-01:tug",
+      "members": {
+        "beh:071f5f59f863709c86ca3aa89a00": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "monthly_maritime_throughput_not_current_disruption",
+          "collection_mode": "sg_mpa",
+          "direct_measurement": true,
+          "event_at": null,
+          "first_observed_at": "2026-11-21T02:31:05+00:00",
+          "geography_key": "country:SG",
+          "geography_label": "Singapore",
+          "geography_precision": "national_port_scope_not_incident",
+          "id": "beh:071f5f59f863709c86ca3aa89a00",
+          "information_root": "sg_mpa:sg_mpa:2026-01:tug",
+          "origin": "behavioral_registry",
+          "provider": "sg_mpa",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_monthly_port_throughput_historical",
+          "source_family": "port_throughput",
+          "source_kind": "official_monthly_port_arrival_count_historical",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "denominator": "vessels_greater_than_75_gross_tons",
+            "most_recent_month_provisional": false,
+            "name": "monthly_vessel_arrivals_over_75_gt",
+            "not_live_tracking": true,
+            "period": "2026-01",
+            "period_months_lag": 10,
+            "reporting_cadence": "monthly",
+            "source_dataset": "d_8f264219109e61fffa87ac64dd5a9a65",
+            "unit": "vessels",
+            "value": 927,
+            "vessel_type": "Tug"
+          },
+          "source_scope": "Maritime & Port Authority of Singapore monthly arrivals >75 GT by vessel type; selected latest months, publication lag, Singapore-only, not live AIS",
+          "source_updated_at": null,
+          "source_url": "https://data.gov.sg/datasets/d_8f264219109e61fffa87ac64dd5a9a65/view",
+          "title": "Singapore MPA 2026-01 Tug vessel arrivals (>75 GT)"
         }
       }
     },

@@ -1,0 +1,61 @@
+{
+  "ambiguous_pair_candidates": [],
+  "approved_corroborations": 0,
+  "candidate_common_event_pairs": [
+    {
+      "epicenter_distance_km": 12.1,
+      "origin_time_difference_seconds": 3,
+      "source_ids": [
+        "usgs:us6000uc96",
+        "bmkg_quake:b12f57a93e1c4d4e6dda7dceb988"
+      ],
+      "source_independence_not_event_independence": true,
+      "source_magnitude_difference": 0.1,
+      "source_modes": [
+        "usgs",
+        "bmkg_quake"
+      ],
+      "source_urls": [
+        "https://earthquake.usgs.gov/earthquakes/eventpage/us6000uc96",
+        "https://data.bmkg.go.id/DataMKG/TEWS/gempaterkini.json"
+      ],
+      "status": "possible_same_earthquake_unreviewed"
+    }
+  ],
+  "checked_recent_event_counts": {
+    "bmkg_quake": 4,
+    "usgs": 15
+  },
+  "comparison_available": true,
+  "generated_at": "2026-11-21T02:31:05.644667Z",
+  "independent_physical_event_count_estimated": null,
+  "interpretation": "Independent publishing institutions may measure the same physical earthquake. Candidate links are NOT reviewed event identities, military indicators, or extra physical-event counts.",
+  "mode": "public_independent_origin_physical_event_candidate_audit",
+  "pairs_truncated": false,
+  "publisher_relay_rules": [
+    {
+      "distribution": "WMO CAP Alert Hub",
+      "independent_new_observer": false,
+      "mode": "imd_in",
+      "original_issuer": "India Meteorological Department"
+    },
+    {
+      "distribution": "WMO CAP Alert Hub",
+      "independent_new_observer": false,
+      "mode": "saws_za",
+      "original_issuer": "South African Weather Service"
+    }
+  ],
+  "schema": "cairn.source-dependency-audit.v1",
+  "source_health": {
+    "bmkg_quake": {
+      "reason": null,
+      "usable": true
+    },
+    "usgs": {
+      "reason": null,
+      "usable": true
+    }
+  },
+  "warning_approved": false
+}

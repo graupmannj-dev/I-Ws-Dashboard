@@ -30,6 +30,53 @@
         }
       }
     },
+    "863329cc2ce982b3a751a141ddb677b2d4b6cf7b793999977c178c39a8becda8": {
+      "information_root": "cbp_wait:cbp_wait:240201:2026-11-20:19:23:04",
+      "members": {
+        "beh:601dacc92668020535f4841d2fb2": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-21T02:31:05+00:00",
+          "geography_key": "us-border-port:240201",
+          "geography_label": "El Paso",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:601dacc92668020535f4841d2fb2",
+          "information_root": "cbp_wait:cbp_wait:240201:2026-11-20:19:23:04",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Lanes Closed",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/20/2026",
+            "reported_local_time": "19:23:04",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — El Paso / Bridge of the Americas (BOTA)"
+        }
+      }
+    },
     "8633a2dfcbe5df549fb6392da887a6570260ec0ce16dc68eb7aa97f8cf5bf9d9": {
       "information_root": "niord:1331ad04-38eb-4c80-b13d-c78c221c5c69:0:4:0",
       "members": {
@@ -90,6 +137,39 @@
         }
       }
     },
+    "8655dc63b563231f366ff9bca04b1ef39805a0ab7224866e92cc5e6d38bceea1": {
+      "information_root": "eonet:EONET_26571",
+      "members": {
+        "beh:258d255b57a8db278c836048cf2b": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "eonet",
+          "direct_measurement": false,
+          "event_at": "2026-11-18T09:18:00Z",
+          "first_observed_at": "2026-11-18T09:18:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:258d255b57a8db278c836048cf2b",
+          "information_root": "eonet:EONET_26571",
+          "origin": "behavioral_registry",
+          "provider": "eonet",
+          "published_at": "2026-11-18T09:18:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "cataloged_natural_hazard_context",
+          "source_measurement": null,
+          "source_scope": "NASA EONET open catalog, category Wildfires",
+          "source_updated_at": null,
+          "source_url": "https://eonet.gsfc.nasa.gov/api/v3/events/EONET_26571",
+          "title": "Prescribed Fire OAK Compartment 29 RX, Bibb, Alabama"
+        }
+      }
+    },
     "86a55bc1af202c3ee87f7b73c50a95d48fbba61fceb9c3ff11f31a4cf82637de": {
       "information_root": "niord:d6579d57-9e90-4738-82a3-05d694d83563:2:0:0",
       "members": {
@@ -147,6 +227,39 @@
           "source_updated_at": null,
           "source_url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.atg.html",
           "title": "Antigua and Barbuda - Level 1: Exercise Normal Precautions"
+        }
+      }
+    },
+    "86fcd8f25e76a9a774e7b12850b2594f7ae3c254f6625b550dfb9dcbc545c53d": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c0b8:110311-2026",
+      "members": {
+        "beh:ea3dc22d680f1c5e8c20a106f802": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-20T16:07:09+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:ea3dc22d680f1c5e8c20a106f802",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c0b8:110311-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-20T16:07:09Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-19T02%3A27%3A41&updatedTo=2026-11-21T02%3A27%3A41",
+          "title": "Digital Specialist Resourcing and Outcomes · Ministry of Housing, Communities & Local Government"
         }
       }
     }

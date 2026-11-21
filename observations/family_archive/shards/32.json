@@ -1,5 +1,38 @@
 {
   "roots": {
+    "32623e91f9715b620bdf4cb23096c3f99c8cdd49e6722ba0f7e3eedaf591a272": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c0cf:110350-2026",
+      "members": {
+        "beh:bd23049dd43afc8585ff3a455ef7": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-20T17:21:04+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:bd23049dd43afc8585ff3a455ef7",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c0cf:110350-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-20T17:21:04Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-19T02%3A27%3A41&updatedTo=2026-11-21T02%3A27%3A41",
+          "title": "SOL NHS Health Checks and Long-Acting Reversible Contraception Services (Primary Care settings) 2027 · Solihull Metropolitan Borough Council"
+        }
+      }
+    },
     "328fb5ead9c8cf10e86a241a289bdf19a1233d81accc4fc0cdefc7797cefdd29": {
       "information_root": "niord:9e345aa9-0c3b-40a4-b93d-0509beaf3267:0:0:0",
       "members": {
@@ -27,6 +60,85 @@
           "source_updated_at": "2026-11-18T00:21:51Z",
           "source_url": "https://niord.dma.dk/#/message/9e345aa9-0c3b-40a4-b93d-0509beaf3267",
           "title": "Denmark. The Baltic Sea. EK D 396 Hullebaek. Firing exercises. Warning."
+        }
+      }
+    },
+    "3299b90f995dfefca412f2769cb9a3707151d88b7147975e266dccb39ee03ae8": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-06e899:110337-2026",
+      "members": {
+        "beh:0aa95d6bcf56c4c0c6cd92e3568f": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-20T16:45:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:0aa95d6bcf56c4c0c6cd92e3568f",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-06e899:110337-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-20T16:45:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-19T02%3A27%3A41&updatedTo=2026-11-21T02%3A27%3A41",
+          "title": "OPA/T865 Gibraltar - Kings Lines Strategic Fuel Hub - EPC. · Oil and Pipelines Agency"
+        }
+      }
+    },
+    "32d81d4719285cd1fb82bbb4e5f8a0a8c3317700a66013867ad3803c7eed26a0": {
+      "information_root": "sg_mpa:sg_mpa:2026-06:miscellaneous",
+      "members": {
+        "beh:1c145d4a2f34ef60ad596add7ac2": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "monthly_maritime_throughput_not_current_disruption",
+          "collection_mode": "sg_mpa",
+          "direct_measurement": true,
+          "event_at": null,
+          "first_observed_at": "2026-11-21T02:31:05+00:00",
+          "geography_key": "country:SG",
+          "geography_label": "Singapore",
+          "geography_precision": "national_port_scope_not_incident",
+          "id": "beh:1c145d4a2f34ef60ad596add7ac2",
+          "information_root": "sg_mpa:sg_mpa:2026-06:miscellaneous",
+          "origin": "behavioral_registry",
+          "provider": "sg_mpa",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_monthly_port_throughput_historical",
+          "source_family": "port_throughput",
+          "source_kind": "official_monthly_port_arrival_count_historical",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "denominator": "vessels_greater_than_75_gross_tons",
+            "most_recent_month_provisional": false,
+            "name": "monthly_vessel_arrivals_over_75_gt",
+            "not_live_tracking": true,
+            "period": "2026-06",
+            "period_months_lag": 5,
+            "reporting_cadence": "monthly",
+            "source_dataset": "d_8f264219109e61fffa87ac64dd5a9a65",
+            "unit": "vessels",
+            "value": 866,
+            "vessel_type": "Miscellaneous"
+          },
+          "source_scope": "Maritime & Port Authority of Singapore monthly arrivals >75 GT by vessel type; selected latest months, publication lag, Singapore-only, not live AIS",
+          "source_updated_at": null,
+          "source_url": "https://data.gov.sg/datasets/d_8f264219109e61fffa87ac64dd5a9a65/view",
+          "title": "Singapore MPA 2026-06 Miscellaneous vessel arrivals (>75 GT)"
         }
       }
     }

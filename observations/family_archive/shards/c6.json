@@ -90,6 +90,52 @@
         }
       }
     },
+    "c66418877125fb1b3803b59440103fe75f614a18aaa45fe2fa9d94ad1b0cf69a": {
+      "information_root": "sg_mpa:sg_mpa:2026-05:tug",
+      "members": {
+        "beh:416bf445900b6e52ff30c2fde0b1": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "monthly_maritime_throughput_not_current_disruption",
+          "collection_mode": "sg_mpa",
+          "direct_measurement": true,
+          "event_at": null,
+          "first_observed_at": "2026-11-21T02:31:05+00:00",
+          "geography_key": "country:SG",
+          "geography_label": "Singapore",
+          "geography_precision": "national_port_scope_not_incident",
+          "id": "beh:416bf445900b6e52ff30c2fde0b1",
+          "information_root": "sg_mpa:sg_mpa:2026-05:tug",
+          "origin": "behavioral_registry",
+          "provider": "sg_mpa",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_monthly_port_throughput_historical",
+          "source_family": "port_throughput",
+          "source_kind": "official_monthly_port_arrival_count_historical",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "denominator": "vessels_greater_than_75_gross_tons",
+            "most_recent_month_provisional": false,
+            "name": "monthly_vessel_arrivals_over_75_gt",
+            "not_live_tracking": true,
+            "period": "2026-05",
+            "period_months_lag": 6,
+            "reporting_cadence": "monthly",
+            "source_dataset": "d_8f264219109e61fffa87ac64dd5a9a65",
+            "unit": "vessels",
+            "value": 925,
+            "vessel_type": "Tug"
+          },
+          "source_scope": "Maritime & Port Authority of Singapore monthly arrivals >75 GT by vessel type; selected latest months, publication lag, Singapore-only, not live AIS",
+          "source_updated_at": null,
+          "source_url": "https://data.gov.sg/datasets/d_8f264219109e61fffa87ac64dd5a9a65/view",
+          "title": "Singapore MPA 2026-05 Tug vessel arrivals (>75 GT)"
+        }
+      }
+    },
     "c692ad3fff3431f446474fec4301875d473a72912c41fb7d913884aac9937757": {
       "information_root": "niord:34ca42b8-dbe4-42c5-87ac-5b8ed6d25d5c:3:0:0",
       "members": {

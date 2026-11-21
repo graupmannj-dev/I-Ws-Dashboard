@@ -146,6 +146,39 @@
         }
       }
     },
+    "b95c0d397f95849930a4a307b113f0119434b619180b0a48285797220d13a26c": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c0cb:110344-2026",
+      "members": {
+        "beh:634e72eb63cd76f54db8e9baafb7": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-20T17:06:19+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:634e72eb63cd76f54db8e9baafb7",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c0cb:110344-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-20T17:06:19Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-19T02%3A27%3A41&updatedTo=2026-11-21T02%3A27%3A41",
+          "title": "Glasshouse Fields Estate – External Fire Safety Improvement Scheme · Newlon Housing Trust"
+        }
+      }
+    },
     "b975276d93b2bf88fc3f1e425a5e325b463d83d29ce7507e036dce5912b8a5aa": {
       "information_root": "official:f4371b22a8ed396fc736",
       "members": {
@@ -173,6 +206,45 @@
           "source_updated_at": null,
           "source_url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.maf.html",
           "title": "French Saint Martin - Level 1: Exercise Normal Precautions"
+        }
+      }
+    },
+    "b97bf364151ca256f12dd108a3043cd3d879f1402bee1243e2691c827bc6158a": {
+      "information_root": "inmet_br:inmet_br:3e6c6408cd33dacf1af3221033a1",
+      "members": {
+        "beh:26519158bd251b4e702893330ce8": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "inmet_br",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-14T08:37:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:26519158bd251b4e702893330ce8",
+          "information_root": "inmet_br:inmet_br:3e6c6408cd33dacf1af3221033a1",
+          "origin": "behavioral_registry",
+          "provider": "inmet_br",
+          "published_at": "2026-11-14T08:37:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Brazil INMET",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Brazil INMET official severe-weather RSS notices; provider-listed bounded sample",
+          "source_updated_at": null,
+          "source_url": "https://apiprevmet3.inmet.gov.br/avisos/rss/56404",
+          "title": "Aviso de Tempestade. Severidade Grau: Perigo Potencial"
         }
       }
     }

@@ -1,5 +1,38 @@
 {
   "roots": {
+    "a05efe77b8b78b42ebe06ef68d87ba757544010956ebf4427ecf6a69b11f9a9d": {
+      "information_root": "usace:214845",
+      "members": {
+        "beh:30fc8040b4c7384ca1a9dc28534c": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "issued_waterway_notice_not_verified_disruption",
+          "collection_mode": "usace",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-08-06T14:28:43+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:30fc8040b4c7384ca1a9dc28534c",
+          "information_root": "usace:214845",
+          "origin": "behavioral_registry",
+          "provider": "usace",
+          "published_at": "2026-08-06T14:28:43Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_navigation_notice",
+          "source_family": "waterway_restriction",
+          "source_kind": "official_waterway_navigation_notice",
+          "source_measurement": null,
+          "source_scope": "USACE NTNI active notices for sampled districts MVP/MVS/SWG; up to 110 total",
+          "source_updated_at": null,
+          "source_url": "https://ndc.ops.usace.army.mil/ords/ntni/print_nav_notice?in_nav_notice_number=214845&in_title_formatting=UB",
+          "title": "NTNI notice 214845 · POOL_09_UPPER_MISSISSIPPI"
+        }
+      }
+    },
     "a07337e435aae0ad5ade2c2e404eb4924a6e6fdd0ba0e87c834b2d8fada07e57": {
       "information_root": "niord:f1598c0a-45e0-4231-a9ef-2830214be50b:0:2:0",
       "members": {
@@ -117,6 +150,52 @@
           "source_updated_at": "2026-11-20T13:21:55Z",
           "source_url": "https://niord.dma.dk/#/message/d8f7a59c-bda3-4691-aa45-338949965a54",
           "title": "Denmark. The North Sea. EK R 33 Vejers. Firing exercises. Warning."
+        }
+      }
+    },
+    "a0fc4212af5e1681485f807f35f29fa89e2e6b86594785e201c322354c0aaab3": {
+      "information_root": "sg_mpa:sg_mpa:2026-07:container",
+      "members": {
+        "beh:09c1002766d4693290c49ff75798": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "monthly_maritime_throughput_not_current_disruption",
+          "collection_mode": "sg_mpa",
+          "direct_measurement": true,
+          "event_at": null,
+          "first_observed_at": "2026-11-21T02:31:05+00:00",
+          "geography_key": "country:SG",
+          "geography_label": "Singapore",
+          "geography_precision": "national_port_scope_not_incident",
+          "id": "beh:09c1002766d4693290c49ff75798",
+          "information_root": "sg_mpa:sg_mpa:2026-07:container",
+          "origin": "behavioral_registry",
+          "provider": "sg_mpa",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_monthly_port_throughput_historical",
+          "source_family": "port_throughput",
+          "source_kind": "official_monthly_port_arrival_count_historical",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "denominator": "vessels_greater_than_75_gross_tons",
+            "most_recent_month_provisional": false,
+            "name": "monthly_vessel_arrivals_over_75_gt",
+            "not_live_tracking": true,
+            "period": "2026-07",
+            "period_months_lag": 4,
+            "reporting_cadence": "monthly",
+            "source_dataset": "d_8f264219109e61fffa87ac64dd5a9a65",
+            "unit": "vessels",
+            "value": 1332,
+            "vessel_type": "Container"
+          },
+          "source_scope": "Maritime & Port Authority of Singapore monthly arrivals >75 GT by vessel type; selected latest months, publication lag, Singapore-only, not live AIS",
+          "source_updated_at": null,
+          "source_url": "https://data.gov.sg/datasets/d_8f264219109e61fffa87ac64dd5a9a65/view",
+          "title": "Singapore MPA 2026-07 Container vessel arrivals (>75 GT)"
         }
       }
     }

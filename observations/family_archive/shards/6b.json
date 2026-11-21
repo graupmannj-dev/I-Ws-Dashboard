@@ -1,5 +1,38 @@
 {
   "roots": {
+    "6b11d93ef8487aac9fca8f810ef33d306a3f5cbd38b90cba5f6b66794e086360": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-0510f8:110372-2026",
+      "members": {
+        "beh:cb166368285de66dc390982f0aad": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-20T23:31:40+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:cb166368285de66dc390982f0aad",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-0510f8:110372-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-20T23:31:40Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-19T02%3A27%3A41&updatedTo=2026-11-21T02%3A27%3A41",
+          "title": "Space Technology Solutions · Crown Commercial Service"
+        }
+      }
+    },
     "6b13a8498f3d0981410f524794fe922448218258684dd04c0fb32bed4741ba4c": {
       "information_root": "faa:6/7890:0:0",
       "members": {
@@ -147,6 +180,39 @@
           "source_updated_at": "2026-11-13T00:21:51Z",
           "source_url": "https://niord.dma.dk/#/message/81a3ee1e-3be5-4107-ba85-9b4f5eb65d25",
           "title": "Denmark. Kattegat. EK R 18 Jaegerspris. Firing exercises. Warning."
+        }
+      }
+    },
+    "6baec3b52b252863ded2a9c0064a7c0cd451a4f3fd37d9d2d62ad3c9b2f44415": {
+      "information_root": "nws:81cae7e9cd8c81afd5374444",
+      "members": {
+        "beh:69e0df0e98dc7f255678a0ad9b33": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "nws",
+          "direct_measurement": false,
+          "event_at": "2026-11-20T16:36:00Z",
+          "first_observed_at": "2026-11-20T16:36:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:69e0df0e98dc7f255678a0ad9b33",
+          "information_root": "nws:81cae7e9cd8c81afd5374444",
+          "origin": "behavioral_registry",
+          "provider": "nws",
+          "published_at": "2026-11-20T16:36:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "official_weather_alert_context",
+          "source_measurement": null,
+          "source_scope": "Active NWS marine alerts; severity Severe",
+          "source_updated_at": null,
+          "source_url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.f368520d1de3d88bd754cc4012f90907a2a21ee2.002.1",
+          "title": "Flood Watch - Inland Flagler; Coastal Duval; Eastern Clay; Eastern Putnam; Coastal Flagler; Trout River; Western C"
         }
       }
     }

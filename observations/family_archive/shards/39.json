@@ -60,6 +60,120 @@
         }
       }
     },
+    "392f7284bbc45a29aad6e428ce8092c516ade3a3ec90fd9d5a862769dff9ae83": {
+      "information_root": "wiki_edits:wiki_edits:pt:20261121T02",
+      "members": {
+        "beh:32041165e369555715045f7cd7eb": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "wiki_edits",
+          "direct_measurement": false,
+          "event_at": "2026-11-21T02:27:35Z",
+          "first_observed_at": "2026-11-21T02:27:35+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:32041165e369555715045f7cd7eb",
+          "information_root": "wiki_edits:wiki_edits:pt:20261121T02",
+          "origin": "behavioral_registry",
+          "provider": "wiki_edits",
+          "published_at": "2026-11-21T02:27:35Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "public_encyclopedia_edit_aggregate",
+          "source_family": "public_attention",
+          "source_kind": "bounded_public_edit_count_not_event_verification",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "distinct_articles_in_sample": 415,
+            "maximum_returned_edits": 500,
+            "most_edited_article_counts": [
+              {
+                "count": 7,
+                "title": "Marsha Blackburn"
+              },
+              {
+                "count": 6,
+                "title": "Country Music Association Awards 2026"
+              },
+              {
+                "count": 6,
+                "title": "Elizabeth Holmes"
+              },
+              {
+                "count": 6,
+                "title": "Medicina tradicional andina"
+              },
+              {
+                "count": 5,
+                "title": "Falando Sério"
+              },
+              {
+                "count": 5,
+                "title": "Vítor Pereira"
+              },
+              {
+                "count": 4,
+                "title": "Eric Barlow"
+              },
+              {
+                "count": 4,
+                "title": "Mallqui"
+              }
+            ],
+            "name": "sampled_edits_last_three_hours",
+            "sample_cap_reached": true,
+            "unit": "edits",
+            "value": 500
+          },
+          "source_scope": "Wikipedia main-namespace edit-count sample, 14 global language editions, three-hour window capped at 500 per wiki; not geographic location",
+          "source_updated_at": null,
+          "source_url": "https://pt.wikipedia.org/wiki/Special:RecentChanges",
+          "title": "Wikipedia pt public article-edit activity (sampled)"
+        }
+      }
+    },
+    "393192d323826e5a5ed4f3751bcfa482cff9f004248e9605d7e81fe86a35d2b3": {
+      "information_root": "inmet_br:inmet_br:e68781a835801bbb849ecb9791af",
+      "members": {
+        "beh:ca40ed72d76e5880274746c99328": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "inmet_br",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-15T00:00:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:ca40ed72d76e5880274746c99328",
+          "information_root": "inmet_br:inmet_br:e68781a835801bbb849ecb9791af",
+          "origin": "behavioral_registry",
+          "provider": "inmet_br",
+          "published_at": "2026-11-15T00:00:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Brazil INMET",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Brazil INMET official severe-weather RSS notices; provider-listed bounded sample",
+          "source_updated_at": null,
+          "source_url": "https://apiprevmet3.inmet.gov.br/avisos/rss/56407",
+          "title": "Aviso de Tempestade. Severidade Grau: Perigo Potencial"
+        }
+      }
+    },
     "394b83c05c088a8a71210d73aff6cbb9ee01c62c9a19650a2ac83f93bafa5db8": {
       "information_root": "niord:f50f5f45-141b-4e6d-b05f-c91b00e96ce2:4:0:0",
       "members": {

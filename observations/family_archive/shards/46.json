@@ -30,6 +30,39 @@
         }
       }
     },
+    "462f8118065095e04862986ac3fcc506e02715a9bcbe5dc86ecc27b81dba96f0": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-06f50e:110362-2026",
+      "members": {
+        "beh:1fd02c7490fb4bd3a4f57dbb7530": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-20T18:06:56+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:1fd02c7490fb4bd3a4f57dbb7530",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-06f50e:110362-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-20T18:06:56Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-19T02%3A27%3A41&updatedTo=2026-11-21T02%3A27%3A41",
+          "title": "West Yorkshire Supply Chain Programme · West Yorkshire Combined Authority"
+        }
+      }
+    },
     "46352024f460de7b7f71880a9f252e5e6eb55b07d81e9152dbabd529235445a0": {
       "information_root": "niord:bd3a545a-8bee-49ce-a67b-c9169c54c6c0:1:0:0",
       "members": {
@@ -113,6 +146,53 @@
           "source_kind": "unreviewed_analyst_report",
           "source_url": "https://www.reuters.com/world/us/faa-issues-national-ground-stop-due-extraordinary-circumstance-reasons-safety-2026-11-13/",
           "title": "FAA nationwide departure ground stop following air traffic control communications failure"
+        }
+      }
+    },
+    "46af509288272b4c7ac632338c94c932ab646e9f42a7619016ffc501a338c441": {
+      "information_root": "cbp_wait:cbp_wait:L01901:2026-11-20:21:23:03",
+      "members": {
+        "beh:4254c1025fe15a82a75adde5494a": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-21T02:31:05+00:00",
+          "geography_key": "us-border-port:L01901",
+          "geography_label": "Madawaska",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:4254c1025fe15a82a75adde5494a",
+          "information_root": "cbp_wait:cbp_wait:L01901:2026-11-20:21:23:03",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "no delay",
+            "lanes_open": 1,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "At 7:00 pm EST",
+            "reported_local_date": "11/20/2026",
+            "reported_local_time": "21:23:03",
+            "source_declared_border": "Canadian Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 0
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Madawaska"
         }
       }
     }

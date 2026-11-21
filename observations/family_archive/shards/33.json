@@ -30,6 +30,52 @@
         }
       }
     },
+    "3314d27b9cd19e4ffac8273770720293a936babfd93283edce546a71870a1809": {
+      "information_root": "sg_mpa:sg_mpa:2026-04:freighter",
+      "members": {
+        "beh:6bb7989974ce5f494227cb023fad": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "monthly_maritime_throughput_not_current_disruption",
+          "collection_mode": "sg_mpa",
+          "direct_measurement": true,
+          "event_at": null,
+          "first_observed_at": "2026-11-21T02:31:05+00:00",
+          "geography_key": "country:SG",
+          "geography_label": "Singapore",
+          "geography_precision": "national_port_scope_not_incident",
+          "id": "beh:6bb7989974ce5f494227cb023fad",
+          "information_root": "sg_mpa:sg_mpa:2026-04:freighter",
+          "origin": "behavioral_registry",
+          "provider": "sg_mpa",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_monthly_port_throughput_historical",
+          "source_family": "port_throughput",
+          "source_kind": "official_monthly_port_arrival_count_historical",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "denominator": "vessels_greater_than_75_gross_tons",
+            "most_recent_month_provisional": false,
+            "name": "monthly_vessel_arrivals_over_75_gt",
+            "not_live_tracking": true,
+            "period": "2026-04",
+            "period_months_lag": 7,
+            "reporting_cadence": "monthly",
+            "source_dataset": "d_8f264219109e61fffa87ac64dd5a9a65",
+            "unit": "vessels",
+            "value": 482,
+            "vessel_type": "Freighter"
+          },
+          "source_scope": "Maritime & Port Authority of Singapore monthly arrivals >75 GT by vessel type; selected latest months, publication lag, Singapore-only, not live AIS",
+          "source_updated_at": null,
+          "source_url": "https://data.gov.sg/datasets/d_8f264219109e61fffa87ac64dd5a9a65/view",
+          "title": "Singapore MPA 2026-04 Freighter vessel arrivals (>75 GT)"
+        }
+      }
+    },
     "333df014c78ba47713e5aec9bb734cf421aaac687ffcd23684de99d95b5066a1": {
       "information_root": "niord:34ca42b8-dbe4-42c5-87ac-5b8ed6d25d5c:0:1:0",
       "members": {
@@ -87,6 +133,53 @@
           "source_updated_at": null,
           "source_url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPVF96dkhaXzR5dnpyV2ZWV1U5cmlvbUtnRW5XckZjenJNRy03UkNYNkZPdmozUzVRWkQ1bk5SaHA0alQ5TFNuOWtmWWZzZEM2cGczZW5jR0U3OGFtVDF1eFhpcHluWDF6ODJXM2tmMFRFM1J3YW81bkxCU2VaZnYtdnNKeFdRN2hPajl5SDdWNHA5UTg?oc=5",
           "title": "Lloyd’s Calls for Clearer War Risk Insurance Coverage and Pricing - Beinsure"
+        }
+      }
+    },
+    "335d21bb96d760c246d8d6a950e9081fc66ee899d78990558f99824ad8326a74": {
+      "information_root": "cbp_wait:cbp_wait:331001:2026-11-20:19:23:04",
+      "members": {
+        "beh:c0e9c20b7b09e6c1b3c191b8e64a": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-21T02:31:05+00:00",
+          "geography_key": "us-border-port:331001",
+          "geography_label": "Sweetgrass",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:c0e9c20b7b09e6c1b3c191b8e64a",
+          "information_root": "cbp_wait:cbp_wait:331001:2026-11-20:19:23:04",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "no delay",
+            "lanes_open": 1,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "At 7:00 pm MST",
+            "reported_local_date": "11/20/2026",
+            "reported_local_time": "19:23:04",
+            "source_declared_border": "Canadian Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 0
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Sweetgrass"
         }
       }
     },

@@ -1,5 +1,45 @@
 {
   "roots": {
+    "59058912052fbb69505480f73aa6a0424330830f47022ebc7ab7b772cc546dfd": {
+      "information_root": "bmkg_quake:bmkg_quake:1bcce79418d9701f05f8eb3925a0",
+      "members": {
+        "beh:eaa649bdfdf24b6d8f4c69d8fc41": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "bmkg_quake",
+          "direct_measurement": true,
+          "event_at": "2026-11-16T21:11:20Z",
+          "first_observed_at": "2026-11-21T02:31:05+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "source_supplied_earthquake_epicenter",
+          "id": "beh:eaa649bdfdf24b6d8f4c69d8fc41",
+          "information_root": "bmkg_quake:bmkg_quake:1bcce79418d9701f05f8eb3925a0",
+          "origin": "behavioral_registry",
+          "provider": "bmkg_quake",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_seismic_reporting_may_represent_same_usgs_event",
+          "source_family": "environmental_context",
+          "source_kind": "national_seismic_measurement_context",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "depth_km": 115.0,
+            "name": "earthquake_magnitude",
+            "possible_same_physical_event_as_usgs": true,
+            "unit": "source_reported_magnitude",
+            "value": 7.1
+          },
+          "source_scope": "Indonesia BMKG 15 latest magnitude-5+ earthquakes; not global; same physical events may appear in USGS",
+          "source_updated_at": null,
+          "source_url": "https://data.bmkg.go.id/DataMKG/TEWS/gempaterkini.json",
+          "title": "BMKG earthquake M7.1 · 130 km BaratDaya MALUKUTENGGARA"
+        }
+      }
+    },
     "59204c19590ea7e66123ee395bcc21b1cfbc9cb3ec3ceb0a637b6db81ac31507": {
       "information_root": "commercial:0eae51027869d54f891b",
       "members": {
@@ -87,6 +127,39 @@
           "source_updated_at": "2026-11-20T00:21:52Z",
           "source_url": "https://niord.dma.dk/#/message/69057d00-f2a2-402c-8b88-b8fb3a34b088",
           "title": "Denmark. Kattegat. EK R 18 Jaegerspris. Firing exercises. Warning."
+        }
+      }
+    },
+    "59dfdff3e86fcacfb371d4ed37d8c4a711ea0d18d454ab695566a433a3ba0189": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-06b83b:110329-2026",
+      "members": {
+        "beh:92ae4c62670d991ae38abad9daeb": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-20T16:33:11+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:92ae4c62670d991ae38abad9daeb",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-06b83b:110329-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-20T16:33:11Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-19T02%3A27%3A41&updatedTo=2026-11-21T02%3A27%3A41",
+          "title": "P1368 - Professional Services (all stages from survey through to completion of works on site) in relation to Multi Element Improvements to 4 No 'Grade B Listed Properties' at Joy S · Northern Ireland Housing Executive"
         }
       }
     }
