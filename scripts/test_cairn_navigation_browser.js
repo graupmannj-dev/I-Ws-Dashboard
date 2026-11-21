@@ -39,7 +39,9 @@ const origin="http://127.0.0.1:8765";
         assert.equal(await page.locator(".cairn-nav [aria-current='page']").count(),1);
         const geom=await page.locator(".cairn-nav").evaluate(e=>{
           const r=e.getBoundingClientRect();
-          return {x:r.x,y:r.y,width:r.width,height:r.height};
+          const h=e.closest(".cairn-topbar").getBoundingClientRect();
+          return {x:r.x,y:r.y,width:r.width,height:r.height,
+                  relativeX:r.x-h.x,relativeY:r.y-h.y,headerHeight:h.height};
         });
         positions.push(geom);
         assert.ok(geom.width>250,"Navigation too narrow");
@@ -63,10 +65,14 @@ const origin="http://127.0.0.1:8765";
         }
       }
       for(const geo of positions.slice(1)){
-        assert.ok(Math.abs(geo.x-positions[0].x)<=2,"Navigation x shifts between pages");
-        assert.ok(Math.abs(geo.y-positions[0].y)<=2,"Navigation y shifts between pages");
+        assert.ok(Math.abs(geo.relativeX-positions[0].relativeX)<=2,
+                  "Navigation x shifts relative to header: "+JSON.stringify(positions));
+        assert.ok(Math.abs(geo.relativeY-positions[0].relativeY)<=2,
+                  "Navigation y shifts relative to header: "+JSON.stringify(positions));
+        assert.ok(Math.abs(geo.headerHeight-positions[0].headerHeight)<=2,
+                  "Header heights differ: "+JSON.stringify(positions));
         assert.ok(Math.abs(geo.width-positions[0].width)<=2,
-                  "Navigation width shifts between pages");
+                  "Navigation width shifts: "+JSON.stringify(positions));
       }
       // Direct, bidirectional cross-page navigation from Sources to Hypotheses.
       await page.goto(origin+"/sources.html",{waitUntil:"domcontentloaded"});
