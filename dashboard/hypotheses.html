@@ -22,7 +22,7 @@
   <div class="hero">
     <div><p class="eyebrow">INVESTIGATORY WORKSPACE · NOT AN OPERATIONAL WARNING</p>
       <h1>Competing hypotheses, visible evidence</h1>
-      <p>Every source remains dated and attributable. Evidence direction is assigned only through explicit analyst reviews. A shared topic or source is not automatic corroboration.</p>
+      <p>Newly ingested evidence is screened automatically after collection-triggered publications. Possible signposts are machine-generated leads, not approved directional evidence. Analyst-reviewed judgments remain separate.</p>
     </div>
     <div class="summary" id="snapshotStatus" aria-live="polite">Loading hypothesis index…</div>
   </div>
@@ -34,7 +34,8 @@
         <label for="caseFilter">Evidence balance</label>
         <select id="caseFilter">
           <option value="all">All hypotheses</option>
-          <option value="reviewed">With reviewed direction</option>
+          <option value="reviewed">With analyst-reviewed direction</option>
+          <option value="machine">With new machine-screened leads</option>
           <option value="unassessed">Unassessed</option>
         </select>
         <p id="caseCount" class="muted" aria-live="polite">—</p>

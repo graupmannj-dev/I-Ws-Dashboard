@@ -20,6 +20,39 @@ function caseLabel(c) {
     b.direction==="leans_contradict" ? "Review balance: leans contradicting" :
     "Review balance: mixed";
 }
+
+const machineLabels = {possible_support:"Possible supporting signpost — unverified",
+  possible_counter:"Possible counter-indicator — unverified",
+  requires_interpretation:"Ambiguous / source reading required", context:"Context only"};
+function autoSection(c){
+  const a=c.automated_screen||{};
+  if(a.status!=="screened")
+    return '<section class="auto-review"><h3>Automated incoming-evidence screen</h3>'+
+      '<p class="muted">Current source snapshot unavailable. No machine review was completed; absence of a result is not negative evidence.</p></section>';
+  const candidates=Array.isArray(a.candidates)?a.candidates:[];
+  const links=candidates.map(f=>{
+    const u=safeUrl(f.source_url);
+    const name=escapeHtml(f.title||"Source observation");
+    return '<li><span class="auto-meta">'+escapeHtml(machineLabels[f.preliminary_direction]||"Preliminary context")+
+      ' · '+escapeHtml(f.match_basis||"unspecified association")+'</span>'+
+      (u?'<a href="'+escapeHtml(u)+'" target="_blank" rel="noopener noreferrer">'+name+'</a>':name)+
+      '<small>'+escapeHtml(f.provider||"Provider unknown")+' · First ingested '+
+      escapeHtml(f.first_observed_at||"unknown")+' · '+escapeHtml(f.source_health||"health unknown")+'</small>'+
+      '<p>'+escapeHtml(f.rationale||"No machine-readable discriminator")+'</p></li>';
+  }).join("");
+  return '<section class="auto-review"><h3>Automated incoming-evidence screen <span class="pill context">Machine preliminary · not analyst approved</span></h3>'+
+    '<p class="muted">Screened '+escapeHtml(a.screened_at||"unknown")+
+    ' · new-first-ingested lookback: '+escapeHtml(c.automated_window_hours||9)+' hours'+
+    ' · source snapshot: '+escapeHtml(c.automated_source_snapshot_at||"not recorded")+'</p>'+
+    '<p>'+escapeHtml(a.new_matching_records||0)+' new eligible source roots associated with this hypothesis'+
+    ' · '+escapeHtml(a.possible_support||0)+' possible supporting'+
+    ' · '+escapeHtml(a.possible_counter||0)+' possible counter'+
+    ' · '+escapeHtml(a.unavailable_source_matches||0)+' matches with unavailable source health.</p>'+
+    (candidates.length?'<ol class="auto-candidates">'+links+'</ol>':
+      '<p class="muted">No new eligible matching records in this window. This is NOT evidence against the hypothesis or evidence of adequate global coverage.</p>')+
+    (a.candidates_truncated?'<p class="muted">Additional candidates omitted from this bounded display.</p>':'')+
+    '<p class="muted">Text signposts are investigative leads, not validated events, independent corroboration, probabilities or approved warnings. The analyst-reviewed evidence balance below remains separate.</p></section>';
+}
 function pill(value,cls) {
   return '<span class="pill '+escapeHtml(cls||"")+'">'+escapeHtml(value)+'</span>';
 }
@@ -27,7 +60,8 @@ function listCases() {
   const query=$("caseSearch").value.trim().toLowerCase(),filter=$("caseFilter").value;
   const shown=rows.filter(c=>(filter==="all" ||
       (filter==="reviewed"&&c.balance.direction!=="not_assessed") ||
-      (filter==="unassessed"&&c.balance.direction==="not_assessed")) &&
+      (filter==="unassessed"&&c.balance.direction==="not_assessed") ||
+      (filter==="machine"&&(c.automated_screen?.new_matching_records||0)>0)) &&
     (!query||([c.title,c.hypothesis,c.standing_state,...c.families.map(f=>f.title)]
       .join(" ").toLowerCase().includes(query))));
   $("caseCount").textContent=shown.length+" of "+rows.length+" hypotheses";
@@ -39,7 +73,8 @@ function listCases() {
     const header=document.createElement("strong");header.textContent=c.title||c.id;
     const desc=document.createElement("span");desc.textContent=c.hypothesis||"Hypothesis not specified";
     const meta=document.createElement("small");
-    meta.textContent=(c.family_count||0)+" evidence families · "+caseLabel(c);
+    meta.textContent=(c.family_count||0)+" evidence families · "+caseLabel(c)+
+      (c.automated_screen?.status==="screened"?" · "+(c.automated_screen.new_matching_records||0)+" new machine-screened roots":"");
     b.append(header,desc,meta);b.addEventListener("click",()=>showCase(c.id));
     host.appendChild(b);
   }
@@ -91,7 +126,7 @@ function showCase(id){
   host.innerHTML='<p class="eyebrow">SOURCE-DATED HYPOTHESIS · '+escapeHtml(c.dossier_asof||"DATE UNKNOWN")+'</p>'+
     '<h2>'+escapeHtml(c.title||c.id)+'</h2>'+
     '<p class="scenario">'+escapeHtml(c.hypothesis||"Hypothesis unspecified")+'</p>'+
-    '<p>'+escapeHtml(c.overview||"No analysis on file")+'</p>'+
+    '<p>'+escapeHtml(c.overview||"No analysis on file")+'</p>'+autoSection(c)+
     '<section class="balance"><div class="balance-title"><h3>Direction of reviewed evidence</h3>'+
       pill(caseLabel(c),assessed?(score>0.2?"supports":score< -0.2?"contradicts":"context"):"not_assessed")+
       '</div><div class="balance-track" role="img" aria-label="'+
@@ -123,10 +158,13 @@ async function start(){
     const payload=await res.json();
     if(payload.schema!=="cairn.hypothesis-evidence.v1"||!Array.isArray(payload.hypotheses))
       throw Error("Unsupported hypothesis index");
-    rows=payload.hypotheses;
+    rows=payload.hypotheses.map(c=>({...c,
+      automated_window_hours:payload.automated_screen?.window_hours,
+      automated_source_snapshot_at:payload.automated_screen?.source_snapshot_at}));
     $("snapshotStatus").textContent=(payload.hypothesis_count||0)+" scenarios · "+
       (payload.reviewed_hypotheses||0)+" with explicit review · "+
-      (payload.generated_at||"Unknown build time");
+      (payload.generated_at||"Unknown build time")+" · Automated: "+
+      (payload.automated_screen?.status==="screened"?"screened "+payload.automated_screen.screened_at:"source snapshot unavailable");
     const initial=new URLSearchParams(window.location.search).get("id");
     $("caseSearch").addEventListener("input",listCases);
     $("caseFilter").addEventListener("change",listCases);

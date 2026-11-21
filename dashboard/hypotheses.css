@@ -31,6 +31,13 @@ input,select{background:#0c1826;color:#edf4fa;border:1px solid #40576a;border-ra
 .panel-grid{display:grid;grid-template-columns:1fr 1fr;gap:13px;margin:16px 0}
 .panel-grid section{padding:15px;background:#15283b;border:1px solid #2d455d;border-radius:9px}
 .panel-grid ol{padding-left:21px;margin:0}.panel-grid li{margin:8px 0;color:#bdd0df}
+.auto-review{border:1px solid #38546d;background:#142b3d;border-radius:10px;padding:16px;margin:17px 0}
+.auto-review h3{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.auto-review .auto-candidates{padding-left:22px;max-height:390px;overflow:auto}
+.auto-candidates li{margin:11px 0;border-bottom:1px solid #355068;padding-bottom:9px}
+.auto-candidates a{display:block;font-weight:650;overflow-wrap:anywhere}
+.auto-candidates small,.auto-meta{display:block;color:#a4bbcf;font-size:11px}
+.auto-candidates p{margin:3px 0;font-size:12px}
 .evidence-top{border-top:1px solid #38516c;padding-top:14px;margin-top:14px}.evidence-section{margin:17px 0}
 .evidence-section h3{display:flex;justify-content:space-between}.evidence-section h3 span{color:#91b6d0;font-size:12px}
 .evidence-card{border:1px solid #334d65;border-radius:8px;margin:8px 0;background:#132538}

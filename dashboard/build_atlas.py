@@ -383,6 +383,18 @@ def generate(site, generated=None, state_dir=None):
         records, dynamic_families, registry.get("source_health", {}),
         read(ROOT / "data" / "hypothesis_reviews.json", {}),
         generated_at=now)
+    # Post-collection preliminary screening, rerun on each approved Pages
+    # publication (including collection-completion workflow_run events).
+    # No lexical candidate can alter signed analyst reviews or issue warnings.
+    try:
+        from dashboard.hypothesis_auto_review import screen as auto_screen
+    except ModuleNotFoundError:
+        from hypothesis_auto_review import screen as auto_screen
+    machine_screen = auto_screen(records, registry, archive, at=render_time)
+    hypothesis_views["automated_screen"] = {
+        key: value for key, value in machine_screen.items() if key != "cases"}
+    for case in hypothesis_views["hypotheses"]:
+        case["automated_screen"] = machine_screen["cases"].get(case["id"], {})
     (site / "hypotheses.json").write_text(
         json.dumps(hypothesis_views, ensure_ascii=False, indent=2), encoding="utf-8")
     # Only safe source monitoring context is included publicly. The private
