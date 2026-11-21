@@ -1,17 +1,15 @@
 {
-  "checked_at": "2026-11-21T02:27:41Z",
-  "missingness": "not_measured_not_zero",
+  "checked_at": "2026-11-21T11:22:54Z",
+  "missingness": "provider_bounded_partial",
   "mode": "tw_power",
   "operational_warning_approved": false,
-  "records": null,
+  "records": 1,
   "schema": "cairn.alternative-sensors.v1",
   "source_dependency_class": "national_public_power_snapshot_not_outage",
-  "source_errors": [
-    "URLError: <urlopen error _ssl.c:1001: The handshake operation timed out>"
-  ],
+  "source_errors": [],
   "source_queries_attempted": 1,
-  "source_queries_ok": 0,
+  "source_queries_ok": 1,
   "source_scope": "Taiwan Taipower public nationwide current load snapshot and publisher release clock, not power-station or local outage data",
-  "status": "unavailable",
-  "truncated": false
+  "status": "partial",
+  "truncated": true
 }

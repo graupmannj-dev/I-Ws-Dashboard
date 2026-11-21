@@ -267,6 +267,99 @@
           "title": "M 5.1 - 32 km NE of Port-Olry, Vanuatu"
         }
       }
+    },
+    "6ce6e187d138065fddade37abf13f84b033711c0d8fc1726bd3bdb301a078de0": {
+      "information_root": "cbp_wait:cbp_wait:240401:2026-11-21:04:24:37",
+      "members": {
+        "beh:7cb59251742cda150918674b3da4": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-21T11:25:03+00:00",
+          "geography_key": "us-border-port:240401",
+          "geography_label": "Marcelino Serna",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:7cb59251742cda150918674b3da4",
+          "information_root": "cbp_wait:cbp_wait:240401:2026-11-21:04:24:37",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Update Pending",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Closed",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/21/2026",
+            "reported_local_time": "04:24:37",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Marcelino Serna / Tornillo"
+        }
+      }
+    },
+    "6ce75599218388ef9a98ada971bd76ac02f8bf3b9127bd3c7cd55fb3b12ed869": {
+      "information_root": "ris_bgp:ris_bgp:AS9829:20261121T07",
+      "members": {
+        "beh:1adcd85b8f005b00e2fcfdb0e7ae": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "public_routing_updates_not_country_outage",
+          "collection_mode": "ris_bgp",
+          "direct_measurement": true,
+          "event_at": null,
+          "first_observed_at": "2026-11-21T11:25:03+00:00",
+          "geography_key": "asn:9829",
+          "geography_label": "AS9829",
+          "geography_precision": "routing_target_not_country_incident",
+          "id": "beh:1adcd85b8f005b00e2fcfdb0e7ae",
+          "information_root": "ris_bgp:ris_bgp:AS9829:20261121T07",
+          "origin": "behavioral_registry",
+          "provider": "ris_bgp",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "routing_collector_sampled_asn_updates",
+          "source_family": "internet_routing",
+          "source_kind": "sampled_asn_bgp_route_updates_not_network_outage",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "collector_peers_are_not_geo_deduplicated": true,
+            "country_impact_not_established": true,
+            "name": "sampled_6h_bgp_announcements",
+            "registered_network_country_hint": "IN",
+            "returned_sampling_buckets": 6,
+            "source_window_end": "2026-11-21T07:00:00Z",
+            "target_asn": "AS9829",
+            "unit": "announcements",
+            "value": 4090966,
+            "window_hours_requested": 6,
+            "withdrawals_unavailable_for_asn": true
+          },
+          "source_scope": "RIPE RIS public route-announcement update samples on six non-Western operated networks; ASNs not country-wide outage detection",
+          "source_updated_at": null,
+          "source_url": "https://stat.ripe.net/data/bgp-update-activity/data.json?resource=AS9829&num_hours=6&max_samples=24&hide_empty_samples=false",
+          "title": "RIPE RIS sampled BGP announcements: AS9829"
+        }
+      }
     }
   },
   "schema": "aiba.family-archive.v1"

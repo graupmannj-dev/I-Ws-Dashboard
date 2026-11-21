@@ -1,5 +1,44 @@
 {
   "roots": {
+    "ac0314eb77370d2c65e6370bbecfc5286a82cfda749a112a458318ebcd7df7e2": {
+      "information_root": "bmkg_nowcast:bmkg_nowcast:fccc2c4731f36704533944613c65",
+      "members": {
+        "beh:ee7414d6945d2a9c742cef9b7f75": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "bmkg_nowcast",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-21T10:05:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:ee7414d6945d2a9c742cef9b7f75",
+          "information_root": "bmkg_nowcast:bmkg_nowcast:fccc2c4731f36704533944613c65",
+          "origin": "behavioral_registry",
+          "provider": "bmkg_nowcast",
+          "published_at": "2026-11-21T10:05:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Indonesia BMKG",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Indonesia BMKG active provincial nowcast RSS, source-reported only; not global",
+          "source_updated_at": null,
+          "source_url": "https://www.bmkg.go.id/alerts/nowcast/en/CGT20261121005_alert.xml",
+          "title": "Thunderstorm This Evening in Gorontalo"
+        }
+      }
+    },
     "ac13e1bf91d45ae9b7fbe845a5fbf8a8e2a7948e4df4e5c33953a5e9033d10f7": {
       "information_root": "niord:fd87de03-3a03-4aa3-a9bf-e701c9b5beb3:0:3:0",
       "members": {

@@ -137,6 +137,86 @@
         }
       }
     },
+    "a6b36bbbe9659ec85c5da199b0dff50be39e05f6b3dbd5d86a8e3c7595bff41e": {
+      "information_root": "cbp_wait:cbp_wait:300901:2026-11-21:03:24:37",
+      "members": {
+        "beh:42d0710eb99a8b757422ca425952": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-21T11:25:03+00:00",
+          "geography_key": "us-border-port:300901",
+          "geography_label": "Sumas",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:42d0710eb99a8b757422ca425952",
+          "information_root": "cbp_wait:cbp_wait:300901:2026-11-21:03:24:37",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "no delay",
+            "lanes_open": 1,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "At 4:00 am PST",
+            "reported_local_date": "11/21/2026",
+            "reported_local_time": "03:24:37",
+            "source_declared_border": "Canadian Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 0
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Sumas"
+        }
+      }
+    },
+    "a6c736052451b35e988f834ef8f1c6b14cd021af42480c26a6f93d9d1cc03075": {
+      "information_root": "nws:9fcc855c2d4ee3746ae532c4",
+      "members": {
+        "beh:6095c993239af01b2e74441ae1cd": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "nws",
+          "direct_measurement": false,
+          "event_at": "2026-11-21T03:57:00Z",
+          "first_observed_at": "2026-11-21T03:57:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:6095c993239af01b2e74441ae1cd",
+          "information_root": "nws:9fcc855c2d4ee3746ae532c4",
+          "origin": "behavioral_registry",
+          "provider": "nws",
+          "published_at": "2026-11-21T03:57:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "official_weather_alert_context",
+          "source_measurement": null,
+          "source_scope": "Active NWS marine alerts; severity Moderate",
+          "source_updated_at": null,
+          "source_url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.122d064675538b36acaeea991e6bb15ec2f53e26.001.1",
+          "title": "Rip Current Statement - Mobile Coastal; Baldwin Coastal; Escambia Coastal; Santa Rosa Coastal; Okaloosa Coastal"
+        }
+      }
+    },
     "a6f9c87b9deaf24b003f9c8051ef3691e3b4a498e187823a146b3592d263b94a": {
       "information_root": "official:eb5f705a608bf459551d",
       "members": {

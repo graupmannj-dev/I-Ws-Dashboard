@@ -119,6 +119,53 @@
         }
       }
     },
+    "8c75a37dc1386b89d8682a436ef363939c756d7608acaf60c73ca7297bd3dccf": {
+      "information_root": "cbp_wait:cbp_wait:535503:2026-11-21:05:24:37",
+      "members": {
+        "beh:bedfa81c56c9b59e6625aa3ad6d2": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-21T11:25:03+00:00",
+          "geography_key": "us-border-port:535503",
+          "geography_label": "Brownsville",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:bedfa81c56c9b59e6625aa3ad6d2",
+          "information_root": "cbp_wait:cbp_wait:535503:2026-11-21:05:24:37",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Lanes Closed",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Closed",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/21/2026",
+            "reported_local_time": "05:24:37",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Brownsville / Los Indios"
+        }
+      }
+    },
     "8c89c39b61714a7f6909a1e051bf698bf9a11b3310ce4d7d929355fdf024fbe6": {
       "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c0ca:110341-2026",
       "members": {
@@ -196,6 +243,39 @@
           "source_updated_at": null,
           "source_url": "https://bwt.cbp.gov/api/waittimes",
           "title": "CBP estimated commercial border wait — Marcelino Serna / Tornillo"
+        }
+      }
+    },
+    "8cdf29c55259e3d968f5c865026f321b24bf6d3cc2949bad427416c1320926dc": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-05cc7b:110378-2026",
+      "members": {
+        "beh:16e39d2cb8343d5a9b4b8c4f9808": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-21T10:20:48+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:16e39d2cb8343d5a9b4b8c4f9808",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-05cc7b:110378-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-21T10:20:48Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-19T11%3A22%3A54&updatedTo=2026-11-21T11%3A22%3A54",
+          "title": "Bertie Place, Oxford · Oxford City Council"
         }
       }
     },

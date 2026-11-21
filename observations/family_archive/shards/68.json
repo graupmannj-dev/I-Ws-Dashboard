@@ -96,6 +96,92 @@
         }
       }
     },
+    "684a8ede139d5c05c8afaec0e2d19ca26706eda6fd6732e91a0d3f4232211ace": {
+      "information_root": "cbp_wait:cbp_wait:230502:2026-11-21:05:24:37",
+      "members": {
+        "beh:fcf3e54255a2a39bb3354d9608a3": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-21T11:25:03+00:00",
+          "geography_key": "us-border-port:230502",
+          "geography_label": "Hidalgo/Pharr",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:fcf3e54255a2a39bb3354d9608a3",
+          "information_root": "cbp_wait:cbp_wait:230502:2026-11-21:05:24:37",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Update Pending",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Closed",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/21/2026",
+            "reported_local_time": "05:24:37",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Hidalgo/Pharr / Pharr"
+        }
+      }
+    },
+    "684b0882407031ed8f07cdaab6152a2a0ac9b4da9b59f5feecd48db88dc3ff90": {
+      "information_root": "bmkg_nowcast:bmkg_nowcast:5cbfa55057100e7b7c8fa145d01c",
+      "members": {
+        "beh:0f40a6707031d18719510806b89a": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "bmkg_nowcast",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-21T10:30:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:0f40a6707031d18719510806b89a",
+          "information_root": "bmkg_nowcast:bmkg_nowcast:5cbfa55057100e7b7c8fa145d01c",
+          "origin": "behavioral_registry",
+          "provider": "bmkg_nowcast",
+          "published_at": "2026-11-21T10:30:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Indonesia BMKG",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Indonesia BMKG active provincial nowcast RSS, source-reported only; not global",
+          "source_updated_at": null,
+          "source_url": "https://www.bmkg.go.id/alerts/nowcast/en/CSL20261121006_alert.xml",
+          "title": "Thunderstorm Tonight in Sulawesi Selatan"
+        }
+      }
+    },
     "68604a2b52b1657c19176cd954475e3ca0256e3d27e9737d7a8f2a1cd9c714ed": {
       "information_root": "faa:6/7687:0:0",
       "members": {
@@ -276,6 +362,39 @@
           "source_updated_at": "2026-11-20T13:21:54Z",
           "source_url": "https://niord.dma.dk/#/message/fd87de03-3a03-4aa3-a9bf-e701c9b5beb3",
           "title": "Denmark. Skagerrak. EK R 48 Tranum S. Firing exercises. Warning."
+        }
+      }
+    },
+    "68f14ad3be11fe527903fbed2272c5fae1dd5b579026f5ccf44de01a192d1142": {
+      "information_root": "nws:74ba7b7da937a0a201bfda34",
+      "members": {
+        "beh:6e04d8f0d90ab7c6801656ea3c04": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "nws",
+          "direct_measurement": false,
+          "event_at": "2026-11-21T09:00:00Z",
+          "first_observed_at": "2026-11-21T09:00:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:6e04d8f0d90ab7c6801656ea3c04",
+          "information_root": "nws:74ba7b7da937a0a201bfda34",
+          "origin": "behavioral_registry",
+          "provider": "nws",
+          "published_at": "2026-11-21T09:00:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "official_weather_alert_context",
+          "source_measurement": null,
+          "source_scope": "Active NWS marine alerts; severity Minor",
+          "source_updated_at": null,
+          "source_url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.704462a79671c41c4d3c5c4d1cf734e43996048e.001.1",
+          "title": "Coastal Flood Statement - Monroe Lower Keys"
         }
       }
     },

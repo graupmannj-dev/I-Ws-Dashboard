@@ -1,5 +1,52 @@
 {
   "roots": {
+    "755e5dd5a9b282f7e54aebbd459baf29d7fa043b23f0f29f448a9192a1ae68fd": {
+      "information_root": "cbp_wait:cbp_wait:l24501:2026-11-21:04:24:37",
+      "members": {
+        "beh:9bd09750a305be4119c9ca588952": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-21T11:25:03+00:00",
+          "geography_key": "us-border-port:l24501",
+          "geography_label": "Fort Hancock",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:9bd09750a305be4119c9ca588952",
+          "information_root": "cbp_wait:cbp_wait:l24501:2026-11-21:04:24:37",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Update Pending",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Closed",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/21/2026",
+            "reported_local_time": "04:24:37",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Fort Hancock / Fort Hancock"
+        }
+      }
+    },
     "757c561ab1274322de5947da70f0ea3f5af9d9342cffd1ec9dbeb94acf2e1887": {
       "information_root": "niord:64267632-ab29-4c8e-8fd2-6b1f42ee4abd:1:0:0",
       "members": {
@@ -60,6 +107,53 @@
         }
       }
     },
+    "759a488d782bf1a20d2629d641a9dc36835267d03f99bfdb5f825b5253b00454": {
+      "information_root": "cbp_wait:cbp_wait:090102:2026-11-21:06:24:37",
+      "members": {
+        "beh:f0cd84b22ab897233a1235c9d4b5": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-21T11:25:03+00:00",
+          "geography_key": "us-border-port:090102",
+          "geography_label": "Buffalo/Niagara Falls",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:f0cd84b22ab897233a1235c9d4b5",
+          "information_root": "cbp_wait:cbp_wait:090102:2026-11-21:06:24:37",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "N/A",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/21/2026",
+            "reported_local_time": "06:24:37",
+            "source_declared_border": "Canadian Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Buffalo/Niagara Falls / Rainbow Bridge"
+        }
+      }
+    },
     "759c9272a8b7d7254cf28b65370c4d129296cc7a40270279fab11161fd8bd478": {
       "information_root": "commercial:2d97818a57d0d1f5bc7b",
       "members": {
@@ -87,6 +181,53 @@
           "source_updated_at": null,
           "source_url": "https://maritime-executive.com/article/kerch-strait-bridge-strike-cuts-off-sea-of-azov-shipping",
           "title": "Kerch Strait Bridge Strike Cuts Off Sea of Azov Shipping"
+        }
+      }
+    },
+    "75a84b38139e8c77e03c8115781c0b625587a0234dbce957072bf9e29b6d94b8": {
+      "information_root": "cbp_wait:cbp_wait:250609:2026-11-21:03:24:37",
+      "members": {
+        "beh:dfd5db67f389b4631d3ca51d3420": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-21T11:25:03+00:00",
+          "geography_key": "us-border-port:250609",
+          "geography_label": "Otay Mesa",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:dfd5db67f389b4631d3ca51d3420",
+          "information_root": "cbp_wait:cbp_wait:250609:2026-11-21:03:24:37",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Update Pending",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/21/2026",
+            "reported_local_time": "03:24:37",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Otay Mesa"
         }
       }
     },

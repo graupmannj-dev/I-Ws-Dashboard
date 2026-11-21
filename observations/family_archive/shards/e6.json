@@ -30,6 +30,52 @@
         }
       }
     },
+    "e63b67d343fe7dedacc2c8e148208a6bfc2a04db64776e1709c0e6194de6ba94": {
+      "information_root": "ris_bgp:ris_bgp:AS4766:20261121T07",
+      "members": {
+        "beh:dda93e76b004eb34fe7b69db77d3": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "public_routing_updates_not_country_outage",
+          "collection_mode": "ris_bgp",
+          "direct_measurement": true,
+          "event_at": null,
+          "first_observed_at": "2026-11-21T11:25:03+00:00",
+          "geography_key": "asn:4766",
+          "geography_label": "AS4766",
+          "geography_precision": "routing_target_not_country_incident",
+          "id": "beh:dda93e76b004eb34fe7b69db77d3",
+          "information_root": "ris_bgp:ris_bgp:AS4766:20261121T07",
+          "origin": "behavioral_registry",
+          "provider": "ris_bgp",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "routing_collector_sampled_asn_updates",
+          "source_family": "internet_routing",
+          "source_kind": "sampled_asn_bgp_route_updates_not_network_outage",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "collector_peers_are_not_geo_deduplicated": true,
+            "country_impact_not_established": true,
+            "name": "sampled_6h_bgp_announcements",
+            "registered_network_country_hint": "KR",
+            "returned_sampling_buckets": 6,
+            "source_window_end": "2026-11-21T07:00:00Z",
+            "target_asn": "AS4766",
+            "unit": "announcements",
+            "value": 8327,
+            "window_hours_requested": 6,
+            "withdrawals_unavailable_for_asn": true
+          },
+          "source_scope": "RIPE RIS public route-announcement update samples on six non-Western operated networks; ASNs not country-wide outage detection",
+          "source_updated_at": null,
+          "source_url": "https://stat.ripe.net/data/bgp-update-activity/data.json?resource=AS4766&num_hours=6&max_samples=24&hide_empty_samples=false",
+          "title": "RIPE RIS sampled BGP announcements: AS4766"
+        }
+      }
+    },
     "e6408156d5f4ee8376b06d887eb9a89fdef63cb5f1a28d839ebeb115993b581b": {
       "information_root": "sg_mpa:sg_mpa:2026-02:tanker",
       "members": {
@@ -103,6 +149,39 @@
           "source_updated_at": "2026-11-17T00:21:51Z",
           "source_url": "https://niord.dma.dk/#/message/57e3ae61-a94b-4cc6-8303-615cf880c5bb",
           "title": "Denmark. The Baltic Sea. EK D 396 Hullebaek. Firing exercises. Warning."
+        }
+      }
+    },
+    "e648281397deb7b6dd5cb463086d9b9272a05efd99579d91b6adb74fef33812f": {
+      "information_root": "nws:dd1a72ee185070cdfcca53a5",
+      "members": {
+        "beh:b8b65fc3aa6a5ca26336a6c80e4d": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "nws",
+          "direct_measurement": false,
+          "event_at": "2026-11-21T02:41:00Z",
+          "first_observed_at": "2026-11-21T02:41:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:b8b65fc3aa6a5ca26336a6c80e4d",
+          "information_root": "nws:dd1a72ee185070cdfcca53a5",
+          "origin": "behavioral_registry",
+          "provider": "nws",
+          "published_at": "2026-11-21T02:41:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "official_weather_alert_context",
+          "source_measurement": null,
+          "source_scope": "Active NWS marine alerts; severity Moderate",
+          "source_updated_at": null,
+          "source_url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.98344576c3d8d6ac641d13f0e4e2f3aa5f9b3b29.001.1",
+          "title": "Rip Current Statement - Coastal Palm Beach County"
         }
       }
     },

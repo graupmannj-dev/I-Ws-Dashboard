@@ -1,5 +1,44 @@
 {
   "roots": {
+    "3c64f764342b49489a84d83efb84003e87d5a5c5ca76f5aa34ce89dc8dae643c": {
+      "information_root": "bmkg_nowcast:bmkg_nowcast:5eddebf3755851086fd667588ab9",
+      "members": {
+        "beh:a37a4dbe3619d2ba52ca402e7bf9": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "bmkg_nowcast",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-21T10:40:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:a37a4dbe3619d2ba52ca402e7bf9",
+          "information_root": "bmkg_nowcast:bmkg_nowcast:5eddebf3755851086fd667588ab9",
+          "origin": "behavioral_registry",
+          "provider": "bmkg_nowcast",
+          "published_at": "2026-11-21T10:40:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Indonesia BMKG",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Indonesia BMKG active provincial nowcast RSS, source-reported only; not global",
+          "source_updated_at": null,
+          "source_url": "https://www.bmkg.go.id/alerts/nowcast/en/CAH20261121004_alert.xml",
+          "title": "Thunderstorm This Evening in Aceh"
+        }
+      }
+    },
     "3c66d15e9cc79367a768c183abb667e4a56b74e58cbf6a604a28494ccee0f8c0": {
       "information_root": "niord:07ae7b1a-b975-48ee-bfd8-822c3fcfa940:0:0:0",
       "members": {

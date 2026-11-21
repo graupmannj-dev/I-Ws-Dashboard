@@ -30,6 +30,53 @@
         }
       }
     },
+    "834a70d3150d2490b40fd9069eea24eb32b0237a3f20acff3998c4fed8564e94": {
+      "information_root": "cbp_wait:cbp_wait:230302:2026-11-21:05:24:37",
+      "members": {
+        "beh:ef6ef875f88b1d68321a58802493": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-21T11:25:03+00:00",
+          "geography_key": "us-border-port:230302",
+          "geography_label": "Eagle Pass",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:ef6ef875f88b1d68321a58802493",
+          "information_root": "cbp_wait:cbp_wait:230302:2026-11-21:05:24:37",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Lanes Closed",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/21/2026",
+            "reported_local_time": "05:24:37",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Eagle Pass / Bridge II"
+        }
+      }
+    },
     "838fc58132ca88a6a28f2f5f5056230afd2f8dff2c38cb33801acbb426d31a7c": {
       "information_root": "niord:4fcc4e47-7663-4a9f-9f65-4ff164149b8f:0:5:0",
       "members": {
@@ -193,6 +240,53 @@
           "source_updated_at": "2026-11-20T13:21:53Z",
           "source_url": "https://niord.dma.dk/#/message/1ef21c8b-efbc-4641-b906-2fa81c3ff90f",
           "title": "Denmark. Kattegat. EK R 17 Isefjord. Firing exercises. Warning."
+        }
+      }
+    },
+    "83e801e70525b2f6ba9f89eebf0419856ef31f8ddb37dfe178c67022c84ab79c": {
+      "information_root": "cbp_wait:cbp_wait:230901:2026-11-21:05:24:37",
+      "members": {
+        "beh:18ee24ad0ae0dd92975af23c0f14": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-21T11:25:03+00:00",
+          "geography_key": "us-border-port:230901",
+          "geography_label": "Progreso",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:18ee24ad0ae0dd92975af23c0f14",
+          "information_root": "cbp_wait:cbp_wait:230901:2026-11-21:05:24:37",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Update Pending",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/21/2026",
+            "reported_local_time": "05:24:37",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Progreso / Progreso International Bridge"
         }
       }
     }

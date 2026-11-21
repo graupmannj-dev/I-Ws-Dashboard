@@ -60,6 +60,53 @@
         }
       }
     },
+    "5a4b90f642f0935010663c79eb2bcac488a7b3cc4ff130954f84db63f19b6161": {
+      "information_root": "cbp_wait:cbp_wait:230404:2026-11-21:05:24:37",
+      "members": {
+        "beh:1d367112691cb3f5087924f3ad67": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-21T11:25:03+00:00",
+          "geography_key": "us-border-port:230404",
+          "geography_label": "Laredo",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:1d367112691cb3f5087924f3ad67",
+          "information_root": "cbp_wait:cbp_wait:230404:2026-11-21:05:24:37",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Lanes Closed",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Closed",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/21/2026",
+            "reported_local_time": "05:24:37",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Laredo / World Trade Bridge"
+        }
+      }
+    },
     "5a557d6e50d2d3bca709c0e647b67086045edc9f715bb413950400df4ec3c1ca": {
       "information_root": "niord:3b2bd424-b82d-439c-a51b-2919d5f09b15:2:0:0",
       "members": {

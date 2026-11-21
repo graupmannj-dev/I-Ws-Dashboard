@@ -125,6 +125,45 @@
           "title": "Property Guardian Service · Clarion Housing Group"
         }
       }
+    },
+    "93e5ac970605448e8d2767b2510ebbf4d349011dc347d501eaa086ebea838d73": {
+      "information_root": "bmkg_nowcast:bmkg_nowcast:a160dc3a2539fe69733e844adacb",
+      "members": {
+        "beh:46b15e8b4fd78ef3a350a30265e0": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "bmkg_nowcast",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-21T09:35:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:46b15e8b4fd78ef3a350a30265e0",
+          "information_root": "bmkg_nowcast:bmkg_nowcast:a160dc3a2539fe69733e844adacb",
+          "origin": "behavioral_registry",
+          "provider": "bmkg_nowcast",
+          "published_at": "2026-11-21T09:35:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Indonesia BMKG",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Indonesia BMKG active provincial nowcast RSS, source-reported only; not global",
+          "source_updated_at": null,
+          "source_url": "https://www.bmkg.go.id/alerts/nowcast/en/CKS20261121005_alert.xml",
+          "title": "Thunderstorm This Evening in Kalimantan Selatan"
+        }
+      }
     }
   },
   "schema": "aiba.family-archive.v1"

@@ -90,6 +90,92 @@
         }
       }
     },
+    "555b68f953ce20e0cece3e194fccacd0a8a32a523e584090ea64e3e153210794": {
+      "information_root": "cbp_wait:cbp_wait:L01901:2026-11-21:06:24:37",
+      "members": {
+        "beh:b184dcea3cff38484cfcad6605c8": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-21T11:25:03+00:00",
+          "geography_key": "us-border-port:L01901",
+          "geography_label": "Madawaska",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:b184dcea3cff38484cfcad6605c8",
+          "information_root": "cbp_wait:cbp_wait:L01901:2026-11-21:06:24:37",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "no delay",
+            "lanes_open": 1,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "At 5:00 am EST",
+            "reported_local_date": "11/21/2026",
+            "reported_local_time": "06:24:37",
+            "source_declared_border": "Canadian Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 0
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Madawaska"
+        }
+      }
+    },
+    "5569ff1ea9cbd16806521a95688375b97536252385e5bc9d9b8d1e29358a37d5": {
+      "information_root": "bmkg_nowcast:bmkg_nowcast:f7b49d1b801cf8225a13d10dd2ae",
+      "members": {
+        "beh:bc89638864e8bbcf70b49344ed98": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "bmkg_nowcast",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-21T11:07:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:bc89638864e8bbcf70b49344ed98",
+          "information_root": "bmkg_nowcast:bmkg_nowcast:f7b49d1b801cf8225a13d10dd2ae",
+          "origin": "behavioral_registry",
+          "provider": "bmkg_nowcast",
+          "published_at": "2026-11-21T11:07:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Indonesia BMKG",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Indonesia BMKG active provincial nowcast RSS, source-reported only; not global",
+          "source_updated_at": null,
+          "source_url": "https://www.bmkg.go.id/alerts/nowcast/en/CKT20261121005_alert.xml",
+          "title": "Thunderstorm Tonight in Kalimantan Timur"
+        }
+      }
+    },
     "557a87d976bf84e889ed367ccb9ea40ce95da9c17640df442188cae6acc816e6": {
       "information_root": "ioda:682987b9c8f13db3b0e3104f",
       "members": {

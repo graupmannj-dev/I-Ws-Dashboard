@@ -109,6 +109,53 @@
         }
       }
     },
+    "565725f5bb92ead0c0038f95a5ecdcaf1a3e6c9c3af431d6069cc59ce7eaddbb": {
+      "information_root": "cbp_wait:cbp_wait:260201:2026-11-21:04:24:37",
+      "members": {
+        "beh:647be8b3c792e877ece8daf6dbe1": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-21T11:25:03+00:00",
+          "geography_key": "us-border-port:260201",
+          "geography_label": "Lukeville",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:647be8b3c792e877ece8daf6dbe1",
+          "information_root": "cbp_wait:cbp_wait:260201:2026-11-21:04:24:37",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Update Pending",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Closed",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/21/2026",
+            "reported_local_time": "04:24:37",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Lukeville"
+        }
+      }
+    },
     "566e7f0502e399231e5f2dbdb96ed751dfbde419cc9dc1bd6029100fb800d4ed": {
       "information_root": "niord:d05a4852-a07f-46c4-a142-280af74b01f5:0:2:0",
       "members": {

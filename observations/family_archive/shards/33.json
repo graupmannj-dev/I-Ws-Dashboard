@@ -136,6 +136,39 @@
         }
       }
     },
+    "335c3184a084be0e4640fa84f878c512b6abc50acae96065120c2b5dae9a170d": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c0db:110376-2026",
+      "members": {
+        "beh:c7667f14bd82de497e527ddb4a31": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-21T09:23:53+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:c7667f14bd82de497e527ddb4a31",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c0db:110376-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-21T09:23:53Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-19T11%3A22%3A54&updatedTo=2026-11-21T11%3A22%3A54",
+          "title": "Tier 2 Mains Renewal Delivery & Resilience Framework · YORKSHIRE WATER SERVICES LIMITED"
+        }
+      }
+    },
     "335d21bb96d760c246d8d6a950e9081fc66ee899d78990558f99824ad8326a74": {
       "information_root": "cbp_wait:cbp_wait:331001:2026-11-20:19:23:04",
       "members": {
@@ -270,6 +303,45 @@
           "source_updated_at": "2026-11-18T00:21:53Z",
           "source_url": "https://niord.dma.dk/#/message/9c9b3baf-65f3-4272-ad53-fa8839c91b2e",
           "title": "Denmark. Kattegat. EK R 45 Hevring. Firing exercises. Warning."
+        }
+      }
+    },
+    "33f8abcb8d26fb6264de4c7bd1c36192018e001879a2b7deebfc950aef3d7fd8": {
+      "information_root": "bmkg_nowcast:bmkg_nowcast:21658b559f495c4677929d136b77",
+      "members": {
+        "beh:d7d8b5c7817fe5e37a7b49c20319": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "bmkg_nowcast",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-21T09:30:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:d7d8b5c7817fe5e37a7b49c20319",
+          "information_root": "bmkg_nowcast:bmkg_nowcast:21658b559f495c4677929d136b77",
+          "origin": "behavioral_registry",
+          "provider": "bmkg_nowcast",
+          "published_at": "2026-11-21T09:30:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Indonesia BMKG",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Indonesia BMKG active provincial nowcast RSS, source-reported only; not global",
+          "source_updated_at": null,
+          "source_url": "https://www.bmkg.go.id/alerts/nowcast/en/CSS20261121007_alert.xml",
+          "title": "Thunderstorm This Evening in Sumatera Selatan"
         }
       }
     },

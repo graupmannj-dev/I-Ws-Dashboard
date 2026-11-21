@@ -30,6 +30,121 @@
         }
       }
     },
+    "4d2341c377bedab8b37178a7c797844f0946190607a939fdd4d2ca4ccc97a595": {
+      "information_root": "coops:8638610:20261121T1118Z",
+      "members": {
+        "beh:d7630398ff25b6a57a593a356c71": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "coops",
+          "direct_measurement": true,
+          "event_at": "2026-11-21T11:18:00Z",
+          "first_observed_at": "2026-11-21T11:18:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:d7630398ff25b6a57a593a356c71",
+          "information_root": "coops:8638610:20261121T1118Z",
+          "origin": "behavioral_registry",
+          "provider": "coops",
+          "published_at": "2026-11-21T11:18:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "station_physical_measurement",
+          "source_family": "port_conditions",
+          "source_kind": "selected_port_water_level_measurement",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "metric_comparable_only_same_station_datum_and_sample_window": true,
+            "name": "observed_water_level",
+            "station": "8638610",
+            "unit": "meters_MLLW",
+            "value": 0.97
+          },
+          "source_scope": "NOAA CO-OPS water levels at San Francisco, Key West and Sewells Point; stations only",
+          "source_updated_at": null,
+          "source_url": "https://tidesandcurrents.noaa.gov/waterlevels.html?id=8638610",
+          "title": "Sewells Point, VA observed water level (no anomaly classification)"
+        }
+      }
+    },
+    "4d38c32f51edcc6d60df87ac23116f5c66a6402f900c354caa0c2854ce00e6d4": {
+      "information_root": "wiki_edits:wiki_edits:ko:20261121T11",
+      "members": {
+        "beh:96e13282f0eae273c03578418518": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "wiki_edits",
+          "direct_measurement": false,
+          "event_at": "2026-11-21T11:22:43Z",
+          "first_observed_at": "2026-11-21T11:22:43+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:96e13282f0eae273c03578418518",
+          "information_root": "wiki_edits:wiki_edits:ko:20261121T11",
+          "origin": "behavioral_registry",
+          "provider": "wiki_edits",
+          "published_at": "2026-11-21T11:22:43Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "public_encyclopedia_edit_aggregate",
+          "source_family": "public_attention",
+          "source_kind": "bounded_public_edit_count_not_event_verification",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "distinct_articles_in_sample": 380,
+            "maximum_returned_edits": 500,
+            "most_edited_article_counts": [
+              {
+                "count": 10,
+                "title": "휴스턴 코메츠"
+              },
+              {
+                "count": 9,
+                "title": "FC 인테르 투르쿠"
+              },
+              {
+                "count": 9,
+                "title": "장택상"
+              },
+              {
+                "count": 6,
+                "title": "장훈고등학교"
+              },
+              {
+                "count": 6,
+                "title": "지푸라기라도 잡고 싶은 짐승들"
+              },
+              {
+                "count": 5,
+                "title": "K리그2"
+              },
+              {
+                "count": 5,
+                "title": "수도권 전철 신안산선"
+              },
+              {
+                "count": 5,
+                "title": "휴스턴 코메츠 (2027년)"
+              }
+            ],
+            "name": "sampled_edits_last_three_hours",
+            "sample_cap_reached": true,
+            "unit": "edits",
+            "value": 500
+          },
+          "source_scope": "Wikipedia main-namespace edit-count sample, 14 global language editions, three-hour window capped at 500 per wiki; not geographic location",
+          "source_updated_at": null,
+          "source_url": "https://ko.wikipedia.org/wiki/Special:RecentChanges",
+          "title": "Wikipedia ko public article-edit activity (sampled)"
+        }
+      }
+    },
     "4d5a186b0ba5a9aa55f053702ea2b8c152be29ca7afc53344994727f882a6360": {
       "information_root": "ioda:b7b7d213647112290d51bcc7",
       "members": {

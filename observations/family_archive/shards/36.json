@@ -150,6 +150,50 @@
         }
       }
     },
+    "369f4ddce94808ff0e4e716c54794312f763760e984a9a290293bcbf1806a610": {
+      "information_root": "tw_power:tw_power:20261121T1110Z",
+      "members": {
+        "beh:cd4a29e9dcd1e101f7069de7fa50": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_power_snapshot_not_outage_attribution",
+          "collection_mode": "tw_power",
+          "direct_measurement": true,
+          "event_at": null,
+          "first_observed_at": "2026-11-21T11:25:03+00:00",
+          "geography_key": "country:TW",
+          "geography_label": "Taiwan",
+          "geography_precision": "national_not_facility",
+          "id": "beh:cd4a29e9dcd1e101f7069de7fa50",
+          "information_root": "tw_power:tw_power:20261121T1110Z",
+          "origin": "behavioral_registry",
+          "provider": "tw_power",
+          "published_at": "2026-11-21T11:10:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "public_national_power_snapshot",
+          "source_family": "grid_load",
+          "source_kind": "national_grid_load_aggregate_not_outage",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "measurement_clock_distinct_from_release_not_verified": true,
+            "name": "nationwide_reported_current_load",
+            "not_grid_frequency_or_outage_attribution": true,
+            "observation_coverage": "single_national_snapshot_not_24h",
+            "reported_utilization_percent": 81.0,
+            "source_published_clock": "2026-11-21T11:10:00Z",
+            "source_value_10k_kilowatts": 2793.7,
+            "unit": "MW",
+            "value": 27937.0
+          },
+          "source_scope": "Taiwan Taipower public nationwide current load snapshot and publisher release clock, not power-station or local outage data",
+          "source_updated_at": null,
+          "source_url": "https://service.taipower.com.tw/data/opendata/apply/file/d006020/001.json",
+          "title": "Taipower nationwide publicly reported current electricity load"
+        }
+      }
+    },
     "36af57bae6c798849f7047ac3b2017abb3147587a4f611258f5efd56b1e45d0b": {
       "information_root": "niord:c2bbab7f-c4f0-476e-9ee8-78f8102eec37:2:0:0",
       "members": {

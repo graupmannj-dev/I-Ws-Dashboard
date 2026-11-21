@@ -46,6 +46,100 @@
         }
       }
     },
+    "bd21c1662b19166cb2a93ae07fc21c243a200865ef3a4b1e505bb3d07c449b5a": {
+      "information_root": "cbp_wait:cbp_wait:230503:2026-11-21:05:24:37",
+      "members": {
+        "beh:a2a016dc89f6a0586b99d7742e64": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-21T11:25:03+00:00",
+          "geography_key": "us-border-port:230503",
+          "geography_label": "Hidalgo/Pharr",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:a2a016dc89f6a0586b99d7742e64",
+          "information_root": "cbp_wait:cbp_wait:230503:2026-11-21:05:24:37",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Update Pending",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Closed",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/21/2026",
+            "reported_local_time": "05:24:37",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Hidalgo/Pharr / Anzalduas International Bridge"
+        }
+      }
+    },
+    "bd3f6170741fdecafd0f522d94033224e2e4f79bc13019bdcbab3ba12cb3d664": {
+      "information_root": "cbp_wait:cbp_wait:380201:2026-11-21:06:24:37",
+      "members": {
+        "beh:7506312ecce61f27e3764ea6eb89": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-21T11:25:03+00:00",
+          "geography_key": "us-border-port:380201",
+          "geography_label": "Port Huron",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:7506312ecce61f27e3764ea6eb89",
+          "information_root": "cbp_wait:cbp_wait:380201:2026-11-21:06:24:37",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "no delay",
+            "lanes_open": 4,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "At 6:00 am EST",
+            "reported_local_date": "11/21/2026",
+            "reported_local_time": "06:24:37",
+            "source_declared_border": "Canadian Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 0
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Port Huron / Bluewater Bridge"
+        }
+      }
+    },
     "bd9c75cc55d28a202ff61c58b1634801a3e11ffd222d3d1b060a0115bf4b8bf4": {
       "information_root": "commercial:3cc62bc3d13058e8cb78",
       "members": {

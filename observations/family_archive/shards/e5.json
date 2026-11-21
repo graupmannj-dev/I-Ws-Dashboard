@@ -1,5 +1,81 @@
 {
   "roots": {
+    "e5285507d522238fd48fb2d11b6ec53d762821e3834e46bb535bdfd4dc190d6f": {
+      "information_root": "usgs:us6000uci2",
+      "members": {
+        "beh:ffb8705c80f875660a1315b115dc": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "usgs",
+          "direct_measurement": true,
+          "event_at": "2026-11-21T07:20:44Z",
+          "first_observed_at": "2026-11-21T07:20:44+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "source_supplied_point_only",
+          "id": "beh:ffb8705c80f875660a1315b115dc",
+          "information_root": "usgs:us6000uci2",
+          "origin": "behavioral_registry",
+          "provider": "usgs",
+          "published_at": "2026-11-21T07:35:51Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "measured_earthquake_context",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "name": "earthquake_magnitude",
+            "unit": "reported_magnitude",
+            "value": 4.9
+          },
+          "source_scope": "USGS M4.5+ earthquakes worldwide, rolling past day; source thresholds apply",
+          "source_updated_at": null,
+          "source_url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000uci2",
+          "title": "M 4.9 - 65 km NNW of Port-Vila, Vanuatu"
+        }
+      }
+    },
+    "e53a8cca9af5f61001cddb78e026aa0af62667270c33ece7e59d726aa27f6800": {
+      "information_root": "usgs:us6000uchd",
+      "members": {
+        "beh:e8c59d1770b813df36f7d33e07f8": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "usgs",
+          "direct_measurement": true,
+          "event_at": "2026-11-21T05:12:04Z",
+          "first_observed_at": "2026-11-21T05:12:04+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "source_supplied_point_only",
+          "id": "beh:e8c59d1770b813df36f7d33e07f8",
+          "information_root": "usgs:us6000uchd",
+          "origin": "behavioral_registry",
+          "provider": "usgs",
+          "published_at": "2026-11-21T06:55:43Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "measured_earthquake_context",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "name": "earthquake_magnitude",
+            "unit": "reported_magnitude",
+            "value": 5
+          },
+          "source_scope": "USGS M4.5+ earthquakes worldwide, rolling past day; source thresholds apply",
+          "source_updated_at": null,
+          "source_url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000uchd",
+          "title": "M 5.0 - 0 km NE of Carhuamayo, Peru"
+        }
+      }
+    },
     "e541b3e62fa2c72ae4b520418120fab3f921057802b451223b852bd486d9d8f0": {
       "information_root": "niord:1331ad04-38eb-4c80-b13d-c78c221c5c69:1:0:0",
       "members": {
@@ -150,6 +226,52 @@
           "source_updated_at": "2026-11-16T09:21:53Z",
           "source_url": "https://niord.dma.dk/#/message/8d5a1de4-9b8e-4c89-bd26-41a2becc8cb3",
           "title": "Denmark. The North Sea. 15 Nymindegab. Firing exercises. Warning."
+        }
+      }
+    },
+    "e5e270f28804f47ab0081e3d6e32de321ff30b5d527e51b32ba3667384f1e62a": {
+      "information_root": "ris_bgp:ris_bgp:AS4134:20261121T07",
+      "members": {
+        "beh:f9e9101a197bc9aecc649f5818ee": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "public_routing_updates_not_country_outage",
+          "collection_mode": "ris_bgp",
+          "direct_measurement": true,
+          "event_at": null,
+          "first_observed_at": "2026-11-21T11:25:03+00:00",
+          "geography_key": "asn:4134",
+          "geography_label": "AS4134",
+          "geography_precision": "routing_target_not_country_incident",
+          "id": "beh:f9e9101a197bc9aecc649f5818ee",
+          "information_root": "ris_bgp:ris_bgp:AS4134:20261121T07",
+          "origin": "behavioral_registry",
+          "provider": "ris_bgp",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "routing_collector_sampled_asn_updates",
+          "source_family": "internet_routing",
+          "source_kind": "sampled_asn_bgp_route_updates_not_network_outage",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "collector_peers_are_not_geo_deduplicated": true,
+            "country_impact_not_established": true,
+            "name": "sampled_6h_bgp_announcements",
+            "registered_network_country_hint": "CN",
+            "returned_sampling_buckets": 6,
+            "source_window_end": "2026-11-21T07:00:00Z",
+            "target_asn": "AS4134",
+            "unit": "announcements",
+            "value": 27406,
+            "window_hours_requested": 6,
+            "withdrawals_unavailable_for_asn": true
+          },
+          "source_scope": "RIPE RIS public route-announcement update samples on six non-Western operated networks; ASNs not country-wide outage detection",
+          "source_updated_at": null,
+          "source_url": "https://stat.ripe.net/data/bgp-update-activity/data.json?resource=AS4134&num_hours=6&max_samples=24&hide_empty_samples=false",
+          "title": "RIPE RIS sampled BGP announcements: AS4134"
         }
       }
     }

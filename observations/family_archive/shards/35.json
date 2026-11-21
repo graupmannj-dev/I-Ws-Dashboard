@@ -193,6 +193,45 @@
         }
       }
     },
+    "3549b2c0ccb97b5f11465f0fa71711aebd56b5b322c9ae6969b3fdd855263894": {
+      "information_root": "bmkg_nowcast:bmkg_nowcast:ae4b0e3d40b2fccd317d979bf70c",
+      "members": {
+        "beh:38bb1ae08a3a1e3578142bdc147e": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "bmkg_nowcast",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-21T10:25:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:38bb1ae08a3a1e3578142bdc147e",
+          "information_root": "bmkg_nowcast:bmkg_nowcast:ae4b0e3d40b2fccd317d979bf70c",
+          "origin": "behavioral_registry",
+          "provider": "bmkg_nowcast",
+          "published_at": "2026-11-21T10:25:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Indonesia BMKG",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Indonesia BMKG active provincial nowcast RSS, source-reported only; not global",
+          "source_updated_at": null,
+          "source_url": "https://www.bmkg.go.id/alerts/nowcast/en/CSB20261121003_alert.xml",
+          "title": "Thunderstorm This Evening in Sumatera Barat"
+        }
+      }
+    },
     "354d669817b3f7964d59f88910ba4cc1c633ca94d3e73ffb40f86382acadae88": {
       "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07b3f0:110276-2026",
       "members": {
@@ -223,6 +262,53 @@
           "source_updated_at": null,
           "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-19T02%3A27%3A41&updatedTo=2026-11-21T02%3A27%3A41",
           "title": "UKRI-4453 Lot 4_02 R131 Enabling and Infrastructure · UK Research & Innovation (UKRI)"
+        }
+      }
+    },
+    "35661397e78230078c352c31d0339c48b6713a7640f097ab537ff5f298e99bb3": {
+      "information_root": "cbp_wait:cbp_wait:230106:2026-11-21:05:24:37",
+      "members": {
+        "beh:7393d9fac1f987710f3fbd61c90d": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-21T11:25:03+00:00",
+          "geography_key": "us-border-port:230106",
+          "geography_label": "B&M Bridge",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:7393d9fac1f987710f3fbd61c90d",
+          "information_root": "cbp_wait:cbp_wait:230106:2026-11-21:05:24:37",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Update Pending",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/21/2026",
+            "reported_local_time": "05:24:37",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — B&M Bridge / B&M Bridge"
         }
       }
     },

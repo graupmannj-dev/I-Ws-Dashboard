@@ -1,5 +1,99 @@
 {
   "roots": {
+    "f52dbe7d03a495a83e11a429a354534100092ab6a75e544427a9fcea7bdb3ba8": {
+      "information_root": "cbp_wait:cbp_wait:380301:2026-11-21:06:24:37",
+      "members": {
+        "beh:44267b0593f755f68b55b0585ec2": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-21T11:25:03+00:00",
+          "geography_key": "us-border-port:380301",
+          "geography_label": "Sault Ste. Marie",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:44267b0593f755f68b55b0585ec2",
+          "information_root": "cbp_wait:cbp_wait:380301:2026-11-21:06:24:37",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "no delay",
+            "lanes_open": 1,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "At 6:00 am EST",
+            "reported_local_date": "11/21/2026",
+            "reported_local_time": "06:24:37",
+            "source_declared_border": "Canadian Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 0
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Sault Ste. Marie / International Bridge - SSM"
+        }
+      }
+    },
+    "f53247b1c209aa569d40567e17e6229c288fe169e34cf7010f023af341d5fe54": {
+      "information_root": "cbp_wait:cbp_wait:070101:2026-11-21:06:24:37",
+      "members": {
+        "beh:679b1b5835bcd1995cf015650d12": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-21T11:25:03+00:00",
+          "geography_key": "us-border-port:070101",
+          "geography_label": "Ogdensburg",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:679b1b5835bcd1995cf015650d12",
+          "information_root": "cbp_wait:cbp_wait:070101:2026-11-21:06:24:37",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "no delay",
+            "lanes_open": 1,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "At 8:00 am EST",
+            "reported_local_date": "11/21/2026",
+            "reported_local_time": "06:24:37",
+            "source_declared_border": "Canadian Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 0
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Ogdensburg"
+        }
+      }
+    },
     "f53f846442e059d9ce76ff49cd8dc3d9fea9a0aba9f7875bfa71272196d7b718": {
       "information_root": "niord:c2bbab7f-c4f0-476e-9ee8-78f8102eec37:0:2:0",
       "members": {
@@ -180,6 +274,53 @@
           "source_updated_at": null,
           "source_url": "https://bwt.cbp.gov/api/waittimes",
           "title": "CBP estimated commercial border wait — Hidalgo/Pharr / Hidalgo"
+        }
+      }
+    },
+    "f5a1e1600ca36194c2ffdce7d7ad4ed9fe3bc7588f39bb9f16762cea54c5cb60": {
+      "information_root": "cbp_wait:cbp_wait:011502:2026-11-21:06:24:37",
+      "members": {
+        "beh:f03dbcf8e7b22d887df0d697cbdf": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-21T11:25:03+00:00",
+          "geography_key": "us-border-port:011502",
+          "geography_label": "Calais",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:f03dbcf8e7b22d887df0d697cbdf",
+          "information_root": "cbp_wait:cbp_wait:011502:2026-11-21:06:24:37",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "N/A",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Closed",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/21/2026",
+            "reported_local_time": "06:24:37",
+            "source_declared_border": "Canadian Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Calais / Milltown"
         }
       }
     },
