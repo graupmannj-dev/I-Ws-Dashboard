@@ -29,6 +29,8 @@ from cairn_national_sensors import (MODES as NATIONAL_MODES, SCOPE as NATIONAL_S
                                     xml_parse, adapter_for)
 from cairn_singapore_port import (FEED as SG_MPA_FEED, SCOPE as SG_MPA_SCOPE,
                                   adapt as adapt_sg_mpa)
+from cairn_brazil_power import (urls as ONS_URLS, SCOPE as ONS_SCOPE,
+                                adapt as adapt_ons)
 
 UTC=dt.timezone.utc
 SCHEMA="cairn.alternative-sensors.v1"
@@ -37,7 +39,7 @@ MAX_RECORDS=110
 USER_AGENT="CAIRN-Public-Alternative-Sensors/1.0 (github.com/graupmannj-dev/I-Ws-Dashboard)"
 WIKI_LANGS=("en","fr","es","ar","ru","zh","hi","id","ja","pt","tr","sw","ko","fa")
 WIKI_HOSTS=frozenset(lang+".wikipedia.org" for lang in WIKI_LANGS)
-MODES=("usgs","eonet","nws","usace","coops","swpc","ripe","uk_tenders","wiki_edits","cbp_wait","sg_mpa")+NATIONAL_MODES
+MODES=("usgs","eonet","nws","usace","coops","swpc","ripe","uk_tenders","wiki_edits","cbp_wait","sg_mpa","ons_br")+NATIONAL_MODES
 SCOPE={
     "usgs":"USGS M4.5+ earthquakes worldwide, rolling past day; source thresholds apply",
     "eonet":"NASA EONET open natural event catalog, recent 7 days; limit 110",
@@ -50,6 +52,7 @@ SCOPE={
     "wiki_edits":"Wikipedia main-namespace edit-count sample, 14 global language editions, three-hour window capped at 500 per wiki; not geographic location",
     "cbp_wait":"CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
     "sg_mpa":SG_MPA_SCOPE,
+    "ons_br":ONS_SCOPE,
     **NATIONAL_SCOPE,
 }
 PORT_STATIONS={
@@ -65,6 +68,7 @@ HOST_ALLOW={
  "uk_tenders":"www.find-tender.service.gov.uk",
  "wiki_edits":"en.wikipedia.org",
  "cbp_wait":"bwt.cbp.gov","sg_mpa":"data.gov.sg",
+ "ons_br":"apicarga.ons.org.br",
  "bmkg_quake":"data.bmkg.go.id","bmkg_nowcast":"www.bmkg.go.id",
  "inmet_br":"apiprevmet3.inmet.gov.br",
  "imd_in":"cap-sources.s3.amazonaws.com",
@@ -72,6 +76,7 @@ HOST_ALLOW={
 }
 MAX_URLS={"usgs":1,"eonet":1,"nws":1,"usace":3,"coops":3,"swpc":1,"ripe":1,
           "uk_tenders":1,"wiki_edits":len(WIKI_LANGS),"cbp_wait":1,"sg_mpa":1,
+          "ons_br":4,
           **{mode:1 for mode in NATIONAL_MODES}}
 MAX_RIPE_PROBES=60000
 
@@ -110,7 +115,8 @@ def source_url(url,mode):
                                                   "tidesandcurrents.noaa.gov",
                                                   "www.swpc.noaa.gov",
                                                   "fr.wikipedia.org","es.wikipedia.org",
-                                                  "avisos.inmet.gov.br",*WIKI_HOSTS):
+                                                  "avisos.inmet.gov.br",
+                                                  "dados.ons.org.br",*WIKI_HOSTS):
         return None
     if p.username or p.password or len(url)>1500:return None
     return url
@@ -149,6 +155,7 @@ def json_get(url):
 def urls(mode,now):
     if mode in NATIONAL_FEEDS:return [NATIONAL_FEEDS[mode]]
     if mode=="sg_mpa":return [SG_MPA_FEED]
+    if mode=="ons_br":return ONS_URLS(now)
     if mode=="usgs":
         return ["https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_day.geojson"]
     if mode=="eonet":
@@ -202,7 +209,8 @@ def entry(mode,rid,title,url,checked,*,event_at=None,published=None,kind="source
         "observed_at":iso(checked),"event_at":iso(event) if event else None,
         "published_at":iso(pub) if pub else None,
         "first_seen_at":iso(first) if first else None,
-        "claim_level":"monthly_historical_port_throughput_not_current_disruption" if mode=="sg_mpa"
+        "claim_level":"verified_grid_load_not_outage_or_intent" if mode=="ons_br"
+                     else "monthly_historical_port_throughput_not_current_disruption" if mode=="sg_mpa"
                      else "national_environmental_context_not_conflict_attribution" if mode in NATIONAL_MODES
                      else "estimated_border_waits_not_vehicle_volume_or_mobilization" if mode=="cbp_wait"
                      else "official_tender_release_not_fulfillment_or_intent" if mode=="uk_tenders"
@@ -595,6 +603,7 @@ ADAPTERS={"usgs":adapt_usgs,"eonet":adapt_eonet,"nws":adapt_nws,
           "uk_tenders":adapt_uk_tenders,"wiki_edits":adapt_wiki_edits,
           "cbp_wait":adapt_cbp_wait,
           "sg_mpa":lambda data,checked,url:adapt_sg_mpa(data,checked,url,entry),
+          "ons_br":lambda data,checked,url:adapt_ons(data,checked,url,entry),
           **{mode:adapter_for(mode,entry) for mode in NATIONAL_MODES}}
 
 
@@ -630,7 +639,7 @@ def collect(state,clock=None,fetcher=json_get,selected=MODES):
                 errors.append(clean(type(exc).__name__+": "+str(exc),180))
         # Provider responses are bounded and explicitly marked partial;
         # collection never silently truncates and claims exhaustive coverage.
-        truncated=len(success)>MAX_RECORDS or len(errors)>0 or mode in ("usace","nws","eonet","coops","uk_tenders","wiki_edits","cbp_wait","sg_mpa")+NATIONAL_MODES
+        truncated=len(success)>MAX_RECORDS or len(errors)>0 or mode in ("usace","nws","eonet","coops","uk_tenders","wiki_edits","cbp_wait","sg_mpa","ons_br")+NATIONAL_MODES
         kept=success[:MAX_RECORDS]
         ok=len(errors)<len(source_urls)
         status="partial" if ok and truncated else "collected" if ok else "unavailable"
@@ -645,7 +654,8 @@ def collect(state,clock=None,fetcher=json_get,selected=MODES):
             "missingness":"provider_bounded_partial" if ok and truncated else
                 "provider_bounded_not_exhaustive" if ok else "not_measured_not_zero",
             "source_dependency_class":(
-                "official_monthly_port_aggregate_not_real_time" if mode=="sg_mpa"
+                "official_regional_grid_load_not_outage" if mode=="ons_br"
+                else "official_monthly_port_aggregate_not_real_time" if mode=="sg_mpa"
                 else "national_official_hazard_bulletin_not_independent_incident" if mode in NATIONAL_MODES
                 else "environmental_hazard_reporting" if mode in ("usgs","eonet","nws","swpc")
                 else "official_navigation_notice" if mode=="usace"
