@@ -86,14 +86,19 @@ def _match_case(case_id, record):
         return None
     # The provider's reported geography is useful context; the publisher
     # location, URL and domain are deliberately NOT geographic matches.
+    geography = record.get("geography")
+    # Registry geography is normally a structured provider-reported object.
+    # Only its reported geographic label is a candidate for case matching:
+    # never match object metadata, collector origins or dateline URLs.
+    place = geography.get("label") if isinstance(geography, dict) else geography
     reported = (" " + _excerpt(record.get("title"), 240) + " " +
-                _excerpt(record.get("geography"), 180) + " ").casefold()
+                _excerpt(place, 180) + " ").casefold()
     return "distinctive_case_cue" if any(cue in reported for cue in cues) else None
 
 
 def _directional_hint(record):
     mode = record.get("collection_mode")
-    if mode in CONTEXT_ONLY_MODES or record.get("evidence_class") == "environmental_context":
+    if mode in CONTEXT_ONLY_MODES or record.get("source_family") == "environmental_context":
         return "context", "Environmental or hazard observation; not evidence of hostile preparation"
     title = _excerpt(record.get("title"), 240).lower()
     support = [name for name, rx in SUPPORT_CUES if re.search(rx, title, re.I)]
