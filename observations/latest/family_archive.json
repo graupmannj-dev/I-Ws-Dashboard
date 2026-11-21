@@ -2,7 +2,7 @@
   "alerts_promoted": 0,
   "archive_integrity": "all shards retained; public discovery cache is bounded",
   "automatic_topic_count_total": 209,
-  "automatic_topic_document_count_total": 473,
+  "automatic_topic_document_count_total": 474,
   "automatic_topic_index": {
     "assignment_explanations": {
       "0265facd0ef6eabdd50cb3069364": {
@@ -1030,6 +1030,20 @@
         "shared_activity_roles": [],
         "shared_subject_terms": []
       },
+      "d8acc741ea0fca86f102cde99325": {
+        "independent_corroboration_proven": false,
+        "latent_semantic_similarity": 1,
+        "method": "legacy_sparse_v1",
+        "raw_text_similarity": 1.0,
+        "review_status": "unreviewed_automatic_topic_match",
+        "same_incident_proven": false,
+        "same_source_document": false,
+        "score": 1.0,
+        "shared_activity_roles": [],
+        "shared_named_subjects": [],
+        "shared_subject_terms": [],
+        "subject_geography_compatible": true
+      },
       "d909f0b940c94962fc1c0756967a": {
         "independent_corroboration_proven": false,
         "latent_semantic_similarity": 0.9937,
@@ -1697,6 +1711,7 @@
       "d86c9ee718717bfec69e66b5120d": "family:c733ba40ded9c2fca04b",
       "d89604af3081532f76eb4b2135e1": "family:59cc1addfc29395f1f7e",
       "d8a7b959a0b3660d940f220de028": "family:f93ac02b582110ef6ed0",
+      "d8acc741ea0fca86f102cde99325": "family:c9675c6f217ebbb3cff4",
       "d8fb5212a5f15ca852722f469410": "family:9713cb39e6debc594663",
       "d909f0b940c94962fc1c0756967a": "family:1c628f836d1f68918c22",
       "d988ebc15c8203cae6665b9ae20d": "family:e1c66c16bd9ca1017201",
@@ -5244,8 +5259,8 @@
       },
       "family:c9675c6f217ebbb3cff4": {
         "first_document_at": "2026-11-12T02:29:18+00:00",
-        "last_document_at": "2026-11-21T08:14:01+00:00",
-        "matched_document_count": 16,
+        "last_document_at": "2026-11-21T16:22:21+00:00",
+        "matched_document_count": 17,
         "seed": {
           "domain": "network",
           "geo": [
@@ -6255,17 +6270,45 @@
     },
     "public_index_truncated": false,
     "schema": "aiba.automatic-analytical-topics.v1",
-    "total_document_assignments": 473,
+    "total_document_assignments": 474,
     "total_stable_topics": 209
   },
-  "generated_at": "2026-11-21T15:40:33.772313+00:00",
+  "generated_at": "2026-11-21T16:22:33.628256+00:00",
   "historical_relationship_count": 0,
   "missing_data_is_not_zero": true,
-  "new_records_added": 0,
-  "public_record_count": 1871,
+  "new_records_added": 1,
+  "public_record_count": 1872,
   "public_snapshot_truncated": false,
-  "record_count_total": 1871,
+  "record_count_total": 1872,
   "records": [
+    {
+      "calibrated_metric": null,
+      "case_hint": null,
+      "claim_level": "measurement_no_attribution",
+      "collection_mode": "ioda",
+      "direct_measurement": true,
+      "event_at": "2026-11-21T14:00:00Z",
+      "first_observed_at": "2026-11-21T16:22:21+00:00",
+      "geography_key": "country:NG",
+      "geography_label": "NG",
+      "geography_precision": "provider_reported_country",
+      "id": "beh:314ad12a74b135304dae7cf55a15",
+      "information_root": "ioda:69c86e2cf2b74d1ef9e71bba",
+      "origin": "behavioral_registry",
+      "provider": "ioda",
+      "published_at": null,
+      "restriction_status": "",
+      "scheduled_valid_from": null,
+      "scheduled_valid_until": null,
+      "source_dependency_class": null,
+      "source_family": "internet_reachability",
+      "source_kind": "outage_event",
+      "source_measurement": null,
+      "source_scope": null,
+      "source_updated_at": null,
+      "source_url": "https://ioda.inetintel.cc.gatech.edu/",
+      "title": "IODA detected connectivity anomaly: country NG"
+    },
     {
       "calibrated_metric": null,
       "case_hint": null,
@@ -60230,22 +60273,23 @@
   "report_relationships": {
     "candidate_groups": []
   },
-  "root_count_total": 1871,
+  "root_count_total": 1872,
   "schema": "aiba.family-archive.v1",
   "source_health": {
     "amsa": {
-      "age_hours": 7.21,
-      "checked_at": "2026-11-21T08:14:01Z",
-      "missingness": "not_measured_not_zero",
+      "age_hours": 0.0,
+      "checked_at": "2026-11-21T16:22:21Z",
+      "first_provider_baseline": false,
+      "missingness": "provider_bounded_not_exhaustive",
       "mode": "amsa",
       "provider_status": "collected",
-      "snapshot_at": "2026-11-21T08:14:01Z",
+      "snapshot_at": "2026-11-21T16:22:21Z",
       "source_scope": "AMSA NAVAREA X only",
-      "status": "stale_or_unavailable",
+      "status": "current",
       "truncated_or_partial": false
     },
     "bmkg_nowcast": {
-      "age_hours": 4.07,
+      "age_hours": 4.99,
       "checked_at": "2026-11-21T11:22:54Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -60257,7 +60301,7 @@
       "truncated_or_partial": true
     },
     "bmkg_quake": {
-      "age_hours": 4.07,
+      "age_hours": 4.99,
       "checked_at": "2026-11-21T11:22:54Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -60269,7 +60313,7 @@
       "truncated_or_partial": true
     },
     "cbp_wait": {
-      "age_hours": 4.07,
+      "age_hours": 4.99,
       "checked_at": "2026-11-21T11:22:54Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -60281,7 +60325,7 @@
       "truncated_or_partial": true
     },
     "commercial": {
-      "age_hours": 0.0,
+      "age_hours": 0.93,
       "checked_at": "2026-11-21T15:26:49Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -60293,7 +60337,7 @@
       "truncated_or_partial": false
     },
     "coops": {
-      "age_hours": 4.07,
+      "age_hours": 4.99,
       "checked_at": "2026-11-21T11:22:54Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -60305,7 +60349,7 @@
       "truncated_or_partial": true
     },
     "eonet": {
-      "age_hours": 4.07,
+      "age_hours": 4.99,
       "checked_at": "2026-11-21T11:22:54Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -60317,7 +60361,7 @@
       "truncated_or_partial": true
     },
     "imd_in": {
-      "age_hours": 4.07,
+      "age_hours": 4.99,
       "checked_at": "2026-11-21T11:22:54Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -60329,7 +60373,7 @@
       "truncated_or_partial": true
     },
     "inmet_br": {
-      "age_hours": 4.07,
+      "age_hours": 4.99,
       "checked_at": "2026-11-21T11:22:54Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -60341,18 +60385,19 @@
       "truncated_or_partial": true
     },
     "ioda": {
-      "age_hours": 7.21,
-      "checked_at": "2026-11-21T08:14:01Z",
-      "missingness": "not_measured_not_zero",
+      "age_hours": 0.0,
+      "checked_at": "2026-11-21T16:22:21Z",
+      "first_provider_baseline": false,
+      "missingness": "provider_bounded_not_exhaustive",
       "mode": "ioda",
       "provider_status": "collected",
-      "snapshot_at": "2026-11-21T08:14:01Z",
+      "snapshot_at": "2026-11-21T16:22:21Z",
       "source_scope": "IODA country events (first 100 of first page, 4-hour query)",
-      "status": "stale_or_unavailable",
+      "status": "current",
       "truncated_or_partial": false
     },
     "live_airspace": {
-      "age_hours": 3.7,
+      "age_hours": 4.63,
       "checked_at": "2026-11-21T11:44:34Z",
       "missingness": "not_measured_not_zero",
       "mode": "live_airspace",
@@ -60363,7 +60408,7 @@
       "truncated_or_partial": true
     },
     "live_maritime": {
-      "age_hours": 3.7,
+      "age_hours": 4.63,
       "checked_at": "2026-11-21T11:44:34Z",
       "missingness": "not_measured_not_zero",
       "mode": "live_maritime",
@@ -60374,18 +60419,18 @@
       "truncated_or_partial": true
     },
     "nga": {
-      "age_hours": 7.21,
-      "checked_at": "2026-11-21T08:14:01Z",
+      "age_hours": 0.0,
+      "checked_at": "2026-11-21T16:22:21Z",
       "missingness": "not_measured_not_zero",
       "mode": "nga",
       "provider_status": "unavailable",
-      "snapshot_at": "2026-11-21T08:14:01Z",
+      "snapshot_at": "2026-11-21T16:22:21Z",
       "source_scope": "NGA active broadcast warnings; provider availability varies",
       "status": "stale_or_unavailable",
       "truncated_or_partial": false
     },
     "nws": {
-      "age_hours": 4.07,
+      "age_hours": 4.99,
       "checked_at": "2026-11-21T11:22:54Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -60397,7 +60442,7 @@
       "truncated_or_partial": true
     },
     "official": {
-      "age_hours": 8.24,
+      "age_hours": 9.17,
       "checked_at": "2026-11-21T07:12:27Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -60409,7 +60454,7 @@
       "truncated_or_partial": false
     },
     "ons_br": {
-      "age_hours": 4.07,
+      "age_hours": 4.99,
       "checked_at": "2026-11-21T11:22:54Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -60421,7 +60466,7 @@
       "truncated_or_partial": true
     },
     "ripe": {
-      "age_hours": 4.07,
+      "age_hours": 4.99,
       "checked_at": "2026-11-21T11:22:54Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -60433,7 +60478,7 @@
       "truncated_or_partial": false
     },
     "ris_bgp": {
-      "age_hours": 4.07,
+      "age_hours": 4.99,
       "checked_at": "2026-11-21T11:22:54Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -60445,7 +60490,7 @@
       "truncated_or_partial": true
     },
     "saws_za": {
-      "age_hours": 4.07,
+      "age_hours": 4.99,
       "checked_at": "2026-11-21T11:22:54Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -60457,7 +60502,7 @@
       "truncated_or_partial": true
     },
     "sg_mpa": {
-      "age_hours": 4.07,
+      "age_hours": 4.99,
       "checked_at": "2026-11-21T11:22:54Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -60469,7 +60514,7 @@
       "truncated_or_partial": true
     },
     "swpc": {
-      "age_hours": 4.07,
+      "age_hours": 4.99,
       "checked_at": "2026-11-21T11:22:54Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -60481,7 +60526,7 @@
       "truncated_or_partial": false
     },
     "tw_power": {
-      "age_hours": 4.07,
+      "age_hours": 4.99,
       "checked_at": "2026-11-21T11:22:54Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -60493,7 +60538,7 @@
       "truncated_or_partial": true
     },
     "uk_tenders": {
-      "age_hours": 4.07,
+      "age_hours": 4.99,
       "checked_at": "2026-11-21T11:22:54Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -60505,7 +60550,7 @@
       "truncated_or_partial": true
     },
     "usace": {
-      "age_hours": 4.07,
+      "age_hours": 4.99,
       "checked_at": "2026-11-21T11:22:54Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -60517,7 +60562,7 @@
       "truncated_or_partial": true
     },
     "usgs": {
-      "age_hours": 4.07,
+      "age_hours": 4.99,
       "checked_at": "2026-11-21T11:22:54Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -60529,7 +60574,7 @@
       "truncated_or_partial": false
     },
     "watchlist": {
-      "age_hours": 8.24,
+      "age_hours": 9.17,
       "checked_at": "2026-11-21T07:12:27Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -60541,7 +60586,7 @@
       "truncated_or_partial": false
     },
     "wiki_edits": {
-      "age_hours": 4.07,
+      "age_hours": 4.99,
       "checked_at": "2026-11-21T11:22:54Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
