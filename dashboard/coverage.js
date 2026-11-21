@@ -85,5 +85,35 @@ async function load(){
     $("countryList").textContent="Source coverage unavailable.";
   }
 }
+async function showPhysicalBaselines(){
+  const target=$("metricDetails");
+  try{
+    const res=await fetch("metric_baselines.json",{cache:"no-store"});
+    if(!res.ok)throw Error("HTTP "+res.status);
+    const data=await res.json();
+    if(data.schema!=="cairn.metric-cohort-baselines.v1"||
+       !Array.isArray(data.series)||data.series.length>300)
+      throw Error("Unsupported metric baseline artifact");
+    target.replaceChildren();
+    const summary=document.createElement("p");summary.className="muted";
+    summary.textContent=(data.series_ready_for_descriptive_deviation||0)+
+      " descriptive cohorts ready of "+data.series.length+
+      " measured series. Historical comparison is not a conflict-warning score.";
+    target.append(summary);
+    for(const record of data.series.slice(0,40)){
+      const line=document.createElement("div");line.className="metric-row";
+      const a=document.createElement("strong");a.textContent=record.series||"unknown series";
+      const desc=document.createElement("span");
+      desc.textContent=(record.status||"unassessed")+
+        " · "+(record.comparable_historical_points??0)+" matched prior periods"+
+        " · latest "+(record.source_clock||"unavailable");
+      line.append(a,desc);target.append(line);
+    }
+  }catch(error){
+    target.textContent="Matched source history not available: "+error.message+
+      ". No uncertainty or missingness is treated as a normal condition.";
+  }
+}
+showPhysicalBaselines();
 load();
 })();

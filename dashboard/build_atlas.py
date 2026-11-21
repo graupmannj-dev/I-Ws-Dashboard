@@ -351,6 +351,17 @@ def generate(site, generated=None, state_dir=None):
     source_coverage = build_source_coverage(registry, generated_at=now)
     (site / "coverage.json").write_text(
         json.dumps(source_coverage, ensure_ascii=False, indent=2), encoding="utf-8")
+    # Matched physical history diagnostics; not calibrated conflict forecasts.
+    metric_path = state_dir / "latest" / "metric_cohort_baselines.json" if state_dir else None
+    metrics = read(metric_path, {}) if metric_path else {}
+    if not isinstance(metrics, dict) or metrics.get("schema") != "cairn.metric-cohort-baselines.v1":
+        metrics = {"schema": "cairn.metric-cohort-baselines.v1",
+                   "status": "metric_history_not_yet_collected",
+                   "series": [], "series_total": 0,
+                   "series_ready_for_descriptive_deviation": 0,
+                   "warnings_approved": 0}
+    (site / "metric_baselines.json").write_text(
+        json.dumps(metrics, ensure_ascii=False, indent=2), encoding="utf-8")
     # Hypothesis center: explicit case IDs and reviewer-tagged evidence only.
     # Historical dossier source items are visible, not reverified as live data.
     try:
@@ -391,6 +402,11 @@ def generate(site, generated=None, state_dir=None):
         "intake_queue_new_count": new_queue_count,
         "visibility_funnel": visibility_funnel,
         "dynamic_bins": dynamic_families,
+        "metric_baselines": {"url": "metric_baselines.json",
+                             "status": metrics.get("status"),
+                             "series_total": len(metrics.get("series", [])),
+                             "readiness_count": metrics.get("series_ready_for_descriptive_deviation", 0),
+                             "automatic_security_warnings": 0},
         "source_coverage": {"url": "coverage.html",
                            "source_modes_total": source_coverage["source_modes_total"],
                            "recently_checked_modes": source_coverage["currently_checked_modes"]},
