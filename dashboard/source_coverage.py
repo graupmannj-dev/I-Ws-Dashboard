@@ -46,6 +46,8 @@ CATALOG={
  "saws_za":("ZA",["ZA"],"national_sample","South Africa SAWS alerts via WMO relay","weather_notice"),
  "sg_mpa":("SG",["SG"],"national_sample","Singapore MPA monthly port arrivals, lagged NOT live","physical_maritime_lagged"),
  "ons_br":("BR",["BR"],"national_sample","Brazil ONS verified half-hour electricity load, four macroregions, two-day historical lag; not outages","physical_grid_load_lagged"),
+ "tw_power":("TW",["TW"],"national_sample","Taiwan Taipower reported national load; publisher release clock, not localized power disturbance","physical_national_grid_snapshot"),
+ "ris_bgp":("NL",[],"global_unlocated","RIPE RIS route activity for six selected non-Western operator ASNs; AS location is NOT affected event site","public_routing_measurement"),
 }
 
 def build(registry,generated_at=None):

@@ -17,6 +17,8 @@ const NAMES={amsa:"AMSA NAVAREA X",commercial:"Commercial media sampling",
   cbp_wait:"CBP border wait estimates",
   sg_mpa:"Singapore MPA monthly vessel arrivals",
   ons_br:"Brazil ONS verified electric-grid load",
+  tw_power:"Taiwan Taipower public national load",
+  ris_bgp:"RIPE RIS public AS routing updates",
   bmkg_quake:"BMKG Indonesian earthquakes",
   bmkg_nowcast:"BMKG Indonesian nowcast warnings",
   inmet_br:"INMET Brazil weather warnings",
@@ -25,7 +27,7 @@ const NAMES={amsa:"AMSA NAVAREA X",commercial:"Commercial media sampling",
 const FRESH_HOURS={amsa:6,commercial:48,ioda:6,live_airspace:2,live_maritime:2,
   nga:6,official:12,watchlist:12,faa_nas:25/60,gdelt:48,wikipedia:72,
   usgs:8,eonet:8,nws:8,usace:12,coops:8,swpc:8,ripe:8,
-  uk_tenders:8,wiki_edits:8,cbp_wait:8,sg_mpa:8,ons_br:8,
+  uk_tenders:8,wiki_edits:8,cbp_wait:8,sg_mpa:8,ons_br:8,tw_power:8,ris_bgp:8,
   bmkg_quake:8,bmkg_nowcast:8,inmet_br:8,imd_in:8,saws_za:8};
 // A source's ROLE and its HEALTH are separate. News can corroborate a lead,
 // but syndicated reports do not by themselves constitute independent sensors.
@@ -66,6 +68,10 @@ const SOURCE_META={
     "UK Find a Tender publishes official OCDS public contract releases. This bounded update sample is not all UK purchasing, a measurement of urgency, or proof that goods or services were delivered."},
   wiki_edits:{role:"Public attention/context",description:
     "Wikipedia public mainspace edits are aggregated in bounded three-hour samples from fourteen language editions including Arabic, Russian, Indonesian, Japanese, Hindi, Chinese and Swahili. Language edition is NOT editor location or geographic coverage; edits alone do not establish an event."},
+  tw_power:{role:"Taiwan public grid aggregate",description:
+    "Taipower publishes a ten-minute-updated national load snapshot and source release clock. CAIRN records the national aggregate only, with release time explicitly distinguished from load measurement time. This cannot identify local grid outages or intent."},
+  ris_bgp:{role:"Global routing context, sampled non-Western operator ASNs",description:
+    "RIPE RIS publishes recent BGP announcement activity for selected China, India, Korea, Vietnam, South Africa, and Argentina network ASNs. AS operator geography is not measurement location, network outage, or country-wide connectivity coverage; ASN withdrawals are unavailable."},
   ons_br:{role:"Brazil physical electricity-system measurement",description:
     "Brazil's ONS publishes verified half-hourly system electricity load for four macroregions. CAIRN samples a two-day-old verified interval per region; load changes alone do not demonstrate power outages, infrastructure damage or malicious activity. Units MWmed, UTC source clock; no matched baseline yet."},
   sg_mpa:{role:"Singapore physical port aggregate — lagged",description:

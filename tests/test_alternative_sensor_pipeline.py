@@ -59,6 +59,17 @@ def sample(mode):
         return [{"msm_id":1001,"timestamp":int(NOW.timestamp())-900,
                  "prb_id":i,"from":f"203.0.113.{i}",
                  "avg":5+i/10} for i in range(1,34)]
+    if mode=="tw_power":
+        return {"success":"true","result":{"resource_id":"-"},"records":[
+            {"curr_load":"2515.6","curr_util_rate":"68"},
+            {"fore_peak_dema_load":"2850","publish_time":"115.11.21(六)00:30"},
+            {"yday_date":"115.11.20"}]}
+    if mode=="ris_bgp":
+        return {"status":"ok","data":{"resource":"AS4134","resource_type":"asn",
+            "query_endtime":"2026-11-20T16:30:00Z",
+            "updates":[{"starttime":"2026-11-20T16:00:00Z",
+                        "announcements":15,"withdrawals":None}],
+            "sampling_period":1800}}
     if mode=="ons_br":
         return [{"cod_areacarga":"SECO","din_referenciautc":"2026-11-18T15:30:00Z",
                  "val_cargaglobal":42500.2}]
@@ -124,6 +135,13 @@ def fake(url):
     if "atlas.ripe.net" in url:return sample("ripe")
     if "find-tender.service.gov.uk" in url:return sample("uk_tenders")
     if "bwt.cbp.gov" in url:return sample("cbp_wait")
+    if "service.taipower.com.tw" in url:return sample("tw_power")
+    if "stat.ripe.net" in url:
+        from urllib.parse import parse_qs,urlsplit
+        asn=parse_qs(urlsplit(url).query)["resource"][0]
+        d=sample("ris_bgp")
+        d["data"]["resource"]=asn
+        return d
     if "apicarga.ons.org.br" in url:
         from urllib.parse import parse_qs,urlsplit
         area=parse_qs(urlsplit(url).query)["cod_areacarga"][0]
@@ -192,6 +210,8 @@ class AlternativeSensorTests(unittest.TestCase):
             self.assertEqual(got["wiki_edits"]["source_queries_attempted"],14)
             self.assertEqual(got["sg_mpa"]["records"],8)
             self.assertEqual(got["ons_br"]["records"],4)
+            self.assertEqual(got["tw_power"]["records"],1)
+            self.assertEqual(got["ris_bgp"]["records"],6)
             self.assertEqual(got["coops"]["status"],"partial")
             reg=create(state,clock=lambda:NOW,run_id="integration",write=True)
             self.assertEqual(reg["schema"],REGISTRY_SCHEMA)
