@@ -73,6 +73,20 @@ class HistoryBackfillTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError,"unexpected"):
             adapt_ons_day(out,area,day,url,NOW)
 
+    def test_ons_source_date_may_end_in_next_utc_day(self):
+        area,day,url=list(ons_urls(NOW))[0]
+        rows=ons_day(area,day)
+        # A domestic calendar day may have an interval endpoint after
+        # midnight UTC; this is not a fabricated second source day.
+        rows[0]["din_referenciautc"]=(dt.datetime.combine(
+            day+dt.timedelta(days=1),dt.time(0,0),tzinfo=UTC).isoformat())
+        result=adapt_ons_day(rows,area,day,url,NOW)
+        self.assertEqual(len(result),48)
+        rows[0]["din_referenciautc"]=(dt.datetime.combine(
+            day+dt.timedelta(days=2),dt.time(0,0),tzinfo=UTC).isoformat())
+        with self.assertRaisesRegex(ValueError,"misaligned"):
+            adapt_ons_day(rows,area,day,url,NOW)
+
     def test_singapore_years_and_duplicates_are_required(self):
         with self.assertRaisesRegex(ValueError,"multiple years"):
             adapt_sg({"success":True,"result":{"resource_id":
