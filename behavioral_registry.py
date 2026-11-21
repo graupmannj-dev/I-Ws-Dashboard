@@ -23,18 +23,19 @@ from behavioral_event_resolution import reported_site
 from cairn_national_sensors import MODES as NATIONAL_MODES, SCOPE as NATIONAL_SCOPE
 from cairn_singapore_port import SCOPE as SG_MPA_SCOPE
 from cairn_brazil_power import SCOPE as ONS_SCOPE
+from cairn_grid_and_bgp import SCOPE as GRID_NET_SCOPE
 
 UTC = dt.timezone.utc
 SCHEMA = "aiba.behavioral-observations.v1"
 MODES = ("ioda", "nga", "amsa", "official", "commercial", "watchlist", "live_airspace", "live_maritime",
          "usgs", "eonet", "nws", "usace", "coops", "swpc", "ripe",
-         "uk_tenders", "wiki_edits", "cbp_wait", "sg_mpa", "ons_br")+NATIONAL_MODES
+         "uk_tenders", "wiki_edits", "cbp_wait", "sg_mpa", "ons_br", "tw_power", "ris_bgp")+NATIONAL_MODES
 ALLOWED_STATES = {"collected", "partial"}
 FRESH_HOURS = {"ioda": 6, "nga": 6, "amsa": 6,
                "official": 12, "commercial": 48, "watchlist": 12,
                "live_airspace": 2, "live_maritime": 2,
                "usgs": 8, "eonet": 8, "nws": 8, "usace": 12, "coops": 8,
-               "swpc": 8, "ripe": 8, "uk_tenders": 8, "wiki_edits": 8, "cbp_wait": 8, "sg_mpa": 8, "ons_br": 8,
+               "swpc": 8, "ripe": 8, "uk_tenders": 8, "wiki_edits": 8, "cbp_wait": 8, "sg_mpa": 8, "ons_br": 8, "tw_power": 8, "ris_bgp": 8,
                **{mode:8 for mode in NATIONAL_MODES}}
 FAMILIES = {"ioda": "internet_reachability", "nga": "maritime_restriction",
             "amsa": "maritime_restriction", "official": "protective_notice",
@@ -46,6 +47,7 @@ FAMILIES = {"ioda": "internet_reachability", "nga": "maritime_restriction",
             "ripe":"internet_reachability", "uk_tenders":"public_procurement",
             "wiki_edits":"public_attention","cbp_wait":"border_transport_delay",
             "sg_mpa":"port_throughput", "ons_br":"grid_load",
+            "tw_power":"grid_load","ris_bgp":"internet_routing",
             **{mode:"environmental_context" for mode in NATIONAL_MODES}}
 EVIDENCE = {"ioda": "network_measurement", "nga": "official_notice",
             "amsa": "official_notice", "official": "official_notice",
@@ -60,6 +62,8 @@ EVIDENCE = {"ioda": "network_measurement", "nga": "official_notice",
             "cbp_wait":"government_border_wait_estimate",
             "sg_mpa":"official_monthly_vessel_arrival_counts",
             "ons_br":"national_grid_verified_load_measurement",
+            "tw_power":"national_grid_reported_power_snapshot",
+            "ris_bgp":"routing_update_activity_aggregate",
             **{mode:("national_seismic_measurement" if mode=="bmkg_quake" else
                      "national_issued_weather_bulletin") for mode in NATIONAL_MODES}}
 # No source is yet verified as a military preparations sensor.
@@ -69,6 +73,7 @@ DIRECT_BEHAVIOR = {"ioda": True, "nga": False, "amsa": False,
                    "usgs": True, "eonet": False, "nws": False,
                    "usace": False, "coops": True,
                    "swpc": False, "ripe": True, "uk_tenders": False, "wiki_edits": False, "cbp_wait": False, "sg_mpa": True, "ons_br": True,
+                   "tw_power": True, "ris_bgp": True,
                    **{mode:mode=="bmkg_quake" for mode in NATIONAL_MODES}}
 MAX_PER_MODE = 500
 MAX_INDEX = 15000
@@ -171,6 +176,7 @@ def mode_status(state, mode, now):
                             else "CBP public northern/southern border commercial waits (port-local clocks; not volume)" if mode=="cbp_wait"
                             else SG_MPA_SCOPE if mode=="sg_mpa"
                             else ONS_SCOPE if mode=="ons_br"
+                            else GRID_NET_SCOPE[mode] if mode in GRID_NET_SCOPE
                             else NATIONAL_SCOPE[mode] if mode in NATIONAL_MODES
                             else "registered, exact-ID forecast contracts only"),
             "missingness":"not_measured_not_zero" if not current else
@@ -228,7 +234,7 @@ def normalize(mode, row, now):
     first_feed=when(row.get("first_seen_at"))
     if any(t and t>collected+dt.timedelta(minutes=5) for t in (published,occurred,first_feed)):
         return None,"source_clock_after_observation"
-    group=(row.get("geography") if mode in ("usgs","eonet","nws","usace","coops","swpc","ripe","uk_tenders","wiki_edits","cbp_wait","sg_mpa","ons_br")+NATIONAL_MODES else
+    group=(row.get("geography") if mode in ("usgs","eonet","nws","usace","coops","swpc","ripe","uk_tenders","wiki_edits","cbp_wait","sg_mpa","ons_br","tw_power","ris_bgp")+NATIONAL_MODES else
            row["geography"] if mode in RESTRICTION_SOURCES else location(row,mode))
     if not isinstance(group,dict):
         group=location(row,mode)
@@ -261,6 +267,8 @@ def normalize(mode, row, now):
                        "border_delay_estimate_not_actual_vehicle_flow" if mode=="cbp_wait" else
                        "monthly_maritime_throughput_not_current_disruption" if mode=="sg_mpa" else
                        "verified_grid_load_not_outage_or_intent" if mode=="ons_br" else
+                       "national_power_snapshot_not_outage_attribution" if mode=="tw_power" else
+                       "public_routing_updates_not_country_outage" if mode=="ris_bgp" else
                        "national_hazard_context_not_hostile_attribution" if mode in NATIONAL_MODES else
                        "environmental_context_not_threat_attribution"),
         "actor_identified":False,
@@ -285,7 +293,7 @@ def normalize(mode, row, now):
             "lat":event_site[0],"lon":event_site[1],
             "location_quality":"source_declared_unreviewed",
         }
-    if mode in ("usgs","eonet","nws","usace","coops","swpc","ripe","uk_tenders","wiki_edits","cbp_wait","sg_mpa","ons_br")+NATIONAL_MODES:
+    if mode in ("usgs","eonet","nws","usace","coops","swpc","ripe","uk_tenders","wiki_edits","cbp_wait","sg_mpa","ons_br","tw_power","ris_bgp")+NATIONAL_MODES:
         # Metadata is source-declared: no synthetic anomaly score or
         # independent corroboration is inferred from natural hazards.
         result["source_scope"]=str(row.get("source_scope") or "")[:220]
@@ -299,6 +307,8 @@ def normalize(mode, row, now):
             else "government_border_wait_estimate" if mode=="cbp_wait"
             else "official_monthly_port_throughput_historical" if mode=="sg_mpa"
             else "verified_national_grid_load_measurement" if mode=="ons_br"
+            else "public_national_power_snapshot" if mode=="tw_power"
+            else "routing_collector_sampled_asn_updates" if mode=="ris_bgp"
             else "national_seismic_reporting_may_represent_same_usgs_event" if mode=="bmkg_quake"
             else "national_issued_weather_warning_not_independent_observation" if mode in NATIONAL_MODES
             else "station_physical_measurement")
