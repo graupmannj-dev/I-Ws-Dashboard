@@ -17,6 +17,7 @@ import hashlib
 import json
 import math
 import re
+import time
 from statistics import median
 from pathlib import Path
 import urllib.parse
@@ -608,7 +609,12 @@ def collect(state,clock=None,fetcher=json_get,selected=MODES):
         errors=[]
         # Each CO-OPS station is independently useful; one failed station
         # does not block successfully observed stations.
-        for url in source_urls[:MAX_URLS[mode]]:
+        for i,url in enumerate(source_urls[:MAX_URLS[mode]]):
+            # Wikimedia throttles bursts across edition hosts from one runner IP.
+            # Pace only real outbound reads. Offline fixtures remain instant.
+            # Never bypass a 429; its source health stays partial/unavailable.
+            if mode=="wiki_edits" and i and fetcher is json_get:
+                time.sleep(7)
             try:
                 if urllib.parse.urlsplit(url).hostname not in (WIKI_HOSTS
                                                              if mode=="wiki_edits" else (HOST_ALLOW[mode],)):
