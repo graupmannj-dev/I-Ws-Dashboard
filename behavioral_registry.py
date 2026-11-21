@@ -20,18 +20,20 @@ from urllib.parse import urlsplit
 from ops_pipeline import load_json, parse_time, write_json
 from behavioral_restrictions import SOURCES as RESTRICTION_SOURCES, adapt_layer
 from behavioral_event_resolution import reported_site
+from cairn_national_sensors import MODES as NATIONAL_MODES, SCOPE as NATIONAL_SCOPE
 
 UTC = dt.timezone.utc
 SCHEMA = "aiba.behavioral-observations.v1"
 MODES = ("ioda", "nga", "amsa", "official", "commercial", "watchlist", "live_airspace", "live_maritime",
          "usgs", "eonet", "nws", "usace", "coops", "swpc", "ripe",
-         "uk_tenders", "wiki_edits", "cbp_wait")
+         "uk_tenders", "wiki_edits", "cbp_wait")+NATIONAL_MODES
 ALLOWED_STATES = {"collected", "partial"}
 FRESH_HOURS = {"ioda": 6, "nga": 6, "amsa": 6,
                "official": 12, "commercial": 48, "watchlist": 12,
                "live_airspace": 2, "live_maritime": 2,
                "usgs": 8, "eonet": 8, "nws": 8, "usace": 12, "coops": 8,
-               "swpc": 8, "ripe": 8, "uk_tenders": 8, "wiki_edits": 8, "cbp_wait": 8}
+               "swpc": 8, "ripe": 8, "uk_tenders": 8, "wiki_edits": 8, "cbp_wait": 8,
+               **{mode:8 for mode in NATIONAL_MODES}}
 FAMILIES = {"ioda": "internet_reachability", "nga": "maritime_restriction",
             "amsa": "maritime_restriction", "official": "protective_notice",
             "commercial": "commercial_media", "watchlist": "market_expectation",
@@ -40,7 +42,8 @@ FAMILIES = {"ioda": "internet_reachability", "nga": "maritime_restriction",
             "nws": "environmental_context", "usace": "waterway_restriction",
             "coops": "port_conditions", "swpc":"environmental_context",
             "ripe":"internet_reachability", "uk_tenders":"public_procurement",
-            "wiki_edits":"public_attention","cbp_wait":"border_transport_delay"}
+            "wiki_edits":"public_attention","cbp_wait":"border_transport_delay",
+            **{mode:"environmental_context" for mode in NATIONAL_MODES}}
 EVIDENCE = {"ioda": "network_measurement", "nga": "official_notice",
             "amsa": "official_notice", "official": "official_notice",
             "commercial": "media_mention", "watchlist": "market_quote",
@@ -51,14 +54,17 @@ EVIDENCE = {"ioda": "network_measurement", "nga": "official_notice",
             "ripe":"aggregated_public_network_measurement",
             "uk_tenders":"official_public_tender_release",
             "wiki_edits":"public_edit_activity_aggregate",
-            "cbp_wait":"government_border_wait_estimate"}
+            "cbp_wait":"government_border_wait_estimate",
+            **{mode:("national_seismic_measurement" if mode=="bmkg_quake" else
+                     "national_issued_weather_bulletin") for mode in NATIONAL_MODES}}
 # No source is yet verified as a military preparations sensor.
 DIRECT_BEHAVIOR = {"ioda": True, "nga": False, "amsa": False,
                    "official": False, "commercial": False, "watchlist": False,
                    "live_airspace": False, "live_maritime": False,
                    "usgs": True, "eonet": False, "nws": False,
                    "usace": False, "coops": True,
-                   "swpc": False, "ripe": True, "uk_tenders": False, "wiki_edits": False, "cbp_wait": False}
+                   "swpc": False, "ripe": True, "uk_tenders": False, "wiki_edits": False, "cbp_wait": False,
+                   **{mode:mode=="bmkg_quake" for mode in NATIONAL_MODES}}
 MAX_PER_MODE = 500
 MAX_INDEX = 15000
 MAX_SNAPSHOT = 2500
@@ -158,6 +164,7 @@ def mode_status(state, mode, now):
                             else "UK Find a Tender official two-day bounded release sample" if mode=="uk_tenders"
                             else "Wikipedia en/fr/es recent main-namespace edit sample" if mode=="wiki_edits"
                             else "CBP public northern/southern border commercial waits (port-local clocks; not volume)" if mode=="cbp_wait"
+                            else NATIONAL_SCOPE[mode] if mode in NATIONAL_MODES
                             else "registered, exact-ID forecast contracts only"),
             "missingness":"not_measured_not_zero" if not current else
                           "partial_sampling_not_worldwide_exhaustive" if truncated else
@@ -214,7 +221,7 @@ def normalize(mode, row, now):
     first_feed=when(row.get("first_seen_at"))
     if any(t and t>collected+dt.timedelta(minutes=5) for t in (published,occurred,first_feed)):
         return None,"source_clock_after_observation"
-    group=(row.get("geography") if mode in ("usgs","eonet","nws","usace","coops","swpc","ripe","uk_tenders","wiki_edits","cbp_wait") else
+    group=(row.get("geography") if mode in ("usgs","eonet","nws","usace","coops","swpc","ripe","uk_tenders","wiki_edits","cbp_wait")+NATIONAL_MODES else
            row["geography"] if mode in RESTRICTION_SOURCES else location(row,mode))
     if not isinstance(group,dict):
         group=location(row,mode)
@@ -245,6 +252,7 @@ def normalize(mode, row, now):
                        "issued_waterway_notice_not_verified_disruption" if mode=="usace" else
                        "aggregate_ping_no_country_or_threat_attribution" if mode=="ripe" else
                        "border_delay_estimate_not_actual_vehicle_flow" if mode=="cbp_wait" else
+                       "national_hazard_context_not_hostile_attribution" if mode in NATIONAL_MODES else
                        "environmental_context_not_threat_attribution"),
         "actor_identified":False,
         "alert_eligible":False,
@@ -268,7 +276,7 @@ def normalize(mode, row, now):
             "lat":event_site[0],"lon":event_site[1],
             "location_quality":"source_declared_unreviewed",
         }
-    if mode in ("usgs","eonet","nws","usace","coops","swpc","ripe","uk_tenders","wiki_edits","cbp_wait"):
+    if mode in ("usgs","eonet","nws","usace","coops","swpc","ripe","uk_tenders","wiki_edits","cbp_wait")+NATIONAL_MODES:
         # Metadata is source-declared: no synthetic anomaly score or
         # independent corroboration is inferred from natural hazards.
         result["source_scope"]=str(row.get("source_scope") or "")[:220]
@@ -280,6 +288,8 @@ def normalize(mode, row, now):
             else "official_public_procurement_release" if mode=="uk_tenders"
             else "public_encyclopedia_edit_aggregate" if mode=="wiki_edits"
             else "government_border_wait_estimate" if mode=="cbp_wait"
+            else "national_seismic_reporting_may_represent_same_usgs_event" if mode=="bmkg_quake"
+            else "national_issued_weather_warning_not_independent_observation" if mode in NATIONAL_MODES
             else "station_physical_measurement")
         result["warning_approved"]=False
     if mode in RESTRICTION_SOURCES:
