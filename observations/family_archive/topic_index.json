@@ -258,6 +258,20 @@
       ],
       "subject_geography_compatible": true
     },
+    "44daea32d3945690536a7aa86baa": {
+      "independent_corroboration_proven": false,
+      "latent_semantic_similarity": 1,
+      "method": "legacy_sparse_v1",
+      "raw_text_similarity": 1.0,
+      "review_status": "unreviewed_automatic_topic_match",
+      "same_incident_proven": false,
+      "same_source_document": false,
+      "score": 1.0,
+      "shared_activity_roles": [],
+      "shared_named_subjects": [],
+      "shared_subject_terms": [],
+      "subject_geography_compatible": true
+    },
     "454dece8cd6d1df433f40fca2811": {
       "independent_corroboration_proven": false,
       "latent_semantic_similarity": 0.9791,
@@ -1554,6 +1568,7 @@
     "4378287f3594bd3d1fcb971932e4": "family:08e15e23c9f75cff09eb",
     "43f13b3b8b345660be9cac9065d6": "family:a6e8f681f426d55095f8",
     "44c5b1c62e062e01a0d96c393f32": "family:c733ba40ded9c2fca04b",
+    "44daea32d3945690536a7aa86baa": "family:e1c66c16bd9ca1017201",
     "454dece8cd6d1df433f40fca2811": "family:6e277c2d1e6ae54d936b",
     "45894439732acdd62a0681de8358": "family:c733ba40ded9c2fca04b",
     "45ac323a002ed9c4b480be8bb14c": "family:c414aa3399b05b3b87c9",
@@ -5796,7 +5811,8 @@
     },
     "family:e1c66c16bd9ca1017201": {
       "first_document_at": "2026-11-12T02:29:18+00:00",
-      "matched_document_count": 8,
+      "last_document_at": "2026-11-21T21:51:31+00:00",
+      "matched_document_count": 9,
       "seed": {
         "domain": "network",
         "geo": [
@@ -6472,9 +6488,9 @@
     }
   },
   "input_truncated": false,
-  "new_document_assignments": 0,
+  "new_document_assignments": 1,
   "schema": "aiba.automatic-analytical-topics.v1",
   "semantic_seed_index_limited": false,
-  "total_document_assignments": 481,
+  "total_document_assignments": 482,
   "total_stable_topics": 212
 }
