@@ -72,7 +72,12 @@ def adapt_ons_day(data,area,day,url,checked):
         if not isinstance(row,dict) or row.get("cod_areacarga")!=area:
             raise ValueError("ONS historical data contains unexpected load region")
         stamp=ons_time(row.get("din_referenciautc"))
-        if not stamp or stamp.date()!=day or stamp.minute not in (0,30) or stamp.second:
+        # ONS filters by dat_referencia (reference calendar day), but
+        # din_referenciautc denotes the UTC end of each half-hour. Some UTC
+        # end timestamps legitimately fall on the NEXT calendar day.
+        # Validate the provider's requested day separately below.
+        if not stamp or not (day-dt.timedelta(days=1)<=stamp.date()<=
+                             day+dt.timedelta(days=1)) or stamp.minute not in (0,30) or stamp.second:
             raise ValueError("ONS source day clock or half-hour misaligned")
         val=_number(row.get("val_cargaglobal"))
         if val is None:
