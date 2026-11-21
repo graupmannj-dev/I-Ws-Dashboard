@@ -45,6 +45,7 @@ CATALOG={
  "imd_in":("IN",["IN"],"national_sample","India IMD official alerts via WMO relay, no independent event","weather_notice"),
  "saws_za":("ZA",["ZA"],"national_sample","South Africa SAWS alerts via WMO relay","weather_notice"),
  "sg_mpa":("SG",["SG"],"national_sample","Singapore MPA monthly port arrivals, lagged NOT live","physical_maritime_lagged"),
+ "ons_br":("BR",["BR"],"national_sample","Brazil ONS verified half-hour electricity load, four macroregions, two-day historical lag; not outages","physical_grid_load_lagged"),
 }
 
 def build(registry,generated_at=None):
