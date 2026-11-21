@@ -103,6 +103,23 @@ class AutoHypothesisReviewTests(unittest.TestCase):
         self.assertEqual(c["context"], 1)
         self.assertEqual(c["possible_support"], 0)
 
+    def test_structured_geography_label_matches_without_incident_attribution(self):
+        row = record("geo", "New emergency airspace closure announced",
+                     geo={"key":"country:TW", "kind":"national_aggregate_without_incident_site",
+                          "label":"Taiwan", "precision":"national_not_facility"})
+        c = screen(DOSSIERS, registry([row]), at=AT)["cases"]["taiwan"]
+        self.assertEqual(c["new_matching_records"], 1)
+        self.assertEqual(c["possible_support"], 1)
+        self.assertEqual(c["candidates"][0]["match_basis"], "distinctive_case_cue")
+
+    def test_weather_family_is_context_even_with_mandatory_evacuation(self):
+        row = record("weather", "Taiwan mandatory evacuation due to tropical storm",
+                     mode="bmkg_nowcast")
+        row["source_family"] = "environmental_context"
+        result = screen(DOSSIERS, registry([row]), at=AT)["cases"]["taiwan"]
+        self.assertEqual(result["context"], 1)
+        self.assertEqual(result["possible_support"], 0)
+
     def test_archive_used_when_valid_and_fallback_when_invalid(self):
         r = record("p", "Taiwan maritime exclusion zone")
         reg = registry([])
