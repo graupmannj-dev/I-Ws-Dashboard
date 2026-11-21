@@ -75,3 +75,49 @@ from source coincidences into warnings.
 The tests include unreviewed default, duplicated source root, shared family
 on two hypotheses, signed directions, dependency caps, contradictory dependent
 sources, stale health, bad annotations and built-site output.
+
+
+## Automatic preliminary screening after collection
+
+The existing `Collect CAIRN public alternative sensors` (~every 3 hours) and
+`Collect AIBA operational feeds` (six-hour cycles plus other intervals)
+workflows update `aiba-feed-data`. On **successful** completion, the existing
+`Validate and publish AIBA` `workflow_run` rebuild screens the available
+current durable registry/archive and embeds results in `hypotheses.json`.
+The same screen runs during any other approved publication rebuild. There is no
+separate polling collector, competing write to the evidence branch, API key or
+infrastructure expense. GitHub scheduling, collection success and Pages
+publication are best effort, not a real-time SLA. A public update still depends
+on `AIBA_PUBLISH_APPROVED=true`.
+
+`dashboard/hypothesis_auto_review.py` examines **first ingested** source
+records within a trailing nine-hour window (not their claimed event time).
+It uses only HTTPS-linked records and source-specific current/partial health.
+It groups repeated reports sharing a collector mode and information root, and
+requires either an explicit case ID or a distinctive case-specific title or
+reported-geography cue. Broad generic topics cannot create case associations.
+Candidate source titles are checked for concrete signpost patterns, possible
+reversals, and contextual/ambiguous language. They are labeled *possible support*,
+*possible counter-indicator*, *context* or *requires interpretation* — never
+reviewed evidence. Unavailable feeds, aged snapshots, unknown source links,
+missing records, provider-initial baselines and unobserved indicators do not
+count against a hypothesis. Overly long evidence archives are capped after
+selecting recent records rather than preferentially retaining old items.
+
+The Hypotheses page shows the machine screen time, input snapshot time,
+nine-hour review window, source links, nominal cues, and a filter for new
+machine-screened leads. The analyst-reviewed ordinal balance remains untouched.
+The screen does **not** assign confidence or probability, validate source claims,
+establish independence, deduce military intent, issue threat alerts or promote
+a hypothesis. Pattern matching can miss novel phrasing and can generate false
+positives; an actual human review of original material is needed before any
+directional assessment.
+
+Screen state is explicit: `screened`, `source_snapshot_stale`, or
+`source_snapshot_unavailable`. A refresh with no eligible candidates means
+only that the bounded available data yielded none; it is not an all-clear.
+
+Tests:
+`python -m unittest tests.test_hypothesis_auto_review -v`
+and `node scripts/test_hypothesis_auto_browser.js` (after building and serving
+a local preview; the PR browser workflow runs this automatically).
