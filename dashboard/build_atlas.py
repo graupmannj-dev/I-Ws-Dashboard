@@ -464,7 +464,7 @@ def generate(site, generated=None, state_dir=None):
     (site / "atlas.json").write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
     asset_dir = site / "dashboard"
     asset_dir.mkdir(exist_ok=True)
-    for name in ("atlas.css", "atlas.js", "layers.js", "countries.geojson",
+    for name in ("atlas.css", "cairn-nav.css", "atlas.js", "layers.js", "countries.geojson",
                  "hypotheses.css", "hypotheses.js",
                  "coverage.css", "coverage.js"):
         shutil.copyfile(WEB / name, asset_dir / name)
