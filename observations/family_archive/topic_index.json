@@ -242,6 +242,20 @@
       "shared_activity_roles": [],
       "shared_subject_terms": []
     },
+    "95023a561a8899e2610f9b0f86cb": {
+      "independent_corroboration_proven": false,
+      "latent_semantic_similarity": 1,
+      "method": "legacy_sparse_v1",
+      "raw_text_similarity": 1,
+      "review_status": "unreviewed_automatic_topic_match",
+      "same_incident_proven": false,
+      "same_source_document": false,
+      "score": 1.0,
+      "shared_activity_roles": [],
+      "shared_named_subjects": [],
+      "shared_subject_terms": [],
+      "subject_geography_compatible": true
+    },
     "964ba909efd75bc6a4273affd361": {
       "independent_corroboration_proven": false,
       "latent_semantic_similarity": 0.9671,
@@ -436,6 +450,20 @@
       "score": null,
       "shared_activity_roles": [],
       "shared_subject_terms": []
+    },
+    "f14a8140f08d942d158874c42e1b": {
+      "independent_corroboration_proven": false,
+      "latent_semantic_similarity": 1,
+      "method": "legacy_sparse_v1",
+      "raw_text_similarity": 1,
+      "review_status": "unreviewed_automatic_topic_match",
+      "same_incident_proven": false,
+      "same_source_document": false,
+      "score": 1.0,
+      "shared_activity_roles": [],
+      "shared_named_subjects": [],
+      "shared_subject_terms": [],
+      "subject_geography_compatible": true
     }
   },
   "assignments": {
@@ -681,6 +709,7 @@
     "9422bfbb1c5c385dad29c7de0311": "family:0f9750038c34a34ab9cd",
     "945b1ac7dd05b880573ca1cb421a": "family:befceef80858c8def8db",
     "94e0a480ad9066cf3d013adde626": "family:e053447247b3f699d081",
+    "95023a561a8899e2610f9b0f86cb": "family:2fb1b1d00012931f4c74",
     "964ba909efd75bc6a4273affd361": "family:c733ba40ded9c2fca04b",
     "9664ee83082dfe8d2154fa58708b": "family:d49a903ff2c5e52fe38d",
     "96a36242772f32ba774f018b5f5b": "family:16768cd11ccd8abf1ec4",
@@ -831,6 +860,7 @@
     "ef9cddba44d26d645ad1b850f934": "family:c733ba40ded9c2fca04b",
     "f06ef190a2f38599fea17abe73f6": "family:3b6063bf907d953c67fd",
     "f0e2203de7311d26ce8b5c358a0e": "family:4e1f848f673313bc5db8",
+    "f14a8140f08d942d158874c42e1b": "family:b521f3efaf3edfaa8e61",
     "f1757ad5be15f42f1cab68b16e9b": "family:ad22e7df37c14bd12656",
     "f1b6d0515991ddd33623c45f116a": "family:a3622921ac50fbc7de1f",
     "f1c24df4263009d7c0ec2968a83d": "family:b521f3efaf3edfaa8e61",
@@ -1692,7 +1722,8 @@
     },
     "family:2fb1b1d00012931f4c74": {
       "first_document_at": "2026-11-18T08:28:52+00:00",
-      "matched_document_count": 2,
+      "last_document_at": "2026-11-21T00:56:09+00:00",
+      "matched_document_count": 3,
       "seed": {
         "domain": "network",
         "geo": [
@@ -3640,7 +3671,8 @@
     },
     "family:b521f3efaf3edfaa8e61": {
       "first_document_at": "2026-11-18T08:28:52+00:00",
-      "matched_document_count": 2,
+      "last_document_at": "2026-11-21T00:56:09+00:00",
+      "matched_document_count": 3,
       "seed": {
         "domain": "network",
         "geo": [
@@ -4951,9 +4983,9 @@
     }
   },
   "input_truncated": false,
-  "new_document_assignments": 0,
+  "new_document_assignments": 2,
   "schema": "aiba.automatic-analytical-topics.v1",
   "semantic_seed_index_limited": false,
-  "total_document_assignments": 420,
+  "total_document_assignments": 422,
   "total_stable_topics": 194
 }
