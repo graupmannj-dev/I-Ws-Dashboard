@@ -1,0 +1,44 @@
+name: CAIRN prospective warning evaluation readiness
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'cairn_prospective_evaluation.py'
+      - 'tests/test_prospective_evaluation.py'
+      - '.github/workflows/audit-cairn-warning-performance.yml'
+  schedule:
+    - cron: '15 6 * * 1'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify-forecast-evaluation-contract:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Verify frozen-forecast and fully adjudicated outcome rules
+        run: python -m unittest tests.test_prospective_evaluation -v
+      - name: Produce public-safe evaluation readiness ONLY
+        run: |
+          mkdir -p /tmp/cairn-prospective-audit
+          python cairn_prospective_evaluation.py --readiness-only \
+            --output /tmp/cairn-prospective-audit/readiness.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          x=json.loads(Path('/tmp/cairn-prospective-audit/readiness.json').read_text())
+          assert x['status']=='no_connected_signed_prospective_outcomes'
+          assert all(v is None for v in x['metrics'].values())
+          assert x['private_source_material_published'] is False
+          assert x['forecast_skill_claim_approved'] is False
+          print('CAIRN evaluation gate: no verified skill metrics until signed prospective forecasts and outcomes')
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: cairn-prospective-readiness
+          path: /tmp/cairn-prospective-audit/readiness.json
+          retention-days: 14
