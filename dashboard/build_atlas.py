@@ -351,6 +351,18 @@ def generate(site, generated=None, state_dir=None):
     source_coverage = build_source_coverage(registry, generated_at=now)
     (site / "coverage.json").write_text(
         json.dumps(source_coverage, ensure_ascii=False, indent=2), encoding="utf-8")
+    # Conservative evidence independence audit. Candidate links do not prove
+    # independent physical events or turn into warning weights.
+    dependency_path = state_dir / "latest" / "source_dependency_audit.json" if state_dir else None
+    dependency = read(dependency_path, {}) if dependency_path else {}
+    if not isinstance(dependency, dict) or dependency.get("schema") != "cairn.source-dependency-audit.v1":
+        dependency = {"schema": "cairn.source-dependency-audit.v1",
+                      "comparison_available": False,
+                      "candidate_common_event_pairs": [], "ambiguous_pair_candidates": [],
+                      "independent_physical_event_count_estimated": None,
+                      "approved_corroborations": 0}
+    (site / "source_dependency_audit.json").write_text(
+        json.dumps(dependency, ensure_ascii=False, indent=2), encoding="utf-8")
     # Hypothesis center: explicit case IDs and reviewer-tagged evidence only.
     # Historical dossier source items are visible, not reverified as live data.
     try:
@@ -394,6 +406,10 @@ def generate(site, generated=None, state_dir=None):
         "source_coverage": {"url": "coverage.html",
                            "source_modes_total": source_coverage["source_modes_total"],
                            "recently_checked_modes": source_coverage["currently_checked_modes"]},
+        "source_dependency_audit": {"url": "source_dependency_audit.json",
+                                    "comparison_available": dependency["comparison_available"],
+                                    "potential_common_physical_events": len(dependency["candidate_common_event_pairs"]),
+                                    "reviewed_independent_confirmations": 0},
         "hypothesis_views": {"url": "hypotheses.html",
                              "hypothesis_count": hypothesis_views["hypothesis_count"],
                              "reviewed_hypotheses": hypothesis_views["reviewed_hypotheses"]},
