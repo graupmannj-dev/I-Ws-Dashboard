@@ -19,7 +19,7 @@ from ops_pipeline import load_json,write_json
 UTC=dt.timezone.utc
 SCHEMA="cairn.metric-cohort-baselines.v1"
 ARCHIVE_SCHEMA="aiba.family-archive.v1"
-MAX_INPUT=30000
+MAX_INPUT=60000
 ONS_HISTORY_DAYS=180
 MPA_HISTORY_YEARS=12
 MIN_ONS_MATCH=8
@@ -179,7 +179,7 @@ def full_metric_archive(state):
         historical=load_json(Path(state)/"metric_history"/"official_metric_backfill.json",{})
         if historical and isinstance(historical,dict) and historical.get("schema")=="cairn.metric-historical-backfill.v1":
             rows=historical.get("records",[])
-            if not isinstance(rows,list) or len(rows)>3000:
+            if not isinstance(rows,list) or len(rows)>50000:
                 raise ValueError("Malformed prearchive physical history")
             return {"schema":ARCHIVE_SCHEMA,"records":rows,"public_snapshot_truncated":False}
         return load_json(Path(state)/"latest"/"family_archive.json",{})
@@ -207,7 +207,7 @@ def full_metric_archive(state):
         if not isinstance(historical,dict) or historical.get("schema")!="cairn.metric-historical-backfill.v1":
             raise ValueError("Unknown or corrupted official historical metric backfill")
         extra=historical.get("records")
-        if not isinstance(extra,list) or len(extra)>3000:
+        if not isinstance(extra,list) or len(extra)>50000:
             raise ValueError("Official backfill records missing or unbounded")
         for row in extra:
             if not isinstance(row,dict) or row.get("historical_backfill") is not True:
