@@ -59,6 +59,9 @@ def sample(mode):
         return [{"msm_id":1001,"timestamp":int(NOW.timestamp())-900,
                  "prb_id":i,"from":f"203.0.113.{i}",
                  "avg":5+i/10} for i in range(1,34)]
+    if mode=="ons_br":
+        return [{"cod_areacarga":"SECO","din_referenciautc":"2026-11-18T15:30:00Z",
+                 "val_cargaglobal":42500.2}]
     if mode=="sg_mpa":
         return {"success":True,"result":{
             "resource_id":"d_8f264219109e61fffa87ac64dd5a9a65",
@@ -121,6 +124,10 @@ def fake(url):
     if "atlas.ripe.net" in url:return sample("ripe")
     if "find-tender.service.gov.uk" in url:return sample("uk_tenders")
     if "bwt.cbp.gov" in url:return sample("cbp_wait")
+    if "apicarga.ons.org.br" in url:
+        from urllib.parse import parse_qs,urlsplit
+        area=parse_qs(urlsplit(url).query)["cod_areacarga"][0]
+        return [{**r,"cod_areacarga":area} for r in sample("ons_br")]
     if "data.gov.sg" in url:return sample("sg_mpa")
     if ".wikipedia.org" in url:return sample("wiki_edits")
     raise ValueError("Unexpected source host")
@@ -184,6 +191,7 @@ class AlternativeSensorTests(unittest.TestCase):
             self.assertEqual(got["usace"]["source_queries_attempted"],3)
             self.assertEqual(got["wiki_edits"]["source_queries_attempted"],14)
             self.assertEqual(got["sg_mpa"]["records"],8)
+            self.assertEqual(got["ons_br"]["records"],4)
             self.assertEqual(got["coops"]["status"],"partial")
             reg=create(state,clock=lambda:NOW,run_id="integration",write=True)
             self.assertEqual(reg["schema"],REGISTRY_SCHEMA)
