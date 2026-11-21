@@ -19,7 +19,7 @@ from ops_pipeline import load_json,write_json
 UTC=dt.timezone.utc
 SCHEMA="cairn.metric-cohort-baselines.v1"
 ARCHIVE_SCHEMA="aiba.family-archive.v1"
-MAX_INPUT=5000
+MAX_INPUT=30000
 ONS_HISTORY_DAYS=180
 MPA_HISTORY_YEARS=12
 MIN_ONS_MATCH=8
@@ -165,10 +165,42 @@ def measure_archive(archive,source_health,now):
         "No independent source observations are duplicated by polling.")
     }
 
+def full_metric_archive(state):
+    """Read immutable source-root shards rather than lossy 5k public cache.
+
+    Only the two calibrated *physical metrics* are admitted; archived
+    source records must never be replaced by today's latest readings.
+    """
+    archive_root=Path(state)/"family_archive"
+    manifest=load_json(archive_root/"manifest.json",{})
+    if not isinstance(manifest,dict) or manifest.get("schema")!=ARCHIVE_SCHEMA:
+        return load_json(Path(state)/"latest"/"family_archive.json",{})
+    shard_paths=sorted((archive_root/"shards").glob("??.json"))
+    if len(shard_paths)>256:raise ValueError("Unexpected family shard partition count")
+    rows=[]
+    scanned=0
+    for path in shard_paths:
+        if not path.is_file() or path.is_symlink() or path.stat().st_size>8_000_000:
+            raise ValueError("Unsafe or oversized family shard")
+        shard=load_json(path)
+        if not isinstance(shard,dict) or shard.get("schema")!=ARCHIVE_SCHEMA or not isinstance(shard.get("roots"),dict):
+            raise ValueError("Invalid durable source-root shard")
+        for family in shard["roots"].values():
+            if not isinstance(family,dict) or not isinstance(family.get("members"),dict):
+                raise ValueError("Invalid family source members")
+            for record in family["members"].values():
+                scanned+=1
+                if scanned>200_000:raise ValueError("Archive too large for bounded calibration scan")
+                if isinstance(record,dict) and record.get("collection_mode") in ("ons_br","sg_mpa"):
+                    rows.append(record)
+                    if len(rows)>30_000:raise ValueError("Source metrics need dedicated sharding")
+    return {"schema":ARCHIVE_SCHEMA,"records":rows,"public_snapshot_truncated":False}
+
+
 def build(state,clock=None,write=True):
     now=(clock or (lambda:dt.datetime.now(UTC)))().astimezone(UTC)
     base=Path(state)
-    archive=load_json(base/"latest"/"family_archive.json",{})
+    archive=full_metric_archive(base)
     registry=load_json(base/"latest"/"behavioral_registry.json",{})
     out=measure_archive(archive,registry.get("source_health",{}) if
                         isinstance(registry,dict) else {},now)
