@@ -3,19 +3,18 @@
   "automated_severity_changes": 0,
   "collection_coverage": {
     "amsa": {
-      "age_hours": 3.51,
+      "age_hours": 7.21,
       "checked_at": "2026-11-21T08:14:01Z",
-      "first_provider_baseline": false,
-      "missingness": "provider_bounded_not_exhaustive",
+      "missingness": "not_measured_not_zero",
       "mode": "amsa",
       "provider_status": "collected",
       "snapshot_at": "2026-11-21T08:14:01Z",
       "source_scope": "AMSA NAVAREA X only",
-      "status": "current",
+      "status": "stale_or_unavailable",
       "truncated_or_partial": false
     },
     "bmkg_nowcast": {
-      "age_hours": 0.36,
+      "age_hours": 4.07,
       "checked_at": "2026-11-21T11:22:54Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -27,7 +26,7 @@
       "truncated_or_partial": true
     },
     "bmkg_quake": {
-      "age_hours": 0.36,
+      "age_hours": 4.07,
       "checked_at": "2026-11-21T11:22:54Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -39,7 +38,7 @@
       "truncated_or_partial": true
     },
     "cbp_wait": {
-      "age_hours": 0.36,
+      "age_hours": 4.07,
       "checked_at": "2026-11-21T11:22:54Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -51,19 +50,19 @@
       "truncated_or_partial": true
     },
     "commercial": {
-      "age_hours": 19.5,
-      "checked_at": "2026-11-20T16:14:21Z",
+      "age_hours": 0.0,
+      "checked_at": "2026-11-21T15:26:49Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
       "mode": "commercial",
       "provider_status": "collected",
-      "snapshot_at": "2026-11-20T16:14:21Z",
+      "snapshot_at": "2026-11-21T15:26:49Z",
       "source_scope": "selected maritime/air-cargo/war-risk press and syndication",
       "status": "current",
       "truncated_or_partial": false
     },
     "coops": {
-      "age_hours": 0.36,
+      "age_hours": 4.07,
       "checked_at": "2026-11-21T11:22:54Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -75,7 +74,7 @@
       "truncated_or_partial": true
     },
     "eonet": {
-      "age_hours": 0.36,
+      "age_hours": 4.07,
       "checked_at": "2026-11-21T11:22:54Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -87,7 +86,7 @@
       "truncated_or_partial": true
     },
     "imd_in": {
-      "age_hours": 0.36,
+      "age_hours": 4.07,
       "checked_at": "2026-11-21T11:22:54Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -99,7 +98,7 @@
       "truncated_or_partial": true
     },
     "inmet_br": {
-      "age_hours": 0.36,
+      "age_hours": 4.07,
       "checked_at": "2026-11-21T11:22:54Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -111,43 +110,40 @@
       "truncated_or_partial": true
     },
     "ioda": {
-      "age_hours": 3.51,
+      "age_hours": 7.21,
       "checked_at": "2026-11-21T08:14:01Z",
-      "first_provider_baseline": false,
-      "missingness": "provider_bounded_not_exhaustive",
+      "missingness": "not_measured_not_zero",
       "mode": "ioda",
       "provider_status": "collected",
       "snapshot_at": "2026-11-21T08:14:01Z",
       "source_scope": "IODA country events (first 100 of first page, 4-hour query)",
-      "status": "current",
+      "status": "stale_or_unavailable",
       "truncated_or_partial": false
     },
     "live_airspace": {
-      "age_hours": 0.0,
+      "age_hours": 3.7,
       "checked_at": "2026-11-21T11:44:34Z",
-      "first_provider_baseline": false,
-      "missingness": "partial_sampling_not_worldwide_exhaustive",
+      "missingness": "not_measured_not_zero",
       "mode": "live_airspace",
       "provider_status": "partial",
       "snapshot_at": "2026-11-21T11:44:34Z",
       "source_scope": "FAA temporary flight restrictions: United States only",
-      "status": "current_partial",
+      "status": "stale_or_unavailable",
       "truncated_or_partial": true
     },
     "live_maritime": {
-      "age_hours": 0.0,
+      "age_hours": 3.7,
       "checked_at": "2026-11-21T11:44:34Z",
-      "first_provider_baseline": false,
-      "missingness": "partial_sampling_not_worldwide_exhaustive",
+      "missingness": "not_measured_not_zero",
       "mode": "live_maritime",
       "provider_status": "partial",
       "snapshot_at": "2026-11-21T11:44:34Z",
       "source_scope": "Danish Maritime Authority Niord notices: regional Baltic/North Sea",
-      "status": "current_partial",
+      "status": "stale_or_unavailable",
       "truncated_or_partial": true
     },
     "nga": {
-      "age_hours": 3.51,
+      "age_hours": 7.21,
       "checked_at": "2026-11-21T08:14:01Z",
       "missingness": "not_measured_not_zero",
       "mode": "nga",
@@ -158,7 +154,7 @@
       "truncated_or_partial": false
     },
     "nws": {
-      "age_hours": 0.36,
+      "age_hours": 4.07,
       "checked_at": "2026-11-21T11:22:54Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -170,7 +166,7 @@
       "truncated_or_partial": true
     },
     "official": {
-      "age_hours": 4.54,
+      "age_hours": 8.24,
       "checked_at": "2026-11-21T07:12:27Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -182,7 +178,7 @@
       "truncated_or_partial": false
     },
     "ons_br": {
-      "age_hours": 0.36,
+      "age_hours": 4.07,
       "checked_at": "2026-11-21T11:22:54Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -194,7 +190,7 @@
       "truncated_or_partial": true
     },
     "ripe": {
-      "age_hours": 0.36,
+      "age_hours": 4.07,
       "checked_at": "2026-11-21T11:22:54Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -206,7 +202,7 @@
       "truncated_or_partial": false
     },
     "ris_bgp": {
-      "age_hours": 0.36,
+      "age_hours": 4.07,
       "checked_at": "2026-11-21T11:22:54Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -218,7 +214,7 @@
       "truncated_or_partial": true
     },
     "saws_za": {
-      "age_hours": 0.36,
+      "age_hours": 4.07,
       "checked_at": "2026-11-21T11:22:54Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -230,7 +226,7 @@
       "truncated_or_partial": true
     },
     "sg_mpa": {
-      "age_hours": 0.36,
+      "age_hours": 4.07,
       "checked_at": "2026-11-21T11:22:54Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -242,7 +238,7 @@
       "truncated_or_partial": true
     },
     "swpc": {
-      "age_hours": 0.36,
+      "age_hours": 4.07,
       "checked_at": "2026-11-21T11:22:54Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -254,7 +250,7 @@
       "truncated_or_partial": false
     },
     "tw_power": {
-      "age_hours": 0.36,
+      "age_hours": 4.07,
       "checked_at": "2026-11-21T11:22:54Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -266,7 +262,7 @@
       "truncated_or_partial": true
     },
     "uk_tenders": {
-      "age_hours": 0.36,
+      "age_hours": 4.07,
       "checked_at": "2026-11-21T11:22:54Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -278,7 +274,7 @@
       "truncated_or_partial": true
     },
     "usace": {
-      "age_hours": 0.36,
+      "age_hours": 4.07,
       "checked_at": "2026-11-21T11:22:54Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -290,7 +286,7 @@
       "truncated_or_partial": true
     },
     "usgs": {
-      "age_hours": 0.36,
+      "age_hours": 4.07,
       "checked_at": "2026-11-21T11:22:54Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -302,7 +298,7 @@
       "truncated_or_partial": false
     },
     "watchlist": {
-      "age_hours": 4.54,
+      "age_hours": 8.24,
       "checked_at": "2026-11-21T07:12:27Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -314,7 +310,7 @@
       "truncated_or_partial": false
     },
     "wiki_edits": {
-      "age_hours": 0.36,
+      "age_hours": 4.07,
       "checked_at": "2026-11-21T11:22:54Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -329,38 +325,38 @@
   "discovery_visibility": {
     "exact_geography_match_required_for_cross_family": true,
     "latest_initial_baseline": false,
-    "latest_registry_newly_observed_count": 0,
-    "latest_registry_record_count": 833,
-    "latest_unlocated_record_count": 608,
+    "latest_registry_newly_observed_count": 2,
+    "latest_registry_record_count": 697,
+    "latest_unlocated_record_count": 520,
     "new_or_collocated_not_same_as_verified_threat": true,
     "new_this_collection_required_for_cross_family_nomination": true,
     "recent_observations_sampled": 24,
     "recent_source_families": {
       "airspace_restriction": 28,
-      "commercial_media": 15,
+      "commercial_media": 17,
       "internet_reachability": 100,
       "maritime_restriction": 255,
-      "protective_notice": 20
+      "protective_notice": 16
     },
-    "recent_unique_record_count_72h": 418,
-    "recent_unlocated_count_72h": 242,
+    "recent_unique_record_count_72h": 416,
+    "recent_unlocated_count_72h": 240,
     "schema": "aiba.behavioral-discovery-visibility.v1",
     "shared_exact_geography_keys_across_behavior_families": 0,
     "source_coverage_is_globally_complete": false
   },
   "forecast_probability": null,
   "gdelt_context": "separate_analytical_stream_not_a_gate_or_confirmation",
-  "generated_at": "2026-11-21T11:44:38Z",
+  "generated_at": "2026-11-21T15:26:50Z",
   "geographic_scope": "source_declared_only",
   "history_diagnostics": {
     "excluded_observations": {
-      "old_source_publication": 7,
+      "old_source_publication": 11,
       "published_after_first_observed": 6,
       "unsupported_family": 156
     },
-    "history_files_examined": 31,
+    "history_files_examined": 32,
     "lookback_hours": 72,
-    "recent_unique_records": 418
+    "recent_unique_records": 416
   },
   "limit_notes": [
     "No automated threat warning. These are unreviewed investigatory leads.",
@@ -369,10 +365,95 @@
     "Unlocated records cannot produce automatic geographic convergence.",
     "Unavailable collection is not evidence of no threatening activity."
   ],
-  "new_single_source_count_total": 0,
-  "new_single_source_leads": [],
+  "new_single_source_count_total": 2,
+  "new_single_source_leads": [
+    {
+      "evidence_class": "media_mention",
+      "first_observed_at": "2026-11-21T15:26:50Z",
+      "geography": {
+        "key": null,
+        "kind": "unlocated",
+        "label": null,
+        "latitude": null,
+        "longitude": null,
+        "precision": "no_source_verified_geography",
+        "verified_iso": false
+      },
+      "information_root": "commercial:15cedab4e0368c0b9fad",
+      "meaning": "Observation novelty, not evidence of impending violence.",
+      "observation_id": "beh:c7814c7c9f9e1007dac41428d5d3",
+      "requires_geolocation": true,
+      "source_family": "commercial_media",
+      "source_published_at": "2026-11-20T18:16:00Z",
+      "source_url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPbjFIWUdEa2p0UTliUHAtTS1IYnJXcDc0eGRmOGE4M2pGczJJbXRwOEF1dktzekNVQ3hGMWtZejZLUEQ4VTlpVk1yZDdxNHhuTGVvcS1MR2oxLUlQQTNlb0pNeFBYOHRQMHBOQ25wUXVfMTZ4YkxQZDVocDZaeUNsTzNwWmRNSFBUS0lLSUdwVGQzOVotc081RE1hQUY4cWN0c2pfTnd30gGrAUFVX3lxTFBiLUpJY0JiM0NVODE4WnU2TEFGSHpRd3R5TmJzUE1qWm5IQ0dmaWhkWS14TC14QnhBcF9tWWpHMGRUSmVfZEU5bV9BT0hWbjJ0NHJqcmVEYktLVzhwWGE3Qll3ckRhT0REdkFGTkRrUVM0ZW5JdmVFNXZLdDAtNHRqaHpaekZfeWlpV3dCeGZPdXNyaFpXQ2xUTkZQdGQ4R2h1ampWYWtfTnZ0NA?oc=5",
+      "status": "single_source_unreviewed",
+      "title": "Ukraine aims to raise €3 billion for War Risk Insurance Fund — Koretskyi - Головне в Україні"
+    },
+    {
+      "evidence_class": "media_mention",
+      "first_observed_at": "2026-11-21T15:26:50Z",
+      "geography": {
+        "key": null,
+        "kind": "unlocated",
+        "label": null,
+        "latitude": null,
+        "longitude": null,
+        "precision": "no_source_verified_geography",
+        "verified_iso": false
+      },
+      "information_root": "commercial:bf91ff6db77000391c0e",
+      "meaning": "Observation novelty, not evidence of impending violence.",
+      "observation_id": "beh:ecfc98d3bcde52b7e9cf60336887",
+      "requires_geolocation": true,
+      "source_family": "commercial_media",
+      "source_published_at": "2026-11-21T14:41:27Z",
+      "source_url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOTHNKT3NGU05QNFFmNXdJSC04WUF2UlJLMF94NVJrZHhHWG9RTzZyT3BJdy1VRjJwT1dmRGRSZlo5cDJwVjNad242cnRqV2ZsMlFHeDRWRHdMM3hLWjFNTTNyT0hFZmRwWnpUSTlydVhTLWxNUklwTWlTaWRHWVpDM3lqQ1BHV1VETzFRazlEcjNDOHhXUmppd3ppdHk?oc=5",
+      "status": "single_source_unreviewed",
+      "title": "€3 Billion War Risk Insurance Fund Planned to Attract Investment to Ukraine - Oj - Odessa Journal"
+    }
+  ],
   "prediction_horizon": null,
   "recent_source_observations": [
+    {
+      "first_observed_at": "2026-11-21T15:26:50Z",
+      "geography": {
+        "key": null,
+        "kind": "unlocated",
+        "label": null,
+        "latitude": null,
+        "longitude": null,
+        "precision": "no_source_verified_geography",
+        "verified_iso": false
+      },
+      "observation_id": "beh:ecfc98d3bcde52b7e9cf60336887",
+      "provider": "commercial",
+      "requires_geolocation": true,
+      "source_family": "commercial_media",
+      "source_published_at": "2026-11-21T14:41:27Z",
+      "source_url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOTHNKT3NGU05QNFFmNXdJSC04WUF2UlJLMF94NVJrZHhHWG9RTzZyT3BJdy1VRjJwT1dmRGRSZlo5cDJwVjNad242cnRqV2ZsMlFHeDRWRHdMM3hLWjFNTTNyT0hFZmRwWnpUSTlydVhTLWxNUklwTWlTaWRHWVpDM3lqQ1BHV1VETzFRazlEcjNDOHhXUmppd3ppdHk?oc=5",
+      "status": "recent_source_observation_unreviewed",
+      "title": "€3 Billion War Risk Insurance Fund Planned to Attract Investment to Ukraine - Oj - Odessa Journal"
+    },
+    {
+      "first_observed_at": "2026-11-21T15:26:50Z",
+      "geography": {
+        "key": null,
+        "kind": "unlocated",
+        "label": null,
+        "latitude": null,
+        "longitude": null,
+        "precision": "no_source_verified_geography",
+        "verified_iso": false
+      },
+      "observation_id": "beh:c7814c7c9f9e1007dac41428d5d3",
+      "provider": "commercial",
+      "requires_geolocation": true,
+      "source_family": "commercial_media",
+      "source_published_at": "2026-11-20T18:16:00Z",
+      "source_url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPbjFIWUdEa2p0UTliUHAtTS1IYnJXcDc0eGRmOGE4M2pGczJJbXRwOEF1dktzekNVQ3hGMWtZejZLUEQ4VTlpVk1yZDdxNHhuTGVvcS1MR2oxLUlQQTNlb0pNeFBYOHRQMHBOQ25wUXVfMTZ4YkxQZDVocDZaeUNsTzNwWmRNSFBUS0lLSUdwVGQzOVotc081RE1hQUY4cWN0c2pfTnd30gGrAUFVX3lxTFBiLUpJY0JiM0NVODE4WnU2TEFGSHpRd3R5TmJzUE1qWm5IQ0dmaWhkWS14TC14QnhBcF9tWWpHMGRUSmVfZEU5bV9BT0hWbjJ0NHJqcmVEYktLVzhwWGE3Qll3ckRhT0REdkFGTkRrUVM0ZW5JdmVFNXZLdDAtNHRqaHpaekZfeWlpV3dCeGZPdXNyaFpXQ2xUTkZQdGQ4R2h1ampWYWtfTnZ0NA?oc=5",
+      "status": "recent_source_observation_unreviewed",
+      "title": "Ukraine aims to raise €3 billion for War Risk Insurance Fund — Koretskyi - Головне в Україні"
+    },
     {
       "first_observed_at": "2026-11-21T11:25:03Z",
       "geography": {
@@ -832,50 +913,10 @@
       "source_url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE1FSkV1c05uVjlKcGRDQWU5cHJKQjBxaTQyQk1saFFwNUlubVhJT3JmSnZ3emJLZ0xYeXRXa1dsZEFxWC0zbGdQSGlkcGxuN0tNX0RMY1lXRWk2eWl5ZnBaVTJBV3Y5WW93enRRZGg2OERDQ0h5SVZFQlJxN2xpRkk?oc=5",
       "status": "recent_source_observation_unreviewed",
       "title": "US commercial P&C insurance premiums decline 1.3% in Q3 2026 - Beinsure"
-    },
-    {
-      "first_observed_at": "2026-11-20T16:14:22Z",
-      "geography": {
-        "key": null,
-        "kind": "unlocated",
-        "label": null,
-        "latitude": null,
-        "longitude": null,
-        "precision": "no_source_verified_geography",
-        "verified_iso": false
-      },
-      "observation_id": "beh:92b5eba9b7e42195703646936fdc",
-      "provider": "commercial",
-      "requires_geolocation": true,
-      "source_family": "commercial_media",
-      "source_published_at": "2026-11-20T13:41:00Z",
-      "source_url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNZlNuTHpvRXZFZ3FYV3dCcUNfVExCX1Nzcmx6SHNNZ1A0RTJRSGsxVGFpcUtPYzhUYWU1cHlDUkxVMDcyVFZQS0FnaXdYaUJTV2RLTXAzRmhid0tnbVpmTXlHS083UFQtZjRSY0VnSGdoVFJwbVhsSFF4b1djbnRiSy1JZURKYmRBZGFaejFnYmlTTy1rYTgyYnduWGUzUzZYTDNnVmlmUG1EWUtYcVBEWUdCcGJXRnQweGZXTHZNVi1fcHZ4UnRmZtIBzgFBVV95cUxOODg0RklfblQwR0E1YVNsUDk1RmlPMGMyOElJcGgyNUJUSkEzeFpzODBhbm02aHVVRE9HLVN1aDkzSVZuV0Vpb0JvNnJ1RGdHQ3RpQmFnM2hjYlpRaEJUN291N0plWU9mcDEwNFNGQ0szMWRBQWdIMTA4Zk1CdXNMelloZXZKdFZPX0dOMUpCQ0VibzU5MWNSemlCZ0hUT1YzMXRfS2xSdVdBSE1xb3E2Z0NEczdUY2ZxY19GM3I5RzlyZjJTMndQUzBOY2lpdw?oc=5",
-      "status": "recent_source_observation_unreviewed",
-      "title": "Ukraine plans to launch EUR 3B war risk insurance fund in January – Koretskyi - Ukrinform"
-    },
-    {
-      "first_observed_at": "2026-11-20T16:14:22Z",
-      "geography": {
-        "key": null,
-        "kind": "unlocated",
-        "label": null,
-        "latitude": null,
-        "longitude": null,
-        "precision": "no_source_verified_geography",
-        "verified_iso": false
-      },
-      "observation_id": "beh:7188983f4b1b8036b4129bff0a66",
-      "provider": "commercial",
-      "requires_geolocation": true,
-      "source_family": "commercial_media",
-      "source_published_at": "2026-11-20T14:40:34Z",
-      "source_url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPVV81MEl0bnJhRzgxNWtSTTRzVG5UaHRxRm9JdXhHQklSODM0cUJpWXhiSDdNWWU0X251cElhMDRubE1jVmhOUFplSDN0cTFQMkxjSDFBM0xRRXRxc3hPZ19JVFFqUDM3T0pwLVp6MENId0VweEF2QW5uYTY3OXRBWTJKSl9CSXBBX2VxM1VkTWhpTnBUVTFVekowRUktSGxNNGd4REhRNkV5cmlIa0RNVQ?oc=5",
-      "status": "recent_source_observation_unreviewed",
-      "title": "Ukraine has called on Germany to support the launch of the War Risk Insurance Fund - UA.NEWS"
     }
   ],
-  "registry_asof": "2026-11-21T11:44:37Z",
-  "registry_source_count": 833,
+  "registry_asof": "2026-11-21T15:26:50Z",
+  "registry_source_count": 697,
   "report_relationships": {
     "automatic_alerts_created": 0,
     "automatic_severity_changes": 0,
@@ -2699,20 +2740,20 @@
     ],
     "candidate_groups_truncated": true,
     "cross_document_relation_count_total": 4,
-    "eligible_event_reporting_records": 15,
+    "eligible_event_reporting_records": 17,
     "forecast_probability": null,
     "geographic_proximity_only_for_explicit_reported_event_sites": true,
     "input_truncated": false,
     "not_a_preparations_sensor_or_warning": true,
     "pairwise_comparisons_capped": false,
-    "pairwise_comparisons_examined": 87153,
+    "pairwise_comparisons_examined": 86320,
     "possible_same_event_count_total": 0,
     "possible_same_source_story_count_total": 4,
-    "records_available": 418,
-    "records_examined": 418,
+    "records_available": 416,
+    "records_examined": 416,
     "related_reporting_count_total": 0,
     "reporting_origins_are_not_event_locations": true,
-    "routine_notice_market_or_measurement_records_excluded_from_text_event_matching": 403,
+    "routine_notice_market_or_measurement_records_excluded_from_text_event_matching": 399,
     "same_document_group_count_total": 32,
     "schema": "aiba.report-event-resolution-shadow.v1",
     "source_independence_unverified": true,

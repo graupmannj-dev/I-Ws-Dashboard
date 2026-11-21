@@ -358,6 +358,30 @@
       "shared_subject_terms": [],
       "subject_geography_compatible": true
     },
+    "6010c1c1e4088e7bc915c292e50a": {
+      "independent_corroboration_proven": false,
+      "latent_semantic_similarity": 0.9968,
+      "method": "aiba.hybrid-local-title-embedding.v1",
+      "raw_text_similarity": 0.512,
+      "review_status": "unreviewed_automatic_topic_match",
+      "same_incident_proven": false,
+      "same_source_document": false,
+      "score": 0.6865,
+      "shared_activity_roles": [],
+      "shared_named_subjects": [
+        "koretskyi",
+        "ukraine"
+      ],
+      "shared_subject_terms": [
+        "fund",
+        "insurance",
+        "koretskyi",
+        "risk",
+        "ukraine",
+        "war"
+      ],
+      "subject_geography_compatible": true
+    },
     "608fa804525f6bf1b9c83166f8b4": {
       "independent_corroboration_proven": false,
       "method": "new_analytical_theme",
@@ -992,6 +1016,15 @@
       ],
       "subject_geography_compatible": true
     },
+    "d89604af3081532f76eb4b2135e1": {
+      "independent_corroboration_proven": false,
+      "method": "new_analytical_theme",
+      "review_status": "unreviewed_automatic_topic_seed",
+      "same_incident_proven": false,
+      "score": null,
+      "shared_activity_roles": [],
+      "shared_subject_terms": []
+    },
     "d909f0b940c94962fc1c0756967a": {
       "independent_corroboration_proven": false,
       "latent_semantic_similarity": 0.9937,
@@ -1428,6 +1461,7 @@
     "5db702d433b74b807148db2d4190": "family:1afe2b6a34a597a6fdba",
     "5e854fe2c92c9e96b75a6f839f36": "family:3faec87a5d3eb20da5ce",
     "5fed1e313181d7a4a4a9ade1e0e6": "family:16768cd11ccd8abf1ec4",
+    "6010c1c1e4088e7bc915c292e50a": "family:c356456b475932be2590",
     "60700c6e59d0faaa3d3ff2e1df7d": "family:0afac7519a942d2982df",
     "608fa804525f6bf1b9c83166f8b4": "family:1c628f836d1f68918c22",
     "61bff5a71c5d2b84608d19810a1d": "family:3c06a2736c512dcdd016",
@@ -1656,6 +1690,7 @@
     "d7647f7e74c299bf79fc3446bd14": "family:6f3e65ab8b7a0d09726d",
     "d83323a904af3d97ed88a21f0575": "family:1c628f836d1f68918c22",
     "d86c9ee718717bfec69e66b5120d": "family:c733ba40ded9c2fca04b",
+    "d89604af3081532f76eb4b2135e1": "family:59cc1addfc29395f1f7e",
     "d8a7b959a0b3660d940f220de028": "family:f93ac02b582110ef6ed0",
     "d8fb5212a5f15ca852722f469410": "family:9713cb39e6debc594663",
     "d909f0b940c94962fc1c0756967a": "family:1c628f836d1f68918c22",
@@ -3447,6 +3482,34 @@
       },
       "source": "automatic_similarity_v1"
     },
+    "family:59cc1addfc29395f1f7e": {
+      "first_document_at": "2026-11-21T15:26:50+00:00",
+      "last_document_at": "2026-11-21T15:26:50+00:00",
+      "matched_document_count": 1,
+      "seed": {
+        "domain": "generic",
+        "geo": [
+          "ukraine"
+        ],
+        "key": "d89604af3081532f76eb4b2135e1",
+        "publisher": "commercial",
+        "source_family": "commercial_media",
+        "terms": {
+          "attract": 1,
+          "billion": 1,
+          "fund": 1,
+          "insurance": 1,
+          "investment": 1,
+          "journal": 1,
+          "odessa": 1,
+          "planned": 1,
+          "risk": 1,
+          "war": 1
+        },
+        "title": "€3 Billion War Risk Insurance Fund Planned to Attract Investment to Ukraine - Oj - Odessa Journal"
+      },
+      "source": "hybrid_local_topic_embedding_v2"
+    },
     "family:5c0e51dc509c41a17587": {
       "first_document_at": "2026-11-13T15:29:53+00:00",
       "matched_document_count": 1,
@@ -5090,8 +5153,8 @@
     },
     "family:c356456b475932be2590": {
       "first_document_at": "2026-11-20T16:14:22+00:00",
-      "last_document_at": "2026-11-20T16:14:22+00:00",
-      "matched_document_count": 1,
+      "last_document_at": "2026-11-21T15:26:50+00:00",
+      "matched_document_count": 2,
       "seed": {
         "domain": "generic",
         "geo": [
@@ -6186,9 +6249,9 @@
     }
   },
   "input_truncated": false,
-  "new_document_assignments": 5,
+  "new_document_assignments": 2,
   "schema": "aiba.automatic-analytical-topics.v1",
   "semantic_seed_index_limited": false,
-  "total_document_assignments": 471,
-  "total_stable_topics": 208
+  "total_document_assignments": 473,
+  "total_stable_topics": 209
 }
