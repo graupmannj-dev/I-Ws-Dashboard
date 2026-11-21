@@ -50,16 +50,16 @@ class ONSTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError,"lacks valid"):
             adapt(sample(area="NE"),NOW,urls(NOW)[0],entry)
         with self.assertRaisesRegex(ValueError,"lacks valid"):
-            adapt(sample(stamp="2026-11-21T19:00:00Z"),NOW,urls(NOW)[0],entry)
+            adapt([sample(stamp="2026-11-21T19:00:00Z")[0]],NOW,urls(NOW)[0],entry)
         with self.assertRaisesRegex(ValueError,"lacks valid"):
-            adapt(sample(val=float("nan")),NOW,urls(NOW)[0],entry)
+            adapt([sample(val=float("nan"))[0]],NOW,urls(NOW)[0],entry)
 
     def test_partial_independent_zones_and_failed_health(self):
         with tempfile.TemporaryDirectory() as d:
             base=Path(d)
             def fake(url):
                 if "cod_areacarga=SECO" in url:return sample()
-                if "cod_areacarga=N&" in url:return sample("N")
+                if url.endswith("cod_areacarga=N"):return sample("N")
                 if "cod_areacarga=NE" in url:return sample("NE")
                 if "cod_areacarga=S" in url:raise TimeoutError("Region unavailable")
                 raise ValueError("unexpected")
