@@ -32,6 +32,17 @@ jobs:
         run: |
           set -euo pipefail
           python src/alternative_sensor_pipeline.py --state state/observations
+      - name: Identify potentially duplicated cross-publisher physical events
+        shell: bash
+        run: |
+          set +e
+          python src/cairn_source_dependency.py --state state/observations
+          rc=$?
+          echo "CAIRN_DEPENDENCY_RC=$rc" >> "$GITHUB_ENV"
+          if [ "$rc" -ne 0 ]; then
+            echo "::warning::Source-dependency audit failed; retain healthy provider receipts."
+          fi
+          exit 0
       - name: Normalize into CAIRN evidence without promoting hazards to warnings
         shell: bash
         run: |
@@ -72,7 +83,7 @@ jobs:
             git push origin HEAD:refs/heads/aiba-feed-data
           fi
       - name: Surface a failed normalization after preserving raw source health
-        if: env.CAIRN_REGISTRY_RC != '0' || env.CAIRN_ARCHIVE_RC == '1'
+        if: env.CAIRN_REGISTRY_RC != '0' || env.CAIRN_ARCHIVE_RC == '1' || env.CAIRN_DEPENDENCY_RC == '1'
         run: |
           echo "::error::CAIRN evidence normalization/archive failed; provider receipts retained."
           exit 1
