@@ -26,6 +26,9 @@ class CoverageTests(unittest.TestCase):
         sources={r["mode"]:r for r in result["sources"]}
         self.assertEqual(sources["bmkg_quake"]["declared_country_jurisdictions"],["ID"])
         self.assertEqual(sources["sg_mpa"]["declared_country_jurisdictions"],["SG"])
+        self.assertEqual(sources["ons_br"]["declared_country_jurisdictions"],["BR"])
+        self.assertEqual(sources["ons_br"]["coverage_class"],"national_sample")
+        self.assertIn("historical lag",sources["ons_br"]["coverage_description"])
         self.assertEqual(sources["inmet_br"]["declared_country_jurisdictions"],["BR"])
         self.assertEqual(sources["imd_in"]["declared_country_jurisdictions"],["IN"])
         self.assertEqual(sources["saws_za"]["declared_country_jurisdictions"],["ZA"])
