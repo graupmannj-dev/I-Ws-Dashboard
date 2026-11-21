@@ -340,6 +340,51 @@ jobs:
       - id: deployment
         uses: actions/deploy-pages@v4
 
+  automatic-hypothesis-real-source-smoke:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          ref: aiba-feed-data
+          path: ops-state
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Read-only automatic hypothesis screening against actual evidence snapshot
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          from dashboard.hypothesis_auto_review import screen, SCHEMA
+          def read(path):
+              try:
+                  return json.loads(Path(path).read_text())
+              except (OSError, ValueError):
+                  return {}
+          cases=read("data/verified_hotspots.json")
+          registry=read("ops-state/observations/latest/behavioral_registry.json")
+          archive=read("ops-state/observations/latest/family_archive.json")
+          output=screen(cases,registry,archive)
+          assert output["schema"]==SCHEMA
+          assert output["operational_warnings_issued"]==0
+          assert output["analyst_direction_overridden"] is False
+          print("Review status:",output["status"],"snapshot:",output["source_snapshot_at"],
+                "new records:",output["new_source_records_in_window"],
+                "durable archive:",output["durable_archive_used"])
+          for case_id,c in output["cases"].items():
+              print(case_id,":",c["new_matching_records"],"eligible;",
+                    c["possible_support"],"possible supporting;",
+                    c["possible_counter"],"possible counter; ",
+                    c["unavailable_source_matches"],"unavailable")
+              assert all(not a["analyst_approved"] and not a["warning_approved"]
+                         for a in c["candidates"])
+          PY
   operational-smoke:
     if: github.event_name == 'pull_request'
     needs: test
@@ -398,6 +443,7 @@ jobs:
           node scripts/test_automatic_topics_browser.js
           node scripts/test_source_status_browser.js
           node scripts/test_hypothesis_browser.js
+          node scripts/test_hypothesis_auto_browser.js
           node scripts/test_coverage_browser.js
           node scripts/test_cairn_navigation_browser.js
           node scripts/test_cairn_priority_browser.js
