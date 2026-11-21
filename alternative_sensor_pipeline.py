@@ -641,7 +641,17 @@ def collect(state,clock=None,fetcher=json_get,selected=MODES):
                 # The injected fetcher is used in offline fixtures; production
                 # uses XML only for declared national CAP/RSS modes.
                 getter=national_fetch if fetcher is json_get else fetcher
-                parsed=ADAPTERS[mode](getter(url),now,url)
+                try:
+                    payload=getter(url)
+                except (urllib.error.URLError,TimeoutError):
+                    # Official Taipower TLS can occasionally time out from shared
+                    # runners. One bounded retry on the SAME original host.
+                    # Never use mirrors or turn a timeout into zero demand.
+                    if mode!="tw_power" or fetcher is not json_get:
+                        raise
+                    time.sleep(2)
+                    payload=getter(url)
+                parsed=ADAPTERS[mode](payload,now,url)
                 success.extend(parsed)
             except (ValueError,TypeError,KeyError,TimeoutError,OSError,
                     urllib.error.URLError,json.JSONDecodeError) as exc:
