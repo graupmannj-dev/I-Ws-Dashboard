@@ -14,11 +14,17 @@ const NAMES={amsa:"AMSA NAVAREA X",commercial:"Commercial media sampling",
   coops:"NOAA CO-OPS monitored port stations",
   swpc:"NOAA space-weather alerts",ripe:"RIPE Atlas public network aggregate",
   uk_tenders:"UK Find a Tender releases",wiki_edits:"Wikipedia public edits",
-  cbp_wait:"CBP border wait estimates"};
+  cbp_wait:"CBP border wait estimates",
+  bmkg_quake:"BMKG Indonesian earthquakes",
+  bmkg_nowcast:"BMKG Indonesian nowcast warnings",
+  inmet_br:"INMET Brazil weather warnings",
+  imd_in:"India IMD weather warnings (WMO relay)",
+  saws_za:"South African weather warnings (WMO relay)"};
 const FRESH_HOURS={amsa:6,commercial:48,ioda:6,live_airspace:2,live_maritime:2,
   nga:6,official:12,watchlist:12,faa_nas:25/60,gdelt:48,wikipedia:72,
   usgs:8,eonet:8,nws:8,usace:12,coops:8,swpc:8,ripe:8,
-  uk_tenders:8,wiki_edits:8,cbp_wait:8};
+  uk_tenders:8,wiki_edits:8,cbp_wait:8,
+  bmkg_quake:8,bmkg_nowcast:8,inmet_br:8,imd_in:8,saws_za:8};
 // A source's ROLE and its HEALTH are separate. News can corroborate a lead,
 // but syndicated reports do not by themselves constitute independent sensors.
 const SOURCE_META={
@@ -60,6 +66,16 @@ const SOURCE_META={
     "Wikipedia public mainspace edits are aggregated in bounded three-hour samples from three language editions. No editor identities are recorded; edits alone do not establish an underlying event."},
   cbp_wait:{role:"Transportation friction proxy",description:
     "CBP directly publishes U.S. northern and southern border commercial-lane wait estimates and crossing status. Wait times depend on inspection practices and staffing; they do not measure truck traffic volume, military movements or border-wide throughput."},
+  bmkg_quake:{role:"Indonesian physical hazard context",description:
+    "Indonesia's BMKG publishes 15 recent M5+ earthquakes with source UTC times and epicenters. The same earthquakes can appear in USGS; they are not two independently caused events and cannot establish hostile preparations."},
+  bmkg_nowcast:{role:"Indonesian official weather warning",description:
+    "BMKG publishes provincial severe-weather nowcasts in English. These are issued warning documents rather than directly observed military behavior or comprehensive Southeast Asia coverage."},
+  inmet_br:{role:"Brazilian official weather warning",description:
+    "INMET publishes Brazil severe-weather RSS bulletins. These offer weather explanations for disruption; feed presence and alert counts do not prove infrastructure effects."},
+  imd_in:{role:"Indian weather authority via WMO relay",description:
+    "India's Meteorological Department issues CAP warnings republished by WMO Alert Hub. Republishing is not independent observation; the monitored feed only covers the publisher's stated jurisdiction."},
+  saws_za:{role:"South African authority via WMO relay",description:
+    "South African Weather Service CAP warnings relayed by WMO Alert Hub. This is authority-issued environmental context, not independently observed conflict evidence or continent-wide African coverage."},
   gdelt:{role:"Context and corroboration",description:
     "GDELT indexes worldwide news coverage, reported events and media attention. CAIRN uses it primarily to establish background and compare developing reporting, not as a direct operational sensor or independently verified event record."},
   wikipedia:{role:"Alternative attention proxy",description:
