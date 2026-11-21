@@ -259,6 +259,7 @@ jobs:
       - run: python scripts/check_atlas.py _site
       - run: node --check _site/dashboard/atlas.js
       - run: node --check _site/dashboard/hypotheses.js
+      - run: node --check _site/dashboard/coverage.js
       - run: node --check _site/dashboard/layers.js
   collect:
     needs: test
@@ -320,6 +321,7 @@ jobs:
       - run: python scripts/check_atlas.py _site
       - run: node --check _site/dashboard/atlas.js
       - run: node --check _site/dashboard/hypotheses.js
+      - run: node --check _site/dashboard/coverage.js
       - run: node --check _site/dashboard/layers.js
       - uses: actions/upload-pages-artifact@v3
         with:
@@ -396,6 +398,7 @@ jobs:
           node scripts/test_automatic_topics_browser.js
           node scripts/test_source_status_browser.js
           node scripts/test_hypothesis_browser.js
+          node scripts/test_coverage_browser.js
           node scripts/test_cairn_priority_browser.js
           node scripts/test_atlas_behavior_browser.js
           node scripts/test_atlas_evaluation_browser.js
