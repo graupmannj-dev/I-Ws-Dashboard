@@ -132,6 +132,11 @@ def adapt_sg(data,url,checked):
     # separately enforced during cohort matching.
     years={int(p[:4]) for p,_ in unique}
     if len(years)<2:raise ValueError("Singapore historical API sample lacks multiple years")
+    cohorts={}
+    for period,kind in unique:
+        cohorts.setdefault((period[5:],kind),set()).add(period[:4])
+    if not any(len(years)>=4 for years in cohorts.values()):
+        raise ValueError("Singapore history lacks a four-year matching monthly/type cohort")
     return [{
       "id":"hist:sg_mpa:"+p+":"+kind.lower().replace(" ","-"),
       "collection_mode":"sg_mpa","source_url":SG_DOC,
