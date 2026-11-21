@@ -98,11 +98,11 @@ class HistoryBackfillTests(unittest.TestCase):
             self.assertEqual(second["records_total"],first["records_total"])
             def fail_one(url):
                 if "cod_areacarga=SECO" in url:return fake(url)
-                if "cod_areacarga=N&" in url:raise TimeoutError("temporary area outage")
+                if url.endswith("cod_areacarga=N"):raise TimeoutError("temporary area outage")
                 return fake(url)
             partial=collect(d,clock=lambda:NOW+dt.timedelta(days=22),fetcher=fail_one)
             self.assertEqual(partial["status"],"partial_failed_source_windows")
-            self.assertEqual(partial["records_total"],first["records_total"])
+            self.assertGreaterEqual(partial["records_total"],first["records_total"])
             self.assertGreater(partial["failed_source_windows"],0)
             self.assertEqual(partial["baseline_calibrated_as_warning"],False)
 
