@@ -1,5 +1,49 @@
 {
   "roots": {
+    "4a003f3d9a756989896dcb12f69e4d4114b94d5acff37cc64a5e8e2c436cd5c0": {
+      "information_root": "ripe:measurement:1001:20261121T19",
+      "members": {
+        "beh:e35a9173c1b1241f6d7509103360": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "aggregate_ping_no_country_or_threat_attribution",
+          "collection_mode": "ripe",
+          "direct_measurement": true,
+          "event_at": null,
+          "first_observed_at": "2026-11-21T19:29:49+00:00",
+          "geography_key": "ripe-msm:1001",
+          "geography_label": "K-root public ping aggregate",
+          "geography_precision": "not_country_or_incident_location",
+          "id": "beh:e35a9173c1b1241f6d7509103360",
+          "information_root": "ripe:measurement:1001:20261121T19",
+          "origin": "behavioral_registry",
+          "provider": "ripe",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "network_aggregate_monitoring",
+          "source_family": "internet_reachability",
+          "source_kind": "aggregate_public_network_ping",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "cohort_comparable_to_prior_snapshots": false,
+            "failed_or_invalid_rtt_count": 370,
+            "individual_probe_records_published": false,
+            "measurement_id": 1001,
+            "name": "sample_median_ping_rtt",
+            "sampled_probe_count": 13456,
+            "unit": "ms",
+            "valid_rtt_count": 13086,
+            "value": 19.343
+          },
+          "source_scope": "RIPE Atlas built-in K-root ping #1001, global public-probe aggregate; not country coverage",
+          "source_updated_at": null,
+          "source_url": "https://atlas.ripe.net/measurements/1001/",
+          "title": "RIPE Atlas K-root public probe aggregate (13086 usable measurements)"
+        }
+      }
+    },
     "4a180011a36ab762cd5c816e13fcee7eca9d509e196ff42feaa441512edd8742": {
       "information_root": "ioda:937a44865c1ec8a6aa4d21b6",
       "members": {

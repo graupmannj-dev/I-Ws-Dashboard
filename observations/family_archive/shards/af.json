@@ -1,5 +1,85 @@
 {
   "roots": {
+    "af14ec24b2035b612053bfd2d53188d5c2832ac42c6ae114ad1aaecbee0a0791": {
+      "information_root": "nws:48a0392b561d546caaee581f",
+      "members": {
+        "beh:346016762463cedb6598c0bc6d4b": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "nws",
+          "direct_measurement": false,
+          "event_at": "2026-11-21T18:52:00Z",
+          "first_observed_at": "2026-11-21T18:52:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:346016762463cedb6598c0bc6d4b",
+          "information_root": "nws:48a0392b561d546caaee581f",
+          "origin": "behavioral_registry",
+          "provider": "nws",
+          "published_at": "2026-11-21T18:52:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "official_weather_alert_context",
+          "source_measurement": null,
+          "source_scope": "Active NWS marine alerts; severity Severe",
+          "source_updated_at": null,
+          "source_url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.5a6ae1079ff562eb5ce0e63b076d688829ebaea1.001.1",
+          "title": "Flood Warning - Seminole, FL"
+        }
+      }
+    },
+    "af220957a9942a5ab6412fd3a4c7cea41994bbd4a79bbd0e0ccacb44ab7fe4ee": {
+      "information_root": "cbp_wait:cbp_wait:230301:2026-11-21:13:22:45",
+      "members": {
+        "beh:4c047e1ce4dcc3b04d8a52b48ebd": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-21T19:29:49+00:00",
+          "geography_key": "us-border-port:230301",
+          "geography_label": "Eagle Pass",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:4c047e1ce4dcc3b04d8a52b48ebd",
+          "information_root": "cbp_wait:cbp_wait:230301:2026-11-21:13:22:45",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "N/A",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/21/2026",
+            "reported_local_time": "13:22:45",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Eagle Pass / Bridge I"
+        }
+      }
+    },
     "af8b073f23481f244b3f261ffe52de65af398976e51b68c7098fd4ad41ee3946": {
       "information_root": "faa:6/7769:0:0",
       "members": {

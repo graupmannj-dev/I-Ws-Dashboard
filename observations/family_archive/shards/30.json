@@ -195,6 +195,53 @@
         }
       }
     },
+    "30e5858a5855676191cd97ca52d6d03d055ec95a207c4fca828c32e150109ba6": {
+      "information_root": "cbp_wait:cbp_wait:230502:2026-11-21:13:22:45",
+      "members": {
+        "beh:be4e79e8a2010556ed3a162782a0": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-21T19:29:49+00:00",
+          "geography_key": "us-border-port:230502",
+          "geography_label": "Hidalgo/Pharr",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:be4e79e8a2010556ed3a162782a0",
+          "information_root": "cbp_wait:cbp_wait:230502:2026-11-21:13:22:45",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "delay",
+            "lanes_open": 5,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "At 1:00 pm CST",
+            "reported_local_date": "11/21/2026",
+            "reported_local_time": "13:22:45",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 20
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Hidalgo/Pharr / Pharr"
+        }
+      }
+    },
     "30ebe5a8e300886d71c64eb632a91e9cc86984eb9c87ce7f2c60100cdf968e19": {
       "information_root": "niord:07ae7b1a-b975-48ee-bfd8-822c3fcfa940:3:0:0",
       "members": {

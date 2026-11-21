@@ -1,5 +1,44 @@
 {
   "roots": {
+    "9d25cfaf9f28ee46958e85ea020ff0503e6d41727927b63316020114ea22b732": {
+      "information_root": "bmkg_nowcast:bmkg_nowcast:33ec6b5a2996e00775c21746d9d4",
+      "members": {
+        "beh:0c59885ff10c85e3351b2b267740": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "bmkg_nowcast",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-21T17:14:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:0c59885ff10c85e3351b2b267740",
+          "information_root": "bmkg_nowcast:bmkg_nowcast:33ec6b5a2996e00775c21746d9d4",
+          "origin": "behavioral_registry",
+          "provider": "bmkg_nowcast",
+          "published_at": "2026-11-21T17:14:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Indonesia BMKG",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Indonesia BMKG active provincial nowcast RSS, source-reported only; not global",
+          "source_updated_at": null,
+          "source_url": "https://www.bmkg.go.id/alerts/nowcast/en/CKR20261121005_alert.xml",
+          "title": "Thunderstorm Tonight in Kep. Riau"
+        }
+      }
+    },
     "9d4174caf2946268945cb2d278c77ccd0936761e44c3052bb1a5ac04c4c031af": {
       "information_root": "niord:83d1a83a-764d-444f-b079-4d31ef8835c0:1:0:0",
       "members": {

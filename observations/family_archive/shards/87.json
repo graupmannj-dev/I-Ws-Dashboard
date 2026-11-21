@@ -1,5 +1,85 @@
 {
   "roots": {
+    "872542eca25a2a905b37f1f284e13ec77ec846fd32185689f7df1b7e1c1990e4": {
+      "information_root": "nws:92d5f64d0a5947da6116750c",
+      "members": {
+        "beh:43043b8d61485da357ed46c7512c": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "nws",
+          "direct_measurement": false,
+          "event_at": "2026-11-21T18:11:00Z",
+          "first_observed_at": "2026-11-21T18:11:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:43043b8d61485da357ed46c7512c",
+          "information_root": "nws:92d5f64d0a5947da6116750c",
+          "origin": "behavioral_registry",
+          "provider": "nws",
+          "published_at": "2026-11-21T18:11:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "official_weather_alert_context",
+          "source_measurement": null,
+          "source_scope": "Active NWS marine alerts; severity Moderate",
+          "source_updated_at": null,
+          "source_url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.c1ae8f94e821fd9f18ccd31d1438759d2f0f8fce.001.3",
+          "title": "Rip Current Statement - Coastal Flagler"
+        }
+      }
+    },
+    "876f262a132d23c1be7c607c7b9915c7158899e71dc1e7450adedca5f2a44a45": {
+      "information_root": "cbp_wait:cbp_wait:260101:2026-11-21:11:22:45",
+      "members": {
+        "beh:ea66721a3abc8f9ae8cba9786204": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-21T19:29:49+00:00",
+          "geography_key": "us-border-port:260101",
+          "geography_label": "Douglas (Raul Hector Castro)",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:ea66721a3abc8f9ae8cba9786204",
+          "information_root": "cbp_wait:cbp_wait:260101:2026-11-21:11:22:45",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "no delay",
+            "lanes_open": 1,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "At Noon PST",
+            "reported_local_date": "11/21/2026",
+            "reported_local_time": "11:22:45",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 1
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Douglas (Raul Hector Castro)"
+        }
+      }
+    },
     "877f3a93b8eea8b14b3a7c39bdaa120686864eb8c286af0c7685eb594ce3090d": {
       "information_root": "wiki_edits:wiki_edits:zh:20261121T11",
       "members": {
@@ -72,6 +152,100 @@
           "source_updated_at": null,
           "source_url": "https://zh.wikipedia.org/wiki/Special:RecentChanges",
           "title": "Wikipedia zh public article-edit activity (sampled)"
+        }
+      }
+    },
+    "878ea811c825c3ca3dbefea8ca1ac30666c45cbe8bb2a8de37a2020f9718e293": {
+      "information_root": "cbp_wait:cbp_wait:380201:2026-11-21:14:22:45",
+      "members": {
+        "beh:37c6a23710c1a103229049ab5815": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-21T19:29:49+00:00",
+          "geography_key": "us-border-port:380201",
+          "geography_label": "Port Huron",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:37c6a23710c1a103229049ab5815",
+          "information_root": "cbp_wait:cbp_wait:380201:2026-11-21:14:22:45",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "no delay",
+            "lanes_open": 2,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "At 2:00 pm EST",
+            "reported_local_date": "11/21/2026",
+            "reported_local_time": "14:22:45",
+            "source_declared_border": "Canadian Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 5
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Port Huron / Bluewater Bridge"
+        }
+      }
+    },
+    "87ecf3ee729001f13e8f8f5ff8c9d5df7c2e3ed0daff3c496df33611d700ea05": {
+      "information_root": "cbp_wait:cbp_wait:250501:2026-11-21:11:22:45",
+      "members": {
+        "beh:88a57b7d6f29abcfebe0b94fdc83": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-21T19:29:49+00:00",
+          "geography_key": "us-border-port:250501",
+          "geography_label": "Tecate",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:88a57b7d6f29abcfebe0b94fdc83",
+          "information_root": "cbp_wait:cbp_wait:250501:2026-11-21:11:22:45",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Lanes Closed",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/21/2026",
+            "reported_local_time": "11:22:45",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Tecate"
         }
       }
     }

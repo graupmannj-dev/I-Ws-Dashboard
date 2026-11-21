@@ -1,5 +1,52 @@
 {
   "roots": {
+    "a206233d4d035bdd926bebb4ba66351978a3dd9aa6bcfe52238a61d812e0468e": {
+      "information_root": "cbp_wait:cbp_wait:021201:2026-11-21:14:22:45",
+      "members": {
+        "beh:690f4fd1a94ef572e455809a72b3": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-21T19:29:49+00:00",
+          "geography_key": "us-border-port:021201",
+          "geography_label": "Highgate Springs",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:690f4fd1a94ef572e455809a72b3",
+          "information_root": "cbp_wait:cbp_wait:021201:2026-11-21:14:22:45",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "no delay",
+            "lanes_open": 1,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "At 2:00 pm EST",
+            "reported_local_date": "11/21/2026",
+            "reported_local_time": "14:22:45",
+            "source_declared_border": "Canadian Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 0
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Highgate Springs"
+        }
+      }
+    },
     "a20e946f2baaa9107b9b7d381657c6d5fd245a538126f7887ad87dacfadb4062": {
       "information_root": "nws:a146295b0bd055ca1918affb",
       "members": {
@@ -153,6 +200,45 @@
         }
       }
     },
+    "a2703d44bf0694deff38bc61a0364eeaad7c83ac742792e14b02dd474284c065": {
+      "information_root": "bmkg_nowcast:bmkg_nowcast:d2b47a5f180d57b8482ed915e3db",
+      "members": {
+        "beh:be94b7a06fb3b5a42e87ae23ee82": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "bmkg_nowcast",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-21T17:50:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:be94b7a06fb3b5a42e87ae23ee82",
+          "information_root": "bmkg_nowcast:bmkg_nowcast:d2b47a5f180d57b8482ed915e3db",
+          "origin": "behavioral_registry",
+          "provider": "bmkg_nowcast",
+          "published_at": "2026-11-21T17:50:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Indonesia BMKG",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Indonesia BMKG active provincial nowcast RSS, source-reported only; not global",
+          "source_updated_at": null,
+          "source_url": "https://www.bmkg.go.id/alerts/nowcast/en/CSR20261121008_alert.xml",
+          "title": "Thunderstorm Tonight in Sulawesi Utara"
+        }
+      }
+    },
     "a27d4313d518fbb4c951e88496912b77a21e46f25af89bc8dcc3bb91d09006bf": {
       "information_root": "sg_mpa:sg_mpa:2026-01:miscellaneous",
       "members": {
@@ -290,6 +376,53 @@
           "source_updated_at": null,
           "source_url": "https://bwt.cbp.gov/api/waittimes",
           "title": "CBP estimated commercial border wait — Laredo / Bridge I"
+        }
+      }
+    },
+    "a2ecca5b46376470df3de2f3a0d7491bbd7dc7515a624235862716b77cbc5230": {
+      "information_root": "cbp_wait:cbp_wait:090103:2026-11-21:14:22:44",
+      "members": {
+        "beh:a9519137a03042b68a97f8e605a7": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-21T19:29:49+00:00",
+          "geography_key": "us-border-port:090103",
+          "geography_label": "Buffalo/Niagara Falls",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:a9519137a03042b68a97f8e605a7",
+          "information_root": "cbp_wait:cbp_wait:090103:2026-11-21:14:22:44",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Update Pending",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/21/2026",
+            "reported_local_time": "14:22:44",
+            "source_declared_border": "Canadian Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Buffalo/Niagara Falls / Whirlpool Bridge"
         }
       }
     }

@@ -47,6 +47,53 @@
         }
       }
     },
+    "db047d74e2bf00131dd151df3bddc6890a0a24193c4641628728576536d10756": {
+      "information_root": "cbp_wait:cbp_wait:535504:2026-11-21:13:22:45",
+      "members": {
+        "beh:45c85a975977162a8b3f1fd945bc": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-21T19:29:49+00:00",
+          "geography_key": "us-border-port:535504",
+          "geography_label": "Brownsville",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:45c85a975977162a8b3f1fd945bc",
+          "information_root": "cbp_wait:cbp_wait:535504:2026-11-21:13:22:45",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "N/A",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/21/2026",
+            "reported_local_time": "13:22:45",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Brownsville / Gateway"
+        }
+      }
+    },
     "db1bb9f3a6adb8ab69e7be69ab78b3dc794355eb5b9ec266ca4899c80fc84c04": {
       "information_root": "niord:f9142f62-1f2e-4853-8861-b2920f02f72f:0:4:0",
       "members": {
@@ -345,6 +392,45 @@
           "source_updated_at": null,
           "source_url": "https://pt.wikipedia.org/wiki/Special:RecentChanges",
           "title": "Wikipedia pt public article-edit activity (sampled)"
+        }
+      }
+    },
+    "dbcf6243cee5b9ab910d7ff20b302838d87439d290199216c0267240a04f48cf": {
+      "information_root": "bmkg_nowcast:bmkg_nowcast:f79702bd1396f065b2b1fb0af453",
+      "members": {
+        "beh:bf975086a0c876d6cadd23125ca8": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "bmkg_nowcast",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-21T16:30:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:bf975086a0c876d6cadd23125ca8",
+          "information_root": "bmkg_nowcast:bmkg_nowcast:f79702bd1396f065b2b1fb0af453",
+          "origin": "behavioral_registry",
+          "provider": "bmkg_nowcast",
+          "published_at": "2026-11-21T16:30:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Indonesia BMKG",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Indonesia BMKG active provincial nowcast RSS, source-reported only; not global",
+          "source_updated_at": null,
+          "source_url": "https://www.bmkg.go.id/alerts/nowcast/en/CLG20261121005_alert.xml",
+          "title": "Thunderstorm Tonight in Lampung"
         }
       }
     },

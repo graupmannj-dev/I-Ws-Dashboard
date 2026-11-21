@@ -295,6 +295,53 @@
         }
       }
     },
+    "1ad09cd41d5710bb5301d35ca12642309d982b3d3b715b9394fbbd4c055ad8bd": {
+      "information_root": "cbp_wait:cbp_wait:020901:2026-11-21:14:22:45",
+      "members": {
+        "beh:8c4eff7bf4aeb54a6c62f18bae4f": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-21T19:29:49+00:00",
+          "geography_key": "us-border-port:020901",
+          "geography_label": "Derby Line",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:8c4eff7bf4aeb54a6c62f18bae4f",
+          "information_root": "cbp_wait:cbp_wait:020901:2026-11-21:14:22:45",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "no delay",
+            "lanes_open": 1,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "At Noon EST",
+            "reported_local_date": "11/21/2026",
+            "reported_local_time": "14:22:45",
+            "source_declared_border": "Canadian Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 0
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Derby Line / Derby Line I-91"
+        }
+      }
+    },
     "1ad229e4cc63ff3c5397854ac48a0d9f30a8db46c757d51cd0f7e1c25cd7abe9": {
       "information_root": "sg_mpa:sg_mpa:2026-05:miscellaneous",
       "members": {
@@ -338,6 +385,45 @@
           "source_updated_at": null,
           "source_url": "https://data.gov.sg/datasets/d_8f264219109e61fffa87ac64dd5a9a65/view",
           "title": "Singapore MPA 2026-05 Miscellaneous vessel arrivals (>75 GT)"
+        }
+      }
+    },
+    "1ae6995f8dff57f479cff1ee5bc4aca3fce63fb8faf91364e0ffeb6e66a2dff7": {
+      "information_root": "inmet_br:inmet_br:f7d6800db89ec957d158ae3bc7f1",
+      "members": {
+        "beh:625322b900facf4b2b5f93bbf71b": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "inmet_br",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-21T00:00:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:625322b900facf4b2b5f93bbf71b",
+          "information_root": "inmet_br:inmet_br:f7d6800db89ec957d158ae3bc7f1",
+          "origin": "behavioral_registry",
+          "provider": "inmet_br",
+          "published_at": "2026-11-21T00:00:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Brazil INMET",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Brazil INMET official severe-weather RSS notices; provider-listed bounded sample",
+          "source_updated_at": null,
+          "source_url": "https://apiprevmet3.inmet.gov.br/avisos/rss/56472",
+          "title": "Aviso de Tempestade. Severidade Grau: Perigo Potencial"
         }
       }
     },

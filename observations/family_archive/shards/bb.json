@@ -1,5 +1,38 @@
 {
   "roots": {
+    "bb0aee837640ac142661a8440351a402a7b36c2d99e4e013d3858c33d839fd13": {
+      "information_root": "nws:70ada62035d3b940794cd35d",
+      "members": {
+        "beh:da5b88b083446e94edfc719fe36d": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "nws",
+          "direct_measurement": false,
+          "event_at": "2026-11-21T18:11:00Z",
+          "first_observed_at": "2026-11-21T18:11:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:da5b88b083446e94edfc719fe36d",
+          "information_root": "nws:70ada62035d3b940794cd35d",
+          "origin": "behavioral_registry",
+          "provider": "nws",
+          "published_at": "2026-11-21T18:11:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "official_weather_alert_context",
+          "source_measurement": null,
+          "source_scope": "Active NWS marine alerts; severity Minor",
+          "source_updated_at": null,
+          "source_url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.c1ae8f94e821fd9f18ccd31d1438759d2f0f8fce.001.2",
+          "title": "High Surf Advisory - Coastal Flagler"
+        }
+      }
+    },
     "bb38a27976f87ff17144c37569e160d63c32cb24750238122fb05b380b911ba2": {
       "information_root": "niord:85b4e019-da5a-432d-b68f-b70721b9f8bb:1:0:0",
       "members": {
@@ -181,6 +214,81 @@
           "source_updated_at": null,
           "source_url": "https://ioda.inetintel.cc.gatech.edu/",
           "title": "IODA detected connectivity anomaly: country SZ"
+        }
+      }
+    },
+    "bbfa54421396d4ac3d089e62099c430d4c4ced8956da266b7be62fe7d15e6182": {
+      "information_root": "wiki_edits:wiki_edits:id:20261121T19",
+      "members": {
+        "beh:9f3d7c781efebb905777a441bb2d": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "wiki_edits",
+          "direct_measurement": false,
+          "event_at": "2026-11-21T19:26:48Z",
+          "first_observed_at": "2026-11-21T19:26:48+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:9f3d7c781efebb905777a441bb2d",
+          "information_root": "wiki_edits:wiki_edits:id:20261121T19",
+          "origin": "behavioral_registry",
+          "provider": "wiki_edits",
+          "published_at": "2026-11-21T19:26:48Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "public_encyclopedia_edit_aggregate",
+          "source_family": "public_attention",
+          "source_kind": "bounded_public_edit_count_not_event_verification",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "distinct_articles_in_sample": 200,
+            "maximum_returned_edits": 500,
+            "most_edited_article_counts": [
+              {
+                "count": 7,
+                "title": "BadToSay"
+              },
+              {
+                "count": 7,
+                "title": "Idha Mochamad Basri"
+              },
+              {
+                "count": 5,
+                "title": "Chelsea F.C. musim 2026–2027"
+              },
+              {
+                "count": 4,
+                "title": "Aman Bhakti Pulungan"
+              },
+              {
+                "count": 4,
+                "title": "Prima (album)"
+              },
+              {
+                "count": 4,
+                "title": "Teknokrasi"
+              },
+              {
+                "count": 3,
+                "title": "Daftar kasus keracunan massal makan siang gratis"
+              },
+              {
+                "count": 3,
+                "title": "Daftar sekolah menengah atas di Nusa Tenggara Timur"
+              }
+            ],
+            "name": "sampled_edits_last_three_hours",
+            "sample_cap_reached": false,
+            "unit": "edits",
+            "value": 258
+          },
+          "source_scope": "Wikipedia main-namespace edit-count sample, 14 global language editions, three-hour window capped at 500 per wiki; not geographic location",
+          "source_updated_at": null,
+          "source_url": "https://id.wikipedia.org/wiki/Special:RecentChanges",
+          "title": "Wikipedia id public article-edit activity (sampled)"
         }
       }
     }

@@ -77,6 +77,53 @@
         }
       }
     },
+    "c48c6b1e559d2c34d90110e27285e3f7e0fb20dfc5bd997d018c6cf6e4ecfad3": {
+      "information_root": "cbp_wait:cbp_wait:380301:2026-11-21:14:22:45",
+      "members": {
+        "beh:641f63bae2a05576e9da6d5d72b6": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-21T19:29:49+00:00",
+          "geography_key": "us-border-port:380301",
+          "geography_label": "Sault Ste. Marie",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:641f63bae2a05576e9da6d5d72b6",
+          "information_root": "cbp_wait:cbp_wait:380301:2026-11-21:14:22:45",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "no delay",
+            "lanes_open": 1,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "At 2:00 pm EST",
+            "reported_local_date": "11/21/2026",
+            "reported_local_time": "14:22:45",
+            "source_declared_border": "Canadian Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 0
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Sault Ste. Marie / International Bridge - SSM"
+        }
+      }
+    },
     "c4a0c6600850626b6bd48f05311ffd0987a502883feef6074348279381fffb2f": {
       "information_root": "2026-11-11-abu-dhabi-russia-ukraine-us-negotiators-pow-exchange",
       "members": {
@@ -130,6 +177,44 @@
           "source_updated_at": null,
           "source_url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.swz.html",
           "title": "Eswatini - Level 2: Exercise Increased Caution"
+        }
+      }
+    },
+    "c4dd5711af0c5ab8487aaaf31b0ea4d46279aee6618761c9e8c15cee15c00e9f": {
+      "information_root": "usgs:us6000ucn8",
+      "members": {
+        "beh:982a8e5786cd9764585c0cd21965": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "usgs",
+          "direct_measurement": true,
+          "event_at": "2026-11-21T17:30:44Z",
+          "first_observed_at": "2026-11-21T17:30:44+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "source_supplied_point_only",
+          "id": "beh:982a8e5786cd9764585c0cd21965",
+          "information_root": "usgs:us6000ucn8",
+          "origin": "behavioral_registry",
+          "provider": "usgs",
+          "published_at": "2026-11-21T18:00:30Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "measured_earthquake_context",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "name": "earthquake_magnitude",
+            "unit": "reported_magnitude",
+            "value": 4.6
+          },
+          "source_scope": "USGS M4.5+ earthquakes worldwide, rolling past day; source thresholds apply",
+          "source_updated_at": null,
+          "source_url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000ucn8",
+          "title": "M 4.6 - 68 km SSE of Tateyama, Japan"
         }
       }
     }

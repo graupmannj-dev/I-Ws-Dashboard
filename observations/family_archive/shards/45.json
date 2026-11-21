@@ -252,6 +252,119 @@
           "title": "CBP estimated commercial border wait — Calais / International Avenue"
         }
       }
+    },
+    "45c77e7ac49adc4fe12321494aef9eb00ecd4d5e3aa063ce8268eaf59543aad4": {
+      "information_root": "eonet:EONET_6320",
+      "members": {
+        "beh:c6affb3f776f9315dda139f0bde4": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "eonet",
+          "direct_measurement": false,
+          "event_at": "2026-11-20T00:00:00Z",
+          "first_observed_at": "2026-11-20T00:00:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:c6affb3f776f9315dda139f0bde4",
+          "information_root": "eonet:EONET_6320",
+          "origin": "behavioral_registry",
+          "provider": "eonet",
+          "published_at": "2026-11-20T00:00:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "cataloged_natural_hazard_context",
+          "source_measurement": null,
+          "source_scope": "NASA EONET open catalog, category Sea and Lake Ice",
+          "source_updated_at": null,
+          "source_url": "https://eonet.gsfc.nasa.gov/api/v3/events/EONET_6320",
+          "title": "Iceberg A81"
+        }
+      }
+    },
+    "45dbdb379053f210daa2ef10847625534367cf56a37b7e3ec0b3302e5f425af0": {
+      "information_root": "cbp_wait:cbp_wait:240201:2026-11-21:12:22:45",
+      "members": {
+        "beh:9b4953aefdb121ab73a014af4c2f": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-21T19:29:49+00:00",
+          "geography_key": "us-border-port:240201",
+          "geography_label": "El Paso",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:9b4953aefdb121ab73a014af4c2f",
+          "information_root": "cbp_wait:cbp_wait:240201:2026-11-21:12:22:45",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Lanes Closed",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/21/2026",
+            "reported_local_time": "12:22:45",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — El Paso / Bridge of the Americas (BOTA)"
+        }
+      }
+    },
+    "45fbec20e46b60a812f8b55da4e3939baaca3302d612ede063112344a41fd5ae": {
+      "information_root": "nws:9ad90d980889bb0cd1e96ea2",
+      "members": {
+        "beh:72af6ded2cbb1dd108f5301935aa": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "nws",
+          "direct_measurement": false,
+          "event_at": "2026-11-21T18:11:00Z",
+          "first_observed_at": "2026-11-21T18:11:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:72af6ded2cbb1dd108f5301935aa",
+          "information_root": "nws:9ad90d980889bb0cd1e96ea2",
+          "origin": "behavioral_registry",
+          "provider": "nws",
+          "published_at": "2026-11-21T18:11:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "official_weather_alert_context",
+          "source_measurement": null,
+          "source_scope": "Active NWS marine alerts; severity Severe",
+          "source_updated_at": null,
+          "source_url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.c1ae8f94e821fd9f18ccd31d1438759d2f0f8fce.001.1",
+          "title": "Coastal Flood Warning - Coastal Flagler"
+        }
+      }
     }
   },
   "schema": "aiba.family-archive.v1"
