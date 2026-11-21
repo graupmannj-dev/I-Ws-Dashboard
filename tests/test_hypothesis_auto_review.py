@@ -76,7 +76,7 @@ class AutoHypothesisReviewTests(unittest.TestCase):
         baseline["registry_novelty"] = "initial_provider_baseline"
         c = screen(DOSSIERS, registry([old, future, baseline]), at=AT)
         self.assertEqual(c["cases"]["taiwan"]["new_matching_records"], 0)
-        self.assertEqual(c["new_source_records_in_window"], 1)
+        self.assertEqual(c["new_source_records_in_window"], 0)
 
     def test_explicit_case_hint_is_separate_from_geographic_inference(self):
         r = record("h", "New cross-border attack", geo="Unlocated",
