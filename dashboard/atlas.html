@@ -7,22 +7,30 @@
   <meta name="theme-color" content="#0c1420">
   <title>CAIRN | Alternative Indicator Early Warning</title>
   <link rel="stylesheet" href="dashboard/atlas.css">
+  <link rel="stylesheet" href="dashboard/cairn-nav.css">
 </head>
 <body>
-  <header class="topbar">
-    <a class="brand" href="./" aria-label="CAIRN home"><span class="brand-mark">◈</span><span>CAIRN</span></a>
-    <div class="header-title"><strong>Alternative-Indicator Early Warning</strong><span>Corroborated Alternative Indicators for Risk Navigation</span></div>
-    <a href="hypotheses.html" class="hypothesis-link">Hypotheses</a>
-    <a href="coverage.html" class="coverage-link">Coverage &amp; gaps</a>
-    <a href="sources.html" class="source-health-link">Sources &amp; status</a>
-    <div class="header-status" aria-label="Collection status">
+  <header class="topbar cairn-topbar">
+    <a class="brand cairn-brand" href="./" aria-label="CAIRN Atlas home"><span class="brand-mark" aria-hidden="true">◈</span><span>CAIRN</span></a>
+    <div class="header-title cairn-header-title"><strong>Alternative-Indicator Early Warning</strong><span>Corroborated Alternative Indicators for Risk Navigation</span></div>
+    <nav class="cairn-nav" aria-label="Primary navigation">
+      <a href="./" data-nav="atlas" aria-current="page">Atlas</a>
+      <a href="hypotheses.html" class="hypothesis-link" data-nav="hypotheses">Hypotheses</a>
+      <a href="sources.html" class="source-health-link" data-nav="sources">Sources &amp; status</a>
+      <a href="coverage.html" class="coverage-link" data-nav="coverage">Coverage &amp; gaps</a>
+    </nav>
+  </header>
+
+  <div class="atlas-meta">
+    <div class="atlas-meta-heading"><strong>Atlas overview</strong><span>Current sourced monitoring snapshot</span></div>
+    <div class="header-status" aria-label="Atlas snapshot summary">
       <div><small>Curated theaters</small><strong id="kpiWatch">—</strong></div>
       <div><small>Reviewed changes</small><strong id="kpiUpdates">—</strong></div>
       <div><small>Sourced reports</small><strong id="kpiReports">—</strong></div>
       <div><small>Snapshot</small><strong id="kpiAsOf">—</strong></div>
     </div>
     <button id="openControls" class="mobile-toggle" type="button" aria-controls="sidebar" aria-expanded="false">Layers</button>
-  </header>
+  </div>
 
   <div class="workspace">
     <aside id="sidebar" class="sidebar" aria-label="Map controls">
@@ -105,8 +113,6 @@
         <label class="toggle-row"><input type="checkbox" id="changedOnly"><span>Only recently changed hotspots</span></label>
         <label class="toggle-row"><input type="checkbox" id="autoRotate"><span>Slow globe rotation</span></label>
         <p class="side-hint" id="dataNotice">Loading source-linked reporting…</p>
-        <h3 class="intake-heading">Collection health and source times</h3>
-        <div id="collectorHealth" class="intake-status" aria-live="polite">Checking feed snapshots…</div>
       </section>
       <section class="side-section">
         <h2>Views</h2>

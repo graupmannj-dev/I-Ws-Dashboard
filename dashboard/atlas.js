@@ -2063,26 +2063,7 @@ function updateTabs(){
   updateWatchlist();
 }
 function renderEvidenceIntake(){
-  const a=state.atlas, status=a.status||{};
-  const feeds=status.operational_feeds||{};
-  const health=$("collectorHealth");
-  const rows=[];
-  for(const key of ["markets","official","commercial"]){
-    const f=feeds[key]||{};
-    const name=key.charAt(0).toUpperCase()+key.slice(1);
-    const freshness=f.freshness||"not available";
-    const checked=f.last_checked||"No successful collection timestamp";
-    rows.push('<div class="intake-feed"><span>'+safe(name)+'</span><strong>'+safe(freshness.replace(/_/g," "))+'</strong></div>'+
-      '<small>Checked: '+safe(checked)+'</small>');
-  }
-  const analyst=status.analyst_intake||{};
-  rows.push('<div class="intake-feed"><span>ChatGPT report intake</span><strong>'+
-    safe((analyst.status||"not_connected").replace(/_/g," "))+'</strong></div>'+
-    '<small>Last handoff: '+safe(analyst.latest_collected_at||"None — scheduled chats do not automatically publish")+
-    '; unique observations: '+safe(analyst.distinct_observations||0)+'</small>');
-  rows.push('<p class="sub">GDELT dataset as of '+safe(a.asof)+
-    '; site generated '+safe(a.generated_at)+'. Collection dates differ from report publication dates.</p>');
-  health.innerHTML=rows.join("");
+  const a=state.atlas;
   const discoveries=$("discoveryLeads");
   const candidate=[...(a.unlocated_analyst_leads||[]).map(x=>({title:x.title,summary:x.summary,
     source_url:x.source_url,kind:"Analyst intake · unreviewed"})),
