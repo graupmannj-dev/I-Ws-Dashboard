@@ -31,7 +31,7 @@ const origin="http://127.0.0.1:8765";
           const link=links.nth(i),want=expected[i];
           assert.equal(await link.getAttribute("data-nav"),want.key);
           assert.equal(await link.getAttribute("href"),want.href);
-          assert.equal((await link.innerText()).replace(/\\s+/g," ").trim(),want.text);
+          assert.equal((await link.innerText()).replace(/\s+/g," ").trim(),want.text);
           assert.equal(await link.getAttribute("aria-current"),
                        target.key===want.key?"page":null);
           assert.equal(await link.isVisible(),true,"Destination hidden at "+viewport.width);
