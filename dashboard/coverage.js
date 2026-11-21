@@ -114,6 +114,35 @@ async function showPhysicalBaselines(){
       ". No uncertainty or missingness is treated as a normal condition.";
   }
 }
+async function showSourceDependencies(){
+  const target=$("dependencyDetails");
+  try {
+    const res=await fetch("source_dependency_audit.json",{cache:"no-store"});
+    if(!res.ok)throw Error("HTTP "+res.status);
+    const d=await res.json();
+    if(d.schema!=="cairn.source-dependency-audit.v1")
+      throw Error("Unsupported source-dependency audit");
+    target.replaceChildren();
+    const p=document.createElement("p");p.className="muted";
+    p.textContent=d.comparison_available ?
+      (d.candidate_common_event_pairs||[]).length+
+      " possible shared physical earthquakes; "+(d.ambiguous_pair_candidates||[]).length+
+      " ambiguous candidates. All require review. None automatically adds independent security evidence.":
+      "Comparative USGS/BMKG observation coverage unavailable or stale; no implication of no earthquakes.";
+    target.appendChild(p);
+    for(const row of (d.candidate_common_event_pairs||[]).slice(0,25)){
+      const line=document.createElement("div");line.className="metric-row";
+      line.textContent=(row.source_ids||[]).join(" / ")+
+        " · "+row.epicenter_distance_km+" km · "+
+        row.origin_time_difference_seconds+" seconds · possible same quake, unreviewed";
+      target.appendChild(line);
+    }
+  } catch(error){
+    target.textContent="Cross-publisher audit not available: "+error.message+
+      ". Missing assessment is not proof of independent events.";
+  }
+}
+showSourceDependencies();
 showPhysicalBaselines();
 load();
 })();
