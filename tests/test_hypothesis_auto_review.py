@@ -106,6 +106,7 @@ class AutoHypothesisReviewTests(unittest.TestCase):
     def test_archive_used_when_valid_and_fallback_when_invalid(self):
         r = record("p", "Taiwan maritime exclusion zone")
         reg = registry([])
+        reg["source_health"]["nga"] = {"status": "current"}
         good = {"schema": "aiba.family-archive.v1", "records": [r]}
         bad = {"schema": "aiba.family-archive.v0", "records": [r]}
         self.assertEqual(screen(DOSSIERS, reg, good, at=AT)
