@@ -11,6 +11,7 @@ from alternative_sensor_pipeline import (
 from behavioral_registry import create,normalize,SCHEMA as REGISTRY_SCHEMA
 from family_archive import update as update_family
 from ops_pipeline import load_json
+from cairn_national_sensors import FEEDS as NATIONAL_FEEDS, xml_parse
 
 UTC=dt.timezone.utc
 NOW=dt.datetime(2026,11,20,17,0,tzinfo=UTC)
@@ -77,6 +78,18 @@ def sample(mode):
              "user":"PRIVATE_SHOULD_NOT_APPEAR","anon":True},
             {"title":"Synthetic transport history","timestamp":STAMP,"rcid":2},
             {"title":"Synthetic weather history","timestamp":STAMP,"rcid":3}]}}
+    if mode=="bmkg_quake":
+        return {"Infogempa":{"gempa":[{
+            "DateTime":STAMP,"Coordinates":"-7.99,121.31",
+            "Magnitude":"5.4","Kedalaman":"10 km",
+            "Wilayah":"Synthetic Sulawesi offshore event","Potensi":"Tidak berpotensi tsunami"}]}}
+    if mode in ("bmkg_nowcast","inmet_br","imd_in","saws_za"):
+        link=NATIONAL_FEEDS[mode]
+        xml=('<?xml version="1.0"?><rss version="2.0"><channel>'+
+             '<title>National official alerts</title><item><guid>test-20261120</guid>'+
+             '<title>Synthetic official rainfall notice</title><link>'+link+'</link>'+
+             '<pubDate>Fri, 20 Nov 2026 16:30:00 GMT</pubDate></item></channel></rss>')
+        return xml_parse(xml.encode())
     if mode=="coops":
         return {"metadata":{"id":"9414290","name":"San Francisco"},
           "data":[{"t":"2026-11-20 16:30","v":"0.82","s":"0.02",
@@ -84,6 +97,11 @@ def sample(mode):
 
 
 def fake(url):
+    if "data.bmkg.go.id" in url:return sample("bmkg_quake")
+    if "www.bmkg.go.id" in url:return sample("bmkg_nowcast")
+    if "apiprevmet3.inmet.gov.br" in url:return sample("inmet_br")
+    if "in-imd-en/" in url:return sample("imd_in")
+    if "za-saws-en/" in url:return sample("saws_za")
     if "earthquake.usgs.gov" in url:return sample("usgs")
     if "eonet.gsfc.nasa.gov" in url:return sample("eonet")
     if "api.weather.gov" in url:return sample("nws")

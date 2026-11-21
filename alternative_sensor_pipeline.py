@@ -23,13 +23,16 @@ import urllib.parse
 import urllib.request
 
 from ops_pipeline import load_json, write_json
+from cairn_national_sensors import (MODES as NATIONAL_MODES, SCOPE as NATIONAL_SCOPE,
+                                    FEEDS as NATIONAL_FEEDS, RSS_MODES,
+                                    xml_parse, adapter_for)
 
 UTC=dt.timezone.utc
 SCHEMA="cairn.alternative-sensors.v1"
 MAX_BYTES=8_000_000  # bounded for full public RIPE built-in probe cohort
 MAX_RECORDS=110
 USER_AGENT="CAIRN-Public-Alternative-Sensors/1.0 (github.com/graupmannj-dev/I-Ws-Dashboard)"
-MODES=("usgs","eonet","nws","usace","coops","swpc","ripe","uk_tenders","wiki_edits","cbp_wait")
+MODES=("usgs","eonet","nws","usace","coops","swpc","ripe","uk_tenders","wiki_edits","cbp_wait")+NATIONAL_MODES
 SCOPE={
     "usgs":"USGS M4.5+ earthquakes worldwide, rolling past day; source thresholds apply",
     "eonet":"NASA EONET open natural event catalog, recent 7 days; limit 110",
@@ -41,6 +44,7 @@ SCOPE={
     "uk_tenders":"UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
     "wiki_edits":"Wikipedia main-namespace edit-count sample, en/fr/es, three-hour window capped at 500 per wiki",
     "cbp_wait":"CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+    **NATIONAL_SCOPE,
 }
 PORT_STATIONS={
     "9414290":"San Francisco, CA",
@@ -55,9 +59,14 @@ HOST_ALLOW={
  "uk_tenders":"www.find-tender.service.gov.uk",
  "wiki_edits":"en.wikipedia.org",
  "cbp_wait":"bwt.cbp.gov",
+ "bmkg_quake":"data.bmkg.go.id","bmkg_nowcast":"www.bmkg.go.id",
+ "inmet_br":"apiprevmet3.inmet.gov.br",
+ "imd_in":"cap-sources.s3.amazonaws.com",
+ "saws_za":"cap-sources.s3.amazonaws.com",
 }
 MAX_URLS={"usgs":1,"eonet":1,"nws":1,"usace":3,"coops":3,"swpc":1,"ripe":1,
-          "uk_tenders":1,"wiki_edits":3,"cbp_wait":1}
+          "uk_tenders":1,"wiki_edits":3,"cbp_wait":1,
+          **{mode:1 for mode in NATIONAL_MODES}}
 MAX_RIPE_PROBES=60000
 
 
@@ -94,10 +103,26 @@ def source_url(url,mode):
                                                   "water.noaa.gov",
                                                   "tidesandcurrents.noaa.gov",
                                                   "www.swpc.noaa.gov",
-                                                  "fr.wikipedia.org","es.wikipedia.org"):
+                                                  "fr.wikipedia.org","es.wikipedia.org",
+                                                  "avisos.inmet.gov.br"):
         return None
     if p.username or p.password or len(url)>1500:return None
     return url
+
+
+def xml_get(url):
+    """HTTPS bounded, parser-restricted RSS/Atom only (no DTD/entities)."""
+    p=urllib.parse.urlsplit(url)
+    if p.scheme!="https" or p.username or p.password:
+        raise ValueError("Invalid HTTPS source")
+    req=urllib.request.Request(url,headers={
+        "User-Agent":USER_AGENT,"Accept":"application/rss+xml, application/atom+xml, application/xml, text/xml"})
+    with urllib.request.urlopen(req,timeout=18) as res:
+        raw=res.read(4_000_001)
+        kind=res.headers.get("content-type","").split(";")[0].lower()
+        if kind=="text/html":
+            raise ValueError("HTML challenge, not source RSS")
+    return xml_parse(raw)
 
 
 def json_get(url):
@@ -116,6 +141,7 @@ def json_get(url):
 
 
 def urls(mode,now):
+    if mode in NATIONAL_FEEDS:return [NATIONAL_FEEDS[mode]]
     if mode=="usgs":
         return ["https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_day.geojson"]
     if mode=="eonet":
@@ -169,7 +195,8 @@ def entry(mode,rid,title,url,checked,*,event_at=None,published=None,kind="source
         "observed_at":iso(checked),"event_at":iso(event) if event else None,
         "published_at":iso(pub) if pub else None,
         "first_seen_at":iso(first) if first else None,
-        "claim_level":"estimated_border_waits_not_vehicle_volume_or_mobilization" if mode=="cbp_wait"
+        "claim_level":"national_environmental_context_not_conflict_attribution" if mode in NATIONAL_MODES
+                     else "estimated_border_waits_not_vehicle_volume_or_mobilization" if mode=="cbp_wait"
                      else "official_tender_release_not_fulfillment_or_intent" if mode=="uk_tenders"
                      else "public_edit_activity_not_event_confirmation" if mode=="wiki_edits"
                      else "environmental_context_not_hostile_attribution" if mode in ("usgs","eonet","nws","coops","swpc")
@@ -558,7 +585,8 @@ ADAPTERS={"usgs":adapt_usgs,"eonet":adapt_eonet,"nws":adapt_nws,
           "usace":adapt_usace,"coops":adapt_coops,
           "swpc":adapt_swpc,"ripe":adapt_ripe,
           "uk_tenders":adapt_uk_tenders,"wiki_edits":adapt_wiki_edits,
-          "cbp_wait":adapt_cbp_wait}
+          "cbp_wait":adapt_cbp_wait,
+          **{mode:adapter_for(mode,entry) for mode in NATIONAL_MODES}}
 
 
 def collect(state,clock=None,fetcher=json_get,selected=MODES):
@@ -577,14 +605,18 @@ def collect(state,clock=None,fetcher=json_get,selected=MODES):
                 if urllib.parse.urlsplit(url).hostname not in ((HOST_ALLOW[mode], "fr.wikipedia.org", "es.wikipedia.org")
                                                              if mode=="wiki_edits" else (HOST_ALLOW[mode],)):
                     raise ValueError("Unapproved data-host endpoint")
-                parsed=ADAPTERS[mode](fetcher(url),now,url)
+                national_fetch=(xml_get if mode in RSS_MODES else json_get)
+                # The injected fetcher is used in offline fixtures; production
+                # uses XML only for declared national CAP/RSS modes.
+                getter=national_fetch if fetcher is json_get else fetcher
+                parsed=ADAPTERS[mode](getter(url),now,url)
                 success.extend(parsed)
             except (ValueError,TypeError,KeyError,TimeoutError,OSError,
                     urllib.error.URLError,json.JSONDecodeError) as exc:
                 errors.append(clean(type(exc).__name__+": "+str(exc),180))
         # Provider responses are bounded and explicitly marked partial;
         # collection never silently truncates and claims exhaustive coverage.
-        truncated=len(success)>MAX_RECORDS or len(errors)>0 or mode in ("usace","nws","eonet","coops","uk_tenders","wiki_edits","cbp_wait")
+        truncated=len(success)>MAX_RECORDS or len(errors)>0 or mode in ("usace","nws","eonet","coops","uk_tenders","wiki_edits","cbp_wait")+NATIONAL_MODES
         kept=success[:MAX_RECORDS]
         ok=len(errors)<len(source_urls)
         status="partial" if ok and truncated else "collected" if ok else "unavailable"
@@ -599,7 +631,8 @@ def collect(state,clock=None,fetcher=json_get,selected=MODES):
             "missingness":"provider_bounded_partial" if ok and truncated else
                 "provider_bounded_not_exhaustive" if ok else "not_measured_not_zero",
             "source_dependency_class":(
-                "environmental_hazard_reporting" if mode in ("usgs","eonet","nws","swpc")
+                "national_official_hazard_bulletin_not_independent_incident" if mode in NATIONAL_MODES
+                else "environmental_hazard_reporting" if mode in ("usgs","eonet","nws","swpc")
                 else "official_navigation_notice" if mode=="usace"
                 else "aggregate_public_network_ping" if mode=="ripe"
                 else "official_cbp_border_wait_estimate" if mode=="cbp_wait"
