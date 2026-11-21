@@ -89,7 +89,9 @@ def _parse(value):
     if not isinstance(value,str):return None
     try:
         v=dt.datetime.fromisoformat(value.replace("Z","+00:00"))
-        return v.astimezone(UTC) if v.tzinfo else None
+        # RIPEstat's data API emits naive ISO-8601 query windows that its
+        # service documents as UTC. This exception applies ONLY to RIPEstat.
+        return v.astimezone(UTC) if v.tzinfo else v.replace(tzinfo=UTC)
     except ValueError:return None
 
 def ris(data,checked,url,entry):
