@@ -73,7 +73,7 @@ class NewSourcesTests(unittest.TestCase):
                 from urllib.parse import parse_qs,urlsplit
                 return ris_data(parse_qs(urlsplit(url).query)["resource"][0])
             out=collect(d,clock=lambda:NOW,fetcher=fake,selected=("tw_power","ris_bgp"))
-            self.assertEqual(out["tw_power"]["status"],"collected")
+            self.assertEqual(out["tw_power"]["status"],"partial")  # bounded national snapshot, never complete coverage
             self.assertEqual(out["ris_bgp"]["source_queries_attempted"],6)
             self.assertEqual(out["ris_bgp"]["source_queries_ok"],5)
             self.assertEqual(out["ris_bgp"]["status"],"partial")
