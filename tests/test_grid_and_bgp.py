@@ -55,6 +55,14 @@ class NewSourcesTests(unittest.TestCase):
             self.assertIsNone(x["event_at"])
             self.assertIn("not_country_outage",x["claim_level"])
 
+    def test_ripe_naive_source_utc_clock_is_documented_exception(self):
+        from cairn_grid_and_bgp import _parse
+        stamp=_parse("2026-11-20T16:30:00")
+        self.assertEqual(stamp.isoformat(),"2026-11-20T16:30:00+00:00")
+        u=urls("ris_bgp")[0]
+        r=ris(ris_data("AS4134",ending="2026-11-20T16:30:00"),NOW,u,entry)[0]
+        self.assertEqual(r["source_measurement"]["value"],17)
+
     def test_no_bgp_updates_is_bounded_zero_not_global_all_clear(self):
         u=urls("ris_bgp")[0]
         x=ris({"status":"ok","data":{"resource":"AS4134","resource_type":"asn",
