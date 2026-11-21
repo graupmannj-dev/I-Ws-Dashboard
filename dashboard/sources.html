@@ -4,6 +4,7 @@
 <meta name="theme-color" content="#0c1420">
 <title>CAIRN | Source Collection Health</title>
 <link rel="stylesheet" href="dashboard/atlas.css">
+<link rel="stylesheet" href="dashboard/cairn-nav.css">
 <style>
 .source-page{max-width:1240px;margin:24px auto;padding:0 22px 55px}
 .source-page h1{font-size:27px;margin:0 0 4px}
@@ -29,12 +30,16 @@
 @media(max-width:760px){.source-page{padding:0 11px}.source-head{align-items:flex-start}.source-table{display:block;overflow:auto;white-space:normal}.source-table th,.source-table td{padding:8px;min-width:120px}.source-page h1{font-size:22px}}
 </style></head>
 <body>
-<header class="topbar">
-<a class="brand" href="./" aria-label="CAIRN home"><span class="brand-mark">◈</span><span>CAIRN</span></a>
-<div class="header-title"><strong>Source collection health</strong><span>Corroborated Alternative Indicators for Risk Navigation</span></div>
-<a class="coverage-link" href="coverage.html">Coverage &amp; gaps</a>
-<a class="source-back-link" href="./">Back to globe</a>
-</header>
+<header class="topbar cairn-topbar">
+    <a class="brand cairn-brand" href="./" aria-label="CAIRN Atlas home"><span class="brand-mark" aria-hidden="true">◈</span><span>CAIRN</span></a>
+    <div class="header-title cairn-header-title"><strong>Alternative-Indicator Early Warning</strong><span>Corroborated Alternative Indicators for Risk Navigation</span></div>
+    <nav class="cairn-nav" aria-label="Primary navigation">
+      <a href="./" data-nav="atlas">Atlas</a>
+      <a href="hypotheses.html" class="hypothesis-link" data-nav="hypotheses">Hypotheses</a>
+      <a href="sources.html" class="source-health-link" data-nav="sources" aria-current="page">Sources &amp; status</a>
+      <a href="coverage.html" class="coverage-link" data-nav="coverage">Coverage &amp; gaps</a>
+    </nav>
+  </header>
 <main class="source-page">
 <div class="source-head"><div><h1>Collector status and freshness</h1>
 <p class="lead">CAIRN prioritizes nontraditional operational, commercial and institutional signals. News indexes and conventional reporting primarily provide background and possible corroboration; neither fresh data nor multiple articles establishes a verified event. Collection dates are not event dates, and missing observations do not imply normal conditions.</p></div>
