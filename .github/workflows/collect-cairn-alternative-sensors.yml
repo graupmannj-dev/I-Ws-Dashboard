@@ -70,6 +70,18 @@ jobs:
             echo "::warning::Source receipts persist; durable family update failed."
           fi
           exit 0
+      - name: Bounded official retrospective ONS and Singapore metric sampling
+        if: env.CAIRN_ARCHIVE_RC == '0'
+        shell: bash
+        run: |
+          set +e
+          python src/cairn_metric_history_backfill.py --state state/observations
+          rc=$?
+          echo "CAIRN_BACKFILL_RC=$rc" >> "$GITHUB_ENV"
+          if [ "$rc" -ne 0 ]; then
+            echo "::warning::Official history backfill failed; previous archive remains intact."
+          fi
+          exit 0
       - name: Calibrate source-specific physical metrics only when archive is current
         if: env.CAIRN_ARCHIVE_RC == '0'
         shell: bash
@@ -95,7 +107,7 @@ jobs:
             git push origin HEAD:refs/heads/aiba-feed-data
           fi
       - name: Surface a failed normalization after preserving raw source health
-        if: env.CAIRN_REGISTRY_RC != '0' || env.CAIRN_ARCHIVE_RC == '1' || env.CAIRN_METRIC_RC == '1' || env.CAIRN_DEPENDENCY_RC == '1'
+        if: env.CAIRN_REGISTRY_RC != '0' || env.CAIRN_ARCHIVE_RC == '1' || env.CAIRN_METRIC_RC == '1' || env.CAIRN_BACKFILL_RC == '1' || env.CAIRN_DEPENDENCY_RC == '1'
         run: |
           echo "::error::CAIRN evidence normalization/archive failed; provider receipts retained."
           exit 1

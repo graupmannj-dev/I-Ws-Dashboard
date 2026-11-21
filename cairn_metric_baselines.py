@@ -19,7 +19,7 @@ from ops_pipeline import load_json,write_json
 UTC=dt.timezone.utc
 SCHEMA="cairn.metric-cohort-baselines.v1"
 ARCHIVE_SCHEMA="aiba.family-archive.v1"
-MAX_INPUT=30000
+MAX_INPUT=60000
 ONS_HISTORY_DAYS=180
 MPA_HISTORY_YEARS=12
 MIN_ONS_MATCH=8
@@ -174,6 +174,14 @@ def full_metric_archive(state):
     archive_root=Path(state)/"family_archive"
     manifest=load_json(archive_root/"manifest.json",{})
     if not isinstance(manifest,dict) or manifest.get("schema")!=ARCHIVE_SCHEMA:
+        # Until the first family shard is published, backfill remains useful
+        # for validation without asserting that live original collection ran.
+        historical=load_json(Path(state)/"metric_history"/"official_metric_backfill.json",{})
+        if historical and isinstance(historical,dict) and historical.get("schema")=="cairn.metric-historical-backfill.v1":
+            rows=historical.get("records",[])
+            if not isinstance(rows,list) or len(rows)>50000:
+                raise ValueError("Malformed prearchive physical history")
+            return {"schema":ARCHIVE_SCHEMA,"records":rows,"public_snapshot_truncated":False}
         return load_json(Path(state)/"latest"/"family_archive.json",{})
     shard_paths=sorted((archive_root/"shards").glob("??.json"))
     if len(shard_paths)>256:raise ValueError("Unexpected family shard partition count")
@@ -194,6 +202,19 @@ def full_metric_archive(state):
                 if isinstance(record,dict) and record.get("collection_mode") in ("ons_br","sg_mpa"):
                     rows.append(record)
                     if len(rows)>30_000:raise ValueError("Source metrics need dedicated sharding")
+    historical=load_json(Path(state)/"metric_history"/"official_metric_backfill.json",{})
+    if historical:
+        if not isinstance(historical,dict) or historical.get("schema")!="cairn.metric-historical-backfill.v1":
+            raise ValueError("Unknown or corrupted official historical metric backfill")
+        extra=historical.get("records")
+        if not isinstance(extra,list) or len(extra)>50000:
+            raise ValueError("Official backfill records missing or unbounded")
+        for row in extra:
+            if not isinstance(row,dict) or row.get("historical_backfill") is not True:
+                raise ValueError("Historical metric backfill record integrity failure")
+            if row.get("collection_mode") not in ("ons_br","sg_mpa"):
+                raise ValueError("Unsupported metric source in historical backfill")
+        rows.extend(extra)
     return {"schema":ARCHIVE_SCHEMA,"records":rows,"public_snapshot_truncated":False}
 
 

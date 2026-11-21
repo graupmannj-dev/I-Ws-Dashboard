@@ -1,0 +1,25 @@
+name: Verify CAIRN official historical baseline sources
+on:
+  pull_request:
+    paths:
+      - 'cairn_metric_history_backfill.py'
+      - 'cairn_metric_baselines.py'
+      - 'tests/test_metric_history_backfill.py'
+      - 'scripts/probe_cairn_metric_history.py'
+      - '.github/workflows/check-cairn-history-probe.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  read-only-source-check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Offline regression for complete measured-time cohorts
+        run: python -m unittest tests.test_metric_history_backfill -v
+      - name: Read only one official ONS historic day and SG monthly cohort
+        run: PYTHONPATH=. python scripts/probe_cairn_metric_history.py
