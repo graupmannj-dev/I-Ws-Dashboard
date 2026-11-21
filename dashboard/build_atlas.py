@@ -342,6 +342,15 @@ def generate(site, generated=None, state_dir=None):
         archive.get("root_count_total") if archive_available else None)
     dynamic_families["archive_public_truncated"] = (
         archive.get("public_snapshot_truncated") if archive_available else None)
+    # Public source geography / missingness ledger. Jurisdictions are NOT
+    # assumed geographic coverage; missing source never implies all-clear.
+    try:
+        from dashboard.source_coverage import build as build_source_coverage
+    except ModuleNotFoundError:
+        from source_coverage import build as build_source_coverage
+    source_coverage = build_source_coverage(registry, generated_at=now)
+    (site / "coverage.json").write_text(
+        json.dumps(source_coverage, ensure_ascii=False, indent=2), encoding="utf-8")
     # Hypothesis center: explicit case IDs and reviewer-tagged evidence only.
     # Historical dossier source items are visible, not reverified as live data.
     try:
@@ -382,6 +391,9 @@ def generate(site, generated=None, state_dir=None):
         "intake_queue_new_count": new_queue_count,
         "visibility_funnel": visibility_funnel,
         "dynamic_bins": dynamic_families,
+        "source_coverage": {"url": "coverage.html",
+                           "source_modes_total": source_coverage["source_modes_total"],
+                           "recently_checked_modes": source_coverage["currently_checked_modes"]},
         "hypothesis_views": {"url": "hypotheses.html",
                              "hypothesis_count": hypothesis_views["hypothesis_count"],
                              "reviewed_hypotheses": hypothesis_views["reviewed_hypotheses"]},
@@ -422,7 +434,8 @@ def generate(site, generated=None, state_dir=None):
     asset_dir = site / "dashboard"
     asset_dir.mkdir(exist_ok=True)
     for name in ("atlas.css", "atlas.js", "layers.js", "countries.geojson",
-                 "hypotheses.css", "hypotheses.js"):
+                 "hypotheses.css", "hypotheses.js",
+                 "coverage.css", "coverage.js"):
         shutil.copyfile(WEB / name, asset_dir / name)
     if not (site / "layers.json").exists():
         try:
@@ -437,6 +450,7 @@ def generate(site, generated=None, state_dir=None):
     shutil.copyfile(WEB / "atlas.html", prior)
     shutil.copyfile(WEB / "sources.html", site / "sources.html")
     shutil.copyfile(WEB / "hypotheses.html", site / "hypotheses.html")
+    shutil.copyfile(WEB / "coverage.html", site / "coverage.html")
     shutil.copyfile(WEB / "source_status.js", asset_dir / "source_status.js")
     return payload
 
