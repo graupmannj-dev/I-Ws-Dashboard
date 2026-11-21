@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#0c1420">
+  <title>CAIRN | Geographic source coverage</title>
+  <link rel="stylesheet" href="dashboard/coverage.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="./">◈ CAIRN</a>
+  <div class="top-title"><strong>Source coverage &amp; blind spots</strong><span>Declared jurisdictions · provider health · collection mechanisms</span></div>
+  <nav><a href="./">Atlas</a><a href="hypotheses.html">Hypotheses</a><a href="sources.html">Source health</a></nav>
+</header>
+<main class="shell">
+  <div class="hero">
+    <p class="eyebrow">COVERAGE AUDIT · NOT A THREAT MAP</p>
+    <h1>What does CAIRN actually measure?</h1>
+    <p>Separate where a publisher operates from the locations its data describe. A source with worldwide reach may cover only a bounded set of events. No feed can establish the absence of danger where it has no validated sampling.</p>
+  </div>
+  <div id="coverageSummary" class="metrics" aria-live="polite">Loading published source inventory…</div>
+  <div class="layout">
+    <aside class="sidebar">
+      <h2>Filter monitored mechanisms</h2>
+      <label for="coverageSearch">Search source, country, or observation type</label>
+      <input id="coverageSearch" type="search" autocomplete="off" placeholder="e.g. Brazil, Indonesia, network">
+      <label for="coverageClass">Declared geographic scope</label>
+      <select id="coverageClass">
+        <option value="all">All source scopes</option>
+        <option value="national_sample">National bounded sample</option>
+        <option value="regional">Regional source</option>
+        <option value="global_bounded">Global source — bounded</option>
+        <option value="global_unlocated">Global aggregate / unlocated</option>
+        <option value="narrative_only">Narrative context</option>
+        <option value="market_selected">Selected market contracts</option>
+        <option value="unknown">Unreviewed footprint</option>
+      </select>
+      <label for="coverageStatus">Recent collector condition</label>
+      <select id="coverageStatus">
+        <option value="all">All health conditions</option>
+        <option value="current">Recent sample / check</option>
+        <option value="missing">Stale, missing, or unknown</option>
+        <option value="zero">Bounded sample returned zero</option>
+      </select>
+      <p class="muted" id="coverageCount">—</p>
+      <div class="panel">
+        <h3>Declared national jurisdictions</h3>
+        <p class="muted">These are <b>issuer-described footprints</b>, not independently verified country-wide sensor coverage.</p>
+        <div id="countryList" class="countries">Loading…</div>
+      </div>
+    </aside>
+    <section class="results">
+      <h2>Observation mechanisms and health</h2>
+      <p class="muted">Each row preserves the observation mechanism, publisher origin, nominated jurisdiction, latest source check, and exact missingness classification. Click a source to inspect its limits.</p>
+      <div id="sourceList" aria-live="polite"></div>
+      <div class="disclaimer">
+        An apparently quiet source is not proof that a hypothesis is false. Contradiction requires a specific falsifiable prediction, sufficient sensor coverage at the relevant place/time, and an explicit source-reviewed assessment. A document relay does not create a second independent observation.
+      </div>
+    </section>
+  </div>
+</main>
+<script defer src="dashboard/coverage.js"></script>
+</body>
+</html>
