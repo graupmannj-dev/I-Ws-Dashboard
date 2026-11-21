@@ -592,7 +592,8 @@ ADAPTERS={"usgs":adapt_usgs,"eonet":adapt_eonet,"nws":adapt_nws,
           "usace":adapt_usace,"coops":adapt_coops,
           "swpc":adapt_swpc,"ripe":adapt_ripe,
           "uk_tenders":adapt_uk_tenders,"wiki_edits":adapt_wiki_edits,
-          "cbp_wait":adapt_cbp_wait,"sg_mpa":adapt_sg_mpa,
+          "cbp_wait":adapt_cbp_wait,
+          "sg_mpa":lambda data,checked,url:adapt_sg_mpa(data,checked,url,entry),
           **{mode:adapter_for(mode,entry) for mode in NATIONAL_MODES}}
 
 
