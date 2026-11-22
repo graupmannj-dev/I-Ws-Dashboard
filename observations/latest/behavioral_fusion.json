@@ -3,7 +3,7 @@
   "automated_severity_changes": 0,
   "collection_coverage": {
     "amsa": {
-      "age_hours": 1.31,
+      "age_hours": 4.73,
       "checked_at": "2026-11-22T02:08:38Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -15,7 +15,7 @@
       "truncated_or_partial": false
     },
     "bmkg_nowcast": {
-      "age_hours": 2.03,
+      "age_hours": 5.45,
       "checked_at": "2026-11-22T01:25:32Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -27,7 +27,7 @@
       "truncated_or_partial": true
     },
     "bmkg_quake": {
-      "age_hours": 2.03,
+      "age_hours": 5.45,
       "checked_at": "2026-11-22T01:25:32Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -39,7 +39,7 @@
       "truncated_or_partial": true
     },
     "cbp_wait": {
-      "age_hours": 2.03,
+      "age_hours": 5.45,
       "checked_at": "2026-11-22T01:25:32Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -51,7 +51,7 @@
       "truncated_or_partial": true
     },
     "commercial": {
-      "age_hours": 12.01,
+      "age_hours": 15.43,
       "checked_at": "2026-11-21T15:26:49Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -63,7 +63,7 @@
       "truncated_or_partial": false
     },
     "coops": {
-      "age_hours": 2.03,
+      "age_hours": 5.45,
       "checked_at": "2026-11-22T01:25:32Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -75,7 +75,7 @@
       "truncated_or_partial": true
     },
     "eonet": {
-      "age_hours": 2.03,
+      "age_hours": 5.45,
       "checked_at": "2026-11-22T01:25:32Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -87,7 +87,7 @@
       "truncated_or_partial": true
     },
     "imd_in": {
-      "age_hours": 2.03,
+      "age_hours": 5.45,
       "checked_at": "2026-11-22T01:25:32Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -99,7 +99,7 @@
       "truncated_or_partial": true
     },
     "inmet_br": {
-      "age_hours": 2.03,
+      "age_hours": 5.45,
       "checked_at": "2026-11-22T01:25:32Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -111,7 +111,7 @@
       "truncated_or_partial": true
     },
     "ioda": {
-      "age_hours": 1.31,
+      "age_hours": 4.73,
       "checked_at": "2026-11-22T02:08:38Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -123,31 +123,29 @@
       "truncated_or_partial": false
     },
     "live_airspace": {
-      "age_hours": 0.0,
+      "age_hours": 3.42,
       "checked_at": "2026-11-22T03:27:08Z",
-      "first_provider_baseline": false,
-      "missingness": "partial_sampling_not_worldwide_exhaustive",
+      "missingness": "not_measured_not_zero",
       "mode": "live_airspace",
       "provider_status": "partial",
       "snapshot_at": "2026-11-22T03:27:08Z",
       "source_scope": "FAA temporary flight restrictions: United States only",
-      "status": "current_partial",
+      "status": "stale_or_unavailable",
       "truncated_or_partial": true
     },
     "live_maritime": {
-      "age_hours": 0.0,
+      "age_hours": 3.42,
       "checked_at": "2026-11-22T03:27:08Z",
-      "first_provider_baseline": false,
-      "missingness": "partial_sampling_not_worldwide_exhaustive",
+      "missingness": "not_measured_not_zero",
       "mode": "live_maritime",
       "provider_status": "partial",
       "snapshot_at": "2026-11-22T03:27:08Z",
       "source_scope": "Danish Maritime Authority Niord notices: regional Baltic/North Sea",
-      "status": "current_partial",
+      "status": "stale_or_unavailable",
       "truncated_or_partial": true
     },
     "nga": {
-      "age_hours": 1.31,
+      "age_hours": 4.73,
       "checked_at": "2026-11-22T02:08:38Z",
       "missingness": "not_measured_not_zero",
       "mode": "nga",
@@ -158,7 +156,7 @@
       "truncated_or_partial": false
     },
     "nws": {
-      "age_hours": 2.03,
+      "age_hours": 5.45,
       "checked_at": "2026-11-22T01:25:32Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -170,19 +168,19 @@
       "truncated_or_partial": true
     },
     "official": {
-      "age_hours": 8.14,
-      "checked_at": "2026-11-21T19:18:52Z",
+      "age_hours": 0.0,
+      "checked_at": "2026-11-22T06:52:31Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
       "mode": "official",
       "provider_status": "collected",
-      "snapshot_at": "2026-11-21T19:18:52Z",
+      "snapshot_at": "2026-11-22T06:52:31Z",
       "source_scope": "US State and UK FCDO travel-advice feeds",
       "status": "current",
       "truncated_or_partial": false
     },
     "ons_br": {
-      "age_hours": 2.03,
+      "age_hours": 5.45,
       "checked_at": "2026-11-22T01:25:32Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -194,7 +192,7 @@
       "truncated_or_partial": true
     },
     "ripe": {
-      "age_hours": 2.03,
+      "age_hours": 5.45,
       "checked_at": "2026-11-22T01:25:32Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -206,7 +204,7 @@
       "truncated_or_partial": false
     },
     "ris_bgp": {
-      "age_hours": 2.03,
+      "age_hours": 5.45,
       "checked_at": "2026-11-22T01:25:32Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -218,7 +216,7 @@
       "truncated_or_partial": true
     },
     "saws_za": {
-      "age_hours": 2.03,
+      "age_hours": 5.45,
       "checked_at": "2026-11-22T01:25:32Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -230,7 +228,7 @@
       "truncated_or_partial": true
     },
     "sg_mpa": {
-      "age_hours": 2.03,
+      "age_hours": 5.45,
       "checked_at": "2026-11-22T01:25:32Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -242,7 +240,7 @@
       "truncated_or_partial": true
     },
     "swpc": {
-      "age_hours": 2.03,
+      "age_hours": 5.45,
       "checked_at": "2026-11-22T01:25:32Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -254,7 +252,7 @@
       "truncated_or_partial": false
     },
     "tw_power": {
-      "age_hours": 2.03,
+      "age_hours": 5.45,
       "checked_at": "2026-11-22T01:25:32Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -266,7 +264,7 @@
       "truncated_or_partial": true
     },
     "uk_tenders": {
-      "age_hours": 2.03,
+      "age_hours": 5.45,
       "checked_at": "2026-11-22T01:25:32Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -278,7 +276,7 @@
       "truncated_or_partial": true
     },
     "usace": {
-      "age_hours": 2.03,
+      "age_hours": 5.45,
       "checked_at": "2026-11-22T01:25:32Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -290,7 +288,7 @@
       "truncated_or_partial": true
     },
     "usgs": {
-      "age_hours": 2.03,
+      "age_hours": 5.45,
       "checked_at": "2026-11-22T01:25:32Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -302,19 +300,19 @@
       "truncated_or_partial": false
     },
     "watchlist": {
-      "age_hours": 8.14,
-      "checked_at": "2026-11-21T19:18:52Z",
+      "age_hours": 0.0,
+      "checked_at": "2026-11-22T06:52:32Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
       "mode": "watchlist",
       "provider_status": "collected",
-      "snapshot_at": "2026-11-21T19:18:52Z",
+      "snapshot_at": "2026-11-22T06:52:32Z",
       "source_scope": "registered, exact-ID forecast contracts only",
       "status": "current",
       "truncated_or_partial": false
     },
     "wiki_edits": {
-      "age_hours": 2.03,
+      "age_hours": 5.45,
       "checked_at": "2026-11-22T01:25:32Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -329,20 +327,20 @@
   "discovery_visibility": {
     "exact_geography_match_required_for_cross_family": true,
     "latest_initial_baseline": false,
-    "latest_registry_newly_observed_count": 33,
-    "latest_registry_record_count": 797,
-    "latest_unlocated_record_count": 583,
+    "latest_registry_newly_observed_count": 0,
+    "latest_registry_record_count": 690,
+    "latest_unlocated_record_count": 505,
     "new_or_collocated_not_same_as_verified_threat": true,
     "new_this_collection_required_for_cross_family_nomination": true,
     "recent_observations_sampled": 24,
     "recent_source_families": {
       "airspace_restriction": 10,
       "commercial_media": 13,
-      "internet_reachability": 39,
+      "internet_reachability": 32,
       "maritime_restriction": 215,
       "protective_notice": 1
     },
-    "recent_unique_record_count_72h": 278,
+    "recent_unique_record_count_72h": 271,
     "recent_unlocated_count_72h": 189,
     "schema": "aiba.behavioral-discovery-visibility.v1",
     "shared_exact_geography_keys_across_behavior_families": 0,
@@ -350,17 +348,17 @@
   },
   "forecast_probability": null,
   "gdelt_context": "separate_analytical_stream_not_a_gate_or_confirmation",
-  "generated_at": "2026-11-22T03:27:11Z",
+  "generated_at": "2026-11-22T06:52:34Z",
   "geographic_scope": "source_declared_only",
   "history_diagnostics": {
     "excluded_observations": {
-      "old_source_publication": 5,
+      "old_source_publication": 4,
       "published_after_first_observed": 11,
       "unsupported_family": 441
     },
     "history_files_examined": 35,
     "lookback_hours": 72,
-    "recent_unique_records": 278
+    "recent_unique_records": 271
   },
   "limit_notes": [
     "No automated threat warning. These are unreviewed investigatory leads.",
@@ -369,801 +367,8 @@
     "Unlocated records cannot produce automatic geographic convergence.",
     "Unavailable collection is not evidence of no threatening activity."
   ],
-  "new_single_source_count_total": 33,
-  "new_single_source_leads": [
-    {
-      "evidence_class": "official_notice",
-      "first_observed_at": "2026-11-22T03:27:11Z",
-      "geography": {
-        "geometry_sha256_prefix": null,
-        "geometry_type": "Point",
-        "key": "source-notice-point:56.52250:10.44083",
-        "kind": "source_notice_point",
-        "label": "Official notice position",
-        "latitude": 56.5225,
-        "longitude": 10.440833333333334,
-        "precision": "provider_defined_notice_point_not_incident",
-        "verified_iso": false
-      },
-      "information_root": "niord:42b7d796-6fdc-4695-9052-4fd5a8e31208:3:0:0",
-      "meaning": "Observation novelty, not evidence of impending violence.",
-      "observation_id": "beh:32931e2fb62b881bb6c8beba5295",
-      "requires_geolocation": false,
-      "source_family": "maritime_restriction",
-      "source_published_at": null,
-      "source_url": "https://niord.dma.dk/#/message/42b7d796-6fdc-4695-9052-4fd5a8e31208",
-      "status": "single_source_unreviewed",
-      "title": "Denmark. Kattegat. EK R 45 Hevring. Firing exercises. Warning."
-    },
-    {
-      "evidence_class": "official_notice",
-      "first_observed_at": "2026-11-22T03:27:11Z",
-      "geography": {
-        "geometry_sha256_prefix": null,
-        "geometry_type": "Point",
-        "key": "source-notice-point:55.89993:11.92565",
-        "kind": "source_notice_point",
-        "label": "Official notice position",
-        "latitude": 55.89993333333334,
-        "longitude": 11.92565,
-        "precision": "provider_defined_notice_point_not_incident",
-        "verified_iso": false
-      },
-      "information_root": "niord:6b7064f4-fb41-4ad6-9d9f-e046b2b4cddf:1:0:2",
-      "meaning": "Observation novelty, not evidence of impending violence.",
-      "observation_id": "beh:6d275afe82ca038627fcd0be9133",
-      "requires_geolocation": false,
-      "source_family": "maritime_restriction",
-      "source_published_at": null,
-      "source_url": "https://niord.dma.dk/#/message/6b7064f4-fb41-4ad6-9d9f-e046b2b4cddf",
-      "status": "single_source_unreviewed",
-      "title": "Denmark. Kattegat. EK R 18 Jaegerspris. Firing exercises. Warning."
-    },
-    {
-      "evidence_class": "official_notice",
-      "first_observed_at": "2026-11-22T03:27:11Z",
-      "geography": {
-        "geometry_sha256_prefix": null,
-        "geometry_type": "Point",
-        "key": "source-notice-point:56.53133:10.40583",
-        "kind": "source_notice_point",
-        "label": "Official notice position",
-        "latitude": 56.531333333333336,
-        "longitude": 10.405833333333334,
-        "precision": "provider_defined_notice_point_not_incident",
-        "verified_iso": false
-      },
-      "information_root": "niord:42b7d796-6fdc-4695-9052-4fd5a8e31208:3:0:1",
-      "meaning": "Observation novelty, not evidence of impending violence.",
-      "observation_id": "beh:8c397a9161abacf7369b5eec1ce7",
-      "requires_geolocation": false,
-      "source_family": "maritime_restriction",
-      "source_published_at": null,
-      "source_url": "https://niord.dma.dk/#/message/42b7d796-6fdc-4695-9052-4fd5a8e31208",
-      "status": "single_source_unreviewed",
-      "title": "Denmark. Kattegat. EK R 45 Hevring. Firing exercises. Warning."
-    },
-    {
-      "evidence_class": "official_notice",
-      "first_observed_at": "2026-11-22T03:27:11Z",
-      "geography": {
-        "geometry_sha256_prefix": null,
-        "geometry_type": "Point",
-        "key": "source-notice-point:55.85957:11.95550",
-        "kind": "source_notice_point",
-        "label": "Official notice position",
-        "latitude": 55.859566666666666,
-        "longitude": 11.9555,
-        "precision": "provider_defined_notice_point_not_incident",
-        "verified_iso": false
-      },
-      "information_root": "niord:6b7064f4-fb41-4ad6-9d9f-e046b2b4cddf:1:0:1",
-      "meaning": "Observation novelty, not evidence of impending violence.",
-      "observation_id": "beh:c1fc608f4ce9c4ed8d8861b768e1",
-      "requires_geolocation": false,
-      "source_family": "maritime_restriction",
-      "source_published_at": null,
-      "source_url": "https://niord.dma.dk/#/message/6b7064f4-fb41-4ad6-9d9f-e046b2b4cddf",
-      "status": "single_source_unreviewed",
-      "title": "Denmark. Kattegat. EK R 18 Jaegerspris. Firing exercises. Warning."
-    },
-    {
-      "evidence_class": "official_notice",
-      "first_observed_at": "2026-11-22T03:27:11Z",
-      "geography": {
-        "geometry_sha256_prefix": "ff87c256d22ce2567dbe95f9",
-        "geometry_type": "Polygon",
-        "key": "source-footprint:ff87c256d22ce2567dbe95f9",
-        "kind": "source_notice_footprint",
-        "label": "Official Polygon notice area",
-        "latitude": null,
-        "longitude": null,
-        "precision": "provider_defined_notice_boundary_not_event_point",
-        "verified_iso": false
-      },
-      "information_root": "niord:42b7d796-6fdc-4695-9052-4fd5a8e31208:1:0:0",
-      "meaning": "Observation novelty, not evidence of impending violence.",
-      "observation_id": "beh:cde9dd471112a4f8a5912b290b72",
-      "requires_geolocation": false,
-      "source_family": "maritime_restriction",
-      "source_published_at": null,
-      "source_url": "https://niord.dma.dk/#/message/42b7d796-6fdc-4695-9052-4fd5a8e31208",
-      "status": "single_source_unreviewed",
-      "title": "Denmark. Kattegat. EK R 45 Hevring. Firing exercises. Warning."
-    },
-    {
-      "evidence_class": "official_notice",
-      "first_observed_at": "2026-11-22T03:27:11Z",
-      "geography": {
-        "geometry_sha256_prefix": "7cd0c92c0114570caed57302",
-        "geometry_type": "Polygon",
-        "key": "source-footprint:7cd0c92c0114570caed57302",
-        "kind": "source_notice_footprint",
-        "label": "Official Polygon notice area",
-        "latitude": null,
-        "longitude": null,
-        "precision": "provider_defined_notice_boundary_not_event_point",
-        "verified_iso": false
-      },
-      "information_root": "niord:6b7064f4-fb41-4ad6-9d9f-e046b2b4cddf:1:0:0",
-      "meaning": "Observation novelty, not evidence of impending violence.",
-      "observation_id": "beh:d1606293db77b547d7da12280a3c",
-      "requires_geolocation": false,
-      "source_family": "maritime_restriction",
-      "source_published_at": null,
-      "source_url": "https://niord.dma.dk/#/message/6b7064f4-fb41-4ad6-9d9f-e046b2b4cddf",
-      "status": "single_source_unreviewed",
-      "title": "Denmark. Kattegat. EK R 18 Jaegerspris. Firing exercises. Warning."
-    },
-    {
-      "evidence_class": "official_notice",
-      "first_observed_at": "2026-11-22T03:27:11Z",
-      "geography": {
-        "geometry_sha256_prefix": "bbff1dde07b72e3217a462f8",
-        "geometry_type": "Polygon",
-        "key": "source-footprint:bbff1dde07b72e3217a462f8",
-        "kind": "source_notice_footprint",
-        "label": "Official Polygon notice area",
-        "latitude": null,
-        "longitude": null,
-        "precision": "provider_defined_notice_boundary_not_event_point",
-        "verified_iso": false
-      },
-      "information_root": "niord:0f9cf7b3-34a5-439f-b569-fb5012ede367:1:0:0",
-      "meaning": "Observation novelty, not evidence of impending violence.",
-      "observation_id": "beh:d5f48cdb5d8e07cc1a6f2041eb25",
-      "requires_geolocation": false,
-      "source_family": "maritime_restriction",
-      "source_published_at": null,
-      "source_url": "https://niord.dma.dk/#/message/0f9cf7b3-34a5-439f-b569-fb5012ede367",
-      "status": "single_source_unreviewed",
-      "title": "Denmark. The North Sea. 15 Nymindegab. Firing exercises. Warning."
-    },
-    {
-      "evidence_class": "official_notice",
-      "first_observed_at": "2026-11-22T03:27:11Z",
-      "geography": {
-        "geometry_sha256_prefix": null,
-        "geometry_type": null,
-        "key": null,
-        "kind": "unlocated",
-        "label": null,
-        "latitude": null,
-        "longitude": null,
-        "precision": "notice_geography_unavailable",
-        "verified_iso": false
-      },
-      "information_root": "niord:6b7064f4-fb41-4ad6-9d9f-e046b2b4cddf:0:5:0",
-      "meaning": "Observation novelty, not evidence of impending violence.",
-      "observation_id": "beh:0187a531f0e0da7424c74d4202fb",
-      "requires_geolocation": true,
-      "source_family": "maritime_restriction",
-      "source_published_at": null,
-      "source_url": "https://niord.dma.dk/#/message/6b7064f4-fb41-4ad6-9d9f-e046b2b4cddf",
-      "status": "single_source_unreviewed",
-      "title": "Denmark. Kattegat. EK R 18 Jaegerspris. Firing exercises. Warning."
-    },
-    {
-      "evidence_class": "official_notice",
-      "first_observed_at": "2026-11-22T03:27:11Z",
-      "geography": {
-        "geometry_sha256_prefix": null,
-        "geometry_type": null,
-        "key": null,
-        "kind": "unlocated",
-        "label": null,
-        "latitude": null,
-        "longitude": null,
-        "precision": "notice_geography_unavailable",
-        "verified_iso": false
-      },
-      "information_root": "niord:6b7064f4-fb41-4ad6-9d9f-e046b2b4cddf:3:0:0",
-      "meaning": "Observation novelty, not evidence of impending violence.",
-      "observation_id": "beh:04083408ddf2436407d85cb17ea4",
-      "requires_geolocation": true,
-      "source_family": "maritime_restriction",
-      "source_published_at": null,
-      "source_url": "https://niord.dma.dk/#/message/6b7064f4-fb41-4ad6-9d9f-e046b2b4cddf",
-      "status": "single_source_unreviewed",
-      "title": "Denmark. Kattegat. EK R 18 Jaegerspris. Firing exercises. Warning."
-    },
-    {
-      "evidence_class": "official_notice",
-      "first_observed_at": "2026-11-22T03:27:11Z",
-      "geography": {
-        "geometry_sha256_prefix": null,
-        "geometry_type": null,
-        "key": null,
-        "kind": "unlocated",
-        "label": null,
-        "latitude": null,
-        "longitude": null,
-        "precision": "notice_geography_unavailable",
-        "verified_iso": false
-      },
-      "information_root": "niord:42b7d796-6fdc-4695-9052-4fd5a8e31208:2:0:0",
-      "meaning": "Observation novelty, not evidence of impending violence.",
-      "observation_id": "beh:18198dd2d50132b31289c703e90f",
-      "requires_geolocation": true,
-      "source_family": "maritime_restriction",
-      "source_published_at": null,
-      "source_url": "https://niord.dma.dk/#/message/42b7d796-6fdc-4695-9052-4fd5a8e31208",
-      "status": "single_source_unreviewed",
-      "title": "Denmark. Kattegat. EK R 45 Hevring. Firing exercises. Warning."
-    },
-    {
-      "evidence_class": "official_notice",
-      "first_observed_at": "2026-11-22T03:27:11Z",
-      "geography": {
-        "geometry_sha256_prefix": null,
-        "geometry_type": null,
-        "key": null,
-        "kind": "unlocated",
-        "label": null,
-        "latitude": null,
-        "longitude": null,
-        "precision": "notice_geography_unavailable",
-        "verified_iso": false
-      },
-      "information_root": "niord:42b7d796-6fdc-4695-9052-4fd5a8e31208:0:0:0",
-      "meaning": "Observation novelty, not evidence of impending violence.",
-      "observation_id": "beh:2a5dcac91a7da0bf0a4820672069",
-      "requires_geolocation": true,
-      "source_family": "maritime_restriction",
-      "source_published_at": null,
-      "source_url": "https://niord.dma.dk/#/message/42b7d796-6fdc-4695-9052-4fd5a8e31208",
-      "status": "single_source_unreviewed",
-      "title": "Denmark. Kattegat. EK R 45 Hevring. Firing exercises. Warning."
-    },
-    {
-      "evidence_class": "official_notice",
-      "first_observed_at": "2026-11-22T03:27:11Z",
-      "geography": {
-        "geometry_sha256_prefix": null,
-        "geometry_type": null,
-        "key": null,
-        "kind": "unlocated",
-        "label": null,
-        "latitude": null,
-        "longitude": null,
-        "precision": "notice_geography_unavailable",
-        "verified_iso": false
-      },
-      "information_root": "niord:0f9cf7b3-34a5-439f-b569-fb5012ede367:4:0:0",
-      "meaning": "Observation novelty, not evidence of impending violence.",
-      "observation_id": "beh:2c5d7ade8154a2b9e7f9b6927b6c",
-      "requires_geolocation": true,
-      "source_family": "maritime_restriction",
-      "source_published_at": null,
-      "source_url": "https://niord.dma.dk/#/message/0f9cf7b3-34a5-439f-b569-fb5012ede367",
-      "status": "single_source_unreviewed",
-      "title": "Denmark. The North Sea. 15 Nymindegab. Firing exercises. Warning."
-    },
-    {
-      "evidence_class": "official_notice",
-      "first_observed_at": "2026-11-22T03:27:11Z",
-      "geography": {
-        "geometry_sha256_prefix": null,
-        "geometry_type": null,
-        "key": null,
-        "kind": "unlocated",
-        "label": null,
-        "latitude": null,
-        "longitude": null,
-        "precision": "notice_geography_unavailable",
-        "verified_iso": false
-      },
-      "information_root": "niord:0f9cf7b3-34a5-439f-b569-fb5012ede367:3:0:0",
-      "meaning": "Observation novelty, not evidence of impending violence.",
-      "observation_id": "beh:35e42aa7a63723c6815799fbc820",
-      "requires_geolocation": true,
-      "source_family": "maritime_restriction",
-      "source_published_at": null,
-      "source_url": "https://niord.dma.dk/#/message/0f9cf7b3-34a5-439f-b569-fb5012ede367",
-      "status": "single_source_unreviewed",
-      "title": "Denmark. The North Sea. 15 Nymindegab. Firing exercises. Warning."
-    },
-    {
-      "evidence_class": "official_notice",
-      "first_observed_at": "2026-11-22T03:27:11Z",
-      "geography": {
-        "geometry_sha256_prefix": null,
-        "geometry_type": null,
-        "key": null,
-        "kind": "unlocated",
-        "label": null,
-        "latitude": null,
-        "longitude": null,
-        "precision": "notice_geography_unavailable",
-        "verified_iso": false
-      },
-      "information_root": "niord:6b7064f4-fb41-4ad6-9d9f-e046b2b4cddf:0:0:0",
-      "meaning": "Observation novelty, not evidence of impending violence.",
-      "observation_id": "beh:361eaf09ba0594627fa039ac097c",
-      "requires_geolocation": true,
-      "source_family": "maritime_restriction",
-      "source_published_at": null,
-      "source_url": "https://niord.dma.dk/#/message/6b7064f4-fb41-4ad6-9d9f-e046b2b4cddf",
-      "status": "single_source_unreviewed",
-      "title": "Denmark. Kattegat. EK R 18 Jaegerspris. Firing exercises. Warning."
-    },
-    {
-      "evidence_class": "official_notice",
-      "first_observed_at": "2026-11-22T03:27:11Z",
-      "geography": {
-        "geometry_sha256_prefix": null,
-        "geometry_type": null,
-        "key": null,
-        "kind": "unlocated",
-        "label": null,
-        "latitude": null,
-        "longitude": null,
-        "precision": "notice_geography_unavailable",
-        "verified_iso": false
-      },
-      "information_root": "niord:42b7d796-6fdc-4695-9052-4fd5a8e31208:0:4:0",
-      "meaning": "Observation novelty, not evidence of impending violence.",
-      "observation_id": "beh:3c3a7a06892085c037f01428198c",
-      "requires_geolocation": true,
-      "source_family": "maritime_restriction",
-      "source_published_at": null,
-      "source_url": "https://niord.dma.dk/#/message/42b7d796-6fdc-4695-9052-4fd5a8e31208",
-      "status": "single_source_unreviewed",
-      "title": "Denmark. Kattegat. EK R 45 Hevring. Firing exercises. Warning."
-    },
-    {
-      "evidence_class": "official_notice",
-      "first_observed_at": "2026-11-22T03:27:11Z",
-      "geography": {
-        "geometry_sha256_prefix": null,
-        "geometry_type": null,
-        "key": null,
-        "kind": "unlocated",
-        "label": null,
-        "latitude": null,
-        "longitude": null,
-        "precision": "notice_geography_unavailable",
-        "verified_iso": false
-      },
-      "information_root": "niord:6b7064f4-fb41-4ad6-9d9f-e046b2b4cddf:0:4:0",
-      "meaning": "Observation novelty, not evidence of impending violence.",
-      "observation_id": "beh:40167f401c4df363cc29751f7436",
-      "requires_geolocation": true,
-      "source_family": "maritime_restriction",
-      "source_published_at": null,
-      "source_url": "https://niord.dma.dk/#/message/6b7064f4-fb41-4ad6-9d9f-e046b2b4cddf",
-      "status": "single_source_unreviewed",
-      "title": "Denmark. Kattegat. EK R 18 Jaegerspris. Firing exercises. Warning."
-    },
-    {
-      "evidence_class": "official_notice",
-      "first_observed_at": "2026-11-22T03:27:11Z",
-      "geography": {
-        "geometry_sha256_prefix": null,
-        "geometry_type": null,
-        "key": null,
-        "kind": "unlocated",
-        "label": null,
-        "latitude": null,
-        "longitude": null,
-        "precision": "notice_geography_unavailable",
-        "verified_iso": false
-      },
-      "information_root": "niord:42b7d796-6fdc-4695-9052-4fd5a8e31208:0:1:0",
-      "meaning": "Observation novelty, not evidence of impending violence.",
-      "observation_id": "beh:48d37a9d645e025ad32be1b772f5",
-      "requires_geolocation": true,
-      "source_family": "maritime_restriction",
-      "source_published_at": null,
-      "source_url": "https://niord.dma.dk/#/message/42b7d796-6fdc-4695-9052-4fd5a8e31208",
-      "status": "single_source_unreviewed",
-      "title": "Denmark. Kattegat. EK R 45 Hevring. Firing exercises. Warning."
-    },
-    {
-      "evidence_class": "official_notice",
-      "first_observed_at": "2026-11-22T03:27:11Z",
-      "geography": {
-        "geometry_sha256_prefix": null,
-        "geometry_type": null,
-        "key": null,
-        "kind": "unlocated",
-        "label": null,
-        "latitude": null,
-        "longitude": null,
-        "precision": "notice_geography_unavailable",
-        "verified_iso": false
-      },
-      "information_root": "niord:0f9cf7b3-34a5-439f-b569-fb5012ede367:0:0:0",
-      "meaning": "Observation novelty, not evidence of impending violence.",
-      "observation_id": "beh:5dd2b4d32dc82ff5ab56cd482477",
-      "requires_geolocation": true,
-      "source_family": "maritime_restriction",
-      "source_published_at": null,
-      "source_url": "https://niord.dma.dk/#/message/0f9cf7b3-34a5-439f-b569-fb5012ede367",
-      "status": "single_source_unreviewed",
-      "title": "Denmark. The North Sea. 15 Nymindegab. Firing exercises. Warning."
-    },
-    {
-      "evidence_class": "official_notice",
-      "first_observed_at": "2026-11-22T03:27:11Z",
-      "geography": {
-        "geometry_sha256_prefix": null,
-        "geometry_type": null,
-        "key": null,
-        "kind": "unlocated",
-        "label": null,
-        "latitude": null,
-        "longitude": null,
-        "precision": "notice_geography_unavailable",
-        "verified_iso": false
-      },
-      "information_root": "niord:6b7064f4-fb41-4ad6-9d9f-e046b2b4cddf:2:0:0",
-      "meaning": "Observation novelty, not evidence of impending violence.",
-      "observation_id": "beh:7ba69349a60b5a55923c95a41512",
-      "requires_geolocation": true,
-      "source_family": "maritime_restriction",
-      "source_published_at": null,
-      "source_url": "https://niord.dma.dk/#/message/6b7064f4-fb41-4ad6-9d9f-e046b2b4cddf",
-      "status": "single_source_unreviewed",
-      "title": "Denmark. Kattegat. EK R 18 Jaegerspris. Firing exercises. Warning."
-    },
-    {
-      "evidence_class": "official_notice",
-      "first_observed_at": "2026-11-22T03:27:11Z",
-      "geography": {
-        "geometry_sha256_prefix": null,
-        "geometry_type": null,
-        "key": null,
-        "kind": "unlocated",
-        "label": null,
-        "latitude": null,
-        "longitude": null,
-        "precision": "notice_geography_unavailable",
-        "verified_iso": false
-      },
-      "information_root": "niord:42b7d796-6fdc-4695-9052-4fd5a8e31208:0:5:0",
-      "meaning": "Observation novelty, not evidence of impending violence.",
-      "observation_id": "beh:7e45142a10c4a9a5865af69f144b",
-      "requires_geolocation": true,
-      "source_family": "maritime_restriction",
-      "source_published_at": null,
-      "source_url": "https://niord.dma.dk/#/message/42b7d796-6fdc-4695-9052-4fd5a8e31208",
-      "status": "single_source_unreviewed",
-      "title": "Denmark. Kattegat. EK R 45 Hevring. Firing exercises. Warning."
-    },
-    {
-      "evidence_class": "official_notice",
-      "first_observed_at": "2026-11-22T03:27:11Z",
-      "geography": {
-        "geometry_sha256_prefix": null,
-        "geometry_type": null,
-        "key": null,
-        "kind": "unlocated",
-        "label": null,
-        "latitude": null,
-        "longitude": null,
-        "precision": "notice_geography_unavailable",
-        "verified_iso": false
-      },
-      "information_root": "niord:42b7d796-6fdc-4695-9052-4fd5a8e31208:0:7:0",
-      "meaning": "Observation novelty, not evidence of impending violence.",
-      "observation_id": "beh:89065ce65104c91293277e3ed616",
-      "requires_geolocation": true,
-      "source_family": "maritime_restriction",
-      "source_published_at": null,
-      "source_url": "https://niord.dma.dk/#/message/42b7d796-6fdc-4695-9052-4fd5a8e31208",
-      "status": "single_source_unreviewed",
-      "title": "Denmark. Kattegat. EK R 45 Hevring. Firing exercises. Warning."
-    },
-    {
-      "evidence_class": "official_notice",
-      "first_observed_at": "2026-11-22T03:27:11Z",
-      "geography": {
-        "geometry_sha256_prefix": null,
-        "geometry_type": null,
-        "key": null,
-        "kind": "unlocated",
-        "label": null,
-        "latitude": null,
-        "longitude": null,
-        "precision": "notice_geography_unavailable",
-        "verified_iso": false
-      },
-      "information_root": "niord:42b7d796-6fdc-4695-9052-4fd5a8e31208:4:0:0",
-      "meaning": "Observation novelty, not evidence of impending violence.",
-      "observation_id": "beh:8aeacee00132fb4fe38aafa1697e",
-      "requires_geolocation": true,
-      "source_family": "maritime_restriction",
-      "source_published_at": null,
-      "source_url": "https://niord.dma.dk/#/message/42b7d796-6fdc-4695-9052-4fd5a8e31208",
-      "status": "single_source_unreviewed",
-      "title": "Denmark. Kattegat. EK R 45 Hevring. Firing exercises. Warning."
-    },
-    {
-      "evidence_class": "official_notice",
-      "first_observed_at": "2026-11-22T03:27:11Z",
-      "geography": {
-        "geometry_sha256_prefix": null,
-        "geometry_type": null,
-        "key": null,
-        "kind": "unlocated",
-        "label": null,
-        "latitude": null,
-        "longitude": null,
-        "precision": "notice_geography_unavailable",
-        "verified_iso": false
-      },
-      "information_root": "niord:42b7d796-6fdc-4695-9052-4fd5a8e31208:0:6:0",
-      "meaning": "Observation novelty, not evidence of impending violence.",
-      "observation_id": "beh:91b8e163135af1a3278426f604b4",
-      "requires_geolocation": true,
-      "source_family": "maritime_restriction",
-      "source_published_at": null,
-      "source_url": "https://niord.dma.dk/#/message/42b7d796-6fdc-4695-9052-4fd5a8e31208",
-      "status": "single_source_unreviewed",
-      "title": "Denmark. Kattegat. EK R 45 Hevring. Firing exercises. Warning."
-    },
-    {
-      "evidence_class": "official_notice",
-      "first_observed_at": "2026-11-22T03:27:11Z",
-      "geography": {
-        "geometry_sha256_prefix": null,
-        "geometry_type": null,
-        "key": null,
-        "kind": "unlocated",
-        "label": null,
-        "latitude": null,
-        "longitude": null,
-        "precision": "notice_geography_unavailable",
-        "verified_iso": false
-      },
-      "information_root": "niord:0f9cf7b3-34a5-439f-b569-fb5012ede367:0:2:0",
-      "meaning": "Observation novelty, not evidence of impending violence.",
-      "observation_id": "beh:a624f4f39a39c3c634c48b286a4a",
-      "requires_geolocation": true,
-      "source_family": "maritime_restriction",
-      "source_published_at": null,
-      "source_url": "https://niord.dma.dk/#/message/0f9cf7b3-34a5-439f-b569-fb5012ede367",
-      "status": "single_source_unreviewed",
-      "title": "Denmark. The North Sea. 15 Nymindegab. Firing exercises. Warning."
-    },
-    {
-      "evidence_class": "official_notice",
-      "first_observed_at": "2026-11-22T03:27:11Z",
-      "geography": {
-        "geometry_sha256_prefix": null,
-        "geometry_type": null,
-        "key": null,
-        "kind": "unlocated",
-        "label": null,
-        "latitude": null,
-        "longitude": null,
-        "precision": "notice_geography_unavailable",
-        "verified_iso": false
-      },
-      "information_root": "niord:42b7d796-6fdc-4695-9052-4fd5a8e31208:0:3:0",
-      "meaning": "Observation novelty, not evidence of impending violence.",
-      "observation_id": "beh:a8d6531e71d0e0e93a63da46eb01",
-      "requires_geolocation": true,
-      "source_family": "maritime_restriction",
-      "source_published_at": null,
-      "source_url": "https://niord.dma.dk/#/message/42b7d796-6fdc-4695-9052-4fd5a8e31208",
-      "status": "single_source_unreviewed",
-      "title": "Denmark. Kattegat. EK R 45 Hevring. Firing exercises. Warning."
-    },
-    {
-      "evidence_class": "official_notice",
-      "first_observed_at": "2026-11-22T03:27:11Z",
-      "geography": {
-        "geometry_sha256_prefix": null,
-        "geometry_type": null,
-        "key": null,
-        "kind": "unlocated",
-        "label": null,
-        "latitude": null,
-        "longitude": null,
-        "precision": "notice_geography_unavailable",
-        "verified_iso": false
-      },
-      "information_root": "niord:6b7064f4-fb41-4ad6-9d9f-e046b2b4cddf:4:0:0",
-      "meaning": "Observation novelty, not evidence of impending violence.",
-      "observation_id": "beh:a91b7efff5e282576c63ea857cd4",
-      "requires_geolocation": true,
-      "source_family": "maritime_restriction",
-      "source_published_at": null,
-      "source_url": "https://niord.dma.dk/#/message/6b7064f4-fb41-4ad6-9d9f-e046b2b4cddf",
-      "status": "single_source_unreviewed",
-      "title": "Denmark. Kattegat. EK R 18 Jaegerspris. Firing exercises. Warning."
-    },
-    {
-      "evidence_class": "official_notice",
-      "first_observed_at": "2026-11-22T03:27:11Z",
-      "geography": {
-        "geometry_sha256_prefix": null,
-        "geometry_type": null,
-        "key": null,
-        "kind": "unlocated",
-        "label": null,
-        "latitude": null,
-        "longitude": null,
-        "precision": "notice_geography_unavailable",
-        "verified_iso": false
-      },
-      "information_root": "niord:6b7064f4-fb41-4ad6-9d9f-e046b2b4cddf:0:6:0",
-      "meaning": "Observation novelty, not evidence of impending violence.",
-      "observation_id": "beh:b1afc4f6b4faa391861dc08444a4",
-      "requires_geolocation": true,
-      "source_family": "maritime_restriction",
-      "source_published_at": null,
-      "source_url": "https://niord.dma.dk/#/message/6b7064f4-fb41-4ad6-9d9f-e046b2b4cddf",
-      "status": "single_source_unreviewed",
-      "title": "Denmark. Kattegat. EK R 18 Jaegerspris. Firing exercises. Warning."
-    },
-    {
-      "evidence_class": "official_notice",
-      "first_observed_at": "2026-11-22T03:27:11Z",
-      "geography": {
-        "geometry_sha256_prefix": null,
-        "geometry_type": null,
-        "key": null,
-        "kind": "unlocated",
-        "label": null,
-        "latitude": null,
-        "longitude": null,
-        "precision": "notice_geography_unavailable",
-        "verified_iso": false
-      },
-      "information_root": "niord:42b7d796-6fdc-4695-9052-4fd5a8e31208:0:2:0",
-      "meaning": "Observation novelty, not evidence of impending violence.",
-      "observation_id": "beh:b5987841d871f905930a05393e4b",
-      "requires_geolocation": true,
-      "source_family": "maritime_restriction",
-      "source_published_at": null,
-      "source_url": "https://niord.dma.dk/#/message/42b7d796-6fdc-4695-9052-4fd5a8e31208",
-      "status": "single_source_unreviewed",
-      "title": "Denmark. Kattegat. EK R 45 Hevring. Firing exercises. Warning."
-    },
-    {
-      "evidence_class": "official_notice",
-      "first_observed_at": "2026-11-22T03:27:11Z",
-      "geography": {
-        "geometry_sha256_prefix": null,
-        "geometry_type": null,
-        "key": null,
-        "kind": "unlocated",
-        "label": null,
-        "latitude": null,
-        "longitude": null,
-        "precision": "notice_geography_unavailable",
-        "verified_iso": false
-      },
-      "information_root": "niord:0f9cf7b3-34a5-439f-b569-fb5012ede367:2:0:0",
-      "meaning": "Observation novelty, not evidence of impending violence.",
-      "observation_id": "beh:c9969b8d12c42c2cfa3db7c6ff2b",
-      "requires_geolocation": true,
-      "source_family": "maritime_restriction",
-      "source_published_at": null,
-      "source_url": "https://niord.dma.dk/#/message/0f9cf7b3-34a5-439f-b569-fb5012ede367",
-      "status": "single_source_unreviewed",
-      "title": "Denmark. The North Sea. 15 Nymindegab. Firing exercises. Warning."
-    },
-    {
-      "evidence_class": "official_notice",
-      "first_observed_at": "2026-11-22T03:27:11Z",
-      "geography": {
-        "geometry_sha256_prefix": null,
-        "geometry_type": null,
-        "key": null,
-        "kind": "unlocated",
-        "label": null,
-        "latitude": null,
-        "longitude": null,
-        "precision": "notice_geography_unavailable",
-        "verified_iso": false
-      },
-      "information_root": "niord:0f9cf7b3-34a5-439f-b569-fb5012ede367:0:1:0",
-      "meaning": "Observation novelty, not evidence of impending violence.",
-      "observation_id": "beh:ddcf351991d898fa669e1a47715f",
-      "requires_geolocation": true,
-      "source_family": "maritime_restriction",
-      "source_published_at": null,
-      "source_url": "https://niord.dma.dk/#/message/0f9cf7b3-34a5-439f-b569-fb5012ede367",
-      "status": "single_source_unreviewed",
-      "title": "Denmark. The North Sea. 15 Nymindegab. Firing exercises. Warning."
-    },
-    {
-      "evidence_class": "official_notice",
-      "first_observed_at": "2026-11-22T03:27:11Z",
-      "geography": {
-        "geometry_sha256_prefix": null,
-        "geometry_type": null,
-        "key": null,
-        "kind": "unlocated",
-        "label": null,
-        "latitude": null,
-        "longitude": null,
-        "precision": "notice_geography_unavailable",
-        "verified_iso": false
-      },
-      "information_root": "niord:6b7064f4-fb41-4ad6-9d9f-e046b2b4cddf:0:2:0",
-      "meaning": "Observation novelty, not evidence of impending violence.",
-      "observation_id": "beh:e27fa47b94a56e9f204d739b986b",
-      "requires_geolocation": true,
-      "source_family": "maritime_restriction",
-      "source_published_at": null,
-      "source_url": "https://niord.dma.dk/#/message/6b7064f4-fb41-4ad6-9d9f-e046b2b4cddf",
-      "status": "single_source_unreviewed",
-      "title": "Denmark. Kattegat. EK R 18 Jaegerspris. Firing exercises. Warning."
-    },
-    {
-      "evidence_class": "official_notice",
-      "first_observed_at": "2026-11-22T03:27:11Z",
-      "geography": {
-        "geometry_sha256_prefix": null,
-        "geometry_type": null,
-        "key": null,
-        "kind": "unlocated",
-        "label": null,
-        "latitude": null,
-        "longitude": null,
-        "precision": "notice_geography_unavailable",
-        "verified_iso": false
-      },
-      "information_root": "niord:6b7064f4-fb41-4ad6-9d9f-e046b2b4cddf:0:1:0",
-      "meaning": "Observation novelty, not evidence of impending violence.",
-      "observation_id": "beh:e3935f884e55892eb096a84e53d9",
-      "requires_geolocation": true,
-      "source_family": "maritime_restriction",
-      "source_published_at": null,
-      "source_url": "https://niord.dma.dk/#/message/6b7064f4-fb41-4ad6-9d9f-e046b2b4cddf",
-      "status": "single_source_unreviewed",
-      "title": "Denmark. Kattegat. EK R 18 Jaegerspris. Firing exercises. Warning."
-    },
-    {
-      "evidence_class": "official_notice",
-      "first_observed_at": "2026-11-22T03:27:11Z",
-      "geography": {
-        "geometry_sha256_prefix": null,
-        "geometry_type": null,
-        "key": null,
-        "kind": "unlocated",
-        "label": null,
-        "latitude": null,
-        "longitude": null,
-        "precision": "notice_geography_unavailable",
-        "verified_iso": false
-      },
-      "information_root": "niord:6b7064f4-fb41-4ad6-9d9f-e046b2b4cddf:0:3:0",
-      "meaning": "Observation novelty, not evidence of impending violence.",
-      "observation_id": "beh:fd3cd627465f074f7c8c7a811d80",
-      "requires_geolocation": true,
-      "source_family": "maritime_restriction",
-      "source_published_at": null,
-      "source_url": "https://niord.dma.dk/#/message/6b7064f4-fb41-4ad6-9d9f-e046b2b4cddf",
-      "status": "single_source_unreviewed",
-      "title": "Denmark. Kattegat. EK R 18 Jaegerspris. Firing exercises. Warning."
-    }
-  ],
+  "new_single_source_count_total": 0,
+  "new_single_source_leads": [],
   "prediction_horizon": null,
   "recent_source_observations": [
     {
@@ -1671,8 +876,8 @@
       "title": "Ecuadorian Fishermen Sue U.S. Government Over Drone Strike on Their Vessel"
     }
   ],
-  "registry_asof": "2026-11-22T03:27:11Z",
-  "registry_source_count": 797,
+  "registry_asof": "2026-11-22T06:52:34Z",
+  "registry_source_count": 690,
   "report_relationships": {
     "automatic_alerts_created": 0,
     "automatic_severity_changes": 0,
@@ -3366,14 +2571,14 @@
     "input_truncated": false,
     "not_a_preparations_sensor_or_warning": true,
     "pairwise_comparisons_capped": false,
-    "pairwise_comparisons_examined": 38503,
+    "pairwise_comparisons_examined": 36585,
     "possible_same_event_count_total": 0,
     "possible_same_source_story_count_total": 2,
-    "records_available": 278,
-    "records_examined": 278,
+    "records_available": 271,
+    "records_examined": 271,
     "related_reporting_count_total": 0,
     "reporting_origins_are_not_event_locations": true,
-    "routine_notice_market_or_measurement_records_excluded_from_text_event_matching": 265,
+    "routine_notice_market_or_measurement_records_excluded_from_text_event_matching": 258,
     "same_document_group_count_total": 26,
     "schema": "aiba.report-event-resolution-shadow.v1",
     "source_independence_unverified": true,
