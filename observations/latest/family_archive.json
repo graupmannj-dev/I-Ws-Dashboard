@@ -2,7 +2,7 @@
   "alerts_promoted": 0,
   "archive_integrity": "all shards retained; public discovery cache is bounded",
   "automatic_topic_count_total": 213,
-  "automatic_topic_document_count_total": 485,
+  "automatic_topic_document_count_total": 488,
   "automatic_topic_index": {
     "assignment_explanations": {
       "0265facd0ef6eabdd50cb3069364": {
@@ -236,6 +236,20 @@
         "score": null,
         "shared_activity_roles": [],
         "shared_subject_terms": []
+      },
+      "33d956ecf08b246e454090790f92": {
+        "independent_corroboration_proven": false,
+        "latent_semantic_similarity": 1,
+        "method": "legacy_sparse_v1",
+        "raw_text_similarity": 1,
+        "review_status": "unreviewed_automatic_topic_match",
+        "same_incident_proven": false,
+        "same_source_document": false,
+        "score": 1.0,
+        "shared_activity_roles": [],
+        "shared_named_subjects": [],
+        "shared_subject_terms": [],
+        "subject_geography_compatible": true
       },
       "340f1b96af667b9c1e1870fc86e4": {
         "independent_corroboration_proven": false,
@@ -586,6 +600,20 @@
           "blockade",
           "iran"
         ],
+        "subject_geography_compatible": true
+      },
+      "74b94616be7fec275f19ad127f92": {
+        "independent_corroboration_proven": false,
+        "latent_semantic_similarity": 1,
+        "method": "legacy_sparse_v1",
+        "raw_text_similarity": 1,
+        "review_status": "unreviewed_automatic_topic_match",
+        "same_incident_proven": false,
+        "same_source_document": false,
+        "score": 1.0,
+        "shared_activity_roles": [],
+        "shared_named_subjects": [],
+        "shared_subject_terms": [],
         "subject_geography_compatible": true
       },
       "75878582dc745909e67b137b0e45": {
@@ -1038,6 +1066,20 @@
           "firing",
           "kattegat"
         ],
+        "subject_geography_compatible": true
+      },
+      "b9a2da4ef051d84e179409c7bcc5": {
+        "independent_corroboration_proven": false,
+        "latent_semantic_similarity": 1,
+        "method": "legacy_sparse_v1",
+        "raw_text_similarity": 1,
+        "review_status": "unreviewed_automatic_topic_match",
+        "same_incident_proven": false,
+        "same_source_document": false,
+        "score": 1.0,
+        "shared_activity_roles": [],
+        "shared_named_subjects": [],
+        "shared_subject_terms": [],
         "subject_geography_compatible": true
       },
       "ba139eeb958c4fbf23137db6478e": {
@@ -1601,6 +1643,7 @@
       "32f5d4bbfba60a322b9006458462": "family:1d735bc0acda197c1a53",
       "33c5f5b103885986bb8ae26958ed": "family:f93ac02b582110ef6ed0",
       "33d7e12940408ec1671d916a24be": "family:71a3bc17bcad4f42d967",
+      "33d956ecf08b246e454090790f92": "family:a6e8f681f426d55095f8",
       "340f1b96af667b9c1e1870fc86e4": "family:c733ba40ded9c2fca04b",
       "34ceb8e0fe71a7fcd9bce9edba4a": "family:16768cd11ccd8abf1ec4",
       "34f647391b7b5968860555ecbe15": "family:a6e8f681f426d55095f8",
@@ -1719,6 +1762,7 @@
       "724399f3fa55073883ad00af3107": "family:28bb6025e5e43c9de56c",
       "73371c6146d8c8dc9d7c139940de": "family:6084b2d4ded8fe54e0a2",
       "739a1dff951445726392a196f0d8": "family:52cedb4649452ec96d13",
+      "74b94616be7fec275f19ad127f92": "family:c9675c6f217ebbb3cff4",
       "74fbfce15195a6eb18605ca3d511": "family:1dc155d78b9539878254",
       "75878582dc745909e67b137b0e45": "family:407cf4aa1ca0988adae7",
       "75d1deefab01f7eb3b11b71f90a7": "family:e1c66c16bd9ca1017201",
@@ -1859,6 +1903,7 @@
       "b7811db46c02027b0cb7e862e39c": "family:4f9a4ff5625912dd5719",
       "b8a9318a814f3d89ff993ace2d7d": "family:16768cd11ccd8abf1ec4",
       "b8b28da5e9b5a7bf70db7b9ef78e": "family:c733ba40ded9c2fca04b",
+      "b9a2da4ef051d84e179409c7bcc5": "family:110a46841aa352688519",
       "b9a635a62049b03d123c7f8e368a": "family:c9675c6f217ebbb3cff4",
       "b9da8442f59697675671183f5562": "family:d7493f2e4bfd9d0a456a",
       "b9dbd10b6ab233a1b2f5d77c71b5": "family:b5d14a9e6945c2d71046",
@@ -2224,7 +2269,8 @@
       },
       "family:110a46841aa352688519": {
         "first_document_at": "2026-11-18T08:28:52+00:00",
-        "matched_document_count": 2,
+        "last_document_at": "2026-11-22T02:08:38+00:00",
+        "matched_document_count": 3,
         "seed": {
           "domain": "network",
           "geo": [
@@ -4835,7 +4881,8 @@
       },
       "family:a6e8f681f426d55095f8": {
         "first_document_at": "2026-11-12T18:34:40+00:00",
-        "matched_document_count": 4,
+        "last_document_at": "2026-11-22T02:08:38+00:00",
+        "matched_document_count": 5,
         "seed": {
           "domain": "network",
           "geo": [
@@ -5560,8 +5607,8 @@
       },
       "family:c9675c6f217ebbb3cff4": {
         "first_document_at": "2026-11-12T02:29:18+00:00",
-        "last_document_at": "2026-11-21T16:22:21+00:00",
-        "matched_document_count": 17,
+        "last_document_at": "2026-11-22T02:08:38+00:00",
+        "matched_document_count": 18,
         "seed": {
           "domain": "network",
           "geo": [
@@ -6573,17 +6620,101 @@
     },
     "public_index_truncated": false,
     "schema": "aiba.automatic-analytical-topics.v1",
-    "total_document_assignments": 485,
+    "total_document_assignments": 488,
     "total_stable_topics": 213
   },
-  "generated_at": "2026-11-22T01:27:46.341416+00:00",
+  "generated_at": "2026-11-22T02:08:52.205168+00:00",
   "historical_relationship_count": 0,
   "missing_data_is_not_zero": true,
-  "new_records_added": 140,
-  "public_record_count": 2201,
+  "new_records_added": 3,
+  "public_record_count": 2204,
   "public_snapshot_truncated": false,
-  "record_count_total": 2201,
+  "record_count_total": 2204,
   "records": [
+    {
+      "calibrated_metric": null,
+      "case_hint": null,
+      "claim_level": "measurement_no_attribution",
+      "collection_mode": "ioda",
+      "direct_measurement": true,
+      "event_at": "2026-11-21T23:55:00Z",
+      "first_observed_at": "2026-11-22T02:08:38+00:00",
+      "geography_key": "country:TL",
+      "geography_label": "TL",
+      "geography_precision": "provider_reported_country",
+      "id": "beh:a41edefb1b9d98ad8abd1de6daf4",
+      "information_root": "ioda:97c0405c8144a519537caf81",
+      "origin": "behavioral_registry",
+      "provider": "ioda",
+      "published_at": null,
+      "restriction_status": "",
+      "scheduled_valid_from": null,
+      "scheduled_valid_until": null,
+      "source_dependency_class": null,
+      "source_family": "internet_reachability",
+      "source_kind": "outage_event",
+      "source_measurement": null,
+      "source_scope": null,
+      "source_updated_at": null,
+      "source_url": "https://ioda.inetintel.cc.gatech.edu/",
+      "title": "IODA detected connectivity anomaly: country TL"
+    },
+    {
+      "calibrated_metric": null,
+      "case_hint": null,
+      "claim_level": "measurement_no_attribution",
+      "collection_mode": "ioda",
+      "direct_measurement": true,
+      "event_at": "2026-11-22T00:25:00Z",
+      "first_observed_at": "2026-11-22T02:08:38+00:00",
+      "geography_key": "country:BW",
+      "geography_label": "BW",
+      "geography_precision": "provider_reported_country",
+      "id": "beh:96bbf753853a15a8fb0af5393429",
+      "information_root": "ioda:e5b6315dc75e991f74f771e4",
+      "origin": "behavioral_registry",
+      "provider": "ioda",
+      "published_at": null,
+      "restriction_status": "",
+      "scheduled_valid_from": null,
+      "scheduled_valid_until": null,
+      "source_dependency_class": null,
+      "source_family": "internet_reachability",
+      "source_kind": "outage_event",
+      "source_measurement": null,
+      "source_scope": null,
+      "source_updated_at": null,
+      "source_url": "https://ioda.inetintel.cc.gatech.edu/",
+      "title": "IODA detected connectivity anomaly: country BW"
+    },
+    {
+      "calibrated_metric": null,
+      "case_hint": null,
+      "claim_level": "measurement_no_attribution",
+      "collection_mode": "ioda",
+      "direct_measurement": true,
+      "event_at": "2026-11-21T21:40:00Z",
+      "first_observed_at": "2026-11-22T02:08:38+00:00",
+      "geography_key": "country:NG",
+      "geography_label": "NG",
+      "geography_precision": "provider_reported_country",
+      "id": "beh:925e2af3e652da3b0fea7b2cc06b",
+      "information_root": "ioda:37995ad91c3aad25fe2807d8",
+      "origin": "behavioral_registry",
+      "provider": "ioda",
+      "published_at": null,
+      "restriction_status": "",
+      "scheduled_valid_from": null,
+      "scheduled_valid_until": null,
+      "source_dependency_class": null,
+      "source_family": "internet_reachability",
+      "source_kind": "outage_event",
+      "source_measurement": null,
+      "source_scope": null,
+      "source_updated_at": null,
+      "source_url": "https://ioda.inetintel.cc.gatech.edu/",
+      "title": "IODA detected connectivity anomaly: country NG"
+    },
     {
       "calibrated_metric": null,
       "case_hint": null,
@@ -73772,23 +73903,23 @@
   "report_relationships": {
     "candidate_groups": []
   },
-  "root_count_total": 2201,
+  "root_count_total": 2204,
   "schema": "aiba.family-archive.v1",
   "source_health": {
     "amsa": {
-      "age_hours": 3.6,
-      "checked_at": "2026-11-21T21:51:31Z",
+      "age_hours": 0.0,
+      "checked_at": "2026-11-22T02:08:38Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
       "mode": "amsa",
       "provider_status": "collected",
-      "snapshot_at": "2026-11-21T21:51:31Z",
+      "snapshot_at": "2026-11-22T02:08:38Z",
       "source_scope": "AMSA NAVAREA X only",
       "status": "current",
       "truncated_or_partial": false
     },
     "bmkg_nowcast": {
-      "age_hours": 0.03,
+      "age_hours": 0.72,
       "checked_at": "2026-11-22T01:25:32Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -73800,7 +73931,7 @@
       "truncated_or_partial": true
     },
     "bmkg_quake": {
-      "age_hours": 0.03,
+      "age_hours": 0.72,
       "checked_at": "2026-11-22T01:25:32Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -73812,7 +73943,7 @@
       "truncated_or_partial": true
     },
     "cbp_wait": {
-      "age_hours": 0.03,
+      "age_hours": 0.72,
       "checked_at": "2026-11-22T01:25:32Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -73824,7 +73955,7 @@
       "truncated_or_partial": true
     },
     "commercial": {
-      "age_hours": 10.01,
+      "age_hours": 10.7,
       "checked_at": "2026-11-21T15:26:49Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -73836,7 +73967,7 @@
       "truncated_or_partial": false
     },
     "coops": {
-      "age_hours": 0.03,
+      "age_hours": 0.72,
       "checked_at": "2026-11-22T01:25:32Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -73848,7 +73979,7 @@
       "truncated_or_partial": true
     },
     "eonet": {
-      "age_hours": 0.03,
+      "age_hours": 0.72,
       "checked_at": "2026-11-22T01:25:32Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -73860,7 +73991,7 @@
       "truncated_or_partial": true
     },
     "imd_in": {
-      "age_hours": 0.03,
+      "age_hours": 0.72,
       "checked_at": "2026-11-22T01:25:32Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -73872,7 +74003,7 @@
       "truncated_or_partial": true
     },
     "inmet_br": {
-      "age_hours": 0.03,
+      "age_hours": 0.72,
       "checked_at": "2026-11-22T01:25:32Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -73884,54 +74015,52 @@
       "truncated_or_partial": true
     },
     "ioda": {
-      "age_hours": 3.6,
-      "checked_at": "2026-11-21T21:51:31Z",
+      "age_hours": 0.0,
+      "checked_at": "2026-11-22T02:08:38Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
       "mode": "ioda",
       "provider_status": "collected",
-      "snapshot_at": "2026-11-21T21:51:31Z",
+      "snapshot_at": "2026-11-22T02:08:38Z",
       "source_scope": "IODA country events (first 100 of first page, 4-hour query)",
       "status": "current",
       "truncated_or_partial": false
     },
     "live_airspace": {
-      "age_hours": 1.99,
+      "age_hours": 2.67,
       "checked_at": "2026-11-21T23:28:27Z",
-      "first_provider_baseline": false,
-      "missingness": "partial_sampling_not_worldwide_exhaustive",
+      "missingness": "not_measured_not_zero",
       "mode": "live_airspace",
       "provider_status": "partial",
       "snapshot_at": "2026-11-21T23:28:27Z",
       "source_scope": "FAA temporary flight restrictions: United States only",
-      "status": "current_partial",
+      "status": "stale_or_unavailable",
       "truncated_or_partial": true
     },
     "live_maritime": {
-      "age_hours": 1.99,
+      "age_hours": 2.67,
       "checked_at": "2026-11-21T23:28:27Z",
-      "first_provider_baseline": false,
-      "missingness": "partial_sampling_not_worldwide_exhaustive",
+      "missingness": "not_measured_not_zero",
       "mode": "live_maritime",
       "provider_status": "partial",
       "snapshot_at": "2026-11-21T23:28:27Z",
       "source_scope": "Danish Maritime Authority Niord notices: regional Baltic/North Sea",
-      "status": "current_partial",
+      "status": "stale_or_unavailable",
       "truncated_or_partial": true
     },
     "nga": {
-      "age_hours": 3.6,
-      "checked_at": "2026-11-21T16:22:21Z",
+      "age_hours": 0.0,
+      "checked_at": "2026-11-22T02:08:38Z",
       "missingness": "not_measured_not_zero",
       "mode": "nga",
       "provider_status": "unavailable",
-      "snapshot_at": "2026-11-21T21:51:31Z",
+      "snapshot_at": "2026-11-22T02:08:38Z",
       "source_scope": "NGA active broadcast warnings; provider availability varies",
       "status": "stale_or_unavailable",
       "truncated_or_partial": false
     },
     "nws": {
-      "age_hours": 0.03,
+      "age_hours": 0.72,
       "checked_at": "2026-11-22T01:25:32Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -73943,7 +74072,7 @@
       "truncated_or_partial": true
     },
     "official": {
-      "age_hours": 6.15,
+      "age_hours": 6.83,
       "checked_at": "2026-11-21T19:18:52Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -73955,7 +74084,7 @@
       "truncated_or_partial": false
     },
     "ons_br": {
-      "age_hours": 0.03,
+      "age_hours": 0.72,
       "checked_at": "2026-11-22T01:25:32Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -73967,7 +74096,7 @@
       "truncated_or_partial": true
     },
     "ripe": {
-      "age_hours": 0.03,
+      "age_hours": 0.72,
       "checked_at": "2026-11-22T01:25:32Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -73979,7 +74108,7 @@
       "truncated_or_partial": false
     },
     "ris_bgp": {
-      "age_hours": 0.03,
+      "age_hours": 0.72,
       "checked_at": "2026-11-22T01:25:32Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -73991,7 +74120,7 @@
       "truncated_or_partial": true
     },
     "saws_za": {
-      "age_hours": 0.03,
+      "age_hours": 0.72,
       "checked_at": "2026-11-22T01:25:32Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -74003,7 +74132,7 @@
       "truncated_or_partial": true
     },
     "sg_mpa": {
-      "age_hours": 0.03,
+      "age_hours": 0.72,
       "checked_at": "2026-11-22T01:25:32Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -74015,7 +74144,7 @@
       "truncated_or_partial": true
     },
     "swpc": {
-      "age_hours": 0.03,
+      "age_hours": 0.72,
       "checked_at": "2026-11-22T01:25:32Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -74027,7 +74156,7 @@
       "truncated_or_partial": false
     },
     "tw_power": {
-      "age_hours": 0.03,
+      "age_hours": 0.72,
       "checked_at": "2026-11-22T01:25:32Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -74039,7 +74168,7 @@
       "truncated_or_partial": true
     },
     "uk_tenders": {
-      "age_hours": 0.03,
+      "age_hours": 0.72,
       "checked_at": "2026-11-22T01:25:32Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -74051,7 +74180,7 @@
       "truncated_or_partial": true
     },
     "usace": {
-      "age_hours": 0.03,
+      "age_hours": 0.72,
       "checked_at": "2026-11-22T01:25:32Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -74063,7 +74192,7 @@
       "truncated_or_partial": true
     },
     "usgs": {
-      "age_hours": 0.03,
+      "age_hours": 0.72,
       "checked_at": "2026-11-22T01:25:32Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -74075,7 +74204,7 @@
       "truncated_or_partial": false
     },
     "watchlist": {
-      "age_hours": 6.15,
+      "age_hours": 6.83,
       "checked_at": "2026-11-21T19:18:52Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -74087,7 +74216,7 @@
       "truncated_or_partial": false
     },
     "wiki_edits": {
-      "age_hours": 0.03,
+      "age_hours": 0.72,
       "checked_at": "2026-11-22T01:25:32Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
