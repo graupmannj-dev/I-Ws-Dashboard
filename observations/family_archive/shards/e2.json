@@ -30,6 +30,53 @@
         }
       }
     },
+    "e205235944cd4f780b4b0805a641a25d147de7179211d95c7530e65785e3f380": {
+      "information_root": "cbp_wait:cbp_wait:231001:2026-11-22:13:38:51",
+      "members": {
+        "beh:e093d74a10f1d19b39a4d3a4d643": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-22T19:52:03+00:00",
+          "geography_key": "us-border-port:231001",
+          "geography_label": "Roma",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:e093d74a10f1d19b39a4d3a4d643",
+          "information_root": "cbp_wait:cbp_wait:231001:2026-11-22:13:38:51",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "delay",
+            "lanes_open": 1,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "At Noon CST",
+            "reported_local_date": "11/22/2026",
+            "reported_local_time": "13:38:51",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 10
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Roma"
+        }
+      }
+    },
     "e209a2251f8905abb0da0f302ed434237beab65d983a17ffe37f176aa3c3daf3": {
       "information_root": "cbp_wait:cbp_wait:380002:2026-11-21:20:22:12",
       "members": {
@@ -209,6 +256,53 @@
           "source_updated_at": null,
           "source_url": "https://ru.wikipedia.org/wiki/Special:RecentChanges",
           "title": "Wikipedia ru public article-edit activity (sampled)"
+        }
+      }
+    },
+    "e23409c0ead421ef71bbd2f5edc891bbbc200e0ac577aaa0dd443bedf3cc5f45": {
+      "information_root": "cbp_wait:cbp_wait:240202:2026-11-22:12:38:51",
+      "members": {
+        "beh:b6314d436a9acb7f86386a5040df": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-22T19:52:03+00:00",
+          "geography_key": "us-border-port:240202",
+          "geography_label": "El Paso",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:b6314d436a9acb7f86386a5040df",
+          "information_root": "cbp_wait:cbp_wait:240202:2026-11-22:12:38:51",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "N/A",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/22/2026",
+            "reported_local_time": "12:38:51",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — El Paso / Paso Del Norte (PDN)"
         }
       }
     },

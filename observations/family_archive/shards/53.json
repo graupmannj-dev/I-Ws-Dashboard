@@ -1,5 +1,52 @@
 {
   "roots": {
+    "530eea3a2018e78833426458fc13529f91f2e55f483c4b4697fd76372a57534c": {
+      "information_root": "cbp_wait:cbp_wait:020901:2026-11-22:14:38:51",
+      "members": {
+        "beh:7cd28cadab3f4881af7875e6ee00": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-22T19:52:03+00:00",
+          "geography_key": "us-border-port:020901",
+          "geography_label": "Derby Line",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:7cd28cadab3f4881af7875e6ee00",
+          "information_root": "cbp_wait:cbp_wait:020901:2026-11-22:14:38:51",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "no delay",
+            "lanes_open": 1,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "At 2:00 pm EST",
+            "reported_local_date": "11/22/2026",
+            "reported_local_time": "14:38:51",
+            "source_declared_border": "Canadian Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 0
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Derby Line / Derby Line I-91"
+        }
+      }
+    },
     "53517952f817bb3ed1f172c22680eabe26d37b3e621bb357a2c65d150eb497af": {
       "information_root": "nws:8c78afed4658502e7b69f232",
       "members": {
@@ -60,6 +107,53 @@
           "source_updated_at": null,
           "source_url": "https://ioda.inetintel.cc.gatech.edu/",
           "title": "IODA detected connectivity anomaly: country HT"
+        }
+      }
+    },
+    "5365962500339f1caa8997c6aeb792f5914feb00644f8f7d1f900eb8ed1064ba": {
+      "information_root": "cbp_wait:cbp_wait:250301:2026-11-22:11:38:51",
+      "members": {
+        "beh:78ee0edee13712d6a7b6e410ecb2": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-22T19:52:03+00:00",
+          "geography_key": "us-border-port:250301",
+          "geography_label": "Calexico",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:78ee0edee13712d6a7b6e410ecb2",
+          "information_root": "cbp_wait:cbp_wait:250301:2026-11-22:11:38:51",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Lanes Closed",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/22/2026",
+            "reported_local_time": "11:38:51",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Calexico / East"
         }
       }
     },
@@ -213,6 +307,53 @@
           "source_updated_at": null,
           "source_url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQZ1l6X0NwdF9NbTdZcl9BWlFjaHMtaHR1RHZfSUk5cHd5RmIzZWRxNUhiMGRBaW1lakFseENzRjFZTExtcW12WXVoa0pQY2gyYUgyUFpPbGdyaFlCdUctd0FFVFB2OGkxbTFsU3lZOWt6WjdRUWg1X1NKbUhlX0NxQ0ptVEgwdWxjX3ZMRFdDXzREbXhhQTl6c0VTODFjeTJna2lJV2hvZ1F6T2hUcTA1YXlhLXJ2cUpiZEVFeDB3Q05Wek5WR1U5QQ?oc=5",
           "title": "To what extent do mines in the Strait of Hormuz pose a threat to shipping? - TRT World"
+        }
+      }
+    },
+    "53ddc8b3531fad68f3c661ca593f221f7bb2d4cae4330b1304f04457906b4766": {
+      "information_root": "cbp_wait:cbp_wait:230404:2026-11-22:13:38:51",
+      "members": {
+        "beh:c83b720be3fcba879b443522e53d": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-22T19:52:03+00:00",
+          "geography_key": "us-border-port:230404",
+          "geography_label": "Laredo",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:c83b720be3fcba879b443522e53d",
+          "information_root": "cbp_wait:cbp_wait:230404:2026-11-22:13:38:51",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "delay",
+            "lanes_open": 12,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "At 1:00 pm CST",
+            "reported_local_date": "11/22/2026",
+            "reported_local_time": "13:38:51",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 15
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Laredo / World Trade Bridge"
         }
       }
     },

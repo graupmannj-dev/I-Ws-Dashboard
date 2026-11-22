@@ -137,6 +137,86 @@
         }
       }
     },
+    "236dc3e04c9407f4d55c01912f7008d00702cacec7be8741ed6af5980ddca042": {
+      "information_root": "nws:1b9d0cd9f17459243a224807",
+      "members": {
+        "beh:d6b927aa2b84f94d46bf0fc9f334": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "nws",
+          "direct_measurement": false,
+          "event_at": "2026-11-22T14:01:00Z",
+          "first_observed_at": "2026-11-22T14:01:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:d6b927aa2b84f94d46bf0fc9f334",
+          "information_root": "nws:1b9d0cd9f17459243a224807",
+          "origin": "behavioral_registry",
+          "provider": "nws",
+          "published_at": "2026-11-22T14:01:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "official_weather_alert_context",
+          "source_measurement": null,
+          "source_scope": "Active NWS marine alerts; severity Severe",
+          "source_updated_at": null,
+          "source_url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.304e4b71ba25d3a4b54e90c9b51276843ee63e08.001.1",
+          "title": "Flood Warning - Seminole, FL"
+        }
+      }
+    },
+    "236f71546f188494cbdecf473c5a6978ccde7d50f4d2cde9dda522143fe2311f": {
+      "information_root": "cbp_wait:cbp_wait:250401:2026-11-22:11:38:51",
+      "members": {
+        "beh:97c3dd0d8813128f00cdf2a8c160": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-22T19:52:03+00:00",
+          "geography_key": "us-border-port:250401",
+          "geography_label": "San Ysidro",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:97c3dd0d8813128f00cdf2a8c160",
+          "information_root": "cbp_wait:cbp_wait:250401:2026-11-22:11:38:51",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "N/A",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/22/2026",
+            "reported_local_time": "11:38:51",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — San Ysidro"
+        }
+      }
+    },
     "238b531f9aaba6bd703dee92aafa22fb59388e8f4674fcba4d5780ffcce3ef99": {
       "information_root": "cbp_wait:cbp_wait:070801:2026-11-22:06:34:18",
       "members": {

@@ -1,5 +1,44 @@
 {
   "roots": {
+    "c810ab370ca09604be362c33d82d1735ff1851bae37f843166c3d63f610222d0": {
+      "information_root": "bmkg_nowcast:bmkg_nowcast:81e0c4fbdc6759ccbf27ae514816",
+      "members": {
+        "beh:82782588a9881cd77faad34d7961": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "bmkg_nowcast",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-22T16:54:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:82782588a9881cd77faad34d7961",
+          "information_root": "bmkg_nowcast:bmkg_nowcast:81e0c4fbdc6759ccbf27ae514816",
+          "origin": "behavioral_registry",
+          "provider": "bmkg_nowcast",
+          "published_at": "2026-11-22T16:54:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Indonesia BMKG",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Indonesia BMKG active provincial nowcast RSS, source-reported only; not global",
+          "source_updated_at": null,
+          "source_url": "https://www.bmkg.go.id/alerts/nowcast/en/CAH20261122008_alert.xml",
+          "title": "Thunderstorm Tonight in Aceh"
+        }
+      }
+    },
     "c813f142ca44f6091c159b88f7a547c8a46add1c2d4591d4d6f2e8e861edc5a9": {
       "information_root": "cbp_wait:cbp_wait:300901:2026-11-21:11:22:45",
       "members": {

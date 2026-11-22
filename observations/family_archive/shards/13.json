@@ -93,6 +93,45 @@
         }
       }
     },
+    "131d49bd064b8fba9b09c65102ec3600003a24b2faa868e27601c76f09714c79": {
+      "information_root": "bmkg_nowcast:bmkg_nowcast:c7e7213c97173f9ced3bd941633d",
+      "members": {
+        "beh:e699d301423cc7a1a8eef57ac384": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "bmkg_nowcast",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-22T18:43:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:e699d301423cc7a1a8eef57ac384",
+          "information_root": "bmkg_nowcast:bmkg_nowcast:c7e7213c97173f9ced3bd941633d",
+          "origin": "behavioral_registry",
+          "provider": "bmkg_nowcast",
+          "published_at": "2026-11-22T18:43:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Indonesia BMKG",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Indonesia BMKG active provincial nowcast RSS, source-reported only; not global",
+          "source_updated_at": null,
+          "source_url": "https://www.bmkg.go.id/alerts/nowcast/en/CBK20261122005_alert.xml",
+          "title": "Thunderstorm Tonight in Bengkulu"
+        }
+      }
+    },
     "1324219c2b2b8c7c2a2ab74fd48f6715058b7b9e214399f740e106748cbf769d": {
       "information_root": "nws:fd6fc77d8ff6654370a54589",
       "members": {
@@ -193,6 +232,52 @@
           "source_updated_at": null,
           "source_url": "https://ioda.inetintel.cc.gatech.edu/",
           "title": "IODA detected connectivity anomaly: country BT"
+        }
+      }
+    },
+    "13ac391dfe000df62989dbf4bd75793eafa009b79d6dbf3262bbdc4d87f95bcc": {
+      "information_root": "ris_bgp:ris_bgp:AS7552:20261122T13",
+      "members": {
+        "beh:68f0fc48f26f845ff4bcb8133210": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "public_routing_updates_not_country_outage",
+          "collection_mode": "ris_bgp",
+          "direct_measurement": true,
+          "event_at": null,
+          "first_observed_at": "2026-11-22T19:52:03+00:00",
+          "geography_key": "asn:7552",
+          "geography_label": "AS7552",
+          "geography_precision": "routing_target_not_country_incident",
+          "id": "beh:68f0fc48f26f845ff4bcb8133210",
+          "information_root": "ris_bgp:ris_bgp:AS7552:20261122T13",
+          "origin": "behavioral_registry",
+          "provider": "ris_bgp",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "routing_collector_sampled_asn_updates",
+          "source_family": "internet_routing",
+          "source_kind": "sampled_asn_bgp_route_updates_not_network_outage",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "collector_peers_are_not_geo_deduplicated": true,
+            "country_impact_not_established": true,
+            "name": "sampled_6h_bgp_announcements",
+            "registered_network_country_hint": "VN",
+            "returned_sampling_buckets": 6,
+            "source_window_end": "2026-11-22T13:00:00Z",
+            "target_asn": "AS7552",
+            "unit": "announcements",
+            "value": 5751283,
+            "window_hours_requested": 6,
+            "withdrawals_unavailable_for_asn": true
+          },
+          "source_scope": "RIPE RIS public route-announcement update samples on six non-Western operated networks; ASNs not country-wide outage detection",
+          "source_updated_at": null,
+          "source_url": "https://stat.ripe.net/data/bgp-update-activity/data.json?resource=AS7552&num_hours=6&max_samples=24&hide_empty_samples=false",
+          "title": "RIPE RIS sampled BGP announcements: AS7552"
         }
       }
     }

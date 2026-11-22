@@ -183,6 +183,53 @@
         }
       }
     },
+    "78aabfda505a76d72a8835cee5185004a508bd79e5527577ff55022512dc280b": {
+      "information_root": "cbp_wait:cbp_wait:090103:2026-11-22:14:38:51",
+      "members": {
+        "beh:defaf4e4f0d08925b2154064975e": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-22T19:52:03+00:00",
+          "geography_key": "us-border-port:090103",
+          "geography_label": "Buffalo/Niagara Falls",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:defaf4e4f0d08925b2154064975e",
+          "information_root": "cbp_wait:cbp_wait:090103:2026-11-22:14:38:51",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Update Pending",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/22/2026",
+            "reported_local_time": "14:38:51",
+            "source_declared_border": "Canadian Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Buffalo/Niagara Falls / Whirlpool Bridge"
+        }
+      }
+    },
     "78ba9974c677802d57216b6da9affe461b9f2631326eed04432127731406076d": {
       "information_root": "official:ee57770cbebe6a703ad5",
       "members": {
@@ -210,6 +257,39 @@
           "source_updated_at": null,
           "source_url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.sxm.html",
           "title": "Sint Maarten - Level 1: Exercise Normal Precautions"
+        }
+      }
+    },
+    "78c68e53f74de807300e10cd4a4819824daae3a15edd7bec35418b7d2b32e9ce": {
+      "information_root": "nws:f6de23cddca14f518c35ecbe",
+      "members": {
+        "beh:5cdbe0b844d34f203373f47f5829": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "nws",
+          "direct_measurement": false,
+          "event_at": "2026-11-22T18:37:00Z",
+          "first_observed_at": "2026-11-22T18:37:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:5cdbe0b844d34f203373f47f5829",
+          "information_root": "nws:f6de23cddca14f518c35ecbe",
+          "origin": "behavioral_registry",
+          "provider": "nws",
+          "published_at": "2026-11-22T18:37:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "official_weather_alert_context",
+          "source_measurement": null,
+          "source_scope": "Active NWS marine alerts; severity Moderate",
+          "source_updated_at": null,
+          "source_url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.5388ab0739e8b241fd047124c3b233920058bae3.003.2",
+          "title": "Rip Current Statement - Coastal Duval"
         }
       }
     }

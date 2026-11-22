@@ -644,6 +644,45 @@
           "title": "Denmark. Kattegat. EK R 45 Hevring. Firing exercises. Warning."
         }
       }
+    },
+    "e6efd299c1438c627423e068e0adbabf6cd80f595a480b0797c0b1dcbb5e514d": {
+      "information_root": "bmkg_nowcast:bmkg_nowcast:4e149b03d2713d2dd254d3e99d6b",
+      "members": {
+        "beh:73a4f524fe997301a9a6d3ec6a6f": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "bmkg_nowcast",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-22T18:00:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:73a4f524fe997301a9a6d3ec6a6f",
+          "information_root": "bmkg_nowcast:bmkg_nowcast:4e149b03d2713d2dd254d3e99d6b",
+          "origin": "behavioral_registry",
+          "provider": "bmkg_nowcast",
+          "published_at": "2026-11-22T18:00:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Indonesia BMKG",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Indonesia BMKG active provincial nowcast RSS, source-reported only; not global",
+          "source_updated_at": null,
+          "source_url": "https://www.bmkg.go.id/alerts/nowcast/en/CSL20261122006_alert.xml",
+          "title": "Thunderstorm Tonight in Sulawesi Selatan"
+        }
+      }
     }
   },
   "schema": "aiba.family-archive.v1"

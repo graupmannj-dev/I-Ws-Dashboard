@@ -122,6 +122,92 @@
         }
       }
     },
+    "eb34100ecd84d8c251cadc16fdc33c5be295e90b5e0b260bcd282ce18e5ac37e": {
+      "information_root": "bmkg_nowcast:bmkg_nowcast:c9f87c75f6cc8513f20d5e3b7f3d",
+      "members": {
+        "beh:ff8bde6b632716987e554b787a23": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "bmkg_nowcast",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-22T16:30:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:ff8bde6b632716987e554b787a23",
+          "information_root": "bmkg_nowcast:bmkg_nowcast:c9f87c75f6cc8513f20d5e3b7f3d",
+          "origin": "behavioral_registry",
+          "provider": "bmkg_nowcast",
+          "published_at": "2026-11-22T16:30:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Indonesia BMKG",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Indonesia BMKG active provincial nowcast RSS, source-reported only; not global",
+          "source_updated_at": null,
+          "source_url": "https://www.bmkg.go.id/alerts/nowcast/en/CJT20261122008_alert.xml",
+          "title": "Thunderstorm Tonight in Jawa Timur"
+        }
+      }
+    },
+    "eb60eadad61be76dfa31001e89c9eefec9dd57cf29c9a39e19380fcf5a8139a8": {
+      "information_root": "cbp_wait:cbp_wait:250501:2026-11-22:11:38:51",
+      "members": {
+        "beh:32f5c0eb789dd847d8380656f700": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-22T19:52:03+00:00",
+          "geography_key": "us-border-port:250501",
+          "geography_label": "Tecate",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:32f5c0eb789dd847d8380656f700",
+          "information_root": "cbp_wait:cbp_wait:250501:2026-11-22:11:38:51",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Lanes Closed",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/22/2026",
+            "reported_local_time": "11:38:51",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Tecate"
+        }
+      }
+    },
     "eb7e4e9c68fac4dbbb864000166097d59631341c17680136faf85beff4301778": {
       "information_root": "ris_bgp:ris_bgp:AS7552:20261121T15",
       "members": {

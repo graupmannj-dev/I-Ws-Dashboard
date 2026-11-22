@@ -167,6 +167,53 @@
         }
       }
     },
+    "70790a96887a0a6644795f7b0eba2da6da9050a62c671cd3587291d59dbaea2b": {
+      "information_root": "cbp_wait:cbp_wait:240221:2026-11-22:12:38:51",
+      "members": {
+        "beh:9487020e6703661d1acd532bd40e": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-22T19:52:03+00:00",
+          "geography_key": "us-border-port:240221",
+          "geography_label": "El Paso",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:9487020e6703661d1acd532bd40e",
+          "information_root": "cbp_wait:cbp_wait:240221:2026-11-22:12:38:51",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Update Pending",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/22/2026",
+            "reported_local_time": "12:38:51",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — El Paso"
+        }
+      }
+    },
     "707cf56664c4a0885d9c595b5f86ff36bb4e7ced1ca23db843c7a015a0c832a3": {
       "information_root": "cbp_wait:cbp_wait:240601:2026-11-20:19:23:04",
       "members": {
@@ -274,6 +321,53 @@
           "source_updated_at": "2026-11-21T00:21:51Z",
           "source_url": "https://niord.dma.dk/#/message/56b257b5-b744-4220-a413-0fc46eae1b7c",
           "title": "Denmark. The North Sea. EK R 33 Vejers. Firing exercises. Warning."
+        }
+      }
+    },
+    "709967a97fa858d30c1bb7c0258a94dd0eb8cb5d39b56998a25f662e01ce3bae": {
+      "information_root": "cbp_wait:cbp_wait:260301:2026-11-22:11:38:51",
+      "members": {
+        "beh:faa692b58d46357a108202c3a916": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-22T19:52:03+00:00",
+          "geography_key": "us-border-port:260301",
+          "geography_label": "Naco",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:faa692b58d46357a108202c3a916",
+          "information_root": "cbp_wait:cbp_wait:260301:2026-11-22:11:38:51",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Lanes Closed",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/22/2026",
+            "reported_local_time": "11:38:51",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Naco"
         }
       }
     },

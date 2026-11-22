@@ -165,6 +165,81 @@
         }
       }
     },
+    "fd60764442fd33436fd9ec8392023e2cb8ea7ffe2e39d71241a5e12a708061b9": {
+      "information_root": "wiki_edits:wiki_edits:tr:20261122T19",
+      "members": {
+        "beh:6a3dd536cf5c8514b676795cf0ad": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "wiki_edits",
+          "direct_measurement": false,
+          "event_at": "2026-11-22T19:49:49Z",
+          "first_observed_at": "2026-11-22T19:49:49+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:6a3dd536cf5c8514b676795cf0ad",
+          "information_root": "wiki_edits:wiki_edits:tr:20261122T19",
+          "origin": "behavioral_registry",
+          "provider": "wiki_edits",
+          "published_at": "2026-11-22T19:49:49Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "public_encyclopedia_edit_aggregate",
+          "source_family": "public_attention",
+          "source_kind": "bounded_public_edit_count_not_event_verification",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "distinct_articles_in_sample": 402,
+            "maximum_returned_edits": 500,
+            "most_edited_article_counts": [
+              {
+                "count": 8,
+                "title": "Papalık üniversitesi"
+              },
+              {
+                "count": 6,
+                "title": "Kerimhan Duman"
+              },
+              {
+                "count": 5,
+                "title": "Altınova, Birecik"
+              },
+              {
+                "count": 3,
+                "title": "Bakalyaro"
+              },
+              {
+                "count": 3,
+                "title": "Selçuk Üniversitesi İlahiyat Fakültesi"
+              },
+              {
+                "count": 2,
+                "title": "Akdeniz uçan balığı"
+              },
+              {
+                "count": 2,
+                "title": "Alestes dentex"
+              },
+              {
+                "count": 2,
+                "title": "Atlantik morinası"
+              }
+            ],
+            "name": "sampled_edits_last_three_hours",
+            "sample_cap_reached": true,
+            "unit": "edits",
+            "value": 500
+          },
+          "source_scope": "Wikipedia main-namespace edit-count sample, 14 global language editions, three-hour window capped at 500 per wiki; not geographic location",
+          "source_updated_at": null,
+          "source_url": "https://tr.wikipedia.org/wiki/Special:RecentChanges",
+          "title": "Wikipedia tr public article-edit activity (sampled)"
+        }
+      }
+    },
     "fd6e3cdfc7457b2c926a031720416aab2478490244618f0c2f52c0295da167d6": {
       "information_root": "usgs:us6000uc8k",
       "members": {
@@ -200,6 +275,45 @@
           "source_updated_at": null,
           "source_url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000uc8k",
           "title": "M 4.7 - southeast of the Loyalty Islands"
+        }
+      }
+    },
+    "fd732e4e13ed14c4224b3cc70931e736a4df85bfa1c8e844a5e396c2e7f7a0b3": {
+      "information_root": "bmkg_nowcast:bmkg_nowcast:b62d0aca14908526cf7dfe96eb95",
+      "members": {
+        "beh:4e1db7647450d33b89ef9f3e657b": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "bmkg_nowcast",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-22T17:11:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:4e1db7647450d33b89ef9f3e657b",
+          "information_root": "bmkg_nowcast:bmkg_nowcast:b62d0aca14908526cf7dfe96eb95",
+          "origin": "behavioral_registry",
+          "provider": "bmkg_nowcast",
+          "published_at": "2026-11-22T17:11:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Indonesia BMKG",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Indonesia BMKG active provincial nowcast RSS, source-reported only; not global",
+          "source_updated_at": null,
+          "source_url": "https://www.bmkg.go.id/alerts/nowcast/en/CJB20261122006_alert.xml",
+          "title": "Thunderstorm Tonight in Jawa Barat"
         }
       }
     },

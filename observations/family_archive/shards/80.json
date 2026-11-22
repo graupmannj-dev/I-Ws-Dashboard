@@ -60,6 +60,53 @@
         }
       }
     },
+    "807a977cb85a481f69f9aeab3552dc488649397b094b496ebada00e2a2085214": {
+      "information_root": "cbp_wait:cbp_wait:260401:2026-11-22:12:38:51",
+      "members": {
+        "beh:430fab14156cd451eb1d1eae608f": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-22T19:52:03+00:00",
+          "geography_key": "us-border-port:260401",
+          "geography_label": "Nogales",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:430fab14156cd451eb1d1eae608f",
+          "information_root": "cbp_wait:cbp_wait:260401:2026-11-22:12:38:51",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "N/A",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/22/2026",
+            "reported_local_time": "12:38:51",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Nogales / Deconcini"
+        }
+      }
+    },
     "808b589f45cbbfef355767f6397a6c9ed42487f88c83d9c20ca3f13c5bbc6d4e": {
       "information_root": "ris_bgp:ris_bgp:AS7303:20261120T23",
       "members": {
@@ -242,6 +289,53 @@
           "source_updated_at": null,
           "source_url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.3ece3c3fc50fa88bbfdfbfe78426fd43970db789.001.3",
           "title": "Rip Current Statement - Coastal Flagler"
+        }
+      }
+    },
+    "80ea9d6f20b74f9dcfd88aa78674a0a9d3c12132ca6d5f09d87e7b6d33d4d529": {
+      "information_root": "cbp_wait:cbp_wait:230901:2026-11-22:13:38:51",
+      "members": {
+        "beh:69d22ed8a35ad9a0791e2cf840d4": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-22T19:52:03+00:00",
+          "geography_key": "us-border-port:230901",
+          "geography_label": "Progreso",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:69d22ed8a35ad9a0791e2cf840d4",
+          "information_root": "cbp_wait:cbp_wait:230901:2026-11-22:13:38:51",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Lanes Closed",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/22/2026",
+            "reported_local_time": "13:38:51",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Progreso / Progreso International Bridge"
         }
       }
     },

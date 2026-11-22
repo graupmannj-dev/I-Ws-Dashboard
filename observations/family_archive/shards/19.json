@@ -305,6 +305,96 @@
         }
       }
     },
+    "19af583837b857906ef2eb6e706141d9134df3d52a168c5e24571f35f2ed7cfc": {
+      "information_root": "ris_bgp:ris_bgp:AS7303:20261122T13",
+      "members": {
+        "beh:c2d9a60fa12f850a96d99e1fa1e3": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "public_routing_updates_not_country_outage",
+          "collection_mode": "ris_bgp",
+          "direct_measurement": true,
+          "event_at": null,
+          "first_observed_at": "2026-11-22T19:52:03+00:00",
+          "geography_key": "asn:7303",
+          "geography_label": "AS7303",
+          "geography_precision": "routing_target_not_country_incident",
+          "id": "beh:c2d9a60fa12f850a96d99e1fa1e3",
+          "information_root": "ris_bgp:ris_bgp:AS7303:20261122T13",
+          "origin": "behavioral_registry",
+          "provider": "ris_bgp",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "routing_collector_sampled_asn_updates",
+          "source_family": "internet_routing",
+          "source_kind": "sampled_asn_bgp_route_updates_not_network_outage",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "collector_peers_are_not_geo_deduplicated": true,
+            "country_impact_not_established": true,
+            "name": "sampled_6h_bgp_announcements",
+            "registered_network_country_hint": "AR",
+            "returned_sampling_buckets": 6,
+            "source_window_end": "2026-11-22T13:00:00Z",
+            "target_asn": "AS7303",
+            "unit": "announcements",
+            "value": 11396,
+            "window_hours_requested": 6,
+            "withdrawals_unavailable_for_asn": true
+          },
+          "source_scope": "RIPE RIS public route-announcement update samples on six non-Western operated networks; ASNs not country-wide outage detection",
+          "source_updated_at": null,
+          "source_url": "https://stat.ripe.net/data/bgp-update-activity/data.json?resource=AS7303&num_hours=6&max_samples=24&hide_empty_samples=false",
+          "title": "RIPE RIS sampled BGP announcements: AS7303"
+        }
+      }
+    },
+    "19c76f0e0ddf77090fa79a8639f077535e67c81ef7f2e5f8943dd2532fa4b74c": {
+      "information_root": "tw_power:tw_power:20261122T1940Z",
+      "members": {
+        "beh:8fb6dbc5679522af19453e6db498": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_power_snapshot_not_outage_attribution",
+          "collection_mode": "tw_power",
+          "direct_measurement": true,
+          "event_at": null,
+          "first_observed_at": "2026-11-22T19:52:03+00:00",
+          "geography_key": "country:TW",
+          "geography_label": "Taiwan",
+          "geography_precision": "national_not_facility",
+          "id": "beh:8fb6dbc5679522af19453e6db498",
+          "information_root": "tw_power:tw_power:20261122T1940Z",
+          "origin": "behavioral_registry",
+          "provider": "tw_power",
+          "published_at": "2026-11-22T19:40:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "public_national_power_snapshot",
+          "source_family": "grid_load",
+          "source_kind": "national_grid_load_aggregate_not_outage",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "measurement_clock_distinct_from_release_not_verified": true,
+            "name": "nationwide_reported_current_load",
+            "not_grid_frequency_or_outage_attribution": true,
+            "observation_coverage": "single_national_snapshot_not_24h",
+            "reported_utilization_percent": 65.0,
+            "source_published_clock": "2026-11-22T19:40:00Z",
+            "source_value_10k_kilowatts": 2259.7,
+            "unit": "MW",
+            "value": 22597.0
+          },
+          "source_scope": "Taiwan Taipower public nationwide current load snapshot and publisher release clock, not power-station or local outage data",
+          "source_updated_at": null,
+          "source_url": "https://service.taipower.com.tw/data/opendata/apply/file/d006020/001.json",
+          "title": "Taipower nationwide publicly reported current electricity load"
+        }
+      }
+    },
     "19ec34a5f09dc8312b873ce105552e8786b85a342d46f3d49442044b570e9246": {
       "information_root": "niord:bd3a545a-8bee-49ce-a67b-c9169c54c6c0:0:0:0",
       "members": {

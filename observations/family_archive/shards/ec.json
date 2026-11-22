@@ -113,6 +113,39 @@
         }
       }
     },
+    "ec6162654365ee12ea5cddcb37b338d81df966d75a1959017ce882bb18af5399": {
+      "information_root": "nws:9f4930d2332a53ca547b457c",
+      "members": {
+        "beh:0805a5972ce7aeff9fbb693150e9": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "nws",
+          "direct_measurement": false,
+          "event_at": "2026-11-22T15:17:00Z",
+          "first_observed_at": "2026-11-22T15:17:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:0805a5972ce7aeff9fbb693150e9",
+          "information_root": "nws:9f4930d2332a53ca547b457c",
+          "origin": "behavioral_registry",
+          "provider": "nws",
+          "published_at": "2026-11-22T15:17:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "official_weather_alert_context",
+          "source_measurement": null,
+          "source_scope": "Active NWS marine alerts; severity Minor",
+          "source_updated_at": null,
+          "source_url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.3c2f2d4fb53bca09a75aa846d7773ac1ce9ace07.001.1",
+          "title": "Coastal Flood Statement - Monroe Upper Keys; Monroe Middle Keys; Monroe Lower Keys"
+        }
+      }
+    },
     "ec97e498f005b70c057b17e776b48297f7a30f45678c3ed6c95bdc228c32a1ff": {
       "information_root": "ioda:29b08cdcdd6299d11c492ad5",
       "members": {
@@ -219,6 +252,53 @@
           "source_updated_at": null,
           "source_url": "https://data.gov.sg/datasets/d_8f264219109e61fffa87ac64dd5a9a65/view",
           "title": "Singapore MPA 2026-02 Bulk Carrier vessel arrivals (>75 GT)"
+        }
+      }
+    },
+    "ecb52ee2d678c296f22d1ea9c33c241622d45a2c9396d712f42b197b9984a6dd": {
+      "information_root": "cbp_wait:cbp_wait:250201:2026-11-22:11:38:51",
+      "members": {
+        "beh:06b7fb20c22f1f400d35c589b053": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-22T19:52:03+00:00",
+          "geography_key": "us-border-port:250201",
+          "geography_label": "Andrade",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:06b7fb20c22f1f400d35c589b053",
+          "information_root": "cbp_wait:cbp_wait:250201:2026-11-22:11:38:51",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Lanes Closed",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/22/2026",
+            "reported_local_time": "11:38:51",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Andrade"
         }
       }
     },

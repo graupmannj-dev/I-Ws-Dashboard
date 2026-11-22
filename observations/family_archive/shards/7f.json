@@ -107,6 +107,53 @@
         }
       }
     },
+    "7f6b01fad8105645893cd0afeba7709d7a2d07e38f66ab5e3d821a22490ca2ca": {
+      "information_root": "cbp_wait:cbp_wait:230302:2026-11-22:13:38:51",
+      "members": {
+        "beh:5e1d578ecfb6b68d33ccbaae2ad3": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-22T19:52:03+00:00",
+          "geography_key": "us-border-port:230302",
+          "geography_label": "Eagle Pass",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:5e1d578ecfb6b68d33ccbaae2ad3",
+          "information_root": "cbp_wait:cbp_wait:230302:2026-11-22:13:38:51",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "no delay",
+            "lanes_open": 1,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "At 1:00 pm CST",
+            "reported_local_date": "11/22/2026",
+            "reported_local_time": "13:38:51",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 5
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Eagle Pass / Bridge II"
+        }
+      }
+    },
     "7fb1e26474ee87dbe49e7bfb2c07632d4d9d39c059a9aa5aabfdf53f9178002c": {
       "information_root": "niord:64267632-ab29-4c8e-8fd2-6b1f42ee4abd:3:0:0",
       "members": {

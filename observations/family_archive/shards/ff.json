@@ -318,6 +318,81 @@
           "title": "IODA detected connectivity anomaly: country NL"
         }
       }
+    },
+    "fff266251811968df135ed166d3f73063c4adfcc62e5082a0b5e363f0cac2f5f": {
+      "information_root": "wiki_edits:wiki_edits:en:20261122T19",
+      "members": {
+        "beh:2b81ff2955a4bf9dcc5cbed09da4": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "wiki_edits",
+          "direct_measurement": false,
+          "event_at": "2026-11-22T19:49:54Z",
+          "first_observed_at": "2026-11-22T19:49:54+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:2b81ff2955a4bf9dcc5cbed09da4",
+          "information_root": "wiki_edits:wiki_edits:en:20261122T19",
+          "origin": "behavioral_registry",
+          "provider": "wiki_edits",
+          "published_at": "2026-11-22T19:49:54Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "public_encyclopedia_edit_aggregate",
+          "source_family": "public_attention",
+          "source_kind": "bounded_public_edit_count_not_event_verification",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "distinct_articles_in_sample": 469,
+            "maximum_returned_edits": 500,
+            "most_edited_article_counts": [
+              {
+                "count": 4,
+                "title": "2026–27 F.C. Copenhagen season"
+              },
+              {
+                "count": 3,
+                "title": "1982 Rubik's Cube World Championship"
+              },
+              {
+                "count": 3,
+                "title": "Lost in the Supermarket"
+              },
+              {
+                "count": 3,
+                "title": "Michael Kassan"
+              },
+              {
+                "count": 3,
+                "title": "White House Deputy Chief of Staff"
+              },
+              {
+                "count": 2,
+                "title": "1895 Liberian general election"
+              },
+              {
+                "count": 2,
+                "title": "1897 Liberian general election"
+              },
+              {
+                "count": 2,
+                "title": "1899 Liberian general election"
+              }
+            ],
+            "name": "sampled_edits_last_three_hours",
+            "sample_cap_reached": true,
+            "unit": "edits",
+            "value": 500
+          },
+          "source_scope": "Wikipedia main-namespace edit-count sample, 14 global language editions, three-hour window capped at 500 per wiki; not geographic location",
+          "source_updated_at": null,
+          "source_url": "https://en.wikipedia.org/wiki/Special:RecentChanges",
+          "title": "Wikipedia en public article-edit activity (sampled)"
+        }
+      }
     }
   },
   "schema": "aiba.family-archive.v1"

@@ -116,6 +116,46 @@
         }
       }
     },
+    "8e883c4a9384847606b661647146cc506473e58124d877ad3302ea14e8799e92": {
+      "information_root": "coops:8638610:20261122T1942Z",
+      "members": {
+        "beh:32aabd21529d7a5df549ba768765": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "coops",
+          "direct_measurement": true,
+          "event_at": "2026-11-22T19:42:00Z",
+          "first_observed_at": "2026-11-22T19:42:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:32aabd21529d7a5df549ba768765",
+          "information_root": "coops:8638610:20261122T1942Z",
+          "origin": "behavioral_registry",
+          "provider": "coops",
+          "published_at": "2026-11-22T19:42:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "station_physical_measurement",
+          "source_family": "port_conditions",
+          "source_kind": "selected_port_water_level_measurement",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "metric_comparable_only_same_station_datum_and_sample_window": true,
+            "name": "observed_water_level",
+            "station": "8638610",
+            "unit": "meters_MLLW",
+            "value": 0.406
+          },
+          "source_scope": "NOAA CO-OPS water levels at San Francisco, Key West and Sewells Point; stations only",
+          "source_updated_at": null,
+          "source_url": "https://tidesandcurrents.noaa.gov/waterlevels.html?id=8638610",
+          "title": "Sewells Point, VA observed water level (no anomaly classification)"
+        }
+      }
+    },
     "8e95e2fe3ce4aa54491bd0cab030b738c8b05cebfab695df80f7c874cf4539c1": {
       "information_root": "niord:778ec0b5-4df7-481b-a2fb-06f435b7fc00:0:5:0",
       "members": {
@@ -313,6 +353,45 @@
           "source_updated_at": "2026-11-17T00:21:53Z",
           "source_url": "https://niord.dma.dk/#/message/b96fa15e-af58-4caa-b4d7-f118a07114c6",
           "title": "Denmark. Kattegat. EK R 19 MULTEX. Firing exercises. Warning."
+        }
+      }
+    },
+    "8edfe4b67edd5b6ec5195f2967cdc8889873c7471010e6f566b274b55c1439f9": {
+      "information_root": "bmkg_nowcast:bmkg_nowcast:0ff9ff161caaa593941b98018559",
+      "members": {
+        "beh:9a36fa990babd8170882539eeb28": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "bmkg_nowcast",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-22T17:57:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:9a36fa990babd8170882539eeb28",
+          "information_root": "bmkg_nowcast:bmkg_nowcast:0ff9ff161caaa593941b98018559",
+          "origin": "behavioral_registry",
+          "provider": "bmkg_nowcast",
+          "published_at": "2026-11-22T17:57:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Indonesia BMKG",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Indonesia BMKG active provincial nowcast RSS, source-reported only; not global",
+          "source_updated_at": null,
+          "source_url": "https://www.bmkg.go.id/alerts/nowcast/en/CKU20261122003_alert.xml",
+          "title": "Thunderstorm Tonight in Kalimantan Utara"
         }
       }
     },
