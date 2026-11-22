@@ -373,6 +373,39 @@
           "title": "FAA TFR 6/7659 · Orlando, FL, Saturday, November 21, 2026 through Sunday, November 22, 2026 UTC"
         }
       }
+    },
+    "18ec12d0d228cba7066bf32121623d324781ce3b98f9856ab5f805fc86f51424": {
+      "information_root": "ioda:d8a749d297bb1c184096c521",
+      "members": {
+        "beh:07dacd07c569adddd43e748d8c1d": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "measurement_no_attribution",
+          "collection_mode": "ioda",
+          "direct_measurement": true,
+          "event_at": "2026-11-22T21:22:00Z",
+          "first_observed_at": "2026-11-22T22:45:52+00:00",
+          "geography_key": "country:DE",
+          "geography_label": "DE",
+          "geography_precision": "provider_reported_country",
+          "id": "beh:07dacd07c569adddd43e748d8c1d",
+          "information_root": "ioda:d8a749d297bb1c184096c521",
+          "origin": "behavioral_registry",
+          "provider": "ioda",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": null,
+          "source_family": "internet_reachability",
+          "source_kind": "outage_event",
+          "source_measurement": null,
+          "source_scope": null,
+          "source_updated_at": null,
+          "source_url": "https://ioda.inetintel.cc.gatech.edu/",
+          "title": "IODA detected connectivity anomaly: country DE"
+        }
+      }
     }
   },
   "schema": "aiba.family-archive.v1"

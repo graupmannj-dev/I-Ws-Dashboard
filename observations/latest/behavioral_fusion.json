@@ -3,19 +3,19 @@
   "automated_severity_changes": 0,
   "collection_coverage": {
     "amsa": {
-      "age_hours": 2.49,
-      "checked_at": "2026-11-22T17:22:32Z",
+      "age_hours": 0.0,
+      "checked_at": "2026-11-22T22:45:52Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
       "mode": "amsa",
       "provider_status": "collected",
-      "snapshot_at": "2026-11-22T17:22:32Z",
+      "snapshot_at": "2026-11-22T22:45:52Z",
       "source_scope": "AMSA NAVAREA X only",
       "status": "current",
       "truncated_or_partial": false
     },
     "bmkg_nowcast": {
-      "age_hours": 0.04,
+      "age_hours": 2.93,
       "checked_at": "2026-11-22T19:49:54Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -27,7 +27,7 @@
       "truncated_or_partial": true
     },
     "bmkg_quake": {
-      "age_hours": 0.04,
+      "age_hours": 2.93,
       "checked_at": "2026-11-22T19:49:54Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -39,7 +39,7 @@
       "truncated_or_partial": true
     },
     "cbp_wait": {
-      "age_hours": 0.04,
+      "age_hours": 2.93,
       "checked_at": "2026-11-22T19:49:54Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -51,7 +51,7 @@
       "truncated_or_partial": true
     },
     "commercial": {
-      "age_hours": 4.4,
+      "age_hours": 7.3,
       "checked_at": "2026-11-22T15:27:48Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -63,7 +63,7 @@
       "truncated_or_partial": false
     },
     "coops": {
-      "age_hours": 0.04,
+      "age_hours": 2.93,
       "checked_at": "2026-11-22T19:49:54Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -75,7 +75,7 @@
       "truncated_or_partial": true
     },
     "eonet": {
-      "age_hours": 0.04,
+      "age_hours": 2.93,
       "checked_at": "2026-11-22T19:49:54Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -87,7 +87,7 @@
       "truncated_or_partial": true
     },
     "imd_in": {
-      "age_hours": 0.04,
+      "age_hours": 2.93,
       "checked_at": "2026-11-22T19:49:54Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -99,7 +99,7 @@
       "truncated_or_partial": true
     },
     "inmet_br": {
-      "age_hours": 0.04,
+      "age_hours": 2.93,
       "checked_at": "2026-11-22T19:49:54Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -111,54 +111,52 @@
       "truncated_or_partial": true
     },
     "ioda": {
-      "age_hours": 2.49,
-      "checked_at": "2026-11-22T17:22:32Z",
+      "age_hours": 0.0,
+      "checked_at": "2026-11-22T22:45:52Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
       "mode": "ioda",
       "provider_status": "collected",
-      "snapshot_at": "2026-11-22T17:22:32Z",
+      "snapshot_at": "2026-11-22T22:45:52Z",
       "source_scope": "IODA country events (first 100 of first page, 4-hour query)",
       "status": "current",
       "truncated_or_partial": false
     },
     "live_airspace": {
-      "age_hours": 0.38,
+      "age_hours": 3.27,
       "checked_at": "2026-11-22T19:29:29Z",
-      "first_provider_baseline": false,
-      "missingness": "partial_sampling_not_worldwide_exhaustive",
+      "missingness": "not_measured_not_zero",
       "mode": "live_airspace",
       "provider_status": "partial",
       "snapshot_at": "2026-11-22T19:29:29Z",
       "source_scope": "FAA temporary flight restrictions: United States only",
-      "status": "current_partial",
+      "status": "stale_or_unavailable",
       "truncated_or_partial": true
     },
     "live_maritime": {
-      "age_hours": 0.38,
+      "age_hours": 3.27,
       "checked_at": "2026-11-22T19:29:29Z",
-      "first_provider_baseline": false,
-      "missingness": "partial_sampling_not_worldwide_exhaustive",
+      "missingness": "not_measured_not_zero",
       "mode": "live_maritime",
       "provider_status": "partial",
       "snapshot_at": "2026-11-22T19:29:29Z",
       "source_scope": "Danish Maritime Authority Niord notices: regional Baltic/North Sea",
-      "status": "current_partial",
+      "status": "stale_or_unavailable",
       "truncated_or_partial": true
     },
     "nga": {
-      "age_hours": 2.49,
+      "age_hours": 0.0,
       "checked_at": "2026-11-22T17:22:32Z",
       "missingness": "not_measured_not_zero",
       "mode": "nga",
       "provider_status": "unavailable",
-      "snapshot_at": "2026-11-22T17:22:32Z",
+      "snapshot_at": "2026-11-22T22:45:52Z",
       "source_scope": "NGA active broadcast warnings; provider availability varies",
       "status": "stale_or_unavailable",
       "truncated_or_partial": false
     },
     "nws": {
-      "age_hours": 0.04,
+      "age_hours": 2.93,
       "checked_at": "2026-11-22T19:49:54Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -170,7 +168,7 @@
       "truncated_or_partial": true
     },
     "official": {
-      "age_hours": 0.14,
+      "age_hours": 3.04,
       "checked_at": "2026-11-22T19:43:49Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -182,7 +180,7 @@
       "truncated_or_partial": false
     },
     "ons_br": {
-      "age_hours": 0.04,
+      "age_hours": 2.93,
       "checked_at": "2026-11-22T19:49:54Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -194,7 +192,7 @@
       "truncated_or_partial": true
     },
     "ripe": {
-      "age_hours": 0.04,
+      "age_hours": 2.93,
       "checked_at": "2026-11-22T19:49:54Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -206,7 +204,7 @@
       "truncated_or_partial": false
     },
     "ris_bgp": {
-      "age_hours": 0.04,
+      "age_hours": 2.93,
       "checked_at": "2026-11-22T19:49:54Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -218,7 +216,7 @@
       "truncated_or_partial": true
     },
     "saws_za": {
-      "age_hours": 0.04,
+      "age_hours": 2.93,
       "checked_at": "2026-11-22T19:49:54Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -230,7 +228,7 @@
       "truncated_or_partial": true
     },
     "sg_mpa": {
-      "age_hours": 0.04,
+      "age_hours": 2.93,
       "checked_at": "2026-11-22T19:49:54Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -242,7 +240,7 @@
       "truncated_or_partial": true
     },
     "swpc": {
-      "age_hours": 0.04,
+      "age_hours": 2.93,
       "checked_at": "2026-11-22T19:49:54Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -254,7 +252,7 @@
       "truncated_or_partial": false
     },
     "tw_power": {
-      "age_hours": 0.04,
+      "age_hours": 2.93,
       "checked_at": "2026-11-22T19:49:54Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -266,7 +264,7 @@
       "truncated_or_partial": true
     },
     "uk_tenders": {
-      "age_hours": 0.04,
+      "age_hours": 2.93,
       "checked_at": "2026-11-22T19:49:54Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -278,7 +276,7 @@
       "truncated_or_partial": true
     },
     "usace": {
-      "age_hours": 0.04,
+      "age_hours": 2.93,
       "checked_at": "2026-11-22T19:49:54Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -290,7 +288,7 @@
       "truncated_or_partial": true
     },
     "usgs": {
-      "age_hours": 0.04,
+      "age_hours": 2.93,
       "checked_at": "2026-11-22T19:49:54Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -302,7 +300,7 @@
       "truncated_or_partial": false
     },
     "watchlist": {
-      "age_hours": 0.14,
+      "age_hours": 3.04,
       "checked_at": "2026-11-22T19:43:50Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -314,7 +312,7 @@
       "truncated_or_partial": false
     },
     "wiki_edits": {
-      "age_hours": 0.04,
+      "age_hours": 2.93,
       "checked_at": "2026-11-22T19:49:54Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -329,20 +327,20 @@
   "discovery_visibility": {
     "exact_geography_match_required_for_cross_family": true,
     "latest_initial_baseline": false,
-    "latest_registry_newly_observed_count": 142,
-    "latest_registry_record_count": 744,
-    "latest_unlocated_record_count": 495,
+    "latest_registry_newly_observed_count": 38,
+    "latest_registry_record_count": 642,
+    "latest_unlocated_record_count": 417,
     "new_or_collocated_not_same_as_verified_threat": true,
     "new_this_collection_required_for_cross_family_nomination": true,
     "recent_observations_sampled": 24,
     "recent_source_families": {
       "airspace_restriction": 10,
       "commercial_media": 9,
-      "internet_reachability": 105,
+      "internet_reachability": 140,
       "maritime_restriction": 215,
       "protective_notice": 1
     },
-    "recent_unique_record_count_72h": 340,
+    "recent_unique_record_count_72h": 375,
     "recent_unlocated_count_72h": 185,
     "schema": "aiba.behavioral-discovery-visibility.v1",
     "shared_exact_geography_keys_across_behavior_families": 0,
@@ -350,7 +348,7 @@
   },
   "forecast_probability": null,
   "gdelt_context": "separate_analytical_stream_not_a_gate_or_confirmation",
-  "generated_at": "2026-11-22T19:52:03Z",
+  "generated_at": "2026-11-22T22:45:58Z",
   "geographic_scope": "source_declared_only",
   "history_diagnostics": {
     "excluded_observations": {
@@ -358,9 +356,9 @@
       "published_after_first_observed": 18,
       "unsupported_family": 731
     },
-    "history_files_examined": 38,
+    "history_files_examined": 37,
     "lookback_hours": 72,
-    "recent_unique_records": 340
+    "recent_unique_records": 375
   },
   "limit_notes": [
     "No automated threat warning. These are unreviewed investigatory leads.",
@@ -369,52 +367,1006 @@
     "Unlocated records cannot produce automatic geographic convergence.",
     "Unavailable collection is not evidence of no threatening activity."
   ],
-  "new_single_source_count_total": 1,
+  "new_single_source_count_total": 38,
   "new_single_source_leads": [
     {
-      "evidence_class": "aggregated_public_network_measurement",
-      "first_observed_at": "2026-11-22T19:52:03Z",
+      "evidence_class": "network_measurement",
+      "first_observed_at": "2026-11-22T22:45:52Z",
       "geography": {
-        "key": "ripe-msm:1001",
-        "kind": "global_public_probe_cohort",
-        "label": "K-root public ping aggregate",
+        "key": "country:DE",
+        "kind": "country_code",
+        "label": "DE",
         "latitude": null,
         "longitude": null,
-        "precision": "not_country_or_incident_location",
+        "precision": "provider_reported_country",
         "verified_iso": false
       },
-      "information_root": "ripe:measurement:1001:20261122T19",
+      "information_root": "ioda:d8a749d297bb1c184096c521",
       "meaning": "Observation novelty, not evidence of impending violence.",
-      "observation_id": "beh:5f319ef0a65a8057caabef2eb119",
+      "observation_id": "beh:07dacd07c569adddd43e748d8c1d",
       "requires_geolocation": false,
       "source_family": "internet_reachability",
       "source_published_at": null,
-      "source_url": "https://atlas.ripe.net/measurements/1001/",
+      "source_url": "https://ioda.inetintel.cc.gatech.edu/",
       "status": "single_source_unreviewed",
-      "title": "RIPE Atlas K-root public probe aggregate (13065 usable measurements)"
+      "title": "IODA detected connectivity anomaly: country DE"
+    },
+    {
+      "evidence_class": "network_measurement",
+      "first_observed_at": "2026-11-22T22:45:52Z",
+      "geography": {
+        "key": "country:CI",
+        "kind": "country_code",
+        "label": "CI",
+        "latitude": null,
+        "longitude": null,
+        "precision": "provider_reported_country",
+        "verified_iso": false
+      },
+      "information_root": "ioda:224a39e006c9aae16ac28bd7",
+      "meaning": "Observation novelty, not evidence of impending violence.",
+      "observation_id": "beh:0dda47e748976d99ae75bbf8f1f7",
+      "requires_geolocation": false,
+      "source_family": "internet_reachability",
+      "source_published_at": null,
+      "source_url": "https://ioda.inetintel.cc.gatech.edu/",
+      "status": "single_source_unreviewed",
+      "title": "IODA detected connectivity anomaly: country CI"
+    },
+    {
+      "evidence_class": "network_measurement",
+      "first_observed_at": "2026-11-22T22:45:52Z",
+      "geography": {
+        "key": "country:PH",
+        "kind": "country_code",
+        "label": "PH",
+        "latitude": null,
+        "longitude": null,
+        "precision": "provider_reported_country",
+        "verified_iso": false
+      },
+      "information_root": "ioda:094d520c024a4ec4a6ee1c77",
+      "meaning": "Observation novelty, not evidence of impending violence.",
+      "observation_id": "beh:0e7d7a22a17cb09055c33c788074",
+      "requires_geolocation": false,
+      "source_family": "internet_reachability",
+      "source_published_at": null,
+      "source_url": "https://ioda.inetintel.cc.gatech.edu/",
+      "status": "single_source_unreviewed",
+      "title": "IODA detected connectivity anomaly: country PH"
+    },
+    {
+      "evidence_class": "network_measurement",
+      "first_observed_at": "2026-11-22T22:45:52Z",
+      "geography": {
+        "key": "country:BY",
+        "kind": "country_code",
+        "label": "BY",
+        "latitude": null,
+        "longitude": null,
+        "precision": "provider_reported_country",
+        "verified_iso": false
+      },
+      "information_root": "ioda:8a93339768d51bcd9f6d3fd4",
+      "meaning": "Observation novelty, not evidence of impending violence.",
+      "observation_id": "beh:1735aeac856d5eb71609569d773b",
+      "requires_geolocation": false,
+      "source_family": "internet_reachability",
+      "source_published_at": null,
+      "source_url": "https://ioda.inetintel.cc.gatech.edu/",
+      "status": "single_source_unreviewed",
+      "title": "IODA detected connectivity anomaly: country BY"
+    },
+    {
+      "evidence_class": "network_measurement",
+      "first_observed_at": "2026-11-22T22:45:52Z",
+      "geography": {
+        "key": "country:GE",
+        "kind": "country_code",
+        "label": "GE",
+        "latitude": null,
+        "longitude": null,
+        "precision": "provider_reported_country",
+        "verified_iso": false
+      },
+      "information_root": "ioda:bca4db85210e83473b58f6ab",
+      "meaning": "Observation novelty, not evidence of impending violence.",
+      "observation_id": "beh:17aca3ad7ea8230fc7e46cd9b924",
+      "requires_geolocation": false,
+      "source_family": "internet_reachability",
+      "source_published_at": null,
+      "source_url": "https://ioda.inetintel.cc.gatech.edu/",
+      "status": "single_source_unreviewed",
+      "title": "IODA detected connectivity anomaly: country GE"
+    },
+    {
+      "evidence_class": "network_measurement",
+      "first_observed_at": "2026-11-22T22:45:52Z",
+      "geography": {
+        "key": "country:AE",
+        "kind": "country_code",
+        "label": "AE",
+        "latitude": null,
+        "longitude": null,
+        "precision": "provider_reported_country",
+        "verified_iso": false
+      },
+      "information_root": "ioda:46a08c507d195773b1779f55",
+      "meaning": "Observation novelty, not evidence of impending violence.",
+      "observation_id": "beh:17eea9d037abc091e135806095b2",
+      "requires_geolocation": false,
+      "source_family": "internet_reachability",
+      "source_published_at": null,
+      "source_url": "https://ioda.inetintel.cc.gatech.edu/",
+      "status": "single_source_unreviewed",
+      "title": "IODA detected connectivity anomaly: country AE"
+    },
+    {
+      "evidence_class": "network_measurement",
+      "first_observed_at": "2026-11-22T22:45:52Z",
+      "geography": {
+        "key": "country:IQ",
+        "kind": "country_code",
+        "label": "IQ",
+        "latitude": null,
+        "longitude": null,
+        "precision": "provider_reported_country",
+        "verified_iso": false
+      },
+      "information_root": "ioda:51f2c50130b5bd21509245f1",
+      "meaning": "Observation novelty, not evidence of impending violence.",
+      "observation_id": "beh:4f28f868711a76d9757bdcd3ce95",
+      "requires_geolocation": false,
+      "source_family": "internet_reachability",
+      "source_published_at": null,
+      "source_url": "https://ioda.inetintel.cc.gatech.edu/",
+      "status": "single_source_unreviewed",
+      "title": "IODA detected connectivity anomaly: country IQ"
+    },
+    {
+      "evidence_class": "network_measurement",
+      "first_observed_at": "2026-11-22T22:45:52Z",
+      "geography": {
+        "key": "country:TR",
+        "kind": "country_code",
+        "label": "TR",
+        "latitude": null,
+        "longitude": null,
+        "precision": "provider_reported_country",
+        "verified_iso": false
+      },
+      "information_root": "ioda:44b89e2ea2ddc341de21c2b1",
+      "meaning": "Observation novelty, not evidence of impending violence.",
+      "observation_id": "beh:5226b9ab46e1265aa25b2dca02ff",
+      "requires_geolocation": false,
+      "source_family": "internet_reachability",
+      "source_published_at": null,
+      "source_url": "https://ioda.inetintel.cc.gatech.edu/",
+      "status": "single_source_unreviewed",
+      "title": "IODA detected connectivity anomaly: country TR"
+    },
+    {
+      "evidence_class": "network_measurement",
+      "first_observed_at": "2026-11-22T22:45:52Z",
+      "geography": {
+        "key": "country:CI",
+        "kind": "country_code",
+        "label": "CI",
+        "latitude": null,
+        "longitude": null,
+        "precision": "provider_reported_country",
+        "verified_iso": false
+      },
+      "information_root": "ioda:24104be20c5ef03dd9e252cb",
+      "meaning": "Observation novelty, not evidence of impending violence.",
+      "observation_id": "beh:5961ddf9edbf6756c3bfaf8a630a",
+      "requires_geolocation": false,
+      "source_family": "internet_reachability",
+      "source_published_at": null,
+      "source_url": "https://ioda.inetintel.cc.gatech.edu/",
+      "status": "single_source_unreviewed",
+      "title": "IODA detected connectivity anomaly: country CI"
+    },
+    {
+      "evidence_class": "network_measurement",
+      "first_observed_at": "2026-11-22T22:45:52Z",
+      "geography": {
+        "key": "country:AE",
+        "kind": "country_code",
+        "label": "AE",
+        "latitude": null,
+        "longitude": null,
+        "precision": "provider_reported_country",
+        "verified_iso": false
+      },
+      "information_root": "ioda:fee28769d960b37402a628c5",
+      "meaning": "Observation novelty, not evidence of impending violence.",
+      "observation_id": "beh:5c8fc415e2cd659268a52bbf3ba5",
+      "requires_geolocation": false,
+      "source_family": "internet_reachability",
+      "source_published_at": null,
+      "source_url": "https://ioda.inetintel.cc.gatech.edu/",
+      "status": "single_source_unreviewed",
+      "title": "IODA detected connectivity anomaly: country AE"
+    },
+    {
+      "evidence_class": "network_measurement",
+      "first_observed_at": "2026-11-22T22:45:52Z",
+      "geography": {
+        "key": "country:BY",
+        "kind": "country_code",
+        "label": "BY",
+        "latitude": null,
+        "longitude": null,
+        "precision": "provider_reported_country",
+        "verified_iso": false
+      },
+      "information_root": "ioda:1a1b790511eeb342266b39e2",
+      "meaning": "Observation novelty, not evidence of impending violence.",
+      "observation_id": "beh:5d7484e0d7592e2035c0db88ef6b",
+      "requires_geolocation": false,
+      "source_family": "internet_reachability",
+      "source_published_at": null,
+      "source_url": "https://ioda.inetintel.cc.gatech.edu/",
+      "status": "single_source_unreviewed",
+      "title": "IODA detected connectivity anomaly: country BY"
+    },
+    {
+      "evidence_class": "network_measurement",
+      "first_observed_at": "2026-11-22T22:45:52Z",
+      "geography": {
+        "key": "country:TR",
+        "kind": "country_code",
+        "label": "TR",
+        "latitude": null,
+        "longitude": null,
+        "precision": "provider_reported_country",
+        "verified_iso": false
+      },
+      "information_root": "ioda:04d29282faac1875f786aec8",
+      "meaning": "Observation novelty, not evidence of impending violence.",
+      "observation_id": "beh:631c2a677c9dc8a12e715322e3db",
+      "requires_geolocation": false,
+      "source_family": "internet_reachability",
+      "source_published_at": null,
+      "source_url": "https://ioda.inetintel.cc.gatech.edu/",
+      "status": "single_source_unreviewed",
+      "title": "IODA detected connectivity anomaly: country TR"
+    },
+    {
+      "evidence_class": "network_measurement",
+      "first_observed_at": "2026-11-22T22:45:52Z",
+      "geography": {
+        "key": "country:TR",
+        "kind": "country_code",
+        "label": "TR",
+        "latitude": null,
+        "longitude": null,
+        "precision": "provider_reported_country",
+        "verified_iso": false
+      },
+      "information_root": "ioda:924881c810c251ca3a25a21e",
+      "meaning": "Observation novelty, not evidence of impending violence.",
+      "observation_id": "beh:63da52f4c2dac8af22d93f6beb38",
+      "requires_geolocation": false,
+      "source_family": "internet_reachability",
+      "source_published_at": null,
+      "source_url": "https://ioda.inetintel.cc.gatech.edu/",
+      "status": "single_source_unreviewed",
+      "title": "IODA detected connectivity anomaly: country TR"
+    },
+    {
+      "evidence_class": "network_measurement",
+      "first_observed_at": "2026-11-22T22:45:52Z",
+      "geography": {
+        "key": "country:UZ",
+        "kind": "country_code",
+        "label": "UZ",
+        "latitude": null,
+        "longitude": null,
+        "precision": "provider_reported_country",
+        "verified_iso": false
+      },
+      "information_root": "ioda:1da591a0d423e655b901db44",
+      "meaning": "Observation novelty, not evidence of impending violence.",
+      "observation_id": "beh:6461e3ccdb40ad41dbcdfe01eb9d",
+      "requires_geolocation": false,
+      "source_family": "internet_reachability",
+      "source_published_at": null,
+      "source_url": "https://ioda.inetintel.cc.gatech.edu/",
+      "status": "single_source_unreviewed",
+      "title": "IODA detected connectivity anomaly: country UZ"
+    },
+    {
+      "evidence_class": "network_measurement",
+      "first_observed_at": "2026-11-22T22:45:52Z",
+      "geography": {
+        "key": "country:TR",
+        "kind": "country_code",
+        "label": "TR",
+        "latitude": null,
+        "longitude": null,
+        "precision": "provider_reported_country",
+        "verified_iso": false
+      },
+      "information_root": "ioda:6815578e431413e33266ca06",
+      "meaning": "Observation novelty, not evidence of impending violence.",
+      "observation_id": "beh:65aa164f2b4a8d0679d9b3246e4b",
+      "requires_geolocation": false,
+      "source_family": "internet_reachability",
+      "source_published_at": null,
+      "source_url": "https://ioda.inetintel.cc.gatech.edu/",
+      "status": "single_source_unreviewed",
+      "title": "IODA detected connectivity anomaly: country TR"
+    },
+    {
+      "evidence_class": "network_measurement",
+      "first_observed_at": "2026-11-22T22:45:52Z",
+      "geography": {
+        "key": "country:GE",
+        "kind": "country_code",
+        "label": "GE",
+        "latitude": null,
+        "longitude": null,
+        "precision": "provider_reported_country",
+        "verified_iso": false
+      },
+      "information_root": "ioda:bd093cb86d9176f5368eddc1",
+      "meaning": "Observation novelty, not evidence of impending violence.",
+      "observation_id": "beh:7a59acd7bdaa4f3bf6e4a7878366",
+      "requires_geolocation": false,
+      "source_family": "internet_reachability",
+      "source_published_at": null,
+      "source_url": "https://ioda.inetintel.cc.gatech.edu/",
+      "status": "single_source_unreviewed",
+      "title": "IODA detected connectivity anomaly: country GE"
+    },
+    {
+      "evidence_class": "network_measurement",
+      "first_observed_at": "2026-11-22T22:45:52Z",
+      "geography": {
+        "key": "country:AE",
+        "kind": "country_code",
+        "label": "AE",
+        "latitude": null,
+        "longitude": null,
+        "precision": "provider_reported_country",
+        "verified_iso": false
+      },
+      "information_root": "ioda:7eea8b4aa590b32d379d34d0",
+      "meaning": "Observation novelty, not evidence of impending violence.",
+      "observation_id": "beh:80283cf08682eb501d08fa964d2c",
+      "requires_geolocation": false,
+      "source_family": "internet_reachability",
+      "source_published_at": null,
+      "source_url": "https://ioda.inetintel.cc.gatech.edu/",
+      "status": "single_source_unreviewed",
+      "title": "IODA detected connectivity anomaly: country AE"
+    },
+    {
+      "evidence_class": "network_measurement",
+      "first_observed_at": "2026-11-22T22:45:52Z",
+      "geography": {
+        "key": "country:GE",
+        "kind": "country_code",
+        "label": "GE",
+        "latitude": null,
+        "longitude": null,
+        "precision": "provider_reported_country",
+        "verified_iso": false
+      },
+      "information_root": "ioda:51e07b2f97a3c231be5cfacf",
+      "meaning": "Observation novelty, not evidence of impending violence.",
+      "observation_id": "beh:8a32095a7af46e0b0a6740a2fc4c",
+      "requires_geolocation": false,
+      "source_family": "internet_reachability",
+      "source_published_at": null,
+      "source_url": "https://ioda.inetintel.cc.gatech.edu/",
+      "status": "single_source_unreviewed",
+      "title": "IODA detected connectivity anomaly: country GE"
+    },
+    {
+      "evidence_class": "network_measurement",
+      "first_observed_at": "2026-11-22T22:45:52Z",
+      "geography": {
+        "key": "country:GE",
+        "kind": "country_code",
+        "label": "GE",
+        "latitude": null,
+        "longitude": null,
+        "precision": "provider_reported_country",
+        "verified_iso": false
+      },
+      "information_root": "ioda:9346b97f34e3b603613d58e1",
+      "meaning": "Observation novelty, not evidence of impending violence.",
+      "observation_id": "beh:93a336b8ed9290661e9494a3b392",
+      "requires_geolocation": false,
+      "source_family": "internet_reachability",
+      "source_published_at": null,
+      "source_url": "https://ioda.inetintel.cc.gatech.edu/",
+      "status": "single_source_unreviewed",
+      "title": "IODA detected connectivity anomaly: country GE"
+    },
+    {
+      "evidence_class": "network_measurement",
+      "first_observed_at": "2026-11-22T22:45:52Z",
+      "geography": {
+        "key": "country:BY",
+        "kind": "country_code",
+        "label": "BY",
+        "latitude": null,
+        "longitude": null,
+        "precision": "provider_reported_country",
+        "verified_iso": false
+      },
+      "information_root": "ioda:c4da1f87870ec2719dac2f72",
+      "meaning": "Observation novelty, not evidence of impending violence.",
+      "observation_id": "beh:93d5f1c685c6adc1491837bda89a",
+      "requires_geolocation": false,
+      "source_family": "internet_reachability",
+      "source_published_at": null,
+      "source_url": "https://ioda.inetintel.cc.gatech.edu/",
+      "status": "single_source_unreviewed",
+      "title": "IODA detected connectivity anomaly: country BY"
+    },
+    {
+      "evidence_class": "network_measurement",
+      "first_observed_at": "2026-11-22T22:45:52Z",
+      "geography": {
+        "key": "country:BN",
+        "kind": "country_code",
+        "label": "BN",
+        "latitude": null,
+        "longitude": null,
+        "precision": "provider_reported_country",
+        "verified_iso": false
+      },
+      "information_root": "ioda:012aa7c26b83d35c857d19c2",
+      "meaning": "Observation novelty, not evidence of impending violence.",
+      "observation_id": "beh:944ee29ceb284fad8ceadd343bc5",
+      "requires_geolocation": false,
+      "source_family": "internet_reachability",
+      "source_published_at": null,
+      "source_url": "https://ioda.inetintel.cc.gatech.edu/",
+      "status": "single_source_unreviewed",
+      "title": "IODA detected connectivity anomaly: country BN"
+    },
+    {
+      "evidence_class": "network_measurement",
+      "first_observed_at": "2026-11-22T22:45:52Z",
+      "geography": {
+        "key": "country:CI",
+        "kind": "country_code",
+        "label": "CI",
+        "latitude": null,
+        "longitude": null,
+        "precision": "provider_reported_country",
+        "verified_iso": false
+      },
+      "information_root": "ioda:3d20dfd68762aaa02baa2fb0",
+      "meaning": "Observation novelty, not evidence of impending violence.",
+      "observation_id": "beh:9b2d0cf0c8e6bb5e8ebba1dc89e3",
+      "requires_geolocation": false,
+      "source_family": "internet_reachability",
+      "source_published_at": null,
+      "source_url": "https://ioda.inetintel.cc.gatech.edu/",
+      "status": "single_source_unreviewed",
+      "title": "IODA detected connectivity anomaly: country CI"
+    },
+    {
+      "evidence_class": "network_measurement",
+      "first_observed_at": "2026-11-22T22:45:52Z",
+      "geography": {
+        "key": "country:GE",
+        "kind": "country_code",
+        "label": "GE",
+        "latitude": null,
+        "longitude": null,
+        "precision": "provider_reported_country",
+        "verified_iso": false
+      },
+      "information_root": "ioda:dc5fe499e0a6c1d7202e4717",
+      "meaning": "Observation novelty, not evidence of impending violence.",
+      "observation_id": "beh:a40be4f5009b62732dc09765cd7d",
+      "requires_geolocation": false,
+      "source_family": "internet_reachability",
+      "source_published_at": null,
+      "source_url": "https://ioda.inetintel.cc.gatech.edu/",
+      "status": "single_source_unreviewed",
+      "title": "IODA detected connectivity anomaly: country GE"
+    },
+    {
+      "evidence_class": "network_measurement",
+      "first_observed_at": "2026-11-22T22:45:52Z",
+      "geography": {
+        "key": "country:AE",
+        "kind": "country_code",
+        "label": "AE",
+        "latitude": null,
+        "longitude": null,
+        "precision": "provider_reported_country",
+        "verified_iso": false
+      },
+      "information_root": "ioda:4cf4d9471ef2b0a97e2cb461",
+      "meaning": "Observation novelty, not evidence of impending violence.",
+      "observation_id": "beh:a9a34e4d2a27e1da99322c2a6f89",
+      "requires_geolocation": false,
+      "source_family": "internet_reachability",
+      "source_published_at": null,
+      "source_url": "https://ioda.inetintel.cc.gatech.edu/",
+      "status": "single_source_unreviewed",
+      "title": "IODA detected connectivity anomaly: country AE"
+    },
+    {
+      "evidence_class": "network_measurement",
+      "first_observed_at": "2026-11-22T22:45:52Z",
+      "geography": {
+        "key": "country:AZ",
+        "kind": "country_code",
+        "label": "AZ",
+        "latitude": null,
+        "longitude": null,
+        "precision": "provider_reported_country",
+        "verified_iso": false
+      },
+      "information_root": "ioda:0c676b00a46e6f6a5b81fe86",
+      "meaning": "Observation novelty, not evidence of impending violence.",
+      "observation_id": "beh:b057b6b53ee4fb2397a52f06d7af",
+      "requires_geolocation": false,
+      "source_family": "internet_reachability",
+      "source_published_at": null,
+      "source_url": "https://ioda.inetintel.cc.gatech.edu/",
+      "status": "single_source_unreviewed",
+      "title": "IODA detected connectivity anomaly: country AZ"
+    },
+    {
+      "evidence_class": "network_measurement",
+      "first_observed_at": "2026-11-22T22:45:52Z",
+      "geography": {
+        "key": "country:BY",
+        "kind": "country_code",
+        "label": "BY",
+        "latitude": null,
+        "longitude": null,
+        "precision": "provider_reported_country",
+        "verified_iso": false
+      },
+      "information_root": "ioda:4204629c41324e17d4e92d08",
+      "meaning": "Observation novelty, not evidence of impending violence.",
+      "observation_id": "beh:b3d5e7d909e2a932ec819f9d602d",
+      "requires_geolocation": false,
+      "source_family": "internet_reachability",
+      "source_published_at": null,
+      "source_url": "https://ioda.inetintel.cc.gatech.edu/",
+      "status": "single_source_unreviewed",
+      "title": "IODA detected connectivity anomaly: country BY"
+    },
+    {
+      "evidence_class": "network_measurement",
+      "first_observed_at": "2026-11-22T22:45:52Z",
+      "geography": {
+        "key": "country:BY",
+        "kind": "country_code",
+        "label": "BY",
+        "latitude": null,
+        "longitude": null,
+        "precision": "provider_reported_country",
+        "verified_iso": false
+      },
+      "information_root": "ioda:1121a973d2662fd6ee0c64b7",
+      "meaning": "Observation novelty, not evidence of impending violence.",
+      "observation_id": "beh:b6446d1b95c1d568edbe087ea2eb",
+      "requires_geolocation": false,
+      "source_family": "internet_reachability",
+      "source_published_at": null,
+      "source_url": "https://ioda.inetintel.cc.gatech.edu/",
+      "status": "single_source_unreviewed",
+      "title": "IODA detected connectivity anomaly: country BY"
+    },
+    {
+      "evidence_class": "network_measurement",
+      "first_observed_at": "2026-11-22T22:45:52Z",
+      "geography": {
+        "key": "country:NG",
+        "kind": "country_code",
+        "label": "NG",
+        "latitude": null,
+        "longitude": null,
+        "precision": "provider_reported_country",
+        "verified_iso": false
+      },
+      "information_root": "ioda:142b9d57a5d6363d35336a9c",
+      "meaning": "Observation novelty, not evidence of impending violence.",
+      "observation_id": "beh:b7d83bc54bad825a6ddddaa44423",
+      "requires_geolocation": false,
+      "source_family": "internet_reachability",
+      "source_published_at": null,
+      "source_url": "https://ioda.inetintel.cc.gatech.edu/",
+      "status": "single_source_unreviewed",
+      "title": "IODA detected connectivity anomaly: country NG"
+    },
+    {
+      "evidence_class": "network_measurement",
+      "first_observed_at": "2026-11-22T22:45:52Z",
+      "geography": {
+        "key": "country:BY",
+        "kind": "country_code",
+        "label": "BY",
+        "latitude": null,
+        "longitude": null,
+        "precision": "provider_reported_country",
+        "verified_iso": false
+      },
+      "information_root": "ioda:835cb4c5d4de9cc91b81ce94",
+      "meaning": "Observation novelty, not evidence of impending violence.",
+      "observation_id": "beh:bc383b59a36df94f9ef745b561b7",
+      "requires_geolocation": false,
+      "source_family": "internet_reachability",
+      "source_published_at": null,
+      "source_url": "https://ioda.inetintel.cc.gatech.edu/",
+      "status": "single_source_unreviewed",
+      "title": "IODA detected connectivity anomaly: country BY"
+    },
+    {
+      "evidence_class": "network_measurement",
+      "first_observed_at": "2026-11-22T22:45:52Z",
+      "geography": {
+        "key": "country:CI",
+        "kind": "country_code",
+        "label": "CI",
+        "latitude": null,
+        "longitude": null,
+        "precision": "provider_reported_country",
+        "verified_iso": false
+      },
+      "information_root": "ioda:9c9cafb250e3d4e8b492733c",
+      "meaning": "Observation novelty, not evidence of impending violence.",
+      "observation_id": "beh:c7949b5ba552f52bab7c81ecd9b1",
+      "requires_geolocation": false,
+      "source_family": "internet_reachability",
+      "source_published_at": null,
+      "source_url": "https://ioda.inetintel.cc.gatech.edu/",
+      "status": "single_source_unreviewed",
+      "title": "IODA detected connectivity anomaly: country CI"
+    },
+    {
+      "evidence_class": "network_measurement",
+      "first_observed_at": "2026-11-22T22:45:52Z",
+      "geography": {
+        "key": "country:BY",
+        "kind": "country_code",
+        "label": "BY",
+        "latitude": null,
+        "longitude": null,
+        "precision": "provider_reported_country",
+        "verified_iso": false
+      },
+      "information_root": "ioda:be4d01a6978505634c5fb57e",
+      "meaning": "Observation novelty, not evidence of impending violence.",
+      "observation_id": "beh:d11727419e149db4a6446831800e",
+      "requires_geolocation": false,
+      "source_family": "internet_reachability",
+      "source_published_at": null,
+      "source_url": "https://ioda.inetintel.cc.gatech.edu/",
+      "status": "single_source_unreviewed",
+      "title": "IODA detected connectivity anomaly: country BY"
+    },
+    {
+      "evidence_class": "network_measurement",
+      "first_observed_at": "2026-11-22T22:45:52Z",
+      "geography": {
+        "key": "country:NF",
+        "kind": "country_code",
+        "label": "NF",
+        "latitude": null,
+        "longitude": null,
+        "precision": "provider_reported_country",
+        "verified_iso": false
+      },
+      "information_root": "ioda:95c2ae191bbbf859c713f655",
+      "meaning": "Observation novelty, not evidence of impending violence.",
+      "observation_id": "beh:d42aa61cf3f0dd23e69bc7029d1e",
+      "requires_geolocation": false,
+      "source_family": "internet_reachability",
+      "source_published_at": null,
+      "source_url": "https://ioda.inetintel.cc.gatech.edu/",
+      "status": "single_source_unreviewed",
+      "title": "IODA detected connectivity anomaly: country NF"
+    },
+    {
+      "evidence_class": "network_measurement",
+      "first_observed_at": "2026-11-22T22:45:52Z",
+      "geography": {
+        "key": "country:CI",
+        "kind": "country_code",
+        "label": "CI",
+        "latitude": null,
+        "longitude": null,
+        "precision": "provider_reported_country",
+        "verified_iso": false
+      },
+      "information_root": "ioda:ee556f6760c92bf28f8093a3",
+      "meaning": "Observation novelty, not evidence of impending violence.",
+      "observation_id": "beh:d5bfb0c6f6c4fbc1e3333bd5acfe",
+      "requires_geolocation": false,
+      "source_family": "internet_reachability",
+      "source_published_at": null,
+      "source_url": "https://ioda.inetintel.cc.gatech.edu/",
+      "status": "single_source_unreviewed",
+      "title": "IODA detected connectivity anomaly: country CI"
+    },
+    {
+      "evidence_class": "network_measurement",
+      "first_observed_at": "2026-11-22T22:45:52Z",
+      "geography": {
+        "key": "country:PH",
+        "kind": "country_code",
+        "label": "PH",
+        "latitude": null,
+        "longitude": null,
+        "precision": "provider_reported_country",
+        "verified_iso": false
+      },
+      "information_root": "ioda:9706ce770ee8a8d8ea1dcac2",
+      "meaning": "Observation novelty, not evidence of impending violence.",
+      "observation_id": "beh:e076aaedf2ffb122b3988dc8b188",
+      "requires_geolocation": false,
+      "source_family": "internet_reachability",
+      "source_published_at": null,
+      "source_url": "https://ioda.inetintel.cc.gatech.edu/",
+      "status": "single_source_unreviewed",
+      "title": "IODA detected connectivity anomaly: country PH"
+    },
+    {
+      "evidence_class": "network_measurement",
+      "first_observed_at": "2026-11-22T22:45:52Z",
+      "geography": {
+        "key": "country:BY",
+        "kind": "country_code",
+        "label": "BY",
+        "latitude": null,
+        "longitude": null,
+        "precision": "provider_reported_country",
+        "verified_iso": false
+      },
+      "information_root": "ioda:3895db16858f2308ba6dcd55",
+      "meaning": "Observation novelty, not evidence of impending violence.",
+      "observation_id": "beh:e7b2ddd5757e295d6b1cd39ad18e",
+      "requires_geolocation": false,
+      "source_family": "internet_reachability",
+      "source_published_at": null,
+      "source_url": "https://ioda.inetintel.cc.gatech.edu/",
+      "status": "single_source_unreviewed",
+      "title": "IODA detected connectivity anomaly: country BY"
+    },
+    {
+      "evidence_class": "network_measurement",
+      "first_observed_at": "2026-11-22T22:45:52Z",
+      "geography": {
+        "key": "country:CI",
+        "kind": "country_code",
+        "label": "CI",
+        "latitude": null,
+        "longitude": null,
+        "precision": "provider_reported_country",
+        "verified_iso": false
+      },
+      "information_root": "ioda:48c27a2758e38e6d57334786",
+      "meaning": "Observation novelty, not evidence of impending violence.",
+      "observation_id": "beh:f38e7d556da7dc43dc36edd02b1c",
+      "requires_geolocation": false,
+      "source_family": "internet_reachability",
+      "source_published_at": null,
+      "source_url": "https://ioda.inetintel.cc.gatech.edu/",
+      "status": "single_source_unreviewed",
+      "title": "IODA detected connectivity anomaly: country CI"
+    },
+    {
+      "evidence_class": "network_measurement",
+      "first_observed_at": "2026-11-22T22:45:52Z",
+      "geography": {
+        "key": "country:AE",
+        "kind": "country_code",
+        "label": "AE",
+        "latitude": null,
+        "longitude": null,
+        "precision": "provider_reported_country",
+        "verified_iso": false
+      },
+      "information_root": "ioda:e6b8380a775d61cc32892014",
+      "meaning": "Observation novelty, not evidence of impending violence.",
+      "observation_id": "beh:f5bf979ef6e8a6861299b0bbaa91",
+      "requires_geolocation": false,
+      "source_family": "internet_reachability",
+      "source_published_at": null,
+      "source_url": "https://ioda.inetintel.cc.gatech.edu/",
+      "status": "single_source_unreviewed",
+      "title": "IODA detected connectivity anomaly: country AE"
+    },
+    {
+      "evidence_class": "network_measurement",
+      "first_observed_at": "2026-11-22T22:45:52Z",
+      "geography": {
+        "key": "country:TR",
+        "kind": "country_code",
+        "label": "TR",
+        "latitude": null,
+        "longitude": null,
+        "precision": "provider_reported_country",
+        "verified_iso": false
+      },
+      "information_root": "ioda:3122e760759b8696fead5fd7",
+      "meaning": "Observation novelty, not evidence of impending violence.",
+      "observation_id": "beh:f66c27349a8c0490ee56c7697b47",
+      "requires_geolocation": false,
+      "source_family": "internet_reachability",
+      "source_published_at": null,
+      "source_url": "https://ioda.inetintel.cc.gatech.edu/",
+      "status": "single_source_unreviewed",
+      "title": "IODA detected connectivity anomaly: country TR"
     }
   ],
   "prediction_horizon": null,
   "recent_source_observations": [
     {
-      "first_observed_at": "2026-11-22T19:52:03Z",
+      "first_observed_at": "2026-11-22T22:45:52Z",
       "geography": {
-        "key": "ripe-msm:1001",
-        "kind": "global_public_probe_cohort",
-        "label": "K-root public ping aggregate",
+        "key": "country:TR",
+        "kind": "country_code",
+        "label": "TR",
         "latitude": null,
         "longitude": null,
-        "precision": "not_country_or_incident_location",
+        "precision": "provider_reported_country",
         "verified_iso": false
       },
-      "observation_id": "beh:5f319ef0a65a8057caabef2eb119",
-      "provider": "ripe",
+      "observation_id": "beh:f66c27349a8c0490ee56c7697b47",
+      "provider": "ioda",
       "requires_geolocation": false,
       "source_family": "internet_reachability",
       "source_published_at": null,
-      "source_url": "https://atlas.ripe.net/measurements/1001/",
+      "source_url": "https://ioda.inetintel.cc.gatech.edu/",
       "status": "recent_source_observation_unreviewed",
-      "title": "RIPE Atlas K-root public probe aggregate (13065 usable measurements)"
+      "title": "IODA detected connectivity anomaly: country TR"
+    },
+    {
+      "first_observed_at": "2026-11-22T22:45:52Z",
+      "geography": {
+        "key": "country:AE",
+        "kind": "country_code",
+        "label": "AE",
+        "latitude": null,
+        "longitude": null,
+        "precision": "provider_reported_country",
+        "verified_iso": false
+      },
+      "observation_id": "beh:f5bf979ef6e8a6861299b0bbaa91",
+      "provider": "ioda",
+      "requires_geolocation": false,
+      "source_family": "internet_reachability",
+      "source_published_at": null,
+      "source_url": "https://ioda.inetintel.cc.gatech.edu/",
+      "status": "recent_source_observation_unreviewed",
+      "title": "IODA detected connectivity anomaly: country AE"
+    },
+    {
+      "first_observed_at": "2026-11-22T22:45:52Z",
+      "geography": {
+        "key": "country:CI",
+        "kind": "country_code",
+        "label": "CI",
+        "latitude": null,
+        "longitude": null,
+        "precision": "provider_reported_country",
+        "verified_iso": false
+      },
+      "observation_id": "beh:f38e7d556da7dc43dc36edd02b1c",
+      "provider": "ioda",
+      "requires_geolocation": false,
+      "source_family": "internet_reachability",
+      "source_published_at": null,
+      "source_url": "https://ioda.inetintel.cc.gatech.edu/",
+      "status": "recent_source_observation_unreviewed",
+      "title": "IODA detected connectivity anomaly: country CI"
+    },
+    {
+      "first_observed_at": "2026-11-22T22:45:52Z",
+      "geography": {
+        "key": "country:BY",
+        "kind": "country_code",
+        "label": "BY",
+        "latitude": null,
+        "longitude": null,
+        "precision": "provider_reported_country",
+        "verified_iso": false
+      },
+      "observation_id": "beh:e7b2ddd5757e295d6b1cd39ad18e",
+      "provider": "ioda",
+      "requires_geolocation": false,
+      "source_family": "internet_reachability",
+      "source_published_at": null,
+      "source_url": "https://ioda.inetintel.cc.gatech.edu/",
+      "status": "recent_source_observation_unreviewed",
+      "title": "IODA detected connectivity anomaly: country BY"
+    },
+    {
+      "first_observed_at": "2026-11-22T22:45:52Z",
+      "geography": {
+        "key": "country:PH",
+        "kind": "country_code",
+        "label": "PH",
+        "latitude": null,
+        "longitude": null,
+        "precision": "provider_reported_country",
+        "verified_iso": false
+      },
+      "observation_id": "beh:e076aaedf2ffb122b3988dc8b188",
+      "provider": "ioda",
+      "requires_geolocation": false,
+      "source_family": "internet_reachability",
+      "source_published_at": null,
+      "source_url": "https://ioda.inetintel.cc.gatech.edu/",
+      "status": "recent_source_observation_unreviewed",
+      "title": "IODA detected connectivity anomaly: country PH"
+    },
+    {
+      "first_observed_at": "2026-11-22T22:45:52Z",
+      "geography": {
+        "key": "country:CI",
+        "kind": "country_code",
+        "label": "CI",
+        "latitude": null,
+        "longitude": null,
+        "precision": "provider_reported_country",
+        "verified_iso": false
+      },
+      "observation_id": "beh:d5bfb0c6f6c4fbc1e3333bd5acfe",
+      "provider": "ioda",
+      "requires_geolocation": false,
+      "source_family": "internet_reachability",
+      "source_published_at": null,
+      "source_url": "https://ioda.inetintel.cc.gatech.edu/",
+      "status": "recent_source_observation_unreviewed",
+      "title": "IODA detected connectivity anomaly: country CI"
+    },
+    {
+      "first_observed_at": "2026-11-22T22:45:52Z",
+      "geography": {
+        "key": "country:NF",
+        "kind": "country_code",
+        "label": "NF",
+        "latitude": null,
+        "longitude": null,
+        "precision": "provider_reported_country",
+        "verified_iso": false
+      },
+      "observation_id": "beh:d42aa61cf3f0dd23e69bc7029d1e",
+      "provider": "ioda",
+      "requires_geolocation": false,
+      "source_family": "internet_reachability",
+      "source_published_at": null,
+      "source_url": "https://ioda.inetintel.cc.gatech.edu/",
+      "status": "recent_source_observation_unreviewed",
+      "title": "IODA detected connectivity anomaly: country NF"
+    },
+    {
+      "first_observed_at": "2026-11-22T22:45:52Z",
+      "geography": {
+        "key": "country:BY",
+        "kind": "country_code",
+        "label": "BY",
+        "latitude": null,
+        "longitude": null,
+        "precision": "provider_reported_country",
+        "verified_iso": false
+      },
+      "observation_id": "beh:d11727419e149db4a6446831800e",
+      "provider": "ioda",
+      "requires_geolocation": false,
+      "source_family": "internet_reachability",
+      "source_published_at": null,
+      "source_url": "https://ioda.inetintel.cc.gatech.edu/",
+      "status": "recent_source_observation_unreviewed",
+      "title": "IODA detected connectivity anomaly: country BY"
     },
     {
       "first_observed_at": "2026-11-22T19:29:33Z",
@@ -459,146 +1411,6 @@
       "source_url": "https://tfr.faa.gov/6_9337.html",
       "status": "recent_source_observation_unreviewed",
       "title": "FAA TFR 6/9337 · ATIGUN PASS, AK, Sunday, November 22, 2026 through Monday, November 23, 2026 UTC"
-    },
-    {
-      "first_observed_at": "2026-11-22T17:22:32Z",
-      "geography": {
-        "key": "country:GE",
-        "kind": "country_code",
-        "label": "GE",
-        "latitude": null,
-        "longitude": null,
-        "precision": "provider_reported_country",
-        "verified_iso": false
-      },
-      "observation_id": "beh:fcc5d4f65bed48ca7a8ef7a1569d",
-      "provider": "ioda",
-      "requires_geolocation": false,
-      "source_family": "internet_reachability",
-      "source_published_at": null,
-      "source_url": "https://ioda.inetintel.cc.gatech.edu/",
-      "status": "recent_source_observation_unreviewed",
-      "title": "IODA detected connectivity anomaly: country GE"
-    },
-    {
-      "first_observed_at": "2026-11-22T17:22:32Z",
-      "geography": {
-        "key": "country:AE",
-        "kind": "country_code",
-        "label": "AE",
-        "latitude": null,
-        "longitude": null,
-        "precision": "provider_reported_country",
-        "verified_iso": false
-      },
-      "observation_id": "beh:fb7826a87d55d8c47cf2ae784199",
-      "provider": "ioda",
-      "requires_geolocation": false,
-      "source_family": "internet_reachability",
-      "source_published_at": null,
-      "source_url": "https://ioda.inetintel.cc.gatech.edu/",
-      "status": "recent_source_observation_unreviewed",
-      "title": "IODA detected connectivity anomaly: country AE"
-    },
-    {
-      "first_observed_at": "2026-11-22T17:22:32Z",
-      "geography": {
-        "key": "country:BY",
-        "kind": "country_code",
-        "label": "BY",
-        "latitude": null,
-        "longitude": null,
-        "precision": "provider_reported_country",
-        "verified_iso": false
-      },
-      "observation_id": "beh:f3647cc6af62a8b8e351664445c9",
-      "provider": "ioda",
-      "requires_geolocation": false,
-      "source_family": "internet_reachability",
-      "source_published_at": null,
-      "source_url": "https://ioda.inetintel.cc.gatech.edu/",
-      "status": "recent_source_observation_unreviewed",
-      "title": "IODA detected connectivity anomaly: country BY"
-    },
-    {
-      "first_observed_at": "2026-11-22T17:22:32Z",
-      "geography": {
-        "key": "country:CI",
-        "kind": "country_code",
-        "label": "CI",
-        "latitude": null,
-        "longitude": null,
-        "precision": "provider_reported_country",
-        "verified_iso": false
-      },
-      "observation_id": "beh:f0a7f99585f88cdd73c35a7ec51b",
-      "provider": "ioda",
-      "requires_geolocation": false,
-      "source_family": "internet_reachability",
-      "source_published_at": null,
-      "source_url": "https://ioda.inetintel.cc.gatech.edu/",
-      "status": "recent_source_observation_unreviewed",
-      "title": "IODA detected connectivity anomaly: country CI"
-    },
-    {
-      "first_observed_at": "2026-11-22T17:22:32Z",
-      "geography": {
-        "key": "country:GE",
-        "kind": "country_code",
-        "label": "GE",
-        "latitude": null,
-        "longitude": null,
-        "precision": "provider_reported_country",
-        "verified_iso": false
-      },
-      "observation_id": "beh:efc80a828edb5d1bbd3ca16fb80e",
-      "provider": "ioda",
-      "requires_geolocation": false,
-      "source_family": "internet_reachability",
-      "source_published_at": null,
-      "source_url": "https://ioda.inetintel.cc.gatech.edu/",
-      "status": "recent_source_observation_unreviewed",
-      "title": "IODA detected connectivity anomaly: country GE"
-    },
-    {
-      "first_observed_at": "2026-11-22T17:22:32Z",
-      "geography": {
-        "key": "country:CI",
-        "kind": "country_code",
-        "label": "CI",
-        "latitude": null,
-        "longitude": null,
-        "precision": "provider_reported_country",
-        "verified_iso": false
-      },
-      "observation_id": "beh:ee6f4f43bf79b9d1e91ecf6d2a8f",
-      "provider": "ioda",
-      "requires_geolocation": false,
-      "source_family": "internet_reachability",
-      "source_published_at": null,
-      "source_url": "https://ioda.inetintel.cc.gatech.edu/",
-      "status": "recent_source_observation_unreviewed",
-      "title": "IODA detected connectivity anomaly: country CI"
-    },
-    {
-      "first_observed_at": "2026-11-22T17:22:32Z",
-      "geography": {
-        "key": "country:AE",
-        "kind": "country_code",
-        "label": "AE",
-        "latitude": null,
-        "longitude": null,
-        "precision": "provider_reported_country",
-        "verified_iso": false
-      },
-      "observation_id": "beh:e0dea225999c9ba7c80085564abd",
-      "provider": "ioda",
-      "requires_geolocation": false,
-      "source_family": "internet_reachability",
-      "source_published_at": null,
-      "source_url": "https://ioda.inetintel.cc.gatech.edu/",
-      "status": "recent_source_observation_unreviewed",
-      "title": "IODA detected connectivity anomaly: country AE"
     },
     {
       "first_observed_at": "2026-11-22T03:27:11Z",
@@ -905,8 +1717,8 @@
       "title": "FAA TFR 6/9186 · MIDDLETOWN, IA, Monday, November 23, 2026 through Wednesday, November 25, 2026 UTC"
     }
   ],
-  "registry_asof": "2026-11-22T19:52:03Z",
-  "registry_source_count": 744,
+  "registry_asof": "2026-11-22T22:45:57Z",
+  "registry_source_count": 642,
   "report_relationships": {
     "automatic_alerts_created": 0,
     "automatic_severity_changes": 0,
@@ -2532,14 +3344,14 @@
     "input_truncated": false,
     "not_a_preparations_sensor_or_warning": true,
     "pairwise_comparisons_capped": false,
-    "pairwise_comparisons_examined": 57630,
+    "pairwise_comparisons_examined": 70125,
     "possible_same_event_count_total": 0,
     "possible_same_source_story_count_total": 1,
-    "records_available": 340,
-    "records_examined": 340,
+    "records_available": 375,
+    "records_examined": 375,
     "related_reporting_count_total": 0,
     "reporting_origins_are_not_event_locations": true,
-    "routine_notice_market_or_measurement_records_excluded_from_text_event_matching": 331,
+    "routine_notice_market_or_measurement_records_excluded_from_text_event_matching": 366,
     "same_document_group_count_total": 26,
     "schema": "aiba.report-event-resolution-shadow.v1",
     "source_independence_unverified": true,

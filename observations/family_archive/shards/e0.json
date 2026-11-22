@@ -1,5 +1,38 @@
 {
   "roots": {
+    "e0070130c18756fcfba27e2819682e4a3be8eec0cf8af2ec4d4447ca292c10f3": {
+      "information_root": "ioda:dc5fe499e0a6c1d7202e4717",
+      "members": {
+        "beh:a40be4f5009b62732dc09765cd7d": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "measurement_no_attribution",
+          "collection_mode": "ioda",
+          "direct_measurement": true,
+          "event_at": "2026-11-22T21:12:00Z",
+          "first_observed_at": "2026-11-22T22:45:52+00:00",
+          "geography_key": "country:GE",
+          "geography_label": "GE",
+          "geography_precision": "provider_reported_country",
+          "id": "beh:a40be4f5009b62732dc09765cd7d",
+          "information_root": "ioda:dc5fe499e0a6c1d7202e4717",
+          "origin": "behavioral_registry",
+          "provider": "ioda",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": null,
+          "source_family": "internet_reachability",
+          "source_kind": "outage_event",
+          "source_measurement": null,
+          "source_scope": null,
+          "source_updated_at": null,
+          "source_url": "https://ioda.inetintel.cc.gatech.edu/",
+          "title": "IODA detected connectivity anomaly: country GE"
+        }
+      }
+    },
     "e029a3b4e68352ffe38379acc6840e9366bc8034f243335aed53a90eb21cd906": {
       "information_root": "official:b119b76a77db67948d33",
       "members": {
@@ -469,6 +502,39 @@
           "source_updated_at": null,
           "source_url": "https://ioda.inetintel.cc.gatech.edu/",
           "title": "IODA detected connectivity anomaly: country NF"
+        }
+      }
+    },
+    "e0a16b3c90377ab681624c19a7c729bc1b181380d5f3b74985ab4b5aa568364c": {
+      "information_root": "ioda:835cb4c5d4de9cc91b81ce94",
+      "members": {
+        "beh:bc383b59a36df94f9ef745b561b7": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "measurement_no_attribution",
+          "collection_mode": "ioda",
+          "direct_measurement": true,
+          "event_at": "2026-11-22T21:41:00Z",
+          "first_observed_at": "2026-11-22T22:45:52+00:00",
+          "geography_key": "country:BY",
+          "geography_label": "BY",
+          "geography_precision": "provider_reported_country",
+          "id": "beh:bc383b59a36df94f9ef745b561b7",
+          "information_root": "ioda:835cb4c5d4de9cc91b81ce94",
+          "origin": "behavioral_registry",
+          "provider": "ioda",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": null,
+          "source_family": "internet_reachability",
+          "source_kind": "outage_event",
+          "source_measurement": null,
+          "source_scope": null,
+          "source_updated_at": null,
+          "source_url": "https://ioda.inetintel.cc.gatech.edu/",
+          "title": "IODA detected connectivity anomaly: country BY"
         }
       }
     },
