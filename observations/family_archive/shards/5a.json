@@ -154,6 +154,46 @@
         }
       }
     },
+    "5a3571c29a6d6a5323185728d5a22109edb29c1d1e337cf6bdbbf82438793a26": {
+      "information_root": "bmkg_quake:bmkg_quake:b8d21fea37b0ed85ec7a8dbd03a2",
+      "members": {
+        "beh:5dc1d97a318f893ec3c410e99032": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "bmkg_quake",
+          "direct_measurement": true,
+          "event_at": "2026-11-22T07:54:39Z",
+          "first_observed_at": "2026-11-22T11:41:54+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "source_supplied_earthquake_epicenter",
+          "id": "beh:5dc1d97a318f893ec3c410e99032",
+          "information_root": "bmkg_quake:bmkg_quake:b8d21fea37b0ed85ec7a8dbd03a2",
+          "origin": "behavioral_registry",
+          "provider": "bmkg_quake",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_seismic_reporting_may_represent_same_usgs_event",
+          "source_family": "environmental_context",
+          "source_kind": "national_seismic_measurement_context",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "depth_km": 10.0,
+            "name": "earthquake_magnitude",
+            "possible_same_physical_event_as_usgs": true,
+            "unit": "source_reported_magnitude",
+            "value": 5.4
+          },
+          "source_scope": "Indonesia BMKG 15 latest magnitude-5+ earthquakes; not global; same physical events may appear in USGS",
+          "source_updated_at": null,
+          "source_url": "https://data.bmkg.go.id/DataMKG/TEWS/gempaterkini.json",
+          "title": "BMKG earthquake M5.4 · 98 km BaratDaya MELONGUANE-SULUT"
+        }
+      }
+    },
     "5a4b90f642f0935010663c79eb2bcac488a7b3cc4ff130954f84db63f19b6161": {
       "information_root": "cbp_wait:cbp_wait:230404:2026-11-21:05:24:37",
       "members": {
@@ -335,6 +375,81 @@
           "source_updated_at": null,
           "source_url": "https://bwt.cbp.gov/api/waittimes",
           "title": "CBP estimated commercial border wait — Eagle Pass / Bridge I"
+        }
+      }
+    },
+    "5a88be0f7e3392a0ac53ac45717bf376c4de3de8c74926d75f09657c607ad559": {
+      "information_root": "wiki_edits:wiki_edits:id:20261122T11",
+      "members": {
+        "beh:058fa687d27e9fcfdac2ef02b9f1": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "wiki_edits",
+          "direct_measurement": false,
+          "event_at": "2026-11-22T11:39:24Z",
+          "first_observed_at": "2026-11-22T11:39:24+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:058fa687d27e9fcfdac2ef02b9f1",
+          "information_root": "wiki_edits:wiki_edits:id:20261122T11",
+          "origin": "behavioral_registry",
+          "provider": "wiki_edits",
+          "published_at": "2026-11-22T11:39:24Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "public_encyclopedia_edit_aggregate",
+          "source_family": "public_attention",
+          "source_kind": "bounded_public_edit_count_not_event_verification",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "distinct_articles_in_sample": 180,
+            "maximum_returned_edits": 500,
+            "most_edited_article_counts": [
+              {
+                "count": 16,
+                "title": "Kapal patroli kelas Attack"
+              },
+              {
+                "count": 13,
+                "title": "Chengdu J-10"
+              },
+              {
+                "count": 12,
+                "title": "VisionQuest"
+              },
+              {
+                "count": 10,
+                "title": "Sherly Tjoanda"
+              },
+              {
+                "count": 7,
+                "title": "Afrian Arisandy"
+              },
+              {
+                "count": 6,
+                "title": "Budaya Pakistan"
+              },
+              {
+                "count": 6,
+                "title": "Possible Love"
+              },
+              {
+                "count": 5,
+                "title": "Sara Eggesvik"
+              }
+            ],
+            "name": "sampled_edits_last_three_hours",
+            "sample_cap_reached": false,
+            "unit": "edits",
+            "value": 302
+          },
+          "source_scope": "Wikipedia main-namespace edit-count sample, 14 global language editions, three-hour window capped at 500 per wiki; not geographic location",
+          "source_updated_at": null,
+          "source_url": "https://id.wikipedia.org/wiki/Special:RecentChanges",
+          "title": "Wikipedia id public article-edit activity (sampled)"
         }
       }
     },

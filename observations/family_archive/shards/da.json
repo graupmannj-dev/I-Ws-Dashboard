@@ -176,6 +176,53 @@
         }
       }
     },
+    "da71b4c58ca0099baf1de85b212110f440f3e2ce75b00dcf6d2dabb3d0781ea3": {
+      "information_root": "cbp_wait:cbp_wait:070401:2026-11-22:06:34:18",
+      "members": {
+        "beh:363d178e2e71fa4b2379e5c023c2": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-22T11:41:54+00:00",
+          "geography_key": "us-border-port:070401",
+          "geography_label": "Massena",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:363d178e2e71fa4b2379e5c023c2",
+          "information_root": "cbp_wait:cbp_wait:070401:2026-11-22:06:34:18",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Lanes Closed",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/22/2026",
+            "reported_local_time": "06:34:18",
+            "source_declared_border": "Canadian Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Massena"
+        }
+      }
+    },
     "da9352f84a10b80000463d971b0ea84cf91bd4c18e6bb9325b6448deb075cb62": {
       "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c0aa:110282-2026",
       "members": {

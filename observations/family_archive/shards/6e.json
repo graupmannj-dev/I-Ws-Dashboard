@@ -77,6 +77,92 @@
         }
       }
     },
+    "6e59ebfee2c2acbb7dc13c03e7da829682f62c33a5e99e51f256723b5bdc7737": {
+      "information_root": "cbp_wait:cbp_wait:300403:2026-11-22:03:34:18",
+      "members": {
+        "beh:aadeaf2eacddce4cb127bd60f725": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-22T11:41:54+00:00",
+          "geography_key": "us-border-port:300403",
+          "geography_label": "Blaine",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:aadeaf2eacddce4cb127bd60f725",
+          "information_root": "cbp_wait:cbp_wait:300403:2026-11-22:03:34:18",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Update Pending",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/22/2026",
+            "reported_local_time": "03:34:18",
+            "source_declared_border": "Canadian Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Blaine / Point Roberts"
+        }
+      }
+    },
+    "6e9895423143b5e417d18140f17f3ffb174eb58b3b14481ea0a92e64dc7dc140": {
+      "information_root": "bmkg_nowcast:bmkg_nowcast:006beba6456ab33205472bec9510",
+      "members": {
+        "beh:6bfeb6a36adb89960c4dfeea92b8": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "bmkg_nowcast",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-22T11:03:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:6bfeb6a36adb89960c4dfeea92b8",
+          "information_root": "bmkg_nowcast:bmkg_nowcast:006beba6456ab33205472bec9510",
+          "origin": "behavioral_registry",
+          "provider": "bmkg_nowcast",
+          "published_at": "2026-11-22T11:03:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Indonesia BMKG",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Indonesia BMKG active provincial nowcast RSS, source-reported only; not global",
+          "source_updated_at": null,
+          "source_url": "https://www.bmkg.go.id/alerts/nowcast/en/CSB20261122003_alert.xml",
+          "title": "Thunderstorm This Evening in Sumatera Barat"
+        }
+      }
+    },
     "6e99a4e2b0d7c2a7c58b92a0114a99464ec99ddc7521a1e36bca2edff7506662": {
       "information_root": "ioda:238c6d4aa513a64e3f0f29e3",
       "members": {

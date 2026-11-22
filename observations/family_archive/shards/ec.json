@@ -188,6 +188,45 @@
           "title": "Singapore MPA 2026-02 Bulk Carrier vessel arrivals (>75 GT)"
         }
       }
+    },
+    "ecc17121d38655293de88e27456ff2eaaae8cd5406ba1f3279fdd18e0bc3d26e": {
+      "information_root": "bmkg_nowcast:bmkg_nowcast:ac9b5ab71a665feac3e649f3f251",
+      "members": {
+        "beh:169a218899cec713d892f65a702d": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "bmkg_nowcast",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-22T10:40:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:169a218899cec713d892f65a702d",
+          "information_root": "bmkg_nowcast:bmkg_nowcast:ac9b5ab71a665feac3e649f3f251",
+          "origin": "behavioral_registry",
+          "provider": "bmkg_nowcast",
+          "published_at": "2026-11-22T10:40:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Indonesia BMKG",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Indonesia BMKG active provincial nowcast RSS, source-reported only; not global",
+          "source_updated_at": null,
+          "source_url": "https://www.bmkg.go.id/alerts/nowcast/en/CBK20261122003_alert.xml",
+          "title": "Thunderstorm This Evening in Bengkulu"
+        }
+      }
     }
   },
   "schema": "aiba.family-archive.v1"

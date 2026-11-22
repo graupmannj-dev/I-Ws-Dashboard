@@ -1,5 +1,45 @@
 {
   "roots": {
+    "420a05ab1806c855aff06ab7dda8d0860b5191be4d26e33ef1edd106c2bf99e7": {
+      "information_root": "coops:8638610:20261122T1130Z",
+      "members": {
+        "beh:8ef07273ecd17c16677ad467eed0": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "coops",
+          "direct_measurement": true,
+          "event_at": "2026-11-22T11:30:00Z",
+          "first_observed_at": "2026-11-22T11:30:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:8ef07273ecd17c16677ad467eed0",
+          "information_root": "coops:8638610:20261122T1130Z",
+          "origin": "behavioral_registry",
+          "provider": "coops",
+          "published_at": "2026-11-22T11:30:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "station_physical_measurement",
+          "source_family": "port_conditions",
+          "source_kind": "selected_port_water_level_measurement",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "metric_comparable_only_same_station_datum_and_sample_window": true,
+            "name": "observed_water_level",
+            "station": "8638610",
+            "unit": "meters_MLLW",
+            "value": 1.11
+          },
+          "source_scope": "NOAA CO-OPS water levels at San Francisco, Key West and Sewells Point; stations only",
+          "source_updated_at": null,
+          "source_url": "https://tidesandcurrents.noaa.gov/waterlevels.html?id=8638610",
+          "title": "Sewells Point, VA observed water level (no anomaly classification)"
+        }
+      }
+    },
     "421fbc80ee7ee17826653777cdcfbc44cf290fa2d0dcfbd7068d23344879a96f": {
       "information_root": "niord:1a3dd20d-b0dd-4957-8447-a652063698ec:2:0:0",
       "members": {
@@ -186,6 +226,53 @@
           "source_updated_at": "2026-11-17T00:21:51Z",
           "source_url": "https://niord.dma.dk/#/message/57e3ae61-a94b-4cc6-8303-615cf880c5bb",
           "title": "Denmark. The Baltic Sea. EK D 396 Hullebaek. Firing exercises. Warning."
+        }
+      }
+    },
+    "42f87793189f252720d4d86f1c0c466b930dd83e53ad375683adfb787d2c6289": {
+      "information_root": "cbp_wait:cbp_wait:240203:2026-11-22:04:34:18",
+      "members": {
+        "beh:42595273f38b4b5f53406f274fdd": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-22T11:41:54+00:00",
+          "geography_key": "us-border-port:240203",
+          "geography_label": "El Paso",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:42595273f38b4b5f53406f274fdd",
+          "information_root": "cbp_wait:cbp_wait:240203:2026-11-22:04:34:18",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Lanes Closed",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/22/2026",
+            "reported_local_time": "04:34:18",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — El Paso / Ysleta"
         }
       }
     }

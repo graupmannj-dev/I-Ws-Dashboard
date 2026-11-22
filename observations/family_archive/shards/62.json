@@ -1,5 +1,80 @@
 {
   "roots": {
+    "620a8d0eb261085fc809bfbb0a330e36c57c617a5e72b804310db5b3954a8750": {
+      "information_root": "wiki_edits:wiki_edits:es:20261122T11",
+      "members": {
+        "beh:fda3186f22115f8e93bbd5368363": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "wiki_edits",
+          "direct_measurement": false,
+          "event_at": "2026-11-22T11:39:17Z",
+          "first_observed_at": "2026-11-22T11:39:17+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:fda3186f22115f8e93bbd5368363",
+          "information_root": "wiki_edits:wiki_edits:es:20261122T11",
+          "origin": "behavioral_registry",
+          "provider": "wiki_edits",
+          "published_at": "2026-11-22T11:39:17Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "public_encyclopedia_edit_aggregate",
+          "source_family": "public_attention",
+          "source_kind": "bounded_public_edit_count_not_event_verification",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "distinct_articles_in_sample": 322,
+            "maximum_returned_edits": 500,
+            "most_edited_article_counts": [
+              {
+                "count": 36,
+                "title": "Osteótomos"
+              },
+              {
+                "count": 18,
+                "title": "Liliana Bodoc"
+              },
+              {
+                "count": 17,
+                "title": "Redada en Pucusana"
+              },
+              {
+                "count": 14,
+                "title": "Andrew Battell"
+              },
+              {
+                "count": 10,
+                "title": "Los días del fuego"
+              },
+              {
+                "count": 5,
+                "title": "Copa Libertadores de Futsal Femenino 2019"
+              },
+              {
+                "count": 5,
+                "title": "Top Gun (Fighter Weapons School)"
+              },
+              {
+                "count": 4,
+                "title": "Corrupción en España"
+              }
+            ],
+            "name": "sampled_edits_last_three_hours",
+            "sample_cap_reached": true,
+            "unit": "edits",
+            "value": 500
+          },
+          "source_scope": "Wikipedia main-namespace edit-count sample, 14 global language editions, three-hour window capped at 500 per wiki; not geographic location",
+          "source_updated_at": null,
+          "source_url": "https://es.wikipedia.org/wiki/Special:RecentChanges",
+          "title": "Wikipedia es public article-edit activity (sampled)"
+        }
+      }
+    },
     "6213b7721e4492df55e94984eafacf1f460452888b9ff265335cff5b09e9eff0": {
       "information_root": "ripe:measurement:1001:20261121T11",
       "members": {
@@ -261,6 +336,45 @@
           "source_updated_at": null,
           "source_url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.tto.html",
           "title": "Trinidad and Tobago - Level 3: Reconsider Travel"
+        }
+      }
+    },
+    "62eea99ef86cb210533fa6b3330ae1290e023558a030e5629a993fe4a02fa75d": {
+      "information_root": "bmkg_nowcast:bmkg_nowcast:0cd1717fc5bc26d6e2850d98a67e",
+      "members": {
+        "beh:5aa1632591d627bf2439ca9d8c8e": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "bmkg_nowcast",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-22T10:10:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:5aa1632591d627bf2439ca9d8c8e",
+          "information_root": "bmkg_nowcast:bmkg_nowcast:0cd1717fc5bc26d6e2850d98a67e",
+          "origin": "behavioral_registry",
+          "provider": "bmkg_nowcast",
+          "published_at": "2026-11-22T10:10:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Indonesia BMKG",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Indonesia BMKG active provincial nowcast RSS, source-reported only; not global",
+          "source_updated_at": null,
+          "source_url": "https://www.bmkg.go.id/alerts/nowcast/en/CJT20261122006_alert.xml",
+          "title": "Thunderstorm This Evening in Jawa Timur"
         }
       }
     }

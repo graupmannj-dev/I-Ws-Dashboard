@@ -272,6 +272,53 @@
         }
       }
     },
+    "26c49de4499fa8018cd0a3f9472f051b598224cf0eee798edb20fd0ca34afe76": {
+      "information_root": "cbp_wait:cbp_wait:380201:2026-11-22:06:34:18",
+      "members": {
+        "beh:cd5a6e0a9aaf230972060dbf0c96": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-22T11:41:54+00:00",
+          "geography_key": "us-border-port:380201",
+          "geography_label": "Port Huron",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:cd5a6e0a9aaf230972060dbf0c96",
+          "information_root": "cbp_wait:cbp_wait:380201:2026-11-22:06:34:18",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "no delay",
+            "lanes_open": 4,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "At 6:00 am EST",
+            "reported_local_date": "11/22/2026",
+            "reported_local_time": "06:34:18",
+            "source_declared_border": "Canadian Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 0
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Port Huron / Bluewater Bridge"
+        }
+      }
+    },
     "26d71872dd63a65a3ab8dc031ba730f14cb678b2ae2a3dd73f93fd6bece7129f": {
       "information_root": "official:c00756724b836ede2853",
       "members": {
@@ -299,6 +346,53 @@
           "source_updated_at": null,
           "source_url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.idn.html",
           "title": "Indonesia - Level 2: Exercise Increased Caution"
+        }
+      }
+    },
+    "26ea7b18530944b5c6b62f398d42be2d8c226b27349b395945c4acd0048858f3": {
+      "information_root": "cbp_wait:cbp_wait:260101:2026-11-22:03:34:18",
+      "members": {
+        "beh:23793149a9a9faf86d4b69994b54": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-22T11:41:54+00:00",
+          "geography_key": "us-border-port:260101",
+          "geography_label": "Douglas (Raul Hector Castro)",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:23793149a9a9faf86d4b69994b54",
+          "information_root": "cbp_wait:cbp_wait:260101:2026-11-22:03:34:18",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Lanes Closed",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/22/2026",
+            "reported_local_time": "03:34:18",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Douglas (Raul Hector Castro)"
         }
       }
     },

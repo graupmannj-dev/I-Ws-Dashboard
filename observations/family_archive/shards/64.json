@@ -225,6 +225,53 @@
         }
       }
     },
+    "648fcc4518bc9fae64908c07707c79e4a8105c0c4f6afe0613eef8a8542f985e": {
+      "information_root": "cbp_wait:cbp_wait:230103:2026-11-22:05:34:18",
+      "members": {
+        "beh:dc8edf5ee020a877cefcd3ad0af6": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-22T11:41:54+00:00",
+          "geography_key": "us-border-port:230103",
+          "geography_label": "Gateway",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:dc8edf5ee020a877cefcd3ad0af6",
+          "information_root": "cbp_wait:cbp_wait:230103:2026-11-22:05:34:18",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Update Pending",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/22/2026",
+            "reported_local_time": "05:34:18",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Gateway"
+        }
+      }
+    },
     "64975b2ab3ecf589c98c287f5c4949ba751755dc2167951783ec3f4c8863aa8a": {
       "information_root": "niord:0dd97987-d92b-4b12-b6f2-524532503f33:2:0:0",
       "members": {
@@ -406,6 +453,53 @@
           "source_updated_at": null,
           "source_url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.ukr.html",
           "title": "Ukraine - Level 4: Do Not Travel"
+        }
+      }
+    },
+    "64d2cd24b7b273e54b33003580739a7ee9a3859766887e01901b1bdd0332fcce": {
+      "information_root": "cbp_wait:cbp_wait:230503:2026-11-22:05:34:18",
+      "members": {
+        "beh:a106207948df23abdd25abbafb05": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-22T11:41:54+00:00",
+          "geography_key": "us-border-port:230503",
+          "geography_label": "Hidalgo/Pharr",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:a106207948df23abdd25abbafb05",
+          "information_root": "cbp_wait:cbp_wait:230503:2026-11-22:05:34:18",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Update Pending",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Closed",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/22/2026",
+            "reported_local_time": "05:34:18",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Hidalgo/Pharr / Anzalduas International Bridge"
         }
       }
     },

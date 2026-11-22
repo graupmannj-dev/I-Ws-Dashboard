@@ -47,6 +47,53 @@
         }
       }
     },
+    "224bd2814fdc66b2988432e0607b340616be5104ba41767338f4b0a9ccdfe50c": {
+      "information_root": "cbp_wait:cbp_wait:250609:2026-11-22:03:34:18",
+      "members": {
+        "beh:2405443043fcdaf973e0c6a08d6e": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-22T11:41:54+00:00",
+          "geography_key": "us-border-port:250609",
+          "geography_label": "Otay Mesa",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:2405443043fcdaf973e0c6a08d6e",
+          "information_root": "cbp_wait:cbp_wait:250609:2026-11-22:03:34:18",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Update Pending",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/22/2026",
+            "reported_local_time": "03:34:18",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Otay Mesa"
+        }
+      }
+    },
     "2275e106638e1192da3ce63b7a66cf14f336fb8d7da4b6cd62875e6d76cd8dac": {
       "information_root": "niord:1a3dd20d-b0dd-4957-8447-a652063698ec:3:0:0",
       "members": {
@@ -134,6 +181,50 @@
           "source_updated_at": "2026-11-19T00:21:54Z",
           "source_url": "https://niord.dma.dk/#/message/382a0e72-378f-4122-a534-e3c21e711107",
           "title": "Denmark. Kattegat. EK R 19 MULTEX. Firing exercises. Warning."
+        }
+      }
+    },
+    "22b349830061a7d82e80963d1f3953ca5d1d0c46200a1d21f0ffab2c0f98eddd": {
+      "information_root": "ripe:measurement:1001:20261122T11",
+      "members": {
+        "beh:d0446d41b676d24f94abb96d985e": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "aggregate_ping_no_country_or_threat_attribution",
+          "collection_mode": "ripe",
+          "direct_measurement": true,
+          "event_at": null,
+          "first_observed_at": "2026-11-22T11:41:54+00:00",
+          "geography_key": "ripe-msm:1001",
+          "geography_label": "K-root public ping aggregate",
+          "geography_precision": "not_country_or_incident_location",
+          "id": "beh:d0446d41b676d24f94abb96d985e",
+          "information_root": "ripe:measurement:1001:20261122T11",
+          "origin": "behavioral_registry",
+          "provider": "ripe",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "network_aggregate_monitoring",
+          "source_family": "internet_reachability",
+          "source_kind": "aggregate_public_network_ping",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "cohort_comparable_to_prior_snapshots": false,
+            "failed_or_invalid_rtt_count": 386,
+            "individual_probe_records_published": false,
+            "measurement_id": 1001,
+            "name": "sample_median_ping_rtt",
+            "sampled_probe_count": 13448,
+            "unit": "ms",
+            "valid_rtt_count": 13062,
+            "value": 19.426
+          },
+          "source_scope": "RIPE Atlas built-in K-root ping #1001, global public-probe aggregate; not country coverage",
+          "source_updated_at": null,
+          "source_url": "https://atlas.ripe.net/measurements/1001/",
+          "title": "RIPE Atlas K-root public probe aggregate (13062 usable measurements)"
         }
       }
     },

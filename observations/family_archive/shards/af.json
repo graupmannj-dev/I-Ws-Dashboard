@@ -1,5 +1,52 @@
 {
   "roots": {
+    "af09e93b5aa51156576806370c7e990e848adf6f21f87a43a8948739a48056ce": {
+      "information_root": "cbp_wait:cbp_wait:360401:2026-11-22:05:34:18",
+      "members": {
+        "beh:d60acdcfd9590615cb1ad5378d53": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-22T11:41:54+00:00",
+          "geography_key": "us-border-port:360401",
+          "geography_label": "International Falls",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:d60acdcfd9590615cb1ad5378d53",
+          "information_root": "cbp_wait:cbp_wait:360401:2026-11-22:05:34:18",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "no delay",
+            "lanes_open": 1,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "At 7:00 am CST",
+            "reported_local_date": "11/22/2026",
+            "reported_local_time": "05:34:18",
+            "source_declared_border": "Canadian Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 0
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — International Falls"
+        }
+      }
+    },
     "af14ec24b2035b612053bfd2d53188d5c2832ac42c6ae114ad1aaecbee0a0791": {
       "information_root": "nws:48a0392b561d546caaee581f",
       "members": {

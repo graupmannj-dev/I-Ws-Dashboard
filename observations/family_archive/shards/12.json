@@ -1,5 +1,38 @@
 {
   "roots": {
+    "1206224539088c5e589e82f5ca000c215a35f2a685e3f8e8f14fbda7d2cae8e7": {
+      "information_root": "nws:56a7f944a193c7343216cfa0",
+      "members": {
+        "beh:c7e6af341d51be0d202f6f61c1e6": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "nws",
+          "direct_measurement": false,
+          "event_at": "2026-11-22T06:20:00Z",
+          "first_observed_at": "2026-11-22T06:20:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:c7e6af341d51be0d202f6f61c1e6",
+          "information_root": "nws:56a7f944a193c7343216cfa0",
+          "origin": "behavioral_registry",
+          "provider": "nws",
+          "published_at": "2026-11-22T06:20:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "official_weather_alert_context",
+          "source_measurement": null,
+          "source_scope": "Active NWS marine alerts; severity Severe",
+          "source_updated_at": null,
+          "source_url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.0bd7583406e3892dc93cdd490c967674b936e7b8.002.1",
+          "title": "Coastal Flood Warning - Inland Flagler; Eastern Clay; Eastern Putnam; South Central Duval; Western St. Johns"
+        }
+      }
+    },
     "1224f67d6930b00e20b9e56cc52a09a4b1be11eb642aabcdd4016879c25047fe": {
       "information_root": "official:a2819c694098f29c0161",
       "members": {
@@ -27,6 +60,53 @@
           "source_updated_at": null,
           "source_url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.bgr.html",
           "title": "Bulgaria - Level 1: Exercise Normal Precautions"
+        }
+      }
+    },
+    "1241a945b7b7ade186a77946e4381cfd4e68ee16c847aabaf164913f0fb49144": {
+      "information_root": "cbp_wait:cbp_wait:331001:2026-11-22:04:34:18",
+      "members": {
+        "beh:22dabef172c39be011038db241d3": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-22T11:41:54+00:00",
+          "geography_key": "us-border-port:331001",
+          "geography_label": "Sweetgrass",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:22dabef172c39be011038db241d3",
+          "information_root": "cbp_wait:cbp_wait:331001:2026-11-22:04:34:18",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "no delay",
+            "lanes_open": 1,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "At 4:00 am MST",
+            "reported_local_date": "11/22/2026",
+            "reported_local_time": "04:34:18",
+            "source_declared_border": "Canadian Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 0
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Sweetgrass"
         }
       }
     },

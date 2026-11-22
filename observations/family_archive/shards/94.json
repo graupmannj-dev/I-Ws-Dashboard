@@ -257,6 +257,45 @@
         }
       }
     },
+    "94993fe76122deacd0fe712cb7bbb6d881c7cb56ba3873c01c6c3fcc5bd7f6a4": {
+      "information_root": "inmet_br:inmet_br:1b79fa33acab6aacf7471755213f",
+      "members": {
+        "beh:95f7eeaaa4b020ac4b79d93ed703": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "inmet_br",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-22T08:20:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:95f7eeaaa4b020ac4b79d93ed703",
+          "information_root": "inmet_br:inmet_br:1b79fa33acab6aacf7471755213f",
+          "origin": "behavioral_registry",
+          "provider": "inmet_br",
+          "published_at": "2026-11-22T08:20:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Brazil INMET",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Brazil INMET official severe-weather RSS notices; provider-listed bounded sample",
+          "source_updated_at": null,
+          "source_url": "https://apiprevmet3.inmet.gov.br/avisos/rss/56477",
+          "title": "Aviso de Tempestade. Severidade Grau: Perigo"
+        }
+      }
+    },
     "94b8a64bb10ffd47304c85fdb8710478c6e0b1ad0b07d27af4426e3ad3ecabf2": {
       "information_root": "niord:532825a7-01a5-4d42-a5db-24bed595e9e8:0:4:0",
       "members": {
@@ -284,6 +323,53 @@
           "source_updated_at": "2026-11-15T00:21:51Z",
           "source_url": "https://niord.dma.dk/#/message/532825a7-01a5-4d42-a5db-24bed595e9e8",
           "title": "Denmark. Kattegat. EK R 45 Hevring. Firing exercises. Warning."
+        }
+      }
+    },
+    "94ba7ec711890ab80581c241282e947d2ca7638395fae14f892384ada1aeaf35": {
+      "information_root": "cbp_wait:cbp_wait:240104:2026-11-22:04:34:19",
+      "members": {
+        "beh:3c94c5b508b6ae527ccc66eec97d": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-22T11:41:54+00:00",
+          "geography_key": "us-border-port:240104",
+          "geography_label": "YSLETA",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:3c94c5b508b6ae527ccc66eec97d",
+          "information_root": "cbp_wait:cbp_wait:240104:2026-11-22:04:34:19",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Update Pending",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/22/2026",
+            "reported_local_time": "04:34:19",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — YSLETA"
         }
       }
     }

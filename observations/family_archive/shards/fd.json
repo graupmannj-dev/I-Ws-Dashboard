@@ -30,6 +30,45 @@
         }
       }
     },
+    "fd30d386302564bee0d702d6d6f10e7c68a6cc57d793e26cd6334ef8df15c4be": {
+      "information_root": "bmkg_nowcast:bmkg_nowcast:7ebafb547654b2830d039b496bc2",
+      "members": {
+        "beh:8c9877f27d10cbcb879c6b77e821": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "bmkg_nowcast",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-22T10:05:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:8c9877f27d10cbcb879c6b77e821",
+          "information_root": "bmkg_nowcast:bmkg_nowcast:7ebafb547654b2830d039b496bc2",
+          "origin": "behavioral_registry",
+          "provider": "bmkg_nowcast",
+          "published_at": "2026-11-22T10:05:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Indonesia BMKG",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Indonesia BMKG active provincial nowcast RSS, source-reported only; not global",
+          "source_updated_at": null,
+          "source_url": "https://www.bmkg.go.id/alerts/nowcast/en/CKG20261122006_alert.xml",
+          "title": "Thunderstorm This Evening in Kalimantan Tengah"
+        }
+      }
+    },
     "fd4eef999d2fefcc6ddbd69efe3672423733a42b482deee6abd983317a1e3f97": {
       "information_root": "ioda:7d407e3b964fb1caa0e7cc3d",
       "members": {
@@ -230,6 +269,81 @@
           "source_updated_at": "2026-11-17T00:21:52Z",
           "source_url": "https://niord.dma.dk/#/message/bd3a545a-8bee-49ce-a67b-c9169c54c6c0",
           "title": "Denmark. Kattegat. EK R 18 Jaegerspris. Firing exercises. Warning."
+        }
+      }
+    },
+    "fdd956d288a985e99484e70f8e69e8fe6b8fafe9774246fb791838126d1a492a": {
+      "information_root": "wiki_edits:wiki_edits:ru:20261122T11",
+      "members": {
+        "beh:50704493cb5017742bbea4332ace": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "wiki_edits",
+          "direct_measurement": false,
+          "event_at": "2026-11-22T11:39:21Z",
+          "first_observed_at": "2026-11-22T11:39:21+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:50704493cb5017742bbea4332ace",
+          "information_root": "wiki_edits:wiki_edits:ru:20261122T11",
+          "origin": "behavioral_registry",
+          "provider": "wiki_edits",
+          "published_at": "2026-11-22T11:39:21Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "public_encyclopedia_edit_aggregate",
+          "source_family": "public_attention",
+          "source_kind": "bounded_public_edit_count_not_event_verification",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "distinct_articles_in_sample": 285,
+            "maximum_returned_edits": 500,
+            "most_edited_article_counts": [
+              {
+                "count": 30,
+                "title": "Список персонажей Grand Theft Auto VI"
+              },
+              {
+                "count": 16,
+                "title": "Каланчакский район"
+              },
+              {
+                "count": 13,
+                "title": "Конференция ООН по изменению климата (2026)"
+              },
+              {
+                "count": 11,
+                "title": "Эфиопская коллегия"
+              },
+              {
+                "count": 9,
+                "title": "Ги IV де Лаваль"
+              },
+              {
+                "count": 7,
+                "title": "Наутилус (Жюль Верн)"
+              },
+              {
+                "count": 6,
+                "title": "Groupe Pastor"
+              },
+              {
+                "count": 6,
+                "title": "Бонни и Клайд"
+              }
+            ],
+            "name": "sampled_edits_last_three_hours",
+            "sample_cap_reached": true,
+            "unit": "edits",
+            "value": 500
+          },
+          "source_scope": "Wikipedia main-namespace edit-count sample, 14 global language editions, three-hour window capped at 500 per wiki; not geographic location",
+          "source_updated_at": null,
+          "source_url": "https://ru.wikipedia.org/wiki/Special:RecentChanges",
+          "title": "Wikipedia ru public article-edit activity (sampled)"
         }
       }
     },

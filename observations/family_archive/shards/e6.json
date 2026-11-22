@@ -297,6 +297,81 @@
         }
       }
     },
+    "e687e7e7ca3944c8703f6ff35f92b4c761094b28fb576f52ba1d1b8559ed4130": {
+      "information_root": "wiki_edits:wiki_edits:en:20261122T11",
+      "members": {
+        "beh:bffdcba20f845e4bc7c787c747a0": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "wiki_edits",
+          "direct_measurement": false,
+          "event_at": "2026-11-22T11:39:21Z",
+          "first_observed_at": "2026-11-22T11:39:21+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:bffdcba20f845e4bc7c787c747a0",
+          "information_root": "wiki_edits:wiki_edits:en:20261122T11",
+          "origin": "behavioral_registry",
+          "provider": "wiki_edits",
+          "published_at": "2026-11-22T11:39:21Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "public_encyclopedia_edit_aggregate",
+          "source_family": "public_attention",
+          "source_kind": "bounded_public_edit_count_not_event_verification",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "distinct_articles_in_sample": 401,
+            "maximum_returned_edits": 500,
+            "most_edited_article_counts": [
+              {
+                "count": 13,
+                "title": "AK-69"
+              },
+              {
+                "count": 6,
+                "title": "John Fraser (Ontario MPP)"
+              },
+              {
+                "count": 6,
+                "title": "The Irishman"
+              },
+              {
+                "count": 5,
+                "title": "JAC Sunray"
+              },
+              {
+                "count": 4,
+                "title": "1944 Bulgarian coup d'état"
+              },
+              {
+                "count": 4,
+                "title": "2028 Democratic Party presidential primaries"
+              },
+              {
+                "count": 4,
+                "title": "Joe Wallach"
+              },
+              {
+                "count": 4,
+                "title": "Phil McCrea"
+              }
+            ],
+            "name": "sampled_edits_last_three_hours",
+            "sample_cap_reached": true,
+            "unit": "edits",
+            "value": 500
+          },
+          "source_scope": "Wikipedia main-namespace edit-count sample, 14 global language editions, three-hour window capped at 500 per wiki; not geographic location",
+          "source_updated_at": null,
+          "source_url": "https://en.wikipedia.org/wiki/Special:RecentChanges",
+          "title": "Wikipedia en public article-edit activity (sampled)"
+        }
+      }
+    },
     "e6a87fb0257ca85b4727105daeb9624e902a6d4378655c979a754a75a50fd386": {
       "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c0b0:110294-2026",
       "members": {
@@ -327,6 +402,53 @@
           "source_updated_at": null,
           "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-19T02%3A27%3A41&updatedTo=2026-11-21T02%3A27%3A41",
           "title": "26214 - Children's SW Managed Service · DMBC"
+        }
+      }
+    },
+    "e6b1c3a5e0d47b288a593967828d1785da4635ebabf1311d208a3796a30dd1c2": {
+      "information_root": "cbp_wait:cbp_wait:250401:2026-11-22:03:34:18",
+      "members": {
+        "beh:d371f01460122ef507aae11b2053": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-22T11:41:54+00:00",
+          "geography_key": "us-border-port:250401",
+          "geography_label": "San Ysidro",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:d371f01460122ef507aae11b2053",
+          "information_root": "cbp_wait:cbp_wait:250401:2026-11-22:03:34:18",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "N/A",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/22/2026",
+            "reported_local_time": "03:34:18",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — San Ysidro"
         }
       }
     },

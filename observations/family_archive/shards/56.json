@@ -30,6 +30,53 @@
         }
       }
     },
+    "5620c1339f1efab053fec7934736b4a2031c69d2b01aa96b152173d94b79486c": {
+      "information_root": "cbp_wait:cbp_wait:240601:2026-11-22:04:34:18",
+      "members": {
+        "beh:06193ea69f1d67112afe3829de30": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-22T11:41:54+00:00",
+          "geography_key": "us-border-port:240601",
+          "geography_label": "Columbus",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:06193ea69f1d67112afe3829de30",
+          "information_root": "cbp_wait:cbp_wait:240601:2026-11-22:04:34:18",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Lanes Closed",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/22/2026",
+            "reported_local_time": "04:34:18",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Columbus"
+        }
+      }
+    },
     "5641ceee87f42de45e883d09b796a7af7fe83b7e29880d8fd4d328753143d65c": {
       "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07b99f:110356-2026",
       "members": {
@@ -153,6 +200,50 @@
           "source_updated_at": null,
           "source_url": "https://bwt.cbp.gov/api/waittimes",
           "title": "CBP estimated commercial border wait — Lukeville"
+        }
+      }
+    },
+    "565bcd7d5ad4f44cd1adce7c7a0b4c83a1563badf0fdb96830b96835446c03b6": {
+      "information_root": "tw_power:tw_power:20261122T1130Z",
+      "members": {
+        "beh:93e2fd1b492ee44978204f9a0471": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_power_snapshot_not_outage_attribution",
+          "collection_mode": "tw_power",
+          "direct_measurement": true,
+          "event_at": null,
+          "first_observed_at": "2026-11-22T11:41:54+00:00",
+          "geography_key": "country:TW",
+          "geography_label": "Taiwan",
+          "geography_precision": "national_not_facility",
+          "id": "beh:93e2fd1b492ee44978204f9a0471",
+          "information_root": "tw_power:tw_power:20261122T1130Z",
+          "origin": "behavioral_registry",
+          "provider": "tw_power",
+          "published_at": "2026-11-22T11:30:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "public_national_power_snapshot",
+          "source_family": "grid_load",
+          "source_kind": "national_grid_load_aggregate_not_outage",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "measurement_clock_distinct_from_release_not_verified": true,
+            "name": "nationwide_reported_current_load",
+            "not_grid_frequency_or_outage_attribution": true,
+            "observation_coverage": "single_national_snapshot_not_24h",
+            "reported_utilization_percent": 81.0,
+            "source_published_clock": "2026-11-22T11:30:00Z",
+            "source_value_10k_kilowatts": 2758.7,
+            "unit": "MW",
+            "value": 27587.0
+          },
+          "source_scope": "Taiwan Taipower public nationwide current load snapshot and publisher release clock, not power-station or local outage data",
+          "source_updated_at": null,
+          "source_url": "https://service.taipower.com.tw/data/opendata/apply/file/d006020/001.json",
+          "title": "Taipower nationwide publicly reported current electricity load"
         }
       }
     },
@@ -282,6 +373,53 @@
           "source_updated_at": null,
           "source_url": "https://apiprevmet3.inmet.gov.br/avisos/rss/56474",
           "title": "Aviso de Tempestade. Severidade Grau: Perigo Potencial"
+        }
+      }
+    },
+    "56c8618cc62168cb9d688c7bf2d33c5eb74629039ffae776e026c876ca8bbb27": {
+      "information_root": "cbp_wait:cbp_wait:260301:2026-11-22:03:34:18",
+      "members": {
+        "beh:d8739a3605fa0bbbd48d89754f4a": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-22T11:41:54+00:00",
+          "geography_key": "us-border-port:260301",
+          "geography_label": "Naco",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:d8739a3605fa0bbbd48d89754f4a",
+          "information_root": "cbp_wait:cbp_wait:260301:2026-11-22:03:34:18",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Update Pending",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Closed",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/22/2026",
+            "reported_local_time": "03:34:18",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Naco"
         }
       }
     },
@@ -438,6 +576,53 @@
           "source_updated_at": "2026-11-17T00:21:52Z",
           "source_url": "https://niord.dma.dk/#/message/bd3a545a-8bee-49ce-a67b-c9169c54c6c0",
           "title": "Denmark. Kattegat. EK R 18 Jaegerspris. Firing exercises. Warning."
+        }
+      }
+    },
+    "56faa8ec9f1a0e2e076ec1344adee85b3687280227c3c0b9dfdb38e31b3d090b": {
+      "information_root": "cbp_wait:cbp_wait:230902:2026-11-22:05:34:18",
+      "members": {
+        "beh:37f73a8882f79d6e1ba3324f3e31": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-22T11:41:54+00:00",
+          "geography_key": "us-border-port:230902",
+          "geography_label": "Progreso",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:37f73a8882f79d6e1ba3324f3e31",
+          "information_root": "cbp_wait:cbp_wait:230902:2026-11-22:05:34:18",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Update Pending",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Closed",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/22/2026",
+            "reported_local_time": "05:34:18",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Progreso / Donna International Bridge"
         }
       }
     }

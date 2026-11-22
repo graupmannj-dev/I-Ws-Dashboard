@@ -134,6 +134,15 @@
       "shared_activity_roles": [],
       "shared_subject_terms": []
     },
+    "1997ee144b515b405fff5244bbfd": {
+      "independent_corroboration_proven": false,
+      "method": "new_analytical_theme",
+      "review_status": "unreviewed_automatic_topic_seed",
+      "same_incident_proven": false,
+      "score": null,
+      "shared_activity_roles": [],
+      "shared_subject_terms": []
+    },
     "19f5502c5b985e510736f0692b24": {
       "independent_corroboration_proven": false,
       "method": "new_analytical_theme",
@@ -1260,6 +1269,31 @@
       "shared_subject_terms": [],
       "subject_geography_compatible": true
     },
+    "9b8a346db35229f8c1fb58639402": {
+      "independent_corroboration_proven": false,
+      "latent_semantic_similarity": 1,
+      "method": "aiba.hybrid-local-title-embedding.v1",
+      "raw_text_similarity": 1,
+      "review_status": "unreviewed_automatic_topic_match",
+      "same_incident_proven": false,
+      "same_source_document": false,
+      "score": 1.0,
+      "shared_activity_roles": [],
+      "shared_named_subjects": [
+        "atlas"
+      ],
+      "shared_subject_terms": [
+        "aggregate",
+        "atlas",
+        "measurements",
+        "probe",
+        "public",
+        "ripe",
+        "root",
+        "usable"
+      ],
+      "subject_geography_compatible": true
+    },
     "9baf73c0951372ca25fef59f44ce": {
       "independent_corroboration_proven": false,
       "method": "new_analytical_theme",
@@ -2190,6 +2224,7 @@
     "1820fc0d34ffdf4e84fef0b4191e": "family:1062f6cafd97802af039",
     "189efeb33d19d021772064846480": "family:fedd67f32b443ff07f62",
     "191e56a1db964f53dda249bed804": "family:28bb6025e5e43c9de56c",
+    "1997ee144b515b405fff5244bbfd": "family:2bf7a8d0d89d1e3ece2b",
     "19f5502c5b985e510736f0692b24": "family:b900577b4b32cde81159",
     "1a2f0b67f2290ce52c531dbc849c": "family:08e15e23c9f75cff09eb",
     "1a7b65447283159c65873f07890e": "family:953351ee9f2e5c1f21ab",
@@ -2462,6 +2497,7 @@
     "992d4f8ce8aa943330958c695c0b": "family:f200e612ec2c9f84f1b1",
     "99d08a4a3e42de3efd66ce19d1a0": "family:95af9afa112d381d30d6",
     "9ad0d3f8c7870a5fc95b140f7bd0": "family:8782f5407f04370eb416",
+    "9b8a346db35229f8c1fb58639402": "family:fe16830728b4f874c391",
     "9baf73c0951372ca25fef59f44ce": "family:3d4d5988e8bee62404c2",
     "9bf44a3f6fcbbb9b4a20e1a37418": "family:9c728d43806fef7addc4",
     "9ca5b64456685496d90544149bbd": "family:e1c66c16bd9ca1017201",
@@ -3532,6 +3568,29 @@
         "title": "IODA detected connectivity anomaly: country TO"
       },
       "source": "automatic_similarity_v1"
+    },
+    "family:2bf7a8d0d89d1e3ece2b": {
+      "first_document_at": "2026-11-22T10:48:55+00:00",
+      "last_document_at": "2026-11-22T10:48:55+00:00",
+      "matched_document_count": 1,
+      "seed": {
+        "domain": "generic",
+        "geo": [],
+        "key": "1997ee144b515b405fff5244bbfd",
+        "publisher": "uk_tenders",
+        "source_family": "public_procurement",
+        "terms": {
+          "awarding": 1,
+          "hmpps": 1,
+          "justice": 1,
+          "ministry": 1,
+          "organisation": 1,
+          "probation": 1,
+          "qualifications": 1
+        },
+        "title": "Awarding Organisation for HMPPS Probation Qualifications · Ministry of Justice"
+      },
+      "source": "hybrid_local_topic_embedding_v2"
     },
     "family:2d2c07c1889c50b8b877": {
       "first_document_at": "2026-11-09T23:30:06.394000+00:00",
@@ -7408,8 +7467,8 @@
     },
     "family:fe16830728b4f874c391": {
       "first_document_at": "2026-11-21T02:31:05+00:00",
-      "last_document_at": "2026-11-22T01:27:37+00:00",
-      "matched_document_count": 4,
+      "last_document_at": "2026-11-22T11:41:54+00:00",
+      "matched_document_count": 5,
       "seed": {
         "domain": "network",
         "geo": [],
@@ -7472,9 +7531,9 @@
     }
   },
   "input_truncated": false,
-  "new_document_assignments": 46,
+  "new_document_assignments": 2,
   "schema": "aiba.automatic-analytical-topics.v1",
   "semantic_seed_index_limited": false,
-  "total_document_assignments": 534,
-  "total_stable_topics": 224
+  "total_document_assignments": 536,
+  "total_stable_topics": 225
 }

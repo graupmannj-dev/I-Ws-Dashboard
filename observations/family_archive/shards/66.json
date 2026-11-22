@@ -200,6 +200,53 @@
         }
       }
     },
+    "668d1dfb2bcaad0b0db4340ebf968302fb5bc6f923420ec7ed64a6dc591e2239": {
+      "information_root": "cbp_wait:cbp_wait:010601:2026-11-22:06:34:18",
+      "members": {
+        "beh:f5364c4c73f9b8d39680805d49e9": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-22T11:41:54+00:00",
+          "geography_key": "us-border-port:010601",
+          "geography_label": "Houlton",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:f5364c4c73f9b8d39680805d49e9",
+          "information_root": "cbp_wait:cbp_wait:010601:2026-11-22:06:34:18",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "no delay",
+            "lanes_open": 1,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "At 5:00 am EST",
+            "reported_local_date": "11/22/2026",
+            "reported_local_time": "06:34:18",
+            "source_declared_border": "Canadian Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 2
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Houlton"
+        }
+      }
+    },
     "66b331d3bd8c5335799b26ce9dfbd5e8ac1ade23aa343e08e7bcffb0e5203bd3": {
       "information_root": "ioda:4aa2b1b1beea114e63fae722",
       "members": {
@@ -257,6 +304,99 @@
           "source_updated_at": null,
           "source_url": "https://tfr.faa.gov/5_6379.html",
           "title": "FAA TFR 5/6379 ·   USA, Wednesday, October 29, 2025 through Friday, October 29, 2027 UTC"
+        }
+      }
+    },
+    "66beee2f9b538b087502c4b54f12d03bef2c6fdf0f5e3008d2110060684dae97": {
+      "information_root": "ris_bgp:ris_bgp:AS4766:20261122T07",
+      "members": {
+        "beh:f855c65d776c6edb623f5ad95799": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "public_routing_updates_not_country_outage",
+          "collection_mode": "ris_bgp",
+          "direct_measurement": true,
+          "event_at": null,
+          "first_observed_at": "2026-11-22T11:41:54+00:00",
+          "geography_key": "asn:4766",
+          "geography_label": "AS4766",
+          "geography_precision": "routing_target_not_country_incident",
+          "id": "beh:f855c65d776c6edb623f5ad95799",
+          "information_root": "ris_bgp:ris_bgp:AS4766:20261122T07",
+          "origin": "behavioral_registry",
+          "provider": "ris_bgp",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "routing_collector_sampled_asn_updates",
+          "source_family": "internet_routing",
+          "source_kind": "sampled_asn_bgp_route_updates_not_network_outage",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "collector_peers_are_not_geo_deduplicated": true,
+            "country_impact_not_established": true,
+            "name": "sampled_6h_bgp_announcements",
+            "registered_network_country_hint": "KR",
+            "returned_sampling_buckets": 6,
+            "source_window_end": "2026-11-22T07:00:00Z",
+            "target_asn": "AS4766",
+            "unit": "announcements",
+            "value": 70390,
+            "window_hours_requested": 6,
+            "withdrawals_unavailable_for_asn": true
+          },
+          "source_scope": "RIPE RIS public route-announcement update samples on six non-Western operated networks; ASNs not country-wide outage detection",
+          "source_updated_at": null,
+          "source_url": "https://stat.ripe.net/data/bgp-update-activity/data.json?resource=AS4766&num_hours=6&max_samples=24&hide_empty_samples=false",
+          "title": "RIPE RIS sampled BGP announcements: AS4766"
+        }
+      }
+    },
+    "66cc422b10a461558118aac7d9cd67484ac400419e32137cf4da40298d472866": {
+      "information_root": "cbp_wait:cbp_wait:020901:2026-11-22:06:34:18",
+      "members": {
+        "beh:e3af1f6121cffcd4126a424d223d": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-22T11:41:54+00:00",
+          "geography_key": "us-border-port:020901",
+          "geography_label": "Derby Line",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:e3af1f6121cffcd4126a424d223d",
+          "information_root": "cbp_wait:cbp_wait:020901:2026-11-22:06:34:18",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "no delay",
+            "lanes_open": 1,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "At 8:00 am EST",
+            "reported_local_date": "11/22/2026",
+            "reported_local_time": "06:34:18",
+            "source_declared_border": "Canadian Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 0
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Derby Line / Derby Line I-91"
         }
       }
     }

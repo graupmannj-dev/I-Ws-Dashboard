@@ -448,6 +448,39 @@
         }
       }
     },
+    "6fa23c7ee98a87e0b03f51ad5b0259525e2532966df975d526857d441ef57ef2": {
+      "information_root": "nws:5708cebd6abdb8c5d86de346",
+      "members": {
+        "beh:d1a714ff00ed5cfa0af4c61502b0": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "nws",
+          "direct_measurement": false,
+          "event_at": "2026-11-22T01:27:00Z",
+          "first_observed_at": "2026-11-22T01:27:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:d1a714ff00ed5cfa0af4c61502b0",
+          "information_root": "nws:5708cebd6abdb8c5d86de346",
+          "origin": "behavioral_registry",
+          "provider": "nws",
+          "published_at": "2026-11-22T01:27:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "official_weather_alert_context",
+          "source_measurement": null,
+          "source_scope": "Active NWS marine alerts; severity Severe",
+          "source_updated_at": null,
+          "source_url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.76171c67859d9be31af3fb79c06be60474be30b3.001.1",
+          "title": "Flood Warning - Seminole, FL"
+        }
+      }
+    },
     "6fa274420c25817cff31d186a24a529629a8cc72aa382943d83e93459085799d": {
       "information_root": "cbp_wait:cbp_wait:230901:2026-11-21:13:22:45",
       "members": {
@@ -492,6 +525,44 @@
           "source_updated_at": null,
           "source_url": "https://bwt.cbp.gov/api/waittimes",
           "title": "CBP estimated commercial border wait — Progreso / Progreso International Bridge"
+        }
+      }
+    },
+    "6fe16ee89c1cf1296b997b6d8ac072d5c81dc13312ca515170a011a0518f27d5": {
+      "information_root": "usgs:us6000ucrb",
+      "members": {
+        "beh:004a413396a5e37eacfddfd8b10b": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "usgs",
+          "direct_measurement": true,
+          "event_at": "2026-11-22T07:54:40Z",
+          "first_observed_at": "2026-11-22T07:54:40+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "source_supplied_point_only",
+          "id": "beh:004a413396a5e37eacfddfd8b10b",
+          "information_root": "usgs:us6000ucrb",
+          "origin": "behavioral_registry",
+          "provider": "usgs",
+          "published_at": "2026-11-22T09:59:32Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "measured_earthquake_context",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "name": "earthquake_magnitude",
+            "unit": "reported_magnitude",
+            "value": 5.4
+          },
+          "source_scope": "USGS M4.5+ earthquakes worldwide, rolling past day; source thresholds apply",
+          "source_updated_at": null,
+          "source_url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000ucrb",
+          "title": "M 5.4 - 224 km NE of Bitung, Indonesia"
         }
       }
     },

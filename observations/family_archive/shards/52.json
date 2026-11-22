@@ -60,6 +60,53 @@
         }
       }
     },
+    "521d54dea5e04dbb149574e54627089b23af94e52a1383f8fd9661e3e79b9c56": {
+      "information_root": "cbp_wait:cbp_wait:240301:2026-11-22:05:34:18",
+      "members": {
+        "beh:8090b045a74f75234fb2ea1279c8": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-22T11:41:54+00:00",
+          "geography_key": "us-border-port:240301",
+          "geography_label": "Presidio",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:8090b045a74f75234fb2ea1279c8",
+          "information_root": "cbp_wait:cbp_wait:240301:2026-11-22:05:34:18",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Lanes Closed",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/22/2026",
+            "reported_local_time": "05:34:18",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Presidio / PRESIDIO PORT OF ENTRY"
+        }
+      }
+    },
     "522f7d06fb18abe154e05e03044e1f8c7634474b773cf42e8d89c64100197459": {
       "information_root": "cbp_wait:cbp_wait:260305:2026-11-20:18:23:04",
       "members": {
@@ -250,6 +297,81 @@
           "source_updated_at": null,
           "source_url": "https://ioda.inetintel.cc.gatech.edu/",
           "title": "IODA detected connectivity anomaly: country CF"
+        }
+      }
+    },
+    "52a63c8f7a11f5ed5345f8f87456b58d8be8d5e4cf995876e57d0f38c1052f5f": {
+      "information_root": "wiki_edits:wiki_edits:ko:20261122T11",
+      "members": {
+        "beh:b2e7a4f6eea7500d5394e192b106": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "wiki_edits",
+          "direct_measurement": false,
+          "event_at": "2026-11-22T11:39:17Z",
+          "first_observed_at": "2026-11-22T11:39:17+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:b2e7a4f6eea7500d5394e192b106",
+          "information_root": "wiki_edits:wiki_edits:ko:20261122T11",
+          "origin": "behavioral_registry",
+          "provider": "wiki_edits",
+          "published_at": "2026-11-22T11:39:17Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "public_encyclopedia_edit_aggregate",
+          "source_family": "public_attention",
+          "source_kind": "bounded_public_edit_count_not_event_verification",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "distinct_articles_in_sample": 236,
+            "maximum_returned_edits": 500,
+            "most_edited_article_counts": [
+              {
+                "count": 17,
+                "title": "리볼버 (2024년 영화)"
+              },
+              {
+                "count": 8,
+                "title": "철도역"
+              },
+              {
+                "count": 6,
+                "title": "인도네시아"
+              },
+              {
+                "count": 5,
+                "title": "2026년 K리그2"
+              },
+              {
+                "count": 5,
+                "title": "나주 나씨 부사공파"
+              },
+              {
+                "count": 5,
+                "title": "유정현 (목사)"
+              },
+              {
+                "count": 4,
+                "title": "MBC TV"
+              },
+              {
+                "count": 4,
+                "title": "가르나차"
+              }
+            ],
+            "name": "sampled_edits_last_three_hours",
+            "sample_cap_reached": false,
+            "unit": "edits",
+            "value": 348
+          },
+          "source_scope": "Wikipedia main-namespace edit-count sample, 14 global language editions, three-hour window capped at 500 per wiki; not geographic location",
+          "source_updated_at": null,
+          "source_url": "https://ko.wikipedia.org/wiki/Special:RecentChanges",
+          "title": "Wikipedia ko public article-edit activity (sampled)"
         }
       }
     },

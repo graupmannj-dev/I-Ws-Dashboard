@@ -221,6 +221,86 @@
           "title": "Denmark. Kattegat. EK R 18 Jaegerspris. Firing exercises. Warning."
         }
       }
+    },
+    "92b47dda0271ef3776790a21b6762931fab63d973f43f04ab899a419e2c0479d": {
+      "information_root": "cbp_wait:cbp_wait:021201:2026-11-22:06:34:18",
+      "members": {
+        "beh:ee339841ae6a200079c9a2a86215": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-22T11:41:54+00:00",
+          "geography_key": "us-border-port:021201",
+          "geography_label": "Highgate Springs",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:ee339841ae6a200079c9a2a86215",
+          "information_root": "cbp_wait:cbp_wait:021201:2026-11-22:06:34:18",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "no delay",
+            "lanes_open": 1,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "At 6:00 am EST",
+            "reported_local_date": "11/22/2026",
+            "reported_local_time": "06:34:18",
+            "source_declared_border": "Canadian Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 0
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Highgate Springs"
+        }
+      }
+    },
+    "92c6388c3feb98683669250fe2ab41dac5b4143a4a184bf4aa1209a8e05e259a": {
+      "information_root": "nws:b4431432f3fa98606a696ffd",
+      "members": {
+        "beh:04e880f91d11b50ad24e9b3571b9": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "nws",
+          "direct_measurement": false,
+          "event_at": "2026-11-22T06:20:00Z",
+          "first_observed_at": "2026-11-22T06:20:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:04e880f91d11b50ad24e9b3571b9",
+          "information_root": "nws:b4431432f3fa98606a696ffd",
+          "origin": "behavioral_registry",
+          "provider": "nws",
+          "published_at": "2026-11-22T06:20:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "official_weather_alert_context",
+          "source_measurement": null,
+          "source_scope": "Active NWS marine alerts; severity Severe",
+          "source_updated_at": null,
+          "source_url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.0bd7583406e3892dc93cdd490c967674b936e7b8.001.2",
+          "title": "Coastal Flood Warning - Coastal Flagler"
+        }
+      }
     }
   },
   "schema": "aiba.family-archive.v1"

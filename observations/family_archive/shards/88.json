@@ -1,5 +1,44 @@
 {
   "roots": {
+    "880ae277a59c2fd2156f917fd221f7fc95671cc4b53b0c3a443d6bc1f473b5f4": {
+      "information_root": "bmkg_nowcast:bmkg_nowcast:74f68b29b83ddf505000be5d89d6",
+      "members": {
+        "beh:ea8dc6f010aaa6071dd9c5a806d3": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "bmkg_nowcast",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-22T10:15:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:ea8dc6f010aaa6071dd9c5a806d3",
+          "information_root": "bmkg_nowcast:bmkg_nowcast:74f68b29b83ddf505000be5d89d6",
+          "origin": "behavioral_registry",
+          "provider": "bmkg_nowcast",
+          "published_at": "2026-11-22T10:15:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Indonesia BMKG",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Indonesia BMKG active provincial nowcast RSS, source-reported only; not global",
+          "source_updated_at": null,
+          "source_url": "https://www.bmkg.go.id/alerts/nowcast/en/CML20261122003_alert.xml",
+          "title": "Thunderstorm Tonight in Maluku"
+        }
+      }
+    },
     "8812c2e8c2633ad21e5048148bfd8b92f3c0c320ddf3b08dda75c2ff8659429b": {
       "information_root": "cbp_wait:cbp_wait:230501:2026-11-21:13:22:45",
       "members": {

@@ -107,6 +107,45 @@
         }
       }
     },
+    "c54e64021106f8bfce4351193490e8cbb04bcd8e3dba593e42b8f060b3a9b1fe": {
+      "information_root": "bmkg_nowcast:bmkg_nowcast:af4ad4c290870c8cc09ff94d6083",
+      "members": {
+        "beh:2d076210aec9499d1e10feb0fb2f": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "bmkg_nowcast",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-22T10:40:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:2d076210aec9499d1e10feb0fb2f",
+          "information_root": "bmkg_nowcast:bmkg_nowcast:af4ad4c290870c8cc09ff94d6083",
+          "origin": "behavioral_registry",
+          "provider": "bmkg_nowcast",
+          "published_at": "2026-11-22T10:40:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Indonesia BMKG",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Indonesia BMKG active provincial nowcast RSS, source-reported only; not global",
+          "source_updated_at": null,
+          "source_url": "https://www.bmkg.go.id/alerts/nowcast/en/CJB20261122004_alert.xml",
+          "title": "Thunderstorm This Evening in Jawa Barat"
+        }
+      }
+    },
     "c5679e117be5d0debb1a7df5db200631b452eb3216ae53f1cfc632e43b06f628": {
       "information_root": "commercial:3b2cf8bd28cf06bc1fce",
       "members": {
@@ -164,6 +203,53 @@
           "source_updated_at": null,
           "source_url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.sen.html",
           "title": "Senegal - Level 1: Exercise Normal Precautions"
+        }
+      }
+    },
+    "c5e3f674f8ee9298b247739891b8817394f92105cda7e538e20e425704ee885c": {
+      "information_root": "cbp_wait:cbp_wait:250407:2026-11-22:03:34:18",
+      "members": {
+        "beh:f3c9a634509b24ec831e7bb2c6fb": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-22T11:41:54+00:00",
+          "geography_key": "us-border-port:250407",
+          "geography_label": "San Ysidro",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:f3c9a634509b24ec831e7bb2c6fb",
+          "information_root": "cbp_wait:cbp_wait:250407:2026-11-22:03:34:18",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Update Pending",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Closed",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/22/2026",
+            "reported_local_time": "03:34:18",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — San Ysidro / PedWest"
         }
       }
     }
