@@ -1,5 +1,52 @@
 {
   "roots": {
+    "9139bed4cb20bbd4146b7a36acbbed4cc449d30d5efda135527e8eaed7377bcd": {
+      "information_root": "cbp_wait:cbp_wait:250301:2026-11-21:17:22:12",
+      "members": {
+        "beh:42683199afdc733b7407dbd48b24": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-22T01:27:37+00:00",
+          "geography_key": "us-border-port:250301",
+          "geography_label": "Calexico",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:42683199afdc733b7407dbd48b24",
+          "information_root": "cbp_wait:cbp_wait:250301:2026-11-21:17:22:12",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Lanes Closed",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/21/2026",
+            "reported_local_time": "17:22:12",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Calexico / East"
+        }
+      }
+    },
     "913d0a65ebb4c84ab7b902abd76090b2b05d65057296afc1c679f7dc8ef239f6": {
       "information_root": "cbp_wait:cbp_wait:240204:2026-11-21:04:24:37",
       "members": {
@@ -84,6 +131,53 @@
           "source_updated_at": null,
           "source_url": "https://data.bmkg.go.id/DataMKG/TEWS/gempaterkini.json",
           "title": "BMKG earthquake M5.8 · 49 km TimurLaut RUTENG-MANGGARAI-NTT"
+        }
+      }
+    },
+    "9174df9b3d42e1b837693aaed883efee68bcf8b09f5d60b437d2355552ebfa4e": {
+      "information_root": "cbp_wait:cbp_wait:250609:2026-11-21:17:22:12",
+      "members": {
+        "beh:9fcbc61ebe1fd1fa20eb00cfdc60": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-22T01:27:37+00:00",
+          "geography_key": "us-border-port:250609",
+          "geography_label": "Otay Mesa",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:9fcbc61ebe1fd1fa20eb00cfdc60",
+          "information_root": "cbp_wait:cbp_wait:250609:2026-11-21:17:22:12",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Update Pending",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/21/2026",
+            "reported_local_time": "17:22:12",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Otay Mesa"
         }
       }
     },

@@ -182,6 +182,81 @@
           "title": "IODA detected connectivity anomaly: country TO"
         }
       }
+    },
+    "a9fc7a90253901cd1df02a66f1ead2b46df011fd6c70775afb63552b37adf0fd": {
+      "information_root": "wiki_edits:wiki_edits:zh:20261122T01",
+      "members": {
+        "beh:cd012d00267dcd2198d9e334ceb5": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "wiki_edits",
+          "direct_measurement": false,
+          "event_at": "2026-11-22T01:25:27Z",
+          "first_observed_at": "2026-11-22T01:25:27+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:cd012d00267dcd2198d9e334ceb5",
+          "information_root": "wiki_edits:wiki_edits:zh:20261122T01",
+          "origin": "behavioral_registry",
+          "provider": "wiki_edits",
+          "published_at": "2026-11-22T01:25:27Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "public_encyclopedia_edit_aggregate",
+          "source_family": "public_attention",
+          "source_kind": "bounded_public_edit_count_not_event_verification",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "distinct_articles_in_sample": 403,
+            "maximum_returned_edits": 500,
+            "most_edited_article_counts": [
+              {
+                "count": 15,
+                "title": "曾文市政願景園區"
+              },
+              {
+                "count": 6,
+                "title": "张镇周"
+              },
+              {
+                "count": 5,
+                "title": "假面騎士MY-TH"
+              },
+              {
+                "count": 5,
+                "title": "姚緒"
+              },
+              {
+                "count": 5,
+                "title": "愛情來了 (2026年電視劇)"
+              },
+              {
+                "count": 4,
+                "title": "弗朗西斯·哈爾岑"
+              },
+              {
+                "count": 4,
+                "title": "文武 (韓國電視劇)"
+              },
+              {
+                "count": 4,
+                "title": "玩命遊戲"
+              }
+            ],
+            "name": "sampled_edits_last_three_hours",
+            "sample_cap_reached": true,
+            "unit": "edits",
+            "value": 500
+          },
+          "source_scope": "Wikipedia main-namespace edit-count sample, 14 global language editions, three-hour window capped at 500 per wiki; not geographic location",
+          "source_updated_at": null,
+          "source_url": "https://zh.wikipedia.org/wiki/Special:RecentChanges",
+          "title": "Wikipedia zh public article-edit activity (sampled)"
+        }
+      }
     }
   },
   "schema": "aiba.family-archive.v1"

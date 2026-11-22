@@ -153,6 +153,50 @@
         }
       }
     },
+    "d53f228555f8387bde3236c6ec48e4cf1ba0c2adc8a58a0874a4492d4572cfcb": {
+      "information_root": "ripe:measurement:1001:20261122T01",
+      "members": {
+        "beh:03a045a65b42ea0913cbfc974370": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "aggregate_ping_no_country_or_threat_attribution",
+          "collection_mode": "ripe",
+          "direct_measurement": true,
+          "event_at": null,
+          "first_observed_at": "2026-11-22T01:27:37+00:00",
+          "geography_key": "ripe-msm:1001",
+          "geography_label": "K-root public ping aggregate",
+          "geography_precision": "not_country_or_incident_location",
+          "id": "beh:03a045a65b42ea0913cbfc974370",
+          "information_root": "ripe:measurement:1001:20261122T01",
+          "origin": "behavioral_registry",
+          "provider": "ripe",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "network_aggregate_monitoring",
+          "source_family": "internet_reachability",
+          "source_kind": "aggregate_public_network_ping",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "cohort_comparable_to_prior_snapshots": false,
+            "failed_or_invalid_rtt_count": 382,
+            "individual_probe_records_published": false,
+            "measurement_id": 1001,
+            "name": "sample_median_ping_rtt",
+            "sampled_probe_count": 13439,
+            "unit": "ms",
+            "valid_rtt_count": 13057,
+            "value": 19.383
+          },
+          "source_scope": "RIPE Atlas built-in K-root ping #1001, global public-probe aggregate; not country coverage",
+          "source_updated_at": null,
+          "source_url": "https://atlas.ripe.net/measurements/1001/",
+          "title": "RIPE Atlas K-root public probe aggregate (13057 usable measurements)"
+        }
+      }
+    },
     "d5467a7a0a7c29041e11a46ded7e53d6216dff33b458e5320b5a296bc85ff579": {
       "information_root": "ioda:02fe598dc74f5c92c94341ec",
       "members": {
@@ -210,6 +254,81 @@
           "source_updated_at": null,
           "source_url": "https://ioda.inetintel.cc.gatech.edu/",
           "title": "IODA detected connectivity anomaly: country LC"
+        }
+      }
+    },
+    "d54d8dcfb28d5642cda73a29eabd1eb55bd8cf4d63fcb5c094b26410361c8a5b": {
+      "information_root": "wiki_edits:wiki_edits:tr:20261122T01",
+      "members": {
+        "beh:8c22b99102c7fe526eb7b65e1442": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "wiki_edits",
+          "direct_measurement": false,
+          "event_at": "2026-11-22T01:25:26Z",
+          "first_observed_at": "2026-11-22T01:25:26+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:8c22b99102c7fe526eb7b65e1442",
+          "information_root": "wiki_edits:wiki_edits:tr:20261122T01",
+          "origin": "behavioral_registry",
+          "provider": "wiki_edits",
+          "published_at": "2026-11-22T01:25:26Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "public_encyclopedia_edit_aggregate",
+          "source_family": "public_attention",
+          "source_kind": "bounded_public_edit_count_not_event_verification",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "distinct_articles_in_sample": 394,
+            "maximum_returned_edits": 500,
+            "most_edited_article_counts": [
+              {
+                "count": 9,
+                "title": "Hiroşima ve Nagasaki'ye atom bombası saldırısı"
+              },
+              {
+                "count": 7,
+                "title": "Taşacak Bu Deniz"
+              },
+              {
+                "count": 4,
+                "title": "Birinci Çin-Japon Savaşı"
+              },
+              {
+                "count": 4,
+                "title": "Türk dizileri listesi"
+              },
+              {
+                "count": 3,
+                "title": "Doğu Türkistan Cumhuriyeti"
+              },
+              {
+                "count": 3,
+                "title": "Los Alamos, New Mexico"
+              },
+              {
+                "count": 3,
+                "title": "Rebbe"
+              },
+              {
+                "count": 3,
+                "title": "Senkronize atlama"
+              }
+            ],
+            "name": "sampled_edits_last_three_hours",
+            "sample_cap_reached": false,
+            "unit": "edits",
+            "value": 427
+          },
+          "source_scope": "Wikipedia main-namespace edit-count sample, 14 global language editions, three-hour window capped at 500 per wiki; not geographic location",
+          "source_updated_at": null,
+          "source_url": "https://tr.wikipedia.org/wiki/Special:RecentChanges",
+          "title": "Wikipedia tr public article-edit activity (sampled)"
         }
       }
     },

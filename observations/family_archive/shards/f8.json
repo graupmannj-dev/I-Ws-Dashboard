@@ -77,6 +77,53 @@
         }
       }
     },
+    "f83d0c65b05507ac8ba1bcecfc3db8678fd3bc3203501a80ed3d975d540eba98": {
+      "information_root": "cbp_wait:cbp_wait:535501:2026-11-21:19:22:12",
+      "members": {
+        "beh:623631b87c3f3cd8e6e5d192e9b9": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-22T01:27:37+00:00",
+          "geography_key": "us-border-port:535501",
+          "geography_label": "Brownsville",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:623631b87c3f3cd8e6e5d192e9b9",
+          "information_root": "cbp_wait:cbp_wait:535501:2026-11-21:19:22:12",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "N/A",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/21/2026",
+            "reported_local_time": "19:22:12",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Brownsville / B&M"
+        }
+      }
+    },
     "f83e1686d863f92d09d65703cf3631c8db7f153609045347190669c17ec25bb1": {
       "information_root": "niord:8d5a1de4-9b8e-4c89-bd26-41a2becc8cb3:0:2:0",
       "members": {
@@ -260,6 +307,53 @@
           "source_updated_at": null,
           "source_url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.ba5b30cdd7725be89290d579d232926c079ae1c6.001.1",
           "title": "Coastal Flood Statement - Monroe Upper Keys; Monroe Middle Keys"
+        }
+      }
+    },
+    "f8c1336a135630efde6fb4d61c225705d3a5467a3c78f9523191c7337aa74fbb": {
+      "information_root": "ons_br:ons_br:S:20261121T030000Z",
+      "members": {
+        "beh:11d94c0ea847daa0e1e2027f6a04": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "verified_grid_load_not_outage_or_intent",
+          "collection_mode": "ons_br",
+          "direct_measurement": true,
+          "event_at": "2026-11-21T03:00:00Z",
+          "first_observed_at": "2026-11-22T01:27:37+00:00",
+          "geography_key": "br-ons-loadarea:S",
+          "geography_label": "South",
+          "geography_precision": "regional_grid_not_incident_site",
+          "id": "beh:11d94c0ea847daa0e1e2027f6a04",
+          "information_root": "ons_br:ons_br:S:20261121T030000Z",
+          "origin": "behavioral_registry",
+          "provider": "ons_br",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "verified_national_grid_load_measurement",
+          "source_family": "grid_load",
+          "source_kind": "verified_regional_electricity_load_context_not_outage",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "collected_history_day": "2026-11-20",
+            "historical_verified_not_live": true,
+            "load_area_code": "S",
+            "load_area_name": "South",
+            "name": "verified_half_hour_global_load",
+            "not_outage_or_attribution": true,
+            "sample_interval_minutes": 30,
+            "sampled_rows": 48,
+            "source_field": "val_cargaglobal",
+            "source_utc_field": "din_referenciautc",
+            "unit": "MWmed",
+            "value": 12738.209
+          },
+          "source_scope": "Brazilian national system operator ONS verified half-hour load, four macroregions, previous two-day sample; no local facilities/outage attribution",
+          "source_updated_at": null,
+          "source_url": "https://dados.ons.org.br/dataset/carga-energia-verificada",
+          "title": "Brazil ONS South verified half-hourly system load"
         }
       }
     },

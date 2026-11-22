@@ -1,5 +1,38 @@
 {
   "roots": {
+    "020fe8e0300850f61ae5238159ec928f50498b5868de0ae066c29989bad7eee7": {
+      "information_root": "nws:680b402f4dd276ac503f7485",
+      "members": {
+        "beh:d84cd6b56e01357332bc75355f77": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "nws",
+          "direct_measurement": false,
+          "event_at": "2026-11-22T00:10:00Z",
+          "first_observed_at": "2026-11-22T00:10:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:d84cd6b56e01357332bc75355f77",
+          "information_root": "nws:680b402f4dd276ac503f7485",
+          "origin": "behavioral_registry",
+          "provider": "nws",
+          "published_at": "2026-11-22T00:10:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "official_weather_alert_context",
+          "source_measurement": null,
+          "source_scope": "Active NWS marine alerts; severity Minor",
+          "source_updated_at": null,
+          "source_url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.3ece3c3fc50fa88bbfdfbfe78426fd43970db789.002.2",
+          "title": "Coastal Flood Advisory - Coastal Duval"
+        }
+      }
+    },
     "0216dbaa97dd9058e4da45c07b365757ba51eae1c4f6f594c6568588a952080c": {
       "information_root": "niord:f1598c0a-45e0-4231-a9ef-2830214be50b:0:0:0",
       "members": {
@@ -106,6 +139,53 @@
           "source_updated_at": null,
           "source_url": "https://www.bmkg.go.id/alerts/nowcast/en/CSG20261121004_alert.xml",
           "title": "Thunderstorm This Evening in Sulawesi Tengah"
+        }
+      }
+    },
+    "029c591020076aa4e8e20e41038c1ed4e67a6155631efebdc82bebbc3c99572b": {
+      "information_root": "cbp_wait:cbp_wait:535503:2026-11-21:19:22:12",
+      "members": {
+        "beh:8cd54994eb17a236f9779d4d4608": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-22T01:27:37+00:00",
+          "geography_key": "us-border-port:535503",
+          "geography_label": "Brownsville",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:8cd54994eb17a236f9779d4d4608",
+          "information_root": "cbp_wait:cbp_wait:535503:2026-11-21:19:22:12",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Lanes Closed",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/21/2026",
+            "reported_local_time": "19:22:12",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Brownsville / Los Indios"
         }
       }
     },

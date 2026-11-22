@@ -147,6 +147,31 @@
       ],
       "subject_geography_compatible": true
     },
+    "24bedf902b77b2628097d2105dd9": {
+      "independent_corroboration_proven": false,
+      "latent_semantic_similarity": 1.0,
+      "method": "aiba.hybrid-local-title-embedding.v1",
+      "raw_text_similarity": 1,
+      "review_status": "unreviewed_automatic_topic_match",
+      "same_incident_proven": false,
+      "same_source_document": false,
+      "score": 1.0,
+      "shared_activity_roles": [],
+      "shared_named_subjects": [
+        "atlas"
+      ],
+      "shared_subject_terms": [
+        "aggregate",
+        "atlas",
+        "measurements",
+        "probe",
+        "public",
+        "ripe",
+        "root",
+        "usable"
+      ],
+      "subject_geography_compatible": true
+    },
     "273a73df52b120223092057c794f": {
       "independent_corroboration_proven": false,
       "method": "new_analytical_theme",
@@ -1547,6 +1572,7 @@
     "239d04c1f707e3ec223e9df93664": "family:1c628f836d1f68918c22",
     "240708e26c0c825b712410e33b71": "family:16768cd11ccd8abf1ec4",
     "242bc0d737a36d5293ca32e26eb5": "family:f6bd83a204d53c1af649",
+    "24bedf902b77b2628097d2105dd9": "family:fe16830728b4f874c391",
     "2560ce934a99101f3552a769a199": "family:12ac7173b9295723ae32",
     "256fbb8f2e5638a7b95f97d66229": "family:e3a7ff1f04ab2ab0fc69",
     "25d5e3a1ac43e49d91deabfb7103": "family:61be0cb940a7f9431b5a",
@@ -6497,8 +6523,8 @@
     },
     "family:fe16830728b4f874c391": {
       "first_document_at": "2026-11-21T02:31:05+00:00",
-      "last_document_at": "2026-11-21T19:29:49+00:00",
-      "matched_document_count": 3,
+      "last_document_at": "2026-11-22T01:27:37+00:00",
+      "matched_document_count": 4,
       "seed": {
         "domain": "network",
         "geo": [],
@@ -6541,9 +6567,9 @@
     }
   },
   "input_truncated": false,
-  "new_document_assignments": 2,
+  "new_document_assignments": 1,
   "schema": "aiba.automatic-analytical-topics.v1",
   "semantic_seed_index_limited": false,
-  "total_document_assignments": 484,
+  "total_document_assignments": 485,
   "total_stable_topics": 213
 }

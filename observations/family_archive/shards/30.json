@@ -165,6 +165,53 @@
         }
       }
     },
+    "30c3e5d731a3128cf4d16ae925d771d3d166780c4cbcaa0e158354f0fd2e19f0": {
+      "information_root": "cbp_wait:cbp_wait:300402:2026-11-21:17:22:12",
+      "members": {
+        "beh:8fb19452cc9302fba99a45ae3bbd": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-22T01:27:37+00:00",
+          "geography_key": "us-border-port:300402",
+          "geography_label": "Blaine",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:8fb19452cc9302fba99a45ae3bbd",
+          "information_root": "cbp_wait:cbp_wait:300402:2026-11-21:17:22:12",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "N/A",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/21/2026",
+            "reported_local_time": "17:22:12",
+            "source_declared_border": "Canadian Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Blaine / Peace Arch"
+        }
+      }
+    },
     "30cef8b2a037ffd807867a935ae03070b74d258df948ce7181f1e8c0706afb5b": {
       "information_root": "official:38c58e6d3f2cd9321386",
       "members": {

@@ -1,5 +1,52 @@
 {
   "roots": {
+    "1a1811868bb3286fc9c85bbdf2ec478eccea45e42c4ee4165b9993ef05ba2a6c": {
+      "information_root": "cbp_wait:cbp_wait:011503:2026-11-21:20:22:12",
+      "members": {
+        "beh:15085761194fd9507864561c5af6": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-22T01:27:37+00:00",
+          "geography_key": "us-border-port:011503",
+          "geography_label": "Calais",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:15085761194fd9507864561c5af6",
+          "information_root": "cbp_wait:cbp_wait:011503:2026-11-21:20:22:12",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "no delay",
+            "lanes_open": 1,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "At 7:00 pm EST",
+            "reported_local_date": "11/21/2026",
+            "reported_local_time": "20:22:12",
+            "source_declared_border": "Canadian Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 0
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Calais / International Avenue"
+        }
+      }
+    },
     "1a30fd5a944f06ae11b56a4669398d5358047d47aad34267216b4219c1960322": {
       "information_root": "ioda:265bb30e26845abac99fc151",
       "members": {
@@ -110,6 +157,45 @@
         }
       }
     },
+    "1a8c445a3862a4556dafeecb337dcdcac2e1ed46b0ccd92ada5fa46af48e18a4": {
+      "information_root": "bmkg_nowcast:bmkg_nowcast:f9906475b9f75854e0a6d25c914e",
+      "members": {
+        "beh:4d090feb632b48928144189a592a": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "bmkg_nowcast",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-22T00:19:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:4d090feb632b48928144189a592a",
+          "information_root": "bmkg_nowcast:bmkg_nowcast:f9906475b9f75854e0a6d25c914e",
+          "origin": "behavioral_registry",
+          "provider": "bmkg_nowcast",
+          "published_at": "2026-11-22T00:19:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Indonesia BMKG",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Indonesia BMKG active provincial nowcast RSS, source-reported only; not global",
+          "source_updated_at": null,
+          "source_url": "https://www.bmkg.go.id/alerts/nowcast/en/CAH20261122001_alert.xml",
+          "title": "Thunderstorm This Morning in Aceh"
+        }
+      }
+    },
     "1a8c6c551a41ada6a22c652721f8107f8927e260073bb1d85012f27cb0333a50": {
       "information_root": "sg_mpa:sg_mpa:2026-05:passenger",
       "members": {
@@ -153,6 +239,53 @@
           "source_updated_at": null,
           "source_url": "https://data.gov.sg/datasets/d_8f264219109e61fffa87ac64dd5a9a65/view",
           "title": "Singapore MPA 2026-05 Passenger vessel arrivals (>75 GT)"
+        }
+      }
+    },
+    "1a9c950c20c9074a15393f297afd37e74322902553f711bc01d03896b0066a18": {
+      "information_root": "ons_br:ons_br:NE:20261121T030000Z",
+      "members": {
+        "beh:608dbaff26529a8a0fdef446805d": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "verified_grid_load_not_outage_or_intent",
+          "collection_mode": "ons_br",
+          "direct_measurement": true,
+          "event_at": "2026-11-21T03:00:00Z",
+          "first_observed_at": "2026-11-22T01:27:37+00:00",
+          "geography_key": "br-ons-loadarea:NE",
+          "geography_label": "Northeast",
+          "geography_precision": "regional_grid_not_incident_site",
+          "id": "beh:608dbaff26529a8a0fdef446805d",
+          "information_root": "ons_br:ons_br:NE:20261121T030000Z",
+          "origin": "behavioral_registry",
+          "provider": "ons_br",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "verified_national_grid_load_measurement",
+          "source_family": "grid_load",
+          "source_kind": "verified_regional_electricity_load_context_not_outage",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "collected_history_day": "2026-11-20",
+            "historical_verified_not_live": true,
+            "load_area_code": "NE",
+            "load_area_name": "Northeast",
+            "name": "verified_half_hour_global_load",
+            "not_outage_or_attribution": true,
+            "sample_interval_minutes": 30,
+            "sampled_rows": 48,
+            "source_field": "val_cargaglobal",
+            "source_utc_field": "din_referenciautc",
+            "unit": "MWmed",
+            "value": 16322.485
+          },
+          "source_scope": "Brazilian national system operator ONS verified half-hour load, four macroregions, previous two-day sample; no local facilities/outage attribution",
+          "source_updated_at": null,
+          "source_url": "https://dados.ons.org.br/dataset/carga-energia-verificada",
+          "title": "Brazil ONS Northeast verified half-hourly system load"
         }
       }
     },

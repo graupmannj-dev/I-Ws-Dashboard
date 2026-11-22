@@ -163,6 +163,53 @@
         }
       }
     },
+    "597c54ad4270661c9f3452490c409b93526c353a434886c50cf9ed8ca1e64cad": {
+      "information_root": "cbp_wait:cbp_wait:250608:2026-11-21:17:22:12",
+      "members": {
+        "beh:251feb78cc3364605725e7619526": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-22T01:27:37+00:00",
+          "geography_key": "us-border-port:250608",
+          "geography_label": "Otay Mesa Port of Entry",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:251feb78cc3364605725e7619526",
+          "information_root": "cbp_wait:cbp_wait:250608:2026-11-21:17:22:12",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Update Pending",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/21/2026",
+            "reported_local_time": "17:22:12",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Otay Mesa Port of Entry"
+        }
+      }
+    },
     "597fe7b175837138c938dd9ab2f919b37cd3f1dbc984e7482492cf310f35ee2e": {
       "information_root": "coops:8638610:20261121T1918Z",
       "members": {
@@ -239,6 +286,50 @@
           "source_updated_at": null,
           "source_url": "https://www.bmkg.go.id/alerts/nowcast/en/CKU20261121003_alert.xml",
           "title": "Thunderstorm This Evening in Kalimantan Utara"
+        }
+      }
+    },
+    "59b4f88ca2783308f7ed7ac8c5b8d3aabff41325f16961ce43e52c353961a6c9": {
+      "information_root": "tw_power:tw_power:20261122T0120Z",
+      "members": {
+        "beh:c543f99701568d089c76c175fe8c": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_power_snapshot_not_outage_attribution",
+          "collection_mode": "tw_power",
+          "direct_measurement": true,
+          "event_at": null,
+          "first_observed_at": "2026-11-22T01:27:37+00:00",
+          "geography_key": "country:TW",
+          "geography_label": "Taiwan",
+          "geography_precision": "national_not_facility",
+          "id": "beh:c543f99701568d089c76c175fe8c",
+          "information_root": "tw_power:tw_power:20261122T0120Z",
+          "origin": "behavioral_registry",
+          "provider": "tw_power",
+          "published_at": "2026-11-22T01:20:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "public_national_power_snapshot",
+          "source_family": "grid_load",
+          "source_kind": "national_grid_load_aggregate_not_outage",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "measurement_clock_distinct_from_release_not_verified": true,
+            "name": "nationwide_reported_current_load",
+            "not_grid_frequency_or_outage_attribution": true,
+            "observation_coverage": "single_national_snapshot_not_24h",
+            "reported_utilization_percent": 59.0,
+            "source_published_clock": "2026-11-22T01:20:00Z",
+            "source_value_10k_kilowatts": 2418.4,
+            "unit": "MW",
+            "value": 24184.0
+          },
+          "source_scope": "Taiwan Taipower public nationwide current load snapshot and publisher release clock, not power-station or local outage data",
+          "source_updated_at": null,
+          "source_url": "https://service.taipower.com.tw/data/opendata/apply/file/d006020/001.json",
+          "title": "Taipower nationwide publicly reported current electricity load"
         }
       }
     },

@@ -1,5 +1,51 @@
 {
   "roots": {
+    "284947ba663919d02f66ffc569cc5db2997732b08dda1035e95755ca82b9e684": {
+      "information_root": "ris_bgp:ris_bgp:AS9829:20261121T21",
+      "members": {
+        "beh:b36a9c5ca7995e795e38aba4817c": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "public_routing_updates_not_country_outage",
+          "collection_mode": "ris_bgp",
+          "direct_measurement": true,
+          "event_at": null,
+          "first_observed_at": "2026-11-22T01:27:37+00:00",
+          "geography_key": "asn:9829",
+          "geography_label": "AS9829",
+          "geography_precision": "routing_target_not_country_incident",
+          "id": "beh:b36a9c5ca7995e795e38aba4817c",
+          "information_root": "ris_bgp:ris_bgp:AS9829:20261121T21",
+          "origin": "behavioral_registry",
+          "provider": "ris_bgp",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "routing_collector_sampled_asn_updates",
+          "source_family": "internet_routing",
+          "source_kind": "sampled_asn_bgp_route_updates_not_network_outage",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "collector_peers_are_not_geo_deduplicated": true,
+            "country_impact_not_established": true,
+            "name": "sampled_6h_bgp_announcements",
+            "registered_network_country_hint": "IN",
+            "returned_sampling_buckets": 6,
+            "source_window_end": "2026-11-21T21:00:00Z",
+            "target_asn": "AS9829",
+            "unit": "announcements",
+            "value": 353965,
+            "window_hours_requested": 6,
+            "withdrawals_unavailable_for_asn": true
+          },
+          "source_scope": "RIPE RIS public route-announcement update samples on six non-Western operated networks; ASNs not country-wide outage detection",
+          "source_updated_at": null,
+          "source_url": "https://stat.ripe.net/data/bgp-update-activity/data.json?resource=AS9829&num_hours=6&max_samples=24&hide_empty_samples=false",
+          "title": "RIPE RIS sampled BGP announcements: AS9829"
+        }
+      }
+    },
     "284b2fe6bc08e4c7b861f39a09dc56109515a5f0021badd5edb2048f84e5be17": {
       "information_root": "niord:4fcc4e47-7663-4a9f-9f65-4ff164149b8f:0:0:0",
       "members": {
@@ -332,6 +378,39 @@
           "source_updated_at": null,
           "source_url": "https://tfr.faa.gov/6_7422.html",
           "title": "FAA TFR 6/7422 · U.S. MEXICO BORDER, TX, Friday, November 13, 2026 UTC"
+        }
+      }
+    },
+    "28d7712209e69a22a3c1c630421649a05eee9d13ff7604c3d7541c219c6eecb2": {
+      "information_root": "nws:8b8b8f67327d47e231e7e391",
+      "members": {
+        "beh:5e9bb4b75aa5f0db6ccd8b95e7c5": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "nws",
+          "direct_measurement": false,
+          "event_at": "2026-11-22T01:21:00Z",
+          "first_observed_at": "2026-11-22T01:21:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:5e9bb4b75aa5f0db6ccd8b95e7c5",
+          "information_root": "nws:8b8b8f67327d47e231e7e391",
+          "origin": "behavioral_registry",
+          "provider": "nws",
+          "published_at": "2026-11-22T01:21:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "official_weather_alert_context",
+          "source_measurement": null,
+          "source_scope": "Active NWS marine alerts; severity Severe",
+          "source_updated_at": null,
+          "source_url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.4410d7b202a29dc4e2491ae0491b2b3bd50cfce9.001.1",
+          "title": "Severe Thunderstorm Warning - Indian River, FL; St. Lucie, FL"
         }
       }
     }

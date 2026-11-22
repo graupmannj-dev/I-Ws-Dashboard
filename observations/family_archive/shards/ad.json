@@ -46,6 +46,100 @@
         }
       }
     },
+    "ad23fb9da6ad4ccb189ff620e4aa7ad8e983acf01c0201b10353a22c21f9bb09": {
+      "information_root": "cbp_wait:cbp_wait:021201:2026-11-21:20:22:12",
+      "members": {
+        "beh:f959e328deaa9122e8a60d08cce6": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-22T01:27:37+00:00",
+          "geography_key": "us-border-port:021201",
+          "geography_label": "Highgate Springs",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:f959e328deaa9122e8a60d08cce6",
+          "information_root": "cbp_wait:cbp_wait:021201:2026-11-21:20:22:12",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "no delay",
+            "lanes_open": 1,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "At 8:00 pm EST",
+            "reported_local_date": "11/21/2026",
+            "reported_local_time": "20:22:12",
+            "source_declared_border": "Canadian Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 0
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Highgate Springs"
+        }
+      }
+    },
+    "ad67864bd3e35fcdb0e4845187416b9b57883337123bb921f0467d3cbf2e4ebd": {
+      "information_root": "cbp_wait:cbp_wait:230404:2026-11-21:19:22:12",
+      "members": {
+        "beh:bf33bbba99d492fd3ef87e5da7ff": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-22T01:27:37+00:00",
+          "geography_key": "us-border-port:230404",
+          "geography_label": "Laredo",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:bf33bbba99d492fd3ef87e5da7ff",
+          "information_root": "cbp_wait:cbp_wait:230404:2026-11-21:19:22:12",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Lanes Closed",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/21/2026",
+            "reported_local_time": "19:22:12",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Laredo / World Trade Bridge"
+        }
+      }
+    },
     "ad91caaf5f8902d24be318acca2d67225372dd4d6c210bc99e157c1c7fdace5e": {
       "information_root": "niord:7e1e4c1f-369b-4077-ac94-713da08c9b82:1:0:0",
       "members": {
@@ -133,6 +227,53 @@
           "source_updated_at": "2026-11-20T16:00:53Z",
           "source_url": "https://niord.dma.dk/#/message/9b7ced07-7d64-4b72-908d-a39b9fa17b77",
           "title": "Denmark. Kattegat. Øster Flak SE. Firing exercise."
+        }
+      }
+    },
+    "ada8962eb0659d0c075c8381752fdda61b151368c376f0fb1a85b06057bbb613": {
+      "information_root": "cbp_wait:cbp_wait:302301:2026-11-21:17:22:12",
+      "members": {
+        "beh:71fe7b12d5f15905807f13218d68": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-22T01:27:37+00:00",
+          "geography_key": "us-border-port:302301",
+          "geography_label": "Lynden",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:71fe7b12d5f15905807f13218d68",
+          "information_root": "cbp_wait:cbp_wait:302301:2026-11-21:17:22:12",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "no delay",
+            "lanes_open": 1,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "At 5:00 pm PST",
+            "reported_local_date": "11/21/2026",
+            "reported_local_time": "17:22:12",
+            "source_declared_border": "Canadian Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 5
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Lynden"
         }
       }
     },

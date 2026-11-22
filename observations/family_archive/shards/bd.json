@@ -229,6 +229,45 @@
           "title": "Denmark. Kattegat. EK R 18 Jaegerspris. Firing exercises. Warning."
         }
       }
+    },
+    "bde0a9b384d07e95d54f1b91b12f951cf912d7f75574c2cfddefc397ad7f5135": {
+      "information_root": "bmkg_nowcast:bmkg_nowcast:16c543133c6b63a2e1af3154f65a",
+      "members": {
+        "beh:6cba4502ef13ec0058a4022c2e0c": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "bmkg_nowcast",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-22T00:50:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:6cba4502ef13ec0058a4022c2e0c",
+          "information_root": "bmkg_nowcast:bmkg_nowcast:16c543133c6b63a2e1af3154f65a",
+          "origin": "behavioral_registry",
+          "provider": "bmkg_nowcast",
+          "published_at": "2026-11-22T00:50:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Indonesia BMKG",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Indonesia BMKG active provincial nowcast RSS, source-reported only; not global",
+          "source_updated_at": null,
+          "source_url": "https://www.bmkg.go.id/alerts/nowcast/en/CRU20261122001_alert.xml",
+          "title": "Thunderstorm This Morning in Riau"
+        }
+      }
     }
   },
   "schema": "aiba.family-archive.v1"

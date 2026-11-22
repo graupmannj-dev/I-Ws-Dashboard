@@ -1,5 +1,38 @@
 {
   "roots": {
+    "0c131ed07c2bb3ab870918bb282110b6c69dfb9de32cf3597ef4cd25032abf78": {
+      "information_root": "nws:e93a3caa6bb1753497bbc36e",
+      "members": {
+        "beh:4c915870fff5681c37aa7bcaa7e0": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "nws",
+          "direct_measurement": false,
+          "event_at": "2026-11-21T23:25:00Z",
+          "first_observed_at": "2026-11-21T23:23:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:4c915870fff5681c37aa7bcaa7e0",
+          "information_root": "nws:e93a3caa6bb1753497bbc36e",
+          "origin": "behavioral_registry",
+          "provider": "nws",
+          "published_at": "2026-11-21T23:23:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "official_weather_alert_context",
+          "source_measurement": null,
+          "source_scope": "Active NWS marine alerts; severity Extreme",
+          "source_updated_at": null,
+          "source_url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.2e48559ebe7aaafcb6cd1e3e928432556d0e4227.001.1",
+          "title": "Tornado Watch - Indian River, FL; Martin, FL; Okeechobee, FL; St. Lucie, FL"
+        }
+      }
+    },
     "0c18a5fd190611cb86f9b895fde4c5dba2717176c213395a7b776e9f87c0249c": {
       "information_root": "niord:c2bbab7f-c4f0-476e-9ee8-78f8102eec37:0:0:0",
       "members": {
@@ -281,6 +314,39 @@
           "source_updated_at": null,
           "source_url": "https://tfr.faa.gov/6_8333.html",
           "title": "FAA TFR 6/8333 ·   USA, Friday, November 20, 2026 UTC"
+        }
+      }
+    },
+    "0cb544294b04f5fd2cb52db6dce7439376100921fd0fb6002ca69f684faa88ca": {
+      "information_root": "nws:b4e2e5fde45c192f48914b1a",
+      "members": {
+        "beh:24403f1469165218ff6b86fc5768": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "nws",
+          "direct_measurement": false,
+          "event_at": "2026-11-22T00:10:00Z",
+          "first_observed_at": "2026-11-22T00:10:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:24403f1469165218ff6b86fc5768",
+          "information_root": "nws:b4e2e5fde45c192f48914b1a",
+          "origin": "behavioral_registry",
+          "provider": "nws",
+          "published_at": "2026-11-22T00:10:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "official_weather_alert_context",
+          "source_measurement": null,
+          "source_scope": "Active NWS marine alerts; severity Moderate",
+          "source_updated_at": null,
+          "source_url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.3ece3c3fc50fa88bbfdfbfe78426fd43970db789.002.3",
+          "title": "Rip Current Statement - Coastal Duval"
         }
       }
     }

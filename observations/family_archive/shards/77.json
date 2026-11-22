@@ -110,6 +110,46 @@
         }
       }
     },
+    "7759b192d6d74c726336750349d4fd3743acad2e8dbd867ec1580f40f3c5b2c3": {
+      "information_root": "coops:8638610:20261122T0118Z",
+      "members": {
+        "beh:20026fe2d6a329bf0c4ecb23d6cf": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "coops",
+          "direct_measurement": true,
+          "event_at": "2026-11-22T01:18:00Z",
+          "first_observed_at": "2026-11-22T01:18:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:20026fe2d6a329bf0c4ecb23d6cf",
+          "information_root": "coops:8638610:20261122T0118Z",
+          "origin": "behavioral_registry",
+          "provider": "coops",
+          "published_at": "2026-11-22T01:18:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "station_physical_measurement",
+          "source_family": "port_conditions",
+          "source_kind": "selected_port_water_level_measurement",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "metric_comparable_only_same_station_datum_and_sample_window": true,
+            "name": "observed_water_level",
+            "station": "8638610",
+            "unit": "meters_MLLW",
+            "value": 0.717
+          },
+          "source_scope": "NOAA CO-OPS water levels at San Francisco, Key West and Sewells Point; stations only",
+          "source_updated_at": null,
+          "source_url": "https://tidesandcurrents.noaa.gov/waterlevels.html?id=8638610",
+          "title": "Sewells Point, VA observed water level (no anomaly classification)"
+        }
+      }
+    },
     "777815a76a57e5619914f30de96676df196d217c97c23f613ab7cd314eff4f14": {
       "information_root": "cbp_wait:cbp_wait:340101:2026-11-20:20:23:04",
       "members": {
@@ -154,6 +194,53 @@
           "source_updated_at": null,
           "source_url": "https://bwt.cbp.gov/api/waittimes",
           "title": "CBP estimated commercial border wait — Pembina"
+        }
+      }
+    },
+    "777da27d69f2475421d0dd884c83a1ec9bdf1aa507cb73f3bfe7d375b0783af4": {
+      "information_root": "cbp_wait:cbp_wait:l24501:2026-11-21:18:22:12",
+      "members": {
+        "beh:3d36f950e13000db7ec194a210ef": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-22T01:27:37+00:00",
+          "geography_key": "us-border-port:l24501",
+          "geography_label": "Fort Hancock",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:3d36f950e13000db7ec194a210ef",
+          "information_root": "cbp_wait:cbp_wait:l24501:2026-11-21:18:22:12",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "N/A",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/21/2026",
+            "reported_local_time": "18:22:12",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Fort Hancock / Fort Hancock"
         }
       }
     },

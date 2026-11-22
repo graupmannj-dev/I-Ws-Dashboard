@@ -136,6 +136,81 @@
         }
       }
     },
+    "2e4e9e88c1c7f4e8301d39bc454057859a812cb35884e508d7f138a860773506": {
+      "information_root": "wiki_edits:wiki_edits:fr:20261122T01",
+      "members": {
+        "beh:0a79c04b7b2940d2d1e471109b1e": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "wiki_edits",
+          "direct_measurement": false,
+          "event_at": "2026-11-22T01:25:30Z",
+          "first_observed_at": "2026-11-22T01:25:30+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:0a79c04b7b2940d2d1e471109b1e",
+          "information_root": "wiki_edits:wiki_edits:fr:20261122T01",
+          "origin": "behavioral_registry",
+          "provider": "wiki_edits",
+          "published_at": "2026-11-22T01:25:30Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "public_encyclopedia_edit_aggregate",
+          "source_family": "public_attention",
+          "source_kind": "bounded_public_edit_count_not_event_verification",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "distinct_articles_in_sample": 425,
+            "maximum_returned_edits": 500,
+            "most_edited_article_counts": [
+              {
+                "count": 11,
+                "title": "Élections législatives de 1893 dans l'Hérault"
+              },
+              {
+                "count": 9,
+                "title": "Guy Robert (homme politique)"
+              },
+              {
+                "count": 8,
+                "title": "Chassepot modèle 1866"
+              },
+              {
+                "count": 4,
+                "title": "Ali Aghamirzaei Jenaghrad"
+              },
+              {
+                "count": 4,
+                "title": "Coupe des nations 2026"
+              },
+              {
+                "count": 4,
+                "title": "Djusqu'au solia"
+              },
+              {
+                "count": 4,
+                "title": "Élection présidentielle cap-verdienne de 2026"
+              },
+              {
+                "count": 3,
+                "title": "Geovany Quenda"
+              }
+            ],
+            "name": "sampled_edits_last_three_hours",
+            "sample_cap_reached": true,
+            "unit": "edits",
+            "value": 500
+          },
+          "source_scope": "Wikipedia main-namespace edit-count sample, 14 global language editions, three-hour window capped at 500 per wiki; not geographic location",
+          "source_updated_at": null,
+          "source_url": "https://fr.wikipedia.org/wiki/Special:RecentChanges",
+          "title": "Wikipedia fr public article-edit activity (sampled)"
+        }
+      }
+    },
     "2e50b2bc5b7122447343abb6ca9ee67ed47a57b50fe5f7eade926a73482e8de4": {
       "information_root": "us-dot-faa-national-ground-stop-20261113",
       "members": {
@@ -315,6 +390,53 @@
         }
       }
     },
+    "2ec32a3107712d80993b6f3c77b898544d4c6d392bff8d8c54791162fc0fa010": {
+      "information_root": "cbp_wait:cbp_wait:L01901:2026-11-21:20:22:12",
+      "members": {
+        "beh:3f22be5fed85c5c729032dd9f03c": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-22T01:27:37+00:00",
+          "geography_key": "us-border-port:L01901",
+          "geography_label": "Madawaska",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:3f22be5fed85c5c729032dd9f03c",
+          "information_root": "cbp_wait:cbp_wait:L01901:2026-11-21:20:22:12",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "no delay",
+            "lanes_open": 1,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "At 7:00 pm EST",
+            "reported_local_date": "11/21/2026",
+            "reported_local_time": "20:22:12",
+            "source_declared_border": "Canadian Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 0
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Madawaska"
+        }
+      }
+    },
     "2ec5d993c84f30f34715e57499641031e37a371b1715778bcbc8eb65be199d37": {
       "information_root": "official:fa06071a79388d1ddc68",
       "members": {
@@ -419,6 +541,81 @@
           "source_updated_at": "2026-11-14T00:21:51Z",
           "source_url": "https://niord.dma.dk/#/message/1a3dd20d-b0dd-4957-8447-a652063698ec",
           "title": "Denmark. Kattegat. EK R 18 Jaegerspris. Firing exercises. Warning."
+        }
+      }
+    },
+    "2ee57d3bb9d4414fc7e7fea8bce5e12220443c884269d0dc758b1feca771472a": {
+      "information_root": "wiki_edits:wiki_edits:ko:20261122T01",
+      "members": {
+        "beh:75147c99a08ee5258a32f23cf535": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "wiki_edits",
+          "direct_measurement": false,
+          "event_at": "2026-11-22T01:25:22Z",
+          "first_observed_at": "2026-11-22T01:25:22+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:75147c99a08ee5258a32f23cf535",
+          "information_root": "wiki_edits:wiki_edits:ko:20261122T01",
+          "origin": "behavioral_registry",
+          "provider": "wiki_edits",
+          "published_at": "2026-11-22T01:25:22Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "public_encyclopedia_edit_aggregate",
+          "source_family": "public_attention",
+          "source_kind": "bounded_public_edit_count_not_event_verification",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "distinct_articles_in_sample": 104,
+            "maximum_returned_edits": 500,
+            "most_edited_article_counts": [
+              {
+                "count": 11,
+                "title": "세리에 A 2026-27 경기 일정"
+              },
+              {
+                "count": 7,
+                "title": "디에이치"
+              },
+              {
+                "count": 7,
+                "title": "포항국제불빛축제"
+              },
+              {
+                "count": 5,
+                "title": "대한민국-부르키나파소 관계"
+              },
+              {
+                "count": 5,
+                "title": "리볼버 (2024년 영화)"
+              },
+              {
+                "count": 4,
+                "title": "2026년 10월 죽음"
+              },
+              {
+                "count": 4,
+                "title": "주나우루 중화민국 대사관"
+              },
+              {
+                "count": 2,
+                "title": "2025년 대한민국의 텔레비전 드라마 목록"
+              }
+            ],
+            "name": "sampled_edits_last_three_hours",
+            "sample_cap_reached": false,
+            "unit": "edits",
+            "value": 162
+          },
+          "source_scope": "Wikipedia main-namespace edit-count sample, 14 global language editions, three-hour window capped at 500 per wiki; not geographic location",
+          "source_updated_at": null,
+          "source_url": "https://ko.wikipedia.org/wiki/Special:RecentChanges",
+          "title": "Wikipedia ko public article-edit activity (sampled)"
         }
       }
     },

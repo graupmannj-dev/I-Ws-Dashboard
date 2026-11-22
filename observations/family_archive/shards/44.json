@@ -77,6 +77,81 @@
         }
       }
     },
+    "442d5c38b50a12e70b2f061cf75d716ff62dfb1399304a0907ac9c2912eea5f8": {
+      "information_root": "wiki_edits:wiki_edits:ru:20261122T01",
+      "members": {
+        "beh:40b8ef4d502ef926651ce2b9c502": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "wiki_edits",
+          "direct_measurement": false,
+          "event_at": "2026-11-22T01:24:44Z",
+          "first_observed_at": "2026-11-22T01:24:44+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:40b8ef4d502ef926651ce2b9c502",
+          "information_root": "wiki_edits:wiki_edits:ru:20261122T01",
+          "origin": "behavioral_registry",
+          "provider": "wiki_edits",
+          "published_at": "2026-11-22T01:24:44Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "public_encyclopedia_edit_aggregate",
+          "source_family": "public_attention",
+          "source_kind": "bounded_public_edit_count_not_event_verification",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "distinct_articles_in_sample": 438,
+            "maximum_returned_edits": 500,
+            "most_edited_article_counts": [
+              {
+                "count": 13,
+                "title": "Kneecap"
+              },
+              {
+                "count": 7,
+                "title": "Отъезд Регула"
+              },
+              {
+                "count": 5,
+                "title": "Фалькнис"
+              },
+              {
+                "count": 5,
+                "title": "Хволес, Григорий Яковлевич"
+              },
+              {
+                "count": 4,
+                "title": "Blüthner"
+              },
+              {
+                "count": 4,
+                "title": "Ретикон"
+              },
+              {
+                "count": 3,
+                "title": "Invincible (песня Muse)"
+              },
+              {
+                "count": 3,
+                "title": "Бернина (гора)"
+              }
+            ],
+            "name": "sampled_edits_last_three_hours",
+            "sample_cap_reached": true,
+            "unit": "edits",
+            "value": 500
+          },
+          "source_scope": "Wikipedia main-namespace edit-count sample, 14 global language editions, three-hour window capped at 500 per wiki; not geographic location",
+          "source_updated_at": null,
+          "source_url": "https://ru.wikipedia.org/wiki/Special:RecentChanges",
+          "title": "Wikipedia ru public article-edit activity (sampled)"
+        }
+      }
+    },
     "4441959146f1c92d0841176f7fb647a48a708d1b43f587c72b9d5ab3ba6c9ac6": {
       "information_root": "faa:6/8352:0:0",
       "members": {
@@ -202,6 +277,52 @@
           "source_updated_at": "2026-11-18T00:21:51Z",
           "source_url": "https://niord.dma.dk/#/message/c2bbab7f-c4f0-476e-9ee8-78f8102eec37",
           "title": "Denmark. The Baltic Sea. EK D 395 Raghammer. Firing exercises. Warning."
+        }
+      }
+    },
+    "44c4f957a213adb6ad1dd524aa7b877c7d26b867d904bede9ef5cc44bb252667": {
+      "information_root": "ris_bgp:ris_bgp:AS7552:20261121T21",
+      "members": {
+        "beh:faf98202e256078cbe62f3d14ec9": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "public_routing_updates_not_country_outage",
+          "collection_mode": "ris_bgp",
+          "direct_measurement": true,
+          "event_at": null,
+          "first_observed_at": "2026-11-22T01:27:37+00:00",
+          "geography_key": "asn:7552",
+          "geography_label": "AS7552",
+          "geography_precision": "routing_target_not_country_incident",
+          "id": "beh:faf98202e256078cbe62f3d14ec9",
+          "information_root": "ris_bgp:ris_bgp:AS7552:20261121T21",
+          "origin": "behavioral_registry",
+          "provider": "ris_bgp",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "routing_collector_sampled_asn_updates",
+          "source_family": "internet_routing",
+          "source_kind": "sampled_asn_bgp_route_updates_not_network_outage",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "collector_peers_are_not_geo_deduplicated": true,
+            "country_impact_not_established": true,
+            "name": "sampled_6h_bgp_announcements",
+            "registered_network_country_hint": "VN",
+            "returned_sampling_buckets": 6,
+            "source_window_end": "2026-11-21T21:00:00Z",
+            "target_asn": "AS7552",
+            "unit": "announcements",
+            "value": 15883412,
+            "window_hours_requested": 6,
+            "withdrawals_unavailable_for_asn": true
+          },
+          "source_scope": "RIPE RIS public route-announcement update samples on six non-Western operated networks; ASNs not country-wide outage detection",
+          "source_updated_at": null,
+          "source_url": "https://stat.ripe.net/data/bgp-update-activity/data.json?resource=AS7552&num_hours=6&max_samples=24&hide_empty_samples=false",
+          "title": "RIPE RIS sampled BGP announcements: AS7552"
         }
       }
     },
