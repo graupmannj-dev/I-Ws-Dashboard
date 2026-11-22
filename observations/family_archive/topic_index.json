@@ -258,6 +258,29 @@
       ],
       "subject_geography_compatible": true
     },
+    "42786f2b9fba88e9fd1a5dc91f03": {
+      "independent_corroboration_proven": false,
+      "latent_semantic_similarity": 0.8797,
+      "method": "aiba.hybrid-local-title-embedding.v1",
+      "raw_text_similarity": 0.2342,
+      "review_status": "unreviewed_automatic_topic_match",
+      "same_incident_proven": false,
+      "same_source_document": false,
+      "score": 0.4666,
+      "shared_activity_roles": [
+        "kinetic"
+      ],
+      "shared_named_subjects": [
+        "bahrain",
+        "iran"
+      ],
+      "shared_subject_terms": [
+        "attack",
+        "bahrain",
+        "iran"
+      ],
+      "subject_geography_compatible": true
+    },
     "44daea32d3945690536a7aa86baa": {
       "independent_corroboration_proven": false,
       "latent_semantic_similarity": 1,
@@ -820,6 +843,15 @@
       "subject_geography_compatible": true
     },
     "983c340573fa1682f91b76f12624": {
+      "independent_corroboration_proven": false,
+      "method": "new_analytical_theme",
+      "review_status": "unreviewed_automatic_topic_seed",
+      "same_incident_proven": false,
+      "score": null,
+      "shared_activity_roles": [],
+      "shared_subject_terms": []
+    },
+    "9baf73c0951372ca25fef59f44ce": {
       "independent_corroboration_proven": false,
       "method": "new_analytical_theme",
       "review_status": "unreviewed_automatic_topic_seed",
@@ -1562,6 +1594,7 @@
     "3f736692ad840ad31631c62c73ef": "family:1d7eab8010a53db9f79e",
     "3fda97308fc119c7024e6f1c4f32": "family:1d7eab8010a53db9f79e",
     "3feb63c0c39222f92b768816f573": "family:c9675c6f217ebbb3cff4",
+    "42786f2b9fba88e9fd1a5dc91f03": "family:f6a997229fdfe081cc7b",
     "42ee2f6950404d9c07d68be019c6": "family:bc737928767a22be58e3",
     "433f8ccf89e47995562a8e783c3d": "family:6b2cdbe752303630a064",
     "436f4123fa41599a8ac14bd6ed16": "family:74e0a809b47d6f4cc000",
@@ -1741,6 +1774,7 @@
     "983c340573fa1682f91b76f12624": "family:f8e1ac401f1c74e63992",
     "992d4f8ce8aa943330958c695c0b": "family:f200e612ec2c9f84f1b1",
     "9ad0d3f8c7870a5fc95b140f7bd0": "family:8782f5407f04370eb416",
+    "9baf73c0951372ca25fef59f44ce": "family:3d4d5988e8bee62404c2",
     "9bf44a3f6fcbbb9b4a20e1a37418": "family:9c728d43806fef7addc4",
     "9ca5b64456685496d90544149bbd": "family:e1c66c16bd9ca1017201",
     "9d434b37ebaf1f27837c1b509a92": "family:4883e56e5b9d4fd00239",
@@ -3256,6 +3290,24 @@
           "vessel": 1
         },
         "title": "Europe Launches Prototype Vessel for Protecting Undersea Cables"
+      },
+      "source": "hybrid_local_topic_embedding_v2"
+    },
+    "family:3d4d5988e8bee62404c2": {
+      "first_document_at": "2026-11-21T23:28:32+00:00",
+      "last_document_at": "2026-11-21T23:28:32+00:00",
+      "matched_document_count": 1,
+      "seed": {
+        "domain": "aviation",
+        "geo": [],
+        "key": "9baf73c0951372ca25fef59f44ce",
+        "publisher": "faa",
+        "source_family": "airspace_restriction",
+        "terms": {
+          "atigun": 1,
+          "pass": 1
+        },
+        "title": "FAA TFR 6/9287 · ATIGUN PASS, AK, Saturday, November 21, 2026 through Sunday, November 22, 2026 UTC"
       },
       "source": "hybrid_local_topic_embedding_v2"
     },
@@ -6257,7 +6309,8 @@
     },
     "family:f6a997229fdfe081cc7b": {
       "first_document_at": "2026-11-18T04:38:39+00:00",
-      "matched_document_count": 1,
+      "last_document_at": "2026-11-21T22:40:03+00:00",
+      "matched_document_count": 2,
       "seed": {
         "domain": "generic",
         "geo": [
@@ -6488,9 +6541,9 @@
     }
   },
   "input_truncated": false,
-  "new_document_assignments": 1,
+  "new_document_assignments": 2,
   "schema": "aiba.automatic-analytical-topics.v1",
   "semantic_seed_index_limited": false,
-  "total_document_assignments": 482,
-  "total_stable_topics": 212
+  "total_document_assignments": 484,
+  "total_stable_topics": 213
 }

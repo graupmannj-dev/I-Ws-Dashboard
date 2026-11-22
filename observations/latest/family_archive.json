@@ -1,8 +1,8 @@
 {
   "alerts_promoted": 0,
   "archive_integrity": "all shards retained; public discovery cache is bounded",
-  "automatic_topic_count_total": 212,
-  "automatic_topic_document_count_total": 482,
+  "automatic_topic_count_total": 213,
+  "automatic_topic_document_count_total": 484,
   "automatic_topic_index": {
     "assignment_explanations": {
       "0265facd0ef6eabdd50cb3069364": {
@@ -260,6 +260,29 @@
           "mississippi",
           "ntni",
           "upper"
+        ],
+        "subject_geography_compatible": true
+      },
+      "42786f2b9fba88e9fd1a5dc91f03": {
+        "independent_corroboration_proven": false,
+        "latent_semantic_similarity": 0.8797,
+        "method": "aiba.hybrid-local-title-embedding.v1",
+        "raw_text_similarity": 0.2342,
+        "review_status": "unreviewed_automatic_topic_match",
+        "same_incident_proven": false,
+        "same_source_document": false,
+        "score": 0.4666,
+        "shared_activity_roles": [
+          "kinetic"
+        ],
+        "shared_named_subjects": [
+          "bahrain",
+          "iran"
+        ],
+        "shared_subject_terms": [
+          "attack",
+          "bahrain",
+          "iran"
         ],
         "subject_geography_compatible": true
       },
@@ -825,6 +848,15 @@
         "subject_geography_compatible": true
       },
       "983c340573fa1682f91b76f12624": {
+        "independent_corroboration_proven": false,
+        "method": "new_analytical_theme",
+        "review_status": "unreviewed_automatic_topic_seed",
+        "same_incident_proven": false,
+        "score": null,
+        "shared_activity_roles": [],
+        "shared_subject_terms": []
+      },
+      "9baf73c0951372ca25fef59f44ce": {
         "independent_corroboration_proven": false,
         "method": "new_analytical_theme",
         "review_status": "unreviewed_automatic_topic_seed",
@@ -1567,6 +1599,7 @@
       "3f736692ad840ad31631c62c73ef": "family:1d7eab8010a53db9f79e",
       "3fda97308fc119c7024e6f1c4f32": "family:1d7eab8010a53db9f79e",
       "3feb63c0c39222f92b768816f573": "family:c9675c6f217ebbb3cff4",
+      "42786f2b9fba88e9fd1a5dc91f03": "family:f6a997229fdfe081cc7b",
       "42ee2f6950404d9c07d68be019c6": "family:bc737928767a22be58e3",
       "433f8ccf89e47995562a8e783c3d": "family:6b2cdbe752303630a064",
       "436f4123fa41599a8ac14bd6ed16": "family:74e0a809b47d6f4cc000",
@@ -1746,6 +1779,7 @@
       "983c340573fa1682f91b76f12624": "family:f8e1ac401f1c74e63992",
       "992d4f8ce8aa943330958c695c0b": "family:f200e612ec2c9f84f1b1",
       "9ad0d3f8c7870a5fc95b140f7bd0": "family:8782f5407f04370eb416",
+      "9baf73c0951372ca25fef59f44ce": "family:3d4d5988e8bee62404c2",
       "9bf44a3f6fcbbb9b4a20e1a37418": "family:9c728d43806fef7addc4",
       "9ca5b64456685496d90544149bbd": "family:e1c66c16bd9ca1017201",
       "9d434b37ebaf1f27837c1b509a92": "family:4883e56e5b9d4fd00239",
@@ -3261,6 +3295,24 @@
             "vessel": 1
           },
           "title": "Europe Launches Prototype Vessel for Protecting Undersea Cables"
+        },
+        "source": "hybrid_local_topic_embedding_v2"
+      },
+      "family:3d4d5988e8bee62404c2": {
+        "first_document_at": "2026-11-21T23:28:32+00:00",
+        "last_document_at": "2026-11-21T23:28:32+00:00",
+        "matched_document_count": 1,
+        "seed": {
+          "domain": "aviation",
+          "geo": [],
+          "key": "9baf73c0951372ca25fef59f44ce",
+          "publisher": "faa",
+          "source_family": "airspace_restriction",
+          "terms": {
+            "atigun": 1,
+            "pass": 1
+          },
+          "title": "FAA TFR 6/9287 · ATIGUN PASS, AK, Saturday, November 21, 2026 through Sunday, November 22, 2026 UTC"
         },
         "source": "hybrid_local_topic_embedding_v2"
       },
@@ -6262,7 +6314,8 @@
       },
       "family:f6a997229fdfe081cc7b": {
         "first_document_at": "2026-11-18T04:38:39+00:00",
-        "matched_document_count": 1,
+        "last_document_at": "2026-11-21T22:40:03+00:00",
+        "matched_document_count": 2,
         "seed": {
           "domain": "generic",
           "geo": [
@@ -6494,17 +6547,66 @@
     },
     "public_index_truncated": false,
     "schema": "aiba.automatic-analytical-topics.v1",
-    "total_document_assignments": 482,
-    "total_stable_topics": 212
+    "total_document_assignments": 484,
+    "total_stable_topics": 213
   },
-  "generated_at": "2026-11-21T21:51:44.493535+00:00",
+  "generated_at": "2026-11-22T01:25:12.912673+00:00",
   "historical_relationship_count": 0,
   "missing_data_is_not_zero": true,
-  "new_records_added": 1,
-  "public_record_count": 2059,
+  "new_records_added": 2,
+  "public_record_count": 2061,
   "public_snapshot_truncated": false,
-  "record_count_total": 2059,
+  "record_count_total": 2061,
   "records": [
+    {
+      "calibrated_metric": null,
+      "case_hint": null,
+      "claim_level": "official_scheduled_restriction_not_military_preparation",
+      "collection_mode": "live_airspace",
+      "direct_measurement": false,
+      "event_at": null,
+      "first_observed_at": "2026-11-21T23:28:32+00:00",
+      "geography_key": "source-footprint:0a7fc8ca82995bdceb89e73d",
+      "geography_label": "Official MultiPolygon notice area",
+      "geography_precision": "provider_defined_notice_boundary_not_event_point",
+      "id": "beh:97ca4c84683ec48449703fc4a29a",
+      "information_root": "faa:6/9287:0:0",
+      "origin": "behavioral_registry",
+      "provider": "faa",
+      "published_at": null,
+      "restriction_status": "within_published_validity_window_not_verified_active",
+      "scheduled_valid_from": "2026-11-21T20:00:00Z",
+      "scheduled_valid_until": "2026-11-22T01:00:00Z",
+      "source_dependency_class": null,
+      "source_family": "airspace_restriction",
+      "source_kind": "official_restriction_notice",
+      "source_measurement": null,
+      "source_scope": null,
+      "source_updated_at": null,
+      "source_url": "https://tfr.faa.gov/6_9287.html",
+      "title": "FAA TFR 6/9287 · ATIGUN PASS, AK, Saturday, November 21, 2026 through Sunday, November 22, 2026 UTC"
+    },
+    {
+      "calibrated_metric": null,
+      "case_hint": "iran_gulf",
+      "claim_level": "unreviewed_source_submission",
+      "collection_mode": "analyst",
+      "direct_measurement": false,
+      "event_at": null,
+      "first_observed_at": "2026-11-21T22:40:03+00:00",
+      "geography_key": null,
+      "geography_label": null,
+      "geography_precision": "case_hint_not_source_geolocation",
+      "id": "analyst:bahrain-moi-industrial-fire-20261121",
+      "information_root": "bahrain-moi-industrial-facility-statement-20261121",
+      "origin": "analyst_intake",
+      "provider": "Bahrain Ministry of Interior (reported by Reuters)",
+      "published_at": null,
+      "source_family": "source_observation",
+      "source_kind": "unreviewed_analyst_report",
+      "source_url": "https://www.reuters.com/world/middle-east/bahrain-warns-residents-potential-threat-iran-conflict-persists-2026-11-21/",
+      "title": "Bahrain reports Iranian attack caused fire at civilian industrial facility"
+    },
     {
       "calibrated_metric": null,
       "case_hint": null,
@@ -67699,11 +67801,11 @@
   "report_relationships": {
     "candidate_groups": []
   },
-  "root_count_total": 2059,
+  "root_count_total": 2061,
   "schema": "aiba.family-archive.v1",
   "source_health": {
     "amsa": {
-      "age_hours": 0.0,
+      "age_hours": 1.62,
       "checked_at": "2026-11-21T21:51:31Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -67715,7 +67817,7 @@
       "truncated_or_partial": false
     },
     "bmkg_nowcast": {
-      "age_hours": 2.4,
+      "age_hours": 4.01,
       "checked_at": "2026-11-21T19:27:44Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -67727,7 +67829,7 @@
       "truncated_or_partial": true
     },
     "bmkg_quake": {
-      "age_hours": 2.4,
+      "age_hours": 4.01,
       "checked_at": "2026-11-21T19:27:44Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -67739,7 +67841,7 @@
       "truncated_or_partial": true
     },
     "cbp_wait": {
-      "age_hours": 2.4,
+      "age_hours": 4.01,
       "checked_at": "2026-11-21T19:27:44Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -67751,7 +67853,7 @@
       "truncated_or_partial": true
     },
     "commercial": {
-      "age_hours": 6.41,
+      "age_hours": 8.03,
       "checked_at": "2026-11-21T15:26:49Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -67763,7 +67865,7 @@
       "truncated_or_partial": false
     },
     "coops": {
-      "age_hours": 2.4,
+      "age_hours": 4.01,
       "checked_at": "2026-11-21T19:27:44Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -67775,7 +67877,7 @@
       "truncated_or_partial": true
     },
     "eonet": {
-      "age_hours": 2.4,
+      "age_hours": 4.01,
       "checked_at": "2026-11-21T19:27:44Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -67787,7 +67889,7 @@
       "truncated_or_partial": true
     },
     "imd_in": {
-      "age_hours": 2.4,
+      "age_hours": 4.01,
       "checked_at": "2026-11-21T19:27:44Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -67799,7 +67901,7 @@
       "truncated_or_partial": true
     },
     "inmet_br": {
-      "age_hours": 2.4,
+      "age_hours": 4.01,
       "checked_at": "2026-11-21T19:27:44Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -67811,7 +67913,7 @@
       "truncated_or_partial": true
     },
     "ioda": {
-      "age_hours": 0.0,
+      "age_hours": 1.62,
       "checked_at": "2026-11-21T21:51:31Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -67823,29 +67925,31 @@
       "truncated_or_partial": false
     },
     "live_airspace": {
-      "age_hours": 3.57,
-      "checked_at": "2026-11-21T18:17:18Z",
-      "missingness": "not_measured_not_zero",
+      "age_hours": 0.0,
+      "checked_at": "2026-11-21T23:28:27Z",
+      "first_provider_baseline": false,
+      "missingness": "partial_sampling_not_worldwide_exhaustive",
       "mode": "live_airspace",
       "provider_status": "partial",
-      "snapshot_at": "2026-11-21T18:17:18Z",
+      "snapshot_at": "2026-11-21T23:28:27Z",
       "source_scope": "FAA temporary flight restrictions: United States only",
-      "status": "stale_or_unavailable",
+      "status": "current_partial",
       "truncated_or_partial": true
     },
     "live_maritime": {
-      "age_hours": 3.57,
-      "checked_at": "2026-11-21T18:17:18Z",
-      "missingness": "not_measured_not_zero",
+      "age_hours": 0.0,
+      "checked_at": "2026-11-21T23:28:27Z",
+      "first_provider_baseline": false,
+      "missingness": "partial_sampling_not_worldwide_exhaustive",
       "mode": "live_maritime",
       "provider_status": "partial",
-      "snapshot_at": "2026-11-21T18:17:18Z",
+      "snapshot_at": "2026-11-21T23:28:27Z",
       "source_scope": "Danish Maritime Authority Niord notices: regional Baltic/North Sea",
-      "status": "stale_or_unavailable",
+      "status": "current_partial",
       "truncated_or_partial": true
     },
     "nga": {
-      "age_hours": 0.0,
+      "age_hours": 1.62,
       "checked_at": "2026-11-21T16:22:21Z",
       "missingness": "not_measured_not_zero",
       "mode": "nga",
@@ -67856,7 +67960,7 @@
       "truncated_or_partial": false
     },
     "nws": {
-      "age_hours": 2.4,
+      "age_hours": 4.01,
       "checked_at": "2026-11-21T19:27:44Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -67868,7 +67972,7 @@
       "truncated_or_partial": true
     },
     "official": {
-      "age_hours": 2.55,
+      "age_hours": 4.16,
       "checked_at": "2026-11-21T19:18:52Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -67880,7 +67984,7 @@
       "truncated_or_partial": false
     },
     "ons_br": {
-      "age_hours": 2.4,
+      "age_hours": 4.01,
       "checked_at": "2026-11-21T19:27:44Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -67892,7 +67996,7 @@
       "truncated_or_partial": true
     },
     "ripe": {
-      "age_hours": 2.4,
+      "age_hours": 4.01,
       "checked_at": "2026-11-21T19:27:44Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -67904,7 +68008,7 @@
       "truncated_or_partial": false
     },
     "ris_bgp": {
-      "age_hours": 2.4,
+      "age_hours": 4.01,
       "checked_at": "2026-11-21T19:27:44Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -67916,7 +68020,7 @@
       "truncated_or_partial": true
     },
     "saws_za": {
-      "age_hours": 2.4,
+      "age_hours": 4.01,
       "checked_at": "2026-11-21T19:27:44Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -67928,7 +68032,7 @@
       "truncated_or_partial": true
     },
     "sg_mpa": {
-      "age_hours": 2.4,
+      "age_hours": 4.01,
       "checked_at": "2026-11-21T19:27:44Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -67940,7 +68044,7 @@
       "truncated_or_partial": true
     },
     "swpc": {
-      "age_hours": 2.4,
+      "age_hours": 4.01,
       "checked_at": "2026-11-21T19:27:44Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -67952,7 +68056,7 @@
       "truncated_or_partial": false
     },
     "tw_power": {
-      "age_hours": 2.4,
+      "age_hours": 4.01,
       "checked_at": "2026-11-21T19:27:44Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -67964,7 +68068,7 @@
       "truncated_or_partial": true
     },
     "uk_tenders": {
-      "age_hours": 2.4,
+      "age_hours": 4.01,
       "checked_at": "2026-11-21T19:27:44Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -67976,7 +68080,7 @@
       "truncated_or_partial": true
     },
     "usace": {
-      "age_hours": 2.4,
+      "age_hours": 4.01,
       "checked_at": "2026-11-21T19:27:44Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -67988,7 +68092,7 @@
       "truncated_or_partial": true
     },
     "usgs": {
-      "age_hours": 2.4,
+      "age_hours": 4.01,
       "checked_at": "2026-11-21T19:27:44Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -68000,7 +68104,7 @@
       "truncated_or_partial": false
     },
     "watchlist": {
-      "age_hours": 2.55,
+      "age_hours": 4.16,
       "checked_at": "2026-11-21T19:18:52Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -68012,7 +68116,7 @@
       "truncated_or_partial": false
     },
     "wiki_edits": {
-      "age_hours": 2.4,
+      "age_hours": 4.01,
       "checked_at": "2026-11-21T19:27:44Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
