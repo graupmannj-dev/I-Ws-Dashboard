@@ -90,20 +90,39 @@ def evidence_packet(case):
             "evidence_families": refs, "source_scope": "bounded source links and titles only; no verified event occurrence"}
 
 def retrieve(packet, limit=24):
-    """Deterministic recall-oriented shortlist; never assign an ACH direction."""
-    text = " ".join(packet["hypotheses"]).lower()
-    terms = set(re.findall(r"[a-z]{4,}", text)) - {
-        "that","this","with","from","would","could","rather","than","because",
-        "military","activity","evidence","regional","explanation","operations"}
-    scored = []
-    for f in packet["evidence_families"]:
-        words = set(re.findall(r"[a-z]{4,}", (f["family_title"]+" "+f["family_mechanism"]+
-                       " "+" ".join(s["title"] for s in f["sources"])).lower()))
-        scored.append((len(terms & words), f["evidence_key"], f))
-    scored.sort(key=lambda row: (-row[0], row[1]))
-    # Lexical scores order a broad bounded candidate set. Semantic comparison
-    # runs over the retained candidates; keyword matching never assigns signs.
-    return [f for _, _, f in scored[:limit]]
+    """Bounded local hybrid semantic similarity for candidate ordering only.
+
+    Uses CAIRN's existing TF-IDF/character n-gram/LSA implementation, with
+    deterministic lexical fallback. This is NOT event matching or proof.
+    """
+    families = packet["evidence_families"]
+    if not families:
+        return []
+    titles = [(f["family_title"] + " " + f["family_mechanism"] + " " +
+               " ".join(s["title"] for s in f["sources"])) for f in families]
+    queries = packet["hypotheses"]
+    try:
+        try:
+            from dashboard.topic_semantics import LocalTopicEmbeddings
+        except ImportError:
+            from topic_semantics import LocalTopicEmbeddings
+        model = LocalTopicEmbeddings(titles + queries)
+        ranked = []
+        for i, family in enumerate(families):
+            similarity = max(model.pair(i, len(families)+j)["score"] for j in range(len(queries)))
+            ranked.append((similarity, family["evidence_key"], family))
+        ranked.sort(key=lambda x: (-x[0], x[1]))
+        return [f for _, _, f in ranked[:limit]]
+    except (ImportError, ValueError, TypeError, KeyError, AttributeError):
+        text = " ".join(queries).lower()
+        terms = set(re.findall(r"[a-z]{4,}",text))
+        scored=[]
+        for f in families:
+            words=set(re.findall(r"[a-z]{4,}",(f["family_title"]+" "+
+                " ".join(s["title"] for s in f["sources"])).lower()))
+            scored.append((len(terms & words),f["evidence_key"],f))
+        scored.sort(key=lambda x:(-x[0],x[1]))
+        return [f for _,_,f in scored[:limit]]
 
 def validate(raw, packet):
     if not isinstance(raw, dict):
