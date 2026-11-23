@@ -1,8 +1,10 @@
-name: CAIRN READ-ONLY Granite vs Phi ACH benchmark
+name: CAIRN READ-ONLY Granite vs Phi ACH quality v2
 on:
   pull_request:
     paths:
       - 'scripts/benchmark_local_ach_models.py'
+      - 'scripts/benchmark_ach_quality_v2.py'
+      - 'tests/test_ach_quality_v2.py'
       - '.github/workflows/cairn-local-llm-ach-benchmark.yml'
       - 'docs/CAIRN_LOCAL_LLM_BENCHMARK.md'
 permissions:
@@ -13,7 +15,7 @@ concurrency:
 jobs:
   shadow-ach-model:
     if: github.event_name == 'pull_request'
-    name: ACH shadow ${{ matrix.model }}
+    name: ACH constrained v2 ${{ matrix.model }}
     runs-on: ubuntu-24.04
     timeout-minutes: 48
     strategy:
@@ -37,6 +39,8 @@ jobs:
           ref: aiba-feed-data
           path: ops-state
           persist-credentials: false
+      - name: Validate controlled scoring and real evidence contract
+        run: python -m unittest tests.test_ach_quality_v2 -v
       - name: Assert actual retained evidence
         run: |
           python - <<'PY'
@@ -101,9 +105,10 @@ jobs:
             sleep 2
           done
           test "$ready" -eq 1 || (tail -80 "$RUNNER_TEMP/cairn-benchmark/server.log"; exit 1)
-          python scripts/benchmark_local_ach_models.py \
+          python -m scripts.benchmark_ach_quality_v2 \
             --archive ops-state/observations/latest/family_archive.json \
             --model-name "$MODEL_NAME" --server http://127.0.0.1:8080 \
+            --mode constrained --max-tokens 700 --timeout 170 \
             --output "$RUNNER_TEMP/cairn-benchmark/results.json" --timeout 160
           if [ -r "/proc/$server_pid/status" ]; then
             grep -E 'VmHWM|VmRSS|VmPeak' "/proc/$server_pid/status" \
@@ -114,7 +119,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: cairn-readonly-ach-${{ matrix.model }}-${{ github.run_id }}
+          name: cairn-readonly-ach-quality-v2-${{ matrix.model }}-${{ github.run_id }}
           path: |
             ${{ runner.temp }}/cairn-benchmark/results.json
             ${{ runner.temp }}/cairn-benchmark/server_memory.txt
