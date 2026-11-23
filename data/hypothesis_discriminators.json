@@ -12,7 +12,7 @@
     "direct_state_engagement": {
       "role": "escalation_candidate",
       "label": "Direct state engagement or cross-border strike",
-      "pattern": "\\b(?:cross[- ]border|interstate|border)\\b.{0,55}\\b(?:attack|strike|shelling|incursion|firing|clash|engagement)\\b|\\b(?:missile|drone|rocket|artillery)\\b.{0,55}\\b(?:attack|strike|hit|incursion)\\b|\\b(?:attack|strike|incursion)\\b.{0,55}\\b(?:missile|drone|rocket)\\b",
+      "pattern": "\\b(?:cross[- ]border|interstate|border)\\b.{0,55}\\b(?:attack|strike|shelling|incursion|firing|clash|engagement)\\b|\\b(?:missile|drone|rocket|artillery)\\b.{0,55}\\b(?:attack|strike|hit|incursion)\\b|\\b(?:attack|strike|incursion)\\b.{0,55}\\b(?:missile|drone|rocket)\\b|\\b(?:iranian|russian|eritrea[n]?|pakistani|rwandan|chinese|north korean)\\b.{0,40}\\b(?:attack|strike|shelling|incursion)\\b",
       "discriminator": "Seek independent attribution to state forces and a verified incident, not just an allegation or syndicated headline."
     },
     "force_concentration": {
@@ -24,7 +24,7 @@
     "maritime_interdiction": {
       "role": "escalation_candidate",
       "label": "Maritime interdiction or shipping disruption",
-      "pattern": "\\b(?:blockade|quarantine|maritime exclusion zone|shipping (?:halted|suspended)|sea[- ]lane (?:closure|shutdown)|tanker (?:hit|struck)|vessel (?:hit|struck)|port (?:closed|closure)|transit (?:halted|suspended))\\b",
+      "pattern": "\\b(?:blockade|quarantine|maritime exclusion zone|shipping (?:halted|suspended)|sea[- ]lane (?:closure|shutdown)|tanker (?:hit|struck|projectile incident)|vessel (?:hit|struck|attack)|port (?:closed|closure)|transit (?:halted|suspended))\\b",
       "discriminator": "Distinguish physical interruption from scheduled navigation warnings, routine exercises, and generalized reporting."
     },
     "airspace_closure": {
@@ -60,7 +60,7 @@
     "scheduled_training": {
       "role": "alternative_candidate",
       "label": "Scheduled/routine exercise explanation",
-      "pattern": "\\b(?:firing exercise|live[- ]fire exercise|military exercise|naval exercise|routine drill|scheduled exercise|training area|exercise warning|training exercise|missile test|weapons test)\\b",
+      "pattern": "\\b(?:firing exercises?|live[- ]fire exercise|military exercises?|naval exercises?|routine drill|scheduled exercise|training area|exercise warning|training exercise|missile test|weapons test)\\b",
       "discriminator": "Routine exercises can explain closures or deployments, but cannot exclude opportunistic escalation."
     },
     "diplomatic_deescalation": {
