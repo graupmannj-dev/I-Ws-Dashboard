@@ -10223,14 +10223,70 @@
     "total_document_assignments": 690,
     "total_stable_topics": 235
   },
-  "generated_at": "2026-11-23T22:56:19.676928+00:00",
+  "generated_at": "2026-11-23T23:55:58.427629+00:00",
   "historical_relationship_count": 0,
   "missing_data_is_not_zero": true,
-  "new_records_added": 0,
-  "public_record_count": 3166,
+  "new_records_added": 2,
+  "public_record_count": 3168,
   "public_snapshot_truncated": false,
-  "record_count_total": 3166,
+  "record_count_total": 3168,
   "records": [
+    {
+      "calibrated_metric": null,
+      "case_hint": null,
+      "claim_level": "notice_not_verified_preparation",
+      "collection_mode": "official",
+      "direct_measurement": false,
+      "event_at": null,
+      "first_observed_at": "2026-11-23T23:55:57+00:00",
+      "geography_key": null,
+      "geography_label": null,
+      "geography_precision": "no_source_verified_geography",
+      "id": "beh:3b9159c9a60db0db93089ef2dc1d",
+      "information_root": "official:c6373ced953ebb07798c",
+      "origin": "behavioral_registry",
+      "provider": "official",
+      "published_at": "2026-11-23T15:19:06Z",
+      "restriction_status": "",
+      "scheduled_valid_from": null,
+      "scheduled_valid_until": null,
+      "source_dependency_class": null,
+      "source_family": "protective_notice",
+      "source_kind": "official_travel_security_notice",
+      "source_measurement": null,
+      "source_scope": null,
+      "source_updated_at": null,
+      "source_url": "https://www.gov.uk/foreign-travel-advice/ethiopia",
+      "title": "Ethiopia"
+    },
+    {
+      "calibrated_metric": null,
+      "case_hint": null,
+      "claim_level": "notice_not_verified_preparation",
+      "collection_mode": "official",
+      "direct_measurement": false,
+      "event_at": null,
+      "first_observed_at": "2026-11-23T23:55:57+00:00",
+      "geography_key": null,
+      "geography_label": null,
+      "geography_precision": "no_source_verified_geography",
+      "id": "beh:15d9c40caedb93fcae6adf48a706",
+      "information_root": "official:de4389cdc47ac5d750dc",
+      "origin": "behavioral_registry",
+      "provider": "official",
+      "published_at": "2026-11-23T10:55:23Z",
+      "restriction_status": "",
+      "scheduled_valid_from": null,
+      "scheduled_valid_until": null,
+      "source_dependency_class": null,
+      "source_family": "protective_notice",
+      "source_kind": "official_travel_security_notice",
+      "source_measurement": null,
+      "source_scope": null,
+      "source_updated_at": null,
+      "source_url": "https://www.gov.uk/foreign-travel-advice/colombia",
+      "title": "Colombia"
+    },
     {
       "calibrated_metric": null,
       "case_hint": null,
@@ -112726,11 +112782,11 @@
   "report_relationships": {
     "candidate_groups": []
   },
-  "root_count_total": 3166,
+  "root_count_total": 3168,
   "schema": "aiba.family-archive.v1",
   "source_health": {
     "amsa": {
-      "age_hours": 9.29,
+      "age_hours": 10.29,
       "checked_at": "2026-11-23T13:38:48Z",
       "missingness": "not_measured_not_zero",
       "mode": "amsa",
@@ -112741,7 +112797,7 @@
       "truncated_or_partial": false
     },
     "bmkg_nowcast": {
-      "age_hours": 9.77,
+      "age_hours": 10.76,
       "checked_at": "2026-11-23T13:10:09Z",
       "missingness": "not_measured_not_zero",
       "mode": "bmkg_nowcast",
@@ -112752,7 +112808,7 @@
       "truncated_or_partial": true
     },
     "bmkg_quake": {
-      "age_hours": 9.77,
+      "age_hours": 10.76,
       "checked_at": "2026-11-23T13:10:09Z",
       "missingness": "not_measured_not_zero",
       "mode": "bmkg_quake",
@@ -112763,7 +112819,7 @@
       "truncated_or_partial": true
     },
     "cbp_wait": {
-      "age_hours": 9.77,
+      "age_hours": 10.76,
       "checked_at": "2026-11-23T13:10:09Z",
       "missingness": "not_measured_not_zero",
       "mode": "cbp_wait",
@@ -112774,7 +112830,7 @@
       "truncated_or_partial": true
     },
     "commercial": {
-      "age_hours": 3.61,
+      "age_hours": 4.6,
       "checked_at": "2026-11-23T19:19:56Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -112786,7 +112842,7 @@
       "truncated_or_partial": false
     },
     "coops": {
-      "age_hours": 9.77,
+      "age_hours": 10.76,
       "checked_at": "2026-11-23T13:10:09Z",
       "missingness": "not_measured_not_zero",
       "mode": "coops",
@@ -112797,7 +112853,7 @@
       "truncated_or_partial": true
     },
     "eonet": {
-      "age_hours": 9.77,
+      "age_hours": 10.76,
       "checked_at": "2026-11-23T13:10:09Z",
       "missingness": "not_measured_not_zero",
       "mode": "eonet",
@@ -112808,7 +112864,7 @@
       "truncated_or_partial": true
     },
     "imd_in": {
-      "age_hours": 9.77,
+      "age_hours": 10.76,
       "checked_at": "2026-11-23T13:10:09Z",
       "missingness": "not_measured_not_zero",
       "mode": "imd_in",
@@ -112819,7 +112875,7 @@
       "truncated_or_partial": true
     },
     "inmet_br": {
-      "age_hours": 9.77,
+      "age_hours": 10.76,
       "checked_at": "2026-11-23T13:10:09Z",
       "missingness": "not_measured_not_zero",
       "mode": "inmet_br",
@@ -112830,7 +112886,7 @@
       "truncated_or_partial": true
     },
     "ioda": {
-      "age_hours": 9.29,
+      "age_hours": 10.29,
       "checked_at": "2026-11-23T13:38:48Z",
       "missingness": "not_measured_not_zero",
       "mode": "ioda",
@@ -112841,7 +112897,7 @@
       "truncated_or_partial": false
     },
     "live_airspace": {
-      "age_hours": 2.57,
+      "age_hours": 3.57,
       "checked_at": "2026-11-23T20:22:00Z",
       "missingness": "not_measured_not_zero",
       "mode": "live_airspace",
@@ -112852,7 +112908,7 @@
       "truncated_or_partial": true
     },
     "live_maritime": {
-      "age_hours": 2.57,
+      "age_hours": 3.57,
       "checked_at": "2026-11-23T20:22:00Z",
       "missingness": "not_measured_not_zero",
       "mode": "live_maritime",
@@ -112863,7 +112919,7 @@
       "truncated_or_partial": true
     },
     "nga": {
-      "age_hours": 9.29,
+      "age_hours": 10.29,
       "checked_at": "2026-11-23T13:38:48Z",
       "missingness": "not_measured_not_zero",
       "mode": "nga",
@@ -112874,7 +112930,7 @@
       "truncated_or_partial": false
     },
     "nws": {
-      "age_hours": 9.77,
+      "age_hours": 10.76,
       "checked_at": "2026-11-23T13:10:09Z",
       "missingness": "not_measured_not_zero",
       "mode": "nws",
@@ -112885,18 +112941,19 @@
       "truncated_or_partial": true
     },
     "official": {
-      "age_hours": 15.23,
-      "checked_at": "2026-11-23T07:42:29Z",
-      "missingness": "not_measured_not_zero",
+      "age_hours": 0.0,
+      "checked_at": "2026-11-23T23:55:54Z",
+      "first_provider_baseline": false,
+      "missingness": "provider_bounded_not_exhaustive",
       "mode": "official",
       "provider_status": "collected",
-      "snapshot_at": "2026-11-23T07:42:29Z",
+      "snapshot_at": "2026-11-23T23:55:54Z",
       "source_scope": "US State and UK FCDO travel-advice feeds",
-      "status": "stale_or_unavailable",
+      "status": "current",
       "truncated_or_partial": false
     },
     "ons_br": {
-      "age_hours": 9.77,
+      "age_hours": 10.76,
       "checked_at": "2026-11-23T13:10:09Z",
       "missingness": "not_measured_not_zero",
       "mode": "ons_br",
@@ -112907,7 +112964,7 @@
       "truncated_or_partial": true
     },
     "ripe": {
-      "age_hours": 9.77,
+      "age_hours": 10.76,
       "checked_at": "2026-11-23T13:10:09Z",
       "missingness": "not_measured_not_zero",
       "mode": "ripe",
@@ -112918,7 +112975,7 @@
       "truncated_or_partial": false
     },
     "ris_bgp": {
-      "age_hours": 9.77,
+      "age_hours": 10.76,
       "checked_at": "2026-11-23T13:10:09Z",
       "missingness": "not_measured_not_zero",
       "mode": "ris_bgp",
@@ -112929,7 +112986,7 @@
       "truncated_or_partial": true
     },
     "saws_za": {
-      "age_hours": 9.77,
+      "age_hours": 10.76,
       "checked_at": "2026-11-23T13:10:09Z",
       "missingness": "not_measured_not_zero",
       "mode": "saws_za",
@@ -112940,7 +112997,7 @@
       "truncated_or_partial": true
     },
     "sg_mpa": {
-      "age_hours": 9.77,
+      "age_hours": 10.76,
       "checked_at": "2026-11-23T13:10:09Z",
       "missingness": "not_measured_not_zero",
       "mode": "sg_mpa",
@@ -112951,7 +113008,7 @@
       "truncated_or_partial": true
     },
     "swpc": {
-      "age_hours": 9.77,
+      "age_hours": 10.76,
       "checked_at": "2026-11-23T13:10:09Z",
       "missingness": "not_measured_not_zero",
       "mode": "swpc",
@@ -112962,7 +113019,7 @@
       "truncated_or_partial": false
     },
     "tw_power": {
-      "age_hours": 9.77,
+      "age_hours": 10.76,
       "checked_at": "2026-11-23T13:10:09Z",
       "missingness": "not_measured_not_zero",
       "mode": "tw_power",
@@ -112973,7 +113030,7 @@
       "truncated_or_partial": true
     },
     "uk_tenders": {
-      "age_hours": 9.77,
+      "age_hours": 10.76,
       "checked_at": "2026-11-23T13:10:09Z",
       "missingness": "not_measured_not_zero",
       "mode": "uk_tenders",
@@ -112984,7 +113041,7 @@
       "truncated_or_partial": true
     },
     "usace": {
-      "age_hours": 9.77,
+      "age_hours": 10.76,
       "checked_at": "2026-11-23T13:10:09Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -112996,7 +113053,7 @@
       "truncated_or_partial": true
     },
     "usgs": {
-      "age_hours": 9.77,
+      "age_hours": 10.76,
       "checked_at": "2026-11-23T13:10:09Z",
       "missingness": "not_measured_not_zero",
       "mode": "usgs",
@@ -113007,18 +113064,19 @@
       "truncated_or_partial": false
     },
     "watchlist": {
-      "age_hours": 15.23,
-      "checked_at": "2026-11-23T07:42:30Z",
-      "missingness": "not_measured_not_zero",
+      "age_hours": 0.0,
+      "checked_at": "2026-11-23T23:55:55Z",
+      "first_provider_baseline": false,
+      "missingness": "provider_bounded_not_exhaustive",
       "mode": "watchlist",
       "provider_status": "collected",
-      "snapshot_at": "2026-11-23T07:42:30Z",
+      "snapshot_at": "2026-11-23T23:55:55Z",
       "source_scope": "registered, exact-ID forecast contracts only",
-      "status": "stale_or_unavailable",
+      "status": "current",
       "truncated_or_partial": false
     },
     "wiki_edits": {
-      "age_hours": 9.77,
+      "age_hours": 10.76,
       "checked_at": "2026-11-23T13:10:09Z",
       "missingness": "not_measured_not_zero",
       "mode": "wiki_edits",
