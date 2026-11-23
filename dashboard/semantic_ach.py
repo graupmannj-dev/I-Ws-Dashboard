@@ -18,7 +18,7 @@ from urllib import request, error, parse
 SCHEMA = "cairn.semantic-ach.v1"
 PROMPT_VERSION = "cairn-semantic-v1"
 DIRECTIONS = {"possibly_consistent", "possibly_inconsistent", "non_diagnostic", "unresolved"}
-MAX_CASES = 3
+MAX_CASES = 40
 MAX_FAMILIES = 20
 MAX_SOURCE_LINKS = 3
 MAX_TEXT = 350
@@ -62,6 +62,16 @@ def evidence_packet(case):
     # Recent case-linked history contributes provisional leads; never sign
     # these sources or treat repeated reports as independently verified events.
     roots = set(f["evidence_key"] for f in refs)
+    for entry in (case.get("analyst_hypotheses") or []):
+        for ref in (entry.get("initial_backfill") or {}).get("source_references",[])[:24]:
+            if not isinstance(ref,dict) or not ref.get("evidence_key") or not isinstance(ref.get("sources"),list):
+                continue
+            if any(f["evidence_key"]==ref["evidence_key"] for f in refs):
+                continue
+            good=[x for x in ref["sources"][:3] if isinstance(x,dict) and isinstance(x.get("url"),str) and
+                 x["url"].startswith("https://")]
+            if good:
+                refs.append({**ref, "sources":good, "reviewed_direction":"not_assessed"})
     for item in (case.get("automated_screen") or {}).get("historical_sources", [])[:12]:
         if not isinstance(item, dict):
             continue
@@ -205,10 +215,10 @@ def evaluate(data, *, api_key=None, model=None, max_cases=MAX_CASES, runner=ask_
     cases=data["hypotheses"]
     at=(clock or dt.datetime.now(dt.timezone.utc)).isoformat().replace("+00:00","Z")
     enabled=bool(api_key and model)
-    # Bound cost, rotate candidate cases by scheduled time slot. Stable,
-    # deterministic ordering within each 3-hour collection interval.
-    slot=(clock or dt.datetime.now(dt.timezone.utc)).hour//3
-    selected={(j+slot)%len(cases) for j in range(min(max_cases,len(cases)))} if enabled and cases else set()
+    # Evaluate all standing cases in each existing collection/publication cycle.
+    # Analyst hypotheses are alternatives inside the case's existing ACH; no
+    # special recurring task or rotating subset can starve their evaluation.
+    selected=set(range(min(max_cases,len(cases)))) if enabled else set()
     outputs={}
     for index,c in enumerate(cases):
         cid=compact(c.get("id"),100)
@@ -229,7 +239,9 @@ def evaluate(data, *, api_key=None, model=None, max_cases=MAX_CASES, runner=ask_
         "model":model if enabled else None,
         "status":"provisional_only" if enabled else "not_configured",
         "provisional_not_analyst_approved":True,"signed_evidence_modified":False,
-        "model_calls_bounded":max_cases if enabled else 0,"cases":outputs}
+        "model_calls_bounded":max_cases if enabled else 0,
+        "cases_not_evaluated":max(0,len(cases)-max_cases) if enabled else len(cases),
+        "cases":outputs}
 
 def publish(site, *, api_key=None, model=None, max_cases=MAX_CASES, clock=None, runner=ask_model):
     site=Path(site)
@@ -254,7 +266,7 @@ if __name__=="__main__":
     ap.add_argument("--site",required=True)
     ap.add_argument("--max-cases",type=int,default=MAX_CASES)
     args=ap.parse_args()
-    if not 1<=args.max_cases<=10: ap.error("max-cases must be 1..10")
+    if not 1<=args.max_cases<=40: ap.error("max-cases must be 1..40")
     out=publish(args.site,api_key=os.getenv("OPENAI_API_KEY"),
                 model=os.getenv("CAIRN_SEMANTIC_MODEL"),max_cases=args.max_cases)
     print(json.dumps(out))
