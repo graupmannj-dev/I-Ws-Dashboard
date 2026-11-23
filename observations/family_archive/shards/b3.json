@@ -1,5 +1,52 @@
 {
   "roots": {
+    "b302470361db3444b93b6e648a65a4eb46cd3c858ac00e7924eae464e9556cde": {
+      "information_root": "cbp_wait:cbp_wait:250401:2026-11-23:05:06:48",
+      "members": {
+        "beh:ad9adb9831e274ae0d0e75b08023": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-23T13:12:14+00:00",
+          "geography_key": "us-border-port:250401",
+          "geography_label": "San Ysidro",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:ad9adb9831e274ae0d0e75b08023",
+          "information_root": "cbp_wait:cbp_wait:250401:2026-11-23:05:06:48",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "N/A",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/23/2026",
+            "reported_local_time": "05:06:48",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — San Ysidro"
+        }
+      }
+    },
     "b33470e278089a21b8560b157b9a9247eb2c5c4f9c11f63b2ef7052ec8b3265e": {
       "information_root": "ioda:078a85207a7377f6a7957816",
       "members": {
@@ -196,6 +243,39 @@
           "source_updated_at": null,
           "source_url": "https://data.gov.sg/datasets/d_8f264219109e61fffa87ac64dd5a9a65/view",
           "title": "Singapore MPA 2026-03 Barges vessel arrivals (>75 GT)"
+        }
+      }
+    },
+    "b3a4e18726f16ce36c7cc212f6936820a5de83439789d77e7ba41befab8b7fbd": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-067e29:110509-2026",
+      "members": {
+        "beh:dfb1ec69a12880b4b0b31b0e399e": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-23T12:16:30+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:dfb1ec69a12880b4b0b31b0e399e",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-067e29:110509-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-23T12:16:30Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-21T13%3A10%3A09&updatedTo=2026-11-23T13%3A10%3A09",
+          "title": "Refurbishment of Heathlands Court Residential Block, Yateley · VIVID Housing Ltd"
         }
       }
     },

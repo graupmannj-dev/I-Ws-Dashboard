@@ -399,6 +399,39 @@
         }
       }
     },
+    "508904e58fb2a7b6fadf99dfb1752a99e757d18d1b73d296ed38c69b0a898113": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07b76b:110552-2026",
+      "members": {
+        "beh:73bc0df2e9089498af77095ff420": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-23T12:57:53+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:73bc0df2e9089498af77095ff420",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07b76b:110552-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-23T12:57:53Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-21T13%3A10%3A09&updatedTo=2026-11-23T13%3A10%3A09",
+          "title": "Contract for the provision of skips and associated waste recycling services · RYKNELD HOMES LIMITED"
+        }
+      }
+    },
     "50a24f09fe92c3fcfe7605a7ec2f31a164039b06c0c8e6f6dcdc051f48c3a47f": {
       "information_root": "saudi-coalition-hodeidah-strike-houthi-response-2026-11-20",
       "members": {
@@ -472,6 +505,45 @@
         }
       }
     },
+    "50e3c71a1deb88933845a1534a762e735ed29c936d8e69f8c329d7b7631caf3e": {
+      "information_root": "inmet_br:inmet_br:06e24a390bd3f1a5737d81f6c457",
+      "members": {
+        "beh:573d1eda74952e3ecba9c57f0b35": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "inmet_br",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-23T09:30:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:573d1eda74952e3ecba9c57f0b35",
+          "information_root": "inmet_br:inmet_br:06e24a390bd3f1a5737d81f6c457",
+          "origin": "behavioral_registry",
+          "provider": "inmet_br",
+          "published_at": "2026-11-23T09:30:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Brazil INMET",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Brazil INMET official severe-weather RSS notices; provider-listed bounded sample",
+          "source_updated_at": null,
+          "source_url": "https://apiprevmet3.inmet.gov.br/avisos/rss/56489",
+          "title": "Aviso de Chuvas Intensas. Severidade Grau: Perigo Potencial"
+        }
+      }
+    },
     "50e40267bc025a18b0fb54e38c5267595b94cbc89e9816743c6dd62b0c23b941": {
       "information_root": "ioda:002b2012adbd1c0d18f8b36e",
       "members": {
@@ -499,6 +571,39 @@
           "source_updated_at": null,
           "source_url": "https://ioda.inetintel.cc.gatech.edu/",
           "title": "IODA detected connectivity anomaly: country BS"
+        }
+      }
+    },
+    "50e64d44eb6210cf01f69d41a2f6e1be4bfcdadd4ef4ce5ecff96805235b5e21": {
+      "information_root": "nws:3e8b6b78dfad4bd12dbb630a",
+      "members": {
+        "beh:1b436030a2fe7de7652173fe018f": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "nws",
+          "direct_measurement": false,
+          "event_at": "2026-11-23T02:26:00Z",
+          "first_observed_at": "2026-11-23T02:26:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:1b436030a2fe7de7652173fe018f",
+          "information_root": "nws:3e8b6b78dfad4bd12dbb630a",
+          "origin": "behavioral_registry",
+          "provider": "nws",
+          "published_at": "2026-11-23T02:26:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "official_weather_alert_context",
+          "source_measurement": null,
+          "source_scope": "Active NWS marine alerts; severity Severe",
+          "source_updated_at": null,
+          "source_url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.c05cc9d935e557d2a3f7126dc2609e51faadfc54.001.1",
+          "title": "Flood Warning - Seminole, FL"
         }
       }
     },

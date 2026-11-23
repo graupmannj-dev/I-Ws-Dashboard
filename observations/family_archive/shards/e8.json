@@ -110,6 +110,45 @@
         }
       }
     },
+    "e8300e03afc5548aa5517dad96295f18b032195d74e650517ce5c501c60b0827": {
+      "information_root": "bmkg_nowcast:bmkg_nowcast:a2cb56454dc825981c5d423a3f6c",
+      "members": {
+        "beh:c3cf7de19e2110cb33ef95e9340b": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "bmkg_nowcast",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-23T12:55:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:c3cf7de19e2110cb33ef95e9340b",
+          "information_root": "bmkg_nowcast:bmkg_nowcast:a2cb56454dc825981c5d423a3f6c",
+          "origin": "behavioral_registry",
+          "provider": "bmkg_nowcast",
+          "published_at": "2026-11-23T12:55:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Indonesia BMKG",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Indonesia BMKG active provincial nowcast RSS, source-reported only; not global",
+          "source_updated_at": null,
+          "source_url": "https://www.bmkg.go.id/alerts/nowcast/en/CJK20261123005_alert.xml",
+          "title": "Thunderstorm Tonight in Jakarta"
+        }
+      }
+    },
     "e848d0aa13338c68bd5d68f59470084a39e3c416c6fc6427d09f8ffc91877060": {
       "information_root": "niord:f44d130c-3d02-409c-8023-40cb59dad3fb:0:1:0",
       "members": {
@@ -379,6 +418,46 @@
           "source_updated_at": null,
           "source_url": "https://ioda.inetintel.cc.gatech.edu/",
           "title": "IODA detected connectivity anomaly: country AE"
+        }
+      }
+    },
+    "e8e895c4cec6a3b9b6d8d06b8dc0ee38cf9ab20ff53c15fa7fd0eda1057c020d": {
+      "information_root": "coops:9414290:20261123T1306Z",
+      "members": {
+        "beh:cdd25f3294a08c5dc35bf589aec3": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "coops",
+          "direct_measurement": true,
+          "event_at": "2026-11-23T13:06:00Z",
+          "first_observed_at": "2026-11-23T13:06:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:cdd25f3294a08c5dc35bf589aec3",
+          "information_root": "coops:9414290:20261123T1306Z",
+          "origin": "behavioral_registry",
+          "provider": "coops",
+          "published_at": "2026-11-23T13:06:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "station_physical_measurement",
+          "source_family": "port_conditions",
+          "source_kind": "selected_port_water_level_measurement",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "metric_comparable_only_same_station_datum_and_sample_window": true,
+            "name": "observed_water_level",
+            "station": "9414290",
+            "unit": "meters_MLLW",
+            "value": 1.342
+          },
+          "source_scope": "NOAA CO-OPS water levels at San Francisco, Key West and Sewells Point; stations only",
+          "source_updated_at": null,
+          "source_url": "https://tidesandcurrents.noaa.gov/waterlevels.html?id=9414290",
+          "title": "San Francisco, CA observed water level (no anomaly classification)"
         }
       }
     }

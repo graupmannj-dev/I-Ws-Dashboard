@@ -1,5 +1,38 @@
 {
   "roots": {
+    "5b11fb5db5541f691707697d04bdb5fc87da18828c0b2761bbc3a7f85528ba23": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c12d:110522-2026",
+      "members": {
+        "beh:9d8277c7c68c92127348075fade5": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-23T12:30:07+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:9d8277c7c68c92127348075fade5",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c12d:110522-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-23T12:30:07Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-21T13%3A10%3A09&updatedTo=2026-11-23T13%3A10%3A09",
+          "title": "Works on Room CCG02 · Southampton Solent University"
+        }
+      }
+    },
     "5b425f549acc0f7467aae8e48d345490e8f50fb055a58d952adc67716c1d114e": {
       "information_root": "official:d3c7a338da3efa348c61",
       "members": {
@@ -162,6 +195,91 @@
         }
       }
     },
+    "5b89b8ab1e2ea97d0f0766bd93d7db4f5ecbddcc29ea79b93899b8dceff8385d": {
+      "information_root": "bmkg_nowcast:bmkg_nowcast:6014e36acaf7bd3a6c76bda4763c",
+      "members": {
+        "beh:f96b6a1d2a86267ab52c34a00066": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "bmkg_nowcast",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-23T12:10:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:f96b6a1d2a86267ab52c34a00066",
+          "information_root": "bmkg_nowcast:bmkg_nowcast:6014e36acaf7bd3a6c76bda4763c",
+          "origin": "behavioral_registry",
+          "provider": "bmkg_nowcast",
+          "published_at": "2026-11-23T12:10:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Indonesia BMKG",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Indonesia BMKG active provincial nowcast RSS, source-reported only; not global",
+          "source_updated_at": null,
+          "source_url": "https://www.bmkg.go.id/alerts/nowcast/en/CJH20261123004_alert.xml",
+          "title": "Thunderstorm Tonight in Jawa Tengah"
+        }
+      }
+    },
+    "5b8fe16108f08f301acd9c141437432fb9fccd158d163d1065435c8832c0be0d": {
+      "information_root": "ris_bgp:ris_bgp:AS4766:20261123T09",
+      "members": {
+        "beh:5fb7f3f5eaf437f18c0de21e7c71": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "public_routing_updates_not_country_outage",
+          "collection_mode": "ris_bgp",
+          "direct_measurement": true,
+          "event_at": null,
+          "first_observed_at": "2026-11-23T13:12:14+00:00",
+          "geography_key": "asn:4766",
+          "geography_label": "AS4766",
+          "geography_precision": "routing_target_not_country_incident",
+          "id": "beh:5fb7f3f5eaf437f18c0de21e7c71",
+          "information_root": "ris_bgp:ris_bgp:AS4766:20261123T09",
+          "origin": "behavioral_registry",
+          "provider": "ris_bgp",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "routing_collector_sampled_asn_updates",
+          "source_family": "internet_routing",
+          "source_kind": "sampled_asn_bgp_route_updates_not_network_outage",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "collector_peers_are_not_geo_deduplicated": true,
+            "country_impact_not_established": true,
+            "name": "sampled_6h_bgp_announcements",
+            "registered_network_country_hint": "KR",
+            "returned_sampling_buckets": 6,
+            "source_window_end": "2026-11-23T09:00:00Z",
+            "target_asn": "AS4766",
+            "unit": "announcements",
+            "value": 32087,
+            "window_hours_requested": 6,
+            "withdrawals_unavailable_for_asn": true
+          },
+          "source_scope": "RIPE RIS public route-announcement update samples on six non-Western operated networks; ASNs not country-wide outage detection",
+          "source_updated_at": null,
+          "source_url": "https://stat.ripe.net/data/bgp-update-activity/data.json?resource=AS4766&num_hours=6&max_samples=24&hide_empty_samples=false",
+          "title": "RIPE RIS sampled BGP announcements: AS4766"
+        }
+      }
+    },
     "5b963f48318ff5b0ab5ca4994c76807f7d81162ccf36e65fa1454a986a25b2c1": {
       "information_root": "niord:30e0503c-a18c-4a20-bb33-158697450fa7:0:2:0",
       "members": {
@@ -295,6 +413,45 @@
           "source_updated_at": null,
           "source_url": "https://stat.ripe.net/data/bgp-update-activity/data.json?resource=AS4134&num_hours=6&max_samples=24&hide_empty_samples=false",
           "title": "RIPE RIS sampled BGP announcements: AS4134"
+        }
+      }
+    },
+    "5bd5722f2f2fb0c067c3375583dda34e30ce5fd6c6c092fbafbb0ed99f0c3a95": {
+      "information_root": "bmkg_nowcast:bmkg_nowcast:13f2539b7bd5c98a5974023e7959",
+      "members": {
+        "beh:350842336a25fc9f1efc39245029": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "bmkg_nowcast",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-23T12:15:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:350842336a25fc9f1efc39245029",
+          "information_root": "bmkg_nowcast:bmkg_nowcast:13f2539b7bd5c98a5974023e7959",
+          "origin": "behavioral_registry",
+          "provider": "bmkg_nowcast",
+          "published_at": "2026-11-23T12:15:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Indonesia BMKG",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Indonesia BMKG active provincial nowcast RSS, source-reported only; not global",
+          "source_updated_at": null,
+          "source_url": "https://www.bmkg.go.id/alerts/nowcast/en/CSB20261123006_alert.xml",
+          "title": "Thunderstorm Tonight in Sumatera Barat"
         }
       }
     }

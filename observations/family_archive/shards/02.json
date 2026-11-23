@@ -103,6 +103,71 @@
         }
       }
     },
+    "027078aa23a513ffdaea89c0c05492862cc07bf7c0e9383a17bb416129fd1eac": {
+      "information_root": "ukraine-president-zelenskyy-benghazi-claim-20261123",
+      "members": {
+        "analyst:ukraine-zelenskyy-benghazi-attribution-20261123": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "unreviewed_source_submission",
+          "collection_mode": "analyst",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-23T10:51:55+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "case_hint_not_source_geolocation",
+          "id": "analyst:ukraine-zelenskyy-benghazi-attribution-20261123",
+          "information_root": "ukraine-president-zelenskyy-benghazi-claim-20261123",
+          "origin": "analyst_intake",
+          "provider": "Reuters",
+          "published_at": "2026-11-23",
+          "source_family": "media_mention",
+          "source_kind": "unreviewed_analyst_report",
+          "source_url": "https://www.reuters.com/world/europe/zelenskiy-says-ukraine-sank-russian-corvette-near-libyas-coast-hit-cargo-ship-2026-11-23/",
+          "title": "Ukraine publicly claims Benghazi Russian corvette attack"
+        }
+      }
+    },
+    "02928defb517a6631dbab8ba977cfa87053c4d2d0530e822ece7eae69254543f": {
+      "information_root": "bmkg_nowcast:bmkg_nowcast:66469694d31d74fcad7587ed5777",
+      "members": {
+        "beh:57a3bfff797a3bc8f2af333d0fb7": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "bmkg_nowcast",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-23T12:20:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:57a3bfff797a3bc8f2af333d0fb7",
+          "information_root": "bmkg_nowcast:bmkg_nowcast:66469694d31d74fcad7587ed5777",
+          "origin": "behavioral_registry",
+          "provider": "bmkg_nowcast",
+          "published_at": "2026-11-23T12:20:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Indonesia BMKG",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Indonesia BMKG active provincial nowcast RSS, source-reported only; not global",
+          "source_updated_at": null,
+          "source_url": "https://www.bmkg.go.id/alerts/nowcast/en/CNB20261123005_alert.xml",
+          "title": "Thunderstorm Tonight in Nusa Tenggara Barat"
+        }
+      }
+    },
     "02963fa3d24eb17ba2b47ed3f432701bf7ac7bcded10e9b68d720d896e2872c0": {
       "information_root": "bmkg_nowcast:bmkg_nowcast:718c675b8625ad472ae1b601837a",
       "members": {

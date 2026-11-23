@@ -1,5 +1,38 @@
 {
   "roots": {
+    "0f1b0745d974f67c5698d9fad0023c915ba87546e5fc5d20c6f1691819f223ad": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c130:110533-2026",
+      "members": {
+        "beh:b265d9cd3ffc1d14acf14a3b4a92": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-23T12:35:30+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:b265d9cd3ffc1d14acf14a3b4a92",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c130:110533-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-23T12:35:30Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-21T13%3A10%3A09&updatedTo=2026-11-23T13%3A10%3A09",
+          "title": "Lowerplace Primary School Hot and Cold Water Pipework (Infants) Phase 1 of 2 · Rochdale Borough Council"
+        }
+      }
+    },
     "0f226240fef211e657fcac67a384171d387e191209e4d78ce2d7aa7ec43970f5": {
       "information_root": "houthi-claim-saudi-energy-targets-2026-11-12",
       "members": {
@@ -222,6 +255,45 @@
         }
       }
     },
+    "0f6130eecad73a9b62c96a231a335b5f1263754ac002a542435271ed7abcc597": {
+      "information_root": "inmet_br:inmet_br:571e427a7709f839d29372f0992a",
+      "members": {
+        "beh:056a1c18c7a849ac0f2a09db8741": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "inmet_br",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-23T09:00:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:056a1c18c7a849ac0f2a09db8741",
+          "information_root": "inmet_br:inmet_br:571e427a7709f839d29372f0992a",
+          "origin": "behavioral_registry",
+          "provider": "inmet_br",
+          "published_at": "2026-11-23T09:00:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Brazil INMET",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Brazil INMET official severe-weather RSS notices; provider-listed bounded sample",
+          "source_updated_at": null,
+          "source_url": "https://apiprevmet3.inmet.gov.br/avisos/rss/56483",
+          "title": "Aviso de Tempestade. Severidade Grau: Perigo Potencial"
+        }
+      }
+    },
     "0f776655a0403ef42de18a203344b7a4091a248a6ba8e3b57385a50e7df08d3d": {
       "information_root": "faa:6/8364:0:0",
       "members": {
@@ -249,6 +321,44 @@
           "source_updated_at": null,
           "source_url": "https://tfr.faa.gov/6_8364.html",
           "title": "FAA TFR 6/8364 ·   USA, Friday, November 20, 2026 UTC"
+        }
+      }
+    },
+    "0f87491f1822a0ed447a67954933c3031c581025170bfda812f71aa36ef2b76a": {
+      "information_root": "usgs:us6000ucx6",
+      "members": {
+        "beh:bff62b6ae7ee630c85faad01b0b6": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "usgs",
+          "direct_measurement": true,
+          "event_at": "2026-11-23T07:36:21Z",
+          "first_observed_at": "2026-11-23T07:36:21+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "source_supplied_point_only",
+          "id": "beh:bff62b6ae7ee630c85faad01b0b6",
+          "information_root": "usgs:us6000ucx6",
+          "origin": "behavioral_registry",
+          "provider": "usgs",
+          "published_at": "2026-11-23T09:41:32Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "measured_earthquake_context",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "name": "earthquake_magnitude",
+            "unit": "reported_magnitude",
+            "value": 5.4
+          },
+          "source_scope": "USGS M4.5+ earthquakes worldwide, rolling past day; source thresholds apply",
+          "source_updated_at": null,
+          "source_url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000ucx6",
+          "title": "M 5.4 - 181 km NE of Lospalos, Timor Leste"
         }
       }
     },
@@ -428,6 +538,39 @@
           "source_updated_at": null,
           "source_url": "https://www.bmkg.go.id/alerts/nowcast/en/CMU20261121001_alert.xml",
           "title": "Thunderstorm This Morning in Maluku Utara"
+        }
+      }
+    },
+    "0ffdfa2c32607910fef9a7da1e2431b54ef371a45feaebf4667bed7ac2a56d33": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c134:110539-2026",
+      "members": {
+        "beh:d1b9bae4babc51fd43065aa6f2b9": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-23T12:46:37+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:d1b9bae4babc51fd43065aa6f2b9",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c134:110539-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-23T12:46:37Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-21T13%3A10%3A09&updatedTo=2026-11-23T13%3A10%3A09",
+          "title": "Holiday Food programme · Royal Borough of Greenwich"
         }
       }
     }

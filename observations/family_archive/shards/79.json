@@ -470,6 +470,53 @@
         }
       }
     },
+    "7975e94b5f51f22bb54a9a6560ea2f030a6a538357ffee8dcf73ac0127a12b4c": {
+      "information_root": "cbp_wait:cbp_wait:300402:2026-11-23:05:06:48",
+      "members": {
+        "beh:26d76bdb4b049b9e1cc64b67de18": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-23T13:12:14+00:00",
+          "geography_key": "us-border-port:300402",
+          "geography_label": "Blaine",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:26d76bdb4b049b9e1cc64b67de18",
+          "information_root": "cbp_wait:cbp_wait:300402:2026-11-23:05:06:48",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "N/A",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/23/2026",
+            "reported_local_time": "05:06:48",
+            "source_declared_border": "Canadian Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Blaine / Peace Arch"
+        }
+      }
+    },
     "79920d82558e05e46eae0af618777d247e20aed8eadfcfc545b3fa5611827d6f": {
       "information_root": "ioda:91864076e0aa3d3d21f6f4ee",
       "members": {
@@ -500,6 +547,50 @@
           "source_updated_at": null,
           "source_url": "https://ioda.inetintel.cc.gatech.edu/",
           "title": "IODA detected connectivity anomaly: country DE"
+        }
+      }
+    },
+    "7992d4979e2734f8a480d6d2ee5f946cf5d7dcb3a0db7b164282336c3489ef69": {
+      "information_root": "tw_power:tw_power:20261123T1300Z",
+      "members": {
+        "beh:8ef1e6b1587da9fe2f6bdc7daaa7": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_power_snapshot_not_outage_attribution",
+          "collection_mode": "tw_power",
+          "direct_measurement": true,
+          "event_at": null,
+          "first_observed_at": "2026-11-23T13:12:14+00:00",
+          "geography_key": "country:TW",
+          "geography_label": "Taiwan",
+          "geography_precision": "national_not_facility",
+          "id": "beh:8ef1e6b1587da9fe2f6bdc7daaa7",
+          "information_root": "tw_power:tw_power:20261123T1300Z",
+          "origin": "behavioral_registry",
+          "provider": "tw_power",
+          "published_at": "2026-11-23T13:00:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "public_national_power_snapshot",
+          "source_family": "grid_load",
+          "source_kind": "national_grid_load_aggregate_not_outage",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "measurement_clock_distinct_from_release_not_verified": true,
+            "name": "nationwide_reported_current_load",
+            "not_grid_frequency_or_outage_attribution": true,
+            "observation_coverage": "single_national_snapshot_not_24h",
+            "reported_utilization_percent": 85.0,
+            "source_published_clock": "2026-11-23T13:00:00Z",
+            "source_value_10k_kilowatts": 2985.9,
+            "unit": "MW",
+            "value": 29859.0
+          },
+          "source_scope": "Taiwan Taipower public nationwide current load snapshot and publisher release clock, not power-station or local outage data",
+          "source_updated_at": null,
+          "source_url": "https://service.taipower.com.tw/data/opendata/apply/file/d006020/001.json",
+          "title": "Taipower nationwide publicly reported current electricity load"
         }
       }
     },

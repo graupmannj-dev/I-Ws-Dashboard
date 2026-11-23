@@ -30,6 +30,53 @@
         }
       }
     },
+    "cd009ff8a273f0fff0fecb5ce8bde96fee14b2797c93b51b9a9ac2548ba60def": {
+      "information_root": "cbp_wait:cbp_wait:380002:2026-11-23:08:06:48",
+      "members": {
+        "beh:8a93a8db2c4f2dc00c6fc046813b": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-23T13:12:14+00:00",
+          "geography_key": "us-border-port:380002",
+          "geography_label": "Detroit",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:8a93a8db2c4f2dc00c6fc046813b",
+          "information_root": "cbp_wait:cbp_wait:380002:2026-11-23:08:06:48",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "no delay",
+            "lanes_open": 1,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "At 7:00 am EST",
+            "reported_local_date": "11/23/2026",
+            "reported_local_time": "08:06:48",
+            "source_declared_border": "Canadian Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 5
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Detroit / Windsor Tunnel"
+        }
+      }
+    },
     "cd07d517dea35352d9bac65c7d4da0bdcda610d33d25f0665d64ea08177bbb4d": {
       "information_root": "niord:02f3c722-952b-445c-8ba9-38509d54b5b2:1:0:1",
       "members": {
@@ -120,6 +167,39 @@
           "source_updated_at": null,
           "source_url": "https://ioda.inetintel.cc.gatech.edu/",
           "title": "IODA detected connectivity anomaly: country NF"
+        }
+      }
+    },
+    "cd6e83a74a8d7f16b9b49f523157c3b479d1ff614002ad20bcdd45653e598fa6": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c11d:110498-2026",
+      "members": {
+        "beh:182f20117ad37a83039d28dd735d": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-23T12:05:30+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:182f20117ad37a83039d28dd735d",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c11d:110498-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-23T12:05:30Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-21T13%3A10%3A09&updatedTo=2026-11-23T13%3A10%3A09",
+          "title": "Mortuary Refurbishment at Sunderland Royal Hospital · CITY HOSPITALS INDEPENDENT COMMERCIAL ENTERPRISES LIMITED"
         }
       }
     },
@@ -401,6 +481,39 @@
           "source_updated_at": null,
           "source_url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.dnk.html",
           "title": "Denmark - Level 2: Exercise Increased Caution"
+        }
+      }
+    },
+    "cdf26b65b29a040faba71ff1d343ea58783f6a579b455bf868d31677fa789ae0": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-06f69e:110487-2026",
+      "members": {
+        "beh:5448ae5ea29abb9af1624d4330b3": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-23T11:53:44+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:5448ae5ea29abb9af1624d4330b3",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-06f69e:110487-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-23T11:53:44Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-21T13%3A10%3A09&updatedTo=2026-11-23T13%3A10%3A09",
+          "title": "UBIQUITY FPV Training · Ministry of Defence"
         }
       }
     },

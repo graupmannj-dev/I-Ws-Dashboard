@@ -140,6 +140,53 @@
         }
       }
     },
+    "d4305b50640f9d49b727737fdcc022eed8ae5815c247a9449473903a655038ad": {
+      "information_root": "cbp_wait:cbp_wait:021201:2026-11-23:08:06:48",
+      "members": {
+        "beh:8bd8c23cb7fc4392417faec3fc4d": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-23T13:12:14+00:00",
+          "geography_key": "us-border-port:021201",
+          "geography_label": "Highgate Springs",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:8bd8c23cb7fc4392417faec3fc4d",
+          "information_root": "cbp_wait:cbp_wait:021201:2026-11-23:08:06:48",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "no delay",
+            "lanes_open": 1,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "At 8:00 am EST",
+            "reported_local_date": "11/23/2026",
+            "reported_local_time": "08:06:48",
+            "source_declared_border": "Canadian Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 0
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Highgate Springs"
+        }
+      }
+    },
     "d44c8141992621bf3e45cdfbc040e11b32e0bca6421a161654deda81c0d1fbc3": {
       "information_root": "nws:1adb78679fa8e2a254316abe",
       "members": {
@@ -170,6 +217,39 @@
           "source_updated_at": null,
           "source_url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.a6fa5086145354d0ed1a90a690364b8badc81719.002.3",
           "title": "Rip Current Statement - Coastal Flagler"
+        }
+      }
+    },
+    "d4968d56498cb5f92ffb27e6ef388b452958e2e18ec11691a7774c9b2ecfcba0": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c135:110540-2026",
+      "members": {
+        "beh:150b20a0406c41ab10ef5545e364": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-23T12:47:24+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:150b20a0406c41ab10ef5545e364",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c135:110540-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-23T12:47:24Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-21T13%3A10%3A09&updatedTo=2026-11-23T13%3A10%3A09",
+          "title": "Patient reclining chairs · CAMBRIDGE UNIVERSITY HOSPITALS NHS FOUNDATION TRUST"
         }
       }
     },

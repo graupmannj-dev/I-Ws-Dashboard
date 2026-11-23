@@ -1,5 +1,76 @@
 {
   "roots": {
+    "7c0bc8e4b94904708165d552bb64519bb2dcf7a13560faa28e1fdc54e13dedc8": {
+      "information_root": "nws:e7d9f03029245ced7ea39495",
+      "members": {
+        "beh:14fbb1f4e99173de0fd378aae331": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "nws",
+          "direct_measurement": false,
+          "event_at": "2026-11-23T02:16:00Z",
+          "first_observed_at": "2026-11-23T02:16:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:14fbb1f4e99173de0fd378aae331",
+          "information_root": "nws:e7d9f03029245ced7ea39495",
+          "origin": "behavioral_registry",
+          "provider": "nws",
+          "published_at": "2026-11-23T02:16:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "official_weather_alert_context",
+          "source_measurement": null,
+          "source_scope": "Active NWS marine alerts; severity Severe",
+          "source_updated_at": null,
+          "source_url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.210fe801f12cc676c0bc0f959b77124ec1b45557.001.1",
+          "title": "Flood Warning - Lake, FL; Volusia, FL"
+        }
+      }
+    },
+    "7c0f13fc8869ad14e5623522a55b4f8dfe64eecb81b7fb3335fd237c568fd894": {
+      "information_root": "usgs:us6000ucxi",
+      "members": {
+        "beh:cc6c74f598b7615ad1129b8bc62a": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "usgs",
+          "direct_measurement": true,
+          "event_at": "2026-11-23T08:01:26Z",
+          "first_observed_at": "2026-11-23T08:01:26+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "source_supplied_point_only",
+          "id": "beh:cc6c74f598b7615ad1129b8bc62a",
+          "information_root": "usgs:us6000ucxi",
+          "origin": "behavioral_registry",
+          "provider": "usgs",
+          "published_at": "2026-11-23T10:09:19Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "measured_earthquake_context",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "name": "earthquake_magnitude",
+            "unit": "reported_magnitude",
+            "value": 5.5
+          },
+          "source_scope": "USGS M4.5+ earthquakes worldwide, rolling past day; source thresholds apply",
+          "source_updated_at": null,
+          "source_url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000ucxi",
+          "title": "M 5.5 - west of Macquarie Island"
+        }
+      }
+    },
     "7c0f65579f3affd9b10c13860314dbcea6c9a8461b8a3f8918886370381ae4dd": {
       "information_root": "niord:778ec0b5-4df7-481b-a2fb-06f435b7fc00:0:4:0",
       "members": {
@@ -259,6 +330,81 @@
           "source_updated_at": null,
           "source_url": "https://bwt.cbp.gov/api/waittimes",
           "title": "CBP estimated commercial border wait — Champlain"
+        }
+      }
+    },
+    "7cd849e4229f14b6c2e74307f5ead97fcc5958d94523a75492424b77fe445508": {
+      "information_root": "wiki_edits:wiki_edits:pt:20261123T13",
+      "members": {
+        "beh:73c1c4a57548cba902eedb5fc859": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "wiki_edits",
+          "direct_measurement": false,
+          "event_at": "2026-11-23T13:09:25Z",
+          "first_observed_at": "2026-11-23T13:09:25+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:73c1c4a57548cba902eedb5fc859",
+          "information_root": "wiki_edits:wiki_edits:pt:20261123T13",
+          "origin": "behavioral_registry",
+          "provider": "wiki_edits",
+          "published_at": "2026-11-23T13:09:25Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "public_encyclopedia_edit_aggregate",
+          "source_family": "public_attention",
+          "source_kind": "bounded_public_edit_count_not_event_verification",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "distinct_articles_in_sample": 453,
+            "maximum_returned_edits": 500,
+            "most_edited_article_counts": [
+              {
+                "count": 5,
+                "title": "Z-Library"
+              },
+              {
+                "count": 4,
+                "title": "Viver Sertanejo"
+              },
+              {
+                "count": 3,
+                "title": "171 (jogo eletrônico)"
+              },
+              {
+                "count": 3,
+                "title": "BNegão"
+              },
+              {
+                "count": 3,
+                "title": "Estação ferroviária de Pitangui"
+              },
+              {
+                "count": 3,
+                "title": "João Clímaco de Camargo Pires"
+              },
+              {
+                "count": 3,
+                "title": "Papa Clemente IV"
+              },
+              {
+                "count": 3,
+                "title": "Shifting"
+              }
+            ],
+            "name": "sampled_edits_last_three_hours",
+            "sample_cap_reached": true,
+            "unit": "edits",
+            "value": 500
+          },
+          "source_scope": "Wikipedia main-namespace edit-count sample, 14 global language editions, three-hour window capped at 500 per wiki; not geographic location",
+          "source_updated_at": null,
+          "source_url": "https://pt.wikipedia.org/wiki/Special:RecentChanges",
+          "title": "Wikipedia pt public article-edit activity (sampled)"
         }
       }
     },

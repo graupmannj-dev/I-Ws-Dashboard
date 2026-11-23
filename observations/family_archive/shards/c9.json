@@ -1,5 +1,38 @@
 {
   "roots": {
+    "c9026fa2a62f200fec8ff80e3b2f883c7fbe3d1719b2f29166c57a1308de93bd": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c137:110543-2026",
+      "members": {
+        "beh:94f7eaa5b42c4812ce4a8e7f90da": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-23T12:49:17+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:94f7eaa5b42c4812ce4a8e7f90da",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c137:110543-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-23T12:49:17Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-21T13%3A10%3A09&updatedTo=2026-11-23T13%3A10%3A09",
+          "title": "Early Market Engagement Notice - Mental Health Support and Accommodation Pathway · Royal Borough of Greenwich"
+        }
+      }
+    },
     "c920fa00b519a53f2321bf15b7852ece1012a9b19d3db9df3a1fbd4ed7eb1a05": {
       "information_root": "ripe:measurement:1001:20261121T02",
       "members": {
@@ -71,6 +104,53 @@
           "source_updated_at": null,
           "source_url": "https://tfr.faa.gov/6_8729.html",
           "title": "FAA TFR 6/8729 ·   USA, Sunday, November 22, 2026 UTC"
+        }
+      }
+    },
+    "c93d33cc49b45ced5ea1365cb2681b7a58265b5ee03cabe50cc0c4bbd510fd22": {
+      "information_root": "cbp_wait:cbp_wait:535503:2026-11-23:07:06:48",
+      "members": {
+        "beh:d4b3c0efeea9d4660b087b3e6295": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-23T13:12:14+00:00",
+          "geography_key": "us-border-port:535503",
+          "geography_label": "Brownsville",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:d4b3c0efeea9d4660b087b3e6295",
+          "information_root": "cbp_wait:cbp_wait:535503:2026-11-23:07:06:48",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Lanes Closed",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/23/2026",
+            "reported_local_time": "07:06:48",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Brownsville / Los Indios"
         }
       }
     },

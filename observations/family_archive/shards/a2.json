@@ -200,6 +200,44 @@
         }
       }
     },
+    "a267cba9fbf1da7c30186dbb2c2e37835fd08185e78f038a647a3f24213343e7": {
+      "information_root": "usgs:us6000ucy6",
+      "members": {
+        "beh:c3de6fea624a8771b193e5d9eceb": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "usgs",
+          "direct_measurement": true,
+          "event_at": "2026-11-23T10:39:20Z",
+          "first_observed_at": "2026-11-23T10:39:20+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "source_supplied_point_only",
+          "id": "beh:c3de6fea624a8771b193e5d9eceb",
+          "information_root": "usgs:us6000ucy6",
+          "origin": "behavioral_registry",
+          "provider": "usgs",
+          "published_at": "2026-11-23T10:54:52Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "measured_earthquake_context",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "name": "earthquake_magnitude",
+            "unit": "reported_magnitude",
+            "value": 4.7
+          },
+          "source_scope": "USGS M4.5+ earthquakes worldwide, rolling past day; source thresholds apply",
+          "source_updated_at": null,
+          "source_url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000ucy6",
+          "title": "M 4.7 - 52 km SW of Tyrma, Russia"
+        }
+      }
+    },
     "a2703d44bf0694deff38bc61a0364eeaad7c83ac742792e14b02dd474284c065": {
       "information_root": "bmkg_nowcast:bmkg_nowcast:d2b47a5f180d57b8482ed915e3db",
       "members": {
@@ -282,6 +320,44 @@
           "source_updated_at": null,
           "source_url": "https://data.gov.sg/datasets/d_8f264219109e61fffa87ac64dd5a9a65/view",
           "title": "Singapore MPA 2026-01 Miscellaneous vessel arrivals (>75 GT)"
+        }
+      }
+    },
+    "a28a216786f937a078dfec13db6961dc9ef2d2a45d3cbc1128894fec4619fcbd": {
+      "information_root": "usgs:us6000ucwd",
+      "members": {
+        "beh:688d05de0bfef149c1dca768a58a": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "usgs",
+          "direct_measurement": true,
+          "event_at": "2026-11-23T04:18:19Z",
+          "first_observed_at": "2026-11-23T04:18:19+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "source_supplied_point_only",
+          "id": "beh:688d05de0bfef149c1dca768a58a",
+          "information_root": "usgs:us6000ucwd",
+          "origin": "behavioral_registry",
+          "provider": "usgs",
+          "published_at": "2026-11-23T04:43:58Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "measured_earthquake_context",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "name": "earthquake_magnitude",
+            "unit": "reported_magnitude",
+            "value": 5
+          },
+          "source_scope": "USGS M4.5+ earthquakes worldwide, rolling past day; source thresholds apply",
+          "source_updated_at": null,
+          "source_url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000ucwd",
+          "title": "M 5.0 - 159 km ESE of Kokopo, Papua New Guinea"
         }
       }
     },
@@ -470,6 +546,39 @@
           "source_updated_at": null,
           "source_url": "https://bwt.cbp.gov/api/waittimes",
           "title": "CBP estimated commercial border wait — Buffalo/Niagara Falls / Whirlpool Bridge"
+        }
+      }
+    },
+    "a2fa3c3f6e990455c23584b85bb487978b585ccbe765c4cea7a7cc1ffef3b90d": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c10a:110469-2026",
+      "members": {
+        "beh:2caf09a4d427eade27b29a09ba73": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-23T11:18:39+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:2caf09a4d427eade27b29a09ba73",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c10a:110469-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-23T11:18:39Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-21T13%3A10%3A09&updatedTo=2026-11-23T13%3A10%3A09",
+          "title": "Provision of Works for Sudborough House and The Workshop · Northamptonshire Healthcare NHS Foundation Trust"
         }
       }
     }

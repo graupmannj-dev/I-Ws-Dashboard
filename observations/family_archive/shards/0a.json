@@ -138,6 +138,53 @@
         }
       }
     },
+    "0a172492337afb1352cfe5104512f91ebdd1c94f8ca0ff7b4e6c33d630c15ef9": {
+      "information_root": "cbp_wait:cbp_wait:021101:2026-11-23:08:06:48",
+      "members": {
+        "beh:6afa66f15be825fe9a318b69103d": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-23T13:12:14+00:00",
+          "geography_key": "us-border-port:021101",
+          "geography_label": "Norton",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:6afa66f15be825fe9a318b69103d",
+          "information_root": "cbp_wait:cbp_wait:021101:2026-11-23:08:06:48",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "no delay",
+            "lanes_open": 1,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "At 8:00 am EST",
+            "reported_local_date": "11/23/2026",
+            "reported_local_time": "08:06:48",
+            "source_declared_border": "Canadian Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 0
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Norton"
+        }
+      }
+    },
     "0a17e4ea6858259712adf61d60774dce89eac2bc7b7c90e4053706e4784b7681": {
       "information_root": "adnoc-ls-statement-hormuz-2026-11-17",
       "members": {
@@ -306,6 +353,39 @@
           "source_updated_at": null,
           "source_url": "https://stat.ripe.net/data/bgp-update-activity/data.json?resource=AS5713&num_hours=6&max_samples=24&hide_empty_samples=false",
           "title": "RIPE RIS sampled BGP announcements: AS5713"
+        }
+      }
+    },
+    "0a57a7a4553ff70b692036578dfd5431b06c4bbaf113d827bda93fb85013346c": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c12a:110517-2026",
+      "members": {
+        "beh:9597cb42e9ea16722b0ae0a2dcfd": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-23T12:25:54+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:9597cb42e9ea16722b0ae0a2dcfd",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c12a:110517-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-23T12:25:54Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-21T13%3A10%3A09&updatedTo=2026-11-23T13%3A10%3A09",
+          "title": "East Cliff Stabilisation Works · Bournemouth, Christchurch and Poole Council"
         }
       }
     },
@@ -554,6 +634,39 @@
         }
       }
     },
+    "0a93c66bc98c6eeb04a680a6fd548b29297d021289ab5c53f4ce1bfde2f9b216": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c122:110505-2026",
+      "members": {
+        "beh:f67b7ba2a9941f99708dd4e34f5c": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-23T12:13:59+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:f67b7ba2a9941f99708dd4e34f5c",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c122:110505-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-23T12:13:59Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-21T13%3A10%3A09&updatedTo=2026-11-23T13%3A10%3A09",
+          "title": "Design, Supply and Installation of Refurbishments at Three Play Areas · East Lindsey District Council"
+        }
+      }
+    },
     "0aa84f9d1878c6b85a8cc946797f7705cec6c9cfb0300fd4c0106ca501ce680e": {
       "information_root": "cbp_wait:cbp_wait:L01901:2026-11-22:06:34:18",
       "members": {
@@ -750,6 +863,53 @@
           "source_updated_at": null,
           "source_url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.a6fa5086145354d0ed1a90a690364b8badc81719.002.1",
           "title": "Coastal Flood Warning - Coastal Flagler"
+        }
+      }
+    },
+    "0afa19190af44bd902d9c05c2f8102c5fb39a6bd6170a39dbf62f4ec866174c4": {
+      "information_root": "cbp_wait:cbp_wait:250301:2026-11-23:05:06:48",
+      "members": {
+        "beh:0172f5dbaf4dbab391d2f2df09c9": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-23T13:12:14+00:00",
+          "geography_key": "us-border-port:250301",
+          "geography_label": "Calexico",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:0172f5dbaf4dbab391d2f2df09c9",
+          "information_root": "cbp_wait:cbp_wait:250301:2026-11-23:05:06:48",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Lanes Closed",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Closed",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/23/2026",
+            "reported_local_time": "05:06:48",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Calexico / East"
         }
       }
     }

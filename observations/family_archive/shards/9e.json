@@ -1,5 +1,38 @@
 {
   "roots": {
+    "9e06bb5dbe58ffd831c0a9937f53778f9c89264bd37a5a06bd7c94140f7fce63": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-06aa22:110555-2026",
+      "members": {
+        "beh:280e3d3111f99cbc0e3c88330bb4": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-23T13:03:22+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:280e3d3111f99cbc0e3c88330bb4",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-06aa22:110555-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-23T13:03:22Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-21T13%3A10%3A09&updatedTo=2026-11-23T13%3A10%3A09",
+          "title": "Caversham Lakes Boat Hoist · ENVIRONMENT AGENCY"
+        }
+      }
+    },
     "9e0959ba7701aecc4e5b5efb7fa21a6271b16d61abdefee53ac6d2d23bc2b541": {
       "information_root": "sg_mpa:sg_mpa:2026-01:passenger",
       "members": {
@@ -43,6 +76,53 @@
           "source_updated_at": null,
           "source_url": "https://data.gov.sg/datasets/d_8f264219109e61fffa87ac64dd5a9a65/view",
           "title": "Singapore MPA 2026-01 Passenger vessel arrivals (>75 GT)"
+        }
+      }
+    },
+    "9e17b18e5633197a14770af72ea06497f7a09b4a43270915442cd76e93914ac7": {
+      "information_root": "cbp_wait:cbp_wait:070801:2026-11-23:08:06:48",
+      "members": {
+        "beh:6def226ee3e0e5f33bd320096399": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-23T13:12:14+00:00",
+          "geography_key": "us-border-port:070801",
+          "geography_label": "Alexandria Bay",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:6def226ee3e0e5f33bd320096399",
+          "information_root": "cbp_wait:cbp_wait:070801:2026-11-23:08:06:48",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "no delay",
+            "lanes_open": 1,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "At 6:00 am EST",
+            "reported_local_date": "11/23/2026",
+            "reported_local_time": "08:06:48",
+            "source_declared_border": "Canadian Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 0
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Alexandria Bay / Thousand Islands Bridge"
         }
       }
     },
@@ -122,6 +202,53 @@
           "source_updated_at": null,
           "source_url": "https://data.gov.sg/datasets/d_8f264219109e61fffa87ac64dd5a9a65/view",
           "title": "Singapore MPA 2026-04 Passenger vessel arrivals (>75 GT)"
+        }
+      }
+    },
+    "9e28d287964fd58cbd64b6be47c642ef875a58b90033b531247950f09c1bde04": {
+      "information_root": "cbp_wait:cbp_wait:020901:2026-11-23:08:06:48",
+      "members": {
+        "beh:4c8e7ae250fd7bd624acc8dbb0d5": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-23T13:12:14+00:00",
+          "geography_key": "us-border-port:020901",
+          "geography_label": "Derby Line",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:4c8e7ae250fd7bd624acc8dbb0d5",
+          "information_root": "cbp_wait:cbp_wait:020901:2026-11-23:08:06:48",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "no delay",
+            "lanes_open": 1,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "At Midnight EST",
+            "reported_local_date": "11/23/2026",
+            "reported_local_time": "08:06:48",
+            "source_declared_border": "Canadian Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 0
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Derby Line / Derby Line I-91"
         }
       }
     },
@@ -297,6 +424,39 @@
         }
       }
     },
+    "9e934c4277b34317d3d7a793206cd88c374aa2feb4cc3150a320a2f275748ccc": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c110:110482-2026",
+      "members": {
+        "beh:a74669c70a48ae81a078518f4a14": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-23T11:42:50+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:a74669c70a48ae81a078518f4a14",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c110:110482-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-23T11:42:50Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-21T13%3A10%3A09&updatedTo=2026-11-23T13%3A10%3A09",
+          "title": "Staff Welfare · The Newcastle Upon Tyne Hospitals NHS Foundation Trust"
+        }
+      }
+    },
     "9e954b3bbe431395f00e709442ab4f5204789bfb84fde62dba0bdb618ddcbec5": {
       "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-065411:110366-2026",
       "members": {
@@ -327,6 +487,39 @@
           "source_updated_at": null,
           "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-19T02%3A27%3A41&updatedTo=2026-11-21T02%3A27%3A41",
           "title": "FCDO Accra British High Commission Offices Redevelopment, Ghana · Foreign, Commonwealth and Development Office"
+        }
+      }
+    },
+    "9e96c5f9455d519ae392d12737d3cc2ff753d035243800bd6c637db2a46ca9f2": {
+      "information_root": "nws:64f866d844f78a3a91581d0f",
+      "members": {
+        "beh:52d32846cbc98ca538afdc279342": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "nws",
+          "direct_measurement": false,
+          "event_at": "2026-11-23T02:31:00Z",
+          "first_observed_at": "2026-11-23T02:31:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:52d32846cbc98ca538afdc279342",
+          "information_root": "nws:64f866d844f78a3a91581d0f",
+          "origin": "behavioral_registry",
+          "provider": "nws",
+          "published_at": "2026-11-23T02:31:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "official_weather_alert_context",
+          "source_measurement": null,
+          "source_scope": "Active NWS marine alerts; severity Severe",
+          "source_updated_at": null,
+          "source_url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.50c3bb7183b32fd9b4b82b0b4eb24cdf4cec3ad7.001.1",
+          "title": "Flood Warning - Lake, FL; Volusia, FL"
         }
       }
     },
@@ -540,6 +733,53 @@
           "source_updated_at": "2026-11-19T00:21:54Z",
           "source_url": "https://niord.dma.dk/#/message/382a0e72-378f-4122-a534-e3c21e711107",
           "title": "Denmark. Kattegat. EK R 19 MULTEX. Firing exercises. Warning."
+        }
+      }
+    },
+    "9ee85b63ad2a6736d285e6d5285e5b4915d469e9c35b36580dcbf105ab30c9f1": {
+      "information_root": "cbp_wait:cbp_wait:340101:2026-11-23:07:06:48",
+      "members": {
+        "beh:82808be43bb4c7e40ab7a8e04d8e": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-23T13:12:14+00:00",
+          "geography_key": "us-border-port:340101",
+          "geography_label": "Pembina",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:82808be43bb4c7e40ab7a8e04d8e",
+          "information_root": "cbp_wait:cbp_wait:340101:2026-11-23:07:06:48",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Update Pending",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/23/2026",
+            "reported_local_time": "07:06:48",
+            "source_declared_border": "Canadian Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Pembina"
         }
       }
     },

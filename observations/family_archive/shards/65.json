@@ -198,6 +198,39 @@
         }
       }
     },
+    "6598046238c14fa16f92c7845ca6da3f179c2d7f2b28ae212c4002b42592d424": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c13a:110547-2026",
+      "members": {
+        "beh:c7a430c565568e3bb36c4be011e8": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-23T12:52:27+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:c7a430c565568e3bb36c4be011e8",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c13a:110547-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-23T12:52:27Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-21T13%3A10%3A09&updatedTo=2026-11-23T13%3A10%3A09",
+          "title": "Provision of Legal Support · DFT OPERATOR LIMITED"
+        }
+      }
+    },
     "65b95f17fe388e59f30d9500ffa26d3d9778d24c25e5ddf7dc1814a34ae0f37f": {
       "information_root": "niord:076f0fb6-c387-450a-9fdb-5629d7c1087e:1:0:0",
       "members": {
@@ -362,6 +395,81 @@
           "source_updated_at": "2026-11-15T00:21:51Z",
           "source_url": "https://niord.dma.dk/#/message/532825a7-01a5-4d42-a5db-24bed595e9e8",
           "title": "Denmark. Kattegat. EK R 45 Hevring. Firing exercises. Warning."
+        }
+      }
+    },
+    "65f4cbbd69389a263545937bb539fcac66d9c36e4fa13930c2234920fd340e5a": {
+      "information_root": "wiki_edits:wiki_edits:en:20261123T13",
+      "members": {
+        "beh:79c12df044ae36d296ef75fc16e3": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "wiki_edits",
+          "direct_measurement": false,
+          "event_at": "2026-11-23T13:10:08Z",
+          "first_observed_at": "2026-11-23T13:10:08+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:79c12df044ae36d296ef75fc16e3",
+          "information_root": "wiki_edits:wiki_edits:en:20261123T13",
+          "origin": "behavioral_registry",
+          "provider": "wiki_edits",
+          "published_at": "2026-11-23T13:10:08Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "public_encyclopedia_edit_aggregate",
+          "source_family": "public_attention",
+          "source_kind": "bounded_public_edit_count_not_event_verification",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "distinct_articles_in_sample": 412,
+            "maximum_returned_edits": 500,
+            "most_edited_article_counts": [
+              {
+                "count": 5,
+                "title": "07th Expansion"
+              },
+              {
+                "count": 5,
+                "title": "Barleeia polychroma"
+              },
+              {
+                "count": 5,
+                "title": "Mass media"
+              },
+              {
+                "count": 4,
+                "title": "2026 Syed Modi International"
+              },
+              {
+                "count": 4,
+                "title": "Lag Tuleritg"
+              },
+              {
+                "count": 4,
+                "title": "Minhazul Karim Shadin"
+              },
+              {
+                "count": 4,
+                "title": "Oda of Canterbury"
+              },
+              {
+                "count": 4,
+                "title": "Quipu"
+              }
+            ],
+            "name": "sampled_edits_last_three_hours",
+            "sample_cap_reached": true,
+            "unit": "edits",
+            "value": 500
+          },
+          "source_scope": "Wikipedia main-namespace edit-count sample, 14 global language editions, three-hour window capped at 500 per wiki; not geographic location",
+          "source_updated_at": null,
+          "source_url": "https://en.wikipedia.org/wiki/Special:RecentChanges",
+          "title": "Wikipedia en public article-edit activity (sampled)"
         }
       }
     }

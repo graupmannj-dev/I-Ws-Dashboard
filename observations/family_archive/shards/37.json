@@ -181,6 +181,45 @@
         }
       }
     },
+    "37a5898801fe1a46b09b65ea36a7813f602c0f91d52d45654c5337cf71d14385": {
+      "information_root": "bmkg_nowcast:bmkg_nowcast:e69ad08d4e6c770e3a1d23aef077",
+      "members": {
+        "beh:9d68b1e9c298170853b04045c3dd": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "bmkg_nowcast",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-23T11:30:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:9d68b1e9c298170853b04045c3dd",
+          "information_root": "bmkg_nowcast:bmkg_nowcast:e69ad08d4e6c770e3a1d23aef077",
+          "origin": "behavioral_registry",
+          "provider": "bmkg_nowcast",
+          "published_at": "2026-11-23T11:30:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Indonesia BMKG",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Indonesia BMKG active provincial nowcast RSS, source-reported only; not global",
+          "source_updated_at": null,
+          "source_url": "https://www.bmkg.go.id/alerts/nowcast/en/CJT20261123007_alert.xml",
+          "title": "Thunderstorm Tonight in Jawa Timur"
+        }
+      }
+    },
     "37a8a10b704efc73ef395d1f283da110c9f27319f2fed8e5fab5a2718a69edc6": {
       "information_root": "bmkg_nowcast:bmkg_nowcast:5cd844f8ac87fc2ec7846cb065b4",
       "members": {
@@ -217,6 +256,53 @@
           "source_updated_at": null,
           "source_url": "https://www.bmkg.go.id/alerts/nowcast/en/CNB20261122015_alert.xml",
           "title": "Thunderstorm Tonight in Nusa Tenggara Barat"
+        }
+      }
+    },
+    "37b5313800529fd8a02353c602114990cdd39e18e8495bf2df660984e95f5e81": {
+      "information_root": "cbp_wait:cbp_wait:090101:2026-11-23:08:06:48",
+      "members": {
+        "beh:a34e336e73baa825764f81b31cd4": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-23T13:12:14+00:00",
+          "geography_key": "us-border-port:090101",
+          "geography_label": "Buffalo/Niagara Falls",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:a34e336e73baa825764f81b31cd4",
+          "information_root": "cbp_wait:cbp_wait:090101:2026-11-23:08:06:48",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "delay",
+            "lanes_open": 4,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "At 8:00 am EST",
+            "reported_local_date": "11/23/2026",
+            "reported_local_time": "08:06:48",
+            "source_declared_border": "Canadian Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 11
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Buffalo/Niagara Falls / Peace Bridge"
         }
       }
     },

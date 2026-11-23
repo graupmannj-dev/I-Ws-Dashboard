@@ -33,6 +33,44 @@
         }
       }
     },
+    "a3387b4458992274512b2acb48fb882885381769bf0f0a7b9641a78caf760e32": {
+      "information_root": "usgs:us6000ucy7",
+      "members": {
+        "beh:6d56dbcc230283806dc8fa23084b": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "usgs",
+          "direct_measurement": true,
+          "event_at": "2026-11-23T10:39:26Z",
+          "first_observed_at": "2026-11-23T10:39:26+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "source_supplied_point_only",
+          "id": "beh:6d56dbcc230283806dc8fa23084b",
+          "information_root": "usgs:us6000ucy7",
+          "origin": "behavioral_registry",
+          "provider": "usgs",
+          "published_at": "2026-11-23T11:02:26Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "measured_earthquake_context",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "name": "earthquake_magnitude",
+            "unit": "reported_magnitude",
+            "value": 4.6
+          },
+          "source_scope": "USGS M4.5+ earthquakes worldwide, rolling past day; source thresholds apply",
+          "source_updated_at": null,
+          "source_url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000ucy7",
+          "title": "M 4.6 - 30 km SW of Finschhafen, Papua New Guinea"
+        }
+      }
+    },
     "a3493105a5f8e3e4de5f87b05cc12b6d2240063c52d321fc4d554615022ee65a": {
       "information_root": "niord:21695ece-4d99-43b7-b632-a24f4575925f:1:0:0",
       "members": {
@@ -142,6 +180,120 @@
           "source_updated_at": null,
           "source_url": "https://eonet.gsfc.nasa.gov/api/v3/events/EONET_26573",
           "title": "Prescribed Fire STEELY MILL RX, El Dorado, California"
+        }
+      }
+    },
+    "a3a62466ca3613762e21d6fba5c410b4459c31f542e88c9d8d8149143c73a8a6": {
+      "information_root": "wiki_edits:wiki_edits:id:20261123T13",
+      "members": {
+        "beh:e0fc8b1573ca1faee802d433dee3": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "wiki_edits",
+          "direct_measurement": false,
+          "event_at": "2026-11-23T13:10:07Z",
+          "first_observed_at": "2026-11-23T13:10:07+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:e0fc8b1573ca1faee802d433dee3",
+          "information_root": "wiki_edits:wiki_edits:id:20261123T13",
+          "origin": "behavioral_registry",
+          "provider": "wiki_edits",
+          "published_at": "2026-11-23T13:10:07Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "public_encyclopedia_edit_aggregate",
+          "source_family": "public_attention",
+          "source_kind": "bounded_public_edit_count_not_event_verification",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "distinct_articles_in_sample": 151,
+            "maximum_returned_edits": 500,
+            "most_edited_article_counts": [
+              {
+                "count": 19,
+                "title": "Amran Sulaiman"
+              },
+              {
+                "count": 18,
+                "title": "Sugiono (politikus)"
+              },
+              {
+                "count": 13,
+                "title": "Pemilihan Wakil Presiden Indonesia 2026"
+              },
+              {
+                "count": 8,
+                "title": "D'Academy (musim 8)"
+              },
+              {
+                "count": 8,
+                "title": "Tertulis untuk Kita"
+              },
+              {
+                "count": 6,
+                "title": "Alas Roban the Series"
+              },
+              {
+                "count": 6,
+                "title": "Festival Internasional Busan ke-26"
+              },
+              {
+                "count": 5,
+                "title": "Makan"
+              }
+            ],
+            "name": "sampled_edits_last_three_hours",
+            "sample_cap_reached": false,
+            "unit": "edits",
+            "value": 269
+          },
+          "source_scope": "Wikipedia main-namespace edit-count sample, 14 global language editions, three-hour window capped at 500 per wiki; not geographic location",
+          "source_updated_at": null,
+          "source_url": "https://id.wikipedia.org/wiki/Special:RecentChanges",
+          "title": "Wikipedia id public article-edit activity (sampled)"
+        }
+      }
+    },
+    "a3ea2e2b885b80dfebcceef2908d6e4e712cdd56e09284f7d5b2a9c54a550b3a": {
+      "information_root": "bmkg_nowcast:bmkg_nowcast:5c5c13a037de1ff6600046501766",
+      "members": {
+        "beh:98b7449f5fb9daebbdc54502eb80": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "bmkg_nowcast",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-23T12:15:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:98b7449f5fb9daebbdc54502eb80",
+          "information_root": "bmkg_nowcast:bmkg_nowcast:5c5c13a037de1ff6600046501766",
+          "origin": "behavioral_registry",
+          "provider": "bmkg_nowcast",
+          "published_at": "2026-11-23T12:15:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Indonesia BMKG",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Indonesia BMKG active provincial nowcast RSS, source-reported only; not global",
+          "source_updated_at": null,
+          "source_url": "https://www.bmkg.go.id/alerts/nowcast/en/CRU20261123005_alert.xml",
+          "title": "Thunderstorm Tonight in Riau"
         }
       }
     },

@@ -1,5 +1,45 @@
 {
   "roots": {
+    "8e1a49dedf20d9a446e5ef6944aa3f6a9f47cc1aa4631601f2ac968f7b9192e4": {
+      "information_root": "coops:8724580:20261123T1300Z",
+      "members": {
+        "beh:c11129511b9f6434856f7df1d3b0": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "coops",
+          "direct_measurement": true,
+          "event_at": "2026-11-23T13:00:00Z",
+          "first_observed_at": "2026-11-23T13:00:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:c11129511b9f6434856f7df1d3b0",
+          "information_root": "coops:8724580:20261123T1300Z",
+          "origin": "behavioral_registry",
+          "provider": "coops",
+          "published_at": "2026-11-23T13:00:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "station_physical_measurement",
+          "source_family": "port_conditions",
+          "source_kind": "selected_port_water_level_measurement",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "metric_comparable_only_same_station_datum_and_sample_window": true,
+            "name": "observed_water_level",
+            "station": "8724580",
+            "unit": "meters_MLLW",
+            "value": 0.536
+          },
+          "source_scope": "NOAA CO-OPS water levels at San Francisco, Key West and Sewells Point; stations only",
+          "source_updated_at": null,
+          "source_url": "https://tidesandcurrents.noaa.gov/waterlevels.html?id=8724580",
+          "title": "Key West, FL observed water level (no anomaly classification)"
+        }
+      }
+    },
     "8e30a66aec202a082586f01d6e2aee7354d6952046a13467051efc4038d3fdb4": {
       "information_root": "niord:5d72ff05-f299-4513-bfbd-2c2d38001fd1:1:0:0",
       "members": {

@@ -256,6 +256,53 @@
         }
       }
     },
+    "afc122138ee75ecfac077ebca4c7a2844d7e51b8e24b2ed06c8bd493f2181309": {
+      "information_root": "cbp_wait:cbp_wait:380102:2026-11-23:08:06:48",
+      "members": {
+        "beh:8b6197cd95ef65b537f66467b66b": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-23T13:12:14+00:00",
+          "geography_key": "us-border-port:380102",
+          "geography_label": "Detroit",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:8b6197cd95ef65b537f66467b66b",
+          "information_root": "cbp_wait:cbp_wait:380102:2026-11-23:08:06:48",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "no delay",
+            "lanes_open": 4,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "At 7:00 am EST",
+            "reported_local_date": "11/23/2026",
+            "reported_local_time": "08:06:48",
+            "source_declared_border": "Canadian Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 5
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Detroit / Gordie Howe International Bridge"
+        }
+      }
+    },
     "aff0d651786da7ed11e5fe1d05548c6b749b1c19a451aae37a5cd4f7dd5be84b": {
       "information_root": "inmet_br:inmet_br:71b7979c8a263a2d00ce69064bf9",
       "members": {

@@ -3,11 +3,11 @@
   "approved_corroborations": 0,
   "candidate_common_event_pairs": [
     {
-      "epicenter_distance_km": 22.7,
-      "origin_time_difference_seconds": 1,
+      "epicenter_distance_km": 26.0,
+      "origin_time_difference_seconds": 3,
       "source_ids": [
-        "usgs:us6000ucrb",
-        "bmkg_quake:b8d21fea37b0ed85ec7a8dbd03a2"
+        "usgs:us6000ucx6",
+        "bmkg_quake:df2ee91bcdd4b37f3036a60cf08c"
       ],
       "source_independence_not_event_independence": true,
       "source_magnitude_difference": 0.0,
@@ -16,18 +16,37 @@
         "bmkg_quake"
       ],
       "source_urls": [
-        "https://earthquake.usgs.gov/earthquakes/eventpage/us6000ucrb",
+        "https://earthquake.usgs.gov/earthquakes/eventpage/us6000ucx6",
+        "https://data.bmkg.go.id/DataMKG/TEWS/gempaterkini.json"
+      ],
+      "status": "possible_same_earthquake_unreviewed"
+    },
+    {
+      "epicenter_distance_km": 13.1,
+      "origin_time_difference_seconds": 1,
+      "source_ids": [
+        "usgs:us6000ucyd",
+        "bmkg_quake:ec4e4e1a4f53a66ceee041a18ef1"
+      ],
+      "source_independence_not_event_independence": true,
+      "source_magnitude_difference": 0.5,
+      "source_modes": [
+        "usgs",
+        "bmkg_quake"
+      ],
+      "source_urls": [
+        "https://earthquake.usgs.gov/earthquakes/eventpage/us6000ucyd",
         "https://data.bmkg.go.id/DataMKG/TEWS/gempaterkini.json"
       ],
       "status": "possible_same_earthquake_unreviewed"
     }
   ],
   "checked_recent_event_counts": {
-    "bmkg_quake": 3,
-    "usgs": 14
+    "bmkg_quake": 4,
+    "usgs": 20
   },
   "comparison_available": true,
-  "generated_at": "2026-11-23T01:51:39.909732Z",
+  "generated_at": "2026-11-23T13:12:14.329732Z",
   "independent_physical_event_count_estimated": null,
   "interpretation": "Independent publishing institutions may measure the same physical earthquake. Candidate links are NOT reviewed event identities, military indicators, or extra physical-event counts.",
   "mode": "public_independent_origin_physical_event_candidate_audit",

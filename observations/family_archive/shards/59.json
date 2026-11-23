@@ -163,6 +163,45 @@
         }
       }
     },
+    "5965ae76ca7717186930c67dcf3b525ff56f71e2855c81d903a0109d2910088d": {
+      "information_root": "inmet_br:inmet_br:422fdb0ff1ea004406c942883149",
+      "members": {
+        "beh:737ab6ac5c44db756dffac26f224": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "inmet_br",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-23T00:00:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:737ab6ac5c44db756dffac26f224",
+          "information_root": "inmet_br:inmet_br:422fdb0ff1ea004406c942883149",
+          "origin": "behavioral_registry",
+          "provider": "inmet_br",
+          "published_at": "2026-11-23T00:00:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Brazil INMET",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Brazil INMET official severe-weather RSS notices; provider-listed bounded sample",
+          "source_updated_at": null,
+          "source_url": "https://apiprevmet3.inmet.gov.br/avisos/rss/56485",
+          "title": "Aviso de Tempestade. Severidade Grau: Perigo Potencial"
+        }
+      }
+    },
     "597c54ad4270661c9f3452490c409b93526c353a434886c50cf9ed8ca1e64cad": {
       "information_root": "cbp_wait:cbp_wait:250608:2026-11-21:17:22:12",
       "members": {
@@ -289,6 +328,53 @@
         }
       }
     },
+    "59aeea907bea5e999a8a98206c0e517ab88e667c72568557f884ee4330131f32": {
+      "information_root": "cbp_wait:cbp_wait:L01901:2026-11-23:08:06:48",
+      "members": {
+        "beh:eed170f27864b9f43db6402e10aa": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-23T13:12:14+00:00",
+          "geography_key": "us-border-port:L01901",
+          "geography_label": "Madawaska",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:eed170f27864b9f43db6402e10aa",
+          "information_root": "cbp_wait:cbp_wait:L01901:2026-11-23:08:06:48",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "no delay",
+            "lanes_open": 1,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "At 8:00 am EST",
+            "reported_local_date": "11/23/2026",
+            "reported_local_time": "08:06:48",
+            "source_declared_border": "Canadian Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 5
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Madawaska"
+        }
+      }
+    },
     "59b4f88ca2783308f7ed7ac8c5b8d3aabff41325f16961ce43e52c353961a6c9": {
       "information_root": "tw_power:tw_power:20261122T0120Z",
       "members": {
@@ -356,6 +442,45 @@
           "source_kind": "unreviewed_analyst_report",
           "source_url": "https://www.reuters.com/business/energy/tanker-hit-by-unknown-projectile-near-omans-khasab-ukmto-says-2026-11-21/",
           "title": "UKMTO reports tanker projectile incidents near Oman's Khasab"
+        }
+      }
+    },
+    "59ce369beb8fbf45272d7f61ababdabf23b7f1f0d15fa27f2361792d5b584191": {
+      "information_root": "bmkg_nowcast:bmkg_nowcast:ff551c17a3472db4772b4d2fe37e",
+      "members": {
+        "beh:7d48ccea09b0a415840a097b9466": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "bmkg_nowcast",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-23T12:10:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:7d48ccea09b0a415840a097b9466",
+          "information_root": "bmkg_nowcast:bmkg_nowcast:ff551c17a3472db4772b4d2fe37e",
+          "origin": "behavioral_registry",
+          "provider": "bmkg_nowcast",
+          "published_at": "2026-11-23T12:10:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Indonesia BMKG",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Indonesia BMKG active provincial nowcast RSS, source-reported only; not global",
+          "source_updated_at": null,
+          "source_url": "https://www.bmkg.go.id/alerts/nowcast/en/CBK20261123004_alert.xml",
+          "title": "Thunderstorm Tonight in Bengkulu"
         }
       }
     },

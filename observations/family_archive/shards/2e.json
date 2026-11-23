@@ -423,6 +423,53 @@
         }
       }
     },
+    "2ec23d559e4ef815225d841436fe0e1ba2fc2678a37c4a7c69f7d6c789c1974d": {
+      "information_root": "cbp_wait:cbp_wait:260801:2026-11-23:06:06:48",
+      "members": {
+        "beh:e0c39c518eede66f809cddc587cd": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-23T13:12:14+00:00",
+          "geography_key": "us-border-port:260801",
+          "geography_label": "San Luis",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:e0c39c518eede66f809cddc587cd",
+          "information_root": "cbp_wait:cbp_wait:260801:2026-11-23:06:06:48",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "N/A",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/23/2026",
+            "reported_local_time": "06:06:48",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — San Luis / San Luis I"
+        }
+      }
+    },
     "2ec32a3107712d80993b6f3c77b898544d4c6d392bff8d8c54791162fc0fa010": {
       "information_root": "cbp_wait:cbp_wait:L01901:2026-11-21:20:22:12",
       "members": {
@@ -574,6 +621,53 @@
           "source_updated_at": "2026-11-14T00:21:51Z",
           "source_url": "https://niord.dma.dk/#/message/1a3dd20d-b0dd-4957-8447-a652063698ec",
           "title": "Denmark. Kattegat. EK R 18 Jaegerspris. Firing exercises. Warning."
+        }
+      }
+    },
+    "2ee1139c0b7febe218df98c3557400070048a1d9aa5640aa9947c6be6fafe67d": {
+      "information_root": "cbp_wait:cbp_wait:070101:2026-11-23:08:06:48",
+      "members": {
+        "beh:9df75ca0f147150207fb3afc27f4": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-23T13:12:14+00:00",
+          "geography_key": "us-border-port:070101",
+          "geography_label": "Ogdensburg",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:9df75ca0f147150207fb3afc27f4",
+          "information_root": "cbp_wait:cbp_wait:070101:2026-11-23:08:06:48",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "no delay",
+            "lanes_open": 1,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "At 8:00 am EST",
+            "reported_local_date": "11/23/2026",
+            "reported_local_time": "08:06:48",
+            "source_declared_border": "Canadian Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 0
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Ogdensburg"
         }
       }
     },

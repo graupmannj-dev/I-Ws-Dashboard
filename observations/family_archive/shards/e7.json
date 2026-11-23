@@ -1,5 +1,38 @@
 {
   "roots": {
+    "e714d96a17639c26b0b0f65dbf847b5eba49f0a632908a09773680d1574ceb38": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c10c:110472-2026",
+      "members": {
+        "beh:69df0dbc691d78e4a4b659dd0752": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-23T11:22:15+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:69df0dbc691d78e4a4b659dd0752",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c10c:110472-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-23T11:22:15Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-21T13%3A10%3A09&updatedTo=2026-11-23T13%3A10%3A09",
+          "title": "The Provision of Extraction Licences – XAMN and XRY · The Police, Fire and Crime Commissioner for Northamptonshire"
+        }
+      }
+    },
     "e71ff429b916d66b074f161ecc4a5d5ab12178d64f2f8264b3ef9362bea9df83": {
       "information_root": "cbp_wait:cbp_wait:380002:2026-11-22:14:38:51",
       "members": {
@@ -319,6 +352,53 @@
           "source_updated_at": "2026-11-20T00:21:51Z",
           "source_url": "https://niord.dma.dk/#/message/4fcc4e47-7663-4a9f-9f65-4ff164149b8f",
           "title": "Denmark. The Baltic Sea. EK D 396 Hullebaek. Firing exercises. Warning."
+        }
+      }
+    },
+    "e78bfe68f7a868c8c39ca9733164bbeb36d3dfdd5183e930d8873fae73ab7f02": {
+      "information_root": "cbp_wait:cbp_wait:535504:2026-11-23:07:06:48",
+      "members": {
+        "beh:ca6a3fa1d10319a1f6e905eefd38": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-23T13:12:14+00:00",
+          "geography_key": "us-border-port:535504",
+          "geography_label": "Brownsville",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:ca6a3fa1d10319a1f6e905eefd38",
+          "information_root": "cbp_wait:cbp_wait:535504:2026-11-23:07:06:48",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "N/A",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/23/2026",
+            "reported_local_time": "07:06:48",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Brownsville / Gateway"
         }
       }
     },

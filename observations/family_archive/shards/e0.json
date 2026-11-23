@@ -585,6 +585,53 @@
         }
       }
     },
+    "e0aabbb497aadfed874c087fa46188fff8a49bbd6ed5eaa2047962f6677dca83": {
+      "information_root": "cbp_wait:cbp_wait:230701:2026-11-23:07:06:48",
+      "members": {
+        "beh:544135ebb2739779a4d5a8a07542": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-23T13:12:14+00:00",
+          "geography_key": "us-border-port:230701",
+          "geography_label": "Rio Grande City",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:544135ebb2739779a4d5a8a07542",
+          "information_root": "cbp_wait:cbp_wait:230701:2026-11-23:07:06:48",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Lanes Closed",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/23/2026",
+            "reported_local_time": "07:06:48",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Rio Grande City"
+        }
+      }
+    },
     "e0caea00611709b2b8dfdc323405ee47f0e82cd09c75caf030f7737903d96b9e": {
       "information_root": "nws:8966cb1fefa61669efbadac7",
       "members": {
@@ -615,6 +662,45 @@
           "source_updated_at": null,
           "source_url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.76cb0111f6d24455929e38a6e0ca23b9d9d09e96.001.2",
           "title": "High Surf Advisory - Coastal Volusia; Coastal Indian River; Coastal St. Lucie; Coastal Martin; Mainland Northern Brevard;"
+        }
+      }
+    },
+    "e0e3191709a73980b83032c77a950176eeb3992d19bebab2aff06eefcc4073aa": {
+      "information_root": "bmkg_nowcast:bmkg_nowcast:af94103e09b68c30f7fbe7d6dd88",
+      "members": {
+        "beh:63b55c4047c248f6c90c83df9381": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "bmkg_nowcast",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-23T11:00:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:63b55c4047c248f6c90c83df9381",
+          "information_root": "bmkg_nowcast:bmkg_nowcast:af94103e09b68c30f7fbe7d6dd88",
+          "origin": "behavioral_registry",
+          "provider": "bmkg_nowcast",
+          "published_at": "2026-11-23T11:00:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Indonesia BMKG",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Indonesia BMKG active provincial nowcast RSS, source-reported only; not global",
+          "source_updated_at": null,
+          "source_url": "https://www.bmkg.go.id/alerts/nowcast/en/CKS20261123005_alert.xml",
+          "title": "Thunderstorm Tonight in Kalimantan Selatan"
         }
       }
     },

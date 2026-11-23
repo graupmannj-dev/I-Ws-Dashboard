@@ -30,6 +30,52 @@
         }
       }
     },
+    "ce3760c44bda83813d6d6392463419f9aa19c465c700cdc7862543aa7a052f8a": {
+      "information_root": "ris_bgp:ris_bgp:AS4134:20261123T09",
+      "members": {
+        "beh:286fca920ed43c834fcc4d0be610": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "public_routing_updates_not_country_outage",
+          "collection_mode": "ris_bgp",
+          "direct_measurement": true,
+          "event_at": null,
+          "first_observed_at": "2026-11-23T13:12:14+00:00",
+          "geography_key": "asn:4134",
+          "geography_label": "AS4134",
+          "geography_precision": "routing_target_not_country_incident",
+          "id": "beh:286fca920ed43c834fcc4d0be610",
+          "information_root": "ris_bgp:ris_bgp:AS4134:20261123T09",
+          "origin": "behavioral_registry",
+          "provider": "ris_bgp",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "routing_collector_sampled_asn_updates",
+          "source_family": "internet_routing",
+          "source_kind": "sampled_asn_bgp_route_updates_not_network_outage",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "collector_peers_are_not_geo_deduplicated": true,
+            "country_impact_not_established": true,
+            "name": "sampled_6h_bgp_announcements",
+            "registered_network_country_hint": "CN",
+            "returned_sampling_buckets": 6,
+            "source_window_end": "2026-11-23T09:00:00Z",
+            "target_asn": "AS4134",
+            "unit": "announcements",
+            "value": 40496,
+            "window_hours_requested": 6,
+            "withdrawals_unavailable_for_asn": true
+          },
+          "source_scope": "RIPE RIS public route-announcement update samples on six non-Western operated networks; ASNs not country-wide outage detection",
+          "source_updated_at": null,
+          "source_url": "https://stat.ripe.net/data/bgp-update-activity/data.json?resource=AS4134&num_hours=6&max_samples=24&hide_empty_samples=false",
+          "title": "RIPE RIS sampled BGP announcements: AS4134"
+        }
+      }
+    },
     "ce4173da1bd31636f23a5c171f1ecff1a40a5e2ac91c38cc3b45b3d075f8a73e": {
       "information_root": "niord:fd87de03-3a03-4aa3-a9bf-e701c9b5beb3:0:4:0",
       "members": {
@@ -132,6 +178,39 @@
           "source_updated_at": null,
           "source_url": "https://zh.wikipedia.org/wiki/Special:RecentChanges",
           "title": "Wikipedia zh public article-edit activity (sampled)"
+        }
+      }
+    },
+    "cea8a2629abf46ff87db4ad3c12ec05e7caf7b1a63c017820d874c228a00a48f": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-06f356:110524-2026",
+      "members": {
+        "beh:595b4e3cdb55d076e3940633ca38": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-23T12:30:33+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:595b4e3cdb55d076e3940633ca38",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-06f356:110524-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-23T12:30:33Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-21T13%3A10%3A09&updatedTo=2026-11-23T13%3A10%3A09",
+          "title": "Growth Gateway · Foreign Commonwealth and Development Office"
         }
       }
     },

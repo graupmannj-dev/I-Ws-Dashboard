@@ -63,6 +63,39 @@
         }
       }
     },
+    "a81b1b1df4ad50a938d5ca24436349561355772d2a81198e42c80ea8ccce2d41": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-06accc:110490-2026",
+      "members": {
+        "beh:ffae73a8037ee191a9dc4e7470f1": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-23T11:57:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:ffae73a8037ee191a9dc4e7470f1",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-06accc:110490-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-23T11:57:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-21T13%3A10%3A09&updatedTo=2026-11-23T13%3A10%3A09",
+          "title": "MBC Development of Former NHS Clinic, Foster Street, Maidstone"
+        }
+      }
+    },
     "a84dcf31d1d8e7631c31d8c521bf1ecc81a405a9061d548e94c7b1e6dd425357": {
       "information_root": "cbp_wait:cbp_wait:250302:2026-11-21:17:22:12",
       "members": {
@@ -270,6 +303,53 @@
           "source_updated_at": null,
           "source_url": "https://bwt.cbp.gov/api/waittimes",
           "title": "CBP estimated commercial border wait — Derby Line / Derby Line I-91"
+        }
+      }
+    },
+    "a89ba45441b733ec67294d4f37dd382c7de081915c52efe71e89c9b56e47c7ba": {
+      "information_root": "cbp_wait:cbp_wait:240221:2026-11-23:06:06:48",
+      "members": {
+        "beh:394e9b758b9800605b1f70dc8926": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-23T13:12:14+00:00",
+          "geography_key": "us-border-port:240221",
+          "geography_label": "El Paso",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:394e9b758b9800605b1f70dc8926",
+          "information_root": "cbp_wait:cbp_wait:240221:2026-11-23:06:06:48",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Update Pending",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/23/2026",
+            "reported_local_time": "06:06:48",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — El Paso"
         }
       }
     },

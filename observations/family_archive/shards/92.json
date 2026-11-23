@@ -192,6 +192,44 @@
         }
       }
     },
+    "92a4ff1af07ac251bf38b6beeefa834f0ebdbbdb007cc485f92549180f603f6a": {
+      "information_root": "usgs:us6000ucvh",
+      "members": {
+        "beh:75b34f648fe166a63365b6512f0f": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "usgs",
+          "direct_measurement": true,
+          "event_at": "2026-11-23T02:14:59Z",
+          "first_observed_at": "2026-11-23T02:14:59+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "source_supplied_point_only",
+          "id": "beh:75b34f648fe166a63365b6512f0f",
+          "information_root": "usgs:us6000ucvh",
+          "origin": "behavioral_registry",
+          "provider": "usgs",
+          "published_at": "2026-11-23T04:18:26Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "measured_earthquake_context",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "name": "earthquake_magnitude",
+            "unit": "reported_magnitude",
+            "value": 4.9
+          },
+          "source_scope": "USGS M4.5+ earthquakes worldwide, rolling past day; source thresholds apply",
+          "source_updated_at": null,
+          "source_url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000ucvh",
+          "title": "M 4.9 - 39 km NW of Kuqa, China"
+        }
+      }
+    },
     "92a6aa7ef4e32af7de3b9e5899b98731d568bad11a15481f2660e7402fc8d6b9": {
       "information_root": "niord:81a3ee1e-3be5-4107-ba85-9b4f5eb65d25:0:1:0",
       "members": {
@@ -269,6 +307,39 @@
         }
       }
     },
+    "92ba0168fab62ddc373701b2dad3092658b0c6df863791061a52c347d0421b37": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c111:110483-2026",
+      "members": {
+        "beh:428f2727fa915bcf045492606467": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-23T11:49:20+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:428f2727fa915bcf045492606467",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c111:110483-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-23T11:49:20Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-21T13%3A10%3A09&updatedTo=2026-11-23T13%3A10%3A09",
+          "title": "ID 6724509 - DOJ - NIPS - Supply and Delivery of Frozen Food · Northern Ireland Prison Service"
+        }
+      }
+    },
     "92c6388c3feb98683669250fe2ab41dac5b4143a4a184bf4aa1209a8e05e259a": {
       "information_root": "nws:b4431432f3fa98606a696ffd",
       "members": {
@@ -299,6 +370,53 @@
           "source_updated_at": null,
           "source_url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.0bd7583406e3892dc93cdd490c967674b936e7b8.001.2",
           "title": "Coastal Flood Warning - Coastal Flagler"
+        }
+      }
+    },
+    "92d5229210f2aebbbd8a28e17b92bd2636729bed13b38297e508c20ab7434beb": {
+      "information_root": "cbp_wait:cbp_wait:380201:2026-11-23:08:06:48",
+      "members": {
+        "beh:00739fb0baeea83479929169b5b9": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-23T13:12:14+00:00",
+          "geography_key": "us-border-port:380201",
+          "geography_label": "Port Huron",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:00739fb0baeea83479929169b5b9",
+          "information_root": "cbp_wait:cbp_wait:380201:2026-11-23:08:06:48",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "no delay",
+            "lanes_open": 6,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "At 7:00 am EST",
+            "reported_local_date": "11/23/2026",
+            "reported_local_time": "08:06:48",
+            "source_declared_border": "Canadian Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 0
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Port Huron / Bluewater Bridge"
         }
       }
     }

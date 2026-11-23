@@ -205,6 +205,52 @@
         }
       }
     },
+    "135efb0da8d4887773294cefc80ba5955fa3af88848546ca7d8de4a721308f25": {
+      "information_root": "ris_bgp:ris_bgp:AS7552:20261123T09",
+      "members": {
+        "beh:01199b0b4f0e1f0a644a60a44edf": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "public_routing_updates_not_country_outage",
+          "collection_mode": "ris_bgp",
+          "direct_measurement": true,
+          "event_at": null,
+          "first_observed_at": "2026-11-23T13:12:14+00:00",
+          "geography_key": "asn:7552",
+          "geography_label": "AS7552",
+          "geography_precision": "routing_target_not_country_incident",
+          "id": "beh:01199b0b4f0e1f0a644a60a44edf",
+          "information_root": "ris_bgp:ris_bgp:AS7552:20261123T09",
+          "origin": "behavioral_registry",
+          "provider": "ris_bgp",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "routing_collector_sampled_asn_updates",
+          "source_family": "internet_routing",
+          "source_kind": "sampled_asn_bgp_route_updates_not_network_outage",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "collector_peers_are_not_geo_deduplicated": true,
+            "country_impact_not_established": true,
+            "name": "sampled_6h_bgp_announcements",
+            "registered_network_country_hint": "VN",
+            "returned_sampling_buckets": 6,
+            "source_window_end": "2026-11-23T09:00:00Z",
+            "target_asn": "AS7552",
+            "unit": "announcements",
+            "value": 6360652,
+            "window_hours_requested": 6,
+            "withdrawals_unavailable_for_asn": true
+          },
+          "source_scope": "RIPE RIS public route-announcement update samples on six non-Western operated networks; ASNs not country-wide outage detection",
+          "source_updated_at": null,
+          "source_url": "https://stat.ripe.net/data/bgp-update-activity/data.json?resource=AS7552&num_hours=6&max_samples=24&hide_empty_samples=false",
+          "title": "RIPE RIS sampled BGP announcements: AS7552"
+        }
+      }
+    },
     "137eeca7bba244cbfa0334f5977ddd898ceae5ef6a38bcbd37edf2e5e8745a6f": {
       "information_root": "ioda:1472fb1c63524c4af78278a2",
       "members": {
@@ -232,6 +278,39 @@
           "source_updated_at": null,
           "source_url": "https://ioda.inetintel.cc.gatech.edu/",
           "title": "IODA detected connectivity anomaly: country BT"
+        }
+      }
+    },
+    "13a91d30975ea7f910fde6b090ff7b0f88e45b629710bc1b007cb7746a3b3ae4": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c10d:110473-2026",
+      "members": {
+        "beh:7c9092410bbb2cfbf8eb3f1ba512": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-23T11:26:49+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:7c9092410bbb2cfbf8eb3f1ba512",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c10d:110473-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-23T11:26:49Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-21T13%3A10%3A09&updatedTo=2026-11-23T13%3A10%3A09",
+          "title": "Stray Dogs Collection and Kennelling Service (Including Veterinary Care) · Thurrock Council"
         }
       }
     },
@@ -278,6 +357,39 @@
           "source_updated_at": null,
           "source_url": "https://stat.ripe.net/data/bgp-update-activity/data.json?resource=AS7552&num_hours=6&max_samples=24&hide_empty_samples=false",
           "title": "RIPE RIS sampled BGP announcements: AS7552"
+        }
+      }
+    },
+    "13af6fd2c418281ddfddd338783cf75a28a8e9fb5e21e46157ab2f895c369e86": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-078738:110525-2026",
+      "members": {
+        "beh:72e14be2f72dab79bc606c4d4645": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-23T12:30:40+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:72e14be2f72dab79bc606c4d4645",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-078738:110525-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-23T12:30:40Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-21T13%3A10%3A09&updatedTo=2026-11-23T13%3A10%3A09",
+          "title": "UKRI-6277 Fast HDX System · UK Research & Innovation (UKRI)"
         }
       }
     }

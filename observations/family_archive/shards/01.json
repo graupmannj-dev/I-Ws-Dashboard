@@ -63,6 +63,79 @@
         }
       }
     },
+    "018744b77b752cafbba816501e166433cefef36004b7684eb1eb743635fc408e": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c131:110534-2026",
+      "members": {
+        "beh:6ee97df69b08175d40ed0e62b94f": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-23T12:37:45+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:6ee97df69b08175d40ed0e62b94f",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c131:110534-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-23T12:37:45Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-21T13%3A10%3A09&updatedTo=2026-11-23T13%3A10%3A09",
+          "title": "Healthy relationships domestic abuse support service for young people in Gloucestershire · Gloucestershire County Council-"
+        }
+      }
+    },
+    "018dc95cdfc020270ee2e0b3c96c92446911517c9be07b097161e5a295a146b5": {
+      "information_root": "bmkg_quake:bmkg_quake:df2ee91bcdd4b37f3036a60cf08c",
+      "members": {
+        "beh:8a59491206e3455a5bb29f8c166e": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "bmkg_quake",
+          "direct_measurement": true,
+          "event_at": "2026-11-23T07:36:24Z",
+          "first_observed_at": "2026-11-23T13:12:14+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "source_supplied_earthquake_epicenter",
+          "id": "beh:8a59491206e3455a5bb29f8c166e",
+          "information_root": "bmkg_quake:bmkg_quake:df2ee91bcdd4b37f3036a60cf08c",
+          "origin": "behavioral_registry",
+          "provider": "bmkg_quake",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_seismic_reporting_may_represent_same_usgs_event",
+          "source_family": "environmental_context",
+          "source_kind": "national_seismic_measurement_context",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "depth_km": 141.0,
+            "name": "earthquake_magnitude",
+            "possible_same_physical_event_as_usgs": true,
+            "unit": "source_reported_magnitude",
+            "value": 5.4
+          },
+          "source_scope": "Indonesia BMKG 15 latest magnitude-5+ earthquakes; not global; same physical events may appear in USGS",
+          "source_updated_at": null,
+          "source_url": "https://data.bmkg.go.id/DataMKG/TEWS/gempaterkini.json",
+          "title": "BMKG earthquake M5.4 · 87 km TimurLaut MALUKUBRTDAYA"
+        }
+      }
+    },
     "019574401e921103f54bc520d6e053c30a81aacc9fee37f674c33627c08f4761": {
       "information_root": "niord:fd585098-74b9-49ea-a826-82951a0a3ad3:3:0:1",
       "members": {

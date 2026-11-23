@@ -110,6 +110,53 @@
         }
       }
     },
+    "3a8c003011e673409e2ed82b23d945685f676ec794cf5e7077131621ae589321": {
+      "information_root": "cbp_wait:cbp_wait:240202:2026-11-23:06:06:48",
+      "members": {
+        "beh:6f3cc55a118aac936146ea2edbea": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-23T13:12:14+00:00",
+          "geography_key": "us-border-port:240202",
+          "geography_label": "El Paso",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:6f3cc55a118aac936146ea2edbea",
+          "information_root": "cbp_wait:cbp_wait:240202:2026-11-23:06:06:48",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "N/A",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/23/2026",
+            "reported_local_time": "06:06:48",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — El Paso / Paso Del Norte (PDN)"
+        }
+      }
+    },
     "3a9a5fe2dd313142c30e36d96c99e3dbe9823568caef29f7e424b95aeb9ee231": {
       "information_root": "uk-government-russia-energy-sanctions-20261112",
       "members": {
@@ -368,6 +415,44 @@
           "source_updated_at": null,
           "source_url": "https://bwt.cbp.gov/api/waittimes",
           "title": "CBP estimated commercial border wait — Otay Mesa"
+        }
+      }
+    },
+    "3af987b4058f2dd5bd65348fc97750f8d7a95f36902f58e59fd2a5c7d12fd079": {
+      "information_root": "usgs:us6000ucw1",
+      "members": {
+        "beh:3682d764cc7904ab12c59fb3fea8": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "usgs",
+          "direct_measurement": true,
+          "event_at": "2026-11-23T03:07:52Z",
+          "first_observed_at": "2026-11-23T03:07:52+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "source_supplied_point_only",
+          "id": "beh:3682d764cc7904ab12c59fb3fea8",
+          "information_root": "usgs:us6000ucw1",
+          "origin": "behavioral_registry",
+          "provider": "usgs",
+          "published_at": "2026-11-23T03:25:33Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "measured_earthquake_context",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "name": "earthquake_magnitude",
+            "unit": "reported_magnitude",
+            "value": 4.9
+          },
+          "source_scope": "USGS M4.5+ earthquakes worldwide, rolling past day; source thresholds apply",
+          "source_updated_at": null,
+          "source_url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000ucw1",
+          "title": "M 4.9 - Vanuatu region"
         }
       }
     }

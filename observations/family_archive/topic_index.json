@@ -1304,6 +1304,27 @@
       "shared_activity_roles": [],
       "shared_subject_terms": []
     },
+    "616fb636df347712ee5029232c29": {
+      "independent_corroboration_proven": false,
+      "latent_semantic_similarity": 0.8918,
+      "method": "aiba.hybrid-local-title-embedding.v1",
+      "raw_text_similarity": 0.2381,
+      "review_status": "unreviewed_automatic_topic_match",
+      "same_incident_proven": false,
+      "same_source_document": false,
+      "score": 0.4734,
+      "shared_activity_roles": [
+        "kinetic"
+      ],
+      "shared_named_subjects": [
+        "ukraine"
+      ],
+      "shared_subject_terms": [
+        "claims",
+        "ukraine"
+      ],
+      "subject_geography_compatible": true
+    },
     "620cd0b5e41af848649daa129f3e": {
       "independent_corroboration_proven": false,
       "latent_semantic_similarity": 0.9929,
@@ -1440,6 +1461,31 @@
       "shared_activity_roles": [],
       "shared_named_subjects": [],
       "shared_subject_terms": [],
+      "subject_geography_compatible": true
+    },
+    "6c3a8834972080bff981ba40ac8f": {
+      "independent_corroboration_proven": false,
+      "latent_semantic_similarity": 1,
+      "method": "aiba.hybrid-local-title-embedding.v1",
+      "raw_text_similarity": 1,
+      "review_status": "unreviewed_automatic_topic_match",
+      "same_incident_proven": false,
+      "same_source_document": false,
+      "score": 1.0,
+      "shared_activity_roles": [],
+      "shared_named_subjects": [
+        "atlas"
+      ],
+      "shared_subject_terms": [
+        "aggregate",
+        "atlas",
+        "measurements",
+        "probe",
+        "public",
+        "ripe",
+        "root",
+        "usable"
+      ],
       "subject_geography_compatible": true
     },
     "6f484163f076ed0b95a211c889bf": {
@@ -2113,6 +2159,15 @@
       "shared_named_subjects": [],
       "shared_subject_terms": [],
       "subject_geography_compatible": true
+    },
+    "97905091f372e4a9620476a96438": {
+      "independent_corroboration_proven": false,
+      "method": "new_analytical_theme",
+      "review_status": "unreviewed_automatic_topic_seed",
+      "same_incident_proven": false,
+      "score": null,
+      "shared_activity_roles": [],
+      "shared_subject_terms": []
     },
     "983c340573fa1682f91b76f12624": {
       "independent_corroboration_proven": false,
@@ -4125,6 +4180,7 @@
     "6010c1c1e4088e7bc915c292e50a": "family:c356456b475932be2590",
     "60700c6e59d0faaa3d3ff2e1df7d": "family:0afac7519a942d2982df",
     "608fa804525f6bf1b9c83166f8b4": "family:1c628f836d1f68918c22",
+    "616fb636df347712ee5029232c29": "family:52b05e31e7ade3adb5cd",
     "61bff5a71c5d2b84608d19810a1d": "family:3c06a2736c512dcdd016",
     "620cd0b5e41af848649daa129f3e": "family:16768cd11ccd8abf1ec4",
     "629476fb4e2fcb5cb1fc1d567169": "family:fe16830728b4f874c391",
@@ -4156,6 +4212,7 @@
     "6b6e3f5b6813bc29772db2f8cf34": "family:f200e612ec2c9f84f1b1",
     "6c055592e8d828dbc1ba7a1f0c77": "family:52b05e31e7ade3adb5cd",
     "6c2997ede2dd6c7014f95846bce6": "family:3c00731ba07f4daedf9d",
+    "6c3a8834972080bff981ba40ac8f": "family:fe16830728b4f874c391",
     "6c86abebb443c0beee38b5d62c37": "family:d7493f2e4bfd9d0a456a",
     "6ca35023e35181feacb2b6187434": "family:f6bd83a204d53c1af649",
     "6de39b66dbd8b737b764d4328062": "family:d42b68793f8e65c9d461",
@@ -4276,6 +4333,7 @@
     "9664ee83082dfe8d2154fa58708b": "family:d49a903ff2c5e52fe38d",
     "967d54bc7fe66a7849422c36ba00": "family:7326644dffff37614fb1",
     "96a36242772f32ba774f018b5f5b": "family:16768cd11ccd8abf1ec4",
+    "97905091f372e4a9620476a96438": "family:da3680bcc465828129dc",
     "983c340573fa1682f91b76f12624": "family:f8e1ac401f1c74e63992",
     "992d4f8ce8aa943330958c695c0b": "family:f200e612ec2c9f84f1b1",
     "99d08a4a3e42de3efd66ce19d1a0": "family:95af9afa112d381d30d6",
@@ -6325,7 +6383,8 @@
     },
     "family:52b05e31e7ade3adb5cd": {
       "first_document_at": "2026-11-17T16:44:13+00:00",
-      "matched_document_count": 1,
+      "last_document_at": "2026-11-23T10:51:55+00:00",
+      "matched_document_count": 2,
       "seed": {
         "domain": "generic",
         "geo": [
@@ -8660,6 +8719,41 @@
       },
       "source": "automatic_similarity_v1"
     },
+    "family:da3680bcc465828129dc": {
+      "first_document_at": "2026-11-23T11:16:16+00:00",
+      "last_document_at": "2026-11-23T11:16:16+00:00",
+      "matched_document_count": 1,
+      "seed": {
+        "domain": "generic",
+        "geo": [],
+        "key": "97905091f372e4a9620476a96438",
+        "publisher": "uk_tenders",
+        "source_family": "public_procurement",
+        "terms": {
+          "action": 1,
+          "armagh": 2,
+          "banbridge": 2,
+          "borough": 2,
+          "city": 2,
+          "community": 1,
+          "consultant": 1,
+          "council": 2,
+          "craigavon": 2,
+          "critical": 1,
+          "develop": 1,
+          "focused": 1,
+          "incidents": 1,
+          "peaceplus": 1,
+          "plan": 1,
+          "resilience": 1,
+          "services": 1,
+          "supported": 1,
+          "weather": 1
+        },
+        "title": "Consultant services to develop Armagh City, Banbridge and Craigavon Borough Council Community Resilience Action Plan - focused on critical weather incidents, supported by PEACEPLUS · Armagh City Banbridge and Craigavon Borough Council"
+      },
+      "source": "hybrid_local_topic_embedding_v2"
+    },
     "family:dda699dbcd9f58c711b5": {
       "first_document_at": "2026-11-20T19:14:46+00:00",
       "last_document_at": "2026-11-20T19:14:46+00:00",
@@ -9380,8 +9474,8 @@
     },
     "family:fe16830728b4f874c391": {
       "first_document_at": "2026-11-21T02:31:05+00:00",
-      "last_document_at": "2026-11-23T01:51:40+00:00",
-      "matched_document_count": 7,
+      "last_document_at": "2026-11-23T13:12:14+00:00",
+      "matched_document_count": 8,
       "seed": {
         "domain": "network",
         "geo": [],
@@ -9444,9 +9538,9 @@
     }
   },
   "input_truncated": false,
-  "new_document_assignments": 0,
+  "new_document_assignments": 3,
   "schema": "aiba.automatic-analytical-topics.v1",
   "semantic_seed_index_limited": false,
-  "total_document_assignments": 652,
-  "total_stable_topics": 228
+  "total_document_assignments": 655,
+  "total_stable_topics": 229
 }

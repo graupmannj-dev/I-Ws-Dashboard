@@ -1,5 +1,38 @@
 {
   "roots": {
+    "671b9d86a0b9ca50d564b70c0b84623179f7c452c49aca882ec462e79f950b9e": {
+      "information_root": "nws:c2dfef2e5e29812aa7f91cdb",
+      "members": {
+        "beh:b45f3b8850e539da5b97a3626b3b": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "nws",
+          "direct_measurement": false,
+          "event_at": "2026-11-23T06:23:00Z",
+          "first_observed_at": "2026-11-23T06:23:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:b45f3b8850e539da5b97a3626b3b",
+          "information_root": "nws:c2dfef2e5e29812aa7f91cdb",
+          "origin": "behavioral_registry",
+          "provider": "nws",
+          "published_at": "2026-11-23T06:23:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "official_weather_alert_context",
+          "source_measurement": null,
+          "source_scope": "Active NWS marine alerts; severity Minor",
+          "source_updated_at": null,
+          "source_url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.d2115dccfa6c4a6f7576fa0af08419ee89a80ee9.003.1",
+          "title": "Coastal Flood Advisory - Coastal Duval"
+        }
+      }
+    },
     "672bd2af8f830361c39fb7d496774757beae9234a6b7bcb91f0e972fcc4b4184": {
       "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c0d5:110368-2026",
       "members": {
@@ -167,6 +200,39 @@
           "source_updated_at": null,
           "source_url": "https://bwt.cbp.gov/api/waittimes",
           "title": "CBP estimated commercial border wait — Buffalo/Niagara Falls / Peace Bridge"
+        }
+      }
+    },
+    "677f91ff33f0c3c483c0c3d0f66780396d1188b764e3e7f7241c718c0d29de69": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c10f:110479-2026",
+      "members": {
+        "beh:292ae52cfb370b1298e653077d56": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-23T11:35:49+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:292ae52cfb370b1298e653077d56",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c10f:110479-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-23T11:35:49Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-21T13%3A10%3A09&updatedTo=2026-11-23T13%3A10%3A09",
+          "title": "Medical Physics Support Services · Great Western Hospitals NHS Foundation Trust"
         }
       }
     },

@@ -47,6 +47,46 @@
         }
       }
     },
+    "7d3ecc544817dcf2bdc50b0247ccaa826eefba3403e12f0739c253bec5667cb9": {
+      "information_root": "coops:8638610:20261123T1300Z",
+      "members": {
+        "beh:bb1286630a108708a84e4dc585bd": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "coops",
+          "direct_measurement": true,
+          "event_at": "2026-11-23T13:00:00Z",
+          "first_observed_at": "2026-11-23T13:00:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:bb1286630a108708a84e4dc585bd",
+          "information_root": "coops:8638610:20261123T1300Z",
+          "origin": "behavioral_registry",
+          "provider": "coops",
+          "published_at": "2026-11-23T13:00:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "station_physical_measurement",
+          "source_family": "port_conditions",
+          "source_kind": "selected_port_water_level_measurement",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "metric_comparable_only_same_station_datum_and_sample_window": true,
+            "name": "observed_water_level",
+            "station": "8638610",
+            "unit": "meters_MLLW",
+            "value": 1.195
+          },
+          "source_scope": "NOAA CO-OPS water levels at San Francisco, Key West and Sewells Point; stations only",
+          "source_updated_at": null,
+          "source_url": "https://tidesandcurrents.noaa.gov/waterlevels.html?id=8638610",
+          "title": "Sewells Point, VA observed water level (no anomaly classification)"
+        }
+      }
+    },
     "7d4ddb0adb3c155fd4c9b2bfe68b597457596e20dbef29112d7293048920ed81": {
       "information_root": "nws:816b87d678af8ea7cae2e837",
       "members": {
@@ -288,6 +328,53 @@
         }
       }
     },
+    "7dadfa42f9ae37cfe40b0fa4e1abf5c780be548acf52894f0fbacaeafd89811e": {
+      "information_root": "cbp_wait:cbp_wait:230401:2026-11-23:07:06:48",
+      "members": {
+        "beh:ed76456c4537dfb4090258173e79": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-23T13:12:14+00:00",
+          "geography_key": "us-border-port:230401",
+          "geography_label": "Laredo",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:ed76456c4537dfb4090258173e79",
+          "information_root": "cbp_wait:cbp_wait:230401:2026-11-23:07:06:48",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "N/A",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/23/2026",
+            "reported_local_time": "07:06:48",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Laredo / Bridge I"
+        }
+      }
+    },
     "7db38ea732f0c141b5c0ae99ecb92ed42f55df5583e28bdcf0ea815cd5205123": {
       "information_root": "official:0df55f3cf204b0c52bc8",
       "members": {
@@ -315,6 +402,39 @@
           "source_updated_at": null,
           "source_url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.deu.html",
           "title": "Germany - Level 2: Exercise Increased Caution"
+        }
+      }
+    },
+    "7de9185cdb14c86c539ef1f78021124ce7e6c01f71701e60417925de30679546": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c142:110563-2026",
+      "members": {
+        "beh:ae0e2432fd4f56f2fd04fe26b33d": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-23T13:07:56+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:ae0e2432fd4f56f2fd04fe26b33d",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c142:110563-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-23T13:07:56Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-21T13%3A10%3A09&updatedTo=2026-11-23T13%3A10%3A09",
+          "title": "Data Archiving & Storage · NHS Blood and Transplant"
         }
       }
     },

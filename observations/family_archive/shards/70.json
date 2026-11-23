@@ -182,6 +182,39 @@
         }
       }
     },
+    "703dfcc2e052b748516c3d8f62788b00be0b4e533a3f7c60ad9ddac3e3e2d22e": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c120:110503-2026",
+      "members": {
+        "beh:6d825e3fee2204fac1409f5353b7": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-23T12:12:40+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:6d825e3fee2204fac1409f5353b7",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c120:110503-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-23T12:12:40Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-21T13%3A10%3A09&updatedTo=2026-11-23T13%3A10%3A09",
+          "title": "Data Specialist Services · The Charity Commission for England and Wales"
+        }
+      }
+    },
     "705b746f5db266fa629ab1ae1a5b94324a51ca18fe820df094eb75f0d3154d77": {
       "information_root": "niord:3b2bd424-b82d-439c-a51b-2919d5f09b15:1:0:0",
       "members": {
@@ -506,6 +539,53 @@
           "source_updated_at": null,
           "source_url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.gha.html",
           "title": "Ghana - Level 2: Exercise Increased Caution"
+        }
+      }
+    },
+    "70e1c7b37cfd2398c945508a30a603d0e2cbb0d5bb208e7d3700cf2c53257dc0": {
+      "information_root": "cbp_wait:cbp_wait:260305:2026-11-23:05:06:48",
+      "members": {
+        "beh:b3d72e86cc706abe72b5ea73562a": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-23T13:12:14+00:00",
+          "geography_key": "us-border-port:260305",
+          "geography_label": "Naco",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:b3d72e86cc706abe72b5ea73562a",
+          "information_root": "cbp_wait:cbp_wait:260305:2026-11-23:05:06:48",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Update Pending",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/23/2026",
+            "reported_local_time": "05:06:48",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Naco"
         }
       }
     }

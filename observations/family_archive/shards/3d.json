@@ -1,5 +1,80 @@
 {
   "roots": {
+    "3d010a40364f38e0e9b724fe1fe6d0082a03625a0f830279705c80f8293ad162": {
+      "information_root": "wiki_edits:wiki_edits:fr:20261123T13",
+      "members": {
+        "beh:f85f82d8e3aa15975af89b4b8278": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "wiki_edits",
+          "direct_measurement": false,
+          "event_at": "2026-11-23T13:09:59Z",
+          "first_observed_at": "2026-11-23T13:09:59+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:f85f82d8e3aa15975af89b4b8278",
+          "information_root": "wiki_edits:wiki_edits:fr:20261123T13",
+          "origin": "behavioral_registry",
+          "provider": "wiki_edits",
+          "published_at": "2026-11-23T13:09:59Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "public_encyclopedia_edit_aggregate",
+          "source_family": "public_attention",
+          "source_kind": "bounded_public_edit_count_not_event_verification",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "distinct_articles_in_sample": 388,
+            "maximum_returned_edits": 500,
+            "most_edited_article_counts": [
+              {
+                "count": 9,
+                "title": "Aziza Sbaity"
+              },
+              {
+                "count": 7,
+                "title": "Freddie Kissoon"
+              },
+              {
+                "count": 6,
+                "title": "Abbaye royale Saint-Michel de Bois-Aubry"
+              },
+              {
+                "count": 6,
+                "title": "Liste des députés européens de la 10e législature"
+              },
+              {
+                "count": 5,
+                "title": "Loffre"
+              },
+              {
+                "count": 4,
+                "title": "Canton de Jarnages"
+              },
+              {
+                "count": 4,
+                "title": "Jean Audureau"
+              },
+              {
+                "count": 4,
+                "title": "Mohamed Cissé (député)"
+              }
+            ],
+            "name": "sampled_edits_last_three_hours",
+            "sample_cap_reached": true,
+            "unit": "edits",
+            "value": 500
+          },
+          "source_scope": "Wikipedia main-namespace edit-count sample, 14 global language editions, three-hour window capped at 500 per wiki; not geographic location",
+          "source_updated_at": null,
+          "source_url": "https://fr.wikipedia.org/wiki/Special:RecentChanges",
+          "title": "Wikipedia fr public article-edit activity (sampled)"
+        }
+      }
+    },
     "3d25be153e6e28666670c0fb3c38a8c5d92d33dae26bc3659a2917ce5f6a38a0": {
       "information_root": "faa:6/8738:0:0",
       "members": {
@@ -304,6 +379,50 @@
           "source_updated_at": null,
           "source_url": "https://bwt.cbp.gov/api/waittimes",
           "title": "CBP estimated commercial border wait — Brownsville / Veterans International"
+        }
+      }
+    },
+    "3ddc98ee8b465a359fac0bdb25e1084044276d83a5712ed44b524c5662200bc9": {
+      "information_root": "ripe:measurement:1001:20261123T13",
+      "members": {
+        "beh:9520525cb163bbd96a8ea244b7fc": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "aggregate_ping_no_country_or_threat_attribution",
+          "collection_mode": "ripe",
+          "direct_measurement": true,
+          "event_at": null,
+          "first_observed_at": "2026-11-23T13:12:14+00:00",
+          "geography_key": "ripe-msm:1001",
+          "geography_label": "K-root public ping aggregate",
+          "geography_precision": "not_country_or_incident_location",
+          "id": "beh:9520525cb163bbd96a8ea244b7fc",
+          "information_root": "ripe:measurement:1001:20261123T13",
+          "origin": "behavioral_registry",
+          "provider": "ripe",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "network_aggregate_monitoring",
+          "source_family": "internet_reachability",
+          "source_kind": "aggregate_public_network_ping",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "cohort_comparable_to_prior_snapshots": false,
+            "failed_or_invalid_rtt_count": 411,
+            "individual_probe_records_published": false,
+            "measurement_id": 1001,
+            "name": "sample_median_ping_rtt",
+            "sampled_probe_count": 13487,
+            "unit": "ms",
+            "valid_rtt_count": 13076,
+            "value": 19.372
+          },
+          "source_scope": "RIPE Atlas built-in K-root ping #1001, global public-probe aggregate; not country coverage",
+          "source_updated_at": null,
+          "source_url": "https://atlas.ripe.net/measurements/1001/",
+          "title": "RIPE Atlas K-root public probe aggregate (13076 usable measurements)"
         }
       }
     }

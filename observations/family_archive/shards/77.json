@@ -80,6 +80,39 @@
         }
       }
     },
+    "774e386f344910bdc56376ed8bde743aa4cd599a5600bb29e9272584c883e937": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-051f59:110556-2026",
+      "members": {
+        "beh:9d79904c9c8ac7678fa31faaeacb": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-23T13:04:50+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:9d79904c9c8ac7678fa31faaeacb",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-051f59:110556-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-23T13:04:50Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-21T13%3A10%3A09&updatedTo=2026-11-23T13%3A10%3A09",
+          "title": "231_26 Asphalt, Aggregates, Ready-mixed Concrete and Related Materials · Leicestershire County Council, trading as ESPO"
+        }
+      }
+    },
     "7754cf990371104774867985f6590fe1ecb5b3a6f5a343a873b9dc58b8efa884": {
       "information_root": "ioda:d0d17ed5603c83984d2f6bb0",
       "members": {
@@ -241,6 +274,53 @@
           "source_updated_at": null,
           "source_url": "https://bwt.cbp.gov/api/waittimes",
           "title": "CBP estimated commercial border wait — Fort Hancock / Fort Hancock"
+        }
+      }
+    },
+    "77a79175a0deb4871a53e5f1f3d017289ecf3b146af520065ea4ff6e092605dc": {
+      "information_root": "cbp_wait:cbp_wait:010601:2026-11-23:08:06:48",
+      "members": {
+        "beh:e4b0d0cbb8781cff35cdf40eccd6": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-23T13:12:14+00:00",
+          "geography_key": "us-border-port:010601",
+          "geography_label": "Houlton",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:e4b0d0cbb8781cff35cdf40eccd6",
+          "information_root": "cbp_wait:cbp_wait:010601:2026-11-23:08:06:48",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "no delay",
+            "lanes_open": 1,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "At 8:00 am EST",
+            "reported_local_date": "11/23/2026",
+            "reported_local_time": "08:06:48",
+            "source_declared_border": "Canadian Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 5
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Houlton"
         }
       }
     },

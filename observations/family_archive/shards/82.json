@@ -413,6 +413,128 @@
         }
       }
     },
+    "827eec6f5a1bcd3bdd155c5f08608f7797b479abe6f4a1ff6f13603e59249dea": {
+      "information_root": "wiki_edits:wiki_edits:ko:20261123T13",
+      "members": {
+        "beh:34bb9d9a93c295bbf640a8af598a": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "wiki_edits",
+          "direct_measurement": false,
+          "event_at": "2026-11-23T13:10:09Z",
+          "first_observed_at": "2026-11-23T13:10:09+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:34bb9d9a93c295bbf640a8af598a",
+          "information_root": "wiki_edits:wiki_edits:ko:20261123T13",
+          "origin": "behavioral_registry",
+          "provider": "wiki_edits",
+          "published_at": "2026-11-23T13:10:09Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "public_encyclopedia_edit_aggregate",
+          "source_family": "public_attention",
+          "source_kind": "bounded_public_edit_count_not_event_verification",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "distinct_articles_in_sample": 402,
+            "maximum_returned_edits": 500,
+            "most_edited_article_counts": [
+              {
+                "count": 11,
+                "title": "2019년 페브러리 스테이크스"
+              },
+              {
+                "count": 6,
+                "title": "Lean"
+              },
+              {
+                "count": 6,
+                "title": "전도연"
+              },
+              {
+                "count": 6,
+                "title": "전도연의 수상 및 후보 목록"
+              },
+              {
+                "count": 5,
+                "title": "Z-라이브러리"
+              },
+              {
+                "count": 5,
+                "title": "굿 플레이스 (한국 드라마)"
+              },
+              {
+                "count": 5,
+                "title": "대학수학능력시험"
+              },
+              {
+                "count": 4,
+                "title": "BKL 특이점"
+              }
+            ],
+            "name": "sampled_edits_last_three_hours",
+            "sample_cap_reached": true,
+            "unit": "edits",
+            "value": 500
+          },
+          "source_scope": "Wikipedia main-namespace edit-count sample, 14 global language editions, three-hour window capped at 500 per wiki; not geographic location",
+          "source_updated_at": null,
+          "source_url": "https://ko.wikipedia.org/wiki/Special:RecentChanges",
+          "title": "Wikipedia ko public article-edit activity (sampled)"
+        }
+      }
+    },
+    "829987f2ddbb65b1e5832703abc15a93ec12264aed388a8d0ab5f5a4001d9921": {
+      "information_root": "cbp_wait:cbp_wait:250302:2026-11-23:05:06:48",
+      "members": {
+        "beh:84be712f0dfdf852ca0560226486": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-23T13:12:14+00:00",
+          "geography_key": "us-border-port:250302",
+          "geography_label": "Calexico",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:84be712f0dfdf852ca0560226486",
+          "information_root": "cbp_wait:cbp_wait:250302:2026-11-23:05:06:48",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "N/A",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/23/2026",
+            "reported_local_time": "05:06:48",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Calexico / West"
+        }
+      }
+    },
     "82b6308d430bf87dc1becbad415f77a7573a5282e26e3845a8ed3e383916427f": {
       "information_root": "ioda:76ffdc3a65949c2d65b76dd3",
       "members": {

@@ -377,6 +377,53 @@
         }
       }
     },
+    "f3ce4d0f9988257a32c148d48093db61b1f63d4b37704f7e95e871c5ef07a656": {
+      "information_root": "cbp_wait:cbp_wait:230301:2026-11-23:07:06:48",
+      "members": {
+        "beh:600475b8465102579b58969b016c": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-23T13:12:14+00:00",
+          "geography_key": "us-border-port:230301",
+          "geography_label": "Eagle Pass",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:600475b8465102579b58969b016c",
+          "information_root": "cbp_wait:cbp_wait:230301:2026-11-23:07:06:48",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "N/A",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/23/2026",
+            "reported_local_time": "07:06:48",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Eagle Pass / Bridge I"
+        }
+      }
+    },
     "f3e01f03b376f3bc8167d30d92bd7135c66032c0d6e30a642deacfdb61795ac8": {
       "information_root": "sg_mpa:sg_mpa:2026-06:container",
       "members": {
@@ -420,6 +467,39 @@
           "source_updated_at": null,
           "source_url": "https://data.gov.sg/datasets/d_8f264219109e61fffa87ac64dd5a9a65/view",
           "title": "Singapore MPA 2026-06 Container vessel arrivals (>75 GT)"
+        }
+      }
+    },
+    "f3e26a4ed8d2d5d4339b7278f5a8f64bc843d6e2b604b0e6078f45945f1caf9a": {
+      "information_root": "nws:dfe14ba1b5e9824ef6eeb577",
+      "members": {
+        "beh:d60772c76981727e3f4aad387f5e": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "nws",
+          "direct_measurement": false,
+          "event_at": "2026-11-23T06:23:00Z",
+          "first_observed_at": "2026-11-23T06:23:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:d60772c76981727e3f4aad387f5e",
+          "information_root": "nws:dfe14ba1b5e9824ef6eeb577",
+          "origin": "behavioral_registry",
+          "provider": "nws",
+          "published_at": "2026-11-23T06:23:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "official_weather_alert_context",
+          "source_measurement": null,
+          "source_scope": "Active NWS marine alerts; severity Severe",
+          "source_updated_at": null,
+          "source_url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.d2115dccfa6c4a6f7576fa0af08419ee89a80ee9.002.1",
+          "title": "Coastal Flood Warning - Inland Flagler; Eastern Putnam; Coastal Flagler"
         }
       }
     },
