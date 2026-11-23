@@ -77,9 +77,8 @@ class GeographicEvidenceTests(unittest.TestCase):
                 "Authorities opened the road and said the border was not closed. "
                 "No maritime exclusion zone had been declared.")
         r = inspect_text(text, "iran_gulf", CONFIG["templates"])
-        self.assertIn("maritime_interdiction", r["qualified_or_disputed_rule_mentions"]
-                         if "maritime_interdiction" in r["qualified_or_disputed_rule_mentions"]
-                         else ["no_maritime_rule"])
+        self.assertIn("maritime_interdiction", r["qualified_or_disputed_rule_mentions"])
+        self.assertNotIn("maritime_interdiction", r["source_text_rule_mentions"])
         self.assertFalse(r["event_occurrence_verified"])
 
     def test_missing_source_text_abstains(self):
@@ -96,8 +95,9 @@ class BoundedSourceFetchTests(unittest.TestCase):
         self.assertIsNone(_safe_source_url("https://www.reuters.com/world/file.pdf"))
         self.assertIsNotNone(_safe_source_url(
             "https://www.reuters.com/world/middle-east/long-sample-article-title/"))
-        self.assertIsNone(NoRedirect().redirect_request(None,None,302,"","","https://evil.test")
-                          if False else None)
+        with self.assertRaises(ValueError):
+            NoRedirect().redirect_request(None, None, 302, "redirect", None,
+                                          "https://evil.test/private")
 
     def test_html_parser_ignores_navigation_scripts_and_quotes(self):
         html = ('<html><head><script>BAD WORDS</script></head><body>'
