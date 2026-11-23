@@ -1,0 +1,122 @@
+name: CAIRN READ-ONLY Granite vs Phi ACH benchmark
+on:
+  pull_request:
+    paths:
+      - 'scripts/benchmark_local_ach_models.py'
+      - '.github/workflows/cairn-local-llm-ach-benchmark.yml'
+      - 'docs/CAIRN_LOCAL_LLM_BENCHMARK.md'
+permissions:
+  contents: read
+concurrency:
+  group: cairn-local-benchmark-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+jobs:
+  shadow-ach-model:
+    if: github.event_name == 'pull_request'
+    name: ACH shadow ${{ matrix.model }}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 48
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - model: granite-4-micro
+            model_repo: ibm-granite/granite-4.0-micro-GGUF
+            filename: granite-4.0-micro-Q4_K_M.gguf
+          - model: phi-4-mini
+            model_repo: bartowski/microsoft_Phi-4-mini-instruct-GGUF
+            filename: Phi-4-mini-instruct-Q4_K_M.gguf
+    steps:
+      - name: Checkout benchmark branch
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Checkout retained public CAIRN evidence
+        uses: actions/checkout@v4
+        with:
+          ref: aiba-feed-data
+          path: ops-state
+          persist-credentials: false
+      - name: Assert actual retained evidence
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          from scripts.benchmark_local_ach_models import select_cases,probes
+          a=json.loads(Path("ops-state/observations/latest/family_archive.json").read_text())
+          rows,info=select_cases(a)
+          print("CAIRN_EVIDENCE_INVENTORY",json.dumps(info))
+          assert len(rows)>=5, "Insufficient actual evidence; refuse synthetic substitution"
+          assert len(probes(rows))>=8
+          PY
+      - name: Build llama.cpp local CPU runtime
+        run: |
+          set -euo pipefail
+          git clone --depth 1 https://github.com/ggml-org/llama.cpp.git "$RUNNER_TEMP/llama"
+          cmake -S "$RUNNER_TEMP/llama" -B "$RUNNER_TEMP/llama/build" -DCMAKE_BUILD_TYPE=Release -DGGML_NATIVE=OFF -DLLAMA_CURL=OFF
+          cmake --build "$RUNNER_TEMP/llama/build" --target llama-server -j 4
+          git -C "$RUNNER_TEMP/llama" rev-parse HEAD
+      - name: Download selected Q4_K_M file only and fingerprint
+        env:
+          MODEL_REPO: ${{ matrix.model_repo }}
+          MODEL_FILE: ${{ matrix.filename }}
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/cairn-model"
+          python - <<'PY'
+          import os,json,urllib.request
+          url="https://huggingface.co/api/models/"+os.environ["MODEL_REPO"]
+          with urllib.request.urlopen(url,timeout=50) as r: info=json.load(r)
+          print("HF_REVISION",info.get("sha"))
+          assert os.environ["MODEL_FILE"] in [x.get("rfilename") for x in info.get("siblings",[])]
+          PY
+          curl --fail --location --retry 3 --retry-delay 8 --connect-timeout 30 --max-time 700 \
+            "https://huggingface.co/$MODEL_REPO/resolve/main/$MODEL_FILE?download=true" \
+            --output "$RUNNER_TEMP/cairn-model/model.gguf"
+          test "$(stat -c%s "$RUNNER_TEMP/cairn-model/model.gguf")" -gt 1000000000
+          sha256sum "$RUNNER_TEMP/cairn-model/model.gguf"
+          df -h "$RUNNER_TEMP"
+      - name: Run local-only inference with no API keys
+        env:
+          MODEL_NAME: ${{ matrix.model }}
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/cairn-benchmark"
+          "$RUNNER_TEMP/llama/build/bin/llama-server" \
+            -m "$RUNNER_TEMP/cairn-model/model.gguf" --host 127.0.0.1 --port 8080 \
+            --ctx-size 4096 --threads 4 --parallel 1 --no-webui \
+            > "$RUNNER_TEMP/cairn-benchmark/server.log" 2>&1 &
+          server_pid=$!
+          trap 'kill "$server_pid" || true' EXIT
+          ready=0
+          for i in $(seq 1 150); do
+            if curl --silent --fail http://127.0.0.1:8080/health >/dev/null; then
+              ready=1
+              break
+            fi
+            if ! kill -0 "$server_pid" 2>/dev/null; then
+              tail -80 "$RUNNER_TEMP/cairn-benchmark/server.log"
+              exit 1
+            fi
+            sleep 2
+          done
+          test "$ready" -eq 1 || (tail -80 "$RUNNER_TEMP/cairn-benchmark/server.log"; exit 1)
+          python scripts/benchmark_local_ach_models.py \
+            --archive ops-state/observations/latest/family_archive.json \
+            --model-name "$MODEL_NAME" --server http://127.0.0.1:8080 \
+            --output "$RUNNER_TEMP/cairn-benchmark/results.json" --timeout 160
+          if [ -r "/proc/$server_pid/status" ]; then
+            grep -E 'VmHWM|VmRSS|VmPeak' "/proc/$server_pid/status" \
+              | tee "$RUNNER_TEMP/cairn-benchmark/server_memory.txt"
+          fi
+          git diff --exit-code -- data/ dashboard/
+      - name: Upload benchmark results only, never publish
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cairn-readonly-ach-${{ matrix.model }}-${{ github.run_id }}
+          path: |
+            ${{ runner.temp }}/cairn-benchmark/results.json
+            ${{ runner.temp }}/cairn-benchmark/server_memory.txt
+          if-no-files-found: warn
+          retention-days: 14
