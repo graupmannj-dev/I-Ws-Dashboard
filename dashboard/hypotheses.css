@@ -85,3 +85,32 @@ input,select{background:#0c1826;color:#edf4fa;border:1px solid #40576a;border-ra
 .disclaimer{border-top:1px solid #354c62;padding:15px 0;color:#9bb5ca;font-size:12px}
 @media(max-width:850px){.layout{grid-template-columns:1fr}.case-list{max-height:260px}.panel-grid{grid-template-columns:1fr}
 .topbar{gap:9px;flex-wrap:wrap}.top-title{min-width:190px}nav{width:100%}.hero{flex-direction:column;align-items:start}.shell{padding:12px}}
+
+/* Analyst-first hierarchy: concise BLUF/ACH, diagnostics on demand. */
+.ach-first{margin:0 0 14px;padding:14px}.ach-first h3{margin:0}.ach-first .balance-track{margin:13px 0 5px}
+.balance-summary{margin:7px 0 0!important;font-size:13px;color:#bfd3e3}
+.ach-bluf{margin:0 0 18px}.ach-bluf h2{font-size:20px;line-height:1.3;margin:7px 0}
+.ach-bluf p{margin:7px 0;line-height:1.55;font-size:14px;color:#d4e1ed;max-width:105ch}
+.ach-panel{background:#14283a;border:1px solid #36536b;border-radius:10px;padding:14px;margin:16px 0}
+.ach-head{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.ach-head h3{margin:0}.ach-scroll{overflow-x:auto;margin-top:10px}
+.ach-table{width:100%;border-collapse:collapse;table-layout:fixed;min-width:620px}
+.ach-table th,.ach-table td{border-bottom:1px solid #334d63;padding:10px;text-align:center}
+.ach-table th:first-child{width:32%;text-align:left}.ach-table thead th{font-size:12px;vertical-align:top}
+.ach-table thead th strong{display:block;color:#8dcaf1;font-size:13px}
+.ach-table thead th span{font-weight:400;color:#b5cfe0;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.ach-family{display:block;text-align:left;background:transparent;color:#e4edf5;font:inherit;font-weight:650;border:0;cursor:pointer;padding:0;width:100%}
+.ach-family span{display:block;font-size:11px;color:#a4bccd;font-weight:400}
+.ach-cell{border:1px solid #637e92;border-radius:6px;background:#284058;color:#f0f7fc;font-size:18px;font-weight:700;cursor:pointer;min-width:42px}
+.ach-cell.has-support{background:#1e594f}.ach-cell.has-counter{background:#704047}
+.ach-unreviewed{color:#92a9b9}.ach-drill td{padding:12px;text-align:left;background:#0f2233}
+.ach-source-list{max-height:430px;overflow:auto}.ach-source-list h4{margin:0 0 9px;font-size:13px}
+.ach-legend{font-size:12px;color:#abc1d1!important;margin:9px 0}
+.new-hypothesis,.analyst-proposal button{background:#246d91;color:white;border:1px solid #60a8cc;padding:9px 12px;border-radius:7px;cursor:pointer;font-weight:700}
+.analyst-proposal{border:1px solid #4b7892;border-radius:9px;padding:13px;margin-top:12px}
+.analyst-proposal textarea{width:100%;display:block;background:#0c1826;color:#f0f5fa;border:1px solid #52738b;border-radius:7px;padding:10px;margin:8px 0}
+.analyst-proposal p{font-size:12px}.signposts{background:#132637;border:1px solid #36536b;padding:14px;border-radius:9px}
+.signposts h3{margin:0 0 5px}.signposts p{margin:0!important}
+.technical-details{margin:18px 0;border-top:1px solid #37536b;padding-top:13px}
+.technical-details>summary{cursor:pointer;color:#a9ccdf;font-weight:650}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}

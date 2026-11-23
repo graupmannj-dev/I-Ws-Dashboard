@@ -90,6 +90,44 @@ def reviewed_annotations(config):
     return results, alternatives
 
 
+def alternative_ach_annotations(config):
+    """Independent ordinal annotations for explicit competing alternatives.
+
+    A signed judgment about the primary claim is NOT transferable to an
+    alternative; a source may be consistent with multiple hypotheses.
+    """
+    if not config:
+        return {}
+    if config.get("schema") != REVIEW_SCHEMA:
+        raise ValueError("Invalid ACH review contract")
+    rows = config.get("ach_reviews", [])
+    if not isinstance(rows, list) or len(rows) > 2000:
+        raise ValueError("Invalid ACH review list")
+    results = {}
+    for row in rows:
+        if not isinstance(row, dict):
+            raise ValueError("ACH review must be a dictionary")
+        hid = clean(row.get("hypothesis_id"), 100)
+        key = clean(row.get("evidence_key"), 100)
+        index = row.get("alternative_index")
+        direction = row.get("direction")
+        strength = row.get("strength")
+        reason = clean(row.get("rationale"), 600)
+        stamp = iso(row.get("reviewed_at"))
+        if not hid or not key or type(index) is not int or index not in (1, 2, 3):
+            raise ValueError("ACH review needs valid case, evidence and competing index")
+        if direction not in DIRECTIONS or type(strength) is not int or strength not in (1, 2, 3) or not reason or not stamp:
+            raise ValueError("Invalid alternative ACH direction, strength, rationale or time")
+        slot = (hid, key, index)
+        if slot in results:
+            raise ValueError("Duplicate alternative ACH review")
+        results[slot] = {"direction": direction, "strength": strength,
+                         "rationale": reason, "reviewed_at": stamp,
+                         "dependency_group": clean(row.get("dependency_group"), 120) or key,
+                         "evidence_model": "reviewed_ordinal_not_probability"}
+    return results
+
+
 def _health_for(family, health):
     modes = sorted({clean(x.get("collection_mode"), 60)
                     for x in family.get("sources", []) if isinstance(x, dict)
@@ -230,6 +268,7 @@ def build(dossiers, dynamic=None, source_health=None, reviews=None, generated_at
     if not isinstance(dossiers, list):
         raise ValueError("Case dossiers must be a list")
     annotations, extras = reviewed_annotations(reviews)
+    alternative_annotations = alternative_ach_annotations(reviews)
     health = source_health if isinstance(source_health, dict) else {}
     cases, used_keys = [], set()
     for dossier in dossiers[:MAX_HYPOTHESES]:
@@ -255,6 +294,9 @@ def build(dossiers, dynamic=None, source_health=None, reviews=None, generated_at
         for item in extras.get(hid, []):
             if item not in alternatives and len(alternatives) < MAX_ALTERNATIVES:
                 alternatives.append(item)
+        for family in linked:
+            family["ach_reviews"] = {str(index): alternative_annotations[(hid, family["evidence_key"], index)]
+                for index in (1, 2, 3) if (hid, family["evidence_key"], index) in alternative_annotations}
         cases.append({
             "id": hid, "title": clean(dossier.get("name"), 180),
             "hypothesis": clean(dossier.get("scenario"), 320),
@@ -269,6 +311,11 @@ def build(dossiers, dynamic=None, source_health=None, reviews=None, generated_at
             "evidence_is_case_associated_not_event_verified": True,
         })
     referenced = {(c["id"], f["evidence_key"]) for c in cases for f in c["families"]}
+    stale_ach_reviews = sorted(k for k in alternative_annotations
+        if (k[0], k[1]) not in referenced or
+        k[2] > len(next((c["alternatives"] for c in cases if c["id"] == k[0]), [])))
+    if stale_ach_reviews:
+        raise ValueError("Alternative ACH review targets missing hypothesis or evidence: " + str(stale_ach_reviews[:3]))
     stale_reviews = sorted(k for k in annotations if k not in referenced)
     if stale_reviews:
         raise ValueError("Review refers to missing hypothesis/evidence key: " + str(stale_reviews[:3]))
