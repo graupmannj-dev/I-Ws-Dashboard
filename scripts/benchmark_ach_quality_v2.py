@@ -46,6 +46,26 @@ SYSTEM=("Analyze two competing hypotheses against the supplied evidence ONLY. "
   "specific rationale, concrete next discriminator, coverage limits, "
   "and source_independence_established=false and event_verified=false "
   "unless the evidence EXPLICITLY demonstrates either.")
+RESTRICTIVE_POLICY=(
+ "ACH DIAGNOSTICITY DECISION RULE: evaluate evidence relative to each competing "
+ "explanation, not mere imaginable compatibility. Possible consistency requires "
+ "positive evidentiary linkage to that hypothesis; 'could hypothetically be related' "
+ "does NOT qualify. Possible inconsistency requires an actual tension or "
+ "contradiction with that hypothesis, not a lack of support. If observation "
+ "is unrelated to either hypothesis or fits both equally without a distinguishing "
+ "mechanism, choose non_diagnostic for each. If there is NO relevant observation "
+ "and sensing/completeness is unverified, choose unresolved for each. "
+ "Do NOT infer an incident's nonoccurrence from its absence in one data packet. "
+ "Treat copied/relayed reports as one information root, not independent sources. "
+ "A verified event is distinct from verified actor intent, an independently "
+ "confirmed event, and independent sources. A disproved piece of alleged proof "
+ "does not prove the opposite hypothesis. Do not infer generic military intentions "
+ "from unrelated civilian transportation, weather, or commercial observations. "
+ "When evidence explicitly favors only one hypothesis without eliminating "
+ "alternatives, retain non_diagnostic for the other unless actual contradictory "
+ "content is supplied. If unsure whether evidence discriminates, abstain. "
+ "Return the two best evidence-grounded directions, not strongest-sounding claims."
+)
 HYPOTHESES=[
   "The observed activity represents preparations for imminent offensive military action.",
   "The observed activity reflects routine training or non-hostile operations."
@@ -106,8 +126,8 @@ def dataset(records):
         out.append(x)
     return out
 
-def ask(server,item,mode,timeout,max_tokens):
-    system=SYSTEM
+def ask(server,item,mode,timeout,max_tokens,policy):
+    system=SYSTEM + (RESTRICTIVE_POLICY if policy=="diagnostic_gate" else "")
     body={"id":item["id"],"evidence_key":item["evidence_key"],
       "evidence":item["evidence"],"hypotheses":item["hypotheses"],
       "source_scope":"No additional sources; do not consult external knowledge"}
@@ -162,6 +182,7 @@ def main():
     p.add_argument("--archive",required=True)
     p.add_argument("--model-name",required=True)
     p.add_argument("--mode",choices=["constrained","json_object"],default="constrained")
+    p.add_argument("--policy",choices=["baseline","diagnostic_gate"],default="baseline")
     p.add_argument("--server",default="http://127.0.0.1:8080")
     p.add_argument("--output",required=True)
     p.add_argument("--max-tokens",type=int,default=700)
@@ -174,7 +195,7 @@ def main():
     for item in items:
         started=time.monotonic()
         try:
-            content,usage=ask(a.server,item,a.mode,a.timeout,a.max_tokens)
+            content,usage=ask(a.server,item,a.mode,a.timeout,a.max_tokens,a.policy)
             assessed=grade(content,item)
             status="completed"
         except (ValueError,TimeoutError,OSError,error.URLError,KeyError,IndexError) as exc:
@@ -192,7 +213,8 @@ def main():
     metrics={name:{"success":sum(bool(x.get(name)) for x in results),"total":len(results)}
        for name in ("json_valid","schema_valid","source_fidelity","gold_correct","epistemic_flags")}
     output={"schema":"cairn.local-llm-ach-quality.v2",
-      "model":a.model_name,"mode":a.mode,"model_prompt_version":"cairn-ach-quality-v2",
+      "model":a.model_name,"mode":a.mode,"policy":a.policy,
+      "model_prompt_version":"cairn-ach-quality-v3",
       "created_at":dt.datetime.now(dt.timezone.utc).isoformat(),
       "archive_sha256":hashlib.sha256(Path(a.archive).read_bytes()).hexdigest(),
       "probe_sha256":digest(items),"inventory":inventory,
