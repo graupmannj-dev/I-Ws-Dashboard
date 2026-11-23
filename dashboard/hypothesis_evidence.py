@@ -294,6 +294,30 @@ def build(dossiers, dynamic=None, source_health=None, reviews=None, generated_at
             raise ValueError("Missing or duplicate hypothesis case ID")
         used_keys.add(hid)
         linked = _dossier_families(dossier) + _dynamic_families(hid, dynamic)
+        # One-time analyst backfill joins the same source-family ACH matrix.
+        # No direction is inferred; retained history is explicitly historical.
+        for entry in analyst_by_case.get(hid, []):
+            state = entry.get("initial_backfill") or {}
+            for ref in (state.get("source_references") or [])[:24]:
+                if not isinstance(ref, dict) or not clean(ref.get("evidence_key"), 100):
+                    continue
+                src=[]
+                for r in (ref.get("sources") or [])[:3]:
+                    if not isinstance(r,dict) or not safe_url(r.get("url")):
+                        continue
+                    src.append({"title":clean(r.get("title"),240),"source_url":safe_url(r["url"]),
+                        "provider":clean(r.get("provider"),120),"observed_at":clean(r.get("first_observed_at"),42),
+                        "assessment":"unreviewed_historical_candidate","collection_mode":"historical_archive",
+                        "source_dependency_class":"independence_unverified"})
+                if not src:
+                    continue
+                linked.append({"evidence_key":clean(ref["evidence_key"],100),
+                    "title":clean(ref.get("family_title"),240),
+                    "source_mechanism":clean(ref.get("family_mechanism"),120),
+                    "origin":"analyst_initial_backfill_unreviewed",
+                    "source_root_count":1,"source_independence_established":False,
+                    "observation_verified_as_hypothesis":False,
+                    "sources":src,"source_count":len(src)})
         deduplicated = {}
         for family in linked:
             deduplicated.setdefault(family["evidence_key"], family)
