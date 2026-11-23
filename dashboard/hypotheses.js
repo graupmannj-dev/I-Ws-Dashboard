@@ -303,7 +303,13 @@ function achTable(c){
     const mark=!reviewed.length?"?":support&&oppose?"±":support?"+":oppose?"−":"—";
     return '<tr><th scope="row"><button class="ach-family" type="button" data-ach-group="'+i+'" aria-expanded="false">'+escapeHtml(name)+' <span>'+families.length+' families · '+families.reduce((n,f)=>n+(f.sources||[]).length,0)+' records</span></button></th>'+
       '<td><button type="button" class="ach-cell '+(support?"has-support":oppose?"has-counter":"")+'" data-ach-group="'+i+'" title="'+escapeHtml(label)+'">'+mark+'<span class="sr-only">'+escapeHtml(label)+'</span></button></td>'+
-      hypotheses.slice(1).map(()=>'<td><span class="ach-unreviewed" title="No reviewed hypothesis-specific discrimination">?</span></td>').join("")+'</tr>'+
+      hypotheses.slice(1).map((h,j)=>{
+        const rv=families.map(f=>f.ach_reviews?.[String(j+1)]).filter(Boolean);
+        const sup=rv.filter(x=>x.direction==="supports").length;
+        const ctr=rv.filter(x=>x.direction==="contradicts").length;
+        const mark=!rv.length?"?":sup&&ctr?"±":sup?"+":ctr?"−":"—";
+        return '<td><span class="ach-cell '+(sup?"has-support":ctr?"has-counter":"")+'" title="'+(rv.length?"Reviewed ACH judgments: "+rv.length:"No alternative-specific reviewed evidence")+'">'+mark+'</span></td>';
+      }).join("")+'</tr>'+
       '<tr class="ach-drill" data-ach-details="'+i+'" hidden><td colspan="'+hypotheses.length+'"><div class="ach-source-list"><h4>'+escapeHtml(name)+' — original evidence</h4>'+
       families.map(familyCard).join("")+'</div></td></tr>';
   }).join("");
