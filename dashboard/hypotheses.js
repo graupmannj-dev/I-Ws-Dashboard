@@ -242,12 +242,7 @@ function listCases() {
     const header=document.createElement("strong");header.textContent=c.title||c.id;
     const desc=document.createElement("span");desc.textContent=c.hypothesis||"Hypothesis not specified";
     const meta=document.createElement("small");
-    meta.textContent=(c.family_count||0)+" evidence families · "+caseLabel(c)+
-      (c.automated_screen?.status==="screened"?" · "+(c.automated_screen.new_matching_records||0)+" new machine-screened roots":"")+
-      (c.gdelt_media_trend?.status==="measured"?" · GDELT: "+(
-        {higher_coded_share:"higher",lower_coded_share:"lower",equal_coded_share:"unchanged"}[c.gdelt_media_trend.trend]||"measured"
-      )+" media-coded share":"")+
-      (c.competing_screen?.status==="screened"?" · Discriminator scan complete":"");
+    meta.textContent=caseLabel(c)+' · '+(c.family_count||0)+' evidence families';
     b.append(header,desc,meta);b.addEventListener("click",()=>showCase(c.id));
     host.appendChild(b);
   }
@@ -284,46 +279,93 @@ function familyCard(f){
       ' · reviewed '+escapeHtml(review.reviewed_at)+'</p>':'')+
     '<h4>Source records ('+sources.length+')</h4><ul class="source-links">'+links+'</ul></div></details>';
 }
+
+function achGroup(f){
+  const text=[f.source_mechanism,f.title,...(f.sources||[]).map(s=>s.collection_mode||"")].join(" ").toLowerCase();
+  if(/airspace|notam|flight restriction|tfr/.test(text))return "Airspace restrictions";
+  if(/aircraft|aviation|flight|ads.b/.test(text))return "Aviation activity";
+  if(/maritime|vessel|port|shipping|navwarn|navtex/.test(text))return "Maritime activity";
+  if(/cyber|internet|network|dns|bgp|outage|telecom/.test(text))return "Infrastructure & networks";
+  if(/market|commercial|finance|supply|trade|procure/.test(text))return "Commercial behavior";
+  if(/government|diplom|official|statement|policy/.test(text))return "Government actions";
+  return "Other observations";
+}
+function achTable(c){
+  const groups=new Map();
+  for(const f of c.families||[]){const name=achGroup(f);if(!groups.has(name))groups.set(name,[]);groups.get(name).push(f);}
+  const hypotheses=[c.hypothesis||"Primary hypothesis",...(c.alternatives||[]).slice(0,3)];
+  const head=hypotheses.map((h,i)=>'<th scope="col"><strong>H'+(i+1)+'</strong><span title="'+escapeHtml(h)+'">'+escapeHtml(h)+'</span></th>').join("");
+  const body=[...groups].map(([name,families],i)=>{
+    const reviewed=families.filter(f=>f.review);
+    const support=reviewed.filter(f=>f.direction==="supports").length;
+    const oppose=reviewed.filter(f=>f.direction==="contradicts").length;
+    const label=!reviewed.length?"Not reviewed":support&&oppose?"Mixed":support?"Consistent":oppose?"Inconsistent":"Context";
+    const mark=!reviewed.length?"?":support&&oppose?"±":support?"+":oppose?"−":"—";
+    return '<tr><th scope="row"><button class="ach-family" type="button" data-ach-group="'+i+'" aria-expanded="false">'+escapeHtml(name)+' <span>'+families.length+' families · '+families.reduce((n,f)=>n+(f.sources||[]).length,0)+' records</span></button></th>'+
+      '<td><button type="button" class="ach-cell '+(support?"has-support":oppose?"has-counter":"")+'" data-ach-group="'+i+'" title="'+escapeHtml(label)+'">'+mark+'<span class="sr-only">'+escapeHtml(label)+'</span></button></td>'+
+      hypotheses.slice(1).map(()=>'<td><span class="ach-unreviewed" title="No reviewed hypothesis-specific discrimination">?</span></td>').join("")+'</tr>'+
+      '<tr class="ach-drill" data-ach-details="'+i+'" hidden><td colspan="'+hypotheses.length+'"><div class="ach-source-list"><h4>'+escapeHtml(name)+' — original evidence</h4>'+
+      families.map(familyCard).join("")+'</div></td></tr>';
+  }).join("");
+  return '<section class="ach-panel"><div class="ach-head"><h3>Analysis of competing hypotheses</h3><span class="pill">Only reviewed directions are scored</span></div>'+
+    '<div class="ach-scroll"><table class="ach-table"><thead><tr><th scope="col">Evidence families</th>'+head+'</tr></thead><tbody>'+body+'</tbody></table></div>'+
+    '<p class="ach-legend">+ consistent · − inconsistent · ± mixed · ? not reviewed. These are review counts, not probabilities; alternatives await hypothesis-specific assessment.</p>'+
+    '<button type="button" class="new-hypothesis" id="addHypothesis">+ Propose an analyst hypothesis</button></section>';
+}
 function showCase(id){
   selected=id;listCases();const c=rows.find(x=>x.id===id);
   const host=$("caseDetail");if(!c)return;
   const balance=c.balance||{},score=balance.signed_ordinal_balance;
   const assessed=typeof score==="number"&&Number.isFinite(score);
-  const at=assessed ? Math.max(0,Math.min(100,50+score*45)) : 50;
-  const groups={supports:[],contradicts:[],context:[],not_assessed:[]};
-  for(const f of c.families||[]) (groups[f.direction]||groups.not_assessed).push(f);
-  const sections=Object.keys(groups).sort((a,b)=>order[a]-order[b]).filter(k=>groups[k].length)
-    .map(k=>'<section class="evidence-section"><h3>'+escapeHtml(labels[k])+
-      ' <span>'+groups[k].length+'</span></h3>'+
-      groups[k].map(familyCard).join("")+'</section>').join("");
-  host.innerHTML='<p class="eyebrow">SOURCE-DATED HYPOTHESIS · '+escapeHtml(c.dossier_asof||"DATE UNKNOWN")+'</p>'+
-    '<h2>'+escapeHtml(c.title||c.id)+'</h2>'+
-    '<p class="scenario">'+escapeHtml(c.hypothesis||"Hypothesis unspecified")+'</p>'+
-    '<p>'+escapeHtml(c.overview||"No analysis on file")+'</p>'+gdeltSection(c)+competingSection(c)+autoSection(c)+evidenceHistory(c)+
-    '<section class="balance"><div class="balance-title"><h3>Direction of reviewed evidence</h3>'+
-      pill(caseLabel(c),assessed?(score>0.2?"supports":score< -0.2?"contradicts":"context"):"not_assessed")+
-      '</div><div class="balance-track" role="img" aria-label="'+
-      escapeHtml(assessed?"Ordinal evidence balance "+score:"Evidence not directionally reviewed")+'">'+
-      '<span class="balance-mid"></span>'+(assessed?'<span class="balance-marker" style="left:'+at+'%"></span>':'')+
-      '</div><div class="balance-axis"><span>Contradicting</span><span>Undetermined</span><span>Supporting</span></div>'+
-      '<p class="muted">'+(assessed?('Reviewed ordinal strengths: '+balance.support_strength+
-        ' supporting / '+balance.contradict_strength+' contradicting. '):'No reviewer-approved signed evidence has been attached. ')+
-        'This is not a probability or automated threat rating.</p>'+
-      (balance.conflicting_dependency_groups_excluded?
-        '<p class="muted">'+balance.conflicting_dependency_groups_excluded+' dependency conflicts excluded pending resolution.</p>':'')+
-    '</section>'+
-    '<div class="panel-grid"><section><h3>Alternative explanatory hypotheses</h3>'+
-      ((c.alternatives||[]).length?
-        '<ol>'+c.alternatives.slice(0,3).map(x=>'<li>'+escapeHtml(x)+'</li>').join("")+'</ol>':
-        '<p class="muted">No sourced alternatives entered; analyst review required.</p>')+
-      '</section><section><h3>Potential discriminating evidence</h3>'+
-        '<p>'+escapeHtml(c.next_discriminators||"No discriminating observations specified.")+'</p></section></div>'+
-    '<div class="evidence-top"><h3>Families of evidence</h3><p>'+
-      escapeHtml(c.family_count)+' linked families · '+escapeHtml(c.reviewed_family_count)+
-      ' with analyst-reviewed roles. Source health is distinct from hypothesis support.</p></div>'+
-      sections+'<footer class="disclaimer">Historical dossiers and unreviewed source-family case hints are not current intelligence assessments. Missing feeds cannot contradict a hypothesis without an explicit expectation and adequate coverage.</footer>';
+  const at=assessed?Math.max(0,Math.min(100,50+score*45)):50;
+  const title=escapeHtml(c.title||c.id);
+  const supplementary='<details class="technical-details"><summary>Detailed source diagnostics and collection context</summary>'+
+    gdeltSection(c)+competingSection(c)+autoSection(c)+evidenceHistory(c)+
+    '<p class="muted">Collection coverage and machine nominations are not approved directional judgments. Missing data are not counterevidence.</p></details>';
+  host.innerHTML=
+    '<section class="balance ach-first"><div class="balance-title"><h3>Direction of reviewed evidence</h3>'+
+      pill(caseLabel(c),assessed?(score>0?"supports":score<0?"contradicts":"context"):"not_assessed")+'</div>'+
+      '<div class="balance-track" role="img" aria-label="'+escapeHtml(assessed?"Reviewed ordinal balance "+score:"No approved directional review")+'">'+
+      '<span class="balance-mid"></span>'+(assessed?'<span class="balance-marker" style="left:'+at+'%"></span>':'')+'</div>'+
+      '<div class="balance-axis"><span>Contradicting</span><span>Undetermined</span><span>Supporting</span></div>'+
+      '<p class="balance-summary">'+(assessed?escapeHtml(balance.support_strength||0)+' supporting / '+escapeHtml(balance.contradict_strength||0)+' contradicting ordinal review strength':'Awaiting analyst-reviewed direction')+'</p></section>'+
+    '<div class="ach-bluf"><span class="eyebrow">BLUF · '+title+'</span>'+
+      '<h2>'+escapeHtml(c.hypothesis||"Hypothesis unspecified")+'</h2>'+
+      '<p>'+escapeHtml(c.overview||"Assessment not yet available")+'</p></div>'+
+    achTable(c)+
+    '<section class="signposts"><h3>What would change this assessment?</h3><p>'+escapeHtml(c.next_discriminators||"No discriminating observations specified.")+'</p></section>'+
+    supplementary;
+  host.querySelectorAll("[data-ach-group]").forEach(btn=>btn.addEventListener("click",()=>{
+    const index=btn.getAttribute("data-ach-group"),panel=host.querySelector('[data-ach-details="'+index+'"]');
+    panel.hidden=!panel.hidden;
+    host.querySelectorAll('[data-ach-group="'+index+'"]').forEach(b=>b.setAttribute("aria-expanded",String(!panel.hidden)));
+  }));
+  $("addHypothesis").addEventListener("click",()=>proposeHypothesis(c));
   host.scrollTop=0;
 }
+function proposeHypothesis(c){
+  const existing=$("analystProposal");
+  if(existing){existing.remove();return;}
+  const wrapper=document.createElement("section");
+  wrapper.id="analystProposal";wrapper.className="analyst-proposal";
+  wrapper.innerHTML='<h3>Propose an alternative explanation</h3><label for="analystHypText">Analyst hypothesis</label>'+
+    '<textarea id="analystHypText" maxlength="1200" rows="4" placeholder="State the proposed explanation, actors and observable implications."></textarea>'+
+    '<p>Submitting opens an authenticated GitHub issue for analyst review. It does not automatically add a reviewed ACH column or assert an AI evaluation.</p>'+
+    '<button type="button" id="submitAnalystHyp">Open GitHub proposal</button>';
+  $("addHypothesis").after(wrapper);
+  $("submitAnalystHyp").addEventListener("click",()=>{
+    const statement=$("analystHypText").value.trim();
+    if(statement.length<20){$("analystHypText").setCustomValidity("Enter a testable explanation of at least 20 characters.");$("analystHypText").reportValidity();return;}
+    $("analystHypText").setCustomValidity("");
+    const heading="CAIRN analyst hypothesis: "+(c.title||c.id);
+    const body="Case ID: "+c.id+"\n\nProposed hypothesis:\n"+statement+
+      "\n\nAnalyst review required: interpret actors, geography, timeframe, expected discriminators, competing explanations and source provenance before accepting. Do not treat automated matching as approved evidence.";
+    const url="https://github.com/graupmannj-dev/I-Ws-Dashboard/issues/new?"+
+      new URLSearchParams({title:heading,body}).toString();
+    window.open(url,"_blank","noopener,noreferrer");
+  });
+}
+
 async function start(){
   try{
     const res=await fetch("hypotheses.json",{cache:"no-store"});
@@ -339,10 +381,7 @@ async function start(){
       (payload.reviewed_hypotheses||0)+" with explicit review · "+
       (payload.generated_at||"Unknown build time")+" · Automated: "+
       (payload.automated_screen?.status==="screened"?"screened "+payload.automated_screen.screened_at:"source snapshot unavailable")+
-      " · GDELT case comparisons: "+(payload.gdelt_case_status?.measured_case_count||0)+"/"+(payload.hypothesis_count||0)+
-      " · Competing-explanation scans: "+(payload.discriminator_screen?.hypothesis_count||0)+
-      " · Original source texts inspected: "+
-      (payload.source_inspection?.documents_inspected??"not collected");
+      " · evidence updated "+(payload.generated_at||"unknown");
     const initial=new URLSearchParams(window.location.search).get("id");
     $("caseSearch").addEventListener("input",listCases);
     $("caseFilter").addEventListener("change",listCases);
