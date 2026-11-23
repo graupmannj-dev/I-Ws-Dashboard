@@ -44,7 +44,7 @@
         <div id="measuredLayerControls"></div>
         <div id="aircraftFilters" class="aircraft-filters" hidden>
           <div class="aircraft-filter-head"><strong>Aircraft filters</strong><small>ADS-B aircraft · provisional labels</small></div>
-          <p class="aircraft-filter-note">Choose affiliations and platform categories. A platform type does not establish this flight's mission.</p>
+          <details class="cairn-secondary-detail"><summary>Aircraft classification notes</summary><p class="aircraft-filter-note">Choose affiliations and platform categories. A platform type does not establish this flight's mission.</p></details>
           <div class="aircraft-group-toggles" role="group" aria-label="Aircraft affiliation filters">
             <label><input type="checkbox" data-aircraft-group="military" checked> Military</label>
             <label><input type="checkbox" data-aircraft-group="civilian"> Civilian</label>
@@ -92,9 +92,9 @@
             </select>
           </label>
           <p id="aircraftFilterCount" class="aircraft-filter-count" aria-live="polite">Aircraft feed not yet connected.</p>
-          <p class="aircraft-attribution"><a href="https://www.adsb.lol/docs/open-data/api" target="_blank" rel="noopener noreferrer">ADSB.lol contributors</a> · ODbL 1.0. Coverage is regional and incomplete. Database flags and operator descriptions may be wrong or missing.</p>
+          <details class="cairn-secondary-detail"><summary>Aircraft source &amp; licensing</summary><p class="aircraft-attribution"><a href="https://www.adsb.lol/docs/open-data/api" target="_blank" rel="noopener noreferrer">ADSB.lol contributors</a> · ODbL 1.0. Coverage is regional and incomplete. Database flags and operator descriptions may be wrong or missing.</p></details>
         </div>
-        <p class="sub">Restriction and advisory layers show current conditions independently of the report timeline.</p>
+        <details class="cairn-secondary-detail"><summary>Layer timing</summary><p class="sub">Restriction and advisory layers show current conditions independently of the report timeline.</p></details>
         <div id="layerStatus" aria-live="polite"></div>
       </section>
       <section class="side-section">
@@ -106,7 +106,7 @@
           <button type="button" class="chip" data-severity="high"><i class="dot high"></i> Escalation</button>
           <button type="button" class="chip" data-severity="watch"><i class="dot watch"></i> Watch</button>
         </div>
-        <p class="side-hint">Colors reflect current sourced case state, not a probability of future conflict. No case is automatically assigned Critical.</p>
+        <details class="cairn-secondary-detail"><summary>How severity is assigned</summary><p class="side-hint">Colors reflect current sourced case state, not a probability of future conflict. No case is automatically assigned Critical.</p></details>
       </section>
       <section class="side-section">
         <h2>Reporting</h2>
@@ -153,7 +153,7 @@
         <canvas id="globe" role="img" aria-label="Rotatable globe with country outlines, colored watchspots and reporting locations. Use the watchlist for keyboard access."></canvas>
         <div id="mapTooltip" class="map-tooltip" hidden></div>
         <div class="map-overlay-note">Drag to rotate · Scroll to zoom (40× maximum) · Double-click to center · Open a sourced notice and select Focus on sourced area</div>
-        <div class="geographic-note">Theater anchors and GCC reference overlays are approximate. Not incident coordinates or official command boundaries.</div>
+        <details class="cairn-map-method"><summary>Map location precision</summary><div class="geographic-note">Theater anchors and GCC reference overlays are approximate. Not incident coordinates or official command boundaries.</div></details>
       </div>
       <div id="selectedDetail" class="selected-detail" aria-live="polite" hidden></div>
     </main>
@@ -171,7 +171,7 @@
           <button type="button" id="tabEvaluation" aria-pressed="false">Evaluation</button>
         </div>
       </div>
-      <div id="queueBanner" class="queue-banner" hidden><strong id="queueBannerCount">0 source reports awaiting review</strong><p>New unreviewed evidence has reached Atlas. This is not a confirmed warning or severity change.</p><button id="openQueue" type="button">Inspect source queue</button></div>
+      <div id="queueBanner" class="queue-banner" hidden><strong id="queueBannerCount">0 source reports awaiting review</strong><p>New source reports require assessment.</p><button id="openQueue" type="button">Inspect source queue</button></div>
       <section class="friction-briefing" id="frictionBriefing" aria-label="Cross-source early-warning briefing">
         <div class="friction-head">
           <strong>Cross-source I&W</strong>
@@ -226,7 +226,7 @@
       <div>
         <p class="workspace-eyebrow">CAIRN · SOURCE-GROUNDED ANALYST REVIEW</p>
         <h2 id="familyWorkspaceTitle">Indicator family analysis</h2>
-        <p id="familyWorkspaceCaveat">Unusual observations can be shown without corroboration. Statistical abnormality, evidence support, and threat attribution are separate judgments.</p>
+        <details class="cairn-secondary-detail"><summary>Assessment methodology</summary><p id="familyWorkspaceCaveat">Unusual observations can be shown without corroboration. Statistical abnormality, evidence support, and threat attribution are separate judgments.</p></details>
       </div>
       <button type="button" id="familyWorkspaceClose" class="family-workspace-close" aria-label="Close evidence family workspace">✕ Close</button>
     </div>
