@@ -332,7 +332,7 @@ jobs:
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           CAIRN_SEMANTIC_MODEL: ${{ vars.CAIRN_SEMANTIC_MODEL }}
-        run: python dashboard/semantic_ach.py --site _site --max-cases 3
+        run: python dashboard/semantic_ach.py --site _site --max-cases 40
       - name: Preserve semantic interpretation audit artifact
         if: always()
         uses: actions/upload-artifact@v4

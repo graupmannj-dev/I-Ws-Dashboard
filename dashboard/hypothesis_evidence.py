@@ -269,6 +269,21 @@ def build(dossiers, dynamic=None, source_health=None, reviews=None, generated_at
         raise ValueError("Case dossiers must be a list")
     annotations, extras = reviewed_annotations(reviews)
     alternative_annotations = alternative_ach_annotations(reviews)
+    analyst_registry = (reviews or {}).get("analyst_hypotheses", [])
+    if not isinstance(analyst_registry, list) or len(analyst_registry)>120:
+        raise ValueError("Invalid analyst hypothesis registry")
+    analyst_by_case = defaultdict(list)
+    seen_analyst_ids = set()
+    for entry in analyst_registry:
+        if not isinstance(entry, dict):
+            raise ValueError("Invalid analyst hypothesis entry")
+        ident, case_id = clean(entry.get("id"), 100),clean(entry.get("case_id"), 100)
+        statement = clean(entry.get("statement"), 300)
+        if not ident.startswith("analyst-") or ident in seen_analyst_ids or not case_id or len(statement)<20:
+            raise ValueError("Invalid or duplicate analyst hypothesis identity")
+        seen_analyst_ids.add(ident)
+        if entry.get("active") is True:
+            analyst_by_case[case_id].append(entry)
     health = source_health if isinstance(source_health, dict) else {}
     cases, used_keys = [], set()
     for dossier in dossiers[:MAX_HYPOTHESES]:
@@ -279,6 +294,30 @@ def build(dossiers, dynamic=None, source_health=None, reviews=None, generated_at
             raise ValueError("Missing or duplicate hypothesis case ID")
         used_keys.add(hid)
         linked = _dossier_families(dossier) + _dynamic_families(hid, dynamic)
+        # One-time analyst backfill joins the same source-family ACH matrix.
+        # No direction is inferred; retained history is explicitly historical.
+        for entry in analyst_by_case.get(hid, []):
+            state = entry.get("initial_backfill") or {}
+            for ref in (state.get("source_references") or [])[:24]:
+                if not isinstance(ref, dict) or not clean(ref.get("evidence_key"), 100):
+                    continue
+                src=[]
+                for r in (ref.get("sources") or [])[:3]:
+                    if not isinstance(r,dict) or not safe_url(r.get("url")):
+                        continue
+                    src.append({"title":clean(r.get("title"),240),"source_url":safe_url(r["url"]),
+                        "provider":clean(r.get("provider"),120),"observed_at":clean(r.get("first_observed_at"),42),
+                        "assessment":"unreviewed_historical_candidate","collection_mode":"historical_archive",
+                        "source_dependency_class":"independence_unverified"})
+                if not src:
+                    continue
+                linked.append({"evidence_key":clean(ref["evidence_key"],100),
+                    "title":clean(ref.get("family_title"),240),
+                    "source_mechanism":clean(ref.get("family_mechanism"),120),
+                    "origin":"analyst_initial_backfill_unreviewed",
+                    "source_root_count":1,"source_independence_established":False,
+                    "observation_verified_as_hypothesis":False,
+                    "sources":src,"source_count":len(src)})
         deduplicated = {}
         for family in linked:
             deduplicated.setdefault(family["evidence_key"], family)
@@ -294,6 +333,19 @@ def build(dossiers, dynamic=None, source_health=None, reviews=None, generated_at
         for item in extras.get(hid, []):
             if item not in alternatives and len(alternatives) < MAX_ALTERNATIVES:
                 alternatives.append(item)
+        analyst_entries = []
+        for entry in analyst_by_case.get(hid, []):
+            if entry["statement"] in alternatives:
+                continue
+            if len(alternatives) >= MAX_ALTERNATIVES:
+                raise ValueError("Active analyst hypothesis exceeds visible ACH column limit: " + hid)
+            alternatives.append(entry["statement"])
+            analyst_entries.append({
+                "id": entry["id"], "index":len(alternatives),
+                "origin":"analyst","statement": entry["statement"],
+                "activated_at":entry.get("activated_at"),
+                "initial_backfill":entry.get("initial_backfill") or {},
+            })
         for family in linked:
             family["ach_reviews"] = {str(index): alternative_annotations[(hid, family["evidence_key"], index)]
                 for index in (1, 2, 3) if (hid, family["evidence_key"], index) in alternative_annotations}
@@ -305,11 +357,15 @@ def build(dossiers, dynamic=None, source_health=None, reviews=None, generated_at
             "overview": clean(dossier.get("analysis"), 700),
             "next_discriminators": clean(dossier.get("next"), 450),
             "alternatives": alternatives[:MAX_ALTERNATIVES],
+            "analyst_hypotheses": analyst_entries,
             "families": linked, "family_count": len(linked),
             "reviewed_family_count": sum(f.get("review") is not None for f in linked),
             "balance": _balance(linked),
             "evidence_is_case_associated_not_event_verified": True,
         })
+    unresolved = sorted(set(analyst_by_case) - {c["id"] for c in cases})
+    if unresolved:
+        raise ValueError("Analyst hypothesis refers to absent case: " + str(unresolved[:3]))
     referenced = {(c["id"], f["evidence_key"]) for c in cases for f in c["families"]}
     stale_ach_reviews = sorted(k for k in alternative_annotations
         if (k[0], k[1]) not in referenced or
