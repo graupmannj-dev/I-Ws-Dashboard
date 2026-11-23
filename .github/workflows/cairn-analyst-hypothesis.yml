@@ -1,0 +1,48 @@
+name: CAIRN approved analyst hypothesis intake
+on:
+  issues:
+    types: [labeled]
+permissions:
+  contents: write
+  pull-requests: write
+  issues: read
+jobs:
+  propose:
+    if: >-
+      github.event.label.name == 'cairn-hypothesis-approved' &&
+      github.event.sender.id == 320673296 &&
+      github.event.issue.user.id == 320673296
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Validate owner-approved issue
+        run: python scripts/approve_analyst_hypothesis.py
+      - name: Validate reviewed configuration
+        run: |
+          python - <<'PY'
+          import json
+          from dashboard.hypothesis_evidence import reviewed_annotations
+          reviewed_annotations(json.load(open('data/hypothesis_reviews.json')))
+          PY
+      - name: Open reviewable PR
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          if git diff --quiet -- data/hypothesis_reviews.json; then exit 0; fi
+          branch="cairn-analyst-hypothesis-${{ github.event.issue.number }}-${{ github.run_id }}"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -b "$branch"
+          git add data/hypothesis_reviews.json
+          git commit -m "propose CAIRN analyst hypothesis from issue #${{ github.event.issue.number }}"
+          git push origin "$branch"
+          gh pr create --base main --head "$branch" \
+            --title "CAIRN: analyst alternative from issue #${{ github.event.issue.number }}" \
+            --body "Owner-approved public issue #${{ github.event.issue.number }}. Explicit analyst review of semantics and indicator definitions still required; no evidence auto-approved."
