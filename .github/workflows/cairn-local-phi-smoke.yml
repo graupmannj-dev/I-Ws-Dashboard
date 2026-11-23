@@ -32,13 +32,21 @@ jobs:
           import json,os
           from pathlib import Path
           from tests.test_semantic_ach import index
+          from dashboard.hypothesis_evidence import build
           root=Path(os.environ['RUNNER_TEMP'])/'cairn-phi-smoke'
           root.mkdir(parents=True,exist_ok=True)
-          (root/'hypotheses.json').write_text(json.dumps(index()))
+          synthetic=index()
+          dossiers=json.loads(Path('data/verified_hotspots.json').read_text())
+          reviews=json.loads(Path('data/hypothesis_reviews.json').read_text())
+          real=build(dossiers,reviews=reviews)['hypotheses'][0]
+          assert real['id']!=synthetic['hypotheses'][0]['id']
+          assert any(f.get('sources') for f in real['families'])
+          synthetic['hypotheses'].append(real)
+          (root/'hypotheses.json').write_text(json.dumps(synthetic))
           PY
       - name: Run pinned Phi locally on synthetic case (read-only test)
         run: |
-          bash scripts/run_cairn_phi.sh --site "$RUNNER_TEMP/cairn-phi-smoke" --max-cases 1
+          bash scripts/run_cairn_phi.sh --site "$RUNNER_TEMP/cairn-phi-smoke" --max-cases 2
       - name: Verify extracted leads cannot alter the ACH balance
         run: |
           python - <<'PY'
@@ -46,14 +54,15 @@ jobs:
           from pathlib import Path
           root=Path(os.environ["RUNNER_TEMP"])/"cairn-phi-smoke"
           data=json.loads((root/"hypotheses.json").read_text())
-          review=data["hypotheses"][0]["semantic_review"]
-          print("Phi review status",review["status"],"notes",len(review.get("evidence_notes",[])),"error_type",review.get("error_type"))
-          assert review["status"]=="provisional_complete"
-          assert review["model_family"]=="phi-4-mini-instruct-q4km-local"
-          assert review["evaluations"]==[]
-          assert review["analyst_approved"] is False
+          for case in data["hypotheses"]:
+            review=case["semantic_review"]
+            print("Phi review",case["id"],review["status"],"leads",len(review.get("evidence_notes",[])),"error",review.get("error_type"))
+            assert review["status"]=="provisional_complete"
+            assert review["model_family"]=="phi-4-mini-instruct-q4km-local"
+            assert review["evaluations"]==[]
+            assert review["analyst_approved"] is False
+            known={f["evidence_key"] for f in case["families"]}
+            assert all(x["evidence_key"] in known for x in review.get("evidence_notes",[]))
+            assert len(review.get("interpretations",[]))==1+len(case.get("alternatives") or [])
           assert data["hypotheses"][0]["balance"]["direction"]=="not_assessed"
-          expected={"family:air","family:network"}
-          assert all(x["evidence_key"] in expected for x in review.get("evidence_notes",[]))
-          assert len(review.get("interpretations",[]))==2
           PY
