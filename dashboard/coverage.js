@@ -29,8 +29,7 @@ function render(){
     const status=visibleStatus(r);
     title.innerHTML='<span class="source-head"><strong>'+esc(r.mode.replace(/_/g," "))+
       '</strong><span class="pill '+esc(status)+'">'+esc(status.replace(/_/g," "))+'</span></span>'+
-      '<span class="source-sub">'+esc(r.mechanism)+' · '+esc(friendly[r.coverage_class]||"Coverage unreviewed")+
-      ' · '+esc(r.issuer_origin||"Publisher origin unknown")+'</span>';
+      '<span class="source-sub">'+esc(r.mechanism)+' · '+esc(friendly[r.coverage_class]||"Coverage unreviewed")+'</span>';
     const body=document.createElement("div");body.className="source-body";
     const count=r.recent_source_records===null?"Unavailable / not measured":r.recent_source_records+" records in bounded latest sample";
     body.innerHTML='<p>'+esc(r.coverage_description)+'</p>'+
@@ -40,9 +39,11 @@ function render(){
       '<dt>Observation status</dt><dd>'+esc(r.visibility.replace(/_/g," "))+'</dd>'+
       '<dt>Source last checked</dt><dd>'+esc(r.source_checked_at||"Not checked")+'</dd>'+
       '<dt>Coverage completeness</dt><dd>Not established; declared source jurisdiction only</dd></dl>';
-    const note=document.createElement("p");note.className="muted";
-    note.textContent="Source age and event occurrence are separate. Missing, zero, or regional snapshots do not establish normal conditions.";
-    body.appendChild(note);card.append(title,body);host.appendChild(card);
+    const note=document.createElement("details");note.className="cairn-secondary-detail";
+    const noteTitle=document.createElement("summary");noteTitle.textContent="Interpretation limits";
+    const noteText=document.createElement("p");noteText.className="muted";
+    noteText.textContent="Source age and event occurrence are separate. Missing, zero, or regional snapshots do not establish normal conditions.";
+    note.append(noteTitle,noteText);body.appendChild(note);card.append(title,body);host.appendChild(card);
   }
   if(!hits.length){const empty=document.createElement("p");empty.className="muted";empty.textContent="No matching source modes. This is a filtered inventory, not an all-clear.";host.appendChild(empty);}
   const countryCodes=new Set(hits.flatMap(r=>r.declared_country_jurisdictions||[]));
