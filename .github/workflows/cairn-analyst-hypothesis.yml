@@ -23,6 +23,18 @@ jobs:
           python-version: '3.11'
       - name: Validate owner-approved issue
         run: python scripts/approve_analyst_hypothesis.py
+      - uses: actions/checkout@v4
+        with:
+          ref: aiba-feed-data
+          path: ops-state
+          persist-credentials: false
+      - name: Install local semantic retrieval dependencies
+        run: python -m pip install -r requirements.txt
+      - name: Perform one-time retained-evidence initialization
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          CAIRN_SEMANTIC_MODEL: ${{ vars.CAIRN_SEMANTIC_MODEL }}
+        run: python -m scripts.initialize_analyst_hypotheses
       - name: Validate reviewed configuration
         run: |
           python - <<'PY'
@@ -44,5 +56,5 @@ jobs:
           git commit -m "propose CAIRN analyst hypothesis from issue #${{ github.event.issue.number }}"
           git push origin "$branch"
           gh pr create --base main --head "$branch" \
-            --title "CAIRN: analyst alternative from issue #${{ github.event.issue.number }}" \
-            --body "Owner-approved public issue #${{ github.event.issue.number }}. Explicit analyst review of semantics and indicator definitions still required; no evidence auto-approved."
+            --title "CAIRN: persistent analyst hypothesis from issue #${{ github.event.issue.number }}" \
+            --body "Owner-approved public issue #${{ github.event.issue.number }}. One-time bounded historical evidence initialization recorded in registry. Missing model access is explicitly flagged; no evidence signed or approved automatically."
