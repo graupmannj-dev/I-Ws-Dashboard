@@ -93,13 +93,15 @@
       ],
       "alternatives": [
         "localized_conflict",
-        "diplomatic_deescalation",
-        "natural_hazard"
+        "diplomatic_deescalation"
       ],
       "priority_modes": [
         "official",
         "commercial",
         "ioda"
+      ],
+      "context": [
+        "natural_hazard"
       ]
     },
     "horn_ethiopia_sudan": {
@@ -118,7 +120,8 @@
         "official",
         "commercial",
         "ioda"
-      ]
+      ],
+      "context": []
     },
     "horn_ethiopia_kenya_moyale": {
       "name": "Ethiopia–Kenya / Moyale",
@@ -129,13 +132,15 @@
       ],
       "alternatives": [
         "localized_conflict",
-        "natural_hazard",
         "diplomatic_deescalation"
       ],
       "priority_modes": [
         "official",
         "commercial",
         "ioda"
+      ],
+      "context": [
+        "natural_hazard"
       ]
     },
     "afpak": {
@@ -154,7 +159,8 @@
         "official",
         "commercial",
         "ioda"
-      ]
+      ],
+      "context": []
     },
     "drc_rwanda": {
       "name": "DR Congo–Rwanda / Kivu",
@@ -172,7 +178,8 @@
         "official",
         "commercial",
         "ioda"
-      ]
+      ],
+      "context": []
     },
     "thailand_cambodia": {
       "name": "Thailand–Cambodia",
@@ -184,13 +191,15 @@
       ],
       "alternatives": [
         "scheduled_training",
-        "diplomatic_deescalation",
-        "natural_hazard"
+        "diplomatic_deescalation"
       ],
       "priority_modes": [
         "official",
         "commercial",
         "ioda"
+      ],
+      "context": [
+        "natural_hazard"
       ]
     },
     "russia_nato": {
@@ -199,19 +208,21 @@
         "direct_state_engagement",
         "force_concentration",
         "airspace_closure",
-        "maritime_interdiction",
-        "network_disruption"
+        "maritime_interdiction"
       ],
       "alternatives": [
         "scheduled_training",
-        "diplomatic_deescalation",
-        "natural_hazard"
+        "diplomatic_deescalation"
       ],
       "priority_modes": [
         "live_maritime",
         "official",
         "commercial",
         "ioda"
+      ],
+      "context": [
+        "network_disruption",
+        "natural_hazard"
       ]
     },
     "iran_gulf": {
@@ -220,19 +231,21 @@
         "direct_state_engagement",
         "maritime_interdiction",
         "civilian_protection",
-        "airspace_closure",
-        "network_disruption"
+        "airspace_closure"
       ],
       "alternatives": [
         "scheduled_training",
-        "diplomatic_deescalation",
-        "natural_hazard"
+        "diplomatic_deescalation"
       ],
       "priority_modes": [
         "official",
         "commercial",
         "ioda",
         "watchlist"
+      ],
+      "context": [
+        "network_disruption",
+        "natural_hazard"
       ]
     },
     "taiwan": {
@@ -241,19 +254,21 @@
         "maritime_interdiction",
         "force_concentration",
         "airspace_closure",
-        "civilian_protection",
-        "network_disruption"
+        "civilian_protection"
       ],
       "alternatives": [
         "scheduled_training",
-        "diplomatic_deescalation",
-        "natural_hazard"
+        "diplomatic_deescalation"
       ],
       "priority_modes": [
         "tw_power",
         "official",
         "commercial",
         "watchlist"
+      ],
+      "context": [
+        "network_disruption",
+        "natural_hazard"
       ]
     },
     "korea": {
@@ -262,8 +277,7 @@
         "direct_state_engagement",
         "force_concentration",
         "airspace_closure",
-        "civilian_protection",
-        "network_disruption"
+        "civilian_protection"
       ],
       "alternatives": [
         "scheduled_training",
@@ -273,6 +287,9 @@
         "official",
         "commercial",
         "ioda"
+      ],
+      "context": [
+        "network_disruption"
       ]
     }
   }
