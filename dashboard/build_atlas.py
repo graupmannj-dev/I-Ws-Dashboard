@@ -406,6 +406,28 @@ def generate(site, generated=None, state_dir=None):
         case["automated_screen"] = machine_screen["cases"].get(case["id"], {})
         case["gdelt_media_trend"] = (
             gdelt_trends["cases"].get(case["id"]) if valid_trends else None)
+    # Explicit discriminators: search recent source-linked observations for
+    # signposts under primary and competing explanations. This read-only
+    # nomination does not write approved reviews or touch case severity.
+    try:
+        from dashboard.hypothesis_discriminator_engine import assess as assess_hypotheses
+    except ModuleNotFoundError:
+        from hypothesis_discriminator_engine import assess as assess_hypotheses
+    discriminator_config = read(ROOT / "data" / "hypothesis_discriminators.json", {})
+    provider_baselines = (
+        read(state_dir / "latest" / "behavioral_baselines.json", {})
+        if state_dir else {})
+    discriminator_review = assess_hypotheses(
+        records, registry, archive, gdelt_trends, provider_baselines,
+        discriminator_config, at=render_time)
+    # Keep a published, source-provenanced review artifact so a subsequent
+    # researcher can audit the literal rule, source ID and time window.
+    (site / "hypothesis_discriminator_screen.json").write_text(
+        json.dumps(discriminator_review, ensure_ascii=False, indent=2), encoding="utf-8")
+    hypothesis_views["discriminator_screen"] = {
+        k: v for k, v in discriminator_review.items() if k != "cases"}
+    for case in hypothesis_views["hypotheses"]:
+        case["competing_screen"] = discriminator_review["cases"].get(case["id"])
     (site / "hypotheses.json").write_text(
         json.dumps(hypothesis_views, ensure_ascii=False, indent=2), encoding="utf-8")
     # Only safe source monitoring context is included publicly. The private
