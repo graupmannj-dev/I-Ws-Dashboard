@@ -95,10 +95,13 @@ def _safe_source_url(url):
         u = urllib.parse.urlsplit(url)
     except ValueError:
         return None
-    if (u.scheme != "https" or u.hostname not in ALLOWED_HOSTS
-            or u.port not in (None, 443) or u.username or u.password
-            or len(u.path.strip("/")) < 9
-            or u.path.lower().endswith(BANNED_PATH_SUFFIXES)):
+    try:
+        if (u.scheme != "https" or u.hostname not in ALLOWED_HOSTS
+                or u.port not in (None, 443) or u.username or u.password
+                or len(u.path.strip("/")) < 9
+                or u.path.lower().endswith(BANNED_PATH_SUFFIXES)):
+            return None
+    except ValueError:
         return None
     return url
 
