@@ -44,6 +44,15 @@ class PhiSafetyTests(unittest.TestCase):
         self.assertTrue(output["interpretation_only"])
         self.assertEqual(output["evidence_notes"][0]["evidence_key"],"source:a")
         self.assertFalse(output["analyst_approved"])
+    def test_phi_human_facing_one_based_indexes_normalize_to_ach(self):
+        p=packet()
+        v=answer(p)
+        for i,row in enumerate(v["interpretations"]):
+            row["hypothesis_index"]=i+1
+        result=_validate(v,p)
+        self.assertEqual([r["hypothesis_index"] for r in result["interpretations"]],[0,1])
+        v["interpretations"][1]["hypothesis_index"]=1
+        with self.assertRaises(ValueError):_validate(v,p)
     def test_reject_invented_key_and_mismatched_hypothesis(self):
         p=packet()
         v=answer(p)
