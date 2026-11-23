@@ -16,7 +16,10 @@ import datetime as dt
 import re
 from urllib.parse import urlsplit
 
-from dashboard.hypothesis_auto_review import _match_case, _parse_time, _safe_url
+try:
+    from .hypothesis_auto_review import _match_case, _parse_time, _safe_url
+except ImportError:  # Direct script invocation of dashboard/build_atlas.py
+    from hypothesis_auto_review import _match_case, _parse_time, _safe_url
 
 SCHEMA = "cairn.competing-hypothesis-screen.v1"
 CONFIG_SCHEMA = "cairn.hypothesis-discriminators.v1"
