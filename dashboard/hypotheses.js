@@ -321,7 +321,7 @@ function achTable(c){
 function semanticSection(c){
   const d=c.semantic_review||{};
   if(d.status!=="provisional_complete"){
-    return '<details class="technical-details"><summary>AI semantic assessment · '+escapeHtml(
+    return '<details class="semantic-status"><summary>AI semantic assessment · '+escapeHtml(
       d.status==="not_configured"?"Not configured":
       d.status==="not_selected_in_bounded_run"?"Awaiting scheduled batch":
       d.status==="model_or_validation_failed"?"Review unavailable":"No assessment")+
