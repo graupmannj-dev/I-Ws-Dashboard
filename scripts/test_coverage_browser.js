@@ -10,6 +10,8 @@ const assert=require("node:assert/strict");
   await page.waitForURL("**/coverage.html");
   await page.waitForFunction(()=>document.querySelectorAll(".source-card").length>=20);
   assert.match(await page.locator("#coverageSummary").innerText(),/Documented source modes/i);
+  assert.equal(await page.locator(".disclaimer").isVisible(),false,"Detailed coverage limits collapsed by default");
+  await page.locator(".disclaimer").locator("..").locator("summary").click();
   assert.match(await page.locator(".disclaimer").innerText(),/specific falsifiable prediction/i);
   const total=await page.locator(".source-card").count();
   await page.locator("#coverageClass").selectOption("global_unlocated");

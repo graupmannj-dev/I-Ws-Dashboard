@@ -28,6 +28,7 @@
 .source-note{font-size:12px;color:#bac8d5;background:#152637;border-left:3px solid #829caf;padding:12px 15px;margin-top:18px;line-height:1.6}
 #sourceRefresh{padding:9px 13px;background:#233c53;border:1px solid #7b9bb9;border-radius:7px;color:#e9f5ff}
 @media(max-width:760px){.source-page{padding:0 11px}.source-head{align-items:flex-start}.source-table{display:block;overflow:auto;white-space:normal}.source-table th,.source-table td{padding:8px;min-width:120px}.source-page h1{font-size:22px}}
+.source-details{display:block;margin-top:7px;max-width:500px}.source-details summary{cursor:pointer;color:#9ed5f2;font-size:12px}.source-details .source-description{margin:6px 0}.source-details .source-sub{margin:5px 0}.source-page .source-table td{vertical-align:middle}.source-note summary{cursor:pointer;font-weight:650;color:#c4dceb}.source-note p{margin:9px 0 0}.source-role{margin-top:3px}
 </style></head>
 <body>
 <header class="topbar cairn-topbar">
@@ -41,16 +42,16 @@
     </nav>
   </header>
 <main class="source-page">
-<div class="source-head"><div><h1>Collector status and freshness</h1>
-<p class="lead">CAIRN prioritizes nontraditional operational, commercial and institutional signals. News indexes and conventional reporting primarily provide background and possible corroboration; neither fresh data nor multiple articles establishes a verified event. Collection dates are not event dates, and missing observations do not imply normal conditions.</p></div>
+<div class="source-head"><div><h1>Source health</h1>
+<p class="lead">Collection readiness, freshness and coverage gaps. Open a source for technical details.</p></div>
 <button type="button" id="sourceRefresh">Refresh status</button></div>
 <p class="source-asof" id="sourceAsOf" aria-live="polite">Reading published source status…</p>
 <div class="source-summary" id="sourceSummary"></div>
 <div style="overflow:auto"><table class="source-table">
-<thead><tr><th scope="col">Source and purpose</th><th scope="col">Coverage</th><th scope="col">Status</th><th scope="col">Last check (UTC)</th><th scope="col">Last sample (UTC)</th></tr></thead>
+<thead><tr><th scope="col">Source</th><th scope="col">Coverage</th><th scope="col">Status</th><th scope="col">Last check (UTC)</th><th scope="col">Last sample (UTC)</th></tr></thead>
 <tbody id="sourceRows"><tr><td colspan="5">Loading status…</td></tr></tbody>
 </table></div>
-<p class="source-note">A green status only means a recent and successful collection within that collector's freshness window; it does not mean its observations are complete or its region is secure. Provider-level health reflects a bounded slice of each source, not worldwide surveillance. FAA NAS measures selected U.S. airport operational records, not attribution or a national all-clear.</p>
+<details class="source-note cairn-secondary-detail"><summary>How to interpret collection status</summary><p>A green status only means a recent and successful collection within that collector's freshness window; it does not mean its observations are complete or its region is secure. Provider-level health reflects a bounded slice of each source, not worldwide surveillance. FAA NAS measures selected U.S. airport operational records, not attribution or a national all-clear.</p></details>
 </main>
 <script src="dashboard/source_status.js" defer></script>
 </body></html>
