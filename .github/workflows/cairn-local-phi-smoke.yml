@@ -37,8 +37,6 @@ jobs:
           (root/'hypotheses.json').write_text(json.dumps(index()))
           PY
       - name: Run pinned Phi locally on synthetic case (read-only test)
-        env:
-          CAIRN_SYNTHETIC_SMOKE_DEBUG: '1'
         run: |
           bash scripts/run_cairn_phi.sh --site "$RUNNER_TEMP/cairn-phi-smoke" --max-cases 1
       - name: Verify extracted leads cannot alter the ACH balance
