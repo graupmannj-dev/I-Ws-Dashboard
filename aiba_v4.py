@@ -224,6 +224,12 @@ def build(out=OUT, asof=None, cache=CACHE, offline=True, baseline_days=28,window
     seed=json.loads((DATA/'verified_hotspots.json').read_text())
     audit={}
     records,totals,roots,avail,samples=ingest(cache, asof,audit)
+    from scripts.gdelt_case_trends import build as build_case_trends
+    # Generate metrics for EVERY standing scenario, not only pairs passing the
+    # global discovery significance/size gate. Missing archive days stay null.
+    case_trends=build_case_trends(records,totals,avail,asof,baseline_days,window_days)
+    (out/'gdelt_case_trends.json').write_text(
+        json.dumps(case_trends,indent=2,ensure_ascii=False),encoding='utf-8')
     discovery,completeness=analyze(records,totals,roots,avail,samples,asof,baseline_days,window_days)
     complete = (completeness['recent_days'] == window_days and completeness['baseline_days'] == baseline_days)
     if suppress_incomplete_discovery and not complete:
