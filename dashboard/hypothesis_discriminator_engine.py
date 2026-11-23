@@ -177,13 +177,15 @@ def _check_config(config):
     for cid, c in cases.items():
         if not isinstance(c, dict):
             raise ValueError("Invalid case " + cid)
-        ids = c.get("escalation", []) + c.get("alternatives", [])
+        ids = c.get("escalation", []) + c.get("alternatives", []) + c.get("context", [])
         if not ids or any(name not in templates for name in ids):
             raise ValueError("Unrecognized discriminator in " + cid)
         if (any(templates[name]["role"] != "escalation_candidate"
                 for name in c.get("escalation", [])) or
-                any(templates[name]["role"] == "escalation_candidate"
-                    for name in c.get("alternatives", []))):
+                any(templates[name]["role"] != "alternative_candidate"
+                    for name in c.get("alternatives", [])) or
+                any(templates[name]["role"] != "context_candidate"
+                    for name in c.get("context", []))):
             raise ValueError("Discriminator placed on wrong competing theory")
     return templates, cases
 
@@ -209,7 +211,7 @@ def assess(dossiers, registry, archive, gdelt_trends, provider_baselines, config
     dossier_map = {r.get("id"): r for r in dossiers if isinstance(r, dict)}
     case_outputs = {}
     for cid, spec in case_specs.items():
-        rules = list(dict.fromkeys(spec["escalation"] + spec["alternatives"]))
+        rules = list(dict.fromkeys(spec["escalation"] + spec["alternatives"] + spec.get("context", [])))
         per_rule = {rule: {"id": rule, "label": _clean(templates[rule].get("label")),
                            "role": templates[rule]["role"],
                            "discriminator": _clean(templates[rule].get("discriminator"), 450),
