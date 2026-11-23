@@ -93,7 +93,8 @@ function competingSection(c){
       '</div></details>';
   };
   const escalation=rules.filter(r=>r.role==="escalation_candidate").map(ruleCard).join("");
-  const alternatives=rules.filter(r=>r.role!=="escalation_candidate").map(ruleCard).join("");
+  const alternatives=rules.filter(r=>r.role==="alternative_candidate").map(ruleCard).join("");
+  const contextual=rules.filter(r=>r.role==="context_candidate").map(ruleCard).join("");
   const coverageRows=coverage.map(v=>'<tr><td>'+escapeHtml(v.mode||"unknown")+
     '</td><td>'+escapeHtml(v.current_source_status||"unknown")+
     '</td><td>'+escapeHtml(v.comparable_days??"not recorded")+
@@ -120,6 +121,8 @@ function competingSection(c){
     '<div class="discriminator-columns"><div><h4>What might distinguish escalation</h4>'+
       escalation+'</div><div><h4>What might favor alternative explanations</h4>'+
       alternatives+'</div></div>'+
+    (contextual?'<div class="discriminator-context"><h4>Context and confounding mechanisms (not directional evidence)</h4>'+
+      contextual+'</div>':'')+
     '<details class="coverage-details"><summary>Source-health and baseline readiness ('+
       escapeHtml(coverage.length)+ ' source types)</summary>'+
       '<p class="muted">These are provider-wide collection baselines, NOT calibrated event frequencies in this theater. A stale or incomplete baseline is unknown, not negative evidence.</p>'+
