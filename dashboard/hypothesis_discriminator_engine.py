@@ -34,6 +34,7 @@ QUOTED_CLAIM = re.compile(
     r"suspect(?:s|ed)?|unconfirm(?:ed)?|den(?:y|ied|ies)|disput(?:ed|es)|"
     r"rumou?r(?:s|ed)?)\b", re.I)
 NEGATED = re.compile(r"\b(?:no|not|without|false|hoax|den(?:ied|ies|y))\b", re.I)
+PLANNED = re.compile(r"\b(?:potential|planned|planning|preparing|preparation|considering|proposed|would|might|may|could)\b", re.I)
 CONFOUNDERS = re.compile(
     r"\b(?:routine|scheduled|planned|exercis(?:e|es)|drill(?:s)?|"
     r"training|weather|storm|cyclone|typhoon|earthquake|flood(?:ing)?|"
@@ -249,6 +250,7 @@ def assess(dossiers, registry, archive, gdelt_trends, provider_baselines, config
                 hazard = (row.get("source_family") in HAZARD_FAMILIES or
                           mode in HAZARD_MODES)
                 qualifies = bool(QUOTED_CLAIM.search(title) or NEGATED.search(title)
+                                 or PLANNED.search(title)
                                  or (role != "context_candidate" and
                                      kind != "current_provider_not_event_verified")
                                  or (role == "escalation_candidate" and
