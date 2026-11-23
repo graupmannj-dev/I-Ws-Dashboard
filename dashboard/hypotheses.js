@@ -244,7 +244,13 @@ function listCases() {
     const meta=document.createElement("small");
     meta.textContent=caseLabel(c)+' · '+(c.family_count||0)+' evidence families';
     b.append(header,desc,meta);b.addEventListener("click",()=>showCase(c.id));
-    host.appendChild(b);
+    const analystIssues=(c.analyst_hypotheses||[]).filter(x=>analystLimit(x).length);
+    if(analystIssues.length){
+      const wrap=document.createElement("div");wrap.className="case-tile-row";
+      wrap.appendChild(b);
+      const hint=document.createElement("span");hint.innerHTML=analystCaution(analystIssues[0]);
+      wrap.appendChild(hint);host.appendChild(wrap);
+    }else host.appendChild(b);
   }
   if(!shown.length){const p=document.createElement("p");p.className="muted";p.textContent="No matching hypotheses.";host.appendChild(p);}
 }
@@ -290,11 +296,34 @@ function achGroup(f){
   if(/government|diplom|official|statement|policy/.test(text))return "Government actions";
   return "Other observations";
 }
+function analystLimit(entry){
+  const state=entry?.initial_backfill||{};
+  const reason=(Array.isArray(state.limitations)?state.limitations:[]).filter(Boolean);
+  if(state.status!=="initial_review_complete" && !reason.length){
+    reason.push("Initial evidence evaluation is incomplete or pending");
+  }
+  return reason.slice(0,4);
+}
+function analystCaution(entry){
+  const reasons=analystLimit(entry);
+  if(!reasons.length)return "";
+  const message=reasons.join(". ");
+  return '<details class="analyst-caution"><summary aria-label="Analyst hypothesis evidence limitation: '+
+    escapeHtml(message)+'" title="'+escapeHtml(message)+'"><span aria-hidden="true">⚠</span></summary>'+
+    '<div class="caution-popover" role="note"><strong>Evidence review limitation</strong>'+
+    '<p>'+escapeHtml(message)+'</p></div></details>';
+}
 function achTable(c){
   const groups=new Map();
   for(const f of c.families||[]){const name=achGroup(f);if(!groups.has(name))groups.set(name,[]);groups.get(name).push(f);}
   const hypotheses=[c.hypothesis||"Primary hypothesis",...(c.alternatives||[]).slice(0,3)];
-  const head=hypotheses.map((h,i)=>'<th scope="col"><strong>H'+(i+1)+'</strong><span title="'+escapeHtml(h)+'">'+escapeHtml(h)+'</span></th>').join("");
+  const analystByIndex=new Map((c.analyst_hypotheses||[]).map(x=>[x.index,x]));
+  const head=hypotheses.map((h,i)=>{
+    const entry=analystByIndex.get(i);
+    return '<th scope="col"><strong>H'+(i+1)+'</strong>'+
+      (entry?'<small class="analyst-origin">Analyst</small>'+analystCaution(entry):'')+
+      '<span title="'+escapeHtml(h)+'">'+escapeHtml(h)+'</span></th>';
+  }).join("");
   const body=[...groups].map(([name,families],i)=>{
     const reviewed=families.filter(f=>f.review);
     const support=reviewed.filter(f=>f.direction==="supports").length;
@@ -392,7 +421,7 @@ function proposeHypothesis(c){
   wrapper.id="analystProposal";wrapper.className="analyst-proposal";
   wrapper.innerHTML='<h3>Propose an alternative explanation</h3><label for="analystHypText">Analyst hypothesis</label>'+
     '<textarea id="analystHypText" maxlength="1200" rows="4" placeholder="State the proposed explanation, actors and observable implications."></textarea>'+
-    '<p>Submitting opens an authenticated GitHub issue for analyst review. It does not automatically add a reviewed ACH column or assert an AI evaluation.</p>'+
+    '<p>Submitting opens an authenticated GitHub issue. After owner approval, CAIRN performs a one-time retained-evidence backfill and adds the hypothesis to this ACH for normal scheduled reviews. It never auto-signs reviewed evidence.</p>'+
     '<button type="button" id="submitAnalystHyp">Open GitHub proposal</button>';
   $("addHypothesis").after(wrapper);
   $("submitAnalystHyp").addEventListener("click",()=>{
