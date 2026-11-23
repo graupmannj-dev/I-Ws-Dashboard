@@ -1,0 +1,59 @@
+name: CAIRN local Phi integration smoke (PR only)
+on:
+  pull_request:
+    paths:
+      - 'scripts/cairn_phi_local.py'
+      - 'scripts/run_cairn_phi.sh'
+      - 'tests/test_cairn_phi_local.py'
+      - '.github/workflows/cairn-local-phi-smoke.yml'
+      - '.github/workflows/publish-global-watchboard.yml'
+      - '.github/workflows/cairn-analyst-hypothesis.yml'
+permissions:
+  contents: read
+jobs:
+  phi-local-integration-smoke:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Validate local inference safety unit tests and Bash
+        run: |
+          python -m unittest tests.test_cairn_phi_local tests.test_semantic_ach -v
+          bash -n scripts/run_cairn_phi.sh
+      - name: Generate a synthetic case artifact (no external evidence uploads)
+        run: |
+          python - <<'PY'
+          import json,os
+          from pathlib import Path
+          from tests.test_semantic_ach import index
+          root=Path(os.environ['RUNNER_TEMP'])/'cairn-phi-smoke'
+          root.mkdir(parents=True,exist_ok=True)
+          (root/'hypotheses.json').write_text(json.dumps(index()))
+          PY
+      - name: Run pinned Phi locally on synthetic case (read-only test)
+        run: |
+          bash scripts/run_cairn_phi.sh --site "$RUNNER_TEMP/cairn-phi-smoke" --max-cases 1
+      - name: Verify extracted leads cannot alter the ACH balance
+        run: |
+          python - <<'PY'
+          import json,os
+          from pathlib import Path
+          root=Path(os.environ["RUNNER_TEMP"])/"cairn-phi-smoke"
+          data=json.loads((root/"hypotheses.json").read_text())
+          review=data["hypotheses"][0]["semantic_review"]
+          print("Phi review status",review["status"],"notes",len(review.get("evidence_notes",[])))
+          assert review["status"]=="provisional_complete"
+          assert review["model_family"]=="phi-4-mini-instruct-q4km-local"
+          assert review["evaluations"]==[]
+          assert review["analyst_approved"] is False
+          assert data["hypotheses"][0]["balance"]["direction"]=="not_assessed"
+          expected={"family:air","family:network"}
+          assert all(x["evidence_key"] in expected for x in review.get("evidence_notes",[]))
+          assert len(review.get("interpretations",[]))==2
+          PY
