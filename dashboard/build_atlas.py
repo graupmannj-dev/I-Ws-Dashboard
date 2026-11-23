@@ -420,12 +420,24 @@ def generate(site, generated=None, state_dir=None):
     discriminator_review = assess_hypotheses(
         records, registry, archive, gdelt_trends, provider_baselines,
         discriminator_config, at=render_time)
+    # A separate allowlisted original-document inspection runs in the Pages
+    # collection job. Failure or blocked sources remain explicitly uninspected.
+    # The join never modifies rule nominations, reviewed evidence or warnings.
+    try:
+        from dashboard.hypothesis_source_link import attach as attach_source_inspections
+    except ModuleNotFoundError:
+        from hypothesis_source_link import attach as attach_source_inspections
+    original_source_inspections = read(site / "source_inspection.json", {})
+    discriminator_review = attach_source_inspections(
+        discriminator_review, original_source_inspections)
     # Keep a published, source-provenanced review artifact so a subsequent
     # researcher can audit the literal rule, source ID and time window.
     (site / "hypothesis_discriminator_screen.json").write_text(
         json.dumps(discriminator_review, ensure_ascii=False, indent=2), encoding="utf-8")
     hypothesis_views["discriminator_screen"] = {
-        k: v for k, v in discriminator_review.items() if k != "cases"}
+        k: v for k, v in discriminator_review.items() if k not in ("cases", "original_source_inspection")}
+    hypothesis_views["source_inspection"] = discriminator_review.get(
+        "original_source_inspection", {})
     for case in hypothesis_views["hypotheses"]:
         case["competing_screen"] = discriminator_review["cases"].get(case["id"])
     (site / "hypotheses.json").write_text(
