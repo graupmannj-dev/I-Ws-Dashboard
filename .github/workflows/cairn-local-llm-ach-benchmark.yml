@@ -25,7 +25,7 @@ jobs:
             filename: granite-4.0-micro-Q4_K_M.gguf
           - model: phi-4-mini
             model_repo: bartowski/microsoft_Phi-4-mini-instruct-GGUF
-            filename: Phi-4-mini-instruct-Q4_K_M.gguf
+            filename: microsoft_Phi-4-mini-instruct-Q4_K_M.gguf
     steps:
       - name: Checkout benchmark branch
         uses: actions/checkout@v4
