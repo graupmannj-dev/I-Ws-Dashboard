@@ -123,7 +123,10 @@ function draw(rows,source){
     const description=document.createElement("span");
     description.className="source-description";
     description.textContent=meta.description;
-    name.append(nameLabel,role,description);
+    const details=document.createElement("details");details.className="source-details";
+    const detailTitle=document.createElement("summary");detailTitle.textContent="Source purpose & limitations";
+    details.append(detailTitle,description);
+    name.append(nameLabel,role,details);
     const scope=document.createElement("td");scope.textContent=r.source_scope||"Coverage not characterized";
     const st=document.createElement("td"),pill=document.createElement("span");
     pill.className="source-status-pill "+code;
@@ -132,7 +135,7 @@ function draw(rows,source){
     const detail=document.createElement("span");detail.className="source-sub";
     detail.textContent=(r.provider_status||r.status||"No provider health")+
       " · "+(r.missingness||"Coverage not fully characterized");
-    st.appendChild(detail);
+    details.appendChild(detail);
     const check=document.createElement("td");check.textContent=format(r.checked_at);
     // A successful check is not proof that a usable sample was captured.
     const sample=document.createElement("td");sample.textContent=format(r.snapshot_at);
@@ -149,9 +152,7 @@ function draw(rows,source){
     item.textContent=label+": "+counts[code];
     summary.appendChild(item);
   }
-  $("sourceAsOf").textContent="Source: "+source+" · checked against current clock "+
-    new Date(now).toISOString().replace("T"," ").replace(".000Z"," UTC")+
-    ". Collection timestamps are not source publication times.";
+  $("sourceAsOf").textContent="Health checked "+new Date(now).toISOString().replace("T"," ").replace(".000Z"," UTC");
 }
 async function get(url){
   const response=await fetch(url,{cache:"no-store"});
