@@ -61,6 +61,22 @@ const interpretationLabels={
   ambiguous_or_context_only:"Only ambiguous/contextual case-associated observations",
   no_matching_case_records_in_window:"No discriminating source-linked observations in this window"
 };
+function sourceInspection(report){
+  const s=report||{};
+  if(!s.status||s.status==="not_selected_for_bounded_fetch")
+    return '<p class="source-inspection-source">Original document not selected for bounded content inspection; headline remains provisional.</p>';
+  if(s.status!=="document_text_inspected")
+    return '<p class="source-inspection-source">Original-document check: '+escapeHtml(s.status)+
+      (s.reason?' · '+escapeHtml(s.reason):'')+'. No source-text inference is possible.</p>';
+  const g=s.geographic_attribution||{},e=g.evidence_span||{};
+  return '<div class="source-inspection-source"><strong>Original document opened — text inspected, event NOT independently verified.</strong>'+
+    '<p>Title rule in source body: '+escapeHtml(s.text_rule_relation||"not determined")+'</p>'+
+    '<p>Reported locality: '+escapeHtml(g.named_place||"Not established")+
+      ' · '+escapeHtml(g.status||"unknown")+
+      (g.reported_country_or_area?' · '+escapeHtml(g.reported_country_or_area):'')+'</p>'+
+    (e.quote_excerpt?'<p>Source-text evidence excerpt: “'+escapeHtml(e.quote_excerpt)+'”</p>':'')+
+    '<p class="muted">A text-mentioned place is not a verified event location. Neither source attribution nor independent occurrence is established.</p></div>';
+}
 function competingSection(c){
   const d=c.competing_screen||{};
   if(d.status!=="screened"){
@@ -69,7 +85,7 @@ function competingSection(c){
   }
   const summary=d.summary||{},rules=Array.isArray(d.discriminators)?d.discriminators:[],
     coverage=Array.isArray(d.source_baseline_readiness)?d.source_baseline_readiness:[],
-    gdelt=d.gdelt_context||{};
+    sourceStatus=d.original_source_inspection||{},gdelt=d.gdelt_context||{};
   const ruleCard=r=>{
     const links=(Array.isArray(r.sources)?r.sources:[]).map(x=>{
       const url=safeUrl(x.source_url);
@@ -80,7 +96,8 @@ function competingSection(c){
           escapeHtml(x.title||"Source document")+'</a>':escapeHtml(x.title||"Source document"))+
         '<small>'+escapeHtml(x.source_mode||"unknown source")+
         ' · First ingested '+escapeHtml(x.first_observed_at||"time unavailable")+'</small>'+
-        '<p class="muted">'+escapeHtml(x.reason||"Needs review")+'</p></li>';
+        '<p class="muted">'+escapeHtml(x.reason||"Needs review")+'</p>'+
+        sourceInspection(x.original_document_review)+'</li>';
     }).join("");
     return '<details class="discriminator-rule"><summary><strong>'+escapeHtml(r.label||r.id)+'</strong>'+
       '<span class="pill context">'+escapeHtml(r.candidate_count||0)+' nominated · '+
@@ -113,6 +130,24 @@ function competingSection(c){
     '<p><strong>Preliminary pattern:</strong> '+
       escapeHtml(interpretationLabels[summary.competing_pattern]||
         "Unclassified source candidates")+'</p>'+
+    '<p class="source-inspection-summary"><strong>Original source-text inspection prototype:</strong> '+
+      escapeHtml(sourceStatus.status==="bounded_receipts_available"?
+        ((sourceStatus.archived_original_documents||[]).length+" original document checks (14-day lookback) · "+
+         (sourceStatus.archived_original_documents||[]).filter(r=>r.status==="document_text_inspected").length+
+         " original narratives retrieved"):
+        "Not collected in this publication")+
+      '. Opening a document does not independently establish an incident.</p>'+
+    (Array.isArray(sourceStatus.archived_original_documents)&&sourceStatus.archived_original_documents.length?
+      '<details class="source-inspection-history"><summary>View original article checks and geographic-text attribution</summary>'+
+      '<ol class="auto-candidates">'+sourceStatus.archived_original_documents.map(r=>{
+        const url=safeUrl(r.source_url);
+        const title=escapeHtml(r.title||"Source document");
+        return '<li><span class="auto-meta">'+escapeHtml(r.status||"not inspected")+
+          (r.source_text_location?' · Reported place: '+escapeHtml(r.source_text_location):' · Site not established')+
+          '</span>'+(url?'<a href="'+escapeHtml(url)+'" target="_blank" rel="noopener noreferrer">'+title+'</a>':title)+
+          '<small>First collected: '+escapeHtml(r.first_observed_at||"unknown")+
+          ' · '+escapeHtml(r.geography_status||r.reason||"no verified source geography")+'</small></li>';
+      }).join("")+'</ol></details>':'')+
     '<p class="muted">Case-linked source documents: '+
       escapeHtml(summary.source_documents_case_associated||0)+
       '. Documents and nominations can overlap. Source independence and incident occurrence have not been established.</p>'+
@@ -305,7 +340,9 @@ async function start(){
       (payload.generated_at||"Unknown build time")+" · Automated: "+
       (payload.automated_screen?.status==="screened"?"screened "+payload.automated_screen.screened_at:"source snapshot unavailable")+
       " · GDELT case comparisons: "+(payload.gdelt_case_status?.measured_case_count||0)+"/"+(payload.hypothesis_count||0)+
-      " · Competing-explanation scans: "+(payload.discriminator_screen?.hypothesis_count||0);
+      " · Competing-explanation scans: "+(payload.discriminator_screen?.hypothesis_count||0)+
+      " · Original source texts inspected: "+
+      (payload.source_inspection?.documents_inspected??"not collected");
     const initial=new URLSearchParams(window.location.search).get("id");
     $("caseSearch").addEventListener("input",listCases);
     $("caseFilter").addEventListener("change",listCases);

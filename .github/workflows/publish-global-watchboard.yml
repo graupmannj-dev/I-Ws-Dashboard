@@ -315,6 +315,16 @@ jobs:
         run: python dashboard/collect_layers.py --output _site/layers.json
       - run: python friction_render.py --state ops-state/observations --site _site
       - run: python behavioral_render.py --state ops-state/observations --site _site
+      - name: Bounded original-source and geographic-text inspection
+        continue-on-error: true
+        timeout-minutes: 4
+        shell: bash
+        run: |
+          python scripts/cairn_source_inspection.py \
+            --registry ops-state/observations/latest/behavioral_registry.json \
+            --archive ops-state/observations/latest/family_archive.json \
+            --config data/hypothesis_discriminators.json \
+            --maximum 12 --output _site/source_inspection.json
       - run: python dashboard/build_atlas.py --site _site --state ops-state/observations
         env:
           AIBA_LAYER_FEED_URL: ${{ vars.AIBA_LAYER_FEED_URL || 'layers.json' }}
@@ -443,6 +453,127 @@ jobs:
                       assert source["independent_observation_confirmed"] is False
               assert all(not item["case_specific"] for item in c["source_baseline_readiness"])
           PY
+  historical-source-replay-real-input:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          ref: aiba-feed-data
+          path: ops-state
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Historical as-of replay using real collection snapshots
+        run: |
+          python scripts/cairn_historical_replay.py \
+            --history ops-state/observations/history/behavioral_registry \
+            --archive ops-state/observations/latest/family_archive.json \
+            --out historical-source-evaluation.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          r=json.loads(Path("historical-source-evaluation.json").read_text())
+          assert r["status"]=="historical_source_visibility_diagnostic_only"
+          assert r["lookahead_restricted_to_snapshot_asof"]
+          assert r["source_snapshots_used"]>0
+          assert r["real_outcome_gold_standard"] is False
+          assert r["real_event_precision"] is None
+          assert r["real_event_recall"] is None
+          assert r["warning_lead_time_hours"] is None
+          assert len(r["cases"])==10
+          print("Historical source replay days:",r["source_snapshots_used"],
+                "curated comparison-covered observations:",
+                r["reference_signals_within_available_history"])
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: cairn-history-source-asof-${{ github.run_id }}
+          path: historical-source-evaluation.json
+          retention-days: 30
+  historical-original-source-probe:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Retrieve real GOV.UK historical original document narratives (no outcomes)
+        run: |
+          python scripts/cairn_historical_original_source_eval.py \
+            --seeds data/govuk_source_seed_manifest.json \
+            --limit 9 --out historical-original-source-audit.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          x=json.loads(Path("historical-original-source-audit.json").read_text())
+          assert x["schema"]=="cairn.historical-original-documents.v1"
+          assert x["real_original_documents_requested"]==9
+          assert x["event_occurrence_ground_truth"] is None
+          assert x["warning_detection_recall"] is None
+          assert all(not r["reported_site_verified"] for r in x["reports"])
+          print("Real historical source-text availability:",x["real_original_documents_inspected"],
+                "/",x["real_original_documents_requested"],
+                "; named localities:",x["real_original_documents_with_named_action_locality"])
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: cairn-historical-original-source-${{ github.run_id }}
+          path: historical-original-source-audit.json
+          retention-days: 30
+  real-source-inspection-prototype:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          ref: aiba-feed-data
+          path: ops-state
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Read-only allowlisted live document inspection
+        run: |
+          python scripts/cairn_source_inspection.py \
+            --registry ops-state/observations/latest/behavioral_registry.json \
+            --archive ops-state/observations/latest/family_archive.json \
+            --maximum 10 --output source-inspection-real-smoke.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          report=json.loads(Path("source-inspection-real-smoke.json").read_text())
+          assert report["schema"]=="cairn.source-inspection.v1"
+          assert report["unique_source_documents_attempted"]<=10
+          assert not report["source_bodies_saved"] and not report["source_bodies_published"]
+          assert report["automated_event_verifications"]==0 and report["approved_warnings"]==0
+          for row in report["inspections"]:
+              assert not row["event_occurred_verified"]
+              assert not row["actor_verified"]
+              assert not row["independent_corroboration"]
+              if row["document_inspection"]:
+                  assert "source_text" not in row["document_inspection"]
+                  assert not row["document_inspection"]["case_attribution"]["reported_event_site_verified"]
+          print("CAIRN source inspection:",report["status_counts"])
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: cairn-source-inspection-real-source-${{ github.run_id }}
+          path: source-inspection-real-smoke.json
+          retention-days: 30
   operational-smoke:
     if: github.event_name == 'pull_request'
     needs: test
@@ -621,3 +752,95 @@ jobs:
           if [ "$rc" -ne 0 ]; then
             echo "::warning::Neither official restriction source could be parsed; do not claim near-live coverage."
           fi
+
+  postdeploy-source-and-historical-evaluation:
+    needs: deploy
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          ref: aiba-feed-data
+          path: ops-state
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Retrieve newly deployed, metadata-only source review receipt
+        continue-on-error: true
+        run: |
+          curl -fLSs --retry 3 --retry-delay 2 --max-time 35 \
+            https://graupmannj-dev.github.io/I-Ws-Dashboard/source_inspection.json \
+            -o /tmp/cairn-deployed-source-inspection.json
+      - name: Time-fenced replay AFTER GitHub Pages deployed
+        run: |
+          if test -s /tmp/cairn-deployed-source-inspection.json; then
+            extra="--inspection /tmp/cairn-deployed-source-inspection.json"
+          else
+            extra=""
+          fi
+          python scripts/cairn_historical_replay.py \
+            --history ops-state/observations/history/behavioral_registry \
+            --archive ops-state/observations/latest/family_archive.json \
+            --out historical-source-evaluation.json $extra
+          python - <<'PY'
+          import json,os
+          from pathlib import Path
+          r=json.loads(Path('historical-source-evaluation.json').read_text())
+          assert r["status"]=="historical_source_visibility_diagnostic_only"
+          assert r["lookahead_restricted_to_snapshot_asof"] is True
+          assert r["real_event_precision"] is None
+          assert r["real_event_recall"] is None
+          assert r["warning_lead_time_hours"] is None
+          hints=r["case_hint_diagnostic"]
+          controls=r["controlled_source_class_audit"]
+          msg=[
+            "## CAIRN AFTER-DEPLOYMENT historical source review (not prediction validation)",
+            "- Time-fenced original daily source snapshots: **"+str(r["source_snapshots_used"])+"**",
+            "- Actual collection history: **"+r["first_source_snapshot_day"]+" – "+r["last_source_snapshot_day"]+"**",
+            "- Reference dated dossier observations inside source-history coverage: **"+
+                str(r["reference_signals_within_available_history"])+"/"+
+                str(r["reference_curated_dated_signals"])+"**",
+            "- Case-hinted analyst report documents: **"+str(hints["report_count"])+"**, independently matched by literal title/geography without hints: **"+
+                str(hints["title_and_geography_matched_without_prior_hint"])+"**",
+            "- Training exercise source-control rows: **"+
+                str(controls["source_rows_with_literal_training_exercise_titles"])+"**; nominated escalation signposts: **"+
+                str(controls["escalation_title_nominations_in_this_subset"])+"**",
+            "- Latest deployed source-inspection metadata: "+str(r["deployed_source_inspection_diagnostic"]),
+            "- These are source visibility and attribution diagnostics, NOT verified real-world episode classification.",
+            "- Real event precision, recall, false positive rate and warning lead time: **not estimable** without independent outcome labels.",
+          ]
+          with open(os.environ["GITHUB_STEP_SUMMARY"],"a") as f:
+              f.write("\n".join(msg)+"\n")
+          PY
+      - name: Historical original-source text audit against dated GOV.UK reports
+        run: |
+          python scripts/cairn_historical_original_source_eval.py \
+            --seeds data/govuk_source_seed_manifest.json \
+            --limit 12 \
+            --out historical-original-source-audit.json
+          python - <<'PY'
+          import json,os
+          from pathlib import Path
+          x=json.loads(Path("historical-original-source-audit.json").read_text())
+          assert x["schema"]=="cairn.historical-original-documents.v1"
+          assert x["event_occurrence_ground_truth"] is None
+          assert x["incident_geo_precision_against_verified_sites"] is None
+          assert all(not report["reported_site_verified"] for report in x["reports"])
+          with open(os.environ["GITHUB_STEP_SUMMARY"],"a") as f:
+              f.write("\n### Source-text processing on actual dated historical GOV.UK documents\n")
+              f.write(f"- Original government narratives retrieved: **{x['real_original_documents_inspected']}/{x['real_original_documents_requested']}**\n")
+              f.write(f"- Literal named action-localities in available documents: **{x['real_original_documents_with_named_action_locality']}**\n")
+              f.write("- These are source-text/geographic parsing diagnostics, NOT validated incident locations or source-at-time warning performance.\n")
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: cairn-postdeploy-historical-source-audit-${{ github.run_id }}
+          path: |
+            historical-source-evaluation.json
+            historical-original-source-audit.json
+          retention-days: 90
