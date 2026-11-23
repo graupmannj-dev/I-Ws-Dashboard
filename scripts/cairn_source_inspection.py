@@ -44,6 +44,7 @@ MAX_TEXT = 12_000
 MIN_NARRATIVE_CHARS = 180
 DEFAULT_DOCS = 12
 MAX_DOCS = 18
+SOURCE_INSPECTION_DAYS = 14  # independent of 7-day direction-screen window
 USER_AGENT = "CAIRN-Source-Inspection/0.1 (public-document research; limited read-only)"
 BANNED_PATH_SUFFIXES = (".pdf", ".jpg", ".png", ".zip", ".xml", ".rss", ".json", ".csv")
 
@@ -205,7 +206,10 @@ def read_original(url, *, timeout=7):
 
 def _select(config, registry, archive, at, maximum):
     dossier = [{"id": case} for case in config["cases"]]
-    scan = assess(dossier, registry, archive, {}, {}, config, at=at)
+    # Source-text verification needs a longer evidence review horizon than
+    # the 7-day incoming-signal panel; it cannot backdate source availability.
+    inspection_config = {**config, "window_days": SOURCE_INSPECTION_DAYS}
+    scan = assess(dossier, registry, archive, {}, {}, inspection_config, at=at)
     by_case = {}
     for case_id, case in scan["cases"].items():
         seen = set()
@@ -217,7 +221,8 @@ def _select(config, registry, archive, at, maximum):
                     continue
                 seen.add(url)
                 options.append({
-                    "case_id": case_id, "source_url": url,
+                    "case_id": case_id, "source_url": url, "title": x.get("title"),
+                    "source_document_key": x.get("source_document_key"),
                     "source_record_id": x["record_id"],
                     "rule": rule["id"], "first_observed_at": x["first_observed_at"],
                     "source_mode": x["source_mode"],
@@ -226,8 +231,13 @@ def _select(config, registry, archive, at, maximum):
         # current provider landing page or recurrent navigation warning.
         def rank(o):
             url = o["source_url"]
+            host = urllib.parse.urlsplit(url).hostname
+            primary = host in ("www.gov.uk", "www.valitsus.ee", "www.adnoc.ae",
+                               "www.arnnewscentre.ae", "www.nato.int",
+                               "www.defense.gov", "www.state.gov", "travel.state.gov")
             is_document = "/news/" in url or "/world/" in url or "/government/" in url
-            return (0 if is_document else 1, 0 if o["source_mode"] == "analyst" else 1,
+            return (0 if primary else 1, 0 if is_document else 1,
+                    0 if o["source_mode"] == "analyst" else 1,
                     o["source_url"])
         by_case[case_id] = sorted(options, key=rank)
     selected = []
@@ -309,6 +319,7 @@ def inspect(registry, archive, config, *, at=None, maximum=DEFAULT_DOCS, fetch=r
         "schema": SCHEMA, "status": "screened" if selected else "no_eligible_document_urls",
         "generated_at": now.astimezone(dt.timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z"),
         "candidate_documents_considered": scan["source_records_in_window"],
+        "source_inspection_lookback_days": SOURCE_INSPECTION_DAYS,
         "candidate_input_truncated": scan["candidate_input_truncated"],
         "unique_source_documents_attempted": len(selected),
         "retrieval_budget": maximum,
