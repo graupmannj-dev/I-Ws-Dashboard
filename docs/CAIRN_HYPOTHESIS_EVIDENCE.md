@@ -237,3 +237,97 @@ Acceptance: `python -m unittest tests.test_hypothesis_discriminator_engine -v`,
 `scripts/test_hypothesis_auto_browser.js` test. A read-only PR smoke job
 executes this model against the live durable source branch and asserts zero
 approved warnings and provenance-preserving output.
+
+## Original-source text and textual geographic attribution prototype (2026-11-23)
+
+CAIRN now has a separate, bounded **read-only original-document inspection**
+step in the Pages collection job. The source scanner uses
+`scripts/cairn_source_inspection.py`, the original-article URL list nominated
+by the existing discriminator screen, and a hardcoded set of supported
+public source domains. A successful run publishes only source receipts at
+`source_inspection.json` and joins them to the existing
+`hypothesis_discriminator_screen.json` and `hypotheses.json`.
+The actual downloaded article bodies exist only in memory inside the runner.
+No unrestricted internet crawling, link expansion, credentials, paid API,
+binary documents, private network addresses, or off-host redirects are used.
+Failed and blocked retrievals yield explicit source access errors.
+
+The system can inspect a maximum of 12 distinct source documents per
+production build (18 is a hard programmatic maximum), using modest byte/time
+budgets. It prefers source-specific articles over provider home pages.
+GOV.UK government content uses the existing carefully scoped public Content
+API client, with content IDs, exclusion and license checks, and official
+publication time. The other allowlisted public HTML pages are read only,
+without re-publication of original bodies. Inaccessible subscription, JS,
+copyright or blocked pages are not guessed from title snippets.
+
+### What constitutes attribution
+
+- The parser looks for *named places in action-bearing source statements* and
+  retains a short, capped quote excerpt plus a SHA256 hash of the source text
+  and evidence sentence. It never infers an incident site from a publisher's
+  dateline, the reporter's home country, a map theater anchor, or a mentioned
+  country acting as a combatant.
+- If a sentence mentions an action in **Khasab**, the source receipt may
+  nominate the named Omani area. It does not generate a fabricated latitude/
+  longitude or claim an actual incident has been geolocated. A document with
+  multiple place candidates abstains from selecting a unique event site.
+- If an article mentions Russia attacking **Ukraine** while **Poland** comments,
+  the Russia–NATO conflict hypothesis is not given a Polish incident location
+  from those sentences. Geographic attribution is stricter than case mentions.
+- Action and context rule matches are rechecked against the retrieved body;
+  negation/attribution remain unverified source claims. A body that does not
+  reproduce the title's action signpost is flagged accordingly.
+- No amount of original document access proves the occurrence, attribution,
+  or independence of the reported real-world event. Source content is not a
+  ground-truth label. Source-level event confirmations, geographic
+  verifications, warnings and signed hypothesis directions remain **zero**.
+
+Read `dashboard/source_geo_claims.py` and
+`dashboard/hypothesis_source_link.py` for the explicit extraction and
+binding contracts. Unit tests cover misleading datelines, actor-versus-site
+mixups, multiple locations, negation, cross-border unrelated reports, redirect
+blocks, non-document URLs, unavailable original text, and provenance-safe UI
+linkage. Real-world fetch success is tracked separately from correctness.
+
+### Historical test methodology (run after deployment)
+
+The real replay uses dated, persisted
+`aiba-feed-data/observations/history/behavioral_registry` source snapshots,
+one actual latest observation per UTC day. It feeds the **actual source
+registry visible at t** into the discriminator engine and excludes even
+records within that registry with `first_observed_at > t`. It does **not**
+apply today's edited/final archive to past snapshots. The actual latest
+archive is used *only* to diagnose coverage of analyst-labeled case hints,
+and the source document inspection obtained today is never backdated.
+
+The curated dossier dated items are historical **source observations**,
+not independently labeled war-onset or interstate escalation outcomes.
+Their collection window is counted explicitly so older episodes that
+precede the first archived snapshot are not silently counted as misses or
+negatives. A scheduled-exercise source subset is a narrow mechanism control:
+misnominated escalation signposts are exposed, but it is not a labeled
+sample of truly peaceful days. If many cases have no historical collecting
+coverage, accuracy cannot be estimated.
+
+The complete `historical-source-evaluation.json` is uploaded as a
+GitHub Actions artifact on PR validation and from a job dependent on the
+production deployment. The postdeploy job writes a concise summary into
+the workflow run. Real event-level precision, recall, false-positive rate,
+lead time, calibration and claimed predictive skill all remain **null** in
+the absence of prospective or genuinely held-out, independent incident
+labels. This is an audit of what the system collected and surfaced, **not**
+a retrospective proof of its warning effectiveness.
+
+Commands:
+```bash
+python -m unittest tests.test_source_geo_verification tests.test_cairn_historical_replay -v
+python scripts/cairn_source_inspection.py \
+  --registry ops-state/observations/latest/behavioral_registry.json \
+  --archive ops-state/observations/latest/family_archive.json \
+  --output /tmp/cairn-source-inspection.json
+python scripts/cairn_historical_replay.py \
+  --history ops-state/observations/history/behavioral_registry \
+  --archive ops-state/observations/latest/family_archive.json \
+  --out /tmp/cairn-historical-source-audit.json
+```
