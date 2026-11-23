@@ -496,6 +496,40 @@ jobs:
           name: cairn-history-source-asof-${{ github.run_id }}
           path: historical-source-evaluation.json
           retention-days: 30
+  historical-original-source-probe:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Retrieve real GOV.UK historical original document narratives (no outcomes)
+        run: |
+          python scripts/cairn_historical_original_source_eval.py \
+            --seeds data/govuk_source_seed_manifest.json \
+            --limit 9 --out historical-original-source-audit.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          x=json.loads(Path("historical-original-source-audit.json").read_text())
+          assert x["schema"]=="cairn.historical-original-documents.v1"
+          assert x["real_original_documents_requested"]==9
+          assert x["event_occurrence_ground_truth"] is None
+          assert x["warning_detection_recall"] is None
+          assert all(not r["reported_site_verified"] for r in x["reports"])
+          print("Real historical source-text availability:",x["real_original_documents_inspected"],
+                "/",x["real_original_documents_requested"],
+                "; named localities:",x["real_original_documents_with_named_action_locality"])
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: cairn-historical-original-source-${{ github.run_id }}
+          path: historical-original-source-audit.json
+          retention-days: 30
   real-source-inspection-prototype:
     if: github.event_name == 'pull_request'
     runs-on: ubuntu-latest
@@ -783,8 +817,30 @@ jobs:
           with open(os.environ["GITHUB_STEP_SUMMARY"],"a") as f:
               f.write("\n".join(msg)+"\n")
           PY
+      - name: Historical original-source text audit against dated GOV.UK reports
+        run: |
+          python scripts/cairn_historical_original_source_eval.py \
+            --seeds data/govuk_source_seed_manifest.json \
+            --limit 12 \
+            --out historical-original-source-audit.json
+          python - <<'PY'
+          import json,os
+          from pathlib import Path
+          x=json.loads(Path("historical-original-source-audit.json").read_text())
+          assert x["schema"]=="cairn.historical-original-documents.v1"
+          assert x["event_occurrence_ground_truth"] is None
+          assert x["incident_geo_precision_against_verified_sites"] is None
+          assert all(not report["reported_site_verified"] for report in x["reports"])
+          with open(os.environ["GITHUB_STEP_SUMMARY"],"a") as f:
+              f.write("\n### Source-text processing on actual dated historical GOV.UK documents\n")
+              f.write(f"- Original government narratives retrieved: **{x['real_original_documents_inspected']}/{x['real_original_documents_requested']}**\n")
+              f.write(f"- Literal named action-localities in available documents: **{x['real_original_documents_with_named_action_locality']}**\n")
+              f.write("- These are source-text/geographic parsing diagnostics, NOT validated incident locations or source-at-time warning performance.\n")
+          PY
       - uses: actions/upload-artifact@v4
         with:
           name: cairn-postdeploy-historical-source-audit-${{ github.run_id }}
-          path: historical-source-evaluation.json
+          path: |
+            historical-source-evaluation.json
+            historical-original-source-audit.json
           retention-days: 90
