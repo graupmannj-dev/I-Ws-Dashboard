@@ -35,6 +35,21 @@ def output():
            {"hypothesis_index":1,"evidence_key":"family:air",
            "direction":"possibly_consistent","rationale":"Airspace restrictions may accompany scheduled exercises."}]}
 class SemanticReviewTests(unittest.TestCase):
+    def test_all_cases_evaluated_each_standard_cycle_without_rotation(self):
+        data=index()
+        second=case()
+        second["id"]="different-case"
+        data["hypotheses"].append(second)
+        visited=[]
+        def runner(packet,key,model):
+            visited.append(packet["case_id"])
+            return validate(output(),packet)
+        result=evaluate(data,api_key="synthetic",model="fixture",
+            clock=NOW,max_cases=40,runner=runner)
+        self.assertEqual(set(visited),{"taiwan","different-case"})
+        self.assertEqual(result["cases_not_evaluated"],0)
+        self.assertEqual(result["cases"]["different-case"]["status"],"provisional_complete")
+
     def test_no_key_no_false_inference_and_no_signed_changes(self):
         data=index()
         result=evaluate(data,clock=NOW)
