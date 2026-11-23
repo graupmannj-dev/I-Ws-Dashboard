@@ -65,6 +65,7 @@ const assert=require("node:assert/strict");
     await page.goto("http://127.0.0.1:8765/hypotheses.html",{waitUntil:"domcontentloaded"});
     await page.waitForFunction(()=>document.querySelectorAll(".case-tile").length>0);
     assert.match(await page.locator("#snapshotStatus").innerText(),/Automated: screened/);
+    await page.locator(".technical-details > summary").click();
     assert.match(await page.locator("#caseDetail").innerText(),/Automated incoming-evidence screen/);
     assert.match(await page.locator("#caseDetail").innerText(),/Machine preliminary/);
     assert.match(await page.locator("#caseDetail").innerText(),/Candidate observable signpost/);
@@ -84,7 +85,7 @@ const assert=require("node:assert/strict");
     assert.match(await page.locator("#caseDetail").innerText(),/Rolling case-linked evidence history/);
     assert.match(await page.locator("#caseDetail").innerText(),/Dated historical source report/);
     assert.match(await page.locator("#caseDetail").innerText(),/NOT an analyst-approved direction/);
-    assert.match(await page.locator("#caseDetail").innerText(),/No reviewer-approved signed evidence/);
+    assert.match(await page.locator("#caseDetail").innerText(),/Awaiting analyst-reviewed direction/);
     assert.equal(await page.locator(".auto-review .auto-candidates a").first().getAttribute("href"),
       "https://example.org/source");
     await page.locator("#caseFilter").selectOption("discriminators");
