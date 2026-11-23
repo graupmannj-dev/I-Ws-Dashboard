@@ -37,21 +37,52 @@ def _stamp(row):
 
 
 def snapshots(directory, *, until=None):
-    """Use the latest actually captured source-health snapshot in each UTC day."""
-    byday = {}
-    valid = 0
+    """Reconstruct as-of snapshots from actual timestamped *incremental* files.
+
+    The durable history stores new_records (not complete records). This replay
+    rolls them forward in original capture order, omits initial baseline
+    records when not individually represented and never inserts modern archive
+    contents retroactively. Health is from each real source receipt.
+    """
+    original = []
     for path in sorted(Path(directory).glob("*.json")):
         obj = _read(path)
         when = _stamp(obj)
         if (not when or obj.get("schema") != "aiba.behavioral-observations.v1"
-                or not isinstance(obj.get("records"), list)
                 or (until and when > until)):
             continue
-        valid += 1
+        entries = obj.get("new_records")
+        if not isinstance(entries, list) and not isinstance(obj.get("records"), list):
+            continue
+        original.append((when, obj, path.name))
+    original.sort(key=lambda item: (item[0], item[2]))
+    known = {}
+    byday = {}
+    for when, obj, name in original:
+        # Support direct full snapshots for local test fixtures only; actual
+        # production historical receipts have the new_records array.
+        if isinstance(obj.get("new_records"), list):
+            for row in obj["new_records"]:
+                if not isinstance(row, dict):
+                    continue
+                first = _parse_time(row.get("first_observed_at"))
+                ident = row.get("id")
+                if not ident or not first or first > when:
+                    continue
+                if row.get("registry_novelty") == "initial_provider_baseline":
+                    continue
+                known.setdefault(ident, row)
+        elif isinstance(obj.get("records"), list):
+            known = {row["id"]: row for row in obj["records"]
+                     if isinstance(row, dict) and row.get("id") and
+                     (first := _parse_time(row.get("first_observed_at"))) and
+                     first <= when}
         day = when.date().isoformat()
-        if day not in byday or when > byday[day][0]:
-            byday[day] = (when, obj, path.name)
-    return [byday[day] for day in sorted(byday)], valid
+        output = {**obj, "records": list(known.values()),
+                  "asof_reconstructed_from_new_records": True,
+                  "initial_registry_baseline_not_reconstructed": True}
+        byday[day] = (when, output, name)
+    return [byday[day] for day in sorted(byday)], len(original)
 
 
 def _case_records_at(snapshot, case_id):
@@ -191,6 +222,8 @@ def replay(source_snapshots, dossier, config, *, historical_archive=None,
         "missing_days": (last - first).days + 1 - len(windows),
         "real_outcome_gold_standard": False,
         "retrospective_reconstruction": True,
+        "reconstructed_from_incremental_first_seen_records": True,
+        "initial_registry_baseline_coverage": "not_reconstructed",
         "lookahead_restricted_to_snapshot_asof": True,
         "real_event_precision": None, "real_event_recall": None,
         "false_positive_rate_on_true_non_events": None,
