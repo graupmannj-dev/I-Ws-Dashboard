@@ -15,7 +15,7 @@ const order = {supports:0,contradicts:1,context:2,not_assessed:3};
 
 function caseLabel(c) {
   const b=c.balance||{};
-  return b.direction==="not_assessed" ? "No reviewed directional evidence" :
+  return b.direction==="not_assessed" ? "No reviewed directional evidence (analyst-approved)" :
     b.direction==="leans_support" ? "Review balance: leans supporting" :
     b.direction==="leans_contradict" ? "Review balance: leans contradicting" :
     "Review balance: mixed";
@@ -51,6 +51,27 @@ function gdeltSection(c){
     '<div class="gdelt-days">'+daily+'</div>'+
     '<p class="muted">This is a directional change in <strong>GDELT media coding</strong>, NOT an analyst-approved direction of the military hypothesis. Coverage, actor coding, duplication, news selection and non-independent reports limit inference. Coded records are not distinct observed events. '+
       (u?'<a href="'+escapeHtml(u)+'" target="_blank" rel="noopener noreferrer">GDELT event archive</a>.':'')+'</p></section>';
+}
+
+function evidenceHistory(c){
+  const a=c.automated_screen||{}, sources=Array.isArray(a.historical_sources)?a.historical_sources:[];
+  const n=a.historical_case_roots||0;
+  const rendered=sources.map(r=>{
+    const u=safeUrl(r.source_url), name=escapeHtml(r.title||"Source record");
+    return '<li><span class="auto-meta">'+escapeHtml(machineLabels[r.preliminary_direction]||"Requires verification")+
+      ' · '+escapeHtml(r.provenance||"Unknown provenance")+'</span>'+
+      (u?'<a href="'+escapeHtml(u)+'" target="_blank" rel="noopener noreferrer">'+name+'</a>':name)+
+      '<small>'+escapeHtml(r.source_mode||"Unclassified source")+' · first collected '+
+      escapeHtml(r.first_observed_at||"unknown")+'</small>'+
+      '<p>'+escapeHtml(r.rationale||"No source-level validation")+'</p></li>';
+  }).join("");
+  return '<section class="auto-review"><h3>Rolling case-linked evidence history <span class="pill context">Seven-day source archive</span></h3>'+
+    '<p class="muted">'+escapeHtml(n)+' distinct case-associated information roots in the latest archived seven days'+
+    ' · '+escapeHtml(a.history_window_hours||168)+'-hour window. Association does not establish a real event or independent corroboration.</p>'+
+    (sources.length?'<ol class="auto-candidates">'+rendered+'</ol>':
+      '<p class="muted">No source-linked observations matched this hypothesis in the retained archive. This does not mean no relevant real-world observations exist.</p>')+
+    (a.historical_sources_truncated?'<p class="muted">More case-linked records exist than shown; this list is capped.</p>':'')+
+    '<p class="muted">Public analyst-intake records are distinguishable from collector-verified observations and are not assigned supporting direction without reading the original source.</p></section>';
 }
 function autoSection(c){
   const a=c.automated_screen||{};
@@ -157,7 +178,7 @@ function showCase(id){
   host.innerHTML='<p class="eyebrow">SOURCE-DATED HYPOTHESIS · '+escapeHtml(c.dossier_asof||"DATE UNKNOWN")+'</p>'+
     '<h2>'+escapeHtml(c.title||c.id)+'</h2>'+
     '<p class="scenario">'+escapeHtml(c.hypothesis||"Hypothesis unspecified")+'</p>'+
-    '<p>'+escapeHtml(c.overview||"No analysis on file")+'</p>'+gdeltSection(c)+autoSection(c)+
+    '<p>'+escapeHtml(c.overview||"No analysis on file")+'</p>'+gdeltSection(c)+autoSection(c)+evidenceHistory(c)+
     '<section class="balance"><div class="balance-title"><h3>Direction of reviewed evidence</h3>'+
       pill(caseLabel(c),assessed?(score>0.2?"supports":score< -0.2?"contradicts":"context"):"not_assessed")+
       '</div><div class="balance-track" role="img" aria-label="'+
