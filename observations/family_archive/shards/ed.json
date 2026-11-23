@@ -316,6 +316,53 @@
         }
       }
     },
+    "edd9261b2051ee7057fe5f2abb2a328a0ce2fc554f15a0bedb0e3ea9f2f788af": {
+      "information_root": "cbp_wait:cbp_wait:070401:2026-11-22:20:44:34",
+      "members": {
+        "beh:2af553234faf36aa3e3dae7c4479": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-23T01:51:40+00:00",
+          "geography_key": "us-border-port:070401",
+          "geography_label": "Massena",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:2af553234faf36aa3e3dae7c4479",
+          "information_root": "cbp_wait:cbp_wait:070401:2026-11-22:20:44:34",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "no delay",
+            "lanes_open": 1,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "At 10:00 pm EST",
+            "reported_local_date": "11/22/2026",
+            "reported_local_time": "20:44:34",
+            "source_declared_border": "Canadian Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 0
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Massena"
+        }
+      }
+    },
     "ede335a40efbc0ecd6255eaf6ebcd9d8cdde387a3eed174bf07df514c6722ce8": {
       "information_root": "niord:d8f7a59c-bda3-4691-aa45-338949965a54:0:2:0",
       "members": {
@@ -343,6 +390,92 @@
           "source_updated_at": "2026-11-20T13:21:55Z",
           "source_url": "https://niord.dma.dk/#/message/d8f7a59c-bda3-4691-aa45-338949965a54",
           "title": "Denmark. The North Sea. EK R 33 Vejers. Firing exercises. Warning."
+        }
+      }
+    },
+    "edf01bfa6267bdf45e53fae51afcf1851a6de99f6cef291005c08017521ba2fe": {
+      "information_root": "bmkg_nowcast:bmkg_nowcast:cfd14f1067ab1201df308d0211ce",
+      "members": {
+        "beh:b0251ac2a7744f11a0b41dc151fb": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "bmkg_nowcast",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-22T22:30:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:b0251ac2a7744f11a0b41dc151fb",
+          "information_root": "bmkg_nowcast:bmkg_nowcast:cfd14f1067ab1201df308d0211ce",
+          "origin": "behavioral_registry",
+          "provider": "bmkg_nowcast",
+          "published_at": "2026-11-22T22:30:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Indonesia BMKG",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Indonesia BMKG active provincial nowcast RSS, source-reported only; not global",
+          "source_updated_at": null,
+          "source_url": "https://www.bmkg.go.id/alerts/nowcast/en/CKG20261122011_alert.xml",
+          "title": "Thunderstorm This Morning in Kalimantan Tengah"
+        }
+      }
+    },
+    "edfda8d62fdf8ecfeca2aafa84860d0dfa8298d574bedf6a6fb2620c1cd6eb85": {
+      "information_root": "ons_br:ons_br:N:20261122T030000Z",
+      "members": {
+        "beh:f77439ba674a19586ccef4902cef": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "verified_grid_load_not_outage_or_intent",
+          "collection_mode": "ons_br",
+          "direct_measurement": true,
+          "event_at": "2026-11-22T03:00:00Z",
+          "first_observed_at": "2026-11-23T01:51:40+00:00",
+          "geography_key": "br-ons-loadarea:N",
+          "geography_label": "North",
+          "geography_precision": "regional_grid_not_incident_site",
+          "id": "beh:f77439ba674a19586ccef4902cef",
+          "information_root": "ons_br:ons_br:N:20261122T030000Z",
+          "origin": "behavioral_registry",
+          "provider": "ons_br",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "verified_national_grid_load_measurement",
+          "source_family": "grid_load",
+          "source_kind": "verified_regional_electricity_load_context_not_outage",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "collected_history_day": "2026-11-21",
+            "historical_verified_not_live": true,
+            "load_area_code": "N",
+            "load_area_name": "North",
+            "name": "verified_half_hour_global_load",
+            "not_outage_or_attribution": true,
+            "sample_interval_minutes": 30,
+            "sampled_rows": 48,
+            "source_field": "val_cargaglobal",
+            "source_utc_field": "din_referenciautc",
+            "unit": "MWmed",
+            "value": 9775.436
+          },
+          "source_scope": "Brazilian national system operator ONS verified half-hour load, four macroregions, previous two-day sample; no local facilities/outage attribution",
+          "source_updated_at": null,
+          "source_url": "https://dados.ons.org.br/dataset/carga-energia-verificada",
+          "title": "Brazil ONS North verified half-hourly system load"
         }
       }
     }

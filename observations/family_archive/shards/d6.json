@@ -267,6 +267,44 @@
         }
       }
     },
+    "d68584c830e5fe4b96013a0021074a862837a11871de019b9a3edac6244af072": {
+      "information_root": "usgs:us6000ucv2",
+      "members": {
+        "beh:bf83416631b17adf12110d7c5a62": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "usgs",
+          "direct_measurement": true,
+          "event_at": "2026-11-22T23:50:44Z",
+          "first_observed_at": "2026-11-22T23:50:44+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "source_supplied_point_only",
+          "id": "beh:bf83416631b17adf12110d7c5a62",
+          "information_root": "usgs:us6000ucv2",
+          "origin": "behavioral_registry",
+          "provider": "usgs",
+          "published_at": "2026-11-23T00:43:50Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "measured_earthquake_context",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "name": "earthquake_magnitude",
+            "unit": "reported_magnitude",
+            "value": 4.7
+          },
+          "source_scope": "USGS M4.5+ earthquakes worldwide, rolling past day; source thresholds apply",
+          "source_updated_at": null,
+          "source_url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000ucv2",
+          "title": "M 4.7 - 226 km NW of Tobelo, Indonesia"
+        }
+      }
+    },
     "d6906786c1029f9dfa0da94d3fc2255c8e9695dd41fecb4663c3126bbc59d492": {
       "information_root": "sg_mpa:sg_mpa:2026-04:container",
       "members": {
@@ -385,6 +423,50 @@
           "source_updated_at": null,
           "source_url": "https://ja.wikipedia.org/wiki/Special:RecentChanges",
           "title": "Wikipedia ja public article-edit activity (sampled)"
+        }
+      }
+    },
+    "d69acde9c127d2017b9ebc29c918d696a73a829ffa23e3208618d4ac87748300": {
+      "information_root": "ripe:measurement:1001:20261123T01",
+      "members": {
+        "beh:9dc13d276e0586590c74405cf7b8": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "aggregate_ping_no_country_or_threat_attribution",
+          "collection_mode": "ripe",
+          "direct_measurement": true,
+          "event_at": null,
+          "first_observed_at": "2026-11-23T01:51:40+00:00",
+          "geography_key": "ripe-msm:1001",
+          "geography_label": "K-root public ping aggregate",
+          "geography_precision": "not_country_or_incident_location",
+          "id": "beh:9dc13d276e0586590c74405cf7b8",
+          "information_root": "ripe:measurement:1001:20261123T01",
+          "origin": "behavioral_registry",
+          "provider": "ripe",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "network_aggregate_monitoring",
+          "source_family": "internet_reachability",
+          "source_kind": "aggregate_public_network_ping",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "cohort_comparable_to_prior_snapshots": false,
+            "failed_or_invalid_rtt_count": 389,
+            "individual_probe_records_published": false,
+            "measurement_id": 1001,
+            "name": "sample_median_ping_rtt",
+            "sampled_probe_count": 13425,
+            "unit": "ms",
+            "valid_rtt_count": 13036,
+            "value": 19.005
+          },
+          "source_scope": "RIPE Atlas built-in K-root ping #1001, global public-probe aggregate; not country coverage",
+          "source_updated_at": null,
+          "source_url": "https://atlas.ripe.net/measurements/1001/",
+          "title": "RIPE Atlas K-root public probe aggregate (13036 usable measurements)"
         }
       }
     },

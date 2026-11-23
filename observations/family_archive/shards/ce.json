@@ -60,6 +60,81 @@
         }
       }
     },
+    "ce4c979202cb7fad6ca3792725c1cdeda5f4fdac3e4a5081c15e83a4d551d231": {
+      "information_root": "wiki_edits:wiki_edits:zh:20261123T01",
+      "members": {
+        "beh:d0228e16e7f5b6e58b532f3b581b": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "wiki_edits",
+          "direct_measurement": false,
+          "event_at": "2026-11-23T01:48:48Z",
+          "first_observed_at": "2026-11-23T01:48:48+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:d0228e16e7f5b6e58b532f3b581b",
+          "information_root": "wiki_edits:wiki_edits:zh:20261123T01",
+          "origin": "behavioral_registry",
+          "provider": "wiki_edits",
+          "published_at": "2026-11-23T01:48:48Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "public_encyclopedia_edit_aggregate",
+          "source_family": "public_attention",
+          "source_kind": "bounded_public_edit_count_not_event_verification",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "distinct_articles_in_sample": 406,
+            "maximum_returned_edits": 500,
+            "most_edited_article_counts": [
+              {
+                "count": 18,
+                "title": "2026年緬因州聯邦參議員選舉"
+              },
+              {
+                "count": 10,
+                "title": "韓義理"
+              },
+              {
+                "count": 8,
+                "title": "施禮榮"
+              },
+              {
+                "count": 6,
+                "title": "2026年王者荣耀洲际争霸赛"
+              },
+              {
+                "count": 5,
+                "title": "2026年国际足联U-17世界杯"
+              },
+              {
+                "count": 4,
+                "title": "和合圖"
+              },
+              {
+                "count": 4,
+                "title": "蘇珊·柯林斯 (政治人物)"
+              },
+              {
+                "count": 4,
+                "title": "高冀惠生"
+              }
+            ],
+            "name": "sampled_edits_last_three_hours",
+            "sample_cap_reached": true,
+            "unit": "edits",
+            "value": 500
+          },
+          "source_scope": "Wikipedia main-namespace edit-count sample, 14 global language editions, three-hour window capped at 500 per wiki; not geographic location",
+          "source_updated_at": null,
+          "source_url": "https://zh.wikipedia.org/wiki/Special:RecentChanges",
+          "title": "Wikipedia zh public article-edit activity (sampled)"
+        }
+      }
+    },
     "ceaee2ccb5bd7c666c8b7dccd7cf7bd2930079758aeb8a0eaba079845f41cddd": {
       "information_root": "niord:a4425666-f4fc-489b-8dcd-a4585efb516b:3:0:1",
       "members": {
@@ -164,6 +239,45 @@
           "source_updated_at": null,
           "source_url": "https://bwt.cbp.gov/api/waittimes",
           "title": "CBP estimated commercial border wait — Brownsville / B&M"
+        }
+      }
+    },
+    "cedbcb8bb5cd9d9e1455682c76ddbd350a9a7fd7845ca1c561796ae9312f8158": {
+      "information_root": "bmkg_nowcast:bmkg_nowcast:d803fb539db08255ea8af8f63760",
+      "members": {
+        "beh:4260634c207c6cc0485bb78eec88": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "bmkg_nowcast",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-23T01:00:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:4260634c207c6cc0485bb78eec88",
+          "information_root": "bmkg_nowcast:bmkg_nowcast:d803fb539db08255ea8af8f63760",
+          "origin": "behavioral_registry",
+          "provider": "bmkg_nowcast",
+          "published_at": "2026-11-23T01:00:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Indonesia BMKG",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Indonesia BMKG active provincial nowcast RSS, source-reported only; not global",
+          "source_updated_at": null,
+          "source_url": "https://www.bmkg.go.id/alerts/nowcast/en/CJH20261123001_alert.xml",
+          "title": "Thunderstorm This Morning in Jawa Tengah"
         }
       }
     },

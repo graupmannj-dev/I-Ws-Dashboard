@@ -298,6 +298,99 @@
         }
       }
     },
+    "fc94657609b8ef8abe75796dbb7bdefa0785d14d5b6f0dc8053d37aa118bb88d": {
+      "information_root": "ris_bgp:ris_bgp:AS4134:20261122T21",
+      "members": {
+        "beh:21cb493dd1cf951879ff2ccb0a3e": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "public_routing_updates_not_country_outage",
+          "collection_mode": "ris_bgp",
+          "direct_measurement": true,
+          "event_at": null,
+          "first_observed_at": "2026-11-23T01:51:40+00:00",
+          "geography_key": "asn:4134",
+          "geography_label": "AS4134",
+          "geography_precision": "routing_target_not_country_incident",
+          "id": "beh:21cb493dd1cf951879ff2ccb0a3e",
+          "information_root": "ris_bgp:ris_bgp:AS4134:20261122T21",
+          "origin": "behavioral_registry",
+          "provider": "ris_bgp",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "routing_collector_sampled_asn_updates",
+          "source_family": "internet_routing",
+          "source_kind": "sampled_asn_bgp_route_updates_not_network_outage",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "collector_peers_are_not_geo_deduplicated": true,
+            "country_impact_not_established": true,
+            "name": "sampled_6h_bgp_announcements",
+            "registered_network_country_hint": "CN",
+            "returned_sampling_buckets": 6,
+            "source_window_end": "2026-11-22T21:00:00Z",
+            "target_asn": "AS4134",
+            "unit": "announcements",
+            "value": 28265,
+            "window_hours_requested": 6,
+            "withdrawals_unavailable_for_asn": true
+          },
+          "source_scope": "RIPE RIS public route-announcement update samples on six non-Western operated networks; ASNs not country-wide outage detection",
+          "source_updated_at": null,
+          "source_url": "https://stat.ripe.net/data/bgp-update-activity/data.json?resource=AS4134&num_hours=6&max_samples=24&hide_empty_samples=false",
+          "title": "RIPE RIS sampled BGP announcements: AS4134"
+        }
+      }
+    },
+    "fc9a3506f776d94c0c597fb21fd92894de87de9edf82fa26005bf70295d15b09": {
+      "information_root": "cbp_wait:cbp_wait:090102:2026-11-22:20:44:34",
+      "members": {
+        "beh:9f77debac5048e9ba11ed447fdc7": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-23T01:51:40+00:00",
+          "geography_key": "us-border-port:090102",
+          "geography_label": "Buffalo/Niagara Falls",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:9f77debac5048e9ba11ed447fdc7",
+          "information_root": "cbp_wait:cbp_wait:090102:2026-11-22:20:44:34",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "N/A",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/22/2026",
+            "reported_local_time": "20:44:34",
+            "source_declared_border": "Canadian Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Buffalo/Niagara Falls / Rainbow Bridge"
+        }
+      }
+    },
     "fc9e7ec5afded16fe0c4370ee49d7e2ca357a7d336604210137051fa904fdbbf": {
       "information_root": "wiki_edits:wiki_edits:zh:20261122T11",
       "members": {
@@ -400,6 +493,39 @@
           "source_updated_at": null,
           "source_url": "https://ioda.inetintel.cc.gatech.edu/",
           "title": "IODA detected connectivity anomaly: country TD"
+        }
+      }
+    },
+    "fcc6b77bb73d0b0c81b0afb40f5211c4f5d7270936d8e89d3919ace9e6b008b7": {
+      "information_root": "niord:977d59f3-ce27-47bb-8aec-42ea6aef5ec3:0:1:0",
+      "members": {
+        "beh:88be465cf54c2b9bda03aa7e6c5b": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "official_scheduled_restriction_not_military_preparation",
+          "collection_mode": "live_maritime",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-23T00:27:52+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "notice_geography_unavailable",
+          "id": "beh:88be465cf54c2b9bda03aa7e6c5b",
+          "information_root": "niord:977d59f3-ce27-47bb-8aec-42ea6aef5ec3:0:1:0",
+          "origin": "behavioral_registry",
+          "provider": "niord",
+          "published_at": null,
+          "restriction_status": "scheduled_not_yet_effective",
+          "scheduled_valid_from": "2026-11-24T08:00:00Z",
+          "scheduled_valid_until": "2026-11-24T21:00:00Z",
+          "source_dependency_class": null,
+          "source_family": "maritime_restriction",
+          "source_kind": "official_restriction_notice",
+          "source_measurement": null,
+          "source_scope": null,
+          "source_updated_at": "2026-11-23T00:21:53Z",
+          "source_url": "https://niord.dma.dk/#/message/977d59f3-ce27-47bb-8aec-42ea6aef5ec3",
+          "title": "Denmark. Kattegat. EK R 18 Jaegerspris. Firing exercises. Warning."
         }
       }
     },

@@ -1,5 +1,44 @@
 {
   "roots": {
+    "f60cc09c08fdc57e7f7a729aec01bc7f861714fe68b924373ebfd596ff18f861": {
+      "information_root": "bmkg_nowcast:bmkg_nowcast:7f175e9d104333d7e94a7205436f",
+      "members": {
+        "beh:cd226988535c60c69a7475413ff4": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "bmkg_nowcast",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-22T22:30:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:cd226988535c60c69a7475413ff4",
+          "information_root": "bmkg_nowcast:bmkg_nowcast:7f175e9d104333d7e94a7205436f",
+          "origin": "behavioral_registry",
+          "provider": "bmkg_nowcast",
+          "published_at": "2026-11-22T22:30:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Indonesia BMKG",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Indonesia BMKG active provincial nowcast RSS, source-reported only; not global",
+          "source_updated_at": null,
+          "source_url": "https://www.bmkg.go.id/alerts/nowcast/en/CJT20261122010_alert.xml",
+          "title": "Thunderstorm This Morning in Jawa Timur"
+        }
+      }
+    },
     "f61b1d3daa2107b91da220bc01eaac71f0b1338ec8c8915bba67553c47426e19": {
       "information_root": "ioda:1121a973d2662fd6ee0c64b7",
       "members": {

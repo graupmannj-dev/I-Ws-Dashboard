@@ -442,6 +442,128 @@
         }
       }
     },
+    "d5887f7a5477baa33a65067e48c312b60b927e0fcfbf4913b7591ee19db60abc": {
+      "information_root": "cbp_wait:cbp_wait:300403:2026-11-22:17:44:34",
+      "members": {
+        "beh:d3189aea20ebfe35f4e80a73947a": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-23T01:51:40+00:00",
+          "geography_key": "us-border-port:300403",
+          "geography_label": "Blaine",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:d3189aea20ebfe35f4e80a73947a",
+          "information_root": "cbp_wait:cbp_wait:300403:2026-11-22:17:44:34",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Update Pending",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/22/2026",
+            "reported_local_time": "17:44:34",
+            "source_declared_border": "Canadian Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Blaine / Point Roberts"
+        }
+      }
+    },
+    "d5b5e3627760f196fd335e55f777ea7058aef447041a868cfe599f4ed8f69ecd": {
+      "information_root": "wiki_edits:wiki_edits:ja:20261123T01",
+      "members": {
+        "beh:3b57b9e150269f669be42e8e90e4": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "wiki_edits",
+          "direct_measurement": false,
+          "event_at": "2026-11-23T01:48:55Z",
+          "first_observed_at": "2026-11-23T01:48:55+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:3b57b9e150269f669be42e8e90e4",
+          "information_root": "wiki_edits:wiki_edits:ja:20261123T01",
+          "origin": "behavioral_registry",
+          "provider": "wiki_edits",
+          "published_at": "2026-11-23T01:48:55Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "public_encyclopedia_edit_aggregate",
+          "source_family": "public_attention",
+          "source_kind": "bounded_public_edit_count_not_event_verification",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "distinct_articles_in_sample": 417,
+            "maximum_returned_edits": 500,
+            "most_edited_article_counts": [
+              {
+                "count": 13,
+                "title": "壬生町"
+              },
+              {
+                "count": 6,
+                "title": "プリパン・サプサンサワット"
+              },
+              {
+                "count": 5,
+                "title": "本間物産"
+              },
+              {
+                "count": 4,
+                "title": "ガンダム オペレーショントロイ"
+              },
+              {
+                "count": 4,
+                "title": "タイワンマス"
+              },
+              {
+                "count": 4,
+                "title": "メンフクロウ"
+              },
+              {
+                "count": 3,
+                "title": "2027年のオリックス・バファローズ"
+              },
+              {
+                "count": 3,
+                "title": "So' Fly"
+              }
+            ],
+            "name": "sampled_edits_last_three_hours",
+            "sample_cap_reached": true,
+            "unit": "edits",
+            "value": 500
+          },
+          "source_scope": "Wikipedia main-namespace edit-count sample, 14 global language editions, three-hour window capped at 500 per wiki; not geographic location",
+          "source_updated_at": null,
+          "source_url": "https://ja.wikipedia.org/wiki/Special:RecentChanges",
+          "title": "Wikipedia ja public article-edit activity (sampled)"
+        }
+      }
+    },
     "d5bc506124941d8310e9c072ca156c46a1357645e8ee59c180960b07b2f9dd4f": {
       "information_root": "bmkg_nowcast:bmkg_nowcast:e23c92f73a0eb3991c7c2df3c0c4",
       "members": {

@@ -126,6 +126,39 @@
         }
       }
     },
+    "ff3cea195219c7933fdefdec333864818cb49de0f258c3029aab05bb6224a81a": {
+      "information_root": "niord:977d59f3-ce27-47bb-8aec-42ea6aef5ec3:0:3:0",
+      "members": {
+        "beh:233475a7629ff65ec55b48e535ab": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "official_scheduled_restriction_not_military_preparation",
+          "collection_mode": "live_maritime",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-23T00:27:52+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "notice_geography_unavailable",
+          "id": "beh:233475a7629ff65ec55b48e535ab",
+          "information_root": "niord:977d59f3-ce27-47bb-8aec-42ea6aef5ec3:0:3:0",
+          "origin": "behavioral_registry",
+          "provider": "niord",
+          "published_at": null,
+          "restriction_status": "scheduled_not_yet_effective",
+          "scheduled_valid_from": "2026-11-26T08:00:00Z",
+          "scheduled_valid_until": "2026-11-26T21:00:00Z",
+          "source_dependency_class": null,
+          "source_family": "maritime_restriction",
+          "source_kind": "official_restriction_notice",
+          "source_measurement": null,
+          "source_scope": null,
+          "source_updated_at": "2026-11-23T00:21:53Z",
+          "source_url": "https://niord.dma.dk/#/message/977d59f3-ce27-47bb-8aec-42ea6aef5ec3",
+          "title": "Denmark. Kattegat. EK R 18 Jaegerspris. Firing exercises. Warning."
+        }
+      }
+    },
     "ff468ea3e5e56a06c1d912e4f2cb95067272dfdc5fa3323e09f9fae4bf9e5eaf": {
       "information_root": "bmkg_nowcast:bmkg_nowcast:5f738839cbe552cf2e6618889556",
       "members": {
@@ -316,6 +349,52 @@
           "source_updated_at": null,
           "source_url": "https://ioda.inetintel.cc.gatech.edu/",
           "title": "IODA detected connectivity anomaly: country NL"
+        }
+      }
+    },
+    "ffc05ffe7f98b8962fc34f2a7c811534f34c2491917e0c5456215ddecff42552": {
+      "information_root": "ris_bgp:ris_bgp:AS4766:20261122T21",
+      "members": {
+        "beh:ebf61157b005c8725671e1b4ce5f": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "public_routing_updates_not_country_outage",
+          "collection_mode": "ris_bgp",
+          "direct_measurement": true,
+          "event_at": null,
+          "first_observed_at": "2026-11-23T01:51:40+00:00",
+          "geography_key": "asn:4766",
+          "geography_label": "AS4766",
+          "geography_precision": "routing_target_not_country_incident",
+          "id": "beh:ebf61157b005c8725671e1b4ce5f",
+          "information_root": "ris_bgp:ris_bgp:AS4766:20261122T21",
+          "origin": "behavioral_registry",
+          "provider": "ris_bgp",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "routing_collector_sampled_asn_updates",
+          "source_family": "internet_routing",
+          "source_kind": "sampled_asn_bgp_route_updates_not_network_outage",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "collector_peers_are_not_geo_deduplicated": true,
+            "country_impact_not_established": true,
+            "name": "sampled_6h_bgp_announcements",
+            "registered_network_country_hint": "KR",
+            "returned_sampling_buckets": 6,
+            "source_window_end": "2026-11-22T21:00:00Z",
+            "target_asn": "AS4766",
+            "unit": "announcements",
+            "value": 57946,
+            "window_hours_requested": 6,
+            "withdrawals_unavailable_for_asn": true
+          },
+          "source_scope": "RIPE RIS public route-announcement update samples on six non-Western operated networks; ASNs not country-wide outage detection",
+          "source_updated_at": null,
+          "source_url": "https://stat.ripe.net/data/bgp-update-activity/data.json?resource=AS4766&num_hours=6&max_samples=24&hide_empty_samples=false",
+          "title": "RIPE RIS sampled BGP announcements: AS4766"
         }
       }
     },

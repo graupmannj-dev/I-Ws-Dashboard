@@ -368,6 +368,39 @@
         }
       }
     },
+    "9483c6acc609b7bd761f8056c3174767ee4f43a47ce543593d0f969b0404e0bf": {
+      "information_root": "niord:679470f0-ce73-4b58-9cc8-24ddf6408cb6:3:0:0",
+      "members": {
+        "beh:ba5a4ed2ae9305990ca65d1289f9": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "official_scheduled_restriction_not_military_preparation",
+          "collection_mode": "live_maritime",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-23T00:27:52+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "notice_geography_unavailable",
+          "id": "beh:ba5a4ed2ae9305990ca65d1289f9",
+          "information_root": "niord:679470f0-ce73-4b58-9cc8-24ddf6408cb6:3:0:0",
+          "origin": "behavioral_registry",
+          "provider": "niord",
+          "published_at": null,
+          "restriction_status": "within_published_validity_window_not_verified_active",
+          "scheduled_valid_from": "2026-11-23T00:21:51Z",
+          "scheduled_valid_until": "2026-11-30T00:00:00Z",
+          "source_dependency_class": null,
+          "source_family": "maritime_restriction",
+          "source_kind": "official_restriction_notice",
+          "source_measurement": null,
+          "source_scope": null,
+          "source_updated_at": "2026-11-23T00:21:51Z",
+          "source_url": "https://niord.dma.dk/#/message/679470f0-ce73-4b58-9cc8-24ddf6408cb6",
+          "title": "Denmark. The Baltic Sea. EK D 396 Hullebaek. Firing exercises. Warning."
+        }
+      }
+    },
     "948bf0eb0f5ea55791fff6227872d9baed817e55c73c8c49cf5ec95d5b024b95": {
       "information_root": "niord:f9142f62-1f2e-4853-8861-b2920f02f72f:0:5:0",
       "members": {
@@ -511,6 +544,45 @@
           "source_updated_at": null,
           "source_url": "https://bwt.cbp.gov/api/waittimes",
           "title": "CBP estimated commercial border wait — YSLETA"
+        }
+      }
+    },
+    "94e74cd9110c1884c2b74d325f9bb19d9f08eee916af559d3db14bbb46222ed1": {
+      "information_root": "bmkg_nowcast:bmkg_nowcast:ea0a3e65f20a491919241a92db58",
+      "members": {
+        "beh:676905f9fc046f60c806e88d3def": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "bmkg_nowcast",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-22T23:55:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:676905f9fc046f60c806e88d3def",
+          "information_root": "bmkg_nowcast:bmkg_nowcast:ea0a3e65f20a491919241a92db58",
+          "origin": "behavioral_registry",
+          "provider": "bmkg_nowcast",
+          "published_at": "2026-11-22T23:55:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Indonesia BMKG",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Indonesia BMKG active provincial nowcast RSS, source-reported only; not global",
+          "source_updated_at": null,
+          "source_url": "https://www.bmkg.go.id/alerts/nowcast/en/CBK20261122006_alert.xml",
+          "title": "Thunderstorm This Morning in Bengkulu"
         }
       }
     }

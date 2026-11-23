@@ -69,6 +69,39 @@
         }
       }
     },
+    "c14f8e470b22710767eeee4c2a58e90b7830042120876a1250062f31a721adc3": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c0df:110387-2026",
+      "members": {
+        "beh:3ad7bc291ad62d5f69a7c045427a": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-22T23:32:43+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:3ad7bc291ad62d5f69a7c045427a",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c0df:110387-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-22T23:32:43Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-21T01%3A49%3A01&updatedTo=2026-11-23T01%3A49%3A01",
+          "title": "Telecoms Mast Management Services · Royal Berkshire Fire Authority"
+        }
+      }
+    },
     "c159ad06733d67561844d7d9bb325ff4be4d688ce01f8a692dedd915b03266a5": {
       "information_root": "niord:3d490dac-280b-4363-8759-a043f37854e8:0:0:0",
       "members": {
@@ -466,6 +499,81 @@
           "source_updated_at": null,
           "source_url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.zmb.html",
           "title": "Zambia - Level 1: Exercise Normal Precautions"
+        }
+      }
+    },
+    "c1ee052e320727bc6f772224aa5f41521093d96451ecaf8de289765da54654f1": {
+      "information_root": "wiki_edits:wiki_edits:ko:20261123T01",
+      "members": {
+        "beh:89d3f768f63b45d43ee57d4687ff": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "wiki_edits",
+          "direct_measurement": false,
+          "event_at": "2026-11-23T01:48:44Z",
+          "first_observed_at": "2026-11-23T01:48:44+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:89d3f768f63b45d43ee57d4687ff",
+          "information_root": "wiki_edits:wiki_edits:ko:20261123T01",
+          "origin": "behavioral_registry",
+          "provider": "wiki_edits",
+          "published_at": "2026-11-23T01:48:44Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "public_encyclopedia_edit_aggregate",
+          "source_family": "public_attention",
+          "source_kind": "bounded_public_edit_count_not_event_verification",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "distinct_articles_in_sample": 169,
+            "maximum_returned_edits": 500,
+            "most_edited_article_counts": [
+              {
+                "count": 15,
+                "title": "전도연의 수상 및 후보 목록"
+              },
+              {
+                "count": 12,
+                "title": "안드레아스 야콥손"
+              },
+              {
+                "count": 8,
+                "title": "에릭 오티에노"
+              },
+              {
+                "count": 8,
+                "title": "지구마불 세계여행"
+              },
+              {
+                "count": 7,
+                "title": "코리아 그랜드 뮤직 어워즈"
+              },
+              {
+                "count": 5,
+                "title": "경남일보"
+              },
+              {
+                "count": 5,
+                "title": "마히르 엠렐리"
+              },
+              {
+                "count": 5,
+                "title": "비디오 대여"
+              }
+            ],
+            "name": "sampled_edits_last_three_hours",
+            "sample_cap_reached": false,
+            "unit": "edits",
+            "value": 305
+          },
+          "source_scope": "Wikipedia main-namespace edit-count sample, 14 global language editions, three-hour window capped at 500 per wiki; not geographic location",
+          "source_updated_at": null,
+          "source_url": "https://ko.wikipedia.org/wiki/Special:RecentChanges",
+          "title": "Wikipedia ko public article-edit activity (sampled)"
         }
       }
     },

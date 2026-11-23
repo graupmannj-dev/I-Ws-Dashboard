@@ -182,6 +182,81 @@
         }
       }
     },
+    "44703d37c84bca6af9e0bfe43dd675951b03431d60f9630f90694b1dce2105e9": {
+      "information_root": "wiki_edits:wiki_edits:es:20261123T01",
+      "members": {
+        "beh:a32e091292ae437d08737365430b": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "wiki_edits",
+          "direct_measurement": false,
+          "event_at": "2026-11-23T01:48:58Z",
+          "first_observed_at": "2026-11-23T01:48:58+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:a32e091292ae437d08737365430b",
+          "information_root": "wiki_edits:wiki_edits:es:20261123T01",
+          "origin": "behavioral_registry",
+          "provider": "wiki_edits",
+          "published_at": "2026-11-23T01:48:58Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "public_encyclopedia_edit_aggregate",
+          "source_family": "public_attention",
+          "source_kind": "bounded_public_edit_count_not_event_verification",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "distinct_articles_in_sample": 371,
+            "maximum_returned_edits": 500,
+            "most_edited_article_counts": [
+              {
+                "count": 8,
+                "title": "Thylacosmilus"
+              },
+              {
+                "count": 7,
+                "title": "Torneo Apertura 2026 (México)"
+              },
+              {
+                "count": 6,
+                "title": "Luis Abinader"
+              },
+              {
+                "count": 6,
+                "title": "Major League Soccer 2026"
+              },
+              {
+                "count": 5,
+                "title": "Ley de Inviolabilidad de la Propiedad Privada"
+              },
+              {
+                "count": 5,
+                "title": "Liga de Primera 2026"
+              },
+              {
+                "count": 5,
+                "title": "Maksim Rázumov"
+              },
+              {
+                "count": 5,
+                "title": "San Esteban (1554)"
+              }
+            ],
+            "name": "sampled_edits_last_three_hours",
+            "sample_cap_reached": true,
+            "unit": "edits",
+            "value": 500
+          },
+          "source_scope": "Wikipedia main-namespace edit-count sample, 14 global language editions, three-hour window capped at 500 per wiki; not geographic location",
+          "source_updated_at": null,
+          "source_url": "https://es.wikipedia.org/wiki/Special:RecentChanges",
+          "title": "Wikipedia es public article-edit activity (sampled)"
+        }
+      }
+    },
     "4485f43703aa7504c971b451177e9a46198b2620f5a529a6cdf3bdc00059086a": {
       "information_root": "ioda:86791ee5376572987fe36593",
       "members": {
@@ -247,6 +322,53 @@
           "source_updated_at": null,
           "source_url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000uc9c",
           "title": "M 4.7 - 94 km W of Illapel, Chile"
+        }
+      }
+    },
+    "44add8deb9df14672345e185ae76bf2a410b15d775c9ee9339221018847bd9f7": {
+      "information_root": "ons_br:ons_br:NE:20261122T030000Z",
+      "members": {
+        "beh:f2919e72cd2107d08f8935bf4776": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "verified_grid_load_not_outage_or_intent",
+          "collection_mode": "ons_br",
+          "direct_measurement": true,
+          "event_at": "2026-11-22T03:00:00Z",
+          "first_observed_at": "2026-11-23T01:51:40+00:00",
+          "geography_key": "br-ons-loadarea:NE",
+          "geography_label": "Northeast",
+          "geography_precision": "regional_grid_not_incident_site",
+          "id": "beh:f2919e72cd2107d08f8935bf4776",
+          "information_root": "ons_br:ons_br:NE:20261122T030000Z",
+          "origin": "behavioral_registry",
+          "provider": "ons_br",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "verified_national_grid_load_measurement",
+          "source_family": "grid_load",
+          "source_kind": "verified_regional_electricity_load_context_not_outage",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "collected_history_day": "2026-11-21",
+            "historical_verified_not_live": true,
+            "load_area_code": "NE",
+            "load_area_name": "Northeast",
+            "name": "verified_half_hour_global_load",
+            "not_outage_or_attribution": true,
+            "sample_interval_minutes": 30,
+            "sampled_rows": 48,
+            "source_field": "val_cargaglobal",
+            "source_utc_field": "din_referenciautc",
+            "unit": "MWmed",
+            "value": 16259.585
+          },
+          "source_scope": "Brazilian national system operator ONS verified half-hour load, four macroregions, previous two-day sample; no local facilities/outage attribution",
+          "source_updated_at": null,
+          "source_url": "https://dados.ons.org.br/dataset/carga-energia-verificada",
+          "title": "Brazil ONS Northeast verified half-hourly system load"
         }
       }
     },

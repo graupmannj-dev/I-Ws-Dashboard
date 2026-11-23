@@ -99,6 +99,39 @@
         }
       }
     },
+    "aca78cc9ef97a97e30410ff2d7950e17b02ba140743ce1decd8611fbe87e6ed5": {
+      "information_root": "nws:673ac1400df266475684520d",
+      "members": {
+        "beh:470fa0e98830c86d9d3f27cb70cf": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "nws",
+          "direct_measurement": false,
+          "event_at": "2026-11-23T00:20:00Z",
+          "first_observed_at": "2026-11-23T00:20:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:470fa0e98830c86d9d3f27cb70cf",
+          "information_root": "nws:673ac1400df266475684520d",
+          "origin": "behavioral_registry",
+          "provider": "nws",
+          "published_at": "2026-11-23T00:20:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "official_weather_alert_context",
+          "source_measurement": null,
+          "source_scope": "Active NWS marine alerts; severity Minor",
+          "source_updated_at": null,
+          "source_url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.d5a505d8634b78a645ce6d517c67f2e0025029d3.002.2",
+          "title": "Coastal Flood Advisory - Coastal Duval"
+        }
+      }
+    },
     "acad128dd1f51530db092591ff842546fff9f0fa651a40d7df360512ddb8782e": {
       "information_root": "cbp_wait:cbp_wait:250608:2026-11-21:11:22:45",
       "members": {
@@ -173,6 +206,86 @@
           "source_updated_at": null,
           "source_url": "https://ioda.inetintel.cc.gatech.edu/",
           "title": "IODA detected connectivity anomaly: country MK"
+        }
+      }
+    },
+    "acb37170fbb73a2ee9cf9cbc0e4ad83e7e6a1b97613abfbacf5c7b07b051f8e8": {
+      "information_root": "cbp_wait:cbp_wait:250501:2026-11-22:17:44:34",
+      "members": {
+        "beh:f3ba53539a4bb3d5dad0e8a7298a": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-23T01:51:40+00:00",
+          "geography_key": "us-border-port:250501",
+          "geography_label": "Tecate",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:f3ba53539a4bb3d5dad0e8a7298a",
+          "information_root": "cbp_wait:cbp_wait:250501:2026-11-22:17:44:34",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Lanes Closed",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/22/2026",
+            "reported_local_time": "17:44:34",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Tecate"
+        }
+      }
+    },
+    "acbc666c74a114dfe2c503ebe773d97e28d4cb130899687bf01fe4e990f80eb7": {
+      "information_root": "niord:21695ece-4d99-43b7-b632-a24f4575925f:2:0:0",
+      "members": {
+        "beh:202ad1bf023f51b23007ec8fc4af": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "official_scheduled_restriction_not_military_preparation",
+          "collection_mode": "live_maritime",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-23T00:27:52+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "notice_geography_unavailable",
+          "id": "beh:202ad1bf023f51b23007ec8fc4af",
+          "information_root": "niord:21695ece-4d99-43b7-b632-a24f4575925f:2:0:0",
+          "origin": "behavioral_registry",
+          "provider": "niord",
+          "published_at": null,
+          "restriction_status": "within_published_validity_window_not_verified_active",
+          "scheduled_valid_from": "2026-11-23T00:21:51Z",
+          "scheduled_valid_until": "2026-11-29T11:00:00Z",
+          "source_dependency_class": null,
+          "source_family": "maritime_restriction",
+          "source_kind": "official_restriction_notice",
+          "source_measurement": null,
+          "source_scope": null,
+          "source_updated_at": "2026-11-23T00:21:54Z",
+          "source_url": "https://niord.dma.dk/#/message/21695ece-4d99-43b7-b632-a24f4575925f",
+          "title": "Denmark. The North Sea. 15 Nymindegab. Firing exercises. Warning."
         }
       }
     },

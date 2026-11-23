@@ -1,5 +1,52 @@
 {
   "roots": {
+    "ef1cfc758f3d960520ab669308ebcf2e6186f6171998d69220ded30e35d10aa4": {
+      "information_root": "cbp_wait:cbp_wait:250407:2026-11-22:17:44:34",
+      "members": {
+        "beh:954fa7bff30116ea1f51af6abc32": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-23T01:51:40+00:00",
+          "geography_key": "us-border-port:250407",
+          "geography_label": "San Ysidro",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:954fa7bff30116ea1f51af6abc32",
+          "information_root": "cbp_wait:cbp_wait:250407:2026-11-22:17:44:34",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "N/A",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Closed",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/22/2026",
+            "reported_local_time": "17:44:34",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — San Ysidro / PedWest"
+        }
+      }
+    },
     "ef296b3a52388187d3dab3733876349623652d20884f2d2e16e66ce0aa4791d2": {
       "information_root": "ioda:941b0c6df3fec99db179b240",
       "members": {
@@ -140,6 +187,53 @@
         }
       }
     },
+    "efb18a9afd2cd6b8b26bcbdc5ca8d7007d1b5bc0f9e364872a1094dc2d13d4b8": {
+      "information_root": "cbp_wait:cbp_wait:230502:2026-11-22:19:44:34",
+      "members": {
+        "beh:792ef14afaab3cf1238fc863cb2c": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-23T01:51:40+00:00",
+          "geography_key": "us-border-port:230502",
+          "geography_label": "Hidalgo/Pharr",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:792ef14afaab3cf1238fc863cb2c",
+          "information_root": "cbp_wait:cbp_wait:230502:2026-11-22:19:44:34",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Lanes Closed",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/22/2026",
+            "reported_local_time": "19:44:34",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Hidalgo/Pharr / Pharr"
+        }
+      }
+    },
     "efbfd80bf827afcddc57498bd7ae078ce8ead8abc64903a1688271b2140b43f5": {
       "information_root": "ioda:8a93339768d51bcd9f6d3fd4",
       "members": {
@@ -173,6 +267,53 @@
         }
       }
     },
+    "efc72f246b0197e50d289c3e0c21d768614d6f74c8ec48671b37b43acfeda091": {
+      "information_root": "cbp_wait:cbp_wait:070101:2026-11-22:20:44:34",
+      "members": {
+        "beh:bde6210933690d4e139ac7342360": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-23T01:51:40+00:00",
+          "geography_key": "us-border-port:070101",
+          "geography_label": "Ogdensburg",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:bde6210933690d4e139ac7342360",
+          "information_root": "cbp_wait:cbp_wait:070101:2026-11-22:20:44:34",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "no delay",
+            "lanes_open": 1,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "At 11:00 pm EST",
+            "reported_local_date": "11/22/2026",
+            "reported_local_time": "20:44:34",
+            "source_declared_border": "Canadian Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 0
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Ogdensburg"
+        }
+      }
+    },
     "efcb037164ced7ee2fc62edbc57da4b3accc6f3284c8a022eec3b1f7c5d39e51": {
       "information_root": "nws:85ab0e197f88827c9bbc6263",
       "members": {
@@ -203,6 +344,39 @@
           "source_updated_at": null,
           "source_url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.98f853852bcae42c9a367130cb55293d7675fd2a.001.1",
           "title": "Special Weather Statement - Suwannee; Baker; Inland Nassau; Eastern Hamilton; Coastal Nassau; Coastal Duval; Western Hamilton; T"
+        }
+      }
+    },
+    "efdd590bdeae3857803a01b92f9f399d340a0a6787893291931748455507ddb1": {
+      "information_root": "nws:29f805e87b61439550fcb353",
+      "members": {
+        "beh:167b21a7e018221767613df3d266": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "nws",
+          "direct_measurement": false,
+          "event_at": "2026-11-22T19:56:00Z",
+          "first_observed_at": "2026-11-22T19:56:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:167b21a7e018221767613df3d266",
+          "information_root": "nws:29f805e87b61439550fcb353",
+          "origin": "behavioral_registry",
+          "provider": "nws",
+          "published_at": "2026-11-22T19:56:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "official_weather_alert_context",
+          "source_measurement": null,
+          "source_scope": "Active NWS marine alerts; severity Severe",
+          "source_updated_at": null,
+          "source_url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.592047179d57e157c434de8744e0e90a3b50d6f2.001.1",
+          "title": "Flood Warning - Lake, FL; Volusia, FL"
         }
       }
     },
@@ -308,6 +482,39 @@
           "source_updated_at": null,
           "source_url": "https://zh.wikipedia.org/wiki/Special:RecentChanges",
           "title": "Wikipedia zh public article-edit activity (sampled)"
+        }
+      }
+    },
+    "effe1ea6a5451e9dbf6e545ce0567836073c569ab7d3586da3cce3bcb889405e": {
+      "information_root": "nws:3de8935420ffd91ed15c0f58",
+      "members": {
+        "beh:7165d47618f85532cde5ffe111b8": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "nws",
+          "direct_measurement": false,
+          "event_at": "2026-11-23T00:20:00Z",
+          "first_observed_at": "2026-11-23T00:20:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:7165d47618f85532cde5ffe111b8",
+          "information_root": "nws:3de8935420ffd91ed15c0f58",
+          "origin": "behavioral_registry",
+          "provider": "nws",
+          "published_at": "2026-11-23T00:20:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "official_weather_alert_context",
+          "source_measurement": null,
+          "source_scope": "Active NWS marine alerts; severity Severe",
+          "source_updated_at": null,
+          "source_url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.d5a505d8634b78a645ce6d517c67f2e0025029d3.001.2",
+          "title": "Coastal Flood Warning - Coastal Flagler"
         }
       }
     }

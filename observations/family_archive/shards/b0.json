@@ -1,5 +1,52 @@
 {
   "roots": {
+    "b0157445fe63e3b071bab4203f775660bbdcaca87678bfb53213d3f1d4cbd269": {
+      "information_root": "cbp_wait:cbp_wait:535501:2026-11-22:19:44:34",
+      "members": {
+        "beh:376a78c61f953b5b68fb82c88c2b": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-23T01:51:40+00:00",
+          "geography_key": "us-border-port:535501",
+          "geography_label": "Brownsville",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:376a78c61f953b5b68fb82c88c2b",
+          "information_root": "cbp_wait:cbp_wait:535501:2026-11-22:19:44:34",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "N/A",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/22/2026",
+            "reported_local_time": "19:44:34",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Brownsville / B&M"
+        }
+      }
+    },
     "b022823ce79c8b048f0fa35e82aaf443cd8e6ed08ae9cdc346a710e2e30e2c46": {
       "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c0d2:110354-2026",
       "members": {

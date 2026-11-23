@@ -26,6 +26,53 @@
         }
       }
     },
+    "2a309002acc2b0fd1b57175846a5ce05dda9ece9d9892acafd6ec8483db0e4ae": {
+      "information_root": "cbp_wait:cbp_wait:230301:2026-11-22:19:44:34",
+      "members": {
+        "beh:a8ab9e68462f1ec5971a93978c1f": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-23T01:51:40+00:00",
+          "geography_key": "us-border-port:230301",
+          "geography_label": "Eagle Pass",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:a8ab9e68462f1ec5971a93978c1f",
+          "information_root": "cbp_wait:cbp_wait:230301:2026-11-22:19:44:34",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "N/A",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/22/2026",
+            "reported_local_time": "19:44:34",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Eagle Pass / Bridge I"
+        }
+      }
+    },
     "2a44e8c57ec0cbcc0799d4fa22f1e86aa8555559116ea6b3abda1c92c8b53818": {
       "information_root": "wiki_edits:wiki_edits:fa:20261122T01",
       "members": {
@@ -131,6 +178,39 @@
           "source_updated_at": null,
           "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-19T02%3A27%3A41&updatedTo=2026-11-21T02%3A27%3A41",
           "title": "ES RDE 102 - EU-UK WFD Alignment Project · ENVIRONMENT AGENCY"
+        }
+      }
+    },
+    "2a6bbbda3dec5be1e67b4fa306383ec470b666ab0b64e6b13bc85b73c20aecc0": {
+      "information_root": "niord:977d59f3-ce27-47bb-8aec-42ea6aef5ec3:0:0:0",
+      "members": {
+        "beh:c525199708e8876977596bd6ea58": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "official_scheduled_restriction_not_military_preparation",
+          "collection_mode": "live_maritime",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-23T00:27:52+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "notice_geography_unavailable",
+          "id": "beh:c525199708e8876977596bd6ea58",
+          "information_root": "niord:977d59f3-ce27-47bb-8aec-42ea6aef5ec3:0:0:0",
+          "origin": "behavioral_registry",
+          "provider": "niord",
+          "published_at": null,
+          "restriction_status": "scheduled_not_yet_effective",
+          "scheduled_valid_from": "2026-11-23T08:00:00Z",
+          "scheduled_valid_until": "2026-11-23T21:00:00Z",
+          "source_dependency_class": null,
+          "source_family": "maritime_restriction",
+          "source_kind": "official_restriction_notice",
+          "source_measurement": null,
+          "source_scope": null,
+          "source_updated_at": "2026-11-23T00:21:53Z",
+          "source_url": "https://niord.dma.dk/#/message/977d59f3-ce27-47bb-8aec-42ea6aef5ec3",
+          "title": "Denmark. Kattegat. EK R 18 Jaegerspris. Firing exercises. Warning."
         }
       }
     },

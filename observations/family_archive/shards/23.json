@@ -1,5 +1,76 @@
 {
   "roots": {
+    "230537fcf61c79dc48a695068dca1b31682796a822d2e6922ec9fd8089730fd0": {
+      "information_root": "niord:977d59f3-ce27-47bb-8aec-42ea6aef5ec3:1:0:2",
+      "members": {
+        "beh:aae64e054196fb3425b9616aed8c": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "official_scheduled_restriction_not_military_preparation",
+          "collection_mode": "live_maritime",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-23T00:27:52+00:00",
+          "geography_key": "source-notice-point:55.89993:11.92565",
+          "geography_label": "Official notice position",
+          "geography_precision": "provider_defined_notice_point_not_incident",
+          "id": "beh:aae64e054196fb3425b9616aed8c",
+          "information_root": "niord:977d59f3-ce27-47bb-8aec-42ea6aef5ec3:1:0:2",
+          "origin": "behavioral_registry",
+          "provider": "niord",
+          "published_at": null,
+          "restriction_status": "within_published_validity_window_not_verified_active",
+          "scheduled_valid_from": "2026-11-23T00:21:51Z",
+          "scheduled_valid_until": "2026-11-30T16:00:00Z",
+          "source_dependency_class": null,
+          "source_family": "maritime_restriction",
+          "source_kind": "official_restriction_notice",
+          "source_measurement": null,
+          "source_scope": null,
+          "source_updated_at": "2026-11-23T00:21:53Z",
+          "source_url": "https://niord.dma.dk/#/message/977d59f3-ce27-47bb-8aec-42ea6aef5ec3",
+          "title": "Denmark. Kattegat. EK R 18 Jaegerspris. Firing exercises. Warning."
+        }
+      }
+    },
+    "230fb7d096ec2f1d565dfbbfb671b634a08919097d7ac06ffa26d3a70f618e7d": {
+      "information_root": "usgs:us6000ucuf",
+      "members": {
+        "beh:30c6d494d0432d50b19876888a84": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "usgs",
+          "direct_measurement": true,
+          "event_at": "2026-11-22T21:35:31Z",
+          "first_observed_at": "2026-11-22T21:35:31+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "source_supplied_point_only",
+          "id": "beh:30c6d494d0432d50b19876888a84",
+          "information_root": "usgs:us6000ucuf",
+          "origin": "behavioral_registry",
+          "provider": "usgs",
+          "published_at": "2026-11-23T00:51:49Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "measured_earthquake_context",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "name": "earthquake_magnitude",
+            "unit": "reported_magnitude",
+            "value": 5.4
+          },
+          "source_scope": "USGS M4.5+ earthquakes worldwide, rolling past day; source thresholds apply",
+          "source_updated_at": null,
+          "source_url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000ucuf",
+          "title": "M 5.4 - 9 km N of Carhuamayo, Peru"
+        }
+      }
+    },
     "2313e3a91accb96074be04b126bbc7203707592ea80d88266db45942dfd6f31e": {
       "information_root": "niord:9c9b3baf-65f3-4272-ad53-fa8839c91b2e:3:0:0",
       "members": {
@@ -27,6 +98,50 @@
           "source_updated_at": "2026-11-18T00:21:53Z",
           "source_url": "https://niord.dma.dk/#/message/9c9b3baf-65f3-4272-ad53-fa8839c91b2e",
           "title": "Denmark. Kattegat. EK R 45 Hevring. Firing exercises. Warning."
+        }
+      }
+    },
+    "2315043dff2e55e4ed08d1b4c59f036f9df15066326b3f9577baaaba618a4955": {
+      "information_root": "tw_power:tw_power:20261123T0140Z",
+      "members": {
+        "beh:022ee6ce278793aec7bbaeb47d3b": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_power_snapshot_not_outage_attribution",
+          "collection_mode": "tw_power",
+          "direct_measurement": true,
+          "event_at": null,
+          "first_observed_at": "2026-11-23T01:51:40+00:00",
+          "geography_key": "country:TW",
+          "geography_label": "Taiwan",
+          "geography_precision": "national_not_facility",
+          "id": "beh:022ee6ce278793aec7bbaeb47d3b",
+          "information_root": "tw_power:tw_power:20261123T0140Z",
+          "origin": "behavioral_registry",
+          "provider": "tw_power",
+          "published_at": "2026-11-23T01:40:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "public_national_power_snapshot",
+          "source_family": "grid_load",
+          "source_kind": "national_grid_load_aggregate_not_outage",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "measurement_clock_distinct_from_release_not_verified": true,
+            "name": "nationwide_reported_current_load",
+            "not_grid_frequency_or_outage_attribution": true,
+            "observation_coverage": "single_national_snapshot_not_24h",
+            "reported_utilization_percent": 72.0,
+            "source_published_clock": "2026-11-23T01:40:00Z",
+            "source_value_10k_kilowatts": 2989.9,
+            "unit": "MW",
+            "value": 29899.0
+          },
+          "source_scope": "Taiwan Taipower public nationwide current load snapshot and publisher release clock, not power-station or local outage data",
+          "source_updated_at": null,
+          "source_url": "https://service.taipower.com.tw/data/opendata/apply/file/d006020/001.json",
+          "title": "Taipower nationwide publicly reported current electricity load"
         }
       }
     },
@@ -247,6 +362,81 @@
           "source_updated_at": null,
           "source_url": "https://bwt.cbp.gov/api/waittimes",
           "title": "CBP estimated commercial border wait — San Ysidro"
+        }
+      }
+    },
+    "2380eb2962af4a7f8de83bb594f29a29347baff6d29197e3339a539a17a61466": {
+      "information_root": "wiki_edits:wiki_edits:ru:20261123T01",
+      "members": {
+        "beh:2cbd347547eb832d7e52b9239a41": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "wiki_edits",
+          "direct_measurement": false,
+          "event_at": "2026-11-23T01:48:44Z",
+          "first_observed_at": "2026-11-23T01:48:44+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:2cbd347547eb832d7e52b9239a41",
+          "information_root": "wiki_edits:wiki_edits:ru:20261123T01",
+          "origin": "behavioral_registry",
+          "provider": "wiki_edits",
+          "published_at": "2026-11-23T01:48:44Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "public_encyclopedia_edit_aggregate",
+          "source_family": "public_attention",
+          "source_kind": "bounded_public_edit_count_not_event_verification",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "distinct_articles_in_sample": 399,
+            "maximum_returned_edits": 500,
+            "most_edited_article_counts": [
+              {
+                "count": 11,
+                "title": "Праведники народов мира в Греции"
+              },
+              {
+                "count": 6,
+                "title": "Андосины"
+              },
+              {
+                "count": 6,
+                "title": "Богров"
+              },
+              {
+                "count": 6,
+                "title": "Гаплогруппа R1b (Y-ДНК)"
+              },
+              {
+                "count": 5,
+                "title": "Демонстрация (публичное мероприятие)"
+              },
+              {
+                "count": 5,
+                "title": "Семья Шеридана"
+              },
+              {
+                "count": 4,
+                "title": "Военные преступления союзников во Второй мировой войне"
+              },
+              {
+                "count": 4,
+                "title": "Как Иван в сказку попал"
+              }
+            ],
+            "name": "sampled_edits_last_three_hours",
+            "sample_cap_reached": true,
+            "unit": "edits",
+            "value": 500
+          },
+          "source_scope": "Wikipedia main-namespace edit-count sample, 14 global language editions, three-hour window capped at 500 per wiki; not geographic location",
+          "source_updated_at": null,
+          "source_url": "https://ru.wikipedia.org/wiki/Special:RecentChanges",
+          "title": "Wikipedia ru public article-edit activity (sampled)"
         }
       }
     },

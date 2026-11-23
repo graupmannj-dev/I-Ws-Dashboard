@@ -151,6 +151,39 @@
         }
       }
     },
+    "6d511bd35ba0412279905511e8278e1f013d79442b97144b238aeaab97d5281a": {
+      "information_root": "niord:a4286c99-e633-461f-be1f-dbbd46ed6c2e:0:6:0",
+      "members": {
+        "beh:b49d5f8de69330a9f0251fe85641": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "official_scheduled_restriction_not_military_preparation",
+          "collection_mode": "live_maritime",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-23T00:27:52+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "notice_geography_unavailable",
+          "id": "beh:b49d5f8de69330a9f0251fe85641",
+          "information_root": "niord:a4286c99-e633-461f-be1f-dbbd46ed6c2e:0:6:0",
+          "origin": "behavioral_registry",
+          "provider": "niord",
+          "published_at": null,
+          "restriction_status": "scheduled_not_yet_effective",
+          "scheduled_valid_from": "2026-11-29T07:00:00Z",
+          "scheduled_valid_until": "2026-11-29T13:00:00Z",
+          "source_dependency_class": null,
+          "source_family": "maritime_restriction",
+          "source_kind": "official_restriction_notice",
+          "source_measurement": null,
+          "source_scope": null,
+          "source_updated_at": "2026-11-23T00:21:53Z",
+          "source_url": "https://niord.dma.dk/#/message/a4286c99-e633-461f-be1f-dbbd46ed6c2e",
+          "title": "Denmark. Kattegat. EK R 45 Hevring. Firing exercises. Warning."
+        }
+      }
+    },
     "6d5366658990205124b1186759cac598ffa48a586a8a925baa0dce9ee75b7c7f": {
       "information_root": "niord:f9142f62-1f2e-4853-8861-b2920f02f72f:1:0:0",
       "members": {
@@ -385,6 +418,45 @@
           "source_updated_at": null,
           "source_url": "https://ioda.inetintel.cc.gatech.edu/",
           "title": "IODA detected connectivity anomaly: country GD"
+        }
+      }
+    },
+    "6db2a98c9e5c71df0bc5d9d6c0a6eb234ddda573c1706bca31680d5f60854fd9": {
+      "information_root": "bmkg_nowcast:bmkg_nowcast:da80e6fd5c25703413ab823b79b1",
+      "members": {
+        "beh:d61be7b9023174dc8a30e41c1a83": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "bmkg_nowcast",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-23T00:50:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:d61be7b9023174dc8a30e41c1a83",
+          "information_root": "bmkg_nowcast:bmkg_nowcast:da80e6fd5c25703413ab823b79b1",
+          "origin": "behavioral_registry",
+          "provider": "bmkg_nowcast",
+          "published_at": "2026-11-23T00:50:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Indonesia BMKG",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Indonesia BMKG active provincial nowcast RSS, source-reported only; not global",
+          "source_updated_at": null,
+          "source_url": "https://www.bmkg.go.id/alerts/nowcast/en/CLG20261123001_alert.xml",
+          "title": "Thunderstorm This Morning in Lampung"
         }
       }
     },

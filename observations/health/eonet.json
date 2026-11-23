@@ -1,15 +1,17 @@
 {
-  "checked_at": "2026-11-22T19:49:54Z",
-  "missingness": "provider_bounded_partial",
+  "checked_at": "2026-11-23T01:49:01Z",
+  "missingness": "not_measured_not_zero",
   "mode": "eonet",
   "operational_warning_approved": false,
-  "records": 16,
+  "records": null,
   "schema": "cairn.alternative-sensors.v1",
   "source_dependency_class": "environmental_hazard_reporting",
-  "source_errors": [],
+  "source_errors": [
+    "URLError: <urlopen error [Errno 101] Network is unreachable>"
+  ],
   "source_queries_attempted": 1,
-  "source_queries_ok": 1,
+  "source_queries_ok": 0,
   "source_scope": "NASA EONET open natural event catalog, recent 7 days; limit 110",
-  "status": "partial",
-  "truncated": true
+  "status": "unavailable",
+  "truncated": false
 }

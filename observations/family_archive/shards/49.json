@@ -452,6 +452,175 @@
         }
       }
     },
+    "49da6a2bdc4d4c35859a09bee2ba6eef886d97c693add56e418e2c1c7ecb1704": {
+      "information_root": "cbp_wait:cbp_wait:250302:2026-11-22:17:44:34",
+      "members": {
+        "beh:19297fb7cd82c46e618ad195509f": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-23T01:51:40+00:00",
+          "geography_key": "us-border-port:250302",
+          "geography_label": "Calexico",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:19297fb7cd82c46e618ad195509f",
+          "information_root": "cbp_wait:cbp_wait:250302:2026-11-22:17:44:34",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "N/A",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/22/2026",
+            "reported_local_time": "17:44:34",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Calexico / West"
+        }
+      }
+    },
+    "49f28bf141b22d2b50942a100870e94366e05d43b166ff84dc868c436b0295c8": {
+      "information_root": "wiki_edits:wiki_edits:sw:20261123T01",
+      "members": {
+        "beh:55ce5be5a501514d1fd3341273cc": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "wiki_edits",
+          "direct_measurement": false,
+          "event_at": "2026-11-23T01:29:14Z",
+          "first_observed_at": "2026-11-23T01:29:14+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:55ce5be5a501514d1fd3341273cc",
+          "information_root": "wiki_edits:wiki_edits:sw:20261123T01",
+          "origin": "behavioral_registry",
+          "provider": "wiki_edits",
+          "published_at": "2026-11-23T01:29:14Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "public_encyclopedia_edit_aggregate",
+          "source_family": "public_attention",
+          "source_kind": "bounded_public_edit_count_not_event_verification",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "distinct_articles_in_sample": 15,
+            "maximum_returned_edits": 500,
+            "most_edited_article_counts": [
+              {
+                "count": 2,
+                "title": "Pape Cheikh Diop"
+              },
+              {
+                "count": 1,
+                "title": "Hailey Bieber"
+              },
+              {
+                "count": 1,
+                "title": "Optikz"
+              },
+              {
+                "count": 1,
+                "title": "Organik"
+              },
+              {
+                "count": 1,
+                "title": "Patricia Kaliati"
+              },
+              {
+                "count": 1,
+                "title": "Paul Hernandez"
+              },
+              {
+                "count": 1,
+                "title": "Phil Chenier"
+              },
+              {
+                "count": 1,
+                "title": "Phil Ford"
+              }
+            ],
+            "name": "sampled_edits_last_three_hours",
+            "sample_cap_reached": false,
+            "unit": "edits",
+            "value": 16
+          },
+          "source_scope": "Wikipedia main-namespace edit-count sample, 14 global language editions, three-hour window capped at 500 per wiki; not geographic location",
+          "source_updated_at": null,
+          "source_url": "https://sw.wikipedia.org/wiki/Special:RecentChanges",
+          "title": "Wikipedia sw public article-edit activity (sampled)"
+        }
+      }
+    },
+    "49f80c1084ea8797e2052d89ef24f1e9fe42bf61f295a84b5f2cb1e35c7ed18f": {
+      "information_root": "cbp_wait:cbp_wait:240207:2026-11-22:18:44:34",
+      "members": {
+        "beh:eaa621ef1dc192d6b0c60d194e12": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-23T01:51:40+00:00",
+          "geography_key": "us-border-port:240207",
+          "geography_label": "Bridge of the Americas Port of Entry",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:eaa621ef1dc192d6b0c60d194e12",
+          "information_root": "cbp_wait:cbp_wait:240207:2026-11-22:18:44:34",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Update Pending",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/22/2026",
+            "reported_local_time": "18:44:34",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Bridge of the Americas Port of Entry"
+        }
+      }
+    },
     "49fc007f18e7ee1ba8a67f2738c78d0f02d04d9c270de2cd382c132b5516342d": {
       "information_root": "niord:73901baf-e621-4274-a712-88d9fd4b324e:2:0:0",
       "members": {

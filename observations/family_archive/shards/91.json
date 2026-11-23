@@ -94,6 +94,53 @@
         }
       }
     },
+    "914757e8d84867b36ba044041abcc2ab8145f87a4fcd2498a4a336c691d8ead1": {
+      "information_root": "cbp_wait:cbp_wait:230901:2026-11-22:19:44:34",
+      "members": {
+        "beh:62766a131f5ace7e99bb1024864b": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-23T01:51:40+00:00",
+          "geography_key": "us-border-port:230901",
+          "geography_label": "Progreso",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:62766a131f5ace7e99bb1024864b",
+          "information_root": "cbp_wait:cbp_wait:230901:2026-11-22:19:44:34",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Lanes Closed",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/22/2026",
+            "reported_local_time": "19:44:34",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Progreso / Progreso International Bridge"
+        }
+      }
+    },
     "91702518af274401b5d163e61992e630bbe39d6845c30c0ba84de0f5de84207a": {
       "information_root": "bmkg_quake:bmkg_quake:b37c14bb18044cfcaa0045358dcf",
       "members": {
@@ -247,6 +294,45 @@
           "source_updated_at": "2026-11-18T00:21:53Z",
           "source_url": "https://niord.dma.dk/#/message/f50f5f45-141b-4e6d-b05f-c91b00e96ce2",
           "title": "Denmark. Skagerrak. EK R 48 Tranum S. Firing exercises. Warning."
+        }
+      }
+    },
+    "91a53330b9aa87ea760df7f53d16b6ac429acc99c7895fb9fbebdb483994d686": {
+      "information_root": "bmkg_nowcast:bmkg_nowcast:1bd9850a66895ea220b841229397",
+      "members": {
+        "beh:c6e7969e766db5ee16c2135f179e": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "bmkg_nowcast",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-23T00:39:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:c6e7969e766db5ee16c2135f179e",
+          "information_root": "bmkg_nowcast:bmkg_nowcast:1bd9850a66895ea220b841229397",
+          "origin": "behavioral_registry",
+          "provider": "bmkg_nowcast",
+          "published_at": "2026-11-23T00:39:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Indonesia BMKG",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Indonesia BMKG active provincial nowcast RSS, source-reported only; not global",
+          "source_updated_at": null,
+          "source_url": "https://www.bmkg.go.id/alerts/nowcast/en/CRU20261123001_alert.xml",
+          "title": "Thunderstorm This Morning in Riau"
         }
       }
     },
