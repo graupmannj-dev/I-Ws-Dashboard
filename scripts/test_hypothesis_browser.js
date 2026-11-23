@@ -5,6 +5,15 @@ const assert=require("node:assert/strict");
   try{
     const page=await browser.newPage({viewport:{width:1440,height:850}});
     const errors=[];page.on("pageerror",e=>errors.push(e.message));
+    await page.route("**/hypotheses.json",async route=>{
+      const response=await route.fetch(),data=await response.json();
+      const item=data.hypotheses[0],hyp="The activity represents scheduled defensive training rather than attack preparations.";
+      item.alternatives=[...(item.alternatives||[]).slice(0,1),hyp];
+      item.analyst_hypotheses=[{id:"analyst-synthetic",index:2,origin:"analyst",
+        statement:hyp,initial_backfill:{status:"interpretation_pending",
+          limitations:["Only a bounded historical source sample was available"]}}];
+      await route.fulfill({response,json:data});
+    });
     await page.goto("http://127.0.0.1:8765/",{waitUntil:"domcontentloaded"});
     await page.locator("a.hypothesis-link").click();
     await page.waitForURL("**/hypotheses.html");
@@ -15,6 +24,15 @@ const assert=require("node:assert/strict");
     assert.match(await page.locator(".case-detail").innerText(),/Direction of reviewed evidence/i);
     assert.match(await page.locator(".case-detail").innerText(),/No reviewed directional evidence/i);
     assert.match(await page.locator(".case-detail").innerText(),/Analysis of competing hypotheses/i);
+    assert.ok(await page.locator(".ach-table thead .analyst-origin").count()===1);
+    const caution=page.locator(".ach-table thead .analyst-caution");
+    assert.equal(await caution.count(),1);
+    assert.equal(await caution.locator(".caution-popover").isVisible(),false);
+    await caution.locator("summary").click();
+    assert.equal(await caution.locator(".caution-popover").isVisible(),true);
+    assert.match(await caution.locator(".caution-popover").innerText(),/bounded historical source sample/i);
+    assert.match(await caution.locator("summary").getAttribute("aria-label"),/Evidence limitation/i);
+
     assert.match(await page.locator(".case-detail").innerText(),/Evidence families/i);
     assert.ok(await page.locator(".ach-family").count()>=1);
     await page.locator(".ach-family").first().click();
