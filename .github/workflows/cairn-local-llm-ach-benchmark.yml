@@ -1,4 +1,4 @@
-name: CAIRN READ-ONLY Granite vs Phi ACH quality v2
+name: CAIRN READ-ONLY Granite vs Phi ACH diagnostic-gate v3
 on:
   pull_request:
     paths:
@@ -15,7 +15,7 @@ concurrency:
 jobs:
   shadow-ach-model:
     if: github.event_name == 'pull_request'
-    name: ACH constrained v2 ${{ matrix.model }}
+    name: ACH diagnostic-gate v3 ${{ matrix.model }}
     runs-on: ubuntu-24.04
     timeout-minutes: 48
     strategy:
@@ -108,7 +108,7 @@ jobs:
           python -m scripts.benchmark_ach_quality_v2 \
             --archive ops-state/observations/latest/family_archive.json \
             --model-name "$MODEL_NAME" --server http://127.0.0.1:8080 \
-            --mode constrained --max-tokens 700 --timeout 170 \
+            --mode constrained --policy diagnostic_gate --max-tokens 700 --timeout 170 \
             --output "$RUNNER_TEMP/cairn-benchmark/results.json" --timeout 160
           if [ -r "/proc/$server_pid/status" ]; then
             grep -E 'VmHWM|VmRSS|VmPeak' "/proc/$server_pid/status" \
@@ -119,7 +119,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: cairn-readonly-ach-quality-v2-${{ matrix.model }}-${{ github.run_id }}
+          name: cairn-readonly-ach-diagnostic-v3-${{ matrix.model }}-${{ github.run_id }}
           path: |
             ${{ runner.temp }}/cairn-benchmark/results.json
             ${{ runner.temp }}/cairn-benchmark/server_memory.txt
