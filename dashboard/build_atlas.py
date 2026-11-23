@@ -393,8 +393,19 @@ def generate(site, generated=None, state_dir=None):
     machine_screen = auto_screen(records, registry, archive, at=render_time)
     hypothesis_views["automated_screen"] = {
         key: value for key, value in machine_screen.items() if key != "cases"}
+    gdelt_trends = read(site / "gdelt_case_trends.json", {})
+    valid_trends = (gdelt_trends.get("schema") == "cairn.gdelt-case-trends.v1"
+                    and isinstance(gdelt_trends.get("cases"), dict))
+    hypothesis_views["gdelt_case_status"] = (
+        {k: gdelt_trends.get(k) for k in
+         ("schema", "status", "asof", "coverage", "window_days", "baseline_days",
+          "measured_case_count", "hypothesis_direction_estimated")}
+        if valid_trends else {"status": "unavailable_missing_trend_file",
+                             "asof": None, "hypothesis_direction_estimated": False})
     for case in hypothesis_views["hypotheses"]:
         case["automated_screen"] = machine_screen["cases"].get(case["id"], {})
+        case["gdelt_media_trend"] = (
+            gdelt_trends["cases"].get(case["id"]) if valid_trends else None)
     (site / "hypotheses.json").write_text(
         json.dumps(hypothesis_views, ensure_ascii=False, indent=2), encoding="utf-8")
     # Only safe source monitoring context is included publicly. The private
