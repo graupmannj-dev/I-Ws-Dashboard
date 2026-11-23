@@ -315,6 +315,16 @@ jobs:
         run: python dashboard/collect_layers.py --output _site/layers.json
       - run: python friction_render.py --state ops-state/observations --site _site
       - run: python behavioral_render.py --state ops-state/observations --site _site
+      - name: Bounded original-source and geographic-text inspection
+        continue-on-error: true
+        timeout-minutes: 4
+        shell: bash
+        run: |
+          python scripts/cairn_source_inspection.py \
+            --registry ops-state/observations/latest/behavioral_registry.json \
+            --archive ops-state/observations/latest/family_archive.json \
+            --config data/hypothesis_discriminators.json \
+            --maximum 12 --output _site/source_inspection.json
       - run: python dashboard/build_atlas.py --site _site --state ops-state/observations
         env:
           AIBA_LAYER_FEED_URL: ${{ vars.AIBA_LAYER_FEED_URL || 'layers.json' }}
@@ -443,6 +453,50 @@ jobs:
                       assert source["independent_observation_confirmed"] is False
               assert all(not item["case_specific"] for item in c["source_baseline_readiness"])
           PY
+  real-source-inspection-prototype:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          ref: aiba-feed-data
+          path: ops-state
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Read-only allowlisted live document inspection
+        run: |
+          python scripts/cairn_source_inspection.py \
+            --registry ops-state/observations/latest/behavioral_registry.json \
+            --archive ops-state/observations/latest/family_archive.json \
+            --maximum 10 --output source-inspection-real-smoke.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          report=json.loads(Path("source-inspection-real-smoke.json").read_text())
+          assert report["schema"]=="cairn.source-inspection.v1"
+          assert report["unique_source_documents_attempted"]<=10
+          assert not report["source_bodies_saved"] and not report["source_bodies_published"]
+          assert report["automated_event_verifications"]==0 and report["approved_warnings"]==0
+          for row in report["inspections"]:
+              assert not row["event_occurred_verified"]
+              assert not row["actor_verified"]
+              assert not row["independent_corroboration"]
+              if row["document_inspection"]:
+                  assert "source_text" not in row["document_inspection"]
+                  assert not row["document_inspection"]["case_attribution"]["reported_event_site_verified"]
+          print("CAIRN source inspection:",report["status_counts"])
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: cairn-source-inspection-real-source-${{ github.run_id }}
+          path: source-inspection-real-smoke.json
+          retention-days: 30
   operational-smoke:
     if: github.event_name == 'pull_request'
     needs: test
