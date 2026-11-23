@@ -1,0 +1,68 @@
+name: CAIRN local Phi integration smoke (PR only)
+on:
+  pull_request:
+    paths:
+      - 'scripts/cairn_phi_local.py'
+      - 'scripts/run_cairn_phi.sh'
+      - 'tests/test_cairn_phi_local.py'
+      - '.github/workflows/cairn-local-phi-smoke.yml'
+      - '.github/workflows/publish-global-watchboard.yml'
+      - '.github/workflows/cairn-analyst-hypothesis.yml'
+permissions:
+  contents: read
+jobs:
+  phi-local-integration-smoke:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Validate local inference safety unit tests and Bash
+        run: |
+          python -m unittest tests.test_cairn_phi_local tests.test_semantic_ach -v
+          bash -n scripts/run_cairn_phi.sh
+      - name: Generate a synthetic case artifact (no external evidence uploads)
+        run: |
+          python - <<'PY'
+          import json,os
+          from pathlib import Path
+          from tests.test_semantic_ach import index
+          from dashboard.hypothesis_evidence import build
+          root=Path(os.environ['RUNNER_TEMP'])/'cairn-phi-smoke'
+          root.mkdir(parents=True,exist_ok=True)
+          synthetic=index()
+          dossiers=json.loads(Path('data/verified_hotspots.json').read_text())
+          reviews=json.loads(Path('data/hypothesis_reviews.json').read_text())
+          real=build(dossiers,reviews=reviews)['hypotheses'][0]
+          assert real['id']!=synthetic['hypotheses'][0]['id']
+          assert any(f.get('sources') for f in real['families'])
+          synthetic['hypotheses'].append(real)
+          (root/'hypotheses.json').write_text(json.dumps(synthetic))
+          PY
+      - name: Run pinned Phi locally on synthetic case (read-only test)
+        run: |
+          bash scripts/run_cairn_phi.sh --site "$RUNNER_TEMP/cairn-phi-smoke" --max-cases 2
+      - name: Verify extracted leads cannot alter the ACH balance
+        run: |
+          python - <<'PY'
+          import json,os
+          from pathlib import Path
+          root=Path(os.environ["RUNNER_TEMP"])/"cairn-phi-smoke"
+          data=json.loads((root/"hypotheses.json").read_text())
+          for case in data["hypotheses"]:
+            review=case["semantic_review"]
+            print("Phi review",case["id"],review["status"],"leads",len(review.get("evidence_notes",[])),"error",review.get("error_type"))
+            assert review["status"]=="provisional_complete"
+            assert review["model_family"]=="phi-4-mini-instruct-q4km-local"
+            assert review["evaluations"]==[]
+            assert review["analyst_approved"] is False
+            known={f["evidence_key"] for f in case["families"]}
+            assert all(x["evidence_key"] in known for x in review.get("evidence_notes",[]))
+            assert len(review.get("interpretations",[]))==1+len(case.get("alternatives") or [])
+          assert data["hypotheses"][0]["balance"]["direction"]=="not_assessed"
+          PY

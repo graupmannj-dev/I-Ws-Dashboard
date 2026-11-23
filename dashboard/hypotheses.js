@@ -393,10 +393,29 @@ function semanticSection(c){
           '<p>'+escapeHtml(v.rationale)+'</p><div class="semantic-source-links">'+links+'</div></li>';
       }).join("")+'</ul></details>';
   }).join("");
-  return '<section class="semantic-panel"><div class="ach-head"><h3>AI-assisted hypothesis comparison</h3>'+
+  const localPhi=d.model_family==="phi-4-mini-instruct-q4km-local";
+  const notes=(Array.isArray(d.evidence_notes)?d.evidence_notes:[]).slice(0,6);
+  const leads=notes.map(n=>{
+    const f=refs.get(n.evidence_key)||{};
+    const links=(f.sources||[]).map(source=>{
+      const url=safeUrl(source.url);
+      return url?'<a href="'+escapeHtml(url)+'" target="_blank" rel="noopener noreferrer">'+
+        escapeHtml(source.title||"Inspect original source")+'</a>':'';
+    }).filter(Boolean).join(" · ");
+    return '<li><strong>'+escapeHtml(f.family_title||n.evidence_key)+'</strong>'+
+      '<p>'+escapeHtml(n.observation)+'</p>'+
+      '<p><strong>Verify:</strong> '+escapeHtml(n.verification_step)+'</p>'+
+      '<div class="semantic-source-links">'+links+'</div></li>';
+  }).join("");
+  return '<section class="semantic-panel"><div class="ach-head"><h3>'+
+    (localPhi?'Local Phi · hypothesis interpretation':'AI-assisted hypothesis comparison')+'</h3>'+
     '<span class="pill context">Provisional · analyst review required</span></div>'+
-    '<p>Candidate interpretations and evidence comparisons. These do not change reviewed evidence direction.</p>'+
-    html+'</section>';
+    '<p>'+(localPhi?
+       'Offline, source-title screening only. No evidence direction, independent corroboration or event truth is established by Phi. The model cannot modify approved ACH evidence.':
+       'Candidate interpretations and evidence comparisons. These do not change reviewed evidence direction.')+'</p>'+
+    html+(localPhi?'<details class="semantic-hypothesis"><summary>Source-linked verification leads ('+
+       notes.length+')</summary><ul class="semantic-verdicts">'+leads+'</ul></details>':'')+
+    '</section>';
 }
 function showCase(id){
   selected=id;listCases();const c=rows.find(x=>x.id===id);
