@@ -67,8 +67,7 @@ class GdeltCaseTrendTests(unittest.TestCase):
             total[d] = 0
         result = build(records, total, DATES, DAY)
         self.assertEqual(result["status"], "unavailable_incomplete_coverage")
-        self.assertIsNone(result["cases"]["taiwan"]["trend"] if False else
-                          result["cases"]["taiwan"]["recent_share"])
+        self.assertIsNone(result["cases"]["taiwan"]["recent_share"])
 
     def test_builder_passes_case_data_into_generated_hypothesis_index(self):
         records, total = self.setup_data()
