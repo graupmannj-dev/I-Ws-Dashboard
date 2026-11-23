@@ -19,7 +19,7 @@ SCHEMA = "cairn.semantic-ach.v1"
 PROMPT_VERSION = "cairn-semantic-v1"
 DIRECTIONS = {"possibly_consistent", "possibly_inconsistent", "non_diagnostic", "unresolved"}
 MAX_CASES = 3
-MAX_FAMILIES = 12
+MAX_FAMILIES = 20
 MAX_SOURCE_LINKS = 3
 MAX_TEXT = 350
 API_URL = "https://api.openai.com/v1/chat/completions"
@@ -59,10 +59,37 @@ def evidence_packet(case):
                      "family_mechanism": compact(f.get("source_mechanism")),
                      "source_health": compact((f.get("health") or {}).get("status"), 60),
                      "sources": src, "reviewed_direction": f.get("direction") or "not_assessed"})
+    # Recent case-linked history contributes provisional leads; never sign
+    # these sources or treat repeated reports as independently verified events.
+    roots = set(f["evidence_key"] for f in refs)
+    for item in (case.get("automated_screen") or {}).get("historical_sources", [])[:12]:
+        if not isinstance(item, dict):
+            continue
+        url = item.get("source_url")
+        try:
+            parsed = parse.urlsplit(url) if isinstance(url, str) else None
+            valid = parsed and parsed.scheme == "https" and parsed.netloc and not parsed.username and not parsed.password
+        except ValueError:
+            valid = False
+        if not valid:
+            continue
+        key = "history:" + hashlib.sha256(url.encode("utf-8")).hexdigest()[:20]
+        if key in roots:
+            continue
+        roots.add(key)
+        refs.append({"evidence_key": key,
+                     "family_title": compact(item.get("title")),
+                     "family_mechanism": "Case-linked history; provisional association only",
+                     "source_health": "not_event_verified",
+                     "sources": [{"url": url[:1800],
+                                  "title": compact(item.get("title")),
+                                  "provider": compact(item.get("source_mode"), 100),
+                                  "first_observed_at": compact(item.get("first_observed_at"), 45)}],
+                     "reviewed_direction": "not_assessed"})
     return {"case_id": compact(case.get("id"), 100), "hypotheses": claims,
             "evidence_families": refs, "source_scope": "bounded source links and titles only; no verified event occurrence"}
 
-def retrieve(packet, limit=8):
+def retrieve(packet, limit=24):
     """Deterministic recall-oriented shortlist; never assign an ACH direction."""
     text = " ".join(packet["hypotheses"]).lower()
     terms = set(re.findall(r"[a-z]{4,}", text)) - {
@@ -74,8 +101,8 @@ def retrieve(packet, limit=8):
                        " "+" ".join(s["title"] for s in f["sources"])).lower()))
         scored.append((len(terms & words), f["evidence_key"], f))
     scored.sort(key=lambda row: (-row[0], row[1]))
-    # Lexical prefilter is never presented as semantic confirmation. Retain
-    # diverse unmatched families for the model to evaluate as unresolved.
+    # Lexical scores order a broad bounded candidate set. Semantic comparison
+    # runs over the retained candidates; keyword matching never assigns signs.
     return [f for _, _, f in scored[:limit]]
 
 def validate(raw, packet):
