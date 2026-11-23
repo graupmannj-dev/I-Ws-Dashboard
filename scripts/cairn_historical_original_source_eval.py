@@ -50,7 +50,7 @@ def select(manifest, limit=14):
 
 def _type(seed):
     hint = seed["episode_hint"]
-    if "yemen" in hint or "redsea" in hint or "middleeast" in hint:
+    if "yemen" in hint or "redsea" in hint:
         return "govuk_yemen_historical"
     if "ukraine" in hint:
         return "govuk_ukraine_historical"
