@@ -492,3 +492,11 @@ a{color:#a9d4ff}
 .source-health-link,.hypothesis-link,.coverage-link,.source-back-link{white-space:nowrap;color:#b6dfff;border:1px solid #4d6d86;border-radius:7px;padding:7px 10px;font-size:11px;text-decoration:none}
 .source-health-link:hover,.source-health-link:focus-visible,.hypothesis-link:hover,.hypothesis-link:focus-visible,.coverage-link:hover,.coverage-link:focus-visible,.source-back-link:hover{border-color:#b6dfff;background:#1b384e}
 @media(max-width:1080px){.source-health-link,.hypothesis-link,.coverage-link{font-size:10px;padding:6px}}
+
+/* Shared progressive disclosure: show decisions and states before caveats. */
+.cairn-secondary-detail{margin:8px 0;color:#b4cadb;font-size:12px;line-height:1.5}
+.cairn-secondary-detail>summary{cursor:pointer;color:#a9d4ee;font-size:12px;font-weight:650}
+.cairn-secondary-detail p{margin:7px 0 0}
+.cairn-map-method{position:absolute;bottom:10px;right:12px;z-index:2;background:rgba(10,22,35,.85);border:1px solid #38546a;border-radius:6px;padding:5px 8px;max-width:320px}
+.cairn-map-method>summary{cursor:pointer;color:#c4d9e7;font-size:11px}
+.cairn-map-method .geographic-note{position:static;max-width:100%;padding:5px 0;background:transparent;border:0}
