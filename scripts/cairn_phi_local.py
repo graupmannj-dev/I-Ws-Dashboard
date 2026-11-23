@@ -134,7 +134,10 @@ def ask_phi(packet, _key=None, _model=None, *, transport=None):
              "messages":[{"role":"system","content":SYSTEM},
                          {"role":"user","content":json.dumps(msg,ensure_ascii=False)}]}
     response=transport(payload) if transport else _send(payload)
-    result=json.loads(response["choices"][0]["message"]["content"])
+    content=response["choices"][0]["message"]["content"]
+    if os.getenv("CAIRN_SYNTHETIC_SMOKE_DEBUG")=="1":
+        print("SYNTHETIC_PHI_RAW",str(content)[:7000],flush=True)
+    result=json.loads(content)
     return _validate(result,packet)
 
 def update_analyst_backfill(path, *, runner=ask_phi):
