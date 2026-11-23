@@ -247,13 +247,16 @@ def assess(dossiers, registry, archive, gdelt_trends, provider_baselines, config
                 hazard = (row.get("source_family") in HAZARD_FAMILIES or
                           mode in HAZARD_MODES)
                 qualifies = bool(QUOTED_CLAIM.search(title) or NEGATED.search(title)
+                                 or (role != "context_candidate" and
+                                     kind != "current_provider_not_event_verified")
                                  or (role == "escalation_candidate" and
                                      (CONFOUNDERS.search(title) or hazard)))
                 # A media headline remains an unverified source claim, even
                 # when it is specific. Qualifiers downgrade interpretability.
                 if qualifies:
                     outcome = "ambiguous_count"
-                    reason = "Conflicting, attributed, uncertain, negated or routine/hazard qualifier in source title"
+                    reason = ("Provisional or unverified source provenance, or an attributed, negated, "
+                              "routine or hazard qualifier; original source and alternatives require review")
                 elif role == "context_candidate" or hazard:
                     outcome = "context_count"
                     reason = "Context only: no military attribution or causal link established"
