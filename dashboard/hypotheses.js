@@ -318,6 +318,42 @@ function achTable(c){
     '<p class="ach-legend">+ consistent · − inconsistent · ± mixed · ? not reviewed. These are review counts, not probabilities; alternatives await hypothesis-specific assessment.</p>'+
     '<button type="button" class="new-hypothesis" id="addHypothesis">+ Propose an analyst hypothesis</button></section>';
 }
+function semanticSection(c){
+  const d=c.semantic_review||{};
+  if(d.status!=="provisional_complete"){
+    return '<details class="technical-details"><summary>AI semantic assessment · '+escapeHtml(
+      d.status==="not_configured"?"Not configured":
+      d.status==="not_selected_in_bounded_run"?"Awaiting scheduled batch":
+      d.status==="model_or_validation_failed"?"Review unavailable":"No assessment")+
+      '</summary><p class="muted">No validated model-generated ACH judgments are published for this case. The existing source and analyst reviews remain available.</p></details>';
+  }
+  const rows=Array.isArray(d.interpretations)?d.interpretations:[];
+  const evaluations=Array.isArray(d.evaluations)?d.evaluations:[];
+  const refs=new Map((d.source_references||[]).map(x=>[x.evidence_key,x]));
+  const readable={possibly_consistent:"Possibly consistent",possibly_inconsistent:"Possibly inconsistent",
+    non_diagnostic:"Not diagnostic",unresolved:"Unresolved"};
+  const html=rows.map((x,i)=>{
+    const verdicts=evaluations.filter(y=>y.hypothesis_index===i);
+    return '<details class="semantic-hypothesis"><summary><strong>H'+(i+1)+'</strong> '+escapeHtml(x.meaning)+
+      ' <span class="pill context">'+verdicts.length+' provisional evaluations</span></summary>'+
+      '<p><strong>Discriminator:</strong> '+escapeHtml(x.discriminator)+'</p>'+
+      '<ul class="semantic-verdicts">'+verdicts.map(v=>{
+        const f=refs.get(v.evidence_key)||{};
+        const links=(f.sources||[]).map(source=>{
+          const url=safeUrl(source.url);
+          return url?'<a href="'+escapeHtml(url)+'" target="_blank" rel="noopener noreferrer">'+
+            escapeHtml(source.title||"Original source")+'</a>':'';
+        }).filter(Boolean).join(" · ");
+        return '<li><strong>'+escapeHtml(f.family_title||v.evidence_key)+'</strong> · '+
+          escapeHtml(readable[v.direction]||"Unresolved")+
+          '<p>'+escapeHtml(v.rationale)+'</p><div class="semantic-source-links">'+links+'</div></li>';
+      }).join("")+'</ul></details>';
+  }).join("");
+  return '<section class="semantic-panel"><div class="ach-head"><h3>AI-assisted hypothesis comparison</h3>'+
+    '<span class="pill context">Provisional · analyst review required</span></div>'+
+    '<p>Candidate interpretations and evidence comparisons. These do not change reviewed evidence direction.</p>'+
+    html+'</section>';
+}
 function showCase(id){
   selected=id;listCases();const c=rows.find(x=>x.id===id);
   const host=$("caseDetail");if(!c)return;
@@ -338,7 +374,7 @@ function showCase(id){
     '<div class="ach-bluf"><span class="eyebrow">BLUF · '+title+'</span>'+
       '<h2>'+escapeHtml(c.hypothesis||"Hypothesis unspecified")+'</h2>'+
       '<p>'+escapeHtml(c.overview||"Assessment not yet available")+'</p></div>'+
-    achTable(c)+
+    achTable(c)+semanticSection(c)+
     '<section class="signposts"><h3>What would change this assessment?</h3><p>'+escapeHtml(c.next_discriminators||"No discriminating observations specified.")+'</p></section>'+
     supplementary;
   host.querySelectorAll("[data-ach-group]").forEach(btn=>btn.addEventListener("click",()=>{
