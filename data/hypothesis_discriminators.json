@@ -24,7 +24,7 @@
     "maritime_interdiction": {
       "role": "escalation_candidate",
       "label": "Maritime interdiction or shipping disruption",
-      "pattern": "\\b(?:blockade|quarantine|maritime exclusion zone|shipping (?:halted|suspended)|sea[- ]lane (?:closure|shutdown)|tanker (?:hit|struck|projectile incident)|vessel (?:hit|struck|attack)|port (?:closed|closure)|transit (?:halted|suspended))\\b",
+      "pattern": "\\b(?:blockade|quarantine|maritime exclusion zone|shipping (?:halted|suspended)|sea[- ]lane (?:closure|shutdown)|tanker (?:hit|struck|projectile incident)|vessel (?:hit|struck|attack)|port (?:closed|closure)|transit (?:halted|suspended))\\b|\\b(?:tanker|vessel|ship)\\b.{0,35}\\b(?:projectile (?:incident|attack)|hit|struck|attacked|targeted)\\b",
       "discriminator": "Distinguish physical interruption from scheduled navigation warnings, routine exercises, and generalized reporting."
     },
     "airspace_closure": {
