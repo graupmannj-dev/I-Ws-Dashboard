@@ -92,6 +92,8 @@ def initialize(config,archive,*,api_key=None,model=None,clock=None,runner=ask_mo
             limitation.append("Retained source archive unavailable for initial backfill")
         if inventory["partial"]:
             limitation.append("Initial review covers only a bounded retained public-source sample")
+        if inventory["status"]!="archive_unavailable":
+            limitation.append("Sensor coverage for the hypothesis geography and timeframe is not verified")
         if not refs:
             limitation.append("No source-linked case evidence was retrieved; absence is not contradictory evidence")
         if not api_key or not model:
