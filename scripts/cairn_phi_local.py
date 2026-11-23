@@ -77,9 +77,21 @@ def _validate(raw, packet):
     interpretations=raw.get("interpretations")
     if not isinstance(interpretations,list) or len(interpretations)!=len(packet["hypotheses"]):
         raise ValueError("Phi did not interpret each hypothesis")
+    indices=[r.get("hypothesis_index") if isinstance(r,dict) else None
+             for r in interpretations]
+    expected=list(range(len(interpretations)))
+    if indices==expected:
+        offset=0
+    elif indices==[i+1 for i in expected]:
+        # Compact instruction models commonly use human-facing H1..Hn.
+        # Normalize a complete unambiguous 1-based sequence; never guess on
+        # mixed indexes, duplicates, missing rows or out-of-order results.
+        offset=1
+    else:
+        raise ValueError("Invalid, repeated or missing hypothesis indices")
     clean=[]
     for i,r in enumerate(interpretations):
-        if not isinstance(r,dict) or type(r.get("hypothesis_index")) is not int or r["hypothesis_index"]!=i:
+        if not isinstance(r,dict) or type(r.get("hypothesis_index")) is not int or r["hypothesis_index"]!=i+offset:
             raise ValueError("Invalid hypothesis index/order")
         meaning=compact(r.get("meaning"),400)
         discriminator=compact(r.get("discriminator"),400)
@@ -135,8 +147,6 @@ def ask_phi(packet, _key=None, _model=None, *, transport=None):
                          {"role":"user","content":json.dumps(msg,ensure_ascii=False)}]}
     response=transport(payload) if transport else _send(payload)
     content=response["choices"][0]["message"]["content"]
-    if os.getenv("CAIRN_SYNTHETIC_SMOKE_DEBUG")=="1":
-        print("SYNTHETIC_PHI_RAW",str(content)[:7000],flush=True)
     result=json.loads(content)
     return _validate(result,packet)
 
