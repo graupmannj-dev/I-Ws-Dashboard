@@ -53,6 +53,87 @@ function gdeltSection(c){
       (u?'<a href="'+escapeHtml(u)+'" target="_blank" rel="noopener noreferrer">GDELT event archive</a>.':'')+'</p></section>';
 }
 
+
+const interpretationLabels={
+  competing_candidates_present:"Candidates associated with both explanations",
+  escalation_signposts_nominated:"Escalation-related candidate signposts; alternatives unresolved",
+  alternative_signposts_nominated:"Alternative-explanation candidate signposts; escalation not excluded",
+  ambiguous_or_context_only:"Only ambiguous/contextual case-associated observations",
+  no_matching_case_records_in_window:"No discriminating source-linked observations in this window"
+};
+function competingSection(c){
+  const d=c.competing_screen||{};
+  if(d.status!=="screened"){
+    return '<section class="competing-screen"><h3>Competing-explanation screen</h3>'+
+      '<p class="muted">Source archive is unavailable. No assessment was made; absence of data is not contradictory evidence.</p></section>';
+  }
+  const summary=d.summary||{},rules=Array.isArray(d.discriminators)?d.discriminators:[],
+    coverage=Array.isArray(d.source_baseline_readiness)?d.source_baseline_readiness:[],
+    gdelt=d.gdelt_context||{};
+  const ruleCard=r=>{
+    const links=(Array.isArray(r.sources)?r.sources:[]).map(x=>{
+      const url=safeUrl(x.source_url);
+      return '<li><span class="auto-meta">'+escapeHtml(x.screening_bucket||"unclassified")+
+        ' · '+escapeHtml(x.event_verification||"not verified")+
+        ' · '+escapeHtml(x.case_association||"unverified case association")+'</span>'+
+        (url?'<a href="'+escapeHtml(url)+'" target="_blank" rel="noopener noreferrer">'+
+          escapeHtml(x.title||"Source document")+'</a>':escapeHtml(x.title||"Source document"))+
+        '<small>'+escapeHtml(x.source_mode||"unknown source")+
+        ' · First ingested '+escapeHtml(x.first_observed_at||"time unavailable")+'</small>'+
+        '<p class="muted">'+escapeHtml(x.reason||"Needs review")+'</p></li>';
+    }).join("");
+    return '<details class="discriminator-rule"><summary><strong>'+escapeHtml(r.label||r.id)+'</strong>'+
+      '<span class="pill context">'+escapeHtml(r.candidate_count||0)+' nominated · '+
+      escapeHtml(r.ambiguous_count||0)+' ambiguous</span></summary>'+
+      '<div class="discriminator-content"><p>'+escapeHtml(r.discriminator||"Evidence discriminator not specified")+'</p>'+
+      '<p class="muted">'+escapeHtml(r.status||"unassessed")+
+      ' · No match does not mean the observation was absent in the theater.</p>'+
+      (links?'<ol class="auto-candidates">'+links+'</ol>':
+        '<p class="muted">No matching, source-linked observation in the retained window.</p>')+
+      '</div></details>';
+  };
+  const escalation=rules.filter(r=>r.role==="escalation_candidate").map(ruleCard).join("");
+  const alternatives=rules.filter(r=>r.role==="alternative_candidate").map(ruleCard).join("");
+  const contextual=rules.filter(r=>r.role==="context_candidate").map(ruleCard).join("");
+  const coverageRows=coverage.map(v=>'<tr><td>'+escapeHtml(v.mode||"unknown")+
+    '</td><td>'+escapeHtml(v.current_source_status||"unknown")+
+    '</td><td>'+escapeHtml(v.comparable_days??"not recorded")+
+    '</td><td>'+escapeHtml(v.status==="provider_descriptive_baseline_available"?
+      "Provider-level comparison only":"Insufficient for baseline")+'</td></tr>').join("");
+  return '<section class="competing-screen" aria-label="Machine hypothesis discriminator workbench">'+
+    '<h3>Hypothesis-specific discriminator workbench <span class="pill context">Provisional screening</span></h3>'+
+    '<p class="muted">Evaluated '+escapeHtml(d.evaluated_at||"unknown")+
+      ' · '+escapeHtml(c.discriminator_window_days||7)+'-day source observation window</p>'+
+    '<div class="competing-summary"><div><small>Escalation signpost nominations</small><strong>'+
+      escapeHtml(summary.escalation_signpost_nominations||0)+'</strong></div>'+
+      '<div><small>Alternative-explanation nominations</small><strong>'+
+      escapeHtml(summary.alternative_signpost_nominations||0)+'</strong></div>'+
+      '<div><small>Ambiguous / unverified nominations</small><strong>'+
+      escapeHtml(summary.ambiguous_signpost_nominations||0)+'</strong></div></div>'+
+    '<p><strong>Preliminary pattern:</strong> '+
+      escapeHtml(interpretationLabels[summary.competing_pattern]||
+        "Unclassified source candidates")+'</p>'+
+    '<p class="muted">Case-linked source documents: '+
+      escapeHtml(summary.source_documents_case_associated||0)+
+      '. Documents and nominations can overlap. Source independence and incident occurrence have not been established.</p>'+
+    '<p class="muted"><strong>Competing explanation:</strong> '+
+      escapeHtml(d.alternative_explanation||"No documented alternative")+'</p>'+
+    '<div class="discriminator-columns"><div><h4>What might distinguish escalation</h4>'+
+      escalation+'</div><div><h4>What might favor alternative explanations</h4>'+
+      alternatives+'</div></div>'+
+    (contextual?'<div class="discriminator-context"><h4>Context and confounding mechanisms (not directional evidence)</h4>'+
+      contextual+'</div>':'')+
+    '<details class="coverage-details"><summary>Source-health and baseline readiness ('+
+      escapeHtml(coverage.length)+ ' source types)</summary>'+
+      '<p class="muted">These are provider-wide collection baselines, NOT calibrated event frequencies in this theater. A stale or incomplete baseline is unknown, not negative evidence.</p>'+
+      '<table><thead><tr><th>Source</th><th>Health</th><th>Comparable days</th><th>Baseline</th></tr></thead>'+
+      '<tbody>'+coverageRows+'</tbody></table></details>'+
+    '<p class="muted">GDELT context: '+escapeHtml(gdelt.status||"unavailable")+
+      (gdelt.status==="measured"?' · '+escapeHtml(gdelt.media_coded_share_trend||"no trend"):'' )+
+      '. It measures reporting share, not preference for the military-escalation hypothesis.</p>'+
+    '<p class="muted"><strong>Interpretation boundary:</strong> No automated claim is a validated event, independent corroboration, attack probability, approved directional review, or operational warning. Read the linked primary source and test the stated alternative before changing a judgment.</p>'+
+    '</section>';
+}
 function evidenceHistory(c){
   const a=c.automated_screen||{}, sources=Array.isArray(a.historical_sources)?a.historical_sources:[];
   const n=a.historical_case_roots||0;
@@ -110,7 +191,11 @@ function listCases() {
   const shown=rows.filter(c=>(filter==="all" ||
       (filter==="reviewed"&&c.balance.direction!=="not_assessed") ||
       (filter==="unassessed"&&c.balance.direction==="not_assessed") ||
-      (filter==="machine"&&(c.automated_screen?.new_matching_records||0)>0)) &&
+      (filter==="machine"&&(c.automated_screen?.new_matching_records||0)>0) ||
+      (filter==="discriminators"&&(
+        (c.competing_screen?.summary?.escalation_signpost_nominations||0)+
+        (c.competing_screen?.summary?.alternative_signpost_nominations||0)+
+        (c.competing_screen?.summary?.ambiguous_signpost_nominations||0)>0))) &&
     (!query||([c.title,c.hypothesis,c.standing_state,...c.families.map(f=>f.title)]
       .join(" ").toLowerCase().includes(query))));
   $("caseCount").textContent=shown.length+" of "+rows.length+" hypotheses";
@@ -126,7 +211,8 @@ function listCases() {
       (c.automated_screen?.status==="screened"?" · "+(c.automated_screen.new_matching_records||0)+" new machine-screened roots":"")+
       (c.gdelt_media_trend?.status==="measured"?" · GDELT: "+(
         {higher_coded_share:"higher",lower_coded_share:"lower",equal_coded_share:"unchanged"}[c.gdelt_media_trend.trend]||"measured"
-      )+" media-coded share":"");
+      )+" media-coded share":"")+
+      (c.competing_screen?.status==="screened"?" · Discriminator scan complete":"");
     b.append(header,desc,meta);b.addEventListener("click",()=>showCase(c.id));
     host.appendChild(b);
   }
@@ -178,7 +264,7 @@ function showCase(id){
   host.innerHTML='<p class="eyebrow">SOURCE-DATED HYPOTHESIS · '+escapeHtml(c.dossier_asof||"DATE UNKNOWN")+'</p>'+
     '<h2>'+escapeHtml(c.title||c.id)+'</h2>'+
     '<p class="scenario">'+escapeHtml(c.hypothesis||"Hypothesis unspecified")+'</p>'+
-    '<p>'+escapeHtml(c.overview||"No analysis on file")+'</p>'+gdeltSection(c)+autoSection(c)+evidenceHistory(c)+
+    '<p>'+escapeHtml(c.overview||"No analysis on file")+'</p>'+gdeltSection(c)+competingSection(c)+autoSection(c)+evidenceHistory(c)+
     '<section class="balance"><div class="balance-title"><h3>Direction of reviewed evidence</h3>'+
       pill(caseLabel(c),assessed?(score>0.2?"supports":score< -0.2?"contradicts":"context"):"not_assessed")+
       '</div><div class="balance-track" role="img" aria-label="'+
@@ -212,12 +298,14 @@ async function start(){
       throw Error("Unsupported hypothesis index");
     rows=payload.hypotheses.map(c=>({...c,
       automated_window_hours:payload.automated_screen?.window_hours,
-      automated_source_snapshot_at:payload.automated_screen?.source_snapshot_at}));
+      automated_source_snapshot_at:payload.automated_screen?.source_snapshot_at,
+      discriminator_window_days:payload.discriminator_screen?.source_lookback_days}));
     $("snapshotStatus").textContent=(payload.hypothesis_count||0)+" scenarios · "+
       (payload.reviewed_hypotheses||0)+" with explicit review · "+
       (payload.generated_at||"Unknown build time")+" · Automated: "+
       (payload.automated_screen?.status==="screened"?"screened "+payload.automated_screen.screened_at:"source snapshot unavailable")+
-      " · GDELT case comparisons: "+(payload.gdelt_case_status?.measured_case_count||0)+"/"+(payload.hypothesis_count||0);
+      " · GDELT case comparisons: "+(payload.gdelt_case_status?.measured_case_count||0)+"/"+(payload.hypothesis_count||0)+
+      " · Competing-explanation scans: "+(payload.discriminator_screen?.hypothesis_count||0);
     const initial=new URLSearchParams(window.location.search).get("id");
     $("caseSearch").addEventListener("input",listCases);
     $("caseFilter").addEventListener("change",listCases);

@@ -31,6 +31,28 @@ input,select{background:#0c1826;color:#edf4fa;border:1px solid #40576a;border-ra
 .panel-grid{display:grid;grid-template-columns:1fr 1fr;gap:13px;margin:16px 0}
 .panel-grid section{padding:15px;background:#15283b;border:1px solid #2d455d;border-radius:9px}
 .panel-grid ol{padding-left:21px;margin:0}.panel-grid li{margin:8px 0;color:#bdd0df}
+.competing-screen{background:#162a3b;border:1px solid #45617b;border-radius:10px;padding:16px;margin:17px 0}
+.competing-screen h3{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.competing-summary{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;margin:12px 0}
+.competing-summary>div{border:1px solid #35516c;background:#102336;padding:10px;border-radius:8px}
+.competing-summary small{display:block;font-size:11px;color:#9eb8cb}
+.competing-summary strong{font-size:19px}
+.discriminator-columns{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.discriminator-columns>div{min-width:0}
+.discriminator-columns h4{font-size:13px;color:#c2e0f1;margin:8px 0}
+.discriminator-rule{border:1px solid #39536b;border-radius:8px;margin:7px 0;background:#102338}
+.discriminator-rule summary{padding:10px;cursor:pointer;display:flex;gap:9px;justify-content:space-between;flex-wrap:wrap;align-items:center}
+.discriminator-rule summary strong{font-size:12px}
+.discriminator-content{border-top:1px solid #334e66;padding:10px}
+.discriminator-content p{margin:5px 0}
+.discriminator-content .auto-candidates{padding-left:20px;max-height:270px;overflow:auto}
+.coverage-details{margin:15px 0;border:1px solid #39536b;border-radius:8px;padding:10px}
+.coverage-details summary{cursor:pointer;color:#a6d5f1}
+.coverage-details table{width:100%;border-collapse:collapse;font-size:12px}
+.coverage-details th,.coverage-details td{padding:7px;text-align:left;border-bottom:1px solid #3c526a;overflow-wrap:anywhere}
+.coverage-details th{color:#a0becf}
+@media(max-width:750px){.discriminator-columns{grid-template-columns:1fr}}
+@media(max-width:500px){.competing-summary{grid-template-columns:1fr}}
 .gdelt-media{border:1px solid #46627a;background:#172d40;border-radius:10px;padding:16px;margin:17px 0}
 .gdelt-media h3{display:flex;align-items:center;flex-wrap:wrap;gap:9px}
 .gdelt-stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}

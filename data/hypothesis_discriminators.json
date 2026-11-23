@@ -1,0 +1,296 @@
+{
+  "schema": "cairn.hypothesis-discriminators.v1",
+  "version": 1,
+  "window_days": 7,
+  "source_baseline_contract": {
+    "minimum_comparable_source_days": 14,
+    "temporal_baseline_scope": "provider_only_not_case_or_region",
+    "gdelt_baseline_days": 28
+  },
+  "interpretation_policy": "All matches are provisional title/context observations. They never establish military intent, independent source confirmation, likelihood ratios, alerts or approved reviews. Missing coverage is unknown, never negative.",
+  "templates": {
+    "direct_state_engagement": {
+      "role": "escalation_candidate",
+      "label": "Direct state engagement or cross-border strike",
+      "pattern": "\\b(?:cross[- ]border|interstate|border)\\b.{0,55}\\b(?:attack|strike|shelling|incursion|firing|clash|engagement)\\b|\\b(?:missile|drone|rocket|artillery)\\b.{0,55}\\b(?:attack|strike|hit|incursion)\\b|\\b(?:attack|strike|incursion)\\b.{0,55}\\b(?:missile|drone|rocket)\\b|\\b(?:iranian|russian|eritrea[n]?|pakistani|rwandan|chinese|north korean)\\b.{0,40}\\b(?:attack|strike|shelling|incursion)\\b",
+      "discriminator": "Seek independent attribution to state forces and a verified incident, not just an allegation or syndicated headline."
+    },
+    "force_concentration": {
+      "role": "escalation_candidate",
+      "label": "Extraordinary force preparation",
+      "pattern": "\\b(?:troop|force|naval|army|armou?red|reserve|amphibious|logistics)\\b.{0,55}\\b(?:mobiliz|mass(?:ing)?|build[- ]?up|concentration|deploy(?:ment|ed)|activation)\\b|\\b(?:extraordinary|unusual|large[- ]scale)\\b.{0,45}\\b(?:deployment|mobilization)\\b",
+      "discriminator": "Compare with recurring exercises and the theater's historical training or deployment baseline."
+    },
+    "maritime_interdiction": {
+      "role": "escalation_candidate",
+      "label": "Maritime interdiction or shipping disruption",
+      "pattern": "\\b(?:blockade|quarantine|maritime exclusion zone|shipping (?:halted|suspended)|sea[- ]lane (?:closure|shutdown)|tanker (?:hit|struck|projectile incident)|vessel (?:hit|struck|attack)|port (?:closed|closure)|transit (?:halted|suspended))\\b",
+      "discriminator": "Distinguish physical interruption from scheduled navigation warnings, routine exercises, and generalized reporting."
+    },
+    "airspace_closure": {
+      "role": "escalation_candidate",
+      "label": "Atypical airspace restriction or civilian flight interruption",
+      "pattern": "\\b(?:airspace (?:closed|closure|shutdown|restricted)|flights? (?:suspended|grounded|cancelled)|civilian (?:aircraft|flights) (?:grounded|suspended))\\b",
+      "discriminator": "Check whether the restriction is exceptional and attributable to the relevant security scenario."
+    },
+    "border_closure": {
+      "role": "escalation_candidate",
+      "label": "Exceptional border/trade crossing restriction",
+      "pattern": "\\b(?:border|frontier|crossing)\\b.{0,40}\\b(?:closed|closure|sealed|shut|suspend|halted)\\b|\\b(?:freight|truck|cargo)\\b.{0,40}\\b(?:blocked|stopped|halted|suspended)\\b",
+      "discriminator": "Verify actual crossing changes against normal travel, customs, and domestic-security restrictions."
+    },
+    "civilian_protection": {
+      "role": "escalation_candidate",
+      "label": "Civilian protection or evacuation action",
+      "pattern": "\\b(?:evacuation order|mandatory evacuation|ordered evacuation|mass evacuation|civilian evacuations|refugee (?:influx|flow|surge)|displacement (?:surge|accelerat))\\b",
+      "discriminator": "Distinguish conflict-driven protective action from localized violence and environmental disasters."
+    },
+    "diplomatic_breakdown": {
+      "role": "escalation_candidate",
+      "label": "Exceptional diplomatic rupture or ceasefire breakdown",
+      "pattern": "\\b(?:expel(?:led|s)? diplomats?|expulsion of diplomats|closed (?:the )?consulate|consular closure|ceasefire (?:collapsed|broken|suspended)|peace talks (?:collapsed|suspended)|diplomatic relations (?:severed|broken))\\b",
+      "discriminator": "Diplomatic signaling is meaningful but cannot by itself demonstrate a decision for direct military action."
+    },
+    "network_disruption": {
+      "role": "context_candidate",
+      "label": "Network or infrastructure disruption (attribution unknown)",
+      "pattern": "\\b(?:connectivity anomaly|internet (?:outage|blackout|shutdown)|telecom (?:outage|disruption)|power (?:outage|blackout)|routing anomaly)\\b",
+      "discriminator": "Require a source-verified local anomaly and separate technical or natural causes from deliberate action."
+    },
+    "scheduled_training": {
+      "role": "alternative_candidate",
+      "label": "Scheduled/routine exercise explanation",
+      "pattern": "\\b(?:firing exercises?|live[- ]fire exercise|military exercises?|naval exercises?|routine drill|scheduled exercise|training area|exercise warning|training exercise|missile test|weapons test)\\b",
+      "discriminator": "Routine exercises can explain closures or deployments, but cannot exclude opportunistic escalation."
+    },
+    "diplomatic_deescalation": {
+      "role": "alternative_candidate",
+      "label": "Diplomatic de-escalation or functioning contacts",
+      "pattern": "\\b(?:mediation talks|diplomatic contacts|ceasefire (?:holds|extended|renewed)|peace talks (?:resumed|continue)|negotiations resumed|border talks (?:resumed|continue)|agreement (?:reached|signed))\\b",
+      "discriminator": "Mediation and talks can coexist with preparation. This is a competing-explanation cue, not proof of safety."
+    },
+    "localized_conflict": {
+      "role": "alternative_candidate",
+      "label": "Continuing localized/proxy conflict explanation",
+      "pattern": "\\b(?:tigray fighting|m23 (?:fighting|advance|clash)|counterinsurgency (?:raid|operation)|localized (?:fighting|clashes)|internal fighting|insurgency fighting|counterterrorism raid|border skirmish|rebel fighting)\\b",
+      "discriminator": "Ongoing violence may generate many alerts without a distinct new interstate escalation."
+    },
+    "natural_hazard": {
+      "role": "context_candidate",
+      "label": "Environmental disruption as a confounder",
+      "pattern": "\\b(?:earthquake|seismic|volcano|cyclone|typhoon|hurricane|tropical storm|flood(?:ing)?|wildfire|thunderstorm)\\b",
+      "discriminator": "A hazard can explain civil restrictions without hostile military intent."
+    }
+  },
+  "cases": {
+    "horn_ethiopia_eritrea": {
+      "name": "Ethiopia–Eritrea / northern Tigray",
+      "escalation": [
+        "direct_state_engagement",
+        "force_concentration",
+        "border_closure",
+        "civilian_protection"
+      ],
+      "alternatives": [
+        "localized_conflict",
+        "diplomatic_deescalation"
+      ],
+      "priority_modes": [
+        "official",
+        "commercial",
+        "ioda"
+      ],
+      "context": [
+        "natural_hazard"
+      ]
+    },
+    "horn_ethiopia_sudan": {
+      "name": "Ethiopia–Sudan",
+      "escalation": [
+        "direct_state_engagement",
+        "force_concentration",
+        "border_closure",
+        "diplomatic_breakdown"
+      ],
+      "alternatives": [
+        "localized_conflict",
+        "diplomatic_deescalation"
+      ],
+      "priority_modes": [
+        "official",
+        "commercial",
+        "ioda"
+      ],
+      "context": []
+    },
+    "horn_ethiopia_kenya_moyale": {
+      "name": "Ethiopia–Kenya / Moyale",
+      "escalation": [
+        "direct_state_engagement",
+        "border_closure",
+        "civilian_protection"
+      ],
+      "alternatives": [
+        "localized_conflict",
+        "diplomatic_deescalation"
+      ],
+      "priority_modes": [
+        "official",
+        "commercial",
+        "ioda"
+      ],
+      "context": [
+        "natural_hazard"
+      ]
+    },
+    "afpak": {
+      "name": "Afghanistan–Pakistan",
+      "escalation": [
+        "direct_state_engagement",
+        "force_concentration",
+        "border_closure",
+        "civilian_protection"
+      ],
+      "alternatives": [
+        "localized_conflict",
+        "diplomatic_deescalation"
+      ],
+      "priority_modes": [
+        "official",
+        "commercial",
+        "ioda"
+      ],
+      "context": []
+    },
+    "drc_rwanda": {
+      "name": "DR Congo–Rwanda / Kivu",
+      "escalation": [
+        "direct_state_engagement",
+        "force_concentration",
+        "civilian_protection",
+        "border_closure"
+      ],
+      "alternatives": [
+        "localized_conflict",
+        "diplomatic_deescalation"
+      ],
+      "priority_modes": [
+        "official",
+        "commercial",
+        "ioda"
+      ],
+      "context": []
+    },
+    "thailand_cambodia": {
+      "name": "Thailand–Cambodia",
+      "escalation": [
+        "direct_state_engagement",
+        "border_closure",
+        "diplomatic_breakdown",
+        "civilian_protection"
+      ],
+      "alternatives": [
+        "scheduled_training",
+        "diplomatic_deescalation"
+      ],
+      "priority_modes": [
+        "official",
+        "commercial",
+        "ioda"
+      ],
+      "context": [
+        "natural_hazard"
+      ]
+    },
+    "russia_nato": {
+      "name": "Russia–NATO",
+      "escalation": [
+        "direct_state_engagement",
+        "force_concentration",
+        "airspace_closure",
+        "maritime_interdiction"
+      ],
+      "alternatives": [
+        "scheduled_training",
+        "diplomatic_deescalation"
+      ],
+      "priority_modes": [
+        "live_maritime",
+        "official",
+        "commercial",
+        "ioda"
+      ],
+      "context": [
+        "network_disruption",
+        "natural_hazard"
+      ]
+    },
+    "iran_gulf": {
+      "name": "U.S.–Iran / Hormuz",
+      "escalation": [
+        "direct_state_engagement",
+        "maritime_interdiction",
+        "civilian_protection",
+        "airspace_closure"
+      ],
+      "alternatives": [
+        "scheduled_training",
+        "diplomatic_deescalation"
+      ],
+      "priority_modes": [
+        "official",
+        "commercial",
+        "ioda",
+        "watchlist"
+      ],
+      "context": [
+        "network_disruption",
+        "natural_hazard"
+      ]
+    },
+    "taiwan": {
+      "name": "Taiwan Strait",
+      "escalation": [
+        "maritime_interdiction",
+        "force_concentration",
+        "airspace_closure",
+        "civilian_protection"
+      ],
+      "alternatives": [
+        "scheduled_training",
+        "diplomatic_deescalation"
+      ],
+      "priority_modes": [
+        "tw_power",
+        "official",
+        "commercial",
+        "watchlist"
+      ],
+      "context": [
+        "network_disruption",
+        "natural_hazard"
+      ]
+    },
+    "korea": {
+      "name": "Korean Peninsula",
+      "escalation": [
+        "direct_state_engagement",
+        "force_concentration",
+        "airspace_closure",
+        "civilian_protection"
+      ],
+      "alternatives": [
+        "scheduled_training",
+        "diplomatic_deescalation"
+      ],
+      "priority_modes": [
+        "official",
+        "commercial",
+        "ioda"
+      ],
+      "context": [
+        "network_disruption"
+      ]
+    }
+  }
+}

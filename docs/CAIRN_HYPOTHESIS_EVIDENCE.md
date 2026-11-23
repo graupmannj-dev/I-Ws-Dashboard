@@ -161,3 +161,79 @@ Acceptance tests: `python -m unittest tests.test_gdelt_case_trends
 tests.test_hypothesis_auto_review -v` and the existing Playwright hypothesis
 browser tests. A successful publication produces the dated GDELT comparison
 file and attaches it to each hypothesis in `hypotheses.json`.
+
+## Competing-hypothesis discriminator screening (November 2026)
+
+Every scheduled successful collection-triggered Pages publication now also runs
+`dashboard/hypothesis_discriminator_engine.py`. Its operational contract is
+versioned in `data/hypothesis_discriminators.json`. The full, source-linked,
+timestamped output is published at
+`hypothesis_discriminator_screen.json`; the per-case results are embedded in
+`hypotheses.json` and presented in the hypothesis detail panel.
+
+### Analytic decision contract
+
+- Each standing scenario defines **escalation signposts** and **competing
+  explanatory signposts**; the 12 reusable templates are chosen separately
+  per case. Every signpost lists an observation that could discriminate among
+  competing explanations. The model reports both sides, not a threat-only
+  count.
+- A record first needs a specific scenario hint or distinctive *reported*
+  place/actor phrase. The association is a candidate, **not** verified event
+  geolocation. The system evaluates a seven-day first-ingested window, not a
+  week of known event occurrences.
+- A versioned rule identifies a source-title signpost. A source claim,
+  negation, uncertainty, routine exercise, natural hazard, unreviewed analyst
+  submission or currently unhealthy collector **downgrades** the matched item
+  to ambiguous/contextual. Additional phrases cannot silently increase an
+  approved warning score. Historical sources need original-reading review.
+- Repeated pieces linked to the same actual source document URL are counted
+  once *within each signpost*; a signpost nomination can appear under more
+  than one rule. Distinct publisher labels do not prove independent events.
+- The machine summarizes `escalation_signposts_nominated`,
+  `alternative_signposts_nominated`, and ambiguous matches; its
+  `competing_pattern` reports which *textual nominations* coexist.
+  `direction_of_armed_conflict_hypothesis` stays `not_estimated`.
+- The prior signed human reviewer file remains untouched. No classifier
+  produces a probability, confidence interval, approved review, warning,
+  critical status, or autonomous escalation conclusion.
+
+### Baseline gates and geographic coverage limits
+
+The engine reads existing
+`observations/latest/behavioral_baselines.json` and each collector's health
+summary. A provider-wide descriptive baseline is eligible only when at least
+14 comparable recorded days, the collector's baseline-ready status, a
+non-null provider median, and a presently current feed are all verified.
+This does **not** establish case-specific historical variation: a global,
+U.S.-only, Indonesian, or Baltic-only source does not establish conditions
+in unrelated theaters. The screen deliberately does not convert
+provider-wide counts into a case-level z-score, escalation probability or
+negative finding. A missing comparator is displayed as insufficient.
+
+The separately published 28-day GDELT pair baseline is reported alongside
+the new screen as descriptive reporting context. A rise in GDELT media-coded
+interaction is not an independent observation of conflict preparation, nor
+evidence by itself that the escalation explanation is more plausible.
+
+### Review and limitations
+
+1. Open the hypothesis, compare the primary explanation to the explicit
+   competing hypothesis, and inspect the dated source URLs under each
+   discriminator.
+2. Check the source's actual claims and whether the events and publisher
+   roots are independent; read collector scope and baseline health.
+3. Only a separate authorized analyst review can assign signed directional
+   evidence in `data/hypothesis_reviews.json`.
+
+The deterministic parser processes *titles*, not verified full text. It can
+both miss events and falsely nominate matches. Routine exercises, meteorology,
+source reporting, and sampling artifacts deserve active alternative analysis.
+Source misses cannot establish no activity. No use as autonomous warning or
+military operational tasking is justified without further external evaluation.
+
+Acceptance: `python -m unittest tests.test_hypothesis_discriminator_engine -v`,
+`python -m unittest discover -s tests -v`, and the PR Playwright
+`scripts/test_hypothesis_auto_browser.js` test. A read-only PR smoke job
+executes this model against the live durable source branch and asserts zero
+approved warnings and provenance-preserving output.

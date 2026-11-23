@@ -385,6 +385,64 @@ jobs:
               assert all(not a["analyst_approved"] and not a["warning_approved"]
                          for a in c["candidates"])
           PY
+  competing-hypotheses-real-source-smoke:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          ref: aiba-feed-data
+          path: ops-state
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Read-only competing-hypothesis scan against source evidence archive
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          from dashboard.hypothesis_discriminator_engine import assess, SCHEMA
+          def read(path):
+              try:
+                  return json.loads(Path(path).read_text(encoding="utf-8"))
+              except (OSError, ValueError):
+                  return {}
+          dossier=read("data/verified_hotspots.json")
+          registry=read("ops-state/observations/latest/behavioral_registry.json")
+          archive=read("ops-state/observations/latest/family_archive.json")
+          baseline=read("ops-state/observations/latest/behavioral_baselines.json")
+          cfg=read("data/hypothesis_discriminators.json")
+          result=assess(dossier,registry,archive,{},baseline,cfg)
+          assert result["schema"]==SCHEMA
+          assert result["hypothesis_count"]==len(dossier)==10
+          assert result["automated_warnings"]==0
+          assert result["analyst_approved_directions"]==0
+          assert result["probability_of_conflict"] is None
+          print("CAIRN discriminator scan",result["status"],
+                "source documents:",result["source_records_in_window"],
+                "truncated:",result["candidate_input_truncated"])
+          for cid,c in result["cases"].items():
+              s=c["summary"]
+              print(cid,":",s["competing_pattern"],
+                    "escalation:",s["escalation_signpost_nominations"],
+                    "alternatives:",s["alternative_signpost_nominations"],
+                    "ambiguous:",s["ambiguous_signpost_nominations"],
+                    "case docs:",s["source_documents_case_associated"])
+              assert s["direction_of_armed_conflict_hypothesis"]=="not_estimated"
+              assert not s["source_independence_established"]
+              assert not s["warning_promoted"]
+              for row in c["discriminators"]:
+                  for source in row["sources"]:
+                      assert source["source_url"].startswith("https://")
+                      assert source["analyst_approved"] is False
+                      assert source["independent_observation_confirmed"] is False
+              assert all(not item["case_specific"] for item in c["source_baseline_readiness"])
+          PY
   operational-smoke:
     if: github.event_name == 'pull_request'
     needs: test
