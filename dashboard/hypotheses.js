@@ -130,12 +130,24 @@ function competingSection(c){
     '<p><strong>Preliminary pattern:</strong> '+
       escapeHtml(interpretationLabels[summary.competing_pattern]||
         "Unclassified source candidates")+'</p>'+
-    '<p class="source-inspection-summary"><strong>Original source-text verification prototype:</strong> '+
+    '<p class="source-inspection-summary"><strong>Original source-text inspection prototype:</strong> '+
       escapeHtml(sourceStatus.status==="bounded_receipts_available"?
-        ((sourceStatus.source_rule_links_inspected||0)+" inspected source-to-rule links · "+
-         (sourceStatus.rule_links_with_textual_place_mention||0)+" with a reported locality"):
+        ((sourceStatus.archived_original_documents||[]).length+" original document checks (14-day lookback) · "+
+         (sourceStatus.archived_original_documents||[]).filter(r=>r.status==="document_text_inspected").length+
+         " original narratives retrieved"):
         "Not collected in this publication")+
       '. Opening a document does not independently establish an incident.</p>'+
+    (Array.isArray(sourceStatus.archived_original_documents)&&sourceStatus.archived_original_documents.length?
+      '<details class="source-inspection-history"><summary>View original article checks and geographic-text attribution</summary>'+
+      '<ol class="auto-candidates">'+sourceStatus.archived_original_documents.map(r=>{
+        const url=safeUrl(r.source_url);
+        const title=escapeHtml(r.title||"Source document");
+        return '<li><span class="auto-meta">'+escapeHtml(r.status||"not inspected")+
+          (r.source_text_location?' · Reported place: '+escapeHtml(r.source_text_location):' · Site not established')+
+          '</span>'+(url?'<a href="'+escapeHtml(url)+'" target="_blank" rel="noopener noreferrer">'+title+'</a>':title)+
+          '<small>First collected: '+escapeHtml(r.first_observed_at||"unknown")+
+          ' · '+escapeHtml(r.geography_status||r.reason||"no verified source geography")+'</small></li>';
+      }).join("")+'</ol></details>':'')+
     '<p class="muted">Case-linked source documents: '+
       escapeHtml(summary.source_documents_case_associated||0)+
       '. Documents and nominations can overlap. Source independence and incident occurrence have not been established.</p>'+
