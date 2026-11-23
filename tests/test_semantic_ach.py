@@ -41,6 +41,18 @@ class SemanticReviewTests(unittest.TestCase):
         self.assertEqual(result["status"],"not_configured")
         self.assertEqual(result["cases"]["taiwan"]["evaluations"],[])
         self.assertEqual(data["hypotheses"][0]["balance"]["direction"],"not_assessed")
+    def test_recent_history_is_provisional_and_source_linked(self):
+        c=case()
+        c["automated_screen"]={"historical_sources":[
+            {"source_url":"https://example.org/recent","title":"Case-linked new airspace notice",
+             "source_mode":"official","first_observed_at":"2026-11-23T11:00:00Z"},
+            {"source_url":"javascript:attack","title":"Unsafe source"}]}
+        packet=evidence_packet(c)
+        history=[f for f in packet["evidence_families"] if f["evidence_key"].startswith("history:")]
+        self.assertEqual(len(history),1)
+        self.assertEqual(history[0]["reviewed_direction"],"not_assessed")
+        self.assertEqual(history[0]["source_health"],"not_event_verified")
+
     def test_packets_only_allow_source_urls(self):
         packet=evidence_packet(case())
         self.assertEqual(len(packet["evidence_families"]),2)
