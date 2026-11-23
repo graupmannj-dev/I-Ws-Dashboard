@@ -336,15 +336,30 @@ function achTable(c){
         const rv=families.map(f=>f.ach_reviews?.[String(j+1)]).filter(Boolean);
         const sup=rv.filter(x=>x.direction==="supports").length;
         const ctr=rv.filter(x=>x.direction==="contradicts").length;
-        const mark=!rv.length?"?":sup&&ctr?"±":sup?"+":ctr?"−":"—";
-        return '<td><span class="ach-cell '+(sup?"has-support":ctr?"has-counter":"")+'" title="'+(rv.length?"Reviewed ACH judgments: "+rv.length:"No alternative-specific reviewed evidence")+'">'+mark+'</span></td>';
+        const analyst=analystByIndex.get(j+1);
+        const initial=(analyst?.initial_backfill?.evaluations||[]);
+        const live=(c.semantic_review?.evaluations||[]);
+        const provisional=!rv.length ? [...live,...initial].filter(x=>
+          (live.includes(x)?x.hypothesis_index===j+1:x.hypothesis_index===0) &&
+          families.some(f=>f.evidence_key===x.evidence_key)):[];
+        const pos=provisional.filter(x=>x.direction==="possibly_consistent").length;
+        const neg=provisional.filter(x=>x.direction==="possibly_inconsistent").length;
+        const machine=!rv.length && (pos||neg);
+        const mark=!rv.length?(machine?(pos&&neg?"≈±":pos?"≈+":"≈−"):"?"):
+          sup&&ctr?"±":sup?"+":ctr?"−":"—";
+        const label=rv.length?"Reviewed ACH judgments: "+rv.length:
+          machine?"Provisional AI evidence comparison only; no analyst-signed direction":
+          "No alternative-specific reviewed evidence";
+        return '<td><span class="ach-cell '+(machine?"ach-provisional ": "")+
+          (sup?"has-support":ctr?"has-counter":"")+'" title="'+escapeHtml(label)+'">'+
+          mark+'</span></td>';
       }).join("")+'</tr>'+
       '<tr class="ach-drill" data-ach-details="'+i+'" hidden><td colspan="'+hypotheses.length+'"><div class="ach-source-list"><h4>'+escapeHtml(name)+' — original evidence</h4>'+
       families.map(familyCard).join("")+'</div></td></tr>';
   }).join("");
   return '<section class="ach-panel"><div class="ach-head"><h3>Analysis of competing hypotheses</h3><span class="pill">Only reviewed directions are scored</span></div>'+
     '<div class="ach-scroll"><table class="ach-table"><thead><tr><th scope="col">Evidence families</th>'+head+'</tr></thead><tbody>'+body+'</tbody></table></div>'+
-    '<p class="ach-legend">+ consistent · − inconsistent · ± mixed · ? not reviewed. These are review counts, not probabilities; alternatives await hypothesis-specific assessment.</p>'+
+    '<p class="ach-legend">+ consistent · − inconsistent · ± mixed · ? not reviewed. ≈ marks provisional AI observations, never approved evidence. Other marks summarize reviewer judgments; none are probabilities.</p>'+
     '<button type="button" class="new-hypothesis" id="addHypothesis">+ Propose an analyst hypothesis</button></section>';
 }
 function semanticSection(c){
