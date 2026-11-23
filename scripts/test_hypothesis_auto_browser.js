@@ -85,7 +85,7 @@ const assert=require("node:assert/strict");
     assert.match(await page.locator("#caseDetail").innerText(),/Dated historical source report/);
     assert.match(await page.locator("#caseDetail").innerText(),/NOT an analyst-approved direction/);
     assert.match(await page.locator("#caseDetail").innerText(),/No reviewer-approved signed evidence/);
-    assert.equal(await page.locator(".auto-candidates a").first().getAttribute("href"),
+    assert.equal(await page.locator(".auto-review .auto-candidates a").first().getAttribute("href"),
       "https://example.org/source");
     await page.locator("#caseFilter").selectOption("discriminators");
     assert.equal(await page.locator(".case-tile").count(),1);
