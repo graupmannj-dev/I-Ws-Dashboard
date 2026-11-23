@@ -23,6 +23,10 @@ import urllib.error
 import urllib.parse
 import urllib.request
 
+import sys
+if str(Path(__file__).resolve().parents[1]) not in sys.path:
+    sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+
 from dashboard.hypothesis_discriminator_engine import assess, _check_config
 from dashboard.source_geo_claims import inspect_text
 
