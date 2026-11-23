@@ -285,6 +285,39 @@
           "title": "FAA TFR 6/7139 · 39 ZJX AIRSPACE BARTOW, FL, Wednesday, November 11, 2026 UTC"
         }
       }
+    },
+    "88fb5f52f974e1da5afaf5d7435f98a635b49ae1f5ae003dec35054791fc6141": {
+      "information_root": "ioda:761e0edcfb52b2da30aa95f2",
+      "members": {
+        "beh:ebe8ecce22562fc2c9464cb7cb98": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "measurement_no_attribution",
+          "collection_mode": "ioda",
+          "direct_measurement": true,
+          "event_at": "2026-11-23T00:35:00Z",
+          "first_observed_at": "2026-11-23T03:41:07+00:00",
+          "geography_key": "country:AE",
+          "geography_label": "AE",
+          "geography_precision": "provider_reported_country",
+          "id": "beh:ebe8ecce22562fc2c9464cb7cb98",
+          "information_root": "ioda:761e0edcfb52b2da30aa95f2",
+          "origin": "behavioral_registry",
+          "provider": "ioda",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": null,
+          "source_family": "internet_reachability",
+          "source_kind": "outage_event",
+          "source_measurement": null,
+          "source_scope": null,
+          "source_updated_at": null,
+          "source_url": "https://ioda.inetintel.cc.gatech.edu/",
+          "title": "IODA detected connectivity anomaly: country AE"
+        }
+      }
     }
   },
   "schema": "aiba.family-archive.v1"

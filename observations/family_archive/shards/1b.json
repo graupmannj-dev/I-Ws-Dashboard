@@ -1,5 +1,38 @@
 {
   "roots": {
+    "1b0387a2600dd75733eb05c1dfa62ee6043545b543a76ec5bc41270603b2394f": {
+      "information_root": "ioda:2c29e6c84b4d8a83cf63ed2e",
+      "members": {
+        "beh:79c9a15f0120a86e00cfe5225c99": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "measurement_no_attribution",
+          "collection_mode": "ioda",
+          "direct_measurement": true,
+          "event_at": "2026-11-23T01:05:00Z",
+          "first_observed_at": "2026-11-23T03:41:07+00:00",
+          "geography_key": "country:TM",
+          "geography_label": "TM",
+          "geography_precision": "provider_reported_country",
+          "id": "beh:79c9a15f0120a86e00cfe5225c99",
+          "information_root": "ioda:2c29e6c84b4d8a83cf63ed2e",
+          "origin": "behavioral_registry",
+          "provider": "ioda",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": null,
+          "source_family": "internet_reachability",
+          "source_kind": "outage_event",
+          "source_measurement": null,
+          "source_scope": null,
+          "source_updated_at": null,
+          "source_url": "https://ioda.inetintel.cc.gatech.edu/",
+          "title": "IODA detected connectivity anomaly: country TM"
+        }
+      }
+    },
     "1b0399dac3f1638df5d98ad12f7bc0b5e9c4658e33e16989f0fe0bfc2cde444e": {
       "information_root": "ioda:140ab27382eda10a13297869",
       "members": {
@@ -164,6 +197,39 @@
           "source_updated_at": "2026-11-19T00:21:54Z",
           "source_url": "https://niord.dma.dk/#/message/73901baf-e621-4274-a712-88d9fd4b324e",
           "title": "Denmark. Kattegat. EK R 17 Isefjord. Firing exercises. Warning."
+        }
+      }
+    },
+    "1b60cda9a66e38d29eb48b48559a2660f12b9935dafda2e0baa2fb52efb1137b": {
+      "information_root": "ioda:27222f3b07cf911e40babd2d",
+      "members": {
+        "beh:51688f1e4e80b098ab56b940b49e": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "measurement_no_attribution",
+          "collection_mode": "ioda",
+          "direct_measurement": true,
+          "event_at": "2026-11-23T02:01:00Z",
+          "first_observed_at": "2026-11-23T03:41:07+00:00",
+          "geography_key": "country:UZ",
+          "geography_label": "UZ",
+          "geography_precision": "provider_reported_country",
+          "id": "beh:51688f1e4e80b098ab56b940b49e",
+          "information_root": "ioda:27222f3b07cf911e40babd2d",
+          "origin": "behavioral_registry",
+          "provider": "ioda",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": null,
+          "source_family": "internet_reachability",
+          "source_kind": "outage_event",
+          "source_measurement": null,
+          "source_scope": null,
+          "source_updated_at": null,
+          "source_url": "https://ioda.inetintel.cc.gatech.edu/",
+          "title": "IODA detected connectivity anomaly: country UZ"
         }
       }
     },
