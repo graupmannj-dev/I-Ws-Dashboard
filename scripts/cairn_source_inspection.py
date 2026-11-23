@@ -363,6 +363,10 @@ def main():
           "original texts examined,",
           result["status_counts"]["source_content_not_retrievable"],
           "access failures; no incidents independently verified")
+    for row in result["inspections"]:
+        host = urllib.parse.urlsplit(row["source_url"]).hostname
+        print("Source access:",row["case_id"],host,row["status"],
+              row.get("reason") or "document text available; event not verified")
 
 
 if __name__ == "__main__":
