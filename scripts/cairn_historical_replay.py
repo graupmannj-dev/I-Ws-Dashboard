@@ -15,6 +15,10 @@ import datetime as dt
 import json
 from pathlib import Path
 
+import sys
+if str(Path(__file__).resolve().parents[1]) not in sys.path:
+    sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+
 from dashboard.hypothesis_discriminator_engine import assess
 from dashboard.hypothesis_auto_review import _match_case, _parse_time
 
