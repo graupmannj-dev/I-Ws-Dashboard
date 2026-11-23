@@ -25,6 +25,21 @@ UNCERTAIN = re.compile(
 NEGATED = re.compile(r"\b(?:no|not|without|denied|disputed|false)\b", re.I)
 BACKGROUND = re.compile(r"\b(?:historically|in 20(?:0\d|1\d)|years ago|previously)\b", re.I)
 CASE_GAZETTEER = {
+    # Real OGL-licensed historical source corpus only. These are NOT standing
+    # CAIRN scenarios and never join live warning screens.
+    "govuk_yemen_historical": [
+        ("Red Sea", "MARITIME_AREA", r"\bred sea\b"),
+        ("Bab al-Mandab", "MARITIME_AREA", r"\b(?:bab[- ]?al[- ]?mandab|bab el mandeb)\b"),
+        ("Hodeidah", "YE", r"\b(?:hodeidah|hudaydah)\b"),
+        ("Sanaa", "YE", r"\b(?:sanaa|san.?a)\b"),
+        ("Yemen", "YE", r"\byemen(?:i)?\b"),
+    ],
+    "govuk_ukraine_historical": [
+        ("Kyiv", "UA", r"\b(?:kyiv|kiev)\b"),
+        ("Kharkiv", "UA", r"\bkharkiv\b"),
+        ("Odesa", "UA", r"\b(?:odesa|odessa)\b"),
+        ("Ukraine", "UA", r"\bukrain(?:e|ian)\b"),
+    ],
     "iran_gulf": [
         ("Strait of Hormuz", "MARITIME_AREA", r"\b(?:strait of hormuz|hormuz strait|hormuz)\b"),
         ("Khasab", "OM", r"\bkhasab\b"),
@@ -93,7 +108,7 @@ CASE_GAZETTEER = {
 }
 # Country mentions are often *actors*, not incident sites. Keep them separate
 # from bounded named places unless explicitly marked as a location in source.
-COARSE = {"Taiwan", "Eritrea", "Ethiopia", "Sudan", "Kenya", "Afghanistan",
+COARSE = {"Yemen", "Ukraine", "Taiwan", "Eritrea", "Ethiopia", "Sudan", "Kenya", "Afghanistan",
           "Pakistan", "Rwanda", "DR Congo", "Thailand", "Cambodia",
           "North Korea", "South Korea", "Poland", "Lithuania", "Latvia",
           "Estonia", "Finland", "Bahrain"}
