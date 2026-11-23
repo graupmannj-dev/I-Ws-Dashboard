@@ -328,6 +328,19 @@ jobs:
       - run: python dashboard/build_atlas.py --site _site --state ops-state/observations
         env:
           AIBA_LAYER_FEED_URL: ${{ vars.AIBA_LAYER_FEED_URL || 'layers.json' }}
+      - name: Evaluate provisional semantic ACH (bounded, trusted main only)
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          CAIRN_SEMANTIC_MODEL: ${{ vars.CAIRN_SEMANTIC_MODEL }}
+        run: python dashboard/semantic_ach.py --site _site --max-cases 3
+      - name: Preserve semantic interpretation audit artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cairn-semantic-ach-${{ github.run_id }}
+          path: _site/semantic_ach.json
+          retention-days: 90
+          if-no-files-found: ignore
       - run: python scripts/check_atlas.py _site
       - run: node --check _site/dashboard/atlas.js
       - run: node --check _site/dashboard/hypotheses.js

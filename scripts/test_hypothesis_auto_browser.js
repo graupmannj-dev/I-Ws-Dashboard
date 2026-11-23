@@ -60,12 +60,29 @@ const assert=require("node:assert/strict");
           source_health:"current",match_basis:"distinctive_case_cue",
           first_observed_at:"2026-11-21T14:30:00Z",preliminary_direction:"possible_support",
           rationale:"Candidate observable signpost: maritime exclusion"}]};
+      body.hypotheses[0].semantic_review={
+        status:"provisional_complete",
+        interpretations:[{
+          hypothesis_index:0,meaning:"A provisional hypothesis about preparations.",
+          discriminator:"Compare movement against confirmed routine schedules."},{
+          hypothesis_index:1,meaning:"Routine training is the competing explanation.",
+          discriminator:"Inspect scheduled training announcements."}],
+        evaluations:[{hypothesis_index:0,evidence_key:"family:mock",
+          direction:"unresolved",rationale:"The source title does not establish operational intent.",
+          analyst_approved:false}],
+        source_references:[{evidence_key:"family:mock",family_title:"Source-linked test family",
+          sources:[{url:"https://example.org/semantic",title:"Original evidence record"}]}]
+      };
       await route.fulfill({response,json:body});
     });
     await page.goto("http://127.0.0.1:8765/hypotheses.html",{waitUntil:"domcontentloaded"});
     await page.waitForFunction(()=>document.querySelectorAll(".case-tile").length>0);
     assert.match(await page.locator("#snapshotStatus").innerText(),/Automated: screened/);
-    await page.locator(".technical-details > summary").click();
+    assert.match(await page.locator(".semantic-panel").innerText(),/AI-assisted hypothesis comparison/i);
+    await page.locator(".semantic-hypothesis > summary").first().click();
+    assert.match(await page.locator(".semantic-hypothesis").first().innerText(),/does not establish operational intent/i);
+    assert.equal(await page.locator('a[href="https://example.org/semantic"]').count(),1);
+        await page.locator(".technical-details > summary").click();
     assert.match(await page.locator("#caseDetail").innerText(),/Automated incoming-evidence screen/);
     assert.match(await page.locator("#caseDetail").innerText(),/Machine preliminary/);
     assert.match(await page.locator("#caseDetail").innerText(),/Candidate observable signpost/);
