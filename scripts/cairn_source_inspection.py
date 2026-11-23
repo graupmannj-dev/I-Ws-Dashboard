@@ -36,6 +36,8 @@ ALLOWED_HOSTS = frozenset((
     "www.nato.int", "www.state.gov", "www.dvidshub.net",
     "www.ukmto.org", "niord.dma.dk", "www.valitsus.ee",
     "www.imo.org", "www.defense.gov", "www.mfa.gov.cn",
+    "www.theguardian.com", "www.adnoc.ae", "www.arnnewscentre.ae",
+    "travel.state.gov",
 ))
 MAX_DOWNLOAD = 450_000
 MAX_TEXT = 12_000
