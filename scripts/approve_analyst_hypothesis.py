@@ -21,6 +21,9 @@ def approve(event, config):
     if not match:
         raise ValueError("Missing case ID or proposed hypothesis")
     case_id, proposal = match.groups()
+    known = json.loads(Path("data/verified_hotspots.json").read_text())
+    if not isinstance(known, list) or case_id not in {d.get("id") for d in known if isinstance(d, dict)}:
+        raise ValueError("Unknown case ID; proposals must match a standing case")
     proposal = proposal.strip()
     if not 20 <= len(proposal) <= 300 or any(ord(c)<32 and c not in "\n\t" for c in proposal):
         raise ValueError("Proposal must be 20-300 printable characters")
