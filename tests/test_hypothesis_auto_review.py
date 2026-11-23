@@ -120,6 +120,33 @@ class AutoHypothesisReviewTests(unittest.TestCase):
         self.assertEqual(result["context"], 1)
         self.assertEqual(result["possible_support"], 0)
 
+    def test_seven_day_archived_analyst_intake_visible_but_unapproved(self):
+        x = record("old-report", "Confirmed reported crossing in Ethiopia",
+                   first="2026-11-18T13:00:00Z", mode="analyst",
+                   geo="Unlocated", hint="horn_ethiopia_eritrea")
+        reg = registry([])
+        archive = {"schema":"aiba.family-archive.v1", "records":[x]}
+        c = screen(DOSSIERS + [{"id":"horn_ethiopia_eritrea"}],
+                   reg, archive, at=AT)["cases"]["horn_ethiopia_eritrea"]
+        self.assertEqual(c["new_matching_records"], 0)
+        self.assertEqual(c["historical_case_roots"], 1)
+        self.assertEqual(c["historical_sources"][0]["provenance"],
+                         "public_analyst_intake_not_independently_verified")
+        self.assertEqual(c["historical_sources"][0]["preliminary_direction"],
+                         "requires_interpretation")
+        self.assertFalse(c["historical_sources"][0]["analyst_approved"])
+
+    def test_historical_root_deduplicated_without_false_directions(self):
+        a=record("one", "Baltic sea firing exercises", first="2026-11-18T13:00:00Z",
+                 geo="Baltic Sea", root="shared")
+        b=record("two", "Baltic sea firing exercises continued",
+                 first="2026-11-18T13:00:00Z", geo="Baltic Sea", root="shared")
+        c=screen(DOSSIERS + [{"id":"russia_nato"}],
+                 registry([a,b]), at=AT)["cases"]["russia_nato"]
+        self.assertEqual(c["historical_case_roots"], 1)
+        self.assertEqual(len(c["historical_sources"]), 1)
+        self.assertEqual(c["possible_support"], 0)
+
     def test_archive_used_when_valid_and_fallback_when_invalid(self):
         r = record("p", "Taiwan maritime exclusion zone")
         reg = registry([])

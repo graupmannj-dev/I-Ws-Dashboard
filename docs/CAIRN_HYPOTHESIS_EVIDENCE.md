@@ -121,3 +121,43 @@ Tests:
 `python -m unittest tests.test_hypothesis_auto_review -v`
 and `node scripts/test_hypothesis_auto_browser.js` (after building and serving
 a local preview; the PR browser workflow runs this automatically).
+
+
+## November 23 correction: complete GDELT coverage and rolling case history
+
+Previously the nine-hour machine screen consumed only the behavioral registry and
+durable archive, **not GDELT**. GDELT only surfaced case context when a pair
+passed the *global anomaly nomination* threshold, and then only on a separate
+ops page. All human-signed balances remained empty because
+`data/hypothesis_reviews.json` starts with zero human judgments. Repeated
+automatic screening never wrote analyst approvals.
+
+Every normal GDELT archive build now emits `gdelt_case_trends.json`. It computes
+seven-day versus preceding 28-day data for **all ten exact bilateral actor-pair
+hypotheses**, not merely the globally nominated anomaly set. It publishes
+source completeness, coded-event counts, total six-root sample denominators,
+per-pair media-event shares, ratio when defined, percentage-point share
+change, and all 35 daily counts. Actor-pair matching uses the existing
+`publication_context.GDELT_PAIRS` crosswalk; a conflict involving a single
+country and an unrelated third party does not become evidence of a specified
+bilateral confrontation.
+
+A missing day or invalid denominator leaves all comparison metrics null;
+complete days may yield zero *coded records* but cannot establish that no
+real-world incidents happened. A higher/lower **GDELT-coded share** is a
+measurement direction, not an endorsement of military escalation, attribution,
+or likelihood. GDELT event coding and reporting are non-independent and
+subject to news coverage and country-code error. No human-reviewed directional
+strength is fabricated.
+
+The nine-hour new-ingest screen remains separate. A seven-day, deduplicated,
+case-associated historical source view also prevents recently collected
+records from vanishing from the Hypotheses page simply because they are
+older than nine hours. Public analyst-intake reports are labeled unverified:
+they may be inspected and sourced but are not silently accepted as live
+source-healthy observations. Such history is context, not corroboration.
+
+Acceptance tests: `python -m unittest tests.test_gdelt_case_trends
+tests.test_hypothesis_auto_review -v` and the existing Playwright hypothesis
+browser tests. A successful publication produces the dated GDELT comparison
+file and attaches it to each hypothesis in `hypotheses.json`.

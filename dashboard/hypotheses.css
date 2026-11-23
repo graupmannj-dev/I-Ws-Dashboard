@@ -31,6 +31,16 @@ input,select{background:#0c1826;color:#edf4fa;border:1px solid #40576a;border-ra
 .panel-grid{display:grid;grid-template-columns:1fr 1fr;gap:13px;margin:16px 0}
 .panel-grid section{padding:15px;background:#15283b;border:1px solid #2d455d;border-radius:9px}
 .panel-grid ol{padding-left:21px;margin:0}.panel-grid li{margin:8px 0;color:#bdd0df}
+.gdelt-media{border:1px solid #46627a;background:#172d40;border-radius:10px;padding:16px;margin:17px 0}
+.gdelt-media h3{display:flex;align-items:center;flex-wrap:wrap;gap:9px}
+.gdelt-stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+.gdelt-stats>div{background:#102438;border:1px solid #36546d;border-radius:8px;padding:10px}
+.gdelt-stats small{display:block;font-size:11px;color:#a0b9cc}
+.gdelt-stats strong{display:block;font-size:15px;overflow-wrap:anywhere}
+.gdelt-days{display:flex;overflow-x:auto;gap:5px;margin:8px 0 13px}
+.gdelt-day{display:flex;flex:1;min-width:65px;flex-direction:column;text-align:center;border:1px solid #425970;border-radius:7px;padding:5px}
+.gdelt-day small{font-size:10px;color:#a0bdcf}.gdelt-day strong{font-size:14px}
+@media(max-width:600px){.gdelt-stats{grid-template-columns:1fr}}
 .auto-review{border:1px solid #38546d;background:#142b3d;border-radius:10px;padding:16px;margin:17px 0}
 .auto-review h3{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
 .auto-review .auto-candidates{padding-left:22px;max-height:390px;overflow:auto}

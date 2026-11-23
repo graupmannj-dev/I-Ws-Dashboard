@@ -16,6 +16,8 @@ ARCHIVE_SCHEMA = "aiba.family-archive.v1"
 LOOKBACK_HOURS = 9
 MAX_RECORDS = 12000
 MAX_MATCHES_PER_CASE = 12
+HISTORY_HOURS = 168
+MAX_HISTORY_PER_CASE = 15
 
 # Explicit, distinctive location/actor cues; a generic country or publisher
 # dateline must not silently link an observation to an interstate scenario.
@@ -147,7 +149,10 @@ def screen(dossiers, registry, archive=None, *, at=None, lookback_hours=LOOKBACK
                    "screened_at": stamp if status == "screened" else None,
                    "new_matching_records": 0, "possible_support": 0,
                    "possible_counter": 0, "context": 0, "requires_interpretation": 0,
-                   "unavailable_source_matches": 0, "candidates": []}
+                   "unavailable_source_matches": 0, "candidates": [],
+                   "history_window_hours": HISTORY_HOURS,
+                   "historical_case_roots": 0, "historical_sources": [],
+                   "historical_sources_truncated": False}
              for cid in all_cases}
     seen = {cid: set() for cid in all_cases}
     recent_rows = []
@@ -199,6 +204,63 @@ def screen(dossiers, registry, archive=None, *, at=None, lookback_hours=LOOKBACK
                 "claim_level": _excerpt(row.get("claim_level"), 120),
                 "analyst_approved": False, "warning_approved": False,
             })
+    # An independent, rolling source-linked investigation history. The nine-
+    # hour latest-ingest screen above must not make older relevant evidence
+    # disappear from the interface. Intake reports have no live collector
+    # health contract: label them explicitly, never treat as approved.
+    history_rows = []
+    if valid_registry:
+        for row in records:
+            if not isinstance(row, dict):
+                continue
+            first = _parse_time(row.get("first_observed_at"))
+            url = _safe_url(row.get("source_url"))
+            if (not first or first > now or
+                    now - first > dt.timedelta(hours=HISTORY_HOURS) or not url):
+                continue
+            if row.get("registry_novelty") == "initial_provider_baseline":
+                continue
+            history_rows.append((first, row, url))
+    history_rows.sort(key=lambda item: item[0], reverse=True)
+    history_seen = {cid: set() for cid in all_cases}
+    for first, row, url in history_rows[:MAX_RECORDS]:
+        for cid, result in cases.items():
+            basis = _match_case(cid, row)
+            if not basis:
+                continue
+            mode = row.get("collection_mode")
+            root = _excerpt(row.get("information_root"), 230) or url
+            key = (_excerpt(mode, 80), root)
+            if key in history_seen[cid]:
+                continue
+            history_seen[cid].add(key)
+            result["historical_case_roots"] += 1
+            provider_status = health.get(mode, {}).get("status") if isinstance(health.get(mode), dict) else None
+            if mode == "analyst":
+                provenance = "public_analyst_intake_not_independently_verified"
+                direction = "requires_interpretation"
+                reason = "Source-linked public intake; no independent provider-health validation"
+            elif provider_status not in ("current", "current_partial"):
+                provenance = "current_provider_health_unavailable"
+                direction = "requires_interpretation"
+                reason = "Archived observation; provider health unavailable at this build"
+            else:
+                provenance = "source_collected_not_event_verified"
+                direction, reason = _directional_hint(row)
+            if len(result["historical_sources"]) < MAX_HISTORY_PER_CASE:
+                result["historical_sources"].append({
+                    "record_id": _excerpt(row.get("id"), 120),
+                    "title": _excerpt(row.get("title"), 240) or "Untitled source record",
+                    "source_url": url, "source_mode": _excerpt(mode, 80),
+                    "provider": _excerpt(row.get("provider"), 120),
+                    "first_observed_at": first.isoformat().replace("+00:00", "Z"),
+                    "case_match_basis": basis, "provenance": provenance,
+                    "preliminary_direction": direction, "rationale": reason,
+                    "analyst_approved": False, "warning_approved": False,
+                })
+    for result in cases.values():
+        result["historical_sources_truncated"] = (
+            result["historical_case_roots"] > MAX_HISTORY_PER_CASE)
     for result in cases.values():
         result["candidates"].sort(key=lambda x: (x["first_observed_at"], x["record_id"]), reverse=True)
         result["candidates_truncated"] = len(result["candidates"]) > MAX_MATCHES_PER_CASE
@@ -209,11 +271,14 @@ def screen(dossiers, registry, archive=None, *, at=None, lookback_hours=LOOKBACK
         "source_snapshot_at": registry.get("generated_at") if valid_registry else None,
         "window_hours": lookback_hours, "new_source_records_in_window": recent,
         "durable_archive_used": valid_archive, "source_records_truncated": limited,
+        "history_window_hours": HISTORY_HOURS,
+        "history_records_truncated": len(history_rows) > MAX_RECORDS,
         "method": "distinctive_case_cue_plus_source_title_signposts_without_attribution",
         "analyst_direction_overridden": False, "operational_warnings_issued": 0,
         "cases": cases,
         "limitations": [
             "New means first ingested within the lookback window; it is not the event occurrence time.",
+            "Seven-day case-linked historical observations remain visible but are never automatically approved.",
             "Lexical signposts nominate observations for investigation and can contain false positives.",
             "Reported geography is not incident geolocation. A case cue is not corroboration.",
             "Unavailable, partial, omitted or old source records are never considered contradicting evidence.",
