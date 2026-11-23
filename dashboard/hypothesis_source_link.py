@@ -68,8 +68,24 @@ def attach(screen, source_receipts):
                     geographically_attributed += 1
                 else:
                     location_unknown += 1
+        archived = [r for r in data if isinstance(r, dict) and r.get("case_id") == cid]
+        archived_views = []
+        for r in archived:
+            body = r.get("document_inspection") or {}
+            geo = body.get("case_attribution") or {}
+            archived_views.append({
+                "title": r.get("title"), "source_url": r.get("source_url"),
+                "first_observed_at": r.get("first_observed_at"),
+                "status": r.get("status"),
+                "source_rule": r.get("rule"), "reason": r.get("reason"),
+                "source_text_location": geo.get("named_place"),
+                "geography_status": geo.get("status"),
+                "source_text_rule_mentions": body.get("source_text_rule_mentions", []),
+                "event_verified": False, "location_verified": False,
+            })
         case["original_source_inspection"] = {
             "status": "bounded_receipts_available" if valid else "not_collected_this_build",
+            "archived_original_documents": archived_views,
             "source_rule_links_total": linked,
             "source_rule_links_inspected": inspected,
             "source_rule_links_not_inspected": unread,
