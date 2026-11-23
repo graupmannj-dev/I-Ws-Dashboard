@@ -83,6 +83,23 @@ class HypothesisEvidenceTests(unittest.TestCase):
         self.assertEqual(b["contradict_strength"],1)
         self.assertIsNone(b["calibrated_probability"])
 
+    def test_competing_hypothesis_reviews_are_separate_from_primary(self):
+        d=dossier("case-a")
+        key=signal_key("case-a","original-document")
+        cfg=reviews([])
+        cfg["ach_reviews"]=[{
+            "hypothesis_id":"case-a","evidence_key":key,"alternative_index":1,
+            "direction":"contradicts","strength":2,
+            "rationale":"This source discriminates against the alternative",
+            "reviewed_at":STAMP}]
+        result=build([d],reviews=cfg,generated_at=STAMP)
+        case=result["hypotheses"][0]
+        self.assertEqual(case["balance"]["direction"],"not_assessed")
+        self.assertEqual(case["families"][0]["ach_reviews"]["1"]["direction"],"contradicts")
+        cfg["ach_reviews"][0]["alternative_index"]=4
+        with self.assertRaises(ValueError):
+            build([d],reviews=cfg,generated_at=STAMP)
+
     def test_shared_dependency_caps_weight_and_conflicts_are_excluded(self):
         from dashboard.hypothesis_evidence import _balance
         rows=[
