@@ -1,0 +1,123 @@
+name: CAIRN shadow rigorous ACH Granite Phi
+on:
+  pull_request:
+    paths:
+      - 'scripts/benchmark_ach_hard_v1.py'
+      - 'tests/test_ach_hard_v1.py'
+      - '.github/workflows/cairn-ach-hard-shadow.yml'
+      - 'docs/CAIRN_ACH_HARD_BENCHMARK.md'
+permissions:
+  contents: read
+concurrency:
+  group: cairn-ach-hard-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+jobs:
+  hard-shadow:
+    if: github.event_name == 'pull_request'
+    name: 24-case evidence discipline ${{ matrix.model }}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 48
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - model: granite-4-micro
+            model_repo: ibm-granite/granite-4.0-micro-GGUF
+            model_rev: 55cded3dcb8ab9f0fdd5373f4e960ffb7fda1c61
+            filename: granite-4.0-micro-Q4_K_M.gguf
+            sha256: 97c417dcc0534b0737c74016fb2af083cb17c3b51eaac621192d23961b7024eb
+          - model: phi-4-mini
+            model_repo: bartowski/microsoft_Phi-4-mini-instruct-GGUF
+            model_rev: 7ff82c2aaa4dde30121698a973765f39be5288c0
+            filename: microsoft_Phi-4-mini-instruct-Q4_K_M.gguf
+            sha256: 01999f17c39cc3074afae5e9c539bc82d45f2dd7faa3917c66cbef76fce8c0c2
+    steps:
+      - name: Checkout benchmark only (no credentials)
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Checkout frozen CAIRN public retained source archive
+        uses: actions/checkout@v4
+        with:
+          ref: af5c2d1ac9d5d697973459965e3097b473dfd4fb
+          path: ops-state
+          persist-credentials: false
+      - name: Execute scoring contract unit tests
+        run: PYTHONPATH=. python -m unittest tests.test_ach_hard_v1 -v
+      - name: Verify retained real evidence and immutable testset
+        run: |
+          PYTHONPATH=. python - <<'PY'
+          import json
+          from pathlib import Path
+          from scripts.benchmark_ach_hard_v1 import make_testset
+          p=Path('ops-state/observations/latest/family_archive.json')
+          cases,info=make_testset(json.loads(p.read_text()))
+          assert len(cases)==24
+          print('ARCHIVE_SIZE',p.stat().st_size,'SOURCE_ROOTS',info.get('eligible_distinct_roots'))
+          print('REAL',sum(c['kind']=='real_unverified_title' for c in cases))
+          print('CONTROLLED',sum(c['kind']=='controlled_fictional' for c in cases))
+          PY
+      - name: Build pinned CPU-only llama.cpp without curl
+        run: |
+          set -euo pipefail
+          git clone --filter=blob:none https://github.com/ggml-org/llama.cpp.git "$RUNNER_TEMP/llama"
+          git -C "$RUNNER_TEMP/llama" checkout 325914defd2c1279a039366d999dff4c19a75b54
+          cmake -S "$RUNNER_TEMP/llama" -B "$RUNNER_TEMP/llama/build" \
+            -DCMAKE_BUILD_TYPE=Release -DGGML_NATIVE=OFF -DLLAMA_CURL=OFF
+          cmake --build "$RUNNER_TEMP/llama/build" --target llama-server -j 4
+          git -C "$RUNNER_TEMP/llama" rev-parse HEAD
+      - name: Download and verify pinned GGUF
+        env:
+          MODEL_REPO: ${{ matrix.model_repo }}
+          MODEL_REV: ${{ matrix.model_rev }}
+          MODEL_FILE: ${{ matrix.filename }}
+          MODEL_SHA: ${{ matrix.sha256 }}
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/cairn-model"
+          curl --fail --location --retry 3 --retry-delay 8 --connect-timeout 30 --max-time 700 \
+            "https://huggingface.co/$MODEL_REPO/resolve/$MODEL_REV/$MODEL_FILE?download=true" \
+            --output "$RUNNER_TEMP/cairn-model/model.gguf"
+          echo "$MODEL_SHA  $RUNNER_TEMP/cairn-model/model.gguf" | sha256sum --check -
+      - name: CPU local-only infer and record evidence-level errors
+        env:
+          MODEL_NAME: ${{ matrix.model }}
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/cairn-hard"
+          "$RUNNER_TEMP/llama/build/bin/llama-server" \
+            -m "$RUNNER_TEMP/cairn-model/model.gguf" \
+            --host 127.0.0.1 --port 8080 --ctx-size 4096 \
+            --threads 4 --parallel 1 --no-webui \
+            > "$RUNNER_TEMP/cairn-hard/server.log" 2>&1 &
+          pid=$!
+          trap 'kill "$pid" || true' EXIT
+          ready=0
+          for n in $(seq 1 150); do
+            if curl --silent --fail http://127.0.0.1:8080/health >/dev/null; then
+              ready=1; break
+            fi
+            if ! kill -0 "$pid" 2>/dev/null; then
+              tail -60 "$RUNNER_TEMP/cairn-hard/server.log"
+              exit 1
+            fi
+            sleep 2
+          done
+          test "$ready" -eq 1
+          PYTHONPATH=. python -m scripts.benchmark_ach_hard_v1 \
+            --archive ops-state/observations/latest/family_archive.json \
+            --model-name "$MODEL_NAME" --max-tokens 650 --timeout 160 \
+            --output "$RUNNER_TEMP/cairn-hard/results.json"
+          grep -E 'VmHWM|VmPeak|VmRSS' "/proc/$pid/status" \
+            | tee "$RUNNER_TEMP/cairn-hard/model_memory.txt"
+          git diff --exit-code -- data/ dashboard/
+      - name: Retain evidence audit only; never publish results to CAIRN
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cairn-ach-hard-${{ matrix.model }}-${{ github.run_id }}
+          path: |
+            ${{ runner.temp }}/cairn-hard/results.json
+            ${{ runner.temp }}/cairn-hard/model_memory.txt
+          if-no-files-found: warn
+          retention-days: 14
