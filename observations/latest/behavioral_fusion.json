@@ -3,19 +3,18 @@
   "automated_severity_changes": 0,
   "collection_coverage": {
     "amsa": {
-      "age_hours": 5.69,
+      "age_hours": 6.72,
       "checked_at": "2026-11-23T13:38:48Z",
-      "first_provider_baseline": false,
-      "missingness": "provider_bounded_not_exhaustive",
+      "missingness": "not_measured_not_zero",
       "mode": "amsa",
       "provider_status": "collected",
       "snapshot_at": "2026-11-23T13:38:48Z",
       "source_scope": "AMSA NAVAREA X only",
-      "status": "current",
+      "status": "stale_or_unavailable",
       "truncated_or_partial": false
     },
     "bmkg_nowcast": {
-      "age_hours": 6.16,
+      "age_hours": 7.2,
       "checked_at": "2026-11-23T13:10:09Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -27,7 +26,7 @@
       "truncated_or_partial": true
     },
     "bmkg_quake": {
-      "age_hours": 6.16,
+      "age_hours": 7.2,
       "checked_at": "2026-11-23T13:10:09Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -39,7 +38,7 @@
       "truncated_or_partial": true
     },
     "cbp_wait": {
-      "age_hours": 6.16,
+      "age_hours": 7.2,
       "checked_at": "2026-11-23T13:10:09Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -51,7 +50,7 @@
       "truncated_or_partial": true
     },
     "commercial": {
-      "age_hours": 0.0,
+      "age_hours": 1.04,
       "checked_at": "2026-11-23T19:19:56Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -63,7 +62,7 @@
       "truncated_or_partial": false
     },
     "coops": {
-      "age_hours": 6.16,
+      "age_hours": 7.2,
       "checked_at": "2026-11-23T13:10:09Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -75,7 +74,7 @@
       "truncated_or_partial": true
     },
     "eonet": {
-      "age_hours": 6.16,
+      "age_hours": 7.2,
       "checked_at": "2026-11-23T13:10:09Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -87,7 +86,7 @@
       "truncated_or_partial": true
     },
     "imd_in": {
-      "age_hours": 6.16,
+      "age_hours": 7.2,
       "checked_at": "2026-11-23T13:10:09Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -99,7 +98,7 @@
       "truncated_or_partial": true
     },
     "inmet_br": {
-      "age_hours": 6.16,
+      "age_hours": 7.2,
       "checked_at": "2026-11-23T13:10:09Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -111,41 +110,42 @@
       "truncated_or_partial": true
     },
     "ioda": {
-      "age_hours": 5.69,
+      "age_hours": 6.72,
       "checked_at": "2026-11-23T13:38:48Z",
-      "first_provider_baseline": false,
-      "missingness": "provider_bounded_not_exhaustive",
+      "missingness": "not_measured_not_zero",
       "mode": "ioda",
       "provider_status": "collected",
       "snapshot_at": "2026-11-23T13:38:48Z",
       "source_scope": "IODA country events (first 100 of first page, 4-hour query)",
-      "status": "current",
+      "status": "stale_or_unavailable",
       "truncated_or_partial": false
     },
     "live_airspace": {
-      "age_hours": 11.19,
-      "checked_at": "2026-11-23T08:08:46Z",
-      "missingness": "not_measured_not_zero",
+      "age_hours": 0.0,
+      "checked_at": "2026-11-23T20:22:00Z",
+      "first_provider_baseline": false,
+      "missingness": "partial_sampling_not_worldwide_exhaustive",
       "mode": "live_airspace",
       "provider_status": "partial",
-      "snapshot_at": "2026-11-23T08:08:46Z",
+      "snapshot_at": "2026-11-23T20:22:00Z",
       "source_scope": "FAA temporary flight restrictions: United States only",
-      "status": "stale_or_unavailable",
+      "status": "current_partial",
       "truncated_or_partial": true
     },
     "live_maritime": {
-      "age_hours": 11.19,
-      "checked_at": "2026-11-23T08:08:46Z",
-      "missingness": "not_measured_not_zero",
+      "age_hours": 0.0,
+      "checked_at": "2026-11-23T20:22:00Z",
+      "first_provider_baseline": false,
+      "missingness": "partial_sampling_not_worldwide_exhaustive",
       "mode": "live_maritime",
       "provider_status": "partial",
-      "snapshot_at": "2026-11-23T08:08:46Z",
+      "snapshot_at": "2026-11-23T20:22:00Z",
       "source_scope": "Danish Maritime Authority Niord notices: regional Baltic/North Sea",
-      "status": "stale_or_unavailable",
+      "status": "current_partial",
       "truncated_or_partial": true
     },
     "nga": {
-      "age_hours": 5.69,
+      "age_hours": 6.72,
       "checked_at": "2026-11-23T13:38:48Z",
       "missingness": "not_measured_not_zero",
       "mode": "nga",
@@ -156,7 +156,7 @@
       "truncated_or_partial": false
     },
     "nws": {
-      "age_hours": 6.16,
+      "age_hours": 7.2,
       "checked_at": "2026-11-23T13:10:09Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -168,19 +168,18 @@
       "truncated_or_partial": true
     },
     "official": {
-      "age_hours": 11.62,
+      "age_hours": 12.66,
       "checked_at": "2026-11-23T07:42:29Z",
-      "first_provider_baseline": false,
-      "missingness": "provider_bounded_not_exhaustive",
+      "missingness": "not_measured_not_zero",
       "mode": "official",
       "provider_status": "collected",
       "snapshot_at": "2026-11-23T07:42:29Z",
       "source_scope": "US State and UK FCDO travel-advice feeds",
-      "status": "current",
+      "status": "stale_or_unavailable",
       "truncated_or_partial": false
     },
     "ons_br": {
-      "age_hours": 6.16,
+      "age_hours": 7.2,
       "checked_at": "2026-11-23T13:10:09Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -192,7 +191,7 @@
       "truncated_or_partial": true
     },
     "ripe": {
-      "age_hours": 6.16,
+      "age_hours": 7.2,
       "checked_at": "2026-11-23T13:10:09Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -204,7 +203,7 @@
       "truncated_or_partial": false
     },
     "ris_bgp": {
-      "age_hours": 6.16,
+      "age_hours": 7.2,
       "checked_at": "2026-11-23T13:10:09Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -216,7 +215,7 @@
       "truncated_or_partial": true
     },
     "saws_za": {
-      "age_hours": 6.16,
+      "age_hours": 7.2,
       "checked_at": "2026-11-23T13:10:09Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -228,7 +227,7 @@
       "truncated_or_partial": true
     },
     "sg_mpa": {
-      "age_hours": 6.16,
+      "age_hours": 7.2,
       "checked_at": "2026-11-23T13:10:09Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -240,7 +239,7 @@
       "truncated_or_partial": true
     },
     "swpc": {
-      "age_hours": 6.16,
+      "age_hours": 7.2,
       "checked_at": "2026-11-23T13:10:09Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -252,7 +251,7 @@
       "truncated_or_partial": false
     },
     "tw_power": {
-      "age_hours": 6.16,
+      "age_hours": 7.2,
       "checked_at": "2026-11-23T13:10:09Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -264,7 +263,7 @@
       "truncated_or_partial": true
     },
     "uk_tenders": {
-      "age_hours": 6.16,
+      "age_hours": 7.2,
       "checked_at": "2026-11-23T13:10:09Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -276,7 +275,7 @@
       "truncated_or_partial": true
     },
     "usace": {
-      "age_hours": 6.16,
+      "age_hours": 7.2,
       "checked_at": "2026-11-23T13:10:09Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -288,7 +287,7 @@
       "truncated_or_partial": true
     },
     "usgs": {
-      "age_hours": 6.16,
+      "age_hours": 7.2,
       "checked_at": "2026-11-23T13:10:09Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -300,19 +299,18 @@
       "truncated_or_partial": false
     },
     "watchlist": {
-      "age_hours": 11.62,
+      "age_hours": 12.66,
       "checked_at": "2026-11-23T07:42:30Z",
-      "first_provider_baseline": false,
-      "missingness": "provider_bounded_not_exhaustive",
+      "missingness": "not_measured_not_zero",
       "mode": "watchlist",
       "provider_status": "collected",
       "snapshot_at": "2026-11-23T07:42:30Z",
       "source_scope": "registered, exact-ID forecast contracts only",
-      "status": "current",
+      "status": "stale_or_unavailable",
       "truncated_or_partial": false
     },
     "wiki_edits": {
-      "age_hours": 6.16,
+      "age_hours": 7.2,
       "checked_at": "2026-11-23T13:10:09Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -328,18 +326,18 @@
     "exact_geography_match_required_for_cross_family": true,
     "latest_initial_baseline": false,
     "latest_registry_newly_observed_count": 7,
-    "latest_registry_record_count": 730,
-    "latest_unlocated_record_count": 512,
+    "latest_registry_record_count": 550,
+    "latest_unlocated_record_count": 341,
     "new_or_collocated_not_same_as_verified_threat": true,
     "new_this_collection_required_for_cross_family_nomination": true,
     "recent_observations_sampled": 24,
     "recent_source_families": {
-      "airspace_restriction": 6,
+      "airspace_restriction": 13,
       "commercial_media": 8,
       "internet_reachability": 194,
       "maritime_restriction": 105
     },
-    "recent_unique_record_count_72h": 313,
+    "recent_unique_record_count_72h": 320,
     "recent_unlocated_count_72h": 91,
     "schema": "aiba.behavioral-discovery-visibility.v1",
     "shared_exact_geography_keys_across_behavior_families": 0,
@@ -347,7 +345,7 @@
   },
   "forecast_probability": null,
   "gdelt_context": "separate_analytical_stream_not_a_gate_or_confirmation",
-  "generated_at": "2026-11-23T19:19:57Z",
+  "generated_at": "2026-11-23T20:22:03Z",
   "geographic_scope": "source_declared_only",
   "history_diagnostics": {
     "excluded_observations": {
@@ -356,9 +354,9 @@
       "published_after_first_observed": 36,
       "unsupported_family": 1104
     },
-    "history_files_examined": 37,
+    "history_files_examined": 38,
     "lookback_hours": 72,
-    "recent_unique_records": 313
+    "recent_unique_records": 320
   },
   "limit_notes": [
     "No automated threat warning. These are unreviewed investigatory leads.",
@@ -370,162 +368,330 @@
   "new_single_source_count_total": 7,
   "new_single_source_leads": [
     {
-      "evidence_class": "media_mention",
-      "first_observed_at": "2026-11-23T19:19:57Z",
+      "evidence_class": "official_notice",
+      "first_observed_at": "2026-11-23T20:22:03Z",
       "geography": {
-        "key": null,
-        "kind": "unlocated",
-        "label": null,
+        "geometry_sha256_prefix": "1c2bd90f106f79638dcb58e1",
+        "geometry_type": "MultiPolygon",
+        "key": "source-footprint:1c2bd90f106f79638dcb58e1",
+        "kind": "source_notice_footprint",
+        "label": "Official MultiPolygon notice area",
         "latitude": null,
         "longitude": null,
-        "precision": "no_source_verified_geography",
+        "precision": "provider_defined_notice_boundary_not_event_point",
         "verified_iso": false
       },
-      "information_root": "commercial:70050dcdf4cfcedc7b55",
+      "information_root": "faa:6/9446:0:0",
       "meaning": "Observation novelty, not evidence of impending violence.",
-      "observation_id": "beh:4251171a591981ba03a8a31e596c",
-      "requires_geolocation": true,
-      "source_family": "commercial_media",
-      "source_published_at": "2026-11-23T13:23:53Z",
-      "source_url": "https://maritime-executive.com/article/cargo-passenger-shipping-merges-with-luxury-on-tahiti-s-new-aranoa",
+      "observation_id": "beh:0010095318f5a14ea4a9afaaefda",
+      "requires_geolocation": false,
+      "source_family": "airspace_restriction",
+      "source_published_at": null,
+      "source_url": "https://tfr.faa.gov/6_9446.html",
       "status": "single_source_unreviewed",
-      "title": "Cargo-Passenger Shipping Merges with Luxury on Tahiti’s New Aranoa"
+      "title": "FAA TFR 6/9446 · Cincinnati, OH, Tuesday, November 24, 2026 through Sunday, November 29, 2026 UTC"
     },
     {
-      "evidence_class": "media_mention",
-      "first_observed_at": "2026-11-23T19:19:57Z",
+      "evidence_class": "official_notice",
+      "first_observed_at": "2026-11-23T20:22:03Z",
       "geography": {
-        "key": null,
-        "kind": "unlocated",
-        "label": null,
+        "geometry_sha256_prefix": "eae55ea941bce7caeb5c7b2f",
+        "geometry_type": "MultiPolygon",
+        "key": "source-footprint:eae55ea941bce7caeb5c7b2f",
+        "kind": "source_notice_footprint",
+        "label": "Official MultiPolygon notice area",
         "latitude": null,
         "longitude": null,
-        "precision": "no_source_verified_geography",
+        "precision": "provider_defined_notice_boundary_not_event_point",
         "verified_iso": false
       },
-      "information_root": "commercial:11892e723a1f9aeb12de",
+      "information_root": "faa:6/9432:0:0",
       "meaning": "Observation novelty, not evidence of impending violence.",
-      "observation_id": "beh:46bb29ff9f7668b9157f15c53b7e",
-      "requires_geolocation": true,
-      "source_family": "commercial_media",
-      "source_published_at": "2026-11-22T22:28:00Z",
-      "source_url": "https://maritime-executive.com/article/massive-attack-on-russian-shipping-in-benghazi",
+      "observation_id": "beh:1259425a88d7a04a84ac99d04f19",
+      "requires_geolocation": false,
+      "source_family": "airspace_restriction",
+      "source_published_at": null,
+      "source_url": "https://tfr.faa.gov/6_9432.html",
       "status": "single_source_unreviewed",
-      "title": "Massive Ukrainian Attack on Russian Shipping in Benghazi"
+      "title": "FAA TFR 6/9432 · New Bern, NC, Sunday, November 29, 2026 UTC"
     },
     {
-      "evidence_class": "media_mention",
-      "first_observed_at": "2026-11-23T19:19:57Z",
+      "evidence_class": "official_notice",
+      "first_observed_at": "2026-11-23T20:22:03Z",
       "geography": {
-        "key": null,
-        "kind": "unlocated",
-        "label": null,
+        "geometry_sha256_prefix": "416f6b092851286a5f7fef74",
+        "geometry_type": "MultiPolygon",
+        "key": "source-footprint:416f6b092851286a5f7fef74",
+        "kind": "source_notice_footprint",
+        "label": "Official MultiPolygon notice area",
         "latitude": null,
         "longitude": null,
-        "precision": "no_source_verified_geography",
+        "precision": "provider_defined_notice_boundary_not_event_point",
         "verified_iso": false
       },
-      "information_root": "commercial:d386e7980f43f88b59b5",
+      "information_root": "faa:6/9446:1:0",
       "meaning": "Observation novelty, not evidence of impending violence.",
-      "observation_id": "beh:48e8f361f3d026022b1efd2eacbc",
-      "requires_geolocation": true,
-      "source_family": "commercial_media",
-      "source_published_at": "2026-11-23T01:35:00Z",
-      "source_url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPODVTY1JXZjVuLTdIVjE3SzBBUUE1RHhuRTdkbGFEOUQ3Ymp3bXhTNk8xTFJVMDlGa0tOM1R2cFNNRjRGanJwbEtUXzNkYUZwZ25lZFNyUzF3dTB3Y3U2a1YteGJGeWFxOXhxMHJ1anhTUjJoZkNqN3o0N3VFOUZ2S2xXYk44REhOUFlvQzJKMU1kcFVYbjFjaEhxaEpqRzN4LWM4X2FUMHhJSWdEYlhuMA?oc=5",
+      "observation_id": "beh:1273b56a4f3fca5eb66cccb049ae",
+      "requires_geolocation": false,
+      "source_family": "airspace_restriction",
+      "source_published_at": null,
+      "source_url": "https://tfr.faa.gov/6_9446.html",
       "status": "single_source_unreviewed",
-      "title": "Cool Carriers Launches Newest Vessel, Cool Eternity, at Shikoku Shipyard - The Maritime Executive"
+      "title": "FAA TFR 6/9446 · Cincinnati, OH, Tuesday, November 24, 2026 through Sunday, November 29, 2026 UTC"
     },
     {
-      "evidence_class": "media_mention",
-      "first_observed_at": "2026-11-23T19:19:57Z",
+      "evidence_class": "official_notice",
+      "first_observed_at": "2026-11-23T20:22:03Z",
       "geography": {
-        "key": null,
-        "kind": "unlocated",
-        "label": null,
+        "geometry_sha256_prefix": "91004aeb38e6668319aebeeb",
+        "geometry_type": "MultiPolygon",
+        "key": "source-footprint:91004aeb38e6668319aebeeb",
+        "kind": "source_notice_footprint",
+        "label": "Official MultiPolygon notice area",
         "latitude": null,
         "longitude": null,
-        "precision": "no_source_verified_geography",
+        "precision": "provider_defined_notice_boundary_not_event_point",
         "verified_iso": false
       },
-      "information_root": "commercial:a9666c63f13b99544ba3",
+      "information_root": "faa:6/9576:0:0",
       "meaning": "Observation novelty, not evidence of impending violence.",
-      "observation_id": "beh:563cba14095e7a1d263089fa04ad",
-      "requires_geolocation": true,
-      "source_family": "commercial_media",
-      "source_published_at": "2026-11-23T01:35:00Z",
-      "source_url": "https://maritime-executive.com/article/cool-carriers-launches-newest-vessel-cool-eternity-at-shikoku-shipyard",
+      "observation_id": "beh:284f147f9d94fdf2a7a1cb25d3ca",
+      "requires_geolocation": false,
+      "source_family": "airspace_restriction",
+      "source_published_at": null,
+      "source_url": "https://tfr.faa.gov/6_9576.html",
       "status": "single_source_unreviewed",
-      "title": "Cool Carriers Launches Newest Vessel, Cool Eternity, at Shikoku Shipyard"
+      "title": "FAA TFR 6/9576 · 76 ZAN AIRSPACETHOMPSON PASS, AK, Monday, November 23, 2026 through Tuesday, November 24, 2026 UTC"
     },
     {
-      "evidence_class": "media_mention",
-      "first_observed_at": "2026-11-23T19:19:57Z",
+      "evidence_class": "official_notice",
+      "first_observed_at": "2026-11-23T20:22:03Z",
       "geography": {
-        "key": null,
-        "kind": "unlocated",
-        "label": null,
+        "geometry_sha256_prefix": "1c2bd90f106f79638dcb58e1",
+        "geometry_type": "MultiPolygon",
+        "key": "source-footprint:1c2bd90f106f79638dcb58e1",
+        "kind": "source_notice_footprint",
+        "label": "Official MultiPolygon notice area",
         "latitude": null,
         "longitude": null,
-        "precision": "no_source_verified_geography",
+        "precision": "provider_defined_notice_boundary_not_event_point",
         "verified_iso": false
       },
-      "information_root": "commercial:a07cc0ac6227b90fff96",
+      "information_root": "faa:6/9446:2:0",
       "meaning": "Observation novelty, not evidence of impending violence.",
-      "observation_id": "beh:6c58e8594bae74c685f712bb160f",
-      "requires_geolocation": true,
-      "source_family": "commercial_media",
-      "source_published_at": "2026-11-23T13:23:53Z",
-      "source_url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQbjA1OThKaS1xVkh6b2tBY3hyZE92dE9ScGdGVFRGSVhvS0VGeW5hZnU2X0lYZ1pNdE9wUzAzcGV3eWxPTHNVSzdqTUltcXhhaWtfWkJpNUJMSHZaOUUwdFJySXZacHVSNFJwaWN5OU5pT0ozMTdaZzc4amt5OEFMc1MzUUo4eFI5WGFyNS1TcTRZT2ktYWFYNXYyYnExdWk3cVVPVjNGeVI?oc=5",
+      "observation_id": "beh:2c13dba7599061a8a0453940c18c",
+      "requires_geolocation": false,
+      "source_family": "airspace_restriction",
+      "source_published_at": null,
+      "source_url": "https://tfr.faa.gov/6_9446.html",
       "status": "single_source_unreviewed",
-      "title": "Cargo-Passenger Shipping Merges with Luxury on Tahiti’s New Aranoa - The Maritime Executive"
+      "title": "FAA TFR 6/9446 · Cincinnati, OH, Tuesday, November 24, 2026 through Sunday, November 29, 2026 UTC"
     },
     {
-      "evidence_class": "media_mention",
-      "first_observed_at": "2026-11-23T19:19:57Z",
+      "evidence_class": "official_notice",
+      "first_observed_at": "2026-11-23T20:22:03Z",
       "geography": {
-        "key": null,
-        "kind": "unlocated",
-        "label": null,
+        "geometry_sha256_prefix": "0a7fc8ca82995bdceb89e73d",
+        "geometry_type": "MultiPolygon",
+        "key": "source-footprint:0a7fc8ca82995bdceb89e73d",
+        "kind": "source_notice_footprint",
+        "label": "Official MultiPolygon notice area",
         "latitude": null,
         "longitude": null,
-        "precision": "no_source_verified_geography",
+        "precision": "provider_defined_notice_boundary_not_event_point",
         "verified_iso": false
       },
-      "information_root": "commercial:7fc9f2e55cd3858f231d",
+      "information_root": "faa:6/9492:0:0",
       "meaning": "Observation novelty, not evidence of impending violence.",
-      "observation_id": "beh:9d271fe602024842b912700dfbbc",
-      "requires_geolocation": true,
-      "source_family": "commercial_media",
-      "source_published_at": "2026-11-22T22:28:00Z",
-      "source_url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPbF9UU3o2SHBjemNSUlZ0LTE3YWZwLWJXVWgyZV9OTlBVWURMRi1zemp3S01GeTNQVDk0Ny1YclRRZjNPUnloSlkySmFtUFpKMkpqajNZUFB5RVVWZTVTOE1vSmtzZ3duQTUwc2tUR2JSdk1YMVFtSkI1bWJaUjVGcXBvblpQRlM3ejlVdW5n?oc=5",
+      "observation_id": "beh:9f5e702ce271795783adf76644cb",
+      "requires_geolocation": false,
+      "source_family": "airspace_restriction",
+      "source_published_at": null,
+      "source_url": "https://tfr.faa.gov/6_9492.html",
       "status": "single_source_unreviewed",
-      "title": "Massive Ukrainian Attack on Russian Shipping in Benghazi - The Maritime Executive"
+      "title": "FAA TFR 6/9492 · ATIGUN PASS, AK, Monday, November 23, 2026 through Tuesday, November 24, 2026 UTC"
     },
     {
-      "evidence_class": "media_mention",
-      "first_observed_at": "2026-11-23T19:19:57Z",
+      "evidence_class": "official_notice",
+      "first_observed_at": "2026-11-23T20:22:03Z",
       "geography": {
-        "key": null,
-        "kind": "unlocated",
-        "label": null,
+        "geometry_sha256_prefix": "e17965084ff99b4954d32643",
+        "geometry_type": "MultiPolygon",
+        "key": "source-footprint:e17965084ff99b4954d32643",
+        "kind": "source_notice_footprint",
+        "label": "Official MultiPolygon notice area",
         "latitude": null,
         "longitude": null,
-        "precision": "no_source_verified_geography",
+        "precision": "provider_defined_notice_boundary_not_event_point",
         "verified_iso": false
       },
-      "information_root": "commercial:4978d7ed5e09625daeb0",
+      "information_root": "faa:6/9517:0:0",
       "meaning": "Observation novelty, not evidence of impending violence.",
-      "observation_id": "beh:dc048d2d8cd440a4a3f758f1a910",
-      "requires_geolocation": true,
-      "source_family": "commercial_media",
-      "source_published_at": "2026-11-23T12:14:00Z",
-      "source_url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNeXVJalMtSkdZNmRqeGVPSFRYcnVmTXZldy1hUVFRTWI5LW5VdU9WZUpHNzBrSHZRME15WkxNcWxCRThvUjFkeFMtbTdvNFk1U1IxOWx1cHZvNlJ4ZmRhd3EtaklUS2g5WW5USkR5MWVndFlqdlFfV2QtQ1F5LXBPNzkzdTVscEF2dk5jVk5VY1R2aGhzTk1PZU8tbTlHV2pmSEt5TnBDWlppeFRMaHBmbURR0gGrAUFVX3lxTE1aeTFFeXM0eFBPUWpwa29TbGpsT0dVbjZSWHFjYV92RW94OUtWUVFPbGdmVEJQYmJoVTliVHlEOS1qcXVTV2NqX3dTa1hEWFRaUkdjRUxLc3ZBemp5ajl1cGdqMkFsaDZOenR0clRQS092SlV2Ukp4b3ZpZThjZXVEcEtxRUFuTm1pWUYwVWdnWmRXa2FqSE44MlVzcFlPWVNEY1FaN0Z1LXhPcw?oc=5",
+      "observation_id": "beh:c8335718f729bcdff28f47c04f40",
+      "requires_geolocation": false,
+      "source_family": "airspace_restriction",
+      "source_published_at": null,
+      "source_url": "https://tfr.faa.gov/6_9517.html",
       "status": "single_source_unreviewed",
-      "title": "Ukraine's war-risk insurance reserves surge nearly fivefold to $110 million in three months - The New Voice of Ukraine"
+      "title": "FAA TFR 6/9517 · HIBBING, MN, Tuesday, November 24, 2026 UTC"
     }
   ],
   "prediction_horizon": null,
   "recent_source_observations": [
+    {
+      "first_observed_at": "2026-11-23T20:22:03Z",
+      "geography": {
+        "geometry_sha256_prefix": "e17965084ff99b4954d32643",
+        "geometry_type": "MultiPolygon",
+        "key": "source-footprint:e17965084ff99b4954d32643",
+        "kind": "source_notice_footprint",
+        "label": "Official MultiPolygon notice area",
+        "latitude": null,
+        "longitude": null,
+        "precision": "provider_defined_notice_boundary_not_event_point",
+        "verified_iso": false
+      },
+      "observation_id": "beh:c8335718f729bcdff28f47c04f40",
+      "provider": "faa",
+      "requires_geolocation": false,
+      "source_family": "airspace_restriction",
+      "source_published_at": null,
+      "source_url": "https://tfr.faa.gov/6_9517.html",
+      "status": "recent_source_observation_unreviewed",
+      "title": "FAA TFR 6/9517 · HIBBING, MN, Tuesday, November 24, 2026 UTC"
+    },
+    {
+      "first_observed_at": "2026-11-23T20:22:03Z",
+      "geography": {
+        "geometry_sha256_prefix": "0a7fc8ca82995bdceb89e73d",
+        "geometry_type": "MultiPolygon",
+        "key": "source-footprint:0a7fc8ca82995bdceb89e73d",
+        "kind": "source_notice_footprint",
+        "label": "Official MultiPolygon notice area",
+        "latitude": null,
+        "longitude": null,
+        "precision": "provider_defined_notice_boundary_not_event_point",
+        "verified_iso": false
+      },
+      "observation_id": "beh:9f5e702ce271795783adf76644cb",
+      "provider": "faa",
+      "requires_geolocation": false,
+      "source_family": "airspace_restriction",
+      "source_published_at": null,
+      "source_url": "https://tfr.faa.gov/6_9492.html",
+      "status": "recent_source_observation_unreviewed",
+      "title": "FAA TFR 6/9492 · ATIGUN PASS, AK, Monday, November 23, 2026 through Tuesday, November 24, 2026 UTC"
+    },
+    {
+      "first_observed_at": "2026-11-23T20:22:03Z",
+      "geography": {
+        "geometry_sha256_prefix": "1c2bd90f106f79638dcb58e1",
+        "geometry_type": "MultiPolygon",
+        "key": "source-footprint:1c2bd90f106f79638dcb58e1",
+        "kind": "source_notice_footprint",
+        "label": "Official MultiPolygon notice area",
+        "latitude": null,
+        "longitude": null,
+        "precision": "provider_defined_notice_boundary_not_event_point",
+        "verified_iso": false
+      },
+      "observation_id": "beh:2c13dba7599061a8a0453940c18c",
+      "provider": "faa",
+      "requires_geolocation": false,
+      "source_family": "airspace_restriction",
+      "source_published_at": null,
+      "source_url": "https://tfr.faa.gov/6_9446.html",
+      "status": "recent_source_observation_unreviewed",
+      "title": "FAA TFR 6/9446 · Cincinnati, OH, Tuesday, November 24, 2026 through Sunday, November 29, 2026 UTC"
+    },
+    {
+      "first_observed_at": "2026-11-23T20:22:03Z",
+      "geography": {
+        "geometry_sha256_prefix": "91004aeb38e6668319aebeeb",
+        "geometry_type": "MultiPolygon",
+        "key": "source-footprint:91004aeb38e6668319aebeeb",
+        "kind": "source_notice_footprint",
+        "label": "Official MultiPolygon notice area",
+        "latitude": null,
+        "longitude": null,
+        "precision": "provider_defined_notice_boundary_not_event_point",
+        "verified_iso": false
+      },
+      "observation_id": "beh:284f147f9d94fdf2a7a1cb25d3ca",
+      "provider": "faa",
+      "requires_geolocation": false,
+      "source_family": "airspace_restriction",
+      "source_published_at": null,
+      "source_url": "https://tfr.faa.gov/6_9576.html",
+      "status": "recent_source_observation_unreviewed",
+      "title": "FAA TFR 6/9576 · 76 ZAN AIRSPACETHOMPSON PASS, AK, Monday, November 23, 2026 through Tuesday, November 24, 2026 UTC"
+    },
+    {
+      "first_observed_at": "2026-11-23T20:22:03Z",
+      "geography": {
+        "geometry_sha256_prefix": "416f6b092851286a5f7fef74",
+        "geometry_type": "MultiPolygon",
+        "key": "source-footprint:416f6b092851286a5f7fef74",
+        "kind": "source_notice_footprint",
+        "label": "Official MultiPolygon notice area",
+        "latitude": null,
+        "longitude": null,
+        "precision": "provider_defined_notice_boundary_not_event_point",
+        "verified_iso": false
+      },
+      "observation_id": "beh:1273b56a4f3fca5eb66cccb049ae",
+      "provider": "faa",
+      "requires_geolocation": false,
+      "source_family": "airspace_restriction",
+      "source_published_at": null,
+      "source_url": "https://tfr.faa.gov/6_9446.html",
+      "status": "recent_source_observation_unreviewed",
+      "title": "FAA TFR 6/9446 · Cincinnati, OH, Tuesday, November 24, 2026 through Sunday, November 29, 2026 UTC"
+    },
+    {
+      "first_observed_at": "2026-11-23T20:22:03Z",
+      "geography": {
+        "geometry_sha256_prefix": "eae55ea941bce7caeb5c7b2f",
+        "geometry_type": "MultiPolygon",
+        "key": "source-footprint:eae55ea941bce7caeb5c7b2f",
+        "kind": "source_notice_footprint",
+        "label": "Official MultiPolygon notice area",
+        "latitude": null,
+        "longitude": null,
+        "precision": "provider_defined_notice_boundary_not_event_point",
+        "verified_iso": false
+      },
+      "observation_id": "beh:1259425a88d7a04a84ac99d04f19",
+      "provider": "faa",
+      "requires_geolocation": false,
+      "source_family": "airspace_restriction",
+      "source_published_at": null,
+      "source_url": "https://tfr.faa.gov/6_9432.html",
+      "status": "recent_source_observation_unreviewed",
+      "title": "FAA TFR 6/9432 · New Bern, NC, Sunday, November 29, 2026 UTC"
+    },
+    {
+      "first_observed_at": "2026-11-23T20:22:03Z",
+      "geography": {
+        "geometry_sha256_prefix": "1c2bd90f106f79638dcb58e1",
+        "geometry_type": "MultiPolygon",
+        "key": "source-footprint:1c2bd90f106f79638dcb58e1",
+        "kind": "source_notice_footprint",
+        "label": "Official MultiPolygon notice area",
+        "latitude": null,
+        "longitude": null,
+        "precision": "provider_defined_notice_boundary_not_event_point",
+        "verified_iso": false
+      },
+      "observation_id": "beh:0010095318f5a14ea4a9afaaefda",
+      "provider": "faa",
+      "requires_geolocation": false,
+      "source_family": "airspace_restriction",
+      "source_published_at": null,
+      "source_url": "https://tfr.faa.gov/6_9446.html",
+      "status": "recent_source_observation_unreviewed",
+      "title": "FAA TFR 6/9446 · Cincinnati, OH, Tuesday, November 24, 2026 through Sunday, November 29, 2026 UTC"
+    },
     {
       "first_observed_at": "2026-11-23T19:19:57Z",
       "geography": {
@@ -867,164 +1033,10 @@
       "source_url": "https://niord.dma.dk/#/message/a4286c99-e633-461f-be1f-dbbd46ed6c2e",
       "status": "recent_source_observation_unreviewed",
       "title": "Denmark. Kattegat. EK R 45 Hevring. Firing exercises. Warning."
-    },
-    {
-      "first_observed_at": "2026-11-23T00:27:52Z",
-      "geography": {
-        "geometry_sha256_prefix": null,
-        "geometry_type": "Point",
-        "key": "source-notice-point:56.53133:10.40583",
-        "kind": "source_notice_point",
-        "label": "Official notice position",
-        "latitude": 56.531333333333336,
-        "longitude": 10.405833333333334,
-        "precision": "provider_defined_notice_point_not_incident",
-        "verified_iso": false
-      },
-      "observation_id": "beh:f716988bbd5d7226a7d5299fac9f",
-      "provider": "niord",
-      "requires_geolocation": false,
-      "source_family": "maritime_restriction",
-      "source_published_at": null,
-      "source_url": "https://niord.dma.dk/#/message/a4286c99-e633-461f-be1f-dbbd46ed6c2e",
-      "status": "recent_source_observation_unreviewed",
-      "title": "Denmark. Kattegat. EK R 45 Hevring. Firing exercises. Warning."
-    },
-    {
-      "first_observed_at": "2026-11-23T00:27:52Z",
-      "geography": {
-        "geometry_sha256_prefix": null,
-        "geometry_type": "Point",
-        "key": "source-notice-point:56.52250:10.44083",
-        "kind": "source_notice_point",
-        "label": "Official notice position",
-        "latitude": 56.5225,
-        "longitude": 10.440833333333334,
-        "precision": "provider_defined_notice_point_not_incident",
-        "verified_iso": false
-      },
-      "observation_id": "beh:ed3f8e46ad63d2a7b7600aa48d57",
-      "provider": "niord",
-      "requires_geolocation": false,
-      "source_family": "maritime_restriction",
-      "source_published_at": null,
-      "source_url": "https://niord.dma.dk/#/message/a4286c99-e633-461f-be1f-dbbd46ed6c2e",
-      "status": "recent_source_observation_unreviewed",
-      "title": "Denmark. Kattegat. EK R 45 Hevring. Firing exercises. Warning."
-    },
-    {
-      "first_observed_at": "2026-11-23T00:27:52Z",
-      "geography": {
-        "geometry_sha256_prefix": null,
-        "geometry_type": null,
-        "key": null,
-        "kind": "unlocated",
-        "label": null,
-        "latitude": null,
-        "longitude": null,
-        "precision": "notice_geography_unavailable",
-        "verified_iso": false
-      },
-      "observation_id": "beh:e6c456b3b05eb87bd09d5366d47c",
-      "provider": "niord",
-      "requires_geolocation": true,
-      "source_family": "maritime_restriction",
-      "source_published_at": null,
-      "source_url": "https://niord.dma.dk/#/message/679470f0-ce73-4b58-9cc8-24ddf6408cb6",
-      "status": "recent_source_observation_unreviewed",
-      "title": "Denmark. The Baltic Sea. EK D 396 Hullebaek. Firing exercises. Warning."
-    },
-    {
-      "first_observed_at": "2026-11-23T00:27:52Z",
-      "geography": {
-        "geometry_sha256_prefix": null,
-        "geometry_type": null,
-        "key": null,
-        "kind": "unlocated",
-        "label": null,
-        "latitude": null,
-        "longitude": null,
-        "precision": "notice_geography_unavailable",
-        "verified_iso": false
-      },
-      "observation_id": "beh:d16b73860558da2c5bb77900bd87",
-      "provider": "niord",
-      "requires_geolocation": true,
-      "source_family": "maritime_restriction",
-      "source_published_at": null,
-      "source_url": "https://niord.dma.dk/#/message/977d59f3-ce27-47bb-8aec-42ea6aef5ec3",
-      "status": "recent_source_observation_unreviewed",
-      "title": "Denmark. Kattegat. EK R 18 Jaegerspris. Firing exercises. Warning."
-    },
-    {
-      "first_observed_at": "2026-11-23T00:27:52Z",
-      "geography": {
-        "geometry_sha256_prefix": null,
-        "geometry_type": null,
-        "key": null,
-        "kind": "unlocated",
-        "label": null,
-        "latitude": null,
-        "longitude": null,
-        "precision": "notice_geography_unavailable",
-        "verified_iso": false
-      },
-      "observation_id": "beh:ca79981282a69a5ae10a3063e04a",
-      "provider": "niord",
-      "requires_geolocation": true,
-      "source_family": "maritime_restriction",
-      "source_published_at": null,
-      "source_url": "https://niord.dma.dk/#/message/21695ece-4d99-43b7-b632-a24f4575925f",
-      "status": "recent_source_observation_unreviewed",
-      "title": "Denmark. The North Sea. 15 Nymindegab. Firing exercises. Warning."
-    },
-    {
-      "first_observed_at": "2026-11-23T00:27:52Z",
-      "geography": {
-        "geometry_sha256_prefix": null,
-        "geometry_type": null,
-        "key": null,
-        "kind": "unlocated",
-        "label": null,
-        "latitude": null,
-        "longitude": null,
-        "precision": "notice_geography_unavailable",
-        "verified_iso": false
-      },
-      "observation_id": "beh:c525199708e8876977596bd6ea58",
-      "provider": "niord",
-      "requires_geolocation": true,
-      "source_family": "maritime_restriction",
-      "source_published_at": null,
-      "source_url": "https://niord.dma.dk/#/message/977d59f3-ce27-47bb-8aec-42ea6aef5ec3",
-      "status": "recent_source_observation_unreviewed",
-      "title": "Denmark. Kattegat. EK R 18 Jaegerspris. Firing exercises. Warning."
-    },
-    {
-      "first_observed_at": "2026-11-22T19:29:33Z",
-      "geography": {
-        "geometry_sha256_prefix": "eae55ea941bce7caeb5c7b2f",
-        "geometry_type": "MultiPolygon",
-        "key": "source-footprint:eae55ea941bce7caeb5c7b2f",
-        "kind": "source_notice_footprint",
-        "label": "Official MultiPolygon notice area",
-        "latitude": null,
-        "longitude": null,
-        "precision": "provider_defined_notice_boundary_not_event_point",
-        "verified_iso": false
-      },
-      "observation_id": "beh:cdc9f957721fb5384d1701aee147",
-      "provider": "faa",
-      "requires_geolocation": false,
-      "source_family": "airspace_restriction",
-      "source_published_at": null,
-      "source_url": "https://tfr.faa.gov/6_9338.html",
-      "status": "recent_source_observation_unreviewed",
-      "title": "FAA TFR 6/9338 · New Bern, NC, Saturday, November 28, 2026 UTC"
     }
   ],
-  "registry_asof": "2026-11-23T19:19:57Z",
-  "registry_source_count": 730,
+  "registry_asof": "2026-11-23T20:22:03Z",
+  "registry_source_count": 550,
   "report_relationships": {
     "automatic_alerts_created": 0,
     "automatic_severity_changes": 0,
@@ -2749,15 +2761,15 @@
     "input_truncated": false,
     "not_a_preparations_sensor_or_warning": true,
     "pairwise_comparisons_capped": false,
-    "pairwise_comparisons_examined": 48828,
+    "pairwise_comparisons_examined": 51040,
     "possible_same_event_count_total": 0,
     "possible_same_source_story_count_total": 3,
-    "records_available": 313,
-    "records_examined": 313,
+    "records_available": 320,
+    "records_examined": 320,
     "related_reporting_count_total": 0,
     "reporting_origins_are_not_event_locations": true,
-    "routine_notice_market_or_measurement_records_excluded_from_text_event_matching": 305,
-    "same_document_group_count_total": 12,
+    "routine_notice_market_or_measurement_records_excluded_from_text_event_matching": 312,
+    "same_document_group_count_total": 13,
     "schema": "aiba.report-event-resolution-shadow.v1",
     "source_independence_unverified": true,
     "status": "unreviewed_report_relationships_only"
