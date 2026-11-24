@@ -233,9 +233,23 @@ def evaluate(data, *, api_key=None, model=None, max_cases=MAX_CASES, runner=ask_
                           "source_references":packet["evidence_families"],
                           "input_sha256":digest(packet)}
         except (ValueError,KeyError,IndexError,TypeError,TimeoutError,OSError,error.URLError) as exc:
+            # Only controlled machine-readable labels are published. Do not
+            # expose str(exc), raw model generations or source text.
+            code=getattr(exc,"code",None)
+            if not isinstance(code,str) or not re.fullmatch(r"[a-z_]{3,48}",code):
+                code="transport_or_unclassified_error"
             outputs[cid]={"status":"model_or_validation_failed",
-                          "interpretations":[],"evaluations":[],"error_type":type(exc).__name__}
+                          "interpretations":[],"evaluations":[],
+                          "error_type":type(exc).__name__,"error_code":code}
+    counts={}
+    for c in outputs.values():
+        if c["status"]=="model_or_validation_failed":
+            code=c.get("error_code","unknown")
+            counts[code]=counts.get(code,0)+1
     return {"schema":SCHEMA,"generated_at":at,"prompt_version":PROMPT_VERSION,
+        "failure_codes":dict(sorted(counts.items())),
+        "format_retries_succeeded":sum(bool(c.get("format_retry_succeeded"))
+            for c in outputs.values()),
         "model":model if enabled else None,
         "status":"provisional_only" if enabled else "not_configured",
         "provisional_not_analyst_approved":True,"signed_evidence_modified":False,
