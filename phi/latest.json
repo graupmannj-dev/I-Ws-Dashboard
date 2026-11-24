@@ -1,8 +1,8 @@
 {
   "schema": "cairn.phi-sidecar.v1",
   "model": "phi-4-mini-instruct-q4km-local",
-  "generated_at": "2026-11-24T22:39:12.536788Z",
-  "source_build_generated_at": "2026-11-24T22:31:30+00:00",
+  "generated_at": "2026-11-24T23:40:54.068549Z",
+  "source_build_generated_at": "2026-11-24T23:38:10+00:00",
   "provisional_only": true,
   "signed_evidence_modified": false,
   "cases": {
@@ -162,7 +162,7 @@
       ],
       "input_sha256": "e560a4fa00c5d63cab8b8ea74ecafdaf6aadaf7eeac34eec1c9fa90e4c1402b3",
       "model_generated_at": "2026-11-24T22:32:58.389913Z",
-      "cache_status": "fresh_inference"
+      "cache_status": "reused_exact_input"
     },
     "horn_ethiopia_sudan": {
       "status": "provisional_complete",
@@ -352,7 +352,7 @@
       ],
       "input_sha256": "fffb2f0296fca8416eaf63a91b4c26baa86a78fe524e6f0aa930d0afb69f26fa",
       "model_generated_at": "2026-11-24T22:32:58.389913Z",
-      "cache_status": "fresh_inference"
+      "cache_status": "reused_exact_input"
     },
     "drc_rwanda": {
       "status": "provisional_complete",
@@ -498,7 +498,7 @@
       ],
       "input_sha256": "aad84a16b4fb658af797ae96affaa7cc6126d46654629bcb9a2e8cbcc0219b92",
       "model_generated_at": "2026-11-24T22:32:58.389913Z",
-      "cache_status": "fresh_inference"
+      "cache_status": "reused_exact_input"
     },
     "thailand_cambodia": {
       "status": "provisional_complete",
@@ -779,51 +779,51 @@
       "interpretations": [
         {
           "hypothesis_index": 0,
-          "meaning": "There is a possibility of a wider escalation in the ongoing armed conflict.",
-          "discriminator": "Observation of increased frequency and intensity of attacks in the region."
+          "meaning": "An increase in the intensity of the ongoing armed conflict in the region.",
+          "discriminator": "Observation of a significant rise in the number of reported incidents involving armed conflict in the region over a short period."
         },
         {
           "hypothesis_index": 1,
-          "meaning": "Deterrent reinforcement or localized strikes may occur without a new theater-wide campaign.",
-          "discriminator": "Observation of targeted strikes with limited geographical spread."
+          "meaning": "A limited increase in military activity, possibly involving targeted strikes or reinforcement of forces, without expanding the conflict to a wider area.",
+          "discriminator": "Observation of a localized increase in military activity with no evidence of broader conflict escalation."
         }
       ],
       "evaluations": [],
       "evidence_notes": [
         {
           "evidence_key": "dossier:8d5f511ee8a63383a7285fb5",
-          "observation": "Warnings to partners and force reinforcement could indicate preparation for wider conflict escalation or localized action, depending on the context and scale of reinforcement observed in subsequent events.",
-          "verification_step": "Monitor subsequent military movements and engagements in the region for signs of escalation or localized action.",
+          "observation": "Reports of warnings to partners and force reinforcement suggest preparation for potential conflict escalation or targeted action, but no direct evidence of wider conflict escalation is provided in this report alone.",
+          "verification_step": "Monitor subsequent reports for evidence of wider conflict escalation.",
           "status": "unverified_source_title_lead"
         },
         {
           "evidence_key": "family:f6a997229fdfe081cc7b",
-          "observation": "Reports of additional Iranian aerial attacks and defensive interceptions suggest localized conflict activity, which may or may not escalate further.",
-          "verification_step": "Track the frequency and scale of Iranian aerial attacks and defensive interceptions over time.",
+          "observation": "Reports of additional Iranian aerial attacks and defensive interceptions in Bahrain indicate localized military activity, but no direct evidence of wider conflict escalation is provided in this report alone.",
+          "verification_step": "Monitor subsequent reports for evidence of wider conflict escalation.",
           "status": "unverified_source_title_lead"
         },
         {
           "evidence_key": "history:7079d777a2c2a9aa89eb",
-          "observation": "Bahrain's reports of additional Iranian aerial attacks and defensive interceptions on November 18 could be indicative of localized conflict activity, which may or may not escalate further.",
-          "verification_step": "Monitor the frequency and scale of Iranian aerial attacks and defensive interceptions over time.",
+          "observation": "Bahrain reports additional Iranian aerial attacks and defensive interceptions on November 18, indicating localized military activity, but no direct evidence of wider conflict escalation is provided in this report alone.",
+          "verification_step": "Monitor subsequent reports for evidence of wider conflict escalation.",
           "status": "unverified_source_title_lead"
         },
         {
           "evidence_key": "history:b70e03574702e41c4966",
-          "observation": "Reports of Iranian attacks causing fires at civilian industrial facilities suggest localized conflict activity, which may or may not escalate further.",
-          "verification_step": "Track the frequency and scale of Iranian attacks causing fires at civilian industrial facilities over time.",
+          "observation": "Bahrain reports Iranian attack caused fire at civilian industrial facility, indicating localized military activity, but no direct evidence of wider conflict escalation is provided in this report alone.",
+          "verification_step": "Monitor subsequent reports for evidence of wider conflict escalation.",
           "status": "unverified_source_title_lead"
         },
         {
           "evidence_key": "history:05c07ea3eeb5036b8d0c",
-          "observation": "ADNOC's confirmation of a Hormuz vessel attack with injured and missing crew could indicate localized conflict activity, which may or may not escalate further.",
-          "verification_step": "Monitor the frequency and scale of Hormuz vessel attacks over time.",
+          "observation": "ADNOC confirms November 17 Hormuz vessel attack with injured and missing crew, indicating localized military activity, but no direct evidence of wider conflict escalation is provided in this report alone.",
+          "verification_step": "Monitor subsequent reports for evidence of wider conflict escalation.",
           "status": "unverified_source_title_lead"
         },
         {
           "evidence_key": "family:a4b6fc7892b9ec7d7559",
-          "observation": "U.S.–Iran Hormuz agreement by November 30 or December 31 could indicate a move towards de-escalation, which may contradict the hypothesis of wider conflict escalation.",
-          "verification_step": "Monitor the adherence to the U.S.–Iran Hormuz agreement and any subsequent changes in conflict activity.",
+          "observation": "U.S.–Iran Hormuz agreement by November 30 and U.S.–Iran Hormuz agreement by December 31 suggest anticipation of conflict, but no direct evidence of wider conflict escalation is provided in this report alone.",
+          "verification_step": "Monitor subsequent reports for evidence of wider conflict escalation.",
           "status": "unverified_source_title_lead"
         }
       ],
@@ -980,25 +980,10 @@
             }
           ],
           "reviewed_direction": "not_assessed"
-        },
-        {
-          "evidence_key": "history:b44060b57343a2a63a16",
-          "family_title": "US official reports retaliatory strike on IRGC missile-launch site on Qeshm Island",
-          "family_mechanism": "Case-linked history; provisional association only",
-          "source_health": "not_event_verified",
-          "sources": [
-            {
-              "url": "https://www.reuters.com/world/middle-east/us-strikes-iranian-missile-launch-site-qeshm-island-us-official-says-2026-11-17/",
-              "title": "US official reports retaliatory strike on IRGC missile-launch site on Qeshm Island",
-              "provider": "analyst",
-              "first_observed_at": "2026-11-17T22:45:25Z"
-            }
-          ],
-          "reviewed_direction": "not_assessed"
         }
       ],
-      "input_sha256": "d038d6cf8b46517059a781710508b982ffb1d283b4bf873f91e049473a301cfd",
-      "model_generated_at": "2026-11-24T22:32:58.389913Z",
+      "input_sha256": "f18a39c817b37c38936c194d310ebccbb2803b9c2fa8713f9cf8f40357c09145",
+      "model_generated_at": "2026-11-24T23:39:04.385628Z",
       "cache_status": "fresh_inference"
     },
     "taiwan": {
@@ -1189,7 +1174,7 @@
       ],
       "input_sha256": "23d81d74d2238e9d13b1ead84eae0db3af72d2d972d1790dc96a9128da5b6608",
       "model_generated_at": "2026-11-24T22:32:58.389913Z",
-      "cache_status": "fresh_inference"
+      "cache_status": "reused_exact_input"
     },
     "horn_ethiopia_kenya_moyale": {
       "status": "provisional_complete",
@@ -1286,8 +1271,8 @@
   },
   "summary": {
     "cases": 10,
-    "reused": 5,
-    "new_provisional": 5,
+    "reused": 9,
+    "new_provisional": 1,
     "failed": 0
   }
 }
