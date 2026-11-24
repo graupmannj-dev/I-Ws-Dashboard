@@ -405,6 +405,10 @@ function semanticSection(c){
         escapeHtml(source.title||"Inspect original source")+'</a>':'';
     }).filter(Boolean).join(" · ");
     return '<li><strong>'+escapeHtml(f.family_title||n.evidence_key)+'</strong>'+
+      '<p class="muted">'+(n.status==="unverified_original_source_lead"?
+        'Original source passage inspected '+escapeHtml(n.inspected_at||"time unknown")+
+        ' · source claims unverified':
+        'Headline-only inspection lead · original document not verified')+'</p>'+
       '<p>'+escapeHtml(n.observation)+'</p>'+
       '<p><strong>Verify:</strong> '+escapeHtml(n.verification_step)+'</p>'+
       '<div class="semantic-source-links">'+links+'</div></li>';
@@ -511,9 +515,24 @@ function validPhiSidecarRow(c, row, now=Date.now()){
     if(ref.sources.some(s=>!s||typeof s.url!=="string"||!safeUrl(s.url)))return false;
   }
   if(row.evidence_notes.some(n=>!n||
-       !keys.has(n.evidence_key)||n.status!=="unverified_source_title_lead"||
+       !keys.has(n.evidence_key)||
        typeof n.observation!=="string"||n.observation.length<15||
        typeof n.verification_step!=="string"||n.verification_step.length<15))return false;
+  for(const n of row.evidence_notes){
+    if(n.status==="unverified_source_title_lead")continue;
+    if(n.status!=="unverified_original_source_lead"||
+       row.grounding_mode!=="ephemeral_original_source"||
+       typeof n.passage_id!=="string"||
+       !/^passage:[a-f0-9]{24}$/.test(n.passage_id)||
+       typeof n.source_body_sha256!=="string"||
+       !/^[a-f0-9]{64}$/.test(n.source_body_sha256)||
+       !Number.isFinite(Date.parse(n.inspected_at))||
+       now-Date.parse(n.inspected_at)<0||
+       now-Date.parse(n.inspected_at)>MAX_PHI_AGE_MS)return false;
+    const family=refs.find(ref=>ref.evidence_key===n.evidence_key);
+    if(!family||!family.sources.some(source=>source.url===n.source_url &&
+                                              !!safeUrl(n.source_url)))return false;
+  }
   return true;
 }
 function applyPhiSidecar(payload, sidecar, now=Date.now()){
