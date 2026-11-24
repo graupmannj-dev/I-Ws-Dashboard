@@ -124,6 +124,53 @@
         }
       }
     },
+    "de58d4594c9966372a7ebb79e32eb4ff2f9a2b9fa8cf1dd00efc35ad92703731": {
+      "information_root": "cbp_wait:cbp_wait:240202:2026-11-24:06:50:03",
+      "members": {
+        "beh:c3bd9405873e052a76b38a7dd6a5": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T13:58:08+00:00",
+          "geography_key": "us-border-port:240202",
+          "geography_label": "El Paso",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:c3bd9405873e052a76b38a7dd6a5",
+          "information_root": "cbp_wait:cbp_wait:240202:2026-11-24:06:50:03",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "N/A",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/24/2026",
+            "reported_local_time": "06:50:03",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — El Paso / Paso Del Norte (PDN)"
+        }
+      }
+    },
     "de5ef9a89cc96df317e7f3e09e159d60968395f78a83ef52f8b38dd26b939622": {
       "information_root": "ioda:3e4fb1d4a835138a22f20402",
       "members": {
@@ -184,6 +231,39 @@
           "source_updated_at": "2026-11-21T00:21:51Z",
           "source_url": "https://niord.dma.dk/#/message/56b257b5-b744-4220-a413-0fc46eae1b7c",
           "title": "Denmark. The North Sea. EK R 33 Vejers. Firing exercises. Warning."
+        }
+      }
+    },
+    "de85282b804a53428f17fee6259e1eab357ccfc0479e3c4f6e9130ea6623d6d4": {
+      "information_root": "nws:d016716c523cc08550ee5662",
+      "members": {
+        "beh:1fbfadf071d7f5be20dedea103b8": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "nws",
+          "direct_measurement": false,
+          "event_at": "2026-11-24T10:00:00Z",
+          "first_observed_at": "2026-11-24T03:12:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:1fbfadf071d7f5be20dedea103b8",
+          "information_root": "nws:d016716c523cc08550ee5662",
+          "origin": "behavioral_registry",
+          "provider": "nws",
+          "published_at": "2026-11-24T03:12:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "official_weather_alert_context",
+          "source_measurement": null,
+          "source_scope": "Active NWS marine alerts; severity Minor",
+          "source_updated_at": null,
+          "source_url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.e59b3daaf9a1a6fbb1b1851e142670f086a7a11d.002.1",
+          "title": "Coastal Flood Statement - Coastal Palm Beach County; Coastal Broward County; Coastal Miami Dade County"
         }
       }
     },

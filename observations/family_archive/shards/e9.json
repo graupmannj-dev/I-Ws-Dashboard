@@ -168,6 +168,81 @@
         }
       }
     },
+    "e94a4e11a8e0f14dd43a0fbb30bfcfe95e5bad49cc135592563d73a2c2e32c5c": {
+      "information_root": "wiki_edits:wiki_edits:ar:20261124T13",
+      "members": {
+        "beh:ddfbca4b5203448a0a2f8110c59e": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "wiki_edits",
+          "direct_measurement": false,
+          "event_at": "2026-11-24T13:56:00Z",
+          "first_observed_at": "2026-11-24T13:56:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:ddfbca4b5203448a0a2f8110c59e",
+          "information_root": "wiki_edits:wiki_edits:ar:20261124T13",
+          "origin": "behavioral_registry",
+          "provider": "wiki_edits",
+          "published_at": "2026-11-24T13:56:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "public_encyclopedia_edit_aggregate",
+          "source_family": "public_attention",
+          "source_kind": "bounded_public_edit_count_not_event_verification",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "distinct_articles_in_sample": 493,
+            "maximum_returned_edits": 500,
+            "most_edited_article_counts": [
+              {
+                "count": 3,
+                "title": "حدوتة"
+              },
+              {
+                "count": 2,
+                "title": "1401 هـ"
+              },
+              {
+                "count": 2,
+                "title": "شارع سمسم"
+              },
+              {
+                "count": 2,
+                "title": "قائمة إحصائيات نادي الزمالك"
+              },
+              {
+                "count": 2,
+                "title": "منتظر عبد الأمير"
+              },
+              {
+                "count": 2,
+                "title": "وفيات 2026"
+              },
+              {
+                "count": 1,
+                "title": "1388 هـ"
+              },
+              {
+                "count": 1,
+                "title": "1407 هـ"
+              }
+            ],
+            "name": "sampled_edits_last_three_hours",
+            "sample_cap_reached": true,
+            "unit": "edits",
+            "value": 500
+          },
+          "source_scope": "Wikipedia main-namespace edit-count sample, 14 global language editions, three-hour window capped at 500 per wiki; not geographic location",
+          "source_updated_at": null,
+          "source_url": "https://ar.wikipedia.org/wiki/Special:RecentChanges",
+          "title": "Wikipedia ar public article-edit activity (sampled)"
+        }
+      }
+    },
     "e9527305465e4048e404fd1a05473adb77d5593f206cbd9fa7632559dd50affb": {
       "information_root": "usgs:us6000ucga",
       "members": {
@@ -236,6 +311,39 @@
           "source_updated_at": null,
           "source_url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.2434f7f90123d06e6e444ba09353499a761ad91c.001.1",
           "title": "Flood Warning - Lake, FL; Volusia, FL"
+        }
+      }
+    },
+    "e98fdf06e5386c68da657cebd0e1269564737392cb491c06e264f0a18ea204be": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-056788:111184-2026",
+      "members": {
+        "beh:eed1391dfa4d09236f7262a27e15": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T13:36:16+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:eed1391dfa4d09236f7262a27e15",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-056788:111184-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-24T13:36:16Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-22T13%3A56%3A02&updatedTo=2026-11-24T13%3A56%3A02",
+          "title": "PROVISION OF FIRE RESPONSE AND EQUIPMENT MAINTENANCE SERVICES AT THE BRITISH HIGH COMMISSION NAIROBI · Foreign, Commonwealth and Development Office"
         }
       }
     },
@@ -524,6 +632,86 @@
           "source_updated_at": null,
           "source_url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.zwe.html",
           "title": "Zimbabwe - Level 2: Exercise Increased Caution"
+        }
+      }
+    },
+    "e9e63858abf238ca1532ad566342429e5819b63451cd73b2b0a981b8c5e1d753": {
+      "information_root": "nws:e7139c015360abb8af7a384b",
+      "members": {
+        "beh:e031c501259060431d2af471e9d9": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "nws",
+          "direct_measurement": false,
+          "event_at": "2026-11-24T05:48:00Z",
+          "first_observed_at": "2026-11-24T05:48:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:e031c501259060431d2af471e9d9",
+          "information_root": "nws:e7139c015360abb8af7a384b",
+          "origin": "behavioral_registry",
+          "provider": "nws",
+          "published_at": "2026-11-24T05:48:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "official_weather_alert_context",
+          "source_measurement": null,
+          "source_scope": "Active NWS marine alerts; severity Severe",
+          "source_updated_at": null,
+          "source_url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.6cd1e5754fe625801aca61e07d6cf04364d2af45.004.1",
+          "title": "Coastal Flood Warning - Inland Flagler; Eastern Putnam"
+        }
+      }
+    },
+    "e9ef2c06dbadca8188ad3a72a572930ca2ad42cacace96a10abc76366bcec482": {
+      "information_root": "cbp_wait:cbp_wait:230106:2026-11-24:07:50:03",
+      "members": {
+        "beh:6c9954abaca0c6ba87b9492de63c": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T13:58:08+00:00",
+          "geography_key": "us-border-port:230106",
+          "geography_label": "B&M Bridge",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:6c9954abaca0c6ba87b9492de63c",
+          "information_root": "cbp_wait:cbp_wait:230106:2026-11-24:07:50:03",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Update Pending",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/24/2026",
+            "reported_local_time": "07:50:03",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — B&M Bridge / B&M Bridge"
         }
       }
     }

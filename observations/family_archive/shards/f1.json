@@ -77,6 +77,52 @@
         }
       }
     },
+    "f134b3b9caef053173c8d8986cf3ccd9aec7003f77ad3985b35c31d2a2c1f1b0": {
+      "information_root": "ris_bgp:ris_bgp:AS4134:20261124T11",
+      "members": {
+        "beh:c478cd778bcbd45106aedf9c6be9": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "public_routing_updates_not_country_outage",
+          "collection_mode": "ris_bgp",
+          "direct_measurement": true,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T13:58:08+00:00",
+          "geography_key": "asn:4134",
+          "geography_label": "AS4134",
+          "geography_precision": "routing_target_not_country_incident",
+          "id": "beh:c478cd778bcbd45106aedf9c6be9",
+          "information_root": "ris_bgp:ris_bgp:AS4134:20261124T11",
+          "origin": "behavioral_registry",
+          "provider": "ris_bgp",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "routing_collector_sampled_asn_updates",
+          "source_family": "internet_routing",
+          "source_kind": "sampled_asn_bgp_route_updates_not_network_outage",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "collector_peers_are_not_geo_deduplicated": true,
+            "country_impact_not_established": true,
+            "name": "sampled_6h_bgp_announcements",
+            "registered_network_country_hint": "CN",
+            "returned_sampling_buckets": 6,
+            "source_window_end": "2026-11-24T11:00:00Z",
+            "target_asn": "AS4134",
+            "unit": "announcements",
+            "value": 82750,
+            "window_hours_requested": 6,
+            "withdrawals_unavailable_for_asn": true
+          },
+          "source_scope": "RIPE RIS public route-announcement update samples on six non-Western operated networks; ASNs not country-wide outage detection",
+          "source_updated_at": null,
+          "source_url": "https://stat.ripe.net/data/bgp-update-activity/data.json?resource=AS4134&num_hours=6&max_samples=24&hide_empty_samples=false",
+          "title": "RIPE RIS sampled BGP announcements: AS4134"
+        }
+      }
+    },
     "f158362b7332672a9ee2ef27a9bebb975e6464caec6b0d0e062cc282f0de0f82": {
       "information_root": "niord:1ef21c8b-efbc-4641-b906-2fa81c3ff90f:0:2:0",
       "members": {
@@ -142,6 +188,45 @@
           "source_updated_at": null,
           "source_url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000uc8g",
           "title": "M 5.0 - southeast of the Loyalty Islands"
+        }
+      }
+    },
+    "f16f433439e891aefdd597e4b001223ada1a30204522e535eb908816981e295f": {
+      "information_root": "bmkg_nowcast:bmkg_nowcast:fb1398ca71e78a680d033714ea26",
+      "members": {
+        "beh:227cb2f01df1c33fc8f723268465": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "bmkg_nowcast",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T11:15:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:227cb2f01df1c33fc8f723268465",
+          "information_root": "bmkg_nowcast:bmkg_nowcast:fb1398ca71e78a680d033714ea26",
+          "origin": "behavioral_registry",
+          "provider": "bmkg_nowcast",
+          "published_at": "2026-11-24T11:15:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Indonesia BMKG",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Indonesia BMKG active provincial nowcast RSS, source-reported only; not global",
+          "source_updated_at": null,
+          "source_url": "https://www.bmkg.go.id/alerts/nowcast/en/CSU20261124004_alert.xml",
+          "title": "Thunderstorm This Evening in Sumatera Utara"
         }
       }
     },

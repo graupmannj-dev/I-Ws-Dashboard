@@ -1,5 +1,45 @@
 {
   "roots": {
+    "f50d956dcde1c7f88b3f0b2ce5419837785650832ae8f7cc9d14a8b9a188882e": {
+      "information_root": "coops:8724580:20261124T1348Z",
+      "members": {
+        "beh:4048e95fa9762237a7226f35f399": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "coops",
+          "direct_measurement": true,
+          "event_at": "2026-11-24T13:48:00Z",
+          "first_observed_at": "2026-11-24T13:48:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:4048e95fa9762237a7226f35f399",
+          "information_root": "coops:8724580:20261124T1348Z",
+          "origin": "behavioral_registry",
+          "provider": "coops",
+          "published_at": "2026-11-24T13:48:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "station_physical_measurement",
+          "source_family": "port_conditions",
+          "source_kind": "selected_port_water_level_measurement",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "metric_comparable_only_same_station_datum_and_sample_window": true,
+            "name": "observed_water_level",
+            "station": "8724580",
+            "unit": "meters_MLLW",
+            "value": 0.539
+          },
+          "source_scope": "NOAA CO-OPS water levels at San Francisco, Key West and Sewells Point; stations only",
+          "source_updated_at": null,
+          "source_url": "https://tidesandcurrents.noaa.gov/waterlevels.html?id=8724580",
+          "title": "Key West, FL observed water level (no anomaly classification)"
+        }
+      }
+    },
     "f52dbe7d03a495a83e11a429a354534100092ab6a75e544427a9fcea7bdb3ba8": {
       "information_root": "cbp_wait:cbp_wait:380301:2026-11-21:06:24:37",
       "members": {

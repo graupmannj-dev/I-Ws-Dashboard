@@ -165,6 +165,53 @@
         }
       }
     },
+    "c16066a7444acfd926ccb904e040fe5097c93ca2914d45c34cc602fbb1ffd895": {
+      "information_root": "cbp_wait:cbp_wait:020901:2026-11-24:08:50:02",
+      "members": {
+        "beh:af5c6cf78a038e72b4c61e3cc63a": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T13:58:08+00:00",
+          "geography_key": "us-border-port:020901",
+          "geography_label": "Derby Line",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:af5c6cf78a038e72b4c61e3cc63a",
+          "information_root": "cbp_wait:cbp_wait:020901:2026-11-24:08:50:02",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "no delay",
+            "lanes_open": 1,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "At 8:00 am EST",
+            "reported_local_date": "11/24/2026",
+            "reported_local_time": "08:50:02",
+            "source_declared_border": "Canadian Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 0
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Derby Line / Derby Line I-91"
+        }
+      }
+    },
     "c16500e88973b6d42eb203ae54c012dd1c318b2a3301b745f0023092902f5dfa": {
       "information_root": "niord:1fb80b52-7724-4cb2-b4b7-ebaf605093bb:2:0:0",
       "members": {
@@ -192,6 +239,39 @@
           "source_updated_at": "2026-11-19T00:21:52Z",
           "source_url": "https://niord.dma.dk/#/message/1fb80b52-7724-4cb2-b4b7-ebaf605093bb",
           "title": "Denmark. The Baltic Sea. EK D 395 Raghammer. Firing exercises. Warning."
+        }
+      }
+    },
+    "c16b48737db30de35f59d2bc435ce8b0925d5583e7f14e662da6ed78a29edd2f": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c286:111190-2026",
+      "members": {
+        "beh:8b7ca0c1f6c04d1bd7ae9f4b0b5d": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T13:42:15+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:8b7ca0c1f6c04d1bd7ae9f4b0b5d",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c286:111190-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-24T13:42:15Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-22T13%3A56%3A02&updatedTo=2026-11-24T13%3A56%3A02",
+          "title": "Replacement Insulation Cladding to Undercroft & Associated Works, Heath & Wellbeing Centre, Churchill Court. · London Borough of Bromley"
         }
       }
     },

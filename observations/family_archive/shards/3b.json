@@ -1,5 +1,99 @@
 {
   "roots": {
+    "3b0b1009f043d7a28fa52c82833f39d79377756cd0882f96b85b189e0a54ee9f": {
+      "information_root": "cbp_wait:cbp_wait:090103:2026-11-24:08:50:02",
+      "members": {
+        "beh:b9fc098d0bac58e2ccad193d2780": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T13:58:08+00:00",
+          "geography_key": "us-border-port:090103",
+          "geography_label": "Buffalo/Niagara Falls",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:b9fc098d0bac58e2ccad193d2780",
+          "information_root": "cbp_wait:cbp_wait:090103:2026-11-24:08:50:02",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Update Pending",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/24/2026",
+            "reported_local_time": "08:50:02",
+            "source_declared_border": "Canadian Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Buffalo/Niagara Falls / Whirlpool Bridge"
+        }
+      }
+    },
+    "3b15d2609ae446907c0c23791ab035e09b88a29ae763733d5d177bd2f560ae38": {
+      "information_root": "cbp_wait:cbp_wait:240301:2026-11-24:07:50:03",
+      "members": {
+        "beh:e3f63e03e70012cb5e511404dabe": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T13:58:08+00:00",
+          "geography_key": "us-border-port:240301",
+          "geography_label": "Presidio",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:e3f63e03e70012cb5e511404dabe",
+          "information_root": "cbp_wait:cbp_wait:240301:2026-11-24:07:50:03",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Lanes Closed",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/24/2026",
+            "reported_local_time": "07:50:03",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Presidio / PRESIDIO PORT OF ENTRY"
+        }
+      }
+    },
     "3b190a67db793b785cd400cce840d48f52b05033132bff527ce383806de1845e": {
       "information_root": "niord:21695ece-4d99-43b7-b632-a24f4575925f:0:0:0",
       "members": {

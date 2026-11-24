@@ -93,6 +93,39 @@
         }
       }
     },
+    "cc19945b4e32e6bc99421c7a171b80c304567a6a17c6d2132599c2d3dc2ad969": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c268:111130-2026",
+      "members": {
+        "beh:c37b9c00c378e7ca4d0c26bad68c": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T12:12:07+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:c37b9c00c378e7ca4d0c26bad68c",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c268:111130-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-24T12:12:07Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-22T13%3A56%3A02&updatedTo=2026-11-24T13%3A56%3A02",
+          "title": "Luna ODiSI · ASTON UNIVERSITY"
+        }
+      }
+    },
     "cc39cc149e8463f67cec972e160b0afc2cd7986554c1cadfa9d9fe4d94665ec1": {
       "information_root": "niord:66104724-dce4-42b0-94f3-a556e64c68e7:3:0:0",
       "members": {
@@ -150,6 +183,44 @@
           "source_updated_at": "2026-11-20T13:21:55Z",
           "source_url": "https://niord.dma.dk/#/message/d8f7a59c-bda3-4691-aa45-338949965a54",
           "title": "Denmark. The North Sea. EK R 33 Vejers. Firing exercises. Warning."
+        }
+      }
+    },
+    "cc4b668b147df63d4b9e16f3c9e7a59a58a2dc6f079c9329595beb880bae4690": {
+      "information_root": "usgs:us6000ud6h",
+      "members": {
+        "beh:5ac88794c6406ab88f428b2cbff2": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "usgs",
+          "direct_measurement": true,
+          "event_at": "2026-11-24T11:06:14Z",
+          "first_observed_at": "2026-11-24T11:06:14+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "source_supplied_point_only",
+          "id": "beh:5ac88794c6406ab88f428b2cbff2",
+          "information_root": "usgs:us6000ud6h",
+          "origin": "behavioral_registry",
+          "provider": "usgs",
+          "published_at": "2026-11-24T13:15:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "measured_earthquake_context",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "name": "earthquake_magnitude",
+            "unit": "reported_magnitude",
+            "value": 6.4
+          },
+          "source_scope": "USGS M4.5+ earthquakes worldwide, rolling past day; source thresholds apply",
+          "source_updated_at": null,
+          "source_url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000ud6h",
+          "title": "M 6.4 - Mauritius - Reunion region"
         }
       }
     },
@@ -227,6 +298,53 @@
           "source_updated_at": null,
           "source_url": "https://bwt.cbp.gov/api/waittimes",
           "title": "CBP estimated commercial border wait — Brownsville / Gateway"
+        }
+      }
+    },
+    "cc669b3f9e8c35c41862a794ab280de39817a4f625841d465a1b4217291f947f": {
+      "information_root": "cbp_wait:cbp_wait:021101:2026-11-24:08:50:02",
+      "members": {
+        "beh:a0d6176231e4c33e4500fd3790a1": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T13:58:08+00:00",
+          "geography_key": "us-border-port:021101",
+          "geography_label": "Norton",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:a0d6176231e4c33e4500fd3790a1",
+          "information_root": "cbp_wait:cbp_wait:021101:2026-11-24:08:50:02",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "no delay",
+            "lanes_open": 1,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "At 8:00 am EST",
+            "reported_local_date": "11/24/2026",
+            "reported_local_time": "08:50:02",
+            "source_declared_border": "Canadian Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 0
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Norton"
         }
       }
     },

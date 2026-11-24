@@ -75,6 +75,53 @@
         }
       }
     },
+    "6512f37bc3df078afca575a1ada9c93d822018b2d69c9035aa6875a39893a376": {
+      "information_root": "cbp_wait:cbp_wait:260201:2026-11-24:06:50:03",
+      "members": {
+        "beh:193ffa2ba50629dae13994b0cef6": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T13:58:08+00:00",
+          "geography_key": "us-border-port:260201",
+          "geography_label": "Lukeville",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:193ffa2ba50629dae13994b0cef6",
+          "information_root": "cbp_wait:cbp_wait:260201:2026-11-24:06:50:03",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Lanes Closed",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/24/2026",
+            "reported_local_time": "06:50:03",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Lukeville"
+        }
+      }
+    },
     "653a999ece2f06e18f084bd051beb82de706e6976673125123002d2ab23db3af": {
       "information_root": "sg_mpa:sg_mpa:2026-01:container",
       "members": {
@@ -168,6 +215,53 @@
         }
       }
     },
+    "655e0637d11d36c89c618d972304bd910ca02edb024098e71a8a493ad387a945": {
+      "information_root": "cbp_wait:cbp_wait:240204:2026-11-24:06:50:03",
+      "members": {
+        "beh:158aede6a4e5532dfbc9efa2d211": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T13:58:08+00:00",
+          "geography_key": "us-border-port:240204",
+          "geography_label": "El Paso",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:158aede6a4e5532dfbc9efa2d211",
+          "information_root": "cbp_wait:cbp_wait:240204:2026-11-24:06:50:03",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Update Pending",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/24/2026",
+            "reported_local_time": "06:50:03",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — El Paso / Stanton DCL"
+        }
+      }
+    },
     "65973f867523e4755e42ffa2d9e6dbc8d53c9bd3b7720ea7f9d034458bd0cd76": {
       "information_root": "official:b6c3eff193b177bbde7a",
       "members": {
@@ -231,6 +325,39 @@
         }
       }
     },
+    "65a15b5ac69bcbb91fd024c1a24240bfd03d52d0726f6319850d5d896c4d7f44": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c26f:111149-2026",
+      "members": {
+        "beh:fc10ad2ad6ef2b81290a63f80949": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T12:37:03+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:fc10ad2ad6ef2b81290a63f80949",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c26f:111149-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-24T12:37:03Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-22T13%3A56%3A02&updatedTo=2026-11-24T13%3A56%3A02",
+          "title": "Neurophysiology Insourcing Services · Cwm Taf Morgannwg University Health Board"
+        }
+      }
+    },
     "65b95f17fe388e59f30d9500ffa26d3d9778d24c25e5ddf7dc1814a34ae0f37f": {
       "information_root": "niord:076f0fb6-c387-450a-9fdb-5629d7c1087e:1:0:0",
       "members": {
@@ -258,6 +385,39 @@
           "source_updated_at": "2026-11-16T09:21:51Z",
           "source_url": "https://niord.dma.dk/#/message/076f0fb6-c387-450a-9fdb-5629d7c1087e",
           "title": "Denmark. Kattegat. EK R 20 Yderby. Firing exercises. Warning."
+        }
+      }
+    },
+    "65c25c9dd5023073ccc6260aac110a6f5a0fe8516cfa6f4c457334c25c9597e9": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-05aeb7:111119-2026",
+      "members": {
+        "beh:4906f9f1774300a775130a2d5ab2": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T12:07:08+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:4906f9f1774300a775130a2d5ab2",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-05aeb7:111119-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-24T12:07:08Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-22T13%3A56%3A02&updatedTo=2026-11-24T13%3A56%3A02",
+          "title": "Statutory Advocacy Service · Borough Council of Calderdale"
         }
       }
     },

@@ -60,6 +60,92 @@
         }
       }
     },
+    "92439d2bfbfdf9389c3bc91280d5541b230a0162dcf3bee686fdb7bbde616208": {
+      "information_root": "cbp_wait:cbp_wait:250609:2026-11-24:05:50:03",
+      "members": {
+        "beh:e2f6de8e559cc8543e6ec3993593": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T13:58:08+00:00",
+          "geography_key": "us-border-port:250609",
+          "geography_label": "Otay Mesa",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:e2f6de8e559cc8543e6ec3993593",
+          "information_root": "cbp_wait:cbp_wait:250609:2026-11-24:05:50:03",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Update Pending",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/24/2026",
+            "reported_local_time": "05:50:03",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Otay Mesa"
+        }
+      }
+    },
+    "924a5074d7b56934d845c6496b773afdc819a59c347919b61dcb8686cdde08fa": {
+      "information_root": "bmkg_nowcast:bmkg_nowcast:66fd76e41d41fe270b26a1b1df32",
+      "members": {
+        "beh:93b6dc08fd946da5342b1d58b8d4": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "bmkg_nowcast",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T10:30:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:93b6dc08fd946da5342b1d58b8d4",
+          "information_root": "bmkg_nowcast:bmkg_nowcast:66fd76e41d41fe270b26a1b1df32",
+          "origin": "behavioral_registry",
+          "provider": "bmkg_nowcast",
+          "published_at": "2026-11-24T10:30:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Indonesia BMKG",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Indonesia BMKG active provincial nowcast RSS, source-reported only; not global",
+          "source_updated_at": null,
+          "source_url": "https://www.bmkg.go.id/alerts/nowcast/en/CJT20261124008_alert.xml",
+          "title": "Thunderstorm This Evening in Jawa Timur"
+        }
+      }
+    },
     "924e3fe4a3f9abd487e5ebb8821a3516e2096f45caa66dcfe22e105a509726b2": {
       "information_root": "nws:a4620853df3f1b2d1e1966ea",
       "members": {
@@ -403,6 +489,45 @@
           "source_updated_at": null,
           "source_url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.0bd7583406e3892dc93cdd490c967674b936e7b8.001.2",
           "title": "Coastal Flood Warning - Coastal Flagler"
+        }
+      }
+    },
+    "92cd1d6b83dcd86384ccdf5ab6b31f915ed7363e8829a9b0249c6fa15940efbd": {
+      "information_root": "bmkg_nowcast:bmkg_nowcast:4cd655fa344e3df778fb39dd9afc",
+      "members": {
+        "beh:38908a07942c48274485955be59b": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "bmkg_nowcast",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T11:40:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:38908a07942c48274485955be59b",
+          "information_root": "bmkg_nowcast:bmkg_nowcast:4cd655fa344e3df778fb39dd9afc",
+          "origin": "behavioral_registry",
+          "provider": "bmkg_nowcast",
+          "published_at": "2026-11-24T11:40:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Indonesia BMKG",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Indonesia BMKG active provincial nowcast RSS, source-reported only; not global",
+          "source_updated_at": null,
+          "source_url": "https://www.bmkg.go.id/alerts/nowcast/en/CRU20261124007_alert.xml",
+          "title": "Thunderstorm This Evening in Riau"
         }
       }
     },

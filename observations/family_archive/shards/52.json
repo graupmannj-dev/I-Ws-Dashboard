@@ -60,6 +60,39 @@
         }
       }
     },
+    "521464ba27be9dc53bdd5969fba783162f6425514924c2ad17c93f8cf7adf7be": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-029f9e:111165-2026",
+      "members": {
+        "beh:8720cb2858a6690329aac0b8bfbd": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T13:06:23+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:8720cb2858a6690329aac0b8bfbd",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-029f9e:111165-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-24T13:06:23Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-22T13%3A56%3A02&updatedTo=2026-11-24T13%3A56%3A02",
+          "title": "C2426 RAAC Programme-Structural Surveys and Ongoing Monitoring · Corporate Officer of the House of Commons"
+        }
+      }
+    },
     "521d54dea5e04dbb149574e54627089b23af94e52a1383f8fd9661e3e79b9c56": {
       "information_root": "cbp_wait:cbp_wait:240301:2026-11-22:05:34:18",
       "members": {
@@ -137,6 +170,52 @@
           "source_updated_at": "2026-11-24T00:21:53Z",
           "source_url": "https://niord.dma.dk/#/message/83a820d1-2d99-4ac4-bbc2-49848ccb316a",
           "title": "Denmark. Kattegat. EK R 20 Yderby. Firing exercises. Warning."
+        }
+      }
+    },
+    "5223e14ccf1e3217c6ff594f23ceeb3053d12477ba371e56f3ea54715383a08d": {
+      "information_root": "ris_bgp:ris_bgp:AS4766:20261124T11",
+      "members": {
+        "beh:561b2222595c7660e3df4eba0fd1": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "public_routing_updates_not_country_outage",
+          "collection_mode": "ris_bgp",
+          "direct_measurement": true,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T13:58:08+00:00",
+          "geography_key": "asn:4766",
+          "geography_label": "AS4766",
+          "geography_precision": "routing_target_not_country_incident",
+          "id": "beh:561b2222595c7660e3df4eba0fd1",
+          "information_root": "ris_bgp:ris_bgp:AS4766:20261124T11",
+          "origin": "behavioral_registry",
+          "provider": "ris_bgp",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "routing_collector_sampled_asn_updates",
+          "source_family": "internet_routing",
+          "source_kind": "sampled_asn_bgp_route_updates_not_network_outage",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "collector_peers_are_not_geo_deduplicated": true,
+            "country_impact_not_established": true,
+            "name": "sampled_6h_bgp_announcements",
+            "registered_network_country_hint": "KR",
+            "returned_sampling_buckets": 6,
+            "source_window_end": "2026-11-24T11:00:00Z",
+            "target_asn": "AS4766",
+            "unit": "announcements",
+            "value": 93772,
+            "window_hours_requested": 6,
+            "withdrawals_unavailable_for_asn": true
+          },
+          "source_scope": "RIPE RIS public route-announcement update samples on six non-Western operated networks; ASNs not country-wide outage detection",
+          "source_updated_at": null,
+          "source_url": "https://stat.ripe.net/data/bgp-update-activity/data.json?resource=AS4766&num_hours=6&max_samples=24&hide_empty_samples=false",
+          "title": "RIPE RIS sampled BGP announcements: AS4766"
         }
       }
     },
@@ -261,6 +340,53 @@
           "source_updated_at": null,
           "source_url": "https://bwt.cbp.gov/api/waittimes",
           "title": "CBP estimated commercial border wait — Houlton"
+        }
+      }
+    },
+    "525bf4439143391e233c339e56cd629972fcc92bab9223ec092a09736e3fa707": {
+      "information_root": "cbp_wait:cbp_wait:300403:2026-11-24:05:50:02",
+      "members": {
+        "beh:717dff265b76a83093eff5d73a49": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T13:58:08+00:00",
+          "geography_key": "us-border-port:300403",
+          "geography_label": "Blaine",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:717dff265b76a83093eff5d73a49",
+          "information_root": "cbp_wait:cbp_wait:300403:2026-11-24:05:50:02",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Update Pending",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/24/2026",
+            "reported_local_time": "05:50:02",
+            "source_declared_border": "Canadian Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Blaine / Point Roberts"
         }
       }
     },

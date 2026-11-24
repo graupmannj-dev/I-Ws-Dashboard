@@ -1,5 +1,44 @@
 {
   "roots": {
+    "891446b12615a0f3419cf8f52d0888855426717eea2a9a57a46644501a8fe209": {
+      "information_root": "bmkg_nowcast:bmkg_nowcast:6ac6aa4015ca8d34b0f90ad24e61",
+      "members": {
+        "beh:13b02fb6aa102ce35e05d2bce547": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "bmkg_nowcast",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T13:30:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:13b02fb6aa102ce35e05d2bce547",
+          "information_root": "bmkg_nowcast:bmkg_nowcast:6ac6aa4015ca8d34b0f90ad24e61",
+          "origin": "behavioral_registry",
+          "provider": "bmkg_nowcast",
+          "published_at": "2026-11-24T13:30:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Indonesia BMKG",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Indonesia BMKG active provincial nowcast RSS, source-reported only; not global",
+          "source_updated_at": null,
+          "source_url": "https://www.bmkg.go.id/alerts/nowcast/en/CJI20261124003_alert.xml",
+          "title": "Thunderstorm Tonight in Jambi"
+        }
+      }
+    },
     "8956ccda457e227bbec5011af10f11b700e12e23274d2aa237c85db891363201": {
       "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-06be54:110295-2026",
       "members": {

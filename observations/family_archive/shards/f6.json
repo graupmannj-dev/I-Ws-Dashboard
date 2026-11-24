@@ -72,6 +72,132 @@
         }
       }
     },
+    "f61c810da64efee7d08d65af40842d521ac73a3d1b9b9e5712dcf8482ff867fb": {
+      "information_root": "ris_bgp:ris_bgp:AS7552:20261124T11",
+      "members": {
+        "beh:56a621adc2c10e246481abf9cf6d": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "public_routing_updates_not_country_outage",
+          "collection_mode": "ris_bgp",
+          "direct_measurement": true,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T13:58:08+00:00",
+          "geography_key": "asn:7552",
+          "geography_label": "AS7552",
+          "geography_precision": "routing_target_not_country_incident",
+          "id": "beh:56a621adc2c10e246481abf9cf6d",
+          "information_root": "ris_bgp:ris_bgp:AS7552:20261124T11",
+          "origin": "behavioral_registry",
+          "provider": "ris_bgp",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "routing_collector_sampled_asn_updates",
+          "source_family": "internet_routing",
+          "source_kind": "sampled_asn_bgp_route_updates_not_network_outage",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "collector_peers_are_not_geo_deduplicated": true,
+            "country_impact_not_established": true,
+            "name": "sampled_6h_bgp_announcements",
+            "registered_network_country_hint": "VN",
+            "returned_sampling_buckets": 6,
+            "source_window_end": "2026-11-24T11:00:00Z",
+            "target_asn": "AS7552",
+            "unit": "announcements",
+            "value": 4140039,
+            "window_hours_requested": 6,
+            "withdrawals_unavailable_for_asn": true
+          },
+          "source_scope": "RIPE RIS public route-announcement update samples on six non-Western operated networks; ASNs not country-wide outage detection",
+          "source_updated_at": null,
+          "source_url": "https://stat.ripe.net/data/bgp-update-activity/data.json?resource=AS7552&num_hours=6&max_samples=24&hide_empty_samples=false",
+          "title": "RIPE RIS sampled BGP announcements: AS7552"
+        }
+      }
+    },
+    "f6242bac073743c722421deded23027e2aa2ddc1d3c5da99f75732a1ec5416e2": {
+      "information_root": "cbp_wait:cbp_wait:380001:2026-11-24:08:50:02",
+      "members": {
+        "beh:5971d147f8cc17ade750ce5cea62": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T13:58:08+00:00",
+          "geography_key": "us-border-port:380001",
+          "geography_label": "Detroit",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:5971d147f8cc17ade750ce5cea62",
+          "information_root": "cbp_wait:cbp_wait:380001:2026-11-24:08:50:02",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "no delay",
+            "lanes_open": 5,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "At 8:00 am EST",
+            "reported_local_date": "11/24/2026",
+            "reported_local_time": "08:50:02",
+            "source_declared_border": "Canadian Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 5
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Detroit / Ambassador Bridge"
+        }
+      }
+    },
+    "f6385328a42aabbfc0a4c4038882d7a64ce3fb0514d0e2a42dead678be4d36d3": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07b5ea:111141-2026",
+      "members": {
+        "beh:aa91bfa2cbf481d820ef1edb01f8": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T12:27:10+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:aa91bfa2cbf481d820ef1edb01f8",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07b5ea:111141-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-24T12:27:10Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-22T13%3A56%3A02&updatedTo=2026-11-24T13%3A56%3A02",
+          "title": "Merthyr Housing Maintenance Contract (Individual Job Value up to £5,000) [28] · Merthyr Tydfil Housing Association"
+        }
+      }
+    },
     "f6602cb53a6664a3de77ff47108888648faeb30c1c90416310762a7b8e65a3db": {
       "information_root": "ioda:6c4dc653f03bcb9f7f3c2215",
       "members": {

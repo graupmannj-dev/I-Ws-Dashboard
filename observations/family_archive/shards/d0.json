@@ -30,6 +30,44 @@
         }
       }
     },
+    "d00a92e07e909f4bb520c033300469a21720c8ef12b0273b54a1d3e35b1917cb": {
+      "information_root": "usgs:us6000ud3m",
+      "members": {
+        "beh:795b0d11a6628800caa142f5457c": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "usgs",
+          "direct_measurement": true,
+          "event_at": "2026-11-24T01:55:57Z",
+          "first_observed_at": "2026-11-24T01:55:57+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "source_supplied_point_only",
+          "id": "beh:795b0d11a6628800caa142f5457c",
+          "information_root": "usgs:us6000ud3m",
+          "origin": "behavioral_registry",
+          "provider": "usgs",
+          "published_at": "2026-11-24T10:14:43Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "measured_earthquake_context",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "name": "earthquake_magnitude",
+            "unit": "reported_magnitude",
+            "value": 4.5
+          },
+          "source_scope": "USGS M4.5+ earthquakes worldwide, rolling past day; source thresholds apply",
+          "source_updated_at": null,
+          "source_url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000ud3m",
+          "title": "M 4.5 - 9 km NNW of La Tronosa, Panama"
+        }
+      }
+    },
     "d00dedcdfbc098a4116c21ae7a494c036dbc37825c1e5c5458dd566a6eb7d61e": {
       "information_root": "niord:57e3ae61-a94b-4cc6-8303-615cf880c5bb:0:8:0",
       "members": {
@@ -117,6 +155,52 @@
           "source_updated_at": null,
           "source_url": "https://tfr.faa.gov/6_7665.html",
           "title": "FAA TFR 6/7665 · Apalachicola, FL, Saturday, November 21, 2026 UTC"
+        }
+      }
+    },
+    "d06e4c0c9f8881595490ce7b9fccc6495d8582d486b728b208410dbad4f7cb63": {
+      "information_root": "ris_bgp:ris_bgp:AS7303:20261124T11",
+      "members": {
+        "beh:87d3be485560adee1c85522db54e": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "public_routing_updates_not_country_outage",
+          "collection_mode": "ris_bgp",
+          "direct_measurement": true,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T13:58:08+00:00",
+          "geography_key": "asn:7303",
+          "geography_label": "AS7303",
+          "geography_precision": "routing_target_not_country_incident",
+          "id": "beh:87d3be485560adee1c85522db54e",
+          "information_root": "ris_bgp:ris_bgp:AS7303:20261124T11",
+          "origin": "behavioral_registry",
+          "provider": "ris_bgp",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "routing_collector_sampled_asn_updates",
+          "source_family": "internet_routing",
+          "source_kind": "sampled_asn_bgp_route_updates_not_network_outage",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "collector_peers_are_not_geo_deduplicated": true,
+            "country_impact_not_established": true,
+            "name": "sampled_6h_bgp_announcements",
+            "registered_network_country_hint": "AR",
+            "returned_sampling_buckets": 6,
+            "source_window_end": "2026-11-24T11:00:00Z",
+            "target_asn": "AS7303",
+            "unit": "announcements",
+            "value": 26858,
+            "window_hours_requested": 6,
+            "withdrawals_unavailable_for_asn": true
+          },
+          "source_scope": "RIPE RIS public route-announcement update samples on six non-Western operated networks; ASNs not country-wide outage detection",
+          "source_updated_at": null,
+          "source_url": "https://stat.ripe.net/data/bgp-update-activity/data.json?resource=AS7303&num_hours=6&max_samples=24&hide_empty_samples=false",
+          "title": "RIPE RIS sampled BGP announcements: AS7303"
         }
       }
     },

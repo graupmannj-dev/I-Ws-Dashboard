@@ -156,6 +156,39 @@
         }
       }
     },
+    "0639376fa7f8c45b86dad66c2592a4e9605a4c4a5fd95472b956949d3852c1b3": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-077eff:111200-2026",
+      "members": {
+        "beh:12c834a54bc1cfcd4532606da2ae": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T13:50:10+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:12c834a54bc1cfcd4532606da2ae",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-077eff:111200-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-24T13:50:10Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-22T13%3A56%3A02&updatedTo=2026-11-24T13%3A56%3A02",
+          "title": "APX052 - Supply of Electricity · Apex Housing Association"
+        }
+      }
+    },
     "063c3ace37bd45531495020ef0f2c88f444d4625496f7903dfc104fd753d93de": {
       "information_root": "usgs:us6000ucz2",
       "members": {
@@ -400,6 +433,45 @@
           "source_updated_at": null,
           "source_url": "https://bwt.cbp.gov/api/waittimes",
           "title": "CBP estimated commercial border wait — Eagle Pass / Bridge I"
+        }
+      }
+    },
+    "0677636d6d74185dfbf8790bcbb6cc31abdb0f20a1a1a50e157596a3597b3b23": {
+      "information_root": "bmkg_nowcast:bmkg_nowcast:4682c1057f8839b93b3458500218",
+      "members": {
+        "beh:cd832302ff4edba15944527dc17b": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "bmkg_nowcast",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T12:30:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:cd832302ff4edba15944527dc17b",
+          "information_root": "bmkg_nowcast:bmkg_nowcast:4682c1057f8839b93b3458500218",
+          "origin": "behavioral_registry",
+          "provider": "bmkg_nowcast",
+          "published_at": "2026-11-24T12:30:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Indonesia BMKG",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Indonesia BMKG active provincial nowcast RSS, source-reported only; not global",
+          "source_updated_at": null,
+          "source_url": "https://www.bmkg.go.id/alerts/nowcast/en/CST20261124002_alert.xml",
+          "title": "Thunderstorm Tonight in Sulawesi Tenggara"
         }
       }
     },

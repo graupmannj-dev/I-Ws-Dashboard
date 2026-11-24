@@ -418,6 +418,78 @@
         }
       }
     },
+    "58d2286639fc13ffdfae51ff8397d3d7fe5f89def19148d51e9a7359d3ec358e": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07bd46:111169-2026",
+      "members": {
+        "beh:a7ac07d7119017d017f84c539f37": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T13:13:07+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:a7ac07d7119017d017f84c539f37",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07bd46:111169-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-24T13:13:07Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-22T13%3A56%3A02&updatedTo=2026-11-24T13%3A56%3A02",
+          "title": "TVCA-PROC-0805 - Committee Management System · Tees Valley Combined Authority"
+        }
+      }
+    },
+    "58d73e2adeb58e166b772f1f676b6cf8f313ae6484d700a06b31a3b2c6998a72": {
+      "information_root": "bmkg_nowcast:bmkg_nowcast:239d26bd42f2924a515328015329",
+      "members": {
+        "beh:a0b43c329bb90c1f67640719d2f4": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "bmkg_nowcast",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T12:50:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:a0b43c329bb90c1f67640719d2f4",
+          "information_root": "bmkg_nowcast:bmkg_nowcast:239d26bd42f2924a515328015329",
+          "origin": "behavioral_registry",
+          "provider": "bmkg_nowcast",
+          "published_at": "2026-11-24T12:50:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Indonesia BMKG",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Indonesia BMKG active provincial nowcast RSS, source-reported only; not global",
+          "source_updated_at": null,
+          "source_url": "https://www.bmkg.go.id/alerts/nowcast/en/CLG20261124006_alert.xml",
+          "title": "Thunderstorm Tonight in Lampung"
+        }
+      }
+    },
     "58e68a436fcfcf86effedd5efe2475ea8e102dfe716a8e904215a1f5eee6ec56": {
       "information_root": "cbp_wait:cbp_wait:070801:2026-11-21:14:22:44",
       "members": {

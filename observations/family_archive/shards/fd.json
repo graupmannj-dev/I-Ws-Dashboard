@@ -30,6 +30,45 @@
         }
       }
     },
+    "fd298f4607791f78a676d819d508c4d0a47102117ff985beacbef5493e901a76": {
+      "information_root": "bmkg_nowcast:bmkg_nowcast:dd98f04e6597a96a552c880acaa8",
+      "members": {
+        "beh:120e65bba9d7c2e2b134d66ee3cf": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "bmkg_nowcast",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T12:25:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:120e65bba9d7c2e2b134d66ee3cf",
+          "information_root": "bmkg_nowcast:bmkg_nowcast:dd98f04e6597a96a552c880acaa8",
+          "origin": "behavioral_registry",
+          "provider": "bmkg_nowcast",
+          "published_at": "2026-11-24T12:25:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Indonesia BMKG",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Indonesia BMKG active provincial nowcast RSS, source-reported only; not global",
+          "source_updated_at": null,
+          "source_url": "https://www.bmkg.go.id/alerts/nowcast/en/CKB20261124004_alert.xml",
+          "title": "Thunderstorm Tonight in Kalimantan Barat"
+        }
+      }
+    },
     "fd30d386302564bee0d702d6d6f10e7c68a6cc57d793e26cd6334ef8df15c4be": {
       "information_root": "bmkg_nowcast:bmkg_nowcast:7ebafb547654b2830d039b496bc2",
       "members": {
@@ -96,6 +135,39 @@
           "source_updated_at": null,
           "source_url": "https://ioda.inetintel.cc.gatech.edu/",
           "title": "IODA detected connectivity anomaly: country KG"
+        }
+      }
+    },
+    "fd549b7f5b61ff9a89809946d993499893625792402b699c278a636e69054462": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07b5e4:111116-2026",
+      "members": {
+        "beh:c0726334151d41c86004310cd78f": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T12:05:14+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:c0726334151d41c86004310cd78f",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07b5e4:111116-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-24T12:05:14Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-22T13%3A56%3A02&updatedTo=2026-11-24T13%3A56%3A02",
+          "title": "Merthyr Housing Maintenance Contract (Individual Job Value up to £5,000) [23] · Merthyr Tydfil Housing Association"
         }
       }
     },

@@ -247,6 +247,53 @@
         }
       }
     },
+    "83a3b7f52a4d552680c58c77f85755593829b30bdb172b96fed1dbfbf592a458": {
+      "information_root": "cbp_wait:cbp_wait:340101:2026-11-24:07:50:02",
+      "members": {
+        "beh:4e31315d97795634084d22e70429": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T13:58:08+00:00",
+          "geography_key": "us-border-port:340101",
+          "geography_label": "Pembina",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:4e31315d97795634084d22e70429",
+          "information_root": "cbp_wait:cbp_wait:340101:2026-11-24:07:50:02",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Update Pending",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/24/2026",
+            "reported_local_time": "07:50:02",
+            "source_declared_border": "Canadian Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Pembina"
+        }
+      }
+    },
     "83a4214c02242f93978c64c2f6efa16aaafabafd070bbcd4474472243654d7ca": {
       "information_root": "sg_mpa:sg_mpa:2026-09:container",
       "members": {

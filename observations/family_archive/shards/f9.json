@@ -66,6 +66,39 @@
         }
       }
     },
+    "f92a5a774d40401e4108c7bad400f6f93a9f30dd97bf51eddb54e69d5e5534a3": {
+      "information_root": "nws:033bf4ad1f1c412faa820138",
+      "members": {
+        "beh:220e14373c031cd53c789d1f55f5": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "nws",
+          "direct_measurement": false,
+          "event_at": "2026-11-24T05:48:00Z",
+          "first_observed_at": "2026-11-24T05:48:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:220e14373c031cd53c789d1f55f5",
+          "information_root": "nws:033bf4ad1f1c412faa820138",
+          "origin": "behavioral_registry",
+          "provider": "nws",
+          "published_at": "2026-11-24T05:48:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "official_weather_alert_context",
+          "source_measurement": null,
+          "source_scope": "Active NWS marine alerts; severity Severe",
+          "source_updated_at": null,
+          "source_url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.6cd1e5754fe625801aca61e07d6cf04364d2af45.003.2",
+          "title": "Coastal Flood Warning - Coastal Flagler"
+        }
+      }
+    },
     "f93859f31cab35448fc2e512787d17dc991c9d151d77da09579e004c5923a6f1": {
       "information_root": "niord:a4425666-f4fc-489b-8dcd-a4585efb516b:0:6:0",
       "members": {
@@ -93,6 +126,53 @@
           "source_updated_at": "2026-11-12T00:21:51Z",
           "source_url": "https://niord.dma.dk/#/message/a4425666-f4fc-489b-8dcd-a4585efb516b",
           "title": "Denmark. Kattegat. EK R 45 Hevring. Firing exercises. Warning."
+        }
+      }
+    },
+    "f9398ad609f4ef0f686ef1cc6b8c1654f0dbc4ccde7467e214ef5ccb649eae9f": {
+      "information_root": "cbp_wait:cbp_wait:380301:2026-11-24:08:50:03",
+      "members": {
+        "beh:3969ee0867ad072dbfe2ce5cf10a": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T13:58:08+00:00",
+          "geography_key": "us-border-port:380301",
+          "geography_label": "Sault Ste. Marie",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:3969ee0867ad072dbfe2ce5cf10a",
+          "information_root": "cbp_wait:cbp_wait:380301:2026-11-24:08:50:03",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "no delay",
+            "lanes_open": 1,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "At 9:00 am EST",
+            "reported_local_date": "11/24/2026",
+            "reported_local_time": "08:50:03",
+            "source_declared_border": "Canadian Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 0
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Sault Ste. Marie / International Bridge - SSM"
         }
       }
     },

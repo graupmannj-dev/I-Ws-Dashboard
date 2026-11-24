@@ -138,6 +138,53 @@
         }
       }
     },
+    "9638b747ebe6094acef42c8efb870f81fb59d18ccde190a8659d89a6580b525c": {
+      "information_root": "cbp_wait:cbp_wait:535502:2026-11-24:07:50:03",
+      "members": {
+        "beh:24f797c4273f6f7726aeb596dbc2": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T13:58:08+00:00",
+          "geography_key": "us-border-port:535502",
+          "geography_label": "Brownsville",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:24f797c4273f6f7726aeb596dbc2",
+          "information_root": "cbp_wait:cbp_wait:535502:2026-11-24:07:50:03",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Lanes Closed",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/24/2026",
+            "reported_local_time": "07:50:03",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Brownsville / Veterans International"
+        }
+      }
+    },
     "96424ba555c0d18c616c5a39526578b54d316243f780b5d9bd4e88a493827a82": {
       "information_root": "faa:6/9446:2:0",
       "members": {
@@ -546,6 +593,39 @@
         }
       }
     },
+    "96a6c3acafcab91bca93c61a328a96bc4ed091290d154d3d2cbd8b8ddb6315cd": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-06b268:111170-2026",
+      "members": {
+        "beh:edb8c628a209bec4a4cd22b18517": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T13:13:35+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:edb8c628a209bec4a4cd22b18517",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-06b268:111170-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-24T13:13:35Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-22T13%3A56%3A02&updatedTo=2026-11-24T13%3A56%3A02",
+          "title": "Greenhithe Medical Centre - Quantity Surveying Services · Dartford Borough Council"
+        }
+      }
+    },
     "96b48ee930c16033332f69a59398c135021cc9142e65f9c3bd51fe7de9866f87": {
       "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07842f:110289-2026",
       "members": {
@@ -693,6 +773,53 @@
           "source_updated_at": null,
           "source_url": "https://apiprevmet3.inmet.gov.br/avisos/rss/56449",
           "title": "Aviso de Tempestade. Severidade Grau: Perigo"
+        }
+      }
+    },
+    "96f919af5123fbaac2be1910d87bc496878e87ecabf9d2f090d36d6ce4ecb48b": {
+      "information_root": "cbp_wait:cbp_wait:240203:2026-11-24:06:50:03",
+      "members": {
+        "beh:22292a267190b5abe1b8e8006a0e": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T13:58:08+00:00",
+          "geography_key": "us-border-port:240203",
+          "geography_label": "El Paso",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:22292a267190b5abe1b8e8006a0e",
+          "information_root": "cbp_wait:cbp_wait:240203:2026-11-24:06:50:03",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "delay",
+            "lanes_open": 5,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "At 7:00 am MST",
+            "reported_local_date": "11/24/2026",
+            "reported_local_time": "06:50:03",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 10
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — El Paso / Ysleta"
         }
       }
     }

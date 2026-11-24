@@ -267,6 +267,39 @@
         }
       }
     },
+    "25d5bf0ff1a9aefd13a59f817d3d65b7aa1056fa6b6562031adabe9694eae91a": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-06e18c:111166-2026",
+      "members": {
+        "beh:5b9dd0a6d0d83629267547d568a2": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T13:07:35+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:5b9dd0a6d0d83629267547d568a2",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-06e18c:111166-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-24T13:07:35Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-22T13%3A56%3A02&updatedTo=2026-11-24T13%3A56%3A02",
+          "title": "Debt Resolution - Collection of · Leeds Teaching Hospitals NHS Trust"
+        }
+      }
+    },
     "25de8b1d3aeaf055d1f9579797c8a424d0033961a7aa28b91f5de74b5ff4dce5": {
       "information_root": "niord:0dd97987-d92b-4b12-b6f2-524532503f33:0:3:0",
       "members": {
@@ -341,6 +374,45 @@
           "source_updated_at": null,
           "source_url": "https://dados.ons.org.br/dataset/carga-energia-verificada",
           "title": "Brazil ONS Southeast/Central West verified half-hourly system load"
+        }
+      }
+    },
+    "25f493f1ba44065a8d9f1f841a921115f4b111bf10bb6ddd4df88c2ff8444f64": {
+      "information_root": "bmkg_nowcast:bmkg_nowcast:ef27a3c444c0ad01ffea8499dcf2",
+      "members": {
+        "beh:41a8f6c9b6915bc7c7eaf30dd360": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "bmkg_nowcast",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T12:00:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:41a8f6c9b6915bc7c7eaf30dd360",
+          "information_root": "bmkg_nowcast:bmkg_nowcast:ef27a3c444c0ad01ffea8499dcf2",
+          "origin": "behavioral_registry",
+          "provider": "bmkg_nowcast",
+          "published_at": "2026-11-24T12:00:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Indonesia BMKG",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Indonesia BMKG active provincial nowcast RSS, source-reported only; not global",
+          "source_updated_at": null,
+          "source_url": "https://www.bmkg.go.id/alerts/nowcast/en/CSL20261124005_alert.xml",
+          "title": "Thunderstorm Tonight in Sulawesi Selatan"
         }
       }
     }

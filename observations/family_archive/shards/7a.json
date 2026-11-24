@@ -124,6 +124,39 @@
         }
       }
     },
+    "7a415473977bd0172ac7098c287acb1c37f864b7f97c11ed65a9e2b136fb490f": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-078db6:111129-2026",
+      "members": {
+        "beh:f0cc14407d995d2201249f828cb5": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T12:12:07+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:f0cc14407d995d2201249f828cb5",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-078db6:111129-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-24T12:12:07Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-22T13%3A56%3A02&updatedTo=2026-11-24T13%3A56%3A02",
+          "title": "Domiciliary Care Open Framework · West Berkshire Council"
+        }
+      }
+    },
     "7a5a93e33e83083eccc636eb5846f5144f91e3f4594ca380400f4920b8cc1d02": {
       "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c1cb:110811-2026",
       "members": {
@@ -154,6 +187,86 @@
           "source_updated_at": null,
           "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-22T02%3A19%3A12&updatedTo=2026-11-24T02%3A19%3A12",
           "title": "HAR6125 Buxton Street Construction · Tower Hamlets"
+        }
+      }
+    },
+    "7a7fcefcf964afb36f32c4a5706dff6730fd86114198b1f14935fa0d77c4e51a": {
+      "information_root": "cbp_wait:cbp_wait:011501:2026-11-24:08:50:02",
+      "members": {
+        "beh:63991f272437704a932a5849591a": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T13:58:08+00:00",
+          "geography_key": "us-border-port:011501",
+          "geography_label": "Calais",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:63991f272437704a932a5849591a",
+          "information_root": "cbp_wait:cbp_wait:011501:2026-11-24:08:50:02",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "N/A",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/24/2026",
+            "reported_local_time": "08:50:02",
+            "source_declared_border": "Canadian Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Calais / Ferry Point"
+        }
+      }
+    },
+    "7a8017a8290536085594d4d6bbedad4f284fdfce25f93a573d9912fb6482fbd1": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-06dc6c:111188-2026",
+      "members": {
+        "beh:97f427f79b42a868b4b39c541ccb": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T13:41:24+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:97f427f79b42a868b4b39c541ccb",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-06dc6c:111188-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-24T13:41:24Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-22T13%3A56%3A02&updatedTo=2026-11-24T13%3A56%3A02",
+          "title": "National Centre for Computing Education (NCCE) · Department for Education"
         }
       }
     },

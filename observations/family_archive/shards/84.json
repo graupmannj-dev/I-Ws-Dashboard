@@ -223,6 +223,50 @@
         }
       }
     },
+    "8470bca7f4f3040f897736f24983d2231712da7108680c5cff946d289a40ef80": {
+      "information_root": "ripe:measurement:1001:20261124T13",
+      "members": {
+        "beh:fd6ab1cc1fd3d98809ebdb72d4e4": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "aggregate_ping_no_country_or_threat_attribution",
+          "collection_mode": "ripe",
+          "direct_measurement": true,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T13:58:08+00:00",
+          "geography_key": "ripe-msm:1001",
+          "geography_label": "K-root public ping aggregate",
+          "geography_precision": "not_country_or_incident_location",
+          "id": "beh:fd6ab1cc1fd3d98809ebdb72d4e4",
+          "information_root": "ripe:measurement:1001:20261124T13",
+          "origin": "behavioral_registry",
+          "provider": "ripe",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "network_aggregate_monitoring",
+          "source_family": "internet_reachability",
+          "source_kind": "aggregate_public_network_ping",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "cohort_comparable_to_prior_snapshots": false,
+            "failed_or_invalid_rtt_count": 377,
+            "individual_probe_records_published": false,
+            "measurement_id": 1001,
+            "name": "sample_median_ping_rtt",
+            "sampled_probe_count": 13528,
+            "unit": "ms",
+            "valid_rtt_count": 13151,
+            "value": 19.176
+          },
+          "source_scope": "RIPE Atlas built-in K-root ping #1001, global public-probe aggregate; not country coverage",
+          "source_updated_at": null,
+          "source_url": "https://atlas.ripe.net/measurements/1001/",
+          "title": "RIPE Atlas K-root public probe aggregate (13151 usable measurements)"
+        }
+      }
+    },
     "847d1b654e0af05dcd5ce3d7718badef23e6feb7a9afec9a0309f1aa4ff1adbb": {
       "information_root": "cbp_wait:cbp_wait:240202:2026-11-22:18:44:34",
       "members": {

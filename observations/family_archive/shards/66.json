@@ -253,6 +253,81 @@
         }
       }
     },
+    "665b6607136532eae8e704174d03363b42d2e87b82412b045e2fd325ef30d9c9": {
+      "information_root": "wiki_edits:wiki_edits:tr:20261124T13",
+      "members": {
+        "beh:08fdf7fba829e3f979f2aed9a545": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "wiki_edits",
+          "direct_measurement": false,
+          "event_at": "2026-11-24T13:55:38Z",
+          "first_observed_at": "2026-11-24T13:55:38+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:08fdf7fba829e3f979f2aed9a545",
+          "information_root": "wiki_edits:wiki_edits:tr:20261124T13",
+          "origin": "behavioral_registry",
+          "provider": "wiki_edits",
+          "published_at": "2026-11-24T13:55:38Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "public_encyclopedia_edit_aggregate",
+          "source_family": "public_attention",
+          "source_kind": "bounded_public_edit_count_not_event_verification",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "distinct_articles_in_sample": 308,
+            "maximum_returned_edits": 500,
+            "most_edited_article_counts": [
+              {
+                "count": 101,
+                "title": "Deniz seviyesinin yükselmesi"
+              },
+              {
+                "count": 7,
+                "title": "Orta Doğu Teknik Üniversitesi Kampüsü"
+              },
+              {
+                "count": 6,
+                "title": "2026 Venezuela depremleri"
+              },
+              {
+                "count": 5,
+                "title": "Devlet ateizmi"
+              },
+              {
+                "count": 5,
+                "title": "Guneet Monga"
+              },
+              {
+                "count": 5,
+                "title": "Jynxzi"
+              },
+              {
+                "count": 5,
+                "title": "Tool"
+              },
+              {
+                "count": 4,
+                "title": "Ateneyum"
+              }
+            ],
+            "name": "sampled_edits_last_three_hours",
+            "sample_cap_reached": true,
+            "unit": "edits",
+            "value": 500
+          },
+          "source_scope": "Wikipedia main-namespace edit-count sample, 14 global language editions, three-hour window capped at 500 per wiki; not geographic location",
+          "source_updated_at": null,
+          "source_url": "https://tr.wikipedia.org/wiki/Special:RecentChanges",
+          "title": "Wikipedia tr public article-edit activity (sampled)"
+        }
+      }
+    },
     "666d423f6d58ed0b45809a4b62c0be2441794f1ee0205f8aba52500d945a08ff": {
       "information_root": "ioda:e0649bf08b090353eb68b267",
       "members": {
@@ -357,6 +432,45 @@
           "source_updated_at": null,
           "source_url": "https://bwt.cbp.gov/api/waittimes",
           "title": "CBP estimated commercial border wait — Houlton"
+        }
+      }
+    },
+    "668fbffd8d0330e5f8ab7432165bbb1e1765ae096eb7a5232d7c2ab64cc9166a": {
+      "information_root": "bmkg_nowcast:bmkg_nowcast:f9b90ed15e0f8bc7f4487fd489f1",
+      "members": {
+        "beh:d2aa0539dee250b4014bf3643221": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "bmkg_nowcast",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T13:25:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:d2aa0539dee250b4014bf3643221",
+          "information_root": "bmkg_nowcast:bmkg_nowcast:f9b90ed15e0f8bc7f4487fd489f1",
+          "origin": "behavioral_registry",
+          "provider": "bmkg_nowcast",
+          "published_at": "2026-11-24T13:25:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Indonesia BMKG",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Indonesia BMKG active provincial nowcast RSS, source-reported only; not global",
+          "source_updated_at": null,
+          "source_url": "https://www.bmkg.go.id/alerts/nowcast/en/CNB20261124008_alert.xml",
+          "title": "Thunderstorm Tonight in Nusa Tenggara Barat"
         }
       }
     },
@@ -576,6 +690,39 @@
           "source_updated_at": null,
           "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-21T13%3A10%3A09&updatedTo=2026-11-23T13%3A10%3A09",
           "title": "LANGUAGE SERVICES 2026-2031 · Police and Crime Commissioner for Lancashire"
+        }
+      }
+    },
+    "66edcb3603d4e46bbe31667b93202f1d67f638c49df035a96895f092cc35437b": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c260:111111-2026",
+      "members": {
+        "beh:ea3fce8a25616562c697015bf677": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T12:00:37+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:ea3fce8a25616562c697015bf677",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c260:111111-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-24T12:00:37Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-22T13%3A56%3A02&updatedTo=2026-11-24T13%3A56%3A02",
+          "title": "Tactical Operational Trousers & Tactical Operational Shirts · Police And Crime Commissioner For Durham"
         }
       }
     }

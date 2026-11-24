@@ -154,6 +154,39 @@
         }
       }
     },
+    "d1339ff78bf60121fe6b4e519bf0d13c80039566fc4031a20bc33ad6d20a9992": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-069001:111123-2026",
+      "members": {
+        "beh:c754e50166a93adddca8ff1fe3bd": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T12:09:05+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:c754e50166a93adddca8ff1fe3bd",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-069001:111123-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-24T12:09:05Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-22T13%3A56%3A02&updatedTo=2026-11-24T13%3A56%3A02",
+          "title": "Space-Based Time Transfer Service (Space BaTTS) Research & Development · Department for Science, Innovation & Technology"
+        }
+      }
+    },
     "d16076dd174850a81733a1058f0d8cd89542568d6fda84335339ef6ef6ebfd80": {
       "information_root": "niord:0d46c069-0c0b-4cd6-80cb-4e07aeaab638:2:0:0",
       "members": {
@@ -313,6 +346,156 @@
           "source_updated_at": "2026-11-24T00:21:51Z",
           "source_url": "https://niord.dma.dk/#/message/be9030e2-17fd-4f93-a5cd-457e38fa46e3",
           "title": "Denmark. The Baltic Sea. EK D 396 Hullebaek. Firing exercises. Warning."
+        }
+      }
+    },
+    "d1b5c8c713075a4866f336d572a364f1155f3b5a536db949265cf1ef85d65562": {
+      "information_root": "wiki_edits:wiki_edits:ru:20261124T13",
+      "members": {
+        "beh:0b9364a5d6393980d98c0aab5052": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "wiki_edits",
+          "direct_measurement": false,
+          "event_at": "2026-11-24T13:56:02Z",
+          "first_observed_at": "2026-11-24T13:56:02+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:0b9364a5d6393980d98c0aab5052",
+          "information_root": "wiki_edits:wiki_edits:ru:20261124T13",
+          "origin": "behavioral_registry",
+          "provider": "wiki_edits",
+          "published_at": "2026-11-24T13:56:02Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "public_encyclopedia_edit_aggregate",
+          "source_family": "public_attention",
+          "source_kind": "bounded_public_edit_count_not_event_verification",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "distinct_articles_in_sample": 380,
+            "maximum_returned_edits": 500,
+            "most_edited_article_counts": [
+              {
+                "count": 9,
+                "title": "Atysa marginata"
+              },
+              {
+                "count": 8,
+                "title": "Улика (фильм)"
+              },
+              {
+                "count": 8,
+                "title": "Чемпионат мира по футболу среди юношеских команд 2026"
+              },
+              {
+                "count": 7,
+                "title": "Теракт в армянском парламенте"
+              },
+              {
+                "count": 6,
+                "title": "Ааппилатток (остров)"
+              },
+              {
+                "count": 6,
+                "title": "Луначарский, Анатолий Васильевич"
+              },
+              {
+                "count": 5,
+                "title": "Золотая карета (фильм)"
+              },
+              {
+                "count": 5,
+                "title": "Иванюшкин, Александр Яковлевич"
+              }
+            ],
+            "name": "sampled_edits_last_three_hours",
+            "sample_cap_reached": true,
+            "unit": "edits",
+            "value": 500
+          },
+          "source_scope": "Wikipedia main-namespace edit-count sample, 14 global language editions, three-hour window capped at 500 per wiki; not geographic location",
+          "source_updated_at": null,
+          "source_url": "https://ru.wikipedia.org/wiki/Special:RecentChanges",
+          "title": "Wikipedia ru public article-edit activity (sampled)"
+        }
+      }
+    },
+    "d1dbdb9732ee959ce604c2f27312b1e95640d2480400611254e1b3c84a901455": {
+      "information_root": "wiki_edits:wiki_edits:fa:20261124T13",
+      "members": {
+        "beh:55b16b247241a2c8b1db81c36472": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "wiki_edits",
+          "direct_measurement": false,
+          "event_at": "2026-11-24T13:55:59Z",
+          "first_observed_at": "2026-11-24T13:55:59+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:55b16b247241a2c8b1db81c36472",
+          "information_root": "wiki_edits:wiki_edits:fa:20261124T13",
+          "origin": "behavioral_registry",
+          "provider": "wiki_edits",
+          "published_at": "2026-11-24T13:55:59Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "public_encyclopedia_edit_aggregate",
+          "source_family": "public_attention",
+          "source_kind": "bounded_public_edit_count_not_event_verification",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "distinct_articles_in_sample": 227,
+            "maximum_returned_edits": 500,
+            "most_edited_article_counts": [
+              {
+                "count": 219,
+                "title": "۷۱۶"
+              },
+              {
+                "count": 24,
+                "title": "اوروشوری‌ها"
+              },
+              {
+                "count": 4,
+                "title": "تور فرست"
+              },
+              {
+                "count": 4,
+                "title": "جلیل تجلیل"
+              },
+              {
+                "count": 3,
+                "title": "رضا راد"
+              },
+              {
+                "count": 3,
+                "title": "ریزموج"
+              },
+              {
+                "count": 3,
+                "title": "سرعت نور"
+              },
+              {
+                "count": 3,
+                "title": "سید هاشم حداد"
+              }
+            ],
+            "name": "sampled_edits_last_three_hours",
+            "sample_cap_reached": true,
+            "unit": "edits",
+            "value": 500
+          },
+          "source_scope": "Wikipedia main-namespace edit-count sample, 14 global language editions, three-hour window capped at 500 per wiki; not geographic location",
+          "source_updated_at": null,
+          "source_url": "https://fa.wikipedia.org/wiki/Special:RecentChanges",
+          "title": "Wikipedia fa public article-edit activity (sampled)"
         }
       }
     },

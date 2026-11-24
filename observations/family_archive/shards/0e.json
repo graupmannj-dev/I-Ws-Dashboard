@@ -308,6 +308,39 @@
         }
       }
     },
+    "0e74d95b75302416a81cd7b3ddd437816146242880899687a7ca6b2ee2426bd4": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07b5e7:111135-2026",
+      "members": {
+        "beh:e8abb3ea9674c85b2cc6b4ce166e": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T12:19:35+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:e8abb3ea9674c85b2cc6b4ce166e",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07b5e7:111135-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-24T12:19:35Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-22T13%3A56%3A02&updatedTo=2026-11-24T13%3A56%3A02",
+          "title": "Merthyr Housing Maintenance Contract (Individual Job Value up to £5,000) [26] · Merthyr Tydfil Housing Association"
+        }
+      }
+    },
     "0e81455c401dd62109345873fb096d6cea362a9e57f6358f41af66c9b0eacc84": {
       "information_root": "bmkg_nowcast:bmkg_nowcast:c94a3de03e00f9ac950f97553791",
       "members": {
@@ -421,6 +454,86 @@
           "source_updated_at": null,
           "source_url": "https://bwt.cbp.gov/api/waittimes",
           "title": "CBP estimated commercial border wait — ROMA TEXAS / ROMA TEXAS"
+        }
+      }
+    },
+    "0e963ad03ec06dbb6ced2442a2062455749e19a9685d8ac3b5b4cfb8eb8c5d18": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c28e:111203-2026",
+      "members": {
+        "beh:8d69385f5b6f36f4296b756e9713": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T13:54:28+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:8d69385f5b6f36f4296b756e9713",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c28e:111203-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-24T13:54:28Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-22T13%3A56%3A02&updatedTo=2026-11-24T13%3A56%3A02",
+          "title": "End User Lifecycle Support · HYDE HOUSING ASSOCIATION LIMITED"
+        }
+      }
+    },
+    "0ee5dced667f8dd5336125eb5e48e1dc6398cf346543a35f60b0476320acd92d": {
+      "information_root": "cbp_wait:cbp_wait:240104:2026-11-24:06:50:03",
+      "members": {
+        "beh:020f2021d3b0d8a7b396914fe61c": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T13:58:08+00:00",
+          "geography_key": "us-border-port:240104",
+          "geography_label": "YSLETA",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:020f2021d3b0d8a7b396914fe61c",
+          "information_root": "cbp_wait:cbp_wait:240104:2026-11-24:06:50:03",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Update Pending",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/24/2026",
+            "reported_local_time": "06:50:03",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — YSLETA"
         }
       }
     },

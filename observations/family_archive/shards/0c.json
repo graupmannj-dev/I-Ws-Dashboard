@@ -368,6 +368,39 @@
         }
       }
     },
+    "0c5d473fd11ac1f7600b3299f1a17db267ae2b5c64748d3991e4b07f6afe2b44": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-06f40f:111187-2026",
+      "members": {
+        "beh:e5e9172d6b9ecf087a10edfaa008": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T13:41:15+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:e5e9172d6b9ecf087a10edfaa008",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-06f40f:111187-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-24T13:41:15Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-22T13%3A56%3A02&updatedTo=2026-11-24T13%3A56%3A02",
+          "title": "Equipment - The Paddocks · Castle Point Borough Council"
+        }
+      }
+    },
     "0c6bd6334fe69b3084227d057113191c27674eee08e5c855e16d7570739ba8a6": {
       "information_root": "cbp_wait:cbp_wait:250401:2026-11-22:17:44:34",
       "members": {
@@ -502,6 +535,53 @@
           "source_updated_at": null,
           "source_url": "https://tfr.faa.gov/6_8333.html",
           "title": "FAA TFR 6/8333 ·   USA, Friday, November 20, 2026 UTC"
+        }
+      }
+    },
+    "0ca44aa328e4a7c527aa451e21694cb60e3281d7cf040bf8cce7874b674aa2d3": {
+      "information_root": "cbp_wait:cbp_wait:260802:2026-11-24:06:50:03",
+      "members": {
+        "beh:718024aec65cc4130d51d3b13d90": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T13:58:08+00:00",
+          "geography_key": "us-border-port:260802",
+          "geography_label": "San Luis",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:718024aec65cc4130d51d3b13d90",
+          "information_root": "cbp_wait:cbp_wait:260802:2026-11-24:06:50:03",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Update Pending",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Closed",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/24/2026",
+            "reported_local_time": "06:50:03",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — San Luis / San Luis II"
         }
       }
     },

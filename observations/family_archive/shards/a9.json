@@ -124,6 +124,39 @@
         }
       }
     },
+    "a950551f407de2cceadf8318ed51fb4b4d01dfa51c3ce1832c456214b563765f": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-05162c:111171-2026",
+      "members": {
+        "beh:a46f36de7d618adef330abe8d126": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T13:13:58+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:a46f36de7d618adef330abe8d126",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-05162c:111171-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-24T13:13:58Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-22T13%3A56%3A02&updatedTo=2026-11-24T13%3A56%3A02",
+          "title": "SINGLE ADULTS COMPLEX NEEDS SUPPORTED ACCOMMODATION"
+        }
+      }
+    },
     "a9a9030131c26e326ed90a715ec16a16f4accccb2eefdce783098c2d2ddab4e2": {
       "information_root": "sg_mpa:sg_mpa:2026-07:barges",
       "members": {
@@ -167,6 +200,81 @@
           "source_updated_at": null,
           "source_url": "https://data.gov.sg/datasets/d_8f264219109e61fffa87ac64dd5a9a65/view",
           "title": "Singapore MPA 2026-07 Barges vessel arrivals (>75 GT)"
+        }
+      }
+    },
+    "a9b0eddfa30c0c267d7f881c2cd038b8c761590ebe1072c48a1d060f0f252f59": {
+      "information_root": "wiki_edits:wiki_edits:fr:20261124T13",
+      "members": {
+        "beh:7260b33f268b505ea536db4759fb": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "wiki_edits",
+          "direct_measurement": false,
+          "event_at": "2026-11-24T13:55:57Z",
+          "first_observed_at": "2026-11-24T13:55:57+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:7260b33f268b505ea536db4759fb",
+          "information_root": "wiki_edits:wiki_edits:fr:20261124T13",
+          "origin": "behavioral_registry",
+          "provider": "wiki_edits",
+          "published_at": "2026-11-24T13:55:57Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "public_encyclopedia_edit_aggregate",
+          "source_family": "public_attention",
+          "source_kind": "bounded_public_edit_count_not_event_verification",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "distinct_articles_in_sample": 418,
+            "maximum_returned_edits": 500,
+            "most_edited_article_counts": [
+              {
+                "count": 6,
+                "title": "Synchronisation de données"
+              },
+              {
+                "count": 5,
+                "title": "Fédération française de la course camarguaise"
+              },
+              {
+                "count": 4,
+                "title": "Championnat de France féminin de handball de Nationale 2 2026-2027"
+              },
+              {
+                "count": 4,
+                "title": "Droit au cœur"
+              },
+              {
+                "count": 4,
+                "title": "Frédéric Maillard"
+              },
+              {
+                "count": 4,
+                "title": "Les Braves"
+              },
+              {
+                "count": 4,
+                "title": "Somerset West"
+              },
+              {
+                "count": 4,
+                "title": "WWE Women's Tag Team Championship"
+              }
+            ],
+            "name": "sampled_edits_last_three_hours",
+            "sample_cap_reached": true,
+            "unit": "edits",
+            "value": 500
+          },
+          "source_scope": "Wikipedia main-namespace edit-count sample, 14 global language editions, three-hour window capped at 500 per wiki; not geographic location",
+          "source_updated_at": null,
+          "source_url": "https://fr.wikipedia.org/wiki/Special:RecentChanges",
+          "title": "Wikipedia fr public article-edit activity (sampled)"
         }
       }
     },

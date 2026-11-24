@@ -173,6 +173,53 @@
         }
       }
     },
+    "6b45239998cbe98f4060bd5454768a8f037cb0285c3635fdc3e84755a7677cd9": {
+      "information_root": "cbp_wait:cbp_wait:230502:2026-11-24:07:50:03",
+      "members": {
+        "beh:73940c517f6595fa8453d56f1ad7": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T13:58:08+00:00",
+          "geography_key": "us-border-port:230502",
+          "geography_label": "Hidalgo/Pharr",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:73940c517f6595fa8453d56f1ad7",
+          "information_root": "cbp_wait:cbp_wait:230502:2026-11-24:07:50:03",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "no delay",
+            "lanes_open": 3,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "At 7:00 am CST",
+            "reported_local_date": "11/24/2026",
+            "reported_local_time": "07:50:03",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 5
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Hidalgo/Pharr / Pharr"
+        }
+      }
+    },
     "6b491974a83e0d07f5034f244abcd68b9e7e56129fd36d974d6e78247508313b": {
       "information_root": "cbp_wait:cbp_wait:535504:2026-11-21:05:24:37",
       "members": {
@@ -217,6 +264,50 @@
           "source_updated_at": null,
           "source_url": "https://bwt.cbp.gov/api/waittimes",
           "title": "CBP estimated commercial border wait — Brownsville / Gateway"
+        }
+      }
+    },
+    "6b52bbb01738c36321d5eb10d41fc916e73749572739d82ca42125c65545b6fc": {
+      "information_root": "tw_power:tw_power:20261124T1350Z",
+      "members": {
+        "beh:9206065e3d2245e08e11e02e0248": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_power_snapshot_not_outage_attribution",
+          "collection_mode": "tw_power",
+          "direct_measurement": true,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T13:58:08+00:00",
+          "geography_key": "country:TW",
+          "geography_label": "Taiwan",
+          "geography_precision": "national_not_facility",
+          "id": "beh:9206065e3d2245e08e11e02e0248",
+          "information_root": "tw_power:tw_power:20261124T1350Z",
+          "origin": "behavioral_registry",
+          "provider": "tw_power",
+          "published_at": "2026-11-24T13:50:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "public_national_power_snapshot",
+          "source_family": "grid_load",
+          "source_kind": "national_grid_load_aggregate_not_outage",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "measurement_clock_distinct_from_release_not_verified": true,
+            "name": "nationwide_reported_current_load",
+            "not_grid_frequency_or_outage_attribution": true,
+            "observation_coverage": "single_national_snapshot_not_24h",
+            "reported_utilization_percent": 77.0,
+            "source_published_clock": "2026-11-24T13:50:00Z",
+            "source_value_10k_kilowatts": 2849.8,
+            "unit": "MW",
+            "value": 28498.0
+          },
+          "source_scope": "Taiwan Taipower public nationwide current load snapshot and publisher release clock, not power-station or local outage data",
+          "source_updated_at": null,
+          "source_url": "https://service.taipower.com.tw/data/opendata/apply/file/d006020/001.json",
+          "title": "Taipower nationwide publicly reported current electricity load"
         }
       }
     },
@@ -311,6 +402,39 @@
           "source_updated_at": null,
           "source_url": "https://bwt.cbp.gov/api/waittimes",
           "title": "CBP estimated commercial border wait — Ogdensburg"
+        }
+      }
+    },
+    "6b6ba8272284ee6f79ecbc464203196c866a54713baa0d1014dfe0220c1d1316": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c26b:111138-2026",
+      "members": {
+        "beh:89771d04c455cefd54b574ea20e1": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T12:22:35+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:89771d04c455cefd54b574ea20e1",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c26b:111138-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-24T12:22:35Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-22T13%3A56%3A02&updatedTo=2026-11-24T13%3A56%3A02",
+          "title": "Access Improvements and Footpath Enhancement Work at Brocolitia · Northumberland National Park Authority"
         }
       }
     },

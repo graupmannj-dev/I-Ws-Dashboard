@@ -182,6 +182,53 @@
         }
       }
     },
+    "a13b81501c6e1f157ce94aa9649c327a04cc259dd2d3dc7fd639caf9938ca6a5": {
+      "information_root": "cbp_wait:cbp_wait:070101:2026-11-24:08:50:02",
+      "members": {
+        "beh:fca7feb8593a44f45f9d2e097ae1": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T13:58:08+00:00",
+          "geography_key": "us-border-port:070101",
+          "geography_label": "Ogdensburg",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:fca7feb8593a44f45f9d2e097ae1",
+          "information_root": "cbp_wait:cbp_wait:070101:2026-11-24:08:50:02",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "no delay",
+            "lanes_open": 1,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "At 7:00 am EST",
+            "reported_local_date": "11/24/2026",
+            "reported_local_time": "08:50:02",
+            "source_declared_border": "Canadian Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 1
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Ogdensburg"
+        }
+      }
+    },
     "a15363cc03660ddedcbc122ae28e701708c71eb92be895eb8a6423c0f39ac324": {
       "information_root": "niord:02f3c722-952b-445c-8ba9-38509d54b5b2:2:0:0",
       "members": {
@@ -242,6 +289,39 @@
           "source_updated_at": null,
           "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-22T02%3A19%3A12&updatedTo=2026-11-24T02%3A19%3A12",
           "title": "Space Technology Solutions · Crown Commercial Service"
+        }
+      }
+    },
+    "a1573a3fbb372964b1079c88bd234965a7bd8fdabdfc02c9c4fccd20ce18a4f2": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c26e:111145-2026",
+      "members": {
+        "beh:7be445bec75b902d12847eda7845": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T12:33:18+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:7be445bec75b902d12847eda7845",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c26e:111145-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-24T12:33:18Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-22T13%3A56%3A02&updatedTo=2026-11-24T13%3A56%3A02",
+          "title": "Media Planning and Buying for the Agriculture and Horticulture Development Board (AHDB) Beef & Lamb, Pork & Dairy · Agriculture and Horticulture Development Board"
         }
       }
     },
@@ -402,6 +482,46 @@
         }
       }
     },
+    "a18f0552fb7cf337ccbb229ab0644d224bb32108dd52d1282d97d1d21593e795": {
+      "information_root": "coops:8638610:20261124T1348Z",
+      "members": {
+        "beh:59653aa13e2403aa174500381d20": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "coops",
+          "direct_measurement": true,
+          "event_at": "2026-11-24T13:48:00Z",
+          "first_observed_at": "2026-11-24T13:48:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:59653aa13e2403aa174500381d20",
+          "information_root": "coops:8638610:20261124T1348Z",
+          "origin": "behavioral_registry",
+          "provider": "coops",
+          "published_at": "2026-11-24T13:48:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "station_physical_measurement",
+          "source_family": "port_conditions",
+          "source_kind": "selected_port_water_level_measurement",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "metric_comparable_only_same_station_datum_and_sample_window": true,
+            "name": "observed_water_level",
+            "station": "8638610",
+            "unit": "meters_MLLW",
+            "value": 1.296
+          },
+          "source_scope": "NOAA CO-OPS water levels at San Francisco, Key West and Sewells Point; stations only",
+          "source_updated_at": null,
+          "source_url": "https://tidesandcurrents.noaa.gov/waterlevels.html?id=8638610",
+          "title": "Sewells Point, VA observed water level (no anomaly classification)"
+        }
+      }
+    },
     "a1992f3a79301beff17e665b83dfd3019b0341c4006832c332be4c6ee44d509c": {
       "information_root": "wiki_edits:wiki_edits:sw:20261122T19",
       "members": {
@@ -504,6 +624,39 @@
           "source_updated_at": null,
           "source_url": "https://tfr.faa.gov/6_7137.html",
           "title": "FAA TFR 6/7137 · 27NM NE NEWCASTLE, WY, Thursday, November 12, 2026 through Friday, November 13, 2026 UTC"
+        }
+      }
+    },
+    "a1bc2e8525d2a6f17aaeeb4c162c3b50cc91819a04b09a1f2f786df6b4e966e6": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c272:111152-2026",
+      "members": {
+        "beh:573ced90f1a1fbde506fa6db5157": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T12:45:44+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:573ced90f1a1fbde506fa6db5157",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c272:111152-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-24T12:45:44Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-22T13%3A56%3A02&updatedTo=2026-11-24T13%3A56%3A02",
+          "title": "LAS - Volvo XC60 APP CC Conversion x1 · London Ambulance Service NHS Trust"
         }
       }
     },
