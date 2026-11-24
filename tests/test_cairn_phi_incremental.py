@@ -88,6 +88,9 @@ class IncrementalPhiTests(unittest.TestCase):
             old = prior(doc)
             old["cases"]["taiwan"]["evaluations"] = [{"direction":"possibly_consistent"}]
             self.assertEqual(prepare(doc, old, d, now=NOW)["changed"], 1)
+            old = prior(doc)
+            old["cases"]["taiwan"]["source_references"][0]["sources"][0]["url"] = "https://attacker.example/false-source"
+            self.assertEqual(prepare(doc, old, d, now=NOW)["changed"], 1)
 
     def test_new_inference_assembled_without_signed_mutations(self):
         with tempfile.TemporaryDirectory() as d:
