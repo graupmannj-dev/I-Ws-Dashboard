@@ -1,8 +1,8 @@
 {
   "schema": "cairn.phi-sidecar.v1",
   "model": "phi-4-mini-instruct-q4km-local",
-  "generated_at": "2026-11-24T19:07:06.639757Z",
-  "source_build_generated_at": "2026-11-24T18:59:35+00:00",
+  "generated_at": "2026-11-24T22:39:12.536788Z",
+  "source_build_generated_at": "2026-11-24T22:31:30+00:00",
   "provisional_only": true,
   "signed_evidence_modified": false,
   "cases": {
@@ -112,7 +112,7 @@
           "evidence_key": "family:f3c000f5d4ff2dd71268",
           "family_title": "iso:ER · connectivity / anomaly",
           "family_mechanism": "internet_reachability",
-          "source_health": "stale_or_unavailable",
+          "source_health": "current",
           "sources": [
             {
               "url": "https://ioda.inetintel.cc.gatech.edu/",
@@ -160,8 +160,8 @@
           "reviewed_direction": "not_assessed"
         }
       ],
-      "input_sha256": "fed71aca721f2995d44dd121f44ed037e961c6a029e5db2d08121fcba1de0aef",
-      "model_generated_at": "2026-11-24T19:01:07.394614Z",
+      "input_sha256": "e560a4fa00c5d63cab8b8ea74ecafdaf6aadaf7eeac34eec1c9fa90e4c1402b3",
+      "model_generated_at": "2026-11-24T22:32:58.389913Z",
       "cache_status": "fresh_inference"
     },
     "horn_ethiopia_sudan": {
@@ -317,7 +317,7 @@
           "evidence_key": "family:b5a9a71b3f21e78be30d",
           "family_title": "iso:AF · connectivity / anomaly",
           "family_mechanism": "internet_reachability",
-          "source_health": "stale_or_unavailable",
+          "source_health": "current",
           "sources": [
             {
               "url": "https://ioda.inetintel.cc.gatech.edu/",
@@ -350,8 +350,8 @@
           "reviewed_direction": "not_assessed"
         }
       ],
-      "input_sha256": "096b033eb14d5e121edecd8cd2b2fbe2b2caa931f0c56c4ebaf7dd15d0771418",
-      "model_generated_at": "2026-11-24T19:01:07.394614Z",
+      "input_sha256": "fffb2f0296fca8416eaf63a91b4c26baa86a78fe524e6f0aa930d0afb69f26fa",
+      "model_generated_at": "2026-11-24T22:32:58.389913Z",
       "cache_status": "fresh_inference"
     },
     "drc_rwanda": {
@@ -457,7 +457,7 @@
           "evidence_key": "family:28bb6025e5e43c9de56c",
           "family_title": "iso:CD · connectivity / anomaly",
           "family_mechanism": "internet_reachability",
-          "source_health": "stale_or_unavailable",
+          "source_health": "current",
           "sources": [
             {
               "url": "https://ioda.inetintel.cc.gatech.edu/",
@@ -496,8 +496,8 @@
           "reviewed_direction": "not_assessed"
         }
       ],
-      "input_sha256": "f357209a28899f3262f6d575d283053375f8ac083a969109b8f08287e7f42328",
-      "model_generated_at": "2026-11-24T19:01:07.394614Z",
+      "input_sha256": "aad84a16b4fb658af797ae96affaa7cc6126d46654629bcb9a2e8cbcc0219b92",
+      "model_generated_at": "2026-11-24T22:32:58.389913Z",
       "cache_status": "fresh_inference"
     },
     "thailand_cambodia": {
@@ -772,58 +772,58 @@
       ],
       "input_sha256": "5438c5af86cb506cd0bac8fd8f8e3fd83b04276b6818786fffd166aa249e00ad",
       "model_generated_at": "2026-11-24T19:01:07.394614Z",
-      "cache_status": "fresh_inference"
+      "cache_status": "reused_exact_input"
     },
     "iran_gulf": {
       "status": "provisional_complete",
       "interpretations": [
         {
           "hypothesis_index": 0,
-          "meaning": "There is a possibility of a wider escalation in the ongoing armed conflict in the Gulf region.",
-          "discriminator": "Observation of increased frequency and intensity of military engagements in the region."
+          "meaning": "There is a possibility of a wider escalation in the ongoing armed conflict.",
+          "discriminator": "Observation of increased frequency and intensity of attacks in the region."
         },
         {
           "hypothesis_index": 1,
-          "meaning": "There may be a reinforcement of deterrence or localized strikes without a new theater-wide campaign.",
-          "discriminator": "Observation of targeted strikes with limited scope and no significant expansion of conflict zones."
+          "meaning": "Deterrent reinforcement or localized strikes may occur without a new theater-wide campaign.",
+          "discriminator": "Observation of targeted strikes with limited geographical spread."
         }
       ],
       "evaluations": [],
       "evidence_notes": [
         {
           "evidence_key": "dossier:8d5f511ee8a63383a7285fb5",
-          "observation": "Warnings to partners and force reinforcement could indicate preparation for wider conflict escalation or localized action, depending on the context and scale of the reinforcement mentioned in the source title.",
-          "verification_step": "Monitor subsequent military movements and engagements in the region for patterns consistent with either wider escalation or localized action.",
+          "observation": "Warnings to partners and force reinforcement could indicate preparation for wider conflict escalation or localized action, depending on the context and scale of reinforcement observed in subsequent events.",
+          "verification_step": "Monitor subsequent military movements and engagements in the region for signs of escalation or localized action.",
           "status": "unverified_source_title_lead"
         },
         {
           "evidence_key": "family:f6a997229fdfe081cc7b",
-          "observation": "Reports of additional Iranian aerial attacks and defensive interceptions suggest localized military actions rather than a wider escalation.",
-          "verification_step": "Track the frequency and geographical spread of reported aerial attacks and interceptions to determine if they are isolated incidents or part of a broader campaign.",
+          "observation": "Reports of additional Iranian aerial attacks and defensive interceptions suggest localized conflict activity, which may or may not escalate further.",
+          "verification_step": "Track the frequency and scale of Iranian aerial attacks and defensive interceptions over time.",
           "status": "unverified_source_title_lead"
         },
         {
           "evidence_key": "history:7079d777a2c2a9aa89eb",
-          "observation": "The report of additional Iranian aerial attacks and defensive interceptions on November 18 by Bahrain could indicate localized military actions.",
-          "verification_step": "Examine the timeline and scale of reported incidents to assess if they align with a localized or wider conflict pattern.",
+          "observation": "Bahrain's reports of additional Iranian aerial attacks and defensive interceptions on November 18 could be indicative of localized conflict activity, which may or may not escalate further.",
+          "verification_step": "Monitor the frequency and scale of Iranian aerial attacks and defensive interceptions over time.",
           "status": "unverified_source_title_lead"
         },
         {
           "evidence_key": "history:b70e03574702e41c4966",
-          "observation": "The report of an Iranian attack causing fire at a civilian industrial facility suggests targeted action rather than a wider escalation.",
-          "verification_step": "Investigate the nature and target of the attack to determine if it fits the pattern of localized strikes or wider conflict escalation.",
+          "observation": "Reports of Iranian attacks causing fires at civilian industrial facilities suggest localized conflict activity, which may or may not escalate further.",
+          "verification_step": "Track the frequency and scale of Iranian attacks causing fires at civilian industrial facilities over time.",
           "status": "unverified_source_title_lead"
         },
         {
           "evidence_key": "history:05c07ea3eeb5036b8d0c",
-          "observation": "The confirmation of a Hormuz vessel attack with injured and missing crew by ADNOC could indicate targeted military action.",
-          "verification_step": "Analyze the context and aftermath of the vessel attack to discern if it is part of a broader conflict or a localized incident.",
+          "observation": "ADNOC's confirmation of a Hormuz vessel attack with injured and missing crew could indicate localized conflict activity, which may or may not escalate further.",
+          "verification_step": "Monitor the frequency and scale of Hormuz vessel attacks over time.",
           "status": "unverified_source_title_lead"
         },
         {
-          "evidence_key": "history:4477c8a58e64fb4d0fff",
-          "observation": "Reports of tanker projectile incidents near Oman's Khasab may reflect localized military actions rather than a wider escalation.",
-          "verification_step": "Examine the scope and frequency of tanker projectile incidents to determine if they are isolated events or part of a wider conflict.",
+          "evidence_key": "family:a4b6fc7892b9ec7d7559",
+          "observation": "U.S.–Iran Hormuz agreement by November 30 or December 31 could indicate a move towards de-escalation, which may contradict the hypothesis of wider conflict escalation.",
+          "verification_step": "Monitor the adherence to the U.S.–Iran Hormuz agreement and any subsequent changes in conflict activity.",
           "status": "unverified_source_title_lead"
         }
       ],
@@ -881,6 +881,27 @@
               "title": "Bahrain reports Iranian attack caused fire at civilian industrial facility",
               "provider": "Bahrain Ministry of Interior (reported by Reuters)",
               "first_observed_at": "2026-11-21T22:40:03+00:00"
+            }
+          ],
+          "reviewed_direction": "not_assessed"
+        },
+        {
+          "evidence_key": "family:a4b6fc7892b9ec7d7559",
+          "family_title": "iran · hormuz / agreement",
+          "family_mechanism": "market_expectation",
+          "source_health": "current",
+          "sources": [
+            {
+              "url": "https://polymarket.com/event/us-iran-hormuz-agreement-by-november-30",
+              "title": "U.S.–Iran Hormuz agreement by November 30",
+              "provider": "polymarket",
+              "first_observed_at": "2026-11-11T02:48:00+00:00"
+            },
+            {
+              "url": "https://polymarket.com/event/us-iran-hormuz-agreement-by-december-31",
+              "title": "U.S.–Iran Hormuz agreement by December 31",
+              "provider": "polymarket",
+              "first_observed_at": "2026-11-11T02:48:00+00:00"
             }
           ],
           "reviewed_direction": "not_assessed"
@@ -976,9 +997,9 @@
           "reviewed_direction": "not_assessed"
         }
       ],
-      "input_sha256": "6af0a597be3f0c04694d2932a8dd9f1d06082fee1f02ad92c7a0dbc500f7eaef",
-      "model_generated_at": "2026-11-24T15:02:42.361014Z",
-      "cache_status": "reused_exact_input"
+      "input_sha256": "d038d6cf8b46517059a781710508b982ffb1d283b4bf873f91e049473a301cfd",
+      "model_generated_at": "2026-11-24T22:32:58.389913Z",
+      "cache_status": "fresh_inference"
     },
     "taiwan": {
       "status": "provisional_complete",
@@ -1133,7 +1154,7 @@
           "evidence_key": "family:e773422e68943318b913",
           "family_title": "iso:KP · connectivity / anomaly",
           "family_mechanism": "internet_reachability",
-          "source_health": "stale_or_unavailable",
+          "source_health": "current",
           "sources": [
             {
               "url": "https://ioda.inetintel.cc.gatech.edu/",
@@ -1166,8 +1187,8 @@
           "reviewed_direction": "not_assessed"
         }
       ],
-      "input_sha256": "41e632f87890aac30fa1396ede2482e4bbda47c5cf468d7ead34091df47d85dc",
-      "model_generated_at": "2026-11-24T19:01:07.394614Z",
+      "input_sha256": "23d81d74d2238e9d13b1ead84eae0db3af72d2d972d1790dc96a9128da5b6608",
+      "model_generated_at": "2026-11-24T22:32:58.389913Z",
       "cache_status": "fresh_inference"
     },
     "horn_ethiopia_kenya_moyale": {
