@@ -1,0 +1,1251 @@
+{
+  "schema": "cairn.phi-sidecar.v1",
+  "model": "phi-4-mini-instruct-q4km-local",
+  "generated_at": "2026-11-24T15:13:37.329321Z",
+  "source_build_generated_at": "2026-11-24T14:58:09+00:00",
+  "provisional_only": true,
+  "signed_evidence_modified": false,
+  "cases": {
+    "horn_ethiopia_eritrea": {
+      "status": "provisional_complete",
+      "interpretations": [
+        {
+          "hypothesis_index": 0,
+          "meaning": "There is an ongoing conflict between Ethiopian federal forces and Tigrayan forces, which could account for the fighting and troop movements without necessarily implying a new Ethiopia–Eritrea war.",
+          "discriminator": "Observation of troop movements toward Rama without direct border clashes."
+        },
+        {
+          "hypothesis_index": 1,
+          "meaning": "There are allegations of direct border clashes between Ethiopia and Eritrea, suggesting a potential escalation of conflict across the border.",
+          "discriminator": "Independent verification of reported direct border clashes."
+        }
+      ],
+      "evaluations": [],
+      "evidence_notes": [
+        {
+          "evidence_key": "dossier:fdbeeb186ca9a6942953c254",
+          "observation": "Reported force movements toward Rama can be observed independently of direct border clashes, supporting the hypothesis of internal conflict without new border war involvement.",
+          "verification_step": "Monitor troop movements toward Rama using satellite imagery or open-source intelligence.",
+          "status": "unverified_source_title_lead"
+        },
+        {
+          "evidence_key": "dossier:f3f8a5fed8a41b811e65ca0a",
+          "observation": "Direct border clashes are alleged, which could indicate a new conflict between Ethiopia and Eritrea.",
+          "verification_step": "Seek independent reports or satellite imagery confirming direct border clashes.",
+          "status": "unverified_source_title_lead"
+        },
+        {
+          "evidence_key": "history:b7d94feb9c985aef27c8",
+          "observation": "Connectivity anomaly detected in Eritrea could be related to the conflict situation, but it does not confirm direct border clashes or internal fighting.",
+          "verification_step": "Investigate the nature of the connectivity anomaly in Eritrea to determine if it is related to the conflict situation.",
+          "status": "unverified_source_title_lead"
+        }
+      ],
+      "model_family": "phi-4-mini-instruct-q4km-local",
+      "interpretation_only": true,
+      "source_truth_not_verified": true,
+      "analyst_approved": false,
+      "attempts": 1,
+      "format_retry_succeeded": false,
+      "source_references": [
+        {
+          "evidence_key": "dossier:fdbeeb186ca9a6942953c254",
+          "family_title": "Reported force movements toward Rama",
+          "family_mechanism": "Conventional",
+          "source_health": "historical_reference_not_live",
+          "sources": [
+            {
+              "url": "https://www.criticalthreats.org/briefs/ethiopia-war-security-review/november-6-2026",
+              "title": "Reported force movements toward Rama",
+              "provider": "Critical Threats / ACLED",
+              "first_observed_at": "2026-11-06"
+            }
+          ],
+          "reviewed_direction": "not_assessed"
+        },
+        {
+          "evidence_key": "dossier:f3f8a5fed8a41b811e65ca0a",
+          "family_title": "Direct border clashes alleged",
+          "family_mechanism": "Conventional",
+          "source_health": "historical_reference_not_live",
+          "sources": [
+            {
+              "url": "https://www.criticalthreats.org/briefs/ethiopia-war-security-review/ethiopia-war-security-review-november-3-2026",
+              "title": "Direct border clashes alleged",
+              "provider": "Critical Threats",
+              "first_observed_at": "2026-11-03"
+            }
+          ],
+          "reviewed_direction": "not_assessed"
+        },
+        {
+          "evidence_key": "dossier:09d3faf438167c40e27ff06f",
+          "family_title": "Chinese mediation contacts",
+          "family_mechanism": "Diplomatic",
+          "source_health": "historical_reference_not_live",
+          "sources": [
+            {
+              "url": "https://www.criticalthreats.org/briefs/ethiopia-war-security-review/november-6-2026",
+              "title": "Chinese mediation contacts",
+              "provider": "Critical Threats / government statements",
+              "first_observed_at": "2026-11-05"
+            }
+          ],
+          "reviewed_direction": "not_assessed"
+        },
+        {
+          "evidence_key": "dossier:67cbb28b697d859848306c05",
+          "family_title": "Mekele nighttime curfew",
+          "family_mechanism": "Institutional",
+          "source_health": "historical_reference_not_live",
+          "sources": [
+            {
+              "url": "https://www.criticalthreats.org/briefs/ethiopia-war-security-review/november-6-2026",
+              "title": "Mekele nighttime curfew",
+              "provider": "Critical Threats",
+              "first_observed_at": "2026-11-05"
+            }
+          ],
+          "reviewed_direction": "not_assessed"
+        },
+        {
+          "evidence_key": "family:f3c000f5d4ff2dd71268",
+          "family_title": "iso:ER · connectivity / anomaly",
+          "family_mechanism": "internet_reachability",
+          "source_health": "current",
+          "sources": [
+            {
+              "url": "https://ioda.inetintel.cc.gatech.edu/",
+              "title": "IODA detected connectivity anomaly: country ER",
+              "provider": "ioda",
+              "first_observed_at": "2026-11-18T08:28:52+00:00"
+            },
+            {
+              "url": "https://ioda.inetintel.cc.gatech.edu/",
+              "title": "IODA detected connectivity anomaly: country ER",
+              "provider": "ioda",
+              "first_observed_at": "2026-11-18T23:34:05+00:00"
+            }
+          ],
+          "reviewed_direction": "not_assessed"
+        },
+        {
+          "evidence_key": "history:b7d94feb9c985aef27c8",
+          "family_title": "IODA detected connectivity anomaly: country ER",
+          "family_mechanism": "Case-linked history; provisional association only",
+          "source_health": "not_event_verified",
+          "sources": [
+            {
+              "url": "https://ioda.inetintel.cc.gatech.edu/",
+              "title": "IODA detected connectivity anomaly: country ER",
+              "provider": "ioda",
+              "first_observed_at": "2026-11-18T23:34:05Z"
+            }
+          ],
+          "reviewed_direction": "not_assessed"
+        },
+        {
+          "evidence_key": "history:fd26f5e841a32750ec2c",
+          "family_title": "Reuters reports Ethiopian and Eritrean force concentrations near Badme; direct clashes disputed",
+          "family_mechanism": "Case-linked history; provisional association only",
+          "source_health": "not_event_verified",
+          "sources": [
+            {
+              "url": "https://www.reuters.com/world/africa/ethiopia-eritrea-amass-forces-along-border-heightening-war-fears-sources-say-2026-11-18/",
+              "title": "Reuters reports Ethiopian and Eritrean force concentrations near Badme; direct clashes disputed",
+              "provider": "analyst",
+              "first_observed_at": "2026-11-18T17:11:23Z"
+            }
+          ],
+          "reviewed_direction": "not_assessed"
+        }
+      ],
+      "input_sha256": "e560a4fa00c5d63cab8b8ea74ecafdaf6aadaf7eeac34eec1c9fa90e4c1402b3",
+      "model_generated_at": "2026-11-24T15:02:42.361014Z",
+      "cache_status": "fresh_inference"
+    },
+    "horn_ethiopia_sudan": {
+      "status": "provisional_complete",
+      "interpretations": [
+        {
+          "hypothesis_index": 0,
+          "meaning": "The situation may escalate into a conflict between states due to a spillover effect from internal conflicts.",
+          "discriminator": "Observation of increased military activity or border skirmishes between Ethiopia and Sudan."
+        },
+        {
+          "hypothesis_index": 1,
+          "meaning": "The situation is likely a result of diplomatic retaliation and information campaigns related to internal conflicts, not an intent for interstate war.",
+          "discriminator": "Observation of diplomatic communications or public statements focusing on internal conflict issues rather than interstate aggression."
+        }
+      ],
+      "evaluations": [],
+      "evidence_notes": [
+        {
+          "evidence_key": "dossier:839d260ba55ede052dcd377d",
+          "observation": "Monitor for any official announcements or actions regarding the closure of consulates between Ethiopia and Sudan, which could indicate a diplomatic response to an incident or conflict spillover.",
+          "verification_step": "Check for official government statements or actions regarding consular closures.",
+          "status": "unverified_source_title_lead"
+        },
+        {
+          "evidence_key": "dossier:07ef2400009e244b5b965566",
+          "observation": "Investigate any public accusations or diplomatic exchanges concerning alleged drone support, which may reflect a broader context of internal conflict rather than an interstate conflict.",
+          "verification_step": "Review diplomatic communications or public statements for mentions of drone support accusations.",
+          "status": "unverified_source_title_lead"
+        }
+      ],
+      "model_family": "phi-4-mini-instruct-q4km-local",
+      "interpretation_only": true,
+      "source_truth_not_verified": true,
+      "analyst_approved": false,
+      "attempts": 1,
+      "format_retry_succeeded": false,
+      "source_references": [
+        {
+          "evidence_key": "dossier:839d260ba55ede052dcd377d",
+          "family_title": "Reciprocal consular closures",
+          "family_mechanism": "Diplomatic",
+          "source_health": "historical_reference_not_live",
+          "sources": [
+            {
+              "url": "https://www.reuters.com/world/africa/ethiopia-expels-sudanese-diplomats-after-fresh-allegations-support-rsf-2026-11-04/",
+              "title": "Reciprocal consular closures",
+              "provider": "Reuters",
+              "first_observed_at": "2026-11-04"
+            }
+          ],
+          "reviewed_direction": "not_assessed"
+        },
+        {
+          "evidence_key": "dossier:07ef2400009e244b5b965566",
+          "family_title": "Accusations about drone support",
+          "family_mechanism": "Diplomatic",
+          "source_health": "historical_reference_not_live",
+          "sources": [
+            {
+              "url": "https://www.reuters.com/world/africa/ethiopia-expels-sudanese-diplomats-after-fresh-allegations-support-rsf-2026-11-04/",
+              "title": "Accusations about drone support",
+              "provider": "Reuters",
+              "first_observed_at": "2026-11-04"
+            }
+          ],
+          "reviewed_direction": "not_assessed"
+        }
+      ],
+      "input_sha256": "7bf5605d6b1d24a61bf61974112e62030b4767c214033f532cd64cfe859c8f04",
+      "model_generated_at": "2026-11-24T15:02:42.361014Z",
+      "cache_status": "fresh_inference"
+    },
+    "afpak": {
+      "status": "provisional_complete",
+      "interpretations": [
+        {
+          "hypothesis_index": 0,
+          "meaning": "The situation involves an expansion of an ongoing conflict across borders, suggesting a conventional interstate war.",
+          "discriminator": "Evidence of border mortar and drone strikes would indicate conventional warfare."
+        },
+        {
+          "hypothesis_index": 1,
+          "meaning": "The situation involves cross-border actions driven by counterinsurgency efforts that have not escalated into a sustained conventional interstate war.",
+          "discriminator": "Evidence of emergency rule in a specific region could suggest counterinsurgency measures."
+        }
+      ],
+      "evaluations": [],
+      "evidence_notes": [
+        {
+          "evidence_key": "dossier:192f055e2e8a68cfd5f4c0d6",
+          "observation": "Look for reports of border mortar and drone strikes as evidence of conventional warfare.",
+          "verification_step": "Independent verification of border mortar and drone strike reports.",
+          "status": "unverified_source_title_lead"
+        },
+        {
+          "evidence_key": "dossier:ad91751fcec87bbd7b0bea0d",
+          "observation": "Look for reports of emergency rule in Khyber Pakhtunkhwa as evidence of counterinsurgency measures.",
+          "verification_step": "Independent verification of emergency rule reports in Khyber Pakhtunkhwa.",
+          "status": "unverified_source_title_lead"
+        },
+        {
+          "evidence_key": "history:b7d94feb9c985aef27c8",
+          "observation": "Look for reports of connectivity anomalies as evidence of unusual activity that may be linked to the situation.",
+          "verification_step": "Independent verification of connectivity anomaly reports.",
+          "status": "unverified_source_title_lead"
+        },
+        {
+          "evidence_key": "family:b5a9a71b3f21e78be30d",
+          "observation": "Look for reports of internet reachability anomalies as evidence of unusual activity that may be linked to the situation.",
+          "verification_step": "Independent verification of internet reachability anomaly reports.",
+          "status": "unverified_source_title_lead"
+        }
+      ],
+      "model_family": "phi-4-mini-instruct-q4km-local",
+      "interpretation_only": true,
+      "source_truth_not_verified": true,
+      "analyst_approved": false,
+      "attempts": 1,
+      "format_retry_succeeded": false,
+      "source_references": [
+        {
+          "evidence_key": "dossier:192f055e2e8a68cfd5f4c0d6",
+          "family_title": "Border mortar and drone strike accusations",
+          "family_mechanism": "Conventional",
+          "source_health": "historical_reference_not_live",
+          "sources": [
+            {
+              "url": "https://www.cfr.org/global-conflict-tracker/conflict/war-afghanistan",
+              "title": "Border mortar and drone strike accusations",
+              "provider": "CFR Global Conflict Tracker",
+              "first_observed_at": "2026-10-29"
+            }
+          ],
+          "reviewed_direction": "not_assessed"
+        },
+        {
+          "evidence_key": "dossier:ad91751fcec87bbd7b0bea0d",
+          "family_title": "Emergency rule in Khyber Pakhtunkhwa",
+          "family_mechanism": "Institutional",
+          "source_health": "historical_reference_not_live",
+          "sources": [
+            {
+              "url": "https://www.cfr.org/global-conflict-tracker/conflict/war-afghanistan",
+              "title": "Emergency rule in Khyber Pakhtunkhwa",
+              "provider": "CFR Global Conflict Tracker",
+              "first_observed_at": "2026-10-11"
+            }
+          ],
+          "reviewed_direction": "not_assessed"
+        },
+        {
+          "evidence_key": "family:b5a9a71b3f21e78be30d",
+          "family_title": "iso:AF · connectivity / anomaly",
+          "family_mechanism": "internet_reachability",
+          "source_health": "current",
+          "sources": [
+            {
+              "url": "https://ioda.inetintel.cc.gatech.edu/",
+              "title": "IODA detected connectivity anomaly: country AF",
+              "provider": "ioda",
+              "first_observed_at": "2026-11-18T08:28:52+00:00"
+            },
+            {
+              "url": "https://ioda.inetintel.cc.gatech.edu/",
+              "title": "IODA detected connectivity anomaly: country AF",
+              "provider": "ioda",
+              "first_observed_at": "2026-11-18T23:34:05+00:00"
+            }
+          ],
+          "reviewed_direction": "not_assessed"
+        },
+        {
+          "evidence_key": "history:b7d94feb9c985aef27c8",
+          "family_title": "IODA detected connectivity anomaly: country AF",
+          "family_mechanism": "Case-linked history; provisional association only",
+          "source_health": "not_event_verified",
+          "sources": [
+            {
+              "url": "https://ioda.inetintel.cc.gatech.edu/",
+              "title": "IODA detected connectivity anomaly: country AF",
+              "provider": "ioda",
+              "first_observed_at": "2026-11-18T23:34:05Z"
+            }
+          ],
+          "reviewed_direction": "not_assessed"
+        }
+      ],
+      "input_sha256": "fffb2f0296fca8416eaf63a91b4c26baa86a78fe524e6f0aa930d0afb69f26fa",
+      "model_generated_at": "2026-11-24T15:02:42.361014Z",
+      "cache_status": "fresh_inference"
+    },
+    "drc_rwanda": {
+      "status": "provisional_complete",
+      "interpretations": [
+        {
+          "hypothesis_index": 0,
+          "meaning": "The M23 conflict is becoming more localized within South Kivu, suggesting a regionalization of the conflict.",
+          "discriminator": "Observation of the geographic concentration of conflict-related incidents in South Kivu."
+        },
+        {
+          "hypothesis_index": 1,
+          "meaning": "The conflict is sustained through indirect means, such as proxy warfare, without escalating to a direct interstate war.",
+          "discriminator": "Evidence of diplomatic engagements like joint security coordination meetings without a transition to overt conventional warfare."
+        }
+      ],
+      "evaluations": [],
+      "evidence_notes": [
+        {
+          "evidence_key": "dossier:8dc76c13118f5334f24fabc0",
+          "observation": "Continued fighting in South Kivu suggests a localized conflict, potentially supporting the regionalization hypothesis.",
+          "verification_step": "Monitor and document the frequency and intensity of conflict-related incidents in South Kivu over time.",
+          "status": "unverified_source_title_lead"
+        },
+        {
+          "evidence_key": "dossier:1c0bddfa689ba438bdced1a7",
+          "observation": "Joint security coordination meeting indicates diplomatic efforts, possibly supporting the proxy conflict hypothesis.",
+          "verification_step": "Track the outcomes and impacts of diplomatic meetings on the conflict dynamics.",
+          "status": "unverified_source_title_lead"
+        },
+        {
+          "evidence_key": "history:b7d94feb9c985aef27c8",
+          "observation": "Connectivity anomaly detected in Rwanda may suggest indirect involvement or influence in the conflict, supporting the proxy conflict hypothesis.",
+          "verification_step": "Investigate the nature and implications of the detected connectivity anomaly in Rwanda.",
+          "status": "unverified_source_title_lead"
+        },
+        {
+          "evidence_key": "dossier:44582437903e704935983830",
+          "observation": "U.S. sanctions against Rwandan Ministry of Defense could indicate international involvement, possibly supporting the proxy conflict hypothesis.",
+          "verification_step": "Examine the effects of sanctions on the conflict and any changes in Rwandan Ministry of Defense's behavior.",
+          "status": "unverified_source_title_lead"
+        },
+        {
+          "evidence_key": "family:28bb6025e5e43c9de56c",
+          "observation": "Repeated connectivity anomalies in Rwanda may suggest indirect involvement or influence in the conflict, supporting the proxy conflict hypothesis.",
+          "verification_step": "Analyze the pattern and context of the connectivity anomalies in Rwanda.",
+          "status": "unverified_source_title_lead"
+        }
+      ],
+      "model_family": "phi-4-mini-instruct-q4km-local",
+      "interpretation_only": true,
+      "source_truth_not_verified": true,
+      "analyst_approved": false,
+      "attempts": 1,
+      "format_retry_succeeded": false,
+      "source_references": [
+        {
+          "evidence_key": "dossier:44582437903e704935983830",
+          "family_title": "U.S. sanctions against Rwandan Ministry of Defense",
+          "family_mechanism": "Diplomatic",
+          "source_health": "historical_reference_not_live",
+          "sources": [
+            {
+              "url": "https://www.criticalthreats.org/briefs/congo-war-security-review",
+              "title": "U.S. sanctions against Rwandan Ministry of Defense",
+              "provider": "Critical Threats / U.S. Treasury",
+              "first_observed_at": "2026-10-28"
+            }
+          ],
+          "reviewed_direction": "not_assessed"
+        },
+        {
+          "evidence_key": "dossier:1c0bddfa689ba438bdced1a7",
+          "family_title": "Joint security coordination meeting",
+          "family_mechanism": "Diplomatic",
+          "source_health": "historical_reference_not_live",
+          "sources": [
+            {
+              "url": "https://www.criticalthreats.org/briefs/congo-war-security-review",
+              "title": "Joint security coordination meeting",
+              "provider": "Critical Threats",
+              "first_observed_at": "2026-10-22"
+            }
+          ],
+          "reviewed_direction": "not_assessed"
+        },
+        {
+          "evidence_key": "dossier:8dc76c13118f5334f24fabc0",
+          "family_title": "Continued fighting in South Kivu",
+          "family_mechanism": "Conventional",
+          "source_health": "historical_reference_not_live",
+          "sources": [
+            {
+              "url": "https://www.criticalthreats.org/briefs/congo-war-security-review",
+              "title": "Continued fighting in South Kivu",
+              "provider": "Critical Threats",
+              "first_observed_at": "2026-10-28"
+            }
+          ],
+          "reviewed_direction": "not_assessed"
+        },
+        {
+          "evidence_key": "family:28bb6025e5e43c9de56c",
+          "family_title": "iso:CD · connectivity / anomaly",
+          "family_mechanism": "internet_reachability",
+          "source_health": "current",
+          "sources": [
+            {
+              "url": "https://ioda.inetintel.cc.gatech.edu/",
+              "title": "IODA detected connectivity anomaly: country CD",
+              "provider": "ioda",
+              "first_observed_at": "2026-11-18T08:28:52+00:00"
+            },
+            {
+              "url": "https://ioda.inetintel.cc.gatech.edu/",
+              "title": "IODA detected connectivity anomaly: country CD",
+              "provider": "ioda",
+              "first_observed_at": "2026-11-18T17:30:32+00:00"
+            },
+            {
+              "url": "https://ioda.inetintel.cc.gatech.edu/",
+              "title": "IODA detected connectivity anomaly: country CD",
+              "provider": "ioda",
+              "first_observed_at": "2026-11-18T23:34:05+00:00"
+            }
+          ],
+          "reviewed_direction": "not_assessed"
+        },
+        {
+          "evidence_key": "history:b7d94feb9c985aef27c8",
+          "family_title": "IODA detected connectivity anomaly: country CD",
+          "family_mechanism": "Case-linked history; provisional association only",
+          "source_health": "not_event_verified",
+          "sources": [
+            {
+              "url": "https://ioda.inetintel.cc.gatech.edu/",
+              "title": "IODA detected connectivity anomaly: country CD",
+              "provider": "ioda",
+              "first_observed_at": "2026-11-20T03:04:12Z"
+            }
+          ],
+          "reviewed_direction": "not_assessed"
+        }
+      ],
+      "input_sha256": "aad84a16b4fb658af797ae96affaa7cc6126d46654629bcb9a2e8cbcc0219b92",
+      "model_generated_at": "2026-11-24T15:02:42.361014Z",
+      "cache_status": "fresh_inference"
+    },
+    "thailand_cambodia": {
+      "status": "provisional_complete",
+      "interpretations": [
+        {
+          "hypothesis_index": 0,
+          "meaning": "The ceasefire agreement between Thailand and Cambodia has broken down, leading to renewed fighting along the border.",
+          "discriminator": "Observation of increased military activity and skirmishes along the Thailand-Cambodia border."
+        },
+        {
+          "hypothesis_index": 1,
+          "meaning": "Political leaders in Thailand and Cambodia are engaging in negotiations to maintain the ceasefire, despite ongoing disputes in other areas such as temple and maritime claims.",
+          "discriminator": "Evidence of diplomatic meetings or communications between Thai and Cambodian officials discussing the ceasefire."
+        }
+      ],
+      "evaluations": [],
+      "evidence_notes": [
+        {
+          "evidence_key": "dossier:6af632f2ae7e6a37b61da7da",
+          "observation": "Bilateral military implementation talks indicate ongoing diplomatic efforts to maintain the ceasefire, suggesting that the ceasefire is still functionally intact despite other disputes.",
+          "verification_step": "Monitor for scheduled or unscheduled diplomatic meetings between Thai and Cambodian officials.",
+          "status": "unverified_source_title_lead"
+        },
+        {
+          "evidence_key": "dossier:a7b5a2c46e34db16d2fc3a26",
+          "observation": "Disputes over temple and maritime claims persist, which could be a separate issue from the ceasefire status, indicating that domestic political posturing may be occurring alongside the ceasefire negotiations.",
+          "verification_step": "Investigate the status of temple and maritime claims disputes through diplomatic channels or official statements.",
+          "status": "unverified_source_title_lead"
+        }
+      ],
+      "model_family": "phi-4-mini-instruct-q4km-local",
+      "interpretation_only": true,
+      "source_truth_not_verified": true,
+      "analyst_approved": false,
+      "attempts": 1,
+      "format_retry_succeeded": false,
+      "source_references": [
+        {
+          "evidence_key": "dossier:6af632f2ae7e6a37b61da7da",
+          "family_title": "Bilateral military implementation talks",
+          "family_mechanism": "Diplomatic",
+          "source_health": "historical_reference_not_live",
+          "sources": [
+            {
+              "url": "https://www.csis.org/blogs/latest-southeast-asia/latest-southeast-asia-thailand-cambodia-disputes-ongoing-one-year-after",
+              "title": "Bilateral military implementation talks",
+              "provider": "CSIS",
+              "first_observed_at": "2026-10-28"
+            }
+          ],
+          "reviewed_direction": "not_assessed"
+        },
+        {
+          "evidence_key": "dossier:a7b5a2c46e34db16d2fc3a26",
+          "family_title": "Continuing disputes over temple and maritime claims",
+          "family_mechanism": "Diplomatic",
+          "source_health": "historical_reference_not_live",
+          "sources": [
+            {
+              "url": "https://www.csis.org/blogs/latest-southeast-asia/latest-southeast-asia-thailand-cambodia-disputes-ongoing-one-year-after",
+              "title": "Continuing disputes over temple and maritime claims",
+              "provider": "CSIS",
+              "first_observed_at": "2026-10-29"
+            }
+          ],
+          "reviewed_direction": "not_assessed"
+        }
+      ],
+      "input_sha256": "249c0f2656b5db936a5dfafe539a333022a3c517c3778284e3dddfc6a3cfd570",
+      "model_generated_at": "2026-11-24T15:02:42.361014Z",
+      "cache_status": "fresh_inference"
+    },
+    "russia_nato": {
+      "status": "provisional_complete",
+      "interpretations": [
+        {
+          "hypothesis_index": 0,
+          "meaning": "Major conventional or limited hybrid escalation",
+          "discriminator": "Evidence of a NATO finding no imminent conventional threat suggests no immediate escalation."
+        },
+        {
+          "hypothesis_index": 1,
+          "meaning": "Defensive precautions may deter or prevent incidents; suspicious observations can be innocuous.",
+          "discriminator": "Evidence of a Polish warning about sabotage/provocation could indicate defensive measures rather than escalation."
+        }
+      ],
+      "evaluations": [],
+      "evidence_notes": [
+        {
+          "evidence_key": "dossier:087124e2a731652ec6bcfa21",
+          "observation": "NATO finds no imminent conventional threat. Independent verification: Monitor NATO communiqués for updates on threat assessments and military postures in the region.",
+          "verification_step": "Monitor NATO communiqués for updates on threat assessments and military postures in the region.",
+          "status": "unverified_source_title_lead"
+        },
+        {
+          "evidence_key": "family:4c6bc7a3202dcc42daf7",
+          "observation": "Russian governor reports Ust-Luga port fire and electricity disruption after drone attack. Independent verification: Cross-reference reports of drone attacks with official statements and satellite imagery.",
+          "verification_step": "Cross-reference reports of drone attacks with official statements and satellite imagery.",
+          "status": "unverified_source_title_lead"
+        },
+        {
+          "evidence_key": "history:3c0be3ce7108c29c4358",
+          "observation": "Denmark. The Baltic Sea. EK D 396 Hullebaek. Firing exercises. Warning. Independent verification: Compare historical firing exercises with current military exercises in the region.",
+          "verification_step": "Compare historical firing exercises with current military exercises in the region.",
+          "status": "unverified_source_title_lead"
+        },
+        {
+          "evidence_key": "history:e03e5c36915a3b88b021",
+          "observation": "Denmark. The Baltic Sea. EK D 396 Hullebaek. Firing exercises. Warning. Independent verification: Assess the context of firing exercises to determine if they are routine or indicative of escalation.",
+          "verification_step": "Assess the context of firing exercises to determine if they are routine or indicative of escalation.",
+          "status": "unverified_source_title_lead"
+        },
+        {
+          "evidence_key": "history:dcd1c0aea25e764ee77b",
+          "observation": "Denmark. The Baltic Sea. EK D 395 Raghammer. Firing exercises. Warning. Independent verification: Evaluate the frequency and scale of firing exercises in relation to regional tensions.",
+          "verification_step": "Evaluate the frequency and scale of firing exercises in relation to regional tensions.",
+          "status": "unverified_source_title_lead"
+        }
+      ],
+      "model_family": "phi-4-mini-instruct-q4km-local",
+      "interpretation_only": true,
+      "source_truth_not_verified": true,
+      "analyst_approved": false,
+      "attempts": 1,
+      "format_retry_succeeded": false,
+      "source_references": [
+        {
+          "evidence_key": "dossier:e7078875412062856418d2fa",
+          "family_title": "Polish sabotage/provocation warning",
+          "family_mechanism": "Conventional",
+          "source_health": "historical_reference_not_live",
+          "sources": [
+            {
+              "url": "https://apnews.com/article/7fa8573c57627a7a2b3475ab44c5eddd",
+              "title": "Polish sabotage/provocation warning",
+              "provider": "AP",
+              "first_observed_at": "2026-11-03"
+            }
+          ],
+          "reviewed_direction": "not_assessed"
+        },
+        {
+          "evidence_key": "dossier:087124e2a731652ec6bcfa21",
+          "family_title": "NATO finds no imminent conventional threat",
+          "family_mechanism": "Diplomatic",
+          "source_health": "historical_reference_not_live",
+          "sources": [
+            {
+              "url": "https://nato.int/en/news-and-events/events/transcripts/2026/10/14/joint-press-conference-with-nato-secretary-general-and-the-prime-minister-of-estonia",
+              "title": "NATO finds no imminent conventional threat",
+              "provider": "NATO",
+              "first_observed_at": "2026-10-14"
+            }
+          ],
+          "reviewed_direction": "not_assessed"
+        },
+        {
+          "evidence_key": "family:4c6bc7a3202dcc42daf7",
+          "family_title": "russia / drone / attack",
+          "family_mechanism": "commercial_media, media_mention",
+          "source_health": "stale_or_unavailable",
+          "sources": [
+            {
+              "url": "https://www.reuters.com/world/drone-attack-causes-fire-russias-baltic-sea-port-ust-luga-governor-says-2026-11-11/",
+              "title": "Russian governor reports Ust-Luga port fire and electricity disruption after drone attack",
+              "provider": "Reuters",
+              "first_observed_at": "2026-11-11T05:10:12+00:00"
+            },
+            {
+              "url": "https://www.theguardian.com/world/2026/nov/20/russian-missiles-drone-poland-attacks-ukraine",
+              "title": "Poland confirms three Russian missile/drone airspace incursions and NATO defensive response",
+              "provider": "The Guardian",
+              "first_observed_at": "2026-11-20T16:54:31+00:00"
+            },
+            {
+              "url": "https://maritime-executive.com/article/massive-attack-on-russian-shipping-in-benghazi",
+              "title": "Massive Ukrainian Attack on Russian Shipping in Benghazi",
+              "provider": "commercial",
+              "first_observed_at": "2026-11-23T19:19:57+00:00"
+            }
+          ],
+          "reviewed_direction": "not_assessed"
+        },
+        {
+          "evidence_key": "family:b43d40b03423259fc083",
+          "family_title": "russia / authorities",
+          "family_mechanism": "media_mention",
+          "source_health": "stale_or_unavailable",
+          "sources": [
+            {
+              "url": "https://www.reuters.com/world/russia-says-ukraine-struck-its-bridge-crimea-second-day-biggest-drone-attack-war-2026-11-17/",
+              "title": "Russian-installed Crimean authorities report second consecutive strike and bridge traffic suspension",
+              "provider": "Reuters",
+              "first_observed_at": "2026-11-17T11:28:00+00:00"
+            },
+            {
+              "url": "https://www.reuters.com/world/middle-east/libyas-eastern-government-suspects-drone-attack-caused-explosion-russian-ship-2026-11-22/",
+              "title": "Eastern Libyan authorities report suspected drone attack on Russian ship",
+              "provider": "Reuters",
+              "first_observed_at": "2026-11-22T16:46:48+00:00"
+            }
+          ],
+          "reviewed_direction": "not_assessed"
+        },
+        {
+          "evidence_key": "history:e03e5c36915a3b88b021",
+          "family_title": "Denmark. The Baltic Sea. EK D 396 Hullebaek. Firing exercises. Warning.",
+          "family_mechanism": "Case-linked history; provisional association only",
+          "source_health": "not_event_verified",
+          "sources": [
+            {
+              "url": "https://niord.dma.dk/#/message/be9030e2-17fd-4f93-a5cd-457e38fa46e3",
+              "title": "Denmark. The Baltic Sea. EK D 396 Hullebaek. Firing exercises. Warning.",
+              "provider": "live_maritime",
+              "first_observed_at": "2026-11-24T04:53:43Z"
+            }
+          ],
+          "reviewed_direction": "not_assessed"
+        },
+        {
+          "evidence_key": "history:dcd1c0aea25e764ee77b",
+          "family_title": "Denmark. The Baltic Sea. EK D 395 Raghammer. Firing exercises. Warning.",
+          "family_mechanism": "Case-linked history; provisional association only",
+          "source_health": "not_event_verified",
+          "sources": [
+            {
+              "url": "https://niord.dma.dk/#/message/025f23ae-eb33-423b-8f4d-1c72fdffc26f",
+              "title": "Denmark. The Baltic Sea. EK D 395 Raghammer. Firing exercises. Warning.",
+              "provider": "live_maritime",
+              "first_observed_at": "2026-11-24T04:53:43Z"
+            }
+          ],
+          "reviewed_direction": "not_assessed"
+        },
+        {
+          "evidence_key": "history:3c0be3ce7108c29c4358",
+          "family_title": "Denmark. The Baltic Sea. EK D 396 Hullebaek. Firing exercises. Warning.",
+          "family_mechanism": "Case-linked history; provisional association only",
+          "source_health": "not_event_verified",
+          "sources": [
+            {
+              "url": "https://niord.dma.dk/#/message/679470f0-ce73-4b58-9cc8-24ddf6408cb6",
+              "title": "Denmark. The Baltic Sea. EK D 396 Hullebaek. Firing exercises. Warning.",
+              "provider": "live_maritime",
+              "first_observed_at": "2026-11-23T00:27:52Z"
+            }
+          ],
+          "reviewed_direction": "not_assessed"
+        }
+      ],
+      "input_sha256": "b5ab71910ce5eedbbf1f72ca3242dbdd42882f7dee16e9daabd7a7082377f086",
+      "model_generated_at": "2026-11-24T15:02:42.361014Z",
+      "cache_status": "fresh_inference"
+    },
+    "iran_gulf": {
+      "status": "provisional_complete",
+      "interpretations": [
+        {
+          "hypothesis_index": 0,
+          "meaning": "There is a possibility of a wider escalation in the ongoing armed conflict in the Gulf region.",
+          "discriminator": "Observation of increased frequency and intensity of military engagements in the region."
+        },
+        {
+          "hypothesis_index": 1,
+          "meaning": "There may be a reinforcement of deterrence or localized strikes without a new theater-wide campaign.",
+          "discriminator": "Observation of targeted strikes with limited scope and no significant expansion of conflict zones."
+        }
+      ],
+      "evaluations": [],
+      "evidence_notes": [
+        {
+          "evidence_key": "dossier:8d5f511ee8a63383a7285fb5",
+          "observation": "Warnings to partners and force reinforcement could indicate preparation for wider conflict escalation or localized action, depending on the context and scale of the reinforcement mentioned in the source title.",
+          "verification_step": "Monitor subsequent military movements and engagements in the region for patterns consistent with either wider escalation or localized action.",
+          "status": "unverified_source_title_lead"
+        },
+        {
+          "evidence_key": "family:f6a997229fdfe081cc7b",
+          "observation": "Reports of additional Iranian aerial attacks and defensive interceptions suggest localized military actions rather than a wider escalation.",
+          "verification_step": "Track the frequency and geographical spread of reported aerial attacks and interceptions to determine if they are isolated incidents or part of a broader campaign.",
+          "status": "unverified_source_title_lead"
+        },
+        {
+          "evidence_key": "history:7079d777a2c2a9aa89eb",
+          "observation": "The report of additional Iranian aerial attacks and defensive interceptions on November 18 by Bahrain could indicate localized military actions.",
+          "verification_step": "Examine the timeline and scale of reported incidents to assess if they align with a localized or wider conflict pattern.",
+          "status": "unverified_source_title_lead"
+        },
+        {
+          "evidence_key": "history:b70e03574702e41c4966",
+          "observation": "The report of an Iranian attack causing fire at a civilian industrial facility suggests targeted action rather than a wider escalation.",
+          "verification_step": "Investigate the nature and target of the attack to determine if it fits the pattern of localized strikes or wider conflict escalation.",
+          "status": "unverified_source_title_lead"
+        },
+        {
+          "evidence_key": "history:05c07ea3eeb5036b8d0c",
+          "observation": "The confirmation of a Hormuz vessel attack with injured and missing crew by ADNOC could indicate targeted military action.",
+          "verification_step": "Analyze the context and aftermath of the vessel attack to discern if it is part of a broader conflict or a localized incident.",
+          "status": "unverified_source_title_lead"
+        },
+        {
+          "evidence_key": "history:4477c8a58e64fb4d0fff",
+          "observation": "Reports of tanker projectile incidents near Oman's Khasab may reflect localized military actions rather than a wider escalation.",
+          "verification_step": "Examine the scope and frequency of tanker projectile incidents to determine if they are isolated events or part of a wider conflict.",
+          "status": "unverified_source_title_lead"
+        }
+      ],
+      "model_family": "phi-4-mini-instruct-q4km-local",
+      "interpretation_only": true,
+      "source_truth_not_verified": true,
+      "analyst_approved": false,
+      "attempts": 1,
+      "format_retry_succeeded": false,
+      "source_references": [
+        {
+          "evidence_key": "dossier:c4b3a74180546386bff8a645",
+          "family_title": "Iranian proposal via Qatar",
+          "family_mechanism": "Diplomatic",
+          "source_health": "historical_reference_not_live",
+          "sources": [
+            {
+              "url": "https://www.reuters.com/world/middle-east/iran-sent-nuclear-proposal-us-via-qatar-senior-iranian-official-tells-reuters-2026-11-05/",
+              "title": "Iranian proposal via Qatar",
+              "provider": "Reuters",
+              "first_observed_at": "2026-11-05"
+            }
+          ],
+          "reviewed_direction": "not_assessed"
+        },
+        {
+          "evidence_key": "dossier:8d5f511ee8a63383a7285fb5",
+          "family_title": "Warnings to partners and force reinforcement",
+          "family_mechanism": "Conventional",
+          "source_health": "historical_reference_not_live",
+          "sources": [
+            {
+              "url": "https://apnews.com/article/c7df622f1e87de6035173be8fb8c4add",
+              "title": "Warnings to partners and force reinforcement",
+              "provider": "AP",
+              "first_observed_at": "2026-10-28"
+            }
+          ],
+          "reviewed_direction": "not_assessed"
+        },
+        {
+          "evidence_key": "family:f6a997229fdfe081cc7b",
+          "family_title": "bahrain · iran / attack",
+          "family_mechanism": "media_mention, source_observation",
+          "source_health": "stale_or_unavailable",
+          "sources": [
+            {
+              "url": "https://www.arnnewscentre.ae/en/news/international/bahrain-kuwait-intercept-more-iranian-air-strikes/",
+              "title": "Bahrain reports additional Iranian aerial attacks and defensive interceptions on November 18",
+              "provider": "Bahrain Defence Force via ARN News Centre",
+              "first_observed_at": "2026-11-18T04:38:39+00:00"
+            },
+            {
+              "url": "https://www.reuters.com/world/middle-east/bahrain-warns-residents-potential-threat-iran-conflict-persists-2026-11-21/",
+              "title": "Bahrain reports Iranian attack caused fire at civilian industrial facility",
+              "provider": "Bahrain Ministry of Interior (reported by Reuters)",
+              "first_observed_at": "2026-11-21T22:40:03+00:00"
+            }
+          ],
+          "reviewed_direction": "not_assessed"
+        },
+        {
+          "evidence_key": "history:b70e03574702e41c4966",
+          "family_title": "Bahrain reports Iranian attack caused fire at civilian industrial facility",
+          "family_mechanism": "Case-linked history; provisional association only",
+          "source_health": "not_event_verified",
+          "sources": [
+            {
+              "url": "https://www.reuters.com/world/middle-east/bahrain-warns-residents-potential-threat-iran-conflict-persists-2026-11-21/",
+              "title": "Bahrain reports Iranian attack caused fire at civilian industrial facility",
+              "provider": "analyst",
+              "first_observed_at": "2026-11-21T22:40:03Z"
+            }
+          ],
+          "reviewed_direction": "not_assessed"
+        },
+        {
+          "evidence_key": "history:4477c8a58e64fb4d0fff",
+          "family_title": "UKMTO reports tanker projectile incidents near Oman's Khasab",
+          "family_mechanism": "Case-linked history; provisional association only",
+          "source_health": "not_event_verified",
+          "sources": [
+            {
+              "url": "https://www.reuters.com/business/energy/tanker-hit-by-unknown-projectile-near-omans-khasab-ukmto-says-2026-11-21/",
+              "title": "UKMTO reports tanker projectile incidents near Oman's Khasab",
+              "provider": "analyst",
+              "first_observed_at": "2026-11-21T17:04:16Z"
+            }
+          ],
+          "reviewed_direction": "not_assessed"
+        },
+        {
+          "evidence_key": "history:78f094fd38e741d04d5a",
+          "family_title": "To what extent do mines in the Strait of Hormuz pose a threat to shipping? - TRT World",
+          "family_mechanism": "Case-linked history; provisional association only",
+          "source_health": "not_event_verified",
+          "sources": [
+            {
+              "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQZ1l6X0NwdF9NbTdZcl9BWlFjaHMtaHR1RHZfSUk5cHd5RmIzZWRxNUhiMGRBaW1lakFseENzRjFZTExtcW12WXVoa0pQY2gyYUgyUFpPbGdyaFlCdUctd0FFVFB2OGkxbTFsU3lZOWt6WjdRUWg1X1NKbUhlX0NxQ0ptVEgwdWxjX3ZMRFdDXzREbXhhQTl6c0VTODFjeTJna2lJV2hvZ1F6T2hUcTA1YXlhLXJ2cUpiZEVFeDB3Q05Wek5WR1U5QQ?oc=5",
+              "title": "To what extent do mines in the Strait of Hormuz pose a threat to shipping? - TRT World",
+              "provider": "commercial",
+              "first_observed_at": "2026-11-18T16:33:02Z"
+            }
+          ],
+          "reviewed_direction": "not_assessed"
+        },
+        {
+          "evidence_key": "history:05c07ea3eeb5036b8d0c",
+          "family_title": "ADNOC confirms November 17 Hormuz vessel attack with injured and missing crew",
+          "family_mechanism": "Case-linked history; provisional association only",
+          "source_health": "not_event_verified",
+          "sources": [
+            {
+              "url": "https://www.adnoc.ae/media-center/adnoc-operational-updates",
+              "title": "ADNOC confirms November 17 Hormuz vessel attack with injured and missing crew",
+              "provider": "analyst",
+              "first_observed_at": "2026-11-18T10:32:02.090000Z"
+            }
+          ],
+          "reviewed_direction": "not_assessed"
+        },
+        {
+          "evidence_key": "history:7079d777a2c2a9aa89eb",
+          "family_title": "Bahrain reports additional Iranian aerial attacks and defensive interceptions on November 18",
+          "family_mechanism": "Case-linked history; provisional association only",
+          "source_health": "not_event_verified",
+          "sources": [
+            {
+              "url": "https://www.arnnewscentre.ae/en/news/international/bahrain-kuwait-intercept-more-iranian-air-strikes/",
+              "title": "Bahrain reports additional Iranian aerial attacks and defensive interceptions on November 18",
+              "provider": "analyst",
+              "first_observed_at": "2026-11-18T04:38:39Z"
+            }
+          ],
+          "reviewed_direction": "not_assessed"
+        },
+        {
+          "evidence_key": "history:b44060b57343a2a63a16",
+          "family_title": "US official reports retaliatory strike on IRGC missile-launch site on Qeshm Island",
+          "family_mechanism": "Case-linked history; provisional association only",
+          "source_health": "not_event_verified",
+          "sources": [
+            {
+              "url": "https://www.reuters.com/world/middle-east/us-strikes-iranian-missile-launch-site-qeshm-island-us-official-says-2026-11-17/",
+              "title": "US official reports retaliatory strike on IRGC missile-launch site on Qeshm Island",
+              "provider": "analyst",
+              "first_observed_at": "2026-11-17T22:45:25Z"
+            }
+          ],
+          "reviewed_direction": "not_assessed"
+        }
+      ],
+      "input_sha256": "6af0a597be3f0c04694d2932a8dd9f1d06082fee1f02ad92c7a0dbc500f7eaef",
+      "model_generated_at": "2026-11-24T15:02:42.361014Z",
+      "cache_status": "fresh_inference"
+    },
+    "taiwan": {
+      "status": "provisional_complete",
+      "interpretations": [
+        {
+          "hypothesis_index": 0,
+          "meaning": "Taiwan is facing a blockade, quarantine, or major armed attack.",
+          "discriminator": "An increase in Coast guard incursions could indicate a blockade or quarantine being enforced."
+        },
+        {
+          "hypothesis_index": 1,
+          "meaning": "Taiwan is experiencing persistent coercive activity without a decision to initiate a blockade.",
+          "discriminator": "A decrease in PLA aircraft sorties might suggest a reduction in coercive activities without a blockade."
+        }
+      ],
+      "evaluations": [],
+      "evidence_notes": [
+        {
+          "evidence_key": "history:46f51de759c69cccce85",
+          "observation": "An increase in Coast guard incursions could indicate a blockade or quarantine being enforced.",
+          "verification_step": "Monitor Coast guard activity for patterns consistent with blockades or quarantine measures.",
+          "status": "unverified_source_title_lead"
+        },
+        {
+          "evidence_key": "dossier:fcb9ba6b7f3d1e6d25b8d2a2",
+          "observation": "An increase in Coast guard incursions could indicate a blockade or quarantine being enforced.",
+          "verification_step": "Monitor Coast guard activity for patterns consistent with blockades or quarantine measures.",
+          "status": "unverified_source_title_lead"
+        },
+        {
+          "evidence_key": "dossier:d9c4d75b7362652cdbc4f0fc",
+          "observation": "A decrease in PLA aircraft sorties might suggest a reduction in coercive activities without a blockade.",
+          "verification_step": "Track PLA aircraft sorties for a sustained decrease that could indicate reduced coercive activity.",
+          "status": "unverified_source_title_lead"
+        }
+      ],
+      "model_family": "phi-4-mini-instruct-q4km-local",
+      "interpretation_only": true,
+      "source_truth_not_verified": true,
+      "analyst_approved": false,
+      "attempts": 1,
+      "format_retry_succeeded": false,
+      "source_references": [
+        {
+          "evidence_key": "dossier:d9c4d75b7362652cdbc4f0fc",
+          "family_title": "PLA aircraft sorties decrease",
+          "family_mechanism": "Conventional",
+          "source_health": "historical_reference_not_live",
+          "sources": [
+            {
+              "url": "https://tsm.schar.gmu.edu/strait-snapshot-october-2026-update/",
+              "title": "PLA aircraft sorties decrease",
+              "provider": "Taiwan Security Monitor",
+              "first_observed_at": "2026-10-31"
+            }
+          ],
+          "reviewed_direction": "not_assessed"
+        },
+        {
+          "evidence_key": "dossier:fcb9ba6b7f3d1e6d25b8d2a2",
+          "family_title": "Coast guard incursions increase",
+          "family_mechanism": "Institutional",
+          "source_health": "historical_reference_not_live",
+          "sources": [
+            {
+              "url": "https://tsm.schar.gmu.edu/strait-snapshot-october-2026-update/",
+              "title": "Coast guard incursions increase",
+              "provider": "Taiwan Security Monitor",
+              "first_observed_at": "2026-10-31"
+            }
+          ],
+          "reviewed_direction": "not_assessed"
+        },
+        {
+          "evidence_key": "history:46f51de759c69cccce85",
+          "family_title": "Taiwan",
+          "family_mechanism": "Case-linked history; provisional association only",
+          "source_health": "not_event_verified",
+          "sources": [
+            {
+              "url": "https://www.gov.uk/foreign-travel-advice/taiwan",
+              "title": "Taiwan",
+              "provider": "official",
+              "first_observed_at": "2026-11-18T20:34:35Z"
+            }
+          ],
+          "reviewed_direction": "not_assessed"
+        }
+      ],
+      "input_sha256": "2f6c13a52f76ccd32d0eea06bd226fc5dfef25b9f2bc856a9a81109e933e5acd",
+      "model_generated_at": "2026-11-24T15:02:42.361014Z",
+      "cache_status": "fresh_inference"
+    },
+    "korea": {
+      "status": "provisional_complete",
+      "interpretations": [
+        {
+          "hypothesis_index": 0,
+          "meaning": "The border clash or major inter-Korean escalation hypothesis suggests that there has been a significant military confrontation between North and South Korea, potentially involving weapons launches or other aggressive actions.",
+          "discriminator": "Observation of satellite imagery showing active military movements or weapon launches near the border."
+        },
+        {
+          "hypothesis_index": 1,
+          "meaning": "The testing and political coercion hypothesis posits that the observed events are part of a series of tests or demonstrations of military capability, possibly as a form of political pressure or negotiation tactic, rather than an outright attack.",
+          "discriminator": "Analysis of communications intercepts indicating a planned sequence of tests or demonstrations rather than an immediate attack."
+        }
+      ],
+      "evaluations": [],
+      "evidence_notes": [
+        {
+          "evidence_key": "history:b7d94feb9c985aef27c8",
+          "observation": "IODA detected connectivity anomaly: country KP - This source claims to have detected a connectivity anomaly in North Korea, which could be related to military communications or other significant activities. Independent verification step: Cross-reference with other intelligence sources to confirm the anomaly and its pot",
+          "verification_step": "Cross-reference with other intelligence sources to confirm the anomaly and its potential connection to military activities or tests.",
+          "status": "unverified_source_title_lead"
+        },
+        {
+          "evidence_key": "dossier:1bffb3f7c49edb6fa702cf72",
+          "observation": "Multiple weapons launches in one month - This source claims there have been multiple weapons launches in North Korea within a single month. Independent verification step: Satellite imagery analysis to confirm the occurrence of weapons launches and their frequency.",
+          "verification_step": "Satellite imagery analysis to confirm the occurrence of weapons launches and their frequency.",
+          "status": "unverified_source_title_lead"
+        },
+        {
+          "evidence_key": "family:e773422e68943318b913",
+          "observation": "IODA detected connectivity anomaly: country KP - This source claims to have detected a connectivity anomaly in North Korea, which could be related to military communications or other significant activities. Independent verification step: Cross-reference with other intelligence sources to confirm the anomaly and its pot",
+          "verification_step": "Cross-reference with other intelligence sources to confirm the anomaly and its potential connection to military activities or tests.",
+          "status": "unverified_source_title_lead"
+        }
+      ],
+      "model_family": "phi-4-mini-instruct-q4km-local",
+      "interpretation_only": true,
+      "source_truth_not_verified": true,
+      "analyst_approved": false,
+      "attempts": 1,
+      "format_retry_succeeded": false,
+      "source_references": [
+        {
+          "evidence_key": "dossier:1bffb3f7c49edb6fa702cf72",
+          "family_title": "Multiple weapons launches in one month",
+          "family_mechanism": "Conventional",
+          "source_health": "historical_reference_not_live",
+          "sources": [
+            {
+              "url": "https://www.reuters.com/world/asia-pacific/north-korea-fires-unidentified-projectile-toward-sea-off-its-east-coast-seoul-2026-11-04/",
+              "title": "Multiple weapons launches in one month",
+              "provider": "Reuters",
+              "first_observed_at": "2026-11-04"
+            }
+          ],
+          "reviewed_direction": "not_assessed"
+        },
+        {
+          "evidence_key": "family:e773422e68943318b913",
+          "family_title": "iso:KP · connectivity / anomaly",
+          "family_mechanism": "internet_reachability",
+          "source_health": "current",
+          "sources": [
+            {
+              "url": "https://ioda.inetintel.cc.gatech.edu/",
+              "title": "IODA detected connectivity anomaly: country KP",
+              "provider": "ioda",
+              "first_observed_at": "2026-11-18T08:28:52+00:00"
+            },
+            {
+              "url": "https://ioda.inetintel.cc.gatech.edu/",
+              "title": "IODA detected connectivity anomaly: country KP",
+              "provider": "ioda",
+              "first_observed_at": "2026-11-18T23:34:05+00:00"
+            }
+          ],
+          "reviewed_direction": "not_assessed"
+        },
+        {
+          "evidence_key": "history:b7d94feb9c985aef27c8",
+          "family_title": "IODA detected connectivity anomaly: country KP",
+          "family_mechanism": "Case-linked history; provisional association only",
+          "source_health": "not_event_verified",
+          "sources": [
+            {
+              "url": "https://ioda.inetintel.cc.gatech.edu/",
+              "title": "IODA detected connectivity anomaly: country KP",
+              "provider": "ioda",
+              "first_observed_at": "2026-11-18T23:34:05Z"
+            }
+          ],
+          "reviewed_direction": "not_assessed"
+        }
+      ],
+      "input_sha256": "23d81d74d2238e9d13b1ead84eae0db3af72d2d972d1790dc96a9128da5b6608",
+      "model_generated_at": "2026-11-24T15:02:42.361014Z",
+      "cache_status": "fresh_inference"
+    },
+    "horn_ethiopia_kenya_moyale": {
+      "status": "provisional_complete",
+      "interpretations": [
+        {
+          "hypothesis_index": 0,
+          "meaning": "There is a significant movement of refugees across the Ethiopia–Kenya border, possibly due to civil conflict in Ethiopia.",
+          "discriminator": "Observe the actual number of refugees crossing the border compared to the UNHCR reports."
+        },
+        {
+          "hypothesis_index": 1,
+          "meaning": "The movement of people across the border may be due to localized conflict within Ethiopia, with civilians seeking safety without escalating to an interstate conflict.",
+          "discriminator": "Investigate the presence of conflict-related incidents within Ethiopia, specifically around Moyale, and compare with the refugee movement data."
+        }
+      ],
+      "evaluations": [],
+      "evidence_notes": [
+        {
+          "evidence_key": "dossier:573ea3cf0ee2775d0dd009f1",
+          "observation": "Compare the UNHCR reported numbers of refugees with actual counts at border crossings to verify the extent of cross-border movement claimed by UNHCR reports.",
+          "verification_step": "Cross-border refugee count verification.",
+          "status": "unverified_source_title_lead"
+        },
+        {
+          "evidence_key": "dossier:158a60e30077a96d4064ca6c",
+          "observation": "Assess the reported fighting around Ethiopian Moyale and its correlation with refugee movement data to determine if there is a direct link between conflict and refugee movement.",
+          "verification_step": "Correlation analysis between conflict reports and refugee movement.",
+          "status": "unverified_source_title_lead"
+        },
+        {
+          "evidence_key": "dossier:f99d9f308c505c10fd4e2bdf",
+          "observation": "Examine the Kenyan police's border security measures and their effectiveness in managing refugee influx compared to the reported numbers of refugees crossing the border.",
+          "verification_step": "Effectiveness of border security measures in managing refugee influx.",
+          "status": "unverified_source_title_lead"
+        }
+      ],
+      "model_family": "phi-4-mini-instruct-q4km-local",
+      "interpretation_only": true,
+      "source_truth_not_verified": true,
+      "analyst_approved": false,
+      "attempts": 1,
+      "format_retry_succeeded": false,
+      "source_references": [
+        {
+          "evidence_key": "dossier:158a60e30077a96d4064ca6c",
+          "family_title": "Fighting reported around Ethiopian Moyale",
+          "family_mechanism": "Conflict onset",
+          "source_health": "historical_reference_not_live",
+          "sources": [
+            {
+              "url": "https://www.unhcr.org/news/press-releases/unhcr-warns-growing-humanitarian-needs-thousands-flee-ethiopia-kenya",
+              "title": "Fighting reported around Ethiopian Moyale",
+              "provider": "UNHCR / Kenya News Agency",
+              "first_observed_at": "2026-10-22"
+            }
+          ],
+          "reviewed_direction": "not_assessed"
+        },
+        {
+          "evidence_key": "dossier:573ea3cf0ee2775d0dd009f1",
+          "family_title": "UNHCR reports substantial cross-border movement",
+          "family_mechanism": "Humanitarian AIBA",
+          "source_health": "historical_reference_not_live",
+          "sources": [
+            {
+              "url": "https://www.unhcr.org/news/press-releases/unhcr-warns-growing-humanitarian-needs-thousands-flee-ethiopia-kenya",
+              "title": "UNHCR reports substantial cross-border movement",
+              "provider": "UNHCR",
+              "first_observed_at": "2026-10-28"
+            }
+          ],
+          "reviewed_direction": "not_assessed"
+        },
+        {
+          "evidence_key": "dossier:f99d9f308c505c10fd4e2bdf",
+          "family_title": "Kenyan police announce border security measures",
+          "family_mechanism": "Institutional protection AIBA",
+          "source_health": "historical_reference_not_live",
+          "sources": [
+            {
+              "url": "https://www.kenyanews.go.ke/ig-kanja-assures-moyale-residents-of-security-as-ethiopia-conflict-displaces-thousands-into-kenya/",
+              "title": "Kenyan police announce border security measures",
+              "provider": "Kenya News Agency",
+              "first_observed_at": "2026-11-06"
+            }
+          ],
+          "reviewed_direction": "not_assessed"
+        }
+      ],
+      "input_sha256": "7a7262d3744ef31f3c68985bdfdc1b51a1b2ddc72704c6cf55e39f7f17b75b36",
+      "model_generated_at": "2026-11-24T15:02:42.361014Z",
+      "cache_status": "fresh_inference"
+    }
+  },
+  "summary": {
+    "cases": 10,
+    "reused": 0,
+    "new_provisional": 10,
+    "failed": 0
+  }
+}
