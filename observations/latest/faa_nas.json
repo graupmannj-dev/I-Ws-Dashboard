@@ -1,24 +1,32 @@
 {
   "active_ground_stop_airports": 0,
-  "affected_airport_records": 1,
+  "affected_airport_records": 2,
   "airports": [
     {
       "airport": "LGA",
       "ground_stop_object_present": false,
       "nas_event_reasons": {
-        "departureDelay": "WX:Wind"
+        "airportClosure": "!LGA 11/413 LGA AD AP CLSD EXC HEL 30MIN PPR 718-533-3700 2611240514-2611241100"
+      },
+      "national_stop_reason_in_source": false
+    },
+    {
+      "airport": "PNS",
+      "ground_stop_object_present": false,
+      "nas_event_reasons": {
+        "airportClosure": "!PNS 11/072 PNS AD AP CLSD EXC HEL OPS 2611240600-2611241100"
       },
       "national_stop_reason_in_source": false
     }
   ],
-  "airports_with_any_delay": 1,
-  "airports_with_any_nas_event": 1,
+  "airports_with_any_delay": 0,
+  "airports_with_any_nas_event": 2,
   "automatic_event_merges": 0,
   "changed_since_prior_observation": false,
-  "checked_at": "2026-11-24T00:08:50Z",
+  "checked_at": "2026-11-24T09:56:34Z",
   "cyberattack_evidence": false,
   "event_occurrence_as_reported_by_FAA_only": true,
-  "event_reason_objects_examined": 1,
+  "event_reason_objects_examined": 2,
   "forecast_probability": null,
   "geographic_scope": "United States",
   "hostile_actor_evidence": false,
@@ -31,11 +39,11 @@
   ],
   "military_warning_level_change": false,
   "monitored_airport_count": 5,
-  "monitored_airport_roster_sha256": "6ac626aa840bb8232dcbe294edd0fd18e72cd4507d5e0c29d87e591f8d6ada70",
+  "monitored_airport_roster_sha256": "1d5118d927556ce40bcf50211068ec3ffef7ccc5253d4330bf445f0445dce44e",
   "multiple_airports_not_independent_attribution": true,
   "national_event_confirmed_by_explicit_ATCSCC_order": false,
   "national_stop_airports": 0,
-  "observed_at": "2026-11-24T00:08:50Z",
+  "observed_at": "2026-11-24T09:56:34Z",
   "provisional_review_required": false,
   "schema": "aiba.faa-nas-systemic-disruption.v1",
   "source_family": "civil_air_traffic_management",
