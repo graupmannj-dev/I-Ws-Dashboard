@@ -73,6 +73,53 @@ class PhiSafetyTests(unittest.TestCase):
         self.assertEqual(len(msg["evidence_families"]),2)
         self.assertNotIn("source_url",json.dumps(msg))
         self.assertEqual(msg["case_id"],"taiwan")
+    def test_live_model_failure_is_not_a_successful_review(self):
+        from dashboard.semantic_ach import publish
+        from tests.test_semantic_ach import index
+        with tempfile.TemporaryDirectory() as tmp:
+            path=Path(tmp)/"hypotheses.json"
+            original=index()
+            path.write_text(json.dumps(original))
+            def fail(*_):
+                raise ValueError("Malformed or unsafe model response")
+            result=publish(tmp,api_key="local-loopback-only",model=MODEL,
+                           max_cases=1,runner=fail)
+            saved=json.loads(path.read_text())
+            receipt=json.loads((Path(tmp)/"semantic_ach.json").read_text())
+            self.assertEqual(result["failed"],1)
+            self.assertEqual(saved["hypotheses"][0]["semantic_review"]["status"],
+                             "model_or_validation_failed")
+            self.assertEqual(saved["hypotheses"][0]["balance"],original["hypotheses"][0]["balance"])
+            self.assertEqual(saved["hypotheses"][0]["families"],original["hypotheses"][0]["families"])
+            self.assertEqual(receipt["cases"]["taiwan"]["evaluations"],[])
+
+    def test_integration_with_site_preserves_signed_inputs_and_known_links(self):
+        from dashboard.semantic_ach import publish
+        from tests.test_semantic_ach import index
+        with tempfile.TemporaryDirectory() as tmp:
+            path=Path(tmp)/"hypotheses.json"
+            original=index()
+            path.write_text(json.dumps(original))
+            def fake(pkt,key,model):
+                response=answer(pkt)
+                return _validate(response,pkt)
+            result=publish(tmp,api_key="local-loopback-only",model=MODEL,
+                           max_cases=1,runner=fake)
+            after=json.loads(path.read_text())
+            case=after["hypotheses"][0]
+            review=case["semantic_review"]
+            self.assertEqual(result["processed"],1)
+            self.assertEqual(review["evaluations"],[])
+            self.assertFalse(review["analyst_approved"])
+            self.assertEqual(case["balance"],original["hypotheses"][0]["balance"])
+            self.assertEqual(case["families"],original["hypotheses"][0]["families"])
+            self.assertEqual(after["reviewed_hypotheses"],original["reviewed_hypotheses"])
+            self.assertTrue(all(note["evidence_key"] in
+                {ref["evidence_key"] for ref in review["source_references"]}
+                for note in review["evidence_notes"]))
+            self.assertTrue(all(source["url"].startswith("https://")
+                for ref in review["source_references"] for source in ref["sources"]))
+
     def test_initial_hypothesis_interpretation_is_one_time(self):
         cfg={"schema":"cairn.hypothesis-reviews.v1","reviews":[],
           "analyst_hypotheses":[{"id":"analyst-abc","case_id":"taiwan",
