@@ -41,10 +41,45 @@ class PhiSafetyTests(unittest.TestCase):
         result=ask_phi(p,transport=transport)
         self.assertEqual(len(calls),2)
         self.assertEqual([x["max_tokens"] for x in calls],[1050,1400])
+        self.assertEqual([x["response_format"]["json_schema"]["schema"]
+                          ["properties"]["evidence_notes"]["maxItems"]
+                          for x in calls],[6,3])
         self.assertEqual(calls[0]["messages"][1],calls[1]["messages"][1])
         self.assertTrue(result["format_retry_succeeded"])
         self.assertEqual(result["attempts"],2)
         self.assertEqual(result["evaluations"],[])
+
+    def test_overlong_notes_fail_closed_if_schema_is_ignored(self):
+        p=packet()
+        v=answer(p)
+        v["evidence_notes"]=v["evidence_notes"]*7
+        calls=[]
+        def transport(payload):
+            calls.append(json.loads(json.dumps(payload)))
+            return {"choices":[{"finish_reason":"stop",
+                "message":{"content":json.dumps(v)}}]}
+        with self.assertRaises(PhiValidationError) as ctx:
+            ask_phi(p,transport=transport)
+        self.assertEqual(ctx.exception.code,"invalid_note_count")
+        self.assertEqual(len(calls),2)
+        self.assertEqual(calls[-1]["response_format"]["json_schema"]["schema"]
+                         ["properties"]["evidence_notes"]["maxItems"],3)
+
+    def test_retry_note_cap_does_not_mutate_schema_for_next_case(self):
+        p=packet()
+        calls=[]
+        def broken(payload):
+            return {"choices":[{"finish_reason":"length",
+                "message":{"content":"{"}}]}
+        with self.assertRaises(PhiValidationError):
+            ask_phi(p,transport=broken)
+        def valid(payload):
+            calls.append(payload)
+            return {"choices":[{"finish_reason":"stop",
+                "message":{"content":json.dumps(answer(p))}}]}
+        ask_phi(p,transport=valid)
+        self.assertEqual(calls[0]["response_format"]["json_schema"]["schema"]
+                         ["properties"]["evidence_notes"]["maxItems"],6)
 
     def test_hallucinated_source_id_fails_closed_without_retry(self):
         p=packet()
@@ -92,6 +127,8 @@ class PhiSafetyTests(unittest.TestCase):
         p=packet()
         def transport(payload):
             self.assertEqual(payload["response_format"]["type"],"json_schema")
+            self.assertEqual(payload["response_format"]["json_schema"]["schema"]
+                             ["properties"]["evidence_notes"]["maxItems"],6)
             self.assertEqual(payload["model"],"local")
             self.assertIn("Do not assign evidence direction",payload["messages"][0]["content"])
             self.assertNotIn("Authorization",json.dumps(payload))
