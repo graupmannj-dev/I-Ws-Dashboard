@@ -411,7 +411,7 @@ function semanticSection(c){
     (localPhi?'Local Phi · hypothesis interpretation':'AI-assisted hypothesis comparison')+'</h3>'+
     '<span class="pill context">Provisional · analyst review required</span></div>'+
     '<p>'+(localPhi?
-       'Offline, source-title screening only. No evidence direction, independent corroboration or event truth is established by Phi. The model cannot modify approved ACH evidence.':
+       'On-runner, source-title screening only (not independent source verification). No evidence direction, independent corroboration or event truth is established by Phi. The model cannot modify approved ACH evidence.':
        'Candidate interpretations and evidence comparisons. These do not change reviewed evidence direction.')+'</p>'+
     html+(localPhi?'<details class="semantic-hypothesis"><summary>Source-linked verification leads ('+
        notes.length+')</summary><ul class="semantic-verdicts">'+leads+'</ul></details>':'')+
