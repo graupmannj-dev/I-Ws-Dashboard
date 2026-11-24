@@ -330,12 +330,32 @@ jobs:
           AIBA_LAYER_FEED_URL: ${{ vars.AIBA_LAYER_FEED_URL || 'layers.json' }}
       - name: Publish no-paid-API semantic fallback receipt
         run: python dashboard/semantic_ach.py --site _site --max-cases 40
+        # Never permit an accidentally configured hosted API to run in CAIRN publishing.
+        env:
+          OPENAI_API_KEY: ''
+          CAIRN_SEMANTIC_MODEL: ''
       - name: Generate provisional Phi interpretation and source verification leads locally
         if: github.ref == 'refs/heads/main'
         continue-on-error: true
         timeout-minutes: 24
         shell: bash
-        run: bash scripts/run_cairn_phi.sh --site _site --max-cases 10
+        run: |
+          set -euo pipefail
+          backup="$RUNNER_TEMP/cairn-phi-fallback"
+          mkdir -p "$backup"
+          cp _site/hypotheses.json "$backup/hypotheses.json"
+          cp _site/semantic_ach.json "$backup/semantic_ach.json"
+          # Bound inference inside the step timeout so a failure can restore
+          # a complete valid fallback before downstream Pages publication.
+          if ! timeout --signal=TERM --kill-after=15s 19m \
+              bash scripts/run_cairn_phi.sh --site _site --max-cases 10; then
+            cp "$backup/hypotheses.json" _site/hypotheses.json
+            cp "$backup/semantic_ach.json" _site/semantic_ach.json
+            echo "::warning::Local Phi unavailable; restored coherent no-inference publication."
+          fi
+        env:
+          OPENAI_API_KEY: ''
+          CAIRN_SEMANTIC_MODEL: ''
       - name: Preserve semantic interpretation audit artifact
         if: always()
         uses: actions/upload-artifact@v4
