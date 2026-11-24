@@ -1,48 +1,24 @@
 {
   "active_ground_stop_airports": 0,
-  "affected_airport_records": 4,
+  "affected_airport_records": 1,
   "airports": [
     {
-      "airport": "DJT",
+      "airport": "LGA",
       "ground_stop_object_present": false,
       "nas_event_reasons": {
-        "departureDelay": "VOL: ZJX"
-      },
-      "national_stop_reason_in_source": false
-    },
-    {
-      "airport": "EWR",
-      "ground_stop_object_present": false,
-      "nas_event_reasons": {
-        "departureDelay": "OTHER: AIRSPACE SHARING WITH N90"
-      },
-      "national_stop_reason_in_source": false
-    },
-    {
-      "airport": "JFK",
-      "ground_stop_object_present": false,
-      "nas_event_reasons": {
-        "departureDelay": "TM Initiatives:Metering:WX"
-      },
-      "national_stop_reason_in_source": false
-    },
-    {
-      "airport": "SRQ",
-      "ground_stop_object_present": false,
-      "nas_event_reasons": {
-        "departureDelay": "TM Initiatives:DSP:VOL"
+        "departureDelay": "WX:Wind"
       },
       "national_stop_reason_in_source": false
     }
   ],
-  "airports_with_any_delay": 4,
-  "airports_with_any_nas_event": 4,
+  "airports_with_any_delay": 1,
+  "airports_with_any_nas_event": 1,
   "automatic_event_merges": 0,
   "changed_since_prior_observation": false,
-  "checked_at": "2026-11-22T22:14:02Z",
+  "checked_at": "2026-11-24T00:08:50Z",
   "cyberattack_evidence": false,
   "event_occurrence_as_reported_by_FAA_only": true,
-  "event_reason_objects_examined": 4,
+  "event_reason_objects_examined": 1,
   "forecast_probability": null,
   "geographic_scope": "United States",
   "hostile_actor_evidence": false,
@@ -54,12 +30,12 @@
     "The sensor makes no inference of hostile intent or cyberattack."
   ],
   "military_warning_level_change": false,
-  "monitored_airport_count": 10,
-  "monitored_airport_roster_sha256": "dc387a9f1ac716d553bec6863d7e1b9486a30212de4221ba305e5d2cb704b301",
+  "monitored_airport_count": 5,
+  "monitored_airport_roster_sha256": "6ac626aa840bb8232dcbe294edd0fd18e72cd4507d5e0c29d87e591f8d6ada70",
   "multiple_airports_not_independent_attribution": true,
   "national_event_confirmed_by_explicit_ATCSCC_order": false,
   "national_stop_airports": 0,
-  "observed_at": "2026-11-22T22:14:02Z",
+  "observed_at": "2026-11-24T00:08:50Z",
   "provisional_review_required": false,
   "schema": "aiba.faa-nas-systemic-disruption.v1",
   "source_family": "civil_air_traffic_management",
