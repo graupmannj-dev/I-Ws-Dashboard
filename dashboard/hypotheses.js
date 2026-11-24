@@ -508,11 +508,22 @@ function validPhiSidecarRow(c, row, now=Date.now()){
   if(!Array.isArray(refs)||!Array.isArray(row.evidence_notes)||
      row.evidence_notes.length>6)return false;
   const keys=new Set();
+  const publishedUrls=new Set();
+  for(const f of c.families||[])
+    for(const source of f.sources||[])
+      if(source&&source.source_url)publishedUrls.add(source.source_url);
+  for(const source of c.automated_screen?.historical_sources||[])
+    if(source&&source.source_url)publishedUrls.add(source.source_url);
+  for(const entry of c.analyst_hypotheses||[])
+    for(const f of entry.initial_backfill?.source_references||[])
+      for(const source of f.sources||[])
+        if(source&&source.url)publishedUrls.add(source.url);
   for(const ref of refs){
     if(!ref||typeof ref.evidence_key!=="string"||
        !Array.isArray(ref.sources))return false;
     keys.add(ref.evidence_key);
-    if(ref.sources.some(s=>!s||typeof s.url!=="string"||!safeUrl(s.url)))return false;
+    if(ref.sources.some(s=>!s||typeof s.url!=="string"||
+                          !safeUrl(s.url)||!publishedUrls.has(s.url)))return false;
   }
   if(row.evidence_notes.some(n=>!n||
        !keys.has(n.evidence_key)||
