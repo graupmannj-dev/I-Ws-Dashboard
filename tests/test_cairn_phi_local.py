@@ -125,8 +125,8 @@ class PhiSafetyTests(unittest.TestCase):
         excerpt=("The original maritime notice describes a scheduled "
                  "exercise period but does not verify a hostile attack.")
         grounded={"source_passages":[{
-            "passage_id":"passage:official1","evidence_key":"source:a",
-            "source_url":"https://www.gov.uk/government/news/example-maritime-notice",
+            "passage_id":"passage:"+"a"*24,"evidence_key":"source:a",
+            "source_url":"https://example.org/a",
             "source_title":"Original maritime bulletin","excerpt":excerpt,
             "source_body_sha256":"b"*64,
             "inspected_at":"2026-11-24T15:00:00Z",
@@ -134,7 +134,7 @@ class PhiSafetyTests(unittest.TestCase):
             "first_observed_at":"2026-11-24T14:30:00Z"}]}
         response=answer(p)
         response["evidence_notes"][0]["basis"]="inspected_passage"
-        response["evidence_notes"][0]["passage_id"]="passage:official1"
+        response["evidence_notes"][0]["passage_id"]="passage:"+"a"*24
         def transport(payload):
             system=payload["messages"][0]["content"]
             user=payload["messages"][1]["content"]
@@ -148,7 +148,7 @@ class PhiSafetyTests(unittest.TestCase):
         self.assertEqual(out["grounding_mode"],"ephemeral_original_source")
         note=out["evidence_notes"][0]
         self.assertEqual(note["status"],"unverified_original_source_lead")
-        self.assertEqual(note["passage_id"],"passage:official1")
+        self.assertEqual(note["passage_id"],"passage:"+"a"*24)
         self.assertEqual(note["source_body_sha256"],"b"*64)
         self.assertNotIn(excerpt,json.dumps(out))
         self.assertEqual(out["evaluations"],[])
@@ -157,9 +157,10 @@ class PhiSafetyTests(unittest.TestCase):
     def test_fake_original_passage_reference_is_rejected_without_retry(self):
         p=packet()
         grounded={"source_passages":[{
-            "passage_id":"passage:good","evidence_key":"source:a",
-            "source_url":"https://www.gov.uk/government/news/example-maritime-notice",
+            "passage_id":"passage:"+"a"*24,"evidence_key":"source:a",
+            "source_url":"https://example.org/a",
             "source_body_sha256":"c"*64,
+            "excerpt":"The original notice contains a dated maritime restriction for safety.",
             "inspected_at":"2026-11-24T15:00:00Z"}]}
         response=answer(p)
         response["evidence_notes"][0]["basis"]="inspected_passage"
@@ -173,6 +174,22 @@ class PhiSafetyTests(unittest.TestCase):
             ask_phi(p,transport=transport,grounder=lambda _:grounded)
         self.assertEqual(ctx.exception.code,"invalid_passage_id")
         self.assertEqual(len(calls),1)
+
+    def test_forged_grounding_url_cannot_reach_model(self):
+        p=packet()
+        forged={"source_passages":[{
+            "passage_id":"passage:"+"c"*24,
+            "evidence_key":"source:a",
+            "source_url":"https://attacker.example/mismatched-source",
+            "source_body_sha256":"d"*64,
+            "excerpt":"An apparently authoritative but unrelated original-source claim.",
+            "inspected_at":"2026-11-24T15:00:00Z",
+        }]}
+        def forbidden(payload):
+            raise AssertionError("Untrusted original text was not screened")
+        with self.assertRaises(PhiValidationError) as ctx:
+            ask_phi(p,transport=forbidden,grounder=lambda _:forged)
+        self.assertEqual(ctx.exception.code,"invalid_grounding_packet")
 
     def test_title_only_fallback_cannot_claim_inspected_passage(self):
         p=packet()
