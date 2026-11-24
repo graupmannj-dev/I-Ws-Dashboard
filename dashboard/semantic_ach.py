@@ -265,7 +265,11 @@ def publish(site, *, api_key=None, model=None, max_cases=MAX_CASES, clock=None, 
     result=evaluate(payload,api_key=api_key,model=model,max_cases=max_cases,clock=clock,runner=runner)
     (site/"semantic_ach.json").write_text(json.dumps(result,indent=2,ensure_ascii=False)+"\n")
     for case in payload["hypotheses"]:
+        # Browser-side Phi results are never trusted merely because their case
+        # ID matches. The server stamps the exact bounded source input digest.
+        case["semantic_input_sha256"]=digest(evidence_packet(case))
         case["semantic_review"]=result["cases"].get(case["id"],{"status":"unavailable"})
+    payload["phi_async_enabled"]=True
     # Neither reviewed ordinal balance nor underlying signed reviews changes.
     if not all(case.get("balance")==original.get("balance") for case,original in
                zip(payload["hypotheses"],json.loads(path.read_text())["hypotheses"])):
