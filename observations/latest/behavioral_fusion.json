@@ -3,19 +3,18 @@
   "automated_severity_changes": 0,
   "collection_coverage": {
     "amsa": {
-      "age_hours": 4.88,
+      "age_hours": 8.07,
       "checked_at": "2026-11-24T10:53:08Z",
-      "first_provider_baseline": false,
-      "missingness": "provider_bounded_not_exhaustive",
+      "missingness": "not_measured_not_zero",
       "mode": "amsa",
       "provider_status": "collected",
       "snapshot_at": "2026-11-24T10:53:08Z",
       "source_scope": "AMSA NAVAREA X only",
-      "status": "current",
+      "status": "stale_or_unavailable",
       "truncated_or_partial": false
     },
     "bmkg_nowcast": {
-      "age_hours": 1.84,
+      "age_hours": 5.03,
       "checked_at": "2026-11-24T13:56:02Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -27,7 +26,7 @@
       "truncated_or_partial": true
     },
     "bmkg_quake": {
-      "age_hours": 1.84,
+      "age_hours": 5.03,
       "checked_at": "2026-11-24T13:56:02Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -39,7 +38,7 @@
       "truncated_or_partial": true
     },
     "cbp_wait": {
-      "age_hours": 1.84,
+      "age_hours": 5.03,
       "checked_at": "2026-11-24T13:56:02Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -51,19 +50,19 @@
       "truncated_or_partial": true
     },
     "commercial": {
-      "age_hours": 20.44,
-      "checked_at": "2026-11-23T19:19:56Z",
+      "age_hours": 0.0,
+      "checked_at": "2026-11-24T18:57:32Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
       "mode": "commercial",
       "provider_status": "collected",
-      "snapshot_at": "2026-11-23T19:19:56Z",
+      "snapshot_at": "2026-11-24T18:57:32Z",
       "source_scope": "selected maritime/air-cargo/war-risk press and syndication",
       "status": "current",
       "truncated_or_partial": false
     },
     "coops": {
-      "age_hours": 1.84,
+      "age_hours": 5.03,
       "checked_at": "2026-11-24T13:56:02Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -75,7 +74,7 @@
       "truncated_or_partial": true
     },
     "eonet": {
-      "age_hours": 1.84,
+      "age_hours": 5.03,
       "checked_at": "2026-11-24T13:56:02Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -87,7 +86,7 @@
       "truncated_or_partial": true
     },
     "imd_in": {
-      "age_hours": 1.84,
+      "age_hours": 5.03,
       "checked_at": "2026-11-24T13:56:02Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -99,7 +98,7 @@
       "truncated_or_partial": true
     },
     "inmet_br": {
-      "age_hours": 1.84,
+      "age_hours": 5.03,
       "checked_at": "2026-11-24T13:56:02Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -111,43 +110,40 @@
       "truncated_or_partial": true
     },
     "ioda": {
-      "age_hours": 4.88,
+      "age_hours": 8.07,
       "checked_at": "2026-11-24T10:53:08Z",
-      "first_provider_baseline": false,
-      "missingness": "provider_bounded_not_exhaustive",
+      "missingness": "not_measured_not_zero",
       "mode": "ioda",
       "provider_status": "collected",
       "snapshot_at": "2026-11-24T10:53:08Z",
       "source_scope": "IODA country events (first 100 of first page, 4-hour query)",
-      "status": "current",
+      "status": "stale_or_unavailable",
       "truncated_or_partial": false
     },
     "live_airspace": {
-      "age_hours": 0.0,
+      "age_hours": 3.19,
       "checked_at": "2026-11-24T15:46:08Z",
-      "first_provider_baseline": false,
-      "missingness": "partial_sampling_not_worldwide_exhaustive",
+      "missingness": "not_measured_not_zero",
       "mode": "live_airspace",
       "provider_status": "partial",
       "snapshot_at": "2026-11-24T15:46:08Z",
       "source_scope": "FAA temporary flight restrictions: United States only",
-      "status": "current_partial",
+      "status": "stale_or_unavailable",
       "truncated_or_partial": true
     },
     "live_maritime": {
-      "age_hours": 0.0,
+      "age_hours": 3.19,
       "checked_at": "2026-11-24T15:46:08Z",
-      "first_provider_baseline": false,
-      "missingness": "partial_sampling_not_worldwide_exhaustive",
+      "missingness": "not_measured_not_zero",
       "mode": "live_maritime",
       "provider_status": "partial",
       "snapshot_at": "2026-11-24T15:46:08Z",
       "source_scope": "Danish Maritime Authority Niord notices: regional Baltic/North Sea",
-      "status": "current_partial",
+      "status": "stale_or_unavailable",
       "truncated_or_partial": true
     },
     "nga": {
-      "age_hours": 4.88,
+      "age_hours": 8.07,
       "checked_at": "2026-11-24T10:53:08Z",
       "missingness": "not_measured_not_zero",
       "mode": "nga",
@@ -158,7 +154,7 @@
       "truncated_or_partial": false
     },
     "nws": {
-      "age_hours": 1.84,
+      "age_hours": 5.03,
       "checked_at": "2026-11-24T13:56:02Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -170,7 +166,7 @@
       "truncated_or_partial": true
     },
     "official": {
-      "age_hours": 5.82,
+      "age_hours": 9.01,
       "checked_at": "2026-11-24T09:57:07Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -182,7 +178,7 @@
       "truncated_or_partial": false
     },
     "ons_br": {
-      "age_hours": 1.84,
+      "age_hours": 5.03,
       "checked_at": "2026-11-24T13:56:02Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -194,7 +190,7 @@
       "truncated_or_partial": true
     },
     "ripe": {
-      "age_hours": 1.84,
+      "age_hours": 5.03,
       "checked_at": "2026-11-24T13:56:02Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -206,7 +202,7 @@
       "truncated_or_partial": false
     },
     "ris_bgp": {
-      "age_hours": 1.84,
+      "age_hours": 5.03,
       "checked_at": "2026-11-24T13:56:02Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -218,7 +214,7 @@
       "truncated_or_partial": true
     },
     "saws_za": {
-      "age_hours": 1.84,
+      "age_hours": 5.03,
       "checked_at": "2026-11-24T13:56:02Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -230,7 +226,7 @@
       "truncated_or_partial": true
     },
     "sg_mpa": {
-      "age_hours": 1.84,
+      "age_hours": 5.03,
       "checked_at": "2026-11-24T13:56:02Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -242,7 +238,7 @@
       "truncated_or_partial": true
     },
     "swpc": {
-      "age_hours": 1.84,
+      "age_hours": 5.03,
       "checked_at": "2026-11-24T13:56:02Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -254,7 +250,7 @@
       "truncated_or_partial": false
     },
     "tw_power": {
-      "age_hours": 1.84,
+      "age_hours": 5.03,
       "checked_at": "2026-11-24T13:56:02Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -266,7 +262,7 @@
       "truncated_or_partial": true
     },
     "uk_tenders": {
-      "age_hours": 1.84,
+      "age_hours": 5.03,
       "checked_at": "2026-11-24T13:56:02Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -278,7 +274,7 @@
       "truncated_or_partial": true
     },
     "usace": {
-      "age_hours": 1.84,
+      "age_hours": 5.03,
       "checked_at": "2026-11-24T13:56:02Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -290,7 +286,7 @@
       "truncated_or_partial": true
     },
     "usgs": {
-      "age_hours": 1.84,
+      "age_hours": 5.03,
       "checked_at": "2026-11-24T13:56:02Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -302,7 +298,7 @@
       "truncated_or_partial": false
     },
     "watchlist": {
-      "age_hours": 5.82,
+      "age_hours": 9.01,
       "checked_at": "2026-11-24T09:57:07Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -314,7 +310,7 @@
       "truncated_or_partial": false
     },
     "wiki_edits": {
-      "age_hours": 1.84,
+      "age_hours": 5.03,
       "checked_at": "2026-11-24T13:56:02Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -329,38 +325,39 @@
   "discovery_visibility": {
     "exact_geography_match_required_for_cross_family": true,
     "latest_initial_baseline": false,
-    "latest_registry_newly_observed_count": 1,
-    "latest_registry_record_count": 802,
-    "latest_unlocated_record_count": 577,
+    "latest_registry_newly_observed_count": 13,
+    "latest_registry_record_count": 696,
+    "latest_unlocated_record_count": 519,
     "new_or_collocated_not_same_as_verified_threat": true,
     "new_this_collection_required_for_cross_family_nomination": true,
     "recent_observations_sampled": 24,
     "recent_source_families": {
-      "airspace_restriction": 12,
-      "commercial_media": 7,
-      "internet_reachability": 216,
+      "airspace_restriction": 11,
+      "commercial_media": 19,
+      "internet_reachability": 215,
       "maritime_restriction": 138,
       "protective_notice": 2
     },
-    "recent_unique_record_count_72h": 375,
-    "recent_unlocated_count_72h": 118,
+    "recent_unique_record_count_72h": 385,
+    "recent_unlocated_count_72h": 130,
     "schema": "aiba.behavioral-discovery-visibility.v1",
     "shared_exact_geography_keys_across_behavior_families": 0,
     "source_coverage_is_globally_complete": false
   },
   "forecast_probability": null,
   "gdelt_context": "separate_analytical_stream_not_a_gate_or_confirmation",
-  "generated_at": "2026-11-24T15:46:13Z",
+  "generated_at": "2026-11-24T18:57:34Z",
   "geographic_scope": "source_declared_only",
   "history_diagnostics": {
     "excluded_observations": {
-      "outside_asof_window": 18,
-      "published_after_first_observed": 39,
-      "unsupported_family": 1422
+      "old_source_publication": 1,
+      "outside_asof_window": 40,
+      "published_after_first_observed": 37,
+      "unsupported_family": 1402
     },
-    "history_files_examined": 37,
+    "history_files_examined": 36,
     "lookback_hours": 72,
-    "recent_unique_records": 375
+    "recent_unique_records": 385
   },
   "limit_notes": [
     "No automated threat warning. These are unreviewed investigatory leads.",
@@ -369,35 +366,435 @@
     "Unlocated records cannot produce automatic geographic convergence.",
     "Unavailable collection is not evidence of no threatening activity."
   ],
-  "new_single_source_count_total": 1,
+  "new_single_source_count_total": 12,
   "new_single_source_leads": [
     {
-      "evidence_class": "official_notice",
-      "first_observed_at": "2026-11-24T15:46:13Z",
+      "evidence_class": "media_mention",
+      "first_observed_at": "2026-11-24T18:57:34Z",
       "geography": {
-        "geometry_sha256_prefix": "c84ae294afeb4711391b8b92",
-        "geometry_type": "MultiPolygon",
-        "key": "source-footprint:c84ae294afeb4711391b8b92",
-        "kind": "source_notice_footprint",
-        "label": "Official MultiPolygon notice area",
+        "key": null,
+        "kind": "unlocated",
+        "label": null,
         "latitude": null,
         "longitude": null,
-        "precision": "provider_defined_notice_boundary_not_event_point",
+        "precision": "no_source_verified_geography",
         "verified_iso": false
       },
-      "information_root": "faa:6/9674:0:0",
+      "information_root": "commercial:bc4f6f4e2dfe85240676",
       "meaning": "Observation novelty, not evidence of impending violence.",
-      "observation_id": "beh:5cfa16e9cf08af1c3c195404d11b",
-      "requires_geolocation": false,
-      "source_family": "airspace_restriction",
-      "source_published_at": null,
-      "source_url": "https://tfr.faa.gov/6_9674.html",
+      "observation_id": "beh:3024037ce446ce8266b344ebbce2",
+      "requires_geolocation": true,
+      "source_family": "commercial_media",
+      "source_published_at": "2026-11-23T20:11:00Z",
+      "source_url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNQnE2d3pYUnFPOGNIdEJ6MUhQNkdVWkp4SnJYLXV1ejN1Mkc4b0JXWkdKYmxjRUJOZzFzZFROOE9HWTF3bl91YkR4SmhOaGNCd0RQSm9XOC1jaVVDajRlelI3dUtGVDBYX012d2JjUEQwOGMzNmpza1NmUm9PWDJJZmRpQkNXTEt6MTRXcWM3RkxXMXp6d3hUckNTcl9vT2RqNm1MSEJGcjRhdnNBOWtSdVV3?oc=5",
       "status": "single_source_unreviewed",
-      "title": "FAA TFR 6/9674 · KEEWATIN, MN, Wednesday, November 25, 2026 UTC"
+      "title": "Op-Ed: Why the UN's Shipping Agency Must Adopt Its Climate Agreement - The Maritime Executive"
+    },
+    {
+      "evidence_class": "media_mention",
+      "first_observed_at": "2026-11-24T18:57:34Z",
+      "geography": {
+        "key": null,
+        "kind": "unlocated",
+        "label": null,
+        "latitude": null,
+        "longitude": null,
+        "precision": "no_source_verified_geography",
+        "verified_iso": false
+      },
+      "information_root": "commercial:4fba6ce67726ab073f77",
+      "meaning": "Observation novelty, not evidence of impending violence.",
+      "observation_id": "beh:4828911e5d83583c9008b287ada3",
+      "requires_geolocation": true,
+      "source_family": "commercial_media",
+      "source_published_at": "2026-11-24T11:23:27Z",
+      "source_url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPT1VNMVh4VUdQZzk3NHNYMnp4VjJNYjRiUnVHTmRVbkpOaTM0V2Y1S1JxZFNfOGJLWWRNTE9FZHJETWNCeXJKZFhVX1pRM1c2VWVzRmhNSmU3Ukx1V3FvWGRsbzhsUENPZF93cGpwUE0zbkhkUTlTZXB4OE8tWFVTSnpGb2w4Z3gzSzg0cnR1emtNT2EwUVowSEJsYnJtNzhYSWE3R0x6d2tCMHFIdnVOS0RtNFpVQQ?oc=5",
+      "status": "single_source_unreviewed",
+      "title": "American Airlines Cargo looks forward to winter network adjustements - Air Cargo News"
+    },
+    {
+      "evidence_class": "media_mention",
+      "first_observed_at": "2026-11-24T18:57:34Z",
+      "geography": {
+        "key": null,
+        "kind": "unlocated",
+        "label": null,
+        "latitude": null,
+        "longitude": null,
+        "precision": "no_source_verified_geography",
+        "verified_iso": false
+      },
+      "information_root": "commercial:581a6a18e9ac64c8eedb",
+      "meaning": "Observation novelty, not evidence of impending violence.",
+      "observation_id": "beh:4cff1b3a8972c51811ab90d993b8",
+      "requires_geolocation": true,
+      "source_family": "commercial_media",
+      "source_published_at": "2026-11-23T20:50:00Z",
+      "source_url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPSnN6N19tdXpCUkRVNm9EVjJIZGl3U2NiTnR0aXl1OHc5T2o3QzMtYjAxLTNrZVpKMC04VUE4c1g1U1liNzZuM0VWYU5uWmVwNEt6SXB1ZzBfZGc0eHZ0R3NyWjlvQ0pfUHVNSGdxN25WM1g4UTRVSGVMM3ExN3R4SjU2LU5EVTB5WTRlNS1nZnhCb2hWb29sZg?oc=5",
+      "status": "single_source_unreviewed",
+      "title": "Russia's Kaliningrad Exclave Survives Through Shipping - The Maritime Executive"
+    },
+    {
+      "evidence_class": "media_mention",
+      "first_observed_at": "2026-11-24T18:57:34Z",
+      "geography": {
+        "key": null,
+        "kind": "unlocated",
+        "label": null,
+        "latitude": null,
+        "longitude": null,
+        "precision": "no_source_verified_geography",
+        "verified_iso": false
+      },
+      "information_root": "commercial:21b739b7a2bc66600452",
+      "meaning": "Observation novelty, not evidence of impending violence.",
+      "observation_id": "beh:502bd6a3aac358f6cfb66ddc3674",
+      "requires_geolocation": true,
+      "source_family": "commercial_media",
+      "source_published_at": "2026-11-24T00:29:45Z",
+      "source_url": "https://maritime-executive.com/article/shipping-corporation-of-india-opens-tenders-for-3b-fleet-expansion",
+      "status": "single_source_unreviewed",
+      "title": "Shipping Corporation of India Opens Tenders for $3B Fleet Expansion"
+    },
+    {
+      "evidence_class": "media_mention",
+      "first_observed_at": "2026-11-24T18:57:34Z",
+      "geography": {
+        "key": null,
+        "kind": "unlocated",
+        "label": null,
+        "latitude": null,
+        "longitude": null,
+        "precision": "no_source_verified_geography",
+        "verified_iso": false
+      },
+      "information_root": "commercial:b82a050a190b3ca60061",
+      "meaning": "Observation novelty, not evidence of impending violence.",
+      "observation_id": "beh:50c5b6f9798598bea5f7f929f435",
+      "requires_geolocation": true,
+      "source_family": "commercial_media",
+      "source_published_at": "2026-11-24T04:55:00Z",
+      "source_url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPVV9fQUt2WThTdWMydkFJQXpCTmVXM0ZJT3RHSWZhcUhncHBIYV9zVkZ2bjBMQkxZRk9fYjBpSmllRDl5WEl3MmR0UTh5azU0SWV5dXJVVHFfRXNIVnltbUxDVFZkbkdxRVBOMXFETWlHUjJVWFcwcnh5MS1xTG9JQ3B2UUpjWjExbnMtUUlFN3NvcF9FdEk0N09fRzYxdVhlaWFiR1ZIN2Q2OUE?oc=5",
+      "status": "single_source_unreviewed",
+      "title": "SHI, Tesser, NTNU and DNV Sign MOU to Develop Nuclear-Powered Vessel - The Maritime Executive"
+    },
+    {
+      "evidence_class": "media_mention",
+      "first_observed_at": "2026-11-24T18:57:34Z",
+      "geography": {
+        "key": null,
+        "kind": "unlocated",
+        "label": null,
+        "latitude": null,
+        "longitude": null,
+        "precision": "no_source_verified_geography",
+        "verified_iso": false
+      },
+      "information_root": "commercial:9b0c4f853f13297598b7",
+      "meaning": "Observation novelty, not evidence of impending violence.",
+      "observation_id": "beh:681af86ae4b8ba0fcceeecc66f16",
+      "requires_geolocation": true,
+      "source_family": "commercial_media",
+      "source_published_at": "2026-11-24T04:55:00Z",
+      "source_url": "https://maritime-executive.com/article/shi-tesser-ntnu-and-dnv-sign-mou-to-develop-nuclear-powered-vessel",
+      "status": "single_source_unreviewed",
+      "title": "SHI, Tesser, NTNU and DNV Sign MOU to Develop Nuclear-Powered Vessel"
+    },
+    {
+      "evidence_class": "media_mention",
+      "first_observed_at": "2026-11-24T18:57:34Z",
+      "geography": {
+        "key": null,
+        "kind": "unlocated",
+        "label": null,
+        "latitude": null,
+        "longitude": null,
+        "precision": "no_source_verified_geography",
+        "verified_iso": false
+      },
+      "information_root": "commercial:01b289f9d7e37aa5e700",
+      "meaning": "Observation novelty, not evidence of impending violence.",
+      "observation_id": "beh:b3f03732f8186ed3481c7c7f1549",
+      "requires_geolocation": true,
+      "source_family": "commercial_media",
+      "source_published_at": "2026-11-24T06:33:43Z",
+      "source_url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNSkZNUjgySW5MYWRmZjNacnQ0X1l0cVROcTF6eGNSRFNoeDJiVmdvZ1FHMi1MZ3hxNS1LeDhKVUg2TnVJZHd4VVZTV3Q5QU11dTltLU9Ja05iY1pKUXAtdkhSVlZPU0dNNzVPckUtNHdlWS1qeGl1VmFZS1dxU1J4SjY1WUlwTlFYdTdVVnhzQUprUQ?oc=5",
+      "status": "single_source_unreviewed",
+      "title": "War Risk Insurance England: Claims and Sanctions - Global Advisory Experts"
+    },
+    {
+      "evidence_class": "media_mention",
+      "first_observed_at": "2026-11-24T18:57:34Z",
+      "geography": {
+        "key": null,
+        "kind": "unlocated",
+        "label": null,
+        "latitude": null,
+        "longitude": null,
+        "precision": "no_source_verified_geography",
+        "verified_iso": false
+      },
+      "information_root": "commercial:6b85f23488703e078b13",
+      "meaning": "Observation novelty, not evidence of impending violence.",
+      "observation_id": "beh:b894c41d4610925448a7511948da",
+      "requires_geolocation": true,
+      "source_family": "commercial_media",
+      "source_published_at": "2026-11-24T13:04:25Z",
+      "source_url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQQ0lVMFJCOXhiaDQtNldMUmRmcTAwLTBBQV9TaFBsdDhENnBJTmlJelFfQnJ1UzNfTE9TaC1KUWJYMk5EYmhMdFJualh3dmxQajFocWQzM09LNi13QnN0WnRpT01taENJVjdtX2ZZMEM4aDUxZlJUcV9UZGtaVjRpZi1fbGpLRHpicEJHMXZGQk9tYUl6LXNLVnBzZlk?oc=5",
+      "status": "single_source_unreviewed",
+      "title": "Gard Club highlights insurance limitations for war-related oil pollution - safety4sea"
+    },
+    {
+      "evidence_class": "media_mention",
+      "first_observed_at": "2026-11-24T18:57:34Z",
+      "geography": {
+        "key": null,
+        "kind": "unlocated",
+        "label": null,
+        "latitude": null,
+        "longitude": null,
+        "precision": "no_source_verified_geography",
+        "verified_iso": false
+      },
+      "information_root": "commercial:a5ff184fa75d0074b7d2",
+      "meaning": "Observation novelty, not evidence of impending violence.",
+      "observation_id": "beh:dbc992bf5f1dbb81ec112c45a71f",
+      "requires_geolocation": true,
+      "source_family": "commercial_media",
+      "source_published_at": "2026-11-23T20:22:15Z",
+      "source_url": "https://news.google.com/rss/articles/CBMingFBVV95cUxPdE43V3lRa1pLaUN5bHBMc2VIdFNoY3VhUXBfaHgwcE9LMG45Z3pzVWV3MlBubTJRVXlKdEQ2SzJPeGlYbFRSMUl5ZG40ZER4cy1KWGgwTlMwRk9ac0RfN1dPbmU0LXNPdzhMWjVrRDM2TkZsU0RJdExIRVUzYTZJYzI1LXhmRlBMUC1xeWtRX2xRQWp3TUlqM2h0VXdSdw?oc=5",
+      "status": "single_source_unreviewed",
+      "title": "Ohio House passes Bill 792 to ease surplus lines insurance regulations - Beinsure"
+    },
+    {
+      "evidence_class": "media_mention",
+      "first_observed_at": "2026-11-24T18:57:34Z",
+      "geography": {
+        "key": null,
+        "kind": "unlocated",
+        "label": null,
+        "latitude": null,
+        "longitude": null,
+        "precision": "no_source_verified_geography",
+        "verified_iso": false
+      },
+      "information_root": "commercial:20e35c481086767eca17",
+      "meaning": "Observation novelty, not evidence of impending violence.",
+      "observation_id": "beh:e60c00be3b01923083088daa4807",
+      "requires_geolocation": true,
+      "source_family": "commercial_media",
+      "source_published_at": "2026-11-24T00:29:45Z",
+      "source_url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNTlc1Wl9RNkdxT2tlRWF1VmQwODk5T081OWszcDF4dTNsRUxmQTE0V29YZ0lLX0xyVUlTSHJfRTNLN3ZGSmdnVXg2aU02d25WQVU3a3FDdEtwVHNVWDliVUI1QmJ4TDc0ZEhXQy1oZ3NZNkdYbFVlUW9aMEo3UndwcDZKRkw1Z1RkQjUzQjJ3XzFabmxGdzRvVDJNYXNtUWh6TlBGbDBnVjQ?oc=5",
+      "status": "single_source_unreviewed",
+      "title": "Shipping Corporation of India Opens Tenders for $3B Fleet Expansion - The Maritime Executive"
+    },
+    {
+      "evidence_class": "media_mention",
+      "first_observed_at": "2026-11-24T18:57:34Z",
+      "geography": {
+        "key": null,
+        "kind": "unlocated",
+        "label": null,
+        "latitude": null,
+        "longitude": null,
+        "precision": "no_source_verified_geography",
+        "verified_iso": false
+      },
+      "information_root": "commercial:f3a2089af8af0acaba6b",
+      "meaning": "Observation novelty, not evidence of impending violence.",
+      "observation_id": "beh:f4e4d81f1ac4d58e9c5f7f1ebced",
+      "requires_geolocation": true,
+      "source_family": "commercial_media",
+      "source_published_at": "2026-11-23T20:11:00Z",
+      "source_url": "https://maritime-executive.com/article/op-ed-why-the-un-shipping-agency-must-adopt-its-crucial-climate-agreement",
+      "status": "single_source_unreviewed",
+      "title": "Op-Ed: Why the UN's Shipping Agency Must Adopt Its Climate Agreement"
+    },
+    {
+      "evidence_class": "media_mention",
+      "first_observed_at": "2026-11-24T18:57:34Z",
+      "geography": {
+        "key": null,
+        "kind": "unlocated",
+        "label": null,
+        "latitude": null,
+        "longitude": null,
+        "precision": "no_source_verified_geography",
+        "verified_iso": false
+      },
+      "information_root": "commercial:ff291d9a851194600eb8",
+      "meaning": "Observation novelty, not evidence of impending violence.",
+      "observation_id": "beh:f70b7002018fa5f2186a4938a682",
+      "requires_geolocation": true,
+      "source_family": "commercial_media",
+      "source_published_at": "2026-11-23T20:50:00Z",
+      "source_url": "https://maritime-executive.com/article/russia-s-kaliningrad-enclave-survives-through-shipping",
+      "status": "single_source_unreviewed",
+      "title": "Russia's Kaliningrad Exclave Survives Through Shipping"
     }
   ],
   "prediction_horizon": null,
   "recent_source_observations": [
+    {
+      "first_observed_at": "2026-11-24T18:57:34Z",
+      "geography": {
+        "key": null,
+        "kind": "unlocated",
+        "label": null,
+        "latitude": null,
+        "longitude": null,
+        "precision": "no_source_verified_geography",
+        "verified_iso": false
+      },
+      "observation_id": "beh:f70b7002018fa5f2186a4938a682",
+      "provider": "commercial",
+      "requires_geolocation": true,
+      "source_family": "commercial_media",
+      "source_published_at": "2026-11-23T20:50:00Z",
+      "source_url": "https://maritime-executive.com/article/russia-s-kaliningrad-enclave-survives-through-shipping",
+      "status": "recent_source_observation_unreviewed",
+      "title": "Russia's Kaliningrad Exclave Survives Through Shipping"
+    },
+    {
+      "first_observed_at": "2026-11-24T18:57:34Z",
+      "geography": {
+        "key": null,
+        "kind": "unlocated",
+        "label": null,
+        "latitude": null,
+        "longitude": null,
+        "precision": "no_source_verified_geography",
+        "verified_iso": false
+      },
+      "observation_id": "beh:f4e4d81f1ac4d58e9c5f7f1ebced",
+      "provider": "commercial",
+      "requires_geolocation": true,
+      "source_family": "commercial_media",
+      "source_published_at": "2026-11-23T20:11:00Z",
+      "source_url": "https://maritime-executive.com/article/op-ed-why-the-un-shipping-agency-must-adopt-its-crucial-climate-agreement",
+      "status": "recent_source_observation_unreviewed",
+      "title": "Op-Ed: Why the UN's Shipping Agency Must Adopt Its Climate Agreement"
+    },
+    {
+      "first_observed_at": "2026-11-24T18:57:34Z",
+      "geography": {
+        "key": null,
+        "kind": "unlocated",
+        "label": null,
+        "latitude": null,
+        "longitude": null,
+        "precision": "no_source_verified_geography",
+        "verified_iso": false
+      },
+      "observation_id": "beh:e60c00be3b01923083088daa4807",
+      "provider": "commercial",
+      "requires_geolocation": true,
+      "source_family": "commercial_media",
+      "source_published_at": "2026-11-24T00:29:45Z",
+      "source_url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNTlc1Wl9RNkdxT2tlRWF1VmQwODk5T081OWszcDF4dTNsRUxmQTE0V29YZ0lLX0xyVUlTSHJfRTNLN3ZGSmdnVXg2aU02d25WQVU3a3FDdEtwVHNVWDliVUI1QmJ4TDc0ZEhXQy1oZ3NZNkdYbFVlUW9aMEo3UndwcDZKRkw1Z1RkQjUzQjJ3XzFabmxGdzRvVDJNYXNtUWh6TlBGbDBnVjQ?oc=5",
+      "status": "recent_source_observation_unreviewed",
+      "title": "Shipping Corporation of India Opens Tenders for $3B Fleet Expansion - The Maritime Executive"
+    },
+    {
+      "first_observed_at": "2026-11-24T18:57:34Z",
+      "geography": {
+        "key": null,
+        "kind": "unlocated",
+        "label": null,
+        "latitude": null,
+        "longitude": null,
+        "precision": "no_source_verified_geography",
+        "verified_iso": false
+      },
+      "observation_id": "beh:dbc992bf5f1dbb81ec112c45a71f",
+      "provider": "commercial",
+      "requires_geolocation": true,
+      "source_family": "commercial_media",
+      "source_published_at": "2026-11-23T20:22:15Z",
+      "source_url": "https://news.google.com/rss/articles/CBMingFBVV95cUxPdE43V3lRa1pLaUN5bHBMc2VIdFNoY3VhUXBfaHgwcE9LMG45Z3pzVWV3MlBubTJRVXlKdEQ2SzJPeGlYbFRSMUl5ZG40ZER4cy1KWGgwTlMwRk9ac0RfN1dPbmU0LXNPdzhMWjVrRDM2TkZsU0RJdExIRVUzYTZJYzI1LXhmRlBMUC1xeWtRX2xRQWp3TUlqM2h0VXdSdw?oc=5",
+      "status": "recent_source_observation_unreviewed",
+      "title": "Ohio House passes Bill 792 to ease surplus lines insurance regulations - Beinsure"
+    },
+    {
+      "first_observed_at": "2026-11-24T18:57:34Z",
+      "geography": {
+        "key": null,
+        "kind": "unlocated",
+        "label": null,
+        "latitude": null,
+        "longitude": null,
+        "precision": "no_source_verified_geography",
+        "verified_iso": false
+      },
+      "observation_id": "beh:b894c41d4610925448a7511948da",
+      "provider": "commercial",
+      "requires_geolocation": true,
+      "source_family": "commercial_media",
+      "source_published_at": "2026-11-24T13:04:25Z",
+      "source_url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQQ0lVMFJCOXhiaDQtNldMUmRmcTAwLTBBQV9TaFBsdDhENnBJTmlJelFfQnJ1UzNfTE9TaC1KUWJYMk5EYmhMdFJualh3dmxQajFocWQzM09LNi13QnN0WnRpT01taENJVjdtX2ZZMEM4aDUxZlJUcV9UZGtaVjRpZi1fbGpLRHpicEJHMXZGQk9tYUl6LXNLVnBzZlk?oc=5",
+      "status": "recent_source_observation_unreviewed",
+      "title": "Gard Club highlights insurance limitations for war-related oil pollution - safety4sea"
+    },
+    {
+      "first_observed_at": "2026-11-24T18:57:34Z",
+      "geography": {
+        "key": null,
+        "kind": "unlocated",
+        "label": null,
+        "latitude": null,
+        "longitude": null,
+        "precision": "no_source_verified_geography",
+        "verified_iso": false
+      },
+      "observation_id": "beh:b3f03732f8186ed3481c7c7f1549",
+      "provider": "commercial",
+      "requires_geolocation": true,
+      "source_family": "commercial_media",
+      "source_published_at": "2026-11-24T06:33:43Z",
+      "source_url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNSkZNUjgySW5MYWRmZjNacnQ0X1l0cVROcTF6eGNSRFNoeDJiVmdvZ1FHMi1MZ3hxNS1LeDhKVUg2TnVJZHd4VVZTV3Q5QU11dTltLU9Ja05iY1pKUXAtdkhSVlZPU0dNNzVPckUtNHdlWS1qeGl1VmFZS1dxU1J4SjY1WUlwTlFYdTdVVnhzQUprUQ?oc=5",
+      "status": "recent_source_observation_unreviewed",
+      "title": "War Risk Insurance England: Claims and Sanctions - Global Advisory Experts"
+    },
+    {
+      "first_observed_at": "2026-11-24T18:57:34Z",
+      "geography": {
+        "key": null,
+        "kind": "unlocated",
+        "label": null,
+        "latitude": null,
+        "longitude": null,
+        "precision": "no_source_verified_geography",
+        "verified_iso": false
+      },
+      "observation_id": "beh:681af86ae4b8ba0fcceeecc66f16",
+      "provider": "commercial",
+      "requires_geolocation": true,
+      "source_family": "commercial_media",
+      "source_published_at": "2026-11-24T04:55:00Z",
+      "source_url": "https://maritime-executive.com/article/shi-tesser-ntnu-and-dnv-sign-mou-to-develop-nuclear-powered-vessel",
+      "status": "recent_source_observation_unreviewed",
+      "title": "SHI, Tesser, NTNU and DNV Sign MOU to Develop Nuclear-Powered Vessel"
+    },
+    {
+      "first_observed_at": "2026-11-24T18:57:34Z",
+      "geography": {
+        "key": null,
+        "kind": "unlocated",
+        "label": null,
+        "latitude": null,
+        "longitude": null,
+        "precision": "no_source_verified_geography",
+        "verified_iso": false
+      },
+      "observation_id": "beh:50c5b6f9798598bea5f7f929f435",
+      "provider": "commercial",
+      "requires_geolocation": true,
+      "source_family": "commercial_media",
+      "source_published_at": "2026-11-24T04:55:00Z",
+      "source_url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPVV9fQUt2WThTdWMydkFJQXpCTmVXM0ZJT3RHSWZhcUhncHBIYV9zVkZ2bjBMQkxZRk9fYjBpSmllRDl5WEl3MmR0UTh5azU0SWV5dXJVVHFfRXNIVnltbUxDVFZkbkdxRVBOMXFETWlHUjJVWFcwcnh5MS1xTG9JQ3B2UUpjWjExbnMtUUlFN3NvcF9FdEk0N09fRzYxdVhlaWFiR1ZIN2Q2OUE?oc=5",
+      "status": "recent_source_observation_unreviewed",
+      "title": "SHI, Tesser, NTNU and DNV Sign MOU to Develop Nuclear-Powered Vessel - The Maritime Executive"
+    },
     {
       "first_observed_at": "2026-11-24T15:46:13Z",
       "geography": {
@@ -735,180 +1132,10 @@
       "source_url": "https://ioda.inetintel.cc.gatech.edu/",
       "status": "recent_source_observation_unreviewed",
       "title": "IODA detected connectivity anomaly: country SZ"
-    },
-    {
-      "first_observed_at": "2026-11-24T01:11:50Z",
-      "geography": {
-        "key": "country:UZ",
-        "kind": "country_code",
-        "label": "UZ",
-        "latitude": null,
-        "longitude": null,
-        "precision": "provider_reported_country",
-        "verified_iso": false
-      },
-      "observation_id": "beh:c7f62788b1c0881c78c6736ca2ec",
-      "provider": "ioda",
-      "requires_geolocation": false,
-      "source_family": "internet_reachability",
-      "source_published_at": null,
-      "source_url": "https://ioda.inetintel.cc.gatech.edu/",
-      "status": "recent_source_observation_unreviewed",
-      "title": "IODA detected connectivity anomaly: country UZ"
-    },
-    {
-      "first_observed_at": "2026-11-23T23:55:57Z",
-      "geography": {
-        "key": null,
-        "kind": "unlocated",
-        "label": null,
-        "latitude": null,
-        "longitude": null,
-        "precision": "no_source_verified_geography",
-        "verified_iso": false
-      },
-      "observation_id": "beh:3b9159c9a60db0db93089ef2dc1d",
-      "provider": "official",
-      "requires_geolocation": true,
-      "source_family": "protective_notice",
-      "source_published_at": "2026-11-23T15:19:06Z",
-      "source_url": "https://www.gov.uk/foreign-travel-advice/ethiopia",
-      "status": "recent_source_observation_unreviewed",
-      "title": "Ethiopia"
-    },
-    {
-      "first_observed_at": "2026-11-23T23:55:57Z",
-      "geography": {
-        "key": null,
-        "kind": "unlocated",
-        "label": null,
-        "latitude": null,
-        "longitude": null,
-        "precision": "no_source_verified_geography",
-        "verified_iso": false
-      },
-      "observation_id": "beh:15d9c40caedb93fcae6adf48a706",
-      "provider": "official",
-      "requires_geolocation": true,
-      "source_family": "protective_notice",
-      "source_published_at": "2026-11-23T10:55:23Z",
-      "source_url": "https://www.gov.uk/foreign-travel-advice/colombia",
-      "status": "recent_source_observation_unreviewed",
-      "title": "Colombia"
-    },
-    {
-      "first_observed_at": "2026-11-23T20:22:03Z",
-      "geography": {
-        "geometry_sha256_prefix": "e17965084ff99b4954d32643",
-        "geometry_type": "MultiPolygon",
-        "key": "source-footprint:e17965084ff99b4954d32643",
-        "kind": "source_notice_footprint",
-        "label": "Official MultiPolygon notice area",
-        "latitude": null,
-        "longitude": null,
-        "precision": "provider_defined_notice_boundary_not_event_point",
-        "verified_iso": false
-      },
-      "observation_id": "beh:c8335718f729bcdff28f47c04f40",
-      "provider": "faa",
-      "requires_geolocation": false,
-      "source_family": "airspace_restriction",
-      "source_published_at": null,
-      "source_url": "https://tfr.faa.gov/6_9517.html",
-      "status": "recent_source_observation_unreviewed",
-      "title": "FAA TFR 6/9517 · HIBBING, MN, Tuesday, November 24, 2026 UTC"
-    },
-    {
-      "first_observed_at": "2026-11-23T20:22:03Z",
-      "geography": {
-        "geometry_sha256_prefix": "0a7fc8ca82995bdceb89e73d",
-        "geometry_type": "MultiPolygon",
-        "key": "source-footprint:0a7fc8ca82995bdceb89e73d",
-        "kind": "source_notice_footprint",
-        "label": "Official MultiPolygon notice area",
-        "latitude": null,
-        "longitude": null,
-        "precision": "provider_defined_notice_boundary_not_event_point",
-        "verified_iso": false
-      },
-      "observation_id": "beh:9f5e702ce271795783adf76644cb",
-      "provider": "faa",
-      "requires_geolocation": false,
-      "source_family": "airspace_restriction",
-      "source_published_at": null,
-      "source_url": "https://tfr.faa.gov/6_9492.html",
-      "status": "recent_source_observation_unreviewed",
-      "title": "FAA TFR 6/9492 · ATIGUN PASS, AK, Monday, November 23, 2026 through Tuesday, November 24, 2026 UTC"
-    },
-    {
-      "first_observed_at": "2026-11-23T20:22:03Z",
-      "geography": {
-        "geometry_sha256_prefix": "1c2bd90f106f79638dcb58e1",
-        "geometry_type": "MultiPolygon",
-        "key": "source-footprint:1c2bd90f106f79638dcb58e1",
-        "kind": "source_notice_footprint",
-        "label": "Official MultiPolygon notice area",
-        "latitude": null,
-        "longitude": null,
-        "precision": "provider_defined_notice_boundary_not_event_point",
-        "verified_iso": false
-      },
-      "observation_id": "beh:2c13dba7599061a8a0453940c18c",
-      "provider": "faa",
-      "requires_geolocation": false,
-      "source_family": "airspace_restriction",
-      "source_published_at": null,
-      "source_url": "https://tfr.faa.gov/6_9446.html",
-      "status": "recent_source_observation_unreviewed",
-      "title": "FAA TFR 6/9446 · Cincinnati, OH, Tuesday, November 24, 2026 through Sunday, November 29, 2026 UTC"
-    },
-    {
-      "first_observed_at": "2026-11-23T20:22:03Z",
-      "geography": {
-        "geometry_sha256_prefix": "91004aeb38e6668319aebeeb",
-        "geometry_type": "MultiPolygon",
-        "key": "source-footprint:91004aeb38e6668319aebeeb",
-        "kind": "source_notice_footprint",
-        "label": "Official MultiPolygon notice area",
-        "latitude": null,
-        "longitude": null,
-        "precision": "provider_defined_notice_boundary_not_event_point",
-        "verified_iso": false
-      },
-      "observation_id": "beh:284f147f9d94fdf2a7a1cb25d3ca",
-      "provider": "faa",
-      "requires_geolocation": false,
-      "source_family": "airspace_restriction",
-      "source_published_at": null,
-      "source_url": "https://tfr.faa.gov/6_9576.html",
-      "status": "recent_source_observation_unreviewed",
-      "title": "FAA TFR 6/9576 · 76 ZAN AIRSPACETHOMPSON PASS, AK, Monday, November 23, 2026 through Tuesday, November 24, 2026 UTC"
-    },
-    {
-      "first_observed_at": "2026-11-23T20:22:03Z",
-      "geography": {
-        "geometry_sha256_prefix": "416f6b092851286a5f7fef74",
-        "geometry_type": "MultiPolygon",
-        "key": "source-footprint:416f6b092851286a5f7fef74",
-        "kind": "source_notice_footprint",
-        "label": "Official MultiPolygon notice area",
-        "latitude": null,
-        "longitude": null,
-        "precision": "provider_defined_notice_boundary_not_event_point",
-        "verified_iso": false
-      },
-      "observation_id": "beh:1273b56a4f3fca5eb66cccb049ae",
-      "provider": "faa",
-      "requires_geolocation": false,
-      "source_family": "airspace_restriction",
-      "source_published_at": null,
-      "source_url": "https://tfr.faa.gov/6_9446.html",
-      "status": "recent_source_observation_unreviewed",
-      "title": "FAA TFR 6/9446 · Cincinnati, OH, Tuesday, November 24, 2026 through Sunday, November 29, 2026 UTC"
     }
   ],
-  "registry_asof": "2026-11-24T15:46:13Z",
-  "registry_source_count": 802,
+  "registry_asof": "2026-11-24T18:57:34Z",
+  "registry_source_count": 696,
   "report_relationships": {
     "automatic_alerts_created": 0,
     "automatic_severity_changes": 0,
@@ -2443,6 +2670,74 @@
       },
       {
         "first_observation_separation_hours": 0.0,
+        "id": "relation:2b62c817eb65c142faa3",
+        "independent_corroboration_established": false,
+        "match_basis": "same_substantive_article_title_different_source_urls",
+        "reported_event_site_comparison_available": false,
+        "reported_event_site_separation_km": null,
+        "reporting_origin_used_as_event_site": false,
+        "review_requirements": [
+          "Verify whether both URLs reproduce one original article",
+          "Do not count syndication as two independently observed events",
+          "Resolve the underlying event separately from this story"
+        ],
+        "semantic_similarity": 0.833,
+        "shared_content_terms": [
+          "develop",
+          "dnv",
+          "mou",
+          "ntnu",
+          "nuclear",
+          "powered"
+        ],
+        "shared_information_root": false,
+        "source_reports": [
+          {
+            "first_observed_at": "2026-11-24T18:57:34Z",
+            "geography": {
+              "key": null,
+              "kind": "unlocated",
+              "label": null,
+              "latitude": null,
+              "longitude": null,
+              "precision": "no_source_verified_geography",
+              "verified_iso": false
+            },
+            "observation_id": "beh:681af86ae4b8ba0fcceeecc66f16",
+            "provider": "commercial",
+            "reporting_origin": null,
+            "source_family": "commercial_media",
+            "source_published_at": "2026-11-24T04:55:00Z",
+            "source_url": "https://maritime-executive.com/article/shi-tesser-ntnu-and-dnv-sign-mou-to-develop-nuclear-powered-vessel",
+            "status": "unreviewed_source_report",
+            "title": "SHI, Tesser, NTNU and DNV Sign MOU to Develop Nuclear-Powered Vessel"
+          },
+          {
+            "first_observed_at": "2026-11-24T18:57:34Z",
+            "geography": {
+              "key": null,
+              "kind": "unlocated",
+              "label": null,
+              "latitude": null,
+              "longitude": null,
+              "precision": "no_source_verified_geography",
+              "verified_iso": false
+            },
+            "observation_id": "beh:50c5b6f9798598bea5f7f929f435",
+            "provider": "commercial",
+            "reporting_origin": null,
+            "source_family": "commercial_media",
+            "source_published_at": "2026-11-24T04:55:00Z",
+            "source_url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPVV9fQUt2WThTdWMydkFJQXpCTmVXM0ZJT3RHSWZhcUhncHBIYV9zVkZ2bjBMQkxZRk9fYjBpSmllRDl5WEl3MmR0UTh5azU0SWV5dXJVVHFfRXNIVnltbUxDVFZkbkdxRVBOMXFETWlHUjJVWFcwcnh5MS1xTG9JQ3B2UUpjWjExbnMtUUlFN3NvcF9FdEk0N09fRzYxdVhlaWFiR1ZIN2Q2OUE?oc=5",
+            "status": "unreviewed_source_report",
+            "title": "SHI, Tesser, NTNU and DNV Sign MOU to Develop Nuclear-Powered Vessel - The Maritime Executive"
+          }
+        ],
+        "status": "possible_same_source_story_unreviewed",
+        "warning_level_change": false
+      },
+      {
+        "first_observation_separation_hours": 0.0,
         "id": "relation:04147ba4f1296a4875bf",
         "independent_corroboration_established": false,
         "match_basis": "same_substantive_article_title_different_source_urls",
@@ -2504,6 +2799,142 @@
             "source_url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPODVTY1JXZjVuLTdIVjE3SzBBUUE1RHhuRTdkbGFEOUQ3Ymp3bXhTNk8xTFJVMDlGa0tOM1R2cFNNRjRGanJwbEtUXzNkYUZwZ25lZFNyUzF3dTB3Y3U2a1YteGJGeWFxOXhxMHJ1anhTUjJoZkNqN3o0N3VFOUZ2S2xXYk44REhOUFlvQzJKMU1kcFVYbjFjaEhxaEpqRzN4LWM4X2FUMHhJSWdEYlhuMA?oc=5",
             "status": "unreviewed_source_report",
             "title": "Cool Carriers Launches Newest Vessel, Cool Eternity, at Shikoku Shipyard - The Maritime Executive"
+          }
+        ],
+        "status": "possible_same_source_story_unreviewed",
+        "warning_level_change": false
+      },
+      {
+        "first_observation_separation_hours": 0.0,
+        "id": "relation:51bf6be9ad1306ba6270",
+        "independent_corroboration_established": false,
+        "match_basis": "same_substantive_article_title_different_source_urls",
+        "reported_event_site_comparison_available": false,
+        "reported_event_site_separation_km": null,
+        "reporting_origin_used_as_event_site": false,
+        "review_requirements": [
+          "Verify whether both URLs reproduce one original article",
+          "Do not count syndication as two independently observed events",
+          "Resolve the underlying event separately from this story"
+        ],
+        "semantic_similarity": 0.778,
+        "shared_content_terms": [
+          "adopt",
+          "agency",
+          "agreement",
+          "climate",
+          "must",
+          "why"
+        ],
+        "shared_information_root": false,
+        "source_reports": [
+          {
+            "first_observed_at": "2026-11-24T18:57:34Z",
+            "geography": {
+              "key": null,
+              "kind": "unlocated",
+              "label": null,
+              "latitude": null,
+              "longitude": null,
+              "precision": "no_source_verified_geography",
+              "verified_iso": false
+            },
+            "observation_id": "beh:f4e4d81f1ac4d58e9c5f7f1ebced",
+            "provider": "commercial",
+            "reporting_origin": null,
+            "source_family": "commercial_media",
+            "source_published_at": "2026-11-23T20:11:00Z",
+            "source_url": "https://maritime-executive.com/article/op-ed-why-the-un-shipping-agency-must-adopt-its-crucial-climate-agreement",
+            "status": "unreviewed_source_report",
+            "title": "Op-Ed: Why the UN's Shipping Agency Must Adopt Its Climate Agreement"
+          },
+          {
+            "first_observed_at": "2026-11-24T18:57:34Z",
+            "geography": {
+              "key": null,
+              "kind": "unlocated",
+              "label": null,
+              "latitude": null,
+              "longitude": null,
+              "precision": "no_source_verified_geography",
+              "verified_iso": false
+            },
+            "observation_id": "beh:3024037ce446ce8266b344ebbce2",
+            "provider": "commercial",
+            "reporting_origin": null,
+            "source_family": "commercial_media",
+            "source_published_at": "2026-11-23T20:11:00Z",
+            "source_url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNQnE2d3pYUnFPOGNIdEJ6MUhQNkdVWkp4SnJYLXV1ejN1Mkc4b0JXWkdKYmxjRUJOZzFzZFROOE9HWTF3bl91YkR4SmhOaGNCd0RQSm9XOC1jaVVDajRlelI3dUtGVDBYX012d2JjUEQwOGMzNmpza1NmUm9PWDJJZmRpQkNXTEt6MTRXcWM3RkxXMXp6d3hUckNTcl9vT2RqNm1MSEJGcjRhdnNBOWtSdVV3?oc=5",
+            "status": "unreviewed_source_report",
+            "title": "Op-Ed: Why the UN's Shipping Agency Must Adopt Its Climate Agreement - The Maritime Executive"
+          }
+        ],
+        "status": "possible_same_source_story_unreviewed",
+        "warning_level_change": false
+      },
+      {
+        "first_observation_separation_hours": 0.0,
+        "id": "relation:78d8eab020a28f3a8b14",
+        "independent_corroboration_established": false,
+        "match_basis": "same_substantive_article_title_different_source_urls",
+        "reported_event_site_comparison_available": false,
+        "reported_event_site_separation_km": null,
+        "reporting_origin_used_as_event_site": false,
+        "review_requirements": [
+          "Verify whether both URLs reproduce one original article",
+          "Do not count syndication as two independently observed events",
+          "Resolve the underlying event separately from this story"
+        ],
+        "semantic_similarity": 0.778,
+        "shared_content_terms": [
+          "corporation",
+          "expansion",
+          "fleet",
+          "india",
+          "opens",
+          "tenders"
+        ],
+        "shared_information_root": false,
+        "source_reports": [
+          {
+            "first_observed_at": "2026-11-24T18:57:34Z",
+            "geography": {
+              "key": null,
+              "kind": "unlocated",
+              "label": null,
+              "latitude": null,
+              "longitude": null,
+              "precision": "no_source_verified_geography",
+              "verified_iso": false
+            },
+            "observation_id": "beh:e60c00be3b01923083088daa4807",
+            "provider": "commercial",
+            "reporting_origin": null,
+            "source_family": "commercial_media",
+            "source_published_at": "2026-11-24T00:29:45Z",
+            "source_url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNTlc1Wl9RNkdxT2tlRWF1VmQwODk5T081OWszcDF4dTNsRUxmQTE0V29YZ0lLX0xyVUlTSHJfRTNLN3ZGSmdnVXg2aU02d25WQVU3a3FDdEtwVHNVWDliVUI1QmJ4TDc0ZEhXQy1oZ3NZNkdYbFVlUW9aMEo3UndwcDZKRkw1Z1RkQjUzQjJ3XzFabmxGdzRvVDJNYXNtUWh6TlBGbDBnVjQ?oc=5",
+            "status": "unreviewed_source_report",
+            "title": "Shipping Corporation of India Opens Tenders for $3B Fleet Expansion - The Maritime Executive"
+          },
+          {
+            "first_observed_at": "2026-11-24T18:57:34Z",
+            "geography": {
+              "key": null,
+              "kind": "unlocated",
+              "label": null,
+              "latitude": null,
+              "longitude": null,
+              "precision": "no_source_verified_geography",
+              "verified_iso": false
+            },
+            "observation_id": "beh:502bd6a3aac358f6cfb66ddc3674",
+            "provider": "commercial",
+            "reporting_origin": null,
+            "source_family": "commercial_media",
+            "source_published_at": "2026-11-24T00:29:45Z",
+            "source_url": "https://maritime-executive.com/article/shipping-corporation-of-india-opens-tenders-for-3b-fleet-expansion",
+            "status": "unreviewed_source_report",
+            "title": "Shipping Corporation of India Opens Tenders for $3B Fleet Expansion"
           }
         ],
         "status": "possible_same_source_story_unreviewed",
@@ -2643,24 +3074,90 @@
         ],
         "status": "possible_same_source_story_unreviewed",
         "warning_level_change": false
+      },
+      {
+        "first_observation_separation_hours": 0.0,
+        "id": "relation:f9b55d9b5a9118c5b3d3",
+        "independent_corroboration_established": false,
+        "match_basis": "same_substantive_article_title_different_source_urls",
+        "reported_event_site_comparison_available": false,
+        "reported_event_site_separation_km": null,
+        "reporting_origin_used_as_event_site": false,
+        "review_requirements": [
+          "Verify whether both URLs reproduce one original article",
+          "Do not count syndication as two independently observed events",
+          "Resolve the underlying event separately from this story"
+        ],
+        "semantic_similarity": 0.75,
+        "shared_content_terms": [
+          "exclave",
+          "kaliningrad",
+          "survives",
+          "through"
+        ],
+        "shared_information_root": false,
+        "source_reports": [
+          {
+            "first_observed_at": "2026-11-24T18:57:34Z",
+            "geography": {
+              "key": null,
+              "kind": "unlocated",
+              "label": null,
+              "latitude": null,
+              "longitude": null,
+              "precision": "no_source_verified_geography",
+              "verified_iso": false
+            },
+            "observation_id": "beh:f70b7002018fa5f2186a4938a682",
+            "provider": "commercial",
+            "reporting_origin": null,
+            "source_family": "commercial_media",
+            "source_published_at": "2026-11-23T20:50:00Z",
+            "source_url": "https://maritime-executive.com/article/russia-s-kaliningrad-enclave-survives-through-shipping",
+            "status": "unreviewed_source_report",
+            "title": "Russia's Kaliningrad Exclave Survives Through Shipping"
+          },
+          {
+            "first_observed_at": "2026-11-24T18:57:34Z",
+            "geography": {
+              "key": null,
+              "kind": "unlocated",
+              "label": null,
+              "latitude": null,
+              "longitude": null,
+              "precision": "no_source_verified_geography",
+              "verified_iso": false
+            },
+            "observation_id": "beh:4cff1b3a8972c51811ab90d993b8",
+            "provider": "commercial",
+            "reporting_origin": null,
+            "source_family": "commercial_media",
+            "source_published_at": "2026-11-23T20:50:00Z",
+            "source_url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPSnN6N19tdXpCUkRVNm9EVjJIZGl3U2NiTnR0aXl1OHc5T2o3QzMtYjAxLTNrZVpKMC04VUE4c1g1U1liNzZuM0VWYU5uWmVwNEt6SXB1ZzBfZGc0eHZ0R3NyWjlvQ0pfUHVNSGdxN25WM1g4UTRVSGVMM3ExN3R4SjU2LU5EVTB5WTRlNS1nZnhCb2hWb29sZg?oc=5",
+            "status": "unreviewed_source_report",
+            "title": "Russia's Kaliningrad Exclave Survives Through Shipping - The Maritime Executive"
+          }
+        ],
+        "status": "possible_same_source_story_unreviewed",
+        "warning_level_change": false
       }
     ],
     "candidate_groups_truncated": true,
-    "cross_document_relation_count_total": 3,
-    "eligible_event_reporting_records": 7,
+    "cross_document_relation_count_total": 7,
+    "eligible_event_reporting_records": 19,
     "forecast_probability": null,
     "geographic_proximity_only_for_explicit_reported_event_sites": true,
     "input_truncated": false,
     "not_a_preparations_sensor_or_warning": true,
     "pairwise_comparisons_capped": false,
-    "pairwise_comparisons_examined": 70125,
+    "pairwise_comparisons_examined": 73920,
     "possible_same_event_count_total": 0,
-    "possible_same_source_story_count_total": 3,
-    "records_available": 375,
-    "records_examined": 375,
+    "possible_same_source_story_count_total": 7,
+    "records_available": 385,
+    "records_examined": 385,
     "related_reporting_count_total": 0,
     "reporting_origins_are_not_event_locations": true,
-    "routine_notice_market_or_measurement_records_excluded_from_text_event_matching": 368,
+    "routine_notice_market_or_measurement_records_excluded_from_text_event_matching": 366,
     "same_document_group_count_total": 18,
     "schema": "aiba.report-event-resolution-shadow.v1",
     "source_independence_unverified": true,
