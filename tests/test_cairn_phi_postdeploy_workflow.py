@@ -12,6 +12,14 @@ class PostdeployPhiWorkflowTests(unittest.TestCase):
         cls.collect=cls.text.split("\n  collect:\n",1)[1].split("\n  deploy:\n",1)[0]
         cls.phi=cls.text.split("\n  phi-postdeploy:\n",1)[1]
 
+    def test_skipped_upstream_cannot_evict_pending_publication(self):
+        root=self.text.split("\njobs:\n",1)[0]
+        self.assertIn("github.event.workflow_run.conclusion != 'success'",root)
+        self.assertIn("github.run_id || 'publish'",root)
+        self.assertIn("cancel-in-progress: false",root)
+        test=self.text.split("\n  test:\n",1)[1].split("\n  collect:\n",1)[0]
+        self.assertIn("github.event.workflow_run.conclusion == 'success'",test)
+
     def test_collection_does_not_start_local_inference(self):
         self.assertIn("python dashboard/semantic_ach.py --site _site",self.collect)
         self.assertNotIn("scripts/run_cairn_phi.sh",self.collect)

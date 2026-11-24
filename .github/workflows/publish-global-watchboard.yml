@@ -12,8 +12,10 @@ on:
     - cron: '35 14 * * *'
 permissions:
   contents: read
+# Skipped upstream ingestion workflows must not evict a queued, legitimate
+# main-branch publication. GitHub allows only one pending run per group.
 concurrency:
-  group: aiba-${{ github.ref }}
+  group: aiba-${{ github.ref }}-${{ github.event_name == 'workflow_run' && github.event.workflow_run.conclusion != 'success' && github.run_id || 'publish' }}
   cancel-in-progress: false
 jobs:
   swpc-ripe-public-live-probe:
@@ -237,6 +239,7 @@ jobs:
                "historical_relationship_count","public_snapshot_truncated")})
           PY
   test:
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
