@@ -10,6 +10,7 @@ weights are downloaded and integrity-checked by the separate runtime script.
 """
 from __future__ import annotations
 import argparse
+import copy
 import json
 import os
 from pathlib import Path
@@ -37,7 +38,7 @@ RESPONSE_SCHEMA = {
                 "discriminator": {"type": "string"},
             }, "required": ["hypothesis_index", "meaning", "discriminator"],
             "additionalProperties": False}},
-        "evidence_notes": {"type": "array", "items": {
+        "evidence_notes": {"type": "array", "maxItems": MAX_NOTES, "items": {
             "type": "object", "properties": {
                 "evidence_key": {"type": "string"},
                 "observation": {"type": "string"},
@@ -149,7 +150,7 @@ def ask_phi(packet, _key=None, _model=None, *, transport=None):
     payload={"model":"local","temperature":0,"max_tokens":1050,
              "response_format":{"type":"json_schema","json_schema":{
                 "name":"cairn_phi_interpretation_only","strict":True,
-                "schema":RESPONSE_SCHEMA}},
+                "schema":copy.deepcopy(RESPONSE_SCHEMA)}},
              "messages":[{"role":"system","content":SYSTEM},
                          {"role":"user","content":json.dumps(msg,ensure_ascii=False)}]}
     # One bounded retry is permitted for FORMAT failures only. A fabricated
@@ -185,6 +186,9 @@ def ask_phi(packet, _key=None, _model=None, *, transport=None):
             # Reuse the same trusted evidence packet and schema; never return
             # a partial completion or feed the malformed output back to Phi.
             payload["max_tokens"]=1400
+            # Bind the retry to a stricter generated note cap, not merely
+            # an instruction string that a small model may ignore.
+            payload["response_format"]["json_schema"]["schema"]["properties"]["evidence_notes"]["maxItems"]=3
             payload["messages"][0]["content"]=SYSTEM+(
                 " Keep the reply exceptionally concise. Give no more than "
                 "three source notes; include every hypothesis index exactly "

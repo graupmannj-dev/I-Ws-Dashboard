@@ -31,7 +31,9 @@ This file is the durable restart checkpoint. When work resumes, inspect this fil
 
 ## Current engineering checkpoint
 
-- **Working branch:** `feat/cairn-phi-m1-diagnostics`.
-- **Change set:** explicit validation error types, per-case failure labels, aggregate failure counts, one constrained retry for formatting only, no retry on fabricated source IDs, tests.
-- **Next action:** Open and validate M1 PR, inspect live-model smoke and production failure-code distribution, then iterate based on measured root causes. Proceed to M2 only after M1 is diagnosed and stabilized.
-
+- **M1 PR #113:** merged as `8531522471fcccd9f2e9c958731f5545bd44bd74`, live smoke and full CI passed; production [run 45408587481](https://github.com/graupmannj-dev/I-Ws-Dashboard/actions/runs/45408587481) collected and deployed successfully.
+- **Observed M1 outcome:** **9/10** structurally valid provisional outputs; `horn_ethiopia_eritrea` and `taiwan` recovered on the one-time format retry, while `iran_gulf` failed `invalid_note_count` despite retry. Output contained zero approved ACH directions.
+- **M1 PR #115:** structural reliability audit merged as `2ec2b1b0182abda729b32dde50a796511e935bc5`; full CI passed. Acceptance requires 5 distinct runs and 50 actual case-runs; **not yet achieved**.
+- **Current engineering branch:** `fix/cairn-phi-m1-note-bounds`. Hard-bound source notes in the runtime JSON schema (6 normally, 3 on format retry), retain fail-closed validation, add live smoke tests.
+- **Next action:** Test and merge the note-bound PR only if GitHub's pinned live Phi smoke and full CI succeed. Then inspect a new production `cairn-semantic-ach` artifact for `iran_gulf` and measure model runtime. Do not claim M1's 98% threshold from one improved production cycle. M2 decoupling will be necessary if CPU runtime remains close to the 19-minute hard limit.
+- **Cross-session tracker:** [issue #114](https://github.com/graupmannj-dev/I-Ws-Dashboard/issues/114).
