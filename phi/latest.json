@@ -1,8 +1,8 @@
 {
   "schema": "cairn.phi-sidecar.v1",
   "model": "phi-4-mini-instruct-q4km-local",
-  "generated_at": "2026-11-24T15:17:04.560363Z",
-  "source_build_generated_at": "2026-11-24T15:16:04+00:00",
+  "generated_at": "2026-11-24T19:07:06.639757Z",
+  "source_build_generated_at": "2026-11-24T18:59:35+00:00",
   "provisional_only": true,
   "signed_evidence_modified": false,
   "cases": {
@@ -112,7 +112,7 @@
           "evidence_key": "family:f3c000f5d4ff2dd71268",
           "family_title": "iso:ER · connectivity / anomaly",
           "family_mechanism": "internet_reachability",
-          "source_health": "current",
+          "source_health": "stale_or_unavailable",
           "sources": [
             {
               "url": "https://ioda.inetintel.cc.gatech.edu/",
@@ -160,9 +160,9 @@
           "reviewed_direction": "not_assessed"
         }
       ],
-      "input_sha256": "e560a4fa00c5d63cab8b8ea74ecafdaf6aadaf7eeac34eec1c9fa90e4c1402b3",
-      "model_generated_at": "2026-11-24T15:02:42.361014Z",
-      "cache_status": "reused_exact_input"
+      "input_sha256": "fed71aca721f2995d44dd121f44ed037e961c6a029e5db2d08121fcba1de0aef",
+      "model_generated_at": "2026-11-24T19:01:07.394614Z",
+      "cache_status": "fresh_inference"
     },
     "horn_ethiopia_sudan": {
       "status": "provisional_complete",
@@ -317,7 +317,7 @@
           "evidence_key": "family:b5a9a71b3f21e78be30d",
           "family_title": "iso:AF · connectivity / anomaly",
           "family_mechanism": "internet_reachability",
-          "source_health": "current",
+          "source_health": "stale_or_unavailable",
           "sources": [
             {
               "url": "https://ioda.inetintel.cc.gatech.edu/",
@@ -350,9 +350,9 @@
           "reviewed_direction": "not_assessed"
         }
       ],
-      "input_sha256": "fffb2f0296fca8416eaf63a91b4c26baa86a78fe524e6f0aa930d0afb69f26fa",
-      "model_generated_at": "2026-11-24T15:02:42.361014Z",
-      "cache_status": "reused_exact_input"
+      "input_sha256": "096b033eb14d5e121edecd8cd2b2fbe2b2caa931f0c56c4ebaf7dd15d0771418",
+      "model_generated_at": "2026-11-24T19:01:07.394614Z",
+      "cache_status": "fresh_inference"
     },
     "drc_rwanda": {
       "status": "provisional_complete",
@@ -457,7 +457,7 @@
           "evidence_key": "family:28bb6025e5e43c9de56c",
           "family_title": "iso:CD · connectivity / anomaly",
           "family_mechanism": "internet_reachability",
-          "source_health": "current",
+          "source_health": "stale_or_unavailable",
           "sources": [
             {
               "url": "https://ioda.inetintel.cc.gatech.edu/",
@@ -496,9 +496,9 @@
           "reviewed_direction": "not_assessed"
         }
       ],
-      "input_sha256": "aad84a16b4fb658af797ae96affaa7cc6126d46654629bcb9a2e8cbcc0219b92",
-      "model_generated_at": "2026-11-24T15:02:42.361014Z",
-      "cache_status": "reused_exact_input"
+      "input_sha256": "f357209a28899f3262f6d575d283053375f8ac083a969109b8f08287e7f42328",
+      "model_generated_at": "2026-11-24T19:01:07.394614Z",
+      "cache_status": "fresh_inference"
     },
     "thailand_cambodia": {
       "status": "provisional_complete",
@@ -577,44 +577,50 @@
         {
           "hypothesis_index": 0,
           "meaning": "Major conventional or limited hybrid escalation",
-          "discriminator": "Evidence of a NATO finding no imminent conventional threat suggests no immediate escalation."
+          "discriminator": "Observation of increased frequency and intensity of reported incidents involving military equipment or actions."
         },
         {
           "hypothesis_index": 1,
           "meaning": "Defensive precautions may deter or prevent incidents; suspicious observations can be innocuous.",
-          "discriminator": "Evidence of a Polish warning about sabotage/provocation could indicate defensive measures rather than escalation."
+          "discriminator": "Observation of defensive measures taken by nations that correlate with a decrease in reported incidents."
         }
       ],
       "evaluations": [],
       "evidence_notes": [
         {
           "evidence_key": "dossier:087124e2a731652ec6bcfa21",
-          "observation": "NATO finds no imminent conventional threat. Independent verification: Monitor NATO communiqués for updates on threat assessments and military postures in the region.",
-          "verification_step": "Monitor NATO communiqués for updates on threat assessments and military postures in the region.",
+          "observation": "NATO finds no imminent conventional threat",
+          "verification_step": "Monitor subsequent NATO communications for any change in stance regarding conventional threats.",
+          "status": "unverified_source_title_lead"
+        },
+        {
+          "evidence_key": "dossier:e7078875412062856418d2fa",
+          "observation": "Polish sabotage/provocation warning",
+          "verification_step": "Investigate the context and timing of the warning to assess its credibility and potential link to escalation.",
           "status": "unverified_source_title_lead"
         },
         {
           "evidence_key": "family:4c6bc7a3202dcc42daf7",
-          "observation": "Russian governor reports Ust-Luga port fire and electricity disruption after drone attack. Independent verification: Cross-reference reports of drone attacks with official statements and satellite imagery.",
-          "verification_step": "Cross-reference reports of drone attacks with official statements and satellite imagery.",
+          "observation": "Russian governor reports Ust-Luga port fire and electricity disruption after drone attack",
+          "verification_step": "Correlate the timing of the reported incident with any known military exercises or provocations.",
           "status": "unverified_source_title_lead"
         },
         {
-          "evidence_key": "history:3c0be3ce7108c29c4358",
-          "observation": "Denmark. The Baltic Sea. EK D 396 Hullebaek. Firing exercises. Warning. Independent verification: Compare historical firing exercises with current military exercises in the region.",
-          "verification_step": "Compare historical firing exercises with current military exercises in the region.",
+          "evidence_key": "family:b43d40b03423259fc083",
+          "observation": "Russian-installed Crimean authorities report second consecutive strike and bridge traffic suspension",
+          "verification_step": "Assess the pattern of strikes and compare with historical data to determine if there is an escalation trend.",
           "status": "unverified_source_title_lead"
         },
         {
-          "evidence_key": "history:e03e5c36915a3b88b021",
-          "observation": "Denmark. The Baltic Sea. EK D 396 Hullebaek. Firing exercises. Warning. Independent verification: Assess the context of firing exercises to determine if they are routine or indicative of escalation.",
-          "verification_step": "Assess the context of firing exercises to determine if they are routine or indicative of escalation.",
+          "evidence_key": "history:ff291d9a851194600eb8",
+          "observation": "Russia's Kaliningrad Exclave Survives Through Shipping",
+          "verification_step": "Examine shipping routes and frequencies for unusual patterns that may indicate strategic importance or military activity.",
           "status": "unverified_source_title_lead"
         },
         {
-          "evidence_key": "history:dcd1c0aea25e764ee77b",
-          "observation": "Denmark. The Baltic Sea. EK D 395 Raghammer. Firing exercises. Warning. Independent verification: Evaluate the frequency and scale of firing exercises in relation to regional tensions.",
-          "verification_step": "Evaluate the frequency and scale of firing exercises in relation to regional tensions.",
+          "evidence_key": "history:581a6a18e9ac64c8eedb",
+          "observation": "Russia's Kaliningrad Exclave Survives Through Shipping - The Maritime Executive",
+          "verification_step": "Review maritime traffic data for anomalies that could suggest military use or preparation.",
           "status": "unverified_source_title_lead"
         }
       ],
@@ -704,6 +710,36 @@
           "reviewed_direction": "not_assessed"
         },
         {
+          "evidence_key": "history:ff291d9a851194600eb8",
+          "family_title": "Russia's Kaliningrad Exclave Survives Through Shipping",
+          "family_mechanism": "Case-linked history; provisional association only",
+          "source_health": "not_event_verified",
+          "sources": [
+            {
+              "url": "https://maritime-executive.com/article/russia-s-kaliningrad-enclave-survives-through-shipping",
+              "title": "Russia's Kaliningrad Exclave Survives Through Shipping",
+              "provider": "commercial",
+              "first_observed_at": "2026-11-24T18:57:34Z"
+            }
+          ],
+          "reviewed_direction": "not_assessed"
+        },
+        {
+          "evidence_key": "history:581a6a18e9ac64c8eedb",
+          "family_title": "Russia's Kaliningrad Exclave Survives Through Shipping - The Maritime Executive",
+          "family_mechanism": "Case-linked history; provisional association only",
+          "source_health": "not_event_verified",
+          "sources": [
+            {
+              "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPSnN6N19tdXpCUkRVNm9EVjJIZGl3U2NiTnR0aXl1OHc5T2o3QzMtYjAxLTNrZVpKMC04VUE4c1g1U1liNzZuM0VWYU5uWmVwNEt6SXB1ZzBfZGc0eHZ0R3NyWjlvQ0pfUHVNSGdxN25WM1g4UTRVSGVMM3ExN3R4SjU2LU5EVTB5WTRlNS1nZnhCb2hWb29sZg?oc=5",
+              "title": "Russia's Kaliningrad Exclave Survives Through Shipping - The Maritime Executive",
+              "provider": "commercial",
+              "first_observed_at": "2026-11-24T18:57:34Z"
+            }
+          ],
+          "reviewed_direction": "not_assessed"
+        },
+        {
           "evidence_key": "history:e03e5c36915a3b88b021",
           "family_title": "Denmark. The Baltic Sea. EK D 396 Hullebaek. Firing exercises. Warning.",
           "family_mechanism": "Case-linked history; provisional association only",
@@ -732,26 +768,11 @@
             }
           ],
           "reviewed_direction": "not_assessed"
-        },
-        {
-          "evidence_key": "history:3c0be3ce7108c29c4358",
-          "family_title": "Denmark. The Baltic Sea. EK D 396 Hullebaek. Firing exercises. Warning.",
-          "family_mechanism": "Case-linked history; provisional association only",
-          "source_health": "not_event_verified",
-          "sources": [
-            {
-              "url": "https://niord.dma.dk/#/message/679470f0-ce73-4b58-9cc8-24ddf6408cb6",
-              "title": "Denmark. The Baltic Sea. EK D 396 Hullebaek. Firing exercises. Warning.",
-              "provider": "live_maritime",
-              "first_observed_at": "2026-11-23T00:27:52Z"
-            }
-          ],
-          "reviewed_direction": "not_assessed"
         }
       ],
-      "input_sha256": "b5ab71910ce5eedbbf1f72ca3242dbdd42882f7dee16e9daabd7a7082377f086",
-      "model_generated_at": "2026-11-24T15:02:42.361014Z",
-      "cache_status": "reused_exact_input"
+      "input_sha256": "5438c5af86cb506cd0bac8fd8f8e3fd83b04276b6818786fffd166aa249e00ad",
+      "model_generated_at": "2026-11-24T19:01:07.394614Z",
+      "cache_status": "fresh_inference"
     },
     "iran_gulf": {
       "status": "provisional_complete",
@@ -1112,7 +1133,7 @@
           "evidence_key": "family:e773422e68943318b913",
           "family_title": "iso:KP · connectivity / anomaly",
           "family_mechanism": "internet_reachability",
-          "source_health": "current",
+          "source_health": "stale_or_unavailable",
           "sources": [
             {
               "url": "https://ioda.inetintel.cc.gatech.edu/",
@@ -1145,9 +1166,9 @@
           "reviewed_direction": "not_assessed"
         }
       ],
-      "input_sha256": "23d81d74d2238e9d13b1ead84eae0db3af72d2d972d1790dc96a9128da5b6608",
-      "model_generated_at": "2026-11-24T15:02:42.361014Z",
-      "cache_status": "reused_exact_input"
+      "input_sha256": "41e632f87890aac30fa1396ede2482e4bbda47c5cf468d7ead34091df47d85dc",
+      "model_generated_at": "2026-11-24T19:01:07.394614Z",
+      "cache_status": "fresh_inference"
     },
     "horn_ethiopia_kenya_moyale": {
       "status": "provisional_complete",
@@ -1244,8 +1265,8 @@
   },
   "summary": {
     "cases": 10,
-    "reused": 10,
-    "new_provisional": 0,
+    "reused": 5,
+    "new_provisional": 5,
     "failed": 0
   }
 }
