@@ -1,5 +1,38 @@
 {
   "roots": {
+    "090bd7ab002210c67723e98cbec769e6794b0dbe66800cc0ef46c133b2c9f84f": {
+      "information_root": "eonet:EONET_26662",
+      "members": {
+        "beh:5bbdfeb5efeffa13d6978c44926d": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "eonet",
+          "direct_measurement": false,
+          "event_at": "2026-11-20T13:16:00Z",
+          "first_observed_at": "2026-11-20T13:16:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:5bbdfeb5efeffa13d6978c44926d",
+          "information_root": "eonet:EONET_26662",
+          "origin": "behavioral_registry",
+          "provider": "eonet",
+          "published_at": "2026-11-20T13:16:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "cataloged_natural_hazard_context",
+          "source_measurement": null,
+          "source_scope": "NASA EONET open catalog, category Wildfires",
+          "source_updated_at": null,
+          "source_url": "https://eonet.gsfc.nasa.gov/api/v3/events/EONET_26662",
+          "title": "Wildfire White Oak Flat, Alleghany, Virginia"
+        }
+      }
+    },
     "09170d677ec1a2be2053deaffb312c2cf2d7e012562e650945602dac18b6fe57": {
       "information_root": "sg_mpa:sg_mpa:2026-10:container",
       "members": {
@@ -76,6 +109,39 @@
           "source_updated_at": null,
           "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-19T02%3A27%3A41&updatedTo=2026-11-21T02%3A27%3A41",
           "title": "Tonbridge & Malling Borough Council Angel Centre Demolition Supplier Engagement · Tonbridge and Malling Borough Council"
+        }
+      }
+    },
+    "0951ac318c745c602787440d15814d60e70cca20e6da93f0e330ed66edbd69ef": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c1d0:110822-2026",
+      "members": {
+        "beh:b3f1e494d5293d61b521b5ac732d": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-23T17:38:57+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:b3f1e494d5293d61b521b5ac732d",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c1d0:110822-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-23T17:38:57Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-22T02%3A19%3A12&updatedTo=2026-11-24T02%3A19%3A12",
+          "title": "Diversionary Youth Activities from King George V Pavilion · Portsmouth City Council"
         }
       }
     },
@@ -172,6 +238,53 @@
           "source_updated_at": null,
           "source_url": "https://ioda.inetintel.cc.gatech.edu/",
           "title": "IODA detected connectivity anomaly: country BN"
+        }
+      }
+    },
+    "099b4c8c4a2d649b68050e9f5c8f029f4e7b78f0268de31e4fa2bf74529daf33": {
+      "information_root": "cbp_wait:cbp_wait:250608:2026-11-23:18:14:19",
+      "members": {
+        "beh:b1d66d70a1b9e2ef409c550b7b7d": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T02:21:11+00:00",
+          "geography_key": "us-border-port:250608",
+          "geography_label": "Otay Mesa Port of Entry",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:b1d66d70a1b9e2ef409c550b7b7d",
+          "information_root": "cbp_wait:cbp_wait:250608:2026-11-23:18:14:19",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Update Pending",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/23/2026",
+            "reported_local_time": "18:14:19",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Otay Mesa Port of Entry"
         }
       }
     },

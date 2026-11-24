@@ -152,6 +152,85 @@
         }
       }
     },
+    "981c92f2b127697fa278e71083f3ad1588a7ec9b239af84ff72233e092243005": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-0774a1:110797-2026",
+      "members": {
+        "beh:108cae0350ea70f1e47743ee52dc": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-23T17:04:09+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:108cae0350ea70f1e47743ee52dc",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-0774a1:110797-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-23T17:04:09Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-22T02%3A19%3A12&updatedTo=2026-11-24T02%3A19%3A12",
+          "title": "Provision of Home to School Transport for Alt Bridge · Knowsley Council"
+        }
+      }
+    },
+    "983d5f794a5e4621c20fed49b80eb2df50f4a6c0cb2c038ad74404b980c37e2c": {
+      "information_root": "ris_bgp:ris_bgp:AS4766:20261124T01",
+      "members": {
+        "beh:a15fa3c1c9df82dce5db739fdc7b": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "public_routing_updates_not_country_outage",
+          "collection_mode": "ris_bgp",
+          "direct_measurement": true,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T02:21:11+00:00",
+          "geography_key": "asn:4766",
+          "geography_label": "AS4766",
+          "geography_precision": "routing_target_not_country_incident",
+          "id": "beh:a15fa3c1c9df82dce5db739fdc7b",
+          "information_root": "ris_bgp:ris_bgp:AS4766:20261124T01",
+          "origin": "behavioral_registry",
+          "provider": "ris_bgp",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "routing_collector_sampled_asn_updates",
+          "source_family": "internet_routing",
+          "source_kind": "sampled_asn_bgp_route_updates_not_network_outage",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "collector_peers_are_not_geo_deduplicated": true,
+            "country_impact_not_established": true,
+            "name": "sampled_6h_bgp_announcements",
+            "registered_network_country_hint": "KR",
+            "returned_sampling_buckets": 6,
+            "source_window_end": "2026-11-24T01:00:00Z",
+            "target_asn": "AS4766",
+            "unit": "announcements",
+            "value": 129734,
+            "window_hours_requested": 6,
+            "withdrawals_unavailable_for_asn": true
+          },
+          "source_scope": "RIPE RIS public route-announcement update samples on six non-Western operated networks; ASNs not country-wide outage detection",
+          "source_updated_at": null,
+          "source_url": "https://stat.ripe.net/data/bgp-update-activity/data.json?resource=AS4766&num_hours=6&max_samples=24&hide_empty_samples=false",
+          "title": "RIPE RIS sampled BGP announcements: AS4766"
+        }
+      }
+    },
     "9845ba0de4e24533c77f04188ea9c1720a489b27475c26b6a9a5991e71984583": {
       "information_root": "usgs:us6000ucf0",
       "members": {

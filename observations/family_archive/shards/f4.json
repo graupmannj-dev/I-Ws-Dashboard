@@ -33,6 +33,46 @@
         }
       }
     },
+    "f451e998fa509a3def6e9b8de67266c4b9a21dfb1e7544e97bcad5e5358646b7": {
+      "information_root": "coops:9414290:20261124T0212Z",
+      "members": {
+        "beh:3c84f7e2f45d7f0824588da018fe": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "coops",
+          "direct_measurement": true,
+          "event_at": "2026-11-24T02:12:00Z",
+          "first_observed_at": "2026-11-24T02:12:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:3c84f7e2f45d7f0824588da018fe",
+          "information_root": "coops:9414290:20261124T0212Z",
+          "origin": "behavioral_registry",
+          "provider": "coops",
+          "published_at": "2026-11-24T02:12:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "station_physical_measurement",
+          "source_family": "port_conditions",
+          "source_kind": "selected_port_water_level_measurement",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "metric_comparable_only_same_station_datum_and_sample_window": true,
+            "name": "observed_water_level",
+            "station": "9414290",
+            "unit": "meters_MLLW",
+            "value": 0.263
+          },
+          "source_scope": "NOAA CO-OPS water levels at San Francisco, Key West and Sewells Point; stations only",
+          "source_updated_at": null,
+          "source_url": "https://tidesandcurrents.noaa.gov/waterlevels.html?id=9414290",
+          "title": "San Francisco, CA observed water level (no anomaly classification)"
+        }
+      }
+    },
     "f45285a8d506a17a311dfa622a9e94c47a1ae699f6b23570d3455293758317c2": {
       "information_root": "niord:ca0f4689-c18d-4d37-9057-61f9ddc85241:2:0:0",
       "members": {
@@ -272,6 +312,39 @@
           "source_updated_at": "2026-11-16T09:21:51Z",
           "source_url": "https://niord.dma.dk/#/message/66104724-dce4-42b0-94f3-a556e64c68e7",
           "title": "Denmark. Kattegat. EK R 12 Gniben. Firing exercises. Warning."
+        }
+      }
+    },
+    "f4e52133dc5cb44573a8e7d93cad4b1495822c1cde99f64a132c5ee2aaee5e53": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-03f6c2:110760-2026",
+      "members": {
+        "beh:dfe4fecfb7012adfaff85b6e7ba1": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-23T16:25:37+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:dfe4fecfb7012adfaff85b6e7ba1",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-03f6c2:110760-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-23T16:25:37Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-22T02%3A19%3A12&updatedTo=2026-11-24T02%3A19%3A12",
+          "title": "Electronic Market Place for Supported Living Services Further Competitions Awarded on Lot 1 Qtr 2 2026/2027 · The Council of the Borough of Kirklees"
         }
       }
     },

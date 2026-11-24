@@ -296,6 +296,53 @@
         }
       }
     },
+    "63a60fcbaa0e5cb6338a82e7d34d575c3f9653f415d6cc9a2e64d8b65bf046fa": {
+      "information_root": "cbp_wait:cbp_wait:250301:2026-11-23:18:14:19",
+      "members": {
+        "beh:eaa7725017e91b5919d404d0d271": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T02:21:11+00:00",
+          "geography_key": "us-border-port:250301",
+          "geography_label": "Calexico",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:eaa7725017e91b5919d404d0d271",
+          "information_root": "cbp_wait:cbp_wait:250301:2026-11-23:18:14:19",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "delay",
+            "lanes_open": 2,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "At 6:00 pm PST",
+            "reported_local_date": "11/23/2026",
+            "reported_local_time": "18:14:19",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 210
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Calexico / East"
+        }
+      }
+    },
     "63b3f7d7f8fe7474a3846a7c181f0cae431383473dcad2d548a34ccbaecab908": {
       "information_root": "commercial:1fe6961ec9f1eaaca5af",
       "members": {
@@ -356,6 +403,39 @@
           "source_updated_at": "2026-11-22T00:21:52Z",
           "source_url": "https://niord.dma.dk/#/message/6b7064f4-fb41-4ad6-9d9f-e046b2b4cddf",
           "title": "Denmark. Kattegat. EK R 18 Jaegerspris. Firing exercises. Warning."
+        }
+      }
+    },
+    "63cca79d112cbec09d8344255b7210cebed8df0e5c0c039656355a1febbb0393": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07b596:110831-2026",
+      "members": {
+        "beh:b552062a2e64091b07f0097a1bcf": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-23T18:57:25+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:b552062a2e64091b07f0097a1bcf",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07b596:110831-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-23T18:57:25Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-22T02%3A19%3A12&updatedTo=2026-11-24T02%3A19%3A12",
+          "title": "Merthyr Housing Maintenance Contract (Individual Job Value up to £5,000) [9] · Merthyr Tydfil Housing Association"
         }
       }
     },
@@ -463,6 +543,53 @@
           "source_updated_at": "2026-11-17T00:21:51Z",
           "source_url": "https://niord.dma.dk/#/message/57e3ae61-a94b-4cc6-8303-615cf880c5bb",
           "title": "Denmark. The Baltic Sea. EK D 396 Hullebaek. Firing exercises. Warning."
+        }
+      }
+    },
+    "63fcf69b0755a368528e53b4066cdd237a8181775f9e694003a51dbbfe4b487e": {
+      "information_root": "cbp_wait:cbp_wait:260101:2026-11-23:18:14:19",
+      "members": {
+        "beh:4af1ffaf0a5ed80e2dc9d41752e7": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T02:21:11+00:00",
+          "geography_key": "us-border-port:260101",
+          "geography_label": "Douglas (Raul Hector Castro)",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:4af1ffaf0a5ed80e2dc9d41752e7",
+          "information_root": "cbp_wait:cbp_wait:260101:2026-11-23:18:14:19",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Lanes Closed",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/23/2026",
+            "reported_local_time": "18:14:19",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Douglas (Raul Hector Castro)"
         }
       }
     }

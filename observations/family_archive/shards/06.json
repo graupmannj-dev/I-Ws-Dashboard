@@ -156,6 +156,83 @@
         }
       }
     },
+    "063c3ace37bd45531495020ef0f2c88f444d4625496f7903dfc104fd753d93de": {
+      "information_root": "usgs:us6000ucz2",
+      "members": {
+        "beh:71e6a0a3e10cdb2ae6ad7747f4aa": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "usgs",
+          "direct_measurement": true,
+          "event_at": "2026-11-23T15:10:57Z",
+          "first_observed_at": "2026-11-23T15:10:57+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "source_supplied_point_only",
+          "id": "beh:71e6a0a3e10cdb2ae6ad7747f4aa",
+          "information_root": "usgs:us6000ucz2",
+          "origin": "behavioral_registry",
+          "provider": "usgs",
+          "published_at": "2026-11-23T16:34:34Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "measured_earthquake_context",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "name": "earthquake_magnitude",
+            "unit": "reported_magnitude",
+            "value": 4.7
+          },
+          "source_scope": "USGS M4.5+ earthquakes worldwide, rolling past day; source thresholds apply",
+          "source_updated_at": null,
+          "source_url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000ucz2",
+          "title": "M 4.7 - South Sandwich Islands region"
+        }
+      }
+    },
+    "0640836aed7692fb380edbceba9d10d8b0eae50a7c86b582a7a5e5137290404b": {
+      "information_root": "bmkg_nowcast:bmkg_nowcast:3fcc51916954b37eafbf4825406e",
+      "members": {
+        "beh:d7b2422b161cb65946dad3c7d6ff": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "bmkg_nowcast",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T01:16:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:d7b2422b161cb65946dad3c7d6ff",
+          "information_root": "bmkg_nowcast:bmkg_nowcast:3fcc51916954b37eafbf4825406e",
+          "origin": "behavioral_registry",
+          "provider": "bmkg_nowcast",
+          "published_at": "2026-11-24T01:16:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Indonesia BMKG",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Indonesia BMKG active provincial nowcast RSS, source-reported only; not global",
+          "source_updated_at": null,
+          "source_url": "https://www.bmkg.go.id/alerts/nowcast/en/CAH20261124001_alert.xml",
+          "title": "Thunderstorm This Morning in Aceh"
+        }
+      }
+    },
     "0650bb3462e0f0b21ee87de449ce6e54f401e2c281095e319f8c55dfb757c1ce": {
       "information_root": "niord:fd585098-74b9-49ea-a826-82951a0a3ad3:0:0:0",
       "members": {
@@ -363,6 +440,39 @@
           "source_updated_at": null,
           "source_url": "https://tidesandcurrents.noaa.gov/waterlevels.html?id=9414290",
           "title": "San Francisco, CA observed water level (no anomaly classification)"
+        }
+      }
+    },
+    "06854fd96c4685cf0dda922d3b0e853333b163869b46c11de2a7f85e56d188cb": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c1ba:110775-2026",
+      "members": {
+        "beh:0b462159d40a499fe8e7b21dd99d": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-23T16:35:08+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:0b462159d40a499fe8e7b21dd99d",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c1ba:110775-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-23T16:35:08Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-22T02%3A19%3A12&updatedTo=2026-11-24T02%3A19%3A12",
+          "title": "Works to ensure the safe operation of our works Depot · Dacorum Borough Council"
         }
       }
     },

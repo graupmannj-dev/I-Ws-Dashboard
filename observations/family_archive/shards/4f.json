@@ -102,6 +102,44 @@
         }
       }
     },
+    "4f39379220e7c7cb184b8c419d8900947a4c560f32fcc82515acc44e5bc781e4": {
+      "information_root": "usgs:us6000ucwm",
+      "members": {
+        "beh:12c1d53f096c4bb956b178123d04": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "usgs",
+          "direct_measurement": true,
+          "event_at": "2026-11-23T05:22:28Z",
+          "first_observed_at": "2026-11-23T05:22:28+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "source_supplied_point_only",
+          "id": "beh:12c1d53f096c4bb956b178123d04",
+          "information_root": "usgs:us6000ucwm",
+          "origin": "behavioral_registry",
+          "provider": "usgs",
+          "published_at": "2026-11-23T17:36:24Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "measured_earthquake_context",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "name": "earthquake_magnitude",
+            "unit": "reported_magnitude",
+            "value": 4.6
+          },
+          "source_scope": "USGS M4.5+ earthquakes worldwide, rolling past day; source thresholds apply",
+          "source_updated_at": null,
+          "source_url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000ucwm",
+          "title": "M 4.6 - 158 km SE of Severo-Kuril’sk, Russia"
+        }
+      }
+    },
     "4f4d0a6969d9e3fa04b1f97053ea92a8b82437b388fb1afa64155bb1dcbadbb2": {
       "information_root": "niord:69efd854-5221-4c33-9355-fb79f6ef0b2a:0:4:0",
       "members": {
@@ -349,6 +387,39 @@
           "source_updated_at": null,
           "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-19T02%3A27%3A41&updatedTo=2026-11-21T02%3A27%3A41",
           "title": "Parent Infant Psychological Therapy Services · West Sussex County Council"
+        }
+      }
+    },
+    "4ff645d7c09cf1fbbe1e82d62b66999ae1eecac413a18b4f7e26b2075704adcf": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c0a9:110776-2026",
+      "members": {
+        "beh:a4ec01391b0d5ce307cd695f9833": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-23T16:35:13+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:a4ec01391b0d5ce307cd695f9833",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c0a9:110776-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-23T16:35:13Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-22T02%3A19%3A12&updatedTo=2026-11-24T02%3A19%3A12",
+          "title": "260275 Contract for Northern Ireland Election Study · Queen's University Belfast"
         }
       }
     }

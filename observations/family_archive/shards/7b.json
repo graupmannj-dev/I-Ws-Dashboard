@@ -1,5 +1,38 @@
 {
   "roots": {
+    "7b06dc925f1883161c6bdbb9ec498a1b218f16421c23afd5f1b40538bfe62816": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c1cf:110821-2026",
+      "members": {
+        "beh:584bceeab5b04f106386b73ed33b": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-23T17:34:47+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:584bceeab5b04f106386b73ed33b",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c1cf:110821-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-23T17:34:47Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-22T02%3A19%3A12&updatedTo=2026-11-24T02%3A19%3A12",
+          "title": "North Northamptonshire Council - Nightly Purchased, Supplier Managed Temporary Accommodation Dynamic Purchasing System (DPS) · North Northamptonshire Council"
+        }
+      }
+    },
     "7b0c91b69a2c499cd5ed2c42debd723b11ec7c61fb370a922700694dd4db2383": {
       "information_root": "nws:1c728c55e62b93ef36dedc61",
       "members": {
@@ -235,6 +268,81 @@
           "source_updated_at": "2026-11-20T00:21:52Z",
           "source_url": "https://niord.dma.dk/#/message/69057d00-f2a2-402c-8b88-b8fb3a34b088",
           "title": "Denmark. Kattegat. EK R 18 Jaegerspris. Firing exercises. Warning."
+        }
+      }
+    },
+    "7b39dfd9d9bc23d70f3c8ed405155e2be325725dda97bb20aca7f8d1a679e48b": {
+      "information_root": "wiki_edits:wiki_edits:ru:20261124T02",
+      "members": {
+        "beh:c74ab86743de9b34902a2998f0a1": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "wiki_edits",
+          "direct_measurement": false,
+          "event_at": "2026-11-24T02:19:10Z",
+          "first_observed_at": "2026-11-24T02:19:10+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:c74ab86743de9b34902a2998f0a1",
+          "information_root": "wiki_edits:wiki_edits:ru:20261124T02",
+          "origin": "behavioral_registry",
+          "provider": "wiki_edits",
+          "published_at": "2026-11-24T02:19:10Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "public_encyclopedia_edit_aggregate",
+          "source_family": "public_attention",
+          "source_kind": "bounded_public_edit_count_not_event_verification",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "distinct_articles_in_sample": 390,
+            "maximum_returned_edits": 500,
+            "most_edited_article_counts": [
+              {
+                "count": 9,
+                "title": "Культивируемое мясо"
+              },
+              {
+                "count": 8,
+                "title": "Митрохин, Андрей Филиппович"
+              },
+              {
+                "count": 7,
+                "title": "Nothofagus alpina"
+              },
+              {
+                "count": 7,
+                "title": "Премия Кана Кикути"
+              },
+              {
+                "count": 6,
+                "title": "Поддубье (Волосовский район)"
+              },
+              {
+                "count": 6,
+                "title": "Томпсон, Джон Нортон"
+              },
+              {
+                "count": 5,
+                "title": "Гранат (обсерватория)"
+              },
+              {
+                "count": 5,
+                "title": "Стрэттон, Джулиана"
+              }
+            ],
+            "name": "sampled_edits_last_three_hours",
+            "sample_cap_reached": true,
+            "unit": "edits",
+            "value": 500
+          },
+          "source_scope": "Wikipedia main-namespace edit-count sample, 14 global language editions, three-hour window capped at 500 per wiki; not geographic location",
+          "source_updated_at": null,
+          "source_url": "https://ru.wikipedia.org/wiki/Special:RecentChanges",
+          "title": "Wikipedia ru public article-edit activity (sampled)"
         }
       }
     },

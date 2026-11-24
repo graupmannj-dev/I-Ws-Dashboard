@@ -1,5 +1,84 @@
 {
   "roots": {
+    "011675822e964b7a4af14f1f28c311165b418fdf01ed44dfd22ccc16d806a4a2": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c1cd:110817-2026",
+      "members": {
+        "beh:bac669fb618e0bc3b86bf95a6d1f": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-23T17:29:29+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:bac669fb618e0bc3b86bf95a6d1f",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c1cd:110817-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-23T17:29:29Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-22T02%3A19%3A12&updatedTo=2026-11-24T02%3A19%3A12",
+          "title": "Right to Buy (HRA Assets) · Dacorum Borough Council"
+        }
+      }
+    },
+    "012f446b600986fe41e6ee8bae03a3923fbc35072ff969c9a626319c010a2e24": {
+      "information_root": "ris_bgp:ris_bgp:AS7303:20261124T01",
+      "members": {
+        "beh:d1f22ebac0a36e3393c5c7e37f02": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "public_routing_updates_not_country_outage",
+          "collection_mode": "ris_bgp",
+          "direct_measurement": true,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T02:21:11+00:00",
+          "geography_key": "asn:7303",
+          "geography_label": "AS7303",
+          "geography_precision": "routing_target_not_country_incident",
+          "id": "beh:d1f22ebac0a36e3393c5c7e37f02",
+          "information_root": "ris_bgp:ris_bgp:AS7303:20261124T01",
+          "origin": "behavioral_registry",
+          "provider": "ris_bgp",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "routing_collector_sampled_asn_updates",
+          "source_family": "internet_routing",
+          "source_kind": "sampled_asn_bgp_route_updates_not_network_outage",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "collector_peers_are_not_geo_deduplicated": true,
+            "country_impact_not_established": true,
+            "name": "sampled_6h_bgp_announcements",
+            "registered_network_country_hint": "AR",
+            "returned_sampling_buckets": 6,
+            "source_window_end": "2026-11-24T01:00:00Z",
+            "target_asn": "AS7303",
+            "unit": "announcements",
+            "value": 18811,
+            "window_hours_requested": 6,
+            "withdrawals_unavailable_for_asn": true
+          },
+          "source_scope": "RIPE RIS public route-announcement update samples on six non-Western operated networks; ASNs not country-wide outage detection",
+          "source_updated_at": null,
+          "source_url": "https://stat.ripe.net/data/bgp-update-activity/data.json?resource=AS7303&num_hours=6&max_samples=24&hide_empty_samples=false",
+          "title": "RIPE RIS sampled BGP announcements: AS7303"
+        }
+      }
+    },
     "014f098af290ad6bf05eb41c67ea3061994337a0781c9656b4cbca9c1f39d74e": {
       "information_root": "ioda:bc6b3cb323055f16fe0193e4",
       "members": {
@@ -313,6 +392,39 @@
           "source_updated_at": null,
           "source_url": "https://ioda.inetintel.cc.gatech.edu/",
           "title": "IODA detected connectivity anomaly: country VI"
+        }
+      }
+    },
+    "01f06ad2ccb690301d9502bfd25ab17932d69ef1a2f0c90f47806d72b7e05c56": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c1ca:110809-2026",
+      "members": {
+        "beh:205a8a078218809ad6a0db0cecb1": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-23T17:22:10+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:205a8a078218809ad6a0db0cecb1",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c1ca:110809-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-23T17:22:10Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-22T02%3A19%3A12&updatedTo=2026-11-24T02%3A19%3A12",
+          "title": "Leaseholder Extension Valuations · Dacorum Borough Council"
         }
       }
     }

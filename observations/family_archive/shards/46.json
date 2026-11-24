@@ -173,6 +173,39 @@
         }
       }
     },
+    "4640e674e5b8f2584c7e477d2cd275c97f630df5928e2f1a2a743e9427b4faa2": {
+      "information_root": "nws:8459e66196eea2cedb5edb7b",
+      "members": {
+        "beh:e39987d45dab5edb7557f5f37b4a": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "nws",
+          "direct_measurement": false,
+          "event_at": "2026-11-24T01:46:00Z",
+          "first_observed_at": "2026-11-24T01:46:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:e39987d45dab5edb7557f5f37b4a",
+          "information_root": "nws:8459e66196eea2cedb5edb7b",
+          "origin": "behavioral_registry",
+          "provider": "nws",
+          "published_at": "2026-11-24T01:46:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "official_weather_alert_context",
+          "source_measurement": null,
+          "source_scope": "Active NWS marine alerts; severity Severe",
+          "source_updated_at": null,
+          "source_url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.9561e02cc26fbf5719949e2f64012a9833c89368.001.1",
+          "title": "Flood Warning - Brevard, FL"
+        }
+      }
+    },
     "46497b4e1de4574ba2b1bce0475051bdb1d8a6b86a2e75e983844dd45790a25d": {
       "information_root": "cbp_wait:cbp_wait:230301:2026-11-22:13:38:51",
       "members": {
@@ -353,6 +386,52 @@
           "source_updated_at": null,
           "source_url": "https://bwt.cbp.gov/api/waittimes",
           "title": "CBP estimated commercial border wait — Madawaska"
+        }
+      }
+    },
+    "46c0a6aa89eb753f5e17a351282267cd1b3ebaea566752308bc0b33eb4b990ca": {
+      "information_root": "ris_bgp:ris_bgp:AS4134:20261124T01",
+      "members": {
+        "beh:b92e9c44e86362d98dcbe25a49e1": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "public_routing_updates_not_country_outage",
+          "collection_mode": "ris_bgp",
+          "direct_measurement": true,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T02:21:11+00:00",
+          "geography_key": "asn:4134",
+          "geography_label": "AS4134",
+          "geography_precision": "routing_target_not_country_incident",
+          "id": "beh:b92e9c44e86362d98dcbe25a49e1",
+          "information_root": "ris_bgp:ris_bgp:AS4134:20261124T01",
+          "origin": "behavioral_registry",
+          "provider": "ris_bgp",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "routing_collector_sampled_asn_updates",
+          "source_family": "internet_routing",
+          "source_kind": "sampled_asn_bgp_route_updates_not_network_outage",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "collector_peers_are_not_geo_deduplicated": true,
+            "country_impact_not_established": true,
+            "name": "sampled_6h_bgp_announcements",
+            "registered_network_country_hint": "CN",
+            "returned_sampling_buckets": 6,
+            "source_window_end": "2026-11-24T01:00:00Z",
+            "target_asn": "AS4134",
+            "unit": "announcements",
+            "value": 66212,
+            "window_hours_requested": 6,
+            "withdrawals_unavailable_for_asn": true
+          },
+          "source_scope": "RIPE RIS public route-announcement update samples on six non-Western operated networks; ASNs not country-wide outage detection",
+          "source_updated_at": null,
+          "source_url": "https://stat.ripe.net/data/bgp-update-activity/data.json?resource=AS4134&num_hours=6&max_samples=24&hide_empty_samples=false",
+          "title": "RIPE RIS sampled BGP announcements: AS4134"
         }
       }
     },

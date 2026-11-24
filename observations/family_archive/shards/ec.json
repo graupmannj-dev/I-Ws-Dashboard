@@ -113,6 +113,100 @@
         }
       }
     },
+    "ec55903c35a35a9b4c73493bd8af19c4241479cb673d80ccb668d7cc42e94ad7": {
+      "information_root": "cbp_wait:cbp_wait:535503:2026-11-23:20:14:19",
+      "members": {
+        "beh:4a88b02f8e481878f3207ea67e64": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T02:21:11+00:00",
+          "geography_key": "us-border-port:535503",
+          "geography_label": "Brownsville",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:4a88b02f8e481878f3207ea67e64",
+          "information_root": "cbp_wait:cbp_wait:535503:2026-11-23:20:14:19",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "no delay",
+            "lanes_open": 1,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "At 8:00 pm CST",
+            "reported_local_date": "11/23/2026",
+            "reported_local_time": "20:14:19",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 5
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Brownsville / Los Indios"
+        }
+      }
+    },
+    "ec61214f841a4e47940aea76e5946f2d1f9f13390642353da20dc01835b8d288": {
+      "information_root": "cbp_wait:cbp_wait:240203:2026-11-23:19:14:19",
+      "members": {
+        "beh:4f79b380a0d5cfc83d3738dac8d6": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T02:21:11+00:00",
+          "geography_key": "us-border-port:240203",
+          "geography_label": "El Paso",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:4f79b380a0d5cfc83d3738dac8d6",
+          "information_root": "cbp_wait:cbp_wait:240203:2026-11-23:19:14:19",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "delay",
+            "lanes_open": 4,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "At 7:00 pm MST",
+            "reported_local_date": "11/23/2026",
+            "reported_local_time": "19:14:19",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 25
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — El Paso / Ysleta"
+        }
+      }
+    },
     "ec6162654365ee12ea5cddcb37b338d81df966d75a1959017ce882bb18af5399": {
       "information_root": "nws:9f4930d2332a53ca547b457c",
       "members": {
@@ -179,6 +273,45 @@
         }
       }
     },
+    "ec9c98ca2c709bade207fd30065990ee9fea51e23fdd4874ed72926c9b8b9079": {
+      "information_root": "inmet_br:inmet_br:7c289dc2f6a7e809f3484225bcb9",
+      "members": {
+        "beh:14c491a420ddb9cac89d6c764597": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "inmet_br",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T00:00:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:14c491a420ddb9cac89d6c764597",
+          "information_root": "inmet_br:inmet_br:7c289dc2f6a7e809f3484225bcb9",
+          "origin": "behavioral_registry",
+          "provider": "inmet_br",
+          "published_at": "2026-11-24T00:00:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Brazil INMET",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Brazil INMET official severe-weather RSS notices; provider-listed bounded sample",
+          "source_updated_at": null,
+          "source_url": "https://apiprevmet3.inmet.gov.br/avisos/rss/56494",
+          "title": "Aviso de Tempestade. Severidade Grau: Perigo"
+        }
+      }
+    },
     "eca5ebd0bde9cea4d3209cfedf7dd828b17e47fa7c592d94b0e220b45457c669": {
       "information_root": "niord:1863129d-c7bf-4cf8-9778-0416c0b5b3b3:4:0:0",
       "members": {
@@ -206,6 +339,39 @@
           "source_updated_at": "2026-11-18T00:21:54Z",
           "source_url": "https://niord.dma.dk/#/message/1863129d-c7bf-4cf8-9778-0416c0b5b3b3",
           "title": "Denmark. The North Sea. EK R 33 Vejers. Firing exercises. Warning."
+        }
+      }
+    },
+    "ecabb1b94e3149d82975d83dd67ef9a8c431ee6b6707d7773f3971f787e47b77": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07b41b:110799-2026",
+      "members": {
+        "beh:97ea849f3c15c6d8298a466e3c78": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-23T17:10:48+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:97ea849f3c15c6d8298a466e3c78",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07b41b:110799-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-23T17:10:48Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-22T02%3A19%3A12&updatedTo=2026-11-24T02%3A19%3A12",
+          "title": "Merthyr Housing Maintenance Contract (Individual Job Value up to £5,000) [1] · Merthyr Tydfil Housing Association"
         }
       }
     },

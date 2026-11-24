@@ -339,6 +339,44 @@
         }
       }
     },
+    "507e7065d2a1edc10bccfaf38d621c1f6f03dfb8558f4690858d0eb119f5e770": {
+      "information_root": "usgs:us6000ud2y",
+      "members": {
+        "beh:64e7bea96961e3bd370c3b597853": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "usgs",
+          "direct_measurement": true,
+          "event_at": "2026-11-23T21:25:33Z",
+          "first_observed_at": "2026-11-23T21:25:33+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "source_supplied_point_only",
+          "id": "beh:64e7bea96961e3bd370c3b597853",
+          "information_root": "usgs:us6000ud2y",
+          "origin": "behavioral_registry",
+          "provider": "usgs",
+          "published_at": "2026-11-24T00:26:33Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "measured_earthquake_context",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "name": "earthquake_magnitude",
+            "unit": "reported_magnitude",
+            "value": 4.6
+          },
+          "source_scope": "USGS M4.5+ earthquakes worldwide, rolling past day; source thresholds apply",
+          "source_updated_at": null,
+          "source_url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000ud2y",
+          "title": "M 4.6 - 130 km SSW of Merizo Village, Guam"
+        }
+      }
+    },
     "50806292675581c52eea08132d41fbc9ba567483d9555e18038785811dc8f93f": {
       "information_root": "official:c1af68fed49ebef26465",
       "members": {
@@ -432,6 +470,39 @@
         }
       }
     },
+    "5092da75777a4e5a3ebdbe67f20cbc8728ba47f93262322801be470898c4b605": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c1b4:110763-2026",
+      "members": {
+        "beh:a9193c698f1e0578656bcd5507e2": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-23T16:26:29+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:a9193c698f1e0578656bcd5507e2",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c1b4:110763-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-23T16:26:29Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-22T02%3A19%3A12&updatedTo=2026-11-24T02%3A19%3A12",
+          "title": "Crisis Resilience Fund Voucher System · Gateshead Borough Council"
+        }
+      }
+    },
     "50a24f09fe92c3fcfe7605a7ec2f31a164039b06c0c8e6f6dcdc051f48c3a47f": {
       "information_root": "saudi-coalition-hodeidah-strike-houthi-response-2026-11-20",
       "members": {
@@ -502,6 +573,53 @@
           "source_updated_at": null,
           "source_url": "https://bwt.cbp.gov/api/waittimes",
           "title": "CBP estimated commercial border wait — Paso Del Norte"
+        }
+      }
+    },
+    "50dcca859109f89513589727aaa1f002bf68f67ea376e4f87bd44be436748e44": {
+      "information_root": "cbp_wait:cbp_wait:090103:2026-11-23:21:14:19",
+      "members": {
+        "beh:85ed6e57318d5aff524d2e820c27": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T02:21:11+00:00",
+          "geography_key": "us-border-port:090103",
+          "geography_label": "Buffalo/Niagara Falls",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:85ed6e57318d5aff524d2e820c27",
+          "information_root": "cbp_wait:cbp_wait:090103:2026-11-23:21:14:19",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Update Pending",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/23/2026",
+            "reported_local_time": "21:14:19",
+            "source_declared_border": "Canadian Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Buffalo/Niagara Falls / Whirlpool Bridge"
         }
       }
     },

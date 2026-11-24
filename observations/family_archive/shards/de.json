@@ -187,6 +187,120 @@
         }
       }
     },
+    "de8d2e8b8c825f537874e8eb536f87ffdbcd66e190e25013f2745b860797cdca": {
+      "information_root": "wiki_edits:wiki_edits:es:20261124T02",
+      "members": {
+        "beh:c38646c215f9b810c82ca9cff38c": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "wiki_edits",
+          "direct_measurement": false,
+          "event_at": "2026-11-24T02:19:05Z",
+          "first_observed_at": "2026-11-24T02:19:05+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:c38646c215f9b810c82ca9cff38c",
+          "information_root": "wiki_edits:wiki_edits:es:20261124T02",
+          "origin": "behavioral_registry",
+          "provider": "wiki_edits",
+          "published_at": "2026-11-24T02:19:05Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "public_encyclopedia_edit_aggregate",
+          "source_family": "public_attention",
+          "source_kind": "bounded_public_edit_count_not_event_verification",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "distinct_articles_in_sample": 384,
+            "maximum_returned_edits": 500,
+            "most_edited_article_counts": [
+              {
+                "count": 13,
+                "title": "Liga Femenina FPF"
+              },
+              {
+                "count": 13,
+                "title": "Raquel Arbaje"
+              },
+              {
+                "count": 9,
+                "title": "Margarita Ortega Valdés"
+              },
+              {
+                "count": 6,
+                "title": "Daqing"
+              },
+              {
+                "count": 6,
+                "title": "Dome (celebridad de Internet)"
+              },
+              {
+                "count": 5,
+                "title": "Banda sonora de Grand Theft Auto V"
+              },
+              {
+                "count": 5,
+                "title": "Campeonato Brasileño de Fútbol Serie A 2026"
+              },
+              {
+                "count": 4,
+                "title": "Autolisis (pelicula Venezolana)"
+              }
+            ],
+            "name": "sampled_edits_last_three_hours",
+            "sample_cap_reached": true,
+            "unit": "edits",
+            "value": 500
+          },
+          "source_scope": "Wikipedia main-namespace edit-count sample, 14 global language editions, three-hour window capped at 500 per wiki; not geographic location",
+          "source_updated_at": null,
+          "source_url": "https://es.wikipedia.org/wiki/Special:RecentChanges",
+          "title": "Wikipedia es public article-edit activity (sampled)"
+        }
+      }
+    },
+    "deccd50f1e0ba9ad8dc6118022fb54c704ba75c0e39dfb84e288729bc21f1181": {
+      "information_root": "bmkg_nowcast:bmkg_nowcast:eabebb5635185cc3122ef81bf639",
+      "members": {
+        "beh:c145cb722793aabfa9ce634f6915": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "bmkg_nowcast",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T00:15:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:c145cb722793aabfa9ce634f6915",
+          "information_root": "bmkg_nowcast:bmkg_nowcast:eabebb5635185cc3122ef81bf639",
+          "origin": "behavioral_registry",
+          "provider": "bmkg_nowcast",
+          "published_at": "2026-11-24T00:15:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Indonesia BMKG",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Indonesia BMKG active provincial nowcast RSS, source-reported only; not global",
+          "source_updated_at": null,
+          "source_url": "https://www.bmkg.go.id/alerts/nowcast/en/CNB20261124001_alert.xml",
+          "title": "Thunderstorm This Morning in Nusa Tenggara Barat"
+        }
+      }
+    },
     "dedb2f41f3e42907d229fd92630a26ff41d0b8e3036186e17397b2bed77f8a61": {
       "information_root": "official:d92ecd889ea0b7b7f554",
       "members": {

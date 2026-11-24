@@ -1,5 +1,43 @@
 {
   "roots": {
+    "b709af509cbc774900b92e33d66d430932a785d376b463d8c7a4dc7622959e50": {
+      "information_root": "usgs:us6000ud3i",
+      "members": {
+        "beh:4f016391c68dbb121012b92886c0": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "usgs",
+          "direct_measurement": true,
+          "event_at": "2026-11-24T01:32:42Z",
+          "first_observed_at": "2026-11-24T01:32:42+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "source_supplied_point_only",
+          "id": "beh:4f016391c68dbb121012b92886c0",
+          "information_root": "usgs:us6000ud3i",
+          "origin": "behavioral_registry",
+          "provider": "usgs",
+          "published_at": "2026-11-24T02:15:25Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "measured_earthquake_context",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "name": "earthquake_magnitude",
+            "unit": "reported_magnitude",
+            "value": 5.3
+          },
+          "source_scope": "USGS M4.5+ earthquakes worldwide, rolling past day; source thresholds apply",
+          "source_updated_at": null,
+          "source_url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000ud3i",
+          "title": "M 5.3 - 67 km WNW of Mangan, India"
+        }
+      }
+    },
     "b73a796afb65685b4ebac43fc9a1297a8387b676ba4be06b71791259c011eecb": {
       "information_root": "sg_mpa:sg_mpa:2026-02:container",
       "members": {
@@ -348,6 +386,39 @@
           "source_updated_at": null,
           "source_url": "https://bwt.cbp.gov/api/waittimes",
           "title": "CBP estimated commercial border wait — Del Rio"
+        }
+      }
+    },
+    "b7cbf7acb8a634dd9a1efef12004554601f348b37bfa669b7b9deb16eaec4bb5": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07bad4:110769-2026",
+      "members": {
+        "beh:235bb9b37c10d130b2fc02298024": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-23T16:32:05+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:235bb9b37c10d130b2fc02298024",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07bad4:110769-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-23T16:32:05Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-22T02%3A19%3A12&updatedTo=2026-11-24T02%3A19%3A12",
+          "title": "2026-035 Spreadsheet Modelling Best Practice · Ofgem"
         }
       }
     },

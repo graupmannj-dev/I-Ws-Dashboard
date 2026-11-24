@@ -181,6 +181,81 @@
         }
       }
     },
+    "3774e7fbc028d8d9b0108455d2eea6df6941c66abf065139d87da7eeebca94f0": {
+      "information_root": "wiki_edits:wiki_edits:hi:20261124T02",
+      "members": {
+        "beh:42543507536732e5bc0d5f75aaae": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "wiki_edits",
+          "direct_measurement": false,
+          "event_at": "2026-11-24T02:13:42Z",
+          "first_observed_at": "2026-11-24T02:13:42+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:42543507536732e5bc0d5f75aaae",
+          "information_root": "wiki_edits:wiki_edits:hi:20261124T02",
+          "origin": "behavioral_registry",
+          "provider": "wiki_edits",
+          "published_at": "2026-11-24T02:13:42Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "public_encyclopedia_edit_aggregate",
+          "source_family": "public_attention",
+          "source_kind": "bounded_public_edit_count_not_event_verification",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "distinct_articles_in_sample": 31,
+            "maximum_returned_edits": 500,
+            "most_edited_article_counts": [
+              {
+                "count": 1,
+                "title": "उत्तरी कोरिया के साथ शांति समझौता"
+              },
+              {
+                "count": 1,
+                "title": "उत्सर्जन व्यापार"
+              },
+              {
+                "count": 1,
+                "title": "उदगीर क़िला"
+              },
+              {
+                "count": 1,
+                "title": "उदय किरण"
+              },
+              {
+                "count": 1,
+                "title": "उदयसागर झील"
+              },
+              {
+                "count": 1,
+                "title": "उधम सिंह"
+              },
+              {
+                "count": 1,
+                "title": "उधम सिंह (हॉकी खिलाडी)"
+              },
+              {
+                "count": 1,
+                "title": "उन्नत वीडियो कोडन"
+              }
+            ],
+            "name": "sampled_edits_last_three_hours",
+            "sample_cap_reached": false,
+            "unit": "edits",
+            "value": 31
+          },
+          "source_scope": "Wikipedia main-namespace edit-count sample, 14 global language editions, three-hour window capped at 500 per wiki; not geographic location",
+          "source_updated_at": null,
+          "source_url": "https://hi.wikipedia.org/wiki/Special:RecentChanges",
+          "title": "Wikipedia hi public article-edit activity (sampled)"
+        }
+      }
+    },
     "3797b6f7e5b606fd5d70869c5ec11ba15fb9949d22fe5528380db2991c60c7bb": {
       "information_root": "ioda:48eec343a39b15a98186fe2e",
       "members": {
@@ -369,6 +444,86 @@
           "source_updated_at": null,
           "source_url": "https://ioda.inetintel.cc.gatech.edu/",
           "title": "IODA detected connectivity anomaly: country NG"
+        }
+      }
+    },
+    "37ec445df663a44529a80032b223ae8a2e2b6345d449001a56e50c06ae5de0c6": {
+      "information_root": "cbp_wait:cbp_wait:300403:2026-11-23:18:14:19",
+      "members": {
+        "beh:cd34252fc6c77d19d650f70a0661": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T02:21:11+00:00",
+          "geography_key": "us-border-port:300403",
+          "geography_label": "Blaine",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:cd34252fc6c77d19d650f70a0661",
+          "information_root": "cbp_wait:cbp_wait:300403:2026-11-23:18:14:19",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Update Pending",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/23/2026",
+            "reported_local_time": "18:14:19",
+            "source_declared_border": "Canadian Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Blaine / Point Roberts"
+        }
+      }
+    },
+    "37fbad2ad3a7283679c7e57baa99397756c4fd5c79b6d51d6b5409c6c1603b6b": {
+      "information_root": "nws:c00d99e5776152edb1d0fe81",
+      "members": {
+        "beh:73d2c8074837ff8fc6c9206adb72": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "nws",
+          "direct_measurement": false,
+          "event_at": "2026-11-23T17:45:00Z",
+          "first_observed_at": "2026-11-23T17:45:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:73d2c8074837ff8fc6c9206adb72",
+          "information_root": "nws:c00d99e5776152edb1d0fe81",
+          "origin": "behavioral_registry",
+          "provider": "nws",
+          "published_at": "2026-11-23T17:45:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "official_weather_alert_context",
+          "source_measurement": null,
+          "source_scope": "Active NWS marine alerts; severity Severe",
+          "source_updated_at": null,
+          "source_url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.2754d520c18cb190464cf72118c0daac46613eae.001.1",
+          "title": "Coastal Flood Warning - Inland Flagler; Eastern Putnam; Coastal Flagler"
         }
       }
     }

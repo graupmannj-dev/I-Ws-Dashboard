@@ -66,6 +66,53 @@
         }
       }
     },
+    "5c2c7e4021867bed66d74fcce5592ac14b264daae14b52ff35ce1fe38dc594ff": {
+      "information_root": "cbp_wait:cbp_wait:070101:2026-11-23:21:14:19",
+      "members": {
+        "beh:08305f25266da5de8628b965a9d6": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T02:21:11+00:00",
+          "geography_key": "us-border-port:070101",
+          "geography_label": "Ogdensburg",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:08305f25266da5de8628b965a9d6",
+          "information_root": "cbp_wait:cbp_wait:070101:2026-11-23:21:14:19",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "no delay",
+            "lanes_open": 1,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "At 10:00 pm EST",
+            "reported_local_date": "11/23/2026",
+            "reported_local_time": "21:14:19",
+            "source_declared_border": "Canadian Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 0
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Ogdensburg"
+        }
+      }
+    },
     "5c33943ce2d4e63f607e2dd30016f16f2e4409e4090a54c765a8d370132a56de": {
       "information_root": "usgs:us6000ucu7",
       "members": {
@@ -101,6 +148,39 @@
           "source_updated_at": null,
           "source_url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000ucu7",
           "title": "M 4.7 - 25 km WSW of Isangel, Vanuatu"
+        }
+      }
+    },
+    "5c4b4ed2deabfe7dda43a7776c65aa103ce503e5bcb6a7303489aa90d6d8a649": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c1b0:110756-2026",
+      "members": {
+        "beh:8d7df92b967c676486aca08940aa": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-23T16:21:59+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:8d7df92b967c676486aca08940aa",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c1b0:110756-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-23T16:21:59Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-22T02%3A19%3A12&updatedTo=2026-11-24T02%3A19%3A12",
+          "title": "Planned Re-Roofing Programme 2027 – 2030 · Dover District Council"
         }
       }
     },
@@ -203,6 +283,39 @@
           "source_updated_at": null,
           "source_url": "https://www.bmkg.go.id/alerts/nowcast/en/CJB20261122007_alert.xml",
           "title": "Thunderstorm Tonight in Jawa Barat"
+        }
+      }
+    },
+    "5c85883bb21028d820df577f933c495dcbce509d4c21cc5b4c55230054a0e7ac": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c1c3:110792-2026",
+      "members": {
+        "beh:e491b885800e61af51d37a46bf2b": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-23T16:49:41+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:e491b885800e61af51d37a46bf2b",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c1c3:110792-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-23T16:49:41Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-22T02%3A19%3A12&updatedTo=2026-11-24T02%3A19%3A12",
+          "title": "Leeds Anchors Consultancy 2026 - 2031Wordfern Limited · Leeds City Council"
         }
       }
     },

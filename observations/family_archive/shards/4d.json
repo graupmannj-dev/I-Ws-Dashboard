@@ -47,6 +47,53 @@
         }
       }
     },
+    "4d15e387aae0e1b6c56b57129e9b95280de84cc957e2da6619ea98c0cefc7ec9": {
+      "information_root": "cbp_wait:cbp_wait:240601:2026-11-23:19:14:19",
+      "members": {
+        "beh:1c7bd3b291b0ef7e511fc677a6df": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T02:21:11+00:00",
+          "geography_key": "us-border-port:240601",
+          "geography_label": "Columbus",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:1c7bd3b291b0ef7e511fc677a6df",
+          "information_root": "cbp_wait:cbp_wait:240601:2026-11-23:19:14:19",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Lanes Closed",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/23/2026",
+            "reported_local_time": "19:14:19",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Columbus"
+        }
+      }
+    },
     "4d169fd515978f67ecc0a885aef30414bd3225233ee2e899abcaaeec09037983": {
       "information_root": "official:658ff7f4dce06dc55d37",
       "members": {
@@ -189,6 +236,53 @@
           "source_updated_at": null,
           "source_url": "https://ko.wikipedia.org/wiki/Special:RecentChanges",
           "title": "Wikipedia ko public article-edit activity (sampled)"
+        }
+      }
+    },
+    "4d3cd85de1b7f402453e0a5faa024293325e4abc8e640aa948bc70b224ea5772": {
+      "information_root": "cbp_wait:cbp_wait:250602:2026-11-23:18:14:19",
+      "members": {
+        "beh:45f03103872f251391a840413010": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T02:21:11+00:00",
+          "geography_key": "us-border-port:250602",
+          "geography_label": "Otay Mesa",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:45f03103872f251391a840413010",
+          "information_root": "cbp_wait:cbp_wait:250602:2026-11-23:18:14:19",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "delay",
+            "lanes_open": 4,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "At 3:00 pm PST",
+            "reported_local_date": "11/23/2026",
+            "reported_local_time": "18:14:19",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 30
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Otay Mesa / Commercial"
         }
       }
     },
@@ -346,6 +440,53 @@
         }
       }
     },
+    "4d9c3c9e548633beeb4c3337f884eff62c9c601aafb265bb48d92332cf5a37fb": {
+      "information_root": "cbp_wait:cbp_wait:240201:2026-11-23:19:14:19",
+      "members": {
+        "beh:2cc27c35c84a528c857a215d6093": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T02:21:11+00:00",
+          "geography_key": "us-border-port:240201",
+          "geography_label": "El Paso",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:2cc27c35c84a528c857a215d6093",
+          "information_root": "cbp_wait:cbp_wait:240201:2026-11-23:19:14:19",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Lanes Closed",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/23/2026",
+            "reported_local_time": "19:14:19",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — El Paso / Bridge of the Americas (BOTA)"
+        }
+      }
+    },
     "4db1ab6924331fa830419f5b357254a3a442b5bed89b7f0305d92e5ac3feaaac": {
       "information_root": "cbp_wait:cbp_wait:240221:2026-11-22:18:44:34",
       "members": {
@@ -491,6 +632,39 @@
           "source_updated_at": "2026-11-22T00:21:52Z",
           "source_url": "https://niord.dma.dk/#/message/6b7064f4-fb41-4ad6-9d9f-e046b2b4cddf",
           "title": "Denmark. Kattegat. EK R 18 Jaegerspris. Firing exercises. Warning."
+        }
+      }
+    },
+    "4dfece47bbc091adf88b32d9c47a2847e5c074f05a4070b6e67ebf8b3515430f": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07b5e3:110838-2026",
+      "members": {
+        "beh:f22089d67454aca9bdcfb5e548a7": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-23T19:30:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:f22089d67454aca9bdcfb5e548a7",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07b5e3:110838-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-23T19:30:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-22T02%3A19%3A12&updatedTo=2026-11-24T02%3A19%3A12",
+          "title": "Merthyr Housing Maintenance Contract (Individual Job Value up to £5,000) [15] · Merthyr Tydfil Housing Association"
         }
       }
     }

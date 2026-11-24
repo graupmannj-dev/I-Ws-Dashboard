@@ -39,6 +39,53 @@
         }
       }
     },
+    "88111649fd2d235df0640d57c07924fbc68df9972006082ed2534b347d709a55": {
+      "information_root": "cbp_wait:cbp_wait:230902:2026-11-23:20:14:19",
+      "members": {
+        "beh:dc4b4eba5162a83e7ff538303845": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T02:21:11+00:00",
+          "geography_key": "us-border-port:230902",
+          "geography_label": "Progreso",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:dc4b4eba5162a83e7ff538303845",
+          "information_root": "cbp_wait:cbp_wait:230902:2026-11-23:20:14:19",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "N/A",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/23/2026",
+            "reported_local_time": "20:14:19",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Progreso / Donna International Bridge"
+        }
+      }
+    },
     "8812c2e8c2633ad21e5048148bfd8b92f3c0c320ddf3b08dda75c2ff8659429b": {
       "information_root": "cbp_wait:cbp_wait:230501:2026-11-21:13:22:45",
       "members": {
@@ -316,6 +363,100 @@
           "source_updated_at": null,
           "source_url": "https://tfr.faa.gov/6_7139.html",
           "title": "FAA TFR 6/7139 · 39 ZJX AIRSPACE BARTOW, FL, Wednesday, November 11, 2026 UTC"
+        }
+      }
+    },
+    "88eba01f221f1d5ce71206f9835f9679b396d41373db966bc9e8f7dd9ba1aaae": {
+      "information_root": "cbp_wait:cbp_wait:231001:2026-11-23:20:14:19",
+      "members": {
+        "beh:bc459a0d9f56fd6ce2f4e196bfc4": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T02:21:11+00:00",
+          "geography_key": "us-border-port:231001",
+          "geography_label": "Roma",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:bc459a0d9f56fd6ce2f4e196bfc4",
+          "information_root": "cbp_wait:cbp_wait:231001:2026-11-23:20:14:19",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "no delay",
+            "lanes_open": 1,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "At 7:00 pm CST",
+            "reported_local_date": "11/23/2026",
+            "reported_local_time": "20:14:19",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 0
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Roma"
+        }
+      }
+    },
+    "88f069b6aea78d77fe914749213af17747aa9534dacc3dd98b59349a0e8bb390": {
+      "information_root": "ons_br:ons_br:N:20261123T030000Z",
+      "members": {
+        "beh:802ee1a9dc57d0ee0c09bbc7a39e": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "verified_grid_load_not_outage_or_intent",
+          "collection_mode": "ons_br",
+          "direct_measurement": true,
+          "event_at": "2026-11-23T03:00:00Z",
+          "first_observed_at": "2026-11-24T02:21:11+00:00",
+          "geography_key": "br-ons-loadarea:N",
+          "geography_label": "North",
+          "geography_precision": "regional_grid_not_incident_site",
+          "id": "beh:802ee1a9dc57d0ee0c09bbc7a39e",
+          "information_root": "ons_br:ons_br:N:20261123T030000Z",
+          "origin": "behavioral_registry",
+          "provider": "ons_br",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "verified_national_grid_load_measurement",
+          "source_family": "grid_load",
+          "source_kind": "verified_regional_electricity_load_context_not_outage",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "collected_history_day": "2026-11-22",
+            "historical_verified_not_live": true,
+            "load_area_code": "N",
+            "load_area_name": "North",
+            "name": "verified_half_hour_global_load",
+            "not_outage_or_attribution": true,
+            "sample_interval_minutes": 30,
+            "sampled_rows": 48,
+            "source_field": "val_cargaglobal",
+            "source_utc_field": "din_referenciautc",
+            "unit": "MWmed",
+            "value": 9920.099
+          },
+          "source_scope": "Brazilian national system operator ONS verified half-hour load, four macroregions, previous two-day sample; no local facilities/outage attribution",
+          "source_updated_at": null,
+          "source_url": "https://dados.ons.org.br/dataset/carga-energia-verificada",
+          "title": "Brazil ONS North verified half-hourly system load"
         }
       }
     },

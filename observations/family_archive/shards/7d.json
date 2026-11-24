@@ -120,6 +120,39 @@
         }
       }
     },
+    "7d5cbc3a6998733d921d1390f9575e03110b48a833214bacbf71f39890219804": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c1b5:110766-2026",
+      "members": {
+        "beh:18a78ec25b27e8ea1112d04900d4": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-23T16:27:32+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:18a78ec25b27e8ea1112d04900d4",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c1b5:110766-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-23T16:27:32Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-22T02%3A19%3A12&updatedTo=2026-11-24T02%3A19%3A12",
+          "title": "Behaviour Change Training · Norfolk County Council"
+        }
+      }
+    },
     "7d6be16212d4d9f041234ea9680d5d91735a099c549710d47f8f7442f4c51e41": {
       "information_root": "ioda:f8a91e92abc99c144d424153",
       "members": {
@@ -435,6 +468,53 @@
           "source_updated_at": null,
           "source_url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.deu.html",
           "title": "Germany - Level 2: Exercise Increased Caution"
+        }
+      }
+    },
+    "7dd6de8cf91f8e5e93bf7b5bdb435e83cffb656c21732bf2625941e3a6524044": {
+      "information_root": "cbp_wait:cbp_wait:230401:2026-11-23:20:14:19",
+      "members": {
+        "beh:3a414a0c41a9dbaded76a48151af": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T02:21:11+00:00",
+          "geography_key": "us-border-port:230401",
+          "geography_label": "Laredo",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:3a414a0c41a9dbaded76a48151af",
+          "information_root": "cbp_wait:cbp_wait:230401:2026-11-23:20:14:19",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "N/A",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/23/2026",
+            "reported_local_time": "20:14:19",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Laredo / Bridge I"
         }
       }
     },

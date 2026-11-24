@@ -419,6 +419,53 @@
         }
       }
     },
+    "59cc91c6354f58854b03d6b8df2f0204ac5291fd50206aaf253cfbf60ee7e4cf": {
+      "information_root": "cbp_wait:cbp_wait:090101:2026-11-23:21:14:19",
+      "members": {
+        "beh:08087ec14c0f4f51bb54b4fed1ac": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T02:21:11+00:00",
+          "geography_key": "us-border-port:090101",
+          "geography_label": "Buffalo/Niagara Falls",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:08087ec14c0f4f51bb54b4fed1ac",
+          "information_root": "cbp_wait:cbp_wait:090101:2026-11-23:21:14:19",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "no delay",
+            "lanes_open": 4,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "At 9:07 pm EST",
+            "reported_local_date": "11/23/2026",
+            "reported_local_time": "21:14:19",
+            "source_declared_border": "Canadian Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 9
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Buffalo/Niagara Falls / Peace Bridge"
+        }
+      }
+    },
     "59cd86bf4c155a553c51d3ed11bb643bb8b3e5a36c88f27f89b18ab32aa4bd8d": {
       "information_root": "ukmto-khasab-projectile-reports-2026-11-21",
       "members": {

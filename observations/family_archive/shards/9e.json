@@ -285,6 +285,39 @@
         }
       }
     },
+    "9e3d430804a9027979e4b4fe7cd25ba8142cca00c550cf0c8314d27381531999": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c1c5:110798-2026",
+      "members": {
+        "beh:b244e624a0e7186ed357afc4b5dd": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-23T17:05:01+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:b244e624a0e7186ed357afc4b5dd",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c1c5:110798-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-23T17:05:01Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-22T02%3A19%3A12&updatedTo=2026-11-24T02%3A19%3A12",
+          "title": "LIBRTI RISE - (Remote Inspection for Safe Entry) UAV/Drone Requirements · UK Atomic Energy Authority"
+        }
+      }
+    },
     "9e4d7212d0bb9956708a4c19ebb31cba8c5a48d57489c9a60ee93e758679d37a": {
       "information_root": "ioda:cce2ae2d32fa9867ce4fa2c9",
       "members": {
@@ -670,6 +703,45 @@
           "source_updated_at": null,
           "source_url": "https://ar.wikipedia.org/wiki/Special:RecentChanges",
           "title": "Wikipedia ar public article-edit activity (sampled)"
+        }
+      }
+    },
+    "9eacbf197f47550ebd80196dfe10882abc6dace431b47ed16a5b9973a572c327": {
+      "information_root": "bmkg_nowcast:bmkg_nowcast:d1fce98edf036042822292b438d7",
+      "members": {
+        "beh:2ddc78c09a21b25768f27f1a201e": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "bmkg_nowcast",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T02:00:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:2ddc78c09a21b25768f27f1a201e",
+          "information_root": "bmkg_nowcast:bmkg_nowcast:d1fce98edf036042822292b438d7",
+          "origin": "behavioral_registry",
+          "provider": "bmkg_nowcast",
+          "published_at": "2026-11-24T02:00:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Indonesia BMKG",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Indonesia BMKG active provincial nowcast RSS, source-reported only; not global",
+          "source_updated_at": null,
+          "source_url": "https://www.bmkg.go.id/alerts/nowcast/en/CRU20261124002_alert.xml",
+          "title": "Thunderstorm This Morning in Riau"
         }
       }
     },

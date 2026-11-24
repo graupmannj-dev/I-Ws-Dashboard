@@ -375,6 +375,45 @@
         }
       }
     },
+    "52ba1cd75cf62075c18a2afaa5c4d42ad4b6b38e7865dd0dc3941695fb32d2a5": {
+      "information_root": "bmkg_nowcast:bmkg_nowcast:7f353d3cf7ce7dcd7750449baccf",
+      "members": {
+        "beh:4dbde8acb6b3a2c45e1d55839095": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "bmkg_nowcast",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T02:10:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:4dbde8acb6b3a2c45e1d55839095",
+          "information_root": "bmkg_nowcast:bmkg_nowcast:7f353d3cf7ce7dcd7750449baccf",
+          "origin": "behavioral_registry",
+          "provider": "bmkg_nowcast",
+          "published_at": "2026-11-24T02:10:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Indonesia BMKG",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Indonesia BMKG active provincial nowcast RSS, source-reported only; not global",
+          "source_updated_at": null,
+          "source_url": "https://www.bmkg.go.id/alerts/nowcast/en/CKR20261124001_alert.xml",
+          "title": "Thunderstorm This Morning in Kep. Riau"
+        }
+      }
+    },
     "52c13e169413cfd246a94063068b40dfeaeddadbe129e4354ae4fe2426be60c5": {
       "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c0bf:110322-2026",
       "members": {
@@ -438,6 +477,81 @@
           "source_updated_at": null,
           "source_url": "https://ioda.inetintel.cc.gatech.edu/",
           "title": "IODA detected connectivity anomaly: country BY"
+        }
+      }
+    },
+    "52ccd1d719faec1c9f6408b8c36897d4a52be34ef6417e26cbf1df2015993206": {
+      "information_root": "wiki_edits:wiki_edits:tr:20261124T02",
+      "members": {
+        "beh:0ac590a72fe411229e89d864b7c3": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "wiki_edits",
+          "direct_measurement": false,
+          "event_at": "2026-11-24T02:18:13Z",
+          "first_observed_at": "2026-11-24T02:18:13+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:0ac590a72fe411229e89d864b7c3",
+          "information_root": "wiki_edits:wiki_edits:tr:20261124T02",
+          "origin": "behavioral_registry",
+          "provider": "wiki_edits",
+          "published_at": "2026-11-24T02:18:13Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "public_encyclopedia_edit_aggregate",
+          "source_family": "public_attention",
+          "source_kind": "bounded_public_edit_count_not_event_verification",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "distinct_articles_in_sample": 467,
+            "maximum_returned_edits": 500,
+            "most_edited_article_counts": [
+              {
+                "count": 10,
+                "title": "Christina Aguilera diskografisi"
+              },
+              {
+                "count": 3,
+                "title": "Bali"
+              },
+              {
+                "count": 3,
+                "title": "Ciguli"
+              },
+              {
+                "count": 3,
+                "title": "Circus (Britney Spears albümü)"
+              },
+              {
+                "count": 3,
+                "title": "FameBit"
+              },
+              {
+                "count": 3,
+                "title": "Neuschwanstein Şatosu"
+              },
+              {
+                "count": 3,
+                "title": "Trabzonspor'un Avrupa kupaları tarihi"
+              },
+              {
+                "count": 2,
+                "title": "2014 Güreş Dünya Kupası - Erkekler serbest"
+              }
+            ],
+            "name": "sampled_edits_last_three_hours",
+            "sample_cap_reached": true,
+            "unit": "edits",
+            "value": 500
+          },
+          "source_scope": "Wikipedia main-namespace edit-count sample, 14 global language editions, three-hour window capped at 500 per wiki; not geographic location",
+          "source_updated_at": null,
+          "source_url": "https://tr.wikipedia.org/wiki/Special:RecentChanges",
+          "title": "Wikipedia tr public article-edit activity (sampled)"
         }
       }
     },

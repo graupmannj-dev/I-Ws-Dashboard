@@ -275,6 +275,53 @@
         }
       }
     },
+    "269c393a8c67bb83a463be06a060d562a2d51102c8ad3b69c477e1769d8f5e4f": {
+      "information_root": "ons_br:ons_br:NE:20261123T030000Z",
+      "members": {
+        "beh:2ad5ea2063518b17ab4a2debcd0c": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "verified_grid_load_not_outage_or_intent",
+          "collection_mode": "ons_br",
+          "direct_measurement": true,
+          "event_at": "2026-11-23T03:00:00Z",
+          "first_observed_at": "2026-11-24T02:21:11+00:00",
+          "geography_key": "br-ons-loadarea:NE",
+          "geography_label": "Northeast",
+          "geography_precision": "regional_grid_not_incident_site",
+          "id": "beh:2ad5ea2063518b17ab4a2debcd0c",
+          "information_root": "ons_br:ons_br:NE:20261123T030000Z",
+          "origin": "behavioral_registry",
+          "provider": "ons_br",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "verified_national_grid_load_measurement",
+          "source_family": "grid_load",
+          "source_kind": "verified_regional_electricity_load_context_not_outage",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "collected_history_day": "2026-11-22",
+            "historical_verified_not_live": true,
+            "load_area_code": "NE",
+            "load_area_name": "Northeast",
+            "name": "verified_half_hour_global_load",
+            "not_outage_or_attribution": true,
+            "sample_interval_minutes": 30,
+            "sampled_rows": 48,
+            "source_field": "val_cargaglobal",
+            "source_utc_field": "din_referenciautc",
+            "unit": "MWmed",
+            "value": 16558.172
+          },
+          "source_scope": "Brazilian national system operator ONS verified half-hour load, four macroregions, previous two-day sample; no local facilities/outage attribution",
+          "source_updated_at": null,
+          "source_url": "https://dados.ons.org.br/dataset/carga-energia-verificada",
+          "title": "Brazil ONS Northeast verified half-hourly system load"
+        }
+      }
+    },
     "269dbd7a93472429a62a15583cbbc9262550f8f44c8bae5facbd1cac58d0f66e": {
       "information_root": "commercial:ccd8abd4253e268bef8b",
       "members": {
@@ -429,6 +476,53 @@
           "source_updated_at": null,
           "source_url": "https://bwt.cbp.gov/api/waittimes",
           "title": "CBP estimated commercial border wait — Port Huron / Bluewater Bridge"
+        }
+      }
+    },
+    "26c6cc5b7340eb0a343809a6ed1556f107848f3b9b72547a6856147fffffcaad": {
+      "information_root": "cbp_wait:cbp_wait:302301:2026-11-23:18:14:19",
+      "members": {
+        "beh:2e930b95f22359de8d81e15dde6f": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T02:21:11+00:00",
+          "geography_key": "us-border-port:302301",
+          "geography_label": "Lynden",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:2e930b95f22359de8d81e15dde6f",
+          "information_root": "cbp_wait:cbp_wait:302301:2026-11-23:18:14:19",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "no delay",
+            "lanes_open": 1,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "At 6:00 pm PST",
+            "reported_local_date": "11/23/2026",
+            "reported_local_time": "18:14:19",
+            "source_declared_border": "Canadian Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 5
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Lynden"
         }
       }
     },

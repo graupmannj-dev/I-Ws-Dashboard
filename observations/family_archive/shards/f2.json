@@ -278,6 +278,53 @@
         }
       }
     },
+    "f28463d91c196a53557892c66a38b4d41d595a95fbfeb0439256a751aa817f73": {
+      "information_root": "cbp_wait:cbp_wait:020901:2026-11-23:21:14:19",
+      "members": {
+        "beh:eda050c676dcb8c81a9962ad5826": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T02:21:11+00:00",
+          "geography_key": "us-border-port:020901",
+          "geography_label": "Derby Line",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:eda050c676dcb8c81a9962ad5826",
+          "information_root": "cbp_wait:cbp_wait:020901:2026-11-23:21:14:19",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "no delay",
+            "lanes_open": 1,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "At 11:00 pm EST",
+            "reported_local_date": "11/23/2026",
+            "reported_local_time": "21:14:19",
+            "source_declared_border": "Canadian Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 0
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Derby Line / Derby Line I-91"
+        }
+      }
+    },
     "f296b509033feadde64f7bf106cfb9bbab16ff5947e6d0bf9f20558a12b44baa": {
       "information_root": "cbp_wait:cbp_wait:250609:2026-11-22:17:44:34",
       "members": {

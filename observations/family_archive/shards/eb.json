@@ -47,6 +47,53 @@
         }
       }
     },
+    "eb0fe720cb80299f5919fcf01c25970e765dc7bad2725e29c830723771ce9f3f": {
+      "information_root": "cbp_wait:cbp_wait:260801:2026-11-23:19:14:19",
+      "members": {
+        "beh:890533c6278a9ec9e8baec4bfde7": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T02:21:11+00:00",
+          "geography_key": "us-border-port:260801",
+          "geography_label": "San Luis",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:890533c6278a9ec9e8baec4bfde7",
+          "information_root": "cbp_wait:cbp_wait:260801:2026-11-23:19:14:19",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "N/A",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/23/2026",
+            "reported_local_time": "19:14:19",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — San Luis / San Luis I"
+        }
+      }
+    },
     "eb12408f7c47ec448cba8c65dae02e89664ec8116dc55e3acef0055961155a65": {
       "information_root": "cbp_wait:cbp_wait:260305:2026-11-22:03:34:18",
       "members": {
@@ -238,6 +285,39 @@
           "source_updated_at": null,
           "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-21T13%3A10%3A09&updatedTo=2026-11-23T13%3A10%3A09",
           "title": "Manufacturing Africa · Foreign Commonwealth and Development Office"
+        }
+      }
+    },
+    "eb4300e51bebdb6c6f6a7f38e7e0445c001720e03568137cdcc43566e6774714": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07b57f:110823-2026",
+      "members": {
+        "beh:0f91b4540ed21f33ff335a6fc052": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-23T17:43:58+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:0f91b4540ed21f33ff335a6fc052",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07b57f:110823-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-23T17:43:58Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-22T02%3A19%3A12&updatedTo=2026-11-24T02%3A19%3A12",
+          "title": "Merthyr Housing Maintenance Contract (Individual Job Value up to £5,000) [5] · Merthyr Tydfil Housing Association"
         }
       }
     },
@@ -455,6 +535,39 @@
           "source_updated_at": null,
           "source_url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000ucws",
           "title": "M 4.7 - 109 km E of Bitung, Indonesia"
+        }
+      }
+    },
+    "eb998dfd10c6c4cb5b559822bbf9f7d83753c99219c30734fe9ca9e5c8a88d7d": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07b840:110755-2026",
+      "members": {
+        "beh:78157a3d3cefafb2552a2f89df65": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-23T16:20:07+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:78157a3d3cefafb2552a2f89df65",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07b840:110755-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-23T16:20:07Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-22T02%3A19%3A12&updatedTo=2026-11-24T02%3A19%3A12",
+          "title": "DA - NEPO418 - Library Books and Digital Content Lot 1-7 · Stockton on Tees Borough Council"
         }
       }
     },
@@ -689,6 +802,53 @@
           "source_updated_at": null,
           "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-19T02%3A27%3A41&updatedTo=2026-11-21T02%3A27%3A41",
           "title": "MNSI Communication and Engagement Support · Care Quality Commission"
+        }
+      }
+    },
+    "ebeb2c5cf5f4a37d67b56844f06438fe35deb788be83b47d50ec7535ffe0c453": {
+      "information_root": "cbp_wait:cbp_wait:240202:2026-11-23:19:14:19",
+      "members": {
+        "beh:5d54b28016a69fcbaae13240c057": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T02:21:11+00:00",
+          "geography_key": "us-border-port:240202",
+          "geography_label": "El Paso",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:5d54b28016a69fcbaae13240c057",
+          "information_root": "cbp_wait:cbp_wait:240202:2026-11-23:19:14:19",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "N/A",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/23/2026",
+            "reported_local_time": "19:14:19",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — El Paso / Paso Del Norte (PDN)"
         }
       }
     }

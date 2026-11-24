@@ -194,6 +194,39 @@
         }
       }
     },
+    "5a47448a8fcc46b726e9975a18c6e6655f209002b52823df53f4f212c7079b21": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07b5c3:110835-2026",
+      "members": {
+        "beh:3d4fad18d27fc5182357d79c2de6": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-23T19:19:42+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:3d4fad18d27fc5182357d79c2de6",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07b5c3:110835-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-23T19:19:42Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-22T02%3A19%3A12&updatedTo=2026-11-24T02%3A19%3A12",
+          "title": "Merthyr Housing Maintenance Contract (Individual Job Value up to £5,000) [13] · Merthyr Tydfil Housing Association"
+        }
+      }
+    },
     "5a4b90f642f0935010663c79eb2bcac488a7b3cc4ff130954f84db63f19b6161": {
       "information_root": "cbp_wait:cbp_wait:230404:2026-11-21:05:24:37",
       "members": {
@@ -549,6 +582,39 @@
         }
       }
     },
+    "5a9fa635ea18471434a78da31e01348e355e018dbf053d0846a9c6d6736cf540": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c1d4:110839-2026",
+      "members": {
+        "beh:b303e63b1e0b7a60f870f5f6da26": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-23T19:34:02+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:b303e63b1e0b7a60f870f5f6da26",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c1d4:110839-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-23T19:34:02Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-22T02%3A19%3A12&updatedTo=2026-11-24T02%3A19%3A12",
+          "title": "SAS Data Managed Advanced · The Mayor's Office for Policing and Crime"
+        }
+      }
+    },
     "5ac00d646485d97e373f7363be5424dc90683f042ae33e21bc9788032172370c": {
       "information_root": "nws:658815a44d45fc6079cb2bb5",
       "members": {
@@ -656,6 +722,53 @@
           "source_updated_at": null,
           "source_url": "https://bwt.cbp.gov/api/waittimes",
           "title": "CBP estimated commercial border wait — Sweetgrass"
+        }
+      }
+    },
+    "5af3ce6ba28b3188c1355118485ce3c5ea89266e4440c6fe135393933e573820": {
+      "information_root": "cbp_wait:cbp_wait:260201:2026-11-23:19:14:19",
+      "members": {
+        "beh:6bb937bb07174e4b0d67f5c71bfa": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T02:21:11+00:00",
+          "geography_key": "us-border-port:260201",
+          "geography_label": "Lukeville",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:6bb937bb07174e4b0d67f5c71bfa",
+          "information_root": "cbp_wait:cbp_wait:260201:2026-11-23:19:14:19",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Lanes Closed",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/23/2026",
+            "reported_local_time": "19:14:19",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Lukeville"
         }
       }
     }

@@ -47,6 +47,81 @@
         }
       }
     },
+    "a51319f1b42a0ea618da60f251a9cf4da2249d401d0c34b0dcd5dc95188b8053": {
+      "information_root": "wiki_edits:wiki_edits:ar:20261124T02",
+      "members": {
+        "beh:d65f0ed172ad56d0f4ede25e64e4": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "wiki_edits",
+          "direct_measurement": false,
+          "event_at": "2026-11-24T02:19:12Z",
+          "first_observed_at": "2026-11-24T02:19:12+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:d65f0ed172ad56d0f4ede25e64e4",
+          "information_root": "wiki_edits:wiki_edits:ar:20261124T02",
+          "origin": "behavioral_registry",
+          "provider": "wiki_edits",
+          "published_at": "2026-11-24T02:19:12Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "public_encyclopedia_edit_aggregate",
+          "source_family": "public_attention",
+          "source_kind": "bounded_public_edit_count_not_event_verification",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "distinct_articles_in_sample": 235,
+            "maximum_returned_edits": 500,
+            "most_edited_article_counts": [
+              {
+                "count": 10,
+                "title": "الألعاب الأولمبية الشتوية 1940"
+              },
+              {
+                "count": 9,
+                "title": "الألعاب الأمريكية 2011"
+              },
+              {
+                "count": 9,
+                "title": "الألعاب الأمريكية 2019"
+              },
+              {
+                "count": 8,
+                "title": "الألعاب الآسيوية الشتوية 2017"
+              },
+              {
+                "count": 8,
+                "title": "الألعاب الآسيوية للصالات 2005"
+              },
+              {
+                "count": 8,
+                "title": "الألعاب الأمريكية 1959"
+              },
+              {
+                "count": 8,
+                "title": "الألعاب الأمريكية 1971"
+              },
+              {
+                "count": 8,
+                "title": "الألعاب الأمريكية 1987"
+              }
+            ],
+            "name": "sampled_edits_last_three_hours",
+            "sample_cap_reached": true,
+            "unit": "edits",
+            "value": 500
+          },
+          "source_scope": "Wikipedia main-namespace edit-count sample, 14 global language editions, three-hour window capped at 500 per wiki; not geographic location",
+          "source_updated_at": null,
+          "source_url": "https://ar.wikipedia.org/wiki/Special:RecentChanges",
+          "title": "Wikipedia ar public article-edit activity (sampled)"
+        }
+      }
+    },
     "a51f3837b0dd5f5a5fad6ce5afef83d595a16bffd0a2d5b17ca95b3b3d195a57": {
       "information_root": "faa:6/7338:0:0",
       "members": {
@@ -262,6 +337,39 @@
           "source_updated_at": null,
           "source_url": "https://ioda.inetintel.cc.gatech.edu/",
           "title": "IODA detected connectivity anomaly: country CI"
+        }
+      }
+    },
+    "a579676e0db4afb20aea95894b3b8cf0acd8b262555b682c93f71a583418f968": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c1b3:110759-2026",
+      "members": {
+        "beh:643323970bf0808ff329b53f4099": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-23T16:25:19+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:643323970bf0808ff329b53f4099",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c1b3:110759-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-23T16:25:19Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-22T02%3A19%3A12&updatedTo=2026-11-24T02%3A19%3A12",
+          "title": "D365 Immutable Backup · Care Quality Commission"
         }
       }
     },

@@ -93,6 +93,53 @@
         }
       }
     },
+    "d72c97972804c08a069350b3908ee4113f246418bab014d80525322666e7033c": {
+      "information_root": "cbp_wait:cbp_wait:010601:2026-11-23:21:14:19",
+      "members": {
+        "beh:6c438699cc48d64ec973f42752ef": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T02:21:11+00:00",
+          "geography_key": "us-border-port:010601",
+          "geography_label": "Houlton",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:6c438699cc48d64ec973f42752ef",
+          "information_root": "cbp_wait:cbp_wait:010601:2026-11-23:21:14:19",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "no delay",
+            "lanes_open": 1,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "At 8:00 pm EST",
+            "reported_local_date": "11/23/2026",
+            "reported_local_time": "21:14:19",
+            "source_declared_border": "Canadian Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 5
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Houlton"
+        }
+      }
+    },
     "d74c224baa6742023d9d0076756c6779bba2ed3ec62895370b2296b5d4bec39a": {
       "information_root": "niord:f44d130c-3d02-409c-8023-40cb59dad3fb:0:0:0",
       "members": {

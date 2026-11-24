@@ -60,6 +60,53 @@
         }
       }
     },
+    "9c187b08855db9c9b73e4b89d5e76be7e35fcb3ebed191ddc799555c64acf0ed": {
+      "information_root": "cbp_wait:cbp_wait:250201:2026-11-23:18:14:19",
+      "members": {
+        "beh:3bd555251becb3efab50539687db": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T02:21:11+00:00",
+          "geography_key": "us-border-port:250201",
+          "geography_label": "Andrade",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:3bd555251becb3efab50539687db",
+          "information_root": "cbp_wait:cbp_wait:250201:2026-11-23:18:14:19",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Lanes Closed",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/23/2026",
+            "reported_local_time": "18:14:19",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Andrade"
+        }
+      }
+    },
     "9c19c5ad00fbe37f49094cd416ed5e7726304e69f50367e38f21fdb6e366c707": {
       "information_root": "ioda:d9557a506c103ae1b8f49925",
       "members": {
@@ -90,6 +137,53 @@
           "source_updated_at": null,
           "source_url": "https://ioda.inetintel.cc.gatech.edu/",
           "title": "IODA detected connectivity anomaly: country UZ"
+        }
+      }
+    },
+    "9c1dd8308866e1194bda35b6ba6f5f8552a0b4498071fdf67a046d5f03145076": {
+      "information_root": "cbp_wait:cbp_wait:010401:2026-11-23:21:14:19",
+      "members": {
+        "beh:de8042bb7fc60282029f729befe1": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T02:21:11+00:00",
+          "geography_key": "us-border-port:010401",
+          "geography_label": "Jackman",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:de8042bb7fc60282029f729befe1",
+          "information_root": "cbp_wait:cbp_wait:010401:2026-11-23:21:14:19",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "no delay",
+            "lanes_open": 1,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "At 9:00 pm EST",
+            "reported_local_date": "11/23/2026",
+            "reported_local_time": "21:14:19",
+            "source_declared_border": "Canadian Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 0
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Jackman"
         }
       }
     },
@@ -197,6 +291,72 @@
           "source_updated_at": null,
           "source_url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOLWdqZ1RnSFFwUjFSUF9XX0FBbjBrRVNjenQzSHdESWV4UEpaRThQb2t6djhwY0lHaXRXWlQwR0piYWhfR0JuSXJuNTY2ZmxFdGZHWkk1S0xkOTh5MzVsTGhFdW1RbHM5SzFZT1hyQ2xpRkJtMWxoaUdqRTZfZHlXZ21xOFY5QkxDbDVHWWVmNnRicEF1?oc=5",
           "title": "War Risk Insurance: Why Airlines Are Paying Far More - The Aviation Hub"
+        }
+      }
+    },
+    "9caaab44770369fe8084f13624336d51842d1b881cb3d1c774a27fd250b418af": {
+      "information_root": "nws:e08191b4baf0764ece69e221",
+      "members": {
+        "beh:98de2cc7f7cb4028900ad4763d27": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "nws",
+          "direct_measurement": false,
+          "event_at": "2026-11-24T01:49:00Z",
+          "first_observed_at": "2026-11-24T01:49:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:98de2cc7f7cb4028900ad4763d27",
+          "information_root": "nws:e08191b4baf0764ece69e221",
+          "origin": "behavioral_registry",
+          "provider": "nws",
+          "published_at": "2026-11-24T01:49:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "official_weather_alert_context",
+          "source_measurement": null,
+          "source_scope": "Active NWS marine alerts; severity Severe",
+          "source_updated_at": null,
+          "source_url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.5ea7bc736918d8c2a07c293ca36f046ace37f5f2.001.1",
+          "title": "Flood Warning - Seminole, FL"
+        }
+      }
+    },
+    "9cb3806b35d77160360a962390f97fdf57170b1b67851ded56b83d2ffc1927e8": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07b5c7:110837-2026",
+      "members": {
+        "beh:291827e307871621527703e423c6": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-23T19:25:32+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:291827e307871621527703e423c6",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07b5c7:110837-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-23T19:25:32Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-22T02%3A19%3A12&updatedTo=2026-11-24T02%3A19%3A12",
+          "title": "Merthyr Housing Maintenance Contract (Individual Job Value up to £5,000) [14] · Merthyr Tydfil Housing Association"
         }
       }
     },

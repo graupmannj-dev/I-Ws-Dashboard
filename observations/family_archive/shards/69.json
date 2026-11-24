@@ -1,5 +1,52 @@
 {
   "roots": {
+    "693258f5255ef37d87c7181b40598199bdc73375201735bed4dcd9a0c4f3405b": {
+      "information_root": "cbp_wait:cbp_wait:070401:2026-11-23:21:14:19",
+      "members": {
+        "beh:cf7aef8c69c1be7ed12d6fabb103": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T02:21:11+00:00",
+          "geography_key": "us-border-port:070401",
+          "geography_label": "Massena",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:cf7aef8c69c1be7ed12d6fabb103",
+          "information_root": "cbp_wait:cbp_wait:070401:2026-11-23:21:14:19",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "no delay",
+            "lanes_open": 1,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "At 10:00 pm EST",
+            "reported_local_date": "11/23/2026",
+            "reported_local_time": "21:14:19",
+            "source_declared_border": "Canadian Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 0
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Massena"
+        }
+      }
+    },
     "69580c9d6ed5b5e2b45fd4acbd9d42444415a96eb97bccd965cc659615ec299f": {
       "information_root": "niord:fd585098-74b9-49ea-a826-82951a0a3ad3:0:2:0",
       "members": {
@@ -170,6 +217,50 @@
           "source_updated_at": null,
           "source_url": "https://manifold.markets/Kynakwado/will-armed-conflict-break-out-betwe-IQN6NqOp09",
           "title": "Ethiopia–Eritrea conflict onset by end-2026"
+        }
+      }
+    },
+    "698748aa5f20f634c4f51b005b1f7713634eb424b752b37e55e3e94738bb753f": {
+      "information_root": "tw_power:tw_power:20261124T0210Z",
+      "members": {
+        "beh:4c39400ff068e4fccbe2316ec751": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_power_snapshot_not_outage_attribution",
+          "collection_mode": "tw_power",
+          "direct_measurement": true,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T02:21:11+00:00",
+          "geography_key": "country:TW",
+          "geography_label": "Taiwan",
+          "geography_precision": "national_not_facility",
+          "id": "beh:4c39400ff068e4fccbe2316ec751",
+          "information_root": "tw_power:tw_power:20261124T0210Z",
+          "origin": "behavioral_registry",
+          "provider": "tw_power",
+          "published_at": "2026-11-24T02:10:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "public_national_power_snapshot",
+          "source_family": "grid_load",
+          "source_kind": "national_grid_load_aggregate_not_outage",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "measurement_clock_distinct_from_release_not_verified": true,
+            "name": "nationwide_reported_current_load",
+            "not_grid_frequency_or_outage_attribution": true,
+            "observation_coverage": "single_national_snapshot_not_24h",
+            "reported_utilization_percent": 77.0,
+            "source_published_clock": "2026-11-24T02:10:00Z",
+            "source_value_10k_kilowatts": 3103.0,
+            "unit": "MW",
+            "value": 31030.0
+          },
+          "source_scope": "Taiwan Taipower public nationwide current load snapshot and publisher release clock, not power-station or local outage data",
+          "source_updated_at": null,
+          "source_url": "https://service.taipower.com.tw/data/opendata/apply/file/d006020/001.json",
+          "title": "Taipower nationwide publicly reported current electricity load"
         }
       }
     },

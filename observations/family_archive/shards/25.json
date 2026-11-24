@@ -198,6 +198,45 @@
         }
       }
     },
+    "25a8979a92f059b150ddca27ef4024d07529e2142abca38ccde7d8027f616c6f": {
+      "information_root": "bmkg_nowcast:bmkg_nowcast:e1c848bad70240535188ca23be3a",
+      "members": {
+        "beh:4f0f7851f58adde2a047ec813059": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "bmkg_nowcast",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T00:32:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:4f0f7851f58adde2a047ec813059",
+          "information_root": "bmkg_nowcast:bmkg_nowcast:e1c848bad70240535188ca23be3a",
+          "origin": "behavioral_registry",
+          "provider": "bmkg_nowcast",
+          "published_at": "2026-11-24T00:32:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Indonesia BMKG",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Indonesia BMKG active provincial nowcast RSS, source-reported only; not global",
+          "source_updated_at": null,
+          "source_url": "https://www.bmkg.go.id/alerts/nowcast/en/CPU20261124001_alert.xml",
+          "title": "Thunderstorm This Morning in Papua"
+        }
+      }
+    },
     "25cd09e5e14c106992ac2595308bd5d10e87f03ea6ba284922018eb21a1cc7fa": {
       "information_root": "niord:7e1e4c1f-369b-4077-ac94-713da08c9b82:3:0:1",
       "members": {
@@ -255,6 +294,53 @@
           "source_updated_at": "2026-11-20T13:21:54Z",
           "source_url": "https://niord.dma.dk/#/message/0dd97987-d92b-4b12-b6f2-524532503f33",
           "title": "Denmark. Kattegat. EK R 45 Hevring. Firing exercises. Warning."
+        }
+      }
+    },
+    "25eb6183d8d3146f40f824764cbb8fd5bc7a7e32311643762aaa67bdd6ff094c": {
+      "information_root": "ons_br:ons_br:SECO:20261123T030000Z",
+      "members": {
+        "beh:61cf592e007e86ef756ba3d20ebd": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "verified_grid_load_not_outage_or_intent",
+          "collection_mode": "ons_br",
+          "direct_measurement": true,
+          "event_at": "2026-11-23T03:00:00Z",
+          "first_observed_at": "2026-11-24T02:21:11+00:00",
+          "geography_key": "br-ons-loadarea:SECO",
+          "geography_label": "Southeast/Central West",
+          "geography_precision": "regional_grid_not_incident_site",
+          "id": "beh:61cf592e007e86ef756ba3d20ebd",
+          "information_root": "ons_br:ons_br:SECO:20261123T030000Z",
+          "origin": "behavioral_registry",
+          "provider": "ons_br",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "verified_national_grid_load_measurement",
+          "source_family": "grid_load",
+          "source_kind": "verified_regional_electricity_load_context_not_outage",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "collected_history_day": "2026-11-22",
+            "historical_verified_not_live": true,
+            "load_area_code": "SECO",
+            "load_area_name": "Southeast/Central West",
+            "name": "verified_half_hour_global_load",
+            "not_outage_or_attribution": true,
+            "sample_interval_minutes": 30,
+            "sampled_rows": 48,
+            "source_field": "val_cargaglobal",
+            "source_utc_field": "din_referenciautc",
+            "unit": "MWmed",
+            "value": 47798.812
+          },
+          "source_scope": "Brazilian national system operator ONS verified half-hour load, four macroregions, previous two-day sample; no local facilities/outage attribution",
+          "source_updated_at": null,
+          "source_url": "https://dados.ons.org.br/dataset/carga-energia-verificada",
+          "title": "Brazil ONS Southeast/Central West verified half-hourly system load"
         }
       }
     }

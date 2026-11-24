@@ -330,6 +330,31 @@
       "shared_subject_terms": [],
       "subject_geography_compatible": true
     },
+    "17978a1f9029297db9cdd8cecb1d": {
+      "independent_corroboration_proven": false,
+      "latent_semantic_similarity": 1,
+      "method": "aiba.hybrid-local-title-embedding.v1",
+      "raw_text_similarity": 1.0,
+      "review_status": "unreviewed_automatic_topic_match",
+      "same_incident_proven": false,
+      "same_source_document": false,
+      "score": 1.0,
+      "shared_activity_roles": [],
+      "shared_named_subjects": [
+        "atlas"
+      ],
+      "shared_subject_terms": [
+        "aggregate",
+        "atlas",
+        "measurements",
+        "probe",
+        "public",
+        "ripe",
+        "root",
+        "usable"
+      ],
+      "subject_geography_compatible": true
+    },
     "17d36fde210dd9769358b7c69530": {
       "independent_corroboration_proven": false,
       "latent_semantic_similarity": 1,
@@ -966,6 +991,15 @@
       "shared_named_subjects": [],
       "shared_subject_terms": [],
       "subject_geography_compatible": true
+    },
+    "3907fefa1516ac669d79738635be": {
+      "independent_corroboration_proven": false,
+      "method": "new_analytical_theme",
+      "review_status": "unreviewed_automatic_topic_seed",
+      "same_incident_proven": false,
+      "score": null,
+      "shared_activity_roles": [],
+      "shared_subject_terms": []
     },
     "39d19927171c1044aea5b4ab86f9": {
       "independent_corroboration_proven": false,
@@ -4851,6 +4885,7 @@
     "1534b43c95193234e82104342296": "family:284aa9e063ca78f74c29",
     "162185744d7cf4d8818cba07db9e": "family:6e277c2d1e6ae54d936b",
     "172b73e34e62e38c6cbbb7119a64": "family:5d40cb8bab0fb3c58d51",
+    "17978a1f9029297db9cdd8cecb1d": "family:fe16830728b4f874c391",
     "1799f482f1eab2ed87408acb24d9": "family:0fda8b379f23ffd48335",
     "17d36fde210dd9769358b7c69530": "family:fedd67f32b443ff07f62",
     "17d4edf7e3c970735cf2e2b4c4a1": "family:7326644dffff37614fb1",
@@ -4940,6 +4975,7 @@
     "381b0eda62c453b17cb05a21429a": "family:3c00731ba07f4daedf9d",
     "38463c6b234d1785aacdbaa332cd": "family:0f97d200dd2099048168",
     "38557641ce4d982e3668d65249aa": "family:4c6bc7a3202dcc42daf7",
+    "3907fefa1516ac669d79738635be": "family:93f12531f053f9d74ab4",
     "39a620d3f9e36ddbd2abc581e43a": "family:e1c66c16bd9ca1017201",
     "39d19927171c1044aea5b4ab86f9": "family:445dccadf0220ded3eff",
     "39f21924dfe83be94a6ce696995c": "family:a002d0f6341183ca2f8c",
@@ -8259,6 +8295,40 @@
       },
       "source": "automatic_similarity_v1"
     },
+    "family:93f12531f053f9d74ab4": {
+      "first_document_at": "2026-11-23T16:14:45+00:00",
+      "last_document_at": "2026-11-23T16:14:45+00:00",
+      "matched_document_count": 1,
+      "seed": {
+        "domain": "generic",
+        "geo": [],
+        "key": "3907fefa1516ac669d79738635be",
+        "publisher": "uk_tenders",
+        "source_family": "public_procurement",
+        "terms": {
+          "composite": 1,
+          "fabrication": 1,
+          "first": 1,
+          "framework": 1,
+          "greater": 1,
+          "gwr": 1,
+          "limited": 1,
+          "maintenance": 1,
+          "operations": 1,
+          "provision": 1,
+          "repair": 2,
+          "rolling": 1,
+          "services": 1,
+          "stock": 1,
+          "structural": 1,
+          "support": 1,
+          "train": 1,
+          "western": 1
+        },
+        "title": "GWR - Framework for the provision of fabrication, structural repair and composite repair services in support of its Train & Rolling Stock (T&RS) maintenance operations · FIRST GREATER WESTERN LIMITED"
+      },
+      "source": "hybrid_local_topic_embedding_v2"
+    },
     "family:942a6789f693b7606b8d": {
       "first_document_at": "2026-11-11T02:48:00+00:00",
       "matched_document_count": 1,
@@ -10526,8 +10596,8 @@
     },
     "family:fe16830728b4f874c391": {
       "first_document_at": "2026-11-21T02:31:05+00:00",
-      "last_document_at": "2026-11-23T13:12:14+00:00",
-      "matched_document_count": 8,
+      "last_document_at": "2026-11-24T02:21:11+00:00",
+      "matched_document_count": 9,
       "seed": {
         "domain": "network",
         "geo": [],
@@ -10590,9 +10660,9 @@
     }
   },
   "input_truncated": false,
-  "new_document_assignments": 25,
+  "new_document_assignments": 2,
   "schema": "aiba.automatic-analytical-topics.v1",
   "semantic_seed_index_limited": false,
-  "total_document_assignments": 715,
-  "total_stable_topics": 235
+  "total_document_assignments": 717,
+  "total_stable_topics": 236
 }

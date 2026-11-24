@@ -1,5 +1,52 @@
 {
   "roots": {
+    "a90e86a8e1d4205437ba148005a627b6d0672a53db38853535becc4b087d0d7e": {
+      "information_root": "cbp_wait:cbp_wait:011502:2026-11-23:21:14:19",
+      "members": {
+        "beh:ab0ceca5e40df9e1744f1353b132": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T02:21:11+00:00",
+          "geography_key": "us-border-port:011502",
+          "geography_label": "Calais",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:ab0ceca5e40df9e1744f1353b132",
+          "information_root": "cbp_wait:cbp_wait:011502:2026-11-23:21:14:19",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "N/A",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Closed",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/23/2026",
+            "reported_local_time": "21:14:19",
+            "source_declared_border": "Canadian Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Calais / Milltown"
+        }
+      }
+    },
     "a92e35a372bfa6d5337a9d8d6ea53100702eaf92650cb35645d2bd12d3b1ffb8": {
       "information_root": "cbp_wait:cbp_wait:L01901:2026-11-21:14:22:45",
       "members": {

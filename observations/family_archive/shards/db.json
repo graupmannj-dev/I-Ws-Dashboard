@@ -527,6 +527,39 @@
         }
       }
     },
+    "dbd816ec4c687409afa4df5a6705495f9e2a53a6ee85c7b00d26bf52009a0635": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c1b7:110768-2026",
+      "members": {
+        "beh:99fd8fea25c8bf04ee02f3ca28e2": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-23T16:31:51+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:99fd8fea25c8bf04ee02f3ca28e2",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c1b7:110768-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-23T16:31:51Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-22T02%3A19%3A12&updatedTo=2026-11-24T02%3A19%3A12",
+          "title": "Supply and Installation of wall pocket dining furniture · Fife Council"
+        }
+      }
+    },
     "dbe4fbba1c259e9bfd4e450d2ba0e04f9526e751bb15d2d1a4cbe314b418332e": {
       "information_root": "official:d259b29daba2e76e02d7",
       "members": {
@@ -584,6 +617,46 @@
           "source_updated_at": null,
           "source_url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.guy.html",
           "title": "Guyana - Level 3: Reconsider Travel"
+        }
+      }
+    },
+    "dbe60bfe7af0238436f27dd7e487459bb73722488fde2fa1494242826b9f269d": {
+      "information_root": "coops:8724580:20261124T0212Z",
+      "members": {
+        "beh:7525f17cfff14bcfa55a13799ee0": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "coops",
+          "direct_measurement": true,
+          "event_at": "2026-11-24T02:12:00Z",
+          "first_observed_at": "2026-11-24T02:12:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:7525f17cfff14bcfa55a13799ee0",
+          "information_root": "coops:8724580:20261124T0212Z",
+          "origin": "behavioral_registry",
+          "provider": "coops",
+          "published_at": "2026-11-24T02:12:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "station_physical_measurement",
+          "source_family": "port_conditions",
+          "source_kind": "selected_port_water_level_measurement",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "metric_comparable_only_same_station_datum_and_sample_window": true,
+            "name": "observed_water_level",
+            "station": "8724580",
+            "unit": "meters_MLLW",
+            "value": 0.864
+          },
+          "source_scope": "NOAA CO-OPS water levels at San Francisco, Key West and Sewells Point; stations only",
+          "source_updated_at": null,
+          "source_url": "https://tidesandcurrents.noaa.gov/waterlevels.html?id=8724580",
+          "title": "Key West, FL observed water level (no anomaly classification)"
         }
       }
     }

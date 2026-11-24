@@ -63,6 +63,44 @@
         }
       }
     },
+    "d320ca46b6b7178b96b05425225d5e6c61d05d43f5d3d6b0a8b941f187a96724": {
+      "information_root": "usgs:us6000ucwx",
+      "members": {
+        "beh:a83dbafedcf3f3c41017416b1a57": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "usgs",
+          "direct_measurement": true,
+          "event_at": "2026-11-23T06:47:36Z",
+          "first_observed_at": "2026-11-23T06:47:36+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "source_supplied_point_only",
+          "id": "beh:a83dbafedcf3f3c41017416b1a57",
+          "information_root": "usgs:us6000ucwx",
+          "origin": "behavioral_registry",
+          "provider": "usgs",
+          "published_at": "2026-11-23T18:03:33Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "measured_earthquake_context",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "name": "earthquake_magnitude",
+            "unit": "reported_magnitude",
+            "value": 4.5
+          },
+          "source_scope": "USGS M4.5+ earthquakes worldwide, rolling past day; source thresholds apply",
+          "source_updated_at": null,
+          "source_url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000ucwx",
+          "title": "M 4.5 - Kepulauan Babar, Indonesia"
+        }
+      }
+    },
     "d34ed3a337f02f0de102a0adf4e265770d6df7a37dbe89a698b2d055b121995e": {
       "information_root": "cbp_wait:cbp_wait:250608:2026-11-22:17:44:34",
       "members": {
@@ -107,6 +145,39 @@
           "source_updated_at": null,
           "source_url": "https://bwt.cbp.gov/api/waittimes",
           "title": "CBP estimated commercial border wait — Otay Mesa Port of Entry"
+        }
+      }
+    },
+    "d3566a9845cdaccdd96fb2808aaf02ec0c3d05017a5a5137927a274f3fb618ac": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c09c:110770-2026",
+      "members": {
+        "beh:7d5c4fc7b8f82cf41442a9b886e1": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-23T16:32:44+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:7d5c4fc7b8f82cf41442a9b886e1",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c09c:110770-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-23T16:32:44Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-22T02%3A19%3A12&updatedTo=2026-11-24T02%3A19%3A12",
+          "title": "Property Guardian Service"
         }
       }
     },
