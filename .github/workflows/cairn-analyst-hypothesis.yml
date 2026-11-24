@@ -32,6 +32,10 @@ jobs:
         run: python -m pip install -r requirements.txt
       - name: Initialize historical evidence references without paid inference
         run: python -m scripts.initialize_analyst_hypotheses
+        # Paid-service credentials must never enter the historical initializer.
+        env:
+          OPENAI_API_KEY: ''
+          CAIRN_SEMANTIC_MODEL: ''
       - name: Optionally interpret initial analyst hypothesis with local Phi
         continue-on-error: true
         timeout-minutes: 22
