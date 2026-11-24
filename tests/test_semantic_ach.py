@@ -106,6 +106,10 @@ class SemanticReviewTests(unittest.TestCase):
             published=publish(tmp,api_key="fake",model="fixture",
                 clock=NOW,runner=lambda packet,key,model:validate(output(),packet))
             data=json.loads(path.read_text())
+            from dashboard.semantic_ach import digest
+            self.assertTrue(data["phi_async_enabled"])
+            self.assertEqual(data["hypotheses"][0]["semantic_input_sha256"],
+                             digest(evidence_packet(data["hypotheses"][0])))
             self.assertEqual(data["hypotheses"][0]["balance"],case()["balance"])
             self.assertEqual(data["reviewed_hypotheses"],0)
             self.assertEqual(data["hypotheses"][0]["semantic_review"]["status"],"provisional_complete")
