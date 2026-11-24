@@ -124,6 +124,44 @@ class IncrementalPhiTests(unittest.TestCase):
             with self.assertRaises(ValueError):
                 assemble(changed, {}, d, now=NOW)
 
+    def test_grounded_passage_is_fresh_only_not_reused_without_body_recheck(self):
+        with tempfile.TemporaryDirectory() as d:
+            doc=source()
+            packet=evidence_packet(doc["hypotheses"][0])
+            family=packet["evidence_families"][0]
+            trusted_url=family["sources"][0]["url"]
+            row=valid(doc["hypotheses"][0])
+            row["grounding_mode"]="ephemeral_original_source"
+            row["evidence_notes"]=[{
+                "evidence_key":family["evidence_key"],
+                "status":"unverified_original_source_lead",
+                "observation":"The original text describes a dated restriction.",
+                "verification_step":"Consult another independently dated primary source.",
+                "source_url":trusted_url,
+                "source_body_sha256":"d"*64,
+                "passage_id":"passage:"+"a"*24,
+                "inspected_at":NOW.isoformat().replace("+00:00","Z"),
+            }]
+            prior_sidecar={"schema":SCHEMA,"model":MODEL,"cases":{"taiwan":row}}
+            self.assertEqual(prepare(doc,prior_sidecar,d,now=NOW)["changed"],1)
+            source_output={"schema":"cairn.semantic-ach.v1","model":MODEL,
+                           "generated_at":NOW.isoformat().replace("+00:00","Z"),
+                           "cases":{"taiwan":row}}
+            (Path(d)/"semantic_ach.json").write_text(json.dumps(source_output))
+            assembled=assemble(doc,prior_sidecar,d,now=NOW)
+            self.assertEqual(assembled["summary"]["new_provisional"],1)
+            self.assertEqual(assembled["cases"]["taiwan"]["status"],
+                             "provisional_complete")
+            self.assertEqual(assembled["cases"]["taiwan"]["evaluations"],[])
+            self.assertEqual(assembled["cases"]["taiwan"]["evidence_notes"][0]
+                             ["status"],"unverified_original_source_lead")
+            source_output["cases"]["taiwan"]["evidence_notes"][0]["source_url"]=(
+                "https://attacker.example/unrelated-event")
+            (Path(d)/"semantic_ach.json").write_text(json.dumps(source_output))
+            declined=assemble(doc,prior_sidecar,d,now=NOW)
+            self.assertEqual(declined["cases"]["taiwan"]["status"],
+                             "model_or_validation_failed")
+
     def test_reject_duplicate_case_ids(self):
         with tempfile.TemporaryDirectory() as d:
             doc = source()
