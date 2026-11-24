@@ -21,6 +21,13 @@ SCHEMA = "cairn.local-phi-assistance.v1"
 MAX_NOTES = 6
 MAX_FAMILIES = 7
 LOCAL_URL = "http://127.0.0.1:8080/v1/chat/completions"
+# Fixed labels only: never publish raw output, source titles or model messages
+# as validation diagnostics.
+class PhiValidationError(ValueError):
+    def __init__(self, code):
+        self.code = code
+        super().__init__(code)
+
 RESPONSE_SCHEMA = {
     "type": "object", "properties": {
         "interpretations": {"type": "array", "items": {
@@ -73,10 +80,10 @@ def _source_packet(packet):
 
 def _validate(raw, packet):
     if not isinstance(raw,dict):
-        raise ValueError("Phi output must be an object")
+        raise PhiValidationError("invalid_root")
     interpretations=raw.get("interpretations")
     if not isinstance(interpretations,list) or len(interpretations)!=len(packet["hypotheses"]):
-        raise ValueError("Phi did not interpret each hypothesis")
+        raise PhiValidationError("incomplete_hypotheses")
     indices=[r.get("hypothesis_index") if isinstance(r,dict) else None
              for r in interpretations]
     expected=list(range(len(interpretations)))
@@ -88,33 +95,33 @@ def _validate(raw, packet):
         # mixed indexes, duplicates, missing rows or out-of-order results.
         offset=1
     else:
-        raise ValueError("Invalid, repeated or missing hypothesis indices")
+        raise PhiValidationError("invalid_hypothesis_indices")
     clean=[]
     for i,r in enumerate(interpretations):
         if not isinstance(r,dict) or type(r.get("hypothesis_index")) is not int or r["hypothesis_index"]!=i+offset:
-            raise ValueError("Invalid hypothesis index/order")
+            raise PhiValidationError("invalid_hypothesis_indices")
         meaning=compact(r.get("meaning"),400)
         discriminator=compact(r.get("discriminator"),400)
         if len(meaning)<12 or len(discriminator)<15:
-            raise ValueError("Incomplete interpretation/discriminator")
+            raise PhiValidationError("incomplete_interpretation")
         clean.append({"hypothesis_index":i,"meaning":meaning,"discriminator":discriminator})
     notes=raw.get("evidence_notes")
     if not isinstance(notes,list) or len(notes)>MAX_NOTES:
-        raise ValueError("Invalid Phi lead count")
+        raise PhiValidationError("invalid_note_count")
     allowed={f["evidence_key"] for f in retrieve(packet,limit=MAX_FAMILIES)}
     seen=set()
     verified=[]
     for r in notes:
         if not isinstance(r,dict) or not isinstance(r.get("evidence_key"),str):
-            raise ValueError("Invalid source citation")
+            raise PhiValidationError("invalid_note_structure")
         key=r["evidence_key"]
         if key not in allowed or key in seen:
-            raise ValueError("Invented or repeated evidence key")
+            raise PhiValidationError("invalid_evidence_key")
         seen.add(key)
         observation=compact(r.get("observation"),320)
         verification=compact(r.get("verification_step"),320)
         if len(observation)<15 or len(verification)<15:
-            raise ValueError("Incomplete verification lead")
+            raise PhiValidationError("incomplete_note")
         verified.append({"evidence_key":key,"observation":observation,
                          "verification_step":verification,
                          "status":"unverified_source_title_lead"})
@@ -145,10 +152,44 @@ def ask_phi(packet, _key=None, _model=None, *, transport=None):
                 "schema":RESPONSE_SCHEMA}},
              "messages":[{"role":"system","content":SYSTEM},
                          {"role":"user","content":json.dumps(msg,ensure_ascii=False)}]}
-    response=transport(payload) if transport else _send(payload)
-    content=response["choices"][0]["message"]["content"]
-    result=json.loads(content)
-    return _validate(result,packet)
+    # One bounded retry is permitted for FORMAT failures only. A fabricated
+    # source key is a substantive fidelity breach: fail closed, never repair
+    # it by guessing or remapping to another key.
+    retryable={"invalid_json","token_limit","invalid_root",
+               "incomplete_hypotheses","invalid_hypothesis_indices",
+               "incomplete_interpretation","invalid_note_count",
+               "invalid_note_structure","incomplete_note"}
+    for attempt in range(2):
+        try:
+            response=transport(payload) if transport else _send(payload)
+            choices=response["choices"]
+            if not isinstance(choices,list) or not choices:
+                raise PhiValidationError("invalid_response_envelope")
+            choice=choices[0]
+            if choice.get("finish_reason")=="length":
+                raise PhiValidationError("token_limit")
+            content=choice["message"]["content"]
+            if not isinstance(content,str):
+                raise PhiValidationError("invalid_response_envelope")
+            try:
+                result=json.loads(content)
+            except json.JSONDecodeError:
+                raise PhiValidationError("invalid_json") from None
+            validated=_validate(result,packet)
+            validated["attempts"]=attempt+1
+            validated["format_retry_succeeded"]=bool(attempt)
+            return validated
+        except PhiValidationError as exc:
+            if attempt or exc.code not in retryable:
+                raise
+            # Reuse the same trusted evidence packet and schema; never return
+            # a partial completion or feed the malformed output back to Phi.
+            payload["max_tokens"]=1400
+            payload["messages"][0]["content"]=SYSTEM+(
+                " Keep the reply exceptionally concise. Give no more than "
+                "three source notes; include every hypothesis index exactly "
+                "once in order, beginning at zero. No Markdown.")
+    raise AssertionError("Unreachable Phi retry state")
 
 def update_analyst_backfill(path, *, runner=ask_phi):
     """Complete one-time analyst interpretation without signing evidence."""
@@ -173,6 +214,7 @@ def update_analyst_backfill(path, *, runner=ask_phi):
             state["model_evidence_notes"]=result["evidence_notes"]
             state["evaluations"]=[]
             state["model_family"]=MODEL
+            state["format_retry_succeeded"]=bool(result.get("format_retry_succeeded",False))
             state["status"]="initial_interpretation_complete"
             state["limitations"]=[
                 x for x in state.get("limitations",[])
@@ -180,7 +222,9 @@ def update_analyst_backfill(path, *, runner=ask_phi):
             state["limitations"].append(
                 "Phi interpretation is provisional and cannot determine supporting or contradicting ACH evidence")
             updated+=1
-        except (ValueError,KeyError,IndexError,TypeError,TimeoutError,OSError):
+        except (ValueError,KeyError,IndexError,TypeError,TimeoutError,OSError) as exc:
+            if isinstance(exc,PhiValidationError):
+                state["error_code"]=exc.code
             # Initial source backfill persists; future PR review can flag that
             # semantic annotation could not be generated. Do not invent output.
             state["limitations"].append("Phi interpretation unavailable; retained-source evidence remains unreviewed")
