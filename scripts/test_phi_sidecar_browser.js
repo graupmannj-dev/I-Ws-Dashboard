@@ -9,6 +9,7 @@ async function inspectScenario(browser,kind){
   const page=await browser.newPage({viewport:{width:1350,height:900}});
   const errors=[];page.on("pageerror",e=>errors.push(e.message));
   let expectedHypCount=0, modelCalls=0, alteredSource=false;
+  let trustedURL="",trustedKey="";
   await page.route("**/hypotheses.json",async route=>{
     const response=await route.fetch(),doc=await response.json();
     doc.phi_async_enabled=true;
@@ -16,6 +17,11 @@ async function inspectScenario(browser,kind){
     first.semantic_input_sha256=HASH;
     first.semantic_review={status:"not_configured",evaluations:[],interpretations:[]};
     expectedHypCount=1+(first.alternatives||[]).slice(0,3).length;
+    const family=(first.families||[]).find(f=>(f.sources||[])
+                                            .some(s=>s.source_url?.startsWith("https://")));
+    assert.ok(family,"Need an original linked source family to test the sidecar");
+    trustedKey=family.evidence_key;
+    trustedURL=family.sources.find(s=>s.source_url?.startsWith("https://")).source_url;
     const orig=JSON.stringify(first.balance);
     alteredSource=false;
     await route.fulfill({response,json:doc});
@@ -51,6 +57,22 @@ async function inspectScenario(browser,kind){
       observation:"A claimed new warning appears in an untrusted title.",
       verification_step:"Look up the original dated bulletin independently."
     }];
+    if(["valid-original","fabricated-passage","substituted-url",
+        "unverified-original-claim"].includes(kind)){
+      const source=kind==="substituted-url"?"https://attacker.example/fake-report":trustedURL;
+      row.grounding_mode=kind==="unverified-original-claim"?"title_only":
+                                                           "ephemeral_original_source";
+      row.source_references=[{evidence_key:trustedKey,sources:[{url:source}]}];
+      row.evidence_notes=[{
+        evidence_key:trustedKey,status:"unverified_original_source_lead",
+        observation:"The accessed original document describes a temporary restriction.",
+        verification_step:"Check the original issuer and its dated primary notice.",
+        source_url:source,source_body_sha256:"d".repeat(64),
+        passage_id:kind==="fabricated-passage"?"passage:not-a-hash":
+                                              "passage:"+"c".repeat(24),
+        inspected_at:new Date().toISOString(),
+      }];
+    }
     original.cases["placeholder"]=row;
     // First case's ID comes from the locally generated source document and
     // is determined by browser interception below, not a fixed hotspot list.
@@ -67,10 +89,12 @@ async function inspectScenario(browser,kind){
              x.includes("Phi result stale or does not match");
     });
     const display=await page.locator("#caseDetail").innerText();
-    const valid=kind==="valid";
+    const valid=["valid","valid-original"].includes(kind);
     if(valid){
       assert.match(display,/Local Phi · hypothesis interpretation/);
       assert.match(display,/Model generated/);
+      if(kind==="valid-original")
+        assert.match(display,/Original source passage inspected/);
     }else{
       assert.doesNotMatch(display,/Model generated/);
       assert.match(display,kind==="unavailable"?
@@ -88,8 +112,10 @@ async function inspectScenario(browser,kind){
 (async()=>{
   const browser=await chromium.launch({headless:true});
   try{
-    for(const kind of ["valid","wrong-hash","expired","autonomous-direction",
-                       "invented-source","unavailable"]){
+    for(const kind of ["valid","valid-original","wrong-hash","expired",
+                       "autonomous-direction","invented-source",
+                       "fabricated-passage","substituted-url",
+                       "unverified-original-claim","unavailable"]){
       await inspectScenario(browser,kind);
       console.log("Phi sidecar browser fail-closed case passed:",kind);
     }
