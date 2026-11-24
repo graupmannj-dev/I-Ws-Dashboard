@@ -93,8 +93,13 @@ async function inspectScenario(browser,kind){
     if(valid){
       assert.match(display,/Local Phi · hypothesis interpretation/);
       assert.match(display,/Model generated/);
-      if(kind==="valid-original")
-        assert.match(display,/Original source passage inspected/);
+      if(kind==="valid-original"){
+        // This is inside a collapsed evidence-leads <details> element;
+        // verify the content exists, then expand to test visibility.
+        const leads=page.locator(".semantic-panel details.semantic-hypothesis").last();
+        await leads.locator("summary").click();
+        assert.match(await leads.innerText(),/Original source passage inspected/);
+      }
     }else{
       assert.doesNotMatch(display,/Model generated/);
       assert.match(display,kind==="unavailable"?
