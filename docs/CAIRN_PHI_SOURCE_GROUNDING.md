@@ -14,12 +14,16 @@ At most four original documents per packet, at most two passages per document, a
 
 No raw source body and no snippets should be put into GitHub Actions logs or a public sidecar. The model should only return sanitized, source-key-linked paraphrased verification leads.
 
-## Stage 2 integration (not implemented here)
+## Stage 2: model prompt and provenance-validated output (feature-gated)
 
-1. Enrich the bounded **in-memory** local Phi inference prompt with these passages and explicit `passage_id` citations, preserving strict JSON and the analyst-approval boundary.
-2. Reject any model statement claiming text inspection unless the cited passage ID belongs to that exact source and original URL. A title-only fallback must be labeled title-only.
-3. Extend the M2 incremental cache contract: **the original source body SHA256 and inspection timing must participate in cache eligibility**. A case-hash match alone is insufficient when the underlying original document has changed.
-4. Add controlled tests for statement negation, syndication, foreign-language/encoding failures, fake quotations, date/geography mismatch, and embedded instructions. Include real-source read-only CI probes with source accessibility reported separately from analytical validity.
-5. Publish only provenance receipts and bounded model paraphrases. Do not claim calibrated warning accuracy; that requires M4's independent adjudications.
+The follow-on stage-2 branch uses the `CAIRN_PHI_INSPECT_ORIGINALS=1` environment flag to invoke this original-source reader within each **local loopback-only** Phi request. Without that flag the existing title-only model behavior remains unchanged. When passages exist, the model sees bounded, explicitly untrusted excerpts, original evidence keys, and passage IDs, and may return `basis=inspected_passage` with the exact passage ID. The adapter checks the source-key/passage pair and copies the original URL, inspection timestamp and source-body SHA256 from the trusted extraction packet—not from the model. Invented passage IDs are rejected without format retry. The public output never includes source excerpts or complete original article text.
 
-**Stage 1 acceptance:** Unit tests pass and source bodies never leave the bounded local call. No live inference workflow or UI is changed in this PR.
+A result based on original document text is labeled `unverified_original_source_lead`; a title-only output remains `unverified_source_title_lead`. Both lack authority to certify incidents or alter ACH judgments. The browser independently checks source-URL membership in the currently published hypothesis evidence, body-hash syntax, passage-ID syntax, freshness and no model-produced ACH direction.
+
+**Cache conservatism:** Original-source pages can change while a headline/source-family packet is unchanged. Until the upstream model preflight independently rechecks the source-body hash, **grounded rows are not reused from the M2 cache**. A fresh grounded output can be displayed if its full provenance passes validation; subsequent publications rerun it instead of silently treating stale source text as current. This trades inference cost for integrity and must be measured. Follow-on optimization may revalidate the whole-document body digest before allowing reuse.
+
+**Source-access limitation:** An actual prior production inspection attempted eight documents but retrieved full narratives for only two. Reuters/other publishers returned 401/403 for many regionally relevant records. Do not attempt credential bypass or infer anything from those missing documents. Expand transparent, primary, geographically diverse accessible providers in subsequent iterations, measure real original-source coverage separately, and preserve title-only status when original text cannot be inspected.
+
+**Release gates still required:** Full CI; pinned live Phi JSON smoke; real-source read-only coverage test with source accessibility reported independently; production result-case audit; never treat a model note as adjudicated real-world outcome. Historical predictive discrimination belongs to M4.
+
+**Stage 1 is a non-inference helper; stage 2 is not activated in production until its own PR is validated and merged.**
