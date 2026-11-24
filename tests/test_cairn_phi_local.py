@@ -6,7 +6,7 @@ import tempfile
 import unittest
 from dashboard.semantic_ach import evidence_packet
 from scripts.cairn_phi_local import (MODEL, LOCAL_URL, _send, _validate,
-    _source_packet, ask_phi, update_analyst_backfill)
+    _source_packet, ask_phi, update_analyst_backfill, PhiValidationError)
 def packet():
     return {"case_id":"taiwan","hypotheses":[
         "Preparations for offensive operations.", "Routine preannounced exercise."],
@@ -28,6 +28,63 @@ def answer(pkt):
           "observation":"Source title claims a temporary navigation warning was published.",
           "verification_step":"Check the original authority bulletin and its polygon validity."}]}
 class PhiSafetyTests(unittest.TestCase):
+    def test_truncated_completion_retries_once_with_same_evidence(self):
+        p=packet()
+        calls=[]
+        def transport(payload):
+            calls.append(json.loads(json.dumps(payload)))
+            if len(calls)==1:
+                return {"choices":[{"finish_reason":"length",
+                    "message":{"content":"{truncated"}}]}
+            return {"choices":[{"finish_reason":"stop",
+                "message":{"content":json.dumps(answer(p))}}]}
+        result=ask_phi(p,transport=transport)
+        self.assertEqual(len(calls),2)
+        self.assertEqual([x["max_tokens"] for x in calls],[1050,1400])
+        self.assertEqual(calls[0]["messages"][1],calls[1]["messages"][1])
+        self.assertTrue(result["format_retry_succeeded"])
+        self.assertEqual(result["attempts"],2)
+        self.assertEqual(result["evaluations"],[])
+
+    def test_hallucinated_source_id_fails_closed_without_retry(self):
+        p=packet()
+        v=answer(p)
+        v["evidence_notes"][0]["evidence_key"]="source:never-given"
+        calls=[]
+        def transport(payload):
+            calls.append(payload)
+            return {"choices":[{"finish_reason":"stop",
+                "message":{"content":json.dumps(v)}}]}
+        with self.assertRaises(PhiValidationError) as ctx:
+            ask_phi(p,transport=transport)
+        self.assertEqual(ctx.exception.code,"invalid_evidence_key")
+        self.assertEqual(len(calls),1)
+
+    def test_invalid_structure_retries_only_once_and_still_fails(self):
+        p=packet()
+        calls=[]
+        def transport(payload):
+            calls.append(payload)
+            return {"choices":[{"finish_reason":"stop",
+                "message":{"content":"not valid json"}}]}
+        with self.assertRaises(PhiValidationError) as ctx:
+            ask_phi(p,transport=transport)
+        self.assertEqual(ctx.exception.code,"invalid_json")
+        self.assertEqual(len(calls),2)
+
+    def test_publish_failure_codes_are_bounded_and_private(self):
+        from dashboard.semantic_ach import evaluate
+        from tests.test_semantic_ach import index
+        def runner(*_):
+            raise PhiValidationError("invalid_hypothesis_indices")
+        out=evaluate(index(),api_key="local-loopback-only",model=MODEL,
+                     max_cases=1,runner=runner)
+        self.assertEqual(out["failure_codes"],{"invalid_hypothesis_indices":1})
+        self.assertEqual(out["cases"]["taiwan"]["error_code"],
+                         "invalid_hypothesis_indices")
+        self.assertNotIn("response_text",json.dumps(out))
+        self.assertEqual(out["cases"]["taiwan"]["evaluations"],[])
+
     def test_only_loopback_transport_allowed(self):
         with self.assertRaises(ValueError):
             _send({},endpoint="https://api.openai.com/v1/chat/completions")
