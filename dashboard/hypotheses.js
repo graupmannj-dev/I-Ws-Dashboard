@@ -366,6 +366,8 @@ function semanticSection(c){
   const d=c.semantic_review||{};
   if(d.status!=="provisional_complete"){
     return '<details class="semantic-status"><summary>AI semantic assessment · '+escapeHtml(
+      d.status==="phi_pending"?"Awaiting post-deployment Phi":
+      d.status==="phi_stale"?"Phi result stale or does not match this evidence":
       d.status==="not_configured"?"Not configured":
       d.status==="not_selected_in_bounded_run"?"Awaiting scheduled batch":
       d.status==="model_or_validation_failed"?"Review unavailable":"No assessment")+
@@ -410,6 +412,10 @@ function semanticSection(c){
   return '<section class="semantic-panel"><div class="ach-head"><h3>'+
     (localPhi?'Local Phi · hypothesis interpretation':'AI-assisted hypothesis comparison')+'</h3>'+
     '<span class="pill context">Provisional · analyst review required</span></div>'+
+    (localPhi&&d.model_generated_at?
+      '<p class="muted">Model generated '+escapeHtml(d.model_generated_at)+
+      ' · '+escapeHtml(d.cache_status==="reused_exact_input"?"Exact evidence packet reused":"New model inference")+
+      '. Source data may have a newer publication time.</p>':'')+
     '<p>'+(localPhi?
        'On-runner, source-title screening only (not independent source verification). No evidence direction, independent corroboration or event truth is established by Phi. The model cannot modify approved ACH evidence.':
        'Candidate interpretations and evidence comparisons. These do not change reviewed evidence direction.')+'</p>'+
@@ -471,6 +477,69 @@ function proposeHypothesis(c){
   });
 }
 
+// The public result branch contains ONLY provisional, source-linked model notes.
+// Neither cached GitHub content nor a model response can change reviewed ACH.
+const PHI_SIDECAR_URL="https://raw.githubusercontent.com/graupmannj-dev/I-Ws-Dashboard/cairn-phi-results/phi/latest.json";
+const PHI_SIDECAR_SCHEMA="cairn.phi-sidecar.v1";
+const PHI_MODEL="phi-4-mini-instruct-q4km-local";
+const MAX_PHI_AGE_MS=24*60*60*1000;
+function validPhiSidecarRow(c, row, now=Date.now()){
+  if(!c||typeof c.semantic_input_sha256!=="string"||
+     !/^[0-9a-f]{64}$/.test(c.semantic_input_sha256)||
+     !row||row.status!=="provisional_complete"||
+     row.input_sha256!==c.semantic_input_sha256||
+     row.model_family!==PHI_MODEL||row.analyst_approved!==false||
+     row.interpretation_only!==true||row.source_truth_not_verified!==true||
+     !Array.isArray(row.evaluations)||row.evaluations.length!==0)return false;
+  const at=Date.parse(row.model_generated_at);
+  if(!Number.isFinite(at)||now-at<0||now-at>MAX_PHI_AGE_MS)return false;
+  const expected=[c.hypothesis,...(c.alternatives||[]).slice(0,3)];
+  if(!Array.isArray(row.interpretations)||
+     row.interpretations.length!==expected.length||
+     row.interpretations.some((x,i)=>!x||
+       x.hypothesis_index!==i||
+       typeof x.meaning!=="string"||x.meaning.length<12||
+       typeof x.discriminator!=="string"||x.discriminator.length<15))return false;
+  const refs=row.source_references;
+  if(!Array.isArray(refs)||!Array.isArray(row.evidence_notes)||
+     row.evidence_notes.length>6)return false;
+  const keys=new Set();
+  for(const ref of refs){
+    if(!ref||typeof ref.evidence_key!=="string"||
+       !Array.isArray(ref.sources))return false;
+    keys.add(ref.evidence_key);
+    if(ref.sources.some(s=>!s||typeof s.url!=="string"||!safeUrl(s.url)))return false;
+  }
+  if(row.evidence_notes.some(n=>!n||
+       !keys.has(n.evidence_key)||n.status!=="unverified_source_title_lead"||
+       typeof n.observation!=="string"||n.observation.length<15||
+       typeof n.verification_step!=="string"||n.verification_step.length<15))return false;
+  return true;
+}
+function applyPhiSidecar(payload, sidecar, now=Date.now()){
+  const good=sidecar&&sidecar.schema===PHI_SIDECAR_SCHEMA&&
+    sidecar.model===PHI_MODEL&&sidecar.provisional_only===true&&
+    sidecar.signed_evidence_modified===false&&
+    sidecar.cases&&typeof sidecar.cases==="object"&&!Array.isArray(sidecar.cases);
+  return payload.hypotheses.map(c=>{
+    const out={...c};
+    // A failed source-matching check must never surface a model assessment.
+    const row=good?sidecar.cases[c.id]:null;
+    if(validPhiSidecarRow(c,row,now)){
+      out.semantic_review={...row,source_references:row.source_references};
+    }else{
+      out.semantic_review={status:row?"phi_stale":"phi_pending",
+        evaluations:[],interpretations:[],analyst_approved:false};
+    }
+    return out;
+  });
+}
+async function retrievePhiSidecar(){
+  const response=await fetch(PHI_SIDECAR_URL,{cache:"no-store"});
+  if(!response.ok)throw new Error("Phi sidecar not yet available");
+  return response.json();
+}
+
 async function start(){
   try{
     const res=await fetch("hypotheses.json",{cache:"no-store"});
@@ -491,6 +560,17 @@ async function start(){
     $("caseSearch").addEventListener("input",listCases);
     $("caseFilter").addEventListener("change",listCases);
     showCase(rows.some(c=>c.id===initial)?initial:rows[0]?.id);
+    if(payload.phi_async_enabled===true){
+      // The source view is ready without waiting for Phi. A missing/corrupt
+      // sidecar is an explicit pending state, never an all-clear or cached fact.
+      try{
+        const sidecar=await retrievePhiSidecar();
+        rows=applyPhiSidecar({hypotheses:rows},sidecar);
+      }catch(error){
+        rows=applyPhiSidecar({hypotheses:rows},null);
+      }
+      if(selected)showCase(selected);
+    }
   }catch(error){
     $("snapshotStatus").textContent="Hypothesis index unavailable";
     $("caseList").textContent="Source-backed hypothesis data could not be loaded: "+error.message;
