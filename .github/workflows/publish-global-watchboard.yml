@@ -334,28 +334,6 @@ jobs:
         env:
           OPENAI_API_KEY: ''
           CAIRN_SEMANTIC_MODEL: ''
-      - name: Generate provisional Phi interpretation and source verification leads locally
-        if: github.ref == 'refs/heads/main'
-        continue-on-error: true
-        timeout-minutes: 24
-        shell: bash
-        run: |
-          set -euo pipefail
-          backup="$RUNNER_TEMP/cairn-phi-fallback"
-          mkdir -p "$backup"
-          cp _site/hypotheses.json "$backup/hypotheses.json"
-          cp _site/semantic_ach.json "$backup/semantic_ach.json"
-          # Bound inference inside the step timeout so a failure can restore
-          # a complete valid fallback before downstream Pages publication.
-          if ! timeout --signal=TERM --kill-after=15s 19m \
-              bash scripts/run_cairn_phi.sh --site _site --max-cases 10; then
-            cp "$backup/hypotheses.json" _site/hypotheses.json
-            cp "$backup/semantic_ach.json" _site/semantic_ach.json
-            echo "::warning::Local Phi unavailable; restored coherent no-inference publication."
-          fi
-        env:
-          OPENAI_API_KEY: ''
-          CAIRN_SEMANTIC_MODEL: ''
       - name: Preserve semantic interpretation audit artifact
         if: always()
         uses: actions/upload-artifact@v4
@@ -880,3 +858,148 @@ jobs:
             historical-source-evaluation.json
             historical-original-source-audit.json
           retention-days: 90
+
+  phi-postdeploy:
+    name: Nonblocking local Phi evidence-hash sidecar
+    needs: deploy
+    if: github.ref == 'refs/heads/main' && vars.AIBA_PUBLISH_APPROVED == 'true'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 52
+    permissions:
+      contents: write
+    concurrency:
+      group: cairn-phi-postdeploy-sidecar
+      cancel-in-progress: false
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/checkout@v4
+        with:
+          ref: cairn-phi-results
+          path: phi-state
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Download exact Pages artifact from this successful deployment
+        uses: actions/download-artifact@v4
+        with:
+          name: github-pages
+          path: ${{ runner.temp }}/cairn-published-archive
+      - name: Extract bounded source snapshot (never fetch mutable live Pages)
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/cairn-published"
+          tar -xf "$RUNNER_TEMP/cairn-published-archive/artifact.tar" \
+              -C "$RUNNER_TEMP/cairn-published" ./hypotheses.json
+          python - <<'PY'
+          import json,os
+          from pathlib import Path
+          p=Path(os.environ["RUNNER_TEMP"])/"cairn-published/hypotheses.json"
+          d=json.loads(p.read_text())
+          assert d["schema"]=="cairn.hypothesis-evidence.v1"
+          assert d.get("phi_async_enabled") is True
+          assert len(d["hypotheses"])==10
+          assert all(isinstance(c.get("semantic_input_sha256"),str) for c in d["hypotheses"])
+          print("Exact deployment source cases:",len(d["hypotheses"]))
+          PY
+      - name: Compare current evidence packets to verified cached receipts
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m scripts.cairn_phi_incremental prepare \
+            --source "$RUNNER_TEMP/cairn-published/hypotheses.json" \
+            --prior phi-state/phi/latest.json \
+            --work "$RUNNER_TEMP/cairn-phi-work" \
+            --max-cases 10 --max-age-hours 24
+      - name: Restore pinned local-model binaries (never server logs)
+        uses: actions/cache@v4
+        with:
+          path: |
+            ${{ runner.temp }}/cairn-local-phi/model.gguf
+            ${{ runner.temp }}/cairn-local-phi/llama
+          key: cairn-local-phi-ubuntu24-325914defd2-01999f17c39c
+      - name: Infer only changed/expired cases after source publication
+        continue-on-error: true
+        timeout-minutes: 36
+        shell: bash
+        env:
+          OPENAI_API_KEY: ''
+          CAIRN_SEMANTIC_MODEL: ''
+        run: |
+          set -euo pipefail
+          count=$(python - <<'PY'
+          import json,os
+          from pathlib import Path
+          d=json.loads((Path(os.environ["RUNNER_TEMP"])/"cairn-phi-work/phi_manifest.json").read_text())
+          print(len(d["changed"]))
+          PY
+          )
+          if [ "$count" -eq 0 ]; then
+            echo "No changed or expired packets; no model process will be started."
+          else
+            echo "Running bounded Phi for $count changed source packets only."
+            timeout --signal=TERM --kill-after=15s 32m \
+              bash scripts/run_cairn_phi.sh --site "$RUNNER_TEMP/cairn-phi-work" --max-cases 10
+          fi
+      - name: Assemble fail-closed, versioned public Phi sidecar
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/cairn-phi-result"
+          python -m scripts.cairn_phi_incremental assemble \
+            --source "$RUNNER_TEMP/cairn-published/hypotheses.json" \
+            --prior phi-state/phi/latest.json \
+            --work "$RUNNER_TEMP/cairn-phi-work" \
+            --output "$RUNNER_TEMP/cairn-phi-result/latest.json" \
+            --max-cases 10 --max-age-hours 24
+          python - <<'PY'
+          import json,os
+          from pathlib import Path
+          p=Path(os.environ["RUNNER_TEMP"])/"cairn-phi-result/latest.json"
+          d=json.loads(p.read_text())
+          assert d["schema"]=="cairn.phi-sidecar.v1"
+          assert d["signed_evidence_modified"] is False
+          assert all(r.get("evaluations")==[] for r in d["cases"].values())
+          assert all(r.get("analyst_approved") is False for r in d["cases"].values())
+          print("Published sidecar summary",json.dumps(d["summary"]))
+          PY
+      - name: Retain provisional model receipt for forensic audit
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cairn-phi-postdeploy-${{ github.run_id }}
+          path: ${{ runner.temp }}/cairn-phi-result/latest.json
+          if-no-files-found: warn
+          retention-days: 90
+      - name: Commit only model sidecar to isolated results branch
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p phi-state/phi
+          python - <<'PY'
+          import datetime as dt,json,os
+          from pathlib import Path
+          new=Path(os.environ["RUNNER_TEMP"])/"cairn-phi-result/latest.json"
+          old=Path("phi-state/phi/latest.json")
+          if old.exists():
+              prior=json.loads(old.read_text())
+              curr=json.loads(new.read_text())
+              def parse(x):
+                  try: return dt.datetime.fromisoformat(x.replace("Z","+00:00"))
+                  except (ValueError,AttributeError): return None
+              p=parse(prior.get("source_build_generated_at"))
+              c=parse(curr.get("source_build_generated_at"))
+              if p and c and p>c:
+                  Path(os.environ["RUNNER_TEMP"],"cairn-phi-superseded").touch()
+                  print("Newer published source already has a result; avoid older overwrite")
+          PY
+          if [ -f "$RUNNER_TEMP/cairn-phi-superseded" ]; then exit 0; fi
+          cp "$RUNNER_TEMP/cairn-phi-result/latest.json" phi-state/phi/latest.json
+          git -C phi-state config user.name "github-actions[bot]"
+          git -C phi-state config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git -C phi-state add phi/latest.json
+          if git -C phi-state diff --cached --quiet; then exit 0; fi
+          git -C phi-state commit -m "Update provisional CAIRN Phi results from run ${{ github.run_id }}"
+          git -C phi-state push origin HEAD:cairn-phi-results
