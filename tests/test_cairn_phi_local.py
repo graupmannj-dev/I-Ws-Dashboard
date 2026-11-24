@@ -102,6 +102,9 @@ class PhiSafetyTests(unittest.TestCase):
             path.write_text(json.dumps(original))
             def fake(pkt,key,model):
                 response=answer(pkt)
+                # The fixture's real retrieval keys are family:*, not source:*.
+                # A model note must cite only a key actually in this packet.
+                response["evidence_notes"][0]["evidence_key"]=pkt["evidence_families"][0]["evidence_key"]
                 return _validate(response,pkt)
             result=publish(tmp,api_key="local-loopback-only",model=MODEL,
                            max_cases=1,runner=fake)
