@@ -12,6 +12,7 @@ import copy
 import datetime as dt
 import json
 from pathlib import Path
+import re
 
 from dashboard.semantic_ach import digest, evidence_packet
 from scripts.cairn_phi_local import MODEL
@@ -61,11 +62,16 @@ def _source_cases(source, max_cases):
     return cases
 
 
-def _valid_provisional(row, case, expected, now, *, max_age_hours):
+def _valid_provisional(row, case, expected, now, *, max_age_hours, for_cache=True):
     """Validate every cache hit independently; source content is not trusted."""
     if not isinstance(row, dict) or row.get("status") != "provisional_complete":
         return False
     if row.get("input_sha256") != expected or row.get("model_family") != MODEL:
+        return False
+    # Ephemerally inspected original texts can change without changing
+    # source titles. Until original-body hashes are independently refreshed
+    # at cache preflight, never reuse previously grounded model conclusions.
+    if for_cache and row.get("grounding_mode")=="ephemeral_original_source":
         return False
     if (row.get("analyst_approved") is not False
             or row.get("interpretation_only") is not True
@@ -97,14 +103,34 @@ def _valid_provisional(row, case, expected, now, *, max_age_hours):
     # current packet, not merely share an ID.
     if refs != packet["evidence_families"]:
         return False
-    if any(not isinstance(n, dict) or n.get("evidence_key") not in known
-           or n.get("status") != "unverified_source_title_lead"
-           or not isinstance(n.get("observation"), str)
-           or len(n["observation"]) < 15
-           or not isinstance(n.get("verification_step"), str)
-           or len(n["verification_step"]) < 15
-           for n in notes):
-        return False
+    by_key = {f["evidence_key"]:{
+        source.get("url") for source in f.get("sources",[])
+        if isinstance(source,dict) and isinstance(source.get("url"),str)}
+        for f in packet["evidence_families"]}
+    for note in notes:
+        if not isinstance(note,dict) or note.get("evidence_key") not in known:
+            return False
+        if (not isinstance(note.get("observation"),str)
+                or len(note["observation"])<15
+                or not isinstance(note.get("verification_step"),str)
+                or len(note["verification_step"])<15):
+            return False
+        if note.get("status")=="unverified_source_title_lead":
+            continue
+        if note.get("status")!="unverified_original_source_lead":
+            return False
+        if row.get("grounding_mode")!="ephemeral_original_source":
+            return False
+        if (not isinstance(note.get("source_url"),str)
+                or note["source_url"] not in by_key.get(note["evidence_key"],set())
+                or not isinstance(note.get("source_body_sha256"),str)
+                or not re.fullmatch(r"[a-f0-9]{64}",note["source_body_sha256"])
+                or not isinstance(note.get("passage_id"),str)
+                or not re.fullmatch(r"passage:[a-f0-9]{24}",note["passage_id"])):
+            return False
+        inspected=_date(note.get("inspected_at"))
+        if inspected is None or not 0 <= (now-inspected).total_seconds() <= max_age_hours*3600:
+            return False
     return True
 
 
@@ -173,7 +199,8 @@ def assemble(source, prior, work, *, now=None, max_cases=MAX_CASES,
             row = copy.deepcopy(fresh.get(cid, {}))
             row["input_sha256"] = key
             row["model_generated_at"] = generated.get("generated_at")
-            if _valid_provisional(row, c, key, now, max_age_hours=max_age_hours):
+            if _valid_provisional(row, c, key, now, max_age_hours=max_age_hours,
+                                  for_cache=False):
                 row["cache_status"] = "fresh_inference"
                 produced += 1
             else:
