@@ -92,14 +92,17 @@ def _valid_provisional(row, case, expected, now, *, max_age_hours):
            or len(x["discriminator"]) < 15
            for i, x in enumerate(interpretations)):
         return False
-    ref_keys = {x.get("evidence_key") for x in refs if isinstance(x, dict)}
-    if not ref_keys.issubset(known):
+    # Even a familiar evidence key must not authorize a substituted URL,
+    # altered title or invented source. All provenance must equal the trusted
+    # current packet, not merely share an ID.
+    if refs != packet["evidence_families"]:
         return False
     if any(not isinstance(n, dict) or n.get("evidence_key") not in known
-           or n.get("evidence_key") not in ref_keys
            or n.get("status") != "unverified_source_title_lead"
            or not isinstance(n.get("observation"), str)
+           or len(n["observation"]) < 15
            or not isinstance(n.get("verification_step"), str)
+           or len(n["verification_step"]) < 15
            for n in notes):
         return False
     return True
@@ -149,7 +152,7 @@ def assemble(source, prior, work, *, now=None, max_cases=MAX_CASES,
     hashes = {c["id"]: digest(evidence_packet(c)) for c in cases}
     if manifest.get("input_sha256") != hashes:
         raise ValueError("Source changed during Phi inference; abort stale publication")
-    prior_rows = prior.get("cases", {}) if prior.get("schema") == SCHEMA and prior.get("model") == MODEL else {}
+    prior_rows = prior.get("cases", {}) if isinstance(prior, dict) and prior.get("schema") == SCHEMA and prior.get("model") == MODEL else {}
     if not isinstance(prior_rows, dict):
         prior_rows = {}
     generated = _load(work / "semantic_ach.json")
