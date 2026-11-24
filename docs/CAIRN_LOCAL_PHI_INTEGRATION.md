@@ -21,8 +21,8 @@ Phi-4-mini-instruct now runs **on GitHub-hosted Ubuntu CPU runners only**. It is
 
 ## Failure and cost policy
 
-- In the publish workflow the optional Phi step has `continue-on-error: true` and a 24-minute timeout; the source feed, map, status and Pages publication still proceed if model weights are unavailable, the runner runs out of resources, or the model fails validation.
-- The owner-approved analyst-intake workflow has a 22-minute optional step and 30-minute total job limit. It does not fail the PR creation if Phi is unavailable.
+- In the publish workflow, paid-API variables are explicitly blanked for the no-inference fallback and Phi steps. The optional Phi step has a 24-minute timeout, an internal 19-minute inference deadline, and a two-file checkpoint: if inference exits unsuccessfully, both `hypotheses.json` and `semantic_ach.json` are restored to the complete no-inference fallback before Pages publication. The source feed, map, status and Pages publication therefore continue without treating model failure as a successful assessment.
+- The owner-approved analyst-intake workflow blanks paid-API variables for historical evidence initialization and has a 22-minute optional step and 30-minute total job limit. It does not fail PR creation if Phi is unavailable.
 - The default no-inference fallback marks the semantic assessment `not_configured`, rather than fabricating a completed assessment. A locally interpreted case has `provisional_complete` with `evaluations: []`.
 - No `OPENAI_API_KEY` or `CAIRN_SEMANTIC_MODEL` variable is consumed by either integration workflow.
 - Standard public-repository GitHub Actions runners are free under GitHub's current billing policy. They still consume computation, GitHub bandwidth, and execution time; verify eligibility if repository visibility or plan changes.
