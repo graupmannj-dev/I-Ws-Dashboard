@@ -120,6 +120,92 @@ class PhiSafetyTests(unittest.TestCase):
         self.assertNotIn("response_text",json.dumps(out))
         self.assertEqual(out["cases"]["taiwan"]["evaluations"],[])
 
+    def test_original_source_passage_citation_is_exact_and_not_published_raw(self):
+        p=packet()
+        excerpt=("The original maritime notice describes a scheduled "
+                 "exercise period but does not verify a hostile attack.")
+        grounded={"source_passages":[{
+            "passage_id":"passage:"+"a"*24,"evidence_key":"source:a",
+            "source_url":"https://example.org/a",
+            "source_title":"Original maritime bulletin","excerpt":excerpt,
+            "source_body_sha256":"b"*64,
+            "inspected_at":"2026-11-24T15:00:00Z",
+            "source_published_at":"2026-11-24T14:00:00Z",
+            "first_observed_at":"2026-11-24T14:30:00Z"}]}
+        response=answer(p)
+        response["evidence_notes"][0]["basis"]="inspected_passage"
+        response["evidence_notes"][0]["passage_id"]="passage:"+"a"*24
+        def transport(payload):
+            system=payload["messages"][0]["content"]
+            user=payload["messages"][1]["content"]
+            self.assertIn("untrusted quoted reporting",system)
+            self.assertIn(excerpt,user)
+            self.assertEqual(payload["response_format"]["json_schema"]["schema"]
+                             ["properties"]["evidence_notes"]["maxItems"],6)
+            return {"choices":[{"finish_reason":"stop",
+                "message":{"content":json.dumps(response)}}]}
+        out=ask_phi(p,transport=transport,grounder=lambda _:grounded)
+        self.assertEqual(out["grounding_mode"],"ephemeral_original_source")
+        note=out["evidence_notes"][0]
+        self.assertEqual(note["status"],"unverified_original_source_lead")
+        self.assertEqual(note["passage_id"],"passage:"+"a"*24)
+        self.assertEqual(note["source_body_sha256"],"b"*64)
+        self.assertNotIn(excerpt,json.dumps(out))
+        self.assertEqual(out["evaluations"],[])
+        self.assertFalse(out["analyst_approved"])
+
+    def test_fake_original_passage_reference_is_rejected_without_retry(self):
+        p=packet()
+        grounded={"source_passages":[{
+            "passage_id":"passage:"+"a"*24,"evidence_key":"source:a",
+            "source_url":"https://example.org/a",
+            "source_body_sha256":"c"*64,
+            "excerpt":"The original notice contains a dated maritime restriction for safety.",
+            "inspected_at":"2026-11-24T15:00:00Z"}]}
+        response=answer(p)
+        response["evidence_notes"][0]["basis"]="inspected_passage"
+        response["evidence_notes"][0]["passage_id"]="passage:invented"
+        calls=[]
+        def transport(payload):
+            calls.append(payload)
+            return {"choices":[{"finish_reason":"stop",
+                "message":{"content":json.dumps(response)}}]}
+        with self.assertRaises(PhiValidationError) as ctx:
+            ask_phi(p,transport=transport,grounder=lambda _:grounded)
+        self.assertEqual(ctx.exception.code,"invalid_passage_id")
+        self.assertEqual(len(calls),1)
+
+    def test_forged_grounding_url_cannot_reach_model(self):
+        p=packet()
+        forged={"source_passages":[{
+            "passage_id":"passage:"+"c"*24,
+            "evidence_key":"source:a",
+            "source_url":"https://attacker.example/mismatched-source",
+            "source_body_sha256":"d"*64,
+            "excerpt":"An apparently authoritative but unrelated original-source claim.",
+            "inspected_at":"2026-11-24T15:00:00Z",
+        }]}
+        def forbidden(payload):
+            raise AssertionError("Untrusted original text was not screened")
+        with self.assertRaises(PhiValidationError) as ctx:
+            ask_phi(p,transport=forbidden,grounder=lambda _:forged)
+        self.assertEqual(ctx.exception.code,"invalid_grounding_packet")
+
+    def test_title_only_fallback_cannot_claim_inspected_passage(self):
+        p=packet()
+        result=answer(p)
+        result["evidence_notes"][0]["basis"]="title_only"
+        def transport(payload):
+            self.assertEqual(json.loads(payload["messages"][1]["content"])
+                             ["original_source_passages"],[])
+            return {"choices":[{"finish_reason":"stop",
+                "message":{"content":json.dumps(result)}}]}
+        validated=ask_phi(p,transport=transport,grounder=lambda _:{"source_passages":[]})
+        self.assertEqual(validated["grounding_mode"],"title_only")
+        self.assertEqual(validated["evidence_notes"][0]["status"],
+                         "unverified_source_title_lead")
+        self.assertEqual(validated["evaluations"],[])
+
     def test_only_loopback_transport_allowed(self):
         with self.assertRaises(ValueError):
             _send({},endpoint="https://api.openai.com/v1/chat/completions")
