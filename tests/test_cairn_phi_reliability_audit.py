@@ -6,10 +6,17 @@ from scripts.cairn_phi_reliability_audit import MODEL, SCHEMA, summarize
 
 def passed():
     return {"status": "provisional_complete", "analyst_approved": False,
-            "interpretation_only": True, "evaluations": [],
+            "interpretation_only": True, "source_truth_not_verified": True,
+            "model_family": MODEL, "evaluations": [],
+            "interpretations": [{"hypothesis_index": 0,
+                "meaning": "An ambiguous, provisional working interpretation.",
+                "discriminator": "Look for an independent timestamped primary report."}],
             "source_references": [{"evidence_key": "family:one"}],
-            "evidence_notes": [{"evidence_key": "family:one"}],
-            "format_retry_succeeded": False}
+            "evidence_notes": [{"evidence_key": "family:one",
+                "observation": "A source title alleges a new restriction.",
+                "verification_step": "Check the original issuer and its recorded date.",
+                "status": "unverified_source_title_lead"}],
+            "attempts": 1, "format_retry_succeeded": False}
 
 
 def receipt(n, *, count=10):
@@ -39,6 +46,7 @@ class PhiReliabilityAuditTests(unittest.TestCase):
             "status": "model_or_validation_failed",
             "evaluations": [], "error_code": "invalid_evidence_key"}
         a["cases"]["case-2"]["format_retry_succeeded"] = True
+        a["cases"]["case-2"]["attempts"] = 2
         report = summarize([a], minimum_cases=10, minimum_runs=1)
         self.assertEqual(report["failure_codes"], {"invalid_evidence_key": 1})
         self.assertEqual(report["format_retries_recovered"], 1)
@@ -53,6 +61,20 @@ class PhiReliabilityAuditTests(unittest.TestCase):
             summarize([a])
         a = receipt(0)
         a["cases"]["case-0"]["evidence_notes"][0]["evidence_key"] = "invented"
+        with self.assertRaises(ValueError):
+            summarize([a])
+
+    def test_missing_hypothesis_and_unverified_flag_fail_closed(self):
+        a = receipt(0)
+        a["cases"]["case-0"]["interpretations"] = []
+        with self.assertRaises(ValueError):
+            summarize([a])
+        a = receipt(0)
+        a["cases"]["case-0"]["source_truth_not_verified"] = False
+        with self.assertRaises(ValueError):
+            summarize([a])
+        a = receipt(0)
+        a["cases"]["case-0"]["format_retry_succeeded"] = True
         with self.assertRaises(ValueError):
             summarize([a])
 
