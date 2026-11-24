@@ -61,10 +61,27 @@ def summarize(receipts, *, minimum_cases=50, minimum_runs=5, threshold=0.98):
                 failures[code] = failures.get(code, 0) + 1
                 continue
             # Schema-valid output is NOT independently verified source truth.
-            if row.get("analyst_approved") is not False or row.get("interpretation_only") is not True:
+            if (row.get("analyst_approved") is not False
+                    or row.get("interpretation_only") is not True
+                    or row.get("source_truth_not_verified") is not True
+                    or row.get("model_family") != MODEL):
                 raise ValueError("Model output crossed the analyst authority boundary")
             if row.get("evaluations") != []:
                 raise ValueError("Local Phi must not publish ACH evidence directions")
+            interpretations = row.get("interpretations")
+            if not isinstance(interpretations, list) or not interpretations:
+                raise ValueError("Missing provisional hypothesis interpretations")
+            if any(not isinstance(x, dict)
+                   or type(x.get("hypothesis_index")) is not int
+                   or x["hypothesis_index"] != index
+                   or not isinstance(x.get("meaning"), str)
+                   or not isinstance(x.get("discriminator"), str)
+                   or len(x["meaning"]) < 12
+                   or len(x["discriminator"]) < 15
+                   for index, x in enumerate(interpretations)):
+                raise ValueError("Unusable or mismatched hypothesis interpretations")
+            if row.get("format_retry_succeeded") is True and row.get("attempts") != 2:
+                raise ValueError("Inconsistent format retry accounting")
             references = row.get("source_references")
             notes = row.get("evidence_notes")
             if not isinstance(references, list) or not isinstance(notes, list):
@@ -72,8 +89,13 @@ def summarize(receipts, *, minimum_cases=50, minimum_runs=5, threshold=0.98):
             keys = {f["evidence_key"] for f in references if isinstance(f, dict)
                     and isinstance(f.get("evidence_key"), str)}
             if any(not isinstance(n, dict) or n.get("evidence_key") not in keys
+                   or n.get("status") != "unverified_source_title_lead"
+                   or not isinstance(n.get("observation"), str)
+                   or len(n["observation"]) < 15
+                   or not isinstance(n.get("verification_step"), str)
+                   or len(n["verification_step"]) < 15
                    for n in notes):
-                raise ValueError("Accepted model note contains fabricated evidence key")
+                raise ValueError("Accepted model note lacks provenance or verification")
             successes += 1
             run_succeeded += 1
             if row.get("format_retry_succeeded") is True:
