@@ -1,8 +1,8 @@
 {
   "alerts_promoted": 0,
   "archive_integrity": "all shards retained; public discovery cache is bounded",
-  "automatic_topic_count_total": 267,
-  "automatic_topic_document_count_total": 786,
+  "automatic_topic_count_total": 268,
+  "automatic_topic_document_count_total": 787,
   "automatic_topic_index": {
     "assignment_explanations": {
       "0102f620874377081ce61da46dea": {
@@ -5011,6 +5011,15 @@
         "shared_activity_roles": [],
         "shared_subject_terms": []
       },
+      "e10163d861391e9602ad928b23f8": {
+        "independent_corroboration_proven": false,
+        "method": "new_analytical_theme",
+        "review_status": "unreviewed_automatic_topic_seed",
+        "same_incident_proven": false,
+        "score": null,
+        "shared_activity_roles": [],
+        "shared_subject_terms": []
+      },
       "e1382a4e641e3bb8e512d1179a4e": {
         "independent_corroboration_proven": false,
         "latent_semantic_similarity": 1,
@@ -6554,6 +6563,7 @@
       "e03aeb20feb6c1145f9f44301dd2": "family:fe16830728b4f874c391",
       "e042848245961255e27f3861d820": "family:8bc0a64d3d5df744832c",
       "e074cd3944ed15338a1d7afe2172": "family:70bc6266ab23e9ae9c53",
+      "e10163d861391e9602ad928b23f8": "family:be55f295fedc3cbc8694",
       "e115c49a8cce23292181bac19a68": "family:d320e56b7e553fbe00db",
       "e1382a4e641e3bb8e512d1179a4e": "family:fedd67f32b443ff07f62",
       "e141d6c178fe081bec4c208ee6b3": "family:a68d914d5c72f6a22df4",
@@ -11071,6 +11081,33 @@
         },
         "source": "automatic_similarity_v1"
       },
+      "family:be55f295fedc3cbc8694": {
+        "first_document_at": "2026-11-25T22:34:43+00:00",
+        "last_document_at": "2026-11-25T22:34:43+00:00",
+        "matched_document_count": 1,
+        "seed": {
+          "domain": "generic",
+          "geo": [
+            "ukraine"
+          ],
+          "key": "e10163d861391e9602ad928b23f8",
+          "publisher": "Reuters",
+          "source_family": "media_mention",
+          "terms": {
+            "accountability": 1,
+            "agent": 1,
+            "alleged": 1,
+            "calls": 1,
+            "control": 1,
+            "multilateral": 1,
+            "over": 1,
+            "riot": 1,
+            "use": 1
+          },
+          "title": "Multilateral statement calls for accountability over alleged riot-control agent use in Ukraine"
+        },
+        "source": "hybrid_local_topic_embedding_v2"
+      },
       "family:befceef80858c8def8db": {
         "first_document_at": "2026-11-17T16:57:47+00:00",
         "matched_document_count": 1,
@@ -12588,17 +12625,38 @@
     },
     "public_index_truncated": false,
     "schema": "aiba.automatic-analytical-topics.v1",
-    "total_document_assignments": 786,
-    "total_stable_topics": 267
+    "total_document_assignments": 787,
+    "total_stable_topics": 268
   },
-  "generated_at": "2026-11-25T21:44:06.499643+00:00",
+  "generated_at": "2026-11-25T22:50:03.039967+00:00",
   "historical_relationship_count": 0,
   "missing_data_is_not_zero": true,
-  "new_records_added": 3,
-  "public_record_count": 4576,
+  "new_records_added": 1,
+  "public_record_count": 4577,
   "public_snapshot_truncated": false,
-  "record_count_total": 4576,
+  "record_count_total": 4577,
   "records": [
+    {
+      "calibrated_metric": null,
+      "case_hint": null,
+      "claim_level": "unreviewed_source_submission",
+      "collection_mode": "analyst",
+      "direct_measurement": false,
+      "event_at": null,
+      "first_observed_at": "2026-11-25T22:34:43+00:00",
+      "geography_key": null,
+      "geography_label": null,
+      "geography_precision": "case_hint_not_source_geolocation",
+      "id": "analyst:reuters-opcw-joint-statement-20261125",
+      "information_root": "opcw-csp31-joint-statement-20261125",
+      "origin": "analyst_intake",
+      "provider": "Reuters",
+      "published_at": "2026-11-25",
+      "source_family": "media_mention",
+      "source_kind": "unreviewed_analyst_report",
+      "source_url": "https://www.reuters.com/world/dozens-countries-call-russia-halt-alleged-use-riot-agent-ukraine-war-2026-11-25/",
+      "title": "Multilateral statement calls for accountability over alleged riot-control agent use in Ukraine"
+    },
     {
       "calibrated_metric": null,
       "case_hint": null,
@@ -164925,7 +164983,7 @@
   "report_relationships": {
     "candidate_groups": []
   },
-  "root_count_total": 4576,
+  "root_count_total": 4577,
   "schema": "aiba.family-archive.v1",
   "source_health": {
     "amsa": {

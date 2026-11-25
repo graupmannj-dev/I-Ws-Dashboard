@@ -5006,6 +5006,15 @@
       "shared_activity_roles": [],
       "shared_subject_terms": []
     },
+    "e10163d861391e9602ad928b23f8": {
+      "independent_corroboration_proven": false,
+      "method": "new_analytical_theme",
+      "review_status": "unreviewed_automatic_topic_seed",
+      "same_incident_proven": false,
+      "score": null,
+      "shared_activity_roles": [],
+      "shared_subject_terms": []
+    },
     "e1382a4e641e3bb8e512d1179a4e": {
       "independent_corroboration_proven": false,
       "latent_semantic_similarity": 1,
@@ -6549,6 +6558,7 @@
     "e03aeb20feb6c1145f9f44301dd2": "family:fe16830728b4f874c391",
     "e042848245961255e27f3861d820": "family:8bc0a64d3d5df744832c",
     "e074cd3944ed15338a1d7afe2172": "family:70bc6266ab23e9ae9c53",
+    "e10163d861391e9602ad928b23f8": "family:be55f295fedc3cbc8694",
     "e115c49a8cce23292181bac19a68": "family:d320e56b7e553fbe00db",
     "e1382a4e641e3bb8e512d1179a4e": "family:fedd67f32b443ff07f62",
     "e141d6c178fe081bec4c208ee6b3": "family:a68d914d5c72f6a22df4",
@@ -11066,6 +11076,33 @@
       },
       "source": "automatic_similarity_v1"
     },
+    "family:be55f295fedc3cbc8694": {
+      "first_document_at": "2026-11-25T22:34:43+00:00",
+      "last_document_at": "2026-11-25T22:34:43+00:00",
+      "matched_document_count": 1,
+      "seed": {
+        "domain": "generic",
+        "geo": [
+          "ukraine"
+        ],
+        "key": "e10163d861391e9602ad928b23f8",
+        "publisher": "Reuters",
+        "source_family": "media_mention",
+        "terms": {
+          "accountability": 1,
+          "agent": 1,
+          "alleged": 1,
+          "calls": 1,
+          "control": 1,
+          "multilateral": 1,
+          "over": 1,
+          "riot": 1,
+          "use": 1
+        },
+        "title": "Multilateral statement calls for accountability over alleged riot-control agent use in Ukraine"
+      },
+      "source": "hybrid_local_topic_embedding_v2"
+    },
     "family:befceef80858c8def8db": {
       "first_document_at": "2026-11-17T16:57:47+00:00",
       "matched_document_count": 1,
@@ -12582,9 +12619,9 @@
     }
   },
   "input_truncated": false,
-  "new_document_assignments": 0,
+  "new_document_assignments": 1,
   "schema": "aiba.automatic-analytical-topics.v1",
   "semantic_seed_index_limited": false,
-  "total_document_assignments": 786,
-  "total_stable_topics": 267
+  "total_document_assignments": 787,
+  "total_stable_topics": 268
 }
