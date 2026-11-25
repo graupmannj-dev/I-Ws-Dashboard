@@ -1,15 +1,32 @@
 {
   "active_ground_stop_airports": 0,
-  "affected_airport_records": 0,
-  "airports": [],
-  "airports_with_any_delay": 0,
-  "airports_with_any_nas_event": 0,
+  "affected_airport_records": 2,
+  "airports": [
+    {
+      "airport": "FLL",
+      "ground_stop_object_present": false,
+      "nas_event_reasons": {
+        "departureDelay": "TM Initiatives:MIT:WX"
+      },
+      "national_stop_reason_in_source": false
+    },
+    {
+      "airport": "MIA",
+      "ground_stop_object_present": false,
+      "nas_event_reasons": {
+        "departureDelay": "TM Initiatives:MIT:WX"
+      },
+      "national_stop_reason_in_source": false
+    }
+  ],
+  "airports_with_any_delay": 2,
+  "airports_with_any_nas_event": 2,
   "automatic_event_merges": 0,
   "changed_since_prior_observation": false,
-  "checked_at": "2026-11-25T03:46:24Z",
+  "checked_at": "2026-11-25T13:42:37Z",
   "cyberattack_evidence": false,
   "event_occurrence_as_reported_by_FAA_only": true,
-  "event_reason_objects_examined": 0,
+  "event_reason_objects_examined": 2,
   "forecast_probability": null,
   "geographic_scope": "United States",
   "hostile_actor_evidence": false,
@@ -21,12 +38,12 @@
     "The sensor makes no inference of hostile intent or cyberattack."
   ],
   "military_warning_level_change": false,
-  "monitored_airport_count": 5,
-  "monitored_airport_roster_sha256": "71bc11f6167c2750343cb0e7d872feb356554b686dc474438ad8f8fb0cd265f5",
+  "monitored_airport_count": 7,
+  "monitored_airport_roster_sha256": "d277041fa28c87e8d53dc0c739e03b58795eccd9e9e32f75365e169765ac136b",
   "multiple_airports_not_independent_attribution": true,
   "national_event_confirmed_by_explicit_ATCSCC_order": false,
   "national_stop_airports": 0,
-  "observed_at": "2026-11-25T03:46:24Z",
+  "observed_at": "2026-11-25T13:42:37Z",
   "provisional_review_required": false,
   "schema": "aiba.faa-nas-systemic-disruption.v1",
   "source_family": "civil_air_traffic_management",
