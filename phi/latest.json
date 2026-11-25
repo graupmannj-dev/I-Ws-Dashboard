@@ -1,8 +1,8 @@
 {
   "schema": "cairn.phi-sidecar.v1",
   "model": "phi-4-mini-instruct-q4km-local",
-  "generated_at": "2026-11-25T19:39:39.252744Z",
-  "source_build_generated_at": "2026-11-25T19:30:11+00:00",
+  "generated_at": "2026-11-25T21:48:06.527079Z",
+  "source_build_generated_at": "2026-11-25T21:46:04+00:00",
   "provisional_only": true,
   "signed_evidence_modified": false,
   "cases": {
@@ -138,7 +138,7 @@
       ],
       "input_sha256": "eef02bcdee9b5dbedb479e32c58586fc122a4d1d9867b25b8506e3255f8ee1e6",
       "model_generated_at": "2026-11-25T19:31:20.755553Z",
-      "cache_status": "fresh_inference"
+      "cache_status": "reused_exact_input"
     },
     "horn_ethiopia_sudan": {
       "status": "provisional_complete",
@@ -301,7 +301,7 @@
       ],
       "input_sha256": "7ac2c2b44be24d458cb215b6f65735485d8762a39be5e4b82658ceebdc664a66",
       "model_generated_at": "2026-11-25T19:31:20.755553Z",
-      "cache_status": "fresh_inference"
+      "cache_status": "reused_exact_input"
     },
     "drc_rwanda": {
       "status": "provisional_complete",
@@ -414,7 +414,7 @@
       ],
       "input_sha256": "4b3c0972f94a5ebc6b2a883eb6c23e96856923b8fe5d807f8f280b02c0c5e693",
       "model_generated_at": "2026-11-25T19:31:20.755553Z",
-      "cache_status": "fresh_inference"
+      "cache_status": "reused_exact_input"
     },
     "thailand_cambodia": {
       "status": "provisional_complete",
@@ -634,7 +634,7 @@
       ],
       "input_sha256": "d8e1501bb15989527fd9ed27f7a4c1a4358815819aa4d63549db9898b827881b",
       "model_generated_at": "2026-11-25T19:31:20.755553Z",
-      "cache_status": "fresh_inference"
+      "cache_status": "reused_exact_input"
     },
     "iran_gulf": {
       "status": "provisional_complete",
@@ -747,7 +747,7 @@
       ],
       "input_sha256": "d50947a8e3033e6741922a07ab743db6093a1e0d8ef868d8158ec50cbeb40097",
       "model_generated_at": "2026-11-25T19:31:20.755553Z",
-      "cache_status": "fresh_inference"
+      "cache_status": "reused_exact_input"
     },
     "taiwan": {
       "status": "provisional_complete",
@@ -755,38 +755,32 @@
         {
           "hypothesis_index": 0,
           "meaning": "The situation involves a blockade, quarantine, or major armed attack.",
-          "discriminator": "Observation of increased military presence or blockade activities in the region."
+          "discriminator": "An increase in coast guard incursions could indicate preparation for a blockade or quarantine."
         },
         {
           "hypothesis_index": 1,
           "meaning": "The situation involves persistent coercive activity without a decision to initiate a blockade.",
-          "discriminator": "Observation of increased coast guard incursions without corresponding military buildup."
+          "discriminator": "A decrease in PLA aircraft sorties might suggest a reduction in coercive activity."
         }
       ],
       "evaluations": [],
       "evidence_notes": [
         {
-          "evidence_key": "history:46f51de759c69cccce85",
-          "observation": "Review historical context for Taiwan to understand past incidents and patterns of behavior that may relate to the current situation.",
-          "verification_step": "Cross-reference with other historical data to confirm the relevance of the historical context to the current situation.",
-          "status": "unverified_source_title_lead"
-        },
-        {
           "evidence_key": "dossier:fcb9ba6b7f3d1e6d25b8d2a2",
-          "observation": "Examine the increase in coast guard incursions for evidence of coercive activity.",
-          "verification_step": "Compare the frequency and intensity of coast guard incursions over time to identify any significant changes.",
+          "observation": "An increase in coast guard incursions could be indicative of preparation for a blockade or quarantine, supporting the hypothesis of a blockade, quarantine, or major armed attack.",
+          "verification_step": "Monitor coast guard activity for patterns consistent with blockade or quarantine preparations.",
           "status": "unverified_source_title_lead"
         },
         {
           "evidence_key": "history:9645f8539047cc7eba08",
-          "observation": "Investigate the seismic event near Hengchun, Taiwan, for any potential connection to the current situation.",
-          "verification_step": "Analyze seismic data and consult geological records to determine if the event is related to the situation.",
+          "observation": "The occurrence of an earthquake near Hengchun, Taiwan, could be related to the situation but does not directly support either hypothesis.",
+          "verification_step": "Correlate the timing of the earthquake with any changes in the situation to determine if there is a causal relationship.",
           "status": "unverified_source_title_lead"
         },
         {
           "evidence_key": "dossier:d9c4d75b7362652cdbc4f0fc",
-          "observation": "Assess the decrease in PLA aircraft sorties for insights into the level of military engagement.",
-          "verification_step": "Review flight logs and military activity reports to confirm the decrease in sorties.",
+          "observation": "A decrease in PLA aircraft sorties might suggest a reduction in coercive activity, supporting the hypothesis of persistent coercive activity without a decision to initiate a blockade.",
+          "verification_step": "Track the frequency and intensity of PLA aircraft sorties over time to confirm a decrease.",
           "status": "unverified_source_title_lead"
         }
       ],
@@ -841,25 +835,10 @@
             }
           ],
           "reviewed_direction": "not_assessed"
-        },
-        {
-          "evidence_key": "history:46f51de759c69cccce85",
-          "family_title": "Taiwan",
-          "family_mechanism": "Case-linked history; provisional association only",
-          "source_health": "not_event_verified",
-          "sources": [
-            {
-              "url": "https://www.gov.uk/foreign-travel-advice/taiwan",
-              "title": "Taiwan",
-              "provider": "official",
-              "first_observed_at": "2026-11-18T20:34:35Z"
-            }
-          ],
-          "reviewed_direction": "not_assessed"
         }
       ],
-      "input_sha256": "d02d94cbf5dc1d2157083914c345bcffe87c37189c864214f9f5e57ac053d6bc",
-      "model_generated_at": "2026-11-25T19:31:20.755553Z",
+      "input_sha256": "91077021d5370ff32777d961bdaf6f85205cf69e9ab0d24db504467c50f66c6f",
+      "model_generated_at": "2026-11-25T21:47:18.869840Z",
       "cache_status": "fresh_inference"
     },
     "korea": {
@@ -931,7 +910,7 @@
       ],
       "input_sha256": "79996ad4b554682f8f51a37bc9ce9bcf1a873588ce362b0b9d5d964fa5c17c2c",
       "model_generated_at": "2026-11-25T19:31:20.755553Z",
-      "cache_status": "fresh_inference"
+      "cache_status": "reused_exact_input"
     },
     "horn_ethiopia_kenya_moyale": {
       "status": "provisional_complete",
@@ -1028,8 +1007,8 @@
   },
   "summary": {
     "cases": 10,
-    "reused": 3,
-    "new_provisional": 7,
+    "reused": 9,
+    "new_provisional": 1,
     "failed": 0
   }
 }
