@@ -384,6 +384,20 @@
       "shared_subject_terms": [],
       "subject_geography_compatible": true
     },
+    "13dd992dbf8bed6b35ac83e587a3": {
+      "independent_corroboration_proven": false,
+      "latent_semantic_similarity": 1,
+      "method": "legacy_sparse_v1",
+      "raw_text_similarity": 1,
+      "review_status": "unreviewed_automatic_topic_match",
+      "same_incident_proven": false,
+      "same_source_document": false,
+      "score": 1.0,
+      "shared_activity_roles": [],
+      "shared_named_subjects": [],
+      "shared_subject_terms": [],
+      "subject_geography_compatible": true
+    },
     "1644096887eb2e4b30fff57d1931": {
       "independent_corroboration_proven": false,
       "latent_semantic_similarity": 1,
@@ -3945,6 +3959,15 @@
       "shared_subject_terms": [],
       "subject_geography_compatible": true
     },
+    "c618771245557c828bd02219ed3a": {
+      "independent_corroboration_proven": false,
+      "method": "new_analytical_theme",
+      "review_status": "unreviewed_automatic_topic_seed",
+      "same_incident_proven": false,
+      "score": null,
+      "shared_activity_roles": [],
+      "shared_subject_terms": []
+    },
     "c69310fb6d5a3c12961a074b124a": {
       "independent_corroboration_proven": false,
       "latent_semantic_similarity": 1,
@@ -5335,6 +5358,7 @@
     "1214883ef4092dcce1e869625a92": "family:a9710ac29fba2f86a610",
     "135caac007b7a1698a29e3462877": "family:c733ba40ded9c2fca04b",
     "137aab6e7c1a1140014ea0e788b4": "family:7326644dffff37614fb1",
+    "13dd992dbf8bed6b35ac83e587a3": "family:b896d0395c33a0c8eafa",
     "13eee0cc1997abc3197ae191b8a9": "family:12ac7173b9295723ae32",
     "146606ed9b9ed3644a022cb8622c": "family:fc97ddd6aacc204e1dcd",
     "148238cf23e9b91a7800d56b56f5": "family:f0a42b102f8782ca6deb",
@@ -5844,6 +5868,7 @@
     "c50ce8c58f1c1d85dcce4ee5b20a": "family:e371760151a6e87ef9df",
     "c5157662116d33e2b0d4552fec85": "family:fedd67f32b443ff07f62",
     "c51e7ef5890ee92bb20f3cf6ee5c": "family:97e5004cd15276f863d2",
+    "c618771245557c828bd02219ed3a": "family:b40297d10ba632012523",
     "c69310fb6d5a3c12961a074b124a": "family:97e5004cd15276f863d2",
     "c6b7cbf9d3efc1be458439dff31b": "family:a3622921ac50fbc7de1f",
     "c6f604741cdc783b59d3142f57a5": "family:dedee4389cbb02954dcf",
@@ -9807,6 +9832,26 @@
       },
       "source": "automatic_similarity_v1"
     },
+    "family:b40297d10ba632012523": {
+      "first_document_at": "2026-11-25T04:06:44+00:00",
+      "last_document_at": "2026-11-25T04:06:44+00:00",
+      "matched_document_count": 1,
+      "seed": {
+        "domain": "network",
+        "geo": [
+          "iso:UA"
+        ],
+        "key": "c618771245557c828bd02219ed3a",
+        "publisher": "ioda",
+        "source_family": "internet_reachability",
+        "terms": {
+          "anomaly": 1,
+          "connectivity": 1
+        },
+        "title": "IODA detected connectivity anomaly: country UA"
+      },
+      "source": "hybrid_local_topic_embedding_v2"
+    },
     "family:b43d40b03423259fc083": {
       "first_document_at": "2026-11-17T11:28:00+00:00",
       "last_document_at": "2026-11-22T16:46:48+00:00",
@@ -9946,7 +9991,8 @@
     },
     "family:b896d0395c33a0c8eafa": {
       "first_document_at": "2026-11-18T08:28:52+00:00",
-      "matched_document_count": 2,
+      "last_document_at": "2026-11-25T04:06:44+00:00",
+      "matched_document_count": 3,
       "seed": {
         "domain": "network",
         "geo": [
@@ -11514,9 +11560,9 @@
     }
   },
   "input_truncated": false,
-  "new_document_assignments": 1,
+  "new_document_assignments": 2,
   "schema": "aiba.automatic-analytical-topics.v1",
   "semantic_seed_index_limited": false,
-  "total_document_assignments": 747,
-  "total_stable_topics": 250
+  "total_document_assignments": 749,
+  "total_stable_topics": 251
 }
