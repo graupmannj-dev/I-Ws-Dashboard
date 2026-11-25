@@ -1,17 +1,22 @@
 {
   "health": {
     "caveat": "Exact contract questions, not event probabilities or interchangeable outcomes.",
-    "checked_at": "2026-11-25T08:39:32Z",
-    "errors": [],
+    "checked_at": "2026-11-25T21:44:04Z",
+    "errors": [
+      {
+        "error": "ValueError: Question changed or unexpected contract definition",
+        "id": "polymarket:2382819"
+      }
+    ],
     "mode": "watchlist",
-    "record_count": 8,
+    "record_count": 7,
     "registry_version": 1,
     "source_queries_attempted": 8,
-    "source_queries_ok": 8,
-    "status": "collected"
+    "source_queries_ok": 7,
+    "status": "partial"
   },
   "mode": "watchlist",
-  "observed_at": "2026-11-25T08:39:32Z",
+  "observed_at": "2026-11-25T21:44:04Z",
   "records": [
     {
       "case_id": "iran_gulf",
@@ -26,7 +31,7 @@
       "liquidity": 5140.0,
       "liquidity_unit": "Manifold play units",
       "market_question": "Will the US invade Iran before the end of 2026?",
-      "observed_at": "2026-11-25T08:39:32Z",
+      "observed_at": "2026-11-25T21:44:04Z",
       "price": 0.050496,
       "provider": "manifold",
       "source_url": "https://manifold.markets/cash/will-the-us-invade-iran-before-the-zs06u6hptc",
@@ -42,11 +47,11 @@
       "expected_question": "us-iran hormuz agreement by november 30",
       "id": "polymarket:5087226",
       "interpretation": "Single-contract YES quote; not a calibrated 7/30-day military-attack probability.",
-      "liquidity": 38423.0872,
+      "liquidity": 33142.40661,
       "liquidity_unit": "Polymarket market units",
       "market_question": "US-Iran Hormuz Agreement by November 30?",
-      "observed_at": "2026-11-25T08:39:32Z",
-      "price": 0.0275,
+      "observed_at": "2026-11-25T21:44:04Z",
+      "price": 0.0345,
       "provider": "polymarket",
       "source_url": "https://polymarket.com/event/us-iran-hormuz-agreement-by-november-30",
       "status": "eligible"
@@ -61,32 +66,13 @@
       "expected_question": "us-iran hormuz agreement by december 31",
       "id": "polymarket:5087228",
       "interpretation": "Single-contract YES quote; not a calibrated 7/30-day military-attack probability.",
-      "liquidity": 47824.3365,
+      "liquidity": 29832.659,
       "liquidity_unit": "Polymarket market units",
       "market_question": "US-Iran Hormuz Agreement by December 31?",
-      "observed_at": "2026-11-25T08:39:32Z",
+      "observed_at": "2026-11-25T21:44:04Z",
       "price": 0.125,
       "provider": "polymarket",
       "source_url": "https://polymarket.com/event/us-iran-hormuz-agreement-by-december-31",
-      "status": "eligible"
-    },
-    {
-      "case_id": "taiwan",
-      "caveat": "Blockade is not invasion or any military clash.",
-      "date_horizon": "2026-12-31",
-      "effect": "escalation",
-      "end_at": "2027-01-01T04:59:00Z",
-      "event": "Taiwan blockade during 2026",
-      "expected_question": "will china blockade taiwan in 2026",
-      "id": "polymarket:2382819",
-      "interpretation": "Single-contract YES quote; not a calibrated 7/30-day military-attack probability.",
-      "liquidity": 43469.13521,
-      "liquidity_unit": "Polymarket market units",
-      "market_question": "Will China blockade Taiwan in 2026?",
-      "observed_at": "2026-11-25T08:39:32Z",
-      "price": 0.017,
-      "provider": "polymarket",
-      "source_url": "https://polymarket.com/event/will-china-blockade-taiwan-by-in-2026",
       "status": "eligible"
     },
     {
@@ -99,11 +85,11 @@
       "expected_question": "china x taiwan military clash before 2027",
       "id": "polymarket:677407",
       "interpretation": "Single-contract YES quote; not a calibrated 7/30-day military-attack probability.",
-      "liquidity": 58665.49758,
+      "liquidity": 51838.1507,
       "liquidity_unit": "Polymarket market units",
       "market_question": "China x Taiwan military clash before 2027?",
-      "observed_at": "2026-11-25T08:39:32Z",
-      "price": 0.0265,
+      "observed_at": "2026-11-25T21:44:04Z",
+      "price": 0.0275,
       "provider": "polymarket",
       "source_url": "https://polymarket.com/event/china-x-taiwan-military-clash-before-2027",
       "status": "eligible"
@@ -118,11 +104,11 @@
       "expected_question": "will china invade taiwan by june 30 2027",
       "id": "polymarket:1811266",
       "interpretation": "Single-contract YES quote; not a calibrated 7/30-day military-attack probability.",
-      "liquidity": 68085.65253,
+      "liquidity": 72731.5417,
       "liquidity_unit": "Polymarket market units",
       "market_question": "Will China invade Taiwan by June 30, 2027?",
-      "observed_at": "2026-11-25T08:39:32Z",
-      "price": 0.0435,
+      "observed_at": "2026-11-25T21:44:04Z",
+      "price": 0.0445,
       "provider": "polymarket",
       "source_url": "https://polymarket.com/event/will-china-invade-taiwan-by-june-30-2027",
       "status": "eligible"
@@ -140,7 +126,7 @@
       "liquidity": 11000.0,
       "liquidity_unit": "Manifold play units",
       "market_question": "Will China militarily seize any of Taiwan's outlying islands (Kinmen, Matsu, Wuqiu, Penghu) before the end of 2026?",
-      "observed_at": "2026-11-25T08:39:32Z",
+      "observed_at": "2026-11-25T21:44:04Z",
       "price": 0.046231,
       "provider": "manifold",
       "source_url": "https://manifold.markets/cash/will-china-militarily-seize-any-of-6dad798706d5",
@@ -159,7 +145,7 @@
       "liquidity": 100.0,
       "liquidity_unit": "Manifold play units",
       "market_question": "Will armed conflict break out between Ethiopia and Eritrea by December 31, 2026?",
-      "observed_at": "2026-11-25T08:39:32Z",
+      "observed_at": "2026-11-25T21:44:04Z",
       "price": 0.82,
       "provider": "manifold",
       "source_url": "https://manifold.markets/Kynakwado/will-armed-conflict-break-out-betwe-IQN6NqOp09",
@@ -167,5 +153,5 @@
     }
   ],
   "registry_version": 1,
-  "status": "collected"
+  "status": "partial"
 }
