@@ -182,6 +182,45 @@
         }
       }
     },
+    "6f2ea565fbf9fe9b5f5b431df2338ca8bc4bb2b27aaa383093261bc1ef64c894": {
+      "information_root": "bmkg_nowcast:bmkg_nowcast:fe4e807e2bdd1b29c8663b1cae9d",
+      "members": {
+        "beh:e148559c3ba50a1a6d2e4ab3cf29": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "bmkg_nowcast",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T22:48:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:e148559c3ba50a1a6d2e4ab3cf29",
+          "information_root": "bmkg_nowcast:bmkg_nowcast:fe4e807e2bdd1b29c8663b1cae9d",
+          "origin": "behavioral_registry",
+          "provider": "bmkg_nowcast",
+          "published_at": "2026-11-24T22:48:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Indonesia BMKG",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Indonesia BMKG active provincial nowcast RSS, source-reported only; not global",
+          "source_updated_at": null,
+          "source_url": "https://www.bmkg.go.id/alerts/nowcast/en/CGT20261124007_alert.xml",
+          "title": "Thunderstorm This Morning in Gorontalo"
+        }
+      }
+    },
     "6f2ff0527af7b8b4a7523c3a7e86647a0df28f9cb8b5359534a0a123ad3cd91a": {
       "information_root": "ioda:6d37165ec301c90fbc2c5760",
       "members": {
@@ -591,6 +630,39 @@
           "source_updated_at": null,
           "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-22T13%3A56%3A02&updatedTo=2026-11-24T13%3A56%3A02",
           "title": "Merthyr Housing Maintenance Contract (Individual Job Value up to £5,000) [25] · Merthyr Tydfil Housing Association"
+        }
+      }
+    },
+    "6fa650c3992c708b61c806164d2da4cf5b1b7b6c459a1ec34560d896909d0c0b": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-06a320:111346-2026",
+      "members": {
+        "beh:3500ef8746c49d69b988457a7f4a": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T16:53:06+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:3500ef8746c49d69b988457a7f4a",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-06a320:111346-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-24T16:53:06Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-22T23%3A56%3A51&updatedTo=2026-11-24T23%3A56%3A51",
+          "title": "Operation and Management of the Toxic Organic Micro Pollutants (TOMPs) Monitoring Network · ENVIRONMENT AGENCY"
         }
       }
     },

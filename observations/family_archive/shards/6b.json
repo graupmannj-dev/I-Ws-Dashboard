@@ -96,6 +96,92 @@
         }
       }
     },
+    "6b2538d67fb265841c86850d68ce47d298790024afa786d99641203bba96cb41": {
+      "information_root": "cbp_wait:cbp_wait:380001:2026-11-24:18:50:48",
+      "members": {
+        "beh:9e5b80a20fcba9707bde21fbef2e": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T23:59:43+00:00",
+          "geography_key": "us-border-port:380001",
+          "geography_label": "Detroit",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:9e5b80a20fcba9707bde21fbef2e",
+          "information_root": "cbp_wait:cbp_wait:380001:2026-11-24:18:50:48",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "no delay",
+            "lanes_open": 6,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "At 6:00 pm EST",
+            "reported_local_date": "11/24/2026",
+            "reported_local_time": "18:50:48",
+            "source_declared_border": "Canadian Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 5
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Detroit / Ambassador Bridge"
+        }
+      }
+    },
+    "6b2b223ed1443d745a18c668dbf54d4899b3a815045fdc76e91faddf445ac69a": {
+      "information_root": "inmet_br:inmet_br:ed80603a6f6e27f4643c58e5388e",
+      "members": {
+        "beh:4b06ce5fe9f682511c851a4368b5": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "inmet_br",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-25T00:00:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:4b06ce5fe9f682511c851a4368b5",
+          "information_root": "inmet_br:inmet_br:ed80603a6f6e27f4643c58e5388e",
+          "origin": "behavioral_registry",
+          "provider": "inmet_br",
+          "published_at": "2026-11-25T00:00:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Brazil INMET",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Brazil INMET official severe-weather RSS notices; provider-listed bounded sample",
+          "source_updated_at": null,
+          "source_url": "https://apiprevmet3.inmet.gov.br/avisos/rss/56501",
+          "title": "Aviso de Tempestade. Severidade Grau: Perigo"
+        }
+      }
+    },
     "6b3b871fb940e691e7e4fcf6b370012ec2fa859844cf7973a773a96046c4867f": {
       "information_root": "cbp_wait:cbp_wait:240104:2026-11-23:19:14:19",
       "members": {
@@ -355,6 +441,39 @@
           "source_updated_at": null,
           "source_url": "https://bwt.cbp.gov/api/waittimes",
           "title": "CBP estimated commercial border wait — San Ysidro / Cross Border Express"
+        }
+      }
+    },
+    "6b674ce898648e1ce4e018c95ccf5507ff0dcd9da057df922c4d625269c58289": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-05092e:111281-2026",
+      "members": {
+        "beh:307278f50f3f6411e745f04b7d6a": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T15:28:25+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:307278f50f3f6411e745f04b7d6a",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-05092e:111281-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-24T15:28:25Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-22T23%3A56%3A51&updatedTo=2026-11-24T23%3A56%3A51",
+          "title": "Local Bus Services · Wokingham Borough Council"
         }
       }
     },

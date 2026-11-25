@@ -113,6 +113,44 @@
         }
       }
     },
+    "b522d27123708d9eb891d2ceae685e1510f43d1f0825c5d56ab7e8601c97650e": {
+      "information_root": "usgs:us6000udbn",
+      "members": {
+        "beh:d5e999608a519a0a26e0899c6977": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "usgs",
+          "direct_measurement": true,
+          "event_at": "2026-11-24T21:11:41Z",
+          "first_observed_at": "2026-11-24T21:11:41+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "source_supplied_point_only",
+          "id": "beh:d5e999608a519a0a26e0899c6977",
+          "information_root": "usgs:us6000udbn",
+          "origin": "behavioral_registry",
+          "provider": "usgs",
+          "published_at": "2026-11-24T21:29:53Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "measured_earthquake_context",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "name": "earthquake_magnitude",
+            "unit": "reported_magnitude",
+            "value": 5
+          },
+          "source_scope": "USGS M4.5+ earthquakes worldwide, rolling past day; source thresholds apply",
+          "source_updated_at": null,
+          "source_url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000udbn",
+          "title": "M 5.0 - 209 km SE of Kokopo, Papua New Guinea"
+        }
+      }
+    },
     "b52922bc1af0b73cbc04fd3941c813d64d23913a5fd08c768db555af7e9b0add": {
       "information_root": "official:823076694b6c889a4df9",
       "members": {
@@ -140,6 +178,53 @@
           "source_updated_at": null,
           "source_url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.grd.html",
           "title": "Grenada - Level 2: Exercise Increased Caution"
+        }
+      }
+    },
+    "b537ddf77d9c9223fa51de7bc98d0b6e158c6b9bb68b20e2e2c264f83e6a907d": {
+      "information_root": "cbp_wait:cbp_wait:230502:2026-11-24:17:50:48",
+      "members": {
+        "beh:bc42fc5b87fa64bffeb8a267202e": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T23:59:43+00:00",
+          "geography_key": "us-border-port:230502",
+          "geography_label": "Hidalgo/Pharr",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:bc42fc5b87fa64bffeb8a267202e",
+          "information_root": "cbp_wait:cbp_wait:230502:2026-11-24:17:50:48",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "delay",
+            "lanes_open": 4,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "At 5:00 pm CST",
+            "reported_local_date": "11/24/2026",
+            "reported_local_time": "17:50:48",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 50
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Hidalgo/Pharr / Pharr"
         }
       }
     },
@@ -239,6 +324,53 @@
         }
       }
     },
+    "b57c8e4dddf525b015309b5c7ac8584a0712d6b5cbbb3916decdc1d2a82616bb": {
+      "information_root": "cbp_wait:cbp_wait:230701:2026-11-24:17:50:49",
+      "members": {
+        "beh:e7fe561997f3eb5cfe7b16d3d9ac": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T23:59:43+00:00",
+          "geography_key": "us-border-port:230701",
+          "geography_label": "Rio Grande City",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:e7fe561997f3eb5cfe7b16d3d9ac",
+          "information_root": "cbp_wait:cbp_wait:230701:2026-11-24:17:50:49",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "no delay",
+            "lanes_open": 1,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "At 5:00 pm CST",
+            "reported_local_date": "11/24/2026",
+            "reported_local_time": "17:50:49",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 0
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Rio Grande City"
+        }
+      }
+    },
     "b5878d78275fc2977fd888a5350653df2281dbbb681b4e5334f7a6f74e8a67a1": {
       "information_root": "niord:42b7d796-6fdc-4695-9052-4fd5a8e31208:0:5:0",
       "members": {
@@ -269,6 +401,128 @@
           "source_updated_at": "2026-11-22T00:21:52Z",
           "source_url": "https://niord.dma.dk/#/message/42b7d796-6fdc-4695-9052-4fd5a8e31208",
           "title": "Denmark. Kattegat. EK R 45 Hevring. Firing exercises. Warning."
+        }
+      }
+    },
+    "b5b87fd66d31a3ccc794ebc42714d337b5b273d1572adde1dab0466f061416d9": {
+      "information_root": "wiki_edits:wiki_edits:ja:20261124T23",
+      "members": {
+        "beh:01c453dc34d5c16fa415b62ca793": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "wiki_edits",
+          "direct_measurement": false,
+          "event_at": "2026-11-24T23:56:48Z",
+          "first_observed_at": "2026-11-24T23:56:48+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:01c453dc34d5c16fa415b62ca793",
+          "information_root": "wiki_edits:wiki_edits:ja:20261124T23",
+          "origin": "behavioral_registry",
+          "provider": "wiki_edits",
+          "published_at": "2026-11-24T23:56:48Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "public_encyclopedia_edit_aggregate",
+          "source_family": "public_attention",
+          "source_kind": "bounded_public_edit_count_not_event_verification",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "distinct_articles_in_sample": 395,
+            "maximum_returned_edits": 500,
+            "most_edited_article_counts": [
+              {
+                "count": 24,
+                "title": "ジョナタン・ドス・サントス・ローザ"
+              },
+              {
+                "count": 6,
+                "title": "UFCランキング"
+              },
+              {
+                "count": 6,
+                "title": "ライラの冒険 黄金の羅針盤"
+              },
+              {
+                "count": 6,
+                "title": "藤井フミヤ"
+              },
+              {
+                "count": 5,
+                "title": "在オデッサ中華人民共和国総領事館"
+              },
+              {
+                "count": 4,
+                "title": "2004年"
+              },
+              {
+                "count": 4,
+                "title": "== 姜門変面 =="
+              },
+              {
+                "count": 4,
+                "title": "共同抵当"
+              }
+            ],
+            "name": "sampled_edits_last_three_hours",
+            "sample_cap_reached": true,
+            "unit": "edits",
+            "value": 500
+          },
+          "source_scope": "Wikipedia main-namespace edit-count sample, 14 global language editions, three-hour window capped at 500 per wiki; not geographic location",
+          "source_updated_at": null,
+          "source_url": "https://ja.wikipedia.org/wiki/Special:RecentChanges",
+          "title": "Wikipedia ja public article-edit activity (sampled)"
+        }
+      }
+    },
+    "b5bdccced6e2f09fcad6dae98e1047da2fbf31a95ab0bcac2c26dc56e15740a6": {
+      "information_root": "cbp_wait:cbp_wait:090104:2026-11-24:18:50:48",
+      "members": {
+        "beh:8021d0a2b0f60fdd262c464e33d8": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T23:59:43+00:00",
+          "geography_key": "us-border-port:090104",
+          "geography_label": "Buffalo/Niagara Falls",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:8021d0a2b0f60fdd262c464e33d8",
+          "information_root": "cbp_wait:cbp_wait:090104:2026-11-24:18:50:48",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "no delay",
+            "lanes_open": 2,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "At 6:37 pm EST",
+            "reported_local_date": "11/24/2026",
+            "reported_local_time": "18:50:48",
+            "source_declared_border": "Canadian Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 0
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Buffalo/Niagara Falls / Lewiston Bridge"
         }
       }
     },

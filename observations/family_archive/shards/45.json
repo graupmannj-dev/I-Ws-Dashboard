@@ -39,6 +39,39 @@
         }
       }
     },
+    "453a32539839b9c77da32fa5ddd13b3a18c1c30bafac7e9b8c3027b8adc60fe4": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c2c6:111301-2026",
+      "members": {
+        "beh:2322f4f92d7461483c127acc0bc6": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T15:50:58+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:2322f4f92d7461483c127acc0bc6",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c2c6:111301-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-24T15:50:58Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-22T23%3A56%3A51&updatedTo=2026-11-24T23%3A56%3A51",
+          "title": "Passivhaus Design Consultant & PHPP Lead · Southend-on-Sea City Council"
+        }
+      }
+    },
     "454c5990e0c545c250e1a415757a497606f80572d998a0ce6ceaf1abba23d690": {
       "information_root": "cbp_wait:cbp_wait:090104:2026-11-21:20:22:12",
       "members": {
@@ -499,6 +532,39 @@
         }
       }
     },
+    "45d1c6281892e3916d691d2a28fdf2ea998f820e8b4363b1afc9d9057fadc87c": {
+      "information_root": "nws:f69ec5dd583dffea27cfd2dc",
+      "members": {
+        "beh:5af838dcc5fd30430b8c733692e0": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "nws",
+          "direct_measurement": false,
+          "event_at": "2026-11-24T16:47:00Z",
+          "first_observed_at": "2026-11-24T16:47:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:5af838dcc5fd30430b8c733692e0",
+          "information_root": "nws:f69ec5dd583dffea27cfd2dc",
+          "origin": "behavioral_registry",
+          "provider": "nws",
+          "published_at": "2026-11-24T16:47:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "official_weather_alert_context",
+          "source_measurement": null,
+          "source_scope": "Active NWS marine alerts; severity Severe",
+          "source_updated_at": null,
+          "source_url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.00a65c523cfdaca1d739b2656355440d584f64df.001.1",
+          "title": "Flood Warning - Brevard, FL"
+        }
+      }
+    },
     "45dbdb379053f210daa2ef10847625534367cf56a37b7e3ec0b3302e5f425af0": {
       "information_root": "cbp_wait:cbp_wait:240201:2026-11-21:12:22:45",
       "members": {
@@ -534,6 +600,53 @@
             "reported_lane_clock": "",
             "reported_local_date": "11/21/2026",
             "reported_local_time": "12:22:45",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — El Paso / Bridge of the Americas (BOTA)"
+        }
+      }
+    },
+    "45f88bac11b32784149990d822885f1a0a043ae99dff6412134a3c881c2e79b4": {
+      "information_root": "cbp_wait:cbp_wait:240201:2026-11-24:16:50:48",
+      "members": {
+        "beh:23eb377701930dfc9bfb7358784c": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T23:59:43+00:00",
+          "geography_key": "us-border-port:240201",
+          "geography_label": "El Paso",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:23eb377701930dfc9bfb7358784c",
+          "information_root": "cbp_wait:cbp_wait:240201:2026-11-24:16:50:48",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Lanes Closed",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/24/2026",
+            "reported_local_time": "16:50:48",
             "source_declared_border": "Mexican Border",
             "source_timezone_resolved": false,
             "unit": "minutes",

@@ -286,6 +286,39 @@
         }
       }
     },
+    "9aab0021bd2c2d30efbd92bf1607105e9ad11231b40b97cb31a9b977a3194b00": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c2cd:111313-2026",
+      "members": {
+        "beh:04a5ef3a553f988193f44fa33d85": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T16:05:34+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:04a5ef3a553f988193f44fa33d85",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c2cd:111313-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-24T16:05:34Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-22T23%3A56%3A51&updatedTo=2026-11-24T23%3A56%3A51",
+          "title": "3 High Swivel Dumpers · Leicester City Council"
+        }
+      }
+    },
     "9aae3fbb3238f608bad43085d6e0fefb4d1e02fb4b487684db4dbd0205a13d30": {
       "information_root": "niord:81a3ee1e-3be5-4107-ba85-9b4f5eb65d25:1:0:2",
       "members": {
@@ -423,6 +456,53 @@
           "source_updated_at": null,
           "source_url": "https://dados.ons.org.br/dataset/carga-energia-verificada",
           "title": "Brazil ONS North verified half-hourly system load"
+        }
+      }
+    },
+    "9ae12d49305cb8f4f6266a4173e5e21f4f15687f7ef72ebcbdfb5c48930c5dcc": {
+      "information_root": "cbp_wait:cbp_wait:250407:2026-11-24:15:50:49",
+      "members": {
+        "beh:b038e6cced6644279f939bb32b02": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T23:59:43+00:00",
+          "geography_key": "us-border-port:250407",
+          "geography_label": "San Ysidro",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:b038e6cced6644279f939bb32b02",
+          "information_root": "cbp_wait:cbp_wait:250407:2026-11-24:15:50:49",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "N/A",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Closed",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/24/2026",
+            "reported_local_time": "15:50:49",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — San Ysidro / PedWest"
         }
       }
     },

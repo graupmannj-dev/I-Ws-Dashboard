@@ -33,6 +33,81 @@
         }
       }
     },
+    "e718b454a4a8a226019266efd9930fab2114805ce79e9c617130593225d8a4d6": {
+      "information_root": "wiki_edits:wiki_edits:fr:20261124T23",
+      "members": {
+        "beh:5a13464312993ebe38b9092d9099": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "wiki_edits",
+          "direct_measurement": false,
+          "event_at": "2026-11-24T23:56:50Z",
+          "first_observed_at": "2026-11-24T23:56:50+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:5a13464312993ebe38b9092d9099",
+          "information_root": "wiki_edits:wiki_edits:fr:20261124T23",
+          "origin": "behavioral_registry",
+          "provider": "wiki_edits",
+          "published_at": "2026-11-24T23:56:50Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "public_encyclopedia_edit_aggregate",
+          "source_family": "public_attention",
+          "source_kind": "bounded_public_edit_count_not_event_verification",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "distinct_articles_in_sample": 398,
+            "maximum_returned_edits": 500,
+            "most_edited_article_counts": [
+              {
+                "count": 18,
+                "title": "Liste des conseillers régionaux du Val-de-Marne"
+              },
+              {
+                "count": 12,
+                "title": "Théodore Ratisbonne"
+              },
+              {
+                "count": 7,
+                "title": "Cristina Córdula"
+              },
+              {
+                "count": 7,
+                "title": "Roll Pignault"
+              },
+              {
+                "count": 5,
+                "title": "Agustín Ferrari"
+              },
+              {
+                "count": 4,
+                "title": "Bataillon Saint Patrick"
+              },
+              {
+                "count": 4,
+                "title": "Fatima Benomar"
+              },
+              {
+                "count": 4,
+                "title": "École internationale de création audiovisuelle et de réalisation"
+              }
+            ],
+            "name": "sampled_edits_last_three_hours",
+            "sample_cap_reached": true,
+            "unit": "edits",
+            "value": 500
+          },
+          "source_scope": "Wikipedia main-namespace edit-count sample, 14 global language editions, three-hour window capped at 500 per wiki; not geographic location",
+          "source_updated_at": null,
+          "source_url": "https://fr.wikipedia.org/wiki/Special:RecentChanges",
+          "title": "Wikipedia fr public article-edit activity (sampled)"
+        }
+      }
+    },
     "e71ff429b916d66b074f161ecc4a5d5ab12178d64f2f8264b3ef9362bea9df83": {
       "information_root": "cbp_wait:cbp_wait:380002:2026-11-22:14:38:51",
       "members": {
@@ -418,6 +493,93 @@
           "source_updated_at": "2026-11-20T00:21:51Z",
           "source_url": "https://niord.dma.dk/#/message/4fcc4e47-7663-4a9f-9f65-4ff164149b8f",
           "title": "Denmark. The Baltic Sea. EK D 396 Hullebaek. Firing exercises. Warning."
+        }
+      }
+    },
+    "e773ccd3a55534edda3daee3ba9439383e2d91f61a772740a40eb68a22647c3e": {
+      "information_root": "cbp_wait:cbp_wait:240401:2026-11-24:16:50:49",
+      "members": {
+        "beh:b1f4820c22835c85bd63ab0a0a9d": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T23:59:43+00:00",
+          "geography_key": "us-border-port:240401",
+          "geography_label": "Marcelino Serna",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:b1f4820c22835c85bd63ab0a0a9d",
+          "information_root": "cbp_wait:cbp_wait:240401:2026-11-24:16:50:49",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Lanes Closed",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/24/2026",
+            "reported_local_time": "16:50:49",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Marcelino Serna / Tornillo"
+        }
+      }
+    },
+    "e7835406ecc27dcc69dabb0b084d5d1703e66b47ae426537777e05385a9c9f6a": {
+      "information_root": "coops:8724580:20261124T2348Z",
+      "members": {
+        "beh:35e51ae9cb988fdf9a57efff2321": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "coops",
+          "direct_measurement": true,
+          "event_at": "2026-11-24T23:48:00Z",
+          "first_observed_at": "2026-11-24T23:48:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:35e51ae9cb988fdf9a57efff2321",
+          "information_root": "coops:8724580:20261124T2348Z",
+          "origin": "behavioral_registry",
+          "provider": "coops",
+          "published_at": "2026-11-24T23:48:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "station_physical_measurement",
+          "source_family": "port_conditions",
+          "source_kind": "selected_port_water_level_measurement",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "metric_comparable_only_same_station_datum_and_sample_window": true,
+            "name": "observed_water_level",
+            "station": "8724580",
+            "unit": "meters_MLLW",
+            "value": 0.801
+          },
+          "source_scope": "NOAA CO-OPS water levels at San Francisco, Key West and Sewells Point; stations only",
+          "source_updated_at": null,
+          "source_url": "https://tidesandcurrents.noaa.gov/waterlevels.html?id=8724580",
+          "title": "Key West, FL observed water level (no anomaly classification)"
         }
       }
     },

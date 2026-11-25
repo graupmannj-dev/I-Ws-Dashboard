@@ -220,6 +220,53 @@
         }
       }
     },
+    "8b8dad88b0c678e4673ff184baaca9eb60e1f75200cabf33b998c15430fad5d0": {
+      "information_root": "cbp_wait:cbp_wait:230403:2026-11-24:17:50:49",
+      "members": {
+        "beh:224f57f71b5a537bf91939fff83d": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T23:59:43+00:00",
+          "geography_key": "us-border-port:230403",
+          "geography_label": "Laredo",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:224f57f71b5a537bf91939fff83d",
+          "information_root": "cbp_wait:cbp_wait:230403:2026-11-24:17:50:49",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "no delay",
+            "lanes_open": 4,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "At 5:00 pm CST",
+            "reported_local_date": "11/24/2026",
+            "reported_local_time": "17:50:49",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 5
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Laredo / Colombia Solidarity"
+        }
+      }
+    },
     "8bae6a86fbe481fc7674db89ca0c323a87ad87028a0fe65bbfa98535e68843c9": {
       "information_root": "ioda:63f3dda562d5c9cbd4c9f871",
       "members": {
@@ -247,6 +294,39 @@
           "source_updated_at": null,
           "source_url": "https://ioda.inetintel.cc.gatech.edu/",
           "title": "IODA detected connectivity anomaly: country TD"
+        }
+      }
+    },
+    "8bb1feeceddfa1c12db669bed61f283fd7ab701c7efe10fe9866cc2db4afde37": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-068a0b:111343-2026",
+      "members": {
+        "beh:383a9b3371e2ae091efb6e3dd6fb": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T16:40:26+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:383a9b3371e2ae091efb6e3dd6fb",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-068a0b:111343-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-24T16:40:26Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-22T23%3A56%3A51&updatedTo=2026-11-24T23%3A56%3A51",
+          "title": "Insurance Policies - December Renewals (Property, Contract Works and Money) · The Mayor and Commonalty and Citizens of the City of London"
         }
       }
     },

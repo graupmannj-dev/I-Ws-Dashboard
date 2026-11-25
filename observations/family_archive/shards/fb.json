@@ -120,6 +120,39 @@
         }
       }
     },
+    "fbc4ddd959016c4c4306ab1084a56f8b1c6c3210e01f7f93725dd95a0bfb38e5": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c2e3:111351-2026",
+      "members": {
+        "beh:8c1579e465f7e53b80779043ffca": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T17:15:06+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:8c1579e465f7e53b80779043ffca",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c2e3:111351-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-24T17:15:06Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-22T23%3A56%3A51&updatedTo=2026-11-24T23%3A56%3A51",
+          "title": "Contract Details of Funding Assessment and Treasury Advice · Cartrefi Conwy Cyfyngedig"
+        }
+      }
+    },
     "fbc52b867dc981d3675f7d28877510f5da03418f4ac1b583b306a296dc07d308": {
       "information_root": "sg_mpa:sg_mpa:2026-06:passenger",
       "members": {
@@ -286,6 +319,45 @@
           "source_updated_at": null,
           "source_url": "https://bwt.cbp.gov/api/waittimes",
           "title": "CBP estimated commercial border wait — Pembina"
+        }
+      }
+    },
+    "fbd37a5e8fb872d3a51601abb22591898e723b0dfd96af4e07237b0cde23cbe5": {
+      "information_root": "bmkg_nowcast:bmkg_nowcast:b870abbd63dc3bf416abaf4dc2b4",
+      "members": {
+        "beh:345b24ee94936277792b66754a1e": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "bmkg_nowcast",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T23:20:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:345b24ee94936277792b66754a1e",
+          "information_root": "bmkg_nowcast:bmkg_nowcast:b870abbd63dc3bf416abaf4dc2b4",
+          "origin": "behavioral_registry",
+          "provider": "bmkg_nowcast",
+          "published_at": "2026-11-24T23:20:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Indonesia BMKG",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Indonesia BMKG active provincial nowcast RSS, source-reported only; not global",
+          "source_updated_at": null,
+          "source_url": "https://www.bmkg.go.id/alerts/nowcast/en/CSB20261124010_alert.xml",
+          "title": "Thunderstorm This Morning in Sumatera Barat"
         }
       }
     },

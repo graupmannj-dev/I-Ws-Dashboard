@@ -104,6 +104,39 @@
         }
       }
     },
+    "7c2c287f29a0b185d03f65319ade160c8bbbfade40385526ee1ef93d426089f9": {
+      "information_root": "nws:80245523930b70f437c2f331",
+      "members": {
+        "beh:291171d46cfc7750590cbb7d394a": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "nws",
+          "direct_measurement": false,
+          "event_at": "2026-11-24T17:00:00Z",
+          "first_observed_at": "2026-11-24T17:00:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:291171d46cfc7750590cbb7d394a",
+          "information_root": "nws:80245523930b70f437c2f331",
+          "origin": "behavioral_registry",
+          "provider": "nws",
+          "published_at": "2026-11-24T17:00:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "official_weather_alert_context",
+          "source_measurement": null,
+          "source_scope": "Active NWS marine alerts; severity Severe",
+          "source_updated_at": null,
+          "source_url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.31a509ce4a261a352e5fd52a0b5c6ab8e9f96b70.006.1",
+          "title": "Coastal Flood Warning - Inland Flagler; Eastern Putnam"
+        }
+      }
+    },
     "7c3ce1e8d9a3aadef1b6b9c04699b3f91e7028351577ce0d300605b483eb3c3d": {
       "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-050b66:110384-2026",
       "members": {
@@ -452,6 +485,52 @@
           "source_updated_at": null,
           "source_url": "https://pt.wikipedia.org/wiki/Special:RecentChanges",
           "title": "Wikipedia pt public article-edit activity (sampled)"
+        }
+      }
+    },
+    "7cdc8b7087c61d66d38dc28fa50d48a2572bb805d260e17ea2ab04b650445ec3": {
+      "information_root": "ris_bgp:ris_bgp:AS7552:20261124T19",
+      "members": {
+        "beh:82e35330209ef734f4d1afc30c78": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "public_routing_updates_not_country_outage",
+          "collection_mode": "ris_bgp",
+          "direct_measurement": true,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T23:59:43+00:00",
+          "geography_key": "asn:7552",
+          "geography_label": "AS7552",
+          "geography_precision": "routing_target_not_country_incident",
+          "id": "beh:82e35330209ef734f4d1afc30c78",
+          "information_root": "ris_bgp:ris_bgp:AS7552:20261124T19",
+          "origin": "behavioral_registry",
+          "provider": "ris_bgp",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "routing_collector_sampled_asn_updates",
+          "source_family": "internet_routing",
+          "source_kind": "sampled_asn_bgp_route_updates_not_network_outage",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "collector_peers_are_not_geo_deduplicated": true,
+            "country_impact_not_established": true,
+            "name": "sampled_6h_bgp_announcements",
+            "registered_network_country_hint": "VN",
+            "returned_sampling_buckets": 6,
+            "source_window_end": "2026-11-24T19:00:00Z",
+            "target_asn": "AS7552",
+            "unit": "announcements",
+            "value": 11743659,
+            "window_hours_requested": 6,
+            "withdrawals_unavailable_for_asn": true
+          },
+          "source_scope": "RIPE RIS public route-announcement update samples on six non-Western operated networks; ASNs not country-wide outage detection",
+          "source_updated_at": null,
+          "source_url": "https://stat.ripe.net/data/bgp-update-activity/data.json?resource=AS7552&num_hours=6&max_samples=24&hide_empty_samples=false",
+          "title": "RIPE RIS sampled BGP announcements: AS7552"
         }
       }
     },

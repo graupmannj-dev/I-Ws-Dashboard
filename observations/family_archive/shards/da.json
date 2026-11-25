@@ -1,5 +1,52 @@
 {
   "roots": {
+    "da00abf31ce47b1c88a1f177a7f2a832b9dd592f83b7c5b887755003e28fe437": {
+      "information_root": "cbp_wait:cbp_wait:090102:2026-11-24:18:50:48",
+      "members": {
+        "beh:73d8554b8f07b3b9a19a08125811": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T23:59:43+00:00",
+          "geography_key": "us-border-port:090102",
+          "geography_label": "Buffalo/Niagara Falls",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:73d8554b8f07b3b9a19a08125811",
+          "information_root": "cbp_wait:cbp_wait:090102:2026-11-24:18:50:48",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "N/A",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/24/2026",
+            "reported_local_time": "18:50:48",
+            "source_declared_border": "Canadian Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Buffalo/Niagara Falls / Rainbow Bridge"
+        }
+      }
+    },
     "da11ff8ab2f7b73a7f6e3410333d9572395268550bc350f921895bf6a7c642fa": {
       "information_root": "niord:9e345aa9-0c3b-40a4-b93d-0509beaf3267:3:0:0",
       "members": {
@@ -267,6 +314,39 @@
           "source_updated_at": null,
           "source_url": "https://bwt.cbp.gov/api/waittimes",
           "title": "CBP estimated commercial border wait — Massena"
+        }
+      }
+    },
+    "da8111cd80f4ecfdff694f9da923506833ef3286976fd00591cc6a45ab00ef9c": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c2b9:111280-2026",
+      "members": {
+        "beh:9bb9207008c0ea32eb7f275d4a41": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T15:28:21+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:9bb9207008c0ea32eb7f275d4a41",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c2b9:111280-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-24T15:28:21Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-22T23%3A56%3A51&updatedTo=2026-11-24T23%3A56%3A51",
+          "title": "The Supply and Installation of Heating Systems within Domestic Properties · Chesterfield Borough Council"
         }
       }
     },

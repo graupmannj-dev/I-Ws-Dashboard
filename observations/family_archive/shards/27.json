@@ -33,6 +33,39 @@
         }
       }
     },
+    "27140f2f3b18b9fed7de3dab8ff008611d8b8a6da1818edea2a005fdf390c179": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c2d5:111323-2026",
+      "members": {
+        "beh:03d65a1211d7d0d4535299aabc28": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T16:13:12+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:03d65a1211d7d0d4535299aabc28",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c2d5:111323-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-24T16:13:12Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-22T23%3A56%3A51&updatedTo=2026-11-24T23%3A56%3A51",
+          "title": "Storage Systems for Geology & Artwork · Prifysgol Bangor / Bangor University"
+        }
+      }
+    },
     "2724610ad44a384ffa7d01c879a6ecf34c7d88c55be867ecdb0bdf14226f0431": {
       "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c026:110785-2026",
       "members": {
@@ -63,6 +96,53 @@
           "source_updated_at": null,
           "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-22T02%3A19%3A12&updatedTo=2026-11-24T02%3A19%3A12",
           "title": "ECITB and Mersey Dee Clean Energy Scholarship Tenders 2027 (Providers) · ENGINEERING CONSTRUCTION INDUSTRY TRAINING BOARD"
+        }
+      }
+    },
+    "27520f5dd0d5a8c65cbb41240ecc61ebb199e6f8fd4ebc781ec13f4c67b66a5a": {
+      "information_root": "cbp_wait:cbp_wait:360401:2026-11-24:17:50:48",
+      "members": {
+        "beh:34c3e4bd7c277abb3732efd4e815": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T23:59:43+00:00",
+          "geography_key": "us-border-port:360401",
+          "geography_label": "International Falls",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:34c3e4bd7c277abb3732efd4e815",
+          "information_root": "cbp_wait:cbp_wait:360401:2026-11-24:17:50:48",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "no delay",
+            "lanes_open": 1,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "At 6:00 pm CST",
+            "reported_local_date": "11/24/2026",
+            "reported_local_time": "17:50:48",
+            "source_declared_border": "Canadian Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 0
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — International Falls"
         }
       }
     },
@@ -112,6 +192,53 @@
         }
       }
     },
+    "278616d3dc8ca8bcec02f8dcc4d4eedd7f80fa059f9b0cf9174d72584cf1a9eb": {
+      "information_root": "cbp_wait:cbp_wait:230401:2026-11-24:17:50:48",
+      "members": {
+        "beh:da625baa166b3bb2c42ed87e1694": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T23:59:43+00:00",
+          "geography_key": "us-border-port:230401",
+          "geography_label": "Laredo",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:da625baa166b3bb2c42ed87e1694",
+          "information_root": "cbp_wait:cbp_wait:230401:2026-11-24:17:50:48",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "N/A",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/24/2026",
+            "reported_local_time": "17:50:48",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Laredo / Bridge I"
+        }
+      }
+    },
     "278c6521385ef993d982deaedc8d3e7bb770b118116385f71719320887e56c48": {
       "information_root": "ioda:d7cd29d0e8c1ccf92e7d56e4",
       "members": {
@@ -142,6 +269,39 @@
           "source_updated_at": null,
           "source_url": "https://ioda.inetintel.cc.gatech.edu/",
           "title": "IODA detected connectivity anomaly: country CI"
+        }
+      }
+    },
+    "27955dbac39eb16f00902eff3972c9f8806aafe8036965f9aea805bab23b9af0": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c2e8:111359-2026",
+      "members": {
+        "beh:242172a560ac3c023623e175ba61": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T18:03:30+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:242172a560ac3c023623e175ba61",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c2e8:111359-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-24T18:03:30Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-22T23%3A56%3A51&updatedTo=2026-11-24T23%3A56%3A51",
+          "title": "Provision of Mediation Services for Housing. · Amplius Living"
         }
       }
     },

@@ -1,5 +1,52 @@
 {
   "roots": {
+    "92277a6c81585e498ad99a8790c4515b52b0a607d4765abbc5e4757ac3dc512f": {
+      "information_root": "cbp_wait:cbp_wait:240204:2026-11-24:16:50:48",
+      "members": {
+        "beh:0b0c743c3b425c1691d03a17191f": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T23:59:43+00:00",
+          "geography_key": "us-border-port:240204",
+          "geography_label": "El Paso",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:0b0c743c3b425c1691d03a17191f",
+          "information_root": "cbp_wait:cbp_wait:240204:2026-11-24:16:50:48",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "N/A",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/24/2026",
+            "reported_local_time": "16:50:48",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — El Paso / Stanton DCL"
+        }
+      }
+    },
     "922e868b5a6e3ccbb89349e672b8d483544cc97091bc4806cc0a9d3085b3b0d9": {
       "information_root": "ioda:d51de248f36dd62c2c480a71",
       "members": {
@@ -176,6 +223,39 @@
           "source_updated_at": null,
           "source_url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.1eef091ef7afddac906f9728907612ea72fa0914.001.1",
           "title": "Special Weather Statement - Coastal Levy; Inland Levy"
+        }
+      }
+    },
+    "925c75c34d5ae4fde9417566b0eb00dda453084dc1eb56de632ffc87eb1d1b52": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c2d9:111332-2026",
+      "members": {
+        "beh:dc146cdfb0b44a78aab09130d4ef": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T16:21:01+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:dc146cdfb0b44a78aab09130d4ef",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c2d9:111332-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-24T16:21:01Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-22T23%3A56%3A51&updatedTo=2026-11-24T23%3A56%3A51",
+          "title": "Assay separation platform · University Of Edinburgh"
         }
       }
     },

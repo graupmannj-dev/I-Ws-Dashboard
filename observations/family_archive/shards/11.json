@@ -203,6 +203,39 @@
         }
       }
     },
+    "115dbf9bd75830796df2f4663ca8b2062c3817992f935f315176b7913a2b74f3": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c233:111311-2026",
+      "members": {
+        "beh:0ba12b0c5ad64be6484bfee262f5": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T16:04:22+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:0ba12b0c5ad64be6484bfee262f5",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c233:111311-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-24T16:04:22Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-22T23%3A56%3A51&updatedTo=2026-11-24T23%3A56%3A51",
+          "title": "Tour De France Grand Depart GB - Provision of event related services · Lancashire County Council"
+        }
+      }
+    },
     "116658e4229f7657fc43815bfd3197b689a7962b151cfdd6c7977d4f6db9fd8f": {
       "information_root": "niord:6e8d5201-019b-4f3b-a79c-da40eb776a48:1:0:0",
       "members": {
@@ -233,6 +266,53 @@
         }
       }
     },
+    "11a33166a7544142af1753a00c00d88699f6bfd689018cfae40ff579d9e6ca1d": {
+      "information_root": "cbp_wait:cbp_wait:020901:2026-11-24:18:50:48",
+      "members": {
+        "beh:ee9a139e81ed6854d0b59e9fe294": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T23:59:43+00:00",
+          "geography_key": "us-border-port:020901",
+          "geography_label": "Derby Line",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:ee9a139e81ed6854d0b59e9fe294",
+          "information_root": "cbp_wait:cbp_wait:020901:2026-11-24:18:50:48",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "no delay",
+            "lanes_open": 1,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "At 3:00 pm EST",
+            "reported_local_date": "11/24/2026",
+            "reported_local_time": "18:50:48",
+            "source_declared_border": "Canadian Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 0
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Derby Line / Derby Line I-91"
+        }
+      }
+    },
     "11a34a2821886341b5188d939b14506a7539837312650861b963b5f7521670e3": {
       "information_root": "niord:1863129d-c7bf-4cf8-9778-0416c0b5b3b3:0:1:0",
       "members": {
@@ -260,6 +340,39 @@
           "source_updated_at": "2026-11-18T00:21:54Z",
           "source_url": "https://niord.dma.dk/#/message/1863129d-c7bf-4cf8-9778-0416c0b5b3b3",
           "title": "Denmark. The North Sea. EK R 33 Vejers. Firing exercises. Warning."
+        }
+      }
+    },
+    "11c7e8aaa0adf62076dbc7aa257ba8a08ff89491cddf58d5006149c471f9d759": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c2db:111334-2026",
+      "members": {
+        "beh:4e1e757da34c156722758cb57ee2": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T16:24:19+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:4e1e757da34c156722758cb57ee2",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c2db:111334-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-24T16:24:19Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-22T23%3A56%3A51&updatedTo=2026-11-24T23%3A56%3A51",
+          "title": "Provision for the Inspection, Testing and Control of Legionella · Luminate Education Group"
         }
       }
     }

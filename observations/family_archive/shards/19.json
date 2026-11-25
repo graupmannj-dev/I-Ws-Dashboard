@@ -1,5 +1,80 @@
 {
   "roots": {
+    "190d27d5d7a3385da3b276cb0ba7b1573a80ac37026c7f955d3bd0940d862108": {
+      "information_root": "wiki_edits:wiki_edits:fa:20261124T23",
+      "members": {
+        "beh:4ec0ca5e429a88a52a16d1a2a1f2": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "wiki_edits",
+          "direct_measurement": false,
+          "event_at": "2026-11-24T23:56:31Z",
+          "first_observed_at": "2026-11-24T23:56:31+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:4ec0ca5e429a88a52a16d1a2a1f2",
+          "information_root": "wiki_edits:wiki_edits:fa:20261124T23",
+          "origin": "behavioral_registry",
+          "provider": "wiki_edits",
+          "published_at": "2026-11-24T23:56:31Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "public_encyclopedia_edit_aggregate",
+          "source_family": "public_attention",
+          "source_kind": "bounded_public_edit_count_not_event_verification",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "distinct_articles_in_sample": 451,
+            "maximum_returned_edits": 500,
+            "most_edited_article_counts": [
+              {
+                "count": 11,
+                "title": "مرده شریر (فرنچایز)"
+              },
+              {
+                "count": 7,
+                "title": "المغراقه (شهر)"
+              },
+              {
+                "count": 5,
+                "title": "تصمیم‌گرایی"
+              },
+              {
+                "count": 4,
+                "title": "اینچان"
+              },
+              {
+                "count": 4,
+                "title": "سفارت ایران در پاریس"
+              },
+              {
+                "count": 3,
+                "title": "المغراقه"
+              },
+              {
+                "count": 3,
+                "title": "بال ۴۳۳ ترابری هوایی"
+              },
+              {
+                "count": 3,
+                "title": "بچه‌های اکباتان"
+              }
+            ],
+            "name": "sampled_edits_last_three_hours",
+            "sample_cap_reached": true,
+            "unit": "edits",
+            "value": 500
+          },
+          "source_scope": "Wikipedia main-namespace edit-count sample, 14 global language editions, three-hour window capped at 500 per wiki; not geographic location",
+          "source_updated_at": null,
+          "source_url": "https://fa.wikipedia.org/wiki/Special:RecentChanges",
+          "title": "Wikipedia fa public article-edit activity (sampled)"
+        }
+      }
+    },
     "19172ef5b7aadf67bbaaa1d38e0fb9c54d1a0bf6fe9cc6e00aaf3ecdf05a00af": {
       "information_root": "commercial:4fba6ce67726ab073f77",
       "members": {
@@ -401,6 +476,78 @@
           "source_updated_at": null,
           "source_url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.lva.html",
           "title": "Latvia - Level 1: Exercise Normal Precautions"
+        }
+      }
+    },
+    "199fbcd437e369c9a9010de6ee3977f158a8c3c4640691a53275693a306b37ab": {
+      "information_root": "bmkg_nowcast:bmkg_nowcast:926f6acaeeeb8b83c48f01973742",
+      "members": {
+        "beh:4493fc71ee8e1ee116c75fb1611c": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "bmkg_nowcast",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T21:15:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:4493fc71ee8e1ee116c75fb1611c",
+          "information_root": "bmkg_nowcast:bmkg_nowcast:926f6acaeeeb8b83c48f01973742",
+          "origin": "behavioral_registry",
+          "provider": "bmkg_nowcast",
+          "published_at": "2026-11-24T21:15:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Indonesia BMKG",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Indonesia BMKG active provincial nowcast RSS, source-reported only; not global",
+          "source_updated_at": null,
+          "source_url": "https://www.bmkg.go.id/alerts/nowcast/en/CRU20261124010_alert.xml",
+          "title": "Thunderstorm Tonight in Riau"
+        }
+      }
+    },
+    "19a83fea682964dcefbde931d809785e29adc0ff0c616a9d6b5f880678d3ccca": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07b96f:111330-2026",
+      "members": {
+        "beh:396ccd0588a83e1167366abf547d": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T16:19:57+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:396ccd0588a83e1167366abf547d",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07b96f:111330-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-24T16:19:57Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-22T23%3A56%3A51&updatedTo=2026-11-24T23%3A56%3A51",
+          "title": "Tree Planting and Maintenance · University Of Edinburgh"
         }
       }
     },

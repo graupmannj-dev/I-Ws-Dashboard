@@ -300,6 +300,39 @@
         }
       }
     },
+    "d3914d94cfc0e5289983575ec13850273ce2db239d73f06974a07c3fdf8a3990": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c2cc:111309-2026",
+      "members": {
+        "beh:c43a681ff808398c3e7d33eea7d2": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T16:03:02+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:c43a681ff808398c3e7d33eea7d2",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c2cc:111309-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-24T16:03:02Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-22T23%3A56%3A51&updatedTo=2026-11-24T23%3A56%3A51",
+          "title": "Reactive Maintenance Replacement Winman System · QE Facilities Ltd"
+        }
+      }
+    },
     "d3b1329a2315c20d4d446b2c0e74b28b41b221df34bcdf2d8ea4fbb4956dd443": {
       "information_root": "inmet_br:inmet_br:0e6a645c83b8c26f92fb8b838567",
       "members": {
@@ -432,6 +465,53 @@
           "source_updated_at": null,
           "source_url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.04a1b77eb12c901179e9f815e1942a6a11f6b78a.002.1",
           "title": "Dense Fog Advisory - Conecuh; Butler; Crenshaw; Escambia; Covington; Escambia Inland; Santa Rosa Inland; Okaloosa Inland"
+        }
+      }
+    },
+    "d3d1b50283b99493960f64451ad22ade54f22b1cb5f82ca6f8012357808e8e25": {
+      "information_root": "cbp_wait:cbp_wait:300403:2026-11-24:15:50:48",
+      "members": {
+        "beh:42aa44c33b09a23c9b76271837c9": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T23:59:43+00:00",
+          "geography_key": "us-border-port:300403",
+          "geography_label": "Blaine",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:42aa44c33b09a23c9b76271837c9",
+          "information_root": "cbp_wait:cbp_wait:300403:2026-11-24:15:50:48",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Update Pending",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/24/2026",
+            "reported_local_time": "15:50:48",
+            "source_declared_border": "Canadian Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Blaine / Point Roberts"
         }
       }
     },

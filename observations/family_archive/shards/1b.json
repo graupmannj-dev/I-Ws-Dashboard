@@ -200,6 +200,45 @@
         }
       }
     },
+    "1b5a5ade59b338a6a179701a133cdf3cbf3b4ed08ef7a5da4967427c4aabbac0": {
+      "information_root": "bmkg_nowcast:bmkg_nowcast:eb62d39356269960d1933c871b2c",
+      "members": {
+        "beh:d977fe699227172a57fef28016db": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "bmkg_nowcast",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T21:38:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:d977fe699227172a57fef28016db",
+          "information_root": "bmkg_nowcast:bmkg_nowcast:eb62d39356269960d1933c871b2c",
+          "origin": "behavioral_registry",
+          "provider": "bmkg_nowcast",
+          "published_at": "2026-11-24T21:38:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Indonesia BMKG",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Indonesia BMKG active provincial nowcast RSS, source-reported only; not global",
+          "source_updated_at": null,
+          "source_url": "https://www.bmkg.go.id/alerts/nowcast/en/CSK20261124003_alert.xml",
+          "title": "Thunderstorm This Morning in Sulawesi Barat"
+        }
+      }
+    },
     "1b60cda9a66e38d29eb48b48559a2660f12b9935dafda2e0baa2fb52efb1137b": {
       "information_root": "ioda:27222f3b07cf911e40babd2d",
       "members": {
@@ -300,6 +339,39 @@
           "source_updated_at": null,
           "source_url": "https://tfr.faa.gov/6_8353.html",
           "title": "FAA TFR 6/8353 ·   USA, Friday, November 20, 2026 UTC"
+        }
+      }
+    },
+    "1b8d7f2b6ea87a2aa659d40cb0596a021edcd2efd8b6ebb2be7d74ab031203f1": {
+      "information_root": "nws:c031c694c2fe1eb9df806217",
+      "members": {
+        "beh:9039c7e4941283b36b0ca8e32306": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "nws",
+          "direct_measurement": false,
+          "event_at": "2026-11-24T17:00:00Z",
+          "first_observed_at": "2026-11-24T17:00:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:9039c7e4941283b36b0ca8e32306",
+          "information_root": "nws:c031c694c2fe1eb9df806217",
+          "origin": "behavioral_registry",
+          "provider": "nws",
+          "published_at": "2026-11-24T17:00:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "official_weather_alert_context",
+          "source_measurement": null,
+          "source_scope": "Active NWS marine alerts; severity Severe",
+          "source_updated_at": null,
+          "source_url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.31a509ce4a261a352e5fd52a0b5c6ab8e9f96b70.004.1",
+          "title": "Coastal Flood Warning - Coastal Flagler"
         }
       }
     },

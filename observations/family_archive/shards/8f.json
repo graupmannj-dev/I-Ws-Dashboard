@@ -85,6 +85,81 @@
         }
       }
     },
+    "8f40a49c2754dfa127eadc49de196a1f49ea8b51a76d31bfcc71981b4711ea8c": {
+      "information_root": "wiki_edits:wiki_edits:pt:20261124T23",
+      "members": {
+        "beh:59cecb7402c15d82e01fc5e00650": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "wiki_edits",
+          "direct_measurement": false,
+          "event_at": "2026-11-24T23:56:46Z",
+          "first_observed_at": "2026-11-24T23:56:46+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:59cecb7402c15d82e01fc5e00650",
+          "information_root": "wiki_edits:wiki_edits:pt:20261124T23",
+          "origin": "behavioral_registry",
+          "provider": "wiki_edits",
+          "published_at": "2026-11-24T23:56:46Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "public_encyclopedia_edit_aggregate",
+          "source_family": "public_attention",
+          "source_kind": "bounded_public_edit_count_not_event_verification",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "distinct_articles_in_sample": 412,
+            "maximum_returned_edits": 500,
+            "most_edited_article_counts": [
+              {
+                "count": 9,
+                "title": "Diocese de Exeter"
+              },
+              {
+                "count": 7,
+                "title": "Poder Executivo do Brasil"
+              },
+              {
+                "count": 6,
+                "title": "Escrava Anastácia"
+              },
+              {
+                "count": 6,
+                "title": "Le Corset"
+              },
+              {
+                "count": 6,
+                "title": "Lista de pinturas de Gustav Klimt"
+              },
+              {
+                "count": 5,
+                "title": "Tangles"
+              },
+              {
+                "count": 4,
+                "title": "MC Duda do Marapé"
+              },
+              {
+                "count": 4,
+                "title": "Sesmaria"
+              }
+            ],
+            "name": "sampled_edits_last_three_hours",
+            "sample_cap_reached": true,
+            "unit": "edits",
+            "value": 500
+          },
+          "source_scope": "Wikipedia main-namespace edit-count sample, 14 global language editions, three-hour window capped at 500 per wiki; not geographic location",
+          "source_updated_at": null,
+          "source_url": "https://pt.wikipedia.org/wiki/Special:RecentChanges",
+          "title": "Wikipedia pt public article-edit activity (sampled)"
+        }
+      }
+    },
     "8f4112806e313f4db2c6481790d178994a91f5ae6f1a54071becac4e0729295c": {
       "information_root": "cbp_wait:cbp_wait:230403:2026-11-21:05:24:37",
       "members": {
@@ -206,6 +281,53 @@
           "source_updated_at": null,
           "source_url": "https://bwt.cbp.gov/api/waittimes",
           "title": "CBP estimated commercial border wait — Hidalgo/Pharr / Pharr"
+        }
+      }
+    },
+    "8fac9725fa8d8f810b8755d808220094c18388c7cd2f4634dcb48102b6e55853": {
+      "information_root": "cbp_wait:cbp_wait:230301:2026-11-24:17:50:48",
+      "members": {
+        "beh:5ce5f17a4ddc23d410582aab178c": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T23:59:43+00:00",
+          "geography_key": "us-border-port:230301",
+          "geography_label": "Eagle Pass",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:5ce5f17a4ddc23d410582aab178c",
+          "information_root": "cbp_wait:cbp_wait:230301:2026-11-24:17:50:48",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "N/A",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/24/2026",
+            "reported_local_time": "17:50:48",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Eagle Pass / Bridge I"
         }
       }
     },

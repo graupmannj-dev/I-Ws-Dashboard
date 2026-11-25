@@ -1,5 +1,52 @@
 {
   "roots": {
+    "740cfacf3c678b269a2197d67b5b1217d9e7aadd0d1e7a388b4a265efa538730": {
+      "information_root": "cbp_wait:cbp_wait:230501:2026-11-24:17:50:48",
+      "members": {
+        "beh:cafe9212c7a765208f08abc80278": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T23:59:43+00:00",
+          "geography_key": "us-border-port:230501",
+          "geography_label": "Hidalgo/Pharr",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:cafe9212c7a765208f08abc80278",
+          "information_root": "cbp_wait:cbp_wait:230501:2026-11-24:17:50:48",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "N/A",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/24/2026",
+            "reported_local_time": "17:50:48",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Hidalgo/Pharr / Hidalgo"
+        }
+      }
+    },
     "742cba15fd67b1c3d306ab22a7390c1464815dda5d0d92b1671af0f6c6bdc462": {
       "information_root": "ioda:d06240ed8adea179bd925da4",
       "members": {
@@ -27,6 +74,45 @@
           "source_updated_at": null,
           "source_url": "https://ioda.inetintel.cc.gatech.edu/",
           "title": "IODA detected connectivity anomaly: country VA"
+        }
+      }
+    },
+    "743daee455998d74a78115cb982366221f3abe83e887382e34db772ec4ecf776": {
+      "information_root": "bmkg_nowcast:bmkg_nowcast:0af375d3eca577ac22347bb74d68",
+      "members": {
+        "beh:7fecf37e5d95615ae5f6248ed1de": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "bmkg_nowcast",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T22:00:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:7fecf37e5d95615ae5f6248ed1de",
+          "information_root": "bmkg_nowcast:bmkg_nowcast:0af375d3eca577ac22347bb74d68",
+          "origin": "behavioral_registry",
+          "provider": "bmkg_nowcast",
+          "published_at": "2026-11-24T22:00:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Indonesia BMKG",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Indonesia BMKG active provincial nowcast RSS, source-reported only; not global",
+          "source_updated_at": null,
+          "source_url": "https://www.bmkg.go.id/alerts/nowcast/en/CSL20261124009_alert.xml",
+          "title": "Thunderstorm This Morning in Sulawesi Selatan"
         }
       }
     },
@@ -121,6 +207,72 @@
           "source_updated_at": null,
           "source_url": "https://bwt.cbp.gov/api/waittimes",
           "title": "CBP estimated commercial border wait — Laredo / Colombia Solidarity"
+        }
+      }
+    },
+    "7482405b5fb84b5cfd901f1ea497cde31a8ddfec8e1369219c46294b18a95e40": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c2ba:111282-2026",
+      "members": {
+        "beh:23b7209879fc367add4cf66d9c8d": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T15:28:47+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:23b7209879fc367add4cf66d9c8d",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c2ba:111282-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-24T15:28:47Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-22T23%3A56%3A51&updatedTo=2026-11-24T23%3A56%3A51",
+          "title": "Telemetry Engineering Support Services · Scottish Water"
+        }
+      }
+    },
+    "749afdb876a753b19f7bcbfa0e1e6090d2fa29dd57bef6a8e72cd0da55761722": {
+      "information_root": "nws:70f58071cc639635507c3795",
+      "members": {
+        "beh:94be3dab435da1cdf189b7416486": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "nws",
+          "direct_measurement": false,
+          "event_at": "2026-11-24T16:53:00Z",
+          "first_observed_at": "2026-11-24T16:53:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:94be3dab435da1cdf189b7416486",
+          "information_root": "nws:70f58071cc639635507c3795",
+          "origin": "behavioral_registry",
+          "provider": "nws",
+          "published_at": "2026-11-24T16:53:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "official_weather_alert_context",
+          "source_measurement": null,
+          "source_scope": "Active NWS marine alerts; severity Severe",
+          "source_updated_at": null,
+          "source_url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.c6db6cb7fd3030efd7a98e7e413ed3bdc5b447a2.001.1",
+          "title": "Flood Warning - Seminole, FL"
         }
       }
     },
@@ -393,6 +545,45 @@
           "source_updated_at": null,
           "source_url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.6cd1e5754fe625801aca61e07d6cf04364d2af45.001.4",
           "title": "Coastal Flood Advisory - Coastal Duval"
+        }
+      }
+    },
+    "74f29ce33ede07ce2269dd38382e4acae26c6e7eb785e3ff809e173cc9da797e": {
+      "information_root": "bmkg_nowcast:bmkg_nowcast:8f4587696005bf9226d7f7b7784b",
+      "members": {
+        "beh:904e39f1bad90686201f9b2b5a14": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "bmkg_nowcast",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T21:45:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:904e39f1bad90686201f9b2b5a14",
+          "information_root": "bmkg_nowcast:bmkg_nowcast:8f4587696005bf9226d7f7b7784b",
+          "origin": "behavioral_registry",
+          "provider": "bmkg_nowcast",
+          "published_at": "2026-11-24T21:45:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Indonesia BMKG",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Indonesia BMKG active provincial nowcast RSS, source-reported only; not global",
+          "source_updated_at": null,
+          "source_url": "https://www.bmkg.go.id/alerts/nowcast/en/CSS20261124012_alert.xml",
+          "title": "Thunderstorm This Morning in Sumatera Selatan"
         }
       }
     },

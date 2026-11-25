@@ -1,5 +1,43 @@
 {
   "roots": {
+    "381e41bffd38ddb8d44e42b110e6f4458ad5ece186518a2002a12b510352bec6": {
+      "information_root": "usgs:us6000udck",
+      "members": {
+        "beh:9269e3d7d31c83a2d2062d70b211": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "usgs",
+          "direct_measurement": true,
+          "event_at": "2026-11-24T23:29:55Z",
+          "first_observed_at": "2026-11-24T23:29:55+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "source_supplied_point_only",
+          "id": "beh:9269e3d7d31c83a2d2062d70b211",
+          "information_root": "usgs:us6000udck",
+          "origin": "behavioral_registry",
+          "provider": "usgs",
+          "published_at": "2026-11-24T23:54:13Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "measured_earthquake_context",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "name": "earthquake_magnitude",
+            "unit": "reported_magnitude",
+            "value": 4.7
+          },
+          "source_scope": "USGS M4.5+ earthquakes worldwide, rolling past day; source thresholds apply",
+          "source_updated_at": null,
+          "source_url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000udck",
+          "title": "M 4.7 - 2 km NNW of Cabatuan, Philippines"
+        }
+      }
+    },
     "38316d540c4d55a761bac435bd2bf45ab9c708150498d0250ad954d638e3dfda": {
       "information_root": "cbp_wait:cbp_wait:240204:2026-11-22:12:38:51",
       "members": {
@@ -77,6 +115,81 @@
           "source_updated_at": null,
           "source_url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNQnE2d3pYUnFPOGNIdEJ6MUhQNkdVWkp4SnJYLXV1ejN1Mkc4b0JXWkdKYmxjRUJOZzFzZFROOE9HWTF3bl91YkR4SmhOaGNCd0RQSm9XOC1jaVVDajRlelI3dUtGVDBYX012d2JjUEQwOGMzNmpza1NmUm9PWDJJZmRpQkNXTEt6MTRXcWM3RkxXMXp6d3hUckNTcl9vT2RqNm1MSEJGcjRhdnNBOWtSdVV3?oc=5",
           "title": "Op-Ed: Why the UN's Shipping Agency Must Adopt Its Climate Agreement - The Maritime Executive"
+        }
+      }
+    },
+    "38394c7143627f0d2d5d93d7128ee7c198f80d63a1c29fe7cfc44568a59b01f5": {
+      "information_root": "wiki_edits:wiki_edits:ru:20261124T23",
+      "members": {
+        "beh:11553349325f296bf395cd4723e7": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "wiki_edits",
+          "direct_measurement": false,
+          "event_at": "2026-11-24T23:56:49Z",
+          "first_observed_at": "2026-11-24T23:56:49+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:11553349325f296bf395cd4723e7",
+          "information_root": "wiki_edits:wiki_edits:ru:20261124T23",
+          "origin": "behavioral_registry",
+          "provider": "wiki_edits",
+          "published_at": "2026-11-24T23:56:49Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "public_encyclopedia_edit_aggregate",
+          "source_family": "public_attention",
+          "source_kind": "bounded_public_edit_count_not_event_verification",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "distinct_articles_in_sample": 398,
+            "maximum_returned_edits": 500,
+            "most_edited_article_counts": [
+              {
+                "count": 11,
+                "title": "2027 год в компьютерных играх"
+              },
+              {
+                "count": 10,
+                "title": "Братья Крутины"
+              },
+              {
+                "count": 7,
+                "title": "Mercedes-Benz GLE-класс"
+              },
+              {
+                "count": 6,
+                "title": "Volvo XC90"
+              },
+              {
+                "count": 6,
+                "title": "Пружицы"
+              },
+              {
+                "count": 5,
+                "title": "Devil Pray"
+              },
+              {
+                "count": 5,
+                "title": "Lexus ES"
+              },
+              {
+                "count": 4,
+                "title": "Дзержинский район (Минская область)"
+              }
+            ],
+            "name": "sampled_edits_last_three_hours",
+            "sample_cap_reached": true,
+            "unit": "edits",
+            "value": 500
+          },
+          "source_scope": "Wikipedia main-namespace edit-count sample, 14 global language editions, three-hour window capped at 500 per wiki; not geographic location",
+          "source_updated_at": null,
+          "source_url": "https://ru.wikipedia.org/wiki/Special:RecentChanges",
+          "title": "Wikipedia ru public article-edit activity (sampled)"
         }
       }
     },

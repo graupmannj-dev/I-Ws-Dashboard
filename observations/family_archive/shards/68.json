@@ -389,6 +389,45 @@
         }
       }
     },
+    "688ebcb41bd2b985a2407c3509051d28533a3959639c8900908a14a214a90a4b": {
+      "information_root": "bmkg_nowcast:bmkg_nowcast:d8161e2d9f1e709551ded3d122ce",
+      "members": {
+        "beh:b18d1a1085f13fbc766dea02bef8": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "bmkg_nowcast",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T22:10:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:b18d1a1085f13fbc766dea02bef8",
+          "information_root": "bmkg_nowcast:bmkg_nowcast:d8161e2d9f1e709551ded3d122ce",
+          "origin": "behavioral_registry",
+          "provider": "bmkg_nowcast",
+          "published_at": "2026-11-24T22:10:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Indonesia BMKG",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Indonesia BMKG active provincial nowcast RSS, source-reported only; not global",
+          "source_updated_at": null,
+          "source_url": "https://www.bmkg.go.id/alerts/nowcast/en/CAH20261124009_alert.xml",
+          "title": "Thunderstorm This Morning in Aceh"
+        }
+      }
+    },
     "68a515b90739dba553276731531330ed110e392fb71e06e747ced7e704a0b125": {
       "information_root": "ioda:0353570cbf1344500381ee5b",
       "members": {
@@ -553,6 +592,39 @@
           "source_updated_at": "2026-11-20T13:21:54Z",
           "source_url": "https://niord.dma.dk/#/message/fd87de03-3a03-4aa3-a9bf-e701c9b5beb3",
           "title": "Denmark. Skagerrak. EK R 48 Tranum S. Firing exercises. Warning."
+        }
+      }
+    },
+    "68ecb24e984a117cf49e46c0aa419589665b3eb6dc551f51d7173311e7ccc212": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-069620:111295-2026",
+      "members": {
+        "beh:aecbb401c65856a5fddfddbb76b4": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T15:46:19+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:aecbb401c65856a5fddfddbb76b4",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-069620:111295-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-24T15:46:19Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-22T23%3A56%3A51&updatedTo=2026-11-24T23%3A56%3A51",
+          "title": "CGI Strata Term License, Maintenance and Support · HM Revenue & Customs"
         }
       }
     },

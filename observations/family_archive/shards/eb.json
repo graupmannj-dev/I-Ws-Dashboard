@@ -1,5 +1,80 @@
 {
   "roots": {
+    "eb01af4fbc0ec5d11df0952d97e30bd568351d5ea4671ac13f69d175c52cbdaf": {
+      "information_root": "wiki_edits:wiki_edits:ar:20261124T23",
+      "members": {
+        "beh:3863d845cc8e4462a8726fe99218": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "wiki_edits",
+          "direct_measurement": false,
+          "event_at": "2026-11-24T23:56:50Z",
+          "first_observed_at": "2026-11-24T23:56:50+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:3863d845cc8e4462a8726fe99218",
+          "information_root": "wiki_edits:wiki_edits:ar:20261124T23",
+          "origin": "behavioral_registry",
+          "provider": "wiki_edits",
+          "published_at": "2026-11-24T23:56:50Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "public_encyclopedia_edit_aggregate",
+          "source_family": "public_attention",
+          "source_kind": "bounded_public_edit_count_not_event_verification",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "distinct_articles_in_sample": 492,
+            "maximum_returned_edits": 500,
+            "most_edited_article_counts": [
+              {
+                "count": 2,
+                "title": "51 ق م"
+              },
+              {
+                "count": 2,
+                "title": "أوتوغراف"
+              },
+              {
+                "count": 2,
+                "title": "الحث النبضي"
+              },
+              {
+                "count": 2,
+                "title": "بروستات"
+              },
+              {
+                "count": 2,
+                "title": "جرافة ثلج"
+              },
+              {
+                "count": 2,
+                "title": "جي. جي. روبرت"
+              },
+              {
+                "count": 2,
+                "title": "جي. دبليو. س. تيت"
+              },
+              {
+                "count": 2,
+                "title": "جي. ديفيد تومسون"
+              }
+            ],
+            "name": "sampled_edits_last_three_hours",
+            "sample_cap_reached": true,
+            "unit": "edits",
+            "value": 500
+          },
+          "source_scope": "Wikipedia main-namespace edit-count sample, 14 global language editions, three-hour window capped at 500 per wiki; not geographic location",
+          "source_updated_at": null,
+          "source_url": "https://ar.wikipedia.org/wiki/Special:RecentChanges",
+          "title": "Wikipedia ar public article-edit activity (sampled)"
+        }
+      }
+    },
     "eb03383b5d35b5d8e03e7f75b7913eda0eee8e1c96d37d7d68788b4e55bb657e": {
       "information_root": "cbp_wait:cbp_wait:070801:2026-11-22:20:44:34",
       "members": {
@@ -138,6 +213,53 @@
           "source_updated_at": null,
           "source_url": "https://bwt.cbp.gov/api/waittimes",
           "title": "CBP estimated commercial border wait — Naco"
+        }
+      }
+    },
+    "eb208ad1b31bd2557096f24506547eb9032dc89a489ee93ee7984d40e842c9b9": {
+      "information_root": "cbp_wait:cbp_wait:250201:2026-11-24:15:50:48",
+      "members": {
+        "beh:815b95273926a128cd47e94908db": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T23:59:43+00:00",
+          "geography_key": "us-border-port:250201",
+          "geography_label": "Andrade",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:815b95273926a128cd47e94908db",
+          "information_root": "cbp_wait:cbp_wait:250201:2026-11-24:15:50:48",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Lanes Closed",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/24/2026",
+            "reported_local_time": "15:50:48",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Andrade"
         }
       }
     },

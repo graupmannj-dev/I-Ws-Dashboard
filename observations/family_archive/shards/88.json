@@ -166,6 +166,81 @@
         }
       }
     },
+    "882006da29fe1861057825cb331041a6c1937890d2e566c57947c3bb267c9be1": {
+      "information_root": "wiki_edits:wiki_edits:zh:20261124T23",
+      "members": {
+        "beh:3aa9d7832d24ee0aa097af9d3ed9": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "wiki_edits",
+          "direct_measurement": false,
+          "event_at": "2026-11-24T23:56:43Z",
+          "first_observed_at": "2026-11-24T23:56:43+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:3aa9d7832d24ee0aa097af9d3ed9",
+          "information_root": "wiki_edits:wiki_edits:zh:20261124T23",
+          "origin": "behavioral_registry",
+          "provider": "wiki_edits",
+          "published_at": "2026-11-24T23:56:43Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "public_encyclopedia_edit_aggregate",
+          "source_family": "public_attention",
+          "source_kind": "bounded_public_edit_count_not_event_verification",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "distinct_articles_in_sample": 455,
+            "maximum_returned_edits": 500,
+            "most_edited_article_counts": [
+              {
+                "count": 7,
+                "title": "Kreekcraft"
+              },
+              {
+                "count": 5,
+                "title": "朱友雍"
+              },
+              {
+                "count": 4,
+                "title": "2026年韓國劇集列表"
+              },
+              {
+                "count": 4,
+                "title": "黃仁勳"
+              },
+              {
+                "count": 3,
+                "title": "中国共产党上海市委员会"
+              },
+              {
+                "count": 3,
+                "title": "孟察"
+              },
+              {
+                "count": 3,
+                "title": "孟道"
+              },
+              {
+                "count": 3,
+                "title": "朱友徽"
+              }
+            ],
+            "name": "sampled_edits_last_three_hours",
+            "sample_cap_reached": true,
+            "unit": "edits",
+            "value": 500
+          },
+          "source_scope": "Wikipedia main-namespace edit-count sample, 14 global language editions, three-hour window capped at 500 per wiki; not geographic location",
+          "source_updated_at": null,
+          "source_url": "https://zh.wikipedia.org/wiki/Special:RecentChanges",
+          "title": "Wikipedia zh public article-edit activity (sampled)"
+        }
+      }
+    },
     "882f3ef88cd05a1eea8ea4784e7de54434e2700e163b9ecdee75a096d4955a12": {
       "information_root": "niord:532825a7-01a5-4d42-a5db-24bed595e9e8:0:1:0",
       "members": {
@@ -523,6 +598,45 @@
           "source_updated_at": null,
           "source_url": "https://ioda.inetintel.cc.gatech.edu/",
           "title": "IODA detected connectivity anomaly: country AE"
+        }
+      }
+    },
+    "88fdd2d0ecf90ddfcc5e07b0e3e0c0e967618aca72d3169cf6cf325bc49956a6": {
+      "information_root": "bmkg_nowcast:bmkg_nowcast:74448f9ff4161b868f9b93f4970f",
+      "members": {
+        "beh:2f52211a2ee6ebfa69f8cc6d6af9": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "bmkg_nowcast",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T22:30:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:2f52211a2ee6ebfa69f8cc6d6af9",
+          "information_root": "bmkg_nowcast:bmkg_nowcast:74448f9ff4161b868f9b93f4970f",
+          "origin": "behavioral_registry",
+          "provider": "bmkg_nowcast",
+          "published_at": "2026-11-24T22:30:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Indonesia BMKG",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Indonesia BMKG active provincial nowcast RSS, source-reported only; not global",
+          "source_updated_at": null,
+          "source_url": "https://www.bmkg.go.id/alerts/nowcast/en/CSR20261124007_alert.xml",
+          "title": "Thunderstorm This Morning in Sulawesi Utara"
         }
       }
     }

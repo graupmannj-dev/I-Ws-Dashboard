@@ -30,6 +30,53 @@
         }
       }
     },
+    "0e09fa26759ff6646af49928437794f4b1d1c711fd6a9256754fd03c1d5b85b7": {
+      "information_root": "cbp_wait:cbp_wait:240301:2026-11-24:17:50:49",
+      "members": {
+        "beh:4cec69d1a3a34b7513d7cb2f77e2": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T23:59:43+00:00",
+          "geography_key": "us-border-port:240301",
+          "geography_label": "Presidio",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:4cec69d1a3a34b7513d7cb2f77e2",
+          "information_root": "cbp_wait:cbp_wait:240301:2026-11-24:17:50:49",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Lanes Closed",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/24/2026",
+            "reported_local_time": "17:50:49",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Presidio / PRESIDIO PORT OF ENTRY"
+        }
+      }
+    },
     "0e1ac895abf47a033a2d444dfffa29140fa345a18aa6e7e487d0fde77e2b1e0f": {
       "information_root": "cbp_wait:cbp_wait:250501:2026-11-21:17:22:12",
       "members": {
@@ -228,6 +275,52 @@
           "source_updated_at": null,
           "source_url": "https://bwt.cbp.gov/api/waittimes",
           "title": "CBP estimated commercial border wait — Calais / Ferry Point"
+        }
+      }
+    },
+    "0e5485cd71ee20e7f92b0904558e8bea1ef325c03ef2240c96efbf0918749fdc": {
+      "information_root": "ris_bgp:ris_bgp:AS5713:20261124T19",
+      "members": {
+        "beh:0a4198de1d52c9f35082c53e79b5": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "public_routing_updates_not_country_outage",
+          "collection_mode": "ris_bgp",
+          "direct_measurement": true,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T23:59:43+00:00",
+          "geography_key": "asn:5713",
+          "geography_label": "AS5713",
+          "geography_precision": "routing_target_not_country_incident",
+          "id": "beh:0a4198de1d52c9f35082c53e79b5",
+          "information_root": "ris_bgp:ris_bgp:AS5713:20261124T19",
+          "origin": "behavioral_registry",
+          "provider": "ris_bgp",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "routing_collector_sampled_asn_updates",
+          "source_family": "internet_routing",
+          "source_kind": "sampled_asn_bgp_route_updates_not_network_outage",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "collector_peers_are_not_geo_deduplicated": true,
+            "country_impact_not_established": true,
+            "name": "sampled_6h_bgp_announcements",
+            "registered_network_country_hint": "ZA",
+            "returned_sampling_buckets": 6,
+            "source_window_end": "2026-11-24T19:00:00Z",
+            "target_asn": "AS5713",
+            "unit": "announcements",
+            "value": 6398,
+            "window_hours_requested": 6,
+            "withdrawals_unavailable_for_asn": true
+          },
+          "source_scope": "RIPE RIS public route-announcement update samples on six non-Western operated networks; ASNs not country-wide outage detection",
+          "source_updated_at": null,
+          "source_url": "https://stat.ripe.net/data/bgp-update-activity/data.json?resource=AS5713&num_hours=6&max_samples=24&hide_empty_samples=false",
+          "title": "RIPE RIS sampled BGP announcements: AS5713"
         }
       }
     },

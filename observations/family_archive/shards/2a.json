@@ -26,6 +26,39 @@
         }
       }
     },
+    "2a1c48ed416df69baae8f2c9c577a68d6e146d3eefcd45d41d3f07d8d73f1a4f": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-06d715:111312-2026",
+      "members": {
+        "beh:6ff25fde5a5affed7b3e1f0d1d6c": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T16:05:22+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:6ff25fde5a5affed7b3e1f0d1d6c",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-06d715:111312-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-24T16:05:22Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-22T23%3A56%3A51&updatedTo=2026-11-24T23%3A56%3A51",
+          "title": "West Yorkshire Domestic Abuse Perpetrator service using CARA (Cautioning and Relationship Abuse) Programme · West Yorkshire Combined Authority"
+        }
+      }
+    },
     "2a22043f689305fe8b474a2fdef8889c5f2f8f35aa798ee0a5a5b5cc63a0a2ba": {
       "information_root": "bmkg_nowcast:bmkg_nowcast:47b8ecc51bd8ffa26f49a8ed5e56",
       "members": {
@@ -283,6 +316,44 @@
           "source_updated_at": "2026-11-23T00:21:53Z",
           "source_url": "https://niord.dma.dk/#/message/977d59f3-ce27-47bb-8aec-42ea6aef5ec3",
           "title": "Denmark. Kattegat. EK R 18 Jaegerspris. Firing exercises. Warning."
+        }
+      }
+    },
+    "2a764bebea8aab77b3f6867dcf1c79a990f1d1ddd94c73e8724035d384508dab": {
+      "information_root": "usgs:us6000ud7z",
+      "members": {
+        "beh:40510d4364feb52d4366c216d49f": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "usgs",
+          "direct_measurement": true,
+          "event_at": "2026-11-24T15:39:43Z",
+          "first_observed_at": "2026-11-24T15:39:43+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "source_supplied_point_only",
+          "id": "beh:40510d4364feb52d4366c216d49f",
+          "information_root": "usgs:us6000ud7z",
+          "origin": "behavioral_registry",
+          "provider": "usgs",
+          "published_at": "2026-11-24T17:25:06Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "measured_earthquake_context",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "name": "earthquake_magnitude",
+            "unit": "reported_magnitude",
+            "value": 4.7
+          },
+          "source_scope": "USGS M4.5+ earthquakes worldwide, rolling past day; source thresholds apply",
+          "source_updated_at": null,
+          "source_url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000ud7z",
+          "title": "M 4.7 - 18 km ESE of Güvercinlik, Turkey"
         }
       }
     },

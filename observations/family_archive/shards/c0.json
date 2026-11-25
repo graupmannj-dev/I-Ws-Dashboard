@@ -141,6 +141,81 @@
         }
       }
     },
+    "c02dee2e8c02f2f00720553c1e2a2a60beb1887b02ae30305390e43caa591cf1": {
+      "information_root": "wiki_edits:wiki_edits:id:20261124T23",
+      "members": {
+        "beh:2ce3230b49b3bd61a06f4d715baf": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "wiki_edits",
+          "direct_measurement": false,
+          "event_at": "2026-11-24T23:54:37Z",
+          "first_observed_at": "2026-11-24T23:54:37+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:2ce3230b49b3bd61a06f4d715baf",
+          "information_root": "wiki_edits:wiki_edits:id:20261124T23",
+          "origin": "behavioral_registry",
+          "provider": "wiki_edits",
+          "published_at": "2026-11-24T23:54:37Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "public_encyclopedia_edit_aggregate",
+          "source_family": "public_attention",
+          "source_kind": "bounded_public_edit_count_not_event_verification",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "distinct_articles_in_sample": 54,
+            "maximum_returned_edits": 500,
+            "most_edited_article_counts": [
+              {
+                "count": 9,
+                "title": "Kabinet Lee Jae-myung"
+              },
+              {
+                "count": 7,
+                "title": "Stasiun Ciomas"
+              },
+              {
+                "count": 3,
+                "title": "Ahrie Sonta Nasution"
+              },
+              {
+                "count": 3,
+                "title": "Dicranocnemus"
+              },
+              {
+                "count": 3,
+                "title": "Jordanoleiopus binigromaculipennis"
+              },
+              {
+                "count": 3,
+                "title": "Myiarchus apicalis"
+              },
+              {
+                "count": 3,
+                "title": "Pembunuhan anggota Front Pembela Islam 2020"
+              },
+              {
+                "count": 2,
+                "title": "Amran Sulaiman"
+              }
+            ],
+            "name": "sampled_edits_last_three_hours",
+            "sample_cap_reached": false,
+            "unit": "edits",
+            "value": 85
+          },
+          "source_scope": "Wikipedia main-namespace edit-count sample, 14 global language editions, three-hour window capped at 500 per wiki; not geographic location",
+          "source_updated_at": null,
+          "source_url": "https://id.wikipedia.org/wiki/Special:RecentChanges",
+          "title": "Wikipedia id public article-edit activity (sampled)"
+        }
+      }
+    },
     "c03b2406e066538ed779ced3261c3fda7b9cc7da8158988b402985c450b8889a": {
       "information_root": "nws:743491ce11df4065009cd7bb",
       "members": {
@@ -411,6 +486,39 @@
           "source_updated_at": "2026-11-20T00:21:54Z",
           "source_url": "https://niord.dma.dk/#/message/39b1c3ad-3f08-4024-832c-68b3cde7dfcf",
           "title": "Denmark. Skagerrak. EK R 48 Tranum S. Firing exercises. Warning."
+        }
+      }
+    },
+    "c0b4ff8c849403870aca8240830712db07e0d1ed3e12bc43cd9859784c6cf06c": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c2c5:111300-2026",
+      "members": {
+        "beh:5104fe1a33d41a368302b8ce966f": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T15:49:50+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:5104fe1a33d41a368302b8ce966f",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c2c5:111300-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-24T15:49:50Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-22T23%3A56%3A51&updatedTo=2026-11-24T23%3A56%3A51",
+          "title": "Kratos Celesguard System ePFD Upgrade · Ofcom"
         }
       }
     },

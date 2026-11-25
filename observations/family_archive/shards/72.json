@@ -374,6 +374,39 @@
         }
       }
     },
+    "72598db4fcd9a40cff210dc01209efaae8f14c065e4c0f2eaa663a4ca00041c5": {
+      "information_root": "swpc:A20F:1139:20261124T141926Z",
+      "members": {
+        "beh:0260884303a5b8df325daa9c369a": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "swpc",
+          "direct_measurement": false,
+          "event_at": "2026-11-24T14:19:26Z",
+          "first_observed_at": "2026-11-24T14:19:26+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:0260884303a5b8df325daa9c369a",
+          "information_root": "swpc:A20F:1139:20261124T141926Z",
+          "origin": "behavioral_registry",
+          "provider": "swpc",
+          "published_at": "2026-11-24T14:19:26Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "issued_space_weather_bulletin",
+          "source_measurement": null,
+          "source_scope": "NOAA SWPC issued recent solar/geomagnetic warnings; explanatory context only",
+          "source_updated_at": null,
+          "source_url": "https://www.swpc.noaa.gov/products/alerts-watches-and-warnings",
+          "title": "WATCH: Geomagnetic Storm Category G1 Predicted"
+        }
+      }
+    },
     "72b09626405325966a8e55262ce7daef63e79db1df323e1d641bf241a020574a": {
       "information_root": "ioda:484a07871ab65bad98150a2e",
       "members": {
@@ -451,6 +484,53 @@
           "source_updated_at": null,
           "source_url": "https://bwt.cbp.gov/api/waittimes",
           "title": "CBP estimated commercial border wait — Laredo / Bridge II"
+        }
+      }
+    },
+    "72e96324b8e083dec4398452d2d88e3ab2214ba14748a739a4f99e1631722d70": {
+      "information_root": "cbp_wait:cbp_wait:250602:2026-11-24:15:50:49",
+      "members": {
+        "beh:e908fa953d949105985fab03a788": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T23:59:43+00:00",
+          "geography_key": "us-border-port:250602",
+          "geography_label": "Otay Mesa",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:e908fa953d949105985fab03a788",
+          "information_root": "cbp_wait:cbp_wait:250602:2026-11-24:15:50:49",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "delay",
+            "lanes_open": 4,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "At 3:00 pm PST",
+            "reported_local_date": "11/24/2026",
+            "reported_local_time": "15:50:49",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 40
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Otay Mesa / Commercial"
         }
       }
     },

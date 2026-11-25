@@ -113,6 +113,39 @@
         }
       }
     },
+    "25606d1c9bd331da40d5f1e34d30d16304409089f919b917953879a214030204": {
+      "information_root": "nws:25da3f83a313ec26f1ad1b47",
+      "members": {
+        "beh:d1929da57a32b4258c9ece129d45": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "nws",
+          "direct_measurement": false,
+          "event_at": "2026-11-24T17:44:00Z",
+          "first_observed_at": "2026-11-24T17:44:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:d1929da57a32b4258c9ece129d45",
+          "information_root": "nws:25da3f83a313ec26f1ad1b47",
+          "origin": "behavioral_registry",
+          "provider": "nws",
+          "published_at": "2026-11-24T17:44:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "official_weather_alert_context",
+          "source_measurement": null,
+          "source_scope": "Active NWS marine alerts; severity Minor",
+          "source_updated_at": null,
+          "source_url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.36c78a94ae7f8c2cdfedbef80d2c6eadcaf5d9db.002.1",
+          "title": "Coastal Flood Statement - Coastal Miami Dade County"
+        }
+      }
+    },
     "2566177213a2ca28c1a5fd60a48e1233755141053db0e1d010dca4d88a80d92f": {
       "information_root": "usgs:us6000uc96",
       "members": {
@@ -195,6 +228,39 @@
           "source_updated_at": null,
           "source_url": "https://bwt.cbp.gov/api/waittimes",
           "title": "CBP estimated commercial border wait — ROMA TEXAS / ROMA TEXAS"
+        }
+      }
+    },
+    "25984749cb6b016c677bdef2c0561264734f5816ab92842e708504e986397fde": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c2ec:111366-2026",
+      "members": {
+        "beh:4ef34ed52781ca4d108fdaaa4a1e": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T20:45:36+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:4ef34ed52781ca4d108fdaaa4a1e",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c2ec:111366-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-24T20:45:36Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-22T23%3A56%3A51&updatedTo=2026-11-24T23%3A56%3A51",
+          "title": "CEFAS26-166 Contract for Service Agreement for Imaging Microscope · Centre for Environment, Fisheries and Aquaculture Science"
         }
       }
     },

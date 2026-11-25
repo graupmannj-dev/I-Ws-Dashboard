@@ -177,6 +177,81 @@
         }
       }
     },
+    "b75ae65572af0eb70311d7b37890320c5cad9b43ccf8647274425358003bcca4": {
+      "information_root": "wiki_edits:wiki_edits:ko:20261124T23",
+      "members": {
+        "beh:ec0e5b0ed04a33b331a2036c4999": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "wiki_edits",
+          "direct_measurement": false,
+          "event_at": "2026-11-24T23:55:25Z",
+          "first_observed_at": "2026-11-24T23:55:25+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:ec0e5b0ed04a33b331a2036c4999",
+          "information_root": "wiki_edits:wiki_edits:ko:20261124T23",
+          "origin": "behavioral_registry",
+          "provider": "wiki_edits",
+          "published_at": "2026-11-24T23:55:25Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "public_encyclopedia_edit_aggregate",
+          "source_family": "public_attention",
+          "source_kind": "bounded_public_edit_count_not_event_verification",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "distinct_articles_in_sample": 157,
+            "maximum_returned_edits": 500,
+            "most_edited_article_counts": [
+              {
+                "count": 16,
+                "title": "전도연의 수상 및 후보 목록"
+              },
+              {
+                "count": 9,
+                "title": "큰난쟁이여우원숭이"
+              },
+              {
+                "count": 8,
+                "title": "티베트마카크"
+              },
+              {
+                "count": 4,
+                "title": "가역적 우주 통제"
+              },
+              {
+                "count": 4,
+                "title": "전술 엣지 뉴로모픽 컴퓨팅"
+              },
+              {
+                "count": 4,
+                "title": "프라하의 연인"
+              },
+              {
+                "count": 3,
+                "title": "김하성"
+              },
+              {
+                "count": 3,
+                "title": "리빙스턴 FC"
+              }
+            ],
+            "name": "sampled_edits_last_three_hours",
+            "sample_cap_reached": false,
+            "unit": "edits",
+            "value": 214
+          },
+          "source_scope": "Wikipedia main-namespace edit-count sample, 14 global language editions, three-hour window capped at 500 per wiki; not geographic location",
+          "source_updated_at": null,
+          "source_url": "https://ko.wikipedia.org/wiki/Special:RecentChanges",
+          "title": "Wikipedia ko public article-edit activity (sampled)"
+        }
+      }
+    },
     "b7792b1f4c31bd8f01c071f50e159d9c8477c9335e7436d5dd7487bd1db3a77f": {
       "information_root": "usgs:us6000ucni",
       "members": {
@@ -259,6 +334,45 @@
           "source_updated_at": null,
           "source_url": "https://bwt.cbp.gov/api/waittimes",
           "title": "CBP estimated commercial border wait — Laredo / Bridge II"
+        }
+      }
+    },
+    "b77b303d192bf2aa52d8655f94ceb0be2134c7c8d9a9e496a9d1cca95f85c7c0": {
+      "information_root": "bmkg_nowcast:bmkg_nowcast:89e0738d50616a29720dcf059ae7",
+      "members": {
+        "beh:74f647ab4a62cc3b861acec5ccb3": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "bmkg_nowcast",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T22:33:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:74f647ab4a62cc3b861acec5ccb3",
+          "information_root": "bmkg_nowcast:bmkg_nowcast:89e0738d50616a29720dcf059ae7",
+          "origin": "behavioral_registry",
+          "provider": "bmkg_nowcast",
+          "published_at": "2026-11-24T22:33:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Indonesia BMKG",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Indonesia BMKG active provincial nowcast RSS, source-reported only; not global",
+          "source_updated_at": null,
+          "source_url": "https://www.bmkg.go.id/alerts/nowcast/en/CPU20261124010_alert.xml",
+          "title": "Thunderstorm This Morning in Papua"
         }
       }
     },
@@ -386,6 +500,53 @@
           "source_updated_at": null,
           "source_url": "https://bwt.cbp.gov/api/waittimes",
           "title": "CBP estimated commercial border wait — Del Rio"
+        }
+      }
+    },
+    "b7b0b2c28e306a3f23cb5c9e7e0fa7945a10cfa820b1553fe28f0171a61f8399": {
+      "information_root": "cbp_wait:cbp_wait:240215:2026-11-24:16:50:48",
+      "members": {
+        "beh:8a4909a1622df92b8c7f9109188a": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T23:59:43+00:00",
+          "geography_key": "us-border-port:240215",
+          "geography_label": "BOTA CARGO FACILITY",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:8a4909a1622df92b8c7f9109188a",
+          "information_root": "cbp_wait:cbp_wait:240215:2026-11-24:16:50:48",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Update Pending",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Closed",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/24/2026",
+            "reported_local_time": "16:50:48",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — BOTA CARGO FACILITY / BRIDGE OF AMERICAS CARGO FACILITY"
         }
       }
     },

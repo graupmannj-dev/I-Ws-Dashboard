@@ -138,6 +138,86 @@
         }
       }
     },
+    "9422c99b5673ab4d06293e6a5c82caf2b638b2a7b8fbd3c60d7151d801f1e487": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c2cf:111317-2026",
+      "members": {
+        "beh:094016a81ea2ab398b6fd4d867d6": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T16:08:28+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:094016a81ea2ab398b6fd4d867d6",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c2cf:111317-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-24T16:08:28Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-22T23%3A56%3A51&updatedTo=2026-11-24T23%3A56%3A51",
+          "title": "GMCA 2156 - MAGIC (Multi-Agency Gold Incident Command) Training · Greater Manchester Combined Authority"
+        }
+      }
+    },
+    "9425c03ba89db8852d8b9fbad7fbd9a5af96cc164f538fdad5a37f4419be11d8": {
+      "information_root": "cbp_wait:cbp_wait:260301:2026-11-24:15:50:49",
+      "members": {
+        "beh:71e30fd0710407d56845a5374297": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T23:59:43+00:00",
+          "geography_key": "us-border-port:260301",
+          "geography_label": "Naco",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:71e30fd0710407d56845a5374297",
+          "information_root": "cbp_wait:cbp_wait:260301:2026-11-24:15:50:49",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "no delay",
+            "lanes_open": 1,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "At 4:00 pm PST",
+            "reported_local_date": "11/24/2026",
+            "reported_local_time": "15:50:49",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 1
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Naco"
+        }
+      }
+    },
     "943b74cc0e0ad80ad47ed53265f57affca3513ec46eabc5418d7c08b1027cfe6": {
       "information_root": "commercial:8f5105cddf69ee5d59da",
       "members": {

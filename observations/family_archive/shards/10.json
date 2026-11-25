@@ -325,6 +325,52 @@
         }
       }
     },
+    "10a903313cc531c3592e6c092b0dcac1f45a6fb26775e4381a62654570e1defe": {
+      "information_root": "ris_bgp:ris_bgp:AS9829:20261124T19",
+      "members": {
+        "beh:3db86e92aec8cdd16b5f6e578641": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "public_routing_updates_not_country_outage",
+          "collection_mode": "ris_bgp",
+          "direct_measurement": true,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T23:59:43+00:00",
+          "geography_key": "asn:9829",
+          "geography_label": "AS9829",
+          "geography_precision": "routing_target_not_country_incident",
+          "id": "beh:3db86e92aec8cdd16b5f6e578641",
+          "information_root": "ris_bgp:ris_bgp:AS9829:20261124T19",
+          "origin": "behavioral_registry",
+          "provider": "ris_bgp",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "routing_collector_sampled_asn_updates",
+          "source_family": "internet_routing",
+          "source_kind": "sampled_asn_bgp_route_updates_not_network_outage",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "collector_peers_are_not_geo_deduplicated": true,
+            "country_impact_not_established": true,
+            "name": "sampled_6h_bgp_announcements",
+            "registered_network_country_hint": "IN",
+            "returned_sampling_buckets": 6,
+            "source_window_end": "2026-11-24T19:00:00Z",
+            "target_asn": "AS9829",
+            "unit": "announcements",
+            "value": 460457,
+            "window_hours_requested": 6,
+            "withdrawals_unavailable_for_asn": true
+          },
+          "source_scope": "RIPE RIS public route-announcement update samples on six non-Western operated networks; ASNs not country-wide outage detection",
+          "source_updated_at": null,
+          "source_url": "https://stat.ripe.net/data/bgp-update-activity/data.json?resource=AS9829&num_hours=6&max_samples=24&hide_empty_samples=false",
+          "title": "RIPE RIS sampled BGP announcements: AS9829"
+        }
+      }
+    },
     "10c725afc9ee5f63e424a62cfdab26d9b61275cd63fe93e2a0a930fb2037daed": {
       "information_root": "niord:532825a7-01a5-4d42-a5db-24bed595e9e8:0:5:0",
       "members": {
@@ -451,6 +497,53 @@
           "source_updated_at": "2026-11-24T00:21:52Z",
           "source_url": "https://niord.dma.dk/#/message/260e9032-659f-4fe8-bf3e-650355377bb5",
           "title": "Denmark. Kattegat. EK R 17 Isefjord. Firing exercises. Warning."
+        }
+      }
+    },
+    "10f37ee57e159e3b35b198053ceb79649a77781ef7ece3dd367ec2e0326768b0": {
+      "information_root": "cbp_wait:cbp_wait:240207:2026-11-24:16:50:48",
+      "members": {
+        "beh:d136dc656657ceb331e93f5049d4": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T23:59:43+00:00",
+          "geography_key": "us-border-port:240207",
+          "geography_label": "Bridge of the Americas Port of Entry",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:d136dc656657ceb331e93f5049d4",
+          "information_root": "cbp_wait:cbp_wait:240207:2026-11-24:16:50:48",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Update Pending",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/24/2026",
+            "reported_local_time": "16:50:48",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Bridge of the Americas Port of Entry"
         }
       }
     }

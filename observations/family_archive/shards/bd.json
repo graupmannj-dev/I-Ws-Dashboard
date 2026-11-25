@@ -233,6 +233,52 @@
         }
       }
     },
+    "bdc7fc1a99bbb6f3f48e8b9eb076d8d37ede467199b4ba1116aaa42542658b93": {
+      "information_root": "ris_bgp:ris_bgp:AS4134:20261124T19",
+      "members": {
+        "beh:f3675c14a9c8c578150e77168617": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "public_routing_updates_not_country_outage",
+          "collection_mode": "ris_bgp",
+          "direct_measurement": true,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T23:59:43+00:00",
+          "geography_key": "asn:4134",
+          "geography_label": "AS4134",
+          "geography_precision": "routing_target_not_country_incident",
+          "id": "beh:f3675c14a9c8c578150e77168617",
+          "information_root": "ris_bgp:ris_bgp:AS4134:20261124T19",
+          "origin": "behavioral_registry",
+          "provider": "ris_bgp",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "routing_collector_sampled_asn_updates",
+          "source_family": "internet_routing",
+          "source_kind": "sampled_asn_bgp_route_updates_not_network_outage",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "collector_peers_are_not_geo_deduplicated": true,
+            "country_impact_not_established": true,
+            "name": "sampled_6h_bgp_announcements",
+            "registered_network_country_hint": "CN",
+            "returned_sampling_buckets": 6,
+            "source_window_end": "2026-11-24T19:00:00Z",
+            "target_asn": "AS4134",
+            "unit": "announcements",
+            "value": 56044,
+            "window_hours_requested": 6,
+            "withdrawals_unavailable_for_asn": true
+          },
+          "source_scope": "RIPE RIS public route-announcement update samples on six non-Western operated networks; ASNs not country-wide outage detection",
+          "source_updated_at": null,
+          "source_url": "https://stat.ripe.net/data/bgp-update-activity/data.json?resource=AS4134&num_hours=6&max_samples=24&hide_empty_samples=false",
+          "title": "RIPE RIS sampled BGP announcements: AS4134"
+        }
+      }
+    },
     "bdcc84738a1d503a9a6525e98727e7657aaa21cf47f2f5aac0c7ed885cdaf928": {
       "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c1c0:110788-2026",
       "members": {
@@ -332,6 +378,39 @@
           "source_updated_at": null,
           "source_url": "https://www.bmkg.go.id/alerts/nowcast/en/CRU20261122001_alert.xml",
           "title": "Thunderstorm This Morning in Riau"
+        }
+      }
+    },
+    "bdf85d924b59c9dd693227a50436cc14100f2349ad1bfbbc1920ee84003f9673": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-0566f7:111314-2026",
+      "members": {
+        "beh:a26292be83a4863bd980fba24ea1": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T16:05:36+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:a26292be83a4863bd980fba24ea1",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-0566f7:111314-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-24T16:05:36Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-22T23%3A56%3A51&updatedTo=2026-11-24T23%3A56%3A51",
+          "title": "MRO - Lot 6 Power Tools and accessories - Lot 7 Mechanical and Electrical goods · SEVERN TRENT WATER LIMITED"
         }
       }
     }

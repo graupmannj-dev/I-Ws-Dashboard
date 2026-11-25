@@ -1,5 +1,38 @@
 {
   "roots": {
+    "8a133be9a852b768db3576cc08466ca0b1407467a4b124481b0e1fa78c755e00": {
+      "information_root": "nws:d86eb79f460f005d135e388d",
+      "members": {
+        "beh:770553bee5b5dcc9e68621e42642": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "nws",
+          "direct_measurement": false,
+          "event_at": "2026-11-24T21:00:00Z",
+          "first_observed_at": "2026-11-24T16:56:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:770553bee5b5dcc9e68621e42642",
+          "information_root": "nws:d86eb79f460f005d135e388d",
+          "origin": "behavioral_registry",
+          "provider": "nws",
+          "published_at": "2026-11-24T16:56:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "official_weather_alert_context",
+          "source_measurement": null,
+          "source_scope": "Active NWS marine alerts; severity Moderate",
+          "source_updated_at": null,
+          "source_url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.9baaedf0ec27dbbe96fc80e8ad0276719e08b0ea.001.1",
+          "title": "Wind Advisory - Coastal Nassau; Coastal Glynn; Coastal Camden"
+        }
+      }
+    },
     "8a2358fc6f5b16cb0faa462c79e9c1c69ce6c9316fa99e66db0f52400e9a946d": {
       "information_root": "ioda:c47140b6b694fb5d4cf552df",
       "members": {
@@ -498,6 +531,39 @@
           "source_updated_at": null,
           "source_url": "https://bwt.cbp.gov/api/waittimes",
           "title": "CBP estimated commercial border wait — Calais / Ferry Point"
+        }
+      }
+    },
+    "8ab9f7020f3d61a3cd2c3907d3a7e3c3989601fd2dc2f7b65e7f628560a75076": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-06ef3f:111292-2026",
+      "members": {
+        "beh:5d1b0ce14851b5c7044c13b50f9d": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-24T15:41:50+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:5d1b0ce14851b5c7044c13b50f9d",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-06ef3f:111292-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-24T15:41:50Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-22T23%3A56%3A51&updatedTo=2026-11-24T23%3A56%3A51",
+          "title": "ICT Managed Services and Consultancy Support · Stowmarket Town Council"
         }
       }
     },
