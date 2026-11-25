@@ -252,6 +252,39 @@
         }
       }
     },
+    "7d740e232075f74225b5c83d7096bd89cac31c627299142b77ee59d563426f4b": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-06f7fc:111837-2026",
+      "members": {
+        "beh:ffaa54ca0357d8ee01578b7d228c": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-25T16:34:34+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:ffaa54ca0357d8ee01578b7d228c",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-06f7fc:111837-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-25T16:34:34Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-23T19%3A25%3A03&updatedTo=2026-11-25T19%3A25%3A03",
+          "title": "CARDIFF UNI PHARMACY EDUCATION RELATED EXPENSES · Health Education and Improvement Wales (HEIW)"
+        }
+      }
+    },
     "7d77ce9b84e41f0f2ad13e8dc5dcbd08cfcec175ba2c6d2d121b445e7fd21383": {
       "information_root": "ris_bgp:ris_bgp:AS7552:20261121T07",
       "members": {
@@ -567,6 +600,45 @@
           "source_updated_at": null,
           "source_url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.deu.html",
           "title": "Germany - Level 2: Exercise Increased Caution"
+        }
+      }
+    },
+    "7dbef285328d55953f7df46e8bb7a8b3be44c3abcf63cad61905514e8d5aae04": {
+      "information_root": "bmkg_nowcast:bmkg_nowcast:98ca97f2963deab0bfa21f1a245c",
+      "members": {
+        "beh:a49094bae35093568261a281723f": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "bmkg_nowcast",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-25T17:50:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:a49094bae35093568261a281723f",
+          "information_root": "bmkg_nowcast:bmkg_nowcast:98ca97f2963deab0bfa21f1a245c",
+          "origin": "behavioral_registry",
+          "provider": "bmkg_nowcast",
+          "published_at": "2026-11-25T17:50:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Indonesia BMKG",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Indonesia BMKG active provincial nowcast RSS, source-reported only; not global",
+          "source_updated_at": null,
+          "source_url": "https://www.bmkg.go.id/alerts/nowcast/en/CKG20261125008_alert.xml",
+          "title": "Thunderstorm Tonight in Kalimantan Tengah"
         }
       }
     },

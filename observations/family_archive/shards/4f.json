@@ -170,6 +170,39 @@
         }
       }
     },
+    "4f629f9c8fdcb181cbc70994ba643631b7eb44440ac46b9e7e6ae25a38500642": {
+      "information_root": "nws:32898a86412a57782270bf8c",
+      "members": {
+        "beh:ae8fbeb37e83b3eadf53158665ba": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "nws",
+          "direct_measurement": false,
+          "event_at": "2026-11-25T15:47:00Z",
+          "first_observed_at": "2026-11-25T15:47:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:ae8fbeb37e83b3eadf53158665ba",
+          "information_root": "nws:32898a86412a57782270bf8c",
+          "origin": "behavioral_registry",
+          "provider": "nws",
+          "published_at": "2026-11-25T15:47:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "official_weather_alert_context",
+          "source_measurement": null,
+          "source_scope": "Active NWS marine alerts; severity Minor",
+          "source_updated_at": null,
+          "source_url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.dca05b7a0ccd9391b53d580ab2944847308f9f17.005.2",
+          "title": "High Surf Advisory - Coastal Flagler; Southeast Coastal St. Johns"
+        }
+      }
+    },
     "4f6d5b48e23f3cc2afbb9ef55938650d3e1954eb18ab5f1d480413c6b1a999c3": {
       "information_root": "bmkg_nowcast:bmkg_nowcast:efcaeb66ebb3ab40bf8bcbd1c46b",
       "members": {
@@ -347,6 +380,53 @@
           "source_updated_at": "2026-11-20T13:21:52Z",
           "source_url": "https://niord.dma.dk/#/message/4d1a85d7-5fb9-489c-b1f5-3aa221796570",
           "title": "Denmark. The Baltic Sea. EK D 396 Hullebaek. Firing exercises. Warning."
+        }
+      }
+    },
+    "4fa87bcfe82c1176831e1c2885f9397a9c1b070eb963c7fa7d8c147f70354977": {
+      "information_root": "cbp_wait:cbp_wait:240203:2026-11-25:12:18:21",
+      "members": {
+        "beh:2ad92224d6d7aa4e4144d6677be9": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-25T19:27:28+00:00",
+          "geography_key": "us-border-port:240203",
+          "geography_label": "El Paso",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:2ad92224d6d7aa4e4144d6677be9",
+          "information_root": "cbp_wait:cbp_wait:240203:2026-11-25:12:18:21",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "delay",
+            "lanes_open": 4,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "At 11:00 am MST",
+            "reported_local_date": "11/25/2026",
+            "reported_local_time": "12:18:21",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 40
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — El Paso / Ysleta"
         }
       }
     },

@@ -205,6 +205,53 @@
         }
       }
     },
+    "62386fa6711fb40690853959cc657f26d30505ad478ef962e58e93d3a45d1625": {
+      "information_root": "cbp_wait:cbp_wait:090101:2026-11-25:14:18:20",
+      "members": {
+        "beh:70cc7d600ea646fd5824cd19fe0b": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-25T19:27:28+00:00",
+          "geography_key": "us-border-port:090101",
+          "geography_label": "Buffalo/Niagara Falls",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:70cc7d600ea646fd5824cd19fe0b",
+          "information_root": "cbp_wait:cbp_wait:090101:2026-11-25:14:18:20",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "no delay",
+            "lanes_open": 4,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "At 2:07 pm EST",
+            "reported_local_date": "11/25/2026",
+            "reported_local_time": "14:18:20",
+            "source_declared_border": "Canadian Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 2
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Buffalo/Niagara Falls / Peace Bridge"
+        }
+      }
+    },
     "623c139f5b5e0a53f1e485dff19a91181ca2d6bacfcfdff3424d5c7abd6923f2": {
       "information_root": "cbp_wait:cbp_wait:231001:2026-11-24:17:50:49",
       "members": {
@@ -465,6 +512,45 @@
           "source_updated_at": null,
           "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-22T23%3A56%3A51&updatedTo=2026-11-24T23%3A56%3A51",
           "title": "CPH138 - Clinical Assessment and Prescribing Service for Varenicline and Cytisinicline (also known as Cytisine) · Derbyshire County Council"
+        }
+      }
+    },
+    "62a14339cd1b6abbf0e43d2cf4b4a59210ef5abc4674b3628bdd1d85398d335f": {
+      "information_root": "bmkg_nowcast:bmkg_nowcast:d7065ca7f88f0c68095fb261c52b",
+      "members": {
+        "beh:8a7bc96a11122bc932f17944ffd5": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "bmkg_nowcast",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-25T17:35:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:8a7bc96a11122bc932f17944ffd5",
+          "information_root": "bmkg_nowcast:bmkg_nowcast:d7065ca7f88f0c68095fb261c52b",
+          "origin": "behavioral_registry",
+          "provider": "bmkg_nowcast",
+          "published_at": "2026-11-25T17:35:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Indonesia BMKG",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Indonesia BMKG active provincial nowcast RSS, source-reported only; not global",
+          "source_updated_at": null,
+          "source_url": "https://www.bmkg.go.id/alerts/nowcast/en/CJI20261125006_alert.xml",
+          "title": "Thunderstorm Tonight in Jambi"
         }
       }
     },

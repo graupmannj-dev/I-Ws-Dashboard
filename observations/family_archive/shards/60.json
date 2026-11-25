@@ -126,6 +126,53 @@
         }
       }
     },
+    "6028172d2d7844a9275eac19f00ca88efcd4a895a571ce2ac1907557632c1873": {
+      "information_root": "cbp_wait:cbp_wait:021201:2026-11-25:14:18:20",
+      "members": {
+        "beh:10461b62ac9f82fe238488ecf921": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-25T19:27:28+00:00",
+          "geography_key": "us-border-port:021201",
+          "geography_label": "Highgate Springs",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:10461b62ac9f82fe238488ecf921",
+          "information_root": "cbp_wait:cbp_wait:021201:2026-11-25:14:18:20",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Lanes Closed",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/25/2026",
+            "reported_local_time": "14:18:20",
+            "source_declared_border": "Canadian Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Highgate Springs"
+        }
+      }
+    },
     "6031ae18ae73a8b1bea3e1adb25abeba97964d8522316af0dfa1a99d428dc0ce": {
       "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c138:110544-2026",
       "members": {

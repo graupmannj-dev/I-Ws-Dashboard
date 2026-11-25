@@ -3638,6 +3638,15 @@
       "shared_subject_terms": [],
       "subject_geography_compatible": true
     },
+    "a77d9dc5a7695bc89a91f1eae7ee": {
+      "independent_corroboration_proven": false,
+      "method": "new_analytical_theme",
+      "review_status": "unreviewed_automatic_topic_seed",
+      "same_incident_proven": false,
+      "score": null,
+      "shared_activity_roles": [],
+      "shared_subject_terms": []
+    },
     "a800d7f9873d692a289cb2ee2e69": {
       "independent_corroboration_proven": false,
       "latent_semantic_similarity": 1,
@@ -3829,6 +3838,31 @@
         "public",
         "sampled",
         "wikipedia"
+      ],
+      "subject_geography_compatible": true
+    },
+    "ae183e1a933669eb20fbd8f61e0a": {
+      "independent_corroboration_proven": false,
+      "latent_semantic_similarity": 1,
+      "method": "aiba.hybrid-local-title-embedding.v1",
+      "raw_text_similarity": 1,
+      "review_status": "unreviewed_automatic_topic_match",
+      "same_incident_proven": false,
+      "same_source_document": false,
+      "score": 1.0,
+      "shared_activity_roles": [],
+      "shared_named_subjects": [
+        "atlas"
+      ],
+      "shared_subject_terms": [
+        "aggregate",
+        "atlas",
+        "measurements",
+        "probe",
+        "public",
+        "ripe",
+        "root",
+        "usable"
       ],
       "subject_geography_compatible": true
     },
@@ -6337,6 +6371,7 @@
     "a6925d51f8305a120685397364fc": "family:36c96da6e7a6c2308842",
     "a6db912ee589c39a48f6e6f38231": "family:97e5004cd15276f863d2",
     "a72c7fd0cbb2877fe9a3df118163": "family:322b37d68d2aa832e904",
+    "a77d9dc5a7695bc89a91f1eae7ee": "family:ee5cba51a280efa3e4d7",
     "a800d7f9873d692a289cb2ee2e69": "family:7326644dffff37614fb1",
     "a80a3049aa2f8bfa9e64888acf14": "family:b896d0395c33a0c8eafa",
     "a80bb4103a4cb510b408d1bd3466": "family:9691e1da39e9390179bd",
@@ -6362,6 +6397,7 @@
     "ad78e712d61b9c4c23b79bb8ba37": "family:0565b75fd955348d3f62",
     "ad795728b8d171ca37bace908907": "family:61be0cb940a7f9431b5a",
     "adf7782560c3253ace6d857e1092": "family:39223941378a258449fa",
+    "ae183e1a933669eb20fbd8f61e0a": "family:fe16830728b4f874c391",
     "ae32b3086f5c5e5a7803c7057707": "family:fedd67f32b443ff07f62",
     "ae62b1db3306d76d808eccdf4700": "family:c733ba40ded9c2fca04b",
     "ae7064c370c53c15681a5d9196f3": "family:e1c66c16bd9ca1017201",
@@ -11986,6 +12022,43 @@
       },
       "source": "hybrid_local_topic_embedding_v2"
     },
+    "family:ee5cba51a280efa3e4d7": {
+      "first_document_at": "2026-11-25T15:43:24+00:00",
+      "last_document_at": "2026-11-25T15:43:24+00:00",
+      "matched_document_count": 1,
+      "seed": {
+        "domain": "generic",
+        "geo": [],
+        "key": "a77d9dc5a7695bc89a91f1eae7ee",
+        "publisher": "uk_tenders",
+        "source_family": "public_procurement",
+        "terms": {
+          "adaptations": 1,
+          "aids": 1,
+          "apex": 1,
+          "apx": 1,
+          "association": 1,
+          "contract": 1,
+          "delivery": 1,
+          "emergency": 1,
+          "hours": 1,
+          "housing": 1,
+          "maintena": 1,
+          "maintenance": 1,
+          "measured": 1,
+          "minor": 1,
+          "out": 1,
+          "preventative": 1,
+          "property": 1,
+          "responsive": 1,
+          "term": 1,
+          "void": 1,
+          "works": 2
+        },
+        "title": "APX024 - Measured Term Contract for the Delivery of Responsive Maintenance, Minor Aids and Adaptations, Void Property Works, Out-of-Hours Emergency Works, and Preventative Maintena · APEX HOUSING ASSOCIATION"
+      },
+      "source": "hybrid_local_topic_embedding_v2"
+    },
     "family:ef0b6b7e70f3f92d029f": {
       "first_document_at": "2026-11-12T16:02:36+00:00",
       "matched_document_count": 2,
@@ -12390,8 +12463,8 @@
     },
     "family:fe16830728b4f874c391": {
       "first_document_at": "2026-11-21T02:31:05+00:00",
-      "last_document_at": "2026-11-25T08:52:01+00:00",
-      "matched_document_count": 11,
+      "last_document_at": "2026-11-25T19:27:28+00:00",
+      "matched_document_count": 12,
       "seed": {
         "domain": "network",
         "geo": [],
@@ -12509,9 +12582,9 @@
     }
   },
   "input_truncated": false,
-  "new_document_assignments": 13,
+  "new_document_assignments": 2,
   "schema": "aiba.automatic-analytical-topics.v1",
   "semantic_seed_index_limited": false,
-  "total_document_assignments": 784,
-  "total_stable_topics": 266
+  "total_document_assignments": 786,
+  "total_stable_topics": 267
 }

@@ -74,6 +74,53 @@
         }
       }
     },
+    "4a1b1699df406de3861265ebfe9561d2af0c55fd3ac89502a55c13d2f36320ba": {
+      "information_root": "cbp_wait:cbp_wait:250501:2026-11-25:11:18:21",
+      "members": {
+        "beh:e239ffafb06c741ba3a3782727ae": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-25T19:27:28+00:00",
+          "geography_key": "us-border-port:250501",
+          "geography_label": "Tecate",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:e239ffafb06c741ba3a3782727ae",
+          "information_root": "cbp_wait:cbp_wait:250501:2026-11-25:11:18:21",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "delay",
+            "lanes_open": 2,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "At 11:00 am PST",
+            "reported_local_date": "11/25/2026",
+            "reported_local_time": "11:18:21",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 15
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Tecate"
+        }
+      }
+    },
     "4a29ef6272482a02d89af6e1fe23327e15012f8e35c8db0797114e87e0965541": {
       "information_root": "ioda:55b117556dd8e01ebc6634fb",
       "members": {
@@ -355,6 +402,39 @@
           "source_updated_at": null,
           "source_url": "https://data.gov.sg/datasets/d_8f264219109e61fffa87ac64dd5a9a65/view",
           "title": "Singapore MPA 2026-10 Freighter vessel arrivals (>75 GT)"
+        }
+      }
+    },
+    "4a81b3a7d56c81c6e5307495e92c01f48863487d1d43c8114fe408d0e4059c1c": {
+      "information_root": "nws:daa4833515a03d9ac236b8f9",
+      "members": {
+        "beh:2e824a0e559bc7b1556f779da9f3": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "nws",
+          "direct_measurement": false,
+          "event_at": "2026-11-25T17:32:00Z",
+          "first_observed_at": "2026-11-25T17:32:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:2e824a0e559bc7b1556f779da9f3",
+          "information_root": "nws:daa4833515a03d9ac236b8f9",
+          "origin": "behavioral_registry",
+          "provider": "nws",
+          "published_at": "2026-11-25T17:32:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "official_weather_alert_context",
+          "source_measurement": null,
+          "source_scope": "Active NWS marine alerts; severity Moderate",
+          "source_updated_at": null,
+          "source_url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.d49a81533354713063f9cf471014c08a101d9df7.001.1",
+          "title": "Rip Current Statement - Mobile Coastal; Baldwin Coastal; Escambia Coastal; Santa Rosa Coastal; Okaloosa Coastal"
         }
       }
     },

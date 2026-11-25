@@ -355,6 +355,81 @@
         }
       }
     },
+    "378cd864fdb5799f641d48eaa869bbe6ffbe4cb9ca52373e267677137e146719": {
+      "information_root": "wiki_edits:wiki_edits:ar:20261125T19",
+      "members": {
+        "beh:385ccbc98db4df951851e1814d58": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "wiki_edits",
+          "direct_measurement": false,
+          "event_at": "2026-11-25T19:24:54Z",
+          "first_observed_at": "2026-11-25T19:24:54+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:385ccbc98db4df951851e1814d58",
+          "information_root": "wiki_edits:wiki_edits:ar:20261125T19",
+          "origin": "behavioral_registry",
+          "provider": "wiki_edits",
+          "published_at": "2026-11-25T19:24:54Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "public_encyclopedia_edit_aggregate",
+          "source_family": "public_attention",
+          "source_kind": "bounded_public_edit_count_not_event_verification",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "distinct_articles_in_sample": 437,
+            "maximum_returned_edits": 500,
+            "most_edited_article_counts": [
+              {
+                "count": 14,
+                "title": "توقف عمليات الهبوط في الولايات المتحدة 2026"
+              },
+              {
+                "count": 6,
+                "title": "رمضان في مصر"
+              },
+              {
+                "count": 5,
+                "title": "ديلوسبيرما هارازيانوم"
+              },
+              {
+                "count": 4,
+                "title": "إيكيبيرجيا بوميلا"
+              },
+              {
+                "count": 3,
+                "title": "أورغانون"
+              },
+              {
+                "count": 3,
+                "title": "الحزب الشيوعي العراقي"
+              },
+              {
+                "count": 3,
+                "title": "السكك الحديدية الإريترية"
+              },
+              {
+                "count": 3,
+                "title": "تلفريك أسمرة–مصوع"
+              }
+            ],
+            "name": "sampled_edits_last_three_hours",
+            "sample_cap_reached": true,
+            "unit": "edits",
+            "value": 500
+          },
+          "source_scope": "Wikipedia main-namespace edit-count sample, 14 global language editions, three-hour window capped at 500 per wiki; not geographic location",
+          "source_updated_at": null,
+          "source_url": "https://ar.wikipedia.org/wiki/Special:RecentChanges",
+          "title": "Wikipedia ar public article-edit activity (sampled)"
+        }
+      }
+    },
     "3797b6f7e5b606fd5d70869c5ec11ba15fb9949d22fe5528380db2991c60c7bb": {
       "information_root": "ioda:48eec343a39b15a98186fe2e",
       "members": {
@@ -510,6 +585,53 @@
           "source_updated_at": null,
           "source_url": "https://bwt.cbp.gov/api/waittimes",
           "title": "CBP estimated commercial border wait — Buffalo/Niagara Falls / Peace Bridge"
+        }
+      }
+    },
+    "37c596498fd7f857ba7df29c874c6038d94710e30eba9996cb7e9e1f33d9bea4": {
+      "information_root": "cbp_wait:cbp_wait:240201:2026-11-25:12:18:21",
+      "members": {
+        "beh:55e53bfed1d44b3aede48b3db94b": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-25T19:27:28+00:00",
+          "geography_key": "us-border-port:240201",
+          "geography_label": "El Paso",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:55e53bfed1d44b3aede48b3db94b",
+          "information_root": "cbp_wait:cbp_wait:240201:2026-11-25:12:18:21",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "delay",
+            "lanes_open": 2,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "At Noon MST",
+            "reported_local_date": "11/25/2026",
+            "reported_local_time": "12:18:21",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 20
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — El Paso / Bridge of the Americas (BOTA)"
         }
       }
     },

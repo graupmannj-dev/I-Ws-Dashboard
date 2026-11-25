@@ -80,6 +80,53 @@
         }
       }
     },
+    "252d0ac3317c71f9ad1cb1eda89af4b56d46b9745247fe1a1b4059646aaed7ef": {
+      "information_root": "cbp_wait:cbp_wait:250201:2026-11-25:11:18:21",
+      "members": {
+        "beh:49aff241b1311b588003384dd187": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-25T19:27:28+00:00",
+          "geography_key": "us-border-port:250201",
+          "geography_label": "Andrade",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:49aff241b1311b588003384dd187",
+          "information_root": "cbp_wait:cbp_wait:250201:2026-11-25:11:18:21",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Lanes Closed",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/25/2026",
+            "reported_local_time": "11:18:21",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Andrade"
+        }
+      }
+    },
     "2533d5d2f4d65bd6210cb9d631ef8153b36fa6b021919cb797cee8feabe62bf7": {
       "information_root": "niord:08daf0b1-ce64-45d9-b42b-884b5c08e6fb:0:1:0",
       "members": {
@@ -327,6 +374,39 @@
           "source_updated_at": null,
           "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-22T23%3A56%3A51&updatedTo=2026-11-24T23%3A56%3A51",
           "title": "CEFAS26-166 Contract for Service Agreement for Imaging Microscope · Centre for Environment, Fisheries and Aquaculture Science"
+        }
+      }
+    },
+    "2598fc500ea9221d74269725d41f9396da47a77f9c09f80c240aaf6d65fbdb6d": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-077a54:111841-2026",
+      "members": {
+        "beh:b7f8efa0c1c8038dae8d525fd417": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-25T16:36:03+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:b7f8efa0c1c8038dae8d525fd417",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-077a54:111841-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-25T16:36:03Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-23T19%3A25%3A03&updatedTo=2026-11-25T19%3A25%3A03",
+          "title": "EE-0004 Orwell Housing Electrical Works · Orwell Housing Association Ltd"
         }
       }
     },

@@ -141,6 +141,50 @@
         }
       }
     },
+    "8b34f04c5e09c4bc221007dddab8b706cc7082e1050f458a552aa1aec3fee9e3": {
+      "information_root": "tw_power:tw_power:20261125T1920Z",
+      "members": {
+        "beh:643d374f752fc8cdcb1d3d074a50": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_power_snapshot_not_outage_attribution",
+          "collection_mode": "tw_power",
+          "direct_measurement": true,
+          "event_at": null,
+          "first_observed_at": "2026-11-25T19:27:28+00:00",
+          "geography_key": "country:TW",
+          "geography_label": "Taiwan",
+          "geography_precision": "national_not_facility",
+          "id": "beh:643d374f752fc8cdcb1d3d074a50",
+          "information_root": "tw_power:tw_power:20261125T1920Z",
+          "origin": "behavioral_registry",
+          "provider": "tw_power",
+          "published_at": "2026-11-25T19:20:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "public_national_power_snapshot",
+          "source_family": "grid_load",
+          "source_kind": "national_grid_load_aggregate_not_outage",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "measurement_clock_distinct_from_release_not_verified": true,
+            "name": "nationwide_reported_current_load",
+            "not_grid_frequency_or_outage_attribution": true,
+            "observation_coverage": "single_national_snapshot_not_24h",
+            "reported_utilization_percent": 64.0,
+            "source_published_clock": "2026-11-25T19:20:00Z",
+            "source_value_10k_kilowatts": 2378.0,
+            "unit": "MW",
+            "value": 23780.0
+          },
+          "source_scope": "Taiwan Taipower public nationwide current load snapshot and publisher release clock, not power-station or local outage data",
+          "source_updated_at": null,
+          "source_url": "https://service.taipower.com.tw/data/opendata/apply/file/d006020/001.json",
+          "title": "Taipower nationwide publicly reported current electricity load"
+        }
+      }
+    },
     "8b3884be66dedeaa3c71a60bda8da295cabd7e2e28e0f2f871a65a7777c73fe7": {
       "information_root": "cbp_wait:cbp_wait:240801:2026-11-23:19:14:19",
       "members": {
@@ -185,6 +229,53 @@
           "source_updated_at": null,
           "source_url": "https://bwt.cbp.gov/api/waittimes",
           "title": "CBP estimated commercial border wait — Santa Teresa / Santa Teresa Port of Entry"
+        }
+      }
+    },
+    "8b4086da091a80f509028e84b47caa474ddedd344926cd99eeeb41e1a1d7377a": {
+      "information_root": "cbp_wait:cbp_wait:010401:2026-11-25:14:18:20",
+      "members": {
+        "beh:3b498c34a456f00db4dd7b6b945b": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-25T19:27:28+00:00",
+          "geography_key": "us-border-port:010401",
+          "geography_label": "Jackman",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:3b498c34a456f00db4dd7b6b945b",
+          "information_root": "cbp_wait:cbp_wait:010401:2026-11-25:14:18:20",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "no delay",
+            "lanes_open": 1,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "At 2:00 pm EST",
+            "reported_local_date": "11/25/2026",
+            "reported_local_time": "14:18:20",
+            "source_declared_border": "Canadian Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 0
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Jackman"
         }
       }
     },
@@ -438,6 +529,53 @@
         }
       }
     },
+    "8baed1eb73e642cabe6eec2b5dbcb172b0e1f81f02150d66938bc4f357581120": {
+      "information_root": "cbp_wait:cbp_wait:230503:2026-11-25:13:18:21",
+      "members": {
+        "beh:a2287b0002152e19811b2fcdf18b": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-25T19:27:28+00:00",
+          "geography_key": "us-border-port:230503",
+          "geography_label": "Hidalgo/Pharr",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:a2287b0002152e19811b2fcdf18b",
+          "information_root": "cbp_wait:cbp_wait:230503:2026-11-25:13:18:21",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "N/A",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/25/2026",
+            "reported_local_time": "13:18:21",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Hidalgo/Pharr / Anzalduas International Bridge"
+        }
+      }
+    },
     "8bb1feeceddfa1c12db669bed61f283fd7ab701c7efe10fe9866cc2db4afde37": {
       "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-068a0b:111343-2026",
       "members": {
@@ -515,6 +653,81 @@
           "source_updated_at": null,
           "source_url": "https://bwt.cbp.gov/api/waittimes",
           "title": "CBP estimated commercial border wait — Otay Mesa / Commercial"
+        }
+      }
+    },
+    "8be2c3c791b174257715905412755614cb4d3f96661bd563780afb7c179a9a23": {
+      "information_root": "wiki_edits:wiki_edits:tr:20261125T19",
+      "members": {
+        "beh:0f49dab846a5c4bf40dd325a4428": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "wiki_edits",
+          "direct_measurement": false,
+          "event_at": "2026-11-25T19:24:49Z",
+          "first_observed_at": "2026-11-25T19:24:49+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:0f49dab846a5c4bf40dd325a4428",
+          "information_root": "wiki_edits:wiki_edits:tr:20261125T19",
+          "origin": "behavioral_registry",
+          "provider": "wiki_edits",
+          "published_at": "2026-11-25T19:24:49Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "public_encyclopedia_edit_aggregate",
+          "source_family": "public_attention",
+          "source_kind": "bounded_public_edit_count_not_event_verification",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "distinct_articles_in_sample": 396,
+            "maximum_returned_edits": 500,
+            "most_edited_article_counts": [
+              {
+                "count": 19,
+                "title": "Gerçek suç"
+              },
+              {
+                "count": 17,
+                "title": "Gezi Parkı olaylarında Türk basınının uyguladığı sansür"
+              },
+              {
+                "count": 11,
+                "title": "Karun Hazinesi"
+              },
+              {
+                "count": 9,
+                "title": "Gerber"
+              },
+              {
+                "count": 6,
+                "title": "Şişli İtalyan Musevi Mezarlığı"
+              },
+              {
+                "count": 4,
+                "title": "Geriye ket vurma"
+              },
+              {
+                "count": 4,
+                "title": "Kurtlar Vadisi (dizi)"
+              },
+              {
+                "count": 4,
+                "title": "Yeşilköy, Ermenek"
+              }
+            ],
+            "name": "sampled_edits_last_three_hours",
+            "sample_cap_reached": true,
+            "unit": "edits",
+            "value": 500
+          },
+          "source_scope": "Wikipedia main-namespace edit-count sample, 14 global language editions, three-hour window capped at 500 per wiki; not geographic location",
+          "source_updated_at": null,
+          "source_url": "https://tr.wikipedia.org/wiki/Special:RecentChanges",
+          "title": "Wikipedia tr public article-edit activity (sampled)"
         }
       }
     },

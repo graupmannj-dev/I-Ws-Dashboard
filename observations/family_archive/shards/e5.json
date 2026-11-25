@@ -264,6 +264,45 @@
         }
       }
     },
+    "e54d540fc90b4a37615b9f098561176cc03e9aa672a4a3f98f7acafbd9b4f728": {
+      "information_root": "bmkg_nowcast:bmkg_nowcast:cdf2a7ae6cdef3358ddeae665744",
+      "members": {
+        "beh:d7a7ba4789e0cfc3ce7eab3d12bf": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "bmkg_nowcast",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-25T16:54:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:d7a7ba4789e0cfc3ce7eab3d12bf",
+          "information_root": "bmkg_nowcast:bmkg_nowcast:cdf2a7ae6cdef3358ddeae665744",
+          "origin": "behavioral_registry",
+          "provider": "bmkg_nowcast",
+          "published_at": "2026-11-25T16:54:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Indonesia BMKG",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Indonesia BMKG active provincial nowcast RSS, source-reported only; not global",
+          "source_updated_at": null,
+          "source_url": "https://www.bmkg.go.id/alerts/nowcast/en/CAH20261125003_alert.xml",
+          "title": "Thunderstorm Tonight in Aceh"
+        }
+      }
+    },
     "e566e199e3ce1a314b4437f9b966bda7b3ec89c0ede70d125baae5dbb5df1a01": {
       "information_root": "cbp_wait:cbp_wait:260802:2026-11-20:19:23:04",
       "members": {
@@ -308,6 +347,45 @@
           "source_updated_at": null,
           "source_url": "https://bwt.cbp.gov/api/waittimes",
           "title": "CBP estimated commercial border wait — San Luis / San Luis II"
+        }
+      }
+    },
+    "e5736a198aa9aa285cbbbab0085c17892d5d4d58b19ffc2246cb8a1f8fd87b01": {
+      "information_root": "inmet_br:inmet_br:df9922bafbe1c16622220b2bab99",
+      "members": {
+        "beh:b978454d3965d0214d1275f72e03": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "inmet_br",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-25T00:00:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:b978454d3965d0214d1275f72e03",
+          "information_root": "inmet_br:inmet_br:df9922bafbe1c16622220b2bab99",
+          "origin": "behavioral_registry",
+          "provider": "inmet_br",
+          "published_at": "2026-11-25T00:00:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Brazil INMET",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Brazil INMET official severe-weather RSS notices; provider-listed bounded sample",
+          "source_updated_at": null,
+          "source_url": "https://apiprevmet3.inmet.gov.br/avisos/rss/56506",
+          "title": "Aviso de Ventos Costeiros. Severidade Grau: Perigo Potencial"
         }
       }
     },

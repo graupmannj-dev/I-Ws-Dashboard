@@ -317,6 +317,53 @@
         }
       }
     },
+    "a860a33885423d75457b27030cf17c266889b0433f77b78d4592c783a7f84d57": {
+      "information_root": "cbp_wait:cbp_wait:250407:2026-11-25:11:18:21",
+      "members": {
+        "beh:7d8987e1be0c818e5b2f5ed872d7": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-25T19:27:28+00:00",
+          "geography_key": "us-border-port:250407",
+          "geography_label": "San Ysidro",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:7d8987e1be0c818e5b2f5ed872d7",
+          "information_root": "cbp_wait:cbp_wait:250407:2026-11-25:11:18:21",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "N/A",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/25/2026",
+            "reported_local_time": "11:18:21",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — San Ysidro / PedWest"
+        }
+      }
+    },
     "a8648e7e2c562509bd9b856702f853f6cb0a666ed1cd6fe151a31cfb72a30905": {
       "information_root": "niord:75ebccfd-c509-4f82-bba1-c4a7fb8f6ac5:0:0:0",
       "members": {
@@ -775,6 +822,39 @@
           "source_updated_at": null,
           "source_url": "https://tfr.faa.gov/6_9287.html",
           "title": "FAA TFR 6/9287 · ATIGUN PASS, AK, Saturday, November 21, 2026 through Sunday, November 22, 2026 UTC"
+        }
+      }
+    },
+    "a8df629e5a79560d6f75197d70ebfa8960f405e7f84c628008a332b6b7c4ff9e": {
+      "information_root": "nws:e1ac59d0f5751c37c1dba2f6",
+      "members": {
+        "beh:ab1b37bba794ecae3629c58b2c84": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "nws",
+          "direct_measurement": false,
+          "event_at": "2026-11-25T17:23:00Z",
+          "first_observed_at": "2026-11-25T17:23:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:ab1b37bba794ecae3629c58b2c84",
+          "information_root": "nws:e1ac59d0f5751c37c1dba2f6",
+          "origin": "behavioral_registry",
+          "provider": "nws",
+          "published_at": "2026-11-25T17:23:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "official_weather_alert_context",
+          "source_measurement": null,
+          "source_scope": "Active NWS marine alerts; severity Minor",
+          "source_updated_at": null,
+          "source_url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.96fdce7234f2a2c25c387630a781922efbd77d03.001.1",
+          "title": "Coastal Flood Advisory - Coastal Palm Beach County; Coastal Broward County"
         }
       }
     },

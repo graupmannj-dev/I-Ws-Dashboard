@@ -1,5 +1,51 @@
 {
   "roots": {
+    "75076d6f666b456389fef876a201564d4e5e73abd67bc0762a43f97d8cc0d59a": {
+      "information_root": "ris_bgp:ris_bgp:AS4134:20261125T15",
+      "members": {
+        "beh:9213793d446ab358b198d85de97f": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "public_routing_updates_not_country_outage",
+          "collection_mode": "ris_bgp",
+          "direct_measurement": true,
+          "event_at": null,
+          "first_observed_at": "2026-11-25T19:27:28+00:00",
+          "geography_key": "asn:4134",
+          "geography_label": "AS4134",
+          "geography_precision": "routing_target_not_country_incident",
+          "id": "beh:9213793d446ab358b198d85de97f",
+          "information_root": "ris_bgp:ris_bgp:AS4134:20261125T15",
+          "origin": "behavioral_registry",
+          "provider": "ris_bgp",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "routing_collector_sampled_asn_updates",
+          "source_family": "internet_routing",
+          "source_kind": "sampled_asn_bgp_route_updates_not_network_outage",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "collector_peers_are_not_geo_deduplicated": true,
+            "country_impact_not_established": true,
+            "name": "sampled_6h_bgp_announcements",
+            "registered_network_country_hint": "CN",
+            "returned_sampling_buckets": 6,
+            "source_window_end": "2026-11-25T15:00:00Z",
+            "target_asn": "AS4134",
+            "unit": "announcements",
+            "value": 79134,
+            "window_hours_requested": 6,
+            "withdrawals_unavailable_for_asn": true
+          },
+          "source_scope": "RIPE RIS public route-announcement update samples on six non-Western operated networks; ASNs not country-wide outage detection",
+          "source_updated_at": null,
+          "source_url": "https://stat.ripe.net/data/bgp-update-activity/data.json?resource=AS4134&num_hours=6&max_samples=24&hide_empty_samples=false",
+          "title": "RIPE RIS sampled BGP announcements: AS4134"
+        }
+      }
+    },
     "751bd79a10f5c698bd1dd3e4b27c15e8af17bb3b2fb462938af09f133cc5193e": {
       "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-0777a6:111163-2026",
       "members": {
@@ -63,6 +109,39 @@
           "source_updated_at": null,
           "source_url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.b17005547ae09739a4b3cdc4432b71d8846f1361.001.4",
           "title": "Rip Current Statement - Coastal Duval"
+        }
+      }
+    },
+    "755909c13ae27edd6e691605a25e16cdff6aadbe3ed44101761b785a48593cf3": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-077549:111834-2026",
+      "members": {
+        "beh:0557d8ffcace38fde2cba91d7fe7": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-25T16:33:02+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:0557d8ffcace38fde2cba91d7fe7",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-077549:111834-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-25T16:33:02Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-23T19%3A25%3A03&updatedTo=2026-11-25T19%3A25%3A03",
+          "title": "North Wooton Pump and Pre-Cast Concrete Units Supply · Kings Lynn Internal Drainage Board"
         }
       }
     },

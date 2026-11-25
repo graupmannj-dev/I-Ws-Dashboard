@@ -1,5 +1,38 @@
 {
   "roots": {
+    "911e295ed117376dfa3bf2cf86b7f4dc71ba5fa64f21131748ad5f86e9fa8609": {
+      "information_root": "nws:0951f0ca46b1b4c6fae95d7d",
+      "members": {
+        "beh:c4fe4874ffe5df2073aa0a1ea65f": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "nws",
+          "direct_measurement": false,
+          "event_at": "2026-11-25T19:21:00Z",
+          "first_observed_at": "2026-11-25T19:21:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:c4fe4874ffe5df2073aa0a1ea65f",
+          "information_root": "nws:0951f0ca46b1b4c6fae95d7d",
+          "origin": "behavioral_registry",
+          "provider": "nws",
+          "published_at": "2026-11-25T19:21:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "official_weather_alert_context",
+          "source_measurement": null,
+          "source_scope": "Active NWS marine alerts; severity Severe",
+          "source_updated_at": null,
+          "source_url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.bf670ebbedcd8d708d98867811fcd595a1e6335c.001.1",
+          "title": "Flood Warning - Brevard, FL"
+        }
+      }
+    },
     "9121c9ebee56a1fda8f983c3f1db9e4ee9afcb57c7d0a2c2c19222abe37bc611": {
       "information_root": "cbp_wait:cbp_wait:230401:2026-11-25:02:45:24",
       "members": {
@@ -218,6 +251,46 @@
           "source_updated_at": null,
           "source_url": "https://bwt.cbp.gov/api/waittimes",
           "title": "CBP estimated commercial border wait — Progreso / Progreso International Bridge"
+        }
+      }
+    },
+    "915352bcd0310beb90e70e1f7034dcf3799a9352e589e0d05ed5318663dbed8a": {
+      "information_root": "coops:8724580:20261125T1918Z",
+      "members": {
+        "beh:314277a6a4393111a309050bf309": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "coops",
+          "direct_measurement": true,
+          "event_at": "2026-11-25T19:18:00Z",
+          "first_observed_at": "2026-11-25T19:18:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:314277a6a4393111a309050bf309",
+          "information_root": "coops:8724580:20261125T1918Z",
+          "origin": "behavioral_registry",
+          "provider": "coops",
+          "published_at": "2026-11-25T19:18:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "station_physical_measurement",
+          "source_family": "port_conditions",
+          "source_kind": "selected_port_water_level_measurement",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "metric_comparable_only_same_station_datum_and_sample_window": true,
+            "name": "observed_water_level",
+            "station": "8724580",
+            "unit": "meters_MLLW",
+            "value": 0.547
+          },
+          "source_scope": "NOAA CO-OPS water levels at San Francisco, Key West and Sewells Point; stations only",
+          "source_updated_at": null,
+          "source_url": "https://tidesandcurrents.noaa.gov/waterlevels.html?id=8724580",
+          "title": "Key West, FL observed water level (no anomaly classification)"
         }
       }
     },
@@ -540,6 +613,39 @@
           "source_updated_at": null,
           "source_url": "https://bwt.cbp.gov/api/waittimes",
           "title": "CBP estimated commercial border wait — Andrade"
+        }
+      }
+    },
+    "91b38eba1d251d0906443b5dea6ba99c1bc802c48d7fe031bd6dcb60ab06b449": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c406:111842-2026",
+      "members": {
+        "beh:be0ee94f0c6ff46a655a30515962": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-25T16:36:05+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:be0ee94f0c6ff46a655a30515962",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c406:111842-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-25T16:36:05Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-23T19%3A25%3A03&updatedTo=2026-11-25T19%3A25%3A03",
+          "title": "The Northern School of Art - Educational Digital Marketing · The Northern School of Art"
         }
       }
     },

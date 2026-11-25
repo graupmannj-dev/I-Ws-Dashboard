@@ -357,6 +357,86 @@
         }
       }
     },
+    "5ea97cc3d568d3614e3781b31657c747eff3ca884651fdc96083486a5352a263": {
+      "information_root": "cbp_wait:cbp_wait:535502:2026-11-25:13:18:21",
+      "members": {
+        "beh:9a4f8143fa88e06e20fdc75db2aa": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-25T19:27:28+00:00",
+          "geography_key": "us-border-port:535502",
+          "geography_label": "Brownsville",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:9a4f8143fa88e06e20fdc75db2aa",
+          "information_root": "cbp_wait:cbp_wait:535502:2026-11-25:13:18:21",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "delay",
+            "lanes_open": 2,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "At 1:00 pm CST",
+            "reported_local_date": "11/25/2026",
+            "reported_local_time": "13:18:21",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 120
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Brownsville / Veterans International"
+        }
+      }
+    },
+    "5ec275972b088c792f72aa1a7b6f22cdb78e58a1c835c42043be6f221b261f31": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c417:111874-2026",
+      "members": {
+        "beh:dad770d0d793e6e53c883cd3b1df": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-25T17:29:56+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:dad770d0d793e6e53c883cd3b1df",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c417:111874-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-25T17:29:56Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-23T19%3A25%3A03&updatedTo=2026-11-25T19%3A25%3A03",
+          "title": "Conservation Covenant and Responsible Body Monitoring Agreement (Forty Hall) · London Borough of Enfield"
+        }
+      }
+    },
     "5edf39f399adc3c5973ef14d3efab7e9825bc545c849732a7e80dbf1ad6b39d0": {
       "information_root": "wiki_edits:wiki_edits:en:20261124T02",
       "members": {

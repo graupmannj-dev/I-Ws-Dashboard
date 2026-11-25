@@ -66,6 +66,53 @@
         }
       }
     },
+    "0d2d9caa1d48d3853d7b8190b83aeb14ef44cb0118eccb303e0d1c05fe14716f": {
+      "information_root": "cbp_wait:cbp_wait:250301:2026-11-25:11:18:21",
+      "members": {
+        "beh:6c7df7e6649737ede1c923fb9c0b": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-25T19:27:28+00:00",
+          "geography_key": "us-border-port:250301",
+          "geography_label": "Calexico",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:6c7df7e6649737ede1c923fb9c0b",
+          "information_root": "cbp_wait:cbp_wait:250301:2026-11-25:11:18:21",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "delay",
+            "lanes_open": 2,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "At 11:00 am PST",
+            "reported_local_date": "11/25/2026",
+            "reported_local_time": "11:18:21",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 40
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Calexico / East"
+        }
+      }
+    },
     "0d32ceead8e8afdf59eebc44716f10e80944b9bec5b9e85bc5ff3029b25ba8df": {
       "information_root": "niord:30e0503c-a18c-4a20-bb33-158697450fa7:2:0:0",
       "members": {
@@ -375,6 +422,105 @@
           "source_updated_at": null,
           "source_url": "https://bwt.cbp.gov/api/waittimes",
           "title": "CBP estimated commercial border wait — Douglas (Raul Hector Castro)"
+        }
+      }
+    },
+    "0db4865f0d1f6aeb4fc11b6e6dd186217273ba3fac574624a42b957856185151": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c419:111877-2026",
+      "members": {
+        "beh:0f2af69ba615d54a6fd25e50bd9e": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-25T18:02:04+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:0f2af69ba615d54a6fd25e50bd9e",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c419:111877-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-25T18:02:04Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-23T19%3A25%3A03&updatedTo=2026-11-25T19%3A25%3A03",
+          "title": "Safety-Critical Workforce Planning and Line Blockage System – Hosting, Support and Maintenance Services · NETWORK RAIL INFRASTRUCTURE LIMITED"
+        }
+      }
+    },
+    "0db78290477c276d6e554dd2a836ced458ec28a9f61a4466acdf307998034c90": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-06d6e9:111844-2026",
+      "members": {
+        "beh:5875e3a33294eaa35d055d34a5b6": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-25T16:36:42+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:5875e3a33294eaa35d055d34a5b6",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-06d6e9:111844-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-25T16:36:42Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-23T19%3A25%3A03&updatedTo=2026-11-25T19%3A25%3A03",
+          "title": "Design and Fit-Out Contractor Framework · UNIVERSITY OF LANCASTER"
+        }
+      }
+    },
+    "0dc6511dabb68984c5bd218d95d88f470d036898d1626b8d814f9a9d270288c6": {
+      "information_root": "nws:71cfb95a60e7c485b0d4c899",
+      "members": {
+        "beh:b4c96712174960aeec548a7967d3": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "nws",
+          "direct_measurement": false,
+          "event_at": "2026-11-25T15:47:00Z",
+          "first_observed_at": "2026-11-25T15:47:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:b4c96712174960aeec548a7967d3",
+          "information_root": "nws:71cfb95a60e7c485b0d4c899",
+          "origin": "behavioral_registry",
+          "provider": "nws",
+          "published_at": "2026-11-25T15:47:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "official_weather_alert_context",
+          "source_measurement": null,
+          "source_scope": "Active NWS marine alerts; severity Severe",
+          "source_updated_at": null,
+          "source_url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.dca05b7a0ccd9391b53d580ab2944847308f9f17.004.3",
+          "title": "Coastal Flood Warning - Coastal Duval; Northeast Coastal St. Johns"
         }
       }
     },

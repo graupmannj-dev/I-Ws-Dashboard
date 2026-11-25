@@ -80,6 +80,53 @@
         }
       }
     },
+    "cb2089400fdcd04bb6f353edac4949536d8cb644e4f1b7182b399f60ba339df7": {
+      "information_root": "cbp_wait:cbp_wait:240401:2026-11-25:12:18:21",
+      "members": {
+        "beh:cdf4cf4602278fc486fb20f62f9f": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-25T19:27:28+00:00",
+          "geography_key": "us-border-port:240401",
+          "geography_label": "Marcelino Serna",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:cdf4cf4602278fc486fb20f62f9f",
+          "information_root": "cbp_wait:cbp_wait:240401:2026-11-25:12:18:21",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "no delay",
+            "lanes_open": 1,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "At Noon MST",
+            "reported_local_date": "11/25/2026",
+            "reported_local_time": "12:18:21",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 5
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Marcelino Serna / Tornillo"
+        }
+      }
+    },
     "cb232280fc03c78d28b5045763184685cc32760e1c89dbdec7334370ec9c205a": {
       "information_root": "ioda:de20ccbca356c3342d51adad",
       "members": {

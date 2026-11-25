@@ -165,6 +165,53 @@
         }
       }
     },
+    "f62bbcfc5ba77f5d60362f873ce42924bacff7c8ff43a70c3eaddb2b0e6d2306": {
+      "information_root": "cbp_wait:cbp_wait:250609:2026-11-25:11:18:21",
+      "members": {
+        "beh:18a3af00a742a5668362d028d813": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-25T19:27:28+00:00",
+          "geography_key": "us-border-port:250609",
+          "geography_label": "Otay Mesa",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:18a3af00a742a5668362d028d813",
+          "information_root": "cbp_wait:cbp_wait:250609:2026-11-25:11:18:21",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Update Pending",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/25/2026",
+            "reported_local_time": "11:18:21",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Otay Mesa"
+        }
+      }
+    },
     "f6385328a42aabbfc0a4c4038882d7a64ce3fb0514d0e2a42dead678be4d36d3": {
       "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07b5ea:111141-2026",
       "members": {
@@ -228,6 +275,39 @@
           "source_updated_at": null,
           "source_url": "https://ioda.inetintel.cc.gatech.edu/",
           "title": "IODA detected connectivity anomaly: country TR"
+        }
+      }
+    },
+    "f66e67a4e22a43ab9a717b631f1d8fbfe26607164a320d14f4bca1df83522787": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c412:111868-2026",
+      "members": {
+        "beh:7e3800b6680509f2cffe049b52f0": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-25T17:12:03+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:7e3800b6680509f2cffe049b52f0",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c412:111868-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-25T17:12:03Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-23T19%3A25%3A03&updatedTo=2026-11-25T19%3A25%3A03",
+          "title": "Specialist Geberit Mapress Stainless Steel pipework, fittings and sealing elements · UK Atomic Energy Authority"
         }
       }
     },
@@ -308,6 +388,39 @@
           "source_updated_at": "2026-11-25T00:21:52Z",
           "source_url": "https://niord.dma.dk/#/message/cdde2874-3d2b-4e2b-bb40-ddb508568dcc",
           "title": "Denmark. Kattegat. EK R 18 Jaegerspris. Firing exercises. Warning."
+        }
+      }
+    },
+    "f6c482c2122f00258e92fba03b3fc7da443a91cb30d5d512b9a09ce87c5a6a68": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-06951e:111810-2026",
+      "members": {
+        "beh:9ddfd1fbe1991543ec7ebb2c345b": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-25T16:08:05+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:9ddfd1fbe1991543ec7ebb2c345b",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-06951e:111810-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-25T16:08:05Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-23T19%3A25%3A03&updatedTo=2026-11-25T19%3A25%3A03",
+          "title": "Provision of a Graffiti & Flyposting Removal and Street Washing Services on behalf of the London Borough of Hillingdon · London Borough of Hillingdon"
         }
       }
     },

@@ -63,6 +63,78 @@
         }
       }
     },
+    "583d8f96a376e3eed3efd51218b45855487ebf1f5c2177d7816801edeab76ef4": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c400:111832-2026",
+      "members": {
+        "beh:fc04c37f3785dec4ffea2b4e8c4c": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-25T16:29:03+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:fc04c37f3785dec4ffea2b4e8c4c",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c400:111832-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-25T16:29:03Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-23T19%3A25%3A03&updatedTo=2026-11-25T19%3A25%3A03",
+          "title": "Disposal of Radioactive Waste · UK Atomic Energy Authority"
+        }
+      }
+    },
+    "583ee37dc380ffe18e88b89416e7d586bd8837bb3ad1a86751bb5f9b4d096844": {
+      "information_root": "bmkg_nowcast:bmkg_nowcast:92dd0caac19b6db64483938eff8c",
+      "members": {
+        "beh:c6d4083162662fd83fb515292d04": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "bmkg_nowcast",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-25T17:06:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:c6d4083162662fd83fb515292d04",
+          "information_root": "bmkg_nowcast:bmkg_nowcast:92dd0caac19b6db64483938eff8c",
+          "origin": "behavioral_registry",
+          "provider": "bmkg_nowcast",
+          "published_at": "2026-11-25T17:06:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Indonesia BMKG",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Indonesia BMKG active provincial nowcast RSS, source-reported only; not global",
+          "source_updated_at": null,
+          "source_url": "https://www.bmkg.go.id/alerts/nowcast/en/CPB20261125004_alert.xml",
+          "title": "Thunderstorm Tonight in Papua Barat"
+        }
+      }
+    },
     "58472bd98eecc735132ef2df41321b96507a267346ef83be52095604258c92f3": {
       "information_root": "cbp_wait:cbp_wait:250409:2026-11-22:03:34:18",
       "members": {
@@ -232,6 +304,53 @@
         }
       }
     },
+    "58561256d8987d915fbb6f4a7409143ef2634081ed648a30d34410cdb2f9825d": {
+      "information_root": "cbp_wait:cbp_wait:260401:2026-11-25:12:18:21",
+      "members": {
+        "beh:8de87d4c5579d22356d0ea9e527e": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-25T19:27:28+00:00",
+          "geography_key": "us-border-port:260401",
+          "geography_label": "Nogales",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:8de87d4c5579d22356d0ea9e527e",
+          "information_root": "cbp_wait:cbp_wait:260401:2026-11-25:12:18:21",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "N/A",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/25/2026",
+            "reported_local_time": "12:18:21",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Nogales / Deconcini"
+        }
+      }
+    },
     "587575253620678497174ad5c1ab30b7f21a523709a32a659e451d465a842c22": {
       "information_root": "official:aaf0b613c65facd65262",
       "members": {
@@ -292,6 +411,39 @@
           "source_updated_at": "2026-11-25T00:21:54Z",
           "source_url": "https://niord.dma.dk/#/message/d7fba36e-b975-4ce7-b42f-bd000262ad50",
           "title": "Denmark. Skagerrak. EK R 48 Tranum S. Firing exercises. Warning."
+        }
+      }
+    },
+    "58794e8483ec769946c17dd1183bb2d51cbd78eba1ccf94aebeade360acf266a": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c3f8:111816-2026",
+      "members": {
+        "beh:fcf9e8d5663759a5eac752904a96": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-25T16:14:45+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:fcf9e8d5663759a5eac752904a96",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c3f8:111816-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-25T16:14:45Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-23T19%3A25%3A03&updatedTo=2026-11-25T19%3A25%3A03",
+          "title": "Lifts - Passenger Lifts Only · Springboard Two Housing Association Limited"
         }
       }
     },

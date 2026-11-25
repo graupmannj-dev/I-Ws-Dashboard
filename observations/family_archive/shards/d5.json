@@ -93,6 +93,44 @@
         }
       }
     },
+    "d52967fcb84743b0e5e2bebb90612bc094413608b657d767baf5e1707be8ca64": {
+      "information_root": "usgs:us6000udf2",
+      "members": {
+        "beh:fc49fe6d61974f0cbd84733d75b9": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "usgs",
+          "direct_measurement": true,
+          "event_at": "2026-11-25T12:08:12Z",
+          "first_observed_at": "2026-11-25T12:08:12+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "source_supplied_point_only",
+          "id": "beh:fc49fe6d61974f0cbd84733d75b9",
+          "information_root": "usgs:us6000udf2",
+          "origin": "behavioral_registry",
+          "provider": "usgs",
+          "published_at": "2026-11-25T12:25:40Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "measured_earthquake_context",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "name": "earthquake_magnitude",
+            "unit": "reported_magnitude",
+            "value": 5
+          },
+          "source_scope": "USGS M4.5+ earthquakes worldwide, rolling past day; source thresholds apply",
+          "source_updated_at": null,
+          "source_url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000udf2",
+          "title": "M 5.0 - 67 km NNE of Luwuk, Indonesia"
+        }
+      }
+    },
     "d52e1abdea9df05aec891aea157ca731ec1cff10c4ba4a957d8ad383f64e3d2f": {
       "information_root": "bmkg_nowcast:bmkg_nowcast:256b63d4335e7e2d914541b83537",
       "members": {
@@ -778,6 +816,39 @@
           "source_updated_at": null,
           "source_url": "https://www.bmkg.go.id/alerts/nowcast/en/CBT20261121003_alert.xml",
           "title": "Thunderstorm This Evening in Banten"
+        }
+      }
+    },
+    "d5cadcffebc929923b63a7f62263f69225aa98bc97d0a490d65aaef5e64baac8": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c403:111838-2026",
+      "members": {
+        "beh:c66bf2115531180f9ed2b61331ec": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-25T16:34:39+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:c66bf2115531180f9ed2b61331ec",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c403:111838-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-25T16:34:39Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-23T19%3A25%3A03&updatedTo=2026-11-25T19%3A25%3A03",
+          "title": "R4 Scada Upgrade at Berkeley · Nuclear Restoration Services Limited"
         }
       }
     },

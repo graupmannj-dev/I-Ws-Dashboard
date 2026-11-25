@@ -419,6 +419,39 @@
         }
       }
     },
+    "bf9099d03d1f63be957d699ba4d6a24bc951d6aff49d555cc5a921504ffa2dea": {
+      "information_root": "nws:e793668d04f0f14d485f6ba7",
+      "members": {
+        "beh:70fbef32358aaf1803a7f1d9baed": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "nws",
+          "direct_measurement": false,
+          "event_at": "2026-11-25T16:42:00Z",
+          "first_observed_at": "2026-11-25T16:42:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:70fbef32358aaf1803a7f1d9baed",
+          "information_root": "nws:e793668d04f0f14d485f6ba7",
+          "origin": "behavioral_registry",
+          "provider": "nws",
+          "published_at": "2026-11-25T16:42:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "official_weather_alert_context",
+          "source_measurement": null,
+          "source_scope": "Active NWS marine alerts; severity Moderate",
+          "source_updated_at": null,
+          "source_url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.292e123705162aafa6976aeffec10f168ab79898.001.1",
+          "title": "Rip Current Statement - Coastal Gulf"
+        }
+      }
+    },
     "bf9133a5170c72ef74e4b014c0ff7333966426bc5a9e6fa1703fd3c40b1d6b8f": {
       "information_root": "sg_mpa:sg_mpa:2026-09:passenger",
       "members": {
@@ -492,6 +525,53 @@
           "source_updated_at": null,
           "source_url": "https://www.gov.uk/foreign-travel-advice/usa",
           "title": "USA"
+        }
+      }
+    },
+    "bfdc450ec6e3e467dd1741aad004ad9c26a4b8c1365849f78e2560575581f7bd": {
+      "information_root": "cbp_wait:cbp_wait:070401:2026-11-25:14:18:20",
+      "members": {
+        "beh:c8361c7cf83af067c6e79dfa16db": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-25T19:27:28+00:00",
+          "geography_key": "us-border-port:070401",
+          "geography_label": "Massena",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:c8361c7cf83af067c6e79dfa16db",
+          "information_root": "cbp_wait:cbp_wait:070401:2026-11-25:14:18:20",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "no delay",
+            "lanes_open": 1,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "At 4:00 pm EST",
+            "reported_local_date": "11/25/2026",
+            "reported_local_time": "14:18:20",
+            "source_declared_border": "Canadian Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 0
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Massena"
         }
       }
     },

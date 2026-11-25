@@ -99,6 +99,86 @@
         }
       }
     },
+    "ee2fe2625b2043993a7651157445ee6f2ac27a38015749eff6d1b67487c3e336": {
+      "information_root": "cbp_wait:cbp_wait:240204:2026-11-25:12:18:21",
+      "members": {
+        "beh:65c72fc9a2cabb6e55f3294a9877": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-25T19:27:28+00:00",
+          "geography_key": "us-border-port:240204",
+          "geography_label": "El Paso",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:65c72fc9a2cabb6e55f3294a9877",
+          "information_root": "cbp_wait:cbp_wait:240204:2026-11-25:12:18:21",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "N/A",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/25/2026",
+            "reported_local_time": "12:18:21",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — El Paso / Stanton DCL"
+        }
+      }
+    },
+    "ee3d211516e633449180a05b77663ce237f9aa0d10fcf3f5a2a0e375624ca845": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-06db72:111829-2026",
+      "members": {
+        "beh:de2958a8d7ee08f6370f52ba5348": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-25T16:24:29+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:de2958a8d7ee08f6370f52ba5348",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-06db72:111829-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-25T16:24:29Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-23T19%3A25%3A03&updatedTo=2026-11-25T19%3A25%3A03",
+          "title": "Responsive Repairs · Cambridge City Council"
+        }
+      }
+    },
     "ee64743b888f4a37407c94c5edb6284b90ae3178ac20f6cc4cd124b0f23d268f": {
       "information_root": "cbp_wait:cbp_wait:260402:2026-11-22:18:44:34",
       "members": {

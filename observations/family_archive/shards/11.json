@@ -1,5 +1,52 @@
 {
   "roots": {
+    "1101e57cc4e8d5804f747e2563a1046626bde3c8813384cfbeb9c741790f979b": {
+      "information_root": "cbp_wait:cbp_wait:230401:2026-11-25:13:18:21",
+      "members": {
+        "beh:8ecbf0f170429101ca0d16e69e4c": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-25T19:27:28+00:00",
+          "geography_key": "us-border-port:230401",
+          "geography_label": "Laredo",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:8ecbf0f170429101ca0d16e69e4c",
+          "information_root": "cbp_wait:cbp_wait:230401:2026-11-25:13:18:21",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "N/A",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/25/2026",
+            "reported_local_time": "13:18:21",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Laredo / Bridge I"
+        }
+      }
+    },
     "1103826d794a6ef492127a640429704735571e6a017a80b576de9c2436c79468": {
       "information_root": "official:88e43e3921f0b6210bc0",
       "members": {
@@ -338,6 +385,53 @@
           "source_updated_at": "2026-11-02T16:21:51Z",
           "source_url": "https://niord.dma.dk/#/message/6e8d5201-019b-4f3b-a79c-da40eb776a48",
           "title": "Denmark. Kattegat. EK R 15 Sejeroe E. Firing exercises. Warning."
+        }
+      }
+    },
+    "118d04d4eba04df3cfd95cdebfc65167bf981e8032128c51fd2c15233629dddb": {
+      "information_root": "cbp_wait:cbp_wait:230106:2026-11-25:13:18:21",
+      "members": {
+        "beh:a9992f20ffd788ee9afd72554be6": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-25T19:27:28+00:00",
+          "geography_key": "us-border-port:230106",
+          "geography_label": "B&M Bridge",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:a9992f20ffd788ee9afd72554be6",
+          "information_root": "cbp_wait:cbp_wait:230106:2026-11-25:13:18:21",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Update Pending",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/25/2026",
+            "reported_local_time": "13:18:21",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — B&M Bridge / B&M Bridge"
         }
       }
     },

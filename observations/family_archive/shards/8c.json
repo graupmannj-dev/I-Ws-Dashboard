@@ -30,6 +30,39 @@
         }
       }
     },
+    "8c1a4352a27d6daa9fef3078f73b9a0cedfa8168d97b1803352f01373a10775c": {
+      "information_root": "nws:bed67fbcb933340defda4e64",
+      "members": {
+        "beh:21802707249cdf5bcfa4d83bda69": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "nws",
+          "direct_measurement": false,
+          "event_at": "2026-11-25T14:54:00Z",
+          "first_observed_at": "2026-11-25T14:54:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:21802707249cdf5bcfa4d83bda69",
+          "information_root": "nws:bed67fbcb933340defda4e64",
+          "origin": "behavioral_registry",
+          "provider": "nws",
+          "published_at": "2026-11-25T14:54:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "official_weather_alert_context",
+          "source_measurement": null,
+          "source_scope": "Active NWS marine alerts; severity Severe",
+          "source_updated_at": null,
+          "source_url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.7d864f6d0518b90be4e5a284c478383179c255ad.001.1",
+          "title": "Flood Warning - Lake, FL; Volusia, FL"
+        }
+      }
+    },
     "8c1e296e02eda39b42ed9eaa3c698a46057efe702050cdde47edf47210123044": {
       "information_root": "coops:8724580:20261122T0118Z",
       "members": {
@@ -542,6 +575,81 @@
           "source_updated_at": null,
           "source_url": "https://bwt.cbp.gov/api/waittimes",
           "title": "CBP estimated commercial border wait — Hidalgo/Pharr / Anzalduas International Bridge"
+        }
+      }
+    },
+    "8ca6d35e2ff36d809f3418d9970a9f72fead18d12d74cec87e716b06a9763e7f": {
+      "information_root": "wiki_edits:wiki_edits:fa:20261125T19",
+      "members": {
+        "beh:93f48d6f742a27169ddd0fbc5442": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "wiki_edits",
+          "direct_measurement": false,
+          "event_at": "2026-11-25T19:24:54Z",
+          "first_observed_at": "2026-11-25T19:24:54+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:93f48d6f742a27169ddd0fbc5442",
+          "information_root": "wiki_edits:wiki_edits:fa:20261125T19",
+          "origin": "behavioral_registry",
+          "provider": "wiki_edits",
+          "published_at": "2026-11-25T19:24:54Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "public_encyclopedia_edit_aggregate",
+          "source_family": "public_attention",
+          "source_kind": "bounded_public_edit_count_not_event_verification",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "distinct_articles_in_sample": 407,
+            "maximum_returned_edits": 500,
+            "most_edited_article_counts": [
+              {
+                "count": 25,
+                "title": "ویلیام سامریل ونمن"
+              },
+              {
+                "count": 11,
+                "title": "ناوچه روسی مرکوری"
+              },
+              {
+                "count": 8,
+                "title": "سیاست‌های راست میانه"
+              },
+              {
+                "count": 8,
+                "title": "وریا غفوری"
+              },
+              {
+                "count": 6,
+                "title": "باشگاه فوتبال شمس‌آذر"
+              },
+              {
+                "count": 6,
+                "title": "زنان در فرهنگ قشقایی"
+              },
+              {
+                "count": 4,
+                "title": "تغییر اقلیم در جنوبگان"
+              },
+              {
+                "count": 4,
+                "title": "حمید هیراد"
+              }
+            ],
+            "name": "sampled_edits_last_three_hours",
+            "sample_cap_reached": true,
+            "unit": "edits",
+            "value": 500
+          },
+          "source_scope": "Wikipedia main-namespace edit-count sample, 14 global language editions, three-hour window capped at 500 per wiki; not geographic location",
+          "source_updated_at": null,
+          "source_url": "https://fa.wikipedia.org/wiki/Special:RecentChanges",
+          "title": "Wikipedia fa public article-edit activity (sampled)"
         }
       }
     },

@@ -561,6 +561,46 @@
           "title": "Denmark. Skagerrak. EK R 48 Tranum S. Firing exercises. Warning."
         }
       }
+    },
+    "caff62c67e198ad2c11d987caa82c79de75fe47d3e1b8bf9d1071027f31888d3": {
+      "information_root": "coops:8638610:20261125T1918Z",
+      "members": {
+        "beh:cad1277dd0c92ecc6ffc2b27ded8": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "coops",
+          "direct_measurement": true,
+          "event_at": "2026-11-25T19:18:00Z",
+          "first_observed_at": "2026-11-25T19:18:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:cad1277dd0c92ecc6ffc2b27ded8",
+          "information_root": "coops:8638610:20261125T1918Z",
+          "origin": "behavioral_registry",
+          "provider": "coops",
+          "published_at": "2026-11-25T19:18:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "station_physical_measurement",
+          "source_family": "port_conditions",
+          "source_kind": "selected_port_water_level_measurement",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "metric_comparable_only_same_station_datum_and_sample_window": true,
+            "name": "observed_water_level",
+            "station": "8638610",
+            "unit": "meters_MLLW",
+            "value": 0.595
+          },
+          "source_scope": "NOAA CO-OPS water levels at San Francisco, Key West and Sewells Point; stations only",
+          "source_updated_at": null,
+          "source_url": "https://tidesandcurrents.noaa.gov/waterlevels.html?id=8638610",
+          "title": "Sewells Point, VA observed water level (no anomaly classification)"
+        }
+      }
     }
   },
   "schema": "aiba.family-archive.v1"

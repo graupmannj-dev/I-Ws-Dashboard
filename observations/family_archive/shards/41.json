@@ -79,6 +79,53 @@
         }
       }
     },
+    "412d5c9f78282c93b2469b54e41485f0c226c0d4c3659caed9d4313ab22efcce": {
+      "information_root": "cbp_wait:cbp_wait:535503:2026-11-25:13:18:21",
+      "members": {
+        "beh:3a3aa07f48c2c78920f0ffc6cb6c": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-25T19:27:28+00:00",
+          "geography_key": "us-border-port:535503",
+          "geography_label": "Brownsville",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:3a3aa07f48c2c78920f0ffc6cb6c",
+          "information_root": "cbp_wait:cbp_wait:535503:2026-11-25:13:18:21",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "no delay",
+            "lanes_open": 1,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "At 1:00 pm CST",
+            "reported_local_date": "11/25/2026",
+            "reported_local_time": "13:18:21",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 0
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Brownsville / Los Indios"
+        }
+      }
+    },
     "412dbd723d30cf37f8e11a9da8e00d6e0bb753b55202174eab983f125b55f690": {
       "information_root": "cbp_wait:cbp_wait:090103:2026-11-23:08:06:48",
       "members": {
@@ -334,6 +381,39 @@
         }
       }
     },
+    "416c2de30937c7e3a89fcd29559e83bfb5c79563ff8782a8b6d7a5c66709d359": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c3f7:111813-2026",
+      "members": {
+        "beh:a0d05ab8f74fef30d79f19aa1c8c": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-25T16:13:13+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:a0d05ab8f74fef30d79f19aa1c8c",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c3f7:111813-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-25T16:13:13Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-23T19%3A25%3A03&updatedTo=2026-11-25T19%3A25%3A03",
+          "title": "ANSYS Software Maintenance and Support Agreement · UNITED KINGDOM NATIONAL NUCLEAR LABORATORY LIMITED"
+        }
+      }
+    },
     "41869066307ad0d0741778d6fba06e5735a37f5d4fb8bd7083cec4d5bcd116bd": {
       "information_root": "ioda:cb06704a626c99b5045704c2",
       "members": {
@@ -431,6 +511,39 @@
           "source_updated_at": null,
           "source_url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.rwa.html",
           "title": "Rwanda - Level 3: Reconsider Travel"
+        }
+      }
+    },
+    "41919c970084660f0c80dbf98aa2c64db079900bce08f0c050899e4399dbf132": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c413:111869-2026",
+      "members": {
+        "beh:b706779c25a78333cce45c7c8613": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-25T17:14:57+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:b706779c25a78333cce45c7c8613",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c413:111869-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-25T17:14:57Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-23T19%3A25%3A03&updatedTo=2026-11-25T19%3A25%3A03",
+          "title": "Helsinki Road Zebra Crossing · Hull City Council"
         }
       }
     },

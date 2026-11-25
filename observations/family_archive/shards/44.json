@@ -77,6 +77,53 @@
         }
       }
     },
+    "4425721457e8a8401e85908eadf22d84d85a122c73e1fea42986452079ca872e": {
+      "information_root": "cbp_wait:cbp_wait:380102:2026-11-25:14:18:20",
+      "members": {
+        "beh:e4fed466c9f1aeb42fe9a6057a66": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-25T19:27:28+00:00",
+          "geography_key": "us-border-port:380102",
+          "geography_label": "Detroit",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:e4fed466c9f1aeb42fe9a6057a66",
+          "information_root": "cbp_wait:cbp_wait:380102:2026-11-25:14:18:20",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "no delay",
+            "lanes_open": 4,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "At 2:00 pm EST",
+            "reported_local_date": "11/25/2026",
+            "reported_local_time": "14:18:20",
+            "source_declared_border": "Canadian Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 5
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Detroit / Gordie Howe International Bridge"
+        }
+      }
+    },
     "442d5c38b50a12e70b2f061cf75d716ff62dfb1399304a0907ac9c2912eea5f8": {
       "information_root": "wiki_edits:wiki_edits:ru:20261122T01",
       "members": {
@@ -424,6 +471,39 @@
         }
       }
     },
+    "44a92daf28be63f9c217827f42cc3e1c92d5cb54cad2af3e542b97d976cf296a": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c3ee:111797-2026",
+      "members": {
+        "beh:cdbac8918aac1317d7010cf11594": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-25T15:55:18+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:cdbac8918aac1317d7010cf11594",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c3ee:111797-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-25T15:55:18Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-23T19%3A25%3A03&updatedTo=2026-11-25T19%3A25%3A03",
+          "title": "Temporary Accommodation & Decant Management · Orwell Housing Association Ltd"
+        }
+      }
+    },
     "44add8deb9df14672345e185ae76bf2a410b15d775c9ee9339221018847bd9f7": {
       "information_root": "ons_br:ons_br:NE:20261122T030000Z",
       "members": {
@@ -654,6 +734,53 @@
           "source_updated_at": null,
           "source_url": "https://ioda.inetintel.cc.gatech.edu/",
           "title": "IODA detected connectivity anomaly: country LA"
+        }
+      }
+    },
+    "44f79eb238d54062b4780e5f9a0943a2934a14f486a11fa3190f32f54f6414e2": {
+      "information_root": "cbp_wait:cbp_wait:260402:2026-11-25:12:18:21",
+      "members": {
+        "beh:109cc13661eb525b3a28aefb5e1b": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-25T19:27:28+00:00",
+          "geography_key": "us-border-port:260402",
+          "geography_label": "Nogales",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:109cc13661eb525b3a28aefb5e1b",
+          "information_root": "cbp_wait:cbp_wait:260402:2026-11-25:12:18:21",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "delay",
+            "lanes_open": 3,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "At 11:00 am MST",
+            "reported_local_date": "11/25/2026",
+            "reported_local_time": "12:18:21",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 20
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Nogales / Mariposa"
         }
       }
     }

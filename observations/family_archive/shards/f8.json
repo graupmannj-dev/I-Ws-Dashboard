@@ -1,5 +1,38 @@
 {
   "roots": {
+    "f8044e69bad5cbf86c77ce4e43018feb9ea42d46db6dcb2329f1ac60e7547dca": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c3ff:111830-2026",
+      "members": {
+        "beh:a9654ff78af51e52de3a92ab356e": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-25T16:28:20+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:a9654ff78af51e52de3a92ab356e",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c3ff:111830-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-25T16:28:20Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-23T19%3A25%3A03&updatedTo=2026-11-25T19%3A25%3A03",
+          "title": "NGC Hoarding 1126 · University of Sunderland"
+        }
+      }
+    },
     "f80b082b1937533ec7606b9b8c95a5431b230968887faffd1c2baea8a98285a5": {
       "information_root": "cbp_wait:cbp_wait:260201:2026-11-20:19:23:04",
       "members": {
@@ -74,6 +107,53 @@
           "source_updated_at": null,
           "source_url": "https://tfr.faa.gov/6_7271.html",
           "title": "FAA TFR 6/7271 · GRANITE CITY, IL, Monday, November 16, 2026 UTC"
+        }
+      }
+    },
+    "f82a87cd62c05bf63790303f4945876c5e74f34abd0c2f5205c09c4d66ed61f0": {
+      "information_root": "cbp_wait:cbp_wait:070801:2026-11-25:14:18:20",
+      "members": {
+        "beh:cf3994443869fa3f7d285530e1a6": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-25T19:27:28+00:00",
+          "geography_key": "us-border-port:070801",
+          "geography_label": "Alexandria Bay",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:cf3994443869fa3f7d285530e1a6",
+          "information_root": "cbp_wait:cbp_wait:070801:2026-11-25:14:18:20",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "delay",
+            "lanes_open": 1,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "At 4:00 am EST",
+            "reported_local_date": "11/25/2026",
+            "reported_local_time": "14:18:20",
+            "source_declared_border": "Canadian Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 10
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Alexandria Bay / Thousand Islands Bridge"
         }
       }
     },

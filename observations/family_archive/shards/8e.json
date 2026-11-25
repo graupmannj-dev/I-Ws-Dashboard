@@ -40,6 +40,39 @@
         }
       }
     },
+    "8e1d0111b8a60f345bf2c450fa82865ceb3dc4a3de85d071a30ba55f6c1094ae": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-078bdd:111812-2026",
+      "members": {
+        "beh:c79749a1f8b3987218ca054aa5ad": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-25T16:11:08+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:c79749a1f8b3987218ca054aa5ad",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-078bdd:111812-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-25T16:11:08Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-23T19%3A25%3A03&updatedTo=2026-11-25T19%3A25%3A03",
+          "title": "Preventative and Reactive Fire Alarm And Associated Systems Maintenance · Northumbria Healthcare Facilities Management"
+        }
+      }
+    },
     "8e30a66aec202a082586f01d6e2aee7354d6952046a13467051efc4038d3fdb4": {
       "information_root": "niord:5d72ff05-f299-4513-bfbd-2c2d38001fd1:1:0:0",
       "members": {
@@ -385,6 +418,44 @@
           "source_updated_at": "2026-11-21T00:21:50Z",
           "source_url": "https://niord.dma.dk/#/message/778ec0b5-4df7-481b-a2fb-06f435b7fc00",
           "title": "Denmark. Kattegat. EK R 18 Jaegerspris. Firing exercises. Warning."
+        }
+      }
+    },
+    "8e9cae8c3e81f43b36d66438e19ab3b2b41fb452b4130a15201b5cd32236e3f8": {
+      "information_root": "usgs:us6000udef",
+      "members": {
+        "beh:a2086d5652b7324c77d81d21cc7e": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "usgs",
+          "direct_measurement": true,
+          "event_at": "2026-11-25T08:47:16Z",
+          "first_observed_at": "2026-11-25T08:47:16+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "source_supplied_point_only",
+          "id": "beh:a2086d5652b7324c77d81d21cc7e",
+          "information_root": "usgs:us6000udef",
+          "origin": "behavioral_registry",
+          "provider": "usgs",
+          "published_at": "2026-11-25T09:04:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "measured_earthquake_context",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "name": "earthquake_magnitude",
+            "unit": "reported_magnitude",
+            "value": 5.3
+          },
+          "source_scope": "USGS M4.5+ earthquakes worldwide, rolling past day; source thresholds apply",
+          "source_updated_at": null,
+          "source_url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000udef",
+          "title": "M 5.3 - 83 km ESE of Hengchun, Taiwan"
         }
       }
     },
