@@ -408,6 +408,39 @@
         }
       }
     },
+    "e98b63c0e3af0a3c4ef356e6ff1e54e6a98810406c2ae29c709ec356cc05b4e4": {
+      "information_root": "nws:871a268bc945188deac46a1d",
+      "members": {
+        "beh:90ef4a184cd168c74b8196b00603": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "nws",
+          "direct_measurement": false,
+          "event_at": "2026-11-25T04:20:00Z",
+          "first_observed_at": "2026-11-25T04:20:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:90ef4a184cd168c74b8196b00603",
+          "information_root": "nws:871a268bc945188deac46a1d",
+          "origin": "behavioral_registry",
+          "provider": "nws",
+          "published_at": "2026-11-25T04:20:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "official_weather_alert_context",
+          "source_measurement": null,
+          "source_scope": "Active NWS marine alerts; severity Minor",
+          "source_updated_at": null,
+          "source_url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.6ba7d9101ed228aacc05d4e6029cc5482f173b39.001.2",
+          "title": "Coastal Flood Advisory - Coastal Palm Beach County; Coastal Broward County"
+        }
+      }
+    },
     "e98fdf06e5386c68da657cebd0e1269564737392cb491c06e264f0a18ea204be": {
       "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-056788:111184-2026",
       "members": {
@@ -513,6 +546,44 @@
           "source_updated_at": null,
           "source_url": "https://id.wikipedia.org/wiki/Special:RecentChanges",
           "title": "Wikipedia id public article-edit activity (sampled)"
+        }
+      }
+    },
+    "e9a0519bd90f25f6c14822e29ed74e6b144106619b2ba5b5fac8278cde6ac5e2": {
+      "information_root": "usgs:us6000udd1",
+      "members": {
+        "beh:c311cabc1997c37af40332fcc72b": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "usgs",
+          "direct_measurement": true,
+          "event_at": "2026-11-25T01:38:45Z",
+          "first_observed_at": "2026-11-25T01:38:45+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "source_supplied_point_only",
+          "id": "beh:c311cabc1997c37af40332fcc72b",
+          "information_root": "usgs:us6000udd1",
+          "origin": "behavioral_registry",
+          "provider": "usgs",
+          "published_at": "2026-11-25T03:43:39Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "measured_earthquake_context",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "name": "earthquake_magnitude",
+            "unit": "reported_magnitude",
+            "value": 5.9
+          },
+          "source_scope": "USGS M4.5+ earthquakes worldwide, rolling past day; source thresholds apply",
+          "source_updated_at": null,
+          "source_url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000udd1",
+          "title": "M 5.9 - Balleny Islands region"
         }
       }
     },

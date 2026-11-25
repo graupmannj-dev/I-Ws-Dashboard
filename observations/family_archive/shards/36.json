@@ -231,6 +231,39 @@
         }
       }
     },
+    "36685e7a6f52b32d8fb4c7a91da2fee460bc62471e2030a6940b95a999e2a9c1": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-06f0b2:111384-2026",
+      "members": {
+        "beh:38d7647aef203dc1bbcda556eb2d": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-25T08:44:49+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:38d7647aef203dc1bbcda556eb2d",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-06f0b2:111384-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-25T08:44:49Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-23T08%3A49%3A43&updatedTo=2026-11-25T08%3A49%3A43",
+          "title": "The Provision of Electronic Warfare Training Systems · Ministry of Defence"
+        }
+      }
+    },
     "3687dfaf392893328212e679d3be1d4b9b753ce6b02cc4fae25e2ca46a871e90": {
       "information_root": "ioda:773b61d254be02abce88663f",
       "members": {
@@ -351,6 +384,53 @@
           "source_updated_at": null,
           "source_url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.col.html",
           "title": "Colombia - Level 3: Reconsider Travel"
+        }
+      }
+    },
+    "368b06bd26870860720d362b9a51c67d95c29c1ba85cee7e0744418b3bc3c88c": {
+      "information_root": "cbp_wait:cbp_wait:260401:2026-11-25:01:45:24",
+      "members": {
+        "beh:c6ea1442d0a10435458ba7d01fdb": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-25T08:52:01+00:00",
+          "geography_key": "us-border-port:260401",
+          "geography_label": "Nogales",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:c6ea1442d0a10435458ba7d01fdb",
+          "information_root": "cbp_wait:cbp_wait:260401:2026-11-25:01:45:24",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "N/A",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/25/2026",
+            "reported_local_time": "01:45:24",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Nogales / Deconcini"
         }
       }
     },

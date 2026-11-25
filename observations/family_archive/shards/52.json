@@ -459,6 +459,39 @@
         }
       }
     },
+    "5292a62258d12f109f094639c28018dad72f18817db5c48fed1fe9496df1c062": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c2f2:111382-2026",
+      "members": {
+        "beh:6eacb85f40e39e0d3c0d2f4a1bad": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-25T08:40:52+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:6eacb85f40e39e0d3c0d2f4a1bad",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c2f2:111382-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-25T08:40:52Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-23T08%3A49%3A43&updatedTo=2026-11-25T08%3A49%3A43",
+          "title": "Works for British Embassy Madrid · Foreign, Commonwealth and Development Office"
+        }
+      }
+    },
     "52a11f316a0425a4de1082f07892de41cea4f5fef62eff46b96f39b7dad052a3": {
       "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c2d7:111328-2026",
       "members": {
@@ -669,6 +702,45 @@
           "source_updated_at": null,
           "source_url": "https://ioda.inetintel.cc.gatech.edu/",
           "title": "IODA detected connectivity anomaly: country BY"
+        }
+      }
+    },
+    "52c9d36b697a5d0100d1c6e2d0c98951f9a17626ed8006ed531e91429eaa63e7": {
+      "information_root": "bmkg_nowcast:bmkg_nowcast:9cc33b66311065bf0e55dbe4b152",
+      "members": {
+        "beh:dd24a5adea7217f1bc8b68dbd4c7": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "bmkg_nowcast",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-25T06:30:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:dd24a5adea7217f1bc8b68dbd4c7",
+          "information_root": "bmkg_nowcast:bmkg_nowcast:9cc33b66311065bf0e55dbe4b152",
+          "origin": "behavioral_registry",
+          "provider": "bmkg_nowcast",
+          "published_at": "2026-11-25T06:30:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Indonesia BMKG",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Indonesia BMKG active provincial nowcast RSS, source-reported only; not global",
+          "source_updated_at": null,
+          "source_url": "https://www.bmkg.go.id/alerts/nowcast/en/CKS20261125003_alert.xml",
+          "title": "Thunderstorm This Afternoon in Kalimantan Selatan"
         }
       }
     },

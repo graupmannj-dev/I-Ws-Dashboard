@@ -1,5 +1,45 @@
 {
   "roots": {
+    "ec112235631c9f3cadf1b627c310af71a3f8d60aa5c31975d6d8d621e4176829": {
+      "information_root": "coops:9414290:20261125T0842Z",
+      "members": {
+        "beh:40f4e7c7187a39ab81a430731b83": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "coops",
+          "direct_measurement": true,
+          "event_at": "2026-11-25T08:42:00Z",
+          "first_observed_at": "2026-11-25T08:42:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:40f4e7c7187a39ab81a430731b83",
+          "information_root": "coops:9414290:20261125T0842Z",
+          "origin": "behavioral_registry",
+          "provider": "coops",
+          "published_at": "2026-11-25T08:42:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "station_physical_measurement",
+          "source_family": "port_conditions",
+          "source_kind": "selected_port_water_level_measurement",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "metric_comparable_only_same_station_datum_and_sample_window": true,
+            "name": "observed_water_level",
+            "station": "9414290",
+            "unit": "meters_MLLW",
+            "value": 1.818
+          },
+          "source_scope": "NOAA CO-OPS water levels at San Francisco, Key West and Sewells Point; stations only",
+          "source_updated_at": null,
+          "source_url": "https://tidesandcurrents.noaa.gov/waterlevels.html?id=9414290",
+          "title": "San Francisco, CA observed water level (no anomaly classification)"
+        }
+      }
+    },
     "ec2565cdcfb7f139c3f05fb89315130517b4b1efb66e21bf8dbf81a6f2087891": {
       "information_root": "ioda:f01f00e95718077164d88a57",
       "members": {

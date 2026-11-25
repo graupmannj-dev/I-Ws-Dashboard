@@ -243,6 +243,53 @@
         }
       }
     },
+    "7495a7f6f34114e0c357cd9ed1ea8d4d8a8f7492ab6ec7c37c0a4ccf1e79f89d": {
+      "information_root": "ons_br:ons_br:SECO:20261124T030000Z",
+      "members": {
+        "beh:37ea195e8f45ba36be5359894b09": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "verified_grid_load_not_outage_or_intent",
+          "collection_mode": "ons_br",
+          "direct_measurement": true,
+          "event_at": "2026-11-24T03:00:00Z",
+          "first_observed_at": "2026-11-25T08:52:01+00:00",
+          "geography_key": "br-ons-loadarea:SECO",
+          "geography_label": "Southeast/Central West",
+          "geography_precision": "regional_grid_not_incident_site",
+          "id": "beh:37ea195e8f45ba36be5359894b09",
+          "information_root": "ons_br:ons_br:SECO:20261124T030000Z",
+          "origin": "behavioral_registry",
+          "provider": "ons_br",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "verified_national_grid_load_measurement",
+          "source_family": "grid_load",
+          "source_kind": "verified_regional_electricity_load_context_not_outage",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "collected_history_day": "2026-11-23",
+            "historical_verified_not_live": true,
+            "load_area_code": "SECO",
+            "load_area_name": "Southeast/Central West",
+            "name": "verified_half_hour_global_load",
+            "not_outage_or_attribution": true,
+            "sample_interval_minutes": 30,
+            "sampled_rows": 48,
+            "source_field": "val_cargaglobal",
+            "source_utc_field": "din_referenciautc",
+            "unit": "MWmed",
+            "value": 50480.426
+          },
+          "source_scope": "Brazilian national system operator ONS verified half-hour load, four macroregions, previous two-day sample; no local facilities/outage attribution",
+          "source_updated_at": null,
+          "source_url": "https://dados.ons.org.br/dataset/carga-energia-verificada",
+          "title": "Brazil ONS Southeast/Central West verified half-hourly system load"
+        }
+      }
+    },
     "749afdb876a753b19f7bcbfa0e1e6090d2fa29dd57bef6a8e72cd0da55761722": {
       "information_root": "nws:70f58071cc639635507c3795",
       "members": {

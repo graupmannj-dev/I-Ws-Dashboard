@@ -173,6 +173,53 @@
         }
       }
     },
+    "bd922be2fe9993e6a95725a0cad81ea38097e196d4e0f9ed1088924c71b77b93": {
+      "information_root": "cbp_wait:cbp_wait:535503:2026-11-25:02:45:23",
+      "members": {
+        "beh:5ebd27dbd2b828d215ce3d7e55e5": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-25T08:52:01+00:00",
+          "geography_key": "us-border-port:535503",
+          "geography_label": "Brownsville",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:5ebd27dbd2b828d215ce3d7e55e5",
+          "information_root": "cbp_wait:cbp_wait:535503:2026-11-25:02:45:23",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Lanes Closed",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Closed",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/25/2026",
+            "reported_local_time": "02:45:23",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Brownsville / Los Indios"
+        }
+      }
+    },
     "bd9c75cc55d28a202ff61c58b1634801a3e11ffd222d3d1b060a0115bf4b8bf4": {
       "information_root": "commercial:3cc62bc3d13058e8cb78",
       "members": {
@@ -378,6 +425,81 @@
           "source_updated_at": null,
           "source_url": "https://www.bmkg.go.id/alerts/nowcast/en/CRU20261122001_alert.xml",
           "title": "Thunderstorm This Morning in Riau"
+        }
+      }
+    },
+    "bdf3887a82856ee02588dfd1d7dc2ed0da1104ec32adcfa363f11aff2f882c5f": {
+      "information_root": "wiki_edits:wiki_edits:es:20261125T08",
+      "members": {
+        "beh:e8cdeac6582370c870f8c3c9035e": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "wiki_edits",
+          "direct_measurement": false,
+          "event_at": "2026-11-25T08:49:37Z",
+          "first_observed_at": "2026-11-25T08:49:37+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:e8cdeac6582370c870f8c3c9035e",
+          "information_root": "wiki_edits:wiki_edits:es:20261125T08",
+          "origin": "behavioral_registry",
+          "provider": "wiki_edits",
+          "published_at": "2026-11-25T08:49:37Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "public_encyclopedia_edit_aggregate",
+          "source_family": "public_attention",
+          "source_kind": "bounded_public_edit_count_not_event_verification",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "distinct_articles_in_sample": 371,
+            "maximum_returned_edits": 500,
+            "most_edited_article_counts": [
+              {
+                "count": 19,
+                "title": "La Meca"
+              },
+              {
+                "count": 14,
+                "title": "Porsche"
+              },
+              {
+                "count": 10,
+                "title": "Barack Obama"
+              },
+              {
+                "count": 9,
+                "title": "Miss Puerto Rico"
+              },
+              {
+                "count": 7,
+                "title": "Rodrigo de Mendoza"
+              },
+              {
+                "count": 6,
+                "title": "Buda Gautama"
+              },
+              {
+                "count": 6,
+                "title": "Cantinflas"
+              },
+              {
+                "count": 6,
+                "title": "Elecciones generales de España de 2026"
+              }
+            ],
+            "name": "sampled_edits_last_three_hours",
+            "sample_cap_reached": true,
+            "unit": "edits",
+            "value": 500
+          },
+          "source_scope": "Wikipedia main-namespace edit-count sample, 14 global language editions, three-hour window capped at 500 per wiki; not geographic location",
+          "source_updated_at": null,
+          "source_url": "https://es.wikipedia.org/wiki/Special:RecentChanges",
+          "title": "Wikipedia es public article-edit activity (sampled)"
         }
       }
     },

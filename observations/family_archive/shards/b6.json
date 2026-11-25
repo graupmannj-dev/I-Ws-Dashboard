@@ -60,6 +60,39 @@
         }
       }
     },
+    "b62611296db67f3c520028d35560f8cd25b8dd5cebf77e161dde02b6674d5060": {
+      "information_root": "nws:6c5cff05cd75d166138905b0",
+      "members": {
+        "beh:caa8d251803c2045683e4d6a40fd": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "nws",
+          "direct_measurement": false,
+          "event_at": "2026-11-25T04:20:00Z",
+          "first_observed_at": "2026-11-25T04:20:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:caa8d251803c2045683e4d6a40fd",
+          "information_root": "nws:6c5cff05cd75d166138905b0",
+          "origin": "behavioral_registry",
+          "provider": "nws",
+          "published_at": "2026-11-25T04:20:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "official_weather_alert_context",
+          "source_measurement": null,
+          "source_scope": "Active NWS marine alerts; severity Minor",
+          "source_updated_at": null,
+          "source_url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.6ba7d9101ed228aacc05d4e6029cc5482f173b39.003.2",
+          "title": "Coastal Flood Statement - Coastal Collier County"
+        }
+      }
+    },
     "b626e4a572547196b41a4e183acab73bba20ed067d81bb4267098f8650783634": {
       "information_root": "cbp_wait:cbp_wait:300403:2026-11-23:05:06:48",
       "members": {
@@ -214,6 +247,100 @@
           "source_updated_at": "2026-11-20T13:21:54Z",
           "source_url": "https://niord.dma.dk/#/message/8f200052-ced8-4c3a-9793-9fda2144fcf6",
           "title": "Denmark. Kattegat. EK R 20 Yderby. Firing exercises. Warning."
+        }
+      }
+    },
+    "b659649a9f55ae8a4cd9af961e67746622a3c09a9225c643c8128707a58b6c47": {
+      "information_root": "cbp_wait:cbp_wait:250301:2026-11-25:00:45:23",
+      "members": {
+        "beh:e1f159412b923d26821748ddc9b8": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-25T08:52:01+00:00",
+          "geography_key": "us-border-port:250301",
+          "geography_label": "Calexico",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:e1f159412b923d26821748ddc9b8",
+          "information_root": "cbp_wait:cbp_wait:250301:2026-11-25:00:45:23",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Update Pending",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Closed",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/25/2026",
+            "reported_local_time": "00:45:23",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Calexico / East"
+        }
+      }
+    },
+    "b65d45151d4e62c896dd126d73b7301aff52026a24be4b01c74ca558dd57de38": {
+      "information_root": "cbp_wait:cbp_wait:240104:2026-11-25:01:45:24",
+      "members": {
+        "beh:8c18a5ae7c805b8df894201569a4": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-25T08:52:01+00:00",
+          "geography_key": "us-border-port:240104",
+          "geography_label": "YSLETA",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:8c18a5ae7c805b8df894201569a4",
+          "information_root": "cbp_wait:cbp_wait:240104:2026-11-25:01:45:24",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Update Pending",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/25/2026",
+            "reported_local_time": "01:45:24",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — YSLETA"
         }
       }
     },
@@ -404,6 +531,39 @@
         }
       }
     },
+    "b6be5267541ad14459c07aa02ec683b38059df2d9d88f3bb86d3bedcb1335d87": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-06dbd2:111374-2026",
+      "members": {
+        "beh:b472e2ee7bfcb59e38c06b501745": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-25T03:54:08+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:b472e2ee7bfcb59e38c06b501745",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-06dbd2:111374-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-25T03:54:08Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-23T08%3A49%3A43&updatedTo=2026-11-25T08%3A49%3A43",
+          "title": "Integrated Facilities Maintenance Services (Cleaning, Gardening, Pest Control, MEP) for British Embassy Muscat · Foreign, Commonwealth and Development Office"
+        }
+      }
+    },
     "b6d3c83bee9e35c1a75ba98d0009704d2f9f3fd9454dbbea674f1cd556401f07": {
       "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-077b31:110380-2026",
       "members": {
@@ -434,6 +594,44 @@
           "source_updated_at": null,
           "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-19T19%3A27%3A44&updatedTo=2026-11-21T19%3A27%3A44",
           "title": "Architectural Services · Bedford College"
+        }
+      }
+    },
+    "b6dab29c64e28694fc926439d84a71967711112b928ff718f2edfae4feef4dd1": {
+      "information_root": "usgs:us6000udcc",
+      "members": {
+        "beh:76d3c6f43457698288f7851adb52": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "usgs",
+          "direct_measurement": true,
+          "event_at": "2026-11-24T22:36:30Z",
+          "first_observed_at": "2026-11-24T22:36:30+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "source_supplied_point_only",
+          "id": "beh:76d3c6f43457698288f7851adb52",
+          "information_root": "usgs:us6000udcc",
+          "origin": "behavioral_registry",
+          "provider": "usgs",
+          "published_at": "2026-11-25T04:49:51Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "measured_earthquake_context",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "name": "earthquake_magnitude",
+            "unit": "reported_magnitude",
+            "value": 4.5
+          },
+          "source_scope": "USGS M4.5+ earthquakes worldwide, rolling past day; source thresholds apply",
+          "source_updated_at": null,
+          "source_url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000udcc",
+          "title": "M 4.5 - 64 km W of San Juan, Peru"
         }
       }
     },

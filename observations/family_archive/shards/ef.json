@@ -47,6 +47,81 @@
         }
       }
     },
+    "ef20241429b3ef36563af039954d632ac8274c58f56110c5811245ba57ccd941": {
+      "information_root": "wiki_edits:wiki_edits:fa:20261125T08",
+      "members": {
+        "beh:306e7878617311ae497760577481": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "wiki_edits",
+          "direct_measurement": false,
+          "event_at": "2026-11-25T08:49:31Z",
+          "first_observed_at": "2026-11-25T08:49:31+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:306e7878617311ae497760577481",
+          "information_root": "wiki_edits:wiki_edits:fa:20261125T08",
+          "origin": "behavioral_registry",
+          "provider": "wiki_edits",
+          "published_at": "2026-11-25T08:49:31Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "public_encyclopedia_edit_aggregate",
+          "source_family": "public_attention",
+          "source_kind": "bounded_public_edit_count_not_event_verification",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "distinct_articles_in_sample": 446,
+            "maximum_returned_edits": 500,
+            "most_edited_article_counts": [
+              {
+                "count": 15,
+                "title": "مسجد جمکران"
+              },
+              {
+                "count": 10,
+                "title": "یورش پلیس ترکیه به انجمن‌های ال‌جی‌بی‌تی‌کیو"
+              },
+              {
+                "count": 5,
+                "title": "محمدحسن آصفری"
+              },
+              {
+                "count": 4,
+                "title": "مرگ و مراسم تشییع جنازه رسمی کیم ایل سونگ"
+              },
+              {
+                "count": 3,
+                "title": "آزمایش زندان استنفورد"
+              },
+              {
+                "count": 3,
+                "title": "تیم ناک"
+              },
+              {
+                "count": 3,
+                "title": "جان فورد"
+              },
+              {
+                "count": 3,
+                "title": "دوشیزه جهان"
+              }
+            ],
+            "name": "sampled_edits_last_three_hours",
+            "sample_cap_reached": true,
+            "unit": "edits",
+            "value": 500
+          },
+          "source_scope": "Wikipedia main-namespace edit-count sample, 14 global language editions, three-hour window capped at 500 per wiki; not geographic location",
+          "source_updated_at": null,
+          "source_url": "https://fa.wikipedia.org/wiki/Special:RecentChanges",
+          "title": "Wikipedia fa public article-edit activity (sampled)"
+        }
+      }
+    },
     "ef296b3a52388187d3dab3733876349623652d20884f2d2e16e66ce0aa4791d2": {
       "information_root": "ioda:941b0c6df3fec99db179b240",
       "members": {
@@ -589,6 +664,53 @@
           "source_updated_at": null,
           "source_url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.98f853852bcae42c9a367130cb55293d7675fd2a.001.1",
           "title": "Special Weather Statement - Suwannee; Baker; Inland Nassau; Eastern Hamilton; Coastal Nassau; Coastal Duval; Western Hamilton; T"
+        }
+      }
+    },
+    "efce80ec78cd7b5d7d58404711bf3984e8886a060d3ca68f1dbcf2376e17104a": {
+      "information_root": "cbp_wait:cbp_wait:250609:2026-11-25:00:45:24",
+      "members": {
+        "beh:906137b876584281de2609eeb263": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-25T08:52:01+00:00",
+          "geography_key": "us-border-port:250609",
+          "geography_label": "Otay Mesa",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:906137b876584281de2609eeb263",
+          "information_root": "cbp_wait:cbp_wait:250609:2026-11-25:00:45:24",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Update Pending",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/25/2026",
+            "reported_local_time": "00:45:24",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Otay Mesa"
         }
       }
     },

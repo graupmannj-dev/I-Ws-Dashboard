@@ -233,6 +233,53 @@
         }
       }
     },
+    "5792a36530cb9d1ffee89511bb311b85cf9958dba73c43ca27ff70cf9584bf49": {
+      "information_root": "cbp_wait:cbp_wait:240601:2026-11-25:01:45:24",
+      "members": {
+        "beh:722b080beb179939c5b6175f09f9": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-25T08:52:01+00:00",
+          "geography_key": "us-border-port:240601",
+          "geography_label": "Columbus",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:722b080beb179939c5b6175f09f9",
+          "information_root": "cbp_wait:cbp_wait:240601:2026-11-25:01:45:24",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Lanes Closed",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/25/2026",
+            "reported_local_time": "01:45:24",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Columbus"
+        }
+      }
+    },
     "579a84be65849f4a2bce5b0f25d75e53847ecb7715eb2f6bfcb4bcfc4f08c167": {
       "information_root": "official:04ad66983006442d772c",
       "members": {
@@ -260,6 +307,45 @@
           "source_updated_at": null,
           "source_url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.twn.html",
           "title": "Taiwan - Level 1: Exercise Normal Precautions"
+        }
+      }
+    },
+    "57a787fc488e5f274a8d98259659f2932baf6f2ed335dba813c3c24a6e14491d": {
+      "information_root": "bmkg_nowcast:bmkg_nowcast:3bce9ef47cfd576ac93454f70ff6",
+      "members": {
+        "beh:b6a338687eae192612df4bbbbb2f": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "bmkg_nowcast",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-25T08:15:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:b6a338687eae192612df4bbbbb2f",
+          "information_root": "bmkg_nowcast:bmkg_nowcast:3bce9ef47cfd576ac93454f70ff6",
+          "origin": "behavioral_registry",
+          "provider": "bmkg_nowcast",
+          "published_at": "2026-11-25T08:15:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Indonesia BMKG",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Indonesia BMKG active provincial nowcast RSS, source-reported only; not global",
+          "source_updated_at": null,
+          "source_url": "https://www.bmkg.go.id/alerts/nowcast/en/CJK20261125003_alert.xml",
+          "title": "Thunderstorm This Evening in Jakarta"
         }
       }
     },

@@ -302,6 +302,78 @@
         }
       }
     },
+    "fe8b8fec5a7aaf39bce10341c9dfe7cdc6ef3587a3c0b043a5db1e108a4fb44d": {
+      "information_root": "nws:005a2f2fbda26b3eac8d58ca",
+      "members": {
+        "beh:c0612406077c7fc58a7fb8d5cd20": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "nws",
+          "direct_measurement": false,
+          "event_at": "2026-11-25T01:27:00Z",
+          "first_observed_at": "2026-11-25T01:27:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:c0612406077c7fc58a7fb8d5cd20",
+          "information_root": "nws:005a2f2fbda26b3eac8d58ca",
+          "origin": "behavioral_registry",
+          "provider": "nws",
+          "published_at": "2026-11-25T01:27:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "official_weather_alert_context",
+          "source_measurement": null,
+          "source_scope": "Active NWS marine alerts; severity Severe",
+          "source_updated_at": null,
+          "source_url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.23070c4dc2cc1be701abb14167bb6e83589562ad.001.1",
+          "title": "Flood Warning - Seminole, FL"
+        }
+      }
+    },
+    "fe8c764043d1255f19daae6845fb7401009107a4c1b97e11c51af31aeee8eaad": {
+      "information_root": "bmkg_nowcast:bmkg_nowcast:a348bc55d0e661187a771344d134",
+      "members": {
+        "beh:c3dfc5d9774e1f38806eeb78f692": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "bmkg_nowcast",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-25T08:00:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:c3dfc5d9774e1f38806eeb78f692",
+          "information_root": "bmkg_nowcast:bmkg_nowcast:a348bc55d0e661187a771344d134",
+          "origin": "behavioral_registry",
+          "provider": "bmkg_nowcast",
+          "published_at": "2026-11-25T08:00:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Indonesia BMKG",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Indonesia BMKG active provincial nowcast RSS, source-reported only; not global",
+          "source_updated_at": null,
+          "source_url": "https://www.bmkg.go.id/alerts/nowcast/en/CNT20261125006_alert.xml",
+          "title": "Thunderstorm This Evening in Nusa Tenggara Timur"
+        }
+      }
+    },
     "fe9164bf4a22a88e42dee22eb01540c40ca1af8f0e3bb705beb87d6f161e58e7": {
       "information_root": "official:2f21cd00176192863d5e",
       "members": {
@@ -359,6 +431,53 @@
           "source_updated_at": null,
           "source_url": "https://ioda.inetintel.cc.gatech.edu/",
           "title": "IODA detected connectivity anomaly: country KI"
+        }
+      }
+    },
+    "feb59123e57c186a0951292f9590ccb9276d2a617af1980d2a4f4d8944fdbf03": {
+      "information_root": "cbp_wait:cbp_wait:260305:2026-11-25:00:45:24",
+      "members": {
+        "beh:507439c68941720feaf6a0543d80": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-25T08:52:01+00:00",
+          "geography_key": "us-border-port:260305",
+          "geography_label": "Naco",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:507439c68941720feaf6a0543d80",
+          "information_root": "cbp_wait:cbp_wait:260305:2026-11-25:00:45:24",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Update Pending",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/25/2026",
+            "reported_local_time": "00:45:24",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Naco"
         }
       }
     },

@@ -96,6 +96,45 @@
         }
       }
     },
+    "6e3a9cc37df9d2784adb351ee2158a126c7dafa8c1abfaa1dc78b4fa0fe30598": {
+      "information_root": "bmkg_nowcast:bmkg_nowcast:bf2de53efd16d9e343def89a68df",
+      "members": {
+        "beh:3cd793b86b6fd7899da14b58f3e0": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "bmkg_nowcast",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-25T07:15:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:3cd793b86b6fd7899da14b58f3e0",
+          "information_root": "bmkg_nowcast:bmkg_nowcast:bf2de53efd16d9e343def89a68df",
+          "origin": "behavioral_registry",
+          "provider": "bmkg_nowcast",
+          "published_at": "2026-11-25T07:15:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Indonesia BMKG",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Indonesia BMKG active provincial nowcast RSS, source-reported only; not global",
+          "source_updated_at": null,
+          "source_url": "https://www.bmkg.go.id/alerts/nowcast/en/CJI20261125003_alert.xml",
+          "title": "Thunderstorm This Afternoon in Jambi"
+        }
+      }
+    },
     "6e40cbb7bc59d79cb859bc95e6caa329adedac2b798cbce411205346f3605701": {
       "information_root": "cbp_wait:cbp_wait:380002:2026-11-20:21:23:03",
       "members": {
@@ -140,6 +179,39 @@
           "source_updated_at": null,
           "source_url": "https://bwt.cbp.gov/api/waittimes",
           "title": "CBP estimated commercial border wait — Detroit / Windsor Tunnel"
+        }
+      }
+    },
+    "6e411cb9815a5cb95f5d19eccab3b5fc37f547761a1dafe01bb8687d04cdd9d3": {
+      "information_root": "nws:a5974337e0b35c3eac3cdf6f",
+      "members": {
+        "beh:179184d39afecb8bed49ca2452a1": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "nws",
+          "direct_measurement": false,
+          "event_at": "2026-11-25T01:25:00Z",
+          "first_observed_at": "2026-11-25T01:25:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:179184d39afecb8bed49ca2452a1",
+          "information_root": "nws:a5974337e0b35c3eac3cdf6f",
+          "origin": "behavioral_registry",
+          "provider": "nws",
+          "published_at": "2026-11-25T01:25:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "official_weather_alert_context",
+          "source_measurement": null,
+          "source_scope": "Active NWS marine alerts; severity Severe",
+          "source_updated_at": null,
+          "source_url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.e1b2dd5f981cb612df0010989801f125322d92da.001.1",
+          "title": "Flood Warning - Seminole, FL"
         }
       }
     },

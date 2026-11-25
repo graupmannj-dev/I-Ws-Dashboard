@@ -1,6 +1,6 @@
 {
   "mode": "ripe",
-  "observed_at": "2026-11-24T13:56:02Z",
+  "observed_at": "2026-11-25T08:49:43Z",
   "records": [
     {
       "claim_level": "aggregated_network_measurement_no_attribution",
@@ -15,27 +15,27 @@
         "precision": "not_country_or_incident_location",
         "verified_iso": false
       },
-      "id": "ripe:measurement:1001:20261124T13",
+      "id": "ripe:measurement:1001:20261125T08",
       "kind": "aggregate_public_network_ping",
-      "observed_at": "2026-11-24T13:56:02Z",
+      "observed_at": "2026-11-25T08:49:43Z",
       "provider": "ripe",
       "published_at": null,
-      "root": "ripe:measurement:1001:20261124T13",
+      "root": "ripe:measurement:1001:20261125T08",
       "source_measurement": {
         "baseline_status": "not_calibrated",
         "cohort_comparable_to_prior_snapshots": false,
-        "failed_or_invalid_rtt_count": 377,
+        "failed_or_invalid_rtt_count": 389,
         "individual_probe_records_published": false,
         "measurement_id": 1001,
         "name": "sample_median_ping_rtt",
-        "sampled_probe_count": 13528,
+        "sampled_probe_count": 13545,
         "unit": "ms",
-        "valid_rtt_count": 13151,
-        "value": 19.176
+        "valid_rtt_count": 13156,
+        "value": 19.22
       },
       "source_scope": "RIPE Atlas built-in K-root ping #1001, global public-probe aggregate; not country coverage",
       "source_url": "https://atlas.ripe.net/measurements/1001/",
-      "title": "RIPE Atlas K-root public probe aggregate (13151 usable measurements)"
+      "title": "RIPE Atlas K-root public probe aggregate (13156 usable measurements)"
     }
   ],
   "schema": "cairn.alternative-sensors.v1",

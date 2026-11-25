@@ -287,6 +287,53 @@
         }
       }
     },
+    "416b1e17628a8adb066630c8a95e0cbf8f8275c07048261f98ecdd06643fc15c": {
+      "information_root": "cbp_wait:cbp_wait:021201:2026-11-25:03:45:23",
+      "members": {
+        "beh:6d428df05112606308de6a252405": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-25T08:52:01+00:00",
+          "geography_key": "us-border-port:021201",
+          "geography_label": "Highgate Springs",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:6d428df05112606308de6a252405",
+          "information_root": "cbp_wait:cbp_wait:021201:2026-11-25:03:45:23",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "no delay",
+            "lanes_open": 1,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "At 3:00 am EST",
+            "reported_local_date": "11/25/2026",
+            "reported_local_time": "03:45:23",
+            "source_declared_border": "Canadian Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 0
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Highgate Springs"
+        }
+      }
+    },
     "41869066307ad0d0741778d6fba06e5735a37f5d4fb8bd7083cec4d5bcd116bd": {
       "information_root": "ioda:cb06704a626c99b5045704c2",
       "members": {
@@ -530,6 +577,81 @@
           "source_updated_at": null,
           "source_url": "https://apiprevmet3.inmet.gov.br/avisos/rss/56444",
           "title": "Aviso de Tempestade. Severidade Grau: Perigo"
+        }
+      }
+    },
+    "41d0fe8e78751894dd828048b04a7e5212517d679e79b47ec8b828f158e0ee15": {
+      "information_root": "wiki_edits:wiki_edits:id:20261125T08",
+      "members": {
+        "beh:d756ad52938ca363df1ba31bb9bb": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "wiki_edits",
+          "direct_measurement": false,
+          "event_at": "2026-11-25T08:47:34Z",
+          "first_observed_at": "2026-11-25T08:47:34+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:d756ad52938ca363df1ba31bb9bb",
+          "information_root": "wiki_edits:wiki_edits:id:20261125T08",
+          "origin": "behavioral_registry",
+          "provider": "wiki_edits",
+          "published_at": "2026-11-25T08:47:34Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "public_encyclopedia_edit_aggregate",
+          "source_family": "public_attention",
+          "source_kind": "bounded_public_edit_count_not_event_verification",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "distinct_articles_in_sample": 394,
+            "maximum_returned_edits": 500,
+            "most_edited_article_counts": [
+              {
+                "count": 9,
+                "title": "Keuskupan Amboina"
+              },
+              {
+                "count": 6,
+                "title": "HKBP Distrik VII Samosir"
+              },
+              {
+                "count": 6,
+                "title": "Pertempuran Marj Rahith"
+              },
+              {
+                "count": 5,
+                "title": "Final Tur Dunia BWF 2026"
+              },
+              {
+                "count": 4,
+                "title": "Gege Elisa"
+              },
+              {
+                "count": 4,
+                "title": "Rockefeller Center"
+              },
+              {
+                "count": 4,
+                "title": "SMA Taruna Nusantara Magelang"
+              },
+              {
+                "count": 3,
+                "title": "ADA Band"
+              }
+            ],
+            "name": "sampled_edits_last_three_hours",
+            "sample_cap_reached": true,
+            "unit": "edits",
+            "value": 500
+          },
+          "source_scope": "Wikipedia main-namespace edit-count sample, 14 global language editions, three-hour window capped at 500 per wiki; not geographic location",
+          "source_updated_at": null,
+          "source_url": "https://id.wikipedia.org/wiki/Special:RecentChanges",
+          "title": "Wikipedia id public article-edit activity (sampled)"
         }
       }
     },

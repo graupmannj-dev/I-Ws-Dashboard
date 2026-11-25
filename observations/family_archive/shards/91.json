@@ -1,5 +1,52 @@
 {
   "roots": {
+    "9121c9ebee56a1fda8f983c3f1db9e4ee9afcb57c7d0a2c2c19222abe37bc611": {
+      "information_root": "cbp_wait:cbp_wait:230401:2026-11-25:02:45:24",
+      "members": {
+        "beh:c928fc9091faf7ff6f712f31463f": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-25T08:52:01+00:00",
+          "geography_key": "us-border-port:230401",
+          "geography_label": "Laredo",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:c928fc9091faf7ff6f712f31463f",
+          "information_root": "cbp_wait:cbp_wait:230401:2026-11-25:02:45:24",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "N/A",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/25/2026",
+            "reported_local_time": "02:45:24",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Laredo / Bridge I"
+        }
+      }
+    },
     "912f5159385fd8b86c8ee64a0a8c9ca357ff9143a8278a2910cc6c4f84372114": {
       "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-069700:110538-2026",
       "members": {
@@ -374,6 +421,39 @@
           "source_updated_at": null,
           "source_url": "https://bwt.cbp.gov/api/waittimes",
           "title": "CBP estimated commercial border wait — Douglas (Raul Hector Castro)"
+        }
+      }
+    },
+    "91a4cbeea5db5b781ae055c56978dc1ca7e127c5fc51c0f6f150a5be8fbf770f": {
+      "information_root": "nws:a081f583531b3089c5fc5ce5",
+      "members": {
+        "beh:fd2398408cddc521c05377cbfd80": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "nws",
+          "direct_measurement": false,
+          "event_at": "2026-11-25T06:00:00Z",
+          "first_observed_at": "2026-11-24T20:32:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:fd2398408cddc521c05377cbfd80",
+          "information_root": "nws:a081f583531b3089c5fc5ce5",
+          "origin": "behavioral_registry",
+          "provider": "nws",
+          "published_at": "2026-11-24T20:32:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "official_weather_alert_context",
+          "source_measurement": null,
+          "source_scope": "Active NWS marine alerts; severity Severe",
+          "source_updated_at": null,
+          "source_url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.101b5d154a4ce1e444b3ac0d9804d7d6d7ea5268.001.1",
+          "title": "Flood Watch - Okeechobee; Coastal Indian River; Coastal St. Lucie; Coastal Martin; Inland Northern Brevard; Inland"
         }
       }
     },

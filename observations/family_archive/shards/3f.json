@@ -124,6 +124,39 @@
         }
       }
     },
+    "3f4b0156bc2bb3604a7e4f4ef81e702c484b9ca7518dabc1e5c31a46c7024ac4": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c2f1:111379-2026",
+      "members": {
+        "beh:36937a3c9bfa0f3c851d3ef6d4f7": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-25T08:26:52+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:36937a3c9bfa0f3c851d3ef6d4f7",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c2f1:111379-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-25T08:26:52Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-23T08%3A49%3A43&updatedTo=2026-11-25T08%3A49%3A43",
+          "title": "Social Media Listening Tool · Heritage Fund"
+        }
+      }
+    },
     "3f9e5c80f0abd5268b17bf2001c9fa95c64e27a4c4de3dc17beeca7956cf0357": {
       "information_root": "cbp_wait:cbp_wait:535504:2026-11-22:05:34:18",
       "members": {
@@ -198,6 +231,45 @@
           "source_updated_at": null,
           "source_url": "https://ioda.inetintel.cc.gatech.edu/",
           "title": "IODA detected connectivity anomaly: country CF"
+        }
+      }
+    },
+    "3fb1257b77d691b3689190cb4fbef9fe64ca47fe5f3cd480820dcad383de3783": {
+      "information_root": "bmkg_nowcast:bmkg_nowcast:5f9daa1d04114a8dddc5f1bd668f",
+      "members": {
+        "beh:d1f1ef34264282ae6fcf3a562d32": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "bmkg_nowcast",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-25T05:50:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:d1f1ef34264282ae6fcf3a562d32",
+          "information_root": "bmkg_nowcast:bmkg_nowcast:5f9daa1d04114a8dddc5f1bd668f",
+          "origin": "behavioral_registry",
+          "provider": "bmkg_nowcast",
+          "published_at": "2026-11-25T05:50:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Indonesia BMKG",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Indonesia BMKG active provincial nowcast RSS, source-reported only; not global",
+          "source_updated_at": null,
+          "source_url": "https://www.bmkg.go.id/alerts/nowcast/en/CKU20261125003_alert.xml",
+          "title": "Thunderstorm This Afternoon in Kalimantan Utara"
         }
       }
     },

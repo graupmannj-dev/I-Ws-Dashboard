@@ -30,6 +30,92 @@
         }
       }
     },
+    "561a5975cbb40998cbbecd801af88535a621b8426ad1e27f7d0245aee506e6c5": {
+      "information_root": "cbp_wait:cbp_wait:300402:2026-11-25:00:45:23",
+      "members": {
+        "beh:398b9e2f1dbb9ccb618e3eb3f5a0": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-25T08:52:01+00:00",
+          "geography_key": "us-border-port:300402",
+          "geography_label": "Blaine",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:398b9e2f1dbb9ccb618e3eb3f5a0",
+          "information_root": "cbp_wait:cbp_wait:300402:2026-11-25:00:45:23",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "N/A",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/25/2026",
+            "reported_local_time": "00:45:23",
+            "source_declared_border": "Canadian Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Blaine / Peace Arch"
+        }
+      }
+    },
+    "561d96f16bab454f1b979d9ee8f08f402c33772b911f541d6bf254bac5039b07": {
+      "information_root": "bmkg_nowcast:bmkg_nowcast:a4e9252e15f8a329482e3c3683a1",
+      "members": {
+        "beh:cbfd4b5fb2bf221db13f2ae0064e": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "bmkg_nowcast",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-25T07:00:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:cbfd4b5fb2bf221db13f2ae0064e",
+          "information_root": "bmkg_nowcast:bmkg_nowcast:a4e9252e15f8a329482e3c3683a1",
+          "origin": "behavioral_registry",
+          "provider": "bmkg_nowcast",
+          "published_at": "2026-11-25T07:00:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Indonesia BMKG",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Indonesia BMKG active provincial nowcast RSS, source-reported only; not global",
+          "source_updated_at": null,
+          "source_url": "https://www.bmkg.go.id/alerts/nowcast/en/CSL20261125005_alert.xml",
+          "title": "Thunderstorm This Evening in Sulawesi Selatan"
+        }
+      }
+    },
     "5620c1339f1efab053fec7934736b4a2031c69d2b01aa96b152173d94b79486c": {
       "information_root": "cbp_wait:cbp_wait:240601:2026-11-22:04:34:18",
       "members": {

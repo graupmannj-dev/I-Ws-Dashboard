@@ -99,6 +99,45 @@
         }
       }
     },
+    "ac4eef41c35dcbda8aa9f1ca85cb1f73bd749a11b9ed672c7d5a13fdb7fd563e": {
+      "information_root": "bmkg_nowcast:bmkg_nowcast:b0d950446df2612e6b85493cc7d4",
+      "members": {
+        "beh:57763178eb4a9837e35ea3885dbd": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "bmkg_nowcast",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-25T07:30:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:57763178eb4a9837e35ea3885dbd",
+          "information_root": "bmkg_nowcast:bmkg_nowcast:b0d950446df2612e6b85493cc7d4",
+          "origin": "behavioral_registry",
+          "provider": "bmkg_nowcast",
+          "published_at": "2026-11-25T07:30:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Indonesia BMKG",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Indonesia BMKG active provincial nowcast RSS, source-reported only; not global",
+          "source_updated_at": null,
+          "source_url": "https://www.bmkg.go.id/alerts/nowcast/en/CJB20261125007_alert.xml",
+          "title": "Thunderstorm This Afternoon in Jawa Barat"
+        }
+      }
+    },
     "ac64c6180def278dd63ada532b917091d9cf9dba38b12d0796585488ea7c0ce3": {
       "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c11e:110499-2026",
       "members": {
@@ -129,6 +168,39 @@
           "source_updated_at": null,
           "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-21T13%3A10%3A09&updatedTo=2026-11-23T13%3A10%3A09",
           "title": "North Lees Hall - Repointing and Cover Flashing Works · Peak District National Park Authority"
+        }
+      }
+    },
+    "ac9bf4283dc78ff75f7f5415cd7b26d79d391115a5dcd800f8436c0e6cd49738": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c02e:111377-2026",
+      "members": {
+        "beh:276f2f3d3fbe8a916098cf1d546a": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-25T08:02:52+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:276f2f3d3fbe8a916098cf1d546a",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c02e:111377-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-25T08:02:52Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-23T08%3A49%3A43&updatedTo=2026-11-25T08%3A49%3A43",
+          "title": "Corvus Development - Data Service · Police & Crime Commissioner for Merseyside & Chief Constable"
         }
       }
     },

@@ -286,6 +286,53 @@
         }
       }
     },
+    "2a6ba6c9388eefd80c15494bd918955ac68f6007ed16896e1137abe7df96bf9f": {
+      "information_root": "cbp_wait:cbp_wait:380201:2026-11-25:03:45:23",
+      "members": {
+        "beh:83ee9e333b8f2157ceebfaa74019": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-25T08:52:01+00:00",
+          "geography_key": "us-border-port:380201",
+          "geography_label": "Port Huron",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:83ee9e333b8f2157ceebfaa74019",
+          "information_root": "cbp_wait:cbp_wait:380201:2026-11-25:03:45:23",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Update Pending",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/25/2026",
+            "reported_local_time": "03:45:23",
+            "source_declared_border": "Canadian Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Port Huron / Bluewater Bridge"
+        }
+      }
+    },
     "2a6bbbda3dec5be1e67b4fa306383ec470b666ab0b64e6b13bc85b73c20aecc0": {
       "information_root": "niord:977d59f3-ce27-47bb-8aec-42ea6aef5ec3:0:0:0",
       "members": {
@@ -354,6 +401,39 @@
           "source_updated_at": null,
           "source_url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000ud7z",
           "title": "M 4.7 - 18 km ESE of Güvercinlik, Turkey"
+        }
+      }
+    },
+    "2a78ed65406c1003015ec885106f3f4335797bfa3b2af4f7ff7c03c4abf3412d": {
+      "information_root": "nws:8dca4ac1616cc570aca0115c",
+      "members": {
+        "beh:8e4060d01573a77a00839c1fea40": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "nws",
+          "direct_measurement": false,
+          "event_at": "2026-11-25T01:22:00Z",
+          "first_observed_at": "2026-11-25T01:22:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:8e4060d01573a77a00839c1fea40",
+          "information_root": "nws:8dca4ac1616cc570aca0115c",
+          "origin": "behavioral_registry",
+          "provider": "nws",
+          "published_at": "2026-11-25T01:22:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "official_weather_alert_context",
+          "source_measurement": null,
+          "source_scope": "Active NWS marine alerts; severity Severe",
+          "source_updated_at": null,
+          "source_url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.ffcc920a7b8cbf24427c6b130d4893f2e786bc08.001.1",
+          "title": "Flood Warning - Brevard, FL"
         }
       }
     },

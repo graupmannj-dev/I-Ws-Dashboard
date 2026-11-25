@@ -431,6 +431,53 @@
         }
       }
     },
+    "a9ccd0d0584a29cd406555e3546a5eef13915aabc7ac2979accd11bca335037a": {
+      "information_root": "cbp_wait:cbp_wait:230301:2026-11-25:02:45:24",
+      "members": {
+        "beh:952e9ac7abb5204823cf51861937": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-25T08:52:01+00:00",
+          "geography_key": "us-border-port:230301",
+          "geography_label": "Eagle Pass",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:952e9ac7abb5204823cf51861937",
+          "information_root": "cbp_wait:cbp_wait:230301:2026-11-25:02:45:24",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Update Pending",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Closed",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/25/2026",
+            "reported_local_time": "02:45:24",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Eagle Pass / Bridge I"
+        }
+      }
+    },
     "a9d65f065b0156f6a0a3b191b47847fe96c9289960fc19693a101411990b8771": {
       "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-0510f8:111371-2026",
       "members": {
@@ -461,6 +508,46 @@
           "source_updated_at": null,
           "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-22T23%3A56%3A51&updatedTo=2026-11-24T23%3A56%3A51",
           "title": "Space Technology Solutions · Crown Commercial Service"
+        }
+      }
+    },
+    "a9f4fcb25212c5919b9e9c1ad596ca75fb1c7acde898463cbad23d704af3ece4": {
+      "information_root": "coops:8724580:20261125T0842Z",
+      "members": {
+        "beh:0ec8ee4fffe0f6e11703b8fa0678": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "coops",
+          "direct_measurement": true,
+          "event_at": "2026-11-25T08:42:00Z",
+          "first_observed_at": "2026-11-25T08:42:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:0ec8ee4fffe0f6e11703b8fa0678",
+          "information_root": "coops:8724580:20261125T0842Z",
+          "origin": "behavioral_registry",
+          "provider": "coops",
+          "published_at": "2026-11-25T08:42:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "station_physical_measurement",
+          "source_family": "port_conditions",
+          "source_kind": "selected_port_water_level_measurement",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "metric_comparable_only_same_station_datum_and_sample_window": true,
+            "name": "observed_water_level",
+            "station": "8724580",
+            "unit": "meters_MLLW",
+            "value": 0.117
+          },
+          "source_scope": "NOAA CO-OPS water levels at San Francisco, Key West and Sewells Point; stations only",
+          "source_updated_at": null,
+          "source_url": "https://tidesandcurrents.noaa.gov/waterlevels.html?id=8724580",
+          "title": "Key West, FL observed water level (no anomaly classification)"
         }
       }
     },

@@ -33,6 +33,39 @@
         }
       }
     },
+    "7552a661e2bd876da6b21dd7198442e75b216a93e735ef54a3ae6561a08e4de5": {
+      "information_root": "nws:5f9bed605fe42817f803be32",
+      "members": {
+        "beh:7be6b8aba2390e653bde05cdd982": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "nws",
+          "direct_measurement": false,
+          "event_at": "2026-11-25T06:24:00Z",
+          "first_observed_at": "2026-11-25T06:24:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:7be6b8aba2390e653bde05cdd982",
+          "information_root": "nws:5f9bed605fe42817f803be32",
+          "origin": "behavioral_registry",
+          "provider": "nws",
+          "published_at": "2026-11-25T06:24:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "official_weather_alert_context",
+          "source_measurement": null,
+          "source_scope": "Active NWS marine alerts; severity Moderate",
+          "source_updated_at": null,
+          "source_url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.b17005547ae09739a4b3cdc4432b71d8846f1361.001.4",
+          "title": "Rip Current Statement - Coastal Duval"
+        }
+      }
+    },
     "755e5dd5a9b282f7e54aebbd459baf29d7fa043b23f0f29f448a9192a1ae68fd": {
       "information_root": "cbp_wait:cbp_wait:l24501:2026-11-21:04:24:37",
       "members": {
@@ -77,6 +110,53 @@
           "source_updated_at": null,
           "source_url": "https://bwt.cbp.gov/api/waittimes",
           "title": "CBP estimated commercial border wait — Fort Hancock / Fort Hancock"
+        }
+      }
+    },
+    "755ec279f7aced94465dbecc63799a0c27fa7e61e5a61a6bd66769a43cfa5d24": {
+      "information_root": "ons_br:ons_br:N:20261124T030000Z",
+      "members": {
+        "beh:f981ee01fcd73b5493226d99408b": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "verified_grid_load_not_outage_or_intent",
+          "collection_mode": "ons_br",
+          "direct_measurement": true,
+          "event_at": "2026-11-24T03:00:00Z",
+          "first_observed_at": "2026-11-25T08:52:01+00:00",
+          "geography_key": "br-ons-loadarea:N",
+          "geography_label": "North",
+          "geography_precision": "regional_grid_not_incident_site",
+          "id": "beh:f981ee01fcd73b5493226d99408b",
+          "information_root": "ons_br:ons_br:N:20261124T030000Z",
+          "origin": "behavioral_registry",
+          "provider": "ons_br",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "verified_national_grid_load_measurement",
+          "source_family": "grid_load",
+          "source_kind": "verified_regional_electricity_load_context_not_outage",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "collected_history_day": "2026-11-23",
+            "historical_verified_not_live": true,
+            "load_area_code": "N",
+            "load_area_name": "North",
+            "name": "verified_half_hour_global_load",
+            "not_outage_or_attribution": true,
+            "sample_interval_minutes": 30,
+            "sampled_rows": 48,
+            "source_field": "val_cargaglobal",
+            "source_utc_field": "din_referenciautc",
+            "unit": "MWmed",
+            "value": 10600.879
+          },
+          "source_scope": "Brazilian national system operator ONS verified half-hour load, four macroregions, previous two-day sample; no local facilities/outage attribution",
+          "source_updated_at": null,
+          "source_url": "https://dados.ons.org.br/dataset/carga-energia-verificada",
+          "title": "Brazil ONS North verified half-hourly system load"
         }
       }
     },

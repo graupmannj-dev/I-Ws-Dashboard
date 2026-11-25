@@ -1,5 +1,52 @@
 {
   "roots": {
+    "2804e36d21539b9947e782297beafe2e266bfe28783a26ed81dfb268dcc1fcaa": {
+      "information_root": "cbp_wait:cbp_wait:010401:2026-11-25:03:45:23",
+      "members": {
+        "beh:91dca258f68cd1c2692ece9c9fc6": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-25T08:52:01+00:00",
+          "geography_key": "us-border-port:010401",
+          "geography_label": "Jackman",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:91dca258f68cd1c2692ece9c9fc6",
+          "information_root": "cbp_wait:cbp_wait:010401:2026-11-25:03:45:23",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "no delay",
+            "lanes_open": 1,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "At 5:00 am EST",
+            "reported_local_date": "11/25/2026",
+            "reported_local_time": "03:45:23",
+            "source_declared_border": "Canadian Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 0
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Jackman"
+        }
+      }
+    },
     "284768874d8eb7b99dfabfa2fd5677ba5ff2aa1968b62b15a8834aed06121b0f": {
       "information_root": "eonet:EONET_26661",
       "members": {
@@ -136,6 +183,39 @@
           "source_updated_at": null,
           "source_url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.swe.html",
           "title": "Sweden - Level 2: Exercise Increased Caution"
+        }
+      }
+    },
+    "2863c668a7722e5369a4dcf8c9280f5a4bf144f7c3d4ffe1426508b2f7762f00": {
+      "information_root": "nws:acdc761fa5ad57744322d192",
+      "members": {
+        "beh:fc53f735ff4d66969be7ef478830": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "nws",
+          "direct_measurement": false,
+          "event_at": "2026-11-25T06:24:00Z",
+          "first_observed_at": "2026-11-25T06:24:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:fc53f735ff4d66969be7ef478830",
+          "information_root": "nws:acdc761fa5ad57744322d192",
+          "origin": "behavioral_registry",
+          "provider": "nws",
+          "published_at": "2026-11-25T06:24:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "official_weather_alert_context",
+          "source_measurement": null,
+          "source_scope": "Active NWS marine alerts; severity Severe",
+          "source_updated_at": null,
+          "source_url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.b17005547ae09739a4b3cdc4432b71d8846f1361.002.1",
+          "title": "Coastal Flood Warning - Coastal Nassau; Northeast Coastal St. Johns; Coastal Glynn; Coastal Camden"
         }
       }
     },

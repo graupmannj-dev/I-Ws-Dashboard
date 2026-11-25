@@ -235,6 +235,39 @@
         }
       }
     },
+    "ae4f351edd102ff67856b5a7ecf858091b859792e1759135da56d1e7b0df1d93": {
+      "information_root": "nws:b3ce114570f068263e5351c7",
+      "members": {
+        "beh:48de50db4b28e70f94cfe5905fc6": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "nws",
+          "direct_measurement": false,
+          "event_at": "2026-11-25T08:26:00Z",
+          "first_observed_at": "2026-11-25T08:26:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:48de50db4b28e70f94cfe5905fc6",
+          "information_root": "nws:b3ce114570f068263e5351c7",
+          "origin": "behavioral_registry",
+          "provider": "nws",
+          "published_at": "2026-11-25T08:26:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "official_weather_alert_context",
+          "source_measurement": null,
+          "source_scope": "Active NWS marine alerts; severity Minor",
+          "source_updated_at": null,
+          "source_url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.f02d04191e3adecac2db55f1393930596dbf50cf.001.1",
+          "title": "Flood Advisory - Miami-Dade, FL"
+        }
+      }
+    },
     "ae5eb9eb15cc40e3407478ac498f2df690263ac5b4f006b8d6d9bf068d62bcd3": {
       "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c0d1:110353-2026",
       "members": {
@@ -552,6 +585,53 @@
           "source_updated_at": null,
           "source_url": "https://bwt.cbp.gov/api/waittimes",
           "title": "CBP estimated commercial border wait — Del Rio"
+        }
+      }
+    },
+    "aee5eb5e26c7db3d25e4a2d0da0910f985d2601e44f5f2b88cfcebbdd44734be": {
+      "information_root": "cbp_wait:cbp_wait:071201:2026-11-25:03:45:23",
+      "members": {
+        "beh:f3b6710088cb212f9ef98bf2d895": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-25T08:52:01+00:00",
+          "geography_key": "us-border-port:071201",
+          "geography_label": "Champlain",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:f3b6710088cb212f9ef98bf2d895",
+          "information_root": "cbp_wait:cbp_wait:071201:2026-11-25:03:45:23",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Lanes Closed",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/25/2026",
+            "reported_local_time": "03:45:23",
+            "source_declared_border": "Canadian Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Champlain"
         }
       }
     }

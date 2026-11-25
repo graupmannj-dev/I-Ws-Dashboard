@@ -93,6 +93,45 @@
         }
       }
     },
+    "d52e1abdea9df05aec891aea157ca731ec1cff10c4ba4a957d8ad383f64e3d2f": {
+      "information_root": "bmkg_nowcast:bmkg_nowcast:256b63d4335e7e2d914541b83537",
+      "members": {
+        "beh:01eea32bac3c6c4e7964f1b447b2": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "bmkg_nowcast",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-25T06:10:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:01eea32bac3c6c4e7964f1b447b2",
+          "information_root": "bmkg_nowcast:bmkg_nowcast:256b63d4335e7e2d914541b83537",
+          "origin": "behavioral_registry",
+          "provider": "bmkg_nowcast",
+          "published_at": "2026-11-25T06:10:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Indonesia BMKG",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Indonesia BMKG active provincial nowcast RSS, source-reported only; not global",
+          "source_updated_at": null,
+          "source_url": "https://www.bmkg.go.id/alerts/nowcast/en/CMU20261125002_alert.xml",
+          "title": "Thunderstorm This Evening in Maluku Utara"
+        }
+      }
+    },
     "d52f0c8d61d8af78dd711f854d3aa136ebcdf438c396508c55aad269d9bfd693": {
       "information_root": "ioda:602cbd5738fe2e64876ae6ab",
       "members": {
@@ -362,6 +401,39 @@
           "source_updated_at": null,
           "source_url": "https://tr.wikipedia.org/wiki/Special:RecentChanges",
           "title": "Wikipedia tr public article-edit activity (sampled)"
+        }
+      }
+    },
+    "d54e04000d42bef5e6ec5d7e76898ed5bf988eeb20d52d50794d93402aaadaa7": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c2f3:111385-2026",
+      "members": {
+        "beh:a8aa396bf863e64567331b278063": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-25T08:46:34+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:a8aa396bf863e64567331b278063",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c2f3:111385-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-25T08:46:34Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-23T08%3A49%3A43&updatedTo=2026-11-25T08%3A49%3A43",
+          "title": "Electricity for British Embassy Helsinki · Foreign, Commonwealth and Development Office"
         }
       }
     },

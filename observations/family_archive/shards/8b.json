@@ -1,5 +1,113 @@
 {
   "roots": {
+    "8b1f9e018c9252d3960511cda90e4995deeffcaf70e1039a42f658a9ecaa88f1": {
+      "information_root": "nws:dbe6294d6fe34e7b9f1b0122",
+      "members": {
+        "beh:7ffcddd5d739c889bdd86a24ef47": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "nws",
+          "direct_measurement": false,
+          "event_at": "2026-11-25T06:24:00Z",
+          "first_observed_at": "2026-11-25T06:24:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:7ffcddd5d739c889bdd86a24ef47",
+          "information_root": "nws:dbe6294d6fe34e7b9f1b0122",
+          "origin": "behavioral_registry",
+          "provider": "nws",
+          "published_at": "2026-11-25T06:24:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "official_weather_alert_context",
+          "source_measurement": null,
+          "source_scope": "Active NWS marine alerts; severity Minor",
+          "source_updated_at": null,
+          "source_url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.b17005547ae09739a4b3cdc4432b71d8846f1361.002.2",
+          "title": "High Surf Advisory - Coastal Nassau; Northeast Coastal St. Johns; Coastal Glynn; Coastal Camden"
+        }
+      }
+    },
+    "8b337c09a435da40ac3b129ab9511c1b4ec81e0e289e3286e5dbef31d251bcab": {
+      "information_root": "wiki_edits:wiki_edits:en:20261125T08",
+      "members": {
+        "beh:95390b54dff82cd3c7bc2c8fab74": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "wiki_edits",
+          "direct_measurement": false,
+          "event_at": "2026-11-25T08:49:43Z",
+          "first_observed_at": "2026-11-25T08:49:43+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:95390b54dff82cd3c7bc2c8fab74",
+          "information_root": "wiki_edits:wiki_edits:en:20261125T08",
+          "origin": "behavioral_registry",
+          "provider": "wiki_edits",
+          "published_at": "2026-11-25T08:49:43Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "public_encyclopedia_edit_aggregate",
+          "source_family": "public_attention",
+          "source_kind": "bounded_public_edit_count_not_event_verification",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "distinct_articles_in_sample": 459,
+            "maximum_returned_edits": 500,
+            "most_edited_article_counts": [
+              {
+                "count": 7,
+                "title": "List of heads of state of Hungary"
+              },
+              {
+                "count": 5,
+                "title": "List of Formula Regional European Championship drivers"
+              },
+              {
+                "count": 3,
+                "title": "Fright Night (album)"
+              },
+              {
+                "count": 3,
+                "title": "Manjiro Sano"
+              },
+              {
+                "count": 3,
+                "title": "Pickleball World Cup"
+              },
+              {
+                "count": 3,
+                "title": "Subdivisions of Timor-Leste"
+              },
+              {
+                "count": 2,
+                "title": "2011 Arizona Cardinals season"
+              },
+              {
+                "count": 2,
+                "title": "Alex Mack"
+              }
+            ],
+            "name": "sampled_edits_last_three_hours",
+            "sample_cap_reached": true,
+            "unit": "edits",
+            "value": 500
+          },
+          "source_scope": "Wikipedia main-namespace edit-count sample, 14 global language editions, three-hour window capped at 500 per wiki; not geographic location",
+          "source_updated_at": null,
+          "source_url": "https://en.wikipedia.org/wiki/Special:RecentChanges",
+          "title": "Wikipedia en public article-edit activity (sampled)"
+        }
+      }
+    },
     "8b3884be66dedeaa3c71a60bda8da295cabd7e2e28e0f2f871a65a7777c73fe7": {
       "information_root": "cbp_wait:cbp_wait:240801:2026-11-23:19:14:19",
       "members": {
@@ -374,6 +482,53 @@
           "source_updated_at": null,
           "source_url": "https://bwt.cbp.gov/api/waittimes",
           "title": "CBP estimated commercial border wait — Otay Mesa / Commercial"
+        }
+      }
+    },
+    "8be6cfa5e9d7f63767106696317716f7dc564b259c007e99bfd920c214ea2522": {
+      "information_root": "cbp_wait:cbp_wait:260802:2026-11-25:01:45:24",
+      "members": {
+        "beh:9d8cf3eb539ab2fc825082040171": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-25T08:52:01+00:00",
+          "geography_key": "us-border-port:260802",
+          "geography_label": "San Luis",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:9d8cf3eb539ab2fc825082040171",
+          "information_root": "cbp_wait:cbp_wait:260802:2026-11-25:01:45:24",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Update Pending",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Closed",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/25/2026",
+            "reported_local_time": "01:45:24",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — San Luis / San Luis II"
         }
       }
     },

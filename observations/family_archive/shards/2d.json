@@ -30,6 +30,39 @@
         }
       }
     },
+    "2d0d000552cd6d89abec897f988ff217a4369ac3177bb92164a42138e8700e85": {
+      "information_root": "nws:980cfc7db3bba033e2b46fef",
+      "members": {
+        "beh:ce48f993714dbe7ded210faadd31": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "nws",
+          "direct_measurement": false,
+          "event_at": "2026-11-25T04:25:00Z",
+          "first_observed_at": "2026-11-25T04:25:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:ce48f993714dbe7ded210faadd31",
+          "information_root": "nws:980cfc7db3bba033e2b46fef",
+          "origin": "behavioral_registry",
+          "provider": "nws",
+          "published_at": "2026-11-25T04:25:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "official_weather_alert_context",
+          "source_measurement": null,
+          "source_scope": "Active NWS marine alerts; severity Severe",
+          "source_updated_at": null,
+          "source_url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.24fb3083fc93a0cc3b591b51a9007c4b55ce3270.001.1",
+          "title": "Flood Watch - Metro Palm Beach County; Metro Broward County; Metropolitan Miami Dade; Coastal Palm Beach County; C"
+        }
+      }
+    },
     "2d151b0d452ba1989e5cc4ec65d11873944f1a53cf937bb5b06ece33941ffabd": {
       "information_root": "ioda:e6b8380a775d61cc32892014",
       "members": {
@@ -214,6 +247,53 @@
           "source_updated_at": null,
           "source_url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.phl.html",
           "title": "Philippines - Level 2: Exercise Increased Caution"
+        }
+      }
+    },
+    "2d68a3c630eba046fc9e58202aa45f7d2fb3b9431b19ac6b8721429b16a37e9e": {
+      "information_root": "cbp_wait:cbp_wait:020901:2026-11-25:03:45:23",
+      "members": {
+        "beh:721ec05cab4dbd8b0efeeba7cae2": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-25T08:52:01+00:00",
+          "geography_key": "us-border-port:020901",
+          "geography_label": "Derby Line",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:721ec05cab4dbd8b0efeeba7cae2",
+          "information_root": "cbp_wait:cbp_wait:020901:2026-11-25:03:45:23",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "no delay",
+            "lanes_open": 1,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "At 8:00 am EST",
+            "reported_local_date": "11/25/2026",
+            "reported_local_time": "03:45:23",
+            "source_declared_border": "Canadian Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 0
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Derby Line / Derby Line I-91"
         }
       }
     },
@@ -644,6 +724,53 @@
           "source_updated_at": null,
           "source_url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.95e6f42e38ee8444985ab0b342ae56bd224a11a1.001.1",
           "title": "Flood Warning - Brevard, FL"
+        }
+      }
+    },
+    "2dda9074a784355789dc2f5eb23754bbc889adb389b4e8374b34152449b2199c": {
+      "information_root": "cbp_wait:cbp_wait:090102:2026-11-25:03:45:23",
+      "members": {
+        "beh:6d4f6a65f31219a11e366eb66352": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-25T08:52:01+00:00",
+          "geography_key": "us-border-port:090102",
+          "geography_label": "Buffalo/Niagara Falls",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:6d4f6a65f31219a11e366eb66352",
+          "information_root": "cbp_wait:cbp_wait:090102:2026-11-25:03:45:23",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "N/A",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/25/2026",
+            "reported_local_time": "03:45:23",
+            "source_declared_border": "Canadian Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Buffalo/Niagara Falls / Rainbow Bridge"
         }
       }
     },
