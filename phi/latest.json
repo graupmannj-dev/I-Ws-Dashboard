@@ -1,8 +1,8 @@
 {
   "schema": "cairn.phi-sidecar.v1",
   "model": "phi-4-mini-instruct-q4km-local",
-  "generated_at": "2026-11-24T23:40:54.068549Z",
-  "source_build_generated_at": "2026-11-24T23:38:10+00:00",
+  "generated_at": "2026-11-25T05:35:01.870577Z",
+  "source_build_generated_at": "2026-11-25T05:32:18+00:00",
   "provisional_only": true,
   "signed_evidence_modified": false,
   "cases": {
@@ -779,51 +779,51 @@
       "interpretations": [
         {
           "hypothesis_index": 0,
-          "meaning": "An increase in the intensity of the ongoing armed conflict in the region.",
-          "discriminator": "Observation of a significant rise in the number of reported incidents involving armed conflict in the region over a short period."
+          "meaning": "There is an ongoing armed conflict that may escalate further.",
+          "discriminator": "Evidence of increased military activity or casualties in the region."
         },
         {
           "hypothesis_index": 1,
-          "meaning": "A limited increase in military activity, possibly involving targeted strikes or reinforcement of forces, without expanding the conflict to a wider area.",
-          "discriminator": "Observation of a localized increase in military activity with no evidence of broader conflict escalation."
+          "meaning": "There may be targeted actions or localized strikes without a broader campaign.",
+          "discriminator": "Evidence of isolated incidents with limited scope and impact."
         }
       ],
       "evaluations": [],
       "evidence_notes": [
         {
           "evidence_key": "dossier:8d5f511ee8a63383a7285fb5",
-          "observation": "Reports of warnings to partners and force reinforcement suggest preparation for potential conflict escalation or targeted action, but no direct evidence of wider conflict escalation is provided in this report alone.",
-          "verification_step": "Monitor subsequent reports for evidence of wider conflict escalation.",
+          "observation": "Reports of force reinforcement and warnings to partners suggest preparation for potential conflict escalation or targeted actions.",
+          "verification_step": "Monitor for subsequent reports of increased military presence or targeted strikes.",
           "status": "unverified_source_title_lead"
         },
         {
           "evidence_key": "family:f6a997229fdfe081cc7b",
-          "observation": "Reports of additional Iranian aerial attacks and defensive interceptions in Bahrain indicate localized military activity, but no direct evidence of wider conflict escalation is provided in this report alone.",
-          "verification_step": "Monitor subsequent reports for evidence of wider conflict escalation.",
-          "status": "unverified_source_title_lead"
-        },
-        {
-          "evidence_key": "history:7079d777a2c2a9aa89eb",
-          "observation": "Bahrain reports additional Iranian aerial attacks and defensive interceptions on November 18, indicating localized military activity, but no direct evidence of wider conflict escalation is provided in this report alone.",
-          "verification_step": "Monitor subsequent reports for evidence of wider conflict escalation.",
+          "observation": "Bahrain reports additional Iranian aerial attacks and defensive interceptions, indicating localized conflict.",
+          "verification_step": "Seek independent verification of reported aerial attacks and defensive measures.",
           "status": "unverified_source_title_lead"
         },
         {
           "evidence_key": "history:b70e03574702e41c4966",
-          "observation": "Bahrain reports Iranian attack caused fire at civilian industrial facility, indicating localized military activity, but no direct evidence of wider conflict escalation is provided in this report alone.",
-          "verification_step": "Monitor subsequent reports for evidence of wider conflict escalation.",
+          "observation": "Bahrain reports Iranian attack causing fire at a civilian industrial facility, suggesting localized conflict.",
+          "verification_step": "Investigate the origin and intent of the attack on the civilian facility.",
           "status": "unverified_source_title_lead"
         },
         {
           "evidence_key": "history:05c07ea3eeb5036b8d0c",
-          "observation": "ADNOC confirms November 17 Hormuz vessel attack with injured and missing crew, indicating localized military activity, but no direct evidence of wider conflict escalation is provided in this report alone.",
-          "verification_step": "Monitor subsequent reports for evidence of wider conflict escalation.",
+          "observation": "ADNOC confirms Hormuz vessel attack with casualties, indicating potential escalation.",
+          "verification_step": "Corroborate the incident with other sources and assess the broader impact on regional security.",
           "status": "unverified_source_title_lead"
         },
         {
-          "evidence_key": "family:a4b6fc7892b9ec7d7559",
-          "observation": "U.S.–Iran Hormuz agreement by November 30 and U.S.–Iran Hormuz agreement by December 31 suggest anticipation of conflict, but no direct evidence of wider conflict escalation is provided in this report alone.",
-          "verification_step": "Monitor subsequent reports for evidence of wider conflict escalation.",
+          "evidence_key": "history:4477c8a58e64fb4d0fff",
+          "observation": "UKMTO reports tanker projectile incidents near Oman's Khasab, suggesting localized conflict.",
+          "verification_step": "Confirm the occurrence of the reported incidents and their relation to broader conflict dynamics.",
+          "status": "unverified_source_title_lead"
+        },
+        {
+          "evidence_key": "history:78f094fd38e741d04d5a",
+          "observation": "Discussion on the threat of mines in the Strait of Hormuz, indicating ongoing security concerns.",
+          "verification_step": "Assess the current threat level posed by mines in the Strait of Hormuz.",
           "status": "unverified_source_title_lead"
         }
       ],
@@ -881,27 +881,6 @@
               "title": "Bahrain reports Iranian attack caused fire at civilian industrial facility",
               "provider": "Bahrain Ministry of Interior (reported by Reuters)",
               "first_observed_at": "2026-11-21T22:40:03+00:00"
-            }
-          ],
-          "reviewed_direction": "not_assessed"
-        },
-        {
-          "evidence_key": "family:a4b6fc7892b9ec7d7559",
-          "family_title": "iran · hormuz / agreement",
-          "family_mechanism": "market_expectation",
-          "source_health": "current",
-          "sources": [
-            {
-              "url": "https://polymarket.com/event/us-iran-hormuz-agreement-by-november-30",
-              "title": "U.S.–Iran Hormuz agreement by November 30",
-              "provider": "polymarket",
-              "first_observed_at": "2026-11-11T02:48:00+00:00"
-            },
-            {
-              "url": "https://polymarket.com/event/us-iran-hormuz-agreement-by-december-31",
-              "title": "U.S.–Iran Hormuz agreement by December 31",
-              "provider": "polymarket",
-              "first_observed_at": "2026-11-11T02:48:00+00:00"
             }
           ],
           "reviewed_direction": "not_assessed"
@@ -965,25 +944,10 @@
             }
           ],
           "reviewed_direction": "not_assessed"
-        },
-        {
-          "evidence_key": "history:7079d777a2c2a9aa89eb",
-          "family_title": "Bahrain reports additional Iranian aerial attacks and defensive interceptions on November 18",
-          "family_mechanism": "Case-linked history; provisional association only",
-          "source_health": "not_event_verified",
-          "sources": [
-            {
-              "url": "https://www.arnnewscentre.ae/en/news/international/bahrain-kuwait-intercept-more-iranian-air-strikes/",
-              "title": "Bahrain reports additional Iranian aerial attacks and defensive interceptions on November 18",
-              "provider": "analyst",
-              "first_observed_at": "2026-11-18T04:38:39Z"
-            }
-          ],
-          "reviewed_direction": "not_assessed"
         }
       ],
-      "input_sha256": "f18a39c817b37c38936c194d310ebccbb2803b9c2fa8713f9cf8f40357c09145",
-      "model_generated_at": "2026-11-24T23:39:04.385628Z",
+      "input_sha256": "316d056befb316feea8465950617fcf294000cf288c8967cf25ca2e81f4d0af4",
+      "model_generated_at": "2026-11-25T05:33:26.050808Z",
       "cache_status": "fresh_inference"
     },
     "taiwan": {
