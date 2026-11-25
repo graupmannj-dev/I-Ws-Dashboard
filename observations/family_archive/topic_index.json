@@ -896,6 +896,15 @@
       "shared_subject_terms": [],
       "subject_geography_compatible": true
     },
+    "29a360947d315de07652cd9a072f": {
+      "independent_corroboration_proven": false,
+      "method": "new_analytical_theme",
+      "review_status": "unreviewed_automatic_topic_seed",
+      "same_incident_proven": false,
+      "score": null,
+      "shared_activity_roles": [],
+      "shared_subject_terms": []
+    },
     "2afd2c57f0d33ea732032e949d0b": {
       "independent_corroboration_proven": false,
       "latent_semantic_similarity": 1,
@@ -5425,6 +5434,7 @@
     "27e4663fbbc7b54abe093bec529f": "family:445dccadf0220ded3eff",
     "2864d778a7f1de608db05f325958": "family:01232a37583e01c7a010",
     "2960bac5b63fc159b58fbbd5304d": "family:ad22e7df37c14bd12656",
+    "29a360947d315de07652cd9a072f": "family:56dcdeb77e076aa1f6ad",
     "2a42aa53849f6feab2b0da2805c8": "family:6939491277ec2aad62d6",
     "2ade70e91e1ed6dd91d64cadbb9e": "family:4701101eb1b16c68aa2a",
     "2afd2c57f0d33ea732032e949d0b": "family:445dccadf0220ded3eff",
@@ -8074,6 +8084,30 @@
         "title": "IODA detected connectivity anomaly: country MS"
       },
       "source": "automatic_similarity_v1"
+    },
+    "family:56dcdeb77e076aa1f6ad": {
+      "first_document_at": "2026-11-25T05:29:39+00:00",
+      "last_document_at": "2026-11-25T05:29:39+00:00",
+      "matched_document_count": 1,
+      "seed": {
+        "domain": "generic",
+        "geo": [],
+        "key": "29a360947d315de07652cd9a072f",
+        "publisher": "Reuters",
+        "source_family": "media_mention",
+        "terms": {
+          "concerning": 1,
+          "conditional": 1,
+          "houthis": 1,
+          "issue": 1,
+          "ports": 1,
+          "red": 1,
+          "saudi": 1,
+          "sea": 1
+        },
+        "title": "Houthis issue conditional warning concerning Saudi Red Sea ports"
+      },
+      "source": "hybrid_local_topic_embedding_v2"
     },
     "family:59cc1addfc29395f1f7e": {
       "first_document_at": "2026-11-21T15:26:50+00:00",
@@ -11560,9 +11594,9 @@
     }
   },
   "input_truncated": false,
-  "new_document_assignments": 2,
+  "new_document_assignments": 1,
   "schema": "aiba.automatic-analytical-topics.v1",
   "semantic_seed_index_limited": false,
-  "total_document_assignments": 749,
-  "total_stable_topics": 251
+  "total_document_assignments": 750,
+  "total_stable_topics": 252
 }
