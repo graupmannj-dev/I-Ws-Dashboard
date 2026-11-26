@@ -13,9 +13,9 @@
         },
         "maritime_restriction": {
           "current": 0,
-          "median": 0.0,
+          "median": 0,
           "robust_z": 0.0,
-          "samples": 12,
+          "samples": 17,
           "status": "within_observed_range",
           "threshold": 4.0
         }
@@ -61,9 +61,9 @@
         },
         "maritime_restriction": {
           "current": 0,
-          "median": 0.0,
+          "median": 0,
           "robust_z": 0.0,
-          "samples": 12,
+          "samples": 17,
           "status": "within_observed_range",
           "threshold": 4.0
         }
@@ -109,9 +109,9 @@
         },
         "maritime_restriction": {
           "current": 0,
-          "median": 0.0,
+          "median": 0,
           "robust_z": 0.0,
-          "samples": 12,
+          "samples": 17,
           "status": "within_observed_range",
           "threshold": 4.0
         }
@@ -157,9 +157,9 @@
         },
         "maritime_restriction": {
           "current": 0,
-          "median": 0.0,
+          "median": 0,
           "robust_z": 0.0,
-          "samples": 12,
+          "samples": 17,
           "status": "within_observed_range",
           "threshold": 4.0
         }
@@ -205,9 +205,9 @@
         },
         "maritime_restriction": {
           "current": 0,
-          "median": 0.0,
+          "median": 0,
           "robust_z": 0.0,
-          "samples": 12,
+          "samples": 17,
           "status": "within_observed_range",
           "threshold": 4.0
         }
@@ -253,9 +253,9 @@
         },
         "maritime_restriction": {
           "current": 0,
-          "median": 0.0,
+          "median": 0,
           "robust_z": 0.0,
-          "samples": 12,
+          "samples": 17,
           "status": "within_observed_range",
           "threshold": 4.0
         }
@@ -301,9 +301,9 @@
         },
         "maritime_restriction": {
           "current": 0,
-          "median": 0.0,
+          "median": 0,
           "robust_z": 0.0,
-          "samples": 12,
+          "samples": 17,
           "status": "within_observed_range",
           "threshold": 4.0
         }
@@ -349,9 +349,9 @@
         },
         "maritime_restriction": {
           "current": 0,
-          "median": 0.0,
+          "median": 0,
           "robust_z": 0.0,
-          "samples": 12,
+          "samples": 17,
           "status": "within_observed_range",
           "threshold": 4.0
         }
@@ -397,9 +397,9 @@
         },
         "maritime_restriction": {
           "current": 0,
-          "median": 0.0,
+          "median": 0,
           "robust_z": 0.0,
-          "samples": 12,
+          "samples": 17,
           "status": "within_observed_range",
           "threshold": 4.0
         }
@@ -445,9 +445,9 @@
         },
         "maritime_restriction": {
           "current": 0,
-          "median": 0.0,
+          "median": 0,
           "robust_z": 0.0,
-          "samples": 12,
+          "samples": 17,
           "status": "within_observed_range",
           "threshold": 4.0
         }
@@ -490,11 +490,11 @@
   "executive_review_count": 0,
   "executive_summary": "No qualifying novel structural-friction lead in the collected evidence. This is not an all-clear; verify coverage and established watch states.",
   "fresh_snapshot": true,
-  "generated_at": "2026-11-26T15:04:24Z",
+  "generated_at": "2026-11-26T23:47:12Z",
   "health": {
     "amsa": {
       "age_hours": 0.01,
-      "checked_at": "2026-11-26T15:03:59Z",
+      "checked_at": "2026-11-26T23:46:44Z",
       "collector_status": "collected",
       "coverage": "complete",
       "error": null,
@@ -503,7 +503,7 @@
     },
     "ioda": {
       "age_hours": 0.01,
-      "checked_at": "2026-11-26T15:03:59Z",
+      "checked_at": "2026-11-26T23:46:44Z",
       "collector_status": "unavailable",
       "coverage": "unknown",
       "error": "TimeoutError: The read operation timed out",
@@ -512,7 +512,7 @@
     },
     "nga": {
       "age_hours": 0.01,
-      "checked_at": "2026-11-26T15:03:59Z",
+      "checked_at": "2026-11-26T23:46:44Z",
       "collector_status": "unavailable",
       "coverage": "unknown",
       "error": "HTTPError: HTTP Error 503: Service Unavailable",
@@ -520,7 +520,7 @@
       "status": "unavailable"
     }
   },
-  "latest_source_snapshot": "2026-11-26T15:03:59Z",
+  "latest_source_snapshot": "2026-11-26T23:46:44Z",
   "limits": [
     "Data feeds are partial, not a global exhaustive sensor network.",
     "Collection timestamp does not establish source event or publication time.",
@@ -540,18 +540,6 @@
   "shadow_mode": true,
   "uncalibrated_review_count": 0,
   "unlocated_leads": [
-    {
-      "event_at": "2026-11-25T02:00:00Z",
-      "family": "internet_reachability",
-      "title": "IODA detected connectivity anomaly: country UA",
-      "url": "https://ioda.inetintel.cc.gatech.edu/"
-    },
-    {
-      "event_at": "2026-11-25T03:05:00Z",
-      "family": "internet_reachability",
-      "title": "IODA detected connectivity anomaly: country SS",
-      "url": "https://ioda.inetintel.cc.gatech.edu/"
-    },
     {
       "event_at": "2026-11-25T00:30:00Z",
       "family": "internet_reachability",
@@ -689,6 +677,18 @@
       "family": "internet_reachability",
       "title": "IODA detected connectivity anomaly: country VI",
       "url": "https://ioda.inetintel.cc.gatech.edu/"
+    },
+    {
+      "event_at": "2026-11-26T03:50:00Z",
+      "family": "internet_reachability",
+      "title": "IODA detected connectivity anomaly: country MK",
+      "url": "https://ioda.inetintel.cc.gatech.edu/"
+    },
+    {
+      "event_at": "2026-11-25T23:59:00Z",
+      "family": "maritime_restriction",
+      "title": "NAVAREA X 127/26 official warning",
+      "url": "https://www.operations.amsa.gov.au/AMSA.Web.MSIPublication/"
     }
   ],
   "validation": {
