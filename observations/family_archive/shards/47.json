@@ -47,6 +47,39 @@
         }
       }
     },
+    "472ab6308a99e5148ddff0cafa1c0d1db17b80c6b9cdc225ad01f04309ab718c": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c25a:111886-2026",
+      "members": {
+        "beh:62e2e80c4521a942942c22f843cc": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-25T21:41:39+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:62e2e80c4521a942942c22f843cc",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c25a:111886-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-25T21:41:39Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-24T03%3A38%3A44&updatedTo=2026-11-26T03%3A38%3A44",
+          "title": "Assessment of community scale zero carbon energy technologies · Local Government Association (LGA)"
+        }
+      }
+    },
     "472ae13b26b468d7a3c64c70414df9069b8b0580b34fe0ad73ea257b7f642b88": {
       "information_root": "bmkg_nowcast:bmkg_nowcast:1a47ae061128efb2e079cf1827cc",
       "members": {
@@ -515,6 +548,53 @@
           "source_updated_at": "2026-11-13T00:21:52Z",
           "source_url": "https://niord.dma.dk/#/message/fd585098-74b9-49ea-a826-82951a0a3ad3",
           "title": "Denmark. Kattegat. EK R 45 Hevring. Firing exercises. Warning."
+        }
+      }
+    },
+    "47f2291b15462e175af5b3fc72e60a6cd43a980de141a329ab2ca7f6268b2129": {
+      "information_root": "cbp_wait:cbp_wait:010401:2026-11-25:22:37:46",
+      "members": {
+        "beh:7fb7df68301251c025416bd917c0": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-26T03:40:40+00:00",
+          "geography_key": "us-border-port:010401",
+          "geography_label": "Jackman",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:7fb7df68301251c025416bd917c0",
+          "information_root": "cbp_wait:cbp_wait:010401:2026-11-25:22:37:46",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "no delay",
+            "lanes_open": 1,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "At 8:00 pm EST",
+            "reported_local_date": "11/25/2026",
+            "reported_local_time": "22:37:46",
+            "source_declared_border": "Canadian Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 0
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Jackman"
         }
       }
     }

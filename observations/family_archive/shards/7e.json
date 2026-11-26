@@ -273,6 +273,81 @@
         }
       }
     },
+    "7ea17f9b5540aa8bef1d4a5c8c6532b8d1d4203e684d4c0a22198ee5e741df1b": {
+      "information_root": "wiki_edits:wiki_edits:ko:20261126T03",
+      "members": {
+        "beh:7de094a87d032dd53962e9a46d51": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "wiki_edits",
+          "direct_measurement": false,
+          "event_at": "2026-11-26T03:38:27Z",
+          "first_observed_at": "2026-11-26T03:38:27+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:7de094a87d032dd53962e9a46d51",
+          "information_root": "wiki_edits:wiki_edits:ko:20261126T03",
+          "origin": "behavioral_registry",
+          "provider": "wiki_edits",
+          "published_at": "2026-11-26T03:38:27Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "public_encyclopedia_edit_aggregate",
+          "source_family": "public_attention",
+          "source_kind": "bounded_public_edit_count_not_event_verification",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "distinct_articles_in_sample": 290,
+            "maximum_returned_edits": 500,
+            "most_edited_article_counts": [
+              {
+                "count": 19,
+                "title": "KBS TV 문학관"
+              },
+              {
+                "count": 11,
+                "title": "계성고등학교 (서울)"
+              },
+              {
+                "count": 10,
+                "title": "교보문고"
+              },
+              {
+                "count": 8,
+                "title": "보성고등학교 (서울)"
+              },
+              {
+                "count": 8,
+                "title": "케라토사우루스"
+              },
+              {
+                "count": 7,
+                "title": "정신여자고등학교"
+              },
+              {
+                "count": 6,
+                "title": "MBC TV"
+              },
+              {
+                "count": 6,
+                "title": "자살의 방식"
+              }
+            ],
+            "name": "sampled_edits_last_three_hours",
+            "sample_cap_reached": false,
+            "unit": "edits",
+            "value": 459
+          },
+          "source_scope": "Wikipedia main-namespace edit-count sample, 14 global language editions, three-hour window capped at 500 per wiki; not geographic location",
+          "source_updated_at": null,
+          "source_url": "https://ko.wikipedia.org/wiki/Special:RecentChanges",
+          "title": "Wikipedia ko public article-edit activity (sampled)"
+        }
+      }
+    },
     "7ec7cf82bb9216f47f43535a262f8c3fa2b1f9944d8567be0ce576f1ac700f41": {
       "information_root": "nws:ee88787a80659415a002efff",
       "members": {
@@ -366,6 +441,45 @@
           "source_updated_at": "2026-11-20T13:21:54Z",
           "source_url": "https://niord.dma.dk/#/message/0dd97987-d92b-4b12-b6f2-524532503f33",
           "title": "Denmark. Kattegat. EK R 45 Hevring. Firing exercises. Warning."
+        }
+      }
+    },
+    "7ef7561ba46abfced625dd830b5fd6ffa32d7e11ca7bd92a8908a54ff6b7e925": {
+      "information_root": "bmkg_nowcast:bmkg_nowcast:8c048914ead4ff7f67c87ce917e1",
+      "members": {
+        "beh:9a5a17b66e68c1bb0a99c0855384": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "bmkg_nowcast",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-26T03:10:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:9a5a17b66e68c1bb0a99c0855384",
+          "information_root": "bmkg_nowcast:bmkg_nowcast:8c048914ead4ff7f67c87ce917e1",
+          "origin": "behavioral_registry",
+          "provider": "bmkg_nowcast",
+          "published_at": "2026-11-26T03:10:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Indonesia BMKG",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Indonesia BMKG active provincial nowcast RSS, source-reported only; not global",
+          "source_updated_at": null,
+          "source_url": "https://www.bmkg.go.id/alerts/nowcast/en/CJK20261126001_alert.xml",
+          "title": "Thunderstorm This Morning in Jakarta"
         }
       }
     }

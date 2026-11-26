@@ -154,6 +154,53 @@
         }
       }
     },
+    "4a44536cf339b3a45fdd64a06238856dd0719e3cfc2522ca7ee532cd9ab46151": {
+      "information_root": "cbp_wait:cbp_wait:260305:2026-11-25:19:37:46",
+      "members": {
+        "beh:f65dc71480f5b2912c3444ed75ea": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-26T03:40:40+00:00",
+          "geography_key": "us-border-port:260305",
+          "geography_label": "Naco",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:f65dc71480f5b2912c3444ed75ea",
+          "information_root": "cbp_wait:cbp_wait:260305:2026-11-25:19:37:46",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Update Pending",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/25/2026",
+            "reported_local_time": "19:37:46",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Naco"
+        }
+      }
+    },
     "4a51d398ef06881852f539e45cd4952d98d8d09d7469ba2e08c5eba09d6de966": {
       "information_root": "ioda:8d88e9622aa41c21cda55ef0",
       "members": {

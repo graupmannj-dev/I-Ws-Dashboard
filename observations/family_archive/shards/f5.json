@@ -73,6 +73,53 @@
         }
       }
     },
+    "f51fb9e0bd7a97ed54db1699b4d0d40673295f4cb9722cebfa30e8d3a736e7b1": {
+      "information_root": "cbp_wait:cbp_wait:230403:2026-11-25:21:37:46",
+      "members": {
+        "beh:f82d9983ca1a116473548f4dfb92": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-26T03:40:40+00:00",
+          "geography_key": "us-border-port:230403",
+          "geography_label": "Laredo",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:f82d9983ca1a116473548f4dfb92",
+          "information_root": "cbp_wait:cbp_wait:230403:2026-11-25:21:37:46",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "delay",
+            "lanes_open": 4,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "At 9:00 pm CST",
+            "reported_local_date": "11/25/2026",
+            "reported_local_time": "21:37:46",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 15
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Laredo / Colombia Solidarity"
+        }
+      }
+    },
     "f52dbe7d03a495a83e11a429a354534100092ab6a75e544427a9fcea7bdb3ba8": {
       "information_root": "cbp_wait:cbp_wait:380301:2026-11-21:06:24:37",
       "members": {
@@ -469,6 +516,39 @@
           "source_updated_at": null,
           "source_url": "https://bwt.cbp.gov/api/waittimes",
           "title": "CBP estimated commercial border wait — Hidalgo/Pharr / Hidalgo"
+        }
+      }
+    },
+    "f58ea1a990ba0be9a959a378a3b86c1af42b097773a20f66a9b436229cc2fd93": {
+      "information_root": "niord:de5a1834-99d1-432f-94c2-7af31d71c67e:0:0:0",
+      "members": {
+        "beh:1e50fe22a7a344d914bdae7b69fd": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "official_scheduled_restriction_not_military_preparation",
+          "collection_mode": "live_maritime",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-26T02:18:09+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "notice_geography_unavailable",
+          "id": "beh:1e50fe22a7a344d914bdae7b69fd",
+          "information_root": "niord:de5a1834-99d1-432f-94c2-7af31d71c67e:0:0:0",
+          "origin": "behavioral_registry",
+          "provider": "niord",
+          "published_at": null,
+          "restriction_status": "scheduled_not_yet_effective",
+          "scheduled_valid_from": "2026-11-26T08:00:00Z",
+          "scheduled_valid_until": "2026-11-26T21:00:00Z",
+          "source_dependency_class": null,
+          "source_family": "maritime_restriction",
+          "source_kind": "official_restriction_notice",
+          "source_measurement": null,
+          "source_scope": null,
+          "source_updated_at": "2026-11-26T00:21:52Z",
+          "source_url": "https://niord.dma.dk/#/message/de5a1834-99d1-432f-94c2-7af31d71c67e",
+          "title": "Denmark. Kattegat. EK R 18 Jaegerspris. Firing exercises. Warning."
         }
       }
     },

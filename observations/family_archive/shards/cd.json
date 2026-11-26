@@ -107,6 +107,39 @@
         }
       }
     },
+    "cd10bb9d22490e139079f65ec8edd900abd937e3e1c17a580ae413a4fc1fa21e": {
+      "information_root": "niord:de5a1834-99d1-432f-94c2-7af31d71c67e:3:0:0",
+      "members": {
+        "beh:2096c5e1ee0984bf55859287e838": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "official_scheduled_restriction_not_military_preparation",
+          "collection_mode": "live_maritime",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-26T02:18:09+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "notice_geography_unavailable",
+          "id": "beh:2096c5e1ee0984bf55859287e838",
+          "information_root": "niord:de5a1834-99d1-432f-94c2-7af31d71c67e:3:0:0",
+          "origin": "behavioral_registry",
+          "provider": "niord",
+          "published_at": null,
+          "restriction_status": "within_published_validity_window_not_verified_active",
+          "scheduled_valid_from": "2026-11-26T00:21:50Z",
+          "scheduled_valid_until": "2026-11-30T16:00:00Z",
+          "source_dependency_class": null,
+          "source_family": "maritime_restriction",
+          "source_kind": "official_restriction_notice",
+          "source_measurement": null,
+          "source_scope": null,
+          "source_updated_at": "2026-11-26T00:21:52Z",
+          "source_url": "https://niord.dma.dk/#/message/de5a1834-99d1-432f-94c2-7af31d71c67e",
+          "title": "Denmark. Kattegat. EK R 18 Jaegerspris. Firing exercises. Warning."
+        }
+      }
+    },
     "cd55fdadecf32cabca59b194aa2f1f1cd48a189bdf8dff373ad07c1604abbc25": {
       "information_root": "commercial:eab6a9d13d5baafde6e1",
       "members": {
@@ -418,6 +451,46 @@
           "source_updated_at": "2026-11-20T00:21:52Z",
           "source_url": "https://niord.dma.dk/#/message/07ae7b1a-b975-48ee-bfd8-822c3fcfa940",
           "title": "Denmark. The Baltic Sea. EK D 395 Raghammer. Firing exercises. Warning."
+        }
+      }
+    },
+    "cdb797a3dd2a48ec0997dff4bdb6f3c508c5044c20ead2bdce7e54e9ff7508d6": {
+      "information_root": "coops:8638610:20261126T0330Z",
+      "members": {
+        "beh:8f5404ba45b4d5c1865e0d7de7c3": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "coops",
+          "direct_measurement": true,
+          "event_at": "2026-11-26T03:30:00Z",
+          "first_observed_at": "2026-11-26T03:30:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:8f5404ba45b4d5c1865e0d7de7c3",
+          "information_root": "coops:8638610:20261126T0330Z",
+          "origin": "behavioral_registry",
+          "provider": "coops",
+          "published_at": "2026-11-26T03:30:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "station_physical_measurement",
+          "source_family": "port_conditions",
+          "source_kind": "selected_port_water_level_measurement",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "metric_comparable_only_same_station_datum_and_sample_window": true,
+            "name": "observed_water_level",
+            "station": "8638610",
+            "unit": "meters_MLLW",
+            "value": 1.499
+          },
+          "source_scope": "NOAA CO-OPS water levels at San Francisco, Key West and Sewells Point; stations only",
+          "source_updated_at": null,
+          "source_url": "https://tidesandcurrents.noaa.gov/waterlevels.html?id=8638610",
+          "title": "Sewells Point, VA observed water level (no anomaly classification)"
         }
       }
     },

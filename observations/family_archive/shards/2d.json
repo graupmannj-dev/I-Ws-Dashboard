@@ -96,6 +96,39 @@
         }
       }
     },
+    "2d27568dec35e50eca49d91ef94233be320293c3593baacb40ad3086b327e40d": {
+      "information_root": "niord:02c9ba7a-bdb7-498e-9c26-4601f5fcb505:4:0:0",
+      "members": {
+        "beh:858bd341e283323a88e060e666a9": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "official_scheduled_restriction_not_military_preparation",
+          "collection_mode": "live_maritime",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-26T02:18:09+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "notice_geography_unavailable",
+          "id": "beh:858bd341e283323a88e060e666a9",
+          "information_root": "niord:02c9ba7a-bdb7-498e-9c26-4601f5fcb505:4:0:0",
+          "origin": "behavioral_registry",
+          "provider": "niord",
+          "published_at": null,
+          "restriction_status": "within_published_validity_window_not_verified_active",
+          "scheduled_valid_from": "2026-11-26T00:21:50Z",
+          "scheduled_valid_until": "2026-11-26T21:00:00Z",
+          "source_dependency_class": null,
+          "source_family": "maritime_restriction",
+          "source_kind": "official_restriction_notice",
+          "source_measurement": null,
+          "source_scope": null,
+          "source_updated_at": "2026-11-26T00:21:52Z",
+          "source_url": "https://niord.dma.dk/#/message/02c9ba7a-bdb7-498e-9c26-4601f5fcb505",
+          "title": "Denmark. Kattegat. EK R 17 Isefjord. Firing exercises. Warning."
+        }
+      }
+    },
     "2d2c5eccea69f47f01a731e7dbbf0db1e115953566af2f1698cacdb058f95677": {
       "information_root": "coops:9414290:20261125T1918Z",
       "members": {
@@ -210,6 +243,39 @@
           "source_updated_at": null,
           "source_url": "https://bwt.cbp.gov/api/waittimes",
           "title": "CBP estimated commercial border wait — Eagle Pass / Bridge II"
+        }
+      }
+    },
+    "2d3e291dedc704be106f668a54714f440d4bd38e3eb0c8a6fcc1d75f6d978ede": {
+      "information_root": "nws:5d70990546caea7fa55b2b2a",
+      "members": {
+        "beh:63509a4ab57986ffd0e302209c6e": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "nws",
+          "direct_measurement": false,
+          "event_at": "2026-11-26T00:03:00Z",
+          "first_observed_at": "2026-11-26T00:03:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:63509a4ab57986ffd0e302209c6e",
+          "information_root": "nws:5d70990546caea7fa55b2b2a",
+          "origin": "behavioral_registry",
+          "provider": "nws",
+          "published_at": "2026-11-26T00:03:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "official_weather_alert_context",
+          "source_measurement": null,
+          "source_scope": "Active NWS marine alerts; severity Minor",
+          "source_updated_at": null,
+          "source_url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.0f97981d5610991deb134b29fe213f9e7ed54cc3.003.2",
+          "title": "High Surf Advisory - Coastal Nassau; Coastal Glynn; Coastal Camden"
         }
       }
     },
@@ -692,6 +758,53 @@
           "source_updated_at": null,
           "source_url": "https://bwt.cbp.gov/api/waittimes",
           "title": "CBP estimated commercial border wait — Del Rio"
+        }
+      }
+    },
+    "2dca82ef5f727e4e22227cbd7e6f02b6982689a903fb59a1b3eba052bbfcd551": {
+      "information_root": "cbp_wait:cbp_wait:380201:2026-11-25:22:37:46",
+      "members": {
+        "beh:191556b74a9751dcc5ab28b43fc6": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-26T03:40:40+00:00",
+          "geography_key": "us-border-port:380201",
+          "geography_label": "Port Huron",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:191556b74a9751dcc5ab28b43fc6",
+          "information_root": "cbp_wait:cbp_wait:380201:2026-11-25:22:37:46",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "no delay",
+            "lanes_open": 2,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "At 10:00 pm EST",
+            "reported_local_date": "11/25/2026",
+            "reported_local_time": "22:37:46",
+            "source_declared_border": "Canadian Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 0
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Port Huron / Bluewater Bridge"
         }
       }
     },

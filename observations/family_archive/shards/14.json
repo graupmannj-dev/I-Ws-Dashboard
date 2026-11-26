@@ -33,6 +33,39 @@
         }
       }
     },
+    "141c3aa0ea8c6acc1dd43d30d73b6a061655c0c715b7cd6e8270db6a57e6432f": {
+      "information_root": "niord:fc2ff18e-e5a4-4f24-8ffb-9878491b4f31:1:0:0",
+      "members": {
+        "beh:dd5415b2c9f2ac4e73f2facbf184": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "official_scheduled_restriction_not_military_preparation",
+          "collection_mode": "live_maritime",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-26T02:18:09+00:00",
+          "geography_key": "source-footprint:ff87c256d22ce2567dbe95f9",
+          "geography_label": "Official Polygon notice area",
+          "geography_precision": "provider_defined_notice_boundary_not_event_point",
+          "id": "beh:dd5415b2c9f2ac4e73f2facbf184",
+          "information_root": "niord:fc2ff18e-e5a4-4f24-8ffb-9878491b4f31:1:0:0",
+          "origin": "behavioral_registry",
+          "provider": "niord",
+          "published_at": null,
+          "restriction_status": "within_published_validity_window_not_verified_active",
+          "scheduled_valid_from": "2026-11-26T00:21:50Z",
+          "scheduled_valid_until": "2026-11-29T13:00:00Z",
+          "source_dependency_class": null,
+          "source_family": "maritime_restriction",
+          "source_kind": "official_restriction_notice",
+          "source_measurement": null,
+          "source_scope": null,
+          "source_updated_at": "2026-11-26T00:21:53Z",
+          "source_url": "https://niord.dma.dk/#/message/fc2ff18e-e5a4-4f24-8ffb-9878491b4f31",
+          "title": "Denmark. Kattegat. EK R 45 Hevring. Firing exercises. Warning."
+        }
+      }
+    },
     "1436f9e50f17ce7f737ab90839261d461673ca6330af8cd38deba4969b30d91a": {
       "information_root": "bmkg_quake:bmkg_quake:f743e5d980b86e23ad68549cc168",
       "members": {
@@ -134,6 +167,81 @@
               {
                 "count": 5,
                 "title": "Kelly Key"
+              }
+            ],
+            "name": "sampled_edits_last_three_hours",
+            "sample_cap_reached": true,
+            "unit": "edits",
+            "value": 500
+          },
+          "source_scope": "Wikipedia main-namespace edit-count sample, 14 global language editions, three-hour window capped at 500 per wiki; not geographic location",
+          "source_updated_at": null,
+          "source_url": "https://pt.wikipedia.org/wiki/Special:RecentChanges",
+          "title": "Wikipedia pt public article-edit activity (sampled)"
+        }
+      }
+    },
+    "1463a1368b7f283117c6f3266b25885f67dfd0c1b4d6eabbfebcde9b751cfcde": {
+      "information_root": "wiki_edits:wiki_edits:pt:20261126T03",
+      "members": {
+        "beh:264869a2a04f88ce72974fc4f322": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "wiki_edits",
+          "direct_measurement": false,
+          "event_at": "2026-11-26T03:38:18Z",
+          "first_observed_at": "2026-11-26T03:38:18+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:264869a2a04f88ce72974fc4f322",
+          "information_root": "wiki_edits:wiki_edits:pt:20261126T03",
+          "origin": "behavioral_registry",
+          "provider": "wiki_edits",
+          "published_at": "2026-11-26T03:38:18Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "public_encyclopedia_edit_aggregate",
+          "source_family": "public_attention",
+          "source_kind": "bounded_public_edit_count_not_event_verification",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "distinct_articles_in_sample": 439,
+            "maximum_returned_edits": 500,
+            "most_edited_article_counts": [
+              {
+                "count": 10,
+                "title": "Osso de Ishango"
+              },
+              {
+                "count": 6,
+                "title": "Barreirinha"
+              },
+              {
+                "count": 6,
+                "title": "Simão Henrique, Conde de Lippe-Detmold"
+              },
+              {
+                "count": 4,
+                "title": "1845 no Brasil"
+              },
+              {
+                "count": 4,
+                "title": "Candeias (Jaboatão dos Guararapes)"
+              },
+              {
+                "count": 4,
+                "title": "Lista de sistemas ferroviários urbanos no Brasil"
+              },
+              {
+                "count": 3,
+                "title": "1843 no Brasil"
+              },
+              {
+                "count": 3,
+                "title": "Igreja Presbiteriana de Manaus"
               }
             ],
             "name": "sampled_edits_last_three_hours",

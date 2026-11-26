@@ -476,6 +476,45 @@
           "title": "Venezuela"
         }
       }
+    },
+    "deea92475386689f7c1acf5eeef0326cf6a48fb46817ea2ae2c8cd3ec7c61fe8": {
+      "information_root": "bmkg_nowcast:bmkg_nowcast:95c8384acedf39622255a540c8a1",
+      "members": {
+        "beh:0b86c4ad4eb63080a0176b4338b7": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "bmkg_nowcast",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-26T01:59:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:0b86c4ad4eb63080a0176b4338b7",
+          "information_root": "bmkg_nowcast:bmkg_nowcast:95c8384acedf39622255a540c8a1",
+          "origin": "behavioral_registry",
+          "provider": "bmkg_nowcast",
+          "published_at": "2026-11-26T01:59:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Indonesia BMKG",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Indonesia BMKG active provincial nowcast RSS, source-reported only; not global",
+          "source_updated_at": null,
+          "source_url": "https://www.bmkg.go.id/alerts/nowcast/en/CPU20261126002_alert.xml",
+          "title": "Thunderstorm This Afternoon in Papua"
+        }
+      }
     }
   },
   "schema": "aiba.family-archive.v1"

@@ -1,5 +1,38 @@
 {
   "roots": {
+    "1d093c5b7b826a7357a9986eea1425dbc9a91c12028ed106d33154a38b019ccd": {
+      "information_root": "nws:c269fdb7d36366ca36dc167c",
+      "members": {
+        "beh:0a5c1cd8be85269c783fad3a4f8b": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "nws",
+          "direct_measurement": false,
+          "event_at": "2026-11-26T01:17:00Z",
+          "first_observed_at": "2026-11-26T01:17:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:0a5c1cd8be85269c783fad3a4f8b",
+          "information_root": "nws:c269fdb7d36366ca36dc167c",
+          "origin": "behavioral_registry",
+          "provider": "nws",
+          "published_at": "2026-11-26T01:17:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "official_weather_alert_context",
+          "source_measurement": null,
+          "source_scope": "Active NWS marine alerts; severity Severe",
+          "source_updated_at": null,
+          "source_url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.6be948b024539d9f3270d9eda824aece5aa2f8f1.001.1",
+          "title": "Flood Warning - Lake, FL; Volusia, FL"
+        }
+      }
+    },
     "1d395d5a533cb7066beef64b04c20a17aa77630fca7a2373da8377c68ee4b86d": {
       "information_root": "ioda:1af3412c75439774a81faa9a",
       "members": {
@@ -60,6 +93,39 @@
           "source_updated_at": null,
           "source_url": "https://ioda.inetintel.cc.gatech.edu/",
           "title": "IODA detected connectivity anomaly: country SR"
+        }
+      }
+    },
+    "1d51dd485aa251dca4e2ab476c6a87fe9ae16396ed019dd39d2396af33a56849": {
+      "information_root": "nws:ccca547c7a9b323445e60282",
+      "members": {
+        "beh:30b00f363dbcad9e5e8094955d2a": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "nws",
+          "direct_measurement": false,
+          "event_at": "2026-11-25T19:49:00Z",
+          "first_observed_at": "2026-11-25T19:49:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:30b00f363dbcad9e5e8094955d2a",
+          "information_root": "nws:ccca547c7a9b323445e60282",
+          "origin": "behavioral_registry",
+          "provider": "nws",
+          "published_at": "2026-11-25T19:49:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "official_weather_alert_context",
+          "source_measurement": null,
+          "source_scope": "Active NWS marine alerts; severity Severe",
+          "source_updated_at": null,
+          "source_url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.c673a9907be498dacf95faec2d917a8c2fc1beb4.001.1",
+          "title": "Flood Watch - Metro Palm Beach County; Metro Broward County; Metropolitan Miami Dade; Coastal Palm Beach County; C"
         }
       }
     },
@@ -362,6 +428,39 @@
           "source_updated_at": null,
           "source_url": "https://apiprevmet3.inmet.gov.br/avisos/rss/56470",
           "title": "Aviso de Tempestade. Severidade Grau: Perigo"
+        }
+      }
+    },
+    "1db2b9d9db8379205f2f8d2f221894dbbf8fda4d9a66d25472cdd099c6fc8c9d": {
+      "information_root": "niord:e44ccdf3-7bea-4812-b576-713ee3e44509:0:0:0",
+      "members": {
+        "beh:63c8106acc597354e0362a1763bd": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "official_scheduled_restriction_not_military_preparation",
+          "collection_mode": "live_maritime",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-26T02:18:09+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "notice_geography_unavailable",
+          "id": "beh:63c8106acc597354e0362a1763bd",
+          "information_root": "niord:e44ccdf3-7bea-4812-b576-713ee3e44509:0:0:0",
+          "origin": "behavioral_registry",
+          "provider": "niord",
+          "published_at": null,
+          "restriction_status": "scheduled_not_yet_effective",
+          "scheduled_valid_from": "2026-11-26T23:00:00Z",
+          "scheduled_valid_until": "2026-11-27T17:00:00Z",
+          "source_dependency_class": null,
+          "source_family": "maritime_restriction",
+          "source_kind": "official_restriction_notice",
+          "source_measurement": null,
+          "source_scope": null,
+          "source_updated_at": "2026-11-26T00:21:51Z",
+          "source_url": "https://niord.dma.dk/#/message/e44ccdf3-7bea-4812-b576-713ee3e44509",
+          "title": "Denmark. The Baltic Sea. EK D 396 Hullebaek. Firing exercises. Warning."
         }
       }
     },

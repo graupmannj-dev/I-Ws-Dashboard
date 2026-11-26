@@ -107,6 +107,53 @@
         }
       }
     },
+    "d41118b421f354f44ace06fdf192632431ae71d8a21364063e32cbc43f41b053": {
+      "information_root": "cbp_wait:cbp_wait:240801:2026-11-25:20:37:47",
+      "members": {
+        "beh:149f8f8df8c6da93888b070b5ece": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-26T03:40:40+00:00",
+          "geography_key": "us-border-port:240801",
+          "geography_label": "Santa Teresa",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:149f8f8df8c6da93888b070b5ece",
+          "information_root": "cbp_wait:cbp_wait:240801:2026-11-25:20:37:47",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "delay",
+            "lanes_open": 1,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "At 8:00 pm MST",
+            "reported_local_date": "11/25/2026",
+            "reported_local_time": "20:37:47",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 35
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Santa Teresa / Santa Teresa Port of Entry"
+        }
+      }
+    },
     "d41d6b97a6b34ce4be57567dc9cfbbaec6345d4cd9c1ef7d49107a022c7bafb9": {
       "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07b583:110824-2026",
       "members": {

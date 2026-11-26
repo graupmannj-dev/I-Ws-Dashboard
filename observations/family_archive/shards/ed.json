@@ -143,6 +143,39 @@
         }
       }
     },
+    "ed5507947e4b087c6532b74c95eeab5b93fdd35758d3f6e3e9df01a87e194af4": {
+      "information_root": "niord:e44ccdf3-7bea-4812-b576-713ee3e44509:1:0:0",
+      "members": {
+        "beh:c7b1497519bc94355d35fa01471c": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "official_scheduled_restriction_not_military_preparation",
+          "collection_mode": "live_maritime",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-26T02:18:09+00:00",
+          "geography_key": "source-footprint:227310d08dc51d223524a542",
+          "geography_label": "Official Polygon notice area",
+          "geography_precision": "provider_defined_notice_boundary_not_event_point",
+          "id": "beh:c7b1497519bc94355d35fa01471c",
+          "information_root": "niord:e44ccdf3-7bea-4812-b576-713ee3e44509:1:0:0",
+          "origin": "behavioral_registry",
+          "provider": "niord",
+          "published_at": null,
+          "restriction_status": "within_published_validity_window_not_verified_active",
+          "scheduled_valid_from": "2026-11-26T00:21:50Z",
+          "scheduled_valid_until": "2026-11-30T00:00:00Z",
+          "source_dependency_class": null,
+          "source_family": "maritime_restriction",
+          "source_kind": "official_restriction_notice",
+          "source_measurement": null,
+          "source_scope": null,
+          "source_updated_at": "2026-11-26T00:21:51Z",
+          "source_url": "https://niord.dma.dk/#/message/e44ccdf3-7bea-4812-b576-713ee3e44509",
+          "title": "Denmark. The Baltic Sea. EK D 396 Hullebaek. Firing exercises. Warning."
+        }
+      }
+    },
     "ed60c96b412aa54f12723a0dac35bc9292d9b3a298c4a79102af73e0c3886663": {
       "information_root": "cbp_wait:cbp_wait:090101:2026-11-22:14:38:50",
       "members": {
@@ -187,6 +220,53 @@
           "source_updated_at": null,
           "source_url": "https://bwt.cbp.gov/api/waittimes",
           "title": "CBP estimated commercial border wait — Buffalo/Niagara Falls / Peace Bridge"
+        }
+      }
+    },
+    "ed6a7486086b4fc2abdd266ce5abaa433ec7c248ee1b293951615820470062d7": {
+      "information_root": "cbp_wait:cbp_wait:240201:2026-11-25:20:37:46",
+      "members": {
+        "beh:c6da8dff5955b8546ed99174ac1b": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-26T03:40:40+00:00",
+          "geography_key": "us-border-port:240201",
+          "geography_label": "El Paso",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:c6da8dff5955b8546ed99174ac1b",
+          "information_root": "cbp_wait:cbp_wait:240201:2026-11-25:20:37:46",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Lanes Closed",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/25/2026",
+            "reported_local_time": "20:37:46",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — El Paso / Bridge of the Americas (BOTA)"
         }
       }
     },
@@ -749,6 +829,53 @@
           "source_updated_at": null,
           "source_url": "https://www.bmkg.go.id/alerts/nowcast/en/CKG20261122011_alert.xml",
           "title": "Thunderstorm This Morning in Kalimantan Tengah"
+        }
+      }
+    },
+    "edf194df7cef6359c2e291565e48b90db461a005125de9dc3a1e779c44bf4154": {
+      "information_root": "cbp_wait:cbp_wait:250401:2026-11-25:19:37:47",
+      "members": {
+        "beh:9cceba15de4eafac7bf4b1062bf9": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-26T03:40:40+00:00",
+          "geography_key": "us-border-port:250401",
+          "geography_label": "San Ysidro",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:9cceba15de4eafac7bf4b1062bf9",
+          "information_root": "cbp_wait:cbp_wait:250401:2026-11-25:19:37:47",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "N/A",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/25/2026",
+            "reported_local_time": "19:37:47",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — San Ysidro"
         }
       }
     },

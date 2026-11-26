@@ -217,6 +217,39 @@
         }
       }
     },
+    "d18172ffac779b838eef378512b568b45ee54180348071c671dc331cf01822ea": {
+      "information_root": "niord:701ef089-5eb7-433c-bbd5-33ee0a7a1a20:0:1:0",
+      "members": {
+        "beh:b91769c2ec4fc66d984ae0df172e": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "official_scheduled_restriction_not_military_preparation",
+          "collection_mode": "live_maritime",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-26T02:18:09+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "notice_geography_unavailable",
+          "id": "beh:b91769c2ec4fc66d984ae0df172e",
+          "information_root": "niord:701ef089-5eb7-433c-bbd5-33ee0a7a1a20:0:1:0",
+          "origin": "behavioral_registry",
+          "provider": "niord",
+          "published_at": null,
+          "restriction_status": "scheduled_not_yet_effective",
+          "scheduled_valid_from": "2026-11-27T07:00:00Z",
+          "scheduled_valid_until": "2026-11-27T14:00:00Z",
+          "source_dependency_class": null,
+          "source_family": "maritime_restriction",
+          "source_kind": "official_restriction_notice",
+          "source_measurement": null,
+          "source_scope": null,
+          "source_updated_at": "2026-11-26T00:21:53Z",
+          "source_url": "https://niord.dma.dk/#/message/701ef089-5eb7-433c-bbd5-33ee0a7a1a20",
+          "title": "Denmark. Kattegat. EK R 20 Yderby. Firing exercises. Warning."
+        }
+      }
+    },
     "d183a1dbfea894495e512a3cff5d228e585a54137c067b0aa722c8ebc65f674b": {
       "information_root": "niord:1fb80b52-7724-4cb2-b4b7-ebaf605093bb:3:0:0",
       "members": {
@@ -487,6 +520,45 @@
           "source_updated_at": null,
           "source_url": "https://ru.wikipedia.org/wiki/Special:RecentChanges",
           "title": "Wikipedia ru public article-edit activity (sampled)"
+        }
+      }
+    },
+    "d1d156a4989a172ff4c3ba555ae780d788dcb53187c90a5958cdf6e57ec2fbfe": {
+      "information_root": "bmkg_nowcast:bmkg_nowcast:3869288575ee9dbc7de3afaac44f",
+      "members": {
+        "beh:b61ea3dd03610e0141c5444b5d53": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "bmkg_nowcast",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-26T02:45:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:b61ea3dd03610e0141c5444b5d53",
+          "information_root": "bmkg_nowcast:bmkg_nowcast:3869288575ee9dbc7de3afaac44f",
+          "origin": "behavioral_registry",
+          "provider": "bmkg_nowcast",
+          "published_at": "2026-11-26T02:45:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Indonesia BMKG",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Indonesia BMKG active provincial nowcast RSS, source-reported only; not global",
+          "source_updated_at": null,
+          "source_url": "https://www.bmkg.go.id/alerts/nowcast/en/CBB20261126001_alert.xml",
+          "title": "Thunderstorm This Morning in Kep. Bangka Belitung"
         }
       }
     },

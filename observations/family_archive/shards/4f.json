@@ -383,6 +383,53 @@
         }
       }
     },
+    "4fa724f12765e3fb5c6409b333d873d758952872f976af0342d234427b712471": {
+      "information_root": "cbp_wait:cbp_wait:090103:2026-11-25:22:37:46",
+      "members": {
+        "beh:31d3dc023673c384f90e360ed4c1": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-26T03:40:40+00:00",
+          "geography_key": "us-border-port:090103",
+          "geography_label": "Buffalo/Niagara Falls",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:31d3dc023673c384f90e360ed4c1",
+          "information_root": "cbp_wait:cbp_wait:090103:2026-11-25:22:37:46",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Update Pending",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/25/2026",
+            "reported_local_time": "22:37:46",
+            "source_declared_border": "Canadian Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Buffalo/Niagara Falls / Whirlpool Bridge"
+        }
+      }
+    },
     "4fa87bcfe82c1176831e1c2885f9397a9c1b070eb963c7fa7d8c147f70354977": {
       "information_root": "cbp_wait:cbp_wait:240203:2026-11-25:12:18:21",
       "members": {
@@ -538,6 +585,50 @@
         }
       }
     },
+    "4fb99bd44c7dba1bbfebc81b3be938626fc10358d02f79e9bd1987ddb19fba15": {
+      "information_root": "tw_power:tw_power:20261126T0330Z",
+      "members": {
+        "beh:84277a15c4478f7a0b648cc7d9f5": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_power_snapshot_not_outage_attribution",
+          "collection_mode": "tw_power",
+          "direct_measurement": true,
+          "event_at": null,
+          "first_observed_at": "2026-11-26T03:40:40+00:00",
+          "geography_key": "country:TW",
+          "geography_label": "Taiwan",
+          "geography_precision": "national_not_facility",
+          "id": "beh:84277a15c4478f7a0b648cc7d9f5",
+          "information_root": "tw_power:tw_power:20261126T0330Z",
+          "origin": "behavioral_registry",
+          "provider": "tw_power",
+          "published_at": "2026-11-26T03:30:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "public_national_power_snapshot",
+          "source_family": "grid_load",
+          "source_kind": "national_grid_load_aggregate_not_outage",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "measurement_clock_distinct_from_release_not_verified": true,
+            "name": "nationwide_reported_current_load",
+            "not_grid_frequency_or_outage_attribution": true,
+            "observation_coverage": "single_national_snapshot_not_24h",
+            "reported_utilization_percent": 79.0,
+            "source_published_clock": "2026-11-26T03:30:00Z",
+            "source_value_10k_kilowatts": 3141.1,
+            "unit": "MW",
+            "value": 31411.0
+          },
+          "source_scope": "Taiwan Taipower public nationwide current load snapshot and publisher release clock, not power-station or local outage data",
+          "source_updated_at": null,
+          "source_url": "https://service.taipower.com.tw/data/opendata/apply/file/d006020/001.json",
+          "title": "Taipower nationwide publicly reported current electricity load"
+        }
+      }
+    },
     "4fc862d977670098b613c8f9c1e4ea6175c8f74173e582bab636474661bac99a": {
       "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c2c8:111303-2026",
       "members": {
@@ -614,6 +705,53 @@
           "source_updated_at": null,
           "source_url": "https://data.gov.sg/datasets/d_8f264219109e61fffa87ac64dd5a9a65/view",
           "title": "Singapore MPA 2026-08 Freighter vessel arrivals (>75 GT)"
+        }
+      }
+    },
+    "4fe40d17758d464e693f215912e508ce0a0ce28130548087d5a74a5f4eabdcad": {
+      "information_root": "cbp_wait:cbp_wait:230404:2026-11-25:21:37:46",
+      "members": {
+        "beh:2bb4f88db2d0602c27f1a7a7f15d": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-26T03:40:40+00:00",
+          "geography_key": "us-border-port:230404",
+          "geography_label": "Laredo",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:2bb4f88db2d0602c27f1a7a7f15d",
+          "information_root": "cbp_wait:cbp_wait:230404:2026-11-25:21:37:46",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "delay",
+            "lanes_open": 12,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "At 9:00 pm CST",
+            "reported_local_date": "11/25/2026",
+            "reported_local_time": "21:37:46",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 30
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Laredo / World Trade Bridge"
         }
       }
     },

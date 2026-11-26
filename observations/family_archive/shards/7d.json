@@ -80,6 +80,53 @@
         }
       }
     },
+    "7d228c7524d444e45db8e2d88c6ea710de574112d625583bed094a75295d8c6e": {
+      "information_root": "cbp_wait:cbp_wait:230301:2026-11-25:21:37:46",
+      "members": {
+        "beh:63cd050d18501e36fabe62859115": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-26T03:40:40+00:00",
+          "geography_key": "us-border-port:230301",
+          "geography_label": "Eagle Pass",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:63cd050d18501e36fabe62859115",
+          "information_root": "cbp_wait:cbp_wait:230301:2026-11-25:21:37:46",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "N/A",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/25/2026",
+            "reported_local_time": "21:37:46",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Eagle Pass / Bridge I"
+        }
+      }
+    },
     "7d3ecc544817dcf2bdc50b0247ccaa826eefba3403e12f0739c253bec5667cb9": {
       "information_root": "coops:8638610:20261123T1300Z",
       "members": {
@@ -490,6 +537,39 @@
           "source_updated_at": "2026-11-17T00:21:52Z",
           "source_url": "https://niord.dma.dk/#/message/fbcc5283-72c1-46cf-847c-5c2eface7b46",
           "title": "Denmark. Kattegat. EK R 17 Isefjord. Firing exercises. Warning."
+        }
+      }
+    },
+    "7da8785723db1f680825e7ff35e52b725dcc59787f82e3869ecaae1864af2945": {
+      "information_root": "niord:b0b5a953-a09d-4165-a0ff-247468eb8a47:0:2:0",
+      "members": {
+        "beh:df1062516fc0144ae66373a4bf13": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "official_scheduled_restriction_not_military_preparation",
+          "collection_mode": "live_maritime",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-26T02:18:09+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "notice_geography_unavailable",
+          "id": "beh:df1062516fc0144ae66373a4bf13",
+          "information_root": "niord:b0b5a953-a09d-4165-a0ff-247468eb8a47:0:2:0",
+          "origin": "behavioral_registry",
+          "provider": "niord",
+          "published_at": null,
+          "restriction_status": "scheduled_not_yet_effective",
+          "scheduled_valid_from": "2026-11-28T08:00:00Z",
+          "scheduled_valid_until": "2026-11-28T14:00:00Z",
+          "source_dependency_class": null,
+          "source_family": "maritime_restriction",
+          "source_kind": "official_restriction_notice",
+          "source_measurement": null,
+          "source_scope": null,
+          "source_updated_at": "2026-11-26T00:21:54Z",
+          "source_url": "https://niord.dma.dk/#/message/b0b5a953-a09d-4165-a0ff-247468eb8a47",
+          "title": "Denmark. Skagerrak. EK R 48 Tranum S. Firing exercises. Warning."
         }
       }
     },

@@ -447,6 +447,53 @@
         }
       }
     },
+    "ad852e4b92dd3a947bbd33ac882e4b5530c08dd3cda2c1caa82d324a1c6c9d06": {
+      "information_root": "ons_br:ons_br:S:20261125T030000Z",
+      "members": {
+        "beh:f92c824634e8c8fb144c9d9fd8b8": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "verified_grid_load_not_outage_or_intent",
+          "collection_mode": "ons_br",
+          "direct_measurement": true,
+          "event_at": "2026-11-25T03:00:00Z",
+          "first_observed_at": "2026-11-26T03:40:40+00:00",
+          "geography_key": "br-ons-loadarea:S",
+          "geography_label": "South",
+          "geography_precision": "regional_grid_not_incident_site",
+          "id": "beh:f92c824634e8c8fb144c9d9fd8b8",
+          "information_root": "ons_br:ons_br:S:20261125T030000Z",
+          "origin": "behavioral_registry",
+          "provider": "ons_br",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "verified_national_grid_load_measurement",
+          "source_family": "grid_load",
+          "source_kind": "verified_regional_electricity_load_context_not_outage",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "collected_history_day": "2026-11-24",
+            "historical_verified_not_live": true,
+            "load_area_code": "S",
+            "load_area_name": "South",
+            "name": "verified_half_hour_global_load",
+            "not_outage_or_attribution": true,
+            "sample_interval_minutes": 30,
+            "sampled_rows": 48,
+            "source_field": "val_cargaglobal",
+            "source_utc_field": "din_referenciautc",
+            "unit": "MWmed",
+            "value": 14179.453
+          },
+          "source_scope": "Brazilian national system operator ONS verified half-hour load, four macroregions, previous two-day sample; no local facilities/outage attribution",
+          "source_updated_at": null,
+          "source_url": "https://dados.ons.org.br/dataset/carga-energia-verificada",
+          "title": "Brazil ONS South verified half-hourly system load"
+        }
+      }
+    },
     "ad91caaf5f8902d24be318acca2d67225372dd4d6c210bc99e157c1c7fdace5e": {
       "information_root": "niord:7e1e4c1f-369b-4077-ac94-713da08c9b82:1:0:0",
       "members": {
@@ -504,6 +551,39 @@
           "source_updated_at": null,
           "source_url": "https://www.gov.uk/foreign-travel-advice/united-arab-emirates",
           "title": "United Arab Emirates"
+        }
+      }
+    },
+    "ad9dd9ed8aaa471c6b8e418b20a7d1ab6bfca56a14695292de672f46db19e4e6": {
+      "information_root": "niord:fc2ff18e-e5a4-4f24-8ffb-9878491b4f31:0:2:0",
+      "members": {
+        "beh:44eb2322f4198ad2c9d98b70e215": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "official_scheduled_restriction_not_military_preparation",
+          "collection_mode": "live_maritime",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-26T02:18:09+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "notice_geography_unavailable",
+          "id": "beh:44eb2322f4198ad2c9d98b70e215",
+          "information_root": "niord:fc2ff18e-e5a4-4f24-8ffb-9878491b4f31:0:2:0",
+          "origin": "behavioral_registry",
+          "provider": "niord",
+          "published_at": null,
+          "restriction_status": "scheduled_not_yet_effective",
+          "scheduled_valid_from": "2026-11-28T07:00:00Z",
+          "scheduled_valid_until": "2026-11-28T22:00:00Z",
+          "source_dependency_class": null,
+          "source_family": "maritime_restriction",
+          "source_kind": "official_restriction_notice",
+          "source_measurement": null,
+          "source_scope": null,
+          "source_updated_at": "2026-11-26T00:21:53Z",
+          "source_url": "https://niord.dma.dk/#/message/fc2ff18e-e5a4-4f24-8ffb-9878491b4f31",
+          "title": "Denmark. Kattegat. EK R 45 Hevring. Firing exercises. Warning."
         }
       }
     },

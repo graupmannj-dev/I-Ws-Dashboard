@@ -93,6 +93,39 @@
         }
       }
     },
+    "993b439c58a924df0b4fd52b3d091eca1d4e1098e4433748d94bf882a4901040": {
+      "information_root": "niord:02c9ba7a-bdb7-498e-9c26-4601f5fcb505:2:0:0",
+      "members": {
+        "beh:1f87a73eef5688767faee13e45cf": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "official_scheduled_restriction_not_military_preparation",
+          "collection_mode": "live_maritime",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-26T02:18:09+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "notice_geography_unavailable",
+          "id": "beh:1f87a73eef5688767faee13e45cf",
+          "information_root": "niord:02c9ba7a-bdb7-498e-9c26-4601f5fcb505:2:0:0",
+          "origin": "behavioral_registry",
+          "provider": "niord",
+          "published_at": null,
+          "restriction_status": "within_published_validity_window_not_verified_active",
+          "scheduled_valid_from": "2026-11-26T00:21:50Z",
+          "scheduled_valid_until": "2026-11-26T21:00:00Z",
+          "source_dependency_class": null,
+          "source_family": "maritime_restriction",
+          "source_kind": "official_restriction_notice",
+          "source_measurement": null,
+          "source_scope": null,
+          "source_updated_at": "2026-11-26T00:21:52Z",
+          "source_url": "https://niord.dma.dk/#/message/02c9ba7a-bdb7-498e-9c26-4601f5fcb505",
+          "title": "Denmark. Kattegat. EK R 17 Isefjord. Firing exercises. Warning."
+        }
+      }
+    },
     "994a210ffdd41307cc33d63a9683d6e593efab4f77e9a8cadcd8211ea01c571f": {
       "information_root": "cbp_wait:cbp_wait:240204:2026-11-23:19:14:19",
       "members": {
@@ -203,6 +236,53 @@
           "source_updated_at": null,
           "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-19T02%3A27%3A41&updatedTo=2026-11-21T02%3A27%3A41",
           "title": "Camel Catchment & South Cornwall PSS · NATURAL ENGLAND"
+        }
+      }
+    },
+    "9977f41a4c89d55ee5ce9b508435e4fc21b2bcfcdb9f11db0df63963db33873c": {
+      "information_root": "cbp_wait:cbp_wait:260802:2026-11-25:20:37:47",
+      "members": {
+        "beh:dc9378cc6fd5763c33e76c6e92b4": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-26T03:40:40+00:00",
+          "geography_key": "us-border-port:260802",
+          "geography_label": "San Luis",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:dc9378cc6fd5763c33e76c6e92b4",
+          "information_root": "cbp_wait:cbp_wait:260802:2026-11-25:20:37:47",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "no delay",
+            "lanes_open": 2,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Closed",
+            "reported_lane_clock": "At 6:00 pm MST",
+            "reported_local_date": "11/25/2026",
+            "reported_local_time": "20:37:47",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 5
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — San Luis / San Luis II"
         }
       }
     },
@@ -544,6 +624,53 @@
           "source_updated_at": null,
           "source_url": "https://data.gov.sg/datasets/d_8f264219109e61fffa87ac64dd5a9a65/view",
           "title": "Singapore MPA 2026-09 Miscellaneous vessel arrivals (>75 GT)"
+        }
+      }
+    },
+    "99e561938baeeaaf0af8012e25021d6c6072da7799559216e2d596d7df2f4dfd": {
+      "information_root": "cbp_wait:cbp_wait:240601:2026-11-25:20:37:46",
+      "members": {
+        "beh:a89e1a65c859d816157b549790c9": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-26T03:40:40+00:00",
+          "geography_key": "us-border-port:240601",
+          "geography_label": "Columbus",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:a89e1a65c859d816157b549790c9",
+          "information_root": "cbp_wait:cbp_wait:240601:2026-11-25:20:37:46",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Lanes Closed",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/25/2026",
+            "reported_local_time": "20:37:46",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Columbus"
         }
       }
     },

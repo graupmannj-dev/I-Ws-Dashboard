@@ -154,6 +154,53 @@
         }
       }
     },
+    "9b987202d21c87849fe5e6cbc66609438b622c7a13f45e2d975920fe8bdaaae7": {
+      "information_root": "cbp_wait:cbp_wait:535502:2026-11-25:21:37:46",
+      "members": {
+        "beh:bec79f9a28ed1698ce9d5d8b6306": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-26T03:40:40+00:00",
+          "geography_key": "us-border-port:535502",
+          "geography_label": "Brownsville",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:bec79f9a28ed1698ce9d5d8b6306",
+          "information_root": "cbp_wait:cbp_wait:535502:2026-11-25:21:37:46",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "no delay",
+            "lanes_open": 2,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "At 9:00 pm CST",
+            "reported_local_date": "11/25/2026",
+            "reported_local_time": "21:37:46",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 5
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Brownsville / Veterans International"
+        }
+      }
+    },
     "9b9e302c790ba1ddd7bc72a95142d921d3953c709d7f0f9ce4c363a13bad3e58": {
       "information_root": "bmkg_nowcast:bmkg_nowcast:23e3f4111b59689ac7abaa0b7d89",
       "members": {
@@ -190,6 +237,39 @@
           "source_updated_at": null,
           "source_url": "https://www.bmkg.go.id/alerts/nowcast/en/CLG20261122003_alert.xml",
           "title": "Thunderstorm This Evening in Lampung"
+        }
+      }
+    },
+    "9b9eb949b6d3d6113b010b873381d80ad9488379586d4f9e27bd9e4591d67dcb": {
+      "information_root": "niord:e44ccdf3-7bea-4812-b576-713ee3e44509:2:0:0",
+      "members": {
+        "beh:e3bef15629e13127456fb3f9dd92": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "official_scheduled_restriction_not_military_preparation",
+          "collection_mode": "live_maritime",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-26T02:18:09+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "notice_geography_unavailable",
+          "id": "beh:e3bef15629e13127456fb3f9dd92",
+          "information_root": "niord:e44ccdf3-7bea-4812-b576-713ee3e44509:2:0:0",
+          "origin": "behavioral_registry",
+          "provider": "niord",
+          "published_at": null,
+          "restriction_status": "within_published_validity_window_not_verified_active",
+          "scheduled_valid_from": "2026-11-26T00:21:50Z",
+          "scheduled_valid_until": "2026-11-30T00:00:00Z",
+          "source_dependency_class": null,
+          "source_family": "maritime_restriction",
+          "source_kind": "official_restriction_notice",
+          "source_measurement": null,
+          "source_scope": null,
+          "source_updated_at": "2026-11-26T00:21:51Z",
+          "source_url": "https://niord.dma.dk/#/message/e44ccdf3-7bea-4812-b576-713ee3e44509",
+          "title": "Denmark. The Baltic Sea. EK D 396 Hullebaek. Firing exercises. Warning."
         }
       }
     },

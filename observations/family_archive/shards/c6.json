@@ -63,6 +63,50 @@
         }
       }
     },
+    "c64382dc67d459fdd2b7e11c3b42622b440b9c228fd5bf6bae7419c2a05bb0df": {
+      "information_root": "ripe:measurement:1001:20261126T03",
+      "members": {
+        "beh:deaf7ad775dc4bcfb80d87ea7fa0": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "aggregate_ping_no_country_or_threat_attribution",
+          "collection_mode": "ripe",
+          "direct_measurement": true,
+          "event_at": null,
+          "first_observed_at": "2026-11-26T03:40:40+00:00",
+          "geography_key": "ripe-msm:1001",
+          "geography_label": "K-root public ping aggregate",
+          "geography_precision": "not_country_or_incident_location",
+          "id": "beh:deaf7ad775dc4bcfb80d87ea7fa0",
+          "information_root": "ripe:measurement:1001:20261126T03",
+          "origin": "behavioral_registry",
+          "provider": "ripe",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "network_aggregate_monitoring",
+          "source_family": "internet_reachability",
+          "source_kind": "aggregate_public_network_ping",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "cohort_comparable_to_prior_snapshots": false,
+            "failed_or_invalid_rtt_count": 383,
+            "individual_probe_records_published": false,
+            "measurement_id": 1001,
+            "name": "sample_median_ping_rtt",
+            "sampled_probe_count": 13487,
+            "unit": "ms",
+            "valid_rtt_count": 13104,
+            "value": 19.019
+          },
+          "source_scope": "RIPE Atlas built-in K-root ping #1001, global public-probe aggregate; not country coverage",
+          "source_updated_at": null,
+          "source_url": "https://atlas.ripe.net/measurements/1001/",
+          "title": "RIPE Atlas K-root public probe aggregate (13104 usable measurements)"
+        }
+      }
+    },
     "c64d236672ada3880fa8ef22a713b0f538439099487c82c2da334c4097c07aca": {
       "information_root": "cbp_wait:cbp_wait:535503:2026-11-22:13:38:51",
       "members": {

@@ -33,6 +33,53 @@
         }
       }
     },
+    "bb1aa230403c1fdbac27404ebcf12bbcfe30df2946ac2dd8aac7905f46a1b309": {
+      "information_root": "cbp_wait:cbp_wait:300402:2026-11-25:19:37:46",
+      "members": {
+        "beh:3ea4e8fd97951ae80eb582792dfe": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-26T03:40:40+00:00",
+          "geography_key": "us-border-port:300402",
+          "geography_label": "Blaine",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:3ea4e8fd97951ae80eb582792dfe",
+          "information_root": "cbp_wait:cbp_wait:300402:2026-11-25:19:37:46",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "N/A",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/25/2026",
+            "reported_local_time": "19:37:46",
+            "source_declared_border": "Canadian Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Blaine / Peace Arch"
+        }
+      }
+    },
     "bb2f4e08aaa53a56452cd9f8417995fa54b34cd559703159352e0d6cd1ee3bcd": {
       "information_root": "cbp_wait:cbp_wait:535501:2026-11-23:07:06:48",
       "members": {
@@ -330,6 +377,81 @@
           "source_updated_at": null,
           "source_url": "https://ioda.inetintel.cc.gatech.edu/",
           "title": "IODA detected connectivity anomaly: country AZ"
+        }
+      }
+    },
+    "bbad3174da50df25999ad7587085134d06c409b9114303ce151d42bab227c641": {
+      "information_root": "wiki_edits:wiki_edits:id:20261126T03",
+      "members": {
+        "beh:f6d3e618229e4ae1ce97c929858a": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "wiki_edits",
+          "direct_measurement": false,
+          "event_at": "2026-11-26T03:38:23Z",
+          "first_observed_at": "2026-11-26T03:38:23+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:f6d3e618229e4ae1ce97c929858a",
+          "information_root": "wiki_edits:wiki_edits:id:20261126T03",
+          "origin": "behavioral_registry",
+          "provider": "wiki_edits",
+          "published_at": "2026-11-26T03:38:23Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "public_encyclopedia_edit_aggregate",
+          "source_family": "public_attention",
+          "source_kind": "bounded_public_edit_count_not_event_verification",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "distinct_articles_in_sample": 334,
+            "maximum_returned_edits": 500,
+            "most_edited_article_counts": [
+              {
+                "count": 17,
+                "title": "Avatar: The Way of Water"
+              },
+              {
+                "count": 10,
+                "title": "Orang Yahudi"
+              },
+              {
+                "count": 6,
+                "title": "Cheers (produk)"
+              },
+              {
+                "count": 6,
+                "title": "D'Academy (musim 8)"
+              },
+              {
+                "count": 6,
+                "title": "Wang Zhenyi (Astronom)"
+              },
+              {
+                "count": 6,
+                "title": "Yahudi di Indonesia"
+              },
+              {
+                "count": 5,
+                "title": "BlackBerry Messenger"
+              },
+              {
+                "count": 4,
+                "title": "Bahtiar Baharuddin"
+              }
+            ],
+            "name": "sampled_edits_last_three_hours",
+            "sample_cap_reached": false,
+            "unit": "edits",
+            "value": 466
+          },
+          "source_scope": "Wikipedia main-namespace edit-count sample, 14 global language editions, three-hour window capped at 500 per wiki; not geographic location",
+          "source_updated_at": null,
+          "source_url": "https://id.wikipedia.org/wiki/Special:RecentChanges",
+          "title": "Wikipedia id public article-edit activity (sampled)"
         }
       }
     },

@@ -30,6 +30,39 @@
         }
       }
     },
+    "bf0e5ace4932c60ad5cd2108fe1f6199834b0f50b5772f161eccbaa46af678f1": {
+      "information_root": "nws:83ec87d4e22f5b2428cf6bdf",
+      "members": {
+        "beh:eb05de346adb56067d82272dd408": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "nws",
+          "direct_measurement": false,
+          "event_at": "2026-11-26T00:23:00Z",
+          "first_observed_at": "2026-11-26T00:23:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:eb05de346adb56067d82272dd408",
+          "information_root": "nws:83ec87d4e22f5b2428cf6bdf",
+          "origin": "behavioral_registry",
+          "provider": "nws",
+          "published_at": "2026-11-26T00:23:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "official_weather_alert_context",
+          "source_measurement": null,
+          "source_scope": "Active NWS marine alerts; severity Minor",
+          "source_updated_at": null,
+          "source_url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.be40d1e80895b70de5fdf9d5e52512002d25cf5c.002.1",
+          "title": "Coastal Flood Statement - Monroe Middle Keys; Monroe Lower Keys"
+        }
+      }
+    },
     "bf1431dc4a360ef1c4b75a6db3cbead40adab31a3d0aed94ec8e52790d7ef9b3": {
       "information_root": "ris_bgp:ris_bgp:AS5713:20261122T21",
       "members": {
@@ -106,6 +139,53 @@
           "source_updated_at": "2026-11-21T00:21:50Z",
           "source_url": "https://niord.dma.dk/#/message/778ec0b5-4df7-481b-a2fb-06f435b7fc00",
           "title": "Denmark. Kattegat. EK R 18 Jaegerspris. Firing exercises. Warning."
+        }
+      }
+    },
+    "bf242d6efc04df850a9ec004629f735289c6ac20a922c94d3b22891828c91835": {
+      "information_root": "cbp_wait:cbp_wait:260401:2026-11-25:20:37:46",
+      "members": {
+        "beh:a7afa028a7d0f02b3908785ad046": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-26T03:40:40+00:00",
+          "geography_key": "us-border-port:260401",
+          "geography_label": "Nogales",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:a7afa028a7d0f02b3908785ad046",
+          "information_root": "cbp_wait:cbp_wait:260401:2026-11-25:20:37:46",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "N/A",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/25/2026",
+            "reported_local_time": "20:37:46",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Nogales / Deconcini"
         }
       }
     },

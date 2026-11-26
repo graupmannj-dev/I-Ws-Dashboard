@@ -669,6 +669,53 @@
         }
       }
     },
+    "19be5cd4c4e64e5ce4f30248edbee37dc83d12355a830c3851574f6859118b0b": {
+      "information_root": "cbp_wait:cbp_wait:231002:2026-11-25:21:37:47",
+      "members": {
+        "beh:17937832187e460a2e3473b8120f": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-26T03:40:40+00:00",
+          "geography_key": "us-border-port:231002",
+          "geography_label": "ROMA TEXAS",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:17937832187e460a2e3473b8120f",
+          "information_root": "cbp_wait:cbp_wait:231002:2026-11-25:21:37:47",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Update Pending",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/25/2026",
+            "reported_local_time": "21:37:47",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — ROMA TEXAS / ROMA TEXAS"
+        }
+      }
+    },
     "19c1cb9c374bbca77b55df2135345c0c01b8ac62678282dbdcd4c52fca936372": {
       "information_root": "nws:654ad8b826fd3f96c2139b36",
       "members": {
@@ -743,6 +790,45 @@
           "source_updated_at": null,
           "source_url": "https://service.taipower.com.tw/data/opendata/apply/file/d006020/001.json",
           "title": "Taipower nationwide publicly reported current electricity load"
+        }
+      }
+    },
+    "19e253104bb9e7b792c32577678e8037a124fab721179181743c9273c1f7c6e8": {
+      "information_root": "bmkg_nowcast:bmkg_nowcast:40586c18e877fb4e5368dd34a0f3",
+      "members": {
+        "beh:32dd53baa0a36b3437332096beb3": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "bmkg_nowcast",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-26T02:00:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:32dd53baa0a36b3437332096beb3",
+          "information_root": "bmkg_nowcast:bmkg_nowcast:40586c18e877fb4e5368dd34a0f3",
+          "origin": "behavioral_registry",
+          "provider": "bmkg_nowcast",
+          "published_at": "2026-11-26T02:00:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Indonesia BMKG",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Indonesia BMKG active provincial nowcast RSS, source-reported only; not global",
+          "source_updated_at": null,
+          "source_url": "https://www.bmkg.go.id/alerts/nowcast/en/CLG20261126001_alert.xml",
+          "title": "Thunderstorm This Morning in Lampung"
         }
       }
     },

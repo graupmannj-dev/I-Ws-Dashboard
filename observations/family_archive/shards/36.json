@@ -541,6 +541,39 @@
         }
       }
     },
+    "36bff6db8b55e2a1cba8becc61d2dafa64f54438e43a00d6ffe8a91e2f32b531": {
+      "information_root": "niord:b1aa7716-3894-4816-87c7-ad33bedbca42:1:0:0",
+      "members": {
+        "beh:6ca4ef2d02ba26d2aa066c201d7f": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "official_scheduled_restriction_not_military_preparation",
+          "collection_mode": "live_maritime",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-26T02:18:09+00:00",
+          "geography_key": "source-footprint:45e4c7bf505a7c2bb5928f3f",
+          "geography_label": "Official Polygon notice area",
+          "geography_precision": "provider_defined_notice_boundary_not_event_point",
+          "id": "beh:6ca4ef2d02ba26d2aa066c201d7f",
+          "information_root": "niord:b1aa7716-3894-4816-87c7-ad33bedbca42:1:0:0",
+          "origin": "behavioral_registry",
+          "provider": "niord",
+          "published_at": null,
+          "restriction_status": "within_published_validity_window_not_verified_active",
+          "scheduled_valid_from": "2026-11-26T00:21:50Z",
+          "scheduled_valid_until": "2026-11-27T14:00:00Z",
+          "source_dependency_class": null,
+          "source_family": "maritime_restriction",
+          "source_kind": "official_restriction_notice",
+          "source_measurement": null,
+          "source_scope": null,
+          "source_updated_at": "2026-11-26T00:21:52Z",
+          "source_url": "https://niord.dma.dk/#/message/b1aa7716-3894-4816-87c7-ad33bedbca42",
+          "title": "Denmark. Kattegat. EK R 19 MULTEX. Firing exercises. Warning."
+        }
+      }
+    },
     "36c0b319d07e06d906d9b327f796ec099dc0dca62c85acbed489514442a1acac": {
       "information_root": "niord:73901baf-e621-4274-a712-88d9fd4b324e:0:0:0",
       "members": {
@@ -568,6 +601,39 @@
           "source_updated_at": "2026-11-19T00:21:54Z",
           "source_url": "https://niord.dma.dk/#/message/73901baf-e621-4274-a712-88d9fd4b324e",
           "title": "Denmark. Kattegat. EK R 17 Isefjord. Firing exercises. Warning."
+        }
+      }
+    },
+    "36c7427e17b81b8065ff15dd20913987c6d8e6b3c4706bc931e6cef7879d5843": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c41c:111885-2026",
+      "members": {
+        "beh:adab61d4570cd6eddd9c2defab6b": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-25T20:52:49+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:adab61d4570cd6eddd9c2defab6b",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c41c:111885-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-25T20:52:49Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-24T03%3A38%3A44&updatedTo=2026-11-26T03%3A38%3A44",
+          "title": "ETCS Affordability Challenge Preliminary Market Engagement · NETWORK RAIL INFRASTRUCTURE LIMITED"
         }
       }
     },

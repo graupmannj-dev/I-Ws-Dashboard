@@ -312,6 +312,81 @@
         }
       }
     },
+    "d86f5373540fb90bbd3f5103c4f28d1f1c93c012fde117a3343c7d44fc7f052d": {
+      "information_root": "wiki_edits:wiki_edits:ja:20261126T03",
+      "members": {
+        "beh:9624356dc659631b5e7c282b07c1": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "wiki_edits",
+          "direct_measurement": false,
+          "event_at": "2026-11-26T03:38:44Z",
+          "first_observed_at": "2026-11-26T03:38:44+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:9624356dc659631b5e7c282b07c1",
+          "information_root": "wiki_edits:wiki_edits:ja:20261126T03",
+          "origin": "behavioral_registry",
+          "provider": "wiki_edits",
+          "published_at": "2026-11-26T03:38:44Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "public_encyclopedia_edit_aggregate",
+          "source_family": "public_attention",
+          "source_kind": "bounded_public_edit_count_not_event_verification",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "distinct_articles_in_sample": 411,
+            "maximum_returned_edits": 500,
+            "most_edited_article_counts": [
+              {
+                "count": 11,
+                "title": "シャッポ (バンド)"
+              },
+              {
+                "count": 6,
+                "title": "上信電鉄"
+              },
+              {
+                "count": 5,
+                "title": "Billboard Japan Streaming Songsチャートにおける実績と記録の一覧"
+              },
+              {
+                "count": 5,
+                "title": "ジャパン (バンド)"
+              },
+              {
+                "count": 5,
+                "title": "名古屋工業高等学校"
+              },
+              {
+                "count": 4,
+                "title": "2026 FIFA U-17ワールドカップ"
+              },
+              {
+                "count": 4,
+                "title": "平良オーストィン"
+              },
+              {
+                "count": 3,
+                "title": "ジャングル (テレビドラマ)"
+              }
+            ],
+            "name": "sampled_edits_last_three_hours",
+            "sample_cap_reached": true,
+            "unit": "edits",
+            "value": 500
+          },
+          "source_scope": "Wikipedia main-namespace edit-count sample, 14 global language editions, three-hour window capped at 500 per wiki; not geographic location",
+          "source_updated_at": null,
+          "source_url": "https://ja.wikipedia.org/wiki/Special:RecentChanges",
+          "title": "Wikipedia ja public article-edit activity (sampled)"
+        }
+      }
+    },
     "d8a30d4aef0b71b3d5b678e42a21704ff090763ad10410e3d1622ca765182779": {
       "information_root": "ris_bgp:ris_bgp:AS7303:20261125T15",
       "members": {
@@ -388,6 +463,39 @@
           "source_updated_at": null,
           "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-22T02%3A19%3A12&updatedTo=2026-11-24T02%3A19%3A12",
           "title": "Fleet Replacement Consultancy · Transport for Wales Rail Limited (Utility Buyer)"
+        }
+      }
+    },
+    "d8b6b151c9014fd5f60cf493b098b250065fb9d1f043e07b95da3f8ea58c2999": {
+      "information_root": "niord:fc2ff18e-e5a4-4f24-8ffb-9878491b4f31:0:1:0",
+      "members": {
+        "beh:bc16572c04a25c8f1421ad1f4d4b": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "official_scheduled_restriction_not_military_preparation",
+          "collection_mode": "live_maritime",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-26T02:18:09+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "notice_geography_unavailable",
+          "id": "beh:bc16572c04a25c8f1421ad1f4d4b",
+          "information_root": "niord:fc2ff18e-e5a4-4f24-8ffb-9878491b4f31:0:1:0",
+          "origin": "behavioral_registry",
+          "provider": "niord",
+          "published_at": null,
+          "restriction_status": "scheduled_not_yet_effective",
+          "scheduled_valid_from": "2026-11-27T07:00:00Z",
+          "scheduled_valid_until": "2026-11-27T14:00:00Z",
+          "source_dependency_class": null,
+          "source_family": "maritime_restriction",
+          "source_kind": "official_restriction_notice",
+          "source_measurement": null,
+          "source_scope": null,
+          "source_updated_at": "2026-11-26T00:21:53Z",
+          "source_url": "https://niord.dma.dk/#/message/fc2ff18e-e5a4-4f24-8ffb-9878491b4f31",
+          "title": "Denmark. Kattegat. EK R 45 Hevring. Firing exercises. Warning."
         }
       }
     },

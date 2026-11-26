@@ -273,6 +273,53 @@
         }
       }
     },
+    "9c5448826674a4927c4649c9b5ec6528f24b1940b7a6e034fcde702df33a6b7b": {
+      "information_root": "cbp_wait:cbp_wait:L01901:2026-11-25:22:37:46",
+      "members": {
+        "beh:1b3d565ac9626f4db2916269e8d8": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-26T03:40:40+00:00",
+          "geography_key": "us-border-port:L01901",
+          "geography_label": "Madawaska",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:1b3d565ac9626f4db2916269e8d8",
+          "information_root": "cbp_wait:cbp_wait:L01901:2026-11-25:22:37:46",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "no delay",
+            "lanes_open": 1,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "At 10:00 pm EST",
+            "reported_local_date": "11/25/2026",
+            "reported_local_time": "22:37:46",
+            "source_declared_border": "Canadian Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 0
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Madawaska"
+        }
+      }
+    },
     "9c6897567e6eb8e69844d27006af815e7f6e1fd749502d442633da03271adfa0": {
       "information_root": "ioda:447d83c7937a609aff647023",
       "members": {
@@ -363,6 +410,39 @@
           "source_updated_at": null,
           "source_url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOLWdqZ1RnSFFwUjFSUF9XX0FBbjBrRVNjenQzSHdESWV4UEpaRThQb2t6djhwY0lHaXRXWlQwR0piYWhfR0JuSXJuNTY2ZmxFdGZHWkk1S0xkOTh5MzVsTGhFdW1RbHM5SzFZT1hyQ2xpRkJtMWxoaUdqRTZfZHlXZ21xOFY5QkxDbDVHWWVmNnRicEF1?oc=5",
           "title": "War Risk Insurance: Why Airlines Are Paying Far More - The Aviation Hub"
+        }
+      }
+    },
+    "9c93aaf4fbf9a6c217e00e79a5c92a9f6c1591f44ebbe0b2ebbfbd24a0c5a1e3": {
+      "information_root": "niord:701ef089-5eb7-433c-bbd5-33ee0a7a1a20:2:0:0",
+      "members": {
+        "beh:447852206541b95a62db172a925a": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "official_scheduled_restriction_not_military_preparation",
+          "collection_mode": "live_maritime",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-26T02:18:09+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "notice_geography_unavailable",
+          "id": "beh:447852206541b95a62db172a925a",
+          "information_root": "niord:701ef089-5eb7-433c-bbd5-33ee0a7a1a20:2:0:0",
+          "origin": "behavioral_registry",
+          "provider": "niord",
+          "published_at": null,
+          "restriction_status": "within_published_validity_window_not_verified_active",
+          "scheduled_valid_from": "2026-11-26T00:21:50Z",
+          "scheduled_valid_until": "2026-11-27T14:00:00Z",
+          "source_dependency_class": null,
+          "source_family": "maritime_restriction",
+          "source_kind": "official_restriction_notice",
+          "source_measurement": null,
+          "source_scope": null,
+          "source_updated_at": "2026-11-26T00:21:53Z",
+          "source_url": "https://niord.dma.dk/#/message/701ef089-5eb7-433c-bbd5-33ee0a7a1a20",
+          "title": "Denmark. Kattegat. EK R 20 Yderby. Firing exercises. Warning."
         }
       }
     },
@@ -633,6 +713,39 @@
           "source_updated_at": null,
           "source_url": "https://bwt.cbp.gov/api/waittimes",
           "title": "CBP estimated commercial border wait — Bridge of the Americas Port of Entry"
+        }
+      }
+    },
+    "9cf6c7ecb2d2038dbe864d8533c0cd2ab88b31c306527decb1aea85dc44929e5": {
+      "information_root": "niord:fc2ff18e-e5a4-4f24-8ffb-9878491b4f31:2:0:0",
+      "members": {
+        "beh:0b6c18faf9a06200bd59c8dcd7cf": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "official_scheduled_restriction_not_military_preparation",
+          "collection_mode": "live_maritime",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-26T02:18:09+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "notice_geography_unavailable",
+          "id": "beh:0b6c18faf9a06200bd59c8dcd7cf",
+          "information_root": "niord:fc2ff18e-e5a4-4f24-8ffb-9878491b4f31:2:0:0",
+          "origin": "behavioral_registry",
+          "provider": "niord",
+          "published_at": null,
+          "restriction_status": "within_published_validity_window_not_verified_active",
+          "scheduled_valid_from": "2026-11-26T00:21:50Z",
+          "scheduled_valid_until": "2026-11-29T13:00:00Z",
+          "source_dependency_class": null,
+          "source_family": "maritime_restriction",
+          "source_kind": "official_restriction_notice",
+          "source_measurement": null,
+          "source_scope": null,
+          "source_updated_at": "2026-11-26T00:21:53Z",
+          "source_url": "https://niord.dma.dk/#/message/fc2ff18e-e5a4-4f24-8ffb-9878491b4f31",
+          "title": "Denmark. Kattegat. EK R 45 Hevring. Firing exercises. Warning."
         }
       }
     }

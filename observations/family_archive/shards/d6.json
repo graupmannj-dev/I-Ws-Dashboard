@@ -30,6 +30,45 @@
         }
       }
     },
+    "d60afbf7b56b13fc9efa9a2d3c10cf139a75bc07c4234d6601eb99ee27d245f4": {
+      "information_root": "bmkg_nowcast:bmkg_nowcast:6966d5dd0755d04b40f0d4b7d0b1",
+      "members": {
+        "beh:6f2817e903b0dc6ad6d664cb85f5": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "bmkg_nowcast",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-26T03:25:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:6f2817e903b0dc6ad6d664cb85f5",
+          "information_root": "bmkg_nowcast:bmkg_nowcast:6966d5dd0755d04b40f0d4b7d0b1",
+          "origin": "behavioral_registry",
+          "provider": "bmkg_nowcast",
+          "published_at": "2026-11-26T03:25:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Indonesia BMKG",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Indonesia BMKG active provincial nowcast RSS, source-reported only; not global",
+          "source_updated_at": null,
+          "source_url": "https://www.bmkg.go.id/alerts/nowcast/en/CSU20261126001_alert.xml",
+          "title": "Thunderstorm This Morning in Sumatera Utara"
+        }
+      }
+    },
     "d6131ec6a951bb0b2134bd3f30a0177838ce0c27dd891ca75cb9efcb23471556": {
       "information_root": "nws:e9f5b1b0ab435694296d7cc1",
       "members": {
@@ -229,6 +268,46 @@
           "source_updated_at": null,
           "source_url": "https://bwt.cbp.gov/api/waittimes",
           "title": "CBP estimated commercial border wait — Eagle Pass / Bridge II"
+        }
+      }
+    },
+    "d664cc2e3932dd73764572ea0facee980e0114591931766d0e32858674c2f229": {
+      "information_root": "coops:9414290:20261126T0330Z",
+      "members": {
+        "beh:19a2bd5dd489e2ab24f481c25cd3": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "coops",
+          "direct_measurement": true,
+          "event_at": "2026-11-26T03:30:00Z",
+          "first_observed_at": "2026-11-26T03:30:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:19a2bd5dd489e2ab24f481c25cd3",
+          "information_root": "coops:9414290:20261126T0330Z",
+          "origin": "behavioral_registry",
+          "provider": "coops",
+          "published_at": "2026-11-26T03:30:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "station_physical_measurement",
+          "source_family": "port_conditions",
+          "source_kind": "selected_port_water_level_measurement",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "metric_comparable_only_same_station_datum_and_sample_window": true,
+            "name": "observed_water_level",
+            "station": "9414290",
+            "unit": "meters_MLLW",
+            "value": -0.035
+          },
+          "source_scope": "NOAA CO-OPS water levels at San Francisco, Key West and Sewells Point; stations only",
+          "source_updated_at": null,
+          "source_url": "https://tidesandcurrents.noaa.gov/waterlevels.html?id=9414290",
+          "title": "San Francisco, CA observed water level (no anomaly classification)"
         }
       }
     },
@@ -533,6 +612,39 @@
           "source_updated_at": null,
           "source_url": "https://atlas.ripe.net/measurements/1001/",
           "title": "RIPE Atlas K-root public probe aggregate (13036 usable measurements)"
+        }
+      }
+    },
+    "d6ad6ecf6129a818eb7ed86b8d3e54e82a170537097ea557395bb7877d4a176c": {
+      "information_root": "nws:8f0bc8ba41054a443b0d004b",
+      "members": {
+        "beh:8ff8ec4ec80072ff32d5caac4734": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "nws",
+          "direct_measurement": false,
+          "event_at": "2026-11-26T00:09:00Z",
+          "first_observed_at": "2026-11-26T00:09:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:8ff8ec4ec80072ff32d5caac4734",
+          "information_root": "nws:8f0bc8ba41054a443b0d004b",
+          "origin": "behavioral_registry",
+          "provider": "nws",
+          "published_at": "2026-11-26T00:09:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "official_weather_alert_context",
+          "source_measurement": null,
+          "source_scope": "Active NWS marine alerts; severity Moderate",
+          "source_updated_at": null,
+          "source_url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.f7c368eb08dc803f684ef2efbe729bdaa8afb98c.001.1",
+          "title": "Rip Current Statement - Mobile Coastal; Baldwin Coastal; Escambia Coastal; Santa Rosa Coastal; Okaloosa Coastal"
         }
       }
     },

@@ -466,6 +466,39 @@
         }
       }
     },
+    "3375f3cbfa41294181bde39ecaa263694ca740ebaca8f145230b4fe0e771e052": {
+      "information_root": "niord:02c9ba7a-bdb7-498e-9c26-4601f5fcb505:1:0:0",
+      "members": {
+        "beh:3974facd66da4ff24bfb5c29d548": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "official_scheduled_restriction_not_military_preparation",
+          "collection_mode": "live_maritime",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-26T02:18:09+00:00",
+          "geography_key": "source-footprint:b55aaa2effef83549e7cd7ed",
+          "geography_label": "Official Polygon notice area",
+          "geography_precision": "provider_defined_notice_boundary_not_event_point",
+          "id": "beh:3974facd66da4ff24bfb5c29d548",
+          "information_root": "niord:02c9ba7a-bdb7-498e-9c26-4601f5fcb505:1:0:0",
+          "origin": "behavioral_registry",
+          "provider": "niord",
+          "published_at": null,
+          "restriction_status": "within_published_validity_window_not_verified_active",
+          "scheduled_valid_from": "2026-11-26T00:21:50Z",
+          "scheduled_valid_until": "2026-11-26T21:00:00Z",
+          "source_dependency_class": null,
+          "source_family": "maritime_restriction",
+          "source_kind": "official_restriction_notice",
+          "source_measurement": null,
+          "source_scope": null,
+          "source_updated_at": "2026-11-26T00:21:52Z",
+          "source_url": "https://niord.dma.dk/#/message/02c9ba7a-bdb7-498e-9c26-4601f5fcb505",
+          "title": "Denmark. Kattegat. EK R 17 Isefjord. Firing exercises. Warning."
+        }
+      }
+    },
     "337c2851641fa25cdfcfeb93f64c6399368a46ebbeb7c5f5ebc3157855bce861": {
       "information_root": "cbp_wait:cbp_wait:230503:2026-11-23:20:14:19",
       "members": {
@@ -560,6 +593,53 @@
         }
       }
     },
+    "33ac81b3be11ead04ee1bbcc235e44e72d06effb6d4c448bcc6de3c16cba6e95": {
+      "information_root": "cbp_wait:cbp_wait:260801:2026-11-25:20:37:47",
+      "members": {
+        "beh:1be4842c73af0698526bba7a5823": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-26T03:40:40+00:00",
+          "geography_key": "us-border-port:260801",
+          "geography_label": "San Luis",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:1be4842c73af0698526bba7a5823",
+          "information_root": "cbp_wait:cbp_wait:260801:2026-11-25:20:37:47",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "N/A",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/25/2026",
+            "reported_local_time": "20:37:47",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — San Luis / San Luis I"
+        }
+      }
+    },
     "33b523c04382cdbfb4937c4f4a51f0fec4419e8bd454b28b2ae5765fb96b8240": {
       "information_root": "cbp_wait:cbp_wait:260402:2026-11-24:06:50:03",
       "members": {
@@ -637,6 +717,44 @@
         }
       }
     },
+    "33c3b20edb551fe28d7394e2c40666f2fd1ab96e1be972f31445935ba2158d27": {
+      "information_root": "usgs:us6000udjz",
+      "members": {
+        "beh:46a19bf3994249aabf1df4cc6bb2": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "usgs",
+          "direct_measurement": true,
+          "event_at": "2026-11-26T02:09:17Z",
+          "first_observed_at": "2026-11-26T02:09:17+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "source_supplied_point_only",
+          "id": "beh:46a19bf3994249aabf1df4cc6bb2",
+          "information_root": "usgs:us6000udjz",
+          "origin": "behavioral_registry",
+          "provider": "usgs",
+          "published_at": "2026-11-26T02:24:33Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "measured_earthquake_context",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "name": "earthquake_magnitude",
+            "unit": "reported_magnitude",
+            "value": 5
+          },
+          "source_scope": "USGS M4.5+ earthquakes worldwide, rolling past day; source thresholds apply",
+          "source_updated_at": null,
+          "source_url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000udjz",
+          "title": "M 5.0 - 184 km N of Hicks Bay, New Zealand"
+        }
+      }
+    },
     "33f8abcb8d26fb6264de4c7bd1c36192018e001879a2b7deebfc950aef3d7fd8": {
       "information_root": "bmkg_nowcast:bmkg_nowcast:21658b559f495c4677929d136b77",
       "members": {
@@ -673,6 +791,53 @@
           "source_updated_at": null,
           "source_url": "https://www.bmkg.go.id/alerts/nowcast/en/CSS20261121007_alert.xml",
           "title": "Thunderstorm This Evening in Sumatera Selatan"
+        }
+      }
+    },
+    "33f9abcf3380046f40d4f6f529b5f3ad75c8a815b74dc4770ef5a48849563e5f": {
+      "information_root": "cbp_wait:cbp_wait:380001:2026-11-25:22:37:46",
+      "members": {
+        "beh:b074466b392ea57b981b5f988f72": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-26T03:40:40+00:00",
+          "geography_key": "us-border-port:380001",
+          "geography_label": "Detroit",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:b074466b392ea57b981b5f988f72",
+          "information_root": "cbp_wait:cbp_wait:380001:2026-11-25:22:37:46",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "no delay",
+            "lanes_open": 3,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "At 10:00 pm EST",
+            "reported_local_date": "11/25/2026",
+            "reported_local_time": "22:37:46",
+            "source_declared_border": "Canadian Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 0
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Detroit / Ambassador Bridge"
         }
       }
     },
