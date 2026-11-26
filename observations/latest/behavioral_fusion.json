@@ -3,19 +3,18 @@
   "automated_severity_changes": 0,
   "collection_coverage": {
     "amsa": {
-      "age_hours": 3.41,
+      "age_hours": 6.17,
       "checked_at": "2026-11-26T04:58:19Z",
-      "first_provider_baseline": false,
-      "missingness": "provider_bounded_not_exhaustive",
+      "missingness": "not_measured_not_zero",
       "mode": "amsa",
       "provider_status": "collected",
       "snapshot_at": "2026-11-26T04:58:19Z",
       "source_scope": "AMSA NAVAREA X only",
-      "status": "current",
+      "status": "stale_or_unavailable",
       "truncated_or_partial": false
     },
     "bmkg_nowcast": {
-      "age_hours": 4.74,
+      "age_hours": 7.5,
       "checked_at": "2026-11-26T03:38:44Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -27,7 +26,7 @@
       "truncated_or_partial": true
     },
     "bmkg_quake": {
-      "age_hours": 4.74,
+      "age_hours": 7.5,
       "checked_at": "2026-11-26T03:38:44Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -39,7 +38,7 @@
       "truncated_or_partial": true
     },
     "cbp_wait": {
-      "age_hours": 4.74,
+      "age_hours": 7.5,
       "checked_at": "2026-11-26T03:38:44Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -51,7 +50,7 @@
       "truncated_or_partial": true
     },
     "commercial": {
-      "age_hours": 14.35,
+      "age_hours": 17.11,
       "checked_at": "2026-11-25T18:01:55Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -63,7 +62,7 @@
       "truncated_or_partial": false
     },
     "coops": {
-      "age_hours": 4.74,
+      "age_hours": 7.5,
       "checked_at": "2026-11-26T03:38:44Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -75,7 +74,7 @@
       "truncated_or_partial": true
     },
     "eonet": {
-      "age_hours": 4.74,
+      "age_hours": 7.5,
       "checked_at": "2026-11-26T03:38:44Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -87,7 +86,7 @@
       "truncated_or_partial": true
     },
     "imd_in": {
-      "age_hours": 4.74,
+      "age_hours": 7.5,
       "checked_at": "2026-11-26T03:38:44Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -99,7 +98,7 @@
       "truncated_or_partial": true
     },
     "inmet_br": {
-      "age_hours": 4.74,
+      "age_hours": 7.5,
       "checked_at": "2026-11-26T03:38:44Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -111,41 +110,42 @@
       "truncated_or_partial": true
     },
     "ioda": {
-      "age_hours": 3.41,
+      "age_hours": 6.17,
       "checked_at": "2026-11-26T04:58:19Z",
-      "first_provider_baseline": false,
-      "missingness": "provider_bounded_not_exhaustive",
+      "missingness": "not_measured_not_zero",
       "mode": "ioda",
       "provider_status": "collected",
       "snapshot_at": "2026-11-26T04:58:19Z",
       "source_scope": "IODA country events (first 100 of first page, 4-hour query)",
-      "status": "current",
+      "status": "stale_or_unavailable",
       "truncated_or_partial": false
     },
     "live_airspace": {
-      "age_hours": 6.08,
-      "checked_at": "2026-11-26T02:18:06Z",
-      "missingness": "not_measured_not_zero",
+      "age_hours": 0.0,
+      "checked_at": "2026-11-26T11:08:31Z",
+      "first_provider_baseline": false,
+      "missingness": "partial_sampling_not_worldwide_exhaustive",
       "mode": "live_airspace",
       "provider_status": "partial",
-      "snapshot_at": "2026-11-26T02:18:06Z",
+      "snapshot_at": "2026-11-26T11:08:31Z",
       "source_scope": "FAA temporary flight restrictions: United States only",
-      "status": "stale_or_unavailable",
+      "status": "current_partial",
       "truncated_or_partial": true
     },
     "live_maritime": {
-      "age_hours": 6.08,
-      "checked_at": "2026-11-26T02:18:06Z",
-      "missingness": "not_measured_not_zero",
+      "age_hours": 0.0,
+      "checked_at": "2026-11-26T11:08:31Z",
+      "first_provider_baseline": false,
+      "missingness": "partial_sampling_not_worldwide_exhaustive",
       "mode": "live_maritime",
       "provider_status": "partial",
-      "snapshot_at": "2026-11-26T02:18:06Z",
+      "snapshot_at": "2026-11-26T11:08:31Z",
       "source_scope": "Danish Maritime Authority Niord notices: regional Baltic/North Sea",
-      "status": "stale_or_unavailable",
+      "status": "current_partial",
       "truncated_or_partial": true
     },
     "nga": {
-      "age_hours": 3.41,
+      "age_hours": 6.17,
       "checked_at": "2026-11-25T23:04:59Z",
       "missingness": "not_measured_not_zero",
       "mode": "nga",
@@ -156,7 +156,7 @@
       "truncated_or_partial": false
     },
     "nws": {
-      "age_hours": 4.74,
+      "age_hours": 7.5,
       "checked_at": "2026-11-26T03:38:44Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -168,7 +168,7 @@
       "truncated_or_partial": true
     },
     "official": {
-      "age_hours": 0.0,
+      "age_hours": 2.76,
       "checked_at": "2026-11-26T08:23:06Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -180,7 +180,7 @@
       "truncated_or_partial": false
     },
     "ons_br": {
-      "age_hours": 4.74,
+      "age_hours": 7.5,
       "checked_at": "2026-11-26T03:38:44Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -192,7 +192,7 @@
       "truncated_or_partial": true
     },
     "ripe": {
-      "age_hours": 4.74,
+      "age_hours": 7.5,
       "checked_at": "2026-11-26T03:38:44Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -204,7 +204,7 @@
       "truncated_or_partial": false
     },
     "ris_bgp": {
-      "age_hours": 4.74,
+      "age_hours": 7.5,
       "checked_at": "2026-11-26T03:38:44Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -216,7 +216,7 @@
       "truncated_or_partial": true
     },
     "saws_za": {
-      "age_hours": 4.74,
+      "age_hours": 7.5,
       "checked_at": "2026-11-26T03:38:44Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -228,7 +228,7 @@
       "truncated_or_partial": true
     },
     "sg_mpa": {
-      "age_hours": 4.74,
+      "age_hours": 7.5,
       "checked_at": "2026-11-26T03:38:44Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -240,7 +240,7 @@
       "truncated_or_partial": true
     },
     "swpc": {
-      "age_hours": 4.74,
+      "age_hours": 7.5,
       "checked_at": "2026-11-26T03:38:44Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -252,7 +252,7 @@
       "truncated_or_partial": false
     },
     "tw_power": {
-      "age_hours": 4.74,
+      "age_hours": 7.5,
       "checked_at": "2026-11-26T03:38:44Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -264,7 +264,7 @@
       "truncated_or_partial": true
     },
     "uk_tenders": {
-      "age_hours": 4.74,
+      "age_hours": 7.5,
       "checked_at": "2026-11-26T03:38:44Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -276,7 +276,7 @@
       "truncated_or_partial": true
     },
     "usace": {
-      "age_hours": 4.74,
+      "age_hours": 7.5,
       "checked_at": "2026-11-26T03:38:44Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -288,7 +288,7 @@
       "truncated_or_partial": true
     },
     "usgs": {
-      "age_hours": 4.74,
+      "age_hours": 7.5,
       "checked_at": "2026-11-26T03:38:44Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -300,7 +300,7 @@
       "truncated_or_partial": false
     },
     "watchlist": {
-      "age_hours": 0.0,
+      "age_hours": 2.76,
       "checked_at": "2026-11-26T08:23:07Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -312,7 +312,7 @@
       "truncated_or_partial": true
     },
     "wiki_edits": {
-      "age_hours": 4.74,
+      "age_hours": 7.5,
       "checked_at": "2026-11-26T03:38:44Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -328,8 +328,8 @@
     "exact_geography_match_required_for_cross_family": true,
     "latest_initial_baseline": false,
     "latest_registry_newly_observed_count": 0,
-    "latest_registry_record_count": 722,
-    "latest_unlocated_record_count": 514,
+    "latest_registry_record_count": 766,
+    "latest_unlocated_record_count": 566,
     "new_or_collocated_not_same_as_verified_threat": true,
     "new_this_collection_required_for_cross_family_nomination": true,
     "recent_observations_sampled": 24,
@@ -338,28 +338,28 @@
       "commercial_media": 28,
       "internet_reachability": 90,
       "maritime_restriction": 186,
-      "protective_notice": 6
+      "protective_notice": 5
     },
-    "recent_unique_record_count_72h": 320,
-    "recent_unlocated_count_72h": 181,
+    "recent_unique_record_count_72h": 319,
+    "recent_unlocated_count_72h": 180,
     "schema": "aiba.behavioral-discovery-visibility.v1",
     "shared_exact_geography_keys_across_behavior_families": 0,
     "source_coverage_is_globally_complete": false
   },
   "forecast_probability": null,
   "gdelt_context": "separate_analytical_stream_not_a_gate_or_confirmation",
-  "generated_at": "2026-11-26T08:23:08Z",
+  "generated_at": "2026-11-26T11:08:35Z",
   "geographic_scope": "source_declared_only",
   "history_diagnostics": {
     "excluded_observations": {
-      "old_source_publication": 5,
-      "outside_asof_window": 20,
-      "published_after_first_observed": 26,
-      "unsupported_family": 1565
+      "old_source_publication": 6,
+      "outside_asof_window": 33,
+      "published_after_first_observed": 23,
+      "unsupported_family": 1555
     },
-    "history_files_examined": 32,
+    "history_files_examined": 33,
     "lookback_hours": 72,
-    "recent_unique_records": 320
+    "recent_unique_records": 319
   },
   "limit_notes": [
     "No automated threat warning. These are unreviewed investigatory leads.",
@@ -869,8 +869,8 @@
       "title": "Ukraine plans to announce war-risk insurance fund at URC 2027 - Interfax-Ukraine"
     }
   ],
-  "registry_asof": "2026-11-26T08:23:08Z",
-  "registry_source_count": 722,
+  "registry_asof": "2026-11-26T11:08:35Z",
+  "registry_source_count": 766,
   "report_relationships": {
     "automatic_alerts_created": 0,
     "automatic_severity_changes": 0,
@@ -3037,14 +3037,14 @@
     "input_truncated": false,
     "not_a_preparations_sensor_or_warning": true,
     "pairwise_comparisons_capped": false,
-    "pairwise_comparisons_examined": 51040,
+    "pairwise_comparisons_examined": 50721,
     "possible_same_event_count_total": 0,
     "possible_same_source_story_count_total": 9,
-    "records_available": 320,
-    "records_examined": 320,
+    "records_available": 319,
+    "records_examined": 319,
     "related_reporting_count_total": 0,
     "reporting_origins_are_not_event_locations": true,
-    "routine_notice_market_or_measurement_records_excluded_from_text_event_matching": 292,
+    "routine_notice_market_or_measurement_records_excluded_from_text_event_matching": 291,
     "same_document_group_count_total": 28,
     "schema": "aiba.report-event-resolution-shadow.v1",
     "source_independence_unverified": true,
