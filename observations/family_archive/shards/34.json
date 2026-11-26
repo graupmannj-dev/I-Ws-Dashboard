@@ -1,5 +1,52 @@
 {
   "roots": {
+    "340a800b0a1e5d7a43d8fbb4f435390632df7a4f81351e16b89975e78eff260a": {
+      "information_root": "cbp_wait:cbp_wait:535504:2026-11-26:11:00:02",
+      "members": {
+        "beh:7de61e46096d81ac05af2c47b0d5": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-26T17:06:25+00:00",
+          "geography_key": "us-border-port:535504",
+          "geography_label": "Brownsville",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:7de61e46096d81ac05af2c47b0d5",
+          "information_root": "cbp_wait:cbp_wait:535504:2026-11-26:11:00:02",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "N/A",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/26/2026",
+            "reported_local_time": "11:00:02",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Brownsville / Gateway"
+        }
+      }
+    },
     "340abf4eb3f7d6c94c30fb23d4e7955e14f47fe511f4d78a24e8514f449560e0": {
       "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-06e9dd:110357-2026",
       "members": {
@@ -153,6 +200,39 @@
           "source_updated_at": "2026-11-19T00:21:52Z",
           "source_url": "https://niord.dma.dk/#/message/64267632-ab29-4c8e-8fd2-6b1f42ee4abd",
           "title": "Denmark. The Baltic Sea. EK D 396 Hullebaek. Firing exercises. Warning."
+        }
+      }
+    },
+    "345b98d856b1fa25cb94c651676d1ae5a564b5795edadc7638df80ea0be80629": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c4e1:112218-2026",
+      "members": {
+        "beh:e862cb1e25f58c86fcb76710b90d": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-26T15:15:05+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:e862cb1e25f58c86fcb76710b90d",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c4e1:112218-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-26T15:15:05Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-24T17%3A03%3A57&updatedTo=2026-11-26T17%3A03%3A57",
+          "title": "SEND Mediation and Disagreement Resolution Service · Sefton Metropolitan Borough Council"
         }
       }
     },

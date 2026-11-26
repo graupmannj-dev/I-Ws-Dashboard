@@ -179,6 +179,52 @@
         }
       }
     },
+    "ee4562a4897d95f4af720c5a832aaff4a495c22aa445ab831a9ca6b453b1ed41": {
+      "information_root": "ris_bgp:ris_bgp:AS4766:20261126T13",
+      "members": {
+        "beh:50c56a511a6942e0a5f6a6567073": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "public_routing_updates_not_country_outage",
+          "collection_mode": "ris_bgp",
+          "direct_measurement": true,
+          "event_at": null,
+          "first_observed_at": "2026-11-26T17:06:25+00:00",
+          "geography_key": "asn:4766",
+          "geography_label": "AS4766",
+          "geography_precision": "routing_target_not_country_incident",
+          "id": "beh:50c56a511a6942e0a5f6a6567073",
+          "information_root": "ris_bgp:ris_bgp:AS4766:20261126T13",
+          "origin": "behavioral_registry",
+          "provider": "ris_bgp",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "routing_collector_sampled_asn_updates",
+          "source_family": "internet_routing",
+          "source_kind": "sampled_asn_bgp_route_updates_not_network_outage",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "collector_peers_are_not_geo_deduplicated": true,
+            "country_impact_not_established": true,
+            "name": "sampled_6h_bgp_announcements",
+            "registered_network_country_hint": "KR",
+            "returned_sampling_buckets": 6,
+            "source_window_end": "2026-11-26T13:00:00Z",
+            "target_asn": "AS4766",
+            "unit": "announcements",
+            "value": 69409,
+            "window_hours_requested": 6,
+            "withdrawals_unavailable_for_asn": true
+          },
+          "source_scope": "RIPE RIS public route-announcement update samples on six non-Western operated networks; ASNs not country-wide outage detection",
+          "source_updated_at": null,
+          "source_url": "https://stat.ripe.net/data/bgp-update-activity/data.json?resource=AS4766&num_hours=6&max_samples=24&hide_empty_samples=false",
+          "title": "RIPE RIS sampled BGP announcements: AS4766"
+        }
+      }
+    },
     "ee64743b888f4a37407c94c5edb6284b90ae3178ac20f6cc4cd124b0f23d268f": {
       "information_root": "cbp_wait:cbp_wait:260402:2026-11-22:18:44:34",
       "members": {
@@ -437,6 +483,39 @@
           "source_updated_at": null,
           "source_url": "https://bwt.cbp.gov/api/waittimes",
           "title": "CBP estimated commercial border wait — Ogdensburg"
+        }
+      }
+    },
+    "eed9ce47213eb6355b63372b7c113ace2e3b69ba5ccb5ccff5752933e6de050f": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c4e6:112229-2026",
+      "members": {
+        "beh:b5a9df72b3e6d1f130a863f65ade": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-26T15:23:16+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:b5a9df72b3e6d1f130a863f65ade",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c4e6:112229-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-26T15:23:16Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-24T17%3A03%3A57&updatedTo=2026-11-26T17%3A03%3A57",
+          "title": "(Market Engagement) Telecare Monitoring Service Provision · London Borough of Waltham Forest"
         }
       }
     },

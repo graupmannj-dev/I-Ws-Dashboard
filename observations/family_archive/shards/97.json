@@ -33,6 +33,53 @@
         }
       }
     },
+    "972ef5f8aaed826af4758bc5b50b86b3815ccb23d7bd6c5758f07854b719ef7f": {
+      "information_root": "cbp_wait:cbp_wait:260403:2026-11-26:10:00:03",
+      "members": {
+        "beh:972ecf7a55497c2b7087e814e050": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-26T17:06:25+00:00",
+          "geography_key": "us-border-port:260403",
+          "geography_label": "Nogales",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:972ecf7a55497c2b7087e814e050",
+          "information_root": "cbp_wait:cbp_wait:260403:2026-11-26:10:00:03",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "N/A",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/26/2026",
+            "reported_local_time": "10:00:03",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Nogales / Morley Gate"
+        }
+      }
+    },
     "972ff39af41785cb5a134016b14003e08976856bf1ea687e70b48a9a2e15ab83": {
       "information_root": "cbp_wait:cbp_wait:240221:2026-11-21:12:22:45",
       "members": {
@@ -181,6 +228,39 @@
         }
       }
     },
+    "977186169d5fdfb3ac51a543a50ca7d22c9369725766219b1150547afb0be285": {
+      "information_root": "nws:77b3e9ee76921f5e62b8a013",
+      "members": {
+        "beh:895ea074a758cfc7027019c2c5bd": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "nws",
+          "direct_measurement": false,
+          "event_at": "2026-11-26T16:38:00Z",
+          "first_observed_at": "2026-11-26T16:38:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:895ea074a758cfc7027019c2c5bd",
+          "information_root": "nws:77b3e9ee76921f5e62b8a013",
+          "origin": "behavioral_registry",
+          "provider": "nws",
+          "published_at": "2026-11-26T16:38:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "official_weather_alert_context",
+          "source_measurement": null,
+          "source_scope": "Active NWS marine alerts; severity Moderate",
+          "source_updated_at": null,
+          "source_url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.2238806b9df87e60f1a4b6152e2c9a4326e794b2.005.1",
+          "title": "Rip Current Statement - Coastal Nassau"
+        }
+      }
+    },
     "978e0dd7c472f7b26b6196d526fdc990620ea2679d23752d92109422250ed506": {
       "information_root": "cbp_wait:cbp_wait:250401:2026-11-21:03:24:37",
       "members": {
@@ -255,6 +335,53 @@
           "source_updated_at": "2026-11-16T09:21:51Z",
           "source_url": "https://niord.dma.dk/#/message/b815767c-8bae-40c4-bd79-36ae1e9006b2",
           "title": "Denmark. Kattegat. EK R 19 MULTEX. Firing exercises. Warning."
+        }
+      }
+    },
+    "97937ff072f948fd85355d855623a9e3c0fec751ee177a17e6b51a8f176edd63": {
+      "information_root": "cbp_wait:cbp_wait:090102:2026-11-26:12:00:02",
+      "members": {
+        "beh:2706b9f1e10e4c6f5ff41d0ac5d4": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-26T17:06:25+00:00",
+          "geography_key": "us-border-port:090102",
+          "geography_label": "Buffalo/Niagara Falls",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:2706b9f1e10e4c6f5ff41d0ac5d4",
+          "information_root": "cbp_wait:cbp_wait:090102:2026-11-26:12:00:02",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "N/A",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/26/2026",
+            "reported_local_time": "12:00:02",
+            "source_declared_border": "Canadian Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Buffalo/Niagara Falls / Rainbow Bridge"
         }
       }
     },

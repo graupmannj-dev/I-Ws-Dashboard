@@ -99,6 +99,53 @@
         }
       }
     },
+    "364ac1729c987a97c04cf5adffc9dd6fb2fe58ee9de50b2c66775acd4fb84a10": {
+      "information_root": "cbp_wait:cbp_wait:302301:2026-11-26:09:00:02",
+      "members": {
+        "beh:86c453c0000616ea3b8cf03dc291": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-26T17:06:25+00:00",
+          "geography_key": "us-border-port:302301",
+          "geography_label": "Lynden",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:86c453c0000616ea3b8cf03dc291",
+          "information_root": "cbp_wait:cbp_wait:302301:2026-11-26:09:00:02",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "no delay",
+            "lanes_open": 1,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "At 8:00 am PST",
+            "reported_local_date": "11/26/2026",
+            "reported_local_time": "09:00:02",
+            "source_declared_border": "Canadian Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 0
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Lynden"
+        }
+      }
+    },
     "3652f06f6977678268c97129be8b771ebaaf42b06c7028787496ae52feaed306": {
       "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c3f3:111804-2026",
       "members": {
@@ -511,6 +558,39 @@
         }
       }
     },
+    "36a847191d6c8e3b6e85780338e717b61f42c75cf536376918d00436a37142ca": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c505:112290-2026",
+      "members": {
+        "beh:0fe3f40184d2cbf57da909ff958a": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-26T16:20:58+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:0fe3f40184d2cbf57da909ff958a",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c505:112290-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-26T16:20:58Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-24T17%3A03%3A57&updatedTo=2026-11-26T17%3A03%3A57",
+          "title": "Applicant Tracking System · King's Lynn and West Norfolk Borough Council"
+        }
+      }
+    },
     "36af57bae6c798849f7047ac3b2017abb3147587a4f611258f5efd56b1e45d0b": {
       "information_root": "niord:c2bbab7f-c4f0-476e-9ee8-78f8102eec37:2:0:0",
       "members": {
@@ -604,6 +684,39 @@
         }
       }
     },
+    "36c151c85c2034aa3b3ea3baec8a0e5b93c93a49fe685ed8d698676d7feee01c": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c4ee:112247-2026",
+      "members": {
+        "beh:abde0da76cb565531e5c20fd7ac0": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-26T15:36:12+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:abde0da76cb565531e5c20fd7ac0",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c4ee:112247-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-26T15:36:12Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-24T17%3A03%3A57&updatedTo=2026-11-26T17%3A03%3A57",
+          "title": "Improving Health data for Violence Prevention · Police and Crime Commissioner for West Midlands"
+        }
+      }
+    },
     "36c7427e17b81b8065ff15dd20913987c6d8e6b3c4706bc931e6cef7879d5843": {
       "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c41c:111885-2026",
       "members": {
@@ -667,6 +780,39 @@
           "source_updated_at": null,
           "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-23T19%3A25%3A03&updatedTo=2026-11-25T19%3A25%3A03",
           "title": "Lift Servicing and Maintenance Services (North) · Southern Housing"
+        }
+      }
+    },
+    "36fdb6f0b3e42125298d6186757e9c1f77b515fba51c26b0dc443f7c093c4121": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c50d:112300-2026",
+      "members": {
+        "beh:cabbda0431831e038901b8cc3229": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-26T16:38:11+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:cabbda0431831e038901b8cc3229",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c50d:112300-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-26T16:38:11Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-24T17%3A03%3A57&updatedTo=2026-11-26T17%3A03%3A57",
+          "title": "Capital - CentriMag Trolley System PW049 · University Hospitals of Leicester NHS Trust"
         }
       }
     }

@@ -553,6 +553,39 @@
         }
       }
     },
+    "5faf5ba228c7e19b95e39de2c7f1e0a7d644523ded200dabd63979542a70df42": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c4f3:112254-2026",
+      "members": {
+        "beh:d5d45c1c11c3ab4e422bc9c727c2": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-26T15:46:37+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:d5d45c1c11c3ab4e422bc9c727c2",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c4f3:112254-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-26T15:46:37Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-24T17%3A03%3A57&updatedTo=2026-11-26T17%3A03%3A57",
+          "title": "Fire Door remedial and replacement works PRH · The Shrewsbury and Telford Hospital NHS Trust"
+        }
+      }
+    },
     "5fb895105f0b41bfcb7ea7a8efa7cb4202cc3a0d034a83d8b736bec7af8d87a1": {
       "information_root": "cbp_wait:cbp_wait:250201:2026-11-22:03:34:18",
       "members": {
@@ -633,6 +666,53 @@
         }
       }
     },
+    "5fc9da3f8b6b38c07122563129239d909a33f06ddf4466570d3062ea091782ef": {
+      "information_root": "cbp_wait:cbp_wait:011501:2026-11-26:12:00:02",
+      "members": {
+        "beh:4ef80dd357d2e6f58c10b7e6cfeb": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-26T17:06:25+00:00",
+          "geography_key": "us-border-port:011501",
+          "geography_label": "Calais",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:4ef80dd357d2e6f58c10b7e6cfeb",
+          "information_root": "cbp_wait:cbp_wait:011501:2026-11-26:12:00:02",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "N/A",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/26/2026",
+            "reported_local_time": "12:00:02",
+            "source_declared_border": "Canadian Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Calais / Ferry Point"
+        }
+      }
+    },
     "5fd38f682a01477e06539dfd087162d9f35afbc16196b01e14bc7615225cc19d": {
       "information_root": "official:082c04d86ffbc200fbb9",
       "members": {
@@ -660,6 +740,39 @@
           "source_updated_at": null,
           "source_url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.mdv.html",
           "title": "Maldives - Level 2: Exercise Increased Caution"
+        }
+      }
+    },
+    "5fdbc594e10f0b1b1fb74fc999a16fd0c5ec274c87d6d263c6e459a3b4cf5fc5": {
+      "information_root": "nws:eb8659d9ba9a819a3a202689",
+      "members": {
+        "beh:764fd8dab337dae346aaea61ee31": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "nws",
+          "direct_measurement": false,
+          "event_at": "2026-11-26T13:50:00Z",
+          "first_observed_at": "2026-11-26T13:50:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:764fd8dab337dae346aaea61ee31",
+          "information_root": "nws:eb8659d9ba9a819a3a202689",
+          "origin": "behavioral_registry",
+          "provider": "nws",
+          "published_at": "2026-11-26T13:50:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "official_weather_alert_context",
+          "source_measurement": null,
+          "source_scope": "Active NWS marine alerts; severity Severe",
+          "source_updated_at": null,
+          "source_url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.93299397ef621c4e79363076d7d3b8d895f4d203.001.1",
+          "title": "Flood Warning - Seminole, FL"
         }
       }
     },

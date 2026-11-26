@@ -469,6 +469,39 @@
         }
       }
     },
+    "fd75eb76c7a3ddcba01bbf03834e83ccbb91659c9c88368cbb18e15500a90680": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c4ff:112283-2026",
+      "members": {
+        "beh:b54c9f1673d463f0011a35809366": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-26T16:12:08+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:b54c9f1673d463f0011a35809366",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c4ff:112283-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-26T16:12:08Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-24T17%3A03%3A57&updatedTo=2026-11-26T17%3A03%3A57",
+          "title": "Project_802243 - UK4 · Defence Infrastructure Organisation"
+        }
+      }
+    },
     "fd86fde2c1b22f6f4b686ab684a6dfc5b0383d124598a2b3f8f83a3a922dafac": {
       "information_root": "ioda:dfd7df45f07228bdbd0ade6b",
       "members": {
@@ -499,6 +532,53 @@
           "source_updated_at": null,
           "source_url": "https://ioda.inetintel.cc.gatech.edu/",
           "title": "IODA detected connectivity anomaly: country AO"
+        }
+      }
+    },
+    "fd988ec06cc3651123dfb23864cb573001bf295c3cac47d4fef7b37933fcc152": {
+      "information_root": "cbp_wait:cbp_wait:010601:2026-11-26:12:00:02",
+      "members": {
+        "beh:ecc192d64db3f5f0c21136ade03f": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-26T17:06:25+00:00",
+          "geography_key": "us-border-port:010601",
+          "geography_label": "Houlton",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:ecc192d64db3f5f0c21136ade03f",
+          "information_root": "cbp_wait:cbp_wait:010601:2026-11-26:12:00:02",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "no delay",
+            "lanes_open": 1,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "At Noon EST",
+            "reported_local_date": "11/26/2026",
+            "reported_local_time": "12:00:02",
+            "source_declared_border": "Canadian Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 2
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Houlton"
         }
       }
     },

@@ -239,6 +239,53 @@
         }
       }
     },
+    "997630e30cb0a67abccac16c7ba204754887ac50a00d4cd83ec65d5e4f500086": {
+      "information_root": "cbp_wait:cbp_wait:071201:2026-11-26:12:00:02",
+      "members": {
+        "beh:76731a74d0f50c161ce36192e7d2": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-26T17:06:25+00:00",
+          "geography_key": "us-border-port:071201",
+          "geography_label": "Champlain",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:76731a74d0f50c161ce36192e7d2",
+          "information_root": "cbp_wait:cbp_wait:071201:2026-11-26:12:00:02",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "no delay",
+            "lanes_open": 1,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "At 11:00 am EST",
+            "reported_local_date": "11/26/2026",
+            "reported_local_time": "12:00:02",
+            "source_declared_border": "Canadian Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 0
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Champlain"
+        }
+      }
+    },
     "9977f41a4c89d55ee5ce9b508435e4fc21b2bcfcdb9f11db0df63963db33873c": {
       "information_root": "cbp_wait:cbp_wait:260802:2026-11-25:20:37:47",
       "members": {
@@ -485,6 +532,53 @@
         }
       }
     },
+    "99b708bd7fc74a92c244b9c74913dc77c86df4c7f5a1895139af8d28ed7f73a2": {
+      "information_root": "cbp_wait:cbp_wait:250301:2026-11-26:09:00:02",
+      "members": {
+        "beh:4b412bc8f99c39a6d139df5fc75b": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-26T17:06:25+00:00",
+          "geography_key": "us-border-port:250301",
+          "geography_label": "Calexico",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:4b412bc8f99c39a6d139df5fc75b",
+          "information_root": "cbp_wait:cbp_wait:250301:2026-11-26:09:00:02",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Lanes Closed",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/26/2026",
+            "reported_local_time": "09:00:02",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Calexico / East"
+        }
+      }
+    },
     "99b88f235628df9f7a73ce74e5e5f5bdb6da92a3ae8693f32df30be64d6b1e3a": {
       "information_root": "official:c65bb2c8a32fa86b6c1b",
       "members": {
@@ -701,6 +795,39 @@
           "source_updated_at": "2026-11-20T13:21:53Z",
           "source_url": "https://niord.dma.dk/#/message/1ef21c8b-efbc-4641-b906-2fa81c3ff90f",
           "title": "Denmark. Kattegat. EK R 17 Isefjord. Firing exercises. Warning."
+        }
+      }
+    },
+    "99f56fe7d2a8b83999ca77e71c0d157905d4b279e4b40bf5b011fd114be09cd8": {
+      "information_root": "nws:c76801d132282a902721fd18",
+      "members": {
+        "beh:dc4ee30b1789f4e7b62afd4fc293": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "nws",
+          "direct_measurement": false,
+          "event_at": "2026-11-26T10:05:00Z",
+          "first_observed_at": "2026-11-26T10:05:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:dc4ee30b1789f4e7b62afd4fc293",
+          "information_root": "nws:c76801d132282a902721fd18",
+          "origin": "behavioral_registry",
+          "provider": "nws",
+          "published_at": "2026-11-26T10:05:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "official_weather_alert_context",
+          "source_measurement": null,
+          "source_scope": "Active NWS marine alerts; severity Moderate",
+          "source_updated_at": null,
+          "source_url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.a93473d23509fbe12f9a2ad4cb0375dc08ee2a3a.001.3",
+          "title": "Rip Current Statement - Pinellas; Coastal Hillsborough; Coastal Manatee; Coastal Sarasota; Coastal Charlotte; Coastal Lee"
         }
       }
     }

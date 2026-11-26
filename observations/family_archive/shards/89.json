@@ -33,6 +33,53 @@
         }
       }
     },
+    "890d2e51475f7d26d51ae4b55942b632ec32abc98b099c996a9c65bfb9fec8a1": {
+      "information_root": "cbp_wait:cbp_wait:230103:2026-11-26:11:00:03",
+      "members": {
+        "beh:926216ac905d276df38357057ef3": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-26T17:06:25+00:00",
+          "geography_key": "us-border-port:230103",
+          "geography_label": "Gateway",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:926216ac905d276df38357057ef3",
+          "information_root": "cbp_wait:cbp_wait:230103:2026-11-26:11:00:03",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Update Pending",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/26/2026",
+            "reported_local_time": "11:00:03",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Gateway"
+        }
+      }
+    },
     "891446b12615a0f3419cf8f52d0888855426717eea2a9a57a46644501a8fe209": {
       "information_root": "bmkg_nowcast:bmkg_nowcast:6ac6aa4015ca8d34b0f90ad24e61",
       "members": {
@@ -69,6 +116,39 @@
           "source_updated_at": null,
           "source_url": "https://www.bmkg.go.id/alerts/nowcast/en/CJI20261124003_alert.xml",
           "title": "Thunderstorm Tonight in Jambi"
+        }
+      }
+    },
+    "891584ae9390b13b83cdf7d3f0d7a49f0356db3351d201fe5b2b10be9961781c": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c4f6:112264-2026",
+      "members": {
+        "beh:60fa96f987f9f0283009e86e9c35": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-26T15:54:30+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:60fa96f987f9f0283009e86e9c35",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c4f6:112264-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-26T15:54:30Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-24T17%3A03%3A57&updatedTo=2026-11-26T17%3A03%3A57",
+          "title": "Group Life Assurance · ORBIT GROUP LIMITED"
         }
       }
     },
@@ -519,6 +599,39 @@
           "source_updated_at": "2026-11-22T00:21:52Z",
           "source_url": "https://niord.dma.dk/#/message/42b7d796-6fdc-4695-9052-4fd5a8e31208",
           "title": "Denmark. Kattegat. EK R 45 Hevring. Firing exercises. Warning."
+        }
+      }
+    },
+    "89f5bc23ae3d815a4a063c7eba1b2de5911a1e053ffe95fc272990079ae8f7e8": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c4fe:112282-2026",
+      "members": {
+        "beh:b0dd81135f9096ca179aa5e54763": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-26T16:08:06+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:b0dd81135f9096ca179aa5e54763",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c4fe:112282-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-26T16:08:06Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-24T17%3A03%3A57&updatedTo=2026-11-26T17%3A03%3A57",
+          "title": "Strategic Assessments for Marine Licensing · Llywodraeth Cymru / Welsh Government"
         }
       }
     }

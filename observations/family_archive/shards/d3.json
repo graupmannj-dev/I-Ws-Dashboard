@@ -140,6 +140,44 @@
         }
       }
     },
+    "d34158d1287667daddbf93db9fbb8d424e797e89a665ef4008b64a3157eb00d4": {
+      "information_root": "usgs:us6000udmc",
+      "members": {
+        "beh:5d2dc356994f01a59398dce1738f": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "usgs",
+          "direct_measurement": true,
+          "event_at": "2026-11-26T09:22:45Z",
+          "first_observed_at": "2026-11-26T09:22:45+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "source_supplied_point_only",
+          "id": "beh:5d2dc356994f01a59398dce1738f",
+          "information_root": "usgs:us6000udmc",
+          "origin": "behavioral_registry",
+          "provider": "usgs",
+          "published_at": "2026-11-26T09:34:36Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "measured_earthquake_context",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "name": "earthquake_magnitude",
+            "unit": "reported_magnitude",
+            "value": 5.2
+          },
+          "source_scope": "USGS M4.5+ earthquakes worldwide, rolling past day; source thresholds apply",
+          "source_updated_at": null,
+          "source_url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000udmc",
+          "title": "M 5.2 - 265 km WNW of Houma, Tonga"
+        }
+      }
+    },
     "d34264171e1259b3aed264cff281444be948d789b1995e1ec506eccbd2890510": {
       "information_root": "niord:fce4f751-427a-4abc-9fe5-f0a94995b0cf:4:0:0",
       "members": {
@@ -369,6 +407,86 @@
           "source_updated_at": null,
           "source_url": "https://bwt.cbp.gov/api/waittimes",
           "title": "CBP estimated commercial border wait — Naco"
+        }
+      }
+    },
+    "d35e3007a1e12e7ec66d7535e5c01941ceffe6824ec1dd884ba23b40723d9eaa": {
+      "information_root": "cbp_wait:cbp_wait:260305:2026-11-26:09:00:03",
+      "members": {
+        "beh:399b7cb91ed888d6eb417c98e347": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-26T17:06:25+00:00",
+          "geography_key": "us-border-port:260305",
+          "geography_label": "Naco",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:399b7cb91ed888d6eb417c98e347",
+          "information_root": "cbp_wait:cbp_wait:260305:2026-11-26:09:00:03",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Update Pending",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/26/2026",
+            "reported_local_time": "09:00:03",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Naco"
+        }
+      }
+    },
+    "d36aaacce4f18a60bed082478a5a314f2336c22b856637a8e84d5869a88925d8": {
+      "information_root": "nws:2a5288f061636706d41c28d8",
+      "members": {
+        "beh:a37793478223ed5f73462db127c4": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "nws",
+          "direct_measurement": false,
+          "event_at": "2026-11-26T15:00:00Z",
+          "first_observed_at": "2026-11-26T14:56:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:a37793478223ed5f73462db127c4",
+          "information_root": "nws:2a5288f061636706d41c28d8",
+          "origin": "behavioral_registry",
+          "provider": "nws",
+          "published_at": "2026-11-26T14:56:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "official_weather_alert_context",
+          "source_measurement": null,
+          "source_scope": "Active NWS marine alerts; severity Minor",
+          "source_updated_at": null,
+          "source_url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.98904e452867c3c97c238a5ab87a8419047b411f.001.2",
+          "title": "Coastal Flood Statement - Coastal Palm Beach County; Coastal Broward County"
         }
       }
     },

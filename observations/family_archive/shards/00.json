@@ -1,5 +1,52 @@
 {
   "roots": {
+    "000698a444555a5b18a4be125d10f6ac0102552adc0c49126d5c12aa58ed8517": {
+      "information_root": "cbp_wait:cbp_wait:230403:2026-11-26:11:00:03",
+      "members": {
+        "beh:bbd7400cedff65dec584247352de": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-26T17:06:25+00:00",
+          "geography_key": "us-border-port:230403",
+          "geography_label": "Laredo",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:bbd7400cedff65dec584247352de",
+          "information_root": "cbp_wait:cbp_wait:230403:2026-11-26:11:00:03",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "no delay",
+            "lanes_open": 5,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "At 10:00 am CST",
+            "reported_local_date": "11/26/2026",
+            "reported_local_time": "11:00:03",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 5
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Laredo / Colombia Solidarity"
+        }
+      }
+    },
     "001a6be44244321d0a10afcffaedb6a82fda289ea72f11ed5aeeb89c08836879": {
       "information_root": "cbp_wait:cbp_wait:011502:2026-11-21:14:22:44",
       "members": {
@@ -91,6 +138,72 @@
           "source_updated_at": null,
           "source_url": "https://bwt.cbp.gov/api/waittimes",
           "title": "CBP estimated commercial border wait — Laredo / Bridge II"
+        }
+      }
+    },
+    "00218ea8c4fbf29e6108028a67f4bf7e80f07c05bb2f3a1255c1fc8a0197e23f": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-0512a4:112222-2026",
+      "members": {
+        "beh:ebd9225e5092a2a1ed005c6a07b4": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-26T15:16:51+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:ebd9225e5092a2a1ed005c6a07b4",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-0512a4:112222-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-26T15:16:51Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-24T17%3A03%3A57&updatedTo=2026-11-26T17%3A03%3A57",
+          "title": "32 Delves Lane - urgent building works"
+        }
+      }
+    },
+    "00251543efee73319f4bcba14aa23d5be031e7e52d104e45e2633d15eaf6138b": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07b354:112228-2026",
+      "members": {
+        "beh:6d5d5a0a1f3d5eb0a74c5776ce69": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-26T15:23:13+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:6d5d5a0a1f3d5eb0a74c5776ce69",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07b354:112228-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-26T15:23:13Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-24T17%3A03%3A57&updatedTo=2026-11-26T17%3A03%3A57",
+          "title": "Outpatient Pharmacy DispensingService · University College London Hospitals NHS FT"
         }
       }
     },
@@ -424,6 +537,81 @@
           "source_updated_at": "2026-11-18T00:21:52Z",
           "source_url": "https://niord.dma.dk/#/message/f48832c8-64ae-4e88-a799-3eedb2703fec",
           "title": "Denmark. Kattegat. EK R 17 Isefjord. Firing exercises. Warning."
+        }
+      }
+    },
+    "00b2384e0d79e3418be0d6e89b2bef04bdf0edb4b7e02a1cb6c0861e9a8bd9e0": {
+      "information_root": "wiki_edits:wiki_edits:en:20261126T17",
+      "members": {
+        "beh:6e01a0dfc3baabe55fb8d67c77c7": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "wiki_edits",
+          "direct_measurement": false,
+          "event_at": "2026-11-26T17:03:57Z",
+          "first_observed_at": "2026-11-26T17:03:57+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:6e01a0dfc3baabe55fb8d67c77c7",
+          "information_root": "wiki_edits:wiki_edits:en:20261126T17",
+          "origin": "behavioral_registry",
+          "provider": "wiki_edits",
+          "published_at": "2026-11-26T17:03:57Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "public_encyclopedia_edit_aggregate",
+          "source_family": "public_attention",
+          "source_kind": "bounded_public_edit_count_not_event_verification",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "distinct_articles_in_sample": 462,
+            "maximum_returned_edits": 500,
+            "most_edited_article_counts": [
+              {
+                "count": 7,
+                "title": "Auditory verbal agnosia"
+              },
+              {
+                "count": 3,
+                "title": "2026–27 Biathlon World Cup"
+              },
+              {
+                "count": 3,
+                "title": "Centre A"
+              },
+              {
+                "count": 3,
+                "title": "High Water Recording Company"
+              },
+              {
+                "count": 2,
+                "title": "1917"
+              },
+              {
+                "count": 2,
+                "title": "1917 in Sweden"
+              },
+              {
+                "count": 2,
+                "title": "2025–26 PGA Tour of Australasia"
+              },
+              {
+                "count": 2,
+                "title": "African Nations League"
+              }
+            ],
+            "name": "sampled_edits_last_three_hours",
+            "sample_cap_reached": true,
+            "unit": "edits",
+            "value": 500
+          },
+          "source_scope": "Wikipedia main-namespace edit-count sample, 14 global language editions, three-hour window capped at 500 per wiki; not geographic location",
+          "source_updated_at": null,
+          "source_url": "https://en.wikipedia.org/wiki/Special:RecentChanges",
+          "title": "Wikipedia en public article-edit activity (sampled)"
         }
       }
     },

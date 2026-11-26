@@ -311,6 +311,39 @@
         }
       }
     },
+    "1c50c6ba509d3ca49e7599b9c4d140ae9b5b573e49637bfd36d7a9c81eed9992": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c506:112291-2026",
+      "members": {
+        "beh:82a2f5cd330c740fba9fa05b4346": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-26T16:21:01+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:82a2f5cd330c740fba9fa05b4346",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c506:112291-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-26T16:21:01Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-24T17%3A03%3A57&updatedTo=2026-11-26T17%3A03%3A57",
+          "title": "Argentia Place piling works · NSAH (ALLIANCE HOMES) LIMITED"
+        }
+      }
+    },
     "1c5710a38b175b5e80bb6538a37c23aa9d28234d20484fbb3d751df3f1c54a2e": {
       "information_root": "ioda:3cf0a44742134785fff5755b",
       "members": {
@@ -371,6 +404,53 @@
           "source_updated_at": null,
           "source_url": "https://ioda.inetintel.cc.gatech.edu/",
           "title": "IODA detected connectivity anomaly: country SS"
+        }
+      }
+    },
+    "1c5d9cd8c372e038e2801dc20091530d0afaee777d3132941f12a7cfd6ffe57a": {
+      "information_root": "cbp_wait:cbp_wait:240301:2026-11-26:11:00:03",
+      "members": {
+        "beh:6e2e77b7cd278d1daebf03b60d50": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-26T17:06:25+00:00",
+          "geography_key": "us-border-port:240301",
+          "geography_label": "Presidio",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:6e2e77b7cd278d1daebf03b60d50",
+          "information_root": "cbp_wait:cbp_wait:240301:2026-11-26:11:00:03",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Lanes Closed",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/26/2026",
+            "reported_local_time": "11:00:03",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Presidio / PRESIDIO PORT OF ENTRY"
         }
       }
     },

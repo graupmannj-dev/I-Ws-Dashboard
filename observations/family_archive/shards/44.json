@@ -229,6 +229,39 @@
         }
       }
     },
+    "444e5cd69b0fb2118b7d79ca93e62e70ca6b3e1680fafdec4dcdc61dd4f8c6dd": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-06931c:112270-2026",
+      "members": {
+        "beh:46000ef5762e9855617ebec8fe49": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-26T16:00:50+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:46000ef5762e9855617ebec8fe49",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-06931c:112270-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-26T16:00:50Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-24T17%3A03%3A57&updatedTo=2026-11-26T17%3A03%3A57",
+          "title": "Provision of a Finance Software System and Associated Implementation Services · The Royal Household"
+        }
+      }
+    },
     "4454ed770fe633971926297ad023c781771dfae503172ae04240142c084c666c": {
       "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07956a:110850-2026",
       "members": {
@@ -624,6 +657,39 @@
           "source_updated_at": null,
           "source_url": "https://stat.ripe.net/data/bgp-update-activity/data.json?resource=AS7552&num_hours=6&max_samples=24&hide_empty_samples=false",
           "title": "RIPE RIS sampled BGP announcements: AS7552"
+        }
+      }
+    },
+    "44d98e1a2f55dca22a9c86d72bd45882acd8958ef3f3dab23755b1aa988d656a": {
+      "information_root": "nws:cca7fd2056b9d19cebd1a41a",
+      "members": {
+        "beh:9b94f06d730ebcc0637558085bfb": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "nws",
+          "direct_measurement": false,
+          "event_at": "2026-11-26T15:58:00Z",
+          "first_observed_at": "2026-11-26T15:58:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:9b94f06d730ebcc0637558085bfb",
+          "information_root": "nws:cca7fd2056b9d19cebd1a41a",
+          "origin": "behavioral_registry",
+          "provider": "nws",
+          "published_at": "2026-11-26T15:58:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "official_weather_alert_context",
+          "source_measurement": null,
+          "source_scope": "Active NWS marine alerts; severity Minor",
+          "source_updated_at": null,
+          "source_url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.8a1aa89498ab1fcc0a9ec8a2268ae5cb58f195ef.001.1",
+          "title": "Coastal Flood Advisory - Monroe Upper Keys"
         }
       }
     },

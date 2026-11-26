@@ -3126,6 +3126,15 @@
       "shared_activity_roles": [],
       "shared_subject_terms": []
     },
+    "808d2f4110ba6264957be5906b49": {
+      "independent_corroboration_proven": false,
+      "method": "new_analytical_theme",
+      "review_status": "unreviewed_automatic_topic_seed",
+      "same_incident_proven": false,
+      "score": null,
+      "shared_activity_roles": [],
+      "shared_subject_terms": []
+    },
     "812e7cb4656da69669483403127a": {
       "independent_corroboration_proven": false,
       "method": "new_analytical_theme",
@@ -5311,6 +5320,31 @@
       "shared_subject_terms": [],
       "subject_geography_compatible": true
     },
+    "de8744f3c13b214855fbe635508b": {
+      "independent_corroboration_proven": false,
+      "latent_semantic_similarity": 1,
+      "method": "aiba.hybrid-local-title-embedding.v1",
+      "raw_text_similarity": 1,
+      "review_status": "unreviewed_automatic_topic_match",
+      "same_incident_proven": false,
+      "same_source_document": false,
+      "score": 1.0,
+      "shared_activity_roles": [],
+      "shared_named_subjects": [
+        "atlas"
+      ],
+      "shared_subject_terms": [
+        "aggregate",
+        "atlas",
+        "measurements",
+        "probe",
+        "public",
+        "ripe",
+        "root",
+        "usable"
+      ],
+      "subject_geography_compatible": true
+    },
     "deae1e83a37cbc8eed90264b84f5": {
       "independent_corroboration_proven": false,
       "latent_semantic_similarity": 1,
@@ -6722,6 +6756,7 @@
     "80575b02ad23c708c3b320348799": "family:97e5004cd15276f863d2",
     "805b93aad4c58fc2907172d1fc89": "family:274ba6576314d71dcd1f",
     "8086240304de5da2cad33494f620": "family:4b766756c25715530d34",
+    "808d2f4110ba6264957be5906b49": "family:8a317fcee4519d793c44",
     "80ea0bac1cc258bbc30c27f2488b": "family:e8dc1a665db5613e9d8d",
     "810d91235de99b5e6f7414ab667e": "family:f4c92566aaca1b740396",
     "812e7cb4656da69669483403127a": "family:3f450f3db3019b9fabb2",
@@ -7016,6 +7051,7 @@
     "ddb634633797326600716d704b9b": "family:fedd67f32b443ff07f62",
     "ddbb0b61447b4a63866e0902be38": "family:f3c000f5d4ff2dd71268",
     "de5a8675d39d77fb89f4c17937e5": "family:4e1f848f673313bc5db8",
+    "de8744f3c13b214855fbe635508b": "family:fe16830728b4f874c391",
     "deae1e83a37cbc8eed90264b84f5": "family:a68d914d5c72f6a22df4",
     "ded9c3b8781971272ad0e01ee6c9": "family:1c628f836d1f68918c22",
     "df0f7421896b81d11a41cd93a5cd": "family:429370c5abbcc0ac3e03",
@@ -10178,6 +10214,34 @@
       },
       "source": "automatic_similarity_v1"
     },
+    "family:8a317fcee4519d793c44": {
+      "first_document_at": "2026-11-26T15:15:05+00:00",
+      "last_document_at": "2026-11-26T15:15:05+00:00",
+      "matched_document_count": 1,
+      "seed": {
+        "domain": "generic",
+        "geo": [],
+        "key": "808d2f4110ba6264957be5906b49",
+        "publisher": "uk_tenders",
+        "source_family": "public_procurement",
+        "terms": {
+          "bay": 1,
+          "board": 3,
+          "dda": 2,
+          "health": 3,
+          "hywel": 2,
+          "integrated": 1,
+          "management": 1,
+          "pest": 1,
+          "regional": 1,
+          "service": 1,
+          "swansea": 1,
+          "university": 3
+        },
+        "title": "REGIONAL INTEGRATED PEST MANAGEMENT SERVICE FOR HYWEL DDA UNIVERSITY HEALTH BOARD AND SWANSEA BAY UNIVERSITY HEALTH BOARD · Hywel Dda University Health Board"
+      },
+      "source": "hybrid_local_topic_embedding_v2"
+    },
     "family:8bc0a64d3d5df744832c": {
       "first_document_at": "2026-11-21T17:04:16+00:00",
       "last_document_at": "2026-11-21T17:04:16+00:00",
@@ -13024,8 +13088,8 @@
     },
     "family:fe16830728b4f874c391": {
       "first_document_at": "2026-11-21T02:31:05+00:00",
-      "last_document_at": "2026-11-26T03:40:40+00:00",
-      "matched_document_count": 13,
+      "last_document_at": "2026-11-26T17:06:25+00:00",
+      "matched_document_count": 14,
       "seed": {
         "domain": "network",
         "geo": [],
@@ -13143,9 +13207,9 @@
     }
   },
   "input_truncated": false,
-  "new_document_assignments": 0,
+  "new_document_assignments": 2,
   "schema": "aiba.automatic-analytical-topics.v1",
   "semantic_seed_index_limited": false,
-  "total_document_assignments": 812,
-  "total_stable_topics": 270
+  "total_document_assignments": 814,
+  "total_stable_topics": 271
 }

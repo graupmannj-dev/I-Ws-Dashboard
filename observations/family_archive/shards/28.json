@@ -80,6 +80,72 @@
         }
       }
     },
+    "2822cb10c20cdafb4e6a948738cc4eeff60d08004229eb3759eb768d246228fd": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-06ce96:112256-2026",
+      "members": {
+        "beh:4225b1e75d3d999398cd9783f921": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-26T15:48:16+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:4225b1e75d3d999398cd9783f921",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-06ce96:112256-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-26T15:48:16Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-24T17%3A03%3A57&updatedTo=2026-11-26T17%3A03%3A57",
+          "title": "Oxford Diocesan Bucks School Trust - Tender for managed IT services incorporating Broadband and VOIP services · Oxford Diocesan Bucks School Trust"
+        }
+      }
+    },
+    "28457c7819ea5a31a780832d93f131b1a17dbeef1054abad6a297c9064304f08": {
+      "information_root": "nws:9aaf16e642accc6d9a6bd68f",
+      "members": {
+        "beh:5a5af22c39f85478694126ec696d": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "nws",
+          "direct_measurement": false,
+          "event_at": "2026-11-26T07:14:00Z",
+          "first_observed_at": "2026-11-26T07:14:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:5a5af22c39f85478694126ec696d",
+          "information_root": "nws:9aaf16e642accc6d9a6bd68f",
+          "origin": "behavioral_registry",
+          "provider": "nws",
+          "published_at": "2026-11-26T07:14:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "official_weather_alert_context",
+          "source_measurement": null,
+          "source_scope": "Active NWS marine alerts; severity Moderate",
+          "source_updated_at": null,
+          "source_url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.b11157bc38df7e7bd9ffea0efabb33ded8203c42.001.1",
+          "title": "Rip Current Statement - South Walton; Coastal Bay; Coastal Gulf; Coastal Franklin"
+        }
+      }
+    },
     "284768874d8eb7b99dfabfa2fd5677ba5ff2aa1968b62b15a8834aed06121b0f": {
       "information_root": "eonet:EONET_26661",
       "members": {
@@ -318,6 +384,52 @@
           "source_updated_at": null,
           "source_url": "https://www.bmkg.go.id/alerts/nowcast/en/CPU20261121004_alert.xml",
           "title": "Thunderstorm Tonight in Papua"
+        }
+      }
+    },
+    "288ad1200ab6363ca1eafd170608cfe78771a3b1e883627bef8bc3e063ec35a3": {
+      "information_root": "ris_bgp:ris_bgp:AS4134:20261126T13",
+      "members": {
+        "beh:962f7dc08db8879b5ec11fa1a4b2": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "public_routing_updates_not_country_outage",
+          "collection_mode": "ris_bgp",
+          "direct_measurement": true,
+          "event_at": null,
+          "first_observed_at": "2026-11-26T17:06:25+00:00",
+          "geography_key": "asn:4134",
+          "geography_label": "AS4134",
+          "geography_precision": "routing_target_not_country_incident",
+          "id": "beh:962f7dc08db8879b5ec11fa1a4b2",
+          "information_root": "ris_bgp:ris_bgp:AS4134:20261126T13",
+          "origin": "behavioral_registry",
+          "provider": "ris_bgp",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "routing_collector_sampled_asn_updates",
+          "source_family": "internet_routing",
+          "source_kind": "sampled_asn_bgp_route_updates_not_network_outage",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "collector_peers_are_not_geo_deduplicated": true,
+            "country_impact_not_established": true,
+            "name": "sampled_6h_bgp_announcements",
+            "registered_network_country_hint": "CN",
+            "returned_sampling_buckets": 6,
+            "source_window_end": "2026-11-26T13:00:00Z",
+            "target_asn": "AS4134",
+            "unit": "announcements",
+            "value": 119366,
+            "window_hours_requested": 6,
+            "withdrawals_unavailable_for_asn": true
+          },
+          "source_scope": "RIPE RIS public route-announcement update samples on six non-Western operated networks; ASNs not country-wide outage detection",
+          "source_updated_at": null,
+          "source_url": "https://stat.ripe.net/data/bgp-update-activity/data.json?resource=AS4134&num_hours=6&max_samples=24&hide_empty_samples=false",
+          "title": "RIPE RIS sampled BGP announcements: AS4134"
         }
       }
     },
@@ -729,6 +841,50 @@
           "source_updated_at": null,
           "source_url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.4410d7b202a29dc4e2491ae0491b2b3bd50cfce9.001.1",
           "title": "Severe Thunderstorm Warning - Indian River, FL; St. Lucie, FL"
+        }
+      }
+    },
+    "28eb8824fd3f2ea535acf6c989a08a7292bd6bd1be5f389b44cc1375a36ab1c1": {
+      "information_root": "ripe:measurement:1001:20261126T17",
+      "members": {
+        "beh:0592de6fdd4cf48a45f673c2246d": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "aggregate_ping_no_country_or_threat_attribution",
+          "collection_mode": "ripe",
+          "direct_measurement": true,
+          "event_at": null,
+          "first_observed_at": "2026-11-26T17:06:25+00:00",
+          "geography_key": "ripe-msm:1001",
+          "geography_label": "K-root public ping aggregate",
+          "geography_precision": "not_country_or_incident_location",
+          "id": "beh:0592de6fdd4cf48a45f673c2246d",
+          "information_root": "ripe:measurement:1001:20261126T17",
+          "origin": "behavioral_registry",
+          "provider": "ripe",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "network_aggregate_monitoring",
+          "source_family": "internet_reachability",
+          "source_kind": "aggregate_public_network_ping",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "cohort_comparable_to_prior_snapshots": false,
+            "failed_or_invalid_rtt_count": 369,
+            "individual_probe_records_published": false,
+            "measurement_id": 1001,
+            "name": "sample_median_ping_rtt",
+            "sampled_probe_count": 13515,
+            "unit": "ms",
+            "valid_rtt_count": 13146,
+            "value": 19.214
+          },
+          "source_scope": "RIPE Atlas built-in K-root ping #1001, global public-probe aggregate; not country coverage",
+          "source_updated_at": null,
+          "source_url": "https://atlas.ripe.net/measurements/1001/",
+          "title": "RIPE Atlas K-root public probe aggregate (13146 usable measurements)"
         }
       }
     }

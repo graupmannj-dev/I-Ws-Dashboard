@@ -352,6 +352,81 @@
         }
       }
     },
+    "ec6a31b4735fd67b9f7a268a58e39b1340e52e283ec5acedefebb76be915d9e1": {
+      "information_root": "wiki_edits:wiki_edits:ko:20261126T17",
+      "members": {
+        "beh:004d2f261fdfcc8a00a44cdd145c": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "wiki_edits",
+          "direct_measurement": false,
+          "event_at": "2026-11-26T17:03:33Z",
+          "first_observed_at": "2026-11-26T17:03:33+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:004d2f261fdfcc8a00a44cdd145c",
+          "information_root": "wiki_edits:wiki_edits:ko:20261126T17",
+          "origin": "behavioral_registry",
+          "provider": "wiki_edits",
+          "published_at": "2026-11-26T17:03:33Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "public_encyclopedia_edit_aggregate",
+          "source_family": "public_attention",
+          "source_kind": "bounded_public_edit_count_not_event_verification",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "distinct_articles_in_sample": 308,
+            "maximum_returned_edits": 500,
+            "most_edited_article_counts": [
+              {
+                "count": 22,
+                "title": "민주 깃발 목록"
+              },
+              {
+                "count": 17,
+                "title": "호이트 액스턴"
+              },
+              {
+                "count": 15,
+                "title": "윌리엄 워커"
+              },
+              {
+                "count": 11,
+                "title": "조셉 W. 마틴 주니어"
+              },
+              {
+                "count": 9,
+                "title": "황우여"
+              },
+              {
+                "count": 6,
+                "title": "FC 빅토리아 플젠"
+              },
+              {
+                "count": 6,
+                "title": "Wild Frontier"
+              },
+              {
+                "count": 6,
+                "title": "국가기술자격"
+              }
+            ],
+            "name": "sampled_edits_last_three_hours",
+            "sample_cap_reached": true,
+            "unit": "edits",
+            "value": 500
+          },
+          "source_scope": "Wikipedia main-namespace edit-count sample, 14 global language editions, three-hour window capped at 500 per wiki; not geographic location",
+          "source_updated_at": null,
+          "source_url": "https://ko.wikipedia.org/wiki/Special:RecentChanges",
+          "title": "Wikipedia ko public article-edit activity (sampled)"
+        }
+      }
+    },
     "ec97e498f005b70c057b17e776b48297f7a30f45678c3ed6c95bdc228c32a1ff": {
       "information_root": "ioda:29b08cdcdd6299d11c492ad5",
       "members": {
@@ -682,6 +757,53 @@
           "source_updated_at": "2026-11-24T00:21:53Z",
           "source_url": "https://niord.dma.dk/#/message/83a820d1-2d99-4ac4-bbc2-49848ccb316a",
           "title": "Denmark. Kattegat. EK R 20 Yderby. Firing exercises. Warning."
+        }
+      }
+    },
+    "ecf9f6085281486cc1d1a9aabaef55f3070ad3d4de2ebcbfaaeb865cb5d15ab3": {
+      "information_root": "cbp_wait:cbp_wait:360401:2026-11-26:11:00:02",
+      "members": {
+        "beh:f6760fd2c7709642bc923781d0cd": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-26T17:06:25+00:00",
+          "geography_key": "us-border-port:360401",
+          "geography_label": "International Falls",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:f6760fd2c7709642bc923781d0cd",
+          "information_root": "cbp_wait:cbp_wait:360401:2026-11-26:11:00:02",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "no delay",
+            "lanes_open": 1,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "At Noon CST",
+            "reported_local_date": "11/26/2026",
+            "reported_local_time": "11:00:02",
+            "source_declared_border": "Canadian Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 0
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — International Falls"
         }
       }
     },

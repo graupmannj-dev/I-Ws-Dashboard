@@ -172,6 +172,45 @@
         }
       }
     },
+    "424510a6b4eb74a33b45986be3d3ee9f74e9eea6760c9e4d7d92ca3b93c201f9": {
+      "information_root": "bmkg_nowcast:bmkg_nowcast:8f427b03df33583bacdcf15c0370",
+      "members": {
+        "beh:1e7d561b1ee265dd766e60aacf7b": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "bmkg_nowcast",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-26T16:02:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:1e7d561b1ee265dd766e60aacf7b",
+          "information_root": "bmkg_nowcast:bmkg_nowcast:8f427b03df33583bacdcf15c0370",
+          "origin": "behavioral_registry",
+          "provider": "bmkg_nowcast",
+          "published_at": "2026-11-26T16:02:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Indonesia BMKG",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Indonesia BMKG active provincial nowcast RSS, source-reported only; not global",
+          "source_updated_at": null,
+          "source_url": "https://www.bmkg.go.id/alerts/nowcast/en/CSK20261126001_alert.xml",
+          "title": "Thunderstorm Tonight in Sulawesi Barat"
+        }
+      }
+    },
     "4255b01db4fcc999750fdadf13fe8a68ed2c7e444a01dbff34039254d9c170a4": {
       "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-0510f8:111369-2026",
       "members": {
@@ -546,6 +585,39 @@
           "source_updated_at": null,
           "source_url": "https://bwt.cbp.gov/api/waittimes",
           "title": "CBP estimated commercial border wait — El Paso / Ysleta"
+        }
+      }
+    },
+    "42fe6b6caf8e21a14c3997614b98c6be65792bfe7daa01c5a0c215fe8cf63c2c": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-06931c:112285-2026",
+      "members": {
+        "beh:878ca4cc789718ede939994dbb30": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-26T16:15:06+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:878ca4cc789718ede939994dbb30",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-06931c:112285-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-26T16:15:06Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-24T17%3A03%3A57&updatedTo=2026-11-26T17%3A03%3A57",
+          "title": "Provision of a Finance Software System and Associated Implementation Services · The Royal Household"
         }
       }
     }

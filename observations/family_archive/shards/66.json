@@ -245,6 +245,39 @@
         }
       }
     },
+    "6653bb973f19fb37b5101cf1b034cd122869980da57bcdd337b7424d05bdb145": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-06ee97:112246-2026",
+      "members": {
+        "beh:19afc2035c5eb9318c5daa8464ca": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-26T15:34:53+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:19afc2035c5eb9318c5daa8464ca",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-06ee97:112246-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-26T15:34:53Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-24T17%3A03%3A57&updatedTo=2026-11-26T17%3A03%3A57",
+          "title": "ID 6543869 - Managing Agent for InterTradeIreland Innovation Boost Programme (Phase VII) · InterTradeIreland"
+        }
+      }
+    },
     "665400c24c8cb0865bfd7f497d0bcd27c8bc776fc0f266fe267c0d5bf8742d46": {
       "information_root": "cbp_wait:cbp_wait:240601:2026-11-21:04:24:37",
       "members": {
@@ -610,6 +643,45 @@
           "source_updated_at": null,
           "source_url": "https://tfr.faa.gov/5_6379.html",
           "title": "FAA TFR 5/6379 ·   USA, Wednesday, October 29, 2025 through Friday, October 29, 2027 UTC"
+        }
+      }
+    },
+    "66b657191ba1cb7fb5c84ae4e02b09c6c308f3028ae5b84d5d63534468281ebf": {
+      "information_root": "bmkg_nowcast:bmkg_nowcast:92404c4c6567897b99ce2dd0616b",
+      "members": {
+        "beh:4d1e85d5441f0c6c195b54cf1e54": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "bmkg_nowcast",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-26T16:00:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:4d1e85d5441f0c6c195b54cf1e54",
+          "information_root": "bmkg_nowcast:bmkg_nowcast:92404c4c6567897b99ce2dd0616b",
+          "origin": "behavioral_registry",
+          "provider": "bmkg_nowcast",
+          "published_at": "2026-11-26T16:00:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Indonesia BMKG",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Indonesia BMKG active provincial nowcast RSS, source-reported only; not global",
+          "source_updated_at": null,
+          "source_url": "https://www.bmkg.go.id/alerts/nowcast/en/CBK20261126006_alert.xml",
+          "title": "Thunderstorm Tonight in Bengkulu"
         }
       }
     },

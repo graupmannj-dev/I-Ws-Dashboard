@@ -137,6 +137,39 @@
         }
       }
     },
+    "a34ff6feb455564d50f5b16f85967fbf9af04b528516c6ba1d622ac1746139a0": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c4d8:112221-2026",
+      "members": {
+        "beh:a1f1888a864bb920a00efcfbd827": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-26T15:16:45+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:a1f1888a864bb920a00efcfbd827",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c4d8:112221-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-26T15:16:45Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-24T17%3A03%3A57&updatedTo=2026-11-26T17%3A03%3A57",
+          "title": "Out of Service Date Extension Programme D&M LH · Defence Equipment and Support"
+        }
+      }
+    },
     "a35a43ec2ed79a2a69edd51276475ecf161ef29626b07c2686aa97f42ea293e3": {
       "information_root": "ris_bgp:ris_bgp:AS5713:20261122T13",
       "members": {
@@ -501,6 +534,45 @@
           "source_updated_at": "2026-11-26T00:21:54Z",
           "source_url": "https://niord.dma.dk/#/message/55d139e4-9567-4a4d-8e26-ee093a4954b1",
           "title": "Denmark. The North Sea. EK R 33 Vejers. Firing exercises. Warning."
+        }
+      }
+    },
+    "a3cf3ef6813925185a40233b7ff87b3afcdf689282247a4459e691d415c9d475": {
+      "information_root": "bmkg_nowcast:bmkg_nowcast:0baf79d0806f9a4c8a5a3837ed94",
+      "members": {
+        "beh:9502036482295de4be9d716d3273": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "bmkg_nowcast",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-26T14:37:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:9502036482295de4be9d716d3273",
+          "information_root": "bmkg_nowcast:bmkg_nowcast:0baf79d0806f9a4c8a5a3837ed94",
+          "origin": "behavioral_registry",
+          "provider": "bmkg_nowcast",
+          "published_at": "2026-11-26T14:37:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Indonesia BMKG",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Indonesia BMKG active provincial nowcast RSS, source-reported only; not global",
+          "source_updated_at": null,
+          "source_url": "https://www.bmkg.go.id/alerts/nowcast/en/CAH20261126002_alert.xml",
+          "title": "Thunderstorm Tonight in Aceh"
         }
       }
     },

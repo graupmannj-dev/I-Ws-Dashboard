@@ -80,6 +80,39 @@
         }
       }
     },
+    "9f1a77e0dce3dff07f0d2bad89d115fdde11065519a0750fbd13efd505d172f5": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-06de47:112311-2026",
+      "members": {
+        "beh:b30f7b5aab45d7e80bf45d3d66cd": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-26T16:55:05+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:b30f7b5aab45d7e80bf45d3d66cd",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-06de47:112311-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-26T16:55:05Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-24T17%3A03%3A57&updatedTo=2026-11-26T17%3A03%3A57",
+          "title": "Purchase of GCMS system for AMD"
+        }
+      }
+    },
     "9f2d6bc7277494dfc7c69af156a86f186535622f4e21ed89f0b14a0291e9d8e4": {
       "information_root": "eonet:EONET_12618",
       "members": {
@@ -143,6 +176,45 @@
           "source_updated_at": null,
           "source_url": "https://ioda.inetintel.cc.gatech.edu/",
           "title": "IODA detected connectivity anomaly: country UZ"
+        }
+      }
+    },
+    "9f470d757c219fb10a4270aaacb6761825bef1dc67ec139240567dbe481cdfd2": {
+      "information_root": "bmkg_nowcast:bmkg_nowcast:69100167945c7bdd5a3de3b8de32",
+      "members": {
+        "beh:aac301f460c4d19d5a5bfdb506ae": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "bmkg_nowcast",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-26T14:30:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:aac301f460c4d19d5a5bfdb506ae",
+          "information_root": "bmkg_nowcast:bmkg_nowcast:69100167945c7bdd5a3de3b8de32",
+          "origin": "behavioral_registry",
+          "provider": "bmkg_nowcast",
+          "published_at": "2026-11-26T14:30:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Indonesia BMKG",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Indonesia BMKG active provincial nowcast RSS, source-reported only; not global",
+          "source_updated_at": null,
+          "source_url": "https://www.bmkg.go.id/alerts/nowcast/en/CJH20261126006_alert.xml",
+          "title": "Thunderstorm Tonight in Jawa Tengah"
         }
       }
     },
@@ -434,6 +506,53 @@
           "source_updated_at": null,
           "source_url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/french-west-indies-travel-advisory.html",
           "title": "French West Indies - Level 1: Exercise Normal Precautions"
+        }
+      }
+    },
+    "9fa5ade8570f9a05b3f292f1c4d566b8b5f9593273641d176844071dc3026823": {
+      "information_root": "cbp_wait:cbp_wait:331001:2026-11-26:10:00:02",
+      "members": {
+        "beh:202cb9d616efe9666b0b8f0e88ab": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-26T17:06:25+00:00",
+          "geography_key": "us-border-port:331001",
+          "geography_label": "Sweetgrass",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:202cb9d616efe9666b0b8f0e88ab",
+          "information_root": "cbp_wait:cbp_wait:331001:2026-11-26:10:00:02",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "no delay",
+            "lanes_open": 1,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "At 9:00 am MST",
+            "reported_local_date": "11/26/2026",
+            "reported_local_time": "10:00:02",
+            "source_declared_border": "Canadian Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 0
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Sweetgrass"
         }
       }
     },

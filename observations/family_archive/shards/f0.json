@@ -75,6 +75,53 @@
         }
       }
     },
+    "f04fe49d19264e5c4cb0e49a01a253566be28c4e1855507b7accc4eae00ab16a": {
+      "information_root": "cbp_wait:cbp_wait:240202:2026-11-26:10:00:02",
+      "members": {
+        "beh:11230b666581e6d4d548e75e564c": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-26T17:06:25+00:00",
+          "geography_key": "us-border-port:240202",
+          "geography_label": "El Paso",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:11230b666581e6d4d548e75e564c",
+          "information_root": "cbp_wait:cbp_wait:240202:2026-11-26:10:00:02",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "N/A",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/26/2026",
+            "reported_local_time": "10:00:02",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — El Paso / Paso Del Norte (PDN)"
+        }
+      }
+    },
     "f061405e9bdaca207ded15db8de81f39aa7938281ff587240ee8c272d8c8cf20": {
       "information_root": "faa:6/8736:0:0",
       "members": {
@@ -179,6 +226,39 @@
           "source_updated_at": null,
           "source_url": "https://polymarket.com/event/us-iran-hormuz-agreement-by-december-31",
           "title": "U.S.–Iran Hormuz agreement by December 31"
+        }
+      }
+    },
+    "f0697e4991e51300693e43b4fd96ac6357be52d6bed86fb5a81c93ec01392c5e": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-0678f2:112301-2026",
+      "members": {
+        "beh:c74c2b1607d969db5182c430bc31": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-26T16:40:38+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:c74c2b1607d969db5182c430bc31",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-0678f2:112301-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-26T16:40:38Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-24T17%3A03%3A57&updatedTo=2026-11-26T17%3A03%3A57",
+          "title": "Concession Contract for electric vehicle charging units at specific ORCS and LEVI Funded Sites. · Sunderland City Council"
         }
       }
     },
@@ -384,6 +464,52 @@
         }
       }
     },
+    "f0ab8c03f340b3a29d7055209b1e6109a68ecf47598dfbd85ae39f18c41b1c27": {
+      "information_root": "ris_bgp:ris_bgp:AS7552:20261126T13",
+      "members": {
+        "beh:f94ac0a59fd0c63b5918401e1383": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "public_routing_updates_not_country_outage",
+          "collection_mode": "ris_bgp",
+          "direct_measurement": true,
+          "event_at": null,
+          "first_observed_at": "2026-11-26T17:06:25+00:00",
+          "geography_key": "asn:7552",
+          "geography_label": "AS7552",
+          "geography_precision": "routing_target_not_country_incident",
+          "id": "beh:f94ac0a59fd0c63b5918401e1383",
+          "information_root": "ris_bgp:ris_bgp:AS7552:20261126T13",
+          "origin": "behavioral_registry",
+          "provider": "ris_bgp",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "routing_collector_sampled_asn_updates",
+          "source_family": "internet_routing",
+          "source_kind": "sampled_asn_bgp_route_updates_not_network_outage",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "collector_peers_are_not_geo_deduplicated": true,
+            "country_impact_not_established": true,
+            "name": "sampled_6h_bgp_announcements",
+            "registered_network_country_hint": "VN",
+            "returned_sampling_buckets": 6,
+            "source_window_end": "2026-11-26T13:00:00Z",
+            "target_asn": "AS7552",
+            "unit": "announcements",
+            "value": 2622197,
+            "window_hours_requested": 6,
+            "withdrawals_unavailable_for_asn": true
+          },
+          "source_scope": "RIPE RIS public route-announcement update samples on six non-Western operated networks; ASNs not country-wide outage detection",
+          "source_updated_at": null,
+          "source_url": "https://stat.ripe.net/data/bgp-update-activity/data.json?resource=AS7552&num_hours=6&max_samples=24&hide_empty_samples=false",
+          "title": "RIPE RIS sampled BGP announcements: AS7552"
+        }
+      }
+    },
     "f0b165246d3b3010ec7ce5c9b1936c9518612928eae5b7465e4c4c410ffee7e4": {
       "information_root": "official:fa2bf3bcb8bf75a1c085",
       "members": {
@@ -411,6 +537,81 @@
           "source_updated_at": null,
           "source_url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.mne.html",
           "title": "Montenegro - Level 1: Exercise Normal Precautions"
+        }
+      }
+    },
+    "f0b7c24289c7fde69703b1d5a837ea41590704e56ec492e8d130a88a1a7ead45": {
+      "information_root": "wiki_edits:wiki_edits:zh:20261126T17",
+      "members": {
+        "beh:d5ff29081db5a3d5fdf7a5ec9c0d": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "wiki_edits",
+          "direct_measurement": false,
+          "event_at": "2026-11-26T17:03:56Z",
+          "first_observed_at": "2026-11-26T17:03:56+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:d5ff29081db5a3d5fdf7a5ec9c0d",
+          "information_root": "wiki_edits:wiki_edits:zh:20261126T17",
+          "origin": "behavioral_registry",
+          "provider": "wiki_edits",
+          "published_at": "2026-11-26T17:03:56Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "public_encyclopedia_edit_aggregate",
+          "source_family": "public_attention",
+          "source_kind": "bounded_public_edit_count_not_event_verification",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "distinct_articles_in_sample": 316,
+            "maximum_returned_edits": 500,
+            "most_edited_article_counts": [
+              {
+                "count": 16,
+                "title": "國立臺北科技大學附屬桃園農工高級中等學校"
+              },
+              {
+                "count": 13,
+                "title": "康方生物"
+              },
+              {
+                "count": 10,
+                "title": "澄江生物群生物列表"
+              },
+              {
+                "count": 8,
+                "title": "比萨尼奥河谷高架桥"
+              },
+              {
+                "count": 6,
+                "title": "OpenAI批量公开的数学论文"
+              },
+              {
+                "count": 6,
+                "title": "宋邯郸故城"
+              },
+              {
+                "count": 6,
+                "title": "尤里·格列霍夫"
+              },
+              {
+                "count": 6,
+                "title": "楊舒晴"
+              }
+            ],
+            "name": "sampled_edits_last_three_hours",
+            "sample_cap_reached": true,
+            "unit": "edits",
+            "value": 500
+          },
+          "source_scope": "Wikipedia main-namespace edit-count sample, 14 global language editions, three-hour window capped at 500 per wiki; not geographic location",
+          "source_updated_at": null,
+          "source_url": "https://zh.wikipedia.org/wiki/Special:RecentChanges",
+          "title": "Wikipedia zh public article-edit activity (sampled)"
         }
       }
     },

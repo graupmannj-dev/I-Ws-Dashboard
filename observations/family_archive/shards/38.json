@@ -1,5 +1,80 @@
 {
   "roots": {
+    "3808c58cf4f956df7a0204ae642d823450550dd9b924d9fe6c984ad6162501fd": {
+      "information_root": "wiki_edits:wiki_edits:fr:20261126T17",
+      "members": {
+        "beh:3cba9d4108e19baa17c977d6f055": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "wiki_edits",
+          "direct_measurement": false,
+          "event_at": "2026-11-26T17:03:54Z",
+          "first_observed_at": "2026-11-26T17:03:54+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:3cba9d4108e19baa17c977d6f055",
+          "information_root": "wiki_edits:wiki_edits:fr:20261126T17",
+          "origin": "behavioral_registry",
+          "provider": "wiki_edits",
+          "published_at": "2026-11-26T17:03:54Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "public_encyclopedia_edit_aggregate",
+          "source_family": "public_attention",
+          "source_kind": "bounded_public_edit_count_not_event_verification",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "distinct_articles_in_sample": 402,
+            "maximum_returned_edits": 500,
+            "most_edited_article_counts": [
+              {
+                "count": 10,
+                "title": "L'Hermitage"
+              },
+              {
+                "count": 7,
+                "title": "Canal de Roubaix"
+              },
+              {
+                "count": 5,
+                "title": "AirIdea"
+              },
+              {
+                "count": 5,
+                "title": "Louis XI"
+              },
+              {
+                "count": 4,
+                "title": "Honda"
+              },
+              {
+                "count": 4,
+                "title": "Juda ibn Tibbon"
+              },
+              {
+                "count": 4,
+                "title": "Plasma Observatory"
+              },
+              {
+                "count": 3,
+                "title": "Art néolithique"
+              }
+            ],
+            "name": "sampled_edits_last_three_hours",
+            "sample_cap_reached": true,
+            "unit": "edits",
+            "value": 500
+          },
+          "source_scope": "Wikipedia main-namespace edit-count sample, 14 global language editions, three-hour window capped at 500 per wiki; not geographic location",
+          "source_updated_at": null,
+          "source_url": "https://fr.wikipedia.org/wiki/Special:RecentChanges",
+          "title": "Wikipedia fr public article-edit activity (sampled)"
+        }
+      }
+    },
     "3808ea35b4fb14779c33804dad94df5f14c3cd476d20a8b0a340dea9f0e3e000": {
       "information_root": "nws:e907669b5562e2d35db60104",
       "members": {
@@ -609,6 +684,39 @@
           "source_updated_at": null,
           "source_url": "https://bwt.cbp.gov/api/waittimes",
           "title": "CBP estimated commercial border wait — YSLETA"
+        }
+      }
+    },
+    "38b729c5810ce4b6e1e06c603bfb68ed274c93b8910228d4edd8cc114816f968": {
+      "information_root": "nws:79919f251fe8dd327585d55e",
+      "members": {
+        "beh:1606597240eadb06225292487f5b": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "nws",
+          "direct_measurement": false,
+          "event_at": "2026-11-26T14:56:00Z",
+          "first_observed_at": "2026-11-26T14:56:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:1606597240eadb06225292487f5b",
+          "information_root": "nws:79919f251fe8dd327585d55e",
+          "origin": "behavioral_registry",
+          "provider": "nws",
+          "published_at": "2026-11-26T14:56:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "official_weather_alert_context",
+          "source_measurement": null,
+          "source_scope": "Active NWS marine alerts; severity Moderate",
+          "source_updated_at": null,
+          "source_url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.98904e452867c3c97c238a5ab87a8419047b411f.001.3",
+          "title": "Rip Current Statement - Coastal Palm Beach County; Coastal Broward County"
         }
       }
     },

@@ -279,6 +279,53 @@
         }
       }
     },
+    "8b44c39cd2e305ca6e91532af4c91831ebf590440576d945142ad0c597777d26": {
+      "information_root": "cbp_wait:cbp_wait:240203:2026-11-26:10:00:03",
+      "members": {
+        "beh:06b04b46c34168f8086b3b20a587": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-26T17:06:25+00:00",
+          "geography_key": "us-border-port:240203",
+          "geography_label": "El Paso",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:06b04b46c34168f8086b3b20a587",
+          "information_root": "cbp_wait:cbp_wait:240203:2026-11-26:10:00:03",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "delay",
+            "lanes_open": 5,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "At 9:00 am MST",
+            "reported_local_date": "11/26/2026",
+            "reported_local_time": "10:00:03",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 40
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — El Paso / Ysleta"
+        }
+      }
+    },
     "8b4b2ade1fff962c18c9e0af99a560d4e466283883715f782193f3e4a1b38512": {
       "information_root": "ioda:56cf42af747c39851d73533c",
       "members": {

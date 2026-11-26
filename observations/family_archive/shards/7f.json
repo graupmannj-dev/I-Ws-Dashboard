@@ -187,6 +187,39 @@
         }
       }
     },
+    "7f5d30c5dd0683d5f6f3b3572cffd7b065af738c5a070c60c32849108c475b97": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c504:112289-2026",
+      "members": {
+        "beh:8e8f70791fa806413b4effcd2644": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-26T16:20:06+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:8e8f70791fa806413b4effcd2644",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c504:112289-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-26T16:20:06Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-24T17%3A03%3A57&updatedTo=2026-11-26T17%3A03%3A57",
+          "title": "People/HR Change Delivery Capacity and Capability · London Borough of Wandsworth"
+        }
+      }
+    },
     "7f61d9b909de9b9c26b6390ed02d68170c94402faf2c2dc9dc3ecefffd0fa995": {
       "information_root": "cbp_wait:cbp_wait:240202:2026-11-20:19:23:04",
       "members": {
@@ -273,6 +306,100 @@
             "source_timezone_resolved": false,
             "unit": "minutes",
             "value": 5
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Eagle Pass / Bridge II"
+        }
+      }
+    },
+    "7f71f98551720e5f53acd6ee80d3065b3de2ef30ff51a17879941095044634bc": {
+      "information_root": "cbp_wait:cbp_wait:260801:2026-11-26:10:00:03",
+      "members": {
+        "beh:874f0741b694effdb04de6f22f29": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-26T17:06:25+00:00",
+          "geography_key": "us-border-port:260801",
+          "geography_label": "San Luis",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:874f0741b694effdb04de6f22f29",
+          "information_root": "cbp_wait:cbp_wait:260801:2026-11-26:10:00:03",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "N/A",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/26/2026",
+            "reported_local_time": "10:00:03",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — San Luis / San Luis I"
+        }
+      }
+    },
+    "7f74f3588a2e4d3aa5dd557fcac186d0e532d04799d8d3359596d23f5353ca02": {
+      "information_root": "cbp_wait:cbp_wait:230302:2026-11-26:11:00:02",
+      "members": {
+        "beh:bd5b294c46fd16ab58ada7c1264a": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-26T17:06:25+00:00",
+          "geography_key": "us-border-port:230302",
+          "geography_label": "Eagle Pass",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:bd5b294c46fd16ab58ada7c1264a",
+          "information_root": "cbp_wait:cbp_wait:230302:2026-11-26:11:00:02",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "no delay",
+            "lanes_open": 1,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "At 11:00 am CST",
+            "reported_local_date": "11/26/2026",
+            "reported_local_time": "11:00:02",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 1
           },
           "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
           "source_updated_at": null,
@@ -465,6 +592,53 @@
           "source_updated_at": "2026-11-17T00:21:53Z",
           "source_url": "https://niord.dma.dk/#/message/69efd854-5221-4c33-9355-fb79f6ef0b2a",
           "title": "Denmark. Kattegat. EK R 45 Hevring. Firing exercises. Warning."
+        }
+      }
+    },
+    "7fd82d1411deb589c8d7540b6e5d3216a4f28442b9c472eae832d836c04a26ed": {
+      "information_root": "cbp_wait:cbp_wait:340101:2026-11-26:11:00:02",
+      "members": {
+        "beh:1d4daa1d269cda204c9082d8dfae": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-26T17:06:25+00:00",
+          "geography_key": "us-border-port:340101",
+          "geography_label": "Pembina",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:1d4daa1d269cda204c9082d8dfae",
+          "information_root": "cbp_wait:cbp_wait:340101:2026-11-26:11:00:02",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "no delay",
+            "lanes_open": 1,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "At 7:00 am CST",
+            "reported_local_date": "11/26/2026",
+            "reported_local_time": "11:00:02",
+            "source_declared_border": "Canadian Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 0
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Pembina"
         }
       }
     },

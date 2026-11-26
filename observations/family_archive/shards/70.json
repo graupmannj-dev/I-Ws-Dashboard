@@ -33,6 +33,39 @@
         }
       }
     },
+    "70063115c493d4ab991f09f15bede12498e7bd06b2d695f26bc93f98ef4cb6e7": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07bc25:112255-2026",
+      "members": {
+        "beh:014ede5b072d9b854a7d5c66590e": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-26T15:47:16+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:014ede5b072d9b854a7d5c66590e",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07bc25:112255-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-26T15:47:16Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-24T17%3A03%3A57&updatedTo=2026-11-26T17%3A03%3A57",
+          "title": "Installation of Lighting and Wiring at Fessey House · Swindon Borough Council"
+        }
+      }
+    },
     "700a8c70d8b7f2dfbe5836ea7faba79ebd00693da7bfa10df374133000217ecc": {
       "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07b5be:110833-2026",
       "members": {
@@ -424,6 +457,53 @@
         }
       }
     },
+    "70727525671860b45506641373875a08a9b828d69d6b2272c96fa5e69327fdd5": {
+      "information_root": "cbp_wait:cbp_wait:240221:2026-11-26:10:00:02",
+      "members": {
+        "beh:6aeeb525d43165e50e381a254d4b": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-26T17:06:25+00:00",
+          "geography_key": "us-border-port:240221",
+          "geography_label": "El Paso",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:6aeeb525d43165e50e381a254d4b",
+          "information_root": "cbp_wait:cbp_wait:240221:2026-11-26:10:00:02",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Update Pending",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/26/2026",
+            "reported_local_time": "10:00:02",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — El Paso"
+        }
+      }
+    },
     "7074c6ecadf572f6a51447218add25afe55584aa07d6982b1e2386fb873370b5": {
       "information_root": "niord:3071c75f-f558-410e-8d1b-380cfe1eb877:0:0:0",
       "members": {
@@ -680,6 +760,53 @@
           "source_updated_at": "2026-11-21T00:21:51Z",
           "source_url": "https://niord.dma.dk/#/message/56b257b5-b744-4220-a413-0fc46eae1b7c",
           "title": "Denmark. The North Sea. EK R 33 Vejers. Firing exercises. Warning."
+        }
+      }
+    },
+    "70970861ece6b20d1f61ed9f3e00dc1f8804dd476ce72f4c34a2305936a2a691": {
+      "information_root": "cbp_wait:cbp_wait:240207:2026-11-26:10:00:02",
+      "members": {
+        "beh:dc31f32dc1fa283832a61f07eebf": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-26T17:06:25+00:00",
+          "geography_key": "us-border-port:240207",
+          "geography_label": "Bridge of the Americas Port of Entry",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:dc31f32dc1fa283832a61f07eebf",
+          "information_root": "cbp_wait:cbp_wait:240207:2026-11-26:10:00:02",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Update Pending",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/26/2026",
+            "reported_local_time": "10:00:02",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Bridge of the Americas Port of Entry"
         }
       }
     },

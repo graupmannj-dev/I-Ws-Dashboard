@@ -1,5 +1,90 @@
 {
   "roots": {
+    "690d97478b0970e8981ef183fdf574310ccd861306dd8946730627910a374acc": {
+      "information_root": "cbp_wait:cbp_wait:380002:2026-11-26:12:00:02",
+      "members": {
+        "beh:618dfa9a42eb9859b414ad600824": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-26T17:06:25+00:00",
+          "geography_key": "us-border-port:380002",
+          "geography_label": "Detroit",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:618dfa9a42eb9859b414ad600824",
+          "information_root": "cbp_wait:cbp_wait:380002:2026-11-26:12:00:02",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "delay",
+            "lanes_open": 1,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "At 11:00 am EST",
+            "reported_local_date": "11/26/2026",
+            "reported_local_time": "12:00:02",
+            "source_declared_border": "Canadian Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 10
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Detroit / Windsor Tunnel"
+        }
+      }
+    },
+    "6915b330c1b63c7ea226985d436bb5fde16713355ecab6a2378e7b54b3b7aa40": {
+      "information_root": "usgs:us6000udq5",
+      "members": {
+        "beh:c3c034c874c73801db7575e75791": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "usgs",
+          "direct_measurement": true,
+          "event_at": "2026-11-26T15:26:44Z",
+          "first_observed_at": "2026-11-26T15:26:44+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "source_supplied_point_only",
+          "id": "beh:c3c034c874c73801db7575e75791",
+          "information_root": "usgs:us6000udq5",
+          "origin": "behavioral_registry",
+          "provider": "usgs",
+          "published_at": "2026-11-26T15:51:04Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "measured_earthquake_context",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "name": "earthquake_magnitude",
+            "unit": "reported_magnitude",
+            "value": 5.7
+          },
+          "source_scope": "USGS M4.5+ earthquakes worldwide, rolling past day; source thresholds apply",
+          "source_updated_at": null,
+          "source_url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000udq5",
+          "title": "M 5.7 - Revilla Gigedo Islands region"
+        }
+      }
+    },
     "693258f5255ef37d87c7181b40598199bdc73375201735bed4dcd9a0c4f3405b": {
       "information_root": "cbp_wait:cbp_wait:070401:2026-11-23:21:14:19",
       "members": {
@@ -47,6 +132,39 @@
         }
       }
     },
+    "6945dea67f276530601e261b43c70f674379d010f4afdd4ef88330dbff1daf3a": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c4ed:112243-2026",
+      "members": {
+        "beh:6afa0e6e9601d1be3464c0918e74": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-26T15:33:11+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:6afa0e6e9601d1be3464c0918e74",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c4ed:112243-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-26T15:33:11Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-24T17%3A03%3A57&updatedTo=2026-11-26T17%3A03%3A57",
+          "title": "Passive fire protection – tender and framework review · University of Bath"
+        }
+      }
+    },
     "69580c9d6ed5b5e2b45fd4acbd9d42444415a96eb97bccd965cc659615ec299f": {
       "information_root": "niord:fd585098-74b9-49ea-a826-82951a0a3ad3:0:2:0",
       "members": {
@@ -74,6 +192,72 @@
           "source_updated_at": "2026-11-13T00:21:52Z",
           "source_url": "https://niord.dma.dk/#/message/fd585098-74b9-49ea-a826-82951a0a3ad3",
           "title": "Denmark. Kattegat. EK R 45 Hevring. Firing exercises. Warning."
+        }
+      }
+    },
+    "6960ba5d8aed0cb6c4ef63b13c749cbf0600b12df3bc7883f4920d4243adef0e": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-060b86:112277-2026",
+      "members": {
+        "beh:0062a3f2da2a162ecc9cd7a02e36": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-26T16:05:21+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:0062a3f2da2a162ecc9cd7a02e36",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-060b86:112277-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-26T16:05:21Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-24T17%3A03%3A57&updatedTo=2026-11-26T17%3A03%3A57",
+          "title": "Baby Steps · London Borough of Hackney"
+        }
+      }
+    },
+    "696621af2e5674a5200a60526dbbde2ccbbb8b1864fa3d2cb6bfce1505d8f2c6": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c50c:112298-2026",
+      "members": {
+        "beh:e8e99e3c47c04b421fa35eb995ab": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-26T16:35:55+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:e8e99e3c47c04b421fa35eb995ab",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c50c:112298-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-26T16:35:55Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-24T17%3A03%3A57&updatedTo=2026-11-26T17%3A03%3A57",
+          "title": "Metrology, 3D scanning and materials testing · Cardiff and Vale College"
         }
       }
     },
@@ -778,6 +962,53 @@
           "source_updated_at": null,
           "source_url": "https://ioda.inetintel.cc.gatech.edu/",
           "title": "IODA detected connectivity anomaly: country AE"
+        }
+      }
+    },
+    "69d7a475292babc3010d2f4bbb27c558355f3b806850431b7d37f87905b096f4": {
+      "information_root": "cbp_wait:cbp_wait:240104:2026-11-26:10:00:03",
+      "members": {
+        "beh:04a27a1af7f1a01708c2dbebd663": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-26T17:06:25+00:00",
+          "geography_key": "us-border-port:240104",
+          "geography_label": "YSLETA",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:04a27a1af7f1a01708c2dbebd663",
+          "information_root": "cbp_wait:cbp_wait:240104:2026-11-26:10:00:03",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Update Pending",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/26/2026",
+            "reported_local_time": "10:00:03",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — YSLETA"
         }
       }
     },

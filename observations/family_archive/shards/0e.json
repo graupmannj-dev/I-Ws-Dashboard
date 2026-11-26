@@ -110,6 +110,79 @@
         }
       }
     },
+    "0e12c8051e0221e5b6168eccd906be737ecb9e58ff2c140eeec90b69573efea4": {
+      "information_root": "nws:fb75147da16639b6327dc66c",
+      "members": {
+        "beh:418314b212ec512412647dca5b66": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "nws",
+          "direct_measurement": false,
+          "event_at": "2026-11-26T15:58:00Z",
+          "first_observed_at": "2026-11-26T15:58:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:418314b212ec512412647dca5b66",
+          "information_root": "nws:fb75147da16639b6327dc66c",
+          "origin": "behavioral_registry",
+          "provider": "nws",
+          "published_at": "2026-11-26T15:58:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "official_weather_alert_context",
+          "source_measurement": null,
+          "source_scope": "Active NWS marine alerts; severity Minor",
+          "source_updated_at": null,
+          "source_url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.8a1aa89498ab1fcc0a9ec8a2268ae5cb58f195ef.002.1",
+          "title": "Coastal Flood Statement - Monroe Middle Keys; Monroe Lower Keys"
+        }
+      }
+    },
+    "0e18963aef7b6512030e9d01a7c70245385fc9fd5bfbcc430dadbb48b09abd98": {
+      "information_root": "coops:9414290:20261126T1654Z",
+      "members": {
+        "beh:e0c1d4763edeccf83b6fbafe34aa": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "coops",
+          "direct_measurement": true,
+          "event_at": "2026-11-26T16:54:00Z",
+          "first_observed_at": "2026-11-26T16:54:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:e0c1d4763edeccf83b6fbafe34aa",
+          "information_root": "coops:9414290:20261126T1654Z",
+          "origin": "behavioral_registry",
+          "provider": "coops",
+          "published_at": "2026-11-26T16:54:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "station_physical_measurement",
+          "source_family": "port_conditions",
+          "source_kind": "selected_port_water_level_measurement",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "metric_comparable_only_same_station_datum_and_sample_window": true,
+            "name": "observed_water_level",
+            "station": "9414290",
+            "unit": "meters_MLLW",
+            "value": 1.806
+          },
+          "source_scope": "NOAA CO-OPS water levels at San Francisco, Key West and Sewells Point; stations only",
+          "source_updated_at": null,
+          "source_url": "https://tidesandcurrents.noaa.gov/waterlevels.html?id=9414290",
+          "title": "San Francisco, CA observed water level (no anomaly classification)"
+        }
+      }
+    },
     "0e1ac895abf47a033a2d444dfffa29140fa345a18aa6e7e487d0fde77e2b1e0f": {
       "information_root": "cbp_wait:cbp_wait:250501:2026-11-21:17:22:12",
       "members": {

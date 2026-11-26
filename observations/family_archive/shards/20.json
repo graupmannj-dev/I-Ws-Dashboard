@@ -237,6 +237,53 @@
         }
       }
     },
+    "20acfcd2043c2dadeaf3577537808057d2bb835cc4400c957ba4f96795b24903": {
+      "information_root": "cbp_wait:cbp_wait:230106:2026-11-26:11:00:02",
+      "members": {
+        "beh:0fd5fdf58696a56abfa4777b93ca": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-26T17:06:25+00:00",
+          "geography_key": "us-border-port:230106",
+          "geography_label": "B&M Bridge",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:0fd5fdf58696a56abfa4777b93ca",
+          "information_root": "cbp_wait:cbp_wait:230106:2026-11-26:11:00:02",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Update Pending",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/26/2026",
+            "reported_local_time": "11:00:02",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — B&M Bridge / B&M Bridge"
+        }
+      }
+    },
     "20b54dec58ac429f87d2d2a52adaae0bc4ba080e3ca06ee6becc740e071d2c85": {
       "information_root": "niord:9c9b3baf-65f3-4272-ad53-fa8839c91b2e:0:2:0",
       "members": {
@@ -264,6 +311,53 @@
           "source_updated_at": "2026-11-18T00:21:53Z",
           "source_url": "https://niord.dma.dk/#/message/9c9b3baf-65f3-4272-ad53-fa8839c91b2e",
           "title": "Denmark. Kattegat. EK R 45 Hevring. Firing exercises. Warning."
+        }
+      }
+    },
+    "20b60fd7c1740fdc5aae55d4ab8bda40ec26848955ecc5d3fc16b008c08b585b": {
+      "information_root": "cbp_wait:cbp_wait:L01901:2026-11-26:12:00:02",
+      "members": {
+        "beh:7a0657b2e3265ba49d11c67c6a87": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-26T17:06:25+00:00",
+          "geography_key": "us-border-port:L01901",
+          "geography_label": "Madawaska",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:7a0657b2e3265ba49d11c67c6a87",
+          "information_root": "cbp_wait:cbp_wait:L01901:2026-11-26:12:00:02",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "delay",
+            "lanes_open": 1,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "At Noon EST",
+            "reported_local_date": "11/26/2026",
+            "reported_local_time": "12:00:02",
+            "source_declared_border": "Canadian Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 15
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Madawaska"
         }
       }
     },
@@ -327,6 +421,39 @@
           "source_updated_at": null,
           "source_url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.chl.html",
           "title": "Chile - Level 2: Exercise Increased Caution"
+        }
+      }
+    },
+    "20bf85df9a0815c900dff70463cbc549d1c696371aacefc6708ecf7b7e2bf3a1": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-077801:112240-2026",
+      "members": {
+        "beh:0ab8c290ed200b742bb90f65933a": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-26T15:31:45+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:0ab8c290ed200b742bb90f65933a",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-077801:112240-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-26T15:31:45Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-24T17%3A03%3A57&updatedTo=2026-11-26T17%3A03%3A57",
+          "title": "Knowsley Supported Lodgings and Emergency Bedspaces (Crash Bed) Enhanced Service · Knowsley Council"
         }
       }
     },

@@ -229,6 +229,39 @@
         }
       }
     },
+    "563dc159764ef1b811dc0e85229778a2c6b567b33773b0761d200edb52377fcd": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-05f913:112239-2026",
+      "members": {
+        "beh:b2cfb5d2503a8a7b5ac6d4e22e4f": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-26T15:29:58+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:b2cfb5d2503a8a7b5ac6d4e22e4f",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-05f913:112239-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-26T15:29:58Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-24T17%3A03%3A57&updatedTo=2026-11-26T17%3A03%3A57",
+          "title": "UK Leisure Framework 2026-2034 - Contract Details Notice · Denbighshire Leisure Ltd"
+        }
+      }
+    },
     "5641ceee87f42de45e883d09b796a7af7fe83b7e29880d8fd4d328753143d65c": {
       "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07b99f:110356-2026",
       "members": {
@@ -462,6 +495,53 @@
           "source_updated_at": null,
           "source_url": "https://service.taipower.com.tw/data/opendata/apply/file/d006020/001.json",
           "title": "Taipower nationwide publicly reported current electricity load"
+        }
+      }
+    },
+    "56606a01ab73774570bad269bdb80f02db3576522638d11fd927cae990347101": {
+      "information_root": "cbp_wait:cbp_wait:090104:2026-11-26:12:00:02",
+      "members": {
+        "beh:048c0646b4631943adf117b59f86": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-26T17:06:25+00:00",
+          "geography_key": "us-border-port:090104",
+          "geography_label": "Buffalo/Niagara Falls",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:048c0646b4631943adf117b59f86",
+          "information_root": "cbp_wait:cbp_wait:090104:2026-11-26:12:00:02",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "no delay",
+            "lanes_open": 2,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "At 11:47 am EST",
+            "reported_local_date": "11/26/2026",
+            "reported_local_time": "12:00:02",
+            "source_declared_border": "Canadian Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 2
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Buffalo/Niagara Falls / Lewiston Bridge"
         }
       }
     },

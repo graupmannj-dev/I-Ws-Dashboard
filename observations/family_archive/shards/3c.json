@@ -257,6 +257,39 @@
         }
       }
     },
+    "3c8265d7d6531735d2f6d036f147a8c25fd291125ceebce2ffcc48c3d36f2d99": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c4eb:112241-2026",
+      "members": {
+        "beh:72bc0cceadc12b50abe793a346de": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-26T15:32:10+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:72bc0cceadc12b50abe793a346de",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c4eb:112241-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-26T15:32:10Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-24T17%3A03%3A57&updatedTo=2026-11-26T17%3A03%3A57",
+          "title": "LAS - Volvo XC60 TRU Conversion x2 · London Ambulance Service NHS Trust"
+        }
+      }
+    },
     "3c8684476b49b6904873d6afe098e0853bc1a445ca21565de989a03e4b67de90": {
       "information_root": "cbp_wait:cbp_wait:250501:2026-11-20:18:23:04",
       "members": {
@@ -494,6 +527,53 @@
           "source_updated_at": "2026-11-21T00:21:51Z",
           "source_url": "https://niord.dma.dk/#/message/0cd216d6-ccbc-4991-af52-22df7d947dcb",
           "title": "Denmark. The North Sea. 15 Nymindegab. Firing exercises. Warning."
+        }
+      }
+    },
+    "3ce3403a82dd4ce9fbe9c8784cb83dedd394e67d818986bdfd079082f26e8ac3": {
+      "information_root": "cbp_wait:cbp_wait:535502:2026-11-26:11:00:02",
+      "members": {
+        "beh:a8059dcfa06d8f987f1fa2955dbd": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-26T17:06:25+00:00",
+          "geography_key": "us-border-port:535502",
+          "geography_label": "Brownsville",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:a8059dcfa06d8f987f1fa2955dbd",
+          "information_root": "cbp_wait:cbp_wait:535502:2026-11-26:11:00:02",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "delay",
+            "lanes_open": 1,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "At 10:00 am CST",
+            "reported_local_date": "11/26/2026",
+            "reported_local_time": "11:00:02",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 10
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Brownsville / Veterans International"
         }
       }
     },
