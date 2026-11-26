@@ -1,0 +1,61 @@
+{
+  "case_counts": {
+    "unlocated": {
+      "maritime_restriction": 3
+    }
+  },
+  "collected_at": "2026-11-26T15:03:59Z",
+  "coverage": "partial",
+  "health": {
+    "amsa": {
+      "caveat": "Source observation only. Does not independently establish military preparations or event attribution.",
+      "checked_at": "2026-11-26T15:03:59Z",
+      "error": null,
+      "records": 3,
+      "source_url": "https://www.operations.amsa.gov.au/AMSA.Web.MSIPublication/",
+      "status": "collected",
+      "truncated": false
+    },
+    "ioda": {
+      "caveat": "Upstream unavailable or unsupported; NOT evidence of zero activity.",
+      "checked_at": "2026-11-26T15:03:59Z",
+      "error": "TimeoutError: The read operation timed out",
+      "records": null,
+      "source_url": "https://api.ioda.inetintel.cc.gatech.edu/v2/outages/events?from=1795691039&until=1795705439&entityType=country&limit=100&page=0&extendWindowSeconds=0",
+      "status": "unavailable",
+      "truncated": null
+    },
+    "nga": {
+      "caveat": "Upstream unavailable or unsupported; NOT evidence of zero activity.",
+      "checked_at": "2026-11-26T15:03:59Z",
+      "error": "HTTPError: HTTP Error 503: Service Unavailable",
+      "records": null,
+      "source_url": "https://msi.nga.mil/api/publications/broadcast-warn?status=active&output=json",
+      "status": "unavailable",
+      "truncated": null
+    }
+  },
+  "new_records": [
+    {
+      "case_id": null,
+      "collected_at": "2026-11-26T15:03:59Z",
+      "event_at": "2026-11-26T12:33:00Z",
+      "family": "maritime_restriction",
+      "first_seen_at": "2026-11-26T15:03:59Z",
+      "id": "amsa:1e474fe2a6bf46ae165e82ea",
+      "kind": "navigation_safety_notice",
+      "location_precision": "NAVAREA X regional warning; no point geolocation inferred.",
+      "provider": "amsa",
+      "review_level": "official_notice_not_kinetic_confirmation",
+      "root": "amsa:NAVAREA-X:26:128",
+      "source": "Australian Maritime Safety Authority (NAVAREA X)",
+      "source_published_at": "2026-11-26T12:33:00Z",
+      "source_url": "https://www.operations.amsa.gov.au/AMSA.Web.MSIPublication/",
+      "summary": "FM JRCC AUSTRALIA 261233Z NOV 26 NAVAREA X 128/26 CHART AUS4710 - CAPE LEEUWIN TO SOUTHEAST INDIAN RIDGE SPACE DEBRIS DANGER AREA BOUNDED BY: A. 38-40.64S 95-42.55E B. 38-50.45S 96-22.11E C. 42-15.89S 94-54.83E D. 42-05.57S 94-13.42E WINDOW 01 DEC 0000 UTC TO 0600 UTC",
+      "title": "NAVAREA X 128/26 official warning"
+    }
+  ],
+  "note": "Only successful sources appear in records. Missing sources remain unavailable.",
+  "record_count": 3,
+  "schema_version": 1
+}
