@@ -1,8 +1,8 @@
 {
   "schema": "cairn.phi-sidecar.v1",
   "model": "phi-4-mini-instruct-q4km-local",
-  "generated_at": "2026-11-26T21:48:29.140163Z",
-  "source_build_generated_at": "2026-11-26T21:38:13+00:00",
+  "generated_at": "2026-11-26T23:17:05.331056Z",
+  "source_build_generated_at": "2026-11-26T23:15:04+00:00",
   "provisional_only": true,
   "signed_evidence_modified": false,
   "cases": {
@@ -144,7 +144,7 @@
       ],
       "input_sha256": "c4194b5bf6d0da194c491c47d6fce06a3f99aadc9d40bcf84cdbf8ea537ef950",
       "model_generated_at": "2026-11-26T21:39:16.710701Z",
-      "cache_status": "fresh_inference"
+      "cache_status": "reused_exact_input"
     },
     "horn_ethiopia_sudan": {
       "status": "provisional_complete",
@@ -215,7 +215,7 @@
       ],
       "input_sha256": "7bf5605d6b1d24a61bf61974112e62030b4767c214033f532cd64cfe859c8f04",
       "model_generated_at": "2026-11-26T21:39:16.710701Z",
-      "cache_status": "fresh_inference"
+      "cache_status": "reused_exact_input"
     },
     "afpak": {
       "status": "provisional_complete",
@@ -313,7 +313,7 @@
       ],
       "input_sha256": "601e65be5a423202d008304714f2733f0d9e9e2ebcb7132dc8724abb998cff88",
       "model_generated_at": "2026-11-26T21:39:16.710701Z",
-      "cache_status": "fresh_inference"
+      "cache_status": "reused_exact_input"
     },
     "drc_rwanda": {
       "status": "provisional_complete",
@@ -459,7 +459,7 @@
       ],
       "input_sha256": "f357209a28899f3262f6d575d283053375f8ac083a969109b8f08287e7f42328",
       "model_generated_at": "2026-11-26T21:39:16.710701Z",
-      "cache_status": "fresh_inference"
+      "cache_status": "reused_exact_input"
     },
     "thailand_cambodia": {
       "status": "provisional_complete",
@@ -530,7 +530,7 @@
       ],
       "input_sha256": "249c0f2656b5db936a5dfafe539a333022a3c517c3778284e3dddfc6a3cfd570",
       "model_generated_at": "2026-11-26T21:39:16.710701Z",
-      "cache_status": "fresh_inference"
+      "cache_status": "reused_exact_input"
     },
     "russia_nato": {
       "status": "provisional_complete",
@@ -718,7 +718,7 @@
       ],
       "input_sha256": "0a0fb6af596eb72f4f0fbf2dcd960b69736d34e61fc83ebcf6fa5c641832ba74",
       "model_generated_at": "2026-11-26T21:39:16.710701Z",
-      "cache_status": "fresh_inference"
+      "cache_status": "reused_exact_input"
     },
     "iran_gulf": {
       "status": "provisional_complete",
@@ -858,17 +858,99 @@
       ],
       "input_sha256": "667430beb14749b0dc4e15c179b25ada59aaed72505389c51086ead01763d55b",
       "model_generated_at": "2026-11-26T21:39:16.710701Z",
-      "cache_status": "fresh_inference"
+      "cache_status": "reused_exact_input"
     },
     "taiwan": {
-      "status": "model_or_validation_failed",
-      "error_code": "phi_runtime_unavailable",
-      "interpretations": [],
+      "status": "provisional_complete",
+      "interpretations": [
+        {
+          "hypothesis_index": 0,
+          "meaning": "The situation involves a blockade, quarantine, or major armed attack.",
+          "discriminator": "An increase in coast guard incursions could indicate preparation for a blockade or quarantine."
+        },
+        {
+          "hypothesis_index": 1,
+          "meaning": "The situation involves persistent coercive activity without a decision to initiate a blockade.",
+          "discriminator": "A decrease in PLA aircraft sorties might suggest a reduction in coercive activity."
+        }
+      ],
       "evaluations": [],
+      "evidence_notes": [
+        {
+          "evidence_key": "dossier:fcb9ba6b7f3d1e6d25b8d2a2",
+          "observation": "An increase in coast guard incursions could be indicative of preparation for a blockade or quarantine, supporting the hypothesis of a blockade, quarantine, or major armed attack.",
+          "verification_step": "Monitor coast guard activity for patterns consistent with blockade or quarantine preparations.",
+          "status": "unverified_source_title_lead"
+        },
+        {
+          "evidence_key": "history:9645f8539047cc7eba08",
+          "observation": "The occurrence of an earthquake near Hengchun, Taiwan, could be related to the situation but does not directly support either hypothesis.",
+          "verification_step": "Correlate the timing of the earthquake with any changes in the situation to determine if there is a causal relationship.",
+          "status": "unverified_source_title_lead"
+        },
+        {
+          "evidence_key": "dossier:d9c4d75b7362652cdbc4f0fc",
+          "observation": "A decrease in PLA aircraft sorties might suggest a reduction in coercive activity, supporting the hypothesis of persistent coercive activity without a decision to initiate a blockade.",
+          "verification_step": "Track the frequency and intensity of PLA aircraft sorties over time to confirm a decrease.",
+          "status": "unverified_source_title_lead"
+        }
+      ],
+      "model_family": "phi-4-mini-instruct-q4km-local",
+      "interpretation_only": true,
+      "source_truth_not_verified": true,
       "analyst_approved": false,
+      "attempts": 1,
+      "format_retry_succeeded": false,
+      "source_references": [
+        {
+          "evidence_key": "dossier:d9c4d75b7362652cdbc4f0fc",
+          "family_title": "PLA aircraft sorties decrease",
+          "family_mechanism": "Conventional",
+          "source_health": "historical_reference_not_live",
+          "sources": [
+            {
+              "url": "https://tsm.schar.gmu.edu/strait-snapshot-october-2026-update/",
+              "title": "PLA aircraft sorties decrease",
+              "provider": "Taiwan Security Monitor",
+              "first_observed_at": "2026-10-31"
+            }
+          ],
+          "reviewed_direction": "not_assessed"
+        },
+        {
+          "evidence_key": "dossier:fcb9ba6b7f3d1e6d25b8d2a2",
+          "family_title": "Coast guard incursions increase",
+          "family_mechanism": "Institutional",
+          "source_health": "historical_reference_not_live",
+          "sources": [
+            {
+              "url": "https://tsm.schar.gmu.edu/strait-snapshot-october-2026-update/",
+              "title": "Coast guard incursions increase",
+              "provider": "Taiwan Security Monitor",
+              "first_observed_at": "2026-10-31"
+            }
+          ],
+          "reviewed_direction": "not_assessed"
+        },
+        {
+          "evidence_key": "history:9645f8539047cc7eba08",
+          "family_title": "M 5.3 - 83 km ESE of Hengchun, Taiwan",
+          "family_mechanism": "Case-linked history; provisional association only",
+          "source_health": "not_event_verified",
+          "sources": [
+            {
+              "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000udef",
+              "title": "M 5.3 - 83 km ESE of Hengchun, Taiwan",
+              "provider": "usgs",
+              "first_observed_at": "2026-11-25T08:47:16Z"
+            }
+          ],
+          "reviewed_direction": "not_assessed"
+        }
+      ],
       "input_sha256": "91077021d5370ff32777d961bdaf6f85205cf69e9ab0d24db504467c50f66c6f",
-      "model_generated_at": null,
-      "cache_status": "unavailable"
+      "model_generated_at": "2026-11-26T23:16:10.421435Z",
+      "cache_status": "fresh_inference"
     },
     "korea": {
       "status": "provisional_complete",
@@ -945,7 +1027,7 @@
       ],
       "input_sha256": "919343914eeda58b2e26c51772e65dd377a30930a7afc91dcf19b6d7cb0dfec6",
       "model_generated_at": "2026-11-26T21:39:16.710701Z",
-      "cache_status": "fresh_inference"
+      "cache_status": "reused_exact_input"
     },
     "horn_ethiopia_kenya_moyale": {
       "status": "provisional_complete",
@@ -1037,13 +1119,13 @@
       ],
       "input_sha256": "7a7262d3744ef31f3c68985bdfdc1b51a1b2ddc72704c6cf55e39f7f17b75b36",
       "model_generated_at": "2026-11-26T21:39:16.710701Z",
-      "cache_status": "fresh_inference"
+      "cache_status": "reused_exact_input"
     }
   },
   "summary": {
     "cases": 10,
-    "reused": 0,
-    "new_provisional": 9,
-    "failed": 1
+    "reused": 9,
+    "new_provisional": 1,
+    "failed": 0
   }
 }
