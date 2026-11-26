@@ -1,8 +1,8 @@
 {
   "schema": "cairn.phi-sidecar.v1",
   "model": "phi-4-mini-instruct-q4km-local",
-  "generated_at": "2026-11-26T08:31:27.661003Z",
-  "source_build_generated_at": "2026-11-26T08:25:08+00:00",
+  "generated_at": "2026-11-26T10:38:07.257651Z",
+  "source_build_generated_at": "2026-11-26T10:37:05+00:00",
   "provisional_only": true,
   "signed_evidence_modified": false,
   "cases": {
@@ -144,7 +144,7 @@
       ],
       "input_sha256": "890d75f4eedcb3c94607a487368b23a6f8401b03fe63c704a1ea6099e326b6a9",
       "model_generated_at": "2026-11-26T08:26:08.030850Z",
-      "cache_status": "fresh_inference"
+      "cache_status": "reused_exact_input"
     },
     "horn_ethiopia_sudan": {
       "status": "provisional_complete",
@@ -313,7 +313,7 @@
       ],
       "input_sha256": "346e8a2a0a2ecfb00ae47ef01291ff6c66cb4906033abc44252db391cb5110b6",
       "model_generated_at": "2026-11-26T08:26:08.030850Z",
-      "cache_status": "fresh_inference"
+      "cache_status": "reused_exact_input"
     },
     "drc_rwanda": {
       "status": "provisional_complete",
@@ -459,7 +459,7 @@
       ],
       "input_sha256": "aad84a16b4fb658af797ae96affaa7cc6126d46654629bcb9a2e8cbcc0219b92",
       "model_generated_at": "2026-11-26T08:26:08.030850Z",
-      "cache_status": "fresh_inference"
+      "cache_status": "reused_exact_input"
     },
     "thailand_cambodia": {
       "status": "provisional_complete",
@@ -718,7 +718,7 @@
       ],
       "input_sha256": "0a0fb6af596eb72f4f0fbf2dcd960b69736d34e61fc83ebcf6fa5c641832ba74",
       "model_generated_at": "2026-11-26T08:26:08.030850Z",
-      "cache_status": "fresh_inference"
+      "cache_status": "reused_exact_input"
     },
     "iran_gulf": {
       "status": "provisional_complete",
@@ -858,7 +858,7 @@
       ],
       "input_sha256": "667430beb14749b0dc4e15c179b25ada59aaed72505389c51086ead01763d55b",
       "model_generated_at": "2026-11-26T08:26:08.030850Z",
-      "cache_status": "fresh_inference"
+      "cache_status": "reused_exact_input"
     },
     "taiwan": {
       "status": "provisional_complete",
@@ -1027,7 +1027,7 @@
       ],
       "input_sha256": "9f4e0e7ca33a92b4120d1d38de1e0a2357601b850117290e66eee1dd10cc6c07",
       "model_generated_at": "2026-11-26T08:26:08.030850Z",
-      "cache_status": "fresh_inference"
+      "cache_status": "reused_exact_input"
     },
     "horn_ethiopia_kenya_moyale": {
       "status": "provisional_complete",
@@ -1124,8 +1124,8 @@
   },
   "summary": {
     "cases": 10,
-    "reused": 4,
-    "new_provisional": 6,
+    "reused": 10,
+    "new_provisional": 0,
     "failed": 0
   }
 }
