@@ -7046,7 +7046,6 @@
       "f7800a89bf02049ad48909f78a9d": "family:2b0714e8344d120fcfad",
       "f7e047ac0964038332b03a86d691": "family:9cf5fdd38fe40f81791d",
       "f87c666f2618c5d0715da7afde86": "family:c733ba40ded9c2fca04b",
-      "f89205e479d017d94c817f2444bd": "family:97900b7279338288f7ea",
       "f898af2ff0775ff837a1f7e760a4": "family:b20c065a7da0b73ad992",
       "f8cbfb3cb931e02eb7e75f732d00": "family:fedd67f32b443ff07f62",
       "f8efb1a042d90f8fd059599a448c": "family:6084b2d4ded8fe54e0a2",
@@ -10377,26 +10376,6 @@
         },
         "source": "automatic_similarity_v1"
       },
-      "family:97900b7279338288f7ea": {
-        "first_document_at": "2026-11-11T02:48:00+00:00",
-        "matched_document_count": 1,
-        "seed": {
-          "domain": "generic",
-          "geo": [
-            "iran"
-          ],
-          "key": "f89205e479d017d94c817f2444bd",
-          "publisher": "manifold",
-          "source_family": "market_expectation",
-          "terms": {
-            "end": 1,
-            "ground": 1,
-            "invasion": 1
-          },
-          "title": "U.S. ground invasion of Iran by end-2026"
-        },
-        "source": "automatic_similarity_v1"
-      },
       "family:97b9ed601e0d39601291": {
         "first_document_at": "2026-11-20T16:14:22+00:00",
         "last_document_at": "2026-11-20T16:14:22+00:00",
@@ -13071,14 +13050,70 @@
     "total_document_assignments": 823,
     "total_stable_topics": 277
   },
-  "generated_at": "2026-11-26T17:47:50.086235+00:00",
+  "generated_at": "2026-11-26T21:36:03.074001+00:00",
   "historical_relationship_count": 0,
   "missing_data_is_not_zero": true,
-  "new_records_added": 9,
+  "new_records_added": 3,
   "public_record_count": 5000,
   "public_snapshot_truncated": true,
-  "record_count_total": 5076,
+  "record_count_total": 5079,
   "records": [
+    {
+      "calibrated_metric": null,
+      "case_hint": null,
+      "claim_level": "notice_not_verified_preparation",
+      "collection_mode": "official",
+      "direct_measurement": false,
+      "event_at": null,
+      "first_observed_at": "2026-11-26T21:36:02+00:00",
+      "geography_key": null,
+      "geography_label": null,
+      "geography_precision": "no_source_verified_geography",
+      "id": "beh:488987628b4911a49800f2a72c1b",
+      "information_root": "official:6393e3fbefc98cc67873",
+      "origin": "behavioral_registry",
+      "provider": "official",
+      "published_at": "2026-11-26T16:39:27Z",
+      "restriction_status": "",
+      "scheduled_valid_from": null,
+      "scheduled_valid_until": null,
+      "source_dependency_class": null,
+      "source_family": "protective_notice",
+      "source_kind": "official_travel_security_notice",
+      "source_measurement": null,
+      "source_scope": null,
+      "source_updated_at": null,
+      "source_url": "https://www.gov.uk/foreign-travel-advice/mauritius",
+      "title": "Mauritius"
+    },
+    {
+      "calibrated_metric": null,
+      "case_hint": null,
+      "claim_level": "official_scheduled_restriction_not_military_preparation",
+      "collection_mode": "live_airspace",
+      "direct_measurement": false,
+      "event_at": null,
+      "first_observed_at": "2026-11-26T20:17:51+00:00",
+      "geography_key": "source-footprint:8a8af63a00d162850ffcae20",
+      "geography_label": "Official MultiPolygon notice area",
+      "geography_precision": "provider_defined_notice_boundary_not_event_point",
+      "id": "beh:c32867aa25cb058acca83ddb66da",
+      "information_root": "faa:6/9837:0:0",
+      "origin": "behavioral_registry",
+      "provider": "faa",
+      "published_at": null,
+      "restriction_status": "scheduled_not_yet_effective",
+      "scheduled_valid_from": "2026-11-30T16:00:00Z",
+      "scheduled_valid_until": "2026-11-30T21:00:00Z",
+      "source_dependency_class": null,
+      "source_family": "airspace_restriction",
+      "source_kind": "official_restriction_notice",
+      "source_measurement": null,
+      "source_scope": null,
+      "source_updated_at": null,
+      "source_url": "https://tfr.faa.gov/6_9837.html",
+      "title": "FAA TFR 6/9837 · LOUISIANA, MO, Monday, November 30, 2026 UTC"
+    },
     {
       "calibrated_metric": null,
       "case_hint": null,
@@ -180205,6 +180240,34 @@
       "geography_key": null,
       "geography_label": null,
       "geography_precision": "no_source_verified_geography",
+      "id": "beh:8777f907365cb91126f1f06d9411",
+      "information_root": "official:276d613adbbe5840634b",
+      "origin": "behavioral_registry",
+      "provider": "official",
+      "published_at": "2026-11-26T10:26:20Z",
+      "restriction_status": "",
+      "scheduled_valid_from": null,
+      "scheduled_valid_until": null,
+      "source_dependency_class": null,
+      "source_family": "protective_notice",
+      "source_kind": "official_travel_security_notice",
+      "source_measurement": null,
+      "source_scope": null,
+      "source_updated_at": null,
+      "source_url": "https://www.gov.uk/foreign-travel-advice/peru",
+      "title": "Peru"
+    },
+    {
+      "calibrated_metric": null,
+      "case_hint": null,
+      "claim_level": "notice_not_verified_preparation",
+      "collection_mode": "official",
+      "direct_measurement": false,
+      "event_at": null,
+      "first_observed_at": "2026-11-11T02:48:00+00:00",
+      "geography_key": null,
+      "geography_label": null,
+      "geography_precision": "no_source_verified_geography",
       "id": "beh:863b0e99a249cf5c2951f560799f",
       "information_root": "official:658ff7f4dce06dc55d37",
       "origin": "behavioral_registry",
@@ -181493,104 +181556,28 @@
       "source_updated_at": null,
       "source_url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.cmr.html",
       "title": "Cameroon - Level 2: Exercise Increased Caution"
-    },
-    {
-      "calibrated_metric": null,
-      "case_hint": null,
-      "claim_level": "notice_not_verified_preparation",
-      "collection_mode": "official",
-      "direct_measurement": false,
-      "event_at": null,
-      "first_observed_at": "2026-11-11T02:48:00+00:00",
-      "geography_key": null,
-      "geography_label": null,
-      "geography_precision": "no_source_verified_geography",
-      "id": "beh:4a34478d4830c25f692b6ff243a4",
-      "information_root": "official:619a279a9844853084c7",
-      "origin": "behavioral_registry",
-      "provider": "official",
-      "published_at": null,
-      "restriction_status": "",
-      "scheduled_valid_from": null,
-      "scheduled_valid_until": null,
-      "source_family": "protective_notice",
-      "source_kind": "official_travel_security_notice",
-      "source_updated_at": null,
-      "source_url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.npl.html",
-      "title": "Nepal - Level 2: Exercise Increased Caution"
-    },
-    {
-      "calibrated_metric": null,
-      "case_hint": "iran_gulf",
-      "claim_level": "market_quote_not_war_probability",
-      "collection_mode": "watchlist",
-      "direct_measurement": false,
-      "event_at": null,
-      "first_observed_at": "2026-11-11T02:48:00+00:00",
-      "geography_key": null,
-      "geography_label": null,
-      "geography_precision": "no_source_verified_geography",
-      "id": "beh:48b076aabceb5bcc39a68615eb2e",
-      "information_root": "watchlist:manifold:q2CZUhn500",
-      "origin": "behavioral_registry",
-      "provider": "manifold",
-      "published_at": null,
-      "restriction_status": "",
-      "scheduled_valid_from": null,
-      "scheduled_valid_until": null,
-      "source_family": "market_expectation",
-      "source_kind": "eligible",
-      "source_updated_at": null,
-      "source_url": "https://manifold.markets/cash/will-the-us-invade-iran-before-the-zs06u6hptc",
-      "title": "U.S. ground invasion of Iran by end-2026"
-    },
-    {
-      "calibrated_metric": null,
-      "case_hint": null,
-      "claim_level": "notice_not_verified_preparation",
-      "collection_mode": "official",
-      "direct_measurement": false,
-      "event_at": null,
-      "first_observed_at": "2026-11-11T02:48:00+00:00",
-      "geography_key": null,
-      "geography_label": null,
-      "geography_precision": "no_source_verified_geography",
-      "id": "beh:4850e7bee86cec72819c67d2a425",
-      "information_root": "official:54a01aef5ed1cfdff703",
-      "origin": "behavioral_registry",
-      "provider": "official",
-      "published_at": null,
-      "restriction_status": "",
-      "scheduled_valid_from": null,
-      "scheduled_valid_until": null,
-      "source_family": "protective_notice",
-      "source_kind": "official_travel_security_notice",
-      "source_updated_at": null,
-      "source_url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.hnd.html",
-      "title": "Honduras - Level 3: Reconsider Travel"
     }
   ],
   "relationship_public_truncated": false,
   "report_relationships": {
     "candidate_groups": []
   },
-  "root_count_total": 5076,
+  "root_count_total": 5079,
   "schema": "aiba.family-archive.v1",
   "source_health": {
     "amsa": {
-      "age_hours": 2.73,
+      "age_hours": 6.53,
       "checked_at": "2026-11-26T15:03:59Z",
-      "first_provider_baseline": false,
-      "missingness": "provider_bounded_not_exhaustive",
+      "missingness": "not_measured_not_zero",
       "mode": "amsa",
       "provider_status": "collected",
       "snapshot_at": "2026-11-26T15:03:59Z",
       "source_scope": "AMSA NAVAREA X only",
-      "status": "current",
+      "status": "stale_or_unavailable",
       "truncated_or_partial": false
     },
     "bmkg_nowcast": {
-      "age_hours": 0.73,
+      "age_hours": 4.53,
       "checked_at": "2026-11-26T17:03:57Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -181602,7 +181589,7 @@
       "truncated_or_partial": true
     },
     "bmkg_quake": {
-      "age_hours": 0.73,
+      "age_hours": 4.53,
       "checked_at": "2026-11-26T17:03:57Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -181614,7 +181601,7 @@
       "truncated_or_partial": true
     },
     "cbp_wait": {
-      "age_hours": 0.73,
+      "age_hours": 4.53,
       "checked_at": "2026-11-26T17:03:57Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -181626,7 +181613,7 @@
       "truncated_or_partial": true
     },
     "commercial": {
-      "age_hours": 0.0,
+      "age_hours": 3.8,
       "checked_at": "2026-11-26T17:47:47Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -181638,7 +181625,7 @@
       "truncated_or_partial": false
     },
     "coops": {
-      "age_hours": 0.73,
+      "age_hours": 4.53,
       "checked_at": "2026-11-26T17:03:57Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -181650,7 +181637,7 @@
       "truncated_or_partial": true
     },
     "eonet": {
-      "age_hours": 0.73,
+      "age_hours": 4.53,
       "checked_at": "2026-11-26T17:03:57Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -181662,7 +181649,7 @@
       "truncated_or_partial": true
     },
     "imd_in": {
-      "age_hours": 0.73,
+      "age_hours": 4.53,
       "checked_at": "2026-11-26T17:03:57Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -181674,7 +181661,7 @@
       "truncated_or_partial": true
     },
     "inmet_br": {
-      "age_hours": 0.73,
+      "age_hours": 4.53,
       "checked_at": "2026-11-26T17:03:57Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -181686,7 +181673,7 @@
       "truncated_or_partial": true
     },
     "ioda": {
-      "age_hours": 2.73,
+      "age_hours": 6.53,
       "checked_at": "2026-11-26T15:03:59Z",
       "missingness": "not_measured_not_zero",
       "mode": "ioda",
@@ -181697,29 +181684,31 @@
       "truncated_or_partial": false
     },
     "live_airspace": {
-      "age_hours": 6.66,
-      "checked_at": "2026-11-26T11:08:31Z",
-      "missingness": "not_measured_not_zero",
+      "age_hours": 1.3,
+      "checked_at": "2026-11-26T20:17:46Z",
+      "first_provider_baseline": false,
+      "missingness": "partial_sampling_not_worldwide_exhaustive",
       "mode": "live_airspace",
       "provider_status": "partial",
-      "snapshot_at": "2026-11-26T11:08:31Z",
+      "snapshot_at": "2026-11-26T20:17:46Z",
       "source_scope": "FAA temporary flight restrictions: United States only",
-      "status": "stale_or_unavailable",
+      "status": "current_partial",
       "truncated_or_partial": true
     },
     "live_maritime": {
-      "age_hours": 6.66,
-      "checked_at": "2026-11-26T11:08:31Z",
-      "missingness": "not_measured_not_zero",
+      "age_hours": 1.3,
+      "checked_at": "2026-11-26T20:17:46Z",
+      "first_provider_baseline": false,
+      "missingness": "partial_sampling_not_worldwide_exhaustive",
       "mode": "live_maritime",
       "provider_status": "partial",
-      "snapshot_at": "2026-11-26T11:08:31Z",
+      "snapshot_at": "2026-11-26T20:17:46Z",
       "source_scope": "Danish Maritime Authority Niord notices: regional Baltic/North Sea",
-      "status": "stale_or_unavailable",
+      "status": "current_partial",
       "truncated_or_partial": true
     },
     "nga": {
-      "age_hours": 2.73,
+      "age_hours": 6.53,
       "checked_at": "2026-11-26T15:03:59Z",
       "missingness": "not_measured_not_zero",
       "mode": "nga",
@@ -181730,7 +181719,7 @@
       "truncated_or_partial": false
     },
     "nws": {
-      "age_hours": 0.73,
+      "age_hours": 4.53,
       "checked_at": "2026-11-26T17:03:57Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -181742,19 +181731,19 @@
       "truncated_or_partial": true
     },
     "official": {
-      "age_hours": 9.41,
-      "checked_at": "2026-11-26T08:23:06Z",
+      "age_hours": 0.0,
+      "checked_at": "2026-11-26T21:36:00Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
       "mode": "official",
       "provider_status": "collected",
-      "snapshot_at": "2026-11-26T08:23:06Z",
+      "snapshot_at": "2026-11-26T21:36:00Z",
       "source_scope": "US State and UK FCDO travel-advice feeds",
       "status": "current",
       "truncated_or_partial": false
     },
     "ons_br": {
-      "age_hours": 0.73,
+      "age_hours": 4.53,
       "checked_at": "2026-11-26T17:03:57Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -181766,7 +181755,7 @@
       "truncated_or_partial": true
     },
     "ripe": {
-      "age_hours": 0.73,
+      "age_hours": 4.53,
       "checked_at": "2026-11-26T17:03:57Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -181778,7 +181767,7 @@
       "truncated_or_partial": false
     },
     "ris_bgp": {
-      "age_hours": 0.73,
+      "age_hours": 4.53,
       "checked_at": "2026-11-26T17:03:57Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -181790,7 +181779,7 @@
       "truncated_or_partial": true
     },
     "saws_za": {
-      "age_hours": 0.73,
+      "age_hours": 4.53,
       "checked_at": "2026-11-26T17:03:57Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -181802,7 +181791,7 @@
       "truncated_or_partial": true
     },
     "sg_mpa": {
-      "age_hours": 0.73,
+      "age_hours": 4.53,
       "checked_at": "2026-11-26T17:03:57Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -181814,7 +181803,7 @@
       "truncated_or_partial": true
     },
     "swpc": {
-      "age_hours": 0.73,
+      "age_hours": 4.53,
       "checked_at": "2026-11-26T17:03:57Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -181826,7 +181815,7 @@
       "truncated_or_partial": false
     },
     "tw_power": {
-      "age_hours": 0.73,
+      "age_hours": 4.53,
       "checked_at": "2026-11-26T17:03:57Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -181838,7 +181827,7 @@
       "truncated_or_partial": true
     },
     "uk_tenders": {
-      "age_hours": 0.73,
+      "age_hours": 4.53,
       "checked_at": "2026-11-26T17:03:57Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -181850,7 +181839,7 @@
       "truncated_or_partial": true
     },
     "usace": {
-      "age_hours": 0.73,
+      "age_hours": 4.53,
       "checked_at": "2026-11-26T17:03:57Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -181862,7 +181851,7 @@
       "truncated_or_partial": true
     },
     "usgs": {
-      "age_hours": 0.73,
+      "age_hours": 4.53,
       "checked_at": "2026-11-26T17:03:57Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -181874,19 +181863,19 @@
       "truncated_or_partial": false
     },
     "watchlist": {
-      "age_hours": 9.41,
-      "checked_at": "2026-11-26T08:23:07Z",
+      "age_hours": 0.0,
+      "checked_at": "2026-11-26T21:36:01Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
       "mode": "watchlist",
       "provider_status": "partial",
-      "snapshot_at": "2026-11-26T08:23:07Z",
+      "snapshot_at": "2026-11-26T21:36:01Z",
       "source_scope": "registered, exact-ID forecast contracts only",
       "status": "current_partial",
       "truncated_or_partial": true
     },
     "wiki_edits": {
-      "age_hours": 0.73,
+      "age_hours": 4.53,
       "checked_at": "2026-11-26T17:03:57Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",

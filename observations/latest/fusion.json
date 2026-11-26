@@ -157,7 +157,7 @@
       "title": "Ukraine's planned war risk fund aims to unlock investment - finway.com.ua"
     }
   ],
-  "generated_at": "2026-11-26T17:47:48Z",
+  "generated_at": "2026-11-26T21:36:01Z",
   "health": {
     "commercial": {
       "caveat": "Data are source observations or investigatory leads; no likelihood of conflict is inferred.",
@@ -171,17 +171,17 @@
     },
     "markets": {
       "caveat": "Data are source observations or investigatory leads; no likelihood of conflict is inferred.",
-      "checked_at": "2026-11-26T08:23:03Z",
+      "checked_at": "2026-11-26T21:35:57Z",
       "errors": [],
       "mode": "markets",
-      "record_count": 107,
+      "record_count": 120,
       "source_queries_attempted": 14,
       "source_queries_ok": 14,
       "status": "collected"
     },
     "official": {
       "caveat": "Data are source observations or investigatory leads; no likelihood of conflict is inferred.",
-      "checked_at": "2026-11-26T08:23:06Z",
+      "checked_at": "2026-11-26T21:36:00Z",
       "errors": [],
       "mode": "official",
       "record_count": 238,
@@ -192,17 +192,30 @@
   },
   "market_moves": [
     {
-      "change_24h_approx": 0.13,
+      "change_24h_approx": -0.32,
       "classification": "market_repricing_investigation_only",
-      "current_at": "2026-11-26T08:23:03Z",
-      "id": "polymarket:6403111",
+      "current_at": "2026-11-26T21:35:57Z",
+      "id": "polymarket:7351770",
       "limitation": "Market question direction may differ from escalation; event definition not cross-validated.",
-      "previous_at": "2026-11-25T08:39:26Z",
+      "previous_at": "2026-11-25T21:44:00Z",
       "scenario_tags": [
-        "Korean Peninsula"
+        "Taiwan Strait"
       ],
-      "title": "Will there be exactly 2 North Korea tests in November 2026?",
-      "url": "https://polymarket.com/event/number-of-north-korea-missile-tests-in-november-2026"
+      "title": "Will China blockade Taiwan by June 30, 2027?",
+      "url": "https://polymarket.com/event/will-china-blockade-taiwan-by-in-2026"
+    },
+    {
+      "change_24h_approx": -0.285,
+      "classification": "market_repricing_investigation_only",
+      "current_at": "2026-11-26T21:35:57Z",
+      "id": "polymarket:7351773",
+      "limitation": "Market question direction may differ from escalation; event definition not cross-validated.",
+      "previous_at": "2026-11-25T21:44:00Z",
+      "scenario_tags": [
+        "Taiwan Strait"
+      ],
+      "title": "Will China blockade Taiwan by December 31, 2027?",
+      "url": "https://polymarket.com/event/will-china-blockade-taiwan-by-in-2026"
     }
   ],
   "models": [
@@ -212,9 +225,48 @@
   "new_official_notices": [
     {
       "assessment": "protective_advisory_not_military_preparation",
+      "id": "6393e3fbefc98cc67873",
+      "kind": "official_travel_security_notice",
+      "observed_at": "2026-11-26T21:36:00Z",
+      "published_at": "2026-11-26T16:39:27Z",
+      "publisher": "UK FCDO",
+      "scenario_tags": [
+        "Unassigned / global"
+      ],
+      "source_url": "https://www.gov.uk/foreign-travel-advice/mauritius",
+      "title": "Mauritius"
+    },
+    {
+      "assessment": "protective_advisory_not_military_preparation",
+      "id": "974c8827b926a3aa3a82",
+      "kind": "official_travel_security_notice",
+      "observed_at": "2026-11-26T21:36:00Z",
+      "published_at": "2026-11-26T10:49:53Z",
+      "publisher": "UK FCDO",
+      "scenario_tags": [
+        "Unassigned / global"
+      ],
+      "source_url": "https://www.gov.uk/foreign-travel-advice/malawi",
+      "title": "Malawi"
+    },
+    {
+      "assessment": "protective_advisory_not_military_preparation",
+      "id": "276d613adbbe5840634b",
+      "kind": "official_travel_security_notice",
+      "observed_at": "2026-11-26T21:36:00Z",
+      "published_at": "2026-11-26T10:26:20Z",
+      "publisher": "UK FCDO",
+      "scenario_tags": [
+        "Unassigned / global"
+      ],
+      "source_url": "https://www.gov.uk/foreign-travel-advice/peru",
+      "title": "Peru"
+    },
+    {
+      "assessment": "protective_advisory_not_military_preparation",
       "id": "4dab1acea2de688035d9",
       "kind": "official_travel_security_notice",
-      "observed_at": "2026-11-26T08:23:06Z",
+      "observed_at": "2026-11-26T21:36:00Z",
       "published_at": "2026-11-25T15:24:11Z",
       "publisher": "UK FCDO",
       "scenario_tags": [
@@ -225,22 +277,9 @@
     },
     {
       "assessment": "protective_advisory_not_military_preparation",
-      "id": "974c8827b926a3aa3a82",
-      "kind": "official_travel_security_notice",
-      "observed_at": "2026-11-26T08:23:06Z",
-      "published_at": "2026-11-25T11:22:56Z",
-      "publisher": "UK FCDO",
-      "scenario_tags": [
-        "Unassigned / global"
-      ],
-      "source_url": "https://www.gov.uk/foreign-travel-advice/malawi",
-      "title": "Malawi"
-    },
-    {
-      "assessment": "protective_advisory_not_military_preparation",
       "id": "9589517b52614f74ddf9",
       "kind": "official_travel_security_notice",
-      "observed_at": "2026-11-26T08:23:06Z",
+      "observed_at": "2026-11-26T21:36:00Z",
       "published_at": "2026-11-25T10:50:56Z",
       "publisher": "UK FCDO",
       "scenario_tags": [
@@ -254,29 +293,50 @@
     {
       "kind": "quiet_discrepancy_candidate",
       "market": {
-        "change_24h_approx": 0.13,
+        "change_24h_approx": -0.32,
         "classification": "market_repricing_investigation_only",
-        "current_at": "2026-11-26T08:23:03Z",
-        "id": "polymarket:6403111",
+        "current_at": "2026-11-26T21:35:57Z",
+        "id": "polymarket:7351770",
         "limitation": "Market question direction may differ from escalation; event definition not cross-validated.",
-        "previous_at": "2026-11-25T08:39:26Z",
+        "previous_at": "2026-11-25T21:44:00Z",
         "scenario_tags": [
-          "Korean Peninsula"
+          "Taiwan Strait"
         ],
-        "title": "Will there be exactly 2 North Korea tests in November 2026?",
-        "url": "https://polymarket.com/event/number-of-north-korea-missile-tests-in-november-2026"
+        "title": "Will China blockade Taiwan by June 30, 2027?",
+        "url": "https://polymarket.com/event/will-china-blockade-taiwan-by-in-2026"
       },
       "meaning": "An investigatory lead only: neither a war probability nor proof of advance knowledge.",
       "related_official_notices": [],
       "scenario_tags": [
-        "Korean Peninsula"
+        "Taiwan Strait"
+      ]
+    },
+    {
+      "kind": "quiet_discrepancy_candidate",
+      "market": {
+        "change_24h_approx": -0.285,
+        "classification": "market_repricing_investigation_only",
+        "current_at": "2026-11-26T21:35:57Z",
+        "id": "polymarket:7351773",
+        "limitation": "Market question direction may differ from escalation; event definition not cross-validated.",
+        "previous_at": "2026-11-25T21:44:00Z",
+        "scenario_tags": [
+          "Taiwan Strait"
+        ],
+        "title": "Will China blockade Taiwan by December 31, 2027?",
+        "url": "https://polymarket.com/event/will-china-blockade-taiwan-by-in-2026"
+      },
+      "meaning": "An investigatory lead only: neither a war probability nor proof of advance knowledge.",
+      "related_official_notices": [],
+      "scenario_tags": [
+        "Taiwan Strait"
       ]
     }
   ],
   "source_asof": {
     "commercial": "2026-11-26T17:47:47Z",
-    "markets": "2026-11-26T08:23:03Z",
-    "official": "2026-11-26T08:23:06Z"
+    "markets": "2026-11-26T21:35:57Z",
+    "official": "2026-11-26T21:36:00Z"
   },
   "warnings": [
     "No validated conflict event posterior",
