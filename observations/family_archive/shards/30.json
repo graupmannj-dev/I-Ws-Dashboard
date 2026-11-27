@@ -203,6 +203,45 @@
         }
       }
     },
+    "303474628d50fa388cd58c78f1bb2aa64f53e3f1c8ce840b2854afa2cedfb548": {
+      "information_root": "bmkg_nowcast:bmkg_nowcast:29e9c153adecce47498e1993f251",
+      "members": {
+        "beh:e946a60f55c6401e1d83bb12e21e": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "bmkg_nowcast",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-27T12:01:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:e946a60f55c6401e1d83bb12e21e",
+          "information_root": "bmkg_nowcast:bmkg_nowcast:29e9c153adecce47498e1993f251",
+          "origin": "behavioral_registry",
+          "provider": "bmkg_nowcast",
+          "published_at": "2026-11-27T12:01:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Indonesia BMKG",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Indonesia BMKG active provincial nowcast RSS, source-reported only; not global",
+          "source_updated_at": null,
+          "source_url": "https://www.bmkg.go.id/alerts/nowcast/en/CSG20261127005_alert.xml",
+          "title": "Thunderstorm Tonight in Sulawesi Tengah"
+        }
+      }
+    },
     "303869f4ca13c1b84ebaf113c0b67430b82a5a59222833af9421c10b21cba2fe": {
       "information_root": "inmet_br:inmet_br:90072184567a01af8be202cb265c",
       "members": {
@@ -418,6 +457,39 @@
         }
       }
     },
+    "30b39bcc85e4021184546fc31205633c5807ea8bb2a38b799c787741996b1e61": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c586:112506-2026",
+      "members": {
+        "beh:474184c43727cc8555a199c11c14": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-27T11:24:30+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:474184c43727cc8555a199c11c14",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c586:112506-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-27T11:24:30Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-25T12%3A43%3A32&updatedTo=2026-11-27T12%3A43%3A32",
+          "title": "Employee Health Cash Plan Benefit · Delta Housing Limited"
+        }
+      }
+    },
     "30b848e79ccd9d3edae2b6b8f454dbe3231ce8e76ab1fe17d872fc7d927a3901": {
       "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c2be:111290-2026",
       "members": {
@@ -525,6 +597,39 @@
           "source_updated_at": null,
           "source_url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.uga.html",
           "title": "Uganda - Level 4: Do Not Travel"
+        }
+      }
+    },
+    "30d25df8c539cb98ad88e00f7a205aacfd9e5d73ca0151fe8c5702e1e1f9e650": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c354:112497-2026",
+      "members": {
+        "beh:21fb8847f17cca9685761280d51c": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-27T11:14:03+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:21fb8847f17cca9685761280d51c",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c354:112497-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-27T11:14:03Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-25T12%3A43%3A32&updatedTo=2026-11-27T12%3A43%3A32",
+          "title": "Design, Supply and Installation of Library Equipment · Durham County Council"
         }
       }
     },

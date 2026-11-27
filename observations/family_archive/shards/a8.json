@@ -135,6 +135,39 @@
         }
       }
     },
+    "a821c8361bcc93a05ff54d9b111054600ebb480d2e923c550004aee024cd728f": {
+      "information_root": "niord:552219cb-8bf8-463c-9f2c-e4ff536d89ee:3:0:1",
+      "members": {
+        "beh:fb86fafb29347429ada2a3e05190": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "official_scheduled_restriction_not_military_preparation",
+          "collection_mode": "live_maritime",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-27T02:58:16+00:00",
+          "geography_key": "source-notice-point:56.53133:10.40583",
+          "geography_label": "Official notice position",
+          "geography_precision": "provider_defined_notice_point_not_incident",
+          "id": "beh:fb86fafb29347429ada2a3e05190",
+          "information_root": "niord:552219cb-8bf8-463c-9f2c-e4ff536d89ee:3:0:1",
+          "origin": "behavioral_registry",
+          "provider": "niord",
+          "published_at": null,
+          "restriction_status": "within_published_validity_window_not_verified_active",
+          "scheduled_valid_from": "2026-11-27T00:21:51Z",
+          "scheduled_valid_until": "2026-11-29T13:00:00Z",
+          "source_dependency_class": null,
+          "source_family": "maritime_restriction",
+          "source_kind": "official_restriction_notice",
+          "source_measurement": null,
+          "source_scope": null,
+          "source_updated_at": "2026-11-27T00:21:52Z",
+          "source_url": "https://niord.dma.dk/#/message/552219cb-8bf8-463c-9f2c-e4ff536d89ee",
+          "title": "Denmark. Kattegat. EK R 45 Hevring. Firing exercises. Warning."
+        }
+      }
+    },
     "a836607a37a9528508235683e21489f32eaacbd0c6c97f5e1bd80937f503bd98": {
       "information_root": "cbp_wait:cbp_wait:240203:2026-11-25:01:45:24",
       "members": {
@@ -704,6 +737,39 @@
           "source_updated_at": null,
           "source_url": "https://bwt.cbp.gov/api/waittimes",
           "title": "CBP estimated commercial border wait — Detroit / Gordie Howe International Bridge"
+        }
+      }
+    },
+    "a893fe0ace0d82aa4595a84bc2581441b92043dfd4ab487ae9e6afc4c16273ce": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-067fe3:112496-2026",
+      "members": {
+        "beh:c9cf0c50c70b71bc23357c222a1b": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-27T11:12:05+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:c9cf0c50c70b71bc23357c222a1b",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-067fe3:112496-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-27T11:12:05Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-25T12%3A43%3A32&updatedTo=2026-11-27T12%3A43%3A32",
+          "title": "Repairs and Associated Works 2026 - Tiered Framework · Southampton City Council"
         }
       }
     },

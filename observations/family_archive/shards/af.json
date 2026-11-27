@@ -47,6 +47,39 @@
         }
       }
     },
+    "af0d84a255e70f9e8185fd2d9e2624fb841fc6b264da4d8aae17576980c19db9": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-06e92d:112552-2026",
+      "members": {
+        "beh:5a197d407fc22b58d989eb258ba6": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-27T12:18:29+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:5a197d407fc22b58d989eb258ba6",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-06e92d:112552-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-27T12:18:29Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-25T12%3A43%3A32&updatedTo=2026-11-27T12%3A43%3A32",
+          "title": "UKRI-6071 Underground Gas Network & Associated Services · UK Research & Innovation (UKRI)"
+        }
+      }
+    },
     "af14ec24b2035b612053bfd2d53188d5c2832ac42c6ae114ad1aaecbee0a0791": {
       "information_root": "nws:48a0392b561d546caaee581f",
       "members": {
@@ -289,6 +322,44 @@
           "source_updated_at": null,
           "source_url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.3ed6264d535d6a40e449f2f7c348a09afbc780f9.001.1",
           "title": "Flood Warning - Lake, FL; Volusia, FL"
+        }
+      }
+    },
+    "af7b8e3f8ae4cc4e22af1302a3f813dc889eb489758a4b9668536066729cb3dd": {
+      "information_root": "usgs:us6000udw4",
+      "members": {
+        "beh:7bdb9396b6bb8ac72270169eb700": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "usgs",
+          "direct_measurement": true,
+          "event_at": "2026-11-27T11:02:25Z",
+          "first_observed_at": "2026-11-27T11:02:25+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "source_supplied_point_only",
+          "id": "beh:7bdb9396b6bb8ac72270169eb700",
+          "information_root": "usgs:us6000udw4",
+          "origin": "behavioral_registry",
+          "provider": "usgs",
+          "published_at": "2026-11-27T11:17:33Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "measured_earthquake_context",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "name": "earthquake_magnitude",
+            "unit": "reported_magnitude",
+            "value": 4.8
+          },
+          "source_scope": "USGS M4.5+ earthquakes worldwide, rolling past day; source thresholds apply",
+          "source_updated_at": null,
+          "source_url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000udw4",
+          "title": "M 4.8 - 183 km SSE of Vilyuchinsk, Russia"
         }
       }
     },
@@ -545,6 +616,39 @@
           "source_updated_at": null,
           "source_url": "https://ioda.inetintel.cc.gatech.edu/",
           "title": "IODA detected connectivity anomaly: country CI"
+        }
+      }
+    },
+    "afbc64ce9bae3ba00f06b998fec2e132dc69086c1e37e9c3f3706699dfb71ebf": {
+      "information_root": "niord:552219cb-8bf8-463c-9f2c-e4ff536d89ee:2:0:0",
+      "members": {
+        "beh:c6805ae03e8d7615ab2e48a9fac1": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "official_scheduled_restriction_not_military_preparation",
+          "collection_mode": "live_maritime",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-27T02:58:16+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "notice_geography_unavailable",
+          "id": "beh:c6805ae03e8d7615ab2e48a9fac1",
+          "information_root": "niord:552219cb-8bf8-463c-9f2c-e4ff536d89ee:2:0:0",
+          "origin": "behavioral_registry",
+          "provider": "niord",
+          "published_at": null,
+          "restriction_status": "within_published_validity_window_not_verified_active",
+          "scheduled_valid_from": "2026-11-27T00:21:51Z",
+          "scheduled_valid_until": "2026-11-29T13:00:00Z",
+          "source_dependency_class": null,
+          "source_family": "maritime_restriction",
+          "source_kind": "official_restriction_notice",
+          "source_measurement": null,
+          "source_scope": null,
+          "source_updated_at": "2026-11-27T00:21:52Z",
+          "source_url": "https://niord.dma.dk/#/message/552219cb-8bf8-463c-9f2c-e4ff536d89ee",
+          "title": "Denmark. Kattegat. EK R 45 Hevring. Firing exercises. Warning."
         }
       }
     },

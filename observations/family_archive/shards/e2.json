@@ -689,6 +689,53 @@
         }
       }
     },
+    "e28b00e77083b8b14d29b7bb683e1d9b27110bfe6dc8e1262c0f852cb77e809e": {
+      "information_root": "cbp_wait:cbp_wait:300403:2026-11-27:04:34:48",
+      "members": {
+        "beh:f6cda868c84236091cdc0b2a71f5": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-27T12:46:23+00:00",
+          "geography_key": "us-border-port:300403",
+          "geography_label": "Blaine",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:f6cda868c84236091cdc0b2a71f5",
+          "information_root": "cbp_wait:cbp_wait:300403:2026-11-27:04:34:48",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Update Pending",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/27/2026",
+            "reported_local_time": "04:34:48",
+            "source_declared_border": "Canadian Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Blaine / Point Roberts"
+        }
+      }
+    },
     "e2904ce841ea05d84f1d29d7928f2b2359d0a87266b1ef83fcf8e463bc531507": {
       "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c136:110541-2026",
       "members": {
@@ -920,6 +967,39 @@
           "source_updated_at": null,
           "source_url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNZlNuTHpvRXZFZ3FYV3dCcUNfVExCX1Nzcmx6SHNNZ1A0RTJRSGsxVGFpcUtPYzhUYWU1cHlDUkxVMDcyVFZQS0FnaXdYaUJTV2RLTXAzRmhid0tnbVpmTXlHS083UFQtZjRSY0VnSGdoVFJwbVhsSFF4b1djbnRiSy1JZURKYmRBZGFaejFnYmlTTy1rYTgyYnduWGUzUzZYTDNnVmlmUG1EWUtYcVBEWUdCcGJXRnQweGZXTHZNVi1fcHZ4UnRmZtIBzgFBVV95cUxOODg0RklfblQwR0E1YVNsUDk1RmlPMGMyOElJcGgyNUJUSkEzeFpzODBhbm02aHVVRE9HLVN1aDkzSVZuV0Vpb0JvNnJ1RGdHQ3RpQmFnM2hjYlpRaEJUN291N0plWU9mcDEwNFNGQ0szMWRBQWdIMTA4Zk1CdXNMelloZXZKdFZPX0dOMUpCQ0VibzU5MWNSemlCZ0hUT1YzMXRfS2xSdVdBSE1xb3E2Z0NEczdUY2ZxY19GM3I5RzlyZjJTMndQUzBOY2lpdw?oc=5",
           "title": "Ukraine plans to launch EUR 3B war risk insurance fund in January – Koretskyi - Ukrinform"
+        }
+      }
+    },
+    "e2fce2b3f8fef68ac2515e9dfa17f438a7846e5550d6291f6b178ed05d59fe07": {
+      "information_root": "nws:39480767fc4a4b5351a445da",
+      "members": {
+        "beh:c55ab1fa608758b6de386d367f9b": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "nws",
+          "direct_measurement": false,
+          "event_at": "2026-11-27T09:17:00Z",
+          "first_observed_at": "2026-11-27T09:17:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:c55ab1fa608758b6de386d367f9b",
+          "information_root": "nws:39480767fc4a4b5351a445da",
+          "origin": "behavioral_registry",
+          "provider": "nws",
+          "published_at": "2026-11-27T09:17:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "official_weather_alert_context",
+          "source_measurement": null,
+          "source_scope": "Active NWS marine alerts; severity Minor",
+          "source_updated_at": null,
+          "source_url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.00b1a266272b65e92289f90fc6117ddb41154d65.002.1",
+          "title": "Coastal Flood Statement - Monroe Middle Keys; Monroe Lower Keys"
         }
       }
     },

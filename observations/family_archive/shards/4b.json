@@ -609,6 +609,53 @@
         }
       }
     },
+    "4bbce1e6e7d174c9ab9dab8cd78b307f09c65efe971efd854857075f767965dd": {
+      "information_root": "cbp_wait:cbp_wait:230201:2026-11-27:06:34:48",
+      "members": {
+        "beh:95687d5a974312b838bee481e03e": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-27T12:46:23+00:00",
+          "geography_key": "us-border-port:230201",
+          "geography_label": "Del Rio",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:95687d5a974312b838bee481e03e",
+          "information_root": "cbp_wait:cbp_wait:230201:2026-11-27:06:34:48",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "no delay",
+            "lanes_open": 1,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "At 6:00 am CST",
+            "reported_local_date": "11/27/2026",
+            "reported_local_time": "06:34:48",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 0
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Del Rio"
+        }
+      }
+    },
     "4bc5f47c1d39e09c0bc05e0f2cf1764e103a2c92359591c3d5b21a41e9c0ffb4": {
       "information_root": "niord:de5a1834-99d1-432f-94c2-7af31d71c67e:4:0:0",
       "members": {

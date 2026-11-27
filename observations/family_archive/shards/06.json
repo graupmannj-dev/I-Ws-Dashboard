@@ -1,5 +1,38 @@
 {
   "roots": {
+    "060531df01096bc771d97b5bed49279bf56040df8d9866ff722dff885a13ff90": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c5aa:112563-2026",
+      "members": {
+        "beh:fbfde75369841ff0592681ef9555": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-27T12:38:38+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:fbfde75369841ff0592681ef9555",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c5aa:112563-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-27T12:38:38Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-25T12%3A43%3A32&updatedTo=2026-11-27T12%3A43%3A32",
+          "title": "CPU 8373 Carecubed Benchmarking System · Nottingham City Council"
+        }
+      }
+    },
     "0609e3c4e05c115c63dc6e66cc0d495b9bda8ee442bdca60268d171ef5aff55a": {
       "information_root": "nws:fdc8dd1e2622fe7165026ae5",
       "members": {
@@ -829,6 +862,45 @@
         }
       }
     },
+    "06b3e4225e04f0b5bcc6a6a418912ec7725ff8881af2cd99940feef8e78b4c00": {
+      "information_root": "bmkg_nowcast:bmkg_nowcast:e14211dc46dfa618311331f5a4df",
+      "members": {
+        "beh:411d66134f4f88a9d8ee77fada28": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "bmkg_nowcast",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-27T09:50:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:411d66134f4f88a9d8ee77fada28",
+          "information_root": "bmkg_nowcast:bmkg_nowcast:e14211dc46dfa618311331f5a4df",
+          "origin": "behavioral_registry",
+          "provider": "bmkg_nowcast",
+          "published_at": "2026-11-27T09:50:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Indonesia BMKG",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Indonesia BMKG active provincial nowcast RSS, source-reported only; not global",
+          "source_updated_at": null,
+          "source_url": "https://www.bmkg.go.id/alerts/nowcast/en/CMU20261127006_alert.xml",
+          "title": "Thunderstorm Tonight in Maluku Utara"
+        }
+      }
+    },
     "06b9ead6a15f067efda61cd3d3276e2100fd4922e705bac303c031f5ce3fff7b": {
       "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c3e4:111851-2026",
       "members": {
@@ -859,6 +931,39 @@
           "source_updated_at": null,
           "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-23T19%3A25%3A03&updatedTo=2026-11-25T19%3A25%3A03",
           "title": "Recruitment CRM · Commercial Services Kent Limited"
+        }
+      }
+    },
+    "06c8b8d1258e2433ae09cce573c5a0e2c9fcb2bfe6054e6bc12a7abf4d1c5a03": {
+      "information_root": "niord:552219cb-8bf8-463c-9f2c-e4ff536d89ee:3:0:0",
+      "members": {
+        "beh:6cacc6399f749e42a4eebd52f5b6": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "official_scheduled_restriction_not_military_preparation",
+          "collection_mode": "live_maritime",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-27T02:58:16+00:00",
+          "geography_key": "source-notice-point:56.52250:10.44083",
+          "geography_label": "Official notice position",
+          "geography_precision": "provider_defined_notice_point_not_incident",
+          "id": "beh:6cacc6399f749e42a4eebd52f5b6",
+          "information_root": "niord:552219cb-8bf8-463c-9f2c-e4ff536d89ee:3:0:0",
+          "origin": "behavioral_registry",
+          "provider": "niord",
+          "published_at": null,
+          "restriction_status": "within_published_validity_window_not_verified_active",
+          "scheduled_valid_from": "2026-11-27T00:21:51Z",
+          "scheduled_valid_until": "2026-11-29T13:00:00Z",
+          "source_dependency_class": null,
+          "source_family": "maritime_restriction",
+          "source_kind": "official_restriction_notice",
+          "source_measurement": null,
+          "source_scope": null,
+          "source_updated_at": "2026-11-27T00:21:52Z",
+          "source_url": "https://niord.dma.dk/#/message/552219cb-8bf8-463c-9f2c-e4ff536d89ee",
+          "title": "Denmark. Kattegat. EK R 45 Hevring. Firing exercises. Warning."
         }
       }
     },

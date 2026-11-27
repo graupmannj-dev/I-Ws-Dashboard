@@ -30,6 +30,53 @@
         }
       }
     },
+    "130ecf14b8d9850a7370d9b79b4e7d978894131297f9ad50b71d110bf419b38d": {
+      "information_root": "cbp_wait:cbp_wait:250301:2026-11-27:04:34:48",
+      "members": {
+        "beh:0d09fff1231164bbd86a558df4c6": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-27T12:46:23+00:00",
+          "geography_key": "us-border-port:250301",
+          "geography_label": "Calexico",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:0d09fff1231164bbd86a558df4c6",
+          "information_root": "cbp_wait:cbp_wait:250301:2026-11-27:04:34:48",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Lanes Closed",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Closed",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/27/2026",
+            "reported_local_time": "04:34:48",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Calexico / East"
+        }
+      }
+    },
     "130f14d74365f64e2a28818a43bc7384d03b5e643a9af06704496d23f6824d36": {
       "information_root": "ioda:02f05461219eba0cbac33406",
       "members": {
@@ -202,6 +249,39 @@
           "source_updated_at": null,
           "source_url": "https://data.bmkg.go.id/DataMKG/TEWS/gempaterkini.json",
           "title": "BMKG earthquake M5.3 · 1 km BaratDaya TOMOHON-SULUT"
+        }
+      }
+    },
+    "13321deb8cf0f2ee0ade2aff7ad045cb11e478dd205243d5ec7677f6282827c5": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c591:112521-2026",
+      "members": {
+        "beh:557e9a77d0e25b9c154e55dfba9a": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-27T11:43:03+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:557e9a77d0e25b9c154e55dfba9a",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c591:112521-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-27T11:43:03Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-25T12%3A43%3A32&updatedTo=2026-11-27T12%3A43%3A32",
+          "title": "DEC Data Coherence, Delivery and Capability Services · Home Office"
         }
       }
     },
@@ -653,6 +733,72 @@
           "source_updated_at": null,
           "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-21T13%3A10%3A09&updatedTo=2026-11-23T13%3A10%3A09",
           "title": "UKRI-6277 Fast HDX System · UK Research & Innovation (UKRI)"
+        }
+      }
+    },
+    "13cb43b6ef025651e72687a77475df4c7df66bda03987fbe21ac02f8cac2d374": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c594:112525-2026",
+      "members": {
+        "beh:d92eb3492cb0525870ddb2e6ae1c": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-27T11:45:32+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:d92eb3492cb0525870ddb2e6ae1c",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c594:112525-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-27T11:45:32Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-25T12%3A43%3A32&updatedTo=2026-11-27T12%3A43%3A32",
+          "title": "Request For Information for Supported Temporary Accommodation support model · South Gloucestershire Council"
+        }
+      }
+    },
+    "13de87bf214cdcdf94a93210a00dbb0947c4ee97277556377a8d893c9d14948b": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c5ae:112568-2026",
+      "members": {
+        "beh:b680df817b1a99d5357435ef0f5c": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-27T12:42:41+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:b680df817b1a99d5357435ef0f5c",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c5ae:112568-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-27T12:42:41Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-25T12%3A43%3A32&updatedTo=2026-11-27T12%3A43%3A32",
+          "title": "Health and Safety Management Software Platform · British Film Institute"
         }
       }
     }

@@ -192,6 +192,39 @@
         }
       }
     },
+    "b74177dc004fda021d3344e9a229ac07f6797b73a6ac45482278a1729dc2dd2b": {
+      "information_root": "niord:547ceae3-aca2-4630-a228-f0a6cac2ec8f:1:0:0",
+      "members": {
+        "beh:b5a9c4a9f9cf357ed486549433e2": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "official_scheduled_restriction_not_military_preparation",
+          "collection_mode": "live_maritime",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-27T02:58:16+00:00",
+          "geography_key": "source-footprint:45e4c7bf505a7c2bb5928f3f",
+          "geography_label": "Official Polygon notice area",
+          "geography_precision": "provider_defined_notice_boundary_not_event_point",
+          "id": "beh:b5a9c4a9f9cf357ed486549433e2",
+          "information_root": "niord:547ceae3-aca2-4630-a228-f0a6cac2ec8f:1:0:0",
+          "origin": "behavioral_registry",
+          "provider": "niord",
+          "published_at": null,
+          "restriction_status": "within_published_validity_window_not_verified_active",
+          "scheduled_valid_from": "2026-11-27T00:21:51Z",
+          "scheduled_valid_until": "2026-11-27T14:00:00Z",
+          "source_dependency_class": null,
+          "source_family": "maritime_restriction",
+          "source_kind": "official_restriction_notice",
+          "source_measurement": null,
+          "source_scope": null,
+          "source_updated_at": "2026-11-27T00:21:52Z",
+          "source_url": "https://niord.dma.dk/#/message/547ceae3-aca2-4630-a228-f0a6cac2ec8f",
+          "title": "Denmark. Kattegat. EK R 19 MULTEX. Firing exercises. Warning."
+        }
+      }
+    },
     "b744de5ae93d63ae12373be13dbb4f38b870a1a7440a9219a0a434442eeb4dc9": {
       "information_root": "faa:6/8654:0:0",
       "members": {
@@ -983,6 +1016,39 @@
           "source_updated_at": null,
           "source_url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.cuw.html",
           "title": "Curaçao - Level 1: Exercise Normal Precautions"
+        }
+      }
+    },
+    "b7f5c78ba83d64ea84b205c71fe326a2ad41ebd3e606329d012eb6e3df16d27c": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c57a:112485-2026",
+      "members": {
+        "beh:4b0abaed940268b20872ef609f88": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-27T11:03:32+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:4b0abaed940268b20872ef609f88",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c57a:112485-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-27T11:03:32Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-25T12%3A43%3A32&updatedTo=2026-11-27T12%3A43%3A32",
+          "title": "Electrical Installation · North East London NHS Foundation Trust"
         }
       }
     }

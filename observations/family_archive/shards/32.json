@@ -120,6 +120,45 @@
         }
       }
     },
+    "324e1569e525b611eb2fede29b5aea4e0009f2ddae24e96c8fdb4e86093346d2": {
+      "information_root": "inmet_br:inmet_br:1038fe60f050a354372829166fe2",
+      "members": {
+        "beh:879b54af30be80110ccc744e68ea": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "inmet_br",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-27T09:30:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:879b54af30be80110ccc744e68ea",
+          "information_root": "inmet_br:inmet_br:1038fe60f050a354372829166fe2",
+          "origin": "behavioral_registry",
+          "provider": "inmet_br",
+          "published_at": "2026-11-27T09:30:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Brazil INMET",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Brazil INMET official severe-weather RSS notices; provider-listed bounded sample",
+          "source_updated_at": null,
+          "source_url": "https://apiprevmet3.inmet.gov.br/avisos/rss/56518",
+          "title": "Aviso de Chuvas Intensas. Severidade Grau: Perigo Potencial"
+        }
+      }
+    },
     "324fd05bcfd0072054c38f2c0529d37d1f12535951568d2736811224b812b79a": {
       "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-06aa22:110492-2026",
       "members": {
@@ -183,6 +222,39 @@
           "source_updated_at": null,
           "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-21T13%3A10%3A09&updatedTo=2026-11-23T13%3A10%3A09",
           "title": "LIAISON QuantiFERON-TB Gold Plus · CAMBRIDGE UNIVERSITY HOSPITALS NHS FOUNDATION TRUST"
+        }
+      }
+    },
+    "325e26430226d47712c0a10c69fdb57c1bd5a0497aa6ce606e3231463f3ce729": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c5a1:112548-2026",
+      "members": {
+        "beh:2fb3433a0b6b3355c5e819aaf6a2": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-27T12:11:54+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:2fb3433a0b6b3355c5e819aaf6a2",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c5a1:112548-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-27T12:11:54Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-25T12%3A43%3A32&updatedTo=2026-11-27T12%3A43%3A32",
+          "title": "itt_64426-lot2-3 x MRI Quenchless Systems for Tayside NP167/22, Lot1 · NHS Tayside"
         }
       }
     },

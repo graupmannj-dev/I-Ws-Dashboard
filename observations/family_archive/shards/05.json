@@ -99,6 +99,53 @@
         }
       }
     },
+    "05381c317c7e8731b6a70ce7ae052991045e4693fd38655871e68d684271e9ca": {
+      "information_root": "cbp_wait:cbp_wait:021201:2026-11-27:07:34:48",
+      "members": {
+        "beh:eb0986714c50475aba590bb4ec2c": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-27T12:46:23+00:00",
+          "geography_key": "us-border-port:021201",
+          "geography_label": "Highgate Springs",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:eb0986714c50475aba590bb4ec2c",
+          "information_root": "cbp_wait:cbp_wait:021201:2026-11-27:07:34:48",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "no delay",
+            "lanes_open": 1,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "At 6:00 am EST",
+            "reported_local_date": "11/27/2026",
+            "reported_local_time": "07:34:48",
+            "source_declared_border": "Canadian Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 0
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Highgate Springs"
+        }
+      }
+    },
     "0548d24b0fec35594a41a6998179cb823b974bb5ff4df7abde5588879cd8fb83": {
       "information_root": "commercial:6022ccc471df31a1b586",
       "members": {
@@ -396,6 +443,39 @@
         }
       }
     },
+    "05a20075d1c6905e7ce139611264915b2d0fd5f869df8538ff6a83baeec5901d": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c57c:112490-2026",
+      "members": {
+        "beh:0b1aae6eeba2b74c9923bc9f49de": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-27T11:07:57+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:0b1aae6eeba2b74c9923bc9f49de",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c57c:112490-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-27T11:07:57Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-25T12%3A43%3A32&updatedTo=2026-11-27T12%3A43%3A32",
+          "title": "UK1 - Pipeline Notice · Ministry of Defence"
+        }
+      }
+    },
     "05a524df6d1837c4bc55b92fbc3339eea1d3e8909be6798c2bdc0e2b56522cc1": {
       "information_root": "cbp_wait:cbp_wait:250501:2026-11-25:00:45:24",
       "members": {
@@ -536,6 +616,45 @@
           "source_updated_at": "2026-11-16T09:21:51Z",
           "source_url": "https://niord.dma.dk/#/message/076f0fb6-c387-450a-9fdb-5629d7c1087e",
           "title": "Denmark. Kattegat. EK R 20 Yderby. Firing exercises. Warning."
+        }
+      }
+    },
+    "05bf36afefb0965c21d59a54ac34e427f07d50559f01395c5c7448ee5520a0f6": {
+      "information_root": "bmkg_nowcast:bmkg_nowcast:f95ef0cb87e184258d8ef1a3e066",
+      "members": {
+        "beh:7ae8a7e11d8ec391dedb3732d903": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "bmkg_nowcast",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-27T10:50:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:7ae8a7e11d8ec391dedb3732d903",
+          "information_root": "bmkg_nowcast:bmkg_nowcast:f95ef0cb87e184258d8ef1a3e066",
+          "origin": "behavioral_registry",
+          "provider": "bmkg_nowcast",
+          "published_at": "2026-11-27T10:50:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Indonesia BMKG",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Indonesia BMKG active provincial nowcast RSS, source-reported only; not global",
+          "source_updated_at": null,
+          "source_url": "https://www.bmkg.go.id/alerts/nowcast/en/CBK20261127004_alert.xml",
+          "title": "Thunderstorm This Evening in Bengkulu"
         }
       }
     },

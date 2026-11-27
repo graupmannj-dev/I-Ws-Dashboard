@@ -339,6 +339,45 @@
         }
       }
     },
+    "616c1d5e0a9c2de8b11e079cbefb7942cecc1f460377b4a23fac90d9fcc8d7b0": {
+      "information_root": "bmkg_nowcast:bmkg_nowcast:385f5b463d63bc8d94a5b7fa110f",
+      "members": {
+        "beh:16242d934d4f2ed8529e208c0450": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "bmkg_nowcast",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-27T11:20:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:16242d934d4f2ed8529e208c0450",
+          "information_root": "bmkg_nowcast:bmkg_nowcast:385f5b463d63bc8d94a5b7fa110f",
+          "origin": "behavioral_registry",
+          "provider": "bmkg_nowcast",
+          "published_at": "2026-11-27T11:20:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Indonesia BMKG",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Indonesia BMKG active provincial nowcast RSS, source-reported only; not global",
+          "source_updated_at": null,
+          "source_url": "https://www.bmkg.go.id/alerts/nowcast/en/CSB20261127003_alert.xml",
+          "title": "Thunderstorm This Evening in Sumatera Barat"
+        }
+      }
+    },
     "616e72064c52e80f895f85aca186dd7ba127b2178c9e9d5a0a41d445d5232ae8": {
       "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c4f2:112253-2026",
       "members": {
@@ -693,6 +732,39 @@
           "source_updated_at": null,
           "source_url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.che.html",
           "title": "Switzerland - Level 1: Exercise Normal Precautions"
+        }
+      }
+    },
+    "61e326a876c9cc31b8954488bdae15782145ecdb5af5a7616319405466a1c3c8": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c572:112476-2026",
+      "members": {
+        "beh:5fa8056e3638976584f523abb0b6": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-27T10:52:23+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:5fa8056e3638976584f523abb0b6",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c572:112476-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-27T10:52:23Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-25T12%3A43%3A32&updatedTo=2026-11-27T12%3A43%3A32",
+          "title": "Pre Market Engagement for PEACEPLUS Sports Cluster Programme · Mid and east Antrim Borough Council"
         }
       }
     },

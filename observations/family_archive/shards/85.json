@@ -1,5 +1,52 @@
 {
   "roots": {
+    "85064672b9a2b7ef97d4434ac0316246209fbb1bf2f5fe53eb231e30dd3c2eaa": {
+      "information_root": "cbp_wait:cbp_wait:250201:2026-11-27:04:34:48",
+      "members": {
+        "beh:7fc1c1eb79ab35e100038ca21006": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-27T12:46:23+00:00",
+          "geography_key": "us-border-port:250201",
+          "geography_label": "Andrade",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:7fc1c1eb79ab35e100038ca21006",
+          "information_root": "cbp_wait:cbp_wait:250201:2026-11-27:04:34:48",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Update Pending",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Closed",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/27/2026",
+            "reported_local_time": "04:34:48",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Andrade"
+        }
+      }
+    },
     "850d9c9b8ac5a52a8b3194a36065b86ddbb7bc31d3d5fd504f33ba14f5bf94a9": {
       "information_root": "cbp_wait:cbp_wait:090101:2026-11-22:06:34:18",
       "members": {
@@ -346,6 +393,39 @@
         }
       }
     },
+    "858200435880af5b247265cfc5f66fdf8c494ad6533800c7624e81a717697028": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07bdb0:112518-2026",
+      "members": {
+        "beh:a256dd505e01959d438e2066a376": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-27T11:40:25+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:a256dd505e01959d438e2066a376",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07bdb0:112518-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-27T11:40:25Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-25T12%3A43%3A32&updatedTo=2026-11-27T12%3A43%3A32",
+          "title": "Annual Hosting Website and Intranet · Cambridgeshire & Peterborough NHS Foundation Trust"
+        }
+      }
+    },
     "858a7a4353c414b919df2912254886510e3859f079b52c006f53ba0d1ff20636": {
       "information_root": "sg_mpa:sg_mpa:2026-01:freighter",
       "members": {
@@ -469,6 +549,39 @@
           "source_updated_at": null,
           "source_url": "https://ioda.inetintel.cc.gatech.edu/",
           "title": "IODA detected connectivity anomaly: country UZ"
+        }
+      }
+    },
+    "85f0d26a569a2a259ddaadbdda45a9bc5b7e76d2927419a8474ea91cd9573a03": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c599:112535-2026",
+      "members": {
+        "beh:94d0342029b01cd54853a0655cd9": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-27T12:01:45+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:94d0342029b01cd54853a0655cd9",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c599:112535-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-27T12:01:45Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-25T12%3A43%3A32&updatedTo=2026-11-27T12%3A43%3A32",
+          "title": "Supply of Wood Poles and Accessories · NATIONAL GRID UK LIMITED"
         }
       }
     },

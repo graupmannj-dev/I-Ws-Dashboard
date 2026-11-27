@@ -146,6 +146,39 @@
         }
       }
     },
+    "363938d8ed1da2604cad5e4b7811b76316b31e66b6bf91b3347742fd8d5cfb57": {
+      "information_root": "niord:547ceae3-aca2-4630-a228-f0a6cac2ec8f:0:0:0",
+      "members": {
+        "beh:90c64f280ac83fd187da8d0887f2": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "official_scheduled_restriction_not_military_preparation",
+          "collection_mode": "live_maritime",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-27T02:58:16+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "notice_geography_unavailable",
+          "id": "beh:90c64f280ac83fd187da8d0887f2",
+          "information_root": "niord:547ceae3-aca2-4630-a228-f0a6cac2ec8f:0:0:0",
+          "origin": "behavioral_registry",
+          "provider": "niord",
+          "published_at": null,
+          "restriction_status": "within_published_validity_window_not_verified_active",
+          "scheduled_valid_from": "2026-11-27T07:00:00Z",
+          "scheduled_valid_until": "2026-11-27T14:00:00Z",
+          "source_dependency_class": null,
+          "source_family": "maritime_restriction",
+          "source_kind": "official_restriction_notice",
+          "source_measurement": null,
+          "source_scope": null,
+          "source_updated_at": "2026-11-27T00:21:52Z",
+          "source_url": "https://niord.dma.dk/#/message/547ceae3-aca2-4630-a228-f0a6cac2ec8f",
+          "title": "Denmark. Kattegat. EK R 19 MULTEX. Firing exercises. Warning."
+        }
+      }
+    },
     "364ac1729c987a97c04cf5adffc9dd6fb2fe58ee9de50b2c66775acd4fb84a10": {
       "information_root": "cbp_wait:cbp_wait:302301:2026-11-26:09:00:02",
       "members": {
@@ -591,6 +624,45 @@
           "source_updated_at": null,
           "source_url": "https://bwt.cbp.gov/api/waittimes",
           "title": "CBP estimated commercial border wait — Nogales / Deconcini"
+        }
+      }
+    },
+    "36933654fa33a7521d178fc8f6c3ab732be66f2a0c488e94bdc2abd2cd81c484": {
+      "information_root": "bmkg_nowcast:bmkg_nowcast:af9f9b5caaff7b6cc86aca160f1c",
+      "members": {
+        "beh:5d0985767c824385f28934a754fb": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "bmkg_nowcast",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-27T09:30:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:5d0985767c824385f28934a754fb",
+          "information_root": "bmkg_nowcast:bmkg_nowcast:af9f9b5caaff7b6cc86aca160f1c",
+          "origin": "behavioral_registry",
+          "provider": "bmkg_nowcast",
+          "published_at": "2026-11-27T09:30:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Indonesia BMKG",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Indonesia BMKG active provincial nowcast RSS, source-reported only; not global",
+          "source_updated_at": null,
+          "source_url": "https://www.bmkg.go.id/alerts/nowcast/en/CSU20261127005_alert.xml",
+          "title": "Thunderstorm This Evening in Sumatera Utara"
         }
       }
     },

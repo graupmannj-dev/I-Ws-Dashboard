@@ -1,5 +1,85 @@
 {
   "roots": {
+    "1401a6a34251d4bcd1083ad81577ea9bf6e89230ef3e7a42435ad7b01e122e8e": {
+      "information_root": "nws:5167e126158f1e08c714ae60",
+      "members": {
+        "beh:991aec886bbee7e4c219ba7c3c1f": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "nws",
+          "direct_measurement": false,
+          "event_at": "2026-11-27T01:47:00Z",
+          "first_observed_at": "2026-11-27T01:47:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:991aec886bbee7e4c219ba7c3c1f",
+          "information_root": "nws:5167e126158f1e08c714ae60",
+          "origin": "behavioral_registry",
+          "provider": "nws",
+          "published_at": "2026-11-27T01:47:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "official_weather_alert_context",
+          "source_measurement": null,
+          "source_scope": "Active NWS marine alerts; severity Severe",
+          "source_updated_at": null,
+          "source_url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.160c8c8ffd425e02dc126832cf89e52b61e29dae.001.1",
+          "title": "Flood Warning - Seminole, FL"
+        }
+      }
+    },
+    "140cfd6dd2800e25fad26d02265fae371995516d922af7215524ccb690770b5a": {
+      "information_root": "cbp_wait:cbp_wait:535504:2026-11-27:06:34:48",
+      "members": {
+        "beh:bfbec28217430df6b1b244ffe9a9": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-27T12:46:23+00:00",
+          "geography_key": "us-border-port:535504",
+          "geography_label": "Brownsville",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:bfbec28217430df6b1b244ffe9a9",
+          "information_root": "cbp_wait:cbp_wait:535504:2026-11-27:06:34:48",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Update Pending",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/27/2026",
+            "reported_local_time": "06:34:48",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Brownsville / Gateway"
+        }
+      }
+    },
     "1414e0df63055b1bb82026eaa7d0cb721b335675d2087fd738a7852a5ad639b5": {
       "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c0cc:110346-2026",
       "members": {
@@ -300,6 +380,119 @@
           "source_updated_at": null,
           "source_url": "https://bwt.cbp.gov/api/waittimes",
           "title": "CBP estimated commercial border wait — Eagle Pass / Bridge I"
+        }
+      }
+    },
+    "148f1d34ea23ddde969d2d78450db926219f1dcfd62ca69dd5874fbcc52504a7": {
+      "information_root": "niord:9ce124cb-bfb5-4ac6-8449-c0b0ab9f5ed7:3:0:0",
+      "members": {
+        "beh:37662fd297d0efd6184138d9b9e4": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "official_scheduled_restriction_not_military_preparation",
+          "collection_mode": "live_maritime",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-27T02:58:16+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "notice_geography_unavailable",
+          "id": "beh:37662fd297d0efd6184138d9b9e4",
+          "information_root": "niord:9ce124cb-bfb5-4ac6-8449-c0b0ab9f5ed7:3:0:0",
+          "origin": "behavioral_registry",
+          "provider": "niord",
+          "published_at": null,
+          "restriction_status": "within_published_validity_window_not_verified_active",
+          "scheduled_valid_from": "2026-11-27T00:21:51Z",
+          "scheduled_valid_until": "2026-11-30T16:00:00Z",
+          "source_dependency_class": null,
+          "source_family": "maritime_restriction",
+          "source_kind": "official_restriction_notice",
+          "source_measurement": null,
+          "source_scope": null,
+          "source_updated_at": "2026-11-27T00:21:51Z",
+          "source_url": "https://niord.dma.dk/#/message/9ce124cb-bfb5-4ac6-8449-c0b0ab9f5ed7",
+          "title": "Denmark. Kattegat. EK R 18 Jaegerspris. Firing exercises. Warning."
+        }
+      }
+    },
+    "149ba27a98888a2c7ef430df0f271539ce50f8206e185d337f22098678d40de8": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c57e:112493-2026",
+      "members": {
+        "beh:26c6c9116220743325afe2715a77": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-27T11:10:39+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:26c6c9116220743325afe2715a77",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c57e:112493-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-27T11:10:39Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-25T12%3A43%3A32&updatedTo=2026-11-27T12%3A43%3A32",
+          "title": "Unlicensed Imported Medicines Framework · East of England NHS collaborative Procurement Hub"
+        }
+      }
+    },
+    "149e1e972d484d13cfa29c17480eb8ca51577293648f8d8659bba48c32b692b8": {
+      "information_root": "cbp_wait:cbp_wait:380301:2026-11-27:07:34:48",
+      "members": {
+        "beh:4c2e465b5b78bc4a6e12e77c95e0": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-27T12:46:23+00:00",
+          "geography_key": "us-border-port:380301",
+          "geography_label": "Sault Ste. Marie",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:4c2e465b5b78bc4a6e12e77c95e0",
+          "information_root": "cbp_wait:cbp_wait:380301:2026-11-27:07:34:48",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "no delay",
+            "lanes_open": 1,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "At 6:00 am EST",
+            "reported_local_date": "11/27/2026",
+            "reported_local_time": "07:34:48",
+            "source_declared_border": "Canadian Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 0
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Sault Ste. Marie / International Bridge - SSM"
         }
       }
     },

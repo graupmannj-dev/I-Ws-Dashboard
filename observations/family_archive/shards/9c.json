@@ -512,6 +512,39 @@
         }
       }
     },
+    "9c9c7da47223007ff93ec9f31160c4a554065ed10603b47d6bf063f4db0ff6af": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-06962e:112550-2026",
+      "members": {
+        "beh:a00ca668fffca59793375b1cd345": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-27T12:12:59+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:a00ca668fffca59793375b1cd345",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-06962e:112550-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-27T12:12:59Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-25T12%3A43%3A32&updatedTo=2026-11-27T12%3A43%3A32",
+          "title": "GMCA1832 Breathing Apparatus · Greater Manchester Combined Authority"
+        }
+      }
+    },
     "9caaab44770369fe8084f13624336d51842d1b881cb3d1c774a27fd250b418af": {
       "information_root": "nws:e08191b4baf0764ece69e221",
       "members": {
@@ -699,6 +732,44 @@
           "source_updated_at": null,
           "source_url": "https://bwt.cbp.gov/api/waittimes",
           "title": "CBP estimated commercial border wait — Paso Del Norte"
+        }
+      }
+    },
+    "9cda441e1558b5282845afdf5ddb2f5dbe3341d60eff4ce5f6757b25359456b7": {
+      "information_root": "usgs:us6000udtu",
+      "members": {
+        "beh:d3fdbaa49e7f6fe896e8ff5ef013": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "usgs",
+          "direct_measurement": true,
+          "event_at": "2026-11-27T02:13:21Z",
+          "first_observed_at": "2026-11-27T02:13:21+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "source_supplied_point_only",
+          "id": "beh:d3fdbaa49e7f6fe896e8ff5ef013",
+          "information_root": "usgs:us6000udtu",
+          "origin": "behavioral_registry",
+          "provider": "usgs",
+          "published_at": "2026-11-27T02:34:46Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "measured_earthquake_context",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "name": "earthquake_magnitude",
+            "unit": "reported_magnitude",
+            "value": 5
+          },
+          "source_scope": "USGS M4.5+ earthquakes worldwide, rolling past day; source thresholds apply",
+          "source_updated_at": null,
+          "source_url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000udtu",
+          "title": "M 5.0 - 89 km SSE of Sola, Vanuatu"
         }
       }
     },

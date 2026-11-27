@@ -370,6 +370,39 @@
         }
       }
     },
+    "0e43138c481ae0bcac862d3ca59d580e806750cdd67cd05da62395f0d4308b24": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c5a2:112549-2026",
+      "members": {
+        "beh:70c5164b7cc22bedad946aaa6b86": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-27T12:12:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:70c5164b7cc22bedad946aaa6b86",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c5a2:112549-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-27T12:12:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-25T12%3A43%3A32&updatedTo=2026-11-27T12%3A43%3A32",
+          "title": "Gas Energy Service Contract · South Kesteven District Council"
+        }
+      }
+    },
     "0e546e47f0ad5096839765baa4fbcac65c7f678a07cfb7228df9635ce0f9763f": {
       "information_root": "cbp_wait:cbp_wait:011501:2026-11-22:14:38:51",
       "members": {
@@ -460,6 +493,45 @@
           "source_updated_at": null,
           "source_url": "https://stat.ripe.net/data/bgp-update-activity/data.json?resource=AS5713&num_hours=6&max_samples=24&hide_empty_samples=false",
           "title": "RIPE RIS sampled BGP announcements: AS5713"
+        }
+      }
+    },
+    "0e57ea4a7f453a510fc5c77654aa9d5d19ab098d1a9ebc831df7d68480bbbfc0": {
+      "information_root": "bmkg_nowcast:bmkg_nowcast:b3c3eff3709714f3a6936fc78087",
+      "members": {
+        "beh:16549aad26fc1a96fa8f383a22e4": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "bmkg_nowcast",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-27T11:00:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:16549aad26fc1a96fa8f383a22e4",
+          "information_root": "bmkg_nowcast:bmkg_nowcast:b3c3eff3709714f3a6936fc78087",
+          "origin": "behavioral_registry",
+          "provider": "bmkg_nowcast",
+          "published_at": "2026-11-27T11:00:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Indonesia BMKG",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Indonesia BMKG active provincial nowcast RSS, source-reported only; not global",
+          "source_updated_at": null,
+          "source_url": "https://www.bmkg.go.id/alerts/nowcast/en/CJB20261127006_alert.xml",
+          "title": "Thunderstorm This Evening in Jawa Barat"
         }
       }
     },

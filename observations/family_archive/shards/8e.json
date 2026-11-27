@@ -1,5 +1,51 @@
 {
   "roots": {
+    "8e12bba4cee6e63d3d46cc8d290bce848293857f910eca34fa50eb03c3abaf2f": {
+      "information_root": "ris_bgp:ris_bgp:AS7303:20261127T09",
+      "members": {
+        "beh:3e7f0c10e56abece56e54d2e0bdc": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "public_routing_updates_not_country_outage",
+          "collection_mode": "ris_bgp",
+          "direct_measurement": true,
+          "event_at": null,
+          "first_observed_at": "2026-11-27T12:46:23+00:00",
+          "geography_key": "asn:7303",
+          "geography_label": "AS7303",
+          "geography_precision": "routing_target_not_country_incident",
+          "id": "beh:3e7f0c10e56abece56e54d2e0bdc",
+          "information_root": "ris_bgp:ris_bgp:AS7303:20261127T09",
+          "origin": "behavioral_registry",
+          "provider": "ris_bgp",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "routing_collector_sampled_asn_updates",
+          "source_family": "internet_routing",
+          "source_kind": "sampled_asn_bgp_route_updates_not_network_outage",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "collector_peers_are_not_geo_deduplicated": true,
+            "country_impact_not_established": true,
+            "name": "sampled_6h_bgp_announcements",
+            "registered_network_country_hint": "AR",
+            "returned_sampling_buckets": 6,
+            "source_window_end": "2026-11-27T09:00:00Z",
+            "target_asn": "AS7303",
+            "unit": "announcements",
+            "value": 52480,
+            "window_hours_requested": 6,
+            "withdrawals_unavailable_for_asn": true
+          },
+          "source_scope": "RIPE RIS public route-announcement update samples on six non-Western operated networks; ASNs not country-wide outage detection",
+          "source_updated_at": null,
+          "source_url": "https://stat.ripe.net/data/bgp-update-activity/data.json?resource=AS7303&num_hours=6&max_samples=24&hide_empty_samples=false",
+          "title": "RIPE RIS sampled BGP announcements: AS7303"
+        }
+      }
+    },
     "8e1a49dedf20d9a446e5ef6944aa3f6a9f47cc1aa4631601f2ac968f7b9192e4": {
       "information_root": "coops:8724580:20261123T1300Z",
       "members": {
@@ -378,6 +424,39 @@
           "source_updated_at": null,
           "source_url": "https://bwt.cbp.gov/api/waittimes",
           "title": "CBP estimated commercial border wait — Hidalgo/Pharr / Hidalgo"
+        }
+      }
+    },
+    "8e78f7d48ef9b031b394922cefdf70da5242728ac9da33ee99d524b403df62da": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c59a:112537-2026",
+      "members": {
+        "beh:351952d6444949c283908e23c3e3": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-27T12:02:37+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:351952d6444949c283908e23c3e3",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c59a:112537-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-27T12:02:37Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-25T12%3A43%3A32&updatedTo=2026-11-27T12%3A43%3A32",
+          "title": "Refresh Specialist Advisor Consultant · South Holland District Council"
         }
       }
     },

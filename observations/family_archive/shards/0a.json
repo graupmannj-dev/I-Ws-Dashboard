@@ -241,6 +241,39 @@
         }
       }
     },
+    "0a2ad753795928f4ca4d8a495b0f679eb6c97f6c1b85750e55ade61524e35dca": {
+      "information_root": "nws:9961d34e0b57be0dd6fc6f93",
+      "members": {
+        "beh:62f982deee48d5b526f4a26e02f5": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "nws",
+          "direct_measurement": false,
+          "event_at": "2026-11-27T09:52:00Z",
+          "first_observed_at": "2026-11-27T09:52:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:62f982deee48d5b526f4a26e02f5",
+          "information_root": "nws:9961d34e0b57be0dd6fc6f93",
+          "origin": "behavioral_registry",
+          "provider": "nws",
+          "published_at": "2026-11-27T09:52:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "official_weather_alert_context",
+          "source_measurement": null,
+          "source_scope": "Active NWS marine alerts; severity Moderate",
+          "source_updated_at": null,
+          "source_url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.a0ea80698473c657729019e80f0f28ea0a7d9f62.001.2",
+          "title": "Rip Current Statement - Coastal Palm Beach County"
+        }
+      }
+    },
     "0a455fd18a426c4bb8581cc11c37049db0b2c2a44e15b4b7f15dec08738190de": {
       "information_root": "inmet_br:inmet_br:be9cd2e8405127e712484a18701c",
       "members": {
@@ -752,6 +785,81 @@
               {
                 "count": 4,
                 "title": "List of members of the National Assembly (South Korea), 2024–2028"
+              }
+            ],
+            "name": "sampled_edits_last_three_hours",
+            "sample_cap_reached": true,
+            "unit": "edits",
+            "value": 500
+          },
+          "source_scope": "Wikipedia main-namespace edit-count sample, 14 global language editions, three-hour window capped at 500 per wiki; not geographic location",
+          "source_updated_at": null,
+          "source_url": "https://en.wikipedia.org/wiki/Special:RecentChanges",
+          "title": "Wikipedia en public article-edit activity (sampled)"
+        }
+      }
+    },
+    "0a92be5290d17fca66778af8d48fa576ccbf31a2ddf6f0422de7f9b149876657": {
+      "information_root": "wiki_edits:wiki_edits:en:20261127T12",
+      "members": {
+        "beh:719f7bf6793d887689fe77bb6639": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "wiki_edits",
+          "direct_measurement": false,
+          "event_at": "2026-11-27T12:43:32Z",
+          "first_observed_at": "2026-11-27T12:43:32+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:719f7bf6793d887689fe77bb6639",
+          "information_root": "wiki_edits:wiki_edits:en:20261127T12",
+          "origin": "behavioral_registry",
+          "provider": "wiki_edits",
+          "published_at": "2026-11-27T12:43:32Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "public_encyclopedia_edit_aggregate",
+          "source_family": "public_attention",
+          "source_kind": "bounded_public_edit_count_not_event_verification",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "distinct_articles_in_sample": 447,
+            "maximum_returned_edits": 500,
+            "most_edited_article_counts": [
+              {
+                "count": 8,
+                "title": "Demi"
+              },
+              {
+                "count": 4,
+                "title": "Steve Harwell"
+              },
+              {
+                "count": 3,
+                "title": "2026–27 Heart of Midlothian F.C. season"
+              },
+              {
+                "count": 3,
+                "title": "Jaani Dushman: Ek Anokhi Kahani"
+              },
+              {
+                "count": 3,
+                "title": "One Day Too Late"
+              },
+              {
+                "count": 3,
+                "title": "UMNO"
+              },
+              {
+                "count": 3,
+                "title": "Zophobas opacus"
+              },
+              {
+                "count": 2,
+                "title": "2026–27 Geylang International FC season"
               }
             ],
             "name": "sampled_edits_last_three_hours",

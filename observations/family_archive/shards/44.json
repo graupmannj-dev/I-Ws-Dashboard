@@ -466,6 +466,39 @@
         }
       }
     },
+    "448b477810178e597e3ca0ba6c33d7c0b8dbe58b918aeb99e3eb5d9f1a9771d8": {
+      "information_root": "niord:902c3933-447a-4800-ad00-645219d35212:0:0:0",
+      "members": {
+        "beh:04bd6a4fc2555e4a52be6c736a0a": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "official_scheduled_restriction_not_military_preparation",
+          "collection_mode": "live_maritime",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-27T02:58:16+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "notice_geography_unavailable",
+          "id": "beh:04bd6a4fc2555e4a52be6c736a0a",
+          "information_root": "niord:902c3933-447a-4800-ad00-645219d35212:0:0:0",
+          "origin": "behavioral_registry",
+          "provider": "niord",
+          "published_at": null,
+          "restriction_status": "within_published_validity_window_not_verified_active",
+          "scheduled_valid_from": "2026-11-27T07:00:00Z",
+          "scheduled_valid_until": "2026-11-27T13:00:00Z",
+          "source_dependency_class": null,
+          "source_family": "maritime_restriction",
+          "source_kind": "official_restriction_notice",
+          "source_measurement": null,
+          "source_scope": null,
+          "source_updated_at": "2026-11-27T00:21:53Z",
+          "source_url": "https://niord.dma.dk/#/message/902c3933-447a-4800-ad00-645219d35212",
+          "title": "Denmark. The North Sea. EK R 33 Vejers. Firing exercises. Warning."
+        }
+      }
+    },
     "44a12d4f53e3da5d38a17b20d76072304f3dddb4bdda3b631c552cc68611c677": {
       "information_root": "usgs:us6000uc9c",
       "members": {
@@ -614,6 +647,45 @@
         }
       }
     },
+    "44bb4c1741091736bf64e0ce8f94b76b7d1cc43ae37fd52669fafe172d7cc2f2": {
+      "information_root": "bmkg_nowcast:bmkg_nowcast:424fad74c76baa30321e006d459c",
+      "members": {
+        "beh:58c89c0e0b192373ef58fa655843": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "bmkg_nowcast",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-27T10:45:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:58c89c0e0b192373ef58fa655843",
+          "information_root": "bmkg_nowcast:bmkg_nowcast:424fad74c76baa30321e006d459c",
+          "origin": "behavioral_registry",
+          "provider": "bmkg_nowcast",
+          "published_at": "2026-11-27T10:45:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Indonesia BMKG",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Indonesia BMKG active provincial nowcast RSS, source-reported only; not global",
+          "source_updated_at": null,
+          "source_url": "https://www.bmkg.go.id/alerts/nowcast/en/CJH20261127003_alert.xml",
+          "title": "Thunderstorm This Evening in Jawa Tengah"
+        }
+      }
+    },
     "44c4f957a213adb6ad1dd524aa7b877c7d26b867d904bede9ef5cc44bb252667": {
       "information_root": "ris_bgp:ris_bgp:AS7552:20261121T21",
       "members": {
@@ -657,6 +729,39 @@
           "source_updated_at": null,
           "source_url": "https://stat.ripe.net/data/bgp-update-activity/data.json?resource=AS7552&num_hours=6&max_samples=24&hide_empty_samples=false",
           "title": "RIPE RIS sampled BGP announcements: AS7552"
+        }
+      }
+    },
+    "44cd5c1320e1c6854e8751f10ca03944a0d874404d952525929fa44032831732": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c587:112507-2026",
+      "members": {
+        "beh:9149145a635aa09500e03bd70fff": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-27T11:24:42+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:9149145a635aa09500e03bd70fff",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c587:112507-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-27T11:24:42Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-25T12%3A43%3A32&updatedTo=2026-11-27T12%3A43%3A32",
+          "title": "Internal Audit Services Preliminary Market Engagement · Slough Borough Council"
         }
       }
     },

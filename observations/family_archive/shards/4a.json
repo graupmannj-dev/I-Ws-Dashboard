@@ -154,6 +154,81 @@
         }
       }
     },
+    "4a307c668c2e542a2e9f051d5c2ae47232f85c27f4e782061145a38553e2d2ee": {
+      "information_root": "wiki_edits:wiki_edits:es:20261127T12",
+      "members": {
+        "beh:519d018e5c5f994d0b3606d8258a": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "wiki_edits",
+          "direct_measurement": false,
+          "event_at": "2026-11-27T12:43:25Z",
+          "first_observed_at": "2026-11-27T12:43:25+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:519d018e5c5f994d0b3606d8258a",
+          "information_root": "wiki_edits:wiki_edits:es:20261127T12",
+          "origin": "behavioral_registry",
+          "provider": "wiki_edits",
+          "published_at": "2026-11-27T12:43:25Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "public_encyclopedia_edit_aggregate",
+          "source_family": "public_attention",
+          "source_kind": "bounded_public_edit_count_not_event_verification",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "distinct_articles_in_sample": 340,
+            "maximum_returned_edits": 500,
+            "most_edited_article_counts": [
+              {
+                "count": 12,
+                "title": "José María Díaz Fernández (canónigo)"
+              },
+              {
+                "count": 9,
+                "title": "Rey de España"
+              },
+              {
+                "count": 8,
+                "title": "Marc Márquez"
+              },
+              {
+                "count": 7,
+                "title": "José Antonio Castorina"
+              },
+              {
+                "count": 6,
+                "title": "Clara Campoamor"
+              },
+              {
+                "count": 5,
+                "title": "Andreína Goetz"
+              },
+              {
+                "count": 5,
+                "title": "Cifrado César"
+              },
+              {
+                "count": 5,
+                "title": "George Washington"
+              }
+            ],
+            "name": "sampled_edits_last_three_hours",
+            "sample_cap_reached": true,
+            "unit": "edits",
+            "value": 500
+          },
+          "source_scope": "Wikipedia main-namespace edit-count sample, 14 global language editions, three-hour window capped at 500 per wiki; not geographic location",
+          "source_updated_at": null,
+          "source_url": "https://es.wikipedia.org/wiki/Special:RecentChanges",
+          "title": "Wikipedia es public article-edit activity (sampled)"
+        }
+      }
+    },
     "4a44536cf339b3a45fdd64a06238856dd0719e3cfc2522ca7ee532cd9ab46151": {
       "information_root": "cbp_wait:cbp_wait:260305:2026-11-25:19:37:46",
       "members": {
@@ -515,6 +590,39 @@
           "source_updated_at": null,
           "source_url": "https://ioda.inetintel.cc.gatech.edu/",
           "title": "IODA detected connectivity anomaly: country BY"
+        }
+      }
+    },
+    "4ab2c057e398d8a6327e4df05c7917023d72557bcf7fdfe0c1222909c901a446": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c59d:112540-2026",
+      "members": {
+        "beh:965593915972d12516604826e2c3": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-27T12:04:03+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:965593915972d12516604826e2c3",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c59d:112540-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-27T12:04:03Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-25T12%3A43%3A32&updatedTo=2026-11-27T12%3A43%3A32",
+          "title": "CICA Digital Modernisation · Ministry of Justice"
         }
       }
     },

@@ -140,6 +140,53 @@
         }
       }
     },
+    "2969d80f138ee7d84903e5585297b40f48d449f34b5f014d25e5fd60156c5266": {
+      "information_root": "cbp_wait:cbp_wait:240204:2026-11-27:05:34:48",
+      "members": {
+        "beh:ce0e0d5e330257cb55b9a8c0882e": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-27T12:46:23+00:00",
+          "geography_key": "us-border-port:240204",
+          "geography_label": "El Paso",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:ce0e0d5e330257cb55b9a8c0882e",
+          "information_root": "cbp_wait:cbp_wait:240204:2026-11-27:05:34:48",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Update Pending",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Closed",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/27/2026",
+            "reported_local_time": "05:34:48",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — El Paso / Stanton DCL"
+        }
+      }
+    },
     "29752d97e902f6f6374f1dbd8eef4752371667b32df2f95f1b493174cecc443e": {
       "information_root": "official:711f8f988e0cbf4858e3",
       "members": {
@@ -217,6 +264,52 @@
         }
       }
     },
+    "29835a5f0fb2b0789b46a5ffac9da13dbacee7c46293b9b71ebdde50df9f57ff": {
+      "information_root": "ris_bgp:ris_bgp:AS4766:20261127T09",
+      "members": {
+        "beh:f9b6e4dd79c2f4a164e9bb27a161": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "public_routing_updates_not_country_outage",
+          "collection_mode": "ris_bgp",
+          "direct_measurement": true,
+          "event_at": null,
+          "first_observed_at": "2026-11-27T12:46:23+00:00",
+          "geography_key": "asn:4766",
+          "geography_label": "AS4766",
+          "geography_precision": "routing_target_not_country_incident",
+          "id": "beh:f9b6e4dd79c2f4a164e9bb27a161",
+          "information_root": "ris_bgp:ris_bgp:AS4766:20261127T09",
+          "origin": "behavioral_registry",
+          "provider": "ris_bgp",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "routing_collector_sampled_asn_updates",
+          "source_family": "internet_routing",
+          "source_kind": "sampled_asn_bgp_route_updates_not_network_outage",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "collector_peers_are_not_geo_deduplicated": true,
+            "country_impact_not_established": true,
+            "name": "sampled_6h_bgp_announcements",
+            "registered_network_country_hint": "KR",
+            "returned_sampling_buckets": 6,
+            "source_window_end": "2026-11-27T09:00:00Z",
+            "target_asn": "AS4766",
+            "unit": "announcements",
+            "value": 168379,
+            "window_hours_requested": 6,
+            "withdrawals_unavailable_for_asn": true
+          },
+          "source_scope": "RIPE RIS public route-announcement update samples on six non-Western operated networks; ASNs not country-wide outage detection",
+          "source_updated_at": null,
+          "source_url": "https://stat.ripe.net/data/bgp-update-activity/data.json?resource=AS4766&num_hours=6&max_samples=24&hide_empty_samples=false",
+          "title": "RIPE RIS sampled BGP announcements: AS4766"
+        }
+      }
+    },
     "29900f1e43b531c6763c9dff93679c6d13c937b91711469defb73d7670552aa2": {
       "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c12c:110520-2026",
       "members": {
@@ -280,6 +373,53 @@
           "source_updated_at": null,
           "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-22T13%3A56%3A02&updatedTo=2026-11-24T13%3A56%3A02",
           "title": "Replacement of Embryoscope® + Time-Lapse Embryo Incubator · Sheffield Teaching Hospitals NHS Foundation Trust"
+        }
+      }
+    },
+    "29b292cd6e87d2e558f94643f881000a08c9211eabe69288a8ead66b9bcf5410": {
+      "information_root": "cbp_wait:cbp_wait:231001:2026-11-27:06:34:48",
+      "members": {
+        "beh:2f8d5f069bca8ec9b71ea9603533": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-27T12:46:23+00:00",
+          "geography_key": "us-border-port:231001",
+          "geography_label": "Roma",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:2f8d5f069bca8ec9b71ea9603533",
+          "information_root": "cbp_wait:cbp_wait:231001:2026-11-27:06:34:48",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Lanes Closed",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/27/2026",
+            "reported_local_time": "06:34:48",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Roma"
         }
       }
     },

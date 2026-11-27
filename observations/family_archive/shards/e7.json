@@ -884,6 +884,45 @@
         }
       }
     },
+    "e7e34ec5dbd9b156fa323fb34dc72247f607eb0f7b5fbe3ffd5f6ada3278791b": {
+      "information_root": "bmkg_nowcast:bmkg_nowcast:a9a1a47d560a194a4d98a1e52e9d",
+      "members": {
+        "beh:0b39eb91c8762218029b59348894": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "bmkg_nowcast",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-27T11:30:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:0b39eb91c8762218029b59348894",
+          "information_root": "bmkg_nowcast:bmkg_nowcast:a9a1a47d560a194a4d98a1e52e9d",
+          "origin": "behavioral_registry",
+          "provider": "bmkg_nowcast",
+          "published_at": "2026-11-27T11:30:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Indonesia BMKG",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Indonesia BMKG active provincial nowcast RSS, source-reported only; not global",
+          "source_updated_at": null,
+          "source_url": "https://www.bmkg.go.id/alerts/nowcast/en/CJT20261127007_alert.xml",
+          "title": "Thunderstorm Tonight in Jawa Timur"
+        }
+      }
+    },
     "e7e816486ba8f800ad5304d871457eb5221c95f67147412861b6240c5025dfc7": {
       "information_root": "cbp_wait:cbp_wait:202401:2026-11-20:20:23:04",
       "members": {
@@ -961,6 +1000,39 @@
           "source_updated_at": "2026-11-25T00:21:54Z",
           "source_url": "https://niord.dma.dk/#/message/5e5a14bd-f0dd-4482-8caf-294c563bca1f",
           "title": "Denmark. Kattegat. EK R 45 Hevring. Firing exercises. Warning."
+        }
+      }
+    },
+    "e7ff2a17356f552cf038aea4f04c75f766a49d7631792334749e7987274ba882": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-06d264:112471-2026",
+      "members": {
+        "beh:1639dfe373e5840ae1e896685bfb": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-27T10:47:17+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:1639dfe373e5840ae1e896685bfb",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-06d264:112471-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-27T10:47:17Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-25T12%3A43%3A32&updatedTo=2026-11-27T12%3A43%3A32",
+          "title": "Invitation to Tender for Vinyl Floor Tiles"
         }
       }
     }

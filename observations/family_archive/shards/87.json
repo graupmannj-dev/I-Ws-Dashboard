@@ -663,6 +663,39 @@
         }
       }
     },
+    "87efa27c7f02c258ca332870451aa0452b3d10e8f332266891b696473f1b5fbf": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-077574:112501-2026",
+      "members": {
+        "beh:d5bd01152e3e38a42adcefe541d4": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-27T11:20:24+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:d5bd01152e3e38a42adcefe541d4",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-077574:112501-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-27T11:20:24Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-25T12%3A43%3A32&updatedTo=2026-11-27T12%3A43%3A32",
+          "title": "UKRI-6349 UPLiFT Refrigerant-based Helium Gas Cooler"
+        }
+      }
+    },
     "87f1247fc1ad88fae76860a30b0e971827ea05c6597372cab589424a765d3ed0": {
       "information_root": "cbp_wait:cbp_wait:260301:2026-11-25:00:45:24",
       "members": {
@@ -707,6 +740,45 @@
           "source_updated_at": null,
           "source_url": "https://bwt.cbp.gov/api/waittimes",
           "title": "CBP estimated commercial border wait — Naco"
+        }
+      }
+    },
+    "87f2dd4b73a62454bbdbea18b01ee5a3c8c681d9c0b8f1e65503b38546417bc3": {
+      "information_root": "inmet_br:inmet_br:6a4fec762eaf5bce35a13b38fd67",
+      "members": {
+        "beh:525b6cdc24cd100bc3500987d085": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "inmet_br",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-27T09:40:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:525b6cdc24cd100bc3500987d085",
+          "information_root": "inmet_br:inmet_br:6a4fec762eaf5bce35a13b38fd67",
+          "origin": "behavioral_registry",
+          "provider": "inmet_br",
+          "published_at": "2026-11-27T09:40:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Brazil INMET",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Brazil INMET official severe-weather RSS notices; provider-listed bounded sample",
+          "source_updated_at": null,
+          "source_url": "https://apiprevmet3.inmet.gov.br/avisos/rss/56515",
+          "title": "Aviso de Chuvas Intensas. Severidade Grau: Perigo"
         }
       }
     }

@@ -63,6 +63,39 @@
         }
       }
     },
+    "a6142fb944ae185c0e18aac866741c75e2b15c5cdeb72a581c54a40525c02def": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c595:112528-2026",
+      "members": {
+        "beh:988a0a595ecf4244df1842060e11": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-27T11:53:58+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:988a0a595ecf4244df1842060e11",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c595:112528-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-27T11:53:58Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-25T12%3A43%3A32&updatedTo=2026-11-27T12%3A43%3A32",
+          "title": "Customer Service Excellence Training · Your Housing Group Limited"
+        }
+      }
+    },
     "a61720afedc54d959971b93bc15f74474b15e3e3c35b75eb4612f4cbb4d558d6": {
       "information_root": "cbp_wait:cbp_wait:090102:2026-11-20:21:23:03",
       "members": {
@@ -137,6 +170,53 @@
           "source_updated_at": null,
           "source_url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.kaz.html",
           "title": "Kazakhstan - Level 1: Exercise Normal Precautions"
+        }
+      }
+    },
+    "a640dcb8ddeac76cbbae9675730337f6b18a0d67e3c208fec37f743f3d3b44f7": {
+      "information_root": "cbp_wait:cbp_wait:250601:2026-11-27:04:34:48",
+      "members": {
+        "beh:fb0865521f3eb5622c5ef7b7e2d2": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-27T12:46:23+00:00",
+          "geography_key": "us-border-port:250601",
+          "geography_label": "Otay Mesa",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:fb0865521f3eb5622c5ef7b7e2d2",
+          "information_root": "cbp_wait:cbp_wait:250601:2026-11-27:04:34:48",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "N/A",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/27/2026",
+            "reported_local_time": "04:34:48",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Otay Mesa / Passenger"
         }
       }
     },

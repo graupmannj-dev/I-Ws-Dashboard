@@ -201,6 +201,45 @@
         }
       }
     },
+    "863a03badc64f73793ba3176f2d68a07084da2618c48592932e463db6196fa2a": {
+      "information_root": "bmkg_nowcast:bmkg_nowcast:51c7838545e487465a53aee1edf8",
+      "members": {
+        "beh:074b2b2a730f2ddccc69f5bfd135": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "bmkg_nowcast",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-27T10:50:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:074b2b2a730f2ddccc69f5bfd135",
+          "information_root": "bmkg_nowcast:bmkg_nowcast:51c7838545e487465a53aee1edf8",
+          "origin": "behavioral_registry",
+          "provider": "bmkg_nowcast",
+          "published_at": "2026-11-27T10:50:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Indonesia BMKG",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Indonesia BMKG active provincial nowcast RSS, source-reported only; not global",
+          "source_updated_at": null,
+          "source_url": "https://www.bmkg.go.id/alerts/nowcast/en/CKT20261127004_alert.xml",
+          "title": "Thunderstorm Tonight in Kalimantan Timur"
+        }
+      }
+    },
     "86551a5f392db7e75837595c802b064e8c5044bc8a61d1447d61cc2cbc538a50": {
       "information_root": "niord:100277fa-16b5-41b8-a7c5-4c1db67accba:3:0:0",
       "members": {
@@ -481,6 +520,39 @@
           "source_updated_at": null,
           "source_url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.42060a29d4857ca4855e30609b395835b97b1273.001.1",
           "title": "Flood Advisory - Indian River, FL; Okeechobee, FL; St. Lucie, FL"
+        }
+      }
+    },
+    "86c7afe58b722ee76bafd8e388baa6dbed143abf7c102aaa87d0addad9046f1f": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-050e45:112489-2026",
+      "members": {
+        "beh:d8468d14f3d9752e30e71255102a": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-27T11:06:16+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:d8468d14f3d9752e30e71255102a",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-050e45:112489-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-27T11:06:16Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-25T12%3A43%3A32&updatedTo=2026-11-27T12%3A43%3A32",
+          "title": "Major Projects Delivery Framework · DfI Transport and Road Asset Management (TRAM)"
         }
       }
     },

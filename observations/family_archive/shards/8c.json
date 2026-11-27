@@ -324,6 +324,53 @@
         }
       }
     },
+    "8c4dec835c0251cb183a5a8e71e242d76e3c12ae75ed81b6bb1ccfb837b698bc": {
+      "information_root": "cbp_wait:cbp_wait:360401:2026-11-27:06:34:48",
+      "members": {
+        "beh:670ed64584387caabbbd69a81b18": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-27T12:46:23+00:00",
+          "geography_key": "us-border-port:360401",
+          "geography_label": "International Falls",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:670ed64584387caabbbd69a81b18",
+          "information_root": "cbp_wait:cbp_wait:360401:2026-11-27:06:34:48",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "no delay",
+            "lanes_open": 1,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "At 8:00 am CST",
+            "reported_local_date": "11/27/2026",
+            "reported_local_time": "06:34:48",
+            "source_declared_border": "Canadian Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 0
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — International Falls"
+        }
+      }
+    },
     "8c4f34db3aba82d362da0bed3ebabb6a147f554c806509eece27851c11ef66e4": {
       "information_root": "cbp_wait:cbp_wait:380001:2026-11-22:06:34:18",
       "members": {
@@ -644,6 +691,39 @@
         }
       }
     },
+    "8c9da9a30e99289b6c6528f53218cab4b4414ae9cb355d140a2379e08dfaacd7": {
+      "information_root": "nws:d89c36aa1a565dbfa932e3a7",
+      "members": {
+        "beh:47f576922ac8ea5c4abbedfd3a94": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "nws",
+          "direct_measurement": false,
+          "event_at": "2026-11-27T09:52:00Z",
+          "first_observed_at": "2026-11-27T09:52:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:47f576922ac8ea5c4abbedfd3a94",
+          "information_root": "nws:d89c36aa1a565dbfa932e3a7",
+          "origin": "behavioral_registry",
+          "provider": "nws",
+          "published_at": "2026-11-27T09:52:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "official_weather_alert_context",
+          "source_measurement": null,
+          "source_scope": "Active NWS marine alerts; severity Minor",
+          "source_updated_at": null,
+          "source_url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.a0ea80698473c657729019e80f0f28ea0a7d9f62.004.1",
+          "title": "Coastal Flood Statement - Mainland Monroe; Far South Miami-Dade County"
+        }
+      }
+    },
     "8ca6d35e2ff36d809f3418d9970a9f72fead18d12d74cec87e716b06a9763e7f": {
       "information_root": "wiki_edits:wiki_edits:fa:20261125T19",
       "members": {
@@ -763,6 +843,39 @@
           "source_updated_at": null,
           "source_url": "https://bwt.cbp.gov/api/waittimes",
           "title": "CBP estimated commercial border wait — Hidalgo/Pharr / Anzalduas International Bridge"
+        }
+      }
+    },
+    "8ccf462cb8dccdd075e148e3ff14d5c5309b9684e3a72406cd467ebd4b88d2c4": {
+      "information_root": "niord:9ce124cb-bfb5-4ac6-8449-c0b0ab9f5ed7:1:0:0",
+      "members": {
+        "beh:387a678e192f6914917561c9279a": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "official_scheduled_restriction_not_military_preparation",
+          "collection_mode": "live_maritime",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-27T02:58:16+00:00",
+          "geography_key": "source-footprint:7cd0c92c0114570caed57302",
+          "geography_label": "Official Polygon notice area",
+          "geography_precision": "provider_defined_notice_boundary_not_event_point",
+          "id": "beh:387a678e192f6914917561c9279a",
+          "information_root": "niord:9ce124cb-bfb5-4ac6-8449-c0b0ab9f5ed7:1:0:0",
+          "origin": "behavioral_registry",
+          "provider": "niord",
+          "published_at": null,
+          "restriction_status": "within_published_validity_window_not_verified_active",
+          "scheduled_valid_from": "2026-11-27T00:21:51Z",
+          "scheduled_valid_until": "2026-11-30T16:00:00Z",
+          "source_dependency_class": null,
+          "source_family": "maritime_restriction",
+          "source_kind": "official_restriction_notice",
+          "source_measurement": null,
+          "source_scope": null,
+          "source_updated_at": "2026-11-27T00:21:51Z",
+          "source_url": "https://niord.dma.dk/#/message/9ce124cb-bfb5-4ac6-8449-c0b0ab9f5ed7",
+          "title": "Denmark. Kattegat. EK R 18 Jaegerspris. Firing exercises. Warning."
         }
       }
     },

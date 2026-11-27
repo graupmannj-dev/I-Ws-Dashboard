@@ -136,6 +136,39 @@
         }
       }
     },
+    "cf3378910cf3688e73de6273d590a009078cb2785a0dc331a898db5fa0b62efa": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c577:112482-2026",
+      "members": {
+        "beh:b6ccf08cb2b9e887dcce66926d05": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-27T11:02:34+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:b6ccf08cb2b9e887dcce66926d05",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c577:112482-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-27T11:02:34Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-25T12%3A43%3A32&updatedTo=2026-11-27T12%3A43%3A32",
+          "title": "Elective Care Services - Ophthalmology Services - Humber and North Yorkshire · NHS HUMBER AND NORTH YORKSHIRE INTEGRATED CARE BOARD"
+        }
+      }
+    },
     "cf57adc5ebc4ca4f37a266e0e0adb3f89182977e0e1a5a09b110d12dc2199865": {
       "information_root": "cbp_wait:cbp_wait:230201:2026-11-20:20:23:04",
       "members": {
@@ -180,6 +213,45 @@
           "source_updated_at": null,
           "source_url": "https://bwt.cbp.gov/api/waittimes",
           "title": "CBP estimated commercial border wait — Del Rio"
+        }
+      }
+    },
+    "cf7cff8c7fedf909d969946922bdeb3dc787ea951aea9bef1a63d0a7bcbd46e5": {
+      "information_root": "bmkg_nowcast:bmkg_nowcast:c4388a46ddd117791f94ad639713",
+      "members": {
+        "beh:16713f937897d59acb524aee7da3": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "bmkg_nowcast",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-27T10:45:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:16713f937897d59acb524aee7da3",
+          "information_root": "bmkg_nowcast:bmkg_nowcast:c4388a46ddd117791f94ad639713",
+          "origin": "behavioral_registry",
+          "provider": "bmkg_nowcast",
+          "published_at": "2026-11-27T10:45:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Indonesia BMKG",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Indonesia BMKG active provincial nowcast RSS, source-reported only; not global",
+          "source_updated_at": null,
+          "source_url": "https://www.bmkg.go.id/alerts/nowcast/en/CSK20261127004_alert.xml",
+          "title": "Thunderstorm Tonight in Sulawesi Barat"
         }
       }
     },

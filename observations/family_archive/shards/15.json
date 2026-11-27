@@ -686,6 +686,53 @@
         }
       }
     },
+    "15ee4c4c3702cb3cc7e2491fda84816585077689fa793e1209ca4f88ccdaa476": {
+      "information_root": "cbp_wait:cbp_wait:535503:2026-11-27:06:34:48",
+      "members": {
+        "beh:e0580b41cee15c60c2e1e5130168": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-27T12:46:23+00:00",
+          "geography_key": "us-border-port:535503",
+          "geography_label": "Brownsville",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:e0580b41cee15c60c2e1e5130168",
+          "information_root": "cbp_wait:cbp_wait:535503:2026-11-27:06:34:48",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Update Pending",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/27/2026",
+            "reported_local_time": "06:34:48",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Brownsville / Los Indios"
+        }
+      }
+    },
     "15f309f278d5336c10e4c43d6777fd7d466a492cd390f58189b6d8ffa258b168": {
       "information_root": "cbp_wait:cbp_wait:090102:2026-11-24:08:50:02",
       "members": {
@@ -763,6 +810,39 @@
           "source_updated_at": null,
           "source_url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPODVTY1JXZjVuLTdIVjE3SzBBUUE1RHhuRTdkbGFEOUQ3Ymp3bXhTNk8xTFJVMDlGa0tOM1R2cFNNRjRGanJwbEtUXzNkYUZwZ25lZFNyUzF3dTB3Y3U2a1YteGJGeWFxOXhxMHJ1anhTUjJoZkNqN3o0N3VFOUZ2S2xXYk44REhOUFlvQzJKMU1kcFVYbjFjaEhxaEpqRzN4LWM4X2FUMHhJSWdEYlhuMA?oc=5",
           "title": "Cool Carriers Launches Newest Vessel, Cool Eternity, at Shikoku Shipyard - The Maritime Executive"
+        }
+      }
+    },
+    "15fba32e3d065deb8e45c82fb6c06470b871d0d0349e076cdf0dd480f264dad2": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c580:112499-2026",
+      "members": {
+        "beh:d123d30b0e051f392c09e2f5e189": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-27T11:16:34+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:d123d30b0e051f392c09e2f5e189",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c580:112499-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-27T11:16:34Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-25T12%3A43%3A32&updatedTo=2026-11-27T12%3A43%3A32",
+          "title": "Car Park Management - Octopass Staff Parking Permit Portal System Licence · North West Anglia NHS Foundation Trust"
         }
       }
     }

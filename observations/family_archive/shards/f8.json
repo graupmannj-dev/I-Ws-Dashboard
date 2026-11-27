@@ -157,6 +157,39 @@
         }
       }
     },
+    "f82b3c8a3542fe6551b96e63fdcaf05827da8064e4fedaaa9cbd9c401106dad2": {
+      "information_root": "niord:547ceae3-aca2-4630-a228-f0a6cac2ec8f:3:0:0",
+      "members": {
+        "beh:e3e781ec8b591f0255a896b6acd6": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "official_scheduled_restriction_not_military_preparation",
+          "collection_mode": "live_maritime",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-27T02:58:16+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "notice_geography_unavailable",
+          "id": "beh:e3e781ec8b591f0255a896b6acd6",
+          "information_root": "niord:547ceae3-aca2-4630-a228-f0a6cac2ec8f:3:0:0",
+          "origin": "behavioral_registry",
+          "provider": "niord",
+          "published_at": null,
+          "restriction_status": "within_published_validity_window_not_verified_active",
+          "scheduled_valid_from": "2026-11-27T00:21:51Z",
+          "scheduled_valid_until": "2026-11-27T14:00:00Z",
+          "source_dependency_class": null,
+          "source_family": "maritime_restriction",
+          "source_kind": "official_restriction_notice",
+          "source_measurement": null,
+          "source_scope": null,
+          "source_updated_at": "2026-11-27T00:21:52Z",
+          "source_url": "https://niord.dma.dk/#/message/547ceae3-aca2-4630-a228-f0a6cac2ec8f",
+          "title": "Denmark. Kattegat. EK R 19 MULTEX. Firing exercises. Warning."
+        }
+      }
+    },
     "f83129638c79763b2df439644822749c0fceddab517ae59013a0991e6874f4a6": {
       "information_root": "ioda:d06018d30080078fe00867ae",
       "members": {
@@ -311,6 +344,81 @@
           "source_updated_at": "2026-11-16T09:21:53Z",
           "source_url": "https://niord.dma.dk/#/message/8d5a1de4-9b8e-4c89-bd26-41a2becc8cb3",
           "title": "Denmark. The North Sea. 15 Nymindegab. Firing exercises. Warning."
+        }
+      }
+    },
+    "f86199f232603bc76b7864389bd4f2988e4cc1caa69a39e96a921eb0d2c89561": {
+      "information_root": "wiki_edits:wiki_edits:ru:20261127T12",
+      "members": {
+        "beh:30b2eb2b40a8d585bbe2dad5af29": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "wiki_edits",
+          "direct_measurement": false,
+          "event_at": "2026-11-27T12:43:19Z",
+          "first_observed_at": "2026-11-27T12:43:19+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:30b2eb2b40a8d585bbe2dad5af29",
+          "information_root": "wiki_edits:wiki_edits:ru:20261127T12",
+          "origin": "behavioral_registry",
+          "provider": "wiki_edits",
+          "published_at": "2026-11-27T12:43:19Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "public_encyclopedia_edit_aggregate",
+          "source_family": "public_attention",
+          "source_kind": "bounded_public_edit_count_not_event_verification",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "distinct_articles_in_sample": 286,
+            "maximum_returned_edits": 500,
+            "most_edited_article_counts": [
+              {
+                "count": 42,
+                "title": "Trick Daddy"
+              },
+              {
+                "count": 25,
+                "title": "Обыкновенные люди"
+              },
+              {
+                "count": 13,
+                "title": "Челурит"
+              },
+              {
+                "count": 10,
+                "title": "Кузьмин, Константин Александрович"
+              },
+              {
+                "count": 8,
+                "title": "ЦСКА (женский футбольный клуб)"
+              },
+              {
+                "count": 7,
+                "title": "Залужное (Воронежская область)"
+              },
+              {
+                "count": 7,
+                "title": "Миёси, Аяка"
+              },
+              {
+                "count": 6,
+                "title": "Гарро, Хосе де"
+              }
+            ],
+            "name": "sampled_edits_last_three_hours",
+            "sample_cap_reached": true,
+            "unit": "edits",
+            "value": 500
+          },
+          "source_scope": "Wikipedia main-namespace edit-count sample, 14 global language editions, three-hour window capped at 500 per wiki; not geographic location",
+          "source_updated_at": null,
+          "source_url": "https://ru.wikipedia.org/wiki/Special:RecentChanges",
+          "title": "Wikipedia ru public article-edit activity (sampled)"
         }
       }
     },

@@ -80,6 +80,39 @@
         }
       }
     },
+    "5d23e8d4eb6b6835af02e0b4d79f66db14f1e59af08974a03ff2434aadf9326d": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c578:112483-2026",
+      "members": {
+        "beh:f9e43120ccf922477d95e76d1905": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-27T11:03:04+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:f9e43120ccf922477d95e76d1905",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c578:112483-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-27T11:03:04Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-25T12%3A43%3A32&updatedTo=2026-11-27T12%3A43%3A32",
+          "title": "Elective Care Services - Ophthalmology Services - Humber and North Yorkshire · NHS HUMBER AND NORTH YORKSHIRE INTEGRATED CARE BOARD"
+        }
+      }
+    },
     "5d28d78f6f2c145b3f0756ca95348e0ab28d6a83f6741fe22fefc1f71d8e6f0f": {
       "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c524:112346-2026",
       "members": {
@@ -451,6 +484,168 @@
           "source_updated_at": null,
           "source_url": "https://bwt.cbp.gov/api/waittimes",
           "title": "CBP estimated commercial border wait — Port Huron / Bluewater Bridge"
+        }
+      }
+    },
+    "5d7d6892f389e2ea48b63127de0134a3975790c6d7b6f0ecce0e971de42a6414": {
+      "information_root": "coops:8724580:20261127T1236Z",
+      "members": {
+        "beh:f21ee8f136ebc679755378774849": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "coops",
+          "direct_measurement": true,
+          "event_at": "2026-11-27T12:36:00Z",
+          "first_observed_at": "2026-11-27T12:36:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:f21ee8f136ebc679755378774849",
+          "information_root": "coops:8724580:20261127T1236Z",
+          "origin": "behavioral_registry",
+          "provider": "coops",
+          "published_at": "2026-11-27T12:36:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "station_physical_measurement",
+          "source_family": "port_conditions",
+          "source_kind": "selected_port_water_level_measurement",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "metric_comparable_only_same_station_datum_and_sample_window": true,
+            "name": "observed_water_level",
+            "station": "8724580",
+            "unit": "meters_MLLW",
+            "value": 0.079
+          },
+          "source_scope": "NOAA CO-OPS water levels at San Francisco, Key West and Sewells Point; stations only",
+          "source_updated_at": null,
+          "source_url": "https://tidesandcurrents.noaa.gov/waterlevels.html?id=8724580",
+          "title": "Key West, FL observed water level (no anomaly classification)"
+        }
+      }
+    },
+    "5d7e163dca551facc2438eabcb695f3733d420a9649cc1f75aea9036bcd5f57a": {
+      "information_root": "cbp_wait:cbp_wait:230501:2026-11-27:06:34:48",
+      "members": {
+        "beh:7d6a8af84ac5bab58fe8643cc214": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-27T12:46:23+00:00",
+          "geography_key": "us-border-port:230501",
+          "geography_label": "Hidalgo/Pharr",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:7d6a8af84ac5bab58fe8643cc214",
+          "information_root": "cbp_wait:cbp_wait:230501:2026-11-27:06:34:48",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "N/A",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/27/2026",
+            "reported_local_time": "06:34:48",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Hidalgo/Pharr / Hidalgo"
+        }
+      }
+    },
+    "5db6539aef07110fba44f37fd14ac07617ed6e664dc48c375d161e35b8772c51": {
+      "information_root": "wiki_edits:wiki_edits:ko:20261127T12",
+      "members": {
+        "beh:32c469e6bf8d0b1cf19c8e74391b": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "wiki_edits",
+          "direct_measurement": false,
+          "event_at": "2026-11-27T12:43:29Z",
+          "first_observed_at": "2026-11-27T12:43:29+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:32c469e6bf8d0b1cf19c8e74391b",
+          "information_root": "wiki_edits:wiki_edits:ko:20261127T12",
+          "origin": "behavioral_registry",
+          "provider": "wiki_edits",
+          "published_at": "2026-11-27T12:43:29Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "public_encyclopedia_edit_aggregate",
+          "source_family": "public_attention",
+          "source_kind": "bounded_public_edit_count_not_event_verification",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "distinct_articles_in_sample": 385,
+            "maximum_returned_edits": 500,
+            "most_edited_article_counts": [
+              {
+                "count": 13,
+                "title": "입 냄새"
+              },
+              {
+                "count": 8,
+                "title": "베르트부인쥐여우원숭이"
+              },
+              {
+                "count": 7,
+                "title": "우장산동"
+              },
+              {
+                "count": 6,
+                "title": "전미 여자 농구 협회"
+              },
+              {
+                "count": 5,
+                "title": "김제 지평선 축제"
+              },
+              {
+                "count": 5,
+                "title": "위대한 방옥숙"
+              },
+              {
+                "count": 4,
+                "title": "2026년 대한민국의 텔레비전 드라마 목록"
+              },
+              {
+                "count": 4,
+                "title": "데인저러스 메소드"
+              }
+            ],
+            "name": "sampled_edits_last_three_hours",
+            "sample_cap_reached": true,
+            "unit": "edits",
+            "value": 500
+          },
+          "source_scope": "Wikipedia main-namespace edit-count sample, 14 global language editions, three-hour window capped at 500 per wiki; not geographic location",
+          "source_updated_at": null,
+          "source_url": "https://ko.wikipedia.org/wiki/Special:RecentChanges",
+          "title": "Wikipedia ko public article-edit activity (sampled)"
         }
       }
     },

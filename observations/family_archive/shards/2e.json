@@ -479,6 +479,45 @@
         }
       }
     },
+    "2e7840f86c81abb8fa8f3e5040197767e7378ea07ba56604092c762757e1e9b7": {
+      "information_root": "bmkg_nowcast:bmkg_nowcast:eb3086e97002aaf873195e5ffc06",
+      "members": {
+        "beh:1e8788432467d5bfdecb1ad02bf5": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "bmkg_nowcast",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-27T10:30:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:1e8788432467d5bfdecb1ad02bf5",
+          "information_root": "bmkg_nowcast:bmkg_nowcast:eb3086e97002aaf873195e5ffc06",
+          "origin": "behavioral_registry",
+          "provider": "bmkg_nowcast",
+          "published_at": "2026-11-27T10:30:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Indonesia BMKG",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Indonesia BMKG active provincial nowcast RSS, source-reported only; not global",
+          "source_updated_at": null,
+          "source_url": "https://www.bmkg.go.id/alerts/nowcast/en/CKU20261127002_alert.xml",
+          "title": "Thunderstorm This Evening in Kalimantan Utara"
+        }
+      }
+    },
     "2e7ca98989f54106fdcb8d8c1420cbf2793e68532a271956ae0321ebad1e63dc": {
       "information_root": "niord:1331ad04-38eb-4c80-b13d-c78c221c5c69:0:3:0",
       "members": {
@@ -853,6 +892,39 @@
           "source_updated_at": null,
           "source_url": "https://bwt.cbp.gov/api/waittimes",
           "title": "CBP estimated commercial border wait — Madawaska"
+        }
+      }
+    },
+    "2ec36afed0d088d697228809eab40170f09437dda92e0b2c0adbd95dd7c2c4c4": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-06c2ec:112510-2026",
+      "members": {
+        "beh:5b744c9b2533f3bd515aeecca945": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-27T11:26:22+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:5b744c9b2533f3bd515aeecca945",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-06c2ec:112510-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-27T11:26:22Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-25T12%3A43%3A32&updatedTo=2026-11-27T12%3A43%3A32",
+          "title": "715884538-Project Strong · Ministry of Defence"
         }
       }
     },

@@ -112,6 +112,45 @@
         }
       }
     },
+    "751f96371b78798dd695291abcf472b2bc876c545cedd5d07a85cae5b439574a": {
+      "information_root": "bmkg_nowcast:bmkg_nowcast:d83bf89db0e001b85e38b4f90f69",
+      "members": {
+        "beh:16a64240cd025be730c8c5b7084c": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "bmkg_nowcast",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-27T12:00:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:16a64240cd025be730c8c5b7084c",
+          "information_root": "bmkg_nowcast:bmkg_nowcast:d83bf89db0e001b85e38b4f90f69",
+          "origin": "behavioral_registry",
+          "provider": "bmkg_nowcast",
+          "published_at": "2026-11-27T12:00:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Indonesia BMKG",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Indonesia BMKG active provincial nowcast RSS, source-reported only; not global",
+          "source_updated_at": null,
+          "source_url": "https://www.bmkg.go.id/alerts/nowcast/en/CSL20261127006_alert.xml",
+          "title": "Thunderstorm Tonight in Sulawesi Selatan"
+        }
+      }
+    },
     "7552a661e2bd876da6b21dd7198442e75b216a93e735ef54a3ae6561a08e4de5": {
       "information_root": "nws:5f9bed605fe42817f803be32",
       "members": {
@@ -305,6 +344,53 @@
         }
       }
     },
+    "7564fcd1fa4be7498886af679cc6c0bd669552cb0db3210e950486d26958e45d": {
+      "information_root": "cbp_wait:cbp_wait:070801:2026-11-27:07:34:48",
+      "members": {
+        "beh:670312034cd46a80e53de10a41f1": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-27T12:46:23+00:00",
+          "geography_key": "us-border-port:070801",
+          "geography_label": "Alexandria Bay",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:670312034cd46a80e53de10a41f1",
+          "information_root": "cbp_wait:cbp_wait:070801:2026-11-27:07:34:48",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Update Pending",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/27/2026",
+            "reported_local_time": "07:34:48",
+            "source_declared_border": "Canadian Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Alexandria Bay / Thousand Islands Bridge"
+        }
+      }
+    },
     "756576575104ea6d7db732b13b3c968763812086f28ea3a75ceec18bdb4e3be1": {
       "information_root": "cbp_wait:cbp_wait:250409:2026-11-21:17:22:12",
       "members": {
@@ -349,6 +435,39 @@
           "source_updated_at": null,
           "source_url": "https://bwt.cbp.gov/api/waittimes",
           "title": "CBP estimated commercial border wait — San Ysidro / Cross Border Express"
+        }
+      }
+    },
+    "756f0cf1f60303f316e6c514ae768ffa64ee42de2b571e35123efc9836505950": {
+      "information_root": "niord:19be7a1d-3ee6-4ef4-815d-9a1954673813:3:0:0",
+      "members": {
+        "beh:ab1e88e3aca4e788b9d205a65416": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "official_scheduled_restriction_not_military_preparation",
+          "collection_mode": "live_maritime",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-27T02:58:16+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "notice_geography_unavailable",
+          "id": "beh:ab1e88e3aca4e788b9d205a65416",
+          "information_root": "niord:19be7a1d-3ee6-4ef4-815d-9a1954673813:3:0:0",
+          "origin": "behavioral_registry",
+          "provider": "niord",
+          "published_at": null,
+          "restriction_status": "within_published_validity_window_not_verified_active",
+          "scheduled_valid_from": "2026-11-27T00:21:51Z",
+          "scheduled_valid_until": "2026-11-27T14:00:00Z",
+          "source_dependency_class": null,
+          "source_family": "maritime_restriction",
+          "source_kind": "official_restriction_notice",
+          "source_measurement": null,
+          "source_scope": null,
+          "source_updated_at": "2026-11-27T00:21:52Z",
+          "source_url": "https://niord.dma.dk/#/message/19be7a1d-3ee6-4ef4-815d-9a1954673813",
+          "title": "Denmark. Kattegat. EK R 20 Yderby. Firing exercises. Warning."
         }
       }
     },
@@ -870,6 +989,53 @@
           "source_updated_at": null,
           "source_url": "https://ioda.inetintel.cc.gatech.edu/",
           "title": "IODA detected connectivity anomaly: country MR"
+        }
+      }
+    },
+    "75d79b1ab266e1ab1d4881136699fd997bd59af4bf136ca357cbc6d4c33b3e6e": {
+      "information_root": "cbp_wait:cbp_wait:071201:2026-11-27:07:34:48",
+      "members": {
+        "beh:ac2d775e8f6cc7b3c0841048bcdf": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-27T12:46:23+00:00",
+          "geography_key": "us-border-port:071201",
+          "geography_label": "Champlain",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:ac2d775e8f6cc7b3c0841048bcdf",
+          "information_root": "cbp_wait:cbp_wait:071201:2026-11-27:07:34:48",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Update Pending",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/27/2026",
+            "reported_local_time": "07:34:48",
+            "source_declared_border": "Canadian Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Champlain"
         }
       }
     },

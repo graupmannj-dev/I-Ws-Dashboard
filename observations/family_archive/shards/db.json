@@ -308,6 +308,53 @@
         }
       }
     },
+    "db90658d842d26acf0853a1ed1841231b532ca89781850cd2d83c3a903020983": {
+      "information_root": "cbp_wait:cbp_wait:230404:2026-11-27:06:34:48",
+      "members": {
+        "beh:8d804506c69a2d499880940a25d4": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-27T12:46:23+00:00",
+          "geography_key": "us-border-port:230404",
+          "geography_label": "Laredo",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:8d804506c69a2d499880940a25d4",
+          "information_root": "cbp_wait:cbp_wait:230404:2026-11-27:06:34:48",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "no delay",
+            "lanes_open": 4,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Closed",
+            "reported_lane_clock": "At 7:00 am CST",
+            "reported_local_date": "11/27/2026",
+            "reported_local_time": "06:34:48",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 0
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Laredo / World Trade Bridge"
+        }
+      }
+    },
     "db9ae595df39f406479690c101baad7bcf9572379cb40d0f757e76394c5d4e30": {
       "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c4dd:112248-2026",
       "members": {
@@ -831,6 +878,46 @@
           "source_updated_at": null,
           "source_url": "https://tidesandcurrents.noaa.gov/waterlevels.html?id=8724580",
           "title": "Key West, FL observed water level (no anomaly classification)"
+        }
+      }
+    },
+    "dbe636992a02400144a502120e077339b3e71fb180886b000163708bc0f4a038": {
+      "information_root": "coops:8638610:20261127T1236Z",
+      "members": {
+        "beh:f8a69a2ac69fa0670e7ab0b127a1": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "coops",
+          "direct_measurement": true,
+          "event_at": "2026-11-27T12:36:00Z",
+          "first_observed_at": "2026-11-27T12:36:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:f8a69a2ac69fa0670e7ab0b127a1",
+          "information_root": "coops:8638610:20261127T1236Z",
+          "origin": "behavioral_registry",
+          "provider": "coops",
+          "published_at": "2026-11-27T12:36:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "station_physical_measurement",
+          "source_family": "port_conditions",
+          "source_kind": "selected_port_water_level_measurement",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "metric_comparable_only_same_station_datum_and_sample_window": true,
+            "name": "observed_water_level",
+            "station": "8638610",
+            "unit": "meters_MLLW",
+            "value": 0.69
+          },
+          "source_scope": "NOAA CO-OPS water levels at San Francisco, Key West and Sewells Point; stations only",
+          "source_updated_at": null,
+          "source_url": "https://tidesandcurrents.noaa.gov/waterlevels.html?id=8638610",
+          "title": "Sewells Point, VA observed water level (no anomaly classification)"
         }
       }
     }

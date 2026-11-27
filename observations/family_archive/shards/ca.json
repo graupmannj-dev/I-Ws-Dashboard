@@ -30,6 +30,78 @@
         }
       }
     },
+    "ca1b0a9a2563a51936a5124c54f7822c5a38dad2c3b3405a1dd94df7a2f483a2": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07bb1e:112487-2026",
+      "members": {
+        "beh:79823c980de62ca740287f3ce44a": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-27T11:04:40+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:79823c980de62ca740287f3ce44a",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07bb1e:112487-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-27T11:04:40Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-25T12%3A43%3A32&updatedTo=2026-11-27T12%3A43%3A32",
+          "title": "Invitation to Tender for the Cleaning Services Contract at Northern Star Academies Trust · NORTHERN STAR ACADEMIES TRUST"
+        }
+      }
+    },
+    "ca1eb04b9b98370db8bb04831c362450a555b5495b7226d97d38bbe7db3ea0e7": {
+      "information_root": "inmet_br:inmet_br:1ecb322b331a2459a7e7dc2acb55",
+      "members": {
+        "beh:95d38a6a93b839b5ba21dc8c4aec": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "inmet_br",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-27T09:12:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:95d38a6a93b839b5ba21dc8c4aec",
+          "information_root": "inmet_br:inmet_br:1ecb322b331a2459a7e7dc2acb55",
+          "origin": "behavioral_registry",
+          "provider": "inmet_br",
+          "published_at": "2026-11-27T09:12:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Brazil INMET",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Brazil INMET official severe-weather RSS notices; provider-listed bounded sample",
+          "source_updated_at": null,
+          "source_url": "https://apiprevmet3.inmet.gov.br/avisos/rss/56517",
+          "title": "Aviso de Chuvas Intensas. Severidade Grau: Perigo Potencial"
+        }
+      }
+    },
     "ca2d5c85e07418281fbe03e3924369579172798a5a53d713ca4bb56862d151bf": {
       "information_root": "ioda:9565bfbb1852d1a90de8446c",
       "members": {

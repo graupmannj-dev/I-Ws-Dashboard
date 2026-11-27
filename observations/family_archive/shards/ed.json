@@ -270,6 +270,81 @@
         }
       }
     },
+    "ed6aeeeab837d689d3bf50383fafbcc31d556c336d2595ae364d6aec5fc5be58": {
+      "information_root": "wiki_edits:wiki_edits:ar:20261127T12",
+      "members": {
+        "beh:9be22eb18d554f4627aed90d26ed": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "wiki_edits",
+          "direct_measurement": false,
+          "event_at": "2026-11-27T12:43:31Z",
+          "first_observed_at": "2026-11-27T12:43:31+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:9be22eb18d554f4627aed90d26ed",
+          "information_root": "wiki_edits:wiki_edits:ar:20261127T12",
+          "origin": "behavioral_registry",
+          "provider": "wiki_edits",
+          "published_at": "2026-11-27T12:43:31Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "public_encyclopedia_edit_aggregate",
+          "source_family": "public_attention",
+          "source_kind": "bounded_public_edit_count_not_event_verification",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "distinct_articles_in_sample": 451,
+            "maximum_returned_edits": 500,
+            "most_edited_article_counts": [
+              {
+                "count": 7,
+                "title": "مسودة:علي أبوحميد"
+              },
+              {
+                "count": 7,
+                "title": "مصطفى فهمي (ممثل)"
+              },
+              {
+                "count": 5,
+                "title": "حسن الشافعي"
+              },
+              {
+                "count": 4,
+                "title": "حريق الطريق الدائري بالوراق 2026"
+              },
+              {
+                "count": 3,
+                "title": "ريا أنتونيو"
+              },
+              {
+                "count": 3,
+                "title": "زئيف"
+              },
+              {
+                "count": 3,
+                "title": "زئيف تيومكن"
+              },
+              {
+                "count": 3,
+                "title": "قائمة الزلازل في 2026"
+              }
+            ],
+            "name": "sampled_edits_last_three_hours",
+            "sample_cap_reached": true,
+            "unit": "edits",
+            "value": 500
+          },
+          "source_scope": "Wikipedia main-namespace edit-count sample, 14 global language editions, three-hour window capped at 500 per wiki; not geographic location",
+          "source_updated_at": null,
+          "source_url": "https://ar.wikipedia.org/wiki/Special:RecentChanges",
+          "title": "Wikipedia ar public article-edit activity (sampled)"
+        }
+      }
+    },
     "ed6ec770cb66350ed0450aa2d7944f047dc6fc769269902c55ac67797cea5f98": {
       "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c2c9:111304-2026",
       "members": {
@@ -909,6 +984,45 @@
           "source_updated_at": "2026-11-24T00:21:53Z",
           "source_url": "https://niord.dma.dk/#/message/6d24b482-144d-4132-a360-95b2c206d6cc",
           "title": "Denmark. Kattegat. EK R 45 Hevring. Firing exercises. Warning."
+        }
+      }
+    },
+    "edf5402fb289f4f45df76525a929f197cbd360cfb0010457c977ffe30bbf17a9": {
+      "information_root": "bmkg_nowcast:bmkg_nowcast:86e5421b2028d5470f4cccc713ed",
+      "members": {
+        "beh:4a4d9abbccf42e46c3e0fba148b7": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "bmkg_nowcast",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-27T10:35:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:4a4d9abbccf42e46c3e0fba148b7",
+          "information_root": "bmkg_nowcast:bmkg_nowcast:86e5421b2028d5470f4cccc713ed",
+          "origin": "behavioral_registry",
+          "provider": "bmkg_nowcast",
+          "published_at": "2026-11-27T10:35:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Indonesia BMKG",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Indonesia BMKG active provincial nowcast RSS, source-reported only; not global",
+          "source_updated_at": null,
+          "source_url": "https://www.bmkg.go.id/alerts/nowcast/en/CJK20261127001_alert.xml",
+          "title": "Thunderstorm This Evening in Jakarta"
         }
       }
     },

@@ -105,6 +105,39 @@
         }
       }
     },
+    "3d2d182b607a3d7349d0d73841f4b9a30308e0ce7e0108d0a13b5f042fbf76cd": {
+      "information_root": "niord:902c3933-447a-4800-ad00-645219d35212:4:0:0",
+      "members": {
+        "beh:83be59fcc24620ee3681229a8a6f": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "official_scheduled_restriction_not_military_preparation",
+          "collection_mode": "live_maritime",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-27T02:58:16+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "notice_geography_unavailable",
+          "id": "beh:83be59fcc24620ee3681229a8a6f",
+          "information_root": "niord:902c3933-447a-4800-ad00-645219d35212:4:0:0",
+          "origin": "behavioral_registry",
+          "provider": "niord",
+          "published_at": null,
+          "restriction_status": "within_published_validity_window_not_verified_active",
+          "scheduled_valid_from": "2026-11-27T00:21:51Z",
+          "scheduled_valid_until": "2026-11-27T13:00:00Z",
+          "source_dependency_class": null,
+          "source_family": "maritime_restriction",
+          "source_kind": "official_restriction_notice",
+          "source_measurement": null,
+          "source_scope": null,
+          "source_updated_at": "2026-11-27T00:21:53Z",
+          "source_url": "https://niord.dma.dk/#/message/902c3933-447a-4800-ad00-645219d35212",
+          "title": "Denmark. The North Sea. EK R 33 Vejers. Firing exercises. Warning."
+        }
+      }
+    },
     "3d2e639bd844d9e23ae0da57ddb0d6ff73d14386006e5061fa359875534839f5": {
       "information_root": "wiki_edits:wiki_edits:es:20261126T17",
       "members": {
@@ -534,6 +567,45 @@
           "source_updated_at": "2026-11-19T00:21:55Z",
           "source_url": "https://niord.dma.dk/#/message/bbdcd7f3-3353-4f9d-939d-cf5b7d0dba74",
           "title": "Denmark. Skagerrak. EK R 48 Tranum S. Firing exercises. Warning."
+        }
+      }
+    },
+    "3dd329899340fbcfc11b93c66fbd0a7d5d0ce552881341e446aaa75eeefaf84e": {
+      "information_root": "bmkg_nowcast:bmkg_nowcast:7fe4437b3611596fa31741983b74",
+      "members": {
+        "beh:b2c46a9ee1af9e0d4ee78c65ea79": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "bmkg_nowcast",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-27T09:41:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:b2c46a9ee1af9e0d4ee78c65ea79",
+          "information_root": "bmkg_nowcast:bmkg_nowcast:7fe4437b3611596fa31741983b74",
+          "origin": "behavioral_registry",
+          "provider": "bmkg_nowcast",
+          "published_at": "2026-11-27T09:41:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Indonesia BMKG",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Indonesia BMKG active provincial nowcast RSS, source-reported only; not global",
+          "source_updated_at": null,
+          "source_url": "https://www.bmkg.go.id/alerts/nowcast/en/CJI20261127004_alert.xml",
+          "title": "Thunderstorm This Evening in Jambi"
         }
       }
     },

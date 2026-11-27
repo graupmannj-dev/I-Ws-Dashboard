@@ -679,6 +679,53 @@
         }
       }
     },
+    "c0f0dc58bd4da53c9654cd2e51c4810eb9becbbdfa07d3762a165cecf1f91307": {
+      "information_root": "cbp_wait:cbp_wait:011503:2026-11-27:07:34:48",
+      "members": {
+        "beh:754958050cca90ba82fe42ac6979": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-27T12:46:23+00:00",
+          "geography_key": "us-border-port:011503",
+          "geography_label": "Calais",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:754958050cca90ba82fe42ac6979",
+          "information_root": "cbp_wait:cbp_wait:011503:2026-11-27:07:34:48",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "no delay",
+            "lanes_open": 1,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "At 7:00 am EST",
+            "reported_local_date": "11/27/2026",
+            "reported_local_time": "07:34:48",
+            "source_declared_border": "Canadian Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 0
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Calais / International Avenue"
+        }
+      }
+    },
     "c0f274b8b3c0664e54abb9cd2051af2a734493a67133cd54e10220797ee366eb": {
       "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-069b43:112353-2026",
       "members": {

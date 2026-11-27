@@ -47,6 +47,53 @@
         }
       }
     },
+    "e3149996b9702ac4d84626eca847d456639ac8e8e62eea235a559c969d58f2c4": {
+      "information_root": "cbp_wait:cbp_wait:240401:2026-11-27:05:34:48",
+      "members": {
+        "beh:038e2cfb727a9a8b8934b7bd43e1": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-27T12:46:23+00:00",
+          "geography_key": "us-border-port:240401",
+          "geography_label": "Marcelino Serna",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:038e2cfb727a9a8b8934b7bd43e1",
+          "information_root": "cbp_wait:cbp_wait:240401:2026-11-27:05:34:48",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Update Pending",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Closed",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/27/2026",
+            "reported_local_time": "05:34:48",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Marcelino Serna / Tornillo"
+        }
+      }
+    },
     "e3175f0fe6c775b4543ae6b63a95544a49062e3b02fba23e03192cebc731aa11": {
       "information_root": "commercial:9a36324a8a641fd0c4af",
       "members": {
@@ -378,6 +425,72 @@
         }
       }
     },
+    "e38acba8e014bf594106178fd88598d5117d802de1e43b97128aae27c41d8313": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-077767:112542-2026",
+      "members": {
+        "beh:78d8004d588a22af7b4d975b03c5": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-27T12:04:51+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:78d8004d588a22af7b4d975b03c5",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-077767:112542-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-27T12:04:51Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-25T12%3A43%3A32&updatedTo=2026-11-27T12%3A43%3A32",
+          "title": "Civils Delivery Partnership · VIA EAST MIDLANDS LIMITED"
+        }
+      }
+    },
+    "e391d1d815ba6767d38ece9ad6cccacf11e190d58af8d2b5e1aaf5150b21d40b": {
+      "information_root": "nws:4b513da389d4927da1f41d22",
+      "members": {
+        "beh:3b1756b6fc904b7f6802b46677ce": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "nws",
+          "direct_measurement": false,
+          "event_at": "2026-11-27T01:53:00Z",
+          "first_observed_at": "2026-11-27T01:53:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:3b1756b6fc904b7f6802b46677ce",
+          "information_root": "nws:4b513da389d4927da1f41d22",
+          "origin": "behavioral_registry",
+          "provider": "nws",
+          "published_at": "2026-11-27T01:53:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "official_weather_alert_context",
+          "source_measurement": null,
+          "source_scope": "Active NWS marine alerts; severity Severe",
+          "source_updated_at": null,
+          "source_url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.97326e6e11c3db87453add942e5c7353c9863bf0.001.1",
+          "title": "Flood Warning - Lake, FL; Volusia, FL"
+        }
+      }
+    },
     "e397b1237ef4804ba2c2dd96f6640d8d9c94ce5a001e7ba7e20350477b815d33": {
       "information_root": "niord:42b7d796-6fdc-4695-9052-4fd5a8e31208:0:4:0",
       "members": {
@@ -565,6 +678,53 @@
           "source_updated_at": null,
           "source_url": "https://bwt.cbp.gov/api/waittimes",
           "title": "CBP estimated commercial border wait — San Ysidro"
+        }
+      }
+    },
+    "e3b34543abd48a383783d76a0eb6a517d6465f7dd0977d38d2147f5e5fcf0b4c": {
+      "information_root": "cbp_wait:cbp_wait:535501:2026-11-27:06:34:48",
+      "members": {
+        "beh:2a5be2194997329f85187ed16e15": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-27T12:46:23+00:00",
+          "geography_key": "us-border-port:535501",
+          "geography_label": "Brownsville",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:2a5be2194997329f85187ed16e15",
+          "information_root": "cbp_wait:cbp_wait:535501:2026-11-27:06:34:48",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Update Pending",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/27/2026",
+            "reported_local_time": "06:34:48",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Brownsville / B&M"
         }
       }
     },

@@ -176,6 +176,114 @@
         }
       }
     },
+    "4834caf2e36aa05f5648e72c9885b4cfbe23d994de01ba6c57ce1045ad118879": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-02db30:112544-2026",
+      "members": {
+        "beh:6c9ac1815329569b5b56698121ac": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-27T12:08:48+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:6c9ac1815329569b5b56698121ac",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-02db30:112544-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-27T12:08:48Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-25T12%3A43%3A32&updatedTo=2026-11-27T12%3A43%3A32",
+          "title": "21034 Social and Education transport Services Dynamic Purchasing System 2021 (DN559834) · Cambridgeshire County Council"
+        }
+      }
+    },
+    "4840b2cad9c90f464627845937ca8f10adeef16c2fd777efa12583e390501e79": {
+      "information_root": "wiki_edits:wiki_edits:fr:20261127T12",
+      "members": {
+        "beh:85f8665ac78fc60a29f7aeaa6a36": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "wiki_edits",
+          "direct_measurement": false,
+          "event_at": "2026-11-27T12:43:24Z",
+          "first_observed_at": "2026-11-27T12:43:24+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:85f8665ac78fc60a29f7aeaa6a36",
+          "information_root": "wiki_edits:wiki_edits:fr:20261127T12",
+          "origin": "behavioral_registry",
+          "provider": "wiki_edits",
+          "published_at": "2026-11-27T12:43:24Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "public_encyclopedia_edit_aggregate",
+          "source_family": "public_attention",
+          "source_kind": "bounded_public_edit_count_not_event_verification",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "distinct_articles_in_sample": 417,
+            "maximum_returned_edits": 500,
+            "most_edited_article_counts": [
+              {
+                "count": 10,
+                "title": "Martin Trévières"
+              },
+              {
+                "count": 7,
+                "title": "Filmographie sur les dictatures militaires des pays d'Amérique latine"
+              },
+              {
+                "count": 7,
+                "title": "Michael Olise"
+              },
+              {
+                "count": 5,
+                "title": "Askip"
+              },
+              {
+                "count": 5,
+                "title": "Coupe du monde de cyclo-cross 2026-2027"
+              },
+              {
+                "count": 5,
+                "title": "L'Annonce faite à Marie"
+              },
+              {
+                "count": 4,
+                "title": "Espace fine insécable"
+              },
+              {
+                "count": 4,
+                "title": "Zèbre"
+              }
+            ],
+            "name": "sampled_edits_last_three_hours",
+            "sample_cap_reached": true,
+            "unit": "edits",
+            "value": 500
+          },
+          "source_scope": "Wikipedia main-namespace edit-count sample, 14 global language editions, three-hour window capped at 500 per wiki; not geographic location",
+          "source_updated_at": null,
+          "source_url": "https://fr.wikipedia.org/wiki/Special:RecentChanges",
+          "title": "Wikipedia fr public article-edit activity (sampled)"
+        }
+      }
+    },
     "4840ccf8eaf27db2c0658bd3f6b2057e039ed4cca844c5a47242e41bf4e421db": {
       "information_root": "niord:260e9032-659f-4fe8-bf3e-650355377bb5:1:0:0",
       "members": {
@@ -645,6 +753,53 @@
           "source_updated_at": null,
           "source_url": "https://bwt.cbp.gov/api/waittimes",
           "title": "CBP estimated commercial border wait — Highgate Springs"
+        }
+      }
+    },
+    "48f9b1ff40f5032cc33c6397b809171c4eef7a54b02deb09c8064e998bd0e0b1": {
+      "information_root": "cbp_wait:cbp_wait:230901:2026-11-27:06:34:48",
+      "members": {
+        "beh:0afe132268b1489df9e0bc3768e3": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-27T12:46:23+00:00",
+          "geography_key": "us-border-port:230901",
+          "geography_label": "Progreso",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:0afe132268b1489df9e0bc3768e3",
+          "information_root": "cbp_wait:cbp_wait:230901:2026-11-27:06:34:48",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Lanes Closed",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/27/2026",
+            "reported_local_time": "06:34:48",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Progreso / Progreso International Bridge"
         }
       }
     },

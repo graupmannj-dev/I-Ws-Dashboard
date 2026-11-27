@@ -404,6 +404,81 @@
         }
       }
     },
+    "776a9083af15de147c2828bd5a9c1edbc1a0dc8e968c4ebfa415379c4ae1ce55": {
+      "information_root": "wiki_edits:wiki_edits:ja:20261127T12",
+      "members": {
+        "beh:3c118aa1196a02e976b774eb0ac8": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "wiki_edits",
+          "direct_measurement": false,
+          "event_at": "2026-11-27T12:43:29Z",
+          "first_observed_at": "2026-11-27T12:43:29+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:3c118aa1196a02e976b774eb0ac8",
+          "information_root": "wiki_edits:wiki_edits:ja:20261127T12",
+          "origin": "behavioral_registry",
+          "provider": "wiki_edits",
+          "published_at": "2026-11-27T12:43:29Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "public_encyclopedia_edit_aggregate",
+          "source_family": "public_attention",
+          "source_kind": "bounded_public_edit_count_not_event_verification",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "distinct_articles_in_sample": 393,
+            "maximum_returned_edits": 500,
+            "most_edited_article_counts": [
+              {
+                "count": 9,
+                "title": "AmbiO"
+              },
+              {
+                "count": 9,
+                "title": "林田愛佳"
+              },
+              {
+                "count": 8,
+                "title": "2026年福岡市長選挙"
+              },
+              {
+                "count": 5,
+                "title": "イリア・マリニン"
+              },
+              {
+                "count": 4,
+                "title": "2026年の日本における個人情報漏洩事件"
+              },
+              {
+                "count": 4,
+                "title": "みんなでひきこもりラジオ"
+              },
+              {
+                "count": 4,
+                "title": "動物の愛称一覧"
+              },
+              {
+                "count": 4,
+                "title": "大阪府立阪南高等学校"
+              }
+            ],
+            "name": "sampled_edits_last_three_hours",
+            "sample_cap_reached": true,
+            "unit": "edits",
+            "value": 500
+          },
+          "source_scope": "Wikipedia main-namespace edit-count sample, 14 global language editions, three-hour window capped at 500 per wiki; not geographic location",
+          "source_updated_at": null,
+          "source_url": "https://ja.wikipedia.org/wiki/Special:RecentChanges",
+          "title": "Wikipedia ja public article-edit activity (sampled)"
+        }
+      }
+    },
     "777815a76a57e5619914f30de96676df196d217c97c23f613ab7cd314eff4f14": {
       "information_root": "cbp_wait:cbp_wait:340101:2026-11-20:20:23:04",
       "members": {
@@ -680,6 +755,100 @@
           "source_updated_at": null,
           "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-25T01%3A47%3A15&updatedTo=2026-11-27T01%3A47%3A15",
           "title": "North Northamptonshire Council - Disposal of Garden Waste · North Northamptonshire Council"
+        }
+      }
+    },
+    "77b5391bf43e4741139a5eef038c4a923422c8598ab6a0931bf5875e6a25307d": {
+      "information_root": "cbp_wait:cbp_wait:021101:2026-11-27:07:34:48",
+      "members": {
+        "beh:c81e7d8400869a5083507fda7db7": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-27T12:46:23+00:00",
+          "geography_key": "us-border-port:021101",
+          "geography_label": "Norton",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:c81e7d8400869a5083507fda7db7",
+          "information_root": "cbp_wait:cbp_wait:021101:2026-11-27:07:34:48",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "no delay",
+            "lanes_open": 1,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "At 8:00 am EST",
+            "reported_local_date": "11/27/2026",
+            "reported_local_time": "07:34:48",
+            "source_declared_border": "Canadian Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 0
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Norton"
+        }
+      }
+    },
+    "77c901f0abf6508092dc19801ea1051c07f3facd5f831ee2d8c2a0e4954462d6": {
+      "information_root": "cbp_wait:cbp_wait:231002:2026-11-27:06:34:48",
+      "members": {
+        "beh:17d48dfe25b8b5163d923ba45f45": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-27T12:46:23+00:00",
+          "geography_key": "us-border-port:231002",
+          "geography_label": "ROMA TEXAS",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:17d48dfe25b8b5163d923ba45f45",
+          "information_root": "cbp_wait:cbp_wait:231002:2026-11-27:06:34:48",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Update Pending",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/27/2026",
+            "reported_local_time": "06:34:48",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — ROMA TEXAS / ROMA TEXAS"
         }
       }
     },

@@ -262,6 +262,53 @@
         }
       }
     },
+    "82289f726926cfb3a46d4140424154ad226576fe8f2ca57a59315b064ef4c767": {
+      "information_root": "cbp_wait:cbp_wait:240601:2026-11-27:05:34:48",
+      "members": {
+        "beh:b9f37adb14b1a1172b10ac5ebb92": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-27T12:46:23+00:00",
+          "geography_key": "us-border-port:240601",
+          "geography_label": "Columbus",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:b9f37adb14b1a1172b10ac5ebb92",
+          "information_root": "cbp_wait:cbp_wait:240601:2026-11-27:05:34:48",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Lanes Closed",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/27/2026",
+            "reported_local_time": "05:34:48",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Columbus"
+        }
+      }
+    },
     "822a90adc5f8c133347674de272cd32268afa5d52487a2b5a09cfcf9f90ee1ab": {
       "information_root": "bmkg_nowcast:bmkg_nowcast:a8e2c4f5db6573773ee42cbc549a",
       "members": {
@@ -673,6 +720,39 @@
           "source_updated_at": null,
           "source_url": "https://ko.wikipedia.org/wiki/Special:RecentChanges",
           "title": "Wikipedia ko public article-edit activity (sampled)"
+        }
+      }
+    },
+    "8297b01eefa8374e56a44752eed024d83d5c1ad7bac625e1e6dd8189842ab4e7": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c574:112478-2026",
+      "members": {
+        "beh:ce868947b789154d0a2f0d4dbcd8": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-27T10:55:44+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:ce868947b789154d0a2f0d4dbcd8",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c574:112478-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-27T10:55:44Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-25T12%3A43%3A32&updatedTo=2026-11-27T12%3A43%3A32",
+          "title": "Unpaid Carers Self Help Digital AI Platform · Dorset Council"
         }
       }
     },

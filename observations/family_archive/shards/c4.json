@@ -160,6 +160,119 @@
         }
       }
     },
+    "c460f6e45db40928e3c7a56b392f5cb558207f3f5045e714feee3f0b41444a8c": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c590:112522-2026",
+      "members": {
+        "beh:fc7a5660c33031f0c1ef9bf1d5d7": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-27T11:43:03+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:fc7a5660c33031f0c1ef9bf1d5d7",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c590:112522-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-27T11:43:03Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-25T12%3A43%3A32&updatedTo=2026-11-27T12%3A43%3A32",
+          "title": "HMP Wealstun- Over 10k- Removal of machinery and installation of washer dryer · Ministry of Justice"
+        }
+      }
+    },
+    "c4646faeaac33aa620600ff45c792157f5f982b22ca4b2524e0d36c16e8a5c2b": {
+      "information_root": "cbp_wait:cbp_wait:250409:2026-11-27:04:34:48",
+      "members": {
+        "beh:21dd51532d1708ec036f2fdfb1b2": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-27T12:46:23+00:00",
+          "geography_key": "us-border-port:250409",
+          "geography_label": "San Ysidro",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:21dd51532d1708ec036f2fdfb1b2",
+          "information_root": "cbp_wait:cbp_wait:250409:2026-11-27:04:34:48",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "N/A",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/27/2026",
+            "reported_local_time": "04:34:48",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — San Ysidro / Cross Border Express"
+        }
+      }
+    },
+    "c46e71451513894f799f7b78592e63cab2b86f8190211ff355bee546bde966d1": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c570:112474-2026",
+      "members": {
+        "beh:3ad2400777b41596fc82afbbd2e7": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-27T10:49:55+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:3ad2400777b41596fc82afbbd2e7",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c570:112474-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-27T10:49:55Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-25T12%3A43%3A32&updatedTo=2026-11-27T12%3A43%3A32",
+          "title": "Solar Panels · North East London NHS Foundation Trust"
+        }
+      }
+    },
     "c47fa6bf2828420007353f63de3ebf45de3e8fe9c12a952143e2b752840151d4": {
       "information_root": "ioda:bd093cb86d9176f5368eddc1",
       "members": {
@@ -438,6 +551,39 @@
           "source_updated_at": null,
           "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-23T19%3A25%3A03&updatedTo=2026-11-25T19%3A25%3A03",
           "title": "Lone Worker Protection Service · The Swaythling Housing Society Ltd (Trading as Abri)"
+        }
+      }
+    },
+    "c4f114af28b2bb427cbf02dc3844f22f50d6dae99689a63dbf4a5f80ca1755e0": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c5a8:112561-2026",
+      "members": {
+        "beh:423268ab121987b0b8be52213a8e": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-27T12:34:11+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:423268ab121987b0b8be52213a8e",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c5a8:112561-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-27T12:34:11Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-25T12%3A43%3A32&updatedTo=2026-11-27T12%3A43%3A32",
+          "title": "Cisco support and subscriptions · Bracknell Forest Borough Council"
         }
       }
     }

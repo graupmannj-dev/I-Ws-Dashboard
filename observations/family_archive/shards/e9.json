@@ -370,6 +370,45 @@
         }
       }
     },
+    "e94ff26484e6ad9c25afa094307c6948731efb98748ff9152f5794a2474f7fc3": {
+      "information_root": "bmkg_nowcast:bmkg_nowcast:63eb180e5e62189288d900695ca8",
+      "members": {
+        "beh:4fc112d0305b8b46726543a96051": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "bmkg_nowcast",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-27T08:50:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:4fc112d0305b8b46726543a96051",
+          "information_root": "bmkg_nowcast:bmkg_nowcast:63eb180e5e62189288d900695ca8",
+          "origin": "behavioral_registry",
+          "provider": "bmkg_nowcast",
+          "published_at": "2026-11-27T08:50:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Indonesia BMKG",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Indonesia BMKG active provincial nowcast RSS, source-reported only; not global",
+          "source_updated_at": null,
+          "source_url": "https://www.bmkg.go.id/alerts/nowcast/en/CAH20261127003_alert.xml",
+          "title": "Thunderstorm This Evening in Aceh"
+        }
+      }
+    },
     "e9527305465e4048e404fd1a05473adb77d5593f206cbd9fa7632559dd50affb": {
       "information_root": "usgs:us6000ucga",
       "members": {
@@ -650,6 +689,39 @@
           "source_updated_at": null,
           "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-22T13%3A56%3A02&updatedTo=2026-11-24T13%3A56%3A02",
           "title": "PROVISION OF FIRE RESPONSE AND EQUIPMENT MAINTENANCE SERVICES AT THE BRITISH HIGH COMMISSION NAIROBI · Foreign, Commonwealth and Development Office"
+        }
+      }
+    },
+    "e994874a41fef9bc40e6ea84cb362660dc90676c698c7bcfa1f2864b4d1ae860": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c571:112475-2026",
+      "members": {
+        "beh:f63d478fc0e40e511ffe0e3c7b83": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-27T10:50:41+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:f63d478fc0e40e511ffe0e3c7b83",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c571:112475-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-27T10:50:41Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-25T12%3A43%3A32&updatedTo=2026-11-27T12%3A43%3A32",
+          "title": "Reducing Reoffending Strategic Needs Analysis · Police and Crime Commissioner for South Wales"
         }
       }
     },
@@ -1042,6 +1114,39 @@
           "source_updated_at": null,
           "source_url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.6cd1e5754fe625801aca61e07d6cf04364d2af45.004.1",
           "title": "Coastal Flood Warning - Inland Flagler; Eastern Putnam"
+        }
+      }
+    },
+    "e9eb7a646109272fcef99201a701068cd7b507aae47efb77a3419ba45d5b1ad3": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c593:112524-2026",
+      "members": {
+        "beh:0419c859801faeb43366d2b3a0e8": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-27T11:45:09+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:0419c859801faeb43366d2b3a0e8",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c593:112524-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-27T11:45:09Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-25T12%3A43%3A32&updatedTo=2026-11-27T12%3A43%3A32",
+          "title": "Home Delivery Service - Mickey Buttons · MID CHESHIRE HOSPITALS NHS FOUNDATION TRUST"
         }
       }
     },
