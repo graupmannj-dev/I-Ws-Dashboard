@@ -109,6 +109,86 @@
         }
       }
     },
+    "b238e6741a27533e65e5d7afb62ec45e3d5dd2d5d816a24170036dcef3443486": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07bb4d:112366-2026",
+      "members": {
+        "beh:bc54a722a9689aa0ab1efe73f5ce": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-26T23:42:04+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:bc54a722a9689aa0ab1efe73f5ce",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07bb4d:112366-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-26T23:42:04Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-25T01%3A47%3A15&updatedTo=2026-11-27T01%3A47%3A15",
+          "title": "Inventory Management System · MHRA"
+        }
+      }
+    },
+    "b24e31659fd9bfc0925a163d916c9d736500e839747f5211385c6217b9570834": {
+      "information_root": "cbp_wait:cbp_wait:021101:2026-11-26:20:40:28",
+      "members": {
+        "beh:a6c9c66390d5e7201fcd66eddcff": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-27T01:49:30+00:00",
+          "geography_key": "us-border-port:021101",
+          "geography_label": "Norton",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:a6c9c66390d5e7201fcd66eddcff",
+          "information_root": "cbp_wait:cbp_wait:021101:2026-11-26:20:40:28",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "no delay",
+            "lanes_open": 1,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "At 11:00 pm EST",
+            "reported_local_date": "11/26/2026",
+            "reported_local_time": "20:40:28",
+            "source_declared_border": "Canadian Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 0
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Norton"
+        }
+      }
+    },
     "b25e6321a53dbab0bc34ac5de8e413106836a5994e37a30f8d1744894ad4ae02": {
       "information_root": "commercial:cf1963f43d8b25e710e9",
       "members": {

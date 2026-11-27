@@ -160,6 +160,39 @@
         }
       }
     },
+    "25347dd588d51b2965addc815f64f25b13f57c3bb7b5df7019e93c08ca422ebf": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c516:112320-2026",
+      "members": {
+        "beh:9178112a33efecfade7287b44a34": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-26T17:09:15+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:9178112a33efecfade7287b44a34",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c516:112320-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-26T17:09:15Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-25T01%3A47%3A15&updatedTo=2026-11-27T01%3A47%3A15",
+          "title": "Cultural Development Coordinator for Dewsbury Town Centre · The Council of the Borough of Kirklees"
+        }
+      }
+    },
     "254500186b4a5670daa1a5222cbfb396a1e7193b87a254df8376c66c4fafc46b": {
       "information_root": "ioda:5b6e25b82476d5ff4b532187",
       "members": {
@@ -240,6 +273,45 @@
         }
       }
     },
+    "255e66c596ae5f90f3caf5a97fc15ce6e66ae45160c1fe5e4ac011b27e892ffd": {
+      "information_root": "bmkg_nowcast:bmkg_nowcast:ffdd233152bbf6647bea47e9c58e",
+      "members": {
+        "beh:ef466cede8d5064f3948809a0b0c": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "bmkg_nowcast",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-26T23:55:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:ef466cede8d5064f3948809a0b0c",
+          "information_root": "bmkg_nowcast:bmkg_nowcast:ffdd233152bbf6647bea47e9c58e",
+          "origin": "behavioral_registry",
+          "provider": "bmkg_nowcast",
+          "published_at": "2026-11-26T23:55:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Indonesia BMKG",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Indonesia BMKG active provincial nowcast RSS, source-reported only; not global",
+          "source_updated_at": null,
+          "source_url": "https://www.bmkg.go.id/alerts/nowcast/en/CKR20261127001_alert.xml",
+          "title": "Thunderstorm This Morning in Kep. Riau"
+        }
+      }
+    },
     "25606d1c9bd331da40d5f1e34d30d16304409089f919b917953879a214030204": {
       "information_root": "nws:25da3f83a313ec26f1ad1b47",
       "members": {
@@ -308,6 +380,53 @@
           "source_updated_at": null,
           "source_url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000uc96",
           "title": "M 5.1 - 15 km SSW of Balangonan, Philippines"
+        }
+      }
+    },
+    "257b90c404febc7d66ed4557f0e75e584069cd81a89058e260b77d5e5ba1cbc6": {
+      "information_root": "cbp_wait:cbp_wait:260402:2026-11-26:18:40:29",
+      "members": {
+        "beh:44c77d67085be9ac2856d1a97e6a": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-27T01:49:30+00:00",
+          "geography_key": "us-border-port:260402",
+          "geography_label": "Nogales",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:44c77d67085be9ac2856d1a97e6a",
+          "information_root": "cbp_wait:cbp_wait:260402:2026-11-26:18:40:29",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Lanes Closed",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/26/2026",
+            "reported_local_time": "18:40:29",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Nogales / Mariposa"
         }
       }
     },
@@ -543,6 +662,81 @@
         }
       }
     },
+    "25b8113eff2ac6135dbf10810b5038499bda0b15ff52ff22ff80afdfc647125b": {
+      "information_root": "wiki_edits:wiki_edits:id:20261127T01",
+      "members": {
+        "beh:0a9c6d10dd043179c7b8759e58cf": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "wiki_edits",
+          "direct_measurement": false,
+          "event_at": "2026-11-27T01:47:15Z",
+          "first_observed_at": "2026-11-27T01:47:15+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:0a9c6d10dd043179c7b8759e58cf",
+          "information_root": "wiki_edits:wiki_edits:id:20261127T01",
+          "origin": "behavioral_registry",
+          "provider": "wiki_edits",
+          "published_at": "2026-11-27T01:47:15Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "public_encyclopedia_edit_aggregate",
+          "source_family": "public_attention",
+          "source_kind": "bounded_public_edit_count_not_event_verification",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "distinct_articles_in_sample": 144,
+            "maximum_returned_edits": 500,
+            "most_edited_article_counts": [
+              {
+                "count": 17,
+                "title": "Pembebastugasan militer"
+              },
+              {
+                "count": 12,
+                "title": "Teh Taiping Houkui"
+              },
+              {
+                "count": 7,
+                "title": "Guarding Stars"
+              },
+              {
+                "count": 6,
+                "title": "Sugiono (politikus)"
+              },
+              {
+                "count": 5,
+                "title": "Ade Irawan"
+              },
+              {
+                "count": 5,
+                "title": "Caroline Augusta dari Bayern"
+              },
+              {
+                "count": 4,
+                "title": "Lasiorica"
+              },
+              {
+                "count": 3,
+                "title": "Avatar (film)"
+              }
+            ],
+            "name": "sampled_edits_last_three_hours",
+            "sample_cap_reached": false,
+            "unit": "edits",
+            "value": 237
+          },
+          "source_scope": "Wikipedia main-namespace edit-count sample, 14 global language editions, three-hour window capped at 500 per wiki; not geographic location",
+          "source_updated_at": null,
+          "source_url": "https://id.wikipedia.org/wiki/Special:RecentChanges",
+          "title": "Wikipedia id public article-edit activity (sampled)"
+        }
+      }
+    },
     "25cd09e5e14c106992ac2595308bd5d10e87f03ea6ba284922018eb21a1cc7fa": {
       "information_root": "niord:7e1e4c1f-369b-4077-ac94-713da08c9b82:3:0:1",
       "members": {
@@ -680,6 +874,39 @@
           "source_updated_at": null,
           "source_url": "https://dados.ons.org.br/dataset/carga-energia-verificada",
           "title": "Brazil ONS Southeast/Central West verified half-hourly system load"
+        }
+      }
+    },
+    "25f004ed5046b8a4c1e1fa7abb802a7917557134159d61719851cd53bb254441": {
+      "information_root": "nws:bdf3caad96ac51fe335b3b4b",
+      "members": {
+        "beh:b44e9252f80002cac03910827f3c": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "nws",
+          "direct_measurement": false,
+          "event_at": "2026-11-26T20:43:00Z",
+          "first_observed_at": "2026-11-26T20:43:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:b44e9252f80002cac03910827f3c",
+          "information_root": "nws:bdf3caad96ac51fe335b3b4b",
+          "origin": "behavioral_registry",
+          "provider": "nws",
+          "published_at": "2026-11-26T20:43:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "official_weather_alert_context",
+          "source_measurement": null,
+          "source_scope": "Active NWS marine alerts; severity Minor",
+          "source_updated_at": null,
+          "source_url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.1611e90aa0247860fdf45a4283935479fcb257e0.001.1",
+          "title": "Coastal Flood Advisory - Monroe Upper Keys"
         }
       }
     },

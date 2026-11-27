@@ -117,6 +117,45 @@
         }
       }
     },
+    "e531aecde5402f892141b246a45f55daad0d4ae993832c9501c9538d1ec8ec18": {
+      "information_root": "bmkg_nowcast:bmkg_nowcast:5f1f1e37f7a7b074beaa23a9546f",
+      "members": {
+        "beh:9edfcf3b585ad41c07e564def1c7": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "bmkg_nowcast",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-26T23:45:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:9edfcf3b585ad41c07e564def1c7",
+          "information_root": "bmkg_nowcast:bmkg_nowcast:5f1f1e37f7a7b074beaa23a9546f",
+          "origin": "behavioral_registry",
+          "provider": "bmkg_nowcast",
+          "published_at": "2026-11-26T23:45:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Indonesia BMKG",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Indonesia BMKG active provincial nowcast RSS, source-reported only; not global",
+          "source_updated_at": null,
+          "source_url": "https://www.bmkg.go.id/alerts/nowcast/en/CSB20261126011_alert.xml",
+          "title": "Thunderstorm This Morning in Sumatera Barat"
+        }
+      }
+    },
     "e53365e9303ba2d34f1bd47dee78592a777db373c10d4a4b085949d5c087c6de": {
       "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-078694:111287-2026",
       "members": {
@@ -386,6 +425,39 @@
           "source_updated_at": null,
           "source_url": "https://apiprevmet3.inmet.gov.br/avisos/rss/56506",
           "title": "Aviso de Ventos Costeiros. Severidade Grau: Perigo Potencial"
+        }
+      }
+    },
+    "e591ec3139ade36e0322a856336874643bc429b4863ca9634904db9f685e3acd": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c522:112339-2026",
+      "members": {
+        "beh:3db2bcc77f4eead809022dce5cc0": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-26T17:57:55+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:3db2bcc77f4eead809022dce5cc0",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c522:112339-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-26T17:57:55Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-25T01%3A47%3A15&updatedTo=2026-11-27T01%3A47%3A15",
+          "title": "Cefas Weymouth – Ozone ETP Technical Survey and Functional Definition · CENTRE FOR ENVIRONMENT, FISHERIES AND AQUACULTURE SCIENCE"
         }
       }
     },

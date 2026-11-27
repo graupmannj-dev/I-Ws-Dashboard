@@ -339,6 +339,50 @@
         }
       }
     },
+    "498768cdea06e33e2bae2625aa9ac61eeaa058294d03b95b5714c42a802e54c5": {
+      "information_root": "ripe:measurement:1001:20261127T01",
+      "members": {
+        "beh:30da526aba3ea4680f1c73c051f8": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "aggregate_ping_no_country_or_threat_attribution",
+          "collection_mode": "ripe",
+          "direct_measurement": true,
+          "event_at": null,
+          "first_observed_at": "2026-11-27T01:49:30+00:00",
+          "geography_key": "ripe-msm:1001",
+          "geography_label": "K-root public ping aggregate",
+          "geography_precision": "not_country_or_incident_location",
+          "id": "beh:30da526aba3ea4680f1c73c051f8",
+          "information_root": "ripe:measurement:1001:20261127T01",
+          "origin": "behavioral_registry",
+          "provider": "ripe",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "network_aggregate_monitoring",
+          "source_family": "internet_reachability",
+          "source_kind": "aggregate_public_network_ping",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "cohort_comparable_to_prior_snapshots": false,
+            "failed_or_invalid_rtt_count": 377,
+            "individual_probe_records_published": false,
+            "measurement_id": 1001,
+            "name": "sample_median_ping_rtt",
+            "sampled_probe_count": 13520,
+            "unit": "ms",
+            "valid_rtt_count": 13143,
+            "value": 19.071
+          },
+          "source_scope": "RIPE Atlas built-in K-root ping #1001, global public-probe aggregate; not country coverage",
+          "source_updated_at": null,
+          "source_url": "https://atlas.ripe.net/measurements/1001/",
+          "title": "RIPE Atlas K-root public probe aggregate (13143 usable measurements)"
+        }
+      }
+    },
     "498deedfbbf063fe6128efd14d0e8892134ecd7363460a21bb9af03d40edaa29": {
       "information_root": "cbp_wait:cbp_wait:300401:2026-11-25:00:45:23",
       "members": {
@@ -691,6 +735,39 @@
         }
       }
     },
+    "49d67eec707a7b2f3b4a70792e9bfed1e6c22d2f4a3aa7d8f5cc6fa6b5d4bd8e": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-06058d:112332-2026",
+      "members": {
+        "beh:4cc0acb1cbfc479b25c05d3c7517": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-26T17:35:43+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:4cc0acb1cbfc479b25c05d3c7517",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-06058d:112332-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-26T17:35:43Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-25T01%3A47%3A15&updatedTo=2026-11-27T01%3A47%3A15",
+          "title": "A Framework for Tree Planting and Maintenance on The Council Estate · Cornwall Council"
+        }
+      }
+    },
     "49da6a2bdc4d4c35859a09bee2ba6eef886d97c693add56e418e2c1c7ecb1704": {
       "information_root": "cbp_wait:cbp_wait:250302:2026-11-22:17:44:34",
       "members": {
@@ -1000,6 +1077,53 @@
           "source_updated_at": "2026-11-19T00:21:54Z",
           "source_url": "https://niord.dma.dk/#/message/73901baf-e621-4274-a712-88d9fd4b324e",
           "title": "Denmark. Kattegat. EK R 17 Isefjord. Firing exercises. Warning."
+        }
+      }
+    },
+    "49fd693694e9a7483c2a23a8ead16569e7e2ac0255d6db05aadb4f5fb6f08551": {
+      "information_root": "cbp_wait:cbp_wait:250401:2026-11-26:17:40:29",
+      "members": {
+        "beh:f6aacbc5c2f6bd79a4fbec37ce11": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-27T01:49:30+00:00",
+          "geography_key": "us-border-port:250401",
+          "geography_label": "San Ysidro",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:f6aacbc5c2f6bd79a4fbec37ce11",
+          "information_root": "cbp_wait:cbp_wait:250401:2026-11-26:17:40:29",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "N/A",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/26/2026",
+            "reported_local_time": "17:40:29",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — San Ysidro"
         }
       }
     }

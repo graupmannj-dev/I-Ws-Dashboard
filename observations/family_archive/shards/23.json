@@ -178,6 +178,53 @@
         }
       }
     },
+    "231697bbee58fb9ec73550117c82108c6ff8bfb294dadafd99dd3b25528a9773": {
+      "information_root": "cbp_wait:cbp_wait:302301:2026-11-26:17:40:28",
+      "members": {
+        "beh:524bff026b010efd1fa34c33e016": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-27T01:49:30+00:00",
+          "geography_key": "us-border-port:302301",
+          "geography_label": "Lynden",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:524bff026b010efd1fa34c33e016",
+          "information_root": "cbp_wait:cbp_wait:302301:2026-11-26:17:40:28",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "no delay",
+            "lanes_open": 1,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "At 5:00 pm PST",
+            "reported_local_date": "11/26/2026",
+            "reported_local_time": "17:40:28",
+            "source_declared_border": "Canadian Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 5
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Lynden"
+        }
+      }
+    },
     "231c9c9d826b641a3fb170c293768e7622cc0856c9ea80d77d70d163248f8661": {
       "information_root": "ioda:7eea8b4aa590b32d379d34d0",
       "members": {
@@ -268,6 +315,53 @@
           "source_updated_at": "2026-11-20T13:21:55Z",
           "source_url": "https://niord.dma.dk/#/message/34ca42b8-dbe4-42c5-87ac-5b8ed6d25d5c",
           "title": "Denmark. The North Sea. 15 Nymindegab. Firing exercises. Warning."
+        }
+      }
+    },
+    "233a91bfd3a11941742ee2077e0205b26da1ab470a78f33e39ec400eac97af7f": {
+      "information_root": "cbp_wait:cbp_wait:250201:2026-11-26:17:40:28",
+      "members": {
+        "beh:355902db0f9b16dee7665cdb970a": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-27T01:49:30+00:00",
+          "geography_key": "us-border-port:250201",
+          "geography_label": "Andrade",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:355902db0f9b16dee7665cdb970a",
+          "information_root": "cbp_wait:cbp_wait:250201:2026-11-26:17:40:28",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Lanes Closed",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/26/2026",
+            "reported_local_time": "17:40:28",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Andrade"
         }
       }
     },
@@ -894,6 +988,39 @@
           "source_updated_at": "2026-11-20T13:21:53Z",
           "source_url": "https://niord.dma.dk/#/message/f1598c0a-45e0-4231-a9ef-2830214be50b",
           "title": "Denmark. Kattegat. EK R 19 MULTEX. Firing exercises. Warning."
+        }
+      }
+    },
+    "23c81fde88289ba2937af92b4d42c185c107f15fa2bf669ec03c4b582e18a069": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-065f97:112340-2026",
+      "members": {
+        "beh:9e5cf0dc3b8fe3cc9c985fabbce0": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-26T17:58:11+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:9e5cf0dc3b8fe3cc9c985fabbce0",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-065f97:112340-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-26T17:58:11Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-25T01%3A47%3A15&updatedTo=2026-11-27T01%3A47%3A15",
+          "title": "School Cleaning Services Contract for La Retraite RC Girls' School · La Retraite Roman Catholic Girls' School"
         }
       }
     },

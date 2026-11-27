@@ -1,5 +1,52 @@
 {
   "roots": {
+    "5c02ba2f8e149a5ea02d2708c90432233926ade47cf22f7abc3b710d32b4fab5": {
+      "information_root": "cbp_wait:cbp_wait:535502:2026-11-26:19:40:28",
+      "members": {
+        "beh:ffbe0a64e3a19567a628b35855bb": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-27T01:49:30+00:00",
+          "geography_key": "us-border-port:535502",
+          "geography_label": "Brownsville",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:ffbe0a64e3a19567a628b35855bb",
+          "information_root": "cbp_wait:cbp_wait:535502:2026-11-26:19:40:28",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "no delay",
+            "lanes_open": 1,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "At 7:00 pm CST",
+            "reported_local_date": "11/26/2026",
+            "reported_local_time": "19:40:28",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 1
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Brownsville / Veterans International"
+        }
+      }
+    },
     "5c0a4c7c54ed94081a8cd236da7068f75cab293e411707ae35381e81d5bacfb8": {
       "information_root": "eonet:EONET_26575",
       "members": {
@@ -333,6 +380,39 @@
           "source_updated_at": null,
           "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-22T13%3A56%3A02&updatedTo=2026-11-24T13%3A56%3A02",
           "title": "Uckfield Community College - Mobile classroom refurbishments · East Sussex County Council"
+        }
+      }
+    },
+    "5c432114a535b2d2392417c551b0e03113f791c53f2fdea2a044acefb4980065": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-0510f8:112363-2026",
+      "members": {
+        "beh:bfc635173e395e4d9e21f5aec3cb": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-26T23:33:41+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:bfc635173e395e4d9e21f5aec3cb",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-0510f8:112363-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-26T23:33:41Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-25T01%3A47%3A15&updatedTo=2026-11-27T01%3A47%3A15",
+          "title": "Space Technology Solutions · Crown Commercial Service"
         }
       }
     },

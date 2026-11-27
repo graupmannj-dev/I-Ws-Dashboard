@@ -162,6 +162,45 @@
         }
       }
     },
+    "51372f616e4554c4541f2e8577fc47a3643216e7d871fa95c1837eca5c39058b": {
+      "information_root": "bmkg_nowcast:bmkg_nowcast:e628de36cfd32f2228d5771d993c",
+      "members": {
+        "beh:8be24b233da64da17e4a2fac8763": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "bmkg_nowcast",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-26T22:50:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:8be24b233da64da17e4a2fac8763",
+          "information_root": "bmkg_nowcast:bmkg_nowcast:e628de36cfd32f2228d5771d993c",
+          "origin": "behavioral_registry",
+          "provider": "bmkg_nowcast",
+          "published_at": "2026-11-26T22:50:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Indonesia BMKG",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Indonesia BMKG active provincial nowcast RSS, source-reported only; not global",
+          "source_updated_at": null,
+          "source_url": "https://www.bmkg.go.id/alerts/nowcast/en/CNT20261126018_alert.xml",
+          "title": "Thunderstorm This Morning in Nusa Tenggara Timur"
+        }
+      }
+    },
     "513f8330b76708dacf9567bcdd2119af9f444df44bc0550a051fec03fb301a9a": {
       "information_root": "cbp_wait:cbp_wait:260401:2026-11-20:19:23:04",
       "members": {
@@ -691,6 +730,39 @@
         }
       }
     },
+    "51c0c137b7fe5df28c079947db7133ca25b92c6d2df41d09324e0d50df583644": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-0510f8:112364-2026",
+      "members": {
+        "beh:841ef1728c51be40cdbe8b6bc27f": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-26T23:35:09+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:841ef1728c51be40cdbe8b6bc27f",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-0510f8:112364-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-26T23:35:09Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-25T01%3A47%3A15&updatedTo=2026-11-27T01%3A47%3A15",
+          "title": "Space Technology Solutions · Crown Commercial Service"
+        }
+      }
+    },
     "51c5afef0f2b3b1b36e6b8b4ab2c356f0d88f234997ce7f9a8b7757c933b5524": {
       "information_root": "nws:2fdb638b2eca0a41dc12dfe7",
       "members": {
@@ -787,6 +859,53 @@
           "source_updated_at": null,
           "source_url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.d5a505d8634b78a645ce6d517c67f2e0025029d3.004.1",
           "title": "Coastal Flood Warning - Inland Flagler; Eastern Clay; Eastern Putnam; South Central Duval; Western St. Johns"
+        }
+      }
+    },
+    "51ebfa9d0e8eaacc9a801fcc3abe2b31666287c79b4f2b0c5de2d230b585a617": {
+      "information_root": "cbp_wait:cbp_wait:380001:2026-11-26:20:40:28",
+      "members": {
+        "beh:797e82c03217d464ef46aac9d09e": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-27T01:49:30+00:00",
+          "geography_key": "us-border-port:380001",
+          "geography_label": "Detroit",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:797e82c03217d464ef46aac9d09e",
+          "information_root": "cbp_wait:cbp_wait:380001:2026-11-26:20:40:28",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "no delay",
+            "lanes_open": 4,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "At 8:00 pm EST",
+            "reported_local_date": "11/26/2026",
+            "reported_local_time": "20:40:28",
+            "source_declared_border": "Canadian Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 5
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Detroit / Ambassador Bridge"
         }
       }
     },

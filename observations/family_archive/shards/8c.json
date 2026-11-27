@@ -199,6 +199,39 @@
         }
       }
     },
+    "8c36ee97eeb1d3f710e9a26442590d1180999ad909350d75729212d5a5fbc6dc": {
+      "information_root": "nws:c80096b275ec394e8b3d41fc",
+      "members": {
+        "beh:c816f5974e05a3e2d43fe458ddbf": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "nws",
+          "direct_measurement": false,
+          "event_at": "2026-11-27T00:25:00Z",
+          "first_observed_at": "2026-11-27T00:25:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:c816f5974e05a3e2d43fe458ddbf",
+          "information_root": "nws:c80096b275ec394e8b3d41fc",
+          "origin": "behavioral_registry",
+          "provider": "nws",
+          "published_at": "2026-11-27T00:25:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "official_weather_alert_context",
+          "source_measurement": null,
+          "source_scope": "Active NWS marine alerts; severity Moderate",
+          "source_updated_at": null,
+          "source_url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.ceb84bc753153b53e21801ee240ca1fea9b5196b.003.2",
+          "title": "Rip Current Statement - Coastal Collier County"
+        }
+      }
+    },
     "8c3e11d17ff48936f876ff74ce36a8d5c313eb7a5125372c01c2d0a54e058493": {
       "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c27a:111172-2026",
       "members": {
@@ -939,6 +972,45 @@
           "source_updated_at": null,
           "source_url": "https://bwt.cbp.gov/api/waittimes",
           "title": "CBP estimated commercial border wait — Nogales / Mariposa"
+        }
+      }
+    },
+    "8cfd200c9869649ae7b1f833c37ae2bf2c3fb3372ecfde82334c40f96e9e264a": {
+      "information_root": "bmkg_nowcast:bmkg_nowcast:d5c0c7c24046847aed8929342288",
+      "members": {
+        "beh:13e89309f9f89209453ce68b2eff": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "bmkg_nowcast",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-26T22:30:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:13e89309f9f89209453ce68b2eff",
+          "information_root": "bmkg_nowcast:bmkg_nowcast:d5c0c7c24046847aed8929342288",
+          "origin": "behavioral_registry",
+          "provider": "bmkg_nowcast",
+          "published_at": "2026-11-26T22:30:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Indonesia BMKG",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Indonesia BMKG active provincial nowcast RSS, source-reported only; not global",
+          "source_updated_at": null,
+          "source_url": "https://www.bmkg.go.id/alerts/nowcast/en/CSU20261126007_alert.xml",
+          "title": "Thunderstorm This Morning in Sumatera Utara"
         }
       }
     }

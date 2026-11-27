@@ -173,6 +173,52 @@
         }
       }
     },
+    "063030aab3d8314993dd46db0123d6136bf0d4d4bc4f4b1adb9fe14717c78d09": {
+      "information_root": "ris_bgp:ris_bgp:AS4134:20261126T21",
+      "members": {
+        "beh:6e80b69915e4702325b0a3fca98a": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "public_routing_updates_not_country_outage",
+          "collection_mode": "ris_bgp",
+          "direct_measurement": true,
+          "event_at": null,
+          "first_observed_at": "2026-11-27T01:49:30+00:00",
+          "geography_key": "asn:4134",
+          "geography_label": "AS4134",
+          "geography_precision": "routing_target_not_country_incident",
+          "id": "beh:6e80b69915e4702325b0a3fca98a",
+          "information_root": "ris_bgp:ris_bgp:AS4134:20261126T21",
+          "origin": "behavioral_registry",
+          "provider": "ris_bgp",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "routing_collector_sampled_asn_updates",
+          "source_family": "internet_routing",
+          "source_kind": "sampled_asn_bgp_route_updates_not_network_outage",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "collector_peers_are_not_geo_deduplicated": true,
+            "country_impact_not_established": true,
+            "name": "sampled_6h_bgp_announcements",
+            "registered_network_country_hint": "CN",
+            "returned_sampling_buckets": 6,
+            "source_window_end": "2026-11-26T21:00:00Z",
+            "target_asn": "AS4134",
+            "unit": "announcements",
+            "value": 115889,
+            "window_hours_requested": 6,
+            "withdrawals_unavailable_for_asn": true
+          },
+          "source_scope": "RIPE RIS public route-announcement update samples on six non-Western operated networks; ASNs not country-wide outage detection",
+          "source_updated_at": null,
+          "source_url": "https://stat.ripe.net/data/bgp-update-activity/data.json?resource=AS4134&num_hours=6&max_samples=24&hide_empty_samples=false",
+          "title": "RIPE RIS sampled BGP announcements: AS4134"
+        }
+      }
+    },
     "06356d0e2ed1c167c00502b501017ac824d566ffc9c75b9d92ca5f8f2b2c9c5d": {
       "information_root": "faa:6/8986:0:0",
       "members": {
@@ -689,6 +735,53 @@
         }
       }
     },
+    "069c659449306946c93b247cb2dd03e552082ede9eb63e2a2948ac7986728444": {
+      "information_root": "cbp_wait:cbp_wait:300901:2026-11-26:17:40:28",
+      "members": {
+        "beh:1ff9db700f53decd02cc6998d7d2": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-27T01:49:30+00:00",
+          "geography_key": "us-border-port:300901",
+          "geography_label": "Sumas",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:1ff9db700f53decd02cc6998d7d2",
+          "information_root": "cbp_wait:cbp_wait:300901:2026-11-26:17:40:28",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "no delay",
+            "lanes_open": 1,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "At 4:00 pm PST",
+            "reported_local_date": "11/26/2026",
+            "reported_local_time": "17:40:28",
+            "source_declared_border": "Canadian Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 5
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Sumas"
+        }
+      }
+    },
     "069e8584007b556698832f01a39c5191782249fe5235a13f7db20afcdc32ec1d": {
       "information_root": "cbp_wait:cbp_wait:071201:2026-11-25:14:18:20",
       "members": {
@@ -932,6 +1025,53 @@
           "source_updated_at": null,
           "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-24T17%3A03%3A57&updatedTo=2026-11-26T17%3A03%3A57",
           "title": "DBS Services and Public Application Portal_26 · Liverpool City Council"
+        }
+      }
+    },
+    "06ff9017d4bd6a37092606cf3061a8826c91678a1960fd3b960a9fd424799b0c": {
+      "information_root": "cbp_wait:cbp_wait:380102:2026-11-26:20:40:28",
+      "members": {
+        "beh:5f1db6673221eafd747d5f123356": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-27T01:49:30+00:00",
+          "geography_key": "us-border-port:380102",
+          "geography_label": "Detroit",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:5f1db6673221eafd747d5f123356",
+          "information_root": "cbp_wait:cbp_wait:380102:2026-11-26:20:40:28",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "no delay",
+            "lanes_open": 2,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "At 8:00 pm EST",
+            "reported_local_date": "11/26/2026",
+            "reported_local_time": "20:40:28",
+            "source_declared_border": "Canadian Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 0
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Detroit / Gordie Howe International Bridge"
         }
       }
     }

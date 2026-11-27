@@ -457,6 +457,53 @@
         }
       }
     },
+    "20bf9bcd437556112651eebca6c8772d8a171ee72de703b4de03941f201a0d03": {
+      "information_root": "cbp_wait:cbp_wait:260305:2026-11-26:17:40:29",
+      "members": {
+        "beh:75104e7a271b0dd2f87c9490c3fe": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-27T01:49:30+00:00",
+          "geography_key": "us-border-port:260305",
+          "geography_label": "Naco",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:75104e7a271b0dd2f87c9490c3fe",
+          "information_root": "cbp_wait:cbp_wait:260305:2026-11-26:17:40:29",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Update Pending",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/26/2026",
+            "reported_local_time": "17:40:29",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Naco"
+        }
+      }
+    },
     "20c7d921634ede22a5c7bfec63e80095e3af421660ca82549a3a0847a2fa7bda": {
       "information_root": "official:3cf14199b028f76b7bee",
       "members": {
@@ -484,6 +531,53 @@
           "source_updated_at": null,
           "source_url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.afg.html",
           "title": "Afghanistan - Level 4: Do Not Travel"
+        }
+      }
+    },
+    "20ca2ffec0a83a5b76f13bce2a45213ced9292aa44727430bbea96785df4596e": {
+      "information_root": "cbp_wait:cbp_wait:250602:2026-11-26:17:40:29",
+      "members": {
+        "beh:b2331e40f3e9e06954112de8d44c": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-27T01:49:30+00:00",
+          "geography_key": "us-border-port:250602",
+          "geography_label": "Otay Mesa",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:b2331e40f3e9e06954112de8d44c",
+          "information_root": "cbp_wait:cbp_wait:250602:2026-11-26:17:40:29",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "no delay",
+            "lanes_open": 2,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "At 2:00 pm PST",
+            "reported_local_date": "11/26/2026",
+            "reported_local_time": "17:40:29",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 5
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Otay Mesa / Commercial"
         }
       }
     },

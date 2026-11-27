@@ -361,6 +361,53 @@
         }
       }
     },
+    "70447800c5ef5e3ae23664af912b34efb54b7af17b0db940b9ee0cc4ce89aea6": {
+      "information_root": "cbp_wait:cbp_wait:260101:2026-11-26:17:40:28",
+      "members": {
+        "beh:44af371bc57747745457eb094c26": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-27T01:49:30+00:00",
+          "geography_key": "us-border-port:260101",
+          "geography_label": "Douglas (Raul Hector Castro)",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:44af371bc57747745457eb094c26",
+          "information_root": "cbp_wait:cbp_wait:260101:2026-11-26:17:40:28",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Lanes Closed",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/26/2026",
+            "reported_local_time": "17:40:28",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Douglas (Raul Hector Castro)"
+        }
+      }
+    },
     "704d0009e22c113b6fa46922d080280c48b8fd59fc8ddce0a62f03abb5ce8f53": {
       "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c1d9:110849-2026",
       "members": {

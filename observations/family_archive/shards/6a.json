@@ -123,6 +123,45 @@
         }
       }
     },
+    "6a43b5c881e552c3364477b18a42d55f6e09d7e94e3cef5bd64de6e38e9445ac": {
+      "information_root": "bmkg_nowcast:bmkg_nowcast:dc9496056d5c525c95e16b33767f",
+      "members": {
+        "beh:c2ca2393a689adc22099f7c070e8": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "bmkg_nowcast",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-27T00:25:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:c2ca2393a689adc22099f7c070e8",
+          "information_root": "bmkg_nowcast:bmkg_nowcast:dc9496056d5c525c95e16b33767f",
+          "origin": "behavioral_registry",
+          "provider": "bmkg_nowcast",
+          "published_at": "2026-11-27T00:25:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Indonesia BMKG",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Indonesia BMKG active provincial nowcast RSS, source-reported only; not global",
+          "source_updated_at": null,
+          "source_url": "https://www.bmkg.go.id/alerts/nowcast/en/CKG20261127001_alert.xml",
+          "title": "Thunderstorm This Morning in Kalimantan Tengah"
+        }
+      }
+    },
     "6a4637048ac8b644edd7d8a7ae753aa54ad3e93bbaf04a84fec898bf7fbbf564": {
       "information_root": "official:1061fcb257bb115351c6",
       "members": {
@@ -353,6 +392,39 @@
           "source_updated_at": "2026-11-20T13:21:52Z",
           "source_url": "https://niord.dma.dk/#/message/551517f5-e6d2-45bb-a747-02fe68d49778",
           "title": "Denmark. The Baltic Sea. EK D 395 Raghammer. Firing exercises. Warning."
+        }
+      }
+    },
+    "6ae16590d5c980741552a1f7ea18677947e2d9eb34562f92bbf3d6fe095e6771": {
+      "information_root": "nws:0db1b84b169439ce8cbcd5bf",
+      "members": {
+        "beh:98402e5054836b4e48a12957e874": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "nws",
+          "direct_measurement": false,
+          "event_at": "2026-11-27T00:25:00Z",
+          "first_observed_at": "2026-11-27T00:25:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:98402e5054836b4e48a12957e874",
+          "information_root": "nws:0db1b84b169439ce8cbcd5bf",
+          "origin": "behavioral_registry",
+          "provider": "nws",
+          "published_at": "2026-11-27T00:25:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "official_weather_alert_context",
+          "source_measurement": null,
+          "source_scope": "Active NWS marine alerts; severity Minor",
+          "source_updated_at": null,
+          "source_url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.ceb84bc753153b53e21801ee240ca1fea9b5196b.003.1",
+          "title": "Coastal Flood Statement - Coastal Collier County"
         }
       }
     },

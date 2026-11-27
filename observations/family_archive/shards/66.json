@@ -96,6 +96,53 @@
         }
       }
     },
+    "66251f5c549d756369cfa2c695fd93a4f1ad5da5cb0f8536d0f342cc26135f0a": {
+      "information_root": "cbp_wait:cbp_wait:250409:2026-11-26:17:40:29",
+      "members": {
+        "beh:ba8a00ea512f086d4d19d9dc8e24": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-27T01:49:30+00:00",
+          "geography_key": "us-border-port:250409",
+          "geography_label": "San Ysidro",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:ba8a00ea512f086d4d19d9dc8e24",
+          "information_root": "cbp_wait:cbp_wait:250409:2026-11-26:17:40:29",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "N/A",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/26/2026",
+            "reported_local_time": "17:40:29",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — San Ysidro / Cross Border Express"
+        }
+      }
+    },
     "6626f069f7b6179dc5955347c016dc50d8e970590f4641b288682e7df7bf85d1": {
       "information_root": "nws:c37a36f1ee9584b5f5422873",
       "members": {
@@ -322,6 +369,81 @@
           "source_updated_at": null,
           "source_url": "https://bwt.cbp.gov/api/waittimes",
           "title": "CBP estimated commercial border wait — Columbus"
+        }
+      }
+    },
+    "6657423d5bb310bc4fa1f2678ebdf606b7031ad37cf3be1d1d1bf08108163fed": {
+      "information_root": "wiki_edits:wiki_edits:hi:20261127T01",
+      "members": {
+        "beh:54c6eb7e0c1ba93c0bf23b665ac7": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "wiki_edits",
+          "direct_measurement": false,
+          "event_at": "2026-11-27T01:38:48Z",
+          "first_observed_at": "2026-11-27T01:38:48+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:54c6eb7e0c1ba93c0bf23b665ac7",
+          "information_root": "wiki_edits:wiki_edits:hi:20261127T01",
+          "origin": "behavioral_registry",
+          "provider": "wiki_edits",
+          "published_at": "2026-11-27T01:38:48Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "public_encyclopedia_edit_aggregate",
+          "source_family": "public_attention",
+          "source_kind": "bounded_public_edit_count_not_event_verification",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "distinct_articles_in_sample": 27,
+            "maximum_returned_edits": 500,
+            "most_edited_article_counts": [
+              {
+                "count": 1,
+                "title": "फ़ख़रुद्दीन अहमद"
+              },
+              {
+                "count": 1,
+                "title": "फ़रीना मीर"
+              },
+              {
+                "count": 1,
+                "title": "फ़िनलैंड के क्षेत्र"
+              },
+              {
+                "count": 1,
+                "title": "फ़ुमिओ किशिदा"
+              },
+              {
+                "count": 1,
+                "title": "फ़्राँस राष्ट्रीय फुटबॉल टीम"
+              },
+              {
+                "count": 1,
+                "title": "फ़्रैंकफ़र्ट"
+              },
+              {
+                "count": 1,
+                "title": "फातिमा बॉश"
+              },
+              {
+                "count": 1,
+                "title": "फालाकाटा विधानसभा निर्वाचन क्षेत्र"
+              }
+            ],
+            "name": "sampled_edits_last_three_hours",
+            "sample_cap_reached": false,
+            "unit": "edits",
+            "value": 27
+          },
+          "source_scope": "Wikipedia main-namespace edit-count sample, 14 global language editions, three-hour window capped at 500 per wiki; not geographic location",
+          "source_updated_at": null,
+          "source_url": "https://hi.wikipedia.org/wiki/Special:RecentChanges",
+          "title": "Wikipedia hi public article-edit activity (sampled)"
         }
       }
     },

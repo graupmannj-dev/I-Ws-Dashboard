@@ -508,6 +508,128 @@
         }
       }
     },
+    "27a2b5adb9597e18faaeb16cdf833e8e3437970bcf295e937399f425b206b7b6": {
+      "information_root": "cbp_wait:cbp_wait:231002:2026-11-26:19:40:29",
+      "members": {
+        "beh:a60cc7bd520ce58f9b5cfd225c50": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-27T01:49:30+00:00",
+          "geography_key": "us-border-port:231002",
+          "geography_label": "ROMA TEXAS",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:a60cc7bd520ce58f9b5cfd225c50",
+          "information_root": "cbp_wait:cbp_wait:231002:2026-11-26:19:40:29",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Lanes Closed",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/26/2026",
+            "reported_local_time": "19:40:29",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — ROMA TEXAS / ROMA TEXAS"
+        }
+      }
+    },
+    "27ab35bafea210a8bb174d60cb63bd6156178c0ffc9033ecd097ec9fc6739449": {
+      "information_root": "wiki_edits:wiki_edits:en:20261127T01",
+      "members": {
+        "beh:70f4c5a15074102d0e9b6a292bed": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "wiki_edits",
+          "direct_measurement": false,
+          "event_at": "2026-11-27T01:47:15Z",
+          "first_observed_at": "2026-11-27T01:47:15+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:70f4c5a15074102d0e9b6a292bed",
+          "information_root": "wiki_edits:wiki_edits:en:20261127T01",
+          "origin": "behavioral_registry",
+          "provider": "wiki_edits",
+          "published_at": "2026-11-27T01:47:15Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "public_encyclopedia_edit_aggregate",
+          "source_family": "public_attention",
+          "source_kind": "bounded_public_edit_count_not_event_verification",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "distinct_articles_in_sample": 434,
+            "maximum_returned_edits": 500,
+            "most_edited_article_counts": [
+              {
+                "count": 4,
+                "title": "Kim Sang-bum (film editor)"
+              },
+              {
+                "count": 4,
+                "title": "Revolutionary Communard Party"
+              },
+              {
+                "count": 4,
+                "title": "Vinyl 1"
+              },
+              {
+                "count": 4,
+                "title": "Western Bloc"
+              },
+              {
+                "count": 3,
+                "title": "7th Engineer Battalion (United States)"
+              },
+              {
+                "count": 3,
+                "title": "Abnak Records"
+              },
+              {
+                "count": 3,
+                "title": "Antaeus (perfume)"
+              },
+              {
+                "count": 3,
+                "title": "Byun Sung-hyun"
+              }
+            ],
+            "name": "sampled_edits_last_three_hours",
+            "sample_cap_reached": true,
+            "unit": "edits",
+            "value": 500
+          },
+          "source_scope": "Wikipedia main-namespace edit-count sample, 14 global language editions, three-hour window capped at 500 per wiki; not geographic location",
+          "source_updated_at": null,
+          "source_url": "https://en.wikipedia.org/wiki/Special:RecentChanges",
+          "title": "Wikipedia en public article-edit activity (sampled)"
+        }
+      }
+    },
     "27befa71e915c521445f82948c23705b5c43526b3a48d5f66d5b8f5893607e74": {
       "information_root": "bmkg_nowcast:bmkg_nowcast:a3c8fe805f69bc45af95af87a32c",
       "members": {

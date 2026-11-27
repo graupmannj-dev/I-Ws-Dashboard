@@ -251,6 +251,39 @@
         }
       }
     },
+    "6f32e21443461e5b05a79a6d8ef6e008f558fbeedd83ee801937a111b0f79d57": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c52b:112357-2026",
+      "members": {
+        "beh:2b50e4af191c7ba1440c4ccd7086": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-26T20:26:17+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:2b50e4af191c7ba1440c4ccd7086",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c52b:112357-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-26T20:26:17Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-25T01%3A47%3A15&updatedTo=2026-11-27T01%3A47%3A15",
+          "title": "Estates Data Collection: Surveying · Department for Education"
+        }
+      }
+    },
     "6f377879b6d72efa0cb78c2c7aaa0afa9217f82baa916495f502330dc22ae553": {
       "information_root": "cbp_wait:cbp_wait:535504:2026-11-25:21:37:46",
       "members": {
@@ -821,6 +854,174 @@
         }
       }
     },
+    "6fb0c298bb391d45a1771460e05254aace1b8349938ca31f9bdde5069edbd0bb": {
+      "information_root": "cbp_wait:cbp_wait:230701:2026-11-26:19:40:29",
+      "members": {
+        "beh:2bbc801a15200d5e30a624d5d284": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-27T01:49:30+00:00",
+          "geography_key": "us-border-port:230701",
+          "geography_label": "Rio Grande City",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:2bbc801a15200d5e30a624d5d284",
+          "information_root": "cbp_wait:cbp_wait:230701:2026-11-26:19:40:29",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "no delay",
+            "lanes_open": 1,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "At 6:00 pm CST",
+            "reported_local_date": "11/26/2026",
+            "reported_local_time": "19:40:29",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 0
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Rio Grande City"
+        }
+      }
+    },
+    "6fb18e4fd05b300ceb6fe0423e8e429236ca161873bd16a0c06eef8252c9192e": {
+      "information_root": "ris_bgp:ris_bgp:AS7303:20261126T21",
+      "members": {
+        "beh:69731bc40d26f1c22d9af792c9bc": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "public_routing_updates_not_country_outage",
+          "collection_mode": "ris_bgp",
+          "direct_measurement": true,
+          "event_at": null,
+          "first_observed_at": "2026-11-27T01:49:30+00:00",
+          "geography_key": "asn:7303",
+          "geography_label": "AS7303",
+          "geography_precision": "routing_target_not_country_incident",
+          "id": "beh:69731bc40d26f1c22d9af792c9bc",
+          "information_root": "ris_bgp:ris_bgp:AS7303:20261126T21",
+          "origin": "behavioral_registry",
+          "provider": "ris_bgp",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "routing_collector_sampled_asn_updates",
+          "source_family": "internet_routing",
+          "source_kind": "sampled_asn_bgp_route_updates_not_network_outage",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "collector_peers_are_not_geo_deduplicated": true,
+            "country_impact_not_established": true,
+            "name": "sampled_6h_bgp_announcements",
+            "registered_network_country_hint": "AR",
+            "returned_sampling_buckets": 6,
+            "source_window_end": "2026-11-26T21:00:00Z",
+            "target_asn": "AS7303",
+            "unit": "announcements",
+            "value": 19091,
+            "window_hours_requested": 6,
+            "withdrawals_unavailable_for_asn": true
+          },
+          "source_scope": "RIPE RIS public route-announcement update samples on six non-Western operated networks; ASNs not country-wide outage detection",
+          "source_updated_at": null,
+          "source_url": "https://stat.ripe.net/data/bgp-update-activity/data.json?resource=AS7303&num_hours=6&max_samples=24&hide_empty_samples=false",
+          "title": "RIPE RIS sampled BGP announcements: AS7303"
+        }
+      }
+    },
+    "6fbf103b7de9c14657b6c42ec4a10d28f42fd2dde973c2dbde43c62280d8cee0": {
+      "information_root": "wiki_edits:wiki_edits:ko:20261127T01",
+      "members": {
+        "beh:d07fd55921a3941cf2ae47dd76a4": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "wiki_edits",
+          "direct_measurement": false,
+          "event_at": "2026-11-27T01:47:01Z",
+          "first_observed_at": "2026-11-27T01:47:01+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:d07fd55921a3941cf2ae47dd76a4",
+          "information_root": "wiki_edits:wiki_edits:ko:20261127T01",
+          "origin": "behavioral_registry",
+          "provider": "wiki_edits",
+          "published_at": "2026-11-27T01:47:01Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "public_encyclopedia_edit_aggregate",
+          "source_family": "public_attention",
+          "source_kind": "bounded_public_edit_count_not_event_verification",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "distinct_articles_in_sample": 389,
+            "maximum_returned_edits": 500,
+            "most_edited_article_counts": [
+              {
+                "count": 16,
+                "title": "울산과학고등학교"
+              },
+              {
+                "count": 10,
+                "title": "울산기술공업고등학교"
+              },
+              {
+                "count": 6,
+                "title": "TBN 플레이리스트"
+              },
+              {
+                "count": 6,
+                "title": "동국대학교 사범대학 부속고등학교"
+              },
+              {
+                "count": 5,
+                "title": "김문수"
+              },
+              {
+                "count": 5,
+                "title": "명탐정 코난의 에피소드 목록 (2026년~현재)"
+              },
+              {
+                "count": 5,
+                "title": "숭의여자고등학교"
+              },
+              {
+                "count": 5,
+                "title": "영등포고등학교"
+              }
+            ],
+            "name": "sampled_edits_last_three_hours",
+            "sample_cap_reached": true,
+            "unit": "edits",
+            "value": 500
+          },
+          "source_scope": "Wikipedia main-namespace edit-count sample, 14 global language editions, three-hour window capped at 500 per wiki; not geographic location",
+          "source_updated_at": null,
+          "source_url": "https://ko.wikipedia.org/wiki/Special:RecentChanges",
+          "title": "Wikipedia ko public article-edit activity (sampled)"
+        }
+      }
+    },
     "6fc3644b9429d885b494f6aba564e062301cbdec58b1d70687373eba7257485b": {
       "information_root": "usgs:us6000udht",
       "members": {
@@ -856,6 +1057,53 @@
           "source_updated_at": null,
           "source_url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000udht",
           "title": "M 4.7 - 13 km NW of Port-Vila, Vanuatu"
+        }
+      }
+    },
+    "6fd68f694618f500b7f7310a91abb60a8daa8a1975ee7e166472c2c1d3387a9c": {
+      "information_root": "ons_br:ons_br:NE:20261126T030000Z",
+      "members": {
+        "beh:76f96a418e80bce8a2a8aa14840e": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "verified_grid_load_not_outage_or_intent",
+          "collection_mode": "ons_br",
+          "direct_measurement": true,
+          "event_at": "2026-11-26T03:00:00Z",
+          "first_observed_at": "2026-11-27T01:49:30+00:00",
+          "geography_key": "br-ons-loadarea:NE",
+          "geography_label": "Northeast",
+          "geography_precision": "regional_grid_not_incident_site",
+          "id": "beh:76f96a418e80bce8a2a8aa14840e",
+          "information_root": "ons_br:ons_br:NE:20261126T030000Z",
+          "origin": "behavioral_registry",
+          "provider": "ons_br",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "verified_national_grid_load_measurement",
+          "source_family": "grid_load",
+          "source_kind": "verified_regional_electricity_load_context_not_outage",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "collected_history_day": "2026-11-25",
+            "historical_verified_not_live": true,
+            "load_area_code": "NE",
+            "load_area_name": "Northeast",
+            "name": "verified_half_hour_global_load",
+            "not_outage_or_attribution": true,
+            "sample_interval_minutes": 30,
+            "sampled_rows": 48,
+            "source_field": "val_cargaglobal",
+            "source_utc_field": "din_referenciautc",
+            "unit": "MWmed",
+            "value": 17741.57
+          },
+          "source_scope": "Brazilian national system operator ONS verified half-hour load, four macroregions, previous two-day sample; no local facilities/outage attribution",
+          "source_updated_at": null,
+          "source_url": "https://dados.ons.org.br/dataset/carga-energia-verificada",
+          "title": "Brazil ONS Northeast verified half-hourly system load"
         }
       }
     },

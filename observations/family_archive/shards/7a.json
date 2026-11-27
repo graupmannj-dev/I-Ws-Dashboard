@@ -33,6 +33,77 @@
         }
       }
     },
+    "7a08b2e10282416d37c5e08c36cbefab731dd715e4358fe757443582a655fa69": {
+      "information_root": "usgs:us6000udry",
+      "members": {
+        "beh:47d612826bdcfeeda01b9b339546": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "usgs",
+          "direct_measurement": true,
+          "event_at": "2026-11-26T19:33:08Z",
+          "first_observed_at": "2026-11-26T19:33:08+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "source_supplied_point_only",
+          "id": "beh:47d612826bdcfeeda01b9b339546",
+          "information_root": "usgs:us6000udry",
+          "origin": "behavioral_registry",
+          "provider": "usgs",
+          "published_at": "2026-11-26T19:50:51Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "measured_earthquake_context",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "name": "earthquake_magnitude",
+            "unit": "reported_magnitude",
+            "value": 5.1
+          },
+          "source_scope": "USGS M4.5+ earthquakes worldwide, rolling past day; source thresholds apply",
+          "source_updated_at": null,
+          "source_url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000udry",
+          "title": "M 5.1 - Bonin Islands, Japan region"
+        }
+      }
+    },
+    "7a0b7891d582144a851d1e6a76b4523766d24fae84c8b92a65dc7cd64e02aa4c": {
+      "information_root": "nws:13a595baf67a6521e671cc43",
+      "members": {
+        "beh:78ef99fba2f511c690cceb556de5": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "nws",
+          "direct_measurement": false,
+          "event_at": "2026-11-27T00:25:00Z",
+          "first_observed_at": "2026-11-27T00:25:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:78ef99fba2f511c690cceb556de5",
+          "information_root": "nws:13a595baf67a6521e671cc43",
+          "origin": "behavioral_registry",
+          "provider": "nws",
+          "published_at": "2026-11-27T00:25:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "official_weather_alert_context",
+          "source_measurement": null,
+          "source_scope": "Active NWS marine alerts; severity Minor",
+          "source_updated_at": null,
+          "source_url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.ceb84bc753153b53e21801ee240ca1fea9b5196b.001.3",
+          "title": "Coastal Flood Statement - Coastal Palm Beach County"
+        }
+      }
+    },
     "7a0baa304523aa3bc88045c5c1ed1460f93598474ee135f04afb673ba9660eaa": {
       "information_root": "cbp_wait:cbp_wait:240221:2026-11-22:04:34:18",
       "members": {

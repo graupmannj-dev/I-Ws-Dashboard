@@ -1,5 +1,52 @@
 {
   "roots": {
+    "360d984070258f46a070273475006b5f539eb378e525b569d242401a532fe24c": {
+      "information_root": "cbp_wait:cbp_wait:230503:2026-11-26:19:40:29",
+      "members": {
+        "beh:08e56da5391fc3356ab38931cda0": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-27T01:49:30+00:00",
+          "geography_key": "us-border-port:230503",
+          "geography_label": "Hidalgo/Pharr",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:08e56da5391fc3356ab38931cda0",
+          "information_root": "cbp_wait:cbp_wait:230503:2026-11-26:19:40:29",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "N/A",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/26/2026",
+            "reported_local_time": "19:40:29",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Hidalgo/Pharr / Anzalduas International Bridge"
+        }
+      }
+    },
     "3615200a83d560c4d198876f6fe59441ce09e95e12c7a07a1b76f05d644573ee": {
       "information_root": "ioda:d2f486ed0accf4bc95198ef1",
       "members": {
@@ -341,6 +388,39 @@
           "source_updated_at": null,
           "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-23T08%3A49%3A43&updatedTo=2026-11-25T08%3A49%3A43",
           "title": "The Provision of Electronic Warfare Training Systems · Ministry of Defence"
+        }
+      }
+    },
+    "366c46d8fa8c8f22dd29f5b442764df8548e9393a7cec10050d2d98067dfec11": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-04585f:112361-2026",
+      "members": {
+        "beh:c97e63bf7d7853113bccee790f9c": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-26T21:00:37+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:c97e63bf7d7853113bccee790f9c",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-04585f:112361-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-26T21:00:37Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-25T01%3A47%3A15&updatedTo=2026-11-27T01%3A47%3A15",
+          "title": "TD2130 - Design and Planning support services to the Our City, Our River (OCOR) Programme · Derby City Council"
         }
       }
     },

@@ -474,6 +474,53 @@
         }
       }
     },
+    "fbd3b9c312d5a78f0ad77b946fc5778e138f19822b96010254eb93b32e7bedbf": {
+      "information_root": "cbp_wait:cbp_wait:380201:2026-11-26:20:40:28",
+      "members": {
+        "beh:afe7a0c48d232c8d2db8c09d57f9": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-27T01:49:30+00:00",
+          "geography_key": "us-border-port:380201",
+          "geography_label": "Port Huron",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:afe7a0c48d232c8d2db8c09d57f9",
+          "information_root": "cbp_wait:cbp_wait:380201:2026-11-26:20:40:28",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "no delay",
+            "lanes_open": 2,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "At 8:00 pm EST",
+            "reported_local_date": "11/26/2026",
+            "reported_local_time": "20:40:28",
+            "source_declared_border": "Canadian Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 5
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Port Huron / Bluewater Bridge"
+        }
+      }
+    },
     "fbd4aa8be89871589843244cbb327fa1cb058a1d2a996df3c03b07db4d737b20": {
       "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c262:111114-2026",
       "members": {
@@ -504,6 +551,52 @@
           "source_updated_at": null,
           "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-22T13%3A56%3A02&updatedTo=2026-11-24T13%3A56%3A02",
           "title": "Repair & Maintenance of Gardening Equipment & Construction Machinery · St Leger Homes of Doncaster"
+        }
+      }
+    },
+    "fbe76bc38888ebdde440f796780375be42502f46da338cc61ed64d71f559708e": {
+      "information_root": "ris_bgp:ris_bgp:AS5713:20261126T21",
+      "members": {
+        "beh:84f0895d603bff9992e6615ced93": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "public_routing_updates_not_country_outage",
+          "collection_mode": "ris_bgp",
+          "direct_measurement": true,
+          "event_at": null,
+          "first_observed_at": "2026-11-27T01:49:30+00:00",
+          "geography_key": "asn:5713",
+          "geography_label": "AS5713",
+          "geography_precision": "routing_target_not_country_incident",
+          "id": "beh:84f0895d603bff9992e6615ced93",
+          "information_root": "ris_bgp:ris_bgp:AS5713:20261126T21",
+          "origin": "behavioral_registry",
+          "provider": "ris_bgp",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "routing_collector_sampled_asn_updates",
+          "source_family": "internet_routing",
+          "source_kind": "sampled_asn_bgp_route_updates_not_network_outage",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "collector_peers_are_not_geo_deduplicated": true,
+            "country_impact_not_established": true,
+            "name": "sampled_6h_bgp_announcements",
+            "registered_network_country_hint": "ZA",
+            "returned_sampling_buckets": 6,
+            "source_window_end": "2026-11-26T21:00:00Z",
+            "target_asn": "AS5713",
+            "unit": "announcements",
+            "value": 8797,
+            "window_hours_requested": 6,
+            "withdrawals_unavailable_for_asn": true
+          },
+          "source_scope": "RIPE RIS public route-announcement update samples on six non-Western operated networks; ASNs not country-wide outage detection",
+          "source_updated_at": null,
+          "source_url": "https://stat.ripe.net/data/bgp-update-activity/data.json?resource=AS5713&num_hours=6&max_samples=24&hide_empty_samples=false",
+          "title": "RIPE RIS sampled BGP announcements: AS5713"
         }
       }
     },

@@ -1,5 +1,38 @@
 {
   "roots": {
+    "0002482d95a33d33e47dd854d0f6b2ff665c8e1943034e5b46ced80cd1a6e687": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-0510f8:112365-2026",
+      "members": {
+        "beh:3b31f23c066b91b2fe95b78d16e8": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-26T23:36:12+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:3b31f23c066b91b2fe95b78d16e8",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-0510f8:112365-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-26T23:36:12Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-25T01%3A47%3A15&updatedTo=2026-11-27T01%3A47%3A15",
+          "title": "Space Technology Solutions · Crown Commercial Service"
+        }
+      }
+    },
     "000698a444555a5b18a4be125d10f6ac0102552adc0c49126d5c12aa58ed8517": {
       "information_root": "cbp_wait:cbp_wait:230403:2026-11-26:11:00:03",
       "members": {
@@ -171,6 +204,53 @@
           "source_updated_at": null,
           "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-24T17%3A03%3A57&updatedTo=2026-11-26T17%3A03%3A57",
           "title": "32 Delves Lane - urgent building works"
+        }
+      }
+    },
+    "00225078ea1aab3136d0a60cf01929ff5a3d380b07ef43edbf0559017c53d9a0": {
+      "information_root": "cbp_wait:cbp_wait:240221:2026-11-26:18:40:28",
+      "members": {
+        "beh:727bbf2049418775c499291615d0": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-27T01:49:30+00:00",
+          "geography_key": "us-border-port:240221",
+          "geography_label": "El Paso",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:727bbf2049418775c499291615d0",
+          "information_root": "cbp_wait:cbp_wait:240221:2026-11-26:18:40:28",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Update Pending",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/26/2026",
+            "reported_local_time": "18:40:28",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — El Paso"
         }
       }
     },

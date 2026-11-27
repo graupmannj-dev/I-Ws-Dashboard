@@ -77,6 +77,39 @@
         }
       }
     },
+    "fc08a1861afef30c154611c24520c8372ed42bfe495b52c06e1d6755f7abdbf0": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c518:112323-2026",
+      "members": {
+        "beh:3d78f85515a1d865c5d4dd2c15a2": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-26T17:14:31+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:3d78f85515a1d865c5d4dd2c15a2",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c518:112323-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-26T17:14:31Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-25T01%3A47%3A15&updatedTo=2026-11-27T01%3A47%3A15",
+          "title": "Echocardiography Insourcing 26 11 · Royal Cornwall Hospital Trust"
+        }
+      }
+    },
     "fc264fb1001f6e9ae62c36a5a5b12f0b1634d66bb6d2d6a5f13e0e3bad9743bd": {
       "information_root": "cbp_wait:cbp_wait:202401:2026-11-25:02:45:24",
       "members": {
@@ -1010,6 +1043,46 @@
           "source_updated_at": null,
           "source_url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.bes.html",
           "title": "Bonaire - Level 1: Exercise Normal Precautions"
+        }
+      }
+    },
+    "fcfb1935d7e4d8192482a38b1c9f0a05ef3f208ad1fc02b77820e738b91fb48a": {
+      "information_root": "coops:8638610:20261127T0142Z",
+      "members": {
+        "beh:a06d493b8636a678256646f093f4": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "coops",
+          "direct_measurement": true,
+          "event_at": "2026-11-27T01:42:00Z",
+          "first_observed_at": "2026-11-27T01:42:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:a06d493b8636a678256646f093f4",
+          "information_root": "coops:8638610:20261127T0142Z",
+          "origin": "behavioral_registry",
+          "provider": "coops",
+          "published_at": "2026-11-27T01:42:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "station_physical_measurement",
+          "source_family": "port_conditions",
+          "source_kind": "selected_port_water_level_measurement",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "metric_comparable_only_same_station_datum_and_sample_window": true,
+            "name": "observed_water_level",
+            "station": "8638610",
+            "unit": "meters_MLLW",
+            "value": 1.36
+          },
+          "source_scope": "NOAA CO-OPS water levels at San Francisco, Key West and Sewells Point; stations only",
+          "source_updated_at": null,
+          "source_url": "https://tidesandcurrents.noaa.gov/waterlevels.html?id=8638610",
+          "title": "Sewells Point, VA observed water level (no anomaly classification)"
         }
       }
     }

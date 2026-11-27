@@ -63,6 +63,45 @@
         }
       }
     },
+    "a818448ded7ea933ab9462a224593dee0a95e03bb5228ee49e2b772d00299481": {
+      "information_root": "bmkg_nowcast:bmkg_nowcast:19ab6663d973182622d16205ec06",
+      "members": {
+        "beh:5e5abfc0c3e798a72c2e726572b4": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "bmkg_nowcast",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-27T00:30:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:5e5abfc0c3e798a72c2e726572b4",
+          "information_root": "bmkg_nowcast:bmkg_nowcast:19ab6663d973182622d16205ec06",
+          "origin": "behavioral_registry",
+          "provider": "bmkg_nowcast",
+          "published_at": "2026-11-27T00:30:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Indonesia BMKG",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Indonesia BMKG active provincial nowcast RSS, source-reported only; not global",
+          "source_updated_at": null,
+          "source_url": "https://www.bmkg.go.id/alerts/nowcast/en/CNB20261127001_alert.xml",
+          "title": "Thunderstorm This Morning in Nusa Tenggara Barat"
+        }
+      }
+    },
     "a81b1b1df4ad50a938d5ca24436349561355772d2a81198e42c80ea8ccce2d41": {
       "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-06accc:110490-2026",
       "members": {
@@ -314,6 +353,53 @@
           "source_updated_at": null,
           "source_url": "https://bwt.cbp.gov/api/waittimes",
           "title": "CBP estimated commercial border wait — Detroit / Ambassador Bridge"
+        }
+      }
+    },
+    "a85ed0f5ec83c0e14020936120b243c43577496415244a30b40f567a9568fbe3": {
+      "information_root": "cbp_wait:cbp_wait:250302:2026-11-26:17:40:28",
+      "members": {
+        "beh:f145afb8dd8eb6d250341371872d": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-27T01:49:30+00:00",
+          "geography_key": "us-border-port:250302",
+          "geography_label": "Calexico",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:f145afb8dd8eb6d250341371872d",
+          "information_root": "cbp_wait:cbp_wait:250302:2026-11-26:17:40:28",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "N/A",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/26/2026",
+            "reported_local_time": "17:40:28",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Calexico / West"
         }
       }
     },

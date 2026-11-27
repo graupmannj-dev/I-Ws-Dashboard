@@ -949,6 +949,81 @@
         }
       }
     },
+    "79cc462b32bb20764c9227e1309b45dd6c3611eac9730dbe80eddfe06e48f2c0": {
+      "information_root": "wiki_edits:wiki_edits:tr:20261127T01",
+      "members": {
+        "beh:71f486eeede51be06893575521fa": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "wiki_edits",
+          "direct_measurement": false,
+          "event_at": "2026-11-27T01:46:58Z",
+          "first_observed_at": "2026-11-27T01:46:58+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:71f486eeede51be06893575521fa",
+          "information_root": "wiki_edits:wiki_edits:tr:20261127T01",
+          "origin": "behavioral_registry",
+          "provider": "wiki_edits",
+          "published_at": "2026-11-27T01:46:58Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "public_encyclopedia_edit_aggregate",
+          "source_family": "public_attention",
+          "source_kind": "bounded_public_edit_count_not_event_verification",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "distinct_articles_in_sample": 493,
+            "maximum_returned_edits": 500,
+            "most_edited_article_counts": [
+              {
+                "count": 3,
+                "title": "Ibrahim Ustavdić"
+              },
+              {
+                "count": 2,
+                "title": "Alkilasyon"
+              },
+              {
+                "count": 2,
+                "title": "Alkilleme"
+              },
+              {
+                "count": 2,
+                "title": "Barış Akarsu"
+              },
+              {
+                "count": 2,
+                "title": "Organobrom kimyası"
+              },
+              {
+                "count": 2,
+                "title": "Prostat kanseri"
+              },
+              {
+                "count": 1,
+                "title": "90bpm"
+              },
+              {
+                "count": 1,
+                "title": "Ahlatlıçeşme, Simav"
+              }
+            ],
+            "name": "sampled_edits_last_three_hours",
+            "sample_cap_reached": true,
+            "unit": "edits",
+            "value": 500
+          },
+          "source_scope": "Wikipedia main-namespace edit-count sample, 14 global language editions, three-hour window capped at 500 per wiki; not geographic location",
+          "source_updated_at": null,
+          "source_url": "https://tr.wikipedia.org/wiki/Special:RecentChanges",
+          "title": "Wikipedia tr public article-edit activity (sampled)"
+        }
+      }
+    },
     "79cf1eba64897de081d068c403d80d178d423e9d542a7c5eeb845cad767aee1e": {
       "information_root": "eonet:EONET_26572",
       "members": {
@@ -1073,6 +1148,53 @@
           "source_updated_at": null,
           "source_url": "https://bwt.cbp.gov/api/waittimes",
           "title": "CBP estimated commercial border wait — Detroit / Windsor Tunnel"
+        }
+      }
+    },
+    "79e6e3fa864917a08f41d9df28518547b0039b6e3cdddcaa563efaacc62a4c34": {
+      "information_root": "cbp_wait:cbp_wait:380301:2026-11-26:20:40:28",
+      "members": {
+        "beh:732e3ed45a703b0300687db5313b": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-27T01:49:30+00:00",
+          "geography_key": "us-border-port:380301",
+          "geography_label": "Sault Ste. Marie",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:732e3ed45a703b0300687db5313b",
+          "information_root": "cbp_wait:cbp_wait:380301:2026-11-26:20:40:28",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "no delay",
+            "lanes_open": 1,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "At 11:00 pm EST",
+            "reported_local_date": "11/26/2026",
+            "reported_local_time": "20:40:28",
+            "source_declared_border": "Canadian Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 0
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Sault Ste. Marie / International Bridge - SSM"
         }
       }
     },

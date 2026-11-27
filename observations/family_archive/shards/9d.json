@@ -295,6 +295,39 @@
         }
       }
     },
+    "9d6e6e367433eebdd2df2015457ae07d6f3c58b6bed92e6b200878c9ad4f24f8": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-078596:112341-2026",
+      "members": {
+        "beh:39bc3ae526046e1ca8b4a9657070": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-26T18:05:59+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:39bc3ae526046e1ca8b4a9657070",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-078596:112341-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-26T18:05:59Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-25T01%3A47%3A15&updatedTo=2026-11-27T01%3A47%3A15",
+          "title": "Smoking Cessation Case Management System (CMS) · North East Lincolnshire Borough Council"
+        }
+      }
+    },
     "9d74c980cb1cd137500b7392c0150a61899c249f8c56c6ed2ffedf41b661b261": {
       "information_root": "niord:5e5a14bd-f0dd-4482-8caf-294c563bca1f:1:0:0",
       "members": {
@@ -618,6 +651,53 @@
           "source_updated_at": null,
           "source_url": "https://www.bmkg.go.id/alerts/nowcast/en/CKR20261125003_alert.xml",
           "title": "Thunderstorm This Afternoon in Kep. Riau"
+        }
+      }
+    },
+    "9de77c1cf1d92ca936b48eb2c4102ee15fdaf7f6f0321dcb616c7090fd2fc492": {
+      "information_root": "cbp_wait:cbp_wait:090103:2026-11-26:20:40:28",
+      "members": {
+        "beh:faa7ec85a7defb93ff10d47ee4a5": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-27T01:49:30+00:00",
+          "geography_key": "us-border-port:090103",
+          "geography_label": "Buffalo/Niagara Falls",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:faa7ec85a7defb93ff10d47ee4a5",
+          "information_root": "cbp_wait:cbp_wait:090103:2026-11-26:20:40:28",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Update Pending",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/26/2026",
+            "reported_local_time": "20:40:28",
+            "source_declared_border": "Canadian Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Buffalo/Niagara Falls / Whirlpool Bridge"
         }
       }
     },

@@ -867,6 +867,46 @@
           "title": "Naoero - Level 1: Exercise Normal Precautions"
         }
       }
+    },
+    "c9fdb6f2468b87f0c99a5880f389fdf984d9767dbbf0f5ac9057dfbde520fa8e": {
+      "information_root": "coops:8724580:20261127T0142Z",
+      "members": {
+        "beh:12838d4103530a72836232be4a90": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "coops",
+          "direct_measurement": true,
+          "event_at": "2026-11-27T01:42:00Z",
+          "first_observed_at": "2026-11-27T01:42:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:12838d4103530a72836232be4a90",
+          "information_root": "coops:8724580:20261127T0142Z",
+          "origin": "behavioral_registry",
+          "provider": "coops",
+          "published_at": "2026-11-27T01:42:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "station_physical_measurement",
+          "source_family": "port_conditions",
+          "source_kind": "selected_port_water_level_measurement",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "metric_comparable_only_same_station_datum_and_sample_window": true,
+            "name": "observed_water_level",
+            "station": "8724580",
+            "unit": "meters_MLLW",
+            "value": 0.749
+          },
+          "source_scope": "NOAA CO-OPS water levels at San Francisco, Key West and Sewells Point; stations only",
+          "source_updated_at": null,
+          "source_url": "https://tidesandcurrents.noaa.gov/waterlevels.html?id=8724580",
+          "title": "Key West, FL observed water level (no anomaly classification)"
+        }
+      }
     }
   },
   "schema": "aiba.family-archive.v1"

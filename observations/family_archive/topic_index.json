@@ -192,6 +192,15 @@
       "shared_activity_roles": [],
       "shared_subject_terms": []
     },
+    "06810e92f09b20d6aa3ad2b049fd": {
+      "independent_corroboration_proven": false,
+      "method": "new_analytical_theme",
+      "review_status": "unreviewed_automatic_topic_seed",
+      "same_incident_proven": false,
+      "score": null,
+      "shared_activity_roles": [],
+      "shared_subject_terms": []
+    },
     "07a2d8297c28c9e554a5778c1a8c": {
       "independent_corroboration_proven": false,
       "latent_semantic_similarity": 0.9648,
@@ -2992,6 +3001,31 @@
       "score": null,
       "shared_activity_roles": [],
       "shared_subject_terms": []
+    },
+    "77b6408b08756dd03331d50bb21b": {
+      "independent_corroboration_proven": false,
+      "latent_semantic_similarity": 1.0,
+      "method": "aiba.hybrid-local-title-embedding.v1",
+      "raw_text_similarity": 1,
+      "review_status": "unreviewed_automatic_topic_match",
+      "same_incident_proven": false,
+      "same_source_document": false,
+      "score": 1.0,
+      "shared_activity_roles": [],
+      "shared_named_subjects": [
+        "atlas"
+      ],
+      "shared_subject_terms": [
+        "aggregate",
+        "atlas",
+        "measurements",
+        "probe",
+        "public",
+        "ripe",
+        "root",
+        "usable"
+      ],
+      "subject_geography_compatible": true
     },
     "77cbdffaaf68cd50575d420f8449": {
       "independent_corroboration_proven": false,
@@ -6525,6 +6559,7 @@
     "05cf68cd971530aa5ce449afa08a": "family:a8cf0acb5dd393876051",
     "05e95055b40fab042599952809d2": "family:22e2efd4b8b480c13dbd",
     "064b696cb4d0809b18a8c25c180b": "family:b37b355086e95943e5f4",
+    "06810e92f09b20d6aa3ad2b049fd": "family:d6fead83b6663163ef20",
     "0720e75c2dc363c09f9f9088ad47": "family:c9675c6f217ebbb3cff4",
     "07a2d8297c28c9e554a5778c1a8c": "family:c733ba40ded9c2fca04b",
     "07ab4fa5c27b9c15c07a6ccfb7b0": "family:ffe1d9551c6a7338303c",
@@ -6871,6 +6906,7 @@
     "77097808a2348a41eb7b11587c8e": "family:39223941378a258449fa",
     "771bbd2cfba3b5764b7a01551122": "family:8782f5407f04370eb416",
     "775a69251fec7ad2109f8ca10e00": "family:2986d698048a4758805e",
+    "77b6408b08756dd03331d50bb21b": "family:fe16830728b4f874c391",
     "77b649b6545163f1c01f4ec79665": "family:c9675c6f217ebbb3cff4",
     "77cbdffaaf68cd50575d420f8449": "family:fedd67f32b443ff07f62",
     "781b1fcc6e9c1afbc89487b5330c": "family:6e277c2d1e6ae54d936b",
@@ -12332,6 +12368,41 @@
       },
       "source": "hybrid_local_topic_embedding_v2"
     },
+    "family:d6fead83b6663163ef20": {
+      "first_document_at": "2026-11-26T17:05:13+00:00",
+      "last_document_at": "2026-11-26T17:05:13+00:00",
+      "matched_document_count": 1,
+      "seed": {
+        "domain": "generic",
+        "geo": [],
+        "key": "06810e92f09b20d6aa3ad2b049fd",
+        "publisher": "uk_tenders",
+        "source_family": "public_procurement",
+        "terms": {
+          "activities": 1,
+          "bradford": 1,
+          "break": 1,
+          "care": 1,
+          "children": 1,
+          "city": 1,
+          "council": 1,
+          "delivery": 1,
+          "disabilities": 1,
+          "district": 1,
+          "educational": 1,
+          "framework": 1,
+          "metropolitan": 1,
+          "needs": 1,
+          "open": 1,
+          "personal": 1,
+          "services": 1,
+          "short": 1,
+          "special": 1
+        },
+        "title": "Open Framework for the delivery of Short Break Activities and Personal Care Services for Children with Special Educational Needs and / or Disabilities · City of Bradford Metropolitan District Council"
+      },
+      "source": "hybrid_local_topic_embedding_v2"
+    },
     "family:d7493f2e4bfd9d0a456a": {
       "first_document_at": "2026-11-18T08:28:52+00:00",
       "matched_document_count": 2,
@@ -13393,8 +13464,8 @@
     },
     "family:fe16830728b4f874c391": {
       "first_document_at": "2026-11-21T02:31:05+00:00",
-      "last_document_at": "2026-11-26T17:06:25+00:00",
-      "matched_document_count": 14,
+      "last_document_at": "2026-11-27T01:49:30+00:00",
+      "matched_document_count": 15,
       "seed": {
         "domain": "network",
         "geo": [],
@@ -13512,9 +13583,9 @@
     }
   },
   "input_truncated": false,
-  "new_document_assignments": 0,
+  "new_document_assignments": 2,
   "schema": "aiba.automatic-analytical-topics.v1",
   "semantic_seed_index_limited": false,
-  "total_document_assignments": 823,
-  "total_stable_topics": 277
+  "total_document_assignments": 825,
+  "total_stable_topics": 278
 }
