@@ -1,0 +1,61 @@
+{
+  "case_counts": {
+    "unlocated": {
+      "maritime_restriction": 5
+    }
+  },
+  "collected_at": "2026-11-27T18:26:12Z",
+  "coverage": "partial",
+  "health": {
+    "amsa": {
+      "caveat": "Source observation only. Does not independently establish military preparations or event attribution.",
+      "checked_at": "2026-11-27T18:26:12Z",
+      "error": null,
+      "records": 5,
+      "source_url": "https://www.operations.amsa.gov.au/AMSA.Web.MSIPublication/",
+      "status": "collected",
+      "truncated": false
+    },
+    "ioda": {
+      "caveat": "Upstream unavailable or unsupported; NOT evidence of zero activity.",
+      "checked_at": "2026-11-27T18:26:12Z",
+      "error": "TimeoutError: The read operation timed out",
+      "records": null,
+      "source_url": "https://api.ioda.inetintel.cc.gatech.edu/v2/outages/events?from=1795789572&until=1795803972&entityType=country&limit=100&page=0&extendWindowSeconds=0",
+      "status": "unavailable",
+      "truncated": null
+    },
+    "nga": {
+      "caveat": "Upstream unavailable or unsupported; NOT evidence of zero activity.",
+      "checked_at": "2026-11-27T18:26:12Z",
+      "error": "HTTPError: HTTP Error 503: Service Unavailable",
+      "records": null,
+      "source_url": "https://msi.nga.mil/api/publications/broadcast-warn?status=active&output=json",
+      "status": "unavailable",
+      "truncated": null
+    }
+  },
+  "new_records": [
+    {
+      "case_id": null,
+      "collected_at": "2026-11-27T18:26:12Z",
+      "event_at": "2026-11-27T10:07:00Z",
+      "family": "maritime_restriction",
+      "first_seen_at": "2026-11-27T18:26:12Z",
+      "id": "amsa:9d1b8bb1cce7c682580bcaa3",
+      "kind": "navigation_safety_notice",
+      "location_precision": "NAVAREA X regional warning; no point geolocation inferred.",
+      "provider": "amsa",
+      "review_level": "official_notice_not_kinetic_confirmation",
+      "root": "amsa:NAVAREA-X:26:130",
+      "source": "Australian Maritime Safety Authority (NAVAREA X)",
+      "source_published_at": "2026-11-27T10:07:00Z",
+      "source_url": "https://www.operations.amsa.gov.au/AMSA.Web.MSIPublication/",
+      "summary": "FM JRCC AUSTRALIA 271007Z NOV 26 NAVAREA X 130/26 CHART PNG 502 - CAPE BLACKWOOD TO KEREMA BAY PIPE-LAYING OPERATIONS IN PROGRESS BY BARGE TIMAS DLB-01/JZFP UNTIL 01 APR 27 IN THE VICINITY OF KUMUL MARINE TERMINAL 08-06.0S 144-33.8E. WIDE BERTH REQUESTED.",
+      "title": "NAVAREA X 130/26 official warning"
+    }
+  ],
+  "note": "Only successful sources appear in records. Missing sources remain unavailable.",
+  "record_count": 5,
+  "schema_version": 1
+}

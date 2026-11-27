@@ -12454,14 +12454,42 @@
     "total_document_assignments": 845,
     "total_stable_topics": 283
   },
-  "generated_at": "2026-11-27T17:31:05.193126+00:00",
+  "generated_at": "2026-11-27T18:26:47.515644+00:00",
   "historical_relationship_count": 0,
   "missing_data_is_not_zero": true,
-  "new_records_added": 12,
+  "new_records_added": 1,
   "public_record_count": 5000,
   "public_snapshot_truncated": true,
-  "record_count_total": 5578,
+  "record_count_total": 5579,
   "records": [
+    {
+      "calibrated_metric": null,
+      "case_hint": null,
+      "claim_level": "notice_not_verified_preparation",
+      "collection_mode": "amsa",
+      "direct_measurement": false,
+      "event_at": "2026-11-27T10:07:00Z",
+      "first_observed_at": "2026-11-27T18:26:12+00:00",
+      "geography_key": "navarea:X",
+      "geography_label": "NAVAREA X",
+      "geography_precision": "regional_not_point",
+      "id": "beh:8ef254fe827bd9a890e13c78510d",
+      "information_root": "amsa:NAVAREA-X:26:130",
+      "origin": "behavioral_registry",
+      "provider": "amsa",
+      "published_at": "2026-11-27T10:07:00Z",
+      "restriction_status": "",
+      "scheduled_valid_from": null,
+      "scheduled_valid_until": null,
+      "source_dependency_class": null,
+      "source_family": "maritime_restriction",
+      "source_kind": "navigation_safety_notice",
+      "source_measurement": null,
+      "source_scope": null,
+      "source_updated_at": null,
+      "source_url": "https://www.operations.amsa.gov.au/AMSA.Web.MSIPublication/",
+      "title": "NAVAREA X 130/26 official warning"
+    },
     {
       "calibrated_metric": null,
       "case_hint": null,
@@ -186517,53 +186545,29 @@
       "source_updated_at": "2026-11-16T09:21:53Z",
       "source_url": "https://niord.dma.dk/#/message/8d5a1de4-9b8e-4c89-bd26-41a2becc8cb3",
       "title": "Denmark. The North Sea. 15 Nymindegab. Firing exercises. Warning."
-    },
-    {
-      "calibrated_metric": null,
-      "case_hint": null,
-      "claim_level": "official_scheduled_restriction_not_military_preparation",
-      "collection_mode": "live_maritime",
-      "direct_measurement": false,
-      "event_at": null,
-      "first_observed_at": "2026-11-16T09:31:14+00:00",
-      "geography_key": null,
-      "geography_label": null,
-      "geography_precision": "notice_geography_unavailable",
-      "id": "beh:5380bfa883d170bd2c722fa0fb1a",
-      "information_root": "niord:0d46c069-0c0b-4cd6-80cb-4e07aeaab638:4:0:0",
-      "origin": "behavioral_registry",
-      "provider": "niord",
-      "published_at": null,
-      "restriction_status": "within_published_validity_window_not_verified_active",
-      "scheduled_valid_from": "2026-11-16T09:21:50Z",
-      "scheduled_valid_until": "2026-11-24T16:00:00Z",
-      "source_family": "maritime_restriction",
-      "source_kind": "official_restriction_notice",
-      "source_updated_at": "2026-11-16T09:21:52Z",
-      "source_url": "https://niord.dma.dk/#/message/0d46c069-0c0b-4cd6-80cb-4e07aeaab638",
-      "title": "Denmark. Skagerrak. EK R 48 Tranum S. Firing exercises. Warning."
     }
   ],
   "relationship_public_truncated": false,
   "report_relationships": {
     "candidate_groups": []
   },
-  "root_count_total": 5578,
+  "root_count_total": 5579,
   "schema": "aiba.family-archive.v1",
   "source_health": {
     "amsa": {
-      "age_hours": 9.28,
-      "checked_at": "2026-11-27T08:14:33Z",
-      "missingness": "not_measured_not_zero",
+      "age_hours": 0.01,
+      "checked_at": "2026-11-27T18:26:12Z",
+      "first_provider_baseline": false,
+      "missingness": "provider_bounded_not_exhaustive",
       "mode": "amsa",
       "provider_status": "collected",
-      "snapshot_at": "2026-11-27T08:14:33Z",
+      "snapshot_at": "2026-11-27T18:26:12Z",
       "source_scope": "AMSA NAVAREA X only",
-      "status": "stale_or_unavailable",
+      "status": "current",
       "truncated_or_partial": false
     },
     "bmkg_nowcast": {
-      "age_hours": 4.79,
+      "age_hours": 5.72,
       "checked_at": "2026-11-27T12:43:32Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -186575,7 +186579,7 @@
       "truncated_or_partial": true
     },
     "bmkg_quake": {
-      "age_hours": 4.79,
+      "age_hours": 5.72,
       "checked_at": "2026-11-27T12:43:32Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -186587,7 +186591,7 @@
       "truncated_or_partial": true
     },
     "cbp_wait": {
-      "age_hours": 4.79,
+      "age_hours": 5.72,
       "checked_at": "2026-11-27T12:43:32Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -186599,7 +186603,7 @@
       "truncated_or_partial": true
     },
     "commercial": {
-      "age_hours": 0.0,
+      "age_hours": 0.93,
       "checked_at": "2026-11-27T17:31:03Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -186611,7 +186615,7 @@
       "truncated_or_partial": false
     },
     "coops": {
-      "age_hours": 4.79,
+      "age_hours": 5.72,
       "checked_at": "2026-11-27T12:43:32Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -186623,7 +186627,7 @@
       "truncated_or_partial": true
     },
     "eonet": {
-      "age_hours": 4.79,
+      "age_hours": 5.72,
       "checked_at": "2026-11-27T12:43:32Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -186635,7 +186639,7 @@
       "truncated_or_partial": true
     },
     "imd_in": {
-      "age_hours": 4.79,
+      "age_hours": 5.72,
       "checked_at": "2026-11-27T12:43:32Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -186647,7 +186651,7 @@
       "truncated_or_partial": true
     },
     "inmet_br": {
-      "age_hours": 4.79,
+      "age_hours": 5.72,
       "checked_at": "2026-11-27T12:43:32Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -186659,18 +186663,18 @@
       "truncated_or_partial": true
     },
     "ioda": {
-      "age_hours": 9.28,
-      "checked_at": "2026-11-27T08:14:33Z",
+      "age_hours": 0.01,
+      "checked_at": "2026-11-27T18:26:12Z",
       "missingness": "not_measured_not_zero",
       "mode": "ioda",
       "provider_status": "unavailable",
-      "snapshot_at": "2026-11-27T08:14:33Z",
+      "snapshot_at": "2026-11-27T18:26:12Z",
       "source_scope": "IODA country events (first 100 of first page, 4-hour query)",
       "status": "stale_or_unavailable",
       "truncated_or_partial": false
     },
     "live_airspace": {
-      "age_hours": 5.48,
+      "age_hours": 6.4,
       "checked_at": "2026-11-27T12:02:24Z",
       "missingness": "not_measured_not_zero",
       "mode": "live_airspace",
@@ -186681,7 +186685,7 @@
       "truncated_or_partial": true
     },
     "live_maritime": {
-      "age_hours": 5.48,
+      "age_hours": 6.4,
       "checked_at": "2026-11-27T12:02:24Z",
       "missingness": "not_measured_not_zero",
       "mode": "live_maritime",
@@ -186692,18 +186696,18 @@
       "truncated_or_partial": true
     },
     "nga": {
-      "age_hours": 9.28,
-      "checked_at": "2026-11-27T08:14:33Z",
+      "age_hours": 0.01,
+      "checked_at": "2026-11-27T18:26:12Z",
       "missingness": "not_measured_not_zero",
       "mode": "nga",
       "provider_status": "unavailable",
-      "snapshot_at": "2026-11-27T08:14:33Z",
+      "snapshot_at": "2026-11-27T18:26:12Z",
       "source_scope": "NGA active broadcast warnings; provider availability varies",
       "status": "stale_or_unavailable",
       "truncated_or_partial": false
     },
     "nws": {
-      "age_hours": 4.79,
+      "age_hours": 5.72,
       "checked_at": "2026-11-27T12:43:32Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -186715,7 +186719,7 @@
       "truncated_or_partial": true
     },
     "official": {
-      "age_hours": 8.88,
+      "age_hours": 9.81,
       "checked_at": "2026-11-27T08:37:59Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -186727,7 +186731,7 @@
       "truncated_or_partial": false
     },
     "ons_br": {
-      "age_hours": 4.79,
+      "age_hours": 5.72,
       "checked_at": "2026-11-27T12:43:32Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -186739,7 +186743,7 @@
       "truncated_or_partial": true
     },
     "ripe": {
-      "age_hours": 4.79,
+      "age_hours": 5.72,
       "checked_at": "2026-11-27T12:43:32Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -186751,7 +186755,7 @@
       "truncated_or_partial": false
     },
     "ris_bgp": {
-      "age_hours": 4.79,
+      "age_hours": 5.72,
       "checked_at": "2026-11-27T12:43:32Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -186763,7 +186767,7 @@
       "truncated_or_partial": true
     },
     "saws_za": {
-      "age_hours": 4.79,
+      "age_hours": 5.72,
       "checked_at": "2026-11-27T12:43:32Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -186775,7 +186779,7 @@
       "truncated_or_partial": true
     },
     "sg_mpa": {
-      "age_hours": 4.79,
+      "age_hours": 5.72,
       "checked_at": "2026-11-27T12:43:32Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -186787,7 +186791,7 @@
       "truncated_or_partial": true
     },
     "swpc": {
-      "age_hours": 4.79,
+      "age_hours": 5.72,
       "checked_at": "2026-11-27T12:43:32Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -186799,7 +186803,7 @@
       "truncated_or_partial": false
     },
     "tw_power": {
-      "age_hours": 15.73,
+      "age_hours": 16.66,
       "checked_at": "2026-11-27T12:43:32Z",
       "missingness": "not_measured_not_zero",
       "mode": "tw_power",
@@ -186810,7 +186814,7 @@
       "truncated_or_partial": false
     },
     "uk_tenders": {
-      "age_hours": 4.79,
+      "age_hours": 5.72,
       "checked_at": "2026-11-27T12:43:32Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -186822,7 +186826,7 @@
       "truncated_or_partial": true
     },
     "usace": {
-      "age_hours": 4.79,
+      "age_hours": 5.72,
       "checked_at": "2026-11-27T12:43:32Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -186834,7 +186838,7 @@
       "truncated_or_partial": true
     },
     "usgs": {
-      "age_hours": 4.79,
+      "age_hours": 5.72,
       "checked_at": "2026-11-27T12:43:32Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -186846,7 +186850,7 @@
       "truncated_or_partial": false
     },
     "watchlist": {
-      "age_hours": 8.88,
+      "age_hours": 9.81,
       "checked_at": "2026-11-27T08:38:00Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -186858,7 +186862,7 @@
       "truncated_or_partial": true
     },
     "wiki_edits": {
-      "age_hours": 4.79,
+      "age_hours": 5.72,
       "checked_at": "2026-11-27T12:43:32Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
