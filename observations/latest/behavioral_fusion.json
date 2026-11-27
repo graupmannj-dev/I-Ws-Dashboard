@@ -3,19 +3,18 @@
   "automated_severity_changes": 0,
   "collection_coverage": {
     "amsa": {
-      "age_hours": 4.53,
+      "age_hours": 9.28,
       "checked_at": "2026-11-27T08:14:33Z",
-      "first_provider_baseline": false,
-      "missingness": "provider_bounded_not_exhaustive",
+      "missingness": "not_measured_not_zero",
       "mode": "amsa",
       "provider_status": "collected",
       "snapshot_at": "2026-11-27T08:14:33Z",
       "source_scope": "AMSA NAVAREA X only",
-      "status": "current",
+      "status": "stale_or_unavailable",
       "truncated_or_partial": false
     },
     "bmkg_nowcast": {
-      "age_hours": 0.05,
+      "age_hours": 4.79,
       "checked_at": "2026-11-27T12:43:32Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -27,7 +26,7 @@
       "truncated_or_partial": true
     },
     "bmkg_quake": {
-      "age_hours": 0.05,
+      "age_hours": 4.79,
       "checked_at": "2026-11-27T12:43:32Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -39,7 +38,7 @@
       "truncated_or_partial": true
     },
     "cbp_wait": {
-      "age_hours": 0.05,
+      "age_hours": 4.79,
       "checked_at": "2026-11-27T12:43:32Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -51,19 +50,19 @@
       "truncated_or_partial": true
     },
     "commercial": {
-      "age_hours": 18.98,
-      "checked_at": "2026-11-26T17:47:47Z",
+      "age_hours": 0.0,
+      "checked_at": "2026-11-27T17:31:03Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
       "mode": "commercial",
       "provider_status": "collected",
-      "snapshot_at": "2026-11-26T17:47:47Z",
+      "snapshot_at": "2026-11-27T17:31:03Z",
       "source_scope": "selected maritime/air-cargo/war-risk press and syndication",
       "status": "current",
       "truncated_or_partial": false
     },
     "coops": {
-      "age_hours": 0.05,
+      "age_hours": 4.79,
       "checked_at": "2026-11-27T12:43:32Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -75,7 +74,7 @@
       "truncated_or_partial": true
     },
     "eonet": {
-      "age_hours": 0.05,
+      "age_hours": 4.79,
       "checked_at": "2026-11-27T12:43:32Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -87,7 +86,7 @@
       "truncated_or_partial": true
     },
     "imd_in": {
-      "age_hours": 0.05,
+      "age_hours": 4.79,
       "checked_at": "2026-11-27T12:43:32Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -99,7 +98,7 @@
       "truncated_or_partial": true
     },
     "inmet_br": {
-      "age_hours": 0.05,
+      "age_hours": 4.79,
       "checked_at": "2026-11-27T12:43:32Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -111,7 +110,7 @@
       "truncated_or_partial": true
     },
     "ioda": {
-      "age_hours": 4.53,
+      "age_hours": 9.28,
       "checked_at": "2026-11-27T08:14:33Z",
       "missingness": "not_measured_not_zero",
       "mode": "ioda",
@@ -122,31 +121,29 @@
       "truncated_or_partial": false
     },
     "live_airspace": {
-      "age_hours": 0.73,
+      "age_hours": 5.48,
       "checked_at": "2026-11-27T12:02:24Z",
-      "first_provider_baseline": false,
-      "missingness": "partial_sampling_not_worldwide_exhaustive",
+      "missingness": "not_measured_not_zero",
       "mode": "live_airspace",
       "provider_status": "partial",
       "snapshot_at": "2026-11-27T12:02:24Z",
       "source_scope": "FAA temporary flight restrictions: United States only",
-      "status": "current_partial",
+      "status": "stale_or_unavailable",
       "truncated_or_partial": true
     },
     "live_maritime": {
-      "age_hours": 0.73,
+      "age_hours": 5.48,
       "checked_at": "2026-11-27T12:02:24Z",
-      "first_provider_baseline": false,
-      "missingness": "partial_sampling_not_worldwide_exhaustive",
+      "missingness": "not_measured_not_zero",
       "mode": "live_maritime",
       "provider_status": "partial",
       "snapshot_at": "2026-11-27T12:02:24Z",
       "source_scope": "Danish Maritime Authority Niord notices: regional Baltic/North Sea",
-      "status": "current_partial",
+      "status": "stale_or_unavailable",
       "truncated_or_partial": true
     },
     "nga": {
-      "age_hours": 4.53,
+      "age_hours": 9.28,
       "checked_at": "2026-11-27T08:14:33Z",
       "missingness": "not_measured_not_zero",
       "mode": "nga",
@@ -157,7 +154,7 @@
       "truncated_or_partial": false
     },
     "nws": {
-      "age_hours": 0.05,
+      "age_hours": 4.79,
       "checked_at": "2026-11-27T12:43:32Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -169,7 +166,7 @@
       "truncated_or_partial": true
     },
     "official": {
-      "age_hours": 4.14,
+      "age_hours": 8.88,
       "checked_at": "2026-11-27T08:37:59Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -181,7 +178,7 @@
       "truncated_or_partial": false
     },
     "ons_br": {
-      "age_hours": 0.05,
+      "age_hours": 4.79,
       "checked_at": "2026-11-27T12:43:32Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -193,7 +190,7 @@
       "truncated_or_partial": true
     },
     "ripe": {
-      "age_hours": 0.05,
+      "age_hours": 4.79,
       "checked_at": "2026-11-27T12:43:32Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -205,7 +202,7 @@
       "truncated_or_partial": false
     },
     "ris_bgp": {
-      "age_hours": 0.05,
+      "age_hours": 4.79,
       "checked_at": "2026-11-27T12:43:32Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -217,7 +214,7 @@
       "truncated_or_partial": true
     },
     "saws_za": {
-      "age_hours": 0.05,
+      "age_hours": 4.79,
       "checked_at": "2026-11-27T12:43:32Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -229,7 +226,7 @@
       "truncated_or_partial": true
     },
     "sg_mpa": {
-      "age_hours": 0.05,
+      "age_hours": 4.79,
       "checked_at": "2026-11-27T12:43:32Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -241,7 +238,7 @@
       "truncated_or_partial": true
     },
     "swpc": {
-      "age_hours": 0.05,
+      "age_hours": 4.79,
       "checked_at": "2026-11-27T12:43:32Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -253,7 +250,7 @@
       "truncated_or_partial": false
     },
     "tw_power": {
-      "age_hours": 10.99,
+      "age_hours": 15.73,
       "checked_at": "2026-11-27T12:43:32Z",
       "missingness": "not_measured_not_zero",
       "mode": "tw_power",
@@ -264,7 +261,7 @@
       "truncated_or_partial": false
     },
     "uk_tenders": {
-      "age_hours": 0.05,
+      "age_hours": 4.79,
       "checked_at": "2026-11-27T12:43:32Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -276,7 +273,7 @@
       "truncated_or_partial": true
     },
     "usace": {
-      "age_hours": 0.05,
+      "age_hours": 4.79,
       "checked_at": "2026-11-27T12:43:32Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -288,7 +285,7 @@
       "truncated_or_partial": true
     },
     "usgs": {
-      "age_hours": 0.05,
+      "age_hours": 4.79,
       "checked_at": "2026-11-27T12:43:32Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -300,7 +297,7 @@
       "truncated_or_partial": false
     },
     "watchlist": {
-      "age_hours": 4.14,
+      "age_hours": 8.88,
       "checked_at": "2026-11-27T08:38:00Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -312,7 +309,7 @@
       "truncated_or_partial": true
     },
     "wiki_edits": {
-      "age_hours": 0.05,
+      "age_hours": 4.79,
       "checked_at": "2026-11-27T12:43:32Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
@@ -327,39 +324,39 @@
   "discovery_visibility": {
     "exact_geography_match_required_for_cross_family": true,
     "latest_initial_baseline": false,
-    "latest_registry_newly_observed_count": 254,
-    "latest_registry_record_count": 752,
-    "latest_unlocated_record_count": 551,
+    "latest_registry_newly_observed_count": 12,
+    "latest_registry_record_count": 688,
+    "latest_unlocated_record_count": 512,
     "new_or_collocated_not_same_as_verified_threat": true,
     "new_this_collection_required_for_cross_family_nomination": true,
     "recent_observations_sampled": 24,
     "recent_source_families": {
-      "airspace_restriction": 4,
-      "commercial_media": 23,
-      "internet_reachability": 37,
+      "airspace_restriction": 3,
+      "commercial_media": 34,
+      "internet_reachability": 36,
       "maritime_restriction": 160,
       "protective_notice": 4
     },
-    "recent_unique_record_count_72h": 228,
-    "recent_unlocated_count_72h": 148,
+    "recent_unique_record_count_72h": 237,
+    "recent_unlocated_count_72h": 159,
     "schema": "aiba.behavioral-discovery-visibility.v1",
     "shared_exact_geography_keys_across_behavior_families": 0,
     "source_coverage_is_globally_complete": false
   },
   "forecast_probability": null,
   "gdelt_context": "separate_analytical_stream_not_a_gate_or_confirmation",
-  "generated_at": "2026-11-27T12:46:23Z",
+  "generated_at": "2026-11-27T17:31:04Z",
   "geographic_scope": "source_declared_only",
   "history_diagnostics": {
     "excluded_observations": {
-      "old_source_publication": 13,
-      "outside_asof_window": 81,
-      "published_after_first_observed": 27,
-      "unsupported_family": 1707
+      "old_source_publication": 14,
+      "outside_asof_window": 97,
+      "published_after_first_observed": 25,
+      "unsupported_family": 1442
     },
-    "history_files_examined": 34,
+    "history_files_examined": 33,
     "lookback_hours": 72,
-    "recent_unique_records": 228
+    "recent_unique_records": 237
   },
   "limit_notes": [
     "No automated threat warning. These are unreviewed investigatory leads.",
@@ -368,33 +365,435 @@
     "Unlocated records cannot produce automatic geographic convergence.",
     "Unavailable collection is not evidence of no threatening activity."
   ],
-  "new_single_source_count_total": 1,
+  "new_single_source_count_total": 12,
   "new_single_source_leads": [
     {
-      "evidence_class": "aggregated_public_network_measurement",
-      "first_observed_at": "2026-11-27T12:46:23Z",
+      "evidence_class": "media_mention",
+      "first_observed_at": "2026-11-27T17:31:04Z",
       "geography": {
-        "key": "ripe-msm:1001",
-        "kind": "global_public_probe_cohort",
-        "label": "K-root public ping aggregate",
+        "key": null,
+        "kind": "unlocated",
+        "label": null,
         "latitude": null,
         "longitude": null,
-        "precision": "not_country_or_incident_location",
+        "precision": "no_source_verified_geography",
         "verified_iso": false
       },
-      "information_root": "ripe:measurement:1001:20261127T12",
+      "information_root": "commercial:15afeeb590b56cad2f19",
       "meaning": "Observation novelty, not evidence of impending violence.",
-      "observation_id": "beh:2d0f4e62d5165bea27641d4c9363",
-      "requires_geolocation": false,
-      "source_family": "internet_reachability",
-      "source_published_at": null,
-      "source_url": "https://atlas.ripe.net/measurements/1001/",
+      "observation_id": "beh:33ca381d2a219bbdd655ed7a6b90",
+      "requires_geolocation": true,
+      "source_family": "commercial_media",
+      "source_published_at": "2026-11-26T17:53:16Z",
+      "source_url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPV3ZlRHBaMzRuaWh5eEdlZzNBU2R1djFJSl90ejdCSjNMSWFKNkQ1YTFxMjdhRUNMMWJEQ3ZuWDI4X0NLenlhUmd2WFdsT0JSZjJRTHZGa21welNWTy0wbHpoRDFVTXdyam9ZNHQyWHZ0T3hQYXdFdE5ta1FtTmV2S3BibDdlQ3luMWYw?oc=5",
       "status": "single_source_unreviewed",
-      "title": "RIPE Atlas K-root public probe aggregate (13119 usable measurements)"
+      "title": "Koretskyi invited Canada to join the War Risk Insurance Fund and the “Industrial Ramstein” - Mezha.net"
+    },
+    {
+      "evidence_class": "media_mention",
+      "first_observed_at": "2026-11-27T17:31:04Z",
+      "geography": {
+        "key": null,
+        "kind": "unlocated",
+        "label": null,
+        "latitude": null,
+        "longitude": null,
+        "precision": "no_source_verified_geography",
+        "verified_iso": false
+      },
+      "information_root": "commercial:81875c973bee78db08a4",
+      "meaning": "Observation novelty, not evidence of impending violence.",
+      "observation_id": "beh:49012d15b92830f2dd3af3134e5d",
+      "requires_geolocation": true,
+      "source_family": "commercial_media",
+      "source_published_at": "2026-11-26T20:15:20Z",
+      "source_url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQcVo4aFRxN05JQmwzVmpvT3JpTXItbloteHBhY1hEVUp1Uzd5bGN2UkhHYy1lTU4yLUpENXNyYTRWbnBHaUJIbDJpRTBOMzJIMmJXQUtlalZiSmVnRUFhTC1IUmRXckdPOWF2cW5TRzNFd3FBb250VzBRcFVrcWVxR2FDd3lOOUlzaHZKNEN2R0tldkZ2ZzdNQXpMMmNKU0J5OEdlVm14TG53V3lZQzBIZUFRYTRvWTdnQS1JR0c3QlFqNkpKOUFJ?oc=5",
+      "status": "single_source_unreviewed",
+      "title": "Ukraine Urges Canada to Join Industrial Ramstein and Contribute to War Risk Insurance Fund - UNITED24 Media"
+    },
+    {
+      "evidence_class": "media_mention",
+      "first_observed_at": "2026-11-27T17:31:04Z",
+      "geography": {
+        "key": null,
+        "kind": "unlocated",
+        "label": null,
+        "latitude": null,
+        "longitude": null,
+        "precision": "no_source_verified_geography",
+        "verified_iso": false
+      },
+      "information_root": "commercial:096716010cc86cffd361",
+      "meaning": "Observation novelty, not evidence of impending violence.",
+      "observation_id": "beh:4c52e350b395383eaf1366c844dd",
+      "requires_geolocation": true,
+      "source_family": "commercial_media",
+      "source_published_at": "2026-11-26T18:58:00Z",
+      "source_url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNTlpFZEVjWkVmSXVaSWxPSUN3dF9iOFJLYUVvR200OWFuUi1sdjVScHJKUXNhRE9WNEJ5QWVtVkdOVlhNal8zV01GR2ZvMVRhVFhmYzhrU2FKOC1yN2RYVG9OZ2F2bmw3QTd5Ymd6U2VRT3UtaGpVRG43ZmhxQVBuNVNlTUlyQlJ4NlpXX0tfc2EySUhnRTQ3S3NnYm5fSGpFWVo2VWQ5cGJ6N1p1TjB0T2RR0gGyAUFVX3lxTE1OWkVkRWNaRWZJdVpJbE9JQ3d0X2I4UkthRW9HbTQ5YW5SLWx2NVJwckpRc2FET1Y0QnlBZW1WR05WWE1qXzNXTUZHZm8xVGFUWGZjOGtTYUo4LXI3ZFhUb05nYXZubDdBN3liZ3pTZVFPdS1oalVEbjdmaHFBUG41U2VNSXJCUng2WldfS19zYTJJSGdFNDdLc2dibl9IakVZWjZVZDlwYno3WnVOMHRPZFE?oc=5",
+      "status": "single_source_unreviewed",
+      "title": "Ukraine invites Canada to join War Risk Insurance Fund - Ukrinform"
+    },
+    {
+      "evidence_class": "media_mention",
+      "first_observed_at": "2026-11-27T17:31:04Z",
+      "geography": {
+        "key": null,
+        "kind": "unlocated",
+        "label": null,
+        "latitude": null,
+        "longitude": null,
+        "precision": "no_source_verified_geography",
+        "verified_iso": false
+      },
+      "information_root": "commercial:350b2cce0dadd821d694",
+      "meaning": "Observation novelty, not evidence of impending violence.",
+      "observation_id": "beh:4e289e2c069fe73e3bbbfbb50690",
+      "requires_geolocation": true,
+      "source_family": "commercial_media",
+      "source_published_at": "2026-11-26T18:03:38Z",
+      "source_url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxOR0xqdEpSTDJ6TjhPMGtVOTBpdjVQdWxaMS1JU2RvamJVV2s1dk1oM3NVYW93RVpNbDVjUXo4NUQ5cW9idEw2NXNwVGxjY3hSanRvcFZhb1RRUEMwcWRHbXF5eXBPUEFCbV93WE9ZSW91aGFGQnVtQzU1a3Y5QlJiUzdadGxIblZKMnhtb3dCYWxvZHRReWh3bWZLZm1EMzVualY0by1BYlp0R2JZSEHSAawBQVVfeXFMTThORndLV0xTSHVnc1ZyTERuNTlDWTlMaDNWNXhUeXd0RGpOOUV6RTBOTVd6aHAtbFpoUkxrTV9LTW41TzFJb016WUVUOXpMdlZDeVFFdjQ3dTZhdVlnZVg2ZF9kckc4dHZwSzlYbUNNQXgtYm02Skx2bGFaTFc4b0s4azVrLTY1R1JoYlVsenpfOGNRNDVvREJyMy1laVg5Nkd0QmRaS2c3MXowYw?oc=5",
+      "status": "single_source_unreviewed",
+      "title": "Ukraine invited Canada to join the War Risk Insurance Fund and the \"Industrial Ramstein\" initiative. - Українські Національні Новини (УНН)"
+    },
+    {
+      "evidence_class": "media_mention",
+      "first_observed_at": "2026-11-27T17:31:04Z",
+      "geography": {
+        "key": null,
+        "kind": "unlocated",
+        "label": null,
+        "latitude": null,
+        "longitude": null,
+        "precision": "no_source_verified_geography",
+        "verified_iso": false
+      },
+      "information_root": "commercial:85294efe3f39b738cd0c",
+      "meaning": "Observation novelty, not evidence of impending violence.",
+      "observation_id": "beh:550ece9cf1d5a1489ba570cd13b6",
+      "requires_geolocation": true,
+      "source_family": "commercial_media",
+      "source_published_at": "2026-11-27T12:34:00Z",
+      "source_url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPREhiVzB0U2ZwN21ZZjNuQi01Y2FQbGR3SlJCNGVNLUdPVmNzQzZ3RmhzdVRjR3ZnQkJXanNMaGZEUzNrNExVaTZRdEF2RFlFTUtsWUYzb1l2Y0g4N1Rya3RFWVhuRkgtaGNFVEFwSTFMZ2xFRW1zVWFTcXA4S3prd2lvc0NsekRKZENYa1VtN0xDSzFOLUdlSE1CdFhrdTdPUGVvdFFhejRuRW9XS0UwclN4NjE?oc=5",
+      "status": "single_source_unreviewed",
+      "title": "How shipping and war-risk insurance affect Kenya's fuel prices - The Star, Kenya"
+    },
+    {
+      "evidence_class": "media_mention",
+      "first_observed_at": "2026-11-27T17:31:04Z",
+      "geography": {
+        "key": null,
+        "kind": "unlocated",
+        "label": null,
+        "latitude": null,
+        "longitude": null,
+        "precision": "no_source_verified_geography",
+        "verified_iso": false
+      },
+      "information_root": "commercial:c0782d45551c8bed7656",
+      "meaning": "Observation novelty, not evidence of impending violence.",
+      "observation_id": "beh:5a7018c5a16018dbecd6984a3151",
+      "requires_geolocation": true,
+      "source_family": "commercial_media",
+      "source_published_at": "2026-11-26T23:11:58Z",
+      "source_url": "https://maritime-executive.com/article/iceland-has-deadliest-maritime-accident-in-decades-as-fishing-vessel-sinks",
+      "status": "single_source_unreviewed",
+      "title": "Iceland Has Deadliest Maritime Accident in Decades as Fishing Vessel Sinks"
+    },
+    {
+      "evidence_class": "media_mention",
+      "first_observed_at": "2026-11-27T17:31:04Z",
+      "geography": {
+        "key": null,
+        "kind": "unlocated",
+        "label": null,
+        "latitude": null,
+        "longitude": null,
+        "precision": "no_source_verified_geography",
+        "verified_iso": false
+      },
+      "information_root": "commercial:6e1a583c834d2c58293e",
+      "meaning": "Observation novelty, not evidence of impending violence.",
+      "observation_id": "beh:836fc31c7f186d3233ad513d9949",
+      "requires_geolocation": true,
+      "source_family": "commercial_media",
+      "source_published_at": "2026-11-27T14:14:16Z",
+      "source_url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQRjJ1N0ExSTdEbERrQTNxdW1wRmVrSjJQUzh5Z1JFZEZOYnktVWFINnY4aXdtRkQtYzdOVmZiSFNIMk44QU1fQk5xNE1Pcy1LS2RpcnlvbmhKNUctSHJTNW5SS1NwQ254SnZHMWVHM3JLRDFIU2VweWtsRmNaVFdSMg?oc=5",
+      "status": "single_source_unreviewed",
+      "title": "Ukraine plans $4B war risk insurance fund - Business Insurance"
+    },
+    {
+      "evidence_class": "media_mention",
+      "first_observed_at": "2026-11-27T17:31:04Z",
+      "geography": {
+        "key": null,
+        "kind": "unlocated",
+        "label": null,
+        "latitude": null,
+        "longitude": null,
+        "precision": "no_source_verified_geography",
+        "verified_iso": false
+      },
+      "information_root": "commercial:316731b2ff36a6c6bb27",
+      "meaning": "Observation novelty, not evidence of impending violence.",
+      "observation_id": "beh:962f9011867649d2ba8627af45a2",
+      "requires_geolocation": true,
+      "source_family": "commercial_media",
+      "source_published_at": "2026-11-26T18:04:41Z",
+      "source_url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxQb3BYT2JsTFBTVno0NjNlaEFqOUVNbm12UHo1NVR5azh1OXBpTW1jWWtWUmxvaEQzWGtLblVJUEw5VWtsb3FMQnZwOXU1Y1YzZktwN0NiMTZhRko0djc4bXFqTlEyWmVuYUlnZkNwWmRBNDJ1TFdwMDlLV05ldWI2M2tDZ3NsMGRmNXNTTWYyWlZfOXNpSlZkWGNKamE3Vm56a1MyU2FxVWUyRHg5NE9OMFh5VGtjQ01kRkpfeGdDaEdvc3RfRWV2RnlUVjhqZ9IBzgFBVV95cUxQb3BYT2JsTFBTVno0NjNlaEFqOUVNbm12UHo1NVR5azh1OXBpTW1jWWtWUmxvaEQzWGtLblVJUEw5VWtsb3FMQnZwOXU1Y1YzZktwN0NiMTZhRko0djc4bXFqTlEyWmVuYUlnZkNwWmRBNDJ1TFdwMDlLV05ldWI2M2tDZ3NsMGRmNXNTTWYyWlZfOXNpSlZkWGNKamE3Vm56a1MyU2FxVWUyRHg5NE9OMFh5VGtjQ01kRkpfeGdDaEdvc3RfRWV2RnlUVjhqZw?oc=5",
+      "status": "single_source_unreviewed",
+      "title": "Ukraine Invites Canada to Join War Risk Insurance Fund and Boost Economic Partnership - Inkorr"
+    },
+    {
+      "evidence_class": "media_mention",
+      "first_observed_at": "2026-11-27T17:31:04Z",
+      "geography": {
+        "key": null,
+        "kind": "unlocated",
+        "label": null,
+        "latitude": null,
+        "longitude": null,
+        "precision": "no_source_verified_geography",
+        "verified_iso": false
+      },
+      "information_root": "commercial:df62914da02f75aa57db",
+      "meaning": "Observation novelty, not evidence of impending violence.",
+      "observation_id": "beh:c3a8627dcd763bd57b510975f4db",
+      "requires_geolocation": true,
+      "source_family": "commercial_media",
+      "source_published_at": "2026-11-26T18:46:07Z",
+      "source_url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOU1dwb1NGLVBHNV9LajQxZDQzbWpSVWJRUXlQX1Z2aG9YbnZnQ1Azd19zVE5NdWtUQ1R1azJzLTJCenFpNjlXZHltMHBfXzR3cjBPUEJXNk1NOWZ5ajVKM0xkd3ZmYlFKdldBU0VsZkJoZExWbFB0MDM0UWFSSFlvTmJpQUpsU1BLWlBCY1pTUDh5QVZ1VGNSR01SUHp4OXFtY3c?oc=5",
+      "status": "single_source_unreviewed",
+      "title": "Ukraine has asked Canada to contribute to the War Risk Insurance Fund - UA.NEWS"
+    },
+    {
+      "evidence_class": "media_mention",
+      "first_observed_at": "2026-11-27T17:31:04Z",
+      "geography": {
+        "key": null,
+        "kind": "unlocated",
+        "label": null,
+        "latitude": null,
+        "longitude": null,
+        "precision": "no_source_verified_geography",
+        "verified_iso": false
+      },
+      "information_root": "commercial:9e524ce875795c2c17c9",
+      "meaning": "Observation novelty, not evidence of impending violence.",
+      "observation_id": "beh:c4674958c9a370c350f73c05e990",
+      "requires_geolocation": true,
+      "source_family": "commercial_media",
+      "source_published_at": "2026-11-27T01:37:44Z",
+      "source_url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE1CdjdXSXJQbjVpTzZ2VGt0bEJXcXp4T0dEWTN0TVVXMDRtVHExRkNxdWwyVkRJaW9hZ0phaDlqdld3VGZmeGtvY0RONVlLV1JFRlIybjU4WTRjR1JXb2tzRkh6MldkWVB2bFFmTDhiLU9PRFJfV3NxNkU1eXY?oc=5",
+      "status": "single_source_unreviewed",
+      "title": "European airline suspends flights and warns of bankruptcy - Karryon"
+    },
+    {
+      "evidence_class": "media_mention",
+      "first_observed_at": "2026-11-27T17:31:04Z",
+      "geography": {
+        "key": null,
+        "kind": "unlocated",
+        "label": null,
+        "latitude": null,
+        "longitude": null,
+        "precision": "no_source_verified_geography",
+        "verified_iso": false
+      },
+      "information_root": "commercial:d71d7bdc0d40c5f09d9a",
+      "meaning": "Observation novelty, not evidence of impending violence.",
+      "observation_id": "beh:ebbe63e631454998a8a0454435f4",
+      "requires_geolocation": true,
+      "source_family": "commercial_media",
+      "source_published_at": "2026-11-26T18:12:39Z",
+      "source_url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE5pT1Y3VHpCdW9TRXhGLXlvOUdyeGNCbXphYU5JdjhyZTdTS3U1RjJBcVhUVGtPNlFVYXRBRXlMaGN4Slp2V1NjZHVIYWQ3c1doX1A2cFhFcXQ2NmdJV1VCMnVn0gFnQVVfeXFMTk5rSmJpdDBSUjlMZjBBc3BoU09qeDdOd0o2dEVuNXNRdmVHMGVUU20xdlR5dHRvNHQ1b0hmWnBaR0pWNFRHTWpHUzdJTm5mcExuQlZ4aVdDU2J4UWVybUliTFZvTmhSYw?oc=5",
+      "status": "single_source_unreviewed",
+      "title": "Koretsky invites Canada to join War Risk Insurance Fund, become part of Industrial Ramstein - Interfax-Ukraine"
+    },
+    {
+      "evidence_class": "media_mention",
+      "first_observed_at": "2026-11-27T17:31:04Z",
+      "geography": {
+        "key": null,
+        "kind": "unlocated",
+        "label": null,
+        "latitude": null,
+        "longitude": null,
+        "precision": "no_source_verified_geography",
+        "verified_iso": false
+      },
+      "information_root": "commercial:5612169bba2b5a0558e4",
+      "meaning": "Observation novelty, not evidence of impending violence.",
+      "observation_id": "beh:f3f9e857e4b5c30ddcdde2bab246",
+      "requires_geolocation": true,
+      "source_family": "commercial_media",
+      "source_published_at": "2026-11-26T23:11:58Z",
+      "source_url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNcmdLbXQ2Q1lVdjhpYWRMMHhwTUh2RXJMcUFCdlRkc0s3N2VFWFZ5cmstTFM2ZWpEWkhqQ0RJRjdZbmN3NXlVR2JCckw4Tkd5OWt6anEwb3VuYlF2VERzeHlKMFJFMVJPRzFCTm1fVmhnOHZaekNXSUtjVlUzVmtVRW00THozTEV0cXV3aS1FZkdiX1p1Y05lMGpFTEhCUXFCQzMxRGJoaldXbjFldjl4LWk0Yw?oc=5",
+      "status": "single_source_unreviewed",
+      "title": "Iceland Has Deadliest Maritime Accident in Decades as Fishing Vessel Sinks - The Maritime Executive"
     }
   ],
   "prediction_horizon": null,
   "recent_source_observations": [
+    {
+      "first_observed_at": "2026-11-27T17:31:04Z",
+      "geography": {
+        "key": null,
+        "kind": "unlocated",
+        "label": null,
+        "latitude": null,
+        "longitude": null,
+        "precision": "no_source_verified_geography",
+        "verified_iso": false
+      },
+      "observation_id": "beh:f3f9e857e4b5c30ddcdde2bab246",
+      "provider": "commercial",
+      "requires_geolocation": true,
+      "source_family": "commercial_media",
+      "source_published_at": "2026-11-26T23:11:58Z",
+      "source_url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNcmdLbXQ2Q1lVdjhpYWRMMHhwTUh2RXJMcUFCdlRkc0s3N2VFWFZ5cmstTFM2ZWpEWkhqQ0RJRjdZbmN3NXlVR2JCckw4Tkd5OWt6anEwb3VuYlF2VERzeHlKMFJFMVJPRzFCTm1fVmhnOHZaekNXSUtjVlUzVmtVRW00THozTEV0cXV3aS1FZkdiX1p1Y05lMGpFTEhCUXFCQzMxRGJoaldXbjFldjl4LWk0Yw?oc=5",
+      "status": "recent_source_observation_unreviewed",
+      "title": "Iceland Has Deadliest Maritime Accident in Decades as Fishing Vessel Sinks - The Maritime Executive"
+    },
+    {
+      "first_observed_at": "2026-11-27T17:31:04Z",
+      "geography": {
+        "key": null,
+        "kind": "unlocated",
+        "label": null,
+        "latitude": null,
+        "longitude": null,
+        "precision": "no_source_verified_geography",
+        "verified_iso": false
+      },
+      "observation_id": "beh:ebbe63e631454998a8a0454435f4",
+      "provider": "commercial",
+      "requires_geolocation": true,
+      "source_family": "commercial_media",
+      "source_published_at": "2026-11-26T18:12:39Z",
+      "source_url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE5pT1Y3VHpCdW9TRXhGLXlvOUdyeGNCbXphYU5JdjhyZTdTS3U1RjJBcVhUVGtPNlFVYXRBRXlMaGN4Slp2V1NjZHVIYWQ3c1doX1A2cFhFcXQ2NmdJV1VCMnVn0gFnQVVfeXFMTk5rSmJpdDBSUjlMZjBBc3BoU09qeDdOd0o2dEVuNXNRdmVHMGVUU20xdlR5dHRvNHQ1b0hmWnBaR0pWNFRHTWpHUzdJTm5mcExuQlZ4aVdDU2J4UWVybUliTFZvTmhSYw?oc=5",
+      "status": "recent_source_observation_unreviewed",
+      "title": "Koretsky invites Canada to join War Risk Insurance Fund, become part of Industrial Ramstein - Interfax-Ukraine"
+    },
+    {
+      "first_observed_at": "2026-11-27T17:31:04Z",
+      "geography": {
+        "key": null,
+        "kind": "unlocated",
+        "label": null,
+        "latitude": null,
+        "longitude": null,
+        "precision": "no_source_verified_geography",
+        "verified_iso": false
+      },
+      "observation_id": "beh:c4674958c9a370c350f73c05e990",
+      "provider": "commercial",
+      "requires_geolocation": true,
+      "source_family": "commercial_media",
+      "source_published_at": "2026-11-27T01:37:44Z",
+      "source_url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE1CdjdXSXJQbjVpTzZ2VGt0bEJXcXp4T0dEWTN0TVVXMDRtVHExRkNxdWwyVkRJaW9hZ0phaDlqdld3VGZmeGtvY0RONVlLV1JFRlIybjU4WTRjR1JXb2tzRkh6MldkWVB2bFFmTDhiLU9PRFJfV3NxNkU1eXY?oc=5",
+      "status": "recent_source_observation_unreviewed",
+      "title": "European airline suspends flights and warns of bankruptcy - Karryon"
+    },
+    {
+      "first_observed_at": "2026-11-27T17:31:04Z",
+      "geography": {
+        "key": null,
+        "kind": "unlocated",
+        "label": null,
+        "latitude": null,
+        "longitude": null,
+        "precision": "no_source_verified_geography",
+        "verified_iso": false
+      },
+      "observation_id": "beh:c3a8627dcd763bd57b510975f4db",
+      "provider": "commercial",
+      "requires_geolocation": true,
+      "source_family": "commercial_media",
+      "source_published_at": "2026-11-26T18:46:07Z",
+      "source_url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOU1dwb1NGLVBHNV9LajQxZDQzbWpSVWJRUXlQX1Z2aG9YbnZnQ1Azd19zVE5NdWtUQ1R1azJzLTJCenFpNjlXZHltMHBfXzR3cjBPUEJXNk1NOWZ5ajVKM0xkd3ZmYlFKdldBU0VsZkJoZExWbFB0MDM0UWFSSFlvTmJpQUpsU1BLWlBCY1pTUDh5QVZ1VGNSR01SUHp4OXFtY3c?oc=5",
+      "status": "recent_source_observation_unreviewed",
+      "title": "Ukraine has asked Canada to contribute to the War Risk Insurance Fund - UA.NEWS"
+    },
+    {
+      "first_observed_at": "2026-11-27T17:31:04Z",
+      "geography": {
+        "key": null,
+        "kind": "unlocated",
+        "label": null,
+        "latitude": null,
+        "longitude": null,
+        "precision": "no_source_verified_geography",
+        "verified_iso": false
+      },
+      "observation_id": "beh:962f9011867649d2ba8627af45a2",
+      "provider": "commercial",
+      "requires_geolocation": true,
+      "source_family": "commercial_media",
+      "source_published_at": "2026-11-26T18:04:41Z",
+      "source_url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxQb3BYT2JsTFBTVno0NjNlaEFqOUVNbm12UHo1NVR5azh1OXBpTW1jWWtWUmxvaEQzWGtLblVJUEw5VWtsb3FMQnZwOXU1Y1YzZktwN0NiMTZhRko0djc4bXFqTlEyWmVuYUlnZkNwWmRBNDJ1TFdwMDlLV05ldWI2M2tDZ3NsMGRmNXNTTWYyWlZfOXNpSlZkWGNKamE3Vm56a1MyU2FxVWUyRHg5NE9OMFh5VGtjQ01kRkpfeGdDaEdvc3RfRWV2RnlUVjhqZ9IBzgFBVV95cUxQb3BYT2JsTFBTVno0NjNlaEFqOUVNbm12UHo1NVR5azh1OXBpTW1jWWtWUmxvaEQzWGtLblVJUEw5VWtsb3FMQnZwOXU1Y1YzZktwN0NiMTZhRko0djc4bXFqTlEyWmVuYUlnZkNwWmRBNDJ1TFdwMDlLV05ldWI2M2tDZ3NsMGRmNXNTTWYyWlZfOXNpSlZkWGNKamE3Vm56a1MyU2FxVWUyRHg5NE9OMFh5VGtjQ01kRkpfeGdDaEdvc3RfRWV2RnlUVjhqZw?oc=5",
+      "status": "recent_source_observation_unreviewed",
+      "title": "Ukraine Invites Canada to Join War Risk Insurance Fund and Boost Economic Partnership - Inkorr"
+    },
+    {
+      "first_observed_at": "2026-11-27T17:31:04Z",
+      "geography": {
+        "key": null,
+        "kind": "unlocated",
+        "label": null,
+        "latitude": null,
+        "longitude": null,
+        "precision": "no_source_verified_geography",
+        "verified_iso": false
+      },
+      "observation_id": "beh:836fc31c7f186d3233ad513d9949",
+      "provider": "commercial",
+      "requires_geolocation": true,
+      "source_family": "commercial_media",
+      "source_published_at": "2026-11-27T14:14:16Z",
+      "source_url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQRjJ1N0ExSTdEbERrQTNxdW1wRmVrSjJQUzh5Z1JFZEZOYnktVWFINnY4aXdtRkQtYzdOVmZiSFNIMk44QU1fQk5xNE1Pcy1LS2RpcnlvbmhKNUctSHJTNW5SS1NwQ254SnZHMWVHM3JLRDFIU2VweWtsRmNaVFdSMg?oc=5",
+      "status": "recent_source_observation_unreviewed",
+      "title": "Ukraine plans $4B war risk insurance fund - Business Insurance"
+    },
+    {
+      "first_observed_at": "2026-11-27T17:31:04Z",
+      "geography": {
+        "key": null,
+        "kind": "unlocated",
+        "label": null,
+        "latitude": null,
+        "longitude": null,
+        "precision": "no_source_verified_geography",
+        "verified_iso": false
+      },
+      "observation_id": "beh:5a7018c5a16018dbecd6984a3151",
+      "provider": "commercial",
+      "requires_geolocation": true,
+      "source_family": "commercial_media",
+      "source_published_at": "2026-11-26T23:11:58Z",
+      "source_url": "https://maritime-executive.com/article/iceland-has-deadliest-maritime-accident-in-decades-as-fishing-vessel-sinks",
+      "status": "recent_source_observation_unreviewed",
+      "title": "Iceland Has Deadliest Maritime Accident in Decades as Fishing Vessel Sinks"
+    },
+    {
+      "first_observed_at": "2026-11-27T17:31:04Z",
+      "geography": {
+        "key": null,
+        "kind": "unlocated",
+        "label": null,
+        "latitude": null,
+        "longitude": null,
+        "precision": "no_source_verified_geography",
+        "verified_iso": false
+      },
+      "observation_id": "beh:550ece9cf1d5a1489ba570cd13b6",
+      "provider": "commercial",
+      "requires_geolocation": true,
+      "source_family": "commercial_media",
+      "source_published_at": "2026-11-27T12:34:00Z",
+      "source_url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPREhiVzB0U2ZwN21ZZjNuQi01Y2FQbGR3SlJCNGVNLUdPVmNzQzZ3RmhzdVRjR3ZnQkJXanNMaGZEUzNrNExVaTZRdEF2RFlFTUtsWUYzb1l2Y0g4N1Rya3RFWVhuRkgtaGNFVEFwSTFMZ2xFRW1zVWFTcXA4S3prd2lvc0NsekRKZENYa1VtN0xDSzFOLUdlSE1CdFhrdTdPUGVvdFFhejRuRW9XS0UwclN4NjE?oc=5",
+      "status": "recent_source_observation_unreviewed",
+      "title": "How shipping and war-risk insurance affect Kenya's fuel prices - The Star, Kenya"
+    },
     {
       "first_observed_at": "2026-11-27T12:46:23Z",
       "geography": {
@@ -652,166 +1051,6 @@
       "title": "FAA TFR 6/9837 · LOUISIANA, MO, Monday, November 30, 2026 UTC"
     },
     {
-      "first_observed_at": "2026-11-26T17:47:49Z",
-      "geography": {
-        "key": null,
-        "kind": "unlocated",
-        "label": null,
-        "latitude": null,
-        "longitude": null,
-        "precision": "no_source_verified_geography",
-        "verified_iso": false
-      },
-      "observation_id": "beh:ffc8977b27939752ae15252f03ba",
-      "provider": "commercial",
-      "requires_geolocation": true,
-      "source_family": "commercial_media",
-      "source_published_at": "2026-11-25T19:47:31Z",
-      "source_url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQQ2JmUkNJR050Sm4tcnRDeWpGS1JSbjFwVTIzYVJaRmZqYXBnZ0RMVHhEYmo2MS1iYVdPNi11QTMydTExdVZqRnV5Y3MxenVWdW5HTlRIZ2VOTWhRak0tbkljbC1ISUhicUpBMW03NGR3LU9rTGdJMEtJSzFKTVVhYW1WT1BBbExRZGhsNDhtazhMeVZkQ2ZJ?oc=5",
-      "status": "recent_source_observation_unreviewed",
-      "title": "Ukraine plans $3-4 bn war risk insurance fund with international partners - Beinsure"
-    },
-    {
-      "first_observed_at": "2026-11-26T17:47:49Z",
-      "geography": {
-        "key": null,
-        "kind": "unlocated",
-        "label": null,
-        "latitude": null,
-        "longitude": null,
-        "precision": "no_source_verified_geography",
-        "verified_iso": false
-      },
-      "observation_id": "beh:f04903b6c5adcd484967c942b890",
-      "provider": "commercial",
-      "requires_geolocation": true,
-      "source_family": "commercial_media",
-      "source_published_at": "2026-11-25T23:25:05Z",
-      "source_url": "https://maritime-executive.com/article/thailand-plans-tricky-salvage-of-grounded-vessel-carrying-ammonia-gas-cargo",
-      "status": "recent_source_observation_unreviewed",
-      "title": "Thailand Plans Tricky Salvage of Grounded Vessel Carrying Ammonia Gas Cargo"
-    },
-    {
-      "first_observed_at": "2026-11-26T17:47:49Z",
-      "geography": {
-        "key": null,
-        "kind": "unlocated",
-        "label": null,
-        "latitude": null,
-        "longitude": null,
-        "precision": "no_source_verified_geography",
-        "verified_iso": false
-      },
-      "observation_id": "beh:c9e448d263125f96b2a4a1888776",
-      "provider": "commercial",
-      "requires_geolocation": true,
-      "source_family": "commercial_media",
-      "source_published_at": "2026-11-26T16:06:44Z",
-      "source_url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQLUVvb3psZ0RYMDZZMHNBS0RvQnVGZjY0Q2pIRDhEeDdvMlRPQ1dvU2ZoR0tZSlprSUhFbnp1WDdjUDZQMDlGSUI4a1pJb3I1UmZQelZoQllYUXZ3bUY0U09peDRCT3NacjhFZXRTYk5BeHFmQ2V4UVJyMWJOZGdzWTVNemtSQWJEai1HeEU3cVNYa0V6SFhsZ3Z1Z0JNZHB4Nl9xMF9NZlJ3U0dTRU5mdFFXS3pCVVlq?oc=5",
-      "status": "recent_source_observation_unreviewed",
-      "title": "FTL Airlines adds A330-300P2F to support Europe-Asia flights - Air Cargo News"
-    },
-    {
-      "first_observed_at": "2026-11-26T17:47:49Z",
-      "geography": {
-        "key": null,
-        "kind": "unlocated",
-        "label": null,
-        "latitude": null,
-        "longitude": null,
-        "precision": "no_source_verified_geography",
-        "verified_iso": false
-      },
-      "observation_id": "beh:af3aa347c8c70b21002294839666",
-      "provider": "commercial",
-      "requires_geolocation": true,
-      "source_family": "commercial_media",
-      "source_published_at": "2026-11-26T13:44:00Z",
-      "source_url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOaklLeE1MQ2lCWEtkQ0tHb0x0Z1dXQzRiNW9lNWpILWhMZzlGd2w0Q1dOWWFsVU5LdzRUb2tSNDNSbEdtU2JBLTQ1N3hvMGtvSUZiVE1nV0lDcmtJQ2g2Smh5anJIVkl0bGZZaXR3Mi1JT1FHeG9ELUFxdjBicEJ6aHdKU1VPOWEzRDZfZ3J2TEhyWFo1Q0NjZFE0cllycUR0TWZUdjFYdFVtSWM?oc=5",
-      "status": "recent_source_observation_unreviewed",
-      "title": "European budget airline suspends flights amid ‘critical’ finances, plans for bankruptcy - New York Post"
-    },
-    {
-      "first_observed_at": "2026-11-26T17:47:49Z",
-      "geography": {
-        "key": null,
-        "kind": "unlocated",
-        "label": null,
-        "latitude": null,
-        "longitude": null,
-        "precision": "no_source_verified_geography",
-        "verified_iso": false
-      },
-      "observation_id": "beh:4de77b09dd45f306390dd6290be1",
-      "provider": "commercial",
-      "requires_geolocation": true,
-      "source_family": "commercial_media",
-      "source_published_at": "2026-11-26T13:45:11Z",
-      "source_url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQZjBvaFJVZjlyMEVHb0M2U1B1SXd2THFyNG5SZzRKQnU5RlM1QkxCSGRpWVNJb2VVMjhiTzNUMXdQSVp4QTJvMVJaMzVINThjcmJYa2RsLUtwOVFrTDNjQVhJT1J2RkRsc2M3bTVBTURMSDdOVDU1YzRfOHhfVEpMRjRCNVZIYVViZkxicg?oc=5",
-      "status": "recent_source_observation_unreviewed",
-      "title": "European budget airline suspends flights amid ‘critical’ finances, plans for bankruptcy - AOL.com"
-    },
-    {
-      "first_observed_at": "2026-11-26T17:47:49Z",
-      "geography": {
-        "key": null,
-        "kind": "unlocated",
-        "label": null,
-        "latitude": null,
-        "longitude": null,
-        "precision": "no_source_verified_geography",
-        "verified_iso": false
-      },
-      "observation_id": "beh:4dbe419d0b41cc74544d0a7e0978",
-      "provider": "commercial",
-      "requires_geolocation": true,
-      "source_family": "commercial_media",
-      "source_published_at": "2026-11-25T23:25:05Z",
-      "source_url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQRGsxR21WRUpreUwzNVp6V1NtVGJuVWFSYmtScHVTckd6clYtX0lvVFFyRHQwU0xRMUlmdGxUaVBxdzE4V2xscGw2RHp2SnA4TDRFTnJnVWYtbUE1am9nUVlJTTRVX1NCX0ktVldGa3JjbmZ0YWhsTGM3VWhGZVJuLWlfOEJxWTY5aldWalI2bV9pcF9vblM3c0NLZ3VkVzNDRnFiUjh2ZnNCd2FWbGhwMUQ3RXE?oc=5",
-      "status": "recent_source_observation_unreviewed",
-      "title": "Thailand Plans Tricky Salvage of Grounded Vessel Carrying Ammonia Gas Cargo - The Maritime Executive"
-    },
-    {
-      "first_observed_at": "2026-11-26T17:47:49Z",
-      "geography": {
-        "key": null,
-        "kind": "unlocated",
-        "label": null,
-        "latitude": null,
-        "longitude": null,
-        "precision": "no_source_verified_geography",
-        "verified_iso": false
-      },
-      "observation_id": "beh:4b4acd27daf9df02caf947abbf96",
-      "provider": "commercial",
-      "requires_geolocation": true,
-      "source_family": "commercial_media",
-      "source_published_at": "2026-11-26T06:49:04Z",
-      "source_url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTFBBcklqcEtBYzNld1A0QnhJSmU3UWVsVVpTdGRObktJWXdQaWlESGpLUEZUV051dTJLaGxuRDIwRmdEYnBFM1FjZnJUdU1SazFzcHJhTkJPVjZJMk9EN3Rlb3lla09nQQ?oc=5",
-      "status": "recent_source_observation_unreviewed",
-      "title": "Ukraine's planned war risk fund aims to unlock investment - finway.com.ua"
-    },
-    {
-      "first_observed_at": "2026-11-26T17:47:49Z",
-      "geography": {
-        "key": null,
-        "kind": "unlocated",
-        "label": null,
-        "latitude": null,
-        "longitude": null,
-        "precision": "no_source_verified_geography",
-        "verified_iso": false
-      },
-      "observation_id": "beh:133e64ba54cd5f93ab30ca02dfac",
-      "provider": "commercial",
-      "requires_geolocation": true,
-      "source_family": "commercial_media",
-      "source_published_at": "2026-11-25T23:58:58Z",
-      "source_url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxOQ3QwdndlX1IwTEQwNFp1dWNhdjh4OXR4T0VJUnhmRWFWVUoxUHZuTXdQTkdMcXdkMmV3cTc4Z28xY3ZyTEprdWdTeEZxc2JUZzdNallELWtzdE53MXdSTzMtNERTN3hKTUJDOVA0YVlrckVOX0wyV1hub3hJekNBc3BB?oc=5",
-      "status": "recent_source_observation_unreviewed",
-      "title": "Black Sea and Danube marine insurance costs surge as reinsurers restrict cover - Beinsure"
-    },
-    {
       "first_observed_at": "2026-11-26T17:06:25Z",
       "geography": {
         "key": "ripe-msm:1001",
@@ -892,8 +1131,8 @@
       "title": "IODA detected connectivity anomaly: country MK"
     }
   ],
-  "registry_asof": "2026-11-27T12:46:23Z",
-  "registry_source_count": 752,
+  "registry_asof": "2026-11-27T17:31:04Z",
+  "registry_source_count": 688,
   "report_relationships": {
     "automatic_alerts_created": 0,
     "automatic_severity_changes": 0,
@@ -2444,6 +2683,74 @@
       },
       {
         "first_observation_separation_hours": 0.0,
+        "id": "relation:2f5383f3339d4715a93c",
+        "independent_corroboration_established": false,
+        "match_basis": "same_substantive_article_title_different_source_urls",
+        "reported_event_site_comparison_available": false,
+        "reported_event_site_separation_km": null,
+        "reporting_origin_used_as_event_site": false,
+        "review_requirements": [
+          "Verify whether both URLs reproduce one original article",
+          "Do not count syndication as two independently observed events",
+          "Resolve the underlying event separately from this story"
+        ],
+        "semantic_similarity": 0.9,
+        "shared_content_terms": [
+          "accident",
+          "deadliest",
+          "decades",
+          "fishing",
+          "has",
+          "iceland"
+        ],
+        "shared_information_root": false,
+        "source_reports": [
+          {
+            "first_observed_at": "2026-11-27T17:31:04Z",
+            "geography": {
+              "key": null,
+              "kind": "unlocated",
+              "label": null,
+              "latitude": null,
+              "longitude": null,
+              "precision": "no_source_verified_geography",
+              "verified_iso": false
+            },
+            "observation_id": "beh:f3f9e857e4b5c30ddcdde2bab246",
+            "provider": "commercial",
+            "reporting_origin": null,
+            "source_family": "commercial_media",
+            "source_published_at": "2026-11-26T23:11:58Z",
+            "source_url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNcmdLbXQ2Q1lVdjhpYWRMMHhwTUh2RXJMcUFCdlRkc0s3N2VFWFZ5cmstTFM2ZWpEWkhqQ0RJRjdZbmN3NXlVR2JCckw4Tkd5OWt6anEwb3VuYlF2VERzeHlKMFJFMVJPRzFCTm1fVmhnOHZaekNXSUtjVlUzVmtVRW00THozTEV0cXV3aS1FZkdiX1p1Y05lMGpFTEhCUXFCQzMxRGJoaldXbjFldjl4LWk0Yw?oc=5",
+            "status": "unreviewed_source_report",
+            "title": "Iceland Has Deadliest Maritime Accident in Decades as Fishing Vessel Sinks - The Maritime Executive"
+          },
+          {
+            "first_observed_at": "2026-11-27T17:31:04Z",
+            "geography": {
+              "key": null,
+              "kind": "unlocated",
+              "label": null,
+              "latitude": null,
+              "longitude": null,
+              "precision": "no_source_verified_geography",
+              "verified_iso": false
+            },
+            "observation_id": "beh:5a7018c5a16018dbecd6984a3151",
+            "provider": "commercial",
+            "reporting_origin": null,
+            "source_family": "commercial_media",
+            "source_published_at": "2026-11-26T23:11:58Z",
+            "source_url": "https://maritime-executive.com/article/iceland-has-deadliest-maritime-accident-in-decades-as-fishing-vessel-sinks",
+            "status": "unreviewed_source_report",
+            "title": "Iceland Has Deadliest Maritime Accident in Decades as Fishing Vessel Sinks"
+          }
+        ],
+        "status": "possible_same_source_story_unreviewed",
+        "warning_level_change": false
+      },
+      {
+        "first_observation_separation_hours": 0.0,
         "id": "relation:73a03ab4ab0844364552",
         "independent_corroboration_established": false,
         "match_basis": "same_substantive_article_title_different_source_urls",
@@ -2783,21 +3090,21 @@
       }
     ],
     "candidate_groups_truncated": true,
-    "cross_document_relation_count_total": 5,
-    "eligible_event_reporting_records": 23,
+    "cross_document_relation_count_total": 6,
+    "eligible_event_reporting_records": 34,
     "forecast_probability": null,
     "geographic_proximity_only_for_explicit_reported_event_sites": true,
     "input_truncated": false,
     "not_a_preparations_sensor_or_warning": true,
     "pairwise_comparisons_capped": false,
-    "pairwise_comparisons_examined": 25878,
+    "pairwise_comparisons_examined": 27966,
     "possible_same_event_count_total": 0,
-    "possible_same_source_story_count_total": 5,
-    "records_available": 228,
-    "records_examined": 228,
+    "possible_same_source_story_count_total": 6,
+    "records_available": 237,
+    "records_examined": 237,
     "related_reporting_count_total": 0,
     "reporting_origins_are_not_event_locations": true,
-    "routine_notice_market_or_measurement_records_excluded_from_text_event_matching": 205,
+    "routine_notice_market_or_measurement_records_excluded_from_text_event_matching": 203,
     "same_document_group_count_total": 26,
     "schema": "aiba.report-event-resolution-shadow.v1",
     "source_independence_unverified": true,
