@@ -1,8 +1,8 @@
 {
   "schema": "cairn.phi-sidecar.v1",
   "model": "phi-4-mini-instruct-q4km-local",
-  "generated_at": "2026-11-27T17:33:49.230903Z",
-  "source_build_generated_at": "2026-11-27T17:32:49+00:00",
+  "generated_at": "2026-11-27T21:24:56.331214Z",
+  "source_build_generated_at": "2026-11-27T21:22:12+00:00",
   "provisional_only": true,
   "signed_evidence_modified": false,
   "cases": {
@@ -512,213 +512,14 @@
       "cache_status": "reused_exact_input"
     },
     "russia_nato": {
-      "status": "provisional_complete",
-      "interpretations": [
-        {
-          "hypothesis_index": 0,
-          "meaning": "Major conventional or limited hybrid escalation",
-          "discriminator": "Finnish military confirms detection of strike on Russian warship in Gulf of Finland"
-        },
-        {
-          "hypothesis_index": 1,
-          "meaning": "Defensive precautions may deter or prevent incidents; suspicious observations can be innocuous.",
-          "discriminator": "Denmark. The Baltic Sea. EK D 395 Raghammer. Firing exercises. Warning."
-        }
-      ],
+      "status": "model_or_validation_failed",
+      "error_code": "invalid_evidence_key",
+      "interpretations": [],
       "evaluations": [],
-      "evidence_notes": [
-        {
-          "evidence_key": "dossier:e7078875412062856418d2fa",
-          "observation": "Polish authorities have issued warnings about potential sabotage or provocation, which could indicate defensive measures against perceived threats or could be misinterpreted as hostile actions.",
-          "verification_step": "Monitor subsequent Polish-Russian diplomatic communications for clarification on the nature of the warnings.",
-          "status": "unverified_source_title_lead"
-        },
-        {
-          "evidence_key": "family:b43d40b03423259fc083",
-          "observation": "Reports of strikes on Russian warships by Finnish military suggest active defensive measures against perceived threats, possibly indicating escalation.",
-          "verification_step": "Assess Finnish-Russian diplomatic exchanges for confirmation of the strikes and their context.",
-          "status": "unverified_source_title_lead"
-        },
-        {
-          "evidence_key": "history:d2ad535443fcdd2a22af",
-          "observation": "Denmark's firing exercises in the Baltic Sea may be defensive drills or could be misinterpreted as aggressive actions by neighboring countries.",
-          "verification_step": "Review Danish-Russian diplomatic communications for explanations of the exercises.",
-          "status": "unverified_source_title_lead"
-        },
-        {
-          "evidence_key": "history:86bf04ac3db6f721acdb",
-          "observation": "Denmark's firing exercises in the Baltic Sea may be defensive drills or could be misinterpreted as aggressive actions by neighboring countries.",
-          "verification_step": "Review Danish-Russian diplomatic communications for explanations of the exercises.",
-          "status": "unverified_source_title_lead"
-        },
-        {
-          "evidence_key": "family:4c6bc7a3202dcc42daf7",
-          "observation": "Incursions of Russian missiles/drone airspace by Poland and NATO's defensive response could indicate a conventional escalation or defensive measures against perceived threats.",
-          "verification_step": "Examine Polish-Russian and NATO-Russian diplomatic communications for context and intent behind the incursions and responses.",
-          "status": "unverified_source_title_lead"
-        },
-        {
-          "evidence_key": "dossier:087124e2a731652ec6bcfa21",
-          "observation": "NATO's finding of no imminent conventional threat suggests defensive measures or a lack of perceived threat, which could be interpreted as a deterrent against escalation.",
-          "verification_step": "Analyze NATO-Russian diplomatic communications for insights into NATO's assessment of the threat level.",
-          "status": "unverified_source_title_lead"
-        }
-      ],
-      "model_family": "phi-4-mini-instruct-q4km-local",
-      "interpretation_only": true,
-      "source_truth_not_verified": true,
       "analyst_approved": false,
-      "attempts": 1,
-      "format_retry_succeeded": false,
-      "source_references": [
-        {
-          "evidence_key": "dossier:e7078875412062856418d2fa",
-          "family_title": "Polish sabotage/provocation warning",
-          "family_mechanism": "Conventional",
-          "source_health": "historical_reference_not_live",
-          "sources": [
-            {
-              "url": "https://apnews.com/article/7fa8573c57627a7a2b3475ab44c5eddd",
-              "title": "Polish sabotage/provocation warning",
-              "provider": "AP",
-              "first_observed_at": "2026-11-03"
-            }
-          ],
-          "reviewed_direction": "not_assessed"
-        },
-        {
-          "evidence_key": "dossier:087124e2a731652ec6bcfa21",
-          "family_title": "NATO finds no imminent conventional threat",
-          "family_mechanism": "Diplomatic",
-          "source_health": "historical_reference_not_live",
-          "sources": [
-            {
-              "url": "https://nato.int/en/news-and-events/events/transcripts/2026/10/14/joint-press-conference-with-nato-secretary-general-and-the-prime-minister-of-estonia",
-              "title": "NATO finds no imminent conventional threat",
-              "provider": "NATO",
-              "first_observed_at": "2026-10-14"
-            }
-          ],
-          "reviewed_direction": "not_assessed"
-        },
-        {
-          "evidence_key": "family:4c6bc7a3202dcc42daf7",
-          "family_title": "russia / drone / attack",
-          "family_mechanism": "commercial_media, media_mention",
-          "source_health": "stale_or_unavailable",
-          "sources": [
-            {
-              "url": "https://www.reuters.com/world/drone-attack-causes-fire-russias-baltic-sea-port-ust-luga-governor-says-2026-11-11/",
-              "title": "Russian governor reports Ust-Luga port fire and electricity disruption after drone attack",
-              "provider": "Reuters",
-              "first_observed_at": "2026-11-11T05:10:12+00:00"
-            },
-            {
-              "url": "https://www.theguardian.com/world/2026/nov/20/russian-missiles-drone-poland-attacks-ukraine",
-              "title": "Poland confirms three Russian missile/drone airspace incursions and NATO defensive response",
-              "provider": "The Guardian",
-              "first_observed_at": "2026-11-20T16:54:31+00:00"
-            },
-            {
-              "url": "https://maritime-executive.com/article/massive-attack-on-russian-shipping-in-benghazi",
-              "title": "Massive Ukrainian Attack on Russian Shipping in Benghazi",
-              "provider": "commercial",
-              "first_observed_at": "2026-11-23T19:19:57+00:00"
-            }
-          ],
-          "reviewed_direction": "not_assessed"
-        },
-        {
-          "evidence_key": "family:b43d40b03423259fc083",
-          "family_title": "russia / authorities / strike",
-          "family_mechanism": "media_mention, source_observation",
-          "source_health": "stale_or_unavailable",
-          "sources": [
-            {
-              "url": "https://www.reuters.com/world/europe/finland-says-it-detects-strike-russian-warship-baltic-sea-2026-11-12/",
-              "title": "Finnish military confirms detection of strike on Russian warship in Gulf of Finland",
-              "provider": "Reuters reporting Finnish Defence Forces statement",
-              "first_observed_at": "2026-11-12T16:30:35+00:00"
-            },
-            {
-              "url": "https://www.reuters.com/world/russia-says-ukraine-struck-its-bridge-crimea-second-day-biggest-drone-attack-war-2026-11-17/",
-              "title": "Russian-installed Crimean authorities report second consecutive strike and bridge traffic suspension",
-              "provider": "Reuters",
-              "first_observed_at": "2026-11-17T11:28:00+00:00"
-            },
-            {
-              "url": "https://www.reuters.com/world/middle-east/libyas-eastern-government-suspects-drone-attack-caused-explosion-russian-ship-2026-11-22/",
-              "title": "Eastern Libyan authorities report suspected drone attack on Russian ship",
-              "provider": "Reuters",
-              "first_observed_at": "2026-11-22T16:46:48+00:00"
-            }
-          ],
-          "reviewed_direction": "not_assessed"
-        },
-        {
-          "evidence_key": "history:db63b77a90c852fd3a4c",
-          "family_title": "Cultural Development Coordinator for Dewsbury Town Centre · The Council of the Borough of Kirklees",
-          "family_mechanism": "Case-linked history; provisional association only",
-          "source_health": "not_event_verified",
-          "sources": [
-            {
-              "url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-25T01%3A47%3A15&updatedTo=2026-11-27T01%3A47%3A15",
-              "title": "Cultural Development Coordinator for Dewsbury Town Centre · The Council of the Borough of Kirklees",
-              "provider": "uk_tenders",
-              "first_observed_at": "2026-11-26T17:09:15Z"
-            }
-          ],
-          "reviewed_direction": "not_assessed"
-        },
-        {
-          "evidence_key": "history:86bf04ac3db6f721acdb",
-          "family_title": "Denmark. The Baltic Sea. EK D 396 Hullebaek. Firing exercises. Warning.",
-          "family_mechanism": "Case-linked history; provisional association only",
-          "source_health": "not_event_verified",
-          "sources": [
-            {
-              "url": "https://niord.dma.dk/#/message/e44ccdf3-7bea-4812-b576-713ee3e44509",
-              "title": "Denmark. The Baltic Sea. EK D 396 Hullebaek. Firing exercises. Warning.",
-              "provider": "live_maritime",
-              "first_observed_at": "2026-11-26T02:18:09Z"
-            }
-          ],
-          "reviewed_direction": "not_assessed"
-        },
-        {
-          "evidence_key": "history:d2ad535443fcdd2a22af",
-          "family_title": "Denmark. The Baltic Sea. EK D 395 Raghammer. Firing exercises. Warning.",
-          "family_mechanism": "Case-linked history; provisional association only",
-          "source_health": "not_event_verified",
-          "sources": [
-            {
-              "url": "https://niord.dma.dk/#/message/fce4f751-427a-4abc-9fe5-f0a94995b0cf",
-              "title": "Denmark. The Baltic Sea. EK D 395 Raghammer. Firing exercises. Warning.",
-              "provider": "live_maritime",
-              "first_observed_at": "2026-11-26T02:18:09Z"
-            }
-          ],
-          "reviewed_direction": "not_assessed"
-        },
-        {
-          "evidence_key": "history:d88ebd4fd9ada4cc1ca5",
-          "family_title": "Denmark. The Baltic Sea. EK D 396 Hullebaek. Firing exercises. Warning.",
-          "family_mechanism": "Case-linked history; provisional association only",
-          "source_health": "not_event_verified",
-          "sources": [
-            {
-              "url": "https://niord.dma.dk/#/message/08daf0b1-ce64-45d9-b42b-884b5c08e6fb",
-              "title": "Denmark. The Baltic Sea. EK D 396 Hullebaek. Firing exercises. Warning.",
-              "provider": "live_maritime",
-              "first_observed_at": "2026-11-25T08:52:19Z"
-            }
-          ],
-          "reviewed_direction": "not_assessed"
-        }
-      ],
-      "input_sha256": "111a4a8a14f4ef26c0d4f3f99ac827ec78d42bc8c3e078f60652ef0e9f1f21db",
-      "model_generated_at": "2026-11-27T12:49:37.748343Z",
-      "cache_status": "reused_exact_input"
+      "input_sha256": "cf50bc243264a55773154fa87d31649b0cb9d7569d1949802424ab1387d3c0b6",
+      "model_generated_at": null,
+      "cache_status": "unavailable"
     },
     "iran_gulf": {
       "status": "provisional_complete",
@@ -1124,8 +925,8 @@
   },
   "summary": {
     "cases": 10,
-    "reused": 10,
+    "reused": 9,
     "new_provisional": 0,
-    "failed": 0
+    "failed": 1
   }
 }
