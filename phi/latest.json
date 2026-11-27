@@ -1,8 +1,8 @@
 {
   "schema": "cairn.phi-sidecar.v1",
   "model": "phi-4-mini-instruct-q4km-local",
-  "generated_at": "2026-11-27T08:46:41.110051Z",
-  "source_build_generated_at": "2026-11-27T08:40:10+00:00",
+  "generated_at": "2026-11-27T12:51:22.653043Z",
+  "source_build_generated_at": "2026-11-27T12:48:37+00:00",
   "provisional_only": true,
   "signed_evidence_modified": false,
   "cases": {
@@ -144,7 +144,7 @@
       ],
       "input_sha256": "c4194b5bf6d0da194c491c47d6fce06a3f99aadc9d40bcf84cdbf8ea537ef950",
       "model_generated_at": "2026-11-27T08:41:22.473032Z",
-      "cache_status": "fresh_inference"
+      "cache_status": "reused_exact_input"
     },
     "horn_ethiopia_sudan": {
       "status": "provisional_complete",
@@ -313,7 +313,7 @@
       ],
       "input_sha256": "601e65be5a423202d008304714f2733f0d9e9e2ebcb7132dc8724abb998cff88",
       "model_generated_at": "2026-11-27T08:41:22.473032Z",
-      "cache_status": "fresh_inference"
+      "cache_status": "reused_exact_input"
     },
     "drc_rwanda": {
       "status": "provisional_complete",
@@ -438,7 +438,7 @@
       ],
       "input_sha256": "ee077d5cd176dff4fc4e4322252ecce4483465ffc0c34f11e2812012c82ced43",
       "model_generated_at": "2026-11-27T08:41:22.473032Z",
-      "cache_status": "fresh_inference"
+      "cache_status": "reused_exact_input"
     },
     "thailand_cambodia": {
       "status": "provisional_complete",
@@ -517,50 +517,50 @@
         {
           "hypothesis_index": 0,
           "meaning": "Major conventional or limited hybrid escalation",
-          "discriminator": "Independent verification step: Monitor for any sudden increase in military exercises or troop movements in the region that are not publicly announced."
+          "discriminator": "Finnish military confirms detection of strike on Russian warship in Gulf of Finland"
         },
         {
           "hypothesis_index": 1,
           "meaning": "Defensive precautions may deter or prevent incidents; suspicious observations can be innocuous.",
-          "discriminator": "Independent verification step: Analyze satellite imagery for unusual activity that could be misinterpreted as hostile actions."
+          "discriminator": "Denmark. The Baltic Sea. EK D 395 Raghammer. Firing exercises. Warning."
         }
       ],
       "evaluations": [],
       "evidence_notes": [
         {
-          "evidence_key": "dossier:087124e2a731652ec6bcfa21",
-          "observation": "NATO finds no imminent conventional threat",
-          "verification_step": "Cross-reference with other NATO member states' intelligence reports for consistency.",
-          "status": "unverified_source_title_lead"
-        },
-        {
           "evidence_key": "dossier:e7078875412062856418d2fa",
-          "observation": "Polish sabotage/provocation warning",
-          "verification_step": "Investigate the credibility of the source and the context of the warning.",
-          "status": "unverified_source_title_lead"
-        },
-        {
-          "evidence_key": "family:4c6bc7a3202dcc42daf7",
-          "observation": "Russian governor reports Ust-Luga port fire and electricity disruption after drone attack",
-          "verification_step": "Correlate the timing of the reported incident with known drone flight paths and capabilities.",
+          "observation": "Polish authorities have issued warnings about potential sabotage or provocation, which could indicate defensive measures against perceived threats or could be misinterpreted as hostile actions.",
+          "verification_step": "Monitor subsequent Polish-Russian diplomatic communications for clarification on the nature of the warnings.",
           "status": "unverified_source_title_lead"
         },
         {
           "evidence_key": "family:b43d40b03423259fc083",
-          "observation": "Russian-installed Crimean authorities report second consecutive strike and bridge traffic suspension",
-          "verification_step": "Assess the plausibility of the reported strikes and their impact on infrastructure.",
+          "observation": "Reports of strikes on Russian warships by Finnish military suggest active defensive measures against perceived threats, possibly indicating escalation.",
+          "verification_step": "Assess Finnish-Russian diplomatic exchanges for confirmation of the strikes and their context.",
           "status": "unverified_source_title_lead"
         },
         {
-          "evidence_key": "history:db63b77a90c852fd3a4c",
-          "observation": "Cultural Development Coordinator for Dewsbury Town Centre · The Council of the Borough of Kirklees",
-          "verification_step": "Determine if there is any connection between this individual and the hypotheses.",
+          "evidence_key": "history:d2ad535443fcdd2a22af",
+          "observation": "Denmark's firing exercises in the Baltic Sea may be defensive drills or could be misinterpreted as aggressive actions by neighboring countries.",
+          "verification_step": "Review Danish-Russian diplomatic communications for explanations of the exercises.",
           "status": "unverified_source_title_lead"
         },
         {
           "evidence_key": "history:86bf04ac3db6f721acdb",
-          "observation": "Denmark. The Baltic Sea. EK D 396 Hullebaek. Firing exercises. Warning.",
-          "verification_step": "Verify if the firing exercises are part of a routine training schedule or an unusual event.",
+          "observation": "Denmark's firing exercises in the Baltic Sea may be defensive drills or could be misinterpreted as aggressive actions by neighboring countries.",
+          "verification_step": "Review Danish-Russian diplomatic communications for explanations of the exercises.",
+          "status": "unverified_source_title_lead"
+        },
+        {
+          "evidence_key": "family:4c6bc7a3202dcc42daf7",
+          "observation": "Incursions of Russian missiles/drone airspace by Poland and NATO's defensive response could indicate a conventional escalation or defensive measures against perceived threats.",
+          "verification_step": "Examine Polish-Russian and NATO-Russian diplomatic communications for context and intent behind the incursions and responses.",
+          "status": "unverified_source_title_lead"
+        },
+        {
+          "evidence_key": "dossier:087124e2a731652ec6bcfa21",
+          "observation": "NATO's finding of no imminent conventional threat suggests defensive measures or a lack of perceived threat, which could be interpreted as a deterrent against escalation.",
+          "verification_step": "Analyze NATO-Russian diplomatic communications for insights into NATO's assessment of the threat level.",
           "status": "unverified_source_title_lead"
         }
       ],
@@ -630,10 +630,16 @@
         },
         {
           "evidence_key": "family:b43d40b03423259fc083",
-          "family_title": "russia / authorities",
-          "family_mechanism": "media_mention",
+          "family_title": "russia / authorities / strike",
+          "family_mechanism": "media_mention, source_observation",
           "source_health": "stale_or_unavailable",
           "sources": [
+            {
+              "url": "https://www.reuters.com/world/europe/finland-says-it-detects-strike-russian-warship-baltic-sea-2026-11-12/",
+              "title": "Finnish military confirms detection of strike on Russian warship in Gulf of Finland",
+              "provider": "Reuters reporting Finnish Defence Forces statement",
+              "first_observed_at": "2026-11-12T16:30:35+00:00"
+            },
             {
               "url": "https://www.reuters.com/world/russia-says-ukraine-struck-its-bridge-crimea-second-day-biggest-drone-attack-war-2026-11-17/",
               "title": "Russian-installed Crimean authorities report second consecutive strike and bridge traffic suspension",
@@ -710,8 +716,8 @@
           "reviewed_direction": "not_assessed"
         }
       ],
-      "input_sha256": "4b006fb4a469dc02657770e4060dff20e8681ba4877429baeebadd1130347b57",
-      "model_generated_at": "2026-11-27T08:41:22.473032Z",
+      "input_sha256": "111a4a8a14f4ef26c0d4f3f99ac827ec78d42bc8c3e078f60652ef0e9f1f21db",
+      "model_generated_at": "2026-11-27T12:49:37.748343Z",
       "cache_status": "fresh_inference"
     },
     "iran_gulf": {
@@ -852,7 +858,7 @@
       ],
       "input_sha256": "667430beb14749b0dc4e15c179b25ada59aaed72505389c51086ead01763d55b",
       "model_generated_at": "2026-11-27T08:41:22.473032Z",
-      "cache_status": "fresh_inference"
+      "cache_status": "reused_exact_input"
     },
     "taiwan": {
       "status": "provisional_complete",
@@ -1021,7 +1027,7 @@
       ],
       "input_sha256": "919343914eeda58b2e26c51772e65dd377a30930a7afc91dcf19b6d7cb0dfec6",
       "model_generated_at": "2026-11-27T08:41:22.473032Z",
-      "cache_status": "fresh_inference"
+      "cache_status": "reused_exact_input"
     },
     "horn_ethiopia_kenya_moyale": {
       "status": "provisional_complete",
@@ -1118,8 +1124,8 @@
   },
   "summary": {
     "cases": 10,
-    "reused": 4,
-    "new_provisional": 6,
+    "reused": 9,
+    "new_provisional": 1,
     "failed": 0
   }
 }
