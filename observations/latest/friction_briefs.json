@@ -13,9 +13,9 @@
         },
         "maritime_restriction": {
           "current": 0,
-          "median": 0,
+          "median": 0.0,
           "robust_z": 0.0,
-          "samples": 13,
+          "samples": 18,
           "status": "within_observed_range",
           "threshold": 4.0
         }
@@ -61,9 +61,9 @@
         },
         "maritime_restriction": {
           "current": 0,
-          "median": 0,
+          "median": 0.0,
           "robust_z": 0.0,
-          "samples": 13,
+          "samples": 18,
           "status": "within_observed_range",
           "threshold": 4.0
         }
@@ -109,9 +109,9 @@
         },
         "maritime_restriction": {
           "current": 0,
-          "median": 0,
+          "median": 0.0,
           "robust_z": 0.0,
-          "samples": 13,
+          "samples": 18,
           "status": "within_observed_range",
           "threshold": 4.0
         }
@@ -157,9 +157,9 @@
         },
         "maritime_restriction": {
           "current": 0,
-          "median": 0,
+          "median": 0.0,
           "robust_z": 0.0,
-          "samples": 13,
+          "samples": 18,
           "status": "within_observed_range",
           "threshold": 4.0
         }
@@ -205,9 +205,9 @@
         },
         "maritime_restriction": {
           "current": 0,
-          "median": 0,
+          "median": 0.0,
           "robust_z": 0.0,
-          "samples": 13,
+          "samples": 18,
           "status": "within_observed_range",
           "threshold": 4.0
         }
@@ -253,9 +253,9 @@
         },
         "maritime_restriction": {
           "current": 0,
-          "median": 0,
+          "median": 0.0,
           "robust_z": 0.0,
-          "samples": 13,
+          "samples": 18,
           "status": "within_observed_range",
           "threshold": 4.0
         }
@@ -301,9 +301,9 @@
         },
         "maritime_restriction": {
           "current": 0,
-          "median": 0,
+          "median": 0.0,
           "robust_z": 0.0,
-          "samples": 13,
+          "samples": 18,
           "status": "within_observed_range",
           "threshold": 4.0
         }
@@ -327,8 +327,16 @@
       "source_evidence": [],
       "standing_state": "Hybrid warning",
       "title": "Russia–NATO",
-      "traditional_changes": [],
-      "traditional_contrast": "No new matched source change across these monitored families; the standing watch and unmeasured activity remain unresolved.",
+      "traditional_changes": [
+        {
+          "family": "official_protective",
+          "note": "Existing decision brief context, not independently re-confirmed here.",
+          "observed_at": "2026-11-27T21:19:56Z",
+          "title": "Poland",
+          "url": "https://www.gov.uk/foreign-travel-advice/poland"
+        }
+      ],
+      "traditional_contrast": "Traditional-source change without newly detected structural friction in the monitored feeds. Missing sources limit inferences from apparent quiet.",
       "triage": "maintain",
       "warnings": [
         "Existing war severity is not evidence of a new phase.",
@@ -349,9 +357,9 @@
         },
         "maritime_restriction": {
           "current": 0,
-          "median": 0,
+          "median": 0.0,
           "robust_z": 0.0,
-          "samples": 13,
+          "samples": 18,
           "status": "within_observed_range",
           "threshold": 4.0
         }
@@ -397,9 +405,9 @@
         },
         "maritime_restriction": {
           "current": 0,
-          "median": 0,
+          "median": 0.0,
           "robust_z": 0.0,
-          "samples": 13,
+          "samples": 18,
           "status": "within_observed_range",
           "threshold": 4.0
         }
@@ -445,9 +453,9 @@
         },
         "maritime_restriction": {
           "current": 0,
-          "median": 0,
+          "median": 0.0,
           "robust_z": 0.0,
-          "samples": 13,
+          "samples": 18,
           "status": "within_observed_range",
           "threshold": 4.0
         }
@@ -490,11 +498,11 @@
   "executive_review_count": 0,
   "executive_summary": "No qualifying novel structural-friction lead in the collected evidence. This is not an all-clear; verify coverage and established watch states.",
   "fresh_snapshot": true,
-  "generated_at": "2026-11-27T18:26:37Z",
+  "generated_at": "2026-11-28T01:39:57Z",
   "health": {
     "amsa": {
       "age_hours": 0.01,
-      "checked_at": "2026-11-27T18:26:12Z",
+      "checked_at": "2026-11-28T01:39:31Z",
       "collector_status": "collected",
       "coverage": "complete",
       "error": null,
@@ -503,7 +511,7 @@
     },
     "ioda": {
       "age_hours": 0.01,
-      "checked_at": "2026-11-27T18:26:12Z",
+      "checked_at": "2026-11-28T01:39:31Z",
       "collector_status": "unavailable",
       "coverage": "unknown",
       "error": "TimeoutError: The read operation timed out",
@@ -512,7 +520,7 @@
     },
     "nga": {
       "age_hours": 0.01,
-      "checked_at": "2026-11-27T18:26:12Z",
+      "checked_at": "2026-11-28T01:39:31Z",
       "collector_status": "unavailable",
       "coverage": "unknown",
       "error": "HTTPError: HTTP Error 503: Service Unavailable",
@@ -520,7 +528,7 @@
       "status": "unavailable"
     }
   },
-  "latest_source_snapshot": "2026-11-27T18:26:12Z",
+  "latest_source_snapshot": "2026-11-28T01:39:31Z",
   "limits": [
     "Data feeds are partial, not a global exhaustive sensor network.",
     "Collection timestamp does not establish source event or publication time.",

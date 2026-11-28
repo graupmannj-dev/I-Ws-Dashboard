@@ -1,0 +1,42 @@
+{
+  "case_counts": {
+    "unlocated": {
+      "maritime_restriction": 5
+    }
+  },
+  "collected_at": "2026-11-28T01:39:31Z",
+  "coverage": "partial",
+  "health": {
+    "amsa": {
+      "caveat": "Source observation only. Does not independently establish military preparations or event attribution.",
+      "checked_at": "2026-11-28T01:39:31Z",
+      "error": null,
+      "records": 5,
+      "source_url": "https://www.operations.amsa.gov.au/AMSA.Web.MSIPublication/",
+      "status": "collected",
+      "truncated": false
+    },
+    "ioda": {
+      "caveat": "Upstream unavailable or unsupported; NOT evidence of zero activity.",
+      "checked_at": "2026-11-28T01:39:31Z",
+      "error": "TimeoutError: The read operation timed out",
+      "records": null,
+      "source_url": "https://api.ioda.inetintel.cc.gatech.edu/v2/outages/events?from=1795815571&until=1795829971&entityType=country&limit=100&page=0&extendWindowSeconds=0",
+      "status": "unavailable",
+      "truncated": null
+    },
+    "nga": {
+      "caveat": "Upstream unavailable or unsupported; NOT evidence of zero activity.",
+      "checked_at": "2026-11-28T01:39:31Z",
+      "error": "HTTPError: HTTP Error 503: Service Unavailable",
+      "records": null,
+      "source_url": "https://msi.nga.mil/api/publications/broadcast-warn?status=active&output=json",
+      "status": "unavailable",
+      "truncated": null
+    }
+  },
+  "new_records": [],
+  "note": "Only successful sources appear in records. Missing sources remain unavailable.",
+  "record_count": 5,
+  "schema_version": 1
+}
