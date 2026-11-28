@@ -12470,7 +12470,7 @@
     "total_document_assignments": 853,
     "total_stable_topics": 283
   },
-  "generated_at": "2026-11-28T01:40:05.765731+00:00",
+  "generated_at": "2026-11-28T07:52:37.673786+00:00",
   "historical_relationship_count": 0,
   "missing_data_is_not_zero": true,
   "new_records_added": 0,
@@ -186735,19 +186735,18 @@
   "schema": "aiba.family-archive.v1",
   "source_health": {
     "amsa": {
-      "age_hours": 0.01,
+      "age_hours": 6.22,
       "checked_at": "2026-11-28T01:39:31Z",
-      "first_provider_baseline": false,
-      "missingness": "provider_bounded_not_exhaustive",
+      "missingness": "not_measured_not_zero",
       "mode": "amsa",
       "provider_status": "collected",
       "snapshot_at": "2026-11-28T01:39:31Z",
       "source_scope": "AMSA NAVAREA X only",
-      "status": "current",
+      "status": "stale_or_unavailable",
       "truncated_or_partial": false
     },
     "bmkg_nowcast": {
-      "age_hours": 12.94,
+      "age_hours": 19.15,
       "checked_at": "2026-11-27T12:43:32Z",
       "missingness": "not_measured_not_zero",
       "mode": "bmkg_nowcast",
@@ -186758,7 +186757,7 @@
       "truncated_or_partial": true
     },
     "bmkg_quake": {
-      "age_hours": 12.94,
+      "age_hours": 19.15,
       "checked_at": "2026-11-27T12:43:32Z",
       "missingness": "not_measured_not_zero",
       "mode": "bmkg_quake",
@@ -186769,7 +186768,7 @@
       "truncated_or_partial": true
     },
     "cbp_wait": {
-      "age_hours": 12.94,
+      "age_hours": 19.15,
       "checked_at": "2026-11-27T12:43:32Z",
       "missingness": "not_measured_not_zero",
       "mode": "cbp_wait",
@@ -186780,7 +186779,7 @@
       "truncated_or_partial": true
     },
     "commercial": {
-      "age_hours": 8.15,
+      "age_hours": 14.36,
       "checked_at": "2026-11-27T17:31:03Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
@@ -186792,7 +186791,7 @@
       "truncated_or_partial": false
     },
     "coops": {
-      "age_hours": 12.94,
+      "age_hours": 19.15,
       "checked_at": "2026-11-27T12:43:32Z",
       "missingness": "not_measured_not_zero",
       "mode": "coops",
@@ -186803,7 +186802,7 @@
       "truncated_or_partial": true
     },
     "eonet": {
-      "age_hours": 12.94,
+      "age_hours": 19.15,
       "checked_at": "2026-11-27T12:43:32Z",
       "missingness": "not_measured_not_zero",
       "mode": "eonet",
@@ -186814,7 +186813,7 @@
       "truncated_or_partial": true
     },
     "imd_in": {
-      "age_hours": 12.94,
+      "age_hours": 19.15,
       "checked_at": "2026-11-27T12:43:32Z",
       "missingness": "not_measured_not_zero",
       "mode": "imd_in",
@@ -186825,7 +186824,7 @@
       "truncated_or_partial": true
     },
     "inmet_br": {
-      "age_hours": 12.94,
+      "age_hours": 19.15,
       "checked_at": "2026-11-27T12:43:32Z",
       "missingness": "not_measured_not_zero",
       "mode": "inmet_br",
@@ -186836,7 +186835,7 @@
       "truncated_or_partial": true
     },
     "ioda": {
-      "age_hours": 0.01,
+      "age_hours": 6.22,
       "checked_at": "2026-11-28T01:39:31Z",
       "missingness": "not_measured_not_zero",
       "mode": "ioda",
@@ -186847,29 +186846,29 @@
       "truncated_or_partial": false
     },
     "live_airspace": {
-      "age_hours": 4.54,
-      "checked_at": "2026-11-27T21:07:35Z",
+      "age_hours": 4.5,
+      "checked_at": "2026-11-28T03:22:27Z",
       "missingness": "not_measured_not_zero",
       "mode": "live_airspace",
       "provider_status": "partial",
-      "snapshot_at": "2026-11-27T21:07:35Z",
+      "snapshot_at": "2026-11-28T03:22:27Z",
       "source_scope": "FAA temporary flight restrictions: United States only",
       "status": "stale_or_unavailable",
       "truncated_or_partial": true
     },
     "live_maritime": {
-      "age_hours": 4.54,
-      "checked_at": "2026-11-27T21:07:35Z",
+      "age_hours": 4.5,
+      "checked_at": "2026-11-28T03:22:27Z",
       "missingness": "not_measured_not_zero",
       "mode": "live_maritime",
       "provider_status": "partial",
-      "snapshot_at": "2026-11-27T21:07:35Z",
+      "snapshot_at": "2026-11-28T03:22:27Z",
       "source_scope": "Danish Maritime Authority Niord notices: regional Baltic/North Sea",
       "status": "stale_or_unavailable",
       "truncated_or_partial": true
     },
     "nga": {
-      "age_hours": 0.01,
+      "age_hours": 6.22,
       "checked_at": "2026-11-28T01:39:31Z",
       "missingness": "not_measured_not_zero",
       "mode": "nga",
@@ -186880,7 +186879,7 @@
       "truncated_or_partial": false
     },
     "nws": {
-      "age_hours": 12.94,
+      "age_hours": 19.15,
       "checked_at": "2026-11-27T12:43:32Z",
       "missingness": "not_measured_not_zero",
       "mode": "nws",
@@ -186891,19 +186890,19 @@
       "truncated_or_partial": true
     },
     "official": {
-      "age_hours": 4.33,
-      "checked_at": "2026-11-27T21:19:56Z",
+      "age_hours": 0.0,
+      "checked_at": "2026-11-28T07:52:34Z",
       "first_provider_baseline": false,
       "missingness": "provider_bounded_not_exhaustive",
       "mode": "official",
       "provider_status": "collected",
-      "snapshot_at": "2026-11-27T21:19:56Z",
+      "snapshot_at": "2026-11-28T07:52:34Z",
       "source_scope": "US State and UK FCDO travel-advice feeds",
       "status": "current",
       "truncated_or_partial": false
     },
     "ons_br": {
-      "age_hours": 12.94,
+      "age_hours": 19.15,
       "checked_at": "2026-11-27T12:43:32Z",
       "missingness": "not_measured_not_zero",
       "mode": "ons_br",
@@ -186914,7 +186913,7 @@
       "truncated_or_partial": true
     },
     "ripe": {
-      "age_hours": 12.94,
+      "age_hours": 19.15,
       "checked_at": "2026-11-27T12:43:32Z",
       "missingness": "not_measured_not_zero",
       "mode": "ripe",
@@ -186925,7 +186924,7 @@
       "truncated_or_partial": false
     },
     "ris_bgp": {
-      "age_hours": 12.94,
+      "age_hours": 19.15,
       "checked_at": "2026-11-27T12:43:32Z",
       "missingness": "not_measured_not_zero",
       "mode": "ris_bgp",
@@ -186936,7 +186935,7 @@
       "truncated_or_partial": true
     },
     "saws_za": {
-      "age_hours": 12.94,
+      "age_hours": 19.15,
       "checked_at": "2026-11-27T12:43:32Z",
       "missingness": "not_measured_not_zero",
       "mode": "saws_za",
@@ -186947,7 +186946,7 @@
       "truncated_or_partial": true
     },
     "sg_mpa": {
-      "age_hours": 12.94,
+      "age_hours": 19.15,
       "checked_at": "2026-11-27T12:43:32Z",
       "missingness": "not_measured_not_zero",
       "mode": "sg_mpa",
@@ -186958,7 +186957,7 @@
       "truncated_or_partial": true
     },
     "swpc": {
-      "age_hours": 12.94,
+      "age_hours": 19.15,
       "checked_at": "2026-11-27T12:43:32Z",
       "missingness": "not_measured_not_zero",
       "mode": "swpc",
@@ -186969,7 +186968,7 @@
       "truncated_or_partial": false
     },
     "tw_power": {
-      "age_hours": 23.88,
+      "age_hours": 30.09,
       "checked_at": "2026-11-27T12:43:32Z",
       "missingness": "not_measured_not_zero",
       "mode": "tw_power",
@@ -186980,7 +186979,7 @@
       "truncated_or_partial": false
     },
     "uk_tenders": {
-      "age_hours": 12.94,
+      "age_hours": 19.15,
       "checked_at": "2026-11-27T12:43:32Z",
       "missingness": "not_measured_not_zero",
       "mode": "uk_tenders",
@@ -186991,7 +186990,7 @@
       "truncated_or_partial": true
     },
     "usace": {
-      "age_hours": 12.94,
+      "age_hours": 19.15,
       "checked_at": "2026-11-27T12:43:32Z",
       "missingness": "not_measured_not_zero",
       "mode": "usace",
@@ -187002,7 +187001,7 @@
       "truncated_or_partial": true
     },
     "usgs": {
-      "age_hours": 12.94,
+      "age_hours": 19.15,
       "checked_at": "2026-11-27T12:43:32Z",
       "missingness": "not_measured_not_zero",
       "mode": "usgs",
@@ -187013,19 +187012,19 @@
       "truncated_or_partial": false
     },
     "watchlist": {
-      "age_hours": 4.33,
-      "checked_at": "2026-11-27T21:19:57Z",
+      "age_hours": 0.0,
+      "checked_at": "2026-11-28T07:52:34Z",
       "first_provider_baseline": false,
       "missingness": "partial_sampling_not_worldwide_exhaustive",
       "mode": "watchlist",
       "provider_status": "partial",
-      "snapshot_at": "2026-11-27T21:19:57Z",
+      "snapshot_at": "2026-11-28T07:52:34Z",
       "source_scope": "registered, exact-ID forecast contracts only",
       "status": "current_partial",
       "truncated_or_partial": true
     },
     "wiki_edits": {
-      "age_hours": 12.94,
+      "age_hours": 19.15,
       "checked_at": "2026-11-27T12:43:32Z",
       "missingness": "not_measured_not_zero",
       "mode": "wiki_edits",
