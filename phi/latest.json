@@ -1,8 +1,8 @@
 {
   "schema": "cairn.phi-sidecar.v1",
   "model": "phi-4-mini-instruct-q4km-local",
-  "generated_at": "2026-11-28T08:14:49.182986Z",
-  "source_build_generated_at": "2026-11-28T08:07:02+00:00",
+  "generated_at": "2026-11-28T10:47:00.202717Z",
+  "source_build_generated_at": "2026-11-28T10:43:21+00:00",
   "provisional_only": true,
   "signed_evidence_modified": false,
   "cases": {
@@ -138,7 +138,7 @@
       ],
       "input_sha256": "fae68236d9a8a83e659b9028e459e59be60ac02220fdeffbeda1506d71d8fe22",
       "model_generated_at": "2026-11-28T08:08:19.693511Z",
-      "cache_status": "fresh_inference"
+      "cache_status": "reused_exact_input"
     },
     "horn_ethiopia_sudan": {
       "status": "provisional_complete",
@@ -301,7 +301,7 @@
       ],
       "input_sha256": "111aacfdde63aa29a3ca33051e5d38935795b668aba12c9fcbdac50ddbf1ac9b",
       "model_generated_at": "2026-11-28T08:08:19.693511Z",
-      "cache_status": "fresh_inference"
+      "cache_status": "reused_exact_input"
     },
     "drc_rwanda": {
       "status": "provisional_complete",
@@ -426,7 +426,7 @@
       ],
       "input_sha256": "390aced076e79a94a4f19d70672086a0c026f7244d28d87af15a7aa25d3194c4",
       "model_generated_at": "2026-11-28T08:08:19.693511Z",
-      "cache_status": "fresh_inference"
+      "cache_status": "reused_exact_input"
     },
     "thailand_cambodia": {
       "status": "provisional_complete",
@@ -653,7 +653,7 @@
       ],
       "input_sha256": "99687220bfe88c53ed7e7e4e74ece0af6e41f369a75bb653523a8797cb008617",
       "model_generated_at": "2026-11-28T08:08:19.693511Z",
-      "cache_status": "fresh_inference"
+      "cache_status": "reused_exact_input"
     },
     "taiwan": {
       "status": "provisional_complete",
@@ -816,7 +816,7 @@
       ],
       "input_sha256": "1d9969a8f9fb3eaf611aa10e59a2e9efcac21a6f72e5b594dccbccb91a2c6152",
       "model_generated_at": "2026-11-28T08:08:19.693511Z",
-      "cache_status": "fresh_inference"
+      "cache_status": "reused_exact_input"
     },
     "horn_ethiopia_kenya_moyale": {
       "status": "provisional_complete",
@@ -913,8 +913,8 @@
   },
   "summary": {
     "cases": 10,
-    "reused": 4,
-    "new_provisional": 5,
+    "reused": 9,
+    "new_provisional": 0,
     "failed": 1
   }
 }
