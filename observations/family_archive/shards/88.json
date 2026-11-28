@@ -557,6 +557,39 @@
         }
       }
     },
+    "889a1be3b28859562a570974dde518ed0ddf99442c8d014bb5e7e2f2588ad146": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07ba5c:112765-2026",
+      "members": {
+        "beh:7c12c222121251976360d425f610": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-27T16:35:40+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:7c12c222121251976360d425f610",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07ba5c:112765-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-27T16:35:40Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-26T08%3A01%3A47&updatedTo=2026-11-28T08%3A01%3A47",
+          "title": "Safety-Critical Workforce Planning and Line Blockage System - Hosting, Support and Maintenance Services"
+        }
+      }
+    },
     "88c60542d8d9efc4e5f7ff955511a0aa3ba2bca95e0b5ca5ca7562a2539c1e3d": {
       "information_root": "niord:efda717e-b7d5-4ae8-a2d1-1af0b35b235a:0:2:0",
       "members": {
@@ -711,6 +744,52 @@
           "source_updated_at": null,
           "source_url": "https://dados.ons.org.br/dataset/carga-energia-verificada",
           "title": "Brazil ONS North verified half-hourly system load"
+        }
+      }
+    },
+    "88f6922d5cbff76cca54f17ec97760b597124aa7367ab8062ec579648b407a74": {
+      "information_root": "ris_bgp:ris_bgp:AS5713:20261128T05",
+      "members": {
+        "beh:d82d5b26ebb4bc5abc73dba7ade1": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "public_routing_updates_not_country_outage",
+          "collection_mode": "ris_bgp",
+          "direct_measurement": true,
+          "event_at": null,
+          "first_observed_at": "2026-11-28T08:04:45+00:00",
+          "geography_key": "asn:5713",
+          "geography_label": "AS5713",
+          "geography_precision": "routing_target_not_country_incident",
+          "id": "beh:d82d5b26ebb4bc5abc73dba7ade1",
+          "information_root": "ris_bgp:ris_bgp:AS5713:20261128T05",
+          "origin": "behavioral_registry",
+          "provider": "ris_bgp",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "routing_collector_sampled_asn_updates",
+          "source_family": "internet_routing",
+          "source_kind": "sampled_asn_bgp_route_updates_not_network_outage",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "collector_peers_are_not_geo_deduplicated": true,
+            "country_impact_not_established": true,
+            "name": "sampled_6h_bgp_announcements",
+            "registered_network_country_hint": "ZA",
+            "returned_sampling_buckets": 6,
+            "source_window_end": "2026-11-28T05:00:00Z",
+            "target_asn": "AS5713",
+            "unit": "announcements",
+            "value": 7074,
+            "window_hours_requested": 6,
+            "withdrawals_unavailable_for_asn": true
+          },
+          "source_scope": "RIPE RIS public route-announcement update samples on six non-Western operated networks; ASNs not country-wide outage detection",
+          "source_updated_at": null,
+          "source_url": "https://stat.ripe.net/data/bgp-update-activity/data.json?resource=AS5713&num_hours=6&max_samples=24&hide_empty_samples=false",
+          "title": "RIPE RIS sampled BGP announcements: AS5713"
         }
       }
     },

@@ -242,6 +242,39 @@
         }
       }
     },
+    "3b39bb0ef0ad45f748656c53a2c90e52191a2c7a61d2706391685d233ae054a2": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c619:112760-2026",
+      "members": {
+        "beh:7c6473931e3846d5bd3b9f822905": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-27T16:18:21+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:7c6473931e3846d5bd3b9f822905",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c619:112760-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-27T16:18:21Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-26T08%3A01%3A47&updatedTo=2026-11-28T08%3A01%3A47",
+          "title": "Certification for new materials for use in the Free Running Explosive Detection Dogs (FREDDs) · Department for Transport"
+        }
+      }
+    },
     "3b4d7f7460073e3e9818fff88956b79c60636d6ee36b4af51d5e842e58fa0c0d": {
       "information_root": "commercial:780dd3164bdcfc9e06b0",
       "members": {
@@ -408,6 +441,45 @@
           "source_updated_at": null,
           "source_url": "https://data.gov.sg/datasets/d_8f264219109e61fffa87ac64dd5a9a65/view",
           "title": "Singapore MPA 2026-01 Tug vessel arrivals (>75 GT)"
+        }
+      }
+    },
+    "3b9cfd9bad8cd8570d461b5f758c8a430351e3edac3001a9d1f0ad500639bd6c": {
+      "information_root": "bmkg_nowcast:bmkg_nowcast:b1f66f84d7cc9895252127d4ff70",
+      "members": {
+        "beh:3926c189be61d8cf5ca7fd4a046d": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "bmkg_nowcast",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-28T06:58:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:3926c189be61d8cf5ca7fd4a046d",
+          "information_root": "bmkg_nowcast:bmkg_nowcast:b1f66f84d7cc9895252127d4ff70",
+          "origin": "behavioral_registry",
+          "provider": "bmkg_nowcast",
+          "published_at": "2026-11-28T06:58:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Indonesia BMKG",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Indonesia BMKG active provincial nowcast RSS, source-reported only; not global",
+          "source_updated_at": null,
+          "source_url": "https://www.bmkg.go.id/alerts/nowcast/en/CKG20261128003_alert.xml",
+          "title": "Thunderstorm This Afternoon in Kalimantan Tengah"
         }
       }
     },

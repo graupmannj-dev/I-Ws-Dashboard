@@ -107,6 +107,81 @@
         }
       }
     },
+    "520dde99f701a2bb09c5e32a4de9c6bfa999493b0947b16c365a5037ef2bc1e8": {
+      "information_root": "wiki_edits:wiki_edits:ja:20261128T08",
+      "members": {
+        "beh:514f91e3674000a8bfee0a4e437e": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "wiki_edits",
+          "direct_measurement": false,
+          "event_at": "2026-11-28T08:01:33Z",
+          "first_observed_at": "2026-11-28T08:01:33+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:514f91e3674000a8bfee0a4e437e",
+          "information_root": "wiki_edits:wiki_edits:ja:20261128T08",
+          "origin": "behavioral_registry",
+          "provider": "wiki_edits",
+          "published_at": "2026-11-28T08:01:33Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "public_encyclopedia_edit_aggregate",
+          "source_family": "public_attention",
+          "source_kind": "bounded_public_edit_count_not_event_verification",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "distinct_articles_in_sample": 405,
+            "maximum_returned_edits": 500,
+            "most_edited_article_counts": [
+              {
+                "count": 6,
+                "title": "イオンタウン田主丸ショッピングセンター"
+              },
+              {
+                "count": 6,
+                "title": "中村之洋"
+              },
+              {
+                "count": 6,
+                "title": "配信者ハイパーゲーム大会"
+              },
+              {
+                "count": 4,
+                "title": "ホシャク・ザカリャン"
+              },
+              {
+                "count": 4,
+                "title": "上野美津恵"
+              },
+              {
+                "count": 4,
+                "title": "中山高陽"
+              },
+              {
+                "count": 4,
+                "title": "村岡 (藤沢市)"
+              },
+              {
+                "count": 4,
+                "title": "真夏の夜の淫夢"
+              }
+            ],
+            "name": "sampled_edits_last_three_hours",
+            "sample_cap_reached": true,
+            "unit": "edits",
+            "value": 500
+          },
+          "source_scope": "Wikipedia main-namespace edit-count sample, 14 global language editions, three-hour window capped at 500 per wiki; not geographic location",
+          "source_updated_at": null,
+          "source_url": "https://ja.wikipedia.org/wiki/Special:RecentChanges",
+          "title": "Wikipedia ja public article-edit activity (sampled)"
+        }
+      }
+    },
     "5214462bf6d9931c2edf1c9e10ff8a96fd380af9cc16e9c7b10ee27908b60851": {
       "information_root": "inmet_br:inmet_br:cf9713cc5ee2a2da5e98b455f583",
       "members": {
@@ -520,6 +595,39 @@
           "source_updated_at": null,
           "source_url": "https://bwt.cbp.gov/api/waittimes",
           "title": "CBP estimated commercial border wait — Blaine / Point Roberts"
+        }
+      }
+    },
+    "525e4d4c6c45fde1ce4953be027883850b3cf550d9cbc25dc0afef0d90d4f0b8": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-0776e4:112762-2026",
+      "members": {
+        "beh:68033310fedd22c3586f0d86c281": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-27T16:21:02+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:68033310fedd22c3586f0d86c281",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-0776e4:112762-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-27T16:21:02Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-26T08%3A01%3A47&updatedTo=2026-11-28T08%3A01%3A47",
+          "title": "Provision of Servicing and Maintenance of Chiller (HVAC) and AC units to Kingston University · Kingston University Higher Education Corporation"
         }
       }
     },

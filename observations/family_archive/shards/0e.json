@@ -230,6 +230,39 @@
         }
       }
     },
+    "0e206ce1e479d529065bbd0a1c3a4a6dfdedf8b72c09c79261e7d00b315693ac": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c62a:112794-2026",
+      "members": {
+        "beh:0a711389319f590dc6c73ade7904": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-27T17:11:09+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:0a711389319f590dc6c73ade7904",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c62a:112794-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-27T17:11:09Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-26T08%3A01%3A47&updatedTo=2026-11-28T08%3A01%3A47",
+          "title": "CWC26119MW - Replacement Social Care System · Wolverhampton City Council"
+        }
+      }
+    },
     "0e3046cd8c69403bd789928cfaca71cd2f6d1a3b0e93e2079930aa66c444a272": {
       "information_root": "faa:6/7765:0:0",
       "members": {
@@ -830,6 +863,45 @@
           "source_updated_at": null,
           "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-22T13%3A56%3A02&updatedTo=2026-11-24T13%3A56%3A02",
           "title": "End User Lifecycle Support · HYDE HOUSING ASSOCIATION LIMITED"
+        }
+      }
+    },
+    "0ea72e04bf678104f73790cfadcfad03c14a3e417a0ae6996816521ee75d3734": {
+      "information_root": "bmkg_nowcast:bmkg_nowcast:79fd3454a11bee9402497f25a9f3",
+      "members": {
+        "beh:12166c1bcc0a6cf5c2ca50c27490": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "bmkg_nowcast",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-28T07:33:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:12166c1bcc0a6cf5c2ca50c27490",
+          "information_root": "bmkg_nowcast:bmkg_nowcast:79fd3454a11bee9402497f25a9f3",
+          "origin": "behavioral_registry",
+          "provider": "bmkg_nowcast",
+          "published_at": "2026-11-28T07:33:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Indonesia BMKG",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Indonesia BMKG active provincial nowcast RSS, source-reported only; not global",
+          "source_updated_at": null,
+          "source_url": "https://www.bmkg.go.id/alerts/nowcast/en/CJB20261128002_alert.xml",
+          "title": "Thunderstorm This Afternoon in Jawa Barat"
         }
       }
     },

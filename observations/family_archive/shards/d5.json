@@ -635,6 +635,53 @@
         }
       }
     },
+    "d56e88a40ad10e767afbcb6d6a6b8146699a70391c3e0e6148e90083e4d2e222": {
+      "information_root": "cbp_wait:cbp_wait:l24501:2026-11-28:00:55:07",
+      "members": {
+        "beh:a54b673979dfae904e97a7a33be6": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-28T08:04:45+00:00",
+          "geography_key": "us-border-port:l24501",
+          "geography_label": "Fort Hancock",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:a54b673979dfae904e97a7a33be6",
+          "information_root": "cbp_wait:cbp_wait:l24501:2026-11-28:00:55:07",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Update Pending",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Closed",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/28/2026",
+            "reported_local_time": "00:55:07",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Fort Hancock / Fort Hancock"
+        }
+      }
+    },
     "d577e4ed9b166f8d515519cdd82129209643a53c729eb9da1daecebad8376d20": {
       "information_root": "niord:28515750-1c32-46ac-b8eb-3424675f4f43:3:0:0",
       "members": {
@@ -829,6 +876,39 @@
           "source_updated_at": null,
           "source_url": "https://bwt.cbp.gov/api/waittimes",
           "title": "CBP estimated commercial border wait — Blaine / Point Roberts"
+        }
+      }
+    },
+    "d5a4b3f331c3efc2a823b0b6a51a460df9cf801ccb85f4831d8c674f35cb4342": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c623:112780-2026",
+      "members": {
+        "beh:3f7c404e7c307cfc3ab11dcd8937": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-27T16:57:12+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:3f7c404e7c307cfc3ab11dcd8937",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c623:112780-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-27T16:57:12Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-26T08%3A01%3A47&updatedTo=2026-11-28T08%3A01%3A47",
+          "title": "DHSC: ASC: Workforce Dataset & Workforce Intelligence (2027) · Department of Health & Social Care"
         }
       }
     },

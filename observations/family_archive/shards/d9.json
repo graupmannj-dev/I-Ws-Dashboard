@@ -196,6 +196,53 @@
         }
       }
     },
+    "d95aa6f640e5914e35990e51578f40a0ee2c4f8158dd8bcc7116311bd820e49f": {
+      "information_root": "cbp_wait:cbp_wait:250409:2026-11-27:23:55:07",
+      "members": {
+        "beh:d017b7bc73063198abb6ebcdba6b": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-28T08:04:45+00:00",
+          "geography_key": "us-border-port:250409",
+          "geography_label": "San Ysidro",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:d017b7bc73063198abb6ebcdba6b",
+          "information_root": "cbp_wait:cbp_wait:250409:2026-11-27:23:55:07",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "N/A",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/27/2026",
+            "reported_local_time": "23:55:07",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — San Ysidro / Cross Border Express"
+        }
+      }
+    },
     "d96be68cf61ecefd15ac6ccba791b8da82556cd49c3e7202c50842903b5bf99d": {
       "information_root": "inmet_br:inmet_br:52e54eee7cdf7e64c4d9ae02d19d",
       "members": {
@@ -265,6 +312,44 @@
           "source_updated_at": null,
           "source_url": "https://ioda.inetintel.cc.gatech.edu/",
           "title": "IODA detected connectivity anomaly: country SZ"
+        }
+      }
+    },
+    "d97d45a3502341f76686e7dde1dfdae6eefc558d6599f23e4e9ad8409a223446": {
+      "information_root": "usgs:us6000ue1h",
+      "members": {
+        "beh:df87bf41b12481482f8dc2aff663": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "usgs",
+          "direct_measurement": true,
+          "event_at": "2026-11-28T02:25:05Z",
+          "first_observed_at": "2026-11-28T02:25:05+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "source_supplied_point_only",
+          "id": "beh:df87bf41b12481482f8dc2aff663",
+          "information_root": "usgs:us6000ue1h",
+          "origin": "behavioral_registry",
+          "provider": "usgs",
+          "published_at": "2026-11-28T02:37:27Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "measured_earthquake_context",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "name": "earthquake_magnitude",
+            "unit": "reported_magnitude",
+            "value": 5.2
+          },
+          "source_scope": "USGS M4.5+ earthquakes worldwide, rolling past day; source thresholds apply",
+          "source_updated_at": null,
+          "source_url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000ue1h",
+          "title": "M 5.2 - 93 km W of San Antonio de los Cobres, Argentina"
         }
       }
     },

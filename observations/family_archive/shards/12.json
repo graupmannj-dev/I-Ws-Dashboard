@@ -80,6 +80,45 @@
         }
       }
     },
+    "1222b07f3904a889a6e2c647278c3206d2e468140f9748e1cef4943991ed3e3d": {
+      "information_root": "bmkg_nowcast:bmkg_nowcast:a67e8338f3f490a3d6853845e0c0",
+      "members": {
+        "beh:e698c44f5d525a04b288aee078d3": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "bmkg_nowcast",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-28T07:30:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:e698c44f5d525a04b288aee078d3",
+          "information_root": "bmkg_nowcast:bmkg_nowcast:a67e8338f3f490a3d6853845e0c0",
+          "origin": "behavioral_registry",
+          "provider": "bmkg_nowcast",
+          "published_at": "2026-11-28T07:30:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Indonesia BMKG",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Indonesia BMKG active provincial nowcast RSS, source-reported only; not global",
+          "source_updated_at": null,
+          "source_url": "https://www.bmkg.go.id/alerts/nowcast/en/CBT20261128002_alert.xml",
+          "title": "Thunderstorm This Afternoon in Banten"
+        }
+      }
+    },
     "12232021008d107e8f791ba5abacf94e7a4c12072c311d236fb626c56bca2b21": {
       "information_root": "cbp_wait:cbp_wait:260201:2026-11-27:05:34:48",
       "members": {
@@ -620,6 +659,45 @@
           "source_updated_at": null,
           "source_url": "https://bwt.cbp.gov/api/waittimes",
           "title": "CBP estimated commercial border wait — Nogales / Mariposa"
+        }
+      }
+    },
+    "12e3495dec08b54102b575865689a3241a59911c30af060c1dafa26166f0a646": {
+      "information_root": "bmkg_nowcast:bmkg_nowcast:082666825799a65573151de08d5d",
+      "members": {
+        "beh:439d5d4b6ea4edb7a565c537940b": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "bmkg_nowcast",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-28T03:53:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:439d5d4b6ea4edb7a565c537940b",
+          "information_root": "bmkg_nowcast:bmkg_nowcast:082666825799a65573151de08d5d",
+          "origin": "behavioral_registry",
+          "provider": "bmkg_nowcast",
+          "published_at": "2026-11-28T03:53:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Indonesia BMKG",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Indonesia BMKG active provincial nowcast RSS, source-reported only; not global",
+          "source_updated_at": null,
+          "source_url": "https://www.bmkg.go.id/alerts/nowcast/en/CSR20261128002_alert.xml",
+          "title": "Thunderstorm This Afternoon in Sulawesi Utara"
         }
       }
     },

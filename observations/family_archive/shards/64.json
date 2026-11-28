@@ -344,6 +344,81 @@
         }
       }
     },
+    "64426c3731a6b41306fc0573f3d3b5bd1a50c97992a4903e79acd88bb2509fb8": {
+      "information_root": "wiki_edits:wiki_edits:zh:20261128T08",
+      "members": {
+        "beh:39fc60544b4ac998e2279ec4936c": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "wiki_edits",
+          "direct_measurement": false,
+          "event_at": "2026-11-28T08:01:43Z",
+          "first_observed_at": "2026-11-28T08:01:43+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:39fc60544b4ac998e2279ec4936c",
+          "information_root": "wiki_edits:wiki_edits:zh:20261128T08",
+          "origin": "behavioral_registry",
+          "provider": "wiki_edits",
+          "published_at": "2026-11-28T08:01:43Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "public_encyclopedia_edit_aggregate",
+          "source_family": "public_attention",
+          "source_kind": "bounded_public_edit_count_not_event_verification",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "distinct_articles_in_sample": 361,
+            "maximum_returned_edits": 500,
+            "most_edited_article_counts": [
+              {
+                "count": 9,
+                "title": "2026年王者荣耀洲际争霸赛"
+              },
+              {
+                "count": 9,
+                "title": "2026年砂拉越州选举"
+              },
+              {
+                "count": 8,
+                "title": "2027年世界棒球12強賽資格賽"
+              },
+              {
+                "count": 7,
+                "title": "裴淳华"
+              },
+              {
+                "count": 6,
+                "title": "向明 (作家)"
+              },
+              {
+                "count": 6,
+                "title": "朝鮮義勇軍"
+              },
+              {
+                "count": 6,
+                "title": "泰益瑪目"
+              },
+              {
+                "count": 5,
+                "title": "2026年中華民國直轄市長及縣市長選舉"
+              }
+            ],
+            "name": "sampled_edits_last_three_hours",
+            "sample_cap_reached": true,
+            "unit": "edits",
+            "value": 500
+          },
+          "source_scope": "Wikipedia main-namespace edit-count sample, 14 global language editions, three-hour window capped at 500 per wiki; not geographic location",
+          "source_updated_at": null,
+          "source_url": "https://zh.wikipedia.org/wiki/Special:RecentChanges",
+          "title": "Wikipedia zh public article-edit activity (sampled)"
+        }
+      }
+    },
     "644680e0c15cf54e191cbbdfa1ae2006ab06de7ec61034f452a0b6e71f847ee9": {
       "information_root": "nws:9f9cfb22a754e06b62b823bc",
       "members": {
@@ -931,6 +1006,53 @@
           "source_updated_at": null,
           "source_url": "https://ioda.inetintel.cc.gatech.edu/",
           "title": "IODA detected connectivity anomaly: country AO"
+        }
+      }
+    },
+    "64fc3fa2f4e7974cc7311750a090321a0dfcdc186e841648629820d732283c69": {
+      "information_root": "cbp_wait:cbp_wait:240202:2026-11-28:00:55:07",
+      "members": {
+        "beh:c68068783346d9a8eaf5ab72c143": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-28T08:04:45+00:00",
+          "geography_key": "us-border-port:240202",
+          "geography_label": "El Paso",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:c68068783346d9a8eaf5ab72c143",
+          "information_root": "cbp_wait:cbp_wait:240202:2026-11-28:00:55:07",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "N/A",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/28/2026",
+            "reported_local_time": "00:55:07",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — El Paso / Paso Del Norte (PDN)"
         }
       }
     }

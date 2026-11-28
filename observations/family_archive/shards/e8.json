@@ -442,6 +442,39 @@
         }
       }
     },
+    "e859cf58cc727dd3ae5fb4ad2ff0471c6de5f371475b5026b8f3875485091532": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c62a:112792-2026",
+      "members": {
+        "beh:de4680dcbfc9e25f2483e570ba39": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-27T17:08:26+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:de4680dcbfc9e25f2483e570ba39",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c62a:112792-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-27T17:08:26Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-26T08%3A01%3A47&updatedTo=2026-11-28T08%3A01%3A47",
+          "title": "CWC26119MW - Replacement Social Care System · Wolverhampton City Council"
+        }
+      }
+    },
     "e85c7d0b743b6fac513df6395586dbe93606d930d73b163cc4534007862491d3": {
       "information_root": "cbp_wait:cbp_wait:380102:2026-11-21:06:24:37",
       "members": {
@@ -486,6 +519,53 @@
           "source_updated_at": null,
           "source_url": "https://bwt.cbp.gov/api/waittimes",
           "title": "CBP estimated commercial border wait — Detroit / Gordie Howe International Bridge"
+        }
+      }
+    },
+    "e85f1dab76a30b4ba9c33137e93ec34709d8a917a5828d71585a471830353bee": {
+      "information_root": "cbp_wait:cbp_wait:230901:2026-11-28:01:55:07",
+      "members": {
+        "beh:35c7ba58708d4dbbc352c916b21e": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-28T08:04:45+00:00",
+          "geography_key": "us-border-port:230901",
+          "geography_label": "Progreso",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:35c7ba58708d4dbbc352c916b21e",
+          "information_root": "cbp_wait:cbp_wait:230901:2026-11-28:01:55:07",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Lanes Closed",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/28/2026",
+            "reported_local_time": "01:55:07",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Progreso / Progreso International Bridge"
         }
       }
     },
@@ -589,6 +669,39 @@
           "source_updated_at": null,
           "source_url": "https://bwt.cbp.gov/api/waittimes",
           "title": "CBP estimated commercial border wait — Jackman"
+        }
+      }
+    },
+    "e89191b849fffde6b113d2238f85c4f5fbaf2abc4c40b36d566c90fe73a41df8": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c621:112777-2026",
+      "members": {
+        "beh:3a2ca4a9f5b1c0d957b2120a315a": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-27T16:52:51+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:3a2ca4a9f5b1c0d957b2120a315a",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c621:112777-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-27T16:52:51Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-26T08%3A01%3A47&updatedTo=2026-11-28T08%3A01%3A47",
+          "title": "Bowling Green Maintenance · Manchester City Council"
         }
       }
     },

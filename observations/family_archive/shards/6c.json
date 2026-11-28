@@ -550,6 +550,39 @@
         }
       }
     },
+    "6c9ccbe9237dfbe1eb955ee48fc5b23a75bfa5b5d1d8fb2592a0a1eaced43518": {
+      "information_root": "nws:2ff7e0ba80f3e8caa4f1b14e",
+      "members": {
+        "beh:29801b4ff7b7cb1f72e20427a350": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "nws",
+          "direct_measurement": false,
+          "event_at": "2026-11-28T06:35:00Z",
+          "first_observed_at": "2026-11-28T06:35:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:29801b4ff7b7cb1f72e20427a350",
+          "information_root": "nws:2ff7e0ba80f3e8caa4f1b14e",
+          "origin": "behavioral_registry",
+          "provider": "nws",
+          "published_at": "2026-11-28T06:35:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "official_weather_alert_context",
+          "source_measurement": null,
+          "source_scope": "Active NWS marine alerts; severity Severe",
+          "source_updated_at": null,
+          "source_url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.3f2485e325bbfaf95e323bcbe96dc3965253b385.001.1",
+          "title": "Coastal Flood Warning - Inland Flagler; Eastern Putnam"
+        }
+      }
+    },
     "6caa97b18728e534ebfa020fbbfd03058bd542dbd8672fc911b59582d2a47754": {
       "information_root": "ioda:f3ecfd293fdefc2ccf73651a",
       "members": {
@@ -721,6 +754,39 @@
           "source_updated_at": null,
           "source_url": "https://bwt.cbp.gov/api/waittimes",
           "title": "CBP estimated commercial border wait — Calais / Ferry Point"
+        }
+      }
+    },
+    "6cbe7743814511f3c03a00c5429e8523b3057068d7c2e9123640776a48ff6175": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-06cba9:112753-2026",
+      "members": {
+        "beh:3018ac3006c1dee142467d7169a7": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-27T16:08:42+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:3018ac3006c1dee142467d7169a7",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-06cba9:112753-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-27T16:08:42Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-26T08%3A01%3A47&updatedTo=2026-11-28T08%3A01%3A47",
+          "title": "Harborough, Charnwood and NWLeicestershire Phase 3 LBS · Leicestershire County Council"
         }
       }
     },

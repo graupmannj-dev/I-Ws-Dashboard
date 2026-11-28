@@ -1,15 +1,17 @@
 {
-  "checked_at": "2026-11-27T12:43:32Z",
-  "missingness": "provider_bounded_partial",
+  "checked_at": "2026-11-28T08:01:47Z",
+  "missingness": "not_measured_not_zero",
   "mode": "inmet_br",
   "operational_warning_approved": false,
-  "records": 35,
+  "records": null,
   "schema": "cairn.alternative-sensors.v1",
   "source_dependency_class": "national_official_hazard_bulletin_not_independent_incident",
-  "source_errors": [],
+  "source_errors": [
+    "URLError: <urlopen error timed out>"
+  ],
   "source_queries_attempted": 1,
-  "source_queries_ok": 1,
+  "source_queries_ok": 0,
   "source_scope": "Brazil INMET official severe-weather RSS notices; provider-listed bounded sample",
-  "status": "partial",
-  "truncated": true
+  "status": "unavailable",
+  "truncated": false
 }

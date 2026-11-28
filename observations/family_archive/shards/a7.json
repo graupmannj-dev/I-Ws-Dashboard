@@ -173,6 +173,81 @@
         }
       }
     },
+    "a741de144b4704a94a60c2c9a188b640c7ae3442c9e1ccef70e3efa568b35cb2": {
+      "information_root": "wiki_edits:wiki_edits:pt:20261128T08",
+      "members": {
+        "beh:48e53e62d6787baf5dfa83acee01": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "wiki_edits",
+          "direct_measurement": false,
+          "event_at": "2026-11-28T07:59:11Z",
+          "first_observed_at": "2026-11-28T07:59:11+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:48e53e62d6787baf5dfa83acee01",
+          "information_root": "wiki_edits:wiki_edits:pt:20261128T08",
+          "origin": "behavioral_registry",
+          "provider": "wiki_edits",
+          "published_at": "2026-11-28T07:59:11Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "public_encyclopedia_edit_aggregate",
+          "source_family": "public_attention",
+          "source_kind": "bounded_public_edit_count_not_event_verification",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "distinct_articles_in_sample": 450,
+            "maximum_returned_edits": 500,
+            "most_edited_article_counts": [
+              {
+                "count": 9,
+                "title": "Xambá"
+              },
+              {
+                "count": 8,
+                "title": "Lista de prêmios e indicações recebidos por Miley Cyrus"
+              },
+              {
+                "count": 6,
+                "title": "Jeff Landry"
+              },
+              {
+                "count": 6,
+                "title": "Joice Hasselmann"
+              },
+              {
+                "count": 5,
+                "title": "Celso Daniel"
+              },
+              {
+                "count": 4,
+                "title": "Henrique Meirelles"
+              },
+              {
+                "count": 3,
+                "title": "Janaina Paschoal"
+              },
+              {
+                "count": 3,
+                "title": "Joesley Batista"
+              }
+            ],
+            "name": "sampled_edits_last_three_hours",
+            "sample_cap_reached": true,
+            "unit": "edits",
+            "value": 500
+          },
+          "source_scope": "Wikipedia main-namespace edit-count sample, 14 global language editions, three-hour window capped at 500 per wiki; not geographic location",
+          "source_updated_at": null,
+          "source_url": "https://pt.wikipedia.org/wiki/Special:RecentChanges",
+          "title": "Wikipedia pt public article-edit activity (sampled)"
+        }
+      }
+    },
     "a743112a115ed87e7fd8ed75787c22de8b1cebaa5e4194d6608666325af214a0": {
       "information_root": "niord:85b4e019-da5a-432d-b68f-b70721b9f8bb:0:2:0",
       "members": {
@@ -618,6 +693,53 @@
           "source_updated_at": null,
           "source_url": "https://bwt.cbp.gov/api/waittimes",
           "title": "CBP estimated commercial border wait — Laredo / Bridge II"
+        }
+      }
+    },
+    "a7d4e852c2763549633b58edc40984edf81a4f6593ba251a371aa96c43b64327": {
+      "information_root": "cbp_wait:cbp_wait:230302:2026-11-28:01:55:07",
+      "members": {
+        "beh:744865295eb07493759aaea628f1": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-28T08:04:45+00:00",
+          "geography_key": "us-border-port:230302",
+          "geography_label": "Eagle Pass",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:744865295eb07493759aaea628f1",
+          "information_root": "cbp_wait:cbp_wait:230302:2026-11-28:01:55:07",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Lanes Closed",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/28/2026",
+            "reported_local_time": "01:55:07",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Eagle Pass / Bridge II"
         }
       }
     },

@@ -47,6 +47,45 @@
         }
       }
     },
+    "4725a02dd5788a827230bb355f47364052bfae7a2dde06575fe3fffea4abce8e": {
+      "information_root": "bmkg_nowcast:bmkg_nowcast:8f9799dfcb141e06ad778a00740b",
+      "members": {
+        "beh:f85f3f8c0390d1b2c9e6291f6c51": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "bmkg_nowcast",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-28T07:00:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:f85f3f8c0390d1b2c9e6291f6c51",
+          "information_root": "bmkg_nowcast:bmkg_nowcast:8f9799dfcb141e06ad778a00740b",
+          "origin": "behavioral_registry",
+          "provider": "bmkg_nowcast",
+          "published_at": "2026-11-28T07:00:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Indonesia BMKG",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Indonesia BMKG active provincial nowcast RSS, source-reported only; not global",
+          "source_updated_at": null,
+          "source_url": "https://www.bmkg.go.id/alerts/nowcast/en/CSL20261128003_alert.xml",
+          "title": "Thunderstorm This Evening in Sulawesi Selatan"
+        }
+      }
+    },
     "472ab6308a99e5148ddff0cafa1c0d1db17b80c6b9cdc225ad01f04309ab718c": {
       "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c25a:111886-2026",
       "members": {
@@ -612,6 +651,53 @@
           "source_updated_at": "2026-11-16T09:21:52Z",
           "source_url": "https://niord.dma.dk/#/message/8e982ea7-247c-4dd6-91e9-05a4458317b1",
           "title": "Denmark. The North Sea. EK R 53 Juvre. Firing exercises. Warning."
+        }
+      }
+    },
+    "47c94c7f63054d2cf8f98a750531c3f1a552eb5d299aa2bd7a16d927dac23bf5": {
+      "information_root": "cbp_wait:cbp_wait:070101:2026-11-28:02:55:07",
+      "members": {
+        "beh:43f6dfcc83b7dbe5080c33ae8870": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-28T08:04:45+00:00",
+          "geography_key": "us-border-port:070101",
+          "geography_label": "Ogdensburg",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:43f6dfcc83b7dbe5080c33ae8870",
+          "information_root": "cbp_wait:cbp_wait:070101:2026-11-28:02:55:07",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "no delay",
+            "lanes_open": 1,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "At 4:00 am EST",
+            "reported_local_date": "11/28/2026",
+            "reported_local_time": "02:55:07",
+            "source_declared_border": "Canadian Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 0
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Ogdensburg"
         }
       }
     },

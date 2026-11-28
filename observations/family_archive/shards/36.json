@@ -47,6 +47,52 @@
         }
       }
     },
+    "3613d7d433586b7f5c17efe8f1e22d7c9ede77dee9e77fba391642df5e739339": {
+      "information_root": "ris_bgp:ris_bgp:AS7552:20261128T05",
+      "members": {
+        "beh:5664db9488cbb0517f7d5821afcf": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "public_routing_updates_not_country_outage",
+          "collection_mode": "ris_bgp",
+          "direct_measurement": true,
+          "event_at": null,
+          "first_observed_at": "2026-11-28T08:04:45+00:00",
+          "geography_key": "asn:7552",
+          "geography_label": "AS7552",
+          "geography_precision": "routing_target_not_country_incident",
+          "id": "beh:5664db9488cbb0517f7d5821afcf",
+          "information_root": "ris_bgp:ris_bgp:AS7552:20261128T05",
+          "origin": "behavioral_registry",
+          "provider": "ris_bgp",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "routing_collector_sampled_asn_updates",
+          "source_family": "internet_routing",
+          "source_kind": "sampled_asn_bgp_route_updates_not_network_outage",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "collector_peers_are_not_geo_deduplicated": true,
+            "country_impact_not_established": true,
+            "name": "sampled_6h_bgp_announcements",
+            "registered_network_country_hint": "VN",
+            "returned_sampling_buckets": 6,
+            "source_window_end": "2026-11-28T05:00:00Z",
+            "target_asn": "AS7552",
+            "unit": "announcements",
+            "value": 2056940,
+            "window_hours_requested": 6,
+            "withdrawals_unavailable_for_asn": true
+          },
+          "source_scope": "RIPE RIS public route-announcement update samples on six non-Western operated networks; ASNs not country-wide outage detection",
+          "source_updated_at": null,
+          "source_url": "https://stat.ripe.net/data/bgp-update-activity/data.json?resource=AS7552&num_hours=6&max_samples=24&hide_empty_samples=false",
+          "title": "RIPE RIS sampled BGP announcements: AS7552"
+        }
+      }
+    },
     "3615200a83d560c4d198876f6fe59441ce09e95e12c7a07a1b76f05d644573ee": {
       "information_root": "ioda:d2f486ed0accf4bc95198ef1",
       "members": {
@@ -899,6 +945,53 @@
           "source_updated_at": null,
           "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-24T03%3A38%3A44&updatedTo=2026-11-26T03%3A38%3A44",
           "title": "ETCS Affordability Challenge Preliminary Market Engagement · NETWORK RAIL INFRASTRUCTURE LIMITED"
+        }
+      }
+    },
+    "36c89bb0723d378653014c924f2416fefd3b66deb2bc7690b82c252e1606ced9": {
+      "information_root": "ons_br:ons_br:N:20261127T030000Z",
+      "members": {
+        "beh:24ac2552b2b4827e857d2b37fee7": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "verified_grid_load_not_outage_or_intent",
+          "collection_mode": "ons_br",
+          "direct_measurement": true,
+          "event_at": "2026-11-27T03:00:00Z",
+          "first_observed_at": "2026-11-28T08:04:45+00:00",
+          "geography_key": "br-ons-loadarea:N",
+          "geography_label": "North",
+          "geography_precision": "regional_grid_not_incident_site",
+          "id": "beh:24ac2552b2b4827e857d2b37fee7",
+          "information_root": "ons_br:ons_br:N:20261127T030000Z",
+          "origin": "behavioral_registry",
+          "provider": "ons_br",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "verified_national_grid_load_measurement",
+          "source_family": "grid_load",
+          "source_kind": "verified_regional_electricity_load_context_not_outage",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "collected_history_day": "2026-11-26",
+            "historical_verified_not_live": true,
+            "load_area_code": "N",
+            "load_area_name": "North",
+            "name": "verified_half_hour_global_load",
+            "not_outage_or_attribution": true,
+            "sample_interval_minutes": 30,
+            "sampled_rows": 48,
+            "source_field": "val_cargaglobal",
+            "source_utc_field": "din_referenciautc",
+            "unit": "MWmed",
+            "value": 10828.565
+          },
+          "source_scope": "Brazilian national system operator ONS verified half-hour load, four macroregions, previous two-day sample; no local facilities/outage attribution",
+          "source_updated_at": null,
+          "source_url": "https://dados.ons.org.br/dataset/carga-energia-verificada",
+          "title": "Brazil ONS North verified half-hourly system load"
         }
       }
     },

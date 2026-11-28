@@ -173,6 +173,45 @@
         }
       }
     },
+    "78453ff84e32c97cc8a50937b31150e5c34c423d158aff99ec9368f11b1cd486": {
+      "information_root": "bmkg_nowcast:bmkg_nowcast:36f54883fff5b6951e3c860191b1",
+      "members": {
+        "beh:edb74fb08d61340675606c49b88c": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "bmkg_nowcast",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-28T06:48:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:edb74fb08d61340675606c49b88c",
+          "information_root": "bmkg_nowcast:bmkg_nowcast:36f54883fff5b6951e3c860191b1",
+          "origin": "behavioral_registry",
+          "provider": "bmkg_nowcast",
+          "published_at": "2026-11-28T06:48:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Indonesia BMKG",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Indonesia BMKG active provincial nowcast RSS, source-reported only; not global",
+          "source_updated_at": null,
+          "source_url": "https://www.bmkg.go.id/alerts/nowcast/en/CBL20261128002_alert.xml",
+          "title": "Thunderstorm This Evening in Bali"
+        }
+      }
+    },
     "784c415f5a222e172a1978e69d91d62e9df7c766d09877f2c307b14a6e72c41c": {
       "information_root": "ioda:e51b60e9e17cb8c97be2f97b",
       "members": {
@@ -266,6 +305,39 @@
           "source_updated_at": null,
           "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-21T13%3A10%3A09&updatedTo=2026-11-23T13%3A10%3A09",
           "title": "EDC/2026/4397 Lift Refurbishment Milngavie Enterprise Centre · East Dunbartonshire Council"
+        }
+      }
+    },
+    "787baa4e7ddddb6ead1b7342066b49ea34dfd6dcae5fd4e4481289faf258739c": {
+      "information_root": "nws:1e066c13992f32a0874b10ff",
+      "members": {
+        "beh:b322ce4200901fc79f0d0abfa33b": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "nws",
+          "direct_measurement": false,
+          "event_at": "2026-11-27T20:47:00Z",
+          "first_observed_at": "2026-11-27T20:47:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:b322ce4200901fc79f0d0abfa33b",
+          "information_root": "nws:1e066c13992f32a0874b10ff",
+          "origin": "behavioral_registry",
+          "provider": "nws",
+          "published_at": "2026-11-27T20:47:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "official_weather_alert_context",
+          "source_measurement": null,
+          "source_scope": "Active NWS marine alerts; severity Minor",
+          "source_updated_at": null,
+          "source_url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.c0f341151fde9dec0e3d90b01a9d0ad80ab0ce95.001.2",
+          "title": "Coastal Flood Statement - Monroe Upper Keys"
         }
       }
     },
@@ -406,6 +478,53 @@
           "source_updated_at": null,
           "source_url": "https://bwt.cbp.gov/api/waittimes",
           "title": "CBP estimated commercial border wait — Buffalo/Niagara Falls / Whirlpool Bridge"
+        }
+      }
+    },
+    "78aac5d245cc513339d11e8a306283891f55853045e172241953176e7b65e037": {
+      "information_root": "cbp_wait:cbp_wait:250401:2026-11-27:23:55:07",
+      "members": {
+        "beh:01655d0a1581a7bc4a033063b5e0": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-28T08:04:45+00:00",
+          "geography_key": "us-border-port:250401",
+          "geography_label": "San Ysidro",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:01655d0a1581a7bc4a033063b5e0",
+          "information_root": "cbp_wait:cbp_wait:250401:2026-11-27:23:55:07",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "N/A",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/27/2026",
+            "reported_local_time": "23:55:07",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — San Ysidro"
         }
       }
     },

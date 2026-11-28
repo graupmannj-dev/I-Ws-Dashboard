@@ -506,6 +506,53 @@
         }
       }
     },
+    "72b7efa49e35fe28efd8c124c46e3aafdc0c4e4b7a85d455407dc6de3bbd0b73": {
+      "information_root": "cbp_wait:cbp_wait:230404:2026-11-28:01:55:07",
+      "members": {
+        "beh:1a52fd7b18503d3c28c2510ce5c3": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-28T08:04:45+00:00",
+          "geography_key": "us-border-port:230404",
+          "geography_label": "Laredo",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:1a52fd7b18503d3c28c2510ce5c3",
+          "information_root": "cbp_wait:cbp_wait:230404:2026-11-28:01:55:07",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Lanes Closed",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Closed",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/28/2026",
+            "reported_local_time": "01:55:07",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Laredo / World Trade Bridge"
+        }
+      }
+    },
     "72cb3b4c631b40256f117b1bc0a46f3abc19c7ed543e88cd77843a99ceee78b1": {
       "information_root": "cbp_wait:cbp_wait:240201:2026-11-25:01:45:24",
       "members": {
@@ -597,6 +644,81 @@
           "source_updated_at": null,
           "source_url": "https://bwt.cbp.gov/api/waittimes",
           "title": "CBP estimated commercial border wait — Laredo / Bridge II"
+        }
+      }
+    },
+    "72e368785c09bd7235bfff0df3446a4fd1792c6b72639f1b4ce088223fd2a002": {
+      "information_root": "wiki_edits:wiki_edits:ar:20261128T08",
+      "members": {
+        "beh:14ff7a2cf5ed0d40c25da8698848": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "wiki_edits",
+          "direct_measurement": false,
+          "event_at": "2026-11-28T08:01:47Z",
+          "first_observed_at": "2026-11-28T08:01:47+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:14ff7a2cf5ed0d40c25da8698848",
+          "information_root": "wiki_edits:wiki_edits:ar:20261128T08",
+          "origin": "behavioral_registry",
+          "provider": "wiki_edits",
+          "published_at": "2026-11-28T08:01:47Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "public_encyclopedia_edit_aggregate",
+          "source_family": "public_attention",
+          "source_kind": "bounded_public_edit_count_not_event_verification",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "distinct_articles_in_sample": 464,
+            "maximum_returned_edits": 500,
+            "most_edited_article_counts": [
+              {
+                "count": 16,
+                "title": "مسابقة الأغنية الأوروبية 2027"
+              },
+              {
+                "count": 4,
+                "title": "صبرينة قاسة"
+              },
+              {
+                "count": 3,
+                "title": "مسودة:سالم خلف الشمري"
+              },
+              {
+                "count": 3,
+                "title": "مسودة:ضياء الجندوبي"
+              },
+              {
+                "count": 2,
+                "title": "اللجنة التحضيرية لنقابة العيادات الإسعافية والقبالة"
+              },
+              {
+                "count": 2,
+                "title": "سيدني غوتليب"
+              },
+              {
+                "count": 2,
+                "title": "سيدني في. ستراتون"
+              },
+              {
+                "count": 2,
+                "title": "سيدني لونغ"
+              }
+            ],
+            "name": "sampled_edits_last_three_hours",
+            "sample_cap_reached": true,
+            "unit": "edits",
+            "value": 500
+          },
+          "source_scope": "Wikipedia main-namespace edit-count sample, 14 global language editions, three-hour window capped at 500 per wiki; not geographic location",
+          "source_updated_at": null,
+          "source_url": "https://ar.wikipedia.org/wiki/Special:RecentChanges",
+          "title": "Wikipedia ar public article-edit activity (sampled)"
         }
       }
     },

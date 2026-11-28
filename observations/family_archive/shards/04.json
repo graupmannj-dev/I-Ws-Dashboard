@@ -273,6 +273,53 @@
         }
       }
     },
+    "044ee5c2bdbe819a74dbfc78e86bd8193d0d24efc43f953c8ea1fce4c827dcf9": {
+      "information_root": "ons_br:ons_br:NE:20261127T030000Z",
+      "members": {
+        "beh:cce2ccc3199d17cae78298be9571": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "verified_grid_load_not_outage_or_intent",
+          "collection_mode": "ons_br",
+          "direct_measurement": true,
+          "event_at": "2026-11-27T03:00:00Z",
+          "first_observed_at": "2026-11-28T08:04:45+00:00",
+          "geography_key": "br-ons-loadarea:NE",
+          "geography_label": "Northeast",
+          "geography_precision": "regional_grid_not_incident_site",
+          "id": "beh:cce2ccc3199d17cae78298be9571",
+          "information_root": "ons_br:ons_br:NE:20261127T030000Z",
+          "origin": "behavioral_registry",
+          "provider": "ons_br",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "verified_national_grid_load_measurement",
+          "source_family": "grid_load",
+          "source_kind": "verified_regional_electricity_load_context_not_outage",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "collected_history_day": "2026-11-26",
+            "historical_verified_not_live": true,
+            "load_area_code": "NE",
+            "load_area_name": "Northeast",
+            "name": "verified_half_hour_global_load",
+            "not_outage_or_attribution": true,
+            "sample_interval_minutes": 30,
+            "sampled_rows": 48,
+            "source_field": "val_cargaglobal",
+            "source_utc_field": "din_referenciautc",
+            "unit": "MWmed",
+            "value": 17790.7
+          },
+          "source_scope": "Brazilian national system operator ONS verified half-hour load, four macroregions, previous two-day sample; no local facilities/outage attribution",
+          "source_updated_at": null,
+          "source_url": "https://dados.ons.org.br/dataset/carga-energia-verificada",
+          "title": "Brazil ONS Northeast verified half-hourly system load"
+        }
+      }
+    },
     "046e4e61934859b147376b1124cbefcad5de8a496dda83509059d5d008a3daea": {
       "information_root": "ioda:95654076edf5357d979e833b",
       "members": {

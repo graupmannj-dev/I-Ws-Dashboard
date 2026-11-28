@@ -93,6 +93,46 @@
         }
       }
     },
+    "842028635756c601b2479c6c2e98d3705e812cb85ad38962ecbb937de425bfe5": {
+      "information_root": "coops:8638610:20261128T0754Z",
+      "members": {
+        "beh:656d4fa9ec23b211f5f2ff23d099": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "coops",
+          "direct_measurement": true,
+          "event_at": "2026-11-28T07:54:00Z",
+          "first_observed_at": "2026-11-28T07:54:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:656d4fa9ec23b211f5f2ff23d099",
+          "information_root": "coops:8638610:20261128T0754Z",
+          "origin": "behavioral_registry",
+          "provider": "coops",
+          "published_at": "2026-11-28T07:54:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "station_physical_measurement",
+          "source_family": "port_conditions",
+          "source_kind": "selected_port_water_level_measurement",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "metric_comparable_only_same_station_datum_and_sample_window": true,
+            "name": "observed_water_level",
+            "station": "8638610",
+            "unit": "meters_MLLW",
+            "value": 0.236
+          },
+          "source_scope": "NOAA CO-OPS water levels at San Francisco, Key West and Sewells Point; stations only",
+          "source_updated_at": null,
+          "source_url": "https://tidesandcurrents.noaa.gov/waterlevels.html?id=8638610",
+          "title": "Sewells Point, VA observed water level (no anomaly classification)"
+        }
+      }
+    },
     "842d7162cb30182a300dec8c59334ebc0de7a257cc04f15c3d0155363be4eb9e": {
       "information_root": "official:ae873870a52cc02cfdda",
       "members": {
@@ -120,6 +160,39 @@
           "source_updated_at": null,
           "source_url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.kgz.html",
           "title": "The Kyrgyz Republic - Level 1: Exercise Normal Precautions"
+        }
+      }
+    },
+    "842e716d3f26d91d03e0784f9600eff7b7847c7b72924c9a0a32b2ca94a63e66": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c63b:112821-2026",
+      "members": {
+        "beh:2cad92ad3dce740a24e5e2d75bb3": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-27T19:53:57+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:2cad92ad3dce740a24e5e2d75bb3",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c63b:112821-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-27T19:53:57Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-26T08%3A01%3A47&updatedTo=2026-11-28T08%3A01%3A47",
+          "title": "Request for Quotation for the Provision of a Creative Partner for the Bolsover Creative Heath Capus · Bolsover District Council"
         }
       }
     },

@@ -30,6 +30,53 @@
         }
       }
     },
+    "260deb458417374d9b7570734fbb6cd8230bf58fec4fa3df1ac0fef6742e16e3": {
+      "information_root": "cbp_wait:cbp_wait:250608:2026-11-27:23:55:07",
+      "members": {
+        "beh:9933c0d7f1e71a961a1949015fc9": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-28T08:04:45+00:00",
+          "geography_key": "us-border-port:250608",
+          "geography_label": "Otay Mesa Port of Entry",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:9933c0d7f1e71a961a1949015fc9",
+          "information_root": "cbp_wait:cbp_wait:250608:2026-11-27:23:55:07",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Update Pending",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/27/2026",
+            "reported_local_time": "23:55:07",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Otay Mesa Port of Entry"
+        }
+      }
+    },
     "261de891d1b5753cc403301033c36cd9e2f5203d9ce90c906a4bd842b3ed9498": {
       "information_root": "cbp_wait:cbp_wait:230503:2026-11-25:21:37:46",
       "members": {
@@ -220,6 +267,39 @@
           "source_updated_at": "2026-11-12T00:21:51Z",
           "source_url": "https://niord.dma.dk/#/message/02f3c722-952b-445c-8ba9-38509d54b5b2",
           "title": "Denmark. Kattegat. EK R 18 Jaegerspris. Firing exercises. Warning."
+        }
+      }
+    },
+    "2634fa9208560093f4cea83f294e0f7849dba5097f4d355e2af7a237fc511059": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c612:112746-2026",
+      "members": {
+        "beh:6bd2d9758b31a53437c593d769d0": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-27T16:02:08+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:6bd2d9758b31a53437c593d769d0",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c612:112746-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-27T16:02:08Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-26T08%3A01%3A47&updatedTo=2026-11-28T08%3A01%3A47",
+          "title": "Legal Services · UK Research and Innovation"
         }
       }
     },
@@ -490,6 +570,39 @@
           "source_updated_at": null,
           "source_url": "https://bwt.cbp.gov/api/waittimes",
           "title": "CBP estimated commercial border wait — Rio Grande City"
+        }
+      }
+    },
+    "2675d47608f42d84f9eec302146e2ac5289b05445432d2da052d9a779f5528fc": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07966a:112763-2026",
+      "members": {
+        "beh:3fb805cb242e97c0dc6f1490e678": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-27T16:21:58+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:3fb805cb242e97c0dc6f1490e678",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07966a:112763-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-27T16:21:58Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-26T08%3A01%3A47&updatedTo=2026-11-28T08%3A01%3A47",
+          "title": "Satellite-Enabled Heat and Humidity Risk Management for NHS Estates · Department for Science, Innovation & Technology"
         }
       }
     },
@@ -1111,6 +1224,45 @@
           "source_updated_at": null,
           "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-21T13%3A10%3A09&updatedTo=2026-11-23T13%3A10%3A09",
           "title": "Reay &amp; Richard Atkins Primary School Fire Safety Project · London Borough of Lambeth"
+        }
+      }
+    },
+    "26e0096795466785428f83c0b3f18e918b92a5382f84730ede3dd0fa7f476f8a": {
+      "information_root": "bmkg_nowcast:bmkg_nowcast:574199cee9626f7bc9ac969221cf",
+      "members": {
+        "beh:d773d5550b50078ee40ec3624807": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "bmkg_nowcast",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-28T05:55:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:d773d5550b50078ee40ec3624807",
+          "information_root": "bmkg_nowcast:bmkg_nowcast:574199cee9626f7bc9ac969221cf",
+          "origin": "behavioral_registry",
+          "provider": "bmkg_nowcast",
+          "published_at": "2026-11-28T05:55:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Indonesia BMKG",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Indonesia BMKG active provincial nowcast RSS, source-reported only; not global",
+          "source_updated_at": null,
+          "source_url": "https://www.bmkg.go.id/alerts/nowcast/en/CKB20261128002_alert.xml",
+          "title": "Thunderstorm This Afternoon in Kalimantan Barat"
         }
       }
     },

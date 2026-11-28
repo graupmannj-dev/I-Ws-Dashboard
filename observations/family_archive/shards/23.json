@@ -851,6 +851,39 @@
         }
       }
     },
+    "238e23cdf9e9eaa17f402997f4323bcd6d8a2b0f925efab6e697fd089c2bf142": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-0672f0:112731-2026",
+      "members": {
+        "beh:486c5bf6422e7093086ac69ff02d": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-27T15:47:58+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:486c5bf6422e7093086ac69ff02d",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-0672f0:112731-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-27T15:47:58Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-26T08%3A01%3A47&updatedTo=2026-11-28T08%3A01%3A47",
+          "title": "Highways Structures Urgent & Minor Works Framework 2027 · Somerset Council"
+        }
+      }
+    },
     "2398ce6a8848e946bc3e346c78a61222b22ca21995e59f1edd8a0f6b31e5429c": {
       "information_root": "niord:f44d130c-3d02-409c-8023-40cb59dad3fb:0:3:0",
       "members": {
@@ -925,6 +958,45 @@
           "source_updated_at": null,
           "source_url": "https://dados.ons.org.br/dataset/carga-energia-verificada",
           "title": "Brazil ONS South verified half-hourly system load"
+        }
+      }
+    },
+    "23a09386cd0b0acdfd93f5c376d554c191dcf95bac7ab11f5318e355f9e33863": {
+      "information_root": "bmkg_nowcast:bmkg_nowcast:7180e041f9a1d1a700e87853c842",
+      "members": {
+        "beh:73ff46670c038b9b83b77b0f32a3": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "bmkg_nowcast",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-28T05:40:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:73ff46670c038b9b83b77b0f32a3",
+          "information_root": "bmkg_nowcast:bmkg_nowcast:7180e041f9a1d1a700e87853c842",
+          "origin": "behavioral_registry",
+          "provider": "bmkg_nowcast",
+          "published_at": "2026-11-28T05:40:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Indonesia BMKG",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Indonesia BMKG active provincial nowcast RSS, source-reported only; not global",
+          "source_updated_at": null,
+          "source_url": "https://www.bmkg.go.id/alerts/nowcast/en/CBK20261128001_alert.xml",
+          "title": "Thunderstorm This Afternoon in Bengkulu"
         }
       }
     },

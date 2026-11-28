@@ -223,6 +223,53 @@
         }
       }
     },
+    "2067b848b850d0721e1689355b65d5bd62c992d01dce29ecae9e299ef58fce0e": {
+      "information_root": "cbp_wait:cbp_wait:380001:2026-11-28:02:55:06",
+      "members": {
+        "beh:0f7ff5e73f2893dac15021075c29": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-28T08:04:45+00:00",
+          "geography_key": "us-border-port:380001",
+          "geography_label": "Detroit",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:0f7ff5e73f2893dac15021075c29",
+          "information_root": "cbp_wait:cbp_wait:380001:2026-11-28:02:55:06",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "no delay",
+            "lanes_open": 3,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "At 2:00 am EST",
+            "reported_local_date": "11/28/2026",
+            "reported_local_time": "02:55:06",
+            "source_declared_border": "Canadian Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 0
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Detroit / Ambassador Bridge"
+        }
+      }
+    },
     "206e0a5aa003ab7d7b7db5bd8139c949e049dc6607335590fc847b63480d1a84": {
       "information_root": "cbp_wait:cbp_wait:240215:2026-11-22:12:38:51",
       "members": {
@@ -876,6 +923,53 @@
           "source_updated_at": null,
           "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-22T02%3A19%3A12&updatedTo=2026-11-24T02%3A19%3A12",
           "title": "Car Park Enhancements - BPC · Binfield Parish Council"
+        }
+      }
+    },
+    "20f5ff0e3ee570342cdeb7786ca0e0136d2fab841b03eee00321f5692f8179c9": {
+      "information_root": "cbp_wait:cbp_wait:020901:2026-11-28:02:55:06",
+      "members": {
+        "beh:507bb431682b51abc8210e3e2b63": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-28T08:04:45+00:00",
+          "geography_key": "us-border-port:020901",
+          "geography_label": "Derby Line",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:507bb431682b51abc8210e3e2b63",
+          "information_root": "cbp_wait:cbp_wait:020901:2026-11-28:02:55:06",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "no delay",
+            "lanes_open": 1,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "At 8:00 am EST",
+            "reported_local_date": "11/28/2026",
+            "reported_local_time": "02:55:06",
+            "source_declared_border": "Canadian Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 0
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Derby Line / Derby Line I-91"
         }
       }
     }

@@ -326,6 +326,45 @@
         }
       }
     },
+    "22662b6071f1642a5959577c59d6d1e7ed07c2a3293bc9244fcae245e48e52b8": {
+      "information_root": "bmkg_nowcast:bmkg_nowcast:18338bcacbcd0e348a764221926e",
+      "members": {
+        "beh:742b9877401d1ef171097c5293bf": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "bmkg_nowcast",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-28T05:10:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:742b9877401d1ef171097c5293bf",
+          "information_root": "bmkg_nowcast:bmkg_nowcast:18338bcacbcd0e348a764221926e",
+          "origin": "behavioral_registry",
+          "provider": "bmkg_nowcast",
+          "published_at": "2026-11-28T05:10:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Indonesia BMKG",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Indonesia BMKG active provincial nowcast RSS, source-reported only; not global",
+          "source_updated_at": null,
+          "source_url": "https://www.bmkg.go.id/alerts/nowcast/en/CJT20261128004_alert.xml",
+          "title": "Thunderstorm This Afternoon in Jawa Timur"
+        }
+      }
+    },
     "2271d90b54d9e250e42db750b89e40ffef889621f8abc928c7baaf01e22ab3a4": {
       "information_root": "cbp_wait:cbp_wait:090104:2026-11-22:20:44:34",
       "members": {
@@ -677,6 +716,39 @@
           "source_updated_at": null,
           "source_url": "https://bwt.cbp.gov/api/waittimes",
           "title": "CBP estimated commercial border wait — Brownsville / Gateway"
+        }
+      }
+    },
+    "22eb1508fa5f10bcb5732f690a973e9614f9c55885209ffcf2cdcf100b2423c9": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c60c:112738-2026",
+      "members": {
+        "beh:c2f6b721ce287050d587733c2cee": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-27T15:57:04+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:c2f6b721ce287050d587733c2cee",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c60c:112738-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-27T15:57:04Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-26T08%3A01%3A47&updatedTo=2026-11-28T08%3A01%3A47",
+          "title": "DDaT26556- Software · UK Research and Innovation"
         }
       }
     },

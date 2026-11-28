@@ -33,6 +33,100 @@
         }
       }
     },
+    "6820b33f07137a98d9f3d93ab785ea864503c2696f1cc903e4dba952189b6673": {
+      "information_root": "cbp_wait:cbp_wait:071201:2026-11-28:02:55:06",
+      "members": {
+        "beh:5db0c9caf21cd78f00ae232d0cf6": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-28T08:04:45+00:00",
+          "geography_key": "us-border-port:071201",
+          "geography_label": "Champlain",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:5db0c9caf21cd78f00ae232d0cf6",
+          "information_root": "cbp_wait:cbp_wait:071201:2026-11-28:02:55:06",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Lanes Closed",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/28/2026",
+            "reported_local_time": "02:55:06",
+            "source_declared_border": "Canadian Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Champlain"
+        }
+      }
+    },
+    "6828541399bc5bdfcfb836ccb1bd8f3579d90266322c4cf5a92ba3fdbe46c270": {
+      "information_root": "cbp_wait:cbp_wait:240601:2026-11-28:00:55:07",
+      "members": {
+        "beh:b089e282372ac9b86333fbb11323": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-28T08:04:45+00:00",
+          "geography_key": "us-border-port:240601",
+          "geography_label": "Columbus",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:b089e282372ac9b86333fbb11323",
+          "information_root": "cbp_wait:cbp_wait:240601:2026-11-28:00:55:07",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Lanes Closed",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/28/2026",
+            "reported_local_time": "00:55:07",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Columbus"
+        }
+      }
+    },
     "682a267ce530c52f913751b63ec592c94feb2e68ec5397c5eecbf78bc5627b86": {
       "information_root": "niord:7e1e4c1f-369b-4077-ac94-713da08c9b82:4:0:0",
       "members": {

@@ -221,6 +221,39 @@
         }
       }
     },
+    "7743220a2df41e763ae8df08076dc387c651b06895fd56e5169bc77045c6630b": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c609:112734-2026",
+      "members": {
+        "beh:f95e0428d4a059e54dfcecfee1e0": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-27T15:53:34+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:f95e0428d4a059e54dfcecfee1e0",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c609:112734-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-27T15:53:34Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-26T08%3A01%3A47&updatedTo=2026-11-28T08%3A01%3A47",
+          "title": "Surface Guided Radiotherapy solution · Portsmouth Hospitals University NHS Trust"
+        }
+      }
+    },
     "77484ba3bf9e31cef368c6de0a2ebdcb31df10a4729f4bdfac48324ac6fa45ff": {
       "information_root": "usace:214812",
       "members": {
@@ -401,6 +434,44 @@
           "source_updated_at": null,
           "source_url": "https://tidesandcurrents.noaa.gov/waterlevels.html?id=8638610",
           "title": "Sewells Point, VA observed water level (no anomaly classification)"
+        }
+      }
+    },
+    "775dda878288d7cd737408dd732141fd505eefe935a5b4fdfb7b39c89042efc2": {
+      "information_root": "usgs:us6000ue0a",
+      "members": {
+        "beh:f4050694d4c1d2fafe51431555b5": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "usgs",
+          "direct_measurement": true,
+          "event_at": "2026-11-27T21:47:28Z",
+          "first_observed_at": "2026-11-27T21:47:28+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "source_supplied_point_only",
+          "id": "beh:f4050694d4c1d2fafe51431555b5",
+          "information_root": "usgs:us6000ue0a",
+          "origin": "behavioral_registry",
+          "provider": "usgs",
+          "published_at": "2026-11-27T22:56:55Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "measured_earthquake_context",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "name": "earthquake_magnitude",
+            "unit": "reported_magnitude",
+            "value": 4.5
+          },
+          "source_scope": "USGS M4.5+ earthquakes worldwide, rolling past day; source thresholds apply",
+          "source_updated_at": null,
+          "source_url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000ue0a",
+          "title": "M 4.5 - Izu Islands, Japan region"
         }
       }
     },

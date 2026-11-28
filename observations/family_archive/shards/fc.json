@@ -900,6 +900,79 @@
         }
       }
     },
+    "fca77b6d35cc54a1706c652127d56cd7fd7e051d0a6a689fd694eeebc460032a": {
+      "information_root": "coops:9414290:20261128T0754Z",
+      "members": {
+        "beh:e77e120f3911c0922b1d955cf130": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "coops",
+          "direct_measurement": true,
+          "event_at": "2026-11-28T07:54:00Z",
+          "first_observed_at": "2026-11-28T07:54:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:e77e120f3911c0922b1d955cf130",
+          "information_root": "coops:9414290:20261128T0754Z",
+          "origin": "behavioral_registry",
+          "provider": "coops",
+          "published_at": "2026-11-28T07:54:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "station_physical_measurement",
+          "source_family": "port_conditions",
+          "source_kind": "selected_port_water_level_measurement",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "metric_comparable_only_same_station_datum_and_sample_window": true,
+            "name": "observed_water_level",
+            "station": "9414290",
+            "unit": "meters_MLLW",
+            "value": 1.047
+          },
+          "source_scope": "NOAA CO-OPS water levels at San Francisco, Key West and Sewells Point; stations only",
+          "source_updated_at": null,
+          "source_url": "https://tidesandcurrents.noaa.gov/waterlevels.html?id=9414290",
+          "title": "San Francisco, CA observed water level (no anomaly classification)"
+        }
+      }
+    },
+    "fcc17e0d0e2ee8aa1b9c7cece87d5d6983305a5b5f2a32301b0273bdc7db5924": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c639:112818-2026",
+      "members": {
+        "beh:22242ead0aae85cd7e554b831ae4": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-27T18:54:11+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:22242ead0aae85cd7e554b831ae4",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c639:112818-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-27T18:54:11Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-26T08%3A01%3A47&updatedTo=2026-11-28T08%3A01%3A47",
+          "title": "Voluntary Ex Ante Transparency (VEAT) Notice: Extension of Bury, Rochdale and Oldham (BRO) Care Organisation Patient Administration System (PAS) Contract with DH Opco UK Ltd (Dedal · NORTHERN CARE ALLIANCE NHS FOUNDATION TRUST"
+        }
+      }
+    },
     "fcc29de19388277047a0e532b223a907d794d38bc097bfbf10d5fbed14c1fcf2": {
       "information_root": "ioda:55c29a2d6fa40e3275eabf55",
       "members": {

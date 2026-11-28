@@ -146,6 +146,39 @@
         }
       }
     },
+    "0d2ff0a9516420fb3e629d071e94c48562bb9af97f5ee94c3f8138bddbd083b8": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c608:112733-2026",
+      "members": {
+        "beh:21dbf940a214f2d3e845d3d6328b": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-27T15:50:41+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:21dbf940a214f2d3e845d3d6328b",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c608:112733-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-27T15:50:41Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-26T08%3A01%3A47&updatedTo=2026-11-28T08%3A01%3A47",
+          "title": "Barclay Hills - Timber Frame Package Works · RING STONES MAINTENANCE AND CONSTRUCTION LIMITED"
+        }
+      }
+    },
     "0d32ceead8e8afdf59eebc44716f10e80944b9bec5b9e85bc5ff3029b25ba8df": {
       "information_root": "niord:30e0503c-a18c-4a20-bb33-158697450fa7:2:0:0",
       "members": {
@@ -488,6 +521,44 @@
           "source_updated_at": null,
           "source_url": "https://bwt.cbp.gov/api/waittimes",
           "title": "CBP estimated commercial border wait — Douglas (Raul Hector Castro)"
+        }
+      }
+    },
+    "0db323efa6bec29df3855302680393629c2085a474138547a4a7c29b09ed0efa": {
+      "information_root": "usgs:us6000ue1k",
+      "members": {
+        "beh:aed92cb4068c6a48a81fbdfbdd89": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "usgs",
+          "direct_measurement": true,
+          "event_at": "2026-11-28T02:55:35Z",
+          "first_observed_at": "2026-11-28T02:55:35+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "source_supplied_point_only",
+          "id": "beh:aed92cb4068c6a48a81fbdfbdd89",
+          "information_root": "usgs:us6000ue1k",
+          "origin": "behavioral_registry",
+          "provider": "usgs",
+          "published_at": "2026-11-28T03:33:54Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "measured_earthquake_context",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "name": "earthquake_magnitude",
+            "unit": "reported_magnitude",
+            "value": 4.6
+          },
+          "source_scope": "USGS M4.5+ earthquakes worldwide, rolling past day; source thresholds apply",
+          "source_updated_at": null,
+          "source_url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000ue1k",
+          "title": "M 4.6 - 26 km NNW of Cuya, Chile"
         }
       }
     },

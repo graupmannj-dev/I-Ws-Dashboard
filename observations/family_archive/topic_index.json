@@ -4701,6 +4701,15 @@
       "shared_activity_roles": [],
       "shared_subject_terms": []
     },
+    "ad905fd73c2a686f109fa4f1891c": {
+      "independent_corroboration_proven": false,
+      "method": "new_analytical_theme",
+      "review_status": "unreviewed_automatic_topic_seed",
+      "same_incident_proven": false,
+      "score": null,
+      "shared_activity_roles": [],
+      "shared_subject_terms": []
+    },
     "adf7782560c3253ace6d857e1092": {
       "independent_corroboration_proven": false,
       "latent_semantic_similarity": 1,
@@ -7007,6 +7016,31 @@
       ],
       "subject_geography_compatible": true
     },
+    "fc2121adf3cd566a9877c0ca64e8": {
+      "independent_corroboration_proven": false,
+      "latent_semantic_similarity": 1,
+      "method": "aiba.hybrid-local-title-embedding.v1",
+      "raw_text_similarity": 1,
+      "review_status": "unreviewed_automatic_topic_match",
+      "same_incident_proven": false,
+      "same_source_document": false,
+      "score": 1.0,
+      "shared_activity_roles": [],
+      "shared_named_subjects": [
+        "atlas"
+      ],
+      "shared_subject_terms": [
+        "aggregate",
+        "atlas",
+        "measurements",
+        "probe",
+        "public",
+        "ripe",
+        "root",
+        "usable"
+      ],
+      "subject_geography_compatible": true
+    },
     "fc7c9c8db9044a7a23851cc4728e": {
       "independent_corroboration_proven": false,
       "latent_semantic_similarity": 1,
@@ -7741,6 +7775,7 @@
     "ad6a6b96e7d41fb6bdaec2ded49e": "family:a8ded1b31e81fcc8925c",
     "ad78e712d61b9c4c23b79bb8ba37": "family:0565b75fd955348d3f62",
     "ad795728b8d171ca37bace908907": "family:61be0cb940a7f9431b5a",
+    "ad905fd73c2a686f109fa4f1891c": "family:95540f91b9346ac6ace5",
     "adf7782560c3253ace6d857e1092": "family:39223941378a258449fa",
     "ae183e1a933669eb20fbd8f61e0a": "family:fe16830728b4f874c391",
     "ae32b3086f5c5e5a7803c7057707": "family:fedd67f32b443ff07f62",
@@ -8011,6 +8046,7 @@
     "fb204b2475e9f5e9b1af7cc636d9": "family:ef1a67844a6498ec8cc9",
     "fb3cf8ad41065dfc4b68ef286551": "family:3c00731ba07f4daedf9d",
     "fb910293fb177bd2e1a2acae9f1c": "family:a3622921ac50fbc7de1f",
+    "fc2121adf3cd566a9877c0ca64e8": "family:fe16830728b4f874c391",
     "fc4e2d5d3fb46c5bf09881ce4005": "family:a4b6fc7892b9ec7d7559",
     "fc7c9c8db9044a7a23851cc4728e": "family:39223941378a258449fa",
     "fc8becfb85eb9bb1a6a300b8f180": "family:3b6063bf907d953c67fd",
@@ -11436,6 +11472,46 @@
       },
       "source": "hybrid_local_topic_embedding_v2"
     },
+    "family:95540f91b9346ac6ace5": {
+      "first_document_at": "2026-11-27T15:42:29+00:00",
+      "last_document_at": "2026-11-27T15:42:29+00:00",
+      "matched_document_count": 1,
+      "seed": {
+        "domain": "generic",
+        "geo": [],
+        "key": "ad905fd73c2a686f109fa4f1891c",
+        "publisher": "uk_tenders",
+        "source_family": "public_procurement",
+        "terms": {
+          "administration": 1,
+          "alliance": 1,
+          "ante": 1,
+          "bro": 1,
+          "bury": 1,
+          "care": 2,
+          "contract": 1,
+          "dedal": 1,
+          "extension": 1,
+          "foundation": 1,
+          "ltd": 1,
+          "nhs": 1,
+          "northern": 1,
+          "oldham": 1,
+          "opco": 1,
+          "organisation": 1,
+          "pas": 1,
+          "patient": 1,
+          "rochdale": 1,
+          "system": 1,
+          "transparency": 1,
+          "trust": 1,
+          "veat": 1,
+          "voluntary": 1
+        },
+        "title": "Voluntary Ex Ante Transparency (VEAT) Notice: Extension of Bury, Rochdale and Oldham (BRO) Care Organisation Patient Administration System (PAS) Contract with DH Opco UK Ltd (Dedal · NORTHERN CARE ALLIANCE NHS FOUNDATION TRUST"
+      },
+      "source": "hybrid_local_topic_embedding_v2"
+    },
     "family:95af9afa112d381d30d6": {
       "first_document_at": "2026-11-22T09:41:11+00:00",
       "last_document_at": "2026-11-23T03:41:07+00:00",
@@ -14267,8 +14343,8 @@
     },
     "family:fe16830728b4f874c391": {
       "first_document_at": "2026-11-21T02:31:05+00:00",
-      "last_document_at": "2026-11-27T12:46:23+00:00",
-      "matched_document_count": 16,
+      "last_document_at": "2026-11-28T08:04:45+00:00",
+      "matched_document_count": 17,
       "seed": {
         "domain": "network",
         "geo": [],
@@ -14386,9 +14462,9 @@
     }
   },
   "input_truncated": false,
-  "new_document_assignments": 0,
+  "new_document_assignments": 2,
   "schema": "aiba.automatic-analytical-topics.v1",
   "semantic_seed_index_limited": false,
-  "total_document_assignments": 853,
-  "total_stable_topics": 283
+  "total_document_assignments": 855,
+  "total_stable_topics": 284
 }

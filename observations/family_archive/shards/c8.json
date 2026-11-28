@@ -358,6 +358,53 @@
         }
       }
     },
+    "c88365fe4bf8dcfc54b242a31f8a6802f0159148d1aaec812f1c8fca1dc5e2ac": {
+      "information_root": "cbp_wait:cbp_wait:300403:2026-11-27:23:55:06",
+      "members": {
+        "beh:84fd93d798a5943e6e36dde03d5b": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-28T08:04:45+00:00",
+          "geography_key": "us-border-port:300403",
+          "geography_label": "Blaine",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:84fd93d798a5943e6e36dde03d5b",
+          "information_root": "cbp_wait:cbp_wait:300403:2026-11-27:23:55:06",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Update Pending",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/27/2026",
+            "reported_local_time": "23:55:06",
+            "source_declared_border": "Canadian Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Blaine / Point Roberts"
+        }
+      }
+    },
     "c8920e3a9049490a5f8942354297d1b6596dc00aca1097d547eca9abe9f742dc": {
       "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c4e8:112231-2026",
       "members": {
@@ -559,6 +606,39 @@
           "source_updated_at": null,
           "source_url": "https://www.bmkg.go.id/alerts/nowcast/en/CNT20261121001_alert.xml",
           "title": "Thunderstorm This Morning in Nusa Tenggara Timur"
+        }
+      }
+    },
+    "c8dd9a17168f54b18a93ddbee5e9830814a6d6e88a7147216b534d76e98da156": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07892a:112787-2026",
+      "members": {
+        "beh:701c0f655b89caa23e0f3932784d": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-27T17:05:25+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:701c0f655b89caa23e0f3932784d",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07892a:112787-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-27T17:05:25Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-26T08%3A01%3A47&updatedTo=2026-11-28T08%3A01%3A47",
+          "title": "Fairhive - Materials Procurement · Fairhive Homes Limited"
         }
       }
     },

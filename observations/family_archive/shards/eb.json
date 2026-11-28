@@ -727,6 +727,45 @@
         }
       }
     },
+    "eb9487e09db9b0f8939c86527c86e1fd2019d8cc25e8d6d5efd52a8316c3bfae": {
+      "information_root": "bmkg_nowcast:bmkg_nowcast:582508091348bd4f217b87c42cb0",
+      "members": {
+        "beh:809d4fa9f406ea5f611e3c5c128c": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "bmkg_nowcast",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-28T07:25:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:809d4fa9f406ea5f611e3c5c128c",
+          "information_root": "bmkg_nowcast:bmkg_nowcast:582508091348bd4f217b87c42cb0",
+          "origin": "behavioral_registry",
+          "provider": "bmkg_nowcast",
+          "published_at": "2026-11-28T07:25:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Indonesia BMKG",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Indonesia BMKG active provincial nowcast RSS, source-reported only; not global",
+          "source_updated_at": null,
+          "source_url": "https://www.bmkg.go.id/alerts/nowcast/en/CJK20261128003_alert.xml",
+          "title": "Thunderstorm This Afternoon in Jakarta"
+        }
+      }
+    },
     "eb960ce439b7e8bab1a2770149167aa32f7d280b8934fbc102fa791154685f55": {
       "information_root": "wiki_edits:wiki_edits:id:20261124T13",
       "members": {
@@ -1151,6 +1190,39 @@
           "source_updated_at": null,
           "source_url": "https://bwt.cbp.gov/api/waittimes",
           "title": "CBP estimated commercial border wait — Brownsville / B&M"
+        }
+      }
+    },
+    "ebe50793ead123aa1706bba73bfb203f5c40781c1ea5943a0936ce0c3075e59d": {
+      "information_root": "nws:02b2e51ecadc20868eda2433",
+      "members": {
+        "beh:4ceaf9154060b45ffd66cc0bb404": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "nws",
+          "direct_measurement": false,
+          "event_at": "2026-11-28T01:47:00Z",
+          "first_observed_at": "2026-11-28T01:47:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:4ceaf9154060b45ffd66cc0bb404",
+          "information_root": "nws:02b2e51ecadc20868eda2433",
+          "origin": "behavioral_registry",
+          "provider": "nws",
+          "published_at": "2026-11-28T01:47:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "official_weather_alert_context",
+          "source_measurement": null,
+          "source_scope": "Active NWS marine alerts; severity Severe",
+          "source_updated_at": null,
+          "source_url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.e8b2c38c9a84de5cfc4c0a5b88c60847cb878316.001.1",
+          "title": "Flood Warning - Seminole, FL"
         }
       }
     },

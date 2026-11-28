@@ -659,6 +659,52 @@
         }
       }
     },
+    "d8d8ec20c88e26ba8d13bc133482b89e29544651dfc7ebc997fe8cdaf77af285": {
+      "information_root": "ris_bgp:ris_bgp:AS4134:20261128T05",
+      "members": {
+        "beh:594f7becffffab8c97c1b742c51c": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "public_routing_updates_not_country_outage",
+          "collection_mode": "ris_bgp",
+          "direct_measurement": true,
+          "event_at": null,
+          "first_observed_at": "2026-11-28T08:04:45+00:00",
+          "geography_key": "asn:4134",
+          "geography_label": "AS4134",
+          "geography_precision": "routing_target_not_country_incident",
+          "id": "beh:594f7becffffab8c97c1b742c51c",
+          "information_root": "ris_bgp:ris_bgp:AS4134:20261128T05",
+          "origin": "behavioral_registry",
+          "provider": "ris_bgp",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "routing_collector_sampled_asn_updates",
+          "source_family": "internet_routing",
+          "source_kind": "sampled_asn_bgp_route_updates_not_network_outage",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "collector_peers_are_not_geo_deduplicated": true,
+            "country_impact_not_established": true,
+            "name": "sampled_6h_bgp_announcements",
+            "registered_network_country_hint": "CN",
+            "returned_sampling_buckets": 6,
+            "source_window_end": "2026-11-28T05:00:00Z",
+            "target_asn": "AS4134",
+            "unit": "announcements",
+            "value": 107670,
+            "window_hours_requested": 6,
+            "withdrawals_unavailable_for_asn": true
+          },
+          "source_scope": "RIPE RIS public route-announcement update samples on six non-Western operated networks; ASNs not country-wide outage detection",
+          "source_updated_at": null,
+          "source_url": "https://stat.ripe.net/data/bgp-update-activity/data.json?resource=AS4134&num_hours=6&max_samples=24&hide_empty_samples=false",
+          "title": "RIPE RIS sampled BGP announcements: AS4134"
+        }
+      }
+    },
     "d8dd70494c95887ca1fe3394e00d924fcabaa230188b4a1e777a355b1613ac96": {
       "information_root": "commercial:456e646e758c7372deed",
       "members": {

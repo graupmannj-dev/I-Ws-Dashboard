@@ -446,6 +446,39 @@
         }
       }
     },
+    "998ea443eb61a51f3b0484c782d62344df9a044500336121d7136d8876257386": {
+      "information_root": "swpc:K04A:2699:20261128T011748Z",
+      "members": {
+        "beh:c7f8e425f8b53a76c4585355bf15": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "swpc",
+          "direct_measurement": false,
+          "event_at": "2026-11-28T01:17:48Z",
+          "first_observed_at": "2026-11-28T01:17:48+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:c7f8e425f8b53a76c4585355bf15",
+          "information_root": "swpc:K04A:2699:20261128T011748Z",
+          "origin": "behavioral_registry",
+          "provider": "swpc",
+          "published_at": "2026-11-28T01:17:48Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "issued_space_weather_bulletin",
+          "source_measurement": null,
+          "source_scope": "NOAA SWPC issued recent solar/geomagnetic warnings; explanatory context only",
+          "source_updated_at": null,
+          "source_url": "https://www.swpc.noaa.gov/products/alerts-watches-and-warnings",
+          "title": "ALERT: Geomagnetic K-index of 4"
+        }
+      }
+    },
     "999fabc8413682905da88e05c0d82e820962e8f28103dc2ae2bdea569cf1b9e9": {
       "information_root": "inmet_br:inmet_br:b2097dcc98b1fcad9c6db75faaf0",
       "members": {
@@ -752,6 +785,44 @@
           "source_updated_at": null,
           "source_url": "https://bwt.cbp.gov/api/waittimes",
           "title": "CBP estimated commercial border wait — Paso Del Norte"
+        }
+      }
+    },
+    "99c2d359836c3db5d7c68a5421d8d5543cd0cc68f92f6c464fc2f308c86542d3": {
+      "information_root": "usgs:us6000ue1a",
+      "members": {
+        "beh:5a2ae2fa47ff45b3cd8ad666beb9": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "usgs",
+          "direct_measurement": true,
+          "event_at": "2026-11-28T01:08:45Z",
+          "first_observed_at": "2026-11-28T01:08:45+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "source_supplied_point_only",
+          "id": "beh:5a2ae2fa47ff45b3cd8ad666beb9",
+          "information_root": "usgs:us6000ue1a",
+          "origin": "behavioral_registry",
+          "provider": "usgs",
+          "published_at": "2026-11-28T01:35:43Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "measured_earthquake_context",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "name": "earthquake_magnitude",
+            "unit": "reported_magnitude",
+            "value": 4.8
+          },
+          "source_scope": "USGS M4.5+ earthquakes worldwide, rolling past day; source thresholds apply",
+          "source_updated_at": null,
+          "source_url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000ue1a",
+          "title": "M 4.8 - 167 km N of Hicks Bay, New Zealand"
         }
       }
     },

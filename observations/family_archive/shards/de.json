@@ -171,6 +171,39 @@
         }
       }
     },
+    "de3bad545de75d8ccf6e1247e41aca9b0dc71d64420f5c1cd64880087571b99e": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c630:112801-2026",
+      "members": {
+        "beh:1d33c35c4a5dddb9ffe0cb92ea72": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-27T17:52:31+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:1d33c35c4a5dddb9ffe0cb92ea72",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c630:112801-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-27T17:52:31Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-26T08%3A01%3A47&updatedTo=2026-11-28T08%3A01%3A47",
+          "title": "Landscaping and Maintenance Services - North Taunton Woolaway Project (Taunton) · Somerset Council"
+        }
+      }
+    },
     "de568208ad4f634bf4304fdf4e718fb9bdc0263c2dfd6071dbc415d61556f054": {
       "information_root": "cbp_wait:cbp_wait:230301:2026-11-27:06:34:48",
       "members": {
@@ -262,6 +295,81 @@
           "source_updated_at": null,
           "source_url": "https://bwt.cbp.gov/api/waittimes",
           "title": "CBP estimated commercial border wait — El Paso / Paso Del Norte (PDN)"
+        }
+      }
+    },
+    "de5a09c59ed2f352cc5cc90ce2057554ef9ee7e6759a0549af217f77ebfdc261": {
+      "information_root": "wiki_edits:wiki_edits:fr:20261128T08",
+      "members": {
+        "beh:384a5af41f4503923d03fa31d984": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "wiki_edits",
+          "direct_measurement": false,
+          "event_at": "2026-11-28T08:01:46Z",
+          "first_observed_at": "2026-11-28T08:01:46+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:384a5af41f4503923d03fa31d984",
+          "information_root": "wiki_edits:wiki_edits:fr:20261128T08",
+          "origin": "behavioral_registry",
+          "provider": "wiki_edits",
+          "published_at": "2026-11-28T08:01:46Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "public_encyclopedia_edit_aggregate",
+          "source_family": "public_attention",
+          "source_kind": "bounded_public_edit_count_not_event_verification",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "distinct_articles_in_sample": 340,
+            "maximum_returned_edits": 500,
+            "most_edited_article_counts": [
+              {
+                "count": 14,
+                "title": "Détroit de Moyle"
+              },
+              {
+                "count": 10,
+                "title": "Canton de Saint-André-les-Alpes"
+              },
+              {
+                "count": 10,
+                "title": "Pweto"
+              },
+              {
+                "count": 8,
+                "title": "David Lisnard"
+              },
+              {
+                "count": 7,
+                "title": "Colissimo"
+              },
+              {
+                "count": 7,
+                "title": "Hadda Hazem"
+              },
+              {
+                "count": 6,
+                "title": "Carnaval de Luz"
+              },
+              {
+                "count": 6,
+                "title": "Famille de Ned Kelly"
+              }
+            ],
+            "name": "sampled_edits_last_three_hours",
+            "sample_cap_reached": true,
+            "unit": "edits",
+            "value": 500
+          },
+          "source_scope": "Wikipedia main-namespace edit-count sample, 14 global language editions, three-hour window capped at 500 per wiki; not geographic location",
+          "source_updated_at": null,
+          "source_url": "https://fr.wikipedia.org/wiki/Special:RecentChanges",
+          "title": "Wikipedia fr public article-edit activity (sampled)"
         }
       }
     },
@@ -682,6 +790,53 @@
           "source_updated_at": null,
           "source_url": "https://www.bmkg.go.id/alerts/nowcast/en/CPU20261126002_alert.xml",
           "title": "Thunderstorm This Afternoon in Papua"
+        }
+      }
+    },
+    "deff8c0aebaba19feb7e93036db04e8a462e35feb27450307e6212cc262d168e": {
+      "information_root": "cbp_wait:cbp_wait:250301:2026-11-27:23:55:07",
+      "members": {
+        "beh:75ce6b99fe0d6c7b90c459dd221d": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-28T08:04:45+00:00",
+          "geography_key": "us-border-port:250301",
+          "geography_label": "Calexico",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:75ce6b99fe0d6c7b90c459dd221d",
+          "information_root": "cbp_wait:cbp_wait:250301:2026-11-27:23:55:07",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Lanes Closed",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Closed",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/27/2026",
+            "reported_local_time": "23:55:07",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Calexico / East"
         }
       }
     }

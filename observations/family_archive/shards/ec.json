@@ -153,6 +153,45 @@
         }
       }
     },
+    "ec33896b3fc0bd227bd192ae4bff4c27cf40dfb3725ce17889a696fc2c3f9d52": {
+      "information_root": "bmkg_nowcast:bmkg_nowcast:e7e9e12ea97b930463269d80cfa6",
+      "members": {
+        "beh:594c0578cfc09fd1651a568049e3": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "bmkg_nowcast",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-28T07:20:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:594c0578cfc09fd1651a568049e3",
+          "information_root": "bmkg_nowcast:bmkg_nowcast:e7e9e12ea97b930463269d80cfa6",
+          "origin": "behavioral_registry",
+          "provider": "bmkg_nowcast",
+          "published_at": "2026-11-28T07:20:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Indonesia BMKG",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Indonesia BMKG active provincial nowcast RSS, source-reported only; not global",
+          "source_updated_at": null,
+          "source_url": "https://www.bmkg.go.id/alerts/nowcast/en/CKR20261128004_alert.xml",
+          "title": "Thunderstorm This Afternoon in Kep. Riau"
+        }
+      }
+    },
     "ec4885780f880fab4098bd166b406047a83362a65ddd51644589db4cb4f8febb": {
       "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-065411:110383-2026",
       "members": {
@@ -457,6 +496,39 @@
           "source_updated_at": null,
           "source_url": "https://ko.wikipedia.org/wiki/Special:RecentChanges",
           "title": "Wikipedia ko public article-edit activity (sampled)"
+        }
+      }
+    },
+    "ec8e60ca11ab237016e3deff483c5af040e2ec1e23b7aff7757f0aaa24c95d24": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c418:112803-2026",
+      "members": {
+        "beh:49b8fe33a1347d9e07cc05aed2b2": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-27T17:55:29+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:49b8fe33a1347d9e07cc05aed2b2",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c418:112803-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-27T17:55:29Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-26T08%3A01%3A47&updatedTo=2026-11-28T08%3A01%3A47",
+          "title": "Lift Servicing and Maintenance Services (North) · Southern Housing"
         }
       }
     },

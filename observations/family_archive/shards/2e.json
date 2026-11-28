@@ -63,6 +63,53 @@
         }
       }
     },
+    "2e0c02afc27a094d5cc98a952ed3f888eb8b3d6069348dc96f2251a0e9f5b81b": {
+      "information_root": "cbp_wait:cbp_wait:L01901:2026-11-28:02:55:07",
+      "members": {
+        "beh:41c2359bd7f327597cd38c9cf041": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-28T08:04:45+00:00",
+          "geography_key": "us-border-port:L01901",
+          "geography_label": "Madawaska",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:41c2359bd7f327597cd38c9cf041",
+          "information_root": "cbp_wait:cbp_wait:L01901:2026-11-28:02:55:07",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "no delay",
+            "lanes_open": 1,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "At 2:00 am EST",
+            "reported_local_date": "11/28/2026",
+            "reported_local_time": "02:55:07",
+            "source_declared_border": "Canadian Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 0
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Madawaska"
+        }
+      }
+    },
     "2e0d67c2274a549504a96bef8945ba2f1944b0dfbfa0f1962f9fb2da68eb2522": {
       "information_root": "ioda:415e07793748875266c1d9f7",
       "members": {
@@ -216,6 +263,39 @@
           "source_updated_at": null,
           "source_url": "https://data.gov.sg/datasets/d_8f264219109e61fffa87ac64dd5a9a65/view",
           "title": "Singapore MPA 2026-03 Passenger vessel arrivals (>75 GT)"
+        }
+      }
+    },
+    "2e46981be4078884e996c0df68d3c2c7ac4e3d408dc7da700d6edcd34172e260": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c628:112788-2026",
+      "members": {
+        "beh:1a1b84fd94c332f30b9b32351614": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-27T17:05:34+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:1a1b84fd94c332f30b9b32351614",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c628:112788-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-27T17:05:34Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-26T08%3A01%3A47&updatedTo=2026-11-28T08%3A01%3A47",
+          "title": "589-NYC-RS Offsite Back-up (NYES) · The North Yorkshire Council"
         }
       }
     },
@@ -443,6 +523,53 @@
           "source_updated_at": "2026-11-18T00:21:53Z",
           "source_url": "https://niord.dma.dk/#/message/f50f5f45-141b-4e6d-b05f-c91b00e96ce2",
           "title": "Denmark. Skagerrak. EK R 48 Tranum S. Firing exercises. Warning."
+        }
+      }
+    },
+    "2e73e76c0585990a007ea99b3b50869b5b1d8ff8da46d0f733b147360fe2aa37": {
+      "information_root": "cbp_wait:cbp_wait:250302:2026-11-27:23:55:07",
+      "members": {
+        "beh:72302d8ba6640fb3489158948f09": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-28T08:04:45+00:00",
+          "geography_key": "us-border-port:250302",
+          "geography_label": "Calexico",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:72302d8ba6640fb3489158948f09",
+          "information_root": "cbp_wait:cbp_wait:250302:2026-11-27:23:55:07",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "N/A",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/27/2026",
+            "reported_local_time": "23:55:07",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Calexico / West"
         }
       }
     },
@@ -1201,6 +1328,53 @@
           "source_updated_at": null,
           "source_url": "https://bwt.cbp.gov/api/waittimes",
           "title": "CBP estimated commercial border wait — Laredo / Bridge II"
+        }
+      }
+    },
+    "2eec66bbf660e295fe938b13d03723f4624c2f6d68ba7b9c796c464390b6779b": {
+      "information_root": "cbp_wait:cbp_wait:090102:2026-11-28:02:55:06",
+      "members": {
+        "beh:62fb471cf5f8ffbc1ced1a10ecc0": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-28T08:04:45+00:00",
+          "geography_key": "us-border-port:090102",
+          "geography_label": "Buffalo/Niagara Falls",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:62fb471cf5f8ffbc1ced1a10ecc0",
+          "information_root": "cbp_wait:cbp_wait:090102:2026-11-28:02:55:06",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "N/A",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/28/2026",
+            "reported_local_time": "02:55:06",
+            "source_declared_border": "Canadian Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Buffalo/Niagara Falls / Rainbow Bridge"
         }
       }
     },

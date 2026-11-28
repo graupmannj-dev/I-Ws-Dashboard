@@ -80,6 +80,53 @@
         }
       }
     },
+    "9320d331e4eeef2ad7321471ef835028cf91f330750ab86c0b60c40ebd923d0e": {
+      "information_root": "cbp_wait:cbp_wait:300901:2026-11-27:23:55:07",
+      "members": {
+        "beh:7952b9a770ba24d5bd61295abf0d": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-28T08:04:45+00:00",
+          "geography_key": "us-border-port:300901",
+          "geography_label": "Sumas",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:7952b9a770ba24d5bd61295abf0d",
+          "information_root": "cbp_wait:cbp_wait:300901:2026-11-27:23:55:07",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "no delay",
+            "lanes_open": 1,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "At 11:00 pm PST",
+            "reported_local_date": "11/27/2026",
+            "reported_local_time": "23:55:07",
+            "source_declared_border": "Canadian Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 0
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Sumas"
+        }
+      }
+    },
     "93392617bac2ad2b0e759e233ad36cf2af7e28b1cd86009abd715f2223843d45": {
       "information_root": "wiki_edits:wiki_edits:hi:20261121T19",
       "members": {
@@ -425,6 +472,39 @@
           "source_updated_at": null,
           "source_url": "https://bwt.cbp.gov/api/waittimes",
           "title": "CBP estimated commercial border wait — Laredo / Colombia Solidarity"
+        }
+      }
+    },
+    "93a4fadb81687080396110a22608ebdf218006954d1abdacd54a46822c10a052": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c626:112784-2026",
+      "members": {
+        "beh:83b3b4a217f4ef517045b60bc8e8": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-27T17:02:43+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:83b3b4a217f4ef517045b60bc8e8",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c626:112784-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-27T17:02:43Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-26T08%3A01%3A47&updatedTo=2026-11-28T08%3A01%3A47",
+          "title": "Provision of a Service Provider to support the delivery of the Jobs Guarantee Programme. · London Borough of Hillingdon"
         }
       }
     },

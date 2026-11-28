@@ -295,6 +295,53 @@
         }
       }
     },
+    "e944a7d08f66618e32b1ec663013e8356d7672cbfe09bd4b5f63441803d21e83": {
+      "information_root": "cbp_wait:cbp_wait:230106:2026-11-28:01:55:07",
+      "members": {
+        "beh:26f289eecc64ec8aef5e6632e743": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-28T08:04:45+00:00",
+          "geography_key": "us-border-port:230106",
+          "geography_label": "B&M Bridge",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:26f289eecc64ec8aef5e6632e743",
+          "information_root": "cbp_wait:cbp_wait:230106:2026-11-28:01:55:07",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Update Pending",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/28/2026",
+            "reported_local_time": "01:55:07",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — B&M Bridge / B&M Bridge"
+        }
+      }
+    },
     "e94a4e11a8e0f14dd43a0fbb30bfcfe95e5bad49cc135592563d73a2c2e32c5c": {
       "information_root": "wiki_edits:wiki_edits:ar:20261124T13",
       "members": {
@@ -656,6 +703,53 @@
           "source_updated_at": null,
           "source_url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.6ba7d9101ed228aacc05d4e6029cc5482f173b39.001.2",
           "title": "Coastal Flood Advisory - Coastal Palm Beach County; Coastal Broward County"
+        }
+      }
+    },
+    "e98ce041574898023cee8ddb122c7b6123a888169c73098f4f041dc414e71e26": {
+      "information_root": "cbp_wait:cbp_wait:260403:2026-11-28:00:55:07",
+      "members": {
+        "beh:547733293e12ee5737c11580e6ee": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-28T08:04:45+00:00",
+          "geography_key": "us-border-port:260403",
+          "geography_label": "Nogales",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:547733293e12ee5737c11580e6ee",
+          "information_root": "cbp_wait:cbp_wait:260403:2026-11-28:00:55:07",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Update Pending",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Closed",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/28/2026",
+            "reported_local_time": "00:55:07",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Nogales / Morley Gate"
         }
       }
     },
@@ -1194,6 +1288,39 @@
           "source_updated_at": null,
           "source_url": "https://bwt.cbp.gov/api/waittimes",
           "title": "CBP estimated commercial border wait — B&M Bridge / B&M Bridge"
+        }
+      }
+    },
+    "e9f525be66a4a719c1fb4ef6a9b3cbfdc5a0fb7e0cf1555b4d7a4d21149909f7": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c624:112781-2026",
+      "members": {
+        "beh:55e41fb3823b0bb92af5460ae69b": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-27T16:59:39+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:55e41fb3823b0bb92af5460ae69b",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c624:112781-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-27T16:59:39Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-26T08%3A01%3A47&updatedTo=2026-11-28T08%3A01%3A47",
+          "title": "North Northamptonshire Council - Country Park Pay and Display Machines · North Northamptonshire Council"
         }
       }
     }

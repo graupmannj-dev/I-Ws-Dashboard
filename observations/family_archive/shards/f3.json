@@ -1,5 +1,99 @@
 {
   "roots": {
+    "f311639ecc6d366e079e9e5abb0003e32df201f6f5cc686fec1cbc31e092a875": {
+      "information_root": "cbp_wait:cbp_wait:240203:2026-11-28:00:55:07",
+      "members": {
+        "beh:6694718084f03196763b5d53446a": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-28T08:04:45+00:00",
+          "geography_key": "us-border-port:240203",
+          "geography_label": "El Paso",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:6694718084f03196763b5d53446a",
+          "information_root": "cbp_wait:cbp_wait:240203:2026-11-28:00:55:07",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Lanes Closed",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/28/2026",
+            "reported_local_time": "00:55:07",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — El Paso / Ysleta"
+        }
+      }
+    },
+    "f320e15bdac67edef0f7f4679292c0fda8a45232157987562a426f004a6a220c": {
+      "information_root": "cbp_wait:cbp_wait:250609:2026-11-27:23:55:07",
+      "members": {
+        "beh:2fc0f34371ddd833ea615308340b": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-28T08:04:45+00:00",
+          "geography_key": "us-border-port:250609",
+          "geography_label": "Otay Mesa",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:2fc0f34371ddd833ea615308340b",
+          "information_root": "cbp_wait:cbp_wait:250609:2026-11-27:23:55:07",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Update Pending",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/27/2026",
+            "reported_local_time": "23:55:07",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Otay Mesa"
+        }
+      }
+    },
     "f32844942e89e57907e278cb4cc6335de9e4567c2a3e037e522498295e2ff046": {
       "information_root": "usace:205788",
       "members": {
@@ -143,6 +237,81 @@
           "source_updated_at": null,
           "source_url": "https://earthquake.usgs.gov/earthquakes/eventpage/nc75468702",
           "title": "M 5.0 - 10 km NW of Pinnacles, CA"
+        }
+      }
+    },
+    "f3439c942f519363fb0647e2fb9fb26ba96e7133fedaf57cef99b65c92fb0c57": {
+      "information_root": "wiki_edits:wiki_edits:id:20261128T08",
+      "members": {
+        "beh:96618c34d7c745dd9a425b873b96": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "wiki_edits",
+          "direct_measurement": false,
+          "event_at": "2026-11-28T08:00:52Z",
+          "first_observed_at": "2026-11-28T08:00:52+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:96618c34d7c745dd9a425b873b96",
+          "information_root": "wiki_edits:wiki_edits:id:20261128T08",
+          "origin": "behavioral_registry",
+          "provider": "wiki_edits",
+          "published_at": "2026-11-28T08:00:52Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "public_encyclopedia_edit_aggregate",
+          "source_family": "public_attention",
+          "source_kind": "bounded_public_edit_count_not_event_verification",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "distinct_articles_in_sample": 198,
+            "maximum_returned_edits": 500,
+            "most_edited_article_counts": [
+              {
+                "count": 14,
+                "title": "Tradisi dan ritual Sindhi"
+              },
+              {
+                "count": 11,
+                "title": "D'Academy (musim 8)"
+              },
+              {
+                "count": 9,
+                "title": "Malakhra"
+              },
+              {
+                "count": 8,
+                "title": "SMA Negeri 10 Malang"
+              },
+              {
+                "count": 6,
+                "title": "Hari Budaya Muhajir"
+              },
+              {
+                "count": 6,
+                "title": "Lakho Phulani"
+              },
+              {
+                "count": 5,
+                "title": "Blackpink"
+              },
+              {
+                "count": 5,
+                "title": "Fangchuan"
+              }
+            ],
+            "name": "sampled_edits_last_three_hours",
+            "sample_cap_reached": false,
+            "unit": "edits",
+            "value": 355
+          },
+          "source_scope": "Wikipedia main-namespace edit-count sample, 14 global language editions, three-hour window capped at 500 per wiki; not geographic location",
+          "source_updated_at": null,
+          "source_url": "https://id.wikipedia.org/wiki/Special:RecentChanges",
+          "title": "Wikipedia id public article-edit activity (sampled)"
         }
       }
     },

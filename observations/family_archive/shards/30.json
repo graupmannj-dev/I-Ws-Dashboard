@@ -63,6 +63,53 @@
         }
       }
     },
+    "3020338c0be9ecadc772fea341ad66f4bc2d60c8aefe2a0d232c887a526f13b1": {
+      "information_root": "cbp_wait:cbp_wait:021101:2026-11-28:02:55:07",
+      "members": {
+        "beh:20d7436d626a4858ad816b294702": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-28T08:04:45+00:00",
+          "geography_key": "us-border-port:021101",
+          "geography_label": "Norton",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:20d7436d626a4858ad816b294702",
+          "information_root": "cbp_wait:cbp_wait:021101:2026-11-28:02:55:07",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "no delay",
+            "lanes_open": 1,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "At 8:00 am EST",
+            "reported_local_date": "11/28/2026",
+            "reported_local_time": "02:55:07",
+            "source_declared_border": "Canadian Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 0
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Norton"
+        }
+      }
+    },
     "30223a07d39db3d2145a8f30d5ed4ba9e790c9443bdb6b03c3450067dc464de1": {
       "information_root": "cbp_wait:cbp_wait:231001:2026-11-25:21:37:47",
       "members": {

@@ -187,6 +187,39 @@
         }
       }
     },
+    "5758bad0366c8286dadca3334c389b2e0a4bc0e92f88566c3a16c16896c70c52": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-06d43b:112775-2026",
+      "members": {
+        "beh:c57e9562eb7f2776eb579875d84c": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-27T16:50:48+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:c57e9562eb7f2776eb579875d84c",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-06d43b:112775-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-27T16:50:48Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-26T08%3A01%3A47&updatedTo=2026-11-28T08%3A01%3A47",
+          "title": "Grounds Maintenance Community · The County Hospital"
+        }
+      }
+    },
     "576cc12f53b51faab6e49b5275260b2785b2ff394768cf66e97297c9425dbd31": {
       "information_root": "niord:6d24b482-144d-4132-a360-95b2c206d6cc:0:1:0",
       "members": {
@@ -280,6 +313,53 @@
           "source_updated_at": null,
           "source_url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxOR0xqdEpSTDJ6TjhPMGtVOTBpdjVQdWxaMS1JU2RvamJVV2s1dk1oM3NVYW93RVpNbDVjUXo4NUQ5cW9idEw2NXNwVGxjY3hSanRvcFZhb1RRUEMwcWRHbXF5eXBPUEFCbV93WE9ZSW91aGFGQnVtQzU1a3Y5QlJiUzdadGxIblZKMnhtb3dCYWxvZHRReWh3bWZLZm1EMzVualY0by1BYlp0R2JZSEHSAawBQVVfeXFMTThORndLV0xTSHVnc1ZyTERuNTlDWTlMaDNWNXhUeXd0RGpOOUV6RTBOTVd6aHAtbFpoUkxrTV9LTW41TzFJb016WUVUOXpMdlZDeVFFdjQ3dTZhdVlnZVg2ZF9kckc4dHZwSzlYbUNNQXgtYm02Skx2bGFaTFc4b0s4azVrLTY1R1JoYlVsenpfOGNRNDVvREJyMy1laVg5Nkd0QmRaS2c3MXowYw?oc=5",
           "title": "Ukraine invited Canada to join the War Risk Insurance Fund and the \"Industrial Ramstein\" initiative. - Українські Національні Новини (УНН)"
+        }
+      }
+    },
+    "577ddbf944814703e71cc22fff1d5cff7fe0855eefc16b17b5ef69670851ef2b": {
+      "information_root": "cbp_wait:cbp_wait:380301:2026-11-28:02:55:07",
+      "members": {
+        "beh:59cf4eaa43f7ace7544ffd324967": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-28T08:04:45+00:00",
+          "geography_key": "us-border-port:380301",
+          "geography_label": "Sault Ste. Marie",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:59cf4eaa43f7ace7544ffd324967",
+          "information_root": "cbp_wait:cbp_wait:380301:2026-11-28:02:55:07",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "no delay",
+            "lanes_open": 1,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "At 2:00 am EST",
+            "reported_local_date": "11/28/2026",
+            "reported_local_time": "02:55:07",
+            "source_declared_border": "Canadian Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 0
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Sault Ste. Marie / International Bridge - SSM"
         }
       }
     },

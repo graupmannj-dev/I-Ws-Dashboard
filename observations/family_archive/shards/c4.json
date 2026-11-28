@@ -146,6 +146,39 @@
         }
       }
     },
+    "c4486b5efc647f9731f88924f3093e70b998f1fa609b9a803a9f7324821020d5": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c62d:112797-2026",
+      "members": {
+        "beh:70a309c0e2b6592223ec7cc7a39a": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-27T17:34:53+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:70a309c0e2b6592223ec7cc7a39a",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07c62d:112797-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-27T17:34:53Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-26T08%3A01%3A47&updatedTo=2026-11-28T08%3A01%3A47",
+          "title": "Hygiene Services · NOTTINGHAM COMMUNITY HOUSING ASSOCIATION LIMITED"
+        }
+      }
+    },
     "c44d55e8e02e52a1c0f1526009e241a97379a9ac4266257dc6229edcf1a71583": {
       "information_root": "cbp_wait:cbp_wait:l24501:2026-11-25:20:37:46",
       "members": {
@@ -439,6 +472,53 @@
           "source_kind": "unreviewed_analyst_report",
           "source_url": "https://apnews.com/article/russia-ukraine-war-talks-kushner-witkoff-7c8d1024302e0c6ad8be064eec852a64",
           "title": "Russia and Ukraine agree in principle to large POW exchange at Abu Dhabi talks"
+        }
+      }
+    },
+    "c4af8c687e9fd7f9860616bc2f32f4b524b01ffb2ab766c576f9964385523add": {
+      "information_root": "cbp_wait:cbp_wait:010601:2026-11-28:02:55:07",
+      "members": {
+        "beh:0310f671c0a0c03ef7ea597d2dae": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-28T08:04:45+00:00",
+          "geography_key": "us-border-port:010601",
+          "geography_label": "Houlton",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:0310f671c0a0c03ef7ea597d2dae",
+          "information_root": "cbp_wait:cbp_wait:010601:2026-11-28:02:55:07",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "no delay",
+            "lanes_open": 1,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "At 2:00 am EST",
+            "reported_local_date": "11/28/2026",
+            "reported_local_time": "02:55:07",
+            "source_declared_border": "Canadian Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 0
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Houlton"
         }
       }
     },

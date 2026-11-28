@@ -608,6 +608,100 @@
         }
       }
     },
+    "32a205c47573f7f51ca4cadc102c24c4d7b5fce938447b7b444ba30b1a788bde": {
+      "information_root": "cbp_wait:cbp_wait:090104:2026-11-28:02:55:06",
+      "members": {
+        "beh:35e66d42eb0faa53b43cd7379f62": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-28T08:04:45+00:00",
+          "geography_key": "us-border-port:090104",
+          "geography_label": "Buffalo/Niagara Falls",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:35e66d42eb0faa53b43cd7379f62",
+          "information_root": "cbp_wait:cbp_wait:090104:2026-11-28:02:55:06",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "no delay",
+            "lanes_open": 2,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Open",
+            "reported_lane_clock": "At 2:47 am EST",
+            "reported_local_date": "11/28/2026",
+            "reported_local_time": "02:55:06",
+            "source_declared_border": "Canadian Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": 0
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Buffalo/Niagara Falls / Lewiston Bridge"
+        }
+      }
+    },
+    "32bf503a6552026fc00e3f0bf27d3a0bd99fc7166eba1488d20f94dba50d4fb1": {
+      "information_root": "cbp_wait:cbp_wait:535503:2026-11-28:01:55:07",
+      "members": {
+        "beh:f9b27d5431869e87b6ff995e8663": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "border_delay_estimate_not_actual_vehicle_flow",
+          "collection_mode": "cbp_wait",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-28T08:04:45+00:00",
+          "geography_key": "us-border-port:535503",
+          "geography_label": "Brownsville",
+          "geography_precision": "published_crossing_not_event_location",
+          "id": "beh:f9b27d5431869e87b6ff995e8663",
+          "information_root": "cbp_wait:cbp_wait:535503:2026-11-28:01:55:07",
+          "origin": "behavioral_registry",
+          "provider": "cbp_wait",
+          "published_at": null,
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "government_border_wait_estimate",
+          "source_family": "border_transport_delay",
+          "source_kind": "published_commercial_wait_estimate_not_vehicle_volume",
+          "source_measurement": {
+            "baseline_status": "not_calibrated",
+            "lane_status": "Lanes Closed",
+            "lanes_open": null,
+            "name": "published_commercial_standard_lane_wait",
+            "not_a_vehicle_throughput_measurement": true,
+            "port_status": "Closed",
+            "reported_lane_clock": "",
+            "reported_local_date": "11/28/2026",
+            "reported_local_time": "01:55:07",
+            "source_declared_border": "Mexican Border",
+            "source_timezone_resolved": false,
+            "unit": "minutes",
+            "value": null
+          },
+          "source_scope": "CBP primary public U.S. Canadian/Mexican border estimated waits, port-local time; not actual traffic volume",
+          "source_updated_at": null,
+          "source_url": "https://bwt.cbp.gov/api/waittimes",
+          "title": "CBP estimated commercial border wait — Brownsville / Los Indios"
+        }
+      }
+    },
     "32ca802af0d1196f65b732b5fc674a5bd063b3beefee290ec86f9ae317a11bed": {
       "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-06d628:111197-2026",
       "members": {
@@ -750,6 +844,45 @@
           "source_updated_at": null,
           "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-22T02%3A19%3A12&updatedTo=2026-11-24T02%3A19%3A12",
           "title": "Patient Hoists [Maintenance of] · Swansea Bay University Health Board"
+        }
+      }
+    },
+    "32e48644f9fcd2df61a2881c0e882c95cba32e38bf922d96bb99b41fa9c0a5c1": {
+      "information_root": "bmkg_nowcast:bmkg_nowcast:ef655dd4ef19939575e4cca05259",
+      "members": {
+        "beh:af4f79326ab3ffb8ad8d66961b83": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "bmkg_nowcast",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-28T06:20:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:af4f79326ab3ffb8ad8d66961b83",
+          "information_root": "bmkg_nowcast:bmkg_nowcast:ef655dd4ef19939575e4cca05259",
+          "origin": "behavioral_registry",
+          "provider": "bmkg_nowcast",
+          "published_at": "2026-11-28T06:20:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Indonesia BMKG",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Indonesia BMKG active provincial nowcast RSS, source-reported only; not global",
+          "source_updated_at": null,
+          "source_url": "https://www.bmkg.go.id/alerts/nowcast/en/CKS20261128002_alert.xml",
+          "title": "Thunderstorm This Afternoon in Kalimantan Selatan"
         }
       }
     },

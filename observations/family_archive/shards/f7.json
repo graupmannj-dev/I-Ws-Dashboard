@@ -171,6 +171,39 @@
         }
       }
     },
+    "f75f15b8d325a441d301da3bb3a17442991b07b8840210c342e88c07a577eebb": {
+      "information_root": "nws:c7546fb729682e5a85d30532",
+      "members": {
+        "beh:e83202bd0284e6b1c9c127c13f07": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "nws",
+          "direct_measurement": false,
+          "event_at": "2026-11-28T01:52:00Z",
+          "first_observed_at": "2026-11-28T01:52:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:e83202bd0284e6b1c9c127c13f07",
+          "information_root": "nws:c7546fb729682e5a85d30532",
+          "origin": "behavioral_registry",
+          "provider": "nws",
+          "published_at": "2026-11-28T01:52:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "environmental_hazard_reporting",
+          "source_family": "environmental_context",
+          "source_kind": "official_weather_alert_context",
+          "source_measurement": null,
+          "source_scope": "Active NWS marine alerts; severity Severe",
+          "source_updated_at": null,
+          "source_url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.aa2f56357813a15f2e4e75bc8dad392d99c8858c.001.1",
+          "title": "Flood Warning - Lake, FL; Volusia, FL"
+        }
+      }
+    },
     "f77e6fdeed98a560bac4ad671e277a41d58a609659e6605511c1b5b217a4c69e": {
       "information_root": "cbp_wait:cbp_wait:250608:2026-11-20:18:23:04",
       "members": {
@@ -245,6 +278,39 @@
           "source_updated_at": null,
           "source_url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.ncl.html",
           "title": "New Caledonia - Level 2: Exercise Increased Caution"
+        }
+      }
+    },
+    "f783466a6273af500c00d866457cc54c8656eb0efb709c3bdae37b45ac3c6f1b": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07b94f:112800-2026",
+      "members": {
+        "beh:b393c513a0753f4542d4488d313a": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-27T17:46:59+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:b393c513a0753f4542d4488d313a",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-07b94f:112800-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-27T17:46:59Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-26T08%3A01%3A47&updatedTo=2026-11-28T08%3A01%3A47",
+          "title": "Smarter Digital Access Programme · FCA"
         }
       }
     },

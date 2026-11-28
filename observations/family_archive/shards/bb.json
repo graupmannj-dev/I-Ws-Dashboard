@@ -411,6 +411,39 @@
         }
       }
     },
+    "bb84879c679cb0e4263f6d524bee289b9766b5e5f3d0342a07c8ae2e438cdab2": {
+      "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-068df2:112729-2026",
+      "members": {
+        "beh:4d2e059ea1b2f83d4060936f4f00": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "environmental_context_not_threat_attribution",
+          "collection_mode": "uk_tenders",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-27T15:45:11+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:4d2e059ea1b2f83d4060936f4f00",
+          "information_root": "uk_tenders:uk_tenders:ocds-h6vhtk-068df2:112729-2026",
+          "origin": "behavioral_registry",
+          "provider": "uk_tenders",
+          "published_at": "2026-11-27T15:45:11Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "official_public_procurement_release",
+          "source_family": "public_procurement",
+          "source_kind": "public_tender_release_not_evidence_of_urgent_need",
+          "source_measurement": null,
+          "source_scope": "UK Find a Tender OCDS releases; latest bounded update-window sample, not all UK tenders",
+          "source_updated_at": null,
+          "source_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&updatedFrom=2026-11-26T08%3A01%3A47&updatedTo=2026-11-28T08%3A01%3A47",
+          "title": "INVITATION TO TENDER (ITT) for the provision of Professional consultancy services to manage delivery of Herefordshire Council’s school building maintenance programme · Herefordshire Council"
+        }
+      }
+    },
     "bb8babd4fa75e3348d92aee8f0afb53bcbe84738ebac5073535feef6a234806d": {
       "information_root": "niord:11b6b645-a1c8-429d-86f2-a1727651d571:0:2:0",
       "members": {
@@ -626,6 +659,45 @@
           "source_updated_at": null,
           "source_url": "https://bwt.cbp.gov/api/waittimes",
           "title": "CBP estimated commercial border wait — Santa Teresa / Santa Teresa Port of Entry"
+        }
+      }
+    },
+    "bbbc981ba74aa854d4731c7833e8898464bf659e5a59ab8e936085ef47a3b507": {
+      "information_root": "bmkg_nowcast:bmkg_nowcast:63ee5aa7a0ccb85d6b3e6202f94c",
+      "members": {
+        "beh:d79ae4be0d3890ffebc5cddc9869": {
+          "calibrated_metric": null,
+          "case_hint": null,
+          "claim_level": "national_hazard_context_not_hostile_attribution",
+          "collection_mode": "bmkg_nowcast",
+          "direct_measurement": false,
+          "event_at": null,
+          "first_observed_at": "2026-11-28T06:15:00+00:00",
+          "geography_key": null,
+          "geography_label": null,
+          "geography_precision": "no_source_verified_geography",
+          "id": "beh:d79ae4be0d3890ffebc5cddc9869",
+          "information_root": "bmkg_nowcast:bmkg_nowcast:63ee5aa7a0ccb85d6b3e6202f94c",
+          "origin": "behavioral_registry",
+          "provider": "bmkg_nowcast",
+          "published_at": "2026-11-28T06:15:00Z",
+          "restriction_status": "",
+          "scheduled_valid_from": null,
+          "scheduled_valid_until": null,
+          "source_dependency_class": "national_issued_weather_warning_not_independent_observation",
+          "source_family": "environmental_context",
+          "source_kind": "national_official_weather_notice_context",
+          "source_measurement": {
+            "calibration_status": "not_calibrated",
+            "issuer": "Indonesia BMKG",
+            "name": "issued_warning_document",
+            "unit": "notice",
+            "wmo_relay_not_independent_observer": false
+          },
+          "source_scope": "Indonesia BMKG active provincial nowcast RSS, source-reported only; not global",
+          "source_updated_at": null,
+          "source_url": "https://www.bmkg.go.id/alerts/nowcast/en/CSS20261128003_alert.xml",
+          "title": "Thunderstorm This Afternoon in Sumatera Selatan"
         }
       }
     },
