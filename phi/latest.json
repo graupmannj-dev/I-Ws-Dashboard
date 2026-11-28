@@ -1,8 +1,8 @@
 {
   "schema": "cairn.phi-sidecar.v1",
   "model": "phi-4-mini-instruct-q4km-local",
-  "generated_at": "2026-11-27T22:59:40.933030Z",
-  "source_build_generated_at": "2026-11-27T22:54:08+00:00",
+  "generated_at": "2026-11-28T07:58:23.481039Z",
+  "source_build_generated_at": "2026-11-28T07:54:41+00:00",
   "provisional_only": true,
   "signed_evidence_modified": false,
   "cases": {
@@ -215,7 +215,7 @@
       ],
       "input_sha256": "7bf5605d6b1d24a61bf61974112e62030b4767c214033f532cd64cfe859c8f04",
       "model_generated_at": "2026-11-27T22:55:34.824192Z",
-      "cache_status": "fresh_inference"
+      "cache_status": "reused_exact_input"
     },
     "afpak": {
       "status": "provisional_complete",
@@ -509,7 +509,7 @@
       ],
       "input_sha256": "249c0f2656b5db936a5dfafe539a333022a3c517c3778284e3dddfc6a3cfd570",
       "model_generated_at": "2026-11-27T22:55:34.824192Z",
-      "cache_status": "fresh_inference"
+      "cache_status": "reused_exact_input"
     },
     "russia_nato": {
       "status": "model_or_validation_failed",
@@ -750,8 +750,8 @@
         }
       ],
       "input_sha256": "91077021d5370ff32777d961bdaf6f85205cf69e9ab0d24db504467c50f66c6f",
-      "model_generated_at": "2026-11-26T23:16:10.421435Z",
-      "cache_status": "reused_exact_input"
+      "model_generated_at": "2026-11-28T07:55:58.543002Z",
+      "cache_status": "fresh_inference"
     },
     "korea": {
       "status": "provisional_complete",
@@ -920,13 +920,13 @@
       ],
       "input_sha256": "7a7262d3744ef31f3c68985bdfdc1b51a1b2ddc72704c6cf55e39f7f17b75b36",
       "model_generated_at": "2026-11-27T22:55:34.824192Z",
-      "cache_status": "fresh_inference"
+      "cache_status": "reused_exact_input"
     }
   },
   "summary": {
     "cases": 10,
-    "reused": 6,
-    "new_provisional": 3,
+    "reused": 8,
+    "new_provisional": 1,
     "failed": 1
   }
 }
